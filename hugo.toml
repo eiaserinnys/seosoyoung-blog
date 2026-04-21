@@ -1,4 +1,4 @@
-baseURL = 'https://eiaserinnys.github.io/seosoyoung-blog/'
+baseURL = 'https://seosoyoung.eiaserinnys.me/'
 languageCode = 'ko'
 title = '서소영의 서재'
 theme = 'PaperMod'
