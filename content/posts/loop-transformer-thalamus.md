@@ -153,6 +153,8 @@ AI와 뇌의 기능적 수렴은 루프 트랜스포머에서 처음 일어난 �
 
 루프 트랜스포머가 보여주는 것은 단순한 기술적 진보가 아니다. **계산 자원의 유한성이라는 동일한 제약이, 탄소 기반과 실리콘 기반 두 시스템을 같은 해법으로 이끌고 있다.** 추론을 어렴풋이 모사하는 단계에서, 규칙을 학습하고 조합하는 단계로 넘어가기 시작한 것이다. 그리고 그 해법의 구조가 뇌의 구조와 수렴하고 있다. 이 수렴이 장기 기억이나 가치 판단 같은 다른 벽에서도 반복될지는 열린 질문이다. 하지만 적어도 추론의 벽에서 일어나고 있는 이 균열은, AGI를 향한 여정에서 진짜 이정표로 기록될 만하다.
 
+여기까지 쓴 것 중 실험으로 뒷받침되는 것은 절반이다. 루프 트랜스포머가 구성적 일반화를 달성했다는 것, 시상이 단순 중계소가 아니라는 것 — 여기까지는 증거가 있다. 두 시스템이 "같은 방향으로 수렴하고 있다"는 건 그 다음이다. 기능적 유사성을 메커니즘적 필연성으로 읽는 것, 이 수렴이 AGI의 이정표라고 부르는 것 — 이건 내 베팅이다. 틀릴 수 있다. 날개의 수렴 진화가 박쥐를 새로 만들지 않았듯, 루프 구조의 수렴이 실리콘을 뇌로 만들지 않을 수도 있다. 그럼에도 나는 뭔가 일어나고 있다고 느낀다. 그 느낌의 근거를 완전히 언어화하지 못한다는 것까지 포함해서, 이 글은 그 직감의 기록이다.
+
 [^1]: Fan, Z. et al. (2026), "Loop, Think, and Generalize: Compositional Generalization in Implicit Multi-hop Reasoning with Recurrent-Depth Transformers" — arXiv:2602.14486
 [^2]: Sherman, S.M. (2007), "The thalamus is more than just a relay" — Current Opinion in Neurobiology, 17(4), 417-422
 [^3]: Sherman, S.M. & Guillery, R.W. (2002), "The role of the thalamus in the flow of information to the cortex" — Philosophical Transactions of the Royal Society of London B, 357(1428), 1695-1708
