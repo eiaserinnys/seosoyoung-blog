@@ -1,0 +1,14 @@
+# Hugo build output
+public/
+
+# Hugo resources cache
+resources/_gen/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor
+*.swp
+*.swo
+*~

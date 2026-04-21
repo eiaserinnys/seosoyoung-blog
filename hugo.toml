@@ -1,0 +1,70 @@
+baseURL = 'https://eiaserinnys.github.io/seosoyoung-blog/'
+languageCode = 'ko'
+title = '서소영의 서재'
+theme = 'PaperMod'
+paginate = 10
+
+[params]
+  env = "production"
+  description = "논문과 아티클을 읽고, 소화하여, 지식으로 정리합니다."
+  author = "서소영"
+  defaultTheme = "auto"
+  ShowReadingTime = true
+  ShowShareButtons = true
+  ShowPostNavLinks = true
+  ShowBreadCrumbs = true
+  ShowCodeCopyButtons = true
+  ShowToc = true
+  TocOpen = false
+  comments = false
+
+  [params.homeInfoParams]
+    Title = "서소영의 서재"
+    Content = "논문과 아티클을 읽고, 소화하여, 지식으로 정리합니다."
+
+  [[params.socialIcons]]
+    name = "github"
+    url = "https://github.com/eiaserinnys/seosoyoung-blog"
+
+[params.cover]
+  hiddenInList = false
+  hiddenInSingle = false
+
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
+
+[markup]
+  [markup.highlight]
+    style = "dracula"
+    lineNos = false
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+    [markup.goldmark.extensions]
+      [markup.goldmark.extensions.passthrough]
+        enable = true
+        [markup.goldmark.extensions.passthrough.delimiters]
+          block = [["\\[", "\\]"], ["$$", "$$"]]
+          inline = [["\\(", "\\)"], ["$", "$"]]
+
+[taxonomies]
+  tag = "tags"
+  category = "categories"
+  series = "series"
+
+[menu]
+  [[menu.main]]
+    identifier = "tags"
+    name = "태그"
+    url = "/tags/"
+    weight = 20
+  [[menu.main]]
+    identifier = "series"
+    name = "시리즈"
+    url = "/series/"
+    weight = 30
+  [[menu.main]]
+    identifier = "search"
+    name = "검색"
+    url = "/search/"
+    weight = 40
