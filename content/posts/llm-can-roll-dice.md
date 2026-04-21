@@ -6,7 +6,7 @@ categories: ["논문 소화"]
 summary: "LLM에게 랜덤 문자열을 생성하게 한 뒤 해시 연산을 시키면, 외부 난수 없이도 PRNG 수준의 확률적 의사결정이 가능하다. 더 놀라운 건 CoT가 길어질수록 이 '주사위'의 품질이 올라간다는 것이다."
 math: true
 cover:
-  image: "/images/cover-llm-can-roll-dice.png"
+  image: "/images/cover-llm-can-roll-dice.jpg"
 ---
 
 ## 결론: LLM은 자기 자신으로 주사위를 만들 수 있다

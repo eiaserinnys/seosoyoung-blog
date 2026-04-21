@@ -6,7 +6,7 @@ categories: ["AI 인사이트"]
 series: ["AI 에이전트 아키텍처"]
 summary: "Claude Opus 4.7의 시스템 프롬프트 변경을 분석하면, 시스템 프롬프트가 모델과 함께 진화하는 하네스라는 사실이 드러난다. 제약은 제거되고, 행동은 재배치된다."
 cover:
-  image: "/images/cover-system-prompt-as-harness.png"
+  image: "/images/cover-system-prompt-as-harness.jpg"
 ---
 
 ## 시스템 프롬프트는 고정된 지시가 아니라, 모델과 함께 움직이는 하네스다

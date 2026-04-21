@@ -5,7 +5,7 @@ tags: ["AI 에이전트", "경제학", "구조적 전환", "노동의 미래"]
 categories: ["AI 인사이트"]
 summary: "AI가 상품 생산을 자동화하면 일자리가 사라지는 게 아니라, 경제의 무게중심이 '관계적 부문'으로 이동한다. 사람이 개입하는 것 자체가 가치인 영역이 GDP의 새로운 중심이 된다."
 cover:
-  image: "/images/cover-what-will-be-scarce.png"
+  image: "/images/cover-what-will-be-scarce.jpg"
 ---
 
 ## AI가 상품을 완성할 때, 경제는 사람에게로 이동한다

@@ -6,7 +6,7 @@ categories: ["논문 소화"]
 summary: "PoisonedRAG는 RAG 시스템의 지식 DB에 5개의 악성 텍스트만 넣으면 90% 이상의 확률로 LLM이 원하는 오답을 내놓게 만든다. 모델은 멀쩡한데 참고 자료가 오염된 것이다."
 math: false
 cover:
-  image: "/images/cover-poisoned-rag-knowledge-corruption.png"
+  image: "/images/cover-poisoned-rag-knowledge-corruption.jpg"
 ---
 
 ## RAG의 보안 구멍은 모델이 아니라 지식 DB에 있다

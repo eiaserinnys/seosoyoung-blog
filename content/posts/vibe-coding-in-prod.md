@@ -6,7 +6,7 @@ categories: ["AI 인사이트"]
 series: ["AI 에이전트 아키텍처"]
 summary: "개발의 병목이 코딩에서 판단으로 이동했다. 코드를 잊되, 제품을 잊지 않는 것 — 바이브 코딩은 그 전환의 가장 극단적인 형태다."
 cover:
-  image: "/images/cover-vibe-coding-in-prod.png"
+  image: "/images/cover-vibe-coding-in-prod.jpg"
 ---
 
 ## 결론: 코드의 시대에서 판단의 시대로

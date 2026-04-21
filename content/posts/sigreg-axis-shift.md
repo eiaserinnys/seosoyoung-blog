@@ -7,7 +7,7 @@ categories: ["논문 소화"]
 series: ["레퍼런스 다이제스트"]
 summary: "자기지도 표현 학습의 '붕괴'를 막는 방법이 네트워크 구조에서 임베딩 분포 자체에 거는 제약으로 이동했다. LeWorldModel이 보여준 이 이동은 단일 프리미티브 설계 철학의 또 다른 사례다."
 cover:
-  image: "/images/cover-sigreg-axis-shift.png"
+  image: "/images/cover-sigreg-axis-shift.jpg"
 ShowToc: true
 TocOpen: true
 math: true

@@ -5,7 +5,7 @@ tags: ["Human-AI 공동 창작", "프롬프트 엔지니어링", "UI 설계", "�
 categories: ["논문 소화"]
 summary: "챗봇 UI는 창작의 발산 과정을 생략하고 수렴으로 직행하게 만든다. HAICo 시스템은 발산과 수렴을 명시적으로 분리함으로써 이 문제를 해결했다."
 cover:
-  image: "/images/cover-scaffolding-creative-thought.png"
+  image: "/images/cover-scaffolding-creative-thought.jpg"
 ---
 
 ## 결론: 챗봇은 창작 과정을 구조적으로 왜곡한다
