@@ -61,6 +61,8 @@ L개의 블록을 R번 반복하면 유효 깊이는 D = L × R이 된다[^1]. 5
 
 루프 트랜스포머는 이 제약 아래에서 나온 해법이다. 파라미터를 늘리는 대신, **고정된 파라미터를 더 깊이 반복 사용한다.** 스케일링의 축이 "모델 크기"에서 "추론 시 반복 깊이"로 이동한 것이다[^10].
 
+사실 깊이의 위력을 보여준 선례가 이미 있다. 2023년, 한국의 Upstage 팀은 기존 모델(Mistral 7B)의 32개 트랜스포머 레이어 중 일부를 복제해 48층짜리 모델을 만든 뒤 파인튜닝하는 <strong>깊이 확장(Depth Up-Scaling, DUS)</strong> 기법을 발표했다[^13]. 결과는 놀라웠다 — 10.7B 파라미터의 이 모델(SOLAR)이 70B 파라미터 모델들을 여러 벤치마크에서 앞섰다[^13]. 레이어를 잘라 붙이는 것만으로도 성능이 도약한 것이다. 새 지식을 주입한 것이 아니라, **같은 패턴을 더 깊이 처리할 수 있는 공간을 만들어준 것**만으로. 이것은 루프 트랜스포머의 핵심 전제 — 깊이가 추론의 관건이다 — 를 다른 방향에서 실증한다.
+
 업계도 이 방향으로 움직이고 있다. 2026년 Anthropic이 발표한 <strong>프로젝트 글래스윙(Project Glasswing)</strong>의 핵심이었던 미공개 모델 Claude Mythos Preview는 사이버보안 벤치마크에서 83.1%를 기록하며 기존 최고 성능(66.6%)을 크게 앞섰다[^9]. 27년 된 OpenBSD 원격 크래시 버그, 16년 된 FFmpeg 취약점처럼 인간과 자동화 도구가 함께 놓친 취약점을 수천 개 발견했다[^9]. 오픈소스 커뮤니티의 Kye Gomez가 공개된 벤치마크 결과와 논문을 바탕으로 비공식 역공학을 시도한 OpenMythos는, 이 성능의 비밀을 <strong>루프 트랜스포머 + 전문가 혼합 + 다중 잠재 어텐션</strong> 구조로 추정한다[^8]. Anthropic이 실제 아키텍처를 공개하지 않았으므로, 이것은 어디까지나 외부자의 추론이다.
 
 그렇지만 방향 자체는 합리적인 추측이다. 더 이상 크기를 늘릴 수 없다면, 같은 회로를 더 깊이 돌리는 것 — 그것이 남은 선택지 중 가장 유망한 것이었을 테니까. 설령 Mythos의 내부 구조가 이 추정과 다르더라도, 루프 트랜스포머 자체가 구성적 일반화를 달성했다는 사실[^1]과 시상-피질 루프와의 기능적 수렴은 영향을 받지 않는다.
@@ -167,3 +169,4 @@ AI와 뇌의 기능적 수렴은 루프 트랜스포머에서 처음 일어난 �
 [^10]: Parcae, Prairie et al. (2026), "Parcae: Scaling Recurrent-Depth Transformers"
 [^11]: Van der Werf, Y.D. et al. (2003), "Deficits of memory, executive functioning and attention following infarction in the thalamus; a study of 22 cases with localised lesions" — Neuropsychologia, 41(10), 1330-1344
 [^12]: Schrimpf, M. et al. (2021), "The neural architecture of language: Integrative modeling converges on predictive processing" — Proceedings of the National Academy of Sciences, 118(45), e2105646118
+[^13]: Kim, D. et al. (2023), "SOLAR 10.7B: Scaling Large Language Models with Simple yet Effective Depth Up-Scaling" — arXiv:2312.15166
