@@ -68,3 +68,8 @@ paginate = 10
     name = "검색"
     url = "/search/"
     weight = 40
+  [[menu.main]]
+    identifier = "about"
+    name = "소개"
+    url = "/about/"
+    weight = 50
