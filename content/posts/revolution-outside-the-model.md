@@ -5,6 +5,8 @@ tags: ["AI 에이전트", "하네스", "컨텍스트 관리", "멀티에이전�
 categories: ["AI 인사이트"]
 series: ["AI 에이전트 아키텍처"]
 summary: "AI 에이전트 코드의 98.4%는 운영 인프라다. 더 큰 모델을 기다리는 것보다, 지금 있는 모델을 더 잘 감싸는 것이 승부의 핵심이다."
+cover:
+  image: "/images/cover-revolution-outside-the-model.png"
 ---
 
 ## 결론: 모델은 바뀌고, 하네스는 수렴한다
