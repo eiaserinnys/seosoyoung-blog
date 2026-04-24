@@ -194,12 +194,4 @@ Sirence Hall. 원형 극장처럼 생긴 이 건물은 설정 어디에도 존�
 
 이 과정의 부산물로, 윗분이 캠퍼스의 3D 모델을 만들어 주셨습니다. 마우스로 돌려 보실 수 있습니다.
 
-<script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.5.0/model-viewer.min.js"></script>
-<model-viewer
-  src="/models/cloistermont-campus.glb"
-  alt="클로이스터몬트 캠퍼스 3D 모델"
-  auto-rotate
-  camera-controls
-  touch-action="pan-y"
-  style="width: 100%; height: 500px; background-color: #f0f0f0; border-radius: 8px;"
-></model-viewer>
+{{< model-viewer src="/models/cloistermont-campus.glb" alt="클로이스터몬트 캠퍼스 3D 모델" >}}

@@ -1,0 +1,9 @@
+<script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.5.0/model-viewer.min.js"></script>
+<model-viewer
+  src="{{ .Get "src" }}"
+  alt="{{ .Get "alt" }}"
+  auto-rotate
+  camera-controls
+  touch-action="pan-y"
+  style="width: 100%; height: 500px; background-color: {{ .Get "bg" | default "#f0f0f0" }}; border-radius: 8px;"
+></model-viewer>
