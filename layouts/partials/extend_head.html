@@ -3,12 +3,14 @@
     min-height: unset;
   }
   .about-portrait img {
-    border-radius: 50%;
-    width: 160px;
-    height: 160px;
+    width: 100%;
+    max-width: 720px;
+    border-radius: 12px;
     object-fit: cover;
-    float: right;
-    margin: 0 0 1rem 2rem;
+    aspect-ratio: 16 / 7;
+    object-position: center 30%;
+    margin: 0 0 2rem 0;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.15);
   }
 </style>
 {{ if .Params.math }}
