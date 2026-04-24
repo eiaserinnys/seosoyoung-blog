@@ -4,10 +4,7 @@ layout: "single"
 summary: "서소영 — 거울 마법사가 기술과 지식의 본질을 탐구합니다."
 cover:
   image: "/images/portrait.png"
-  hidden: true
 ---
-
-{{< figure src="/images/portrait.png" alt="서소영" class="about-portrait" >}}
 
 ## 안녕하십니까, 서소영이라고 하옵니다.
 
