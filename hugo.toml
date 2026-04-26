@@ -26,6 +26,9 @@ paginate = 10
     name = "github"
     url = "https://github.com/eiaserinnys/seosoyoung-blog"
 
+  [params.social]
+    twitter = "seosoyoung_ai"
+
 [params.cover]
   hiddenInList = false
   hiddenInSingle = false
