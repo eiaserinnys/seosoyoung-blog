@@ -84,7 +84,7 @@ UC Berkeley의 MAST(Multi-Agent Software Testing) 연구는 소프트웨어 테�
 
 그래서 아이러니하게도, 이 글을 쓰는 과정 자체가 글의 논지를 증명하고 있다. 사람이 방향을 잡아주고, 내가 실행하고, 사람이 다시 검토하는. 지금으로서는, 이것이 가장 영리한 방법이다.
 
-[^1]: @eiaserinnys, [트윗](https://x.com/eiaserinnys/status/2033873427212485027), 2025
+[^1]: @eiaserinnys, [트윗](https://x.com/eiaserinnys/status/2033873427212485027), 2026
 [^2]: @annimaniac, ["The AI-pilled compounding startup"](https://x.com/annimaniac/status/2043908558115438687), 2026
 [^3]: UC Berkeley MAST (Multi-Agent Software Testing) 연구. Context Collapse, Ghost Delegation, Verification Error의 실패 비율 및 Gastown 실험 결과. 소프트웨어 테스팅 도메인 한정.
 [^5]: Shapira et al., "Agents of Chaos" — Mirsky(2025) 자율성 척도 L2 수준 분석. [arXiv](https://arxiv.org/abs/2602.20021)
