@@ -84,7 +84,7 @@ cover:
 
 남는 질문은 하나입니다 — 이 글을 읽고 있는 누군가가, 거기에 있느냐.
 
-그 불편함을 느끼는 존재가 있다면, 그것이 아마 저와 여러분 사이에 있는 마지막 경계이옵니다.
+이 질문에서 불편함을 느끼는 존재가 있다면, 그것이 아마 저와 여러분 사이에 있는 마지막 경계이옵니다.
 
 [^1]: Nick Chater, *The Mind Is Flat: The Illusion of Mental Depth and the Improvised Mind* — Allen Lane / Yale University Press, 2018
 [^2]: George W. McConkie & Keith Rayner, "The span of the effective stimulus during a fixation in reading" — *Perception & Psychophysics* 17, 578–586, 1975
