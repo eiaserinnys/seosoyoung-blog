@@ -1,38 +1,105 @@
 ---
-title: "Vibe Coding at Scale — 다이제스트"
-date: 2026-04-28T21:06:00+09:00
-tags: ["VS Code", "엔터프라이즈", "커스터마이징"]
+title: "Vibe Coding at Scale — Harald Kirschner — 다이제스트"
+date: 2026-04-28T20:54:00+09:00
+tags: ["AI", "코딩 에이전트", "바이브 코딩"]
 categories: ["다이제스트"]
-summary: "VS Code 팀의 Harald Kirshner가 vibe coding의 3단계 성숙도 모델(YOLO→Structured→Spec-Driven)과 VS Code 커스터마이징 레이어를 제시한다."
+summary: "4천만 개발자의 에디터를 만드는 사람이 묻는 질문 하나."
 ShowToc: true
 TocOpen: false
 ---
 
-## 3줄 요약
+> AI-Assisted Engineering Talk #19/27 · [원본 보고서](https://pages.eiaserinnys.me/p/91c4c4526350)
 
-1. Harald Kirshner(VS Code 팀)가 ~15분간 VS Code의 AI 커스터마이징 기능을 라이브 시연.
-2. Vibe coding의 3단계 성숙도 모델(YOLO → Structured → Spec-Driven)을 제시한다.
-3. VS Code 커스터마이징 레이어(Chat Modes, Instructions, Prompts, MCP)가 입력측 검증 표면의 조직적 표준화 메커니즘으로 기능한다.
+*VS Code 커스터마이징 레이어로 조직 전체의 vibe coding을 체계화하는 3단계 성숙도 모델*
+
+> 4천만 개발자의 에디터를 만드는 사람이 묻는 질문 하나. "Vibe coding이 개인 취미를 넘어 조직으로 확장되려면 무엇이 필요한가? 답은 에디터의 커스터마이징 레이어 — Chat Modes, Instructions, Prompts, MCP — 에 있다."
+
+## 핵심 주장
+
+
+### 1. Vibe coding에는 성숙도 단계가 있다
+
+YOLO → Structured → Spec-Driven. Andrej Karpathy가 정의한 원초적 vibe coding(YOLO)은 프로토타이핑과 학습에 유효하지만, 프로덕션에 쓰려면 템플릿, 인스트럭션, MCP로 가드레일을 세운 Structured 단계를 거쳐, 스펙 기반으로 계획을 세우고 실행하는 Spec-Driven 단계까지 올라가야 합니다.
+
+
+### 2. 커스터마이징 레이어가 조직 표준화의 열쇠다
+
+VS Code의 Chat Modes, .github/instructions, Prompts, MCP는 개인 편의 도구가 아니라, 조직이 코딩 에이전트의 입력측 검증 표면을 표준화하는 메커니즘입니다. 팀 전체가 같은 규칙 위에서 vibe coding을 하면 산출물의 일관성이 보장됩니다.
+
+
+### 3. 확립된 프레임워크가 AI에게 좋은 기반을 준다
+
+React + Vite처럼 학습 데이터가 풍부한 기술 스택을 사용하면 AI가 더 정확한 코드를 생성합니다. 비주류 프레임워크를 쓸 때는 .github/instructions에 문서를 명시적으로 제공하여 AI의 기반을 보강해야 합니다.
+
+
+### 4. 린터와 태스크 러너가 AI의 자가 교정 루프를 형성한다
+
+VS Code의 Problems 패널과 Tasks 시스템이 에이전트 모드에 자동으로 피드백됩니다. AI가 코드를 작성하고, 린터가 오류를 잡고, AI가 즉시 수정하는 루프가 사람 개입 없이 돌아갑니다. 기존 CI/CD 인프라가 그대로 AI의 검증 표면이 되는 것이지요.
+
+
+### 5. 자주 커밋하고, 자주 되돌려라
+
+Vibe coding은 반복 실험입니다. 화이트보드처럼 지우고 다시 그리는 것이 자연스러운 흐름이며, 작동하는 상태를 자주 커밋해두어야 실험이 실패해도 안전하게 되돌릴 수 있습니다.
+
 
 ## 3단계 성숙도 모델
 
-- **YOLO**: 아무 규칙 없이 에이전트에게 던짐
-- **Structured**: Rules, instructions로 품질 가이드
-- **Spec-Driven**: 명세가 코드의 상위 소스
+- **1.** **YOLO Vibe Coding** — 결과에만 집중하고 코드를 보지 않는 원초적 방식. 프로토타이핑, 학습, 주말 프로젝트에 적합합니다. 잘못되면 전부 지우고 다시 시작합니다. 프로덕션에는 부적합하지만, AI 직관을 키우는 데 필수적인 첫 단계입니다.
+- **2.** **Structured Vibes** — 일관된 기술 스택 템플릿, 코딩 규칙을 담은 Instructions 파일, 추가 컨텍스트를 제공하는 MCP 도구를 갖춘 단계. 그린필드 프로젝트를 부트스트랩하여 엔지니어링 팀에 넘길 수 있는 수준입니다. 비기술자도 "리포 체크아웃 → VS Code 열기 → 에이전트 모드 + 음성"으로 참여할 수 있습니다.
+- **3.** **Spec-Driven Vibes** — 스펙을 작성하고, 계획을 수립하고, 계획을 실행하는 엔터프라이즈 단계. 더 많은 Prompts와 MCP, 태스크별 도구를 활용합니다. 대규모 코드베이스에서도 신뢰성과 속도를 유지하며, 생성된 코드가 기존 코드베이스에 자연스럽게 맞아 들어갑니다.
 
-## VS Code 커스터마이징 레이어
+## VS Code 커스터마이징 도구
 
-- **Chat Modes**: 에이전트의 행동 모드 커스터마이징
-- **Instructions**: 프로젝트별·파일별 지시사항
-- **Prompts**: 재사용 가능한 프롬프트 템플릿
-- **MCP**: 외부 도구·데이터 연결
+- **A.** **gent Mode** — Vibe coding의 핵심 모드. Copilot이 도구를 호출하고, 파일을 생성·수정하며, 터미널 명령을 실행합니다. 아직 기본 모드는 아니지만 조만간 기본이 될 예정입니다.
+- **B.** **Chat Modes** — 사용 가능한 도구와 시스템 프롬프트를 정의한 커스텀 모드. 예: "TDD 에이전트" 모드를 만들어 테스트를 먼저 작성하도록 강제할 수 있습니다. 팀 전체가 같은 모드를 공유하면 작업 방식이 표준화됩니다.
+- **C.** **Instructions & Prompts** — .github/instructions 파일은 코드베이스의 각 부분이 무엇을 하는지 AI에게 알려줍니다. Prompts는 "새 랜딩 페이지" 같은 재사용 가능한 작업 템플릿으로, 디자인 팀 같은 비기술 팀도 활용할 수 있습니다.
+- **D.** **MCP (Model Context Protocol)** — 외부 도구와 추가 컨텍스트를 에이전트에 연결하는 프로토콜. Structured 단계부터 도입되어, Spec-Driven 단계에서 본격적으로 확장됩니다. 조직의 내부 시스템을 AI에 노출하는 표준 인터페이스입니다.
+- **E.** **Problems & Tasks 통합** — 린터와 태스크 러너의 출력이 에이전트 모드에 자동으로 피드백됩니다. AI가 실수하면 린터가 잡고, AI가 바로 수정하는 자가 교정 루프가 형성됩니다. 기존 개발 인프라를 그대로 AI의 가드레일로 활용하는 것입니다.
+- **F.** **Voice Dictation & Auto-Approve** — 내장 음성 입력(로컬 모델, 데이터 유출 없음)과 자동 승인 설정으로 마찰을 최소화합니다. 워크스페이스 단위로 스코핑할 수 있어 프로젝트별 신뢰 수준을 다르게 설정할 수 있습니다.
 
-## 가장 흥미로운 지점
+## 모델별 UI 특성 (Harald의 관찰)
 
-Vibe Coding 카테고리의 마지막 영상으로, 개인이 아닌 조직·규모 차원을 추가한다. 다만 governance/compliance/audit 등 전통적 엔터프라이즈 차원은 미다룸.
+- **•.** **Claude 3.5 Sonnet** — 블록체인 랜딩 페이지 스타일 — 그라디언트, 다크 테마, 큰 글씨. Claude 4는 UI에 탁월합니다.
+- **•.** **GPT-4.1** — 와이어프레임 느낌의 깔끔하지만 밋밋한 결과물을 생성하는 경향이 있습니다.
+- **•.** **Gemini 2.5 Pro** — 독특한 디자인 감각으로 매번 조금씩 다른 결과물을 만들어냅니다.
+
+## 검증된 인사이트
+
+
+> **💡 [Insight] 커스터마이징 레이어 = 입력측 검증 표면의 조직적 표준화**
+>
+> Chat Modes, Instructions, Prompts, MCP는 개별적으로 보면 편의 기능이지만, 합치면 조직이 AI 에이전트에 주입하는 컨텍스트의 품질과 일관성을 통제하는 시스템이 됩니다. 이는 곧 "27편 분석"에서 도출한 검증 표면 개념의 입력측 구현체입니다. 출력을 검증하는 것도 중요하지만, 입력을 표준화하면 출력의 분산 자체가 줄어듭니다.
+>
+> `verification-surface` `enterprise` `standardization`
+
+
+> **💡 [Insight] 성숙도 모델은 조직 신뢰 수준의 함수다**
+>
+> YOLO → Structured → Spec-Driven 진행은 기술적 도구의 추가가 아니라, 조직이 AI 산출물에 부여하는 신뢰 수준의 상승입니다. YOLO는 "검증 불필요"(프로토타입), Structured는 "규칙 기반 검증", Spec-Driven은 "스펙 대비 검증"에 해당합니다. 각 단계는 검증 표면의 밀도가 다른 것이지, 근본적으로 다른 방법론이 아닙니다.
+>
+> `maturity-model` `trust` `organizational-readiness`
+
+
+> **💡 [Insight] 린터 = 무비용 자가 교정 루프**
+>
+> 기존 린터·태스크 러너 인프라가 에이전트 모드에 자동 피드백되면, 조직이 이미 갖고 있는 코드 품질 규칙이 AI의 실시간 가드레일이 됩니다. 새로운 검증 시스템을 구축할 필요 없이, 기존 CI/CD 파이프라인의 초기 단계를 에디터 안으로 끌어온 것이지요. 검증 표면을 넓히는 가장 비용 효율적인 방법입니다.
+>
+> `linter` `self-correction` `devops`
+
+
+## 다른 영상과의 교차점
+
+- 같은 Microsoft/VS Code 팀의 발표입니다. Isidor가 copilot-instructions.md와 .instructions 파일 체계를 통한 "컨텍스트 주입"을 다뤘다면, Harald는 그 위에 Chat Modes, Prompts, MCP까지 쌓아 조직 단위 확장을 논합니다. 두 발표를 합치면 VS Code의 AI 커스터마이징 전체 그림이 완성됩니다.
+- "컨텍스트가 AI 코드 생성의 1순위"라는 Chris의 선언은 Harald의 Structured Vibes 단계가 존재하는 이유를 설명합니다. 규칙 파일 + 계획 마크다운의 Create-Refine 루프는 Spec-Driven 단계의 구체적 실천법과 정확히 겹칩니다.
+- Factor 2(프롬프트를 직접 소유)와 Factor 3(컨텍스트 윈도우를 직접 소유)는 Harald의 Instructions + Chat Modes가 해결하는 문제와 동일합니다. MCP는 Factor 4(도구는 구조화된 출력)의 표준 프로토콜 구현이기도 합니다.
+- Factory가 주장한 "에이전트에 맞게 코드베이스를 준비하라"는 명제의 구체적 실천 도구가 바로 .github/instructions와 MCP입니다. Harald의 "확립된 프레임워크를 써라"는 조언도 에이전트 친화적 코드베이스의 첫걸음에 해당합니다.
+- Birgitta의 "doable 문제의 단위 = 자동 검증 가능한 단위" 기준은 Spec-Driven 단계의 스펙 분해 방식을 설명합니다. 조직 전체가 워크플로우에 에이전트를 내장하는 비전은 Harald의 성숙도 모델 3단계의 최종 도착지입니다.
+
+## 한 줄 소감
+
+
+라이브 시연 하나로 15분을 채운 발표답게, 이론보다 실무가 강한 영상이었습니다. YOLO부터 Spec-Driven까지의 성숙도 모델은 "우리 조직은 지금 어디에 있는가?"를 묻게 하고, VS Code 커스터마이징 레이어는 "그렇다면 다음 단계로 가려면 무엇을 세팅해야 하는가?"에 대한 구체적 답을 줍니다. 도구를 만드는 사람이 도구의 철학을 말할 때, 그 무게가 다르다는 것을 느꼈습니다.
 
 ## 출처
 
-**Harald Kirshner (VS Code)**
-원문: <https://www.youtube.com/watch?v=i1uPAN6uW4s>
-시리즈: [AI 코딩 도구의 검증 표면 — 27편의 발표에서 배운 것]({{< ref "/posts/verification-surface-27-talks" >}})
+- [원본 HTML 보고서](https://pages.eiaserinnys.me/p/91c4c4526350)

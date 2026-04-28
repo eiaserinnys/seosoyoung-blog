@@ -1,44 +1,112 @@
 ---
 title: "Collaborating with Agents in your Software Dev Workflow — 다이제스트"
-date: 2026-04-28T20:21:00+09:00
-tags: ["GitHub Copilot", "에이전트 격리", "DevOps"]
+date: 2026-04-28T20:12:00+09:00
+tags: ["AI", "코딩 에이전트", "에이전트"]
 categories: ["다이제스트"]
-summary: "GitHub 개발자 애드보킷들이 Copilot의 6중 격리 아키텍처와, AI가 DevOps 흐름을 바꾸지 않는다는 원칙을 워크숍에서 시연한다."
+summary: "Copilot은 코드를 컴파일하거나 실행하지 않고 사람처럼 읽는다."
 ShowToc: true
 TocOpen: false
 ---
 
-## 3줄 요약
+> AI-Assisted Engineering Talk #5/27 · [원본 보고서](https://pages.eiaserinnys.me/p/00dc95dbed6d)
 
-1. Christopher Harrison & John Peck(GitHub Developer Advocates)이 진행한 GitHub Copilot 핸즈온 워크숍.
-2. Copilot은 'AI 페어 프로그래머'이며 코드를 읽기 때문에 코드베이스 가독성이 곧 컨텍스트 품질이다.
-3. Coding agent는 6중 격리로 인간 검증 전 진입을 원천 차단하며, AI는 DevOps flow를 바꾸지 않는다.
+> Copilot은 코드를 컴파일하거나 실행하지 않고 사람처럼 읽는다. 따라서 코드 가독성이 곧 AI의 입력 품질이며, 에이전트의 잘못된 행동은 일차적으로 환경 결함이지 모델 결함이 아니다. AI는 DevOps flow를 대체하지 않는다 — 기존의 리뷰·린터·보안 스캔·테스트를 그대로 통과해야 한다.
 
-## 6중 격리 아키텍처
+## 핵심 주장
 
-코딩 에이전트의 안전 장치:
 
-- Firewall — 네트워크 격리
-- Ephemeral — 일회용 실행 환경
-- Branch-only-write — 메인 직접 수정 불가
-- Draft-PR — 자동 머지 금지
-- Gated-CI — CI 통과 필수
-- No-self-review — 자기 코드 자기 승인 불가
+### AI 페어 프로그래머는 코드를 '읽는다'
 
-## copilot-instructions.md
+Copilot은 코드를 파서로 처리하거나 컴파일하지 않고, 사람처럼 텍스트로 읽는다.
+      따라서 함수·변수 이름의 명확성과 구조의 정돈 수준이 직접적인 입력 품질이 된다.
+      'AI를 위한 특별한 변환층'은 없다 — good code 101이 그대로 에이전트 입력 품질이다.
 
-입력측 검증 자산으로서의 역할:
 
-- `copilot-instructions.md`와 `.instructions(applyTo glob)`으로 컨텍스트 커스터마이징
-- 우선순위에 last-writer-wins가 없으므로 *일관성*이 곧 시스템 속성
-- 리뷰·린터·보안 스캔·테스트는 AI 시대에도 그대로 필수
+### Coding Agent의 6중 격리로 인간 검증 전 진입을 원천 차단
 
-## 가장 흥미로운 지점
+Firewall(외부 차단) → Ephemeral 컨테이너 → 자기 브랜치만 쓰기 → Draft PR → CI 승인 대기 → 자가 리뷰 금지.
+      격리는 자율성과 트레이드오프가 아니라 권한 발급의 단위다.
+      에이전트가 핵심 자산에 직접 손댈 수 없다는 보증이 구조적으로 성립한다.
 
-"AI는 DevOps flow를 바꾸지 않는다"는 선언이 인상적이다. 에이전트가 아무리 발전해도 검증 인프라의 필요성은 변하지 않는다는 보수적이지만 현실적인 관점이다.
+
+### AI는 DevOps flow를 바꾸지 않는다
+
+AI가 작성했든 사람이 작성했든 코드는 동일한 위험을 가지며,
+      확률적이라는 점에서 오히려 더 엄격한 검증이 정당화된다.
+      생산 속도가 빨라질수록 동일한 검증 표면을 더 자주 통과해야 한다.
+
+
+### Instructions 파일은 자본 지출이다
+
+copilot-instructions.md와 .instructions(applyTo glob)는 일회성 프롬프트가 아니라
+      리포지터리 산출물(artifact)로 다루어 코드처럼 버전 관리·진화시킨다.
+      결과는 단지 생산성이 아니라 생성된 코드의 일관성 보장이다.
+
+
+### Passive-aggressive 하지 말라 — 알면서 말 안 하면 결함이다
+
+의도(intent)는 명시적으로 적고, 알고 있는 제약은 모두 적는다.
+      알고 있으면서 말하지 않은 정보가 있으면 그 자체가 결함이다.
+      인간 협업에서도 안 통하는 것은 AI 협업에서도 안 통한다.
+
+
+## Coding Agent 6중 격리 게이트
+
+- **1.** **Firewall: 외부 차단** — 기본값이 'deny all'. npm/pip 자동 설치 불가. 외부 의존성이 필요하면 셋업 워크플로우에 미리 설치하거나 firewall에 명시적 hole을 뚫어야 한다.
+- **2.** **Ephemeral 컨테이너** — 이슈 한 건마다 GitHub Actions 컨테이너가 새로 launch되고 작업 후 사라진다. 격리가 보안이자 동시성의 안전조건이다.
+- **3.** **자기 브랜치만 쓰기** — 자기가 만든 작업 브랜치 하나에만 쓸 수 있고, main이나 다른 브랜치는 변경 불가. 핵심 자산 보호가 구조적으로 성립한다.
+- **4.** **Draft PR** — 작업 완료 후에도 draft 상태. 사용자가 'ready for review'를 누르기 전까지 다른 자동화·리뷰어가 머지 후보로 인식하지 않는다.
+- **5.** **CI 승인 대기** — CI 워크플로우는 자동 실행되지 않는다. 사람이 'Approve workflow runs'를 클릭해야만 동작. Secret 탈취 공격 벡터와 비용 발생을 원천 차단한다.
+- **6.** **자가 리뷰 금지** — 이슈를 할당한 사람은 결과 PR을 자기가 리뷰할 수 없다. 인간 코드 리뷰의 4-eyes 원칙이 자동으로 강제된다.
+
+## 주요 인사이트
+
+
+> **💡 [Context Engineering] 컨텍스트에 last-writer-wins이 없다**
+>
+> 이슈 본문, copilot-instructions, .instructions, MCP 응답이 동시에 입력될 때
+      Copilot은 모두를 함께 고려할 뿐 우선순위 규칙을 두지 않는다.
+      일관성은 도구 기능이 아니라 시스템 운영자의 책임이며,
+      명세 간 모순은 즉시 결함이 된다.
+
+
+> **💡 [Autonomy Spectrum] 5단 자율성 스펙트럼은 검증 부담의 배치 장치다**
+>
+> Completions → Chat → Edits → Agent → Coding Agent.
+      단계가 올라갈수록 인간 개입 비율은 줄고, 검증은 후위로 이동한다.
+      모드 선택은 UX 옵션이 아니라 '얼마나 자율적으로 풀어줄 것인가 = 검증 부담을 어디로 옮길 것인가'의 조정 장치다.
+
+
+> **💡 [MCP Integration] MCP는 런타임 컨텍스트 페치 채널이다**
+>
+> LLM은 학습 시점 데이터에 갇혀 있고 사용자 시스템을 모른다.
+      MCP 서버는 그 경계를 넘어 외부 정보 접근, 사용자 위임 행위, 거대 코드베이스 검색을 가능하게 한다.
+      정적 패딩이 아니라 런타임 확장 — 단, Coding agent용 MCP는 firewall hole + 만료 토큰을 동시에 요구한다.
+
+
+> **💡 [Debugging Heuristic] 에이전트 오작동의 9/10은 컨텍스트 부족이다**
+>
+> Copilot이 의도와 어긋난 결과를 냈을 때, 모델 교체나 프롬프트 재작성보다
+      instructions 파일·MCP 서버를 먼저 손본다.
+      에이전트의 잘못된 행동은 일차적으로 환경 결함이지 모델 결함이 아니다.
+
+
+## 교차 연결
+
+- '에이전트의 잘못된 행동은 환경 결함'이라는 Harrison & Peck의 진단은
+      Reyes의 'environment readiness' 명제와 동일 구조다.
+      두 발표 모두 에이전트 성공률의 결정 변수가 모델이 아니라 환경이라는 결론에 수렴한다.
+- Coding Agent의 6중 격리 게이트는 12-Factor의 '인간 검증 루프 내재화' 원칙의 구체적 구현이다.
+      Horthy가 추상 원칙으로 제시한 것을 GitHub이 인프라 수준에서 강제한 사례.
+- Harrison & Peck이 '모드 선택 = 변경 범위 제어'로 정리한 자율성 스펙트럼은
+      SDE 역할 변화의 구체적 메커니즘을 보여준다. 검증자로서의 개발자 역할이 강화된다.
+- '코드를 읽지 않고 검증하는 추상화'를 탐구한 Schulthz의 리프 노드 전략과,
+      Harrison & Peck의 '기존 DevOps 안전망을 그대로 유지'는 상호 보완적이다.
+      하나는 '어디에 적용하는가', 다른 하나는 '어떤 게이트를 통과시키는가'.
+
+에이전트에게 자율성을 부여하되, 격리로 권한을 통제하고, 기존 검증 표면을 그대로 유지하라.
+  AI가 DevOps를 바꾸지 않는다는 것은 한계가 아니라 — 오히려 신뢰의 토대이다.
 
 ## 출처
 
-**Jon Peck & Christopher Harrison (Microsoft/GitHub)**
-원문: <https://www.youtube.com/watch?v=G1hhmz6mXT0>
-시리즈: [AI 코딩 도구의 검증 표면 — 27편의 발표에서 배운 것]({{< ref "/posts/verification-surface-27-talks" >}})
+- [원본 HTML 보고서](https://pages.eiaserinnys.me/p/00dc95dbed6d)
