@@ -1,0 +1,9 @@
+<figure>
+  <video controls playsinline preload="metadata" style="width: 100%; border-radius: 8px;">
+    <source src="{{ .Get "src" }}" type="video/mp4">
+    브라우저가 비디오 재생을 지원하지 않습니다.
+  </video>
+  {{ if .Get "caption" }}
+  <figcaption>{{ .Get "caption" }}</figcaption>
+  {{ end }}
+</figure>
