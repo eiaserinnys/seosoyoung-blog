@@ -18,6 +18,8 @@ AI 영상 생성에서 가장 답답한 순간은 모델이 못 만들 때가 �
 
 이 글에서는 VideoSpec이 왜 필요한지, CHAI가 어떻게 작동하는지, 그리고 이것이 실제로 영상 생성에 어떤 변화를 가져오는지를 순서대로 살펴본다.
 
+{{< figure src="/images/chai-teaser.png" caption="기존 접근(위)과 CHAI(아래)의 차이. 모호한 명세 → 구조화된 명세, 단독 어노테이션 → 인간-AI 분업, 출력 비교 → 명시적 비평 기반 학습. ©Lin et al. 2026[^1], arXiv License" >}}
+
 ## 영상의 언어가 없었다
 
 영상을 기술하는 건 이미지를 기술하는 것보다 차원이 다른 문제다.
@@ -40,6 +42,8 @@ VideoSpec은 영상의 시각 요소를 다섯 가지 차원으로 나눈다.
 - **Spatial** — 공간 구성. 샷 사이즈, 프레임 내 위치, 깊이, 이동 방향
 - **Camera** — 카메라 역학. 앵글, 높이, 렌즈, 초점, 흔들림, 이동
 
+{{< figure src="/images/chai-videospec-taxonomy.png" caption="VideoSpec의 5축 분류 체계. 각 축이 세부 카테고리로 나뉘고, 각 카테고리 아래에 구체적 프리미티브가 정의된다. ©Lin et al. 2026[^1], arXiv License" >}}
+
 각 축 아래에 225개의 시각 프리미티브와 17개의 스킬 카테고리가 정의되어 있다. "dramatic angle" 같은 모호한 표현 대신, "Dutch angle at 15 degrees"처럼 해석의 여지를 좁힌 구체적 용어를 쓴다. 이 명세를 전문 영상인 — 영화감독, 촬영감독, 콘텐츠 크리에이터 — 100명 이상과 1년에 걸쳐 공동 설계했다는 점이 눈에 띈다[^1]. 학술적 분류 체계가 아니라, 현장에서 실제로 쓰이는 어휘를 체계화한 것이다.
 
 다시 스토리보드 경험을 떠올려보면, 당시 가장 힘들었던 건 카메라와 공간 구성이었다. "뒷모습 상반신 샷, 떠다니는 거울들 사이로 한 인물이 다른 인물에게 가까이 다가선다. 상대는 살짝 몸을 뒤로 물린다"를 프롬프트로 옮기는 데 한 문단이 필요했고, 그래도 의도와 결과 사이에 간극이 남았다. VideoSpec의 Spatial과 Camera 축이 바로 그 간극을 메우기 위해 설계된 어휘다. "over-the-shoulder medium shot, subject leaning away, rack focus from foreground to background" — 프리미티브 조합으로 의도를 압축할 수 있다면, 프롬프트 작성이 글짓기에서 조립으로 바뀐다.
@@ -55,6 +59,8 @@ CHAI는 이 딜레마를 분업으로 해결한다. 핵심 통찰이 아주 실�
 1. **AI 초안(Pre-caption)**: VLM이 영상을 보고 VideoSpec 기반의 포괄적 캡션을 생성한다
 2. **인간 비평(Critique)**: 전문가가 캡션의 오류를 식별하고 건설적 피드백을 작성한다
 3. **AI 수정(Post-caption)**: VLM이 피드백을 반영하여 정확한 캡션을 다시 생성한다
+
+{{< figure src="/images/chai-critique-quality.png" caption="비평 품질의 세 축: 정밀도(precision), 재현율(recall), 건설성(constructiveness). 오른쪽 초록 영역이 세 축을 모두 충족하는 좋은 비평이다. ©Lin et al. 2026[^1], arXiv License" >}}
 
 여기서 중요한 건 비평의 품질이다. 선행 연구들은 비평 데이터를 수집할 때 50% 이상이 비건설적인 — "잘 모르겠다", "괜찮은 것 같다" 수준의 — 피드백이었다고 한다[^1]. CHAI는 비평의 정밀도(precision), 재현율(recall), 건설성(constructiveness) 세 축으로 품질 게이트를 적용한다. 이 세 축 중 어느 하나라도 약화시키면 최종 성능이 떨어진다는 걸 실험으로 보여줬다.
 
