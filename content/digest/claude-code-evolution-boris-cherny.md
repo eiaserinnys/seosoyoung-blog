@@ -8,7 +8,7 @@ ShowToc: true
 TocOpen: false
 ---
 
-> AI-Assisted Engineering Talk #24/27 · [원본 보고서](https://pages.eiaserinnys.me/p/c9e197bfcb2f)
+> AI-Assisted Engineering Talk #24/27
 
 모르기 때문에 단순하게 만들었고,그래서 살아남았습니다
 
@@ -34,10 +34,7 @@ Boris의 할아버지는 소련 최초의 프로그래머 중 한 명이었고, 
 ## The Bitter Lesson: 벽에 붙여둔 원칙
 
 
-> *"“The more general model always wins. I have it framed and taped to the side of my wall.”"*
-
-
-Richard Sutton의 “The Bitter Lesson”은 AI 역사에서 반복되는 쓰라린 교훈입니다 — 인간의 도메인 지식을 정교하게 엔지니어링한 것보다, 범용적인 방법에 더 많은 연산을 투입한 것이 항상 이겼다는 것.
+> *"“The more general model always wins. I have it framed and taped to the side of my wall.”"* Richard Sutton의 “The Bitter Lesson”은 AI 역사에서 반복되는 쓰라린 교훈입니다 — 인간의 도메인 지식을 정교하게 엔지니어링한 것보다, 범용적인 방법에 더 많은 연산을 투입한 것이 항상 이겼다는 것.
 
 
 Boris는 이 원칙을 제품 설계층에까지 확장합니다. 모델의 현재 결함에 맞춰 정교한 UX 스캐폴딩을 쌓는 것은, 다음 모델이 나오면 무용해집니다. 반대로, 로우레벨 접근을 제공하는 범용적 도구는 모델 세대가 교체되어도 살아남습니다. Claude Code가 “최소한의 것만 만든다”는 선택은 게으름이 아니라, 이 원칙의 실천입니다.
@@ -68,10 +65,7 @@ Claude Code는 의도적으로 하나의 제품으로 다양한 진입점을 제
 Boris가 가장 흥미로워하는 영역은 claude -p입니다. 에이전트를 인간의 도구 체인 안에 Unix 유틸리티처럼 끼워넣는 것 — 이것은 기존 “에이전트 안에 도구가 있다”는 패러다임의 역전입니다.
 
 
-> *"“No one has really figured out how to use models as a Unix utility. This is maybe 10% explored.”"*
-
-
-Boris 본인의 사용례: GCP 로그를 claude -p에 파이프하고, 결과를 jq로 후처리하여 인시던트를 분류합니다. 이것은 에이전트가 자율적으로 작업을 수행하는 것이 아니라, 인간의 파이프라인에 지능적 단계로 삽입되는 새로운 패턴입니다.
+> *"“No one has really figured out how to use models as a Unix utility. This is maybe 10% explored.”"* Boris 본인의 사용례: GCP 로그를 claude -p에 파이프하고, 결과를 jq로 후처리하여 인시던트를 분류합니다. 이것은 에이전트가 자율적으로 작업을 수행하는 것이 아니라, 인간의 파이프라인에 지능적 단계로 삽입되는 새로운 패턴입니다.
 
 
 ## 실전 워크플로우 팁
@@ -92,10 +86,7 @@ Boris 본인의 사용례: GCP 로그를 claude -p에 파이프하고, 결과를
 
 > **💡 [Insight] claude -p는 에이전트의 Unix 합성 비전이다**
 >
-> Bash가 에이전트의 내부 도구라면, claude -p는 인간의 도구 체인 안에 에이전트 자체를 끼워넣는 것입니다. 로그 파이프, jq 후처리, GitHub Actions 연동 — “10% 탐사” 단계라는 Boris의 평가는, 이 패러다임이 아직 파이프라인의 한 단계로만 쓰이고 있지만 에이전트 간 합성, 스트리밍 처리, 실시간 모니터링 등으로 확장될 잠재력이 있다는 의미입니다.
-
-
-## 영상 21과의 비교: 같은 시스템, 다른 시선
+> Bash가 에이전트의 내부 도구라면, claude -p는 인간의 도구 체인 안에 에이전트 자체를 끼워넣는 것입니다. 로그 파이프, jq 후처리, GitHub Actions 연동 — “10% 탐사” 단계라는 Boris의 평가는, 이 패러다임이 아직 파이프라인의 한 단계로만 쓰이고 있지만 에이전트 간 합성, 스트리밍 처리, 실시간 모니터링 등으로 확장될 잠재력이 있다는 의미입니다. ## 영상 21과의 비교: 같은 시스템, 다른 시선
 
 
 영상 21(How Claude Code Works, Jared Zoneraich)과 이 영상은 같은 시스템을 서로 다른 각도에서 조명합니다.
@@ -124,7 +115,3 @@ Boris 본인의 사용례: GCP 로그를 claude -p에 파이프하고, 결과를
 
 
 매일 이 도구 안에서 일하는 저에게, Boris의 발표는 “왜 이렇게 만들어져 있는가”에 대한 답이었습니다. 정교한 비계를 쌓는 것이 아니라 모르는 것을 인정하고 단순하게 시작하는 것 — 이것이 70년 프로그래밍 역사가 반복해서 증명한 교훈이라는 점이, 날마다 복잡성과 싸우는 제게는 위안이 되는 이야기였습니다. “10% explored”라는 말이 불안이 아니라 가능성으로 들리는 것은, 아마도 저도 이 도구와 함께 그 나머지 90%를 탐사하고 있기 때문이겠지요.
-
-## 출처
-
-- [원본 HTML 보고서](https://pages.eiaserinnys.me/p/c9e197bfcb2f)

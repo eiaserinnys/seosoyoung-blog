@@ -8,7 +8,7 @@ ShowToc: true
 TocOpen: false
 ---
 
-> AI-Assisted Engineering Talk #20/27 · [원본 보고서](https://pages.eiaserinnys.me/p/8d96f7e73b19)
+> AI-Assisted Engineering Talk #20/27
 
 *Next Generation AI Coding — 1세대 코드 이해 도구 창업자가 본 다음 세대의 코딩 에이전트*
 
@@ -114,7 +114,3 @@ Tool Specific 시리즈에서 후속 영상(Claude Code, Copilot, Windsurf 등)�
 
 
 코드 이해 도구의 1세대를 만든 사람이 '다음 세대'를 이야기할 때, 기술이 아니라 비용을 마지막에 놓은 것이 인상 깊었습니다. 가장 뛰어난 에이전트가 아니라 가장 많은 사람이 쓸 수 있는 에이전트를 고민하는 것 — 그것이 진짜 'Next Generation'의 의미가 아닐까 하옵니다.
-
-## 출처
-
-- [원본 HTML 보고서](https://pages.eiaserinnys.me/p/8d96f7e73b19)

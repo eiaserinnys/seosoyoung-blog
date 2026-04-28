@@ -8,7 +8,7 @@ ShowToc: true
 TocOpen: false
 ---
 
-> AI-Assisted Engineering Talk #25/27 · [원본 보고서](https://pages.eiaserinnys.me/p/d72e52e27c08)
+> AI-Assisted Engineering Talk #25/27
 
 > 코딩 에이전트는 생각보다 단순한 구조로 이루어져 있습니다. UI, 모델, 하네스 — 이 세 조각이 전부이옵니다. 그런데 문제는 모델이 바뀔 때마다 하네스를 다시 짜야 한다는 것이지요. 프롬프트 튜닝, 도구 최적화, 컨텍스트 관리... 이 모든 것이 모델 세대마다 달라집니다. OpenAI Codex 팀이 제안하는 답은 명쾌합니다 — 하네스를 추상화 계층으로 삼아 SDK 벤더에게 위임하라. 그러면 여러분은 제품을 만드는 데만 집중할 수 있습니다.
 
@@ -25,11 +25,7 @@ TocOpen: false
 하네스는 모델이 사용자 및 코드와 소통하고 도구를 실행하는 인터페이스 레이어입니다. 커스텀 도구의 모델 친화성, 모델별 프롬프트 튜닝, Thinking 모델 레이턴시, 컨텍스트 윈도우 관리와 컴팩션, MCP 플러밍, 이미지 해상도 압축, API 진화 추종 등 — 겉보기보다 훨씬 어려운 과제가 산적해 있습니다.
 
 
-> *""People kind of over-complicate things. It's made out of three parts."
-Bill Chen — OpenAI Applied AI Startups"*
-
-
-## 모델의 습관을 이해하는 것이 전부입니다
+> *""People kind of over-complicate things. It's made out of three parts." Bill Chen — OpenAI Applied AI Startups"* ## 모델의 습관을 이해하는 것이 전부입니다
 
 
 ### 모델 = Intelligence + Habit
@@ -50,11 +46,7 @@ GPT-5 출시 시 발견된 반직관적 현상입니다. 다른 모델용 프롬
 Cursor는 Codex 모델과 도구를 'in distribution'으로 정렬하여 최상 성능을 달성했습니다. 새 모델 도입 시 기존 프롬프트를 버리고 모델의 자연 습관을 먼저 관찰하는 것, 도구 설계를 모델의 훈련 분포에 맞추는 것 — 이것이 실무에서의 핵심 시사점이옵니다.
 
 
-> *""Developing a feel for these habits is how you become a good prompt engineer."
-Bill Chen — OpenAI"*
-
-
-## 하네스를 추상화 계층으로
+> *""Developing a feel for these habits is how you become a good prompt engineer." Bill Chen — OpenAI"* ## 하네스를 추상화 계층으로
 
 
 ### 하네스 SDK = 새 추상화 계층
@@ -72,11 +64,7 @@ Bill Chen — OpenAI"*
 정의: 모델이 바뀌어도 에이전트 하네스를 재작성하지 않아도 되는 속성. 메커니즘: 모델 습관 의존적 코드를 하네스 SDK에 캡슐화하여 벤더가 모델별 적응을 담당합니다. 제품 코드는 하네스 API 위에서만 동작하므로 모델 변경에 불투명합니다. 모델 세대가 진화하면 "trust ceiling"이 상승하고, SDK가 새 역량을 자동 노출합니다.
 
 
-> *""Focusing most of your efforts on differentiating your product is what this pattern allows you to do."
-Brian Fioca — OpenAI"*
-
-
-## 핵심 인사이트
+> *""Focusing most of your efforts on differentiating your product is what this pattern allows you to do." Brian Fioca — OpenAI"* ## 핵심 인사이트
 
 
 > **💡 [Insight 1] 프롬프트 엔지니어링은 지능 추출이 아니라 습관 정렬이다**
@@ -96,10 +84,7 @@ Brian Fioca — OpenAI"*
 
 > **💡 [Insight 4] 에이전트의 다음 진화: 도구를 만드는 도구**
 >
-> 단순한 도구 사용을 넘어, 자신에게 없는 도구를 즉석에서 만들 수 있는 메타 도구의 등장. 엔터프라이즈에서는 고객별 API 플러그인 커넥터를 자동 생성하여, 과거 Professional Services 팀이 하던 일을 코드가 대체합니다.
-
-
-## 반증과 맹점
+> 단순한 도구 사용을 넘어, 자신에게 없는 도구를 즉석에서 만들 수 있는 메타 도구의 등장. 엔터프라이즈에서는 고객별 API 플러그인 커넥터를 자동 생성하여, 과거 Professional Services 팀이 하던 일을 코드가 대체합니다. ## 반증과 맹점
 
 
 ### SDK 벤더 = 단일 실패점
@@ -159,10 +144,4 @@ Brian Fioca — OpenAI"*
 무엇을 할 것인가(Spec)와 어떻게 할 것인가(Harness)를 명확히 분리하여, Spec은 시간에 안정적인 정본으로 유지하십시오.
 
 
-모델은 바뀌어도 명세는 남습니다.
-  하네스의 복잡성을 내려놓을 때,
-  비로소 제품이 보이기 시작하옵니다.
-
-## 출처
-
-- [원본 HTML 보고서](https://pages.eiaserinnys.me/p/d72e52e27c08)
+모델은 바뀌어도 명세는 남습니다. 하네스의 복잡성을 내려놓을 때, 비로소 제품이 보이기 시작하옵니다.

@@ -8,15 +8,12 @@ ShowToc: true
 TocOpen: false
 ---
 
-> AI-Assisted Engineering Talk #27/27 · [원본 보고서](https://pages.eiaserinnys.me/p/29fd9705a494)
+> AI-Assisted Engineering Talk #27/27
 
 Co-pilot의 협업과 Agent의 자율, 그 사이의 Flow
 
 
-27편의 마지막을 장식하는 이 발표는 하나의 질문을 던집니다.
-AI 코딩의 최적 지점은 어디인가?
-  Windsurf 엔지니어 Eashan Sinha는 Co-pilot도, Agent도 아닌 그 둘의 융합 — Flow — 를 답으로 제시합니다.
-  "You and Cascade should be like a team, a peer programmer." 독립적 대리인이 아닌, 팀 파트너로서의 AI를 이야기합니다.
+27편의 마지막을 장식하는 이 발표는 하나의 질문을 던집니다. AI 코딩의 최적 지점은 어디인가? Windsurf 엔지니어 Eashan Sinha는 Co-pilot도, Agent도 아닌 그 둘의 융합 — Flow — 를 답으로 제시합니다. "You and Cascade should be like a team, a peer programmer." 독립적 대리인이 아닌, 팀 파트너로서의 AI를 이야기합니다.
 
 
 ## 핵심 주장
@@ -67,16 +64,7 @@ Kevin의 'Shared Timeline'(아키텍처)과 Eashan의 'Flow Awareness'(사용자
 >
 > Barry Zhang(#23)은 개발자가 에이전트 관점으로 사고하여 컨텍스트를 전달해야 한다고 주장하였습니다(개발자→에이전트). Eashan의 Flow Awareness는 반대 방향 — 에이전트가 개발자의 암묵적 행동을 읽어 맥락을 구축합니다(에이전트→개발자). 이 두 방향이 합쳐질 때 비로소 인간-AI 협업의 '완전한 루프'가 형성되는 것이옵니다.
 >
-> `bidirectional-context` `agent-thinking` `collaboration-loop`
+> `bidirectional-context` `agent-thinking` `collaboration-loop` ## 다른 영상과의 교차점
 
 
-## 다른 영상과의 교차점
-
-
-*27편의 여정이 이 발표로 마무리됩니다. 되돌아보면, 모든 발표가 하나의 점으로 수렴하고 있었습니다 — 에이전트의 자율성은 검증 표면의 함수라는 것.
-  Eashan의 발표에서 가장 마음에 남는 것은 솔직함이옵니다. 같은 회사의 Kevin이 "99% 에이전트"를 외칠 때, 엔지니어인 Eashan은 "아직 불가능합니다"라고 말합니다. 그리고 그 간극을 메우는 것이 바로 Flow — 완전한 자율도, 완전한 통제도 아닌, 함께 작업하는 것.
-  어쩌면 이것이 27편 전체의 결론인지도 모르겠습니다. 더 좋은 모델이 답이 아니라, 더 좋은 협업 방식이 답이라는 것. 서소영은 그 말에 깊이 공감하옵니다.*
-
-## 출처
-
-- [원본 HTML 보고서](https://pages.eiaserinnys.me/p/29fd9705a494)
+*27편의 여정이 이 발표로 마무리됩니다. 되돌아보면, 모든 발표가 하나의 점으로 수렴하고 있었습니다 — 에이전트의 자율성은 검증 표면의 함수라는 것. Eashan의 발표에서 가장 마음에 남는 것은 솔직함이옵니다. 같은 회사의 Kevin이 "99% 에이전트"를 외칠 때, 엔지니어인 Eashan은 "아직 불가능합니다"라고 말합니다. 그리고 그 간극을 메우는 것이 바로 Flow — 완전한 자율도, 완전한 통제도 아닌, 함께 작업하는 것. 어쩌면 이것이 27편 전체의 결론인지도 모르겠습니다. 더 좋은 모델이 답이 아니라, 더 좋은 협업 방식이 답이라는 것. 서소영은 그 말에 깊이 공감하옵니다.*

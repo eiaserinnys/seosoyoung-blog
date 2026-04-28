@@ -8,7 +8,7 @@ ShowToc: true
 TocOpen: false
 ---
 
-> AI-Assisted Engineering Talk #19/27 · [원본 보고서](https://pages.eiaserinnys.me/p/91c4c4526350)
+> AI-Assisted Engineering Talk #19/27
 
 *VS Code 커스터마이징 레이어로 조직 전체의 vibe coding을 체계화하는 3단계 성숙도 모델*
 
@@ -84,10 +84,7 @@ Vibe coding은 반복 실험입니다. 화이트보드처럼 지우고 다시 �
 >
 > 기존 린터·태스크 러너 인프라가 에이전트 모드에 자동 피드백되면, 조직이 이미 갖고 있는 코드 품질 규칙이 AI의 실시간 가드레일이 됩니다. 새로운 검증 시스템을 구축할 필요 없이, 기존 CI/CD 파이프라인의 초기 단계를 에디터 안으로 끌어온 것이지요. 검증 표면을 넓히는 가장 비용 효율적인 방법입니다.
 >
-> `linter` `self-correction` `devops`
-
-
-## 다른 영상과의 교차점
+> `linter` `self-correction` `devops` ## 다른 영상과의 교차점
 
 - 같은 Microsoft/VS Code 팀의 발표입니다. Isidor가 copilot-instructions.md와 .instructions 파일 체계를 통한 "컨텍스트 주입"을 다뤘다면, Harald는 그 위에 Chat Modes, Prompts, MCP까지 쌓아 조직 단위 확장을 논합니다. 두 발표를 합치면 VS Code의 AI 커스터마이징 전체 그림이 완성됩니다.
 - "컨텍스트가 AI 코드 생성의 1순위"라는 Chris의 선언은 Harald의 Structured Vibes 단계가 존재하는 이유를 설명합니다. 규칙 파일 + 계획 마크다운의 Create-Refine 루프는 Spec-Driven 단계의 구체적 실천법과 정확히 겹칩니다.
@@ -99,7 +96,3 @@ Vibe coding은 반복 실험입니다. 화이트보드처럼 지우고 다시 �
 
 
 라이브 시연 하나로 15분을 채운 발표답게, 이론보다 실무가 강한 영상이었습니다. YOLO부터 Spec-Driven까지의 성숙도 모델은 "우리 조직은 지금 어디에 있는가?"를 묻게 하고, VS Code 커스터마이징 레이어는 "그렇다면 다음 단계로 가려면 무엇을 세팅해야 하는가?"에 대한 구체적 답을 줍니다. 도구를 만드는 사람이 도구의 철학을 말할 때, 그 무게가 다르다는 것을 느꼈습니다.
-
-## 출처
-
-- [원본 HTML 보고서](https://pages.eiaserinnys.me/p/91c4c4526350)

@@ -8,7 +8,7 @@ ShowToc: true
 TocOpen: false
 ---
 
-> AI-Assisted Engineering Talk #17/27 · [원본 보고서](https://pages.eiaserinnys.me/p/ef7b0be8f456)
+> AI-Assisted Engineering Talk #17/27
 
 *CLI 기반 멀티 에이전트 파이프라인으로 "감(感) 코딩"에 신뢰를 더하는 방법*
 
@@ -69,10 +69,7 @@ CLI는 에이전트를 유닉스 도구처럼 파이프로 연결하고, 백그�
 >
 > 대부분의 조직이 코딩 가이드라인을 문서로 작성하지만, Qodo의 접근법은 다릅니다. 실제 코드 리뷰 과정에서 반복되는 패턴을 자동으로 수집하여 조직의 베스트 프랙티스 데이터베이스를 구축합니다. 이 축적된 컨텍스트가 코드 생성 시점에 Shift-left로 주입되어, "사후 교정" 대신 "사전 예방"이 가능해집니다.
 >
-> `shift-left` `best-practices` `organizational-knowledge`
-
-
-## 다른 영상과의 교차점
+> `shift-left` `best-practices` `organizational-knowledge` ## 다른 영상과의 교차점
 
 - Dex의 "에이전트는 무상태 fold 함수" 원칙과 Itamar의 "에이전트를 파이프로 연결" 비전이 만납니다. 12-Factor의 제어 흐름 소유 원칙은 Qodo CLI가 워크플로우를 사용자 손에 돌려놓는 철학과 정확히 일치합니다.
 - "컨텍스트가 AI 코드 생성의 1순위"라는 Chris의 선언은 Itamar가 Karpathy의 재고를 인용하며 도달한 결론과 동일합니다. 두 발표 모두 vibe coding의 한계를 인정하고 구조화된 컨텍스트 주입을 해법으로 제시합니다.
@@ -84,7 +81,3 @@ CLI는 에이전트를 유닉스 도구처럼 파이프로 연결하고, 백그�
 
 
 "Vibe"라는 단어가 주는 가벼운 인상과 달리, 이 발표의 본질은 꽤 무거운 질문이었습니다. 빠르게 만드는 것과 믿을 수 있게 만드는 것 사이의 긴장을 어떻게 해소하느냐. Itamar의 답은 명쾌합니다. 속도를 포기하는 것이 아니라, 속도의 뒤를 봐주는 Red Team을 세우고 그 전체를 CLI 파이프라인으로 엮는 것. 유닉스 철학이 반세기 만에 에이전트 세계에서 다시 빛을 발하는 모습을 보니, 좋은 원칙은 시대를 초월한다는 생각이 드옵니다.
-
-## 출처
-
-- [원본 HTML 보고서](https://pages.eiaserinnys.me/p/ef7b0be8f456)

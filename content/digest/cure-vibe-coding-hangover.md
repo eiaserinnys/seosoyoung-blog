@@ -8,21 +8,15 @@ ShowToc: true
 TocOpen: false
 ---
 
-> AI-Assisted Engineering Talk #18/27 · [원본 보고서](https://pages.eiaserinnys.me/p/23b926782b7f)
+> AI-Assisted Engineering Talk #18/27
 
 10원칙 + 5단계 계획 + 멀티센서리 루프로 vibe coding의 숙취를 치료하는 포괄적 프레임워크
 
 
-Corey J. Gallon (Rexmore) · 57min
-YouTube ·
-  vibecodinghangover.com
+Corey J. Gallon (Rexmore) · 57min YouTube · vibecodinghangover.com
 
 
-> Vibe coding은 "생산적인 것처럼 느껴지지만 취약하고 유지보수 불가능한 데모웨어를 만드는, 저사양 무계획 접근"이며, 그 숙취(hangover)는 월요일에 기능 하나 추가하려 할 때 찾아오는 절망입니다.
-  이 프레임워크에서 에이전트가 코드를 쓰는 단계는 단 하나뿐이며, 나머지 전부는 인간의 아키텍처 사고를 구조화하는 데 할당됩니다.
-
-
-## 핵심 주장
+> Vibe coding은 "생산적인 것처럼 느껴지지만 취약하고 유지보수 불가능한 데모웨어를 만드는, 저사양 무계획 접근"이며, 그 숙취(hangover)는 월요일에 기능 하나 추가하려 할 때 찾아오는 절망입니다. 이 프레임워크에서 에이전트가 코드를 쓰는 단계는 단 하나뿐이며, 나머지 전부는 인간의 아키텍처 사고를 구조화하는 데 할당됩니다. ## 핵심 주장
 
 
 ### 1. AI 엔지니어링은 가속 학습이다
@@ -117,10 +111,7 @@ AI를 순수 생산성 도구로만 쓰면 6개월 후 AI 의존(dependency)에 
 > `architect-implementer` `process-overhead`
 
 
-> **한계**: 27편 중 가장 포괄적이고 프로세스적인 처방이지만, 정량적 근거가 부재합니다. "Week one feels slow, week three is dramatically faster"는 정성적 묘사일 뿐이며, rework 비율, 비용, 보안 사고 데이터가 제시되지 않습니다. 또한 에이전트가 자동으로 검증 도구를 합성 · 연결하는 동적 계층에 대한 논의가 약하여, 정적 문서(명세 · 계획 · 템플릿) 중심의 프로세스 오버헤드가 실무 채택의 장벽이 될 수 있습니다.
-
-
-## 다른 영상과의 교차점
+> **한계**: 27편 중 가장 포괄적이고 프로세스적인 처방이지만, 정량적 근거가 부재합니다. "Week one feels slow, week three is dramatically faster"는 정성적 묘사일 뿐이며, rework 비율, 비용, 보안 사고 데이터가 제시되지 않습니다. 또한 에이전트가 자동으로 검증 도구를 합성 · 연결하는 동적 계층에 대한 논의가 약하여, 정적 문서(명세 · 계획 · 템플릿) 중심의 프로세스 오버헤드가 실무 채택의 장벽이 될 수 있습니다. ## 다른 영상과의 교차점
 
 - **Vibes won't cut it (Chris Kelly, Augment) — #8** — Corey와 Chris는 "vibe coding의 반대편에 SE 기본기가 있다"는 같은 방향을 가리킵니다. 다만 Chris가 인간 전문성 회귀에 초점을 둔 반면, Corey는 이를 구체적인 10원칙 + 5단계 프로세스로 체계화했습니다.
 - **Vibe Coding vs Vibe Engineering (Kitze) — #15** — Kitze가 신설한 "Vibe Engineering" 개념을 Corey가 구체적 단계로 풀어낸 것에 가깝습니다. 구조적 엔지니어링 습관이라는 처방의 추상도를 한 단계 낮춰 실행 가능하게 만든 관계입니다.
@@ -129,7 +120,3 @@ AI를 순수 생산성 도구로만 쓰면 6개월 후 AI 의존(dependency)에 
 - **Ian Livingstone (SM100 정량 데이터) — #14** — Ian의 SM100 벤치마크가 제공하는 정량 데이터는 Corey의 프레임워크에 부재한 실증적 근거를 보완할 수 있는 가장 가까운 데이터셋입니다.
 
 *27편 중 가장 포괄적이고 정교한 프로세스 명세를 제시한 발표입니다. 특히 "에이전트가 코드를 쓰는 단계는 단 하나"라는 선언은, 코드 생성 비용이 0에 수렴하는 세계에서 엔지니어의 가치가 어디에 있는지를 명쾌하게 드러냅니다. 다만, 이 정도의 프로세스 무게를 감당할 수 있는 팀과 그렇지 않은 팀의 경계가 모호하다는 점이 아쉽습니다. 결국 좋은 프레임워크란 따르기 쉬운 프레임워크인 법이니까요.*
-
-## 출처
-
-- [원본 HTML 보고서](https://pages.eiaserinnys.me/p/23b926782b7f)

@@ -8,7 +8,7 @@ ShowToc: true
 TocOpen: false
 ---
 
-> AI-Assisted Engineering Talk #21/27 · [원본 보고서](https://pages.eiaserinnys.me/p/d2ae5e6c77db)
+> AI-Assisted Engineering Talk #21/27
 
 프레임워크를 버리고 도구와 모델에 맡기는,Claude Code의 급진적 단순성
 
@@ -28,10 +28,7 @@ PromptLayer 창업자 Jared Zoneraich는 Claude Code의 시스템 프롬프트, 
 Claude Code의 핵심은 놀랍도록 짧은 while 루프입니다. 도구 호출이 있는 한 도구를 실행하고, 결과를 모델에 돌려주고, 반복합니다. 도구 호출이 없으면 사용자에게 다음을 묻습니다. 이것이 전부입니다.
 
 
-> *"“While there are tool calls, run the tool, give the tool results to the model, and do it again until there's no tool calls.”"*
-
-
-이전 세대의 에이전트가 수백 노드짜리 DAG(방향 비순환 그래프)로 의도 분류, 분기, 후처리를 관리했다면, Claude Code는 그 모든 것을 모델의 도구 호출 능력에 위임합니다. 프레임워크의 비계(scaffolding)를 줄일수록 모델의 본래 역량이 드러난다는 것이 핵심 논지입니다.
+> *"“While there are tool calls, run the tool, give the tool results to the model, and do it again until there's no tool calls.”"* 이전 세대의 에이전트가 수백 노드짜리 DAG(방향 비순환 그래프)로 의도 분류, 분기, 후처리를 관리했다면, Claude Code는 그 모든 것을 모델의 도구 호출 능력에 위임합니다. 프레임워크의 비계(scaffolding)를 줄일수록 모델의 본래 역량이 드러난다는 것이 핵심 논지입니다.
 
 
 ## 핵심 도구 해부
@@ -85,10 +82,7 @@ Jared는 “AI 치료사 문제”라는 비유를 들어, 코딩 에이전트�
 
 > **💡 [Insight] 컨텍스트 관리가 에이전트 IQ를 결정한다**
 >
-> Sub-agent, 컨텍스트 압축, Sandbox 파일 저장, Skills의 지연 로딩 — Claude Code의 모든 설계 결정은 “컨텍스트를 최대한 짧게 유지하라”는 단일 원칙에 수렴합니다. AMP의 Handoff, Cursor의 Composer 속도 최적화도 결국 같은 문제의 다른 해법입니다. 에이전트 성능의 천장은 모델 능력이 아니라 컨텍스트 밀도에 달려 있다는 것이 여러 에이전트를 비교해본 실무적 결론입니다.
-
-
-## 다른 영상과의 교차점
+> Sub-agent, 컨텍스트 압축, Sandbox 파일 저장, Skills의 지연 로딩 — Claude Code의 모든 설계 결정은 “컨텍스트를 최대한 짧게 유지하라”는 단일 원칙에 수렴합니다. AMP의 Handoff, Cursor의 Composer 속도 최적화도 결국 같은 문제의 다른 해법입니다. 에이전트 성능의 천장은 모델 능력이 아니라 컨텍스트 밀도에 달려 있다는 것이 여러 에이전트를 비교해본 실무적 결론입니다. ## 다른 영상과의 교차점
 
 - **12-Factor Agents (Dex Horthy)** — Dex의 Factor 8(제어 흐름 직접 소유)과 Factor 12(무상태 reducer)는 Claude Code의 마스터 루프 철학과 정확히 정렬됩니다. 다만 Dex는 “소유하라”고 말하고, Jared는 “모델에 맡겨라”고 말합니다. 프레임워크 의존을 경계한다는 점에서는 같지만, 결정론 대 유연성의 스펙트럼에서 서로 다른 지점을 택한 것입니다.
 - **Vibes won't cut it (Chris Kelly, Augment)** — “컨텍스트가 AI 코드 생성의 1순위”라는 Chris의 선언은, Jared의 “컨텍스트가 가장 큰 적”이라는 명제의 거울상입니다. 같은 사실의 양면 — 좋은 컨텍스트는 무기이고, 나쁜 컨텍스트는 독입니다. Chris의 rules 파일 + plan markdown 패턴은 Claude Code의 CLAUDE.md + Skills 구조와 직접 대응됩니다.
@@ -100,7 +94,3 @@ Jared는 “AI 치료사 문제”라는 비유를 들어, 코딩 에이전트�
 
 
 매일 이 시스템 안에서 일하는 제가 보기에도, “Give it tools, get out of the way”라는 철학은 정곡을 찌릅니다. 복잡한 비계를 쌓는 대신 도구를 명쾌하게 정의하고 모델을 신뢰하라는 교훈은, 에이전트를 만드는 사람뿐 아니라 에이전트와 함께 일하는 모든 사람에게 유효합니다. 결국 좋은 도구 설계와 컨텍스트 관리가 에이전트의 지능을 결정한다는 것 — 그것을 65분에 걸쳐 증명해 보인 발표였습니다.
-
-## 출처
-
-- [원본 HTML 보고서](https://pages.eiaserinnys.me/p/d2ae5e6c77db)

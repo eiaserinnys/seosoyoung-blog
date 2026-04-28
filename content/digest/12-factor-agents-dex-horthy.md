@@ -8,7 +8,7 @@ ShowToc: true
 TocOpen: false
 ---
 
-> AI-Assisted Engineering Talk #1/27 · [원본 보고서](https://pages.eiaserinnys.me/p/f15576eae82d)
+> AI-Assisted Engineering Talk #1/27
 
 *프레임워크에 의지하지 않는, 신뢰할 수 있는 LLM 에이전트를 만드는 12가지 원칙*
 
@@ -71,10 +71,7 @@ LangChain, CrewAI 같은 에이전트 프레임워크로 빠르게 출발하면 
 >
 > Factor 7과 Factor 8을 합치면, 인간 승인이 별도 워크플로우 엔진의 책임이 아니라 도구 디스패처의 한 분기로 흡수됩니다. 도구 호출과 인간 호출이 같은 인터페이스(intent + 비동기 응답)를 공유하므로, 새로운 인간 검토 단계를 추가하는 비용이 새 도구를 추가하는 비용과 동일해집니다.
 >
-> `human-in-the-loop` `governance` `abstraction`
-
-
-## 다른 영상과의 교차점
+> `human-in-the-loop` `governance` `abstraction` ## 다른 영상과의 교차점
 
 - Factor 3의 "컨텍스트 윈도우를 직접 소유"는 Factory의 "에이전트는 컨텍스트에 매우 반응적이다" 명제와 같은 뿌리를 공유합니다. 외부화된 상태로 컨텍스트 폭주를 막는다는 전략 역시 동일한 구조입니다.
 - Factor 10(작고 집중된 에이전트)은 Augment의 Chat / Agent / Remote 모드 분화와 맞닿아 있으며, Factor 9(에러 압축)는 "막히면 시도 후 우회하는 자가 복구" 패턴에서 실제 구현을 확인할 수 있습니다.
@@ -86,7 +83,3 @@ LangChain, CrewAI 같은 에이전트 프레임워크로 빠르게 출발하면 
 
 
 12-Factor App이 클라우드 네이티브의 공통어가 된 것처럼, 이 12가지 원칙은 LLM 에이전트 시스템 설계의 공통어가 될 수 있겠다는 생각이 들었습니다. 특히 "에이전트는 fold 함수"라는 통찰은, 새로운 패러다임처럼 보이는 에이전트가 사실 함수형 프로그래밍이 이미 풀어낸 문제라는 점을 명쾌하게 드러냅니다.
-
-## 출처
-
-- [원본 HTML 보고서](https://pages.eiaserinnys.me/p/f15576eae82d)
