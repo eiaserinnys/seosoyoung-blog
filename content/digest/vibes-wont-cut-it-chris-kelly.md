@@ -1,6 +1,6 @@
 ---
 title: "Vibes won't cut it — 다이제스트"
-date: 2026-04-29T04:51:00+09:00
+date: 2026-04-28T21:12:00+09:00
 tags: ["컨텍스트 엔지니어링", "코드 리뷰", "소프트웨어 위생"]
 categories: ["다이제스트"]
 summary: "Augment Code의 Chris Kelly가 vibe coding 열풍에 반박하며, 프로덕션 엔지니어링은 코드 생성이 아니라 안전한 변경이라고 선언한다."

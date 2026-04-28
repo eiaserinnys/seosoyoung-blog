@@ -1,6 +1,6 @@
 ---
 title: "2026: The Year The IDE Died — 다이제스트"
-date: 2026-04-29T05:15:00+09:00
+date: 2026-04-28T21:18:00+09:00
 tags: ["IDE", "다중 에이전트", "DORA"]
 categories: ["다이제스트"]
 summary: "Steve Yegge와 Gene Kim이 IDE의 종말과 다중 에이전트 전환을 선언하나, 검증 논의가 부재한 복음주의 발표."

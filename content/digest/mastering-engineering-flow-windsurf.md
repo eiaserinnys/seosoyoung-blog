@@ -1,6 +1,6 @@
 ---
 title: "Mastering Engineering Flow with Windsurf — 다이제스트"
-date: 2026-04-29T05:48:00+09:00
+date: 2026-04-28T20:54:00+09:00
 tags: ["Windsurf", "AI Flow", "Cascade"]
 categories: ["다이제스트"]
 summary: "Windsurf의 Eashan Sinha가 AI 코딩의 진화(Co-pilot→Agent→Flow)를 정리하고, 'AI Flow' — 협업적 챗봇과 자율 에이전트의 융합 — 을 정의한다."

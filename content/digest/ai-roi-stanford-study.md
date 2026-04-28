@@ -1,6 +1,6 @@
 ---
 title: "Can you prove AI ROI in Software Engineering? — 다이제스트"
-date: 2026-04-29T04:45:00+09:00
+date: 2026-04-28T20:06:00+09:00
 tags: ["생산성 측정", "ROI", "연구"]
 categories: ["다이제스트"]
 summary: "Stanford 연구진이 12만 명 개발자의 git 데이터를 2년간 분석하여 AI 코딩 도구의 실제 ROI를 정량 측정한 발표."

@@ -1,6 +1,6 @@
 ---
 title: "Future-Proof Coding Agents — 다이제스트"
-date: 2026-04-29T05:42:00+09:00
+date: 2026-04-28T20:36:00+09:00
 tags: ["OpenAI", "Codex", "SDK", "에이전트 아키텍처"]
 categories: ["다이제스트"]
 summary: "OpenAI Applied AI팀이 코딩 에이전트를 모델 업그레이드에서 살아남게 만드는 방법을 제시한다. 하네스 복잡성을 SDK에 위임하라는 것이 핵심."

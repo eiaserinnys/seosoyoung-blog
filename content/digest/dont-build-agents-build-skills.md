@@ -1,6 +1,6 @@
 ---
 title: "Don't Build Agents, Build Skills Instead — 다이제스트"
-date: 2026-04-29T05:06:00+09:00
+date: 2026-04-28T20:30:00+09:00
 tags: ["Claude Code", "스킬", "Anthropic"]
 categories: ["다이제스트"]
 summary: "Anthropic의 Barry Zhang과 Mahesh Murag가 에이전트를 분해하는 대신 스킬로 전문성을 패키징하라고 제안한다. 5주 만에 수천 개 스킬 생태계 형성."

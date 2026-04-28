@@ -1,6 +1,6 @@
 ---
 title: "Windsurf everywhere — 다이제스트"
-date: 2026-04-29T05:45:00+09:00
+date: 2026-04-28T21:15:00+09:00
 tags: ["Windsurf", "Shared Timeline", "Data Flywheel"]
 categories: ["다이제스트"]
 summary: "Windsurf 프로덕트 리드 Kevin Hou가 Shared Timeline, 3가지 컨텍스트 카테고리, 자체 SE 모델 SU1, Data Flywheel을 소개한다."

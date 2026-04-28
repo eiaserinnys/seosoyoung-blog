@@ -1,6 +1,6 @@
 ---
 title: "GitHub Copilot — 다이제스트"
-date: 2026-04-29T05:33:00+09:00
+date: 2026-04-28T20:39:00+09:00
 tags: ["GitHub Copilot", "데모", "제품 소개"]
 categories: ["다이제스트"]
 summary: "GitHub의 Senior DevOps Advocate가 Copilot 전 제품 라인업을 데모 중심으로 소개하는 컨퍼런스 발표."

@@ -1,6 +1,6 @@
 ---
 title: "How Claude Code Works — 다이제스트"
-date: 2026-04-29T05:30:00+09:00
+date: 2026-04-28T20:42:00+09:00
 tags: ["Claude Code", "역공학", "시스템 프롬프트"]
 categories: ["다이제스트"]
 summary: "PromptLayer 창업자가 Claude Code의 내부를 역공학하여 시스템 프롬프트, 도구 구조, 컨텍스트 관리를 해부하고, 다른 에이전트와 비교한다."

@@ -1,6 +1,6 @@
 ---
 title: "Context Platform Engineering to Reduce Token Anxiety — 다이제스트"
-date: 2026-04-29T04:57:00+09:00
+date: 2026-04-28T20:24:00+09:00
 tags: ["인프라", "KV Cache", "토큰 비용"]
 categories: ["다이제스트"]
 summary: "WEKA가 KV Cache를 '토큰 저장 문제'로 재정의하고, 메모리 티어 인프라가 에이전트 비용·성능을 결정한다고 주장한다."

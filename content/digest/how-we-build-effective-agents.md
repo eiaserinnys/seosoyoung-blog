@@ -1,6 +1,6 @@
 ---
 title: "How We Build Effective Agents — 다이제스트"
-date: 2026-04-29T05:36:00+09:00
+date: 2026-04-28T20:45:00+09:00
 tags: ["에이전트", "Anthropic", "단순함"]
 categories: ["다이제스트"]
 summary: "Anthropic의 Barry Zhang이 'Building Effective Agents' 블로그 포스트를 심화하며, 에이전트를 빌드하지 말아야 할 때와 단순함의 가치를 설파한다."

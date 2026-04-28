@@ -1,6 +1,6 @@
 ---
 title: "To the moon! Navigating deep context in legacy code — 다이제스트"
-date: 2026-04-29T04:36:00+09:00
+date: 2026-04-28T21:03:00+09:00
 tags: ["AI 에이전트", "레거시 코드", "컨텍스트 엔진"]
 categories: ["다이제스트"]
 summary: "Augment Code가 Apollo 11 AGC 어셈블리를 '궁극의 레거시'로 시연하며, 컨텍스트 엔진이 코드를 '텍스트가 아닌 코드로' 다루어야 한다고 주장한다."

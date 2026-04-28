@@ -1,6 +1,6 @@
 ---
 title: "From Vibe Coding To Vibe Engineering — 다이제스트"
-date: 2026-04-29T05:12:00+09:00
+date: 2026-04-28T20:33:00+09:00
 tags: ["vibe coding", "vibe engineering", "실천론"]
 categories: ["다이제스트"]
 summary: "Kitze(Sizzy)가 vibe coding과 vibe engineering의 명시적 구분을 제안하며, 에이전트가 코드를 쓰되 엔지니어링 판단은 인간이 유지하는 실천을 정의한다."

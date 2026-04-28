@@ -1,6 +1,6 @@
 ---
 title: "Collaborating with Agents in your Software Dev Workflow — 다이제스트"
-date: 2026-04-29T04:42:00+09:00
+date: 2026-04-28T20:21:00+09:00
 tags: ["GitHub Copilot", "에이전트 격리", "DevOps"]
 categories: ["다이제스트"]
 summary: "GitHub 개발자 애드보킷들이 Copilot의 6중 격리 아키텍처와, AI가 DevOps 흐름을 바꾸지 않는다는 원칙을 워크숍에서 시연한다."

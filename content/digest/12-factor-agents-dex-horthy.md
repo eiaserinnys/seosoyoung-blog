@@ -1,6 +1,6 @@
 ---
 title: "12-Factor Agents — 다이제스트"
-date: 2026-04-29T04:30:00+09:00
+date: 2026-04-28T20:00:00+09:00
 tags: ["AI 에이전트", "아키텍처", "LLM 시스템"]
 categories: ["다이제스트"]
 summary: "HumanLayer의 Dex Horthy가 AI 에이전트 구축의 12가지 원칙을 제시한다. 좋은 에이전트는 결정론적 소프트웨어에 LLM 단계를 정확한 지점에 끼워 넣은 시스템이다."

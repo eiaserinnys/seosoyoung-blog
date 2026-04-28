@@ -1,6 +1,6 @@
 ---
 title: "Vibe Coding at Scale — 다이제스트"
-date: 2026-04-29T05:24:00+09:00
+date: 2026-04-28T21:06:00+09:00
 tags: ["VS Code", "엔터프라이즈", "커스터마이징"]
 categories: ["다이제스트"]
 summary: "VS Code 팀의 Harald Kirshner가 vibe coding의 3단계 성숙도 모델(YOLO→Structured→Spec-Driven)과 VS Code 커스터마이징 레이어를 제시한다."

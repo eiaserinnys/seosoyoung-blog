@@ -1,6 +1,6 @@
 ---
 title: "Claude Code & the evolution of agentic coding — 다이제스트"
-date: 2026-04-29T05:39:00+09:00
+date: 2026-04-28T20:15:00+09:00
 tags: ["Claude Code", "Anthropic", "설계 철학"]
 categories: ["다이제스트"]
 summary: "Claude Code 창시자 Boris Cherny가 프로그래밍 50년 진화와 Claude Code의 의도적 단순성 철학을 연결하는 유일한 1차 증언."

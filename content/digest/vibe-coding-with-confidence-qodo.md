@@ -1,6 +1,6 @@
 ---
 title: "Vibe Coding with Confidence — 다이제스트"
-date: 2026-04-29T05:18:00+09:00
+date: 2026-04-28T21:09:00+09:00
 tags: ["vibe coding", "멀티 에이전트", "CLI"]
 categories: ["다이제스트"]
 summary: "Qodo CEO Itamar Friedman이 AI 코딩 도구의 3세대 진화를 정리하고, CLI 기반 에이전트 파이프라인으로 confidence를 달성한다고 주장한다."

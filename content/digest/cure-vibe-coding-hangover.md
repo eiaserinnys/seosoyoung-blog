@@ -1,6 +1,6 @@
 ---
 title: "The Cure for the Vibe Coding Hangover — 다이제스트"
-date: 2026-04-29T05:21:00+09:00
+date: 2026-04-28T20:27:00+09:00
 tags: ["vibe coding", "프레임워크", "검증 표면"]
 categories: ["다이제스트"]
 summary: "Corey J. Gallon이 vibe coding의 부작용과 처방을 체계적 프레임워크(10원칙 + 5단계 + 멀티센서리 루프)로 제시한다."

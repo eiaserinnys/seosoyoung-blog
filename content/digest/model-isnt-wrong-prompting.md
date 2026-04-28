@@ -1,6 +1,6 @@
 ---
 title: "The Model Isn't Wrong, You're Just Bad at Prompting — 다이제스트"
-date: 2026-04-29T04:54:00+09:00
+date: 2026-04-28T20:57:00+09:00
 tags: ["프롬프트 엔지니어링", "reasoning model", "CoT"]
 categories: ["다이제스트"]
 summary: "Prompt Hub의 Dan이 프롬프트 엔지니어링의 정석을 정리하되, reasoning model에서는 정반대 접근이 옳다는 결론을 못박는다."

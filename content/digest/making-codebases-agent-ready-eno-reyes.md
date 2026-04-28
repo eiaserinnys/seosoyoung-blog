@@ -1,6 +1,6 @@
 ---
 title: "Making Codebases Agent Ready — 다이제스트"
-date: 2026-04-29T04:33:00+09:00
+date: 2026-04-28T20:51:00+09:00
 tags: ["AI 에이전트", "코드베이스", "검증"]
 categories: ["다이제스트"]
 summary: "Factory AI CTO Eno Reyes가 에이전트의 프로덕션 실패 원인은 모델이 아니라 환경 readiness라고 진단하고, 명세 주도 개발과 빠른 피드백 루프의 ROI를 재계산한다."

@@ -1,6 +1,6 @@
 ---
 title: "Your AI Agent Isn't an Engineer — 다이제스트"
-date: 2026-04-29T04:48:00+09:00
+date: 2026-04-28T20:03:00+09:00
 tags: ["의인화", "AI 문화", "개발자 경험"]
 categories: ["다이제스트"]
 summary: "Block의 Rizel Scarlett이 AI를 '엔지니어'로 부르는 의인화 마케팅의 자기 파괴 효과를 진단하고, thoughtful anthropomorphism 8원칙을 제시한다."

@@ -1,6 +1,6 @@
 ---
 title: "How to Improve your Vibe Coding — 다이제스트"
-date: 2026-04-29T05:09:00+09:00
+date: 2026-04-28T20:48:00+09:00
 tags: ["vibe coding", "벤치마크", "rules"]
 categories: ["다이제스트"]
 summary: "Bismouth CEO가 SM100 벤치마크 결과를 기반으로 vibe coding의 현실적 한계를 데이터로 제시하고, rules·context·thinking 세 축의 개선법을 제안한다."

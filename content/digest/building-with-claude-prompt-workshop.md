@@ -1,6 +1,6 @@
 ---
 title: "Building with Anthropic Claude: Prompt Workshop — 다이제스트"
-date: 2026-04-29T05:00:00+09:00
+date: 2026-04-28T20:12:00+09:00
 tags: ["Claude", "프롬프트 엔지니어링", "Anthropic"]
 categories: ["다이제스트"]
 summary: "Anthropic의 prompt engineer Zack Witten이 청중의 실제 프롬프트를 라이브로 개선하며 XML 태그, prefill, few-shot 등 공식 권고를 실전 시연한다."

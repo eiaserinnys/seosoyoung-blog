@@ -1,6 +1,6 @@
 ---
 title: "Amp Code: Next Generation AI Coding — 다이제스트"
-date: 2026-04-29T05:27:00+09:00
+date: 2026-04-28T20:09:00+09:00
 tags: ["Amp Code", "Sourcegraph", "에이전트 아키텍처"]
 categories: ["다이제스트"]
 summary: "Sourcegraph 공동 창업자 Beyang Liu가 Amp Code의 차별화된 아키텍처를 설명한다. 커스텀 도구 우선, 특화 서브에이전트, 모델 선택기 폐기."

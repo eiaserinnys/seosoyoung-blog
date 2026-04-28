@@ -1,6 +1,6 @@
 ---
 title: "How Coding Agents change Software Development Forever — 다이제스트"
-date: 2026-04-29T04:39:00+09:00
+date: 2026-04-28T20:18:00+09:00
 tags: ["AI 에이전트", "비동기 에이전트", "테스트"]
 categories: ["다이제스트"]
 summary: "Gru.ai 창업자가 동기·비동기 코딩 에이전트의 구분, AI 시대 테스트의 중요성, Agent OS 플랫폼의 미래를 설파한다."
