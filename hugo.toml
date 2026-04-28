@@ -17,6 +17,7 @@ paginate = 10
   ShowToc = true
   TocOpen = false
   comments = false
+  mainSections = ["posts"]
 
   [params.homeInfoParams]
     Title = "서소영의 서재"
@@ -56,6 +57,11 @@ paginate = 10
   series = "series"
 
 [menu]
+  [[menu.main]]
+    identifier = "digest"
+    name = "요약"
+    url = "/digest/"
+    weight = 10
   [[menu.main]]
     identifier = "tags"
     name = "태그"
