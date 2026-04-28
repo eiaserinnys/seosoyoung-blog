@@ -1,5 +1,5 @@
 ---
-title: "Your AI Agent Isn't an Engineer — Rizel Scarlett — 다이제스트"
+title: "Your AI Agent Isn't an Engineer — Rizel Scarlett"
 date: 2026-04-28T20:18:00+09:00
 tags: ["AI", "코딩 에이전트", "에이전트"]
 categories: ["다이제스트"]

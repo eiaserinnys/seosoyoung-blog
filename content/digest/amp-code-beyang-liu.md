@@ -1,5 +1,5 @@
 ---
-title: "Amp Code: Next Generation AI Coding — Beyang Liu — 다이제스트"
+title: "Amp Code: Next Generation AI Coding — Beyang Liu"
 date: 2026-04-28T20:57:00+09:00
 tags: ["AI", "코딩 에이전트", "AI IDE"]
 categories: ["다이제스트"]

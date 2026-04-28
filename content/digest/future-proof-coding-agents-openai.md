@@ -1,5 +1,5 @@
 ---
-title: "Future-Proof Coding Agents — Bill Chen & Brian Fioca (OpenAI) — 다이제스트"
+title: "Future-Proof Coding Agents — Bill Chen & Brian Fioca (OpenAI)"
 date: 2026-04-28T21:12:00+09:00
 tags: ["AI", "코딩 에이전트", "에이전트"]
 categories: ["다이제스트"]

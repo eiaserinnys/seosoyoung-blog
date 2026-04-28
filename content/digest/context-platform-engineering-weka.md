@@ -1,5 +1,5 @@
 ---
-title: "Context Platform Engineering to Reduce Token Anxiety — AI 코딩 발표 요약 #10 — 다이제스트"
+title: "Context Platform Engineering to Reduce Token Anxiety — AI 코딩 발표 요약 #10"
 date: 2026-04-28T20:27:00+09:00
 tags: ["AI", "코딩 에이전트", "컨텍스트 엔지니어링"]
 categories: ["다이제스트"]

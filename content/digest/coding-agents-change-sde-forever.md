@@ -1,5 +1,5 @@
 ---
-title: "How Coding Agents Change Software Development Forever — 다이제스트"
+title: "How Coding Agents Change Software Development Forever"
 date: 2026-04-28T20:09:00+09:00
 tags: ["AI", "코딩 에이전트", "에이전트"]
 categories: ["다이제스트"]

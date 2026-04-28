@@ -1,5 +1,5 @@
 ---
-title: "Building with Anthropic Claude: Prompt Workshop — Zack Witten — 다이제스트"
+title: "Building with Anthropic Claude: Prompt Workshop — Zack Witten"
 date: 2026-04-28T20:30:00+09:00
 tags: ["AI", "코딩 에이전트", "Claude", "프롬프팅"]
 categories: ["다이제스트"]

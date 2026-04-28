@@ -1,5 +1,5 @@
 ---
-title: "2026: The Year The IDE Died — Steve Yegge & Gene Kim — 다이제스트"
+title: "2026: The Year The IDE Died — Steve Yegge & Gene Kim"
 date: 2026-04-28T20:45:00+09:00
 tags: ["AI", "코딩 에이전트", "AI IDE"]
 categories: ["다이제스트"]

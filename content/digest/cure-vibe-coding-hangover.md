@@ -1,5 +1,5 @@
 ---
-title: "The Cure for the Vibe Coding Hangover — Corey J. Gallon — 다이제스트"
+title: "The Cure for the Vibe Coding Hangover — Corey J. Gallon"
 date: 2026-04-28T20:51:00+09:00
 tags: ["AI", "코딩 에이전트", "바이브 코딩"]
 categories: ["다이제스트"]

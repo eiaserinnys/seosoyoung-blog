@@ -1,5 +1,5 @@
 ---
-title: "Can you prove AI ROI in Software Engineering? — Yegor Denisov-Blanch (Stanford) — 다이제스트"
+title: "Can you prove AI ROI in Software Engineering? — Yegor Denisov-Blanch (Stanford)"
 date: 2026-04-28T20:15:00+09:00
 tags: ["AI", "코딩 에이전트"]
 categories: ["다이제스트"]

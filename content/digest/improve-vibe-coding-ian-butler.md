@@ -1,5 +1,5 @@
 ---
-title: "How to Improve your Vibe Coding — Ian Butler (Bismouth) — 다이제스트"
+title: "How to Improve your Vibe Coding — Ian Butler (Bismouth)"
 date: 2026-04-28T20:39:00+09:00
 tags: ["AI", "코딩 에이전트", "바이브 코딩"]
 categories: ["다이제스트"]

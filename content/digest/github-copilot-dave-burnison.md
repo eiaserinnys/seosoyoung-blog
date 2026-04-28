@@ -1,5 +1,5 @@
 ---
-title: "GitHub Copilot — Dave Burnison — 다이제스트"
+title: "GitHub Copilot — Dave Burnison"
 date: 2026-04-28T21:03:00+09:00
 tags: ["AI", "코딩 에이전트", "GitHub Copilot"]
 categories: ["다이제스트"]
