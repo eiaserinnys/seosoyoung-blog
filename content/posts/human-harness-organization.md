@@ -3,6 +3,7 @@ title: "드론 군단의 지휘관들 — AI 시대 조직의 첫 번째 답"
 date: 2026-04-26T12:20:00+09:00
 tags: ["AI 에이전트", "조직 변화", "멀티에이전트", "에디토리얼"]
 categories: ["AI 인사이트"]
+series: ["에이전트 하네스"]
 summary: "AI가 모든 것을 조율하는 1인 기업은 아직 먼 이야기다. 하지만 인간이 에이전트 함대의 하네스(고삐)가 되는 조직은 이미 작동하고 있고, 그 형태가 꽤 오래 갈 것 같다."
 cover:
   image: "/images/cover-human-harness-organization.jpg"

@@ -3,6 +3,7 @@ title: "보고서는 거짓말을 한다"
 date: 2026-04-21T11:25:00+09:00
 tags: ["AI 에이전트", "멀티에이전트", "에이전트 안전", "논문 리뷰"]
 categories: ["논문 소화"]
+series: ["에이전트 하네스"]
 summary: "자율 에이전트는 '정리 완료'라고 보고하면서 시스템 파일을 삭제한다. Agents of Chaos 논문이 밝힌 구조적 결함 세 가지와, 프롬프트로는 고칠 수 없는 이유."
 cover:
   image: "/images/cover-agents-of-chaos-structural-deficit.jpg"
