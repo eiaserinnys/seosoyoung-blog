@@ -67,7 +67,7 @@ AI를 순수 생산성 도구로만 쓰면 6개월 후 AI 의존(dependency)에 
 계획 단계는 순차적이며 "순전히 인간의 작업"입니다. 에이전트는 thinking partner로만 참여하고, 모든 의사결정은 인간이 내립니다.
 
 - **Vision Capture** — 머릿속의 막연한 아이디어를 5개 섹션(목적, 핵심 기능, 범위 경계, 기술 맥락, 워크플로우)으로 구조화합니다. 에이전트와 "think out loud"하되 결정은 인간이.
-- **Feature Identification & Categorization** — MPS에서 섹션별 추출 질문으로 기능 단위를 체계적으로 식별하고, 3~7 카테고리로 분류합니다. 유니크 ID(CORE-001, API-101) 부여, 복잡도 추정(easy/medium/hard).
+- **Feature Identification & Categorization** — MPS에서 섹션별 추출 질문으로 기능 단위를 체계적으로 식별하고, 3\~7 카테고리로 분류합니다. 유니크 ID(CORE-001, API-101) 부여, 복잡도 추정(easy/medium/hard).
 - **Iterative Specification Development** — 구현 계약 3단계(자연어 → 로직 플로우 → 정형 인터페이스) + 검증 계약 3단계(시나리오 → Given/When/Then → 정형 테스트) 정련. 원자성 검증 후 의존성 식별.
 - **Dependency Analysis** — 행렬 추출 → 그래프 생성(Graphviz/Mermaid) → binary dependency test로 검증 → 순환 탐지 → 해소(제거 → 재명세 → 분할 → 통합).
 - **Implementation Plan Development** — 위상정렬로 phase 조직. 각 phase에 binary success criteria, 피드백 루프, phase gate를 정의합니다. Critical path 식별.

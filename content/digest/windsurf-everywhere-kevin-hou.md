@@ -58,7 +58,7 @@ Windsurf만이 "상시 작동 + 자체 SE 모델"을 동시에 추구하여, 4�
 
 > **💡 [Insight] Shared Timeline은 IDE의 생존 전략이다**
 >
-> Yegge(영상 16)는 IDE가 1~1.5년 내 CNC로 대체된다고 예측하였습니다. Windsurf는 IDE를 포기하지 않고, IDE의 경계를 해소하는 것으로 응답합니다. 'Windsurf will be everywhere' = IDE가 죽는 대신 IDE가 모든 곳으로 확산. Shared Timeline이 IDE의 존재 이유(맥락 파악)를 유지하면서 공간/시간 경계를 없앤다는 전략이옵니다.
+> Yegge(영상 16)는 IDE가 1\~1.5년 내 CNC로 대체된다고 예측하였습니다. Windsurf는 IDE를 포기하지 않고, IDE의 경계를 해소하는 것으로 응답합니다. 'Windsurf will be everywhere' = IDE가 죽는 대신 IDE가 모든 곳으로 확산. Shared Timeline이 IDE의 존재 이유(맥락 파악)를 유지하면서 공간/시간 경계를 없앤다는 전략이옵니다.
 >
 > `IDE-evolution` `context-architecture` `boundary-dissolution`
 

@@ -89,5 +89,5 @@ UC Berkeley의 MAST(Multi-Agent Software Testing) 연구는 소프트웨어 테�
 [^3]: UC Berkeley MAST (Multi-Agent Software Testing) 연구. Context Collapse, Ghost Delegation, Verification Error의 실패 비율 및 Gastown 실험 결과. 소프트웨어 테스팅 도메인 한정.
 [^5]: Shapira et al., "Agents of Chaos" — Mirsky(2025) 자율성 척도 L2 수준 분석. [arXiv](https://arxiv.org/abs/2602.20021)
 [^6]: @danielchoi.ai, ["멀티 에이전트 시스템을 Max 20까지 올려서 굴려봤습니다"](https://www.threads.com/@danielchoi.ai/post/DXjntdFCXyY), 2026
-[^7]: Andon Labs, Vending-Bench 2 — AI 모델의 장시간 비즈니스 경영 벤치마크. 1위 모델 $10,937 대비 전략적 최적해 ~$63,000.
+[^7]: Andon Labs, Vending-Bench 2 — AI 모델의 장시간 비즈니스 경영 벤치마크. 1위 모델 $10,937 대비 전략적 최적해 \~$63,000.
 [^8]: "The Billion-Dollar Solo Startup: Medvi" (quasa.io, 2026); "Solo Founder Runs Company With 15 AI Agents" (Business Insider, 2026); "One Person, Five Businesses, Zero Employees" (AI Navigate, 2026)

@@ -47,14 +47,14 @@ Context financial engineering(prompt arbitrage)은 cache write의 5분/1시간 T
 
 ## 인프라 운영 메트릭
 
-- **10~15초** — 에이전트 내부 median inter-request
+- **10\~15초** — 에이전트 내부 median inter-request
 - **최대 10x** — Cache miss 시 비용 증가 (hit 대비)
-- **15~16회** — 1분 TTL에서 동일 토큰 re-prefill 횟수
-- **~1000x** — NVMe 밀도 (DRAM 대비)
-- **50~60 GB/s** — POSIX 스토리지 대역폭
+- **15\~16회** — 1분 TTL에서 동일 토큰 re-prefill 횟수
+- **\~1000x** — NVMe 밀도 (DRAM 대비)
+- **50\~60 GB/s** — POSIX 스토리지 대역폭
 - **비선형 곡선** — Cache hit rate ↔ Throughput (sweet spot 존재)
 
-특히 인간-에이전트 케이던스 미스매치가 cache thrashing의 근본 원인이라는 지적이 인상적입니다. 에이전트는 10~15초 간격으로 토큰을 소비하지만, 인간의 대기 시간은 분~시간 단위입니다. 그 사이에 캐시가 만료되어 동일한 토큰을 반복 prefill하게 됩니다.
+특히 인간-에이전트 케이던스 미스매치가 cache thrashing의 근본 원인이라는 지적이 인상적입니다. 에이전트는 10\~15초 간격으로 토큰을 소비하지만, 인간의 대기 시간은 분\~시간 단위입니다. 그 사이에 캐시가 만료되어 동일한 토큰을 반복 prefill하게 됩니다.
 
 
 ## 검증된 인사이트

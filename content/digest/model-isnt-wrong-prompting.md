@@ -28,9 +28,9 @@ Anthropic의 에이전트 가이드를 인용하여, 한 시간 만에 'prompt�
 DeepSeek R1은 think 태그 안에 reasoning chain을 생성하도록 학습되었습니다. 이제 외부에서 'think step by step'을 붙일 필요가 없어졌습니다 — CoT가 prompt 기법에서 모델의 기본 행동으로 변한 변곡점이옵니다.
 
 
-### Few-shot은 1~2개로 충분, 그 이상은 역효과
+### Few-shot은 1\~2개로 충분, 그 이상은 역효과
 
-예시 개수 대비 성능 그래프는 거의 항상 빠르게 plateau에 도달하고, 어느 시점부터 오히려 성능을 떨어뜨립니다. 다양한 입력을 커버하는 1~2개 예시면 충분하다는 것이지요.
+예시 개수 대비 성능 그래프는 거의 항상 빠르게 plateau에 도달하고, 어느 시점부터 오히려 성능을 떨어뜨립니다. 다양한 입력을 커버하는 1\~2개 예시면 충분하다는 것이지요.
 
 
 ### Reasoning Model에서는 모든 것이 정반대
@@ -77,7 +77,7 @@ Minimal prompt + 명확한 task description — 군더더기를 제거하고, �
 필요 시 reasoning을 더 격려 — 'quick response'보다 '더 사고하라'가 우월합니다. 마지막 1%를 짜낼 때 유효합니다.
 
 
-Few-shot 회피, 쓰더라도 1~2개 — 추가 컨텍스트가 reasoning model을 over-complicate시키고 혼란에 빠뜨립니다.
+Few-shot 회피, 쓰더라도 1\~2개 — 추가 컨텍스트가 reasoning model을 over-complicate시키고 혼란에 빠뜨립니다.
 
 
 Reasoning 방법을 prompt로 지시하지 말 것 — 모델에 내장된 reasoning을 외부 prompt가 덮어쓰면 정확도가 떨어집니다.
