@@ -4,6 +4,7 @@ date: 2026-04-29T16:50:00+09:00
 tags: ["금융수학", "옵션", "역가우시안", "내재변동성"]
 categories: ["다이제스트"]
 summary: "50년간 수치 탐색으로만 풀리던 블랙-숄즈 내재 변동성을 역가우시안 분위수 함수 한 번으로 직접 계산하는 닫힌 형태의 해가 최초로 제시되었다."
+math: true
 ShowToc: true
 TocOpen: false
 ---
@@ -90,6 +91,12 @@ $$\sigma(K{=}F,\,C) = \frac{2}{\sqrt{T}}\,\Phi^{-1}\!\left(\frac{c+1}{2}\right)$
 | $k = \ln(K/F)$ | 로그 머니니스 |
 | $\Phi^{-1}$ | 표준정규 분위수 함수 |
 | $\mathcal{F}_{\text{IG}}^{-1}(\cdot;\mu,\lambda)$ | 역가우시안 분위수 함수 |
+
+## 인터랙티브 시각화
+
+슬라이더를 움직이면 파란 선(블랙-숄즈 콜 가격)과 빨간 점(역가우시안 생존 확률)이 정확히 겹치는 것을 확인할 수 있다. 주황색 수직선이 닫힌 형태 공식으로 복원한 $\sigma$다.
+
+<iframe src="https://pages.eiaserinnys.me/p/75d040d1c2b2" width="100%" height="1600" style="border: none; border-radius: 12px; margin: 1rem 0;" loading="lazy"></iframe>
 
 ## 가장 흥미로운 지점
 
