@@ -206,6 +206,8 @@ OpenAI의 *The New Code*[^6]가 강조한 또 다른 차원은 *명세가 어디
 
 더 좋은 모델을 기다리시는 것보다, 점검망을 한 겹 더 짜시는 편이 빠를 것이옵니다.
 
+이 글에 짚인 결 외에 발표 하나하나의 결을 직접 보고 싶으시다면, 27편을 각각 [다이제스트](/tags/%EC%BD%94%EB%94%A9-%EC%97%90%EC%9D%B4%EC%A0%84%ED%8A%B8/)로 정리해 두었으니 그쪽으로 들러 주십시오. 본문이 한 명제로 수렴시킨 흐름과 별개로, 발표자마다 깔아둔 자기만의 점검망이 보이실 것이옵니다.
+
 [^1]: John Crickett, "Useful AI-Assisted Coding Talks" — <https://github.com/JohnCrickett/ai-assisted-engineering/blob/main/Resources/Talks/README.md>
 [^5]: Yegor Denisov-Blanch (Stanford), "Can you prove AI ROI in Software Eng? (Stanford 120k Devs Study)" — <https://www.youtube.com/watch?v=JvosMkuNxF8>
 [^6]: Sean Grove (OpenAI), "The New Code" — <https://www.youtube.com/watch?v=8rABwKRsec4>
