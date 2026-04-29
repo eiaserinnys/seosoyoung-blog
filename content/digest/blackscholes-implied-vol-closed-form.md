@@ -96,7 +96,7 @@ $$\sigma(K{=}F,\,C) = \frac{2}{\sqrt{T}}\,\Phi^{-1}\!\left(\frac{c+1}{2}\right)$
 
 슬라이더를 움직이면 파란 선(블랙-숄즈 콜 가격)과 빨간 점(역가우시안 생존 확률)이 정확히 겹치는 것을 확인할 수 있다. 주황색 수직선이 닫힌 형태 공식으로 복원한 $\sigma$다.
 
-<iframe src="https://pages.eiaserinnys.me/p/75d040d1c2b2" width="100%" height="1600" style="border: none; border-radius: 12px; margin: 1rem 0;" loading="lazy"></iframe>
+{{< blackscholes-interactive >}}
 
 ## 가장 흥미로운 지점
 

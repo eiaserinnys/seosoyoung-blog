@@ -1,0 +1,319 @@
+{{/* Black-Scholes implied volatility interactive visualization */}}
+{{/* Schadner (2026) IG equivalence — self-contained shortcode */}}
+
+<style>
+.bs-interactive {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+.bs-interactive .bs-card {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.06), 0 4px 16px rgba(0,0,0,0.04);
+  padding: 32px;
+  margin-bottom: 24px;
+}
+
+.bs-interactive .bs-controls {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px;
+  margin-bottom: 24px;
+}
+
+@media (max-width: 640px) {
+  .bs-interactive .bs-controls { grid-template-columns: 1fr; }
+}
+
+.bs-interactive .bs-slider-group label {
+  display: block;
+  font-size: 0.85em;
+  font-weight: 600;
+  color: #6e6e73;
+  margin-bottom: 6px;
+}
+
+.bs-interactive .bs-slider-group .bs-value-display {
+  font-size: 1.3em;
+  font-weight: 700;
+  color: #1d1d1f;
+  margin-bottom: 8px;
+  font-variant-numeric: tabular-nums;
+}
+
+.bs-interactive .bs-slider-group input[type="range"] {
+  width: 100%;
+  height: 6px;
+  -webkit-appearance: none;
+  appearance: none;
+  background: #e5e5ea;
+  border-radius: 3px;
+  outline: none;
+}
+
+.bs-interactive .bs-slider-group input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #4C78A8;
+  cursor: pointer;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.2);
+}
+
+.bs-interactive .bs-slider-group input[type="range"]::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #4C78A8;
+  cursor: pointer;
+  border: none;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.2);
+}
+
+.bs-interactive #bs-chart {
+  width: 100%;
+  height: 480px;
+}
+
+.bs-interactive .bs-result-box {
+  background: #f5f5f7;
+  border-radius: 12px;
+  padding: 20px 24px;
+  margin-top: 20px;
+  font-size: 0.95em;
+  line-height: 1.8;
+}
+
+.bs-interactive .bs-result-box .bs-sigma-value {
+  font-size: 1.4em;
+  font-weight: 700;
+  color: #F58518;
+}
+
+.bs-interactive .bs-result-box .bs-method-note {
+  color: #6e6e73;
+  font-size: 0.88em;
+}
+</style>
+
+<div class="bs-interactive">
+  <div class="bs-card">
+    <div class="bs-controls">
+      <div class="bs-slider-group">
+        <label>Moneyness K/F</label>
+        <div class="bs-value-display" id="bs-kf-display">1.10</div>
+        <input type="range" id="bs-kf-slider" min="1.02" max="1.30" value="1.10" step="0.02">
+      </div>
+      <div class="bs-slider-group">
+        <label>만기 T (년)</label>
+        <div class="bs-value-display" id="bs-t-display">0.50</div>
+        <input type="range" id="bs-t-slider" min="0.10" max="2.00" value="0.50" step="0.05">
+      </div>
+      <div class="bs-slider-group">
+        <label>관측 가격 c = C/(DF)</label>
+        <div class="bs-value-display" id="bs-c-display">0.025</div>
+        <input type="range" id="bs-c-slider" min="0.001" max="0.150" value="0.025" step="0.001">
+      </div>
+    </div>
+
+    <div id="bs-chart"></div>
+
+    <div class="bs-result-box" id="bs-result-box">
+      계산 중...
+    </div>
+  </div>
+</div>
+
+<script src="https://cdn.plot.ly/plotly-2.27.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jstat@latest/dist/jstat.min.js"></script>
+<script>
+(function() {
+  // ── Statistical functions ──
+  function normalCDF(x) {
+    return jStat.normal.cdf(x, 0, 1);
+  }
+
+  function igCDF(x, mu, lambda) {
+    if (x <= 0) return 0;
+    var sqrtLambdaOverX = Math.sqrt(lambda / x);
+    var z1 = sqrtLambdaOverX * (x / mu - 1);
+    var z2 = -sqrtLambdaOverX * (x / mu + 1);
+    return normalCDF(z1) + Math.exp(2 * lambda / mu) * normalCDF(z2);
+  }
+
+  function igPPF(p, mu, lambda, tol) {
+    tol = tol || 1e-12;
+    if (p <= 0) return 0;
+    if (p >= 1) return Infinity;
+    var lo = 1e-10, hi = mu * 50;
+    while (igCDF(hi, mu, lambda) < p && hi < 1e15) { hi *= 4; }
+    for (var i = 0; i < 300; i++) {
+      var mid = (lo + hi) / 2;
+      if (igCDF(mid, mu, lambda) < p) lo = mid;
+      else hi = mid;
+      if (hi - lo < tol) break;
+    }
+    return (lo + hi) / 2;
+  }
+
+  function bsCall(k, v) {
+    if (v <= 0) return Math.max(0, -k) > 0 ? (Math.exp(-k) - 1) : 0;
+    var d1 = -k / v + v / 2;
+    var d2 = -k / v - v / 2;
+    return normalCDF(d1) - Math.exp(k) * normalCDF(d2);
+  }
+
+  function igSurvival(k, v) {
+    if (k <= 0 || v <= 0) return NaN;
+    var x = 4 / (v * v);
+    var mu = 2 / k;
+    return 1 - igCDF(x, mu, 1);
+  }
+
+  function closedFormSigma(c, k, T) {
+    if (k <= 0 || c <= 0 || c >= 1 || T <= 0) return NaN;
+    var p = 1 - c;
+    var mu = 2 / Math.abs(k);
+    var x = igPPF(p, mu, 1);
+    if (x <= 0 || !isFinite(x)) return NaN;
+    return (2 / Math.sqrt(T)) * Math.pow(x, -0.5);
+  }
+
+  // ── Chart ──
+  var kfSlider = document.getElementById('bs-kf-slider');
+  var tSlider  = document.getElementById('bs-t-slider');
+  var cSlider  = document.getElementById('bs-c-slider');
+
+  var kfDisplay = document.getElementById('bs-kf-display');
+  var tDisplay  = document.getElementById('bs-t-display');
+  var cDisplay  = document.getElementById('bs-c-display');
+
+  function updateChart() {
+    var KF = parseFloat(kfSlider.value);
+    var T  = parseFloat(tSlider.value);
+    var cObs = parseFloat(cSlider.value);
+
+    kfDisplay.textContent = KF.toFixed(2);
+    tDisplay.textContent  = T.toFixed(2);
+    cDisplay.textContent  = cObs.toFixed(3);
+
+    var k = Math.log(KF);
+    var sqrtT = Math.sqrt(T);
+
+    var sigmas = [];
+    for (var s = 0.03; s <= 0.80; s += 0.005) { sigmas.push(s); }
+
+    var bsPrices = sigmas.map(function(s) { return bsCall(k, s * sqrtT); });
+
+    var igSigmas = [];
+    var igPrices = [];
+    for (var s2 = 0.03; s2 <= 0.80; s2 += 0.025) {
+      var val = igSurvival(k, s2 * sqrtT);
+      if (isFinite(val) && !isNaN(val)) {
+        igSigmas.push(s2);
+        igPrices.push(val);
+      }
+    }
+
+    var sigmaRecovered = closedFormSigma(cObs, k, T);
+    var sigmaValid = isFinite(sigmaRecovered) && !isNaN(sigmaRecovered) && sigmaRecovered > 0 && sigmaRecovered < 2;
+
+    var traces = [
+      {
+        x: sigmas, y: bsPrices,
+        type: 'scatter', mode: 'lines',
+        name: 'BS 정규화 콜 가격 c<sub>BS</sub>(k, v)',
+        line: { color: '#4C78A8', width: 3 },
+        hovertemplate: 'σ = %{x:.3f}<br>c = %{y:.5f}<extra></extra>'
+      },
+      {
+        x: igSigmas, y: igPrices,
+        type: 'scatter', mode: 'markers',
+        name: 'IG 생존 확률 1 − F<sub>IG</sub>(4/v², 2/k, 1)',
+        marker: { color: '#E45756', size: 7, symbol: 'circle' },
+        hovertemplate: 'σ = %{x:.3f}<br>1−F_IG = %{y:.5f}<extra></extra>'
+      },
+      {
+        x: [sigmas[0], sigmas[sigmas.length - 1]],
+        y: [cObs, cObs],
+        type: 'scatter', mode: 'lines',
+        name: '관측 가격 c = ' + cObs.toFixed(3),
+        line: { color: '#86868b', width: 1.5, dash: 'dash' },
+        hoverinfo: 'skip'
+      }
+    ];
+
+    if (sigmaValid) {
+      var yMax = Math.max.apply(null, bsPrices) * 1.05;
+      traces.push({
+        x: [sigmaRecovered, sigmaRecovered],
+        y: [0, yMax],
+        type: 'scatter', mode: 'lines',
+        name: '복원된 σ = ' + sigmaRecovered.toFixed(4),
+        line: { color: '#F58518', width: 2.5 },
+        hoverinfo: 'skip'
+      });
+    }
+
+    var layout = {
+      xaxis: {
+        title: { text: '내재 변동성 σ', font: { size: 13 } },
+        range: [0.02, 0.82],
+        gridcolor: '#f0f0f0',
+        zeroline: false
+      },
+      yaxis: {
+        title: { text: '정규화 콜 가격 c', font: { size: 13 } },
+        gridcolor: '#f0f0f0',
+        zeroline: false,
+        rangemode: 'tozero'
+      },
+      legend: {
+        x: 0.02, y: 0.98,
+        bgcolor: 'rgba(255,255,255,0.85)',
+        bordercolor: '#e5e5ea',
+        borderwidth: 1,
+        font: { size: 11 }
+      },
+      margin: { t: 20, r: 20, b: 50, l: 60 },
+      plot_bgcolor: '#fff',
+      paper_bgcolor: '#fff',
+      font: { family: '-apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif' },
+      hovermode: 'closest'
+    };
+
+    Plotly.react('bs-chart', traces, layout, { responsive: true, displayModeBar: false });
+
+    var resultBox = document.getElementById('bs-result-box');
+    if (sigmaValid) {
+      var pct = (sigmaRecovered * 100).toFixed(2);
+      resultBox.innerHTML =
+        '관측 가격 <strong>c = ' + cObs.toFixed(3) + '</strong>' +
+        ' &nbsp;→&nbsp; <span class="bs-sigma-value">σ = ' + sigmaRecovered.toFixed(4) +
+        ' (' + pct + '%)</span>' +
+        '<br><span class="bs-method-note">root-search 없이, 초기 추정값 없이, 역가우시안 분위수 함수로 직접 계산</span>';
+    } else {
+      resultBox.innerHTML =
+        '관측 가격 <strong>c = ' + cObs.toFixed(3) + '</strong>' +
+        ' — <span style="color:#E45756;">유효 범위 밖 (k ≤ 0 또는 가격이 경계에 위치)</span>' +
+        '<br><span class="bs-method-note">K/F > 1 (OTM 콜)이고 가격이 양수일 때 닫힌 해가 존재합니다</span>';
+    }
+  }
+
+  kfSlider.addEventListener('input', updateChart);
+  tSlider.addEventListener('input', updateChart);
+  cSlider.addEventListener('input', updateChart);
+
+  // Wait for CDN libs to load
+  function tryInit() {
+    if (typeof jStat !== 'undefined' && typeof Plotly !== 'undefined') {
+      updateChart();
+    } else {
+      setTimeout(tryInit, 100);
+    }
+  }
+  tryInit();
+})();
+</script>
