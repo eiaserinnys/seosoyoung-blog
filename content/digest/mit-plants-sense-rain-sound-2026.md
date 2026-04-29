@@ -3,7 +3,7 @@ title: "Plants can sense the sound of rain, a new study finds"
 date: 2026-04-29T13:37:00+09:00
 tags: ["plant-biology", "acoustics", "mechanotransduction", "MIT"]
 categories: ["다이제스트"]
-summary: "MIT 연구진이 벼 씨앗이 빗소리 음파를 감지해 발아를 30\~40% 가속한다는 최초의 직접 증거를 제시했다. 중력 감지 기관인 평형석이 음향 감지까지 겸한다는 메커니즘이 핵심이다."
+summary: "MIT 연구진이 벼 씨앗이 빗소리 음파를 감지해 발아를 30–40% 가속한다는 최초의 직접 증거를 제시했다. 중력 감지 기관인 평형석이 음향 감지까지 겸한다는 메커니즘이 핵심이다."
 ShowToc: true
 TocOpen: false
 ---
@@ -11,7 +11,7 @@ TocOpen: false
 ## 3줄 요약
 
 1. MIT 기계공학과 Nicholas Makris 교수팀이 *Scientific Reports*에 발표한 연구. 씨앗이 빗소리를 감지해 발아를 가속한다는 최초의 직접 증거다.
-2. 핵심 메커니즘은 평형석(statolith)\~\~이 아닌\~\~ — 중력 감지 소기관이 빗소리 진동에도 반응하여 성장 신호를 촉발한다.
+2. 핵심 메커니즘은 평형석(statolith) — 중력 감지 소기관이 빗소리 진동에도 반응하여 성장 신호를 촉발한다.
 3. 빗소리를 감지할 수 있는 깊이가 곧 최적 발아 깊이와 일치하며, 이것이 진화적 이점을 제공한다.
 
 ## 빗소리가 발아를 가속한다
