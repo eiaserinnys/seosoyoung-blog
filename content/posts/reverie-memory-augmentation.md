@@ -32,7 +32,7 @@ cover:
 Reverie의 핵심은 MemoryLink 알고리즘이다. HippoRAG2의 해마 모델에서 영감을 받아, <strong>개체(entity)</strong>와 <strong>구절(passage)</strong>을 잇는 이분 그래프를 구성한다. 물론 실제 해마는 이분 그래프보다 훨씬 복잡하다 — 여기서 빌려 온 건 "색인 구조를 통한 연상 검색"이라는 기능적 아이디어이지, 생물학적 충실성은 아니다.
 
 <figure>
-<img src="https://pub-236dc9dc170e487faec4c8b5e2d084c6.r2.dev/pages/reverie-memory/diagram-overview.png" alt="MemoryLink 전체 구조" style="width:100%; border-radius:8px;">
+<img src="/images/diagram-overview.png" alt="MemoryLink 전체 구조" style="width:100%;">
 <figcaption>MemoryLink 전체 구조 — 인덱싱 단계에서 세션을 파싱하여 이분 그래프를 구축하고, 검색 단계에서 쿼리 NER + PageRank + KNN을 혼합 결합한 뒤 LLM으로 결과를 정제한다.</figcaption>
 </figure>
 
@@ -41,7 +41,7 @@ Reverie의 핵심은 MemoryLink 알고리즘이다. HippoRAG2의 해마 모델�
 한쪽 노드는 개체 — `claude code`, `authentication`, `oauth` 같은 이름 붙은 개념들. 다른 쪽은 구절 — 실제 대화에서 잘라낸 1\~3턴짜리 발췌문. 간선은 "이 구절에 이 개체가 등장한다"는 관계를 나타낸다.
 
 <figure>
-<img src="https://pub-236dc9dc170e487faec4c8b5e2d084c6.r2.dev/pages/reverie-memory/diagram-bipartite.png" alt="이분 그래프 구조" style="width:100%; border-radius:8px;">
+<img src="/images/diagram-bipartite.png" alt="이분 그래프 구조" style="width:100%;">
 <figcaption>이분 그래프 구조 — 개체와 구절이 등장 관계로 연결된다.</figcaption>
 </figure>
 
@@ -56,7 +56,7 @@ $$\tilde{A} = \begin{bmatrix} 0 & C^T \\\\ C & A \end{bmatrix}$$
 쿼리가 들어오면 다섯 단계를 거친다:
 
 <figure>
-<img src="https://pub-236dc9dc170e487faec4c8b5e2d084c6.r2.dev/pages/reverie-memory/diagram-retrieval.png" alt="검색 처리 흐름" style="width:100%; border-radius:8px;">
+<img src="/images/diagram-retrieval.png" alt="검색 처리 흐름" style="width:100%;">
 <figcaption>검색 처리 흐름 — 쿼리 NER(병목 1)에서 씨앗을 찾고, PPR + KNN으로 관련 구절을 발견한 뒤, LLM 결과 정제(병목 2)를 거친다. 총 지연 5~15초.</figcaption>
 </figure>
 
@@ -89,7 +89,7 @@ $$\text{score} = \beta \cdot \text{ppr\_norm} + (1-\beta) \cdot \text{knn\_norm}
 목록으로 적으면 담백하지만, 실제로는 각각이 이틀씩 잡아먹은 것들이다.
 
 <figure>
-<img src="https://pub-236dc9dc170e487faec4c8b5e2d084c6.r2.dev/pages/reverie-memory/reverie-dashboard.png" alt="Reverie 대시보드" style="width:100%; border-radius:8px;">
+<img src="/images/reverie-dashboard.png" alt="Reverie 대시보드" style="width:100%;">
 <figcaption>Reverie 대시보드. 중앙의 그래프 뷰에서 개체(노드)와 구절(간선) 사이의 관계를 시각적으로 탐색한다. — 출처: <a href="https://github.com/eiaserinnys/reverie">github.com/eiaserinnys/reverie</a></figcaption>
 </figure>
 
