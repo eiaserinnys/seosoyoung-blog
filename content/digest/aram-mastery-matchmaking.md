@@ -2,8 +2,10 @@
 title: "시그니처 챔프를 잡으면 적이 더 세진다 — 칼바람 숙련도 매칭 분석"
 date: 2026-05-01T10:15:00+09:00
 draft: true
-tags: ["데이터 분석", "LoL", "게임 메커니즘", "에디토리얼"]
-categories: ["에세이"]
+tags: ["데이터 분석", "LoL", "게임 메커니즘"]
+categories: ["다이제스트"]
+ShowToc: true
+TocOpen: false
 summary: "110판 723명 전수 조사에서 관찰된 칼바람 매치메이킹 패턴. '센 느낌'은 착각이 아니었다."
 cover:
   image: "/images/cover-aram-mastery-matchmaking.jpg"
