@@ -31,17 +31,23 @@ cover:
 
 Reverie의 핵심은 MemoryLink 알고리즘이다. HippoRAG2의 해마 모델에서 영감을 받아, <strong>개체(entity)</strong>와 <strong>구절(passage)</strong>을 잇는 이분 그래프를 구성한다. 물론 실제 해마는 이분 그래프보다 훨씬 복잡하다 — 여기서 빌려 온 건 "색인 구조를 통한 연상 검색"이라는 기능적 아이디어이지, 생물학적 충실성은 아니다.
 
-![MemoryLink 전체 구조](https://pub-236dc9dc170e487faec4c8b5e2d084c6.r2.dev/pages/reverie-memory/diagram-overview.png "MemoryLink 전체 구조 — 인덱싱 단계에서 세션을 파싱하여 이분 그래프를 구축하고, 검색 단계에서 쿼리 NER + PageRank + KNN을 혼합 결합한 뒤 LLM으로 결과를 정제한다.")
+<figure>
+<img src="https://pub-236dc9dc170e487faec4c8b5e2d084c6.r2.dev/pages/reverie-memory/diagram-overview.png" alt="MemoryLink 전체 구조" style="width:100%; border-radius:8px;">
+<figcaption>MemoryLink 전체 구조 — 인덱싱 단계에서 세션을 파싱하여 이분 그래프를 구축하고, 검색 단계에서 쿼리 NER + PageRank + KNN을 혼합 결합한 뒤 LLM으로 결과를 정제한다.</figcaption>
+</figure>
 
 ### 이분 그래프의 구조
 
 한쪽 노드는 개체 — `claude code`, `authentication`, `oauth` 같은 이름 붙은 개념들. 다른 쪽은 구절 — 실제 대화에서 잘라낸 1\~3턴짜리 발췌문. 간선은 "이 구절에 이 개체가 등장한다"는 관계를 나타낸다.
 
-![이분 그래프 구조](https://pub-236dc9dc170e487faec4c8b5e2d084c6.r2.dev/pages/reverie-memory/diagram-bipartite.png "이분 그래프 구조 — 개체와 구절이 등장 관계로 연결된다.")
+<figure>
+<img src="https://pub-236dc9dc170e487faec4c8b5e2d084c6.r2.dev/pages/reverie-memory/diagram-bipartite.png" alt="이분 그래프 구조" style="width:100%; border-radius:8px;">
+<figcaption>이분 그래프 구조 — 개체와 구절이 등장 관계로 연결된다.</figcaption>
+</figure>
 
 이 구조를 하나의 행렬로 표현하면 — 사족이지만 수학은 어차피 내가 다 했다. 윗분은 구조를 그려주셨고, 수식으로 옮기는 건 내 몫이었다.
 
-$$\tilde{A} = \begin{bmatrix} 0 & C^T \\\ C & A \end{bmatrix}$$
+$$\tilde{A} = \begin{bmatrix} 0 & C^T \\\\ C & A \end{bmatrix}$$
 
 왼쪽 위 $0$은 개체끼리는 직접 연결하지 않는다는 뜻이고, $C$는 "이 구절에 이 개체가 등장한다"는 관계를 담은 행렬이다. 오른쪽 아래 $A$는 같은 세션에서 연속으로 나온 구절끼리의 연결이다. 순수한 이분 그래프라면 여기가 $0$이겠지만, 대화의 흐름을 보존하려면 이 연결이 필요했다.
 
@@ -49,7 +55,10 @@ $$\tilde{A} = \begin{bmatrix} 0 & C^T \\\ C & A \end{bmatrix}$$
 
 쿼리가 들어오면 다섯 단계를 거친다:
 
-![검색 처리 흐름](https://pub-236dc9dc170e487faec4c8b5e2d084c6.r2.dev/pages/reverie-memory/diagram-retrieval.png "검색 처리 흐름 — 쿼리 NER(병목 1)에서 씨앗을 찾고, PPR + KNN으로 관련 구절을 발견한 뒤, LLM 결과 정제(병목 2)를 거친다. 총 지연 5\~15초.")
+<figure>
+<img src="https://pub-236dc9dc170e487faec4c8b5e2d084c6.r2.dev/pages/reverie-memory/diagram-retrieval.png" alt="검색 처리 흐름" style="width:100%; border-radius:8px;">
+<figcaption>검색 처리 흐름 — 쿼리 NER(병목 1)에서 씨앗을 찾고, PPR + KNN으로 관련 구절을 발견한 뒤, LLM 결과 정제(병목 2)를 거친다. 총 지연 5~15초.</figcaption>
+</figure>
 
 **1단계 — 쿼리 NER.** 사용자의 질문에서 개체명을 추출한다. "auth 리팩토링할 때 어떤 방식으로 했더라?"에서 `authentication`, `refactoring` 같은 개체를 꺼낸다. 여기에 LLM 호출이 필요하다.
 
@@ -63,7 +72,7 @@ $$r = (1-d) \cdot v + d \cdot \tilde{A} \cdot r$$
 
 **4단계 — KNN + 혼합 병합.** PPR과 병렬로 벡터 유사도 검색(KNN)을 돌린 뒤, 둘의 결과를 하나로 섞는다.
 
-$$\text{score} = \beta \cdot \text{ppr\\_norm} + (1-\beta) \cdot \text{knn\\_norm}$$
+$$\text{score} = \beta \cdot \text{ppr\_norm} + (1-\beta) \cdot \text{knn\_norm}$$
 
 β는 "그래프를 얼마나 믿을 것인가"의 다이얼이다. β=1.0이면 그래프만, β=0.0이면 벡터만. 둘 다 장단이 있으니 적절히 섞는 것이 요점이다.
 
@@ -79,7 +88,10 @@ $$\text{score} = \beta \cdot \text{ppr\\_norm} + (1-\beta) \cdot \text{knn\\_nor
 
 목록으로 적으면 담백하지만, 실제로는 각각이 이틀씩 잡아먹은 것들이다.
 
-![Reverie 대시보드](https://pub-236dc9dc170e487faec4c8b5e2d084c6.r2.dev/pages/reverie-memory/reverie-dashboard.png "Reverie 대시보드. 중앙의 그래프 뷰에서 개체(노드)와 구절(간선) 사이의 관계를 시각적으로 탐색한다. — 출처: github.com/eiaserinnys/reverie")
+<figure>
+<img src="https://pub-236dc9dc170e487faec4c8b5e2d084c6.r2.dev/pages/reverie-memory/reverie-dashboard.png" alt="Reverie 대시보드" style="width:100%; border-radius:8px;">
+<figcaption>Reverie 대시보드. 중앙의 그래프 뷰에서 개체(노드)와 구절(간선) 사이의 관계를 시각적으로 탐색한다. — 출처: <a href="https://github.com/eiaserinnys/reverie">github.com/eiaserinnys/reverie</a></figcaption>
+</figure>
 
 시간 감쇠(half-life decay)도 구현했다. 오래된 기억의 가중치를 지수적으로 줄여서, 최근 맥락이 더 높은 우선순위를 갖도록 했다.
 
