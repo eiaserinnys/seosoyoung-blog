@@ -34,13 +34,13 @@ LLM은 "서울의 수도는?", "아인슈타인의 생일은?" 같은 단순 연
 
 메모리 검색 결과(y)를 입력 신호(x)로 게이팅하여, 메모리에서 꺼낸 정보를 현재 맥락에 맞게 조절한다. 대규모 메모리에서 발생하는 학습 불안정성은 qk-normalization으로 해결한다.
 
-![Memory+ 블록 아키텍처. 왼쪽이 기본 메모리 레이어, 오른쪽이 게이팅과 SiLU가 추가된 Memory+ 블록.](https://pages-assets.eiaserinnys.me/digest/memory-layers-at-scale/fig3_memory_plus.png)
+![Memory+ 블록 아키텍처. 왼쪽이 기본 메모리 레이어, 오른쪽이 게이팅과 SiLU가 추가된 Memory+ 블록.](/images/digest/memory-layers-at-scale/fig3_memory_plus.png)
 
 ### 병렬 EmbeddingBag 구현
 
 메모리 레이어의 핵심 연산은 FLOP이 아니라 **메모리 대역폭**에 병목이 걸린다. 저자들은 커스텀 CUDA 커널을 구현하여 순전파에서 H100의 이론 대역폭(3.35TB/s)에 근접한 3TB/s를 달성했다. PyTorch 기본 EmbeddingBag 대비 **6배 빠르다.**
 
-![병렬 EmbeddingBag 구현. 각 GPU가 전체 인덱스에 대해 자기 샤드의 절반 차원 임베딩만 처리하고 교환한다.](https://pages-assets.eiaserinnys.me/digest/memory-layers-at-scale/fig2_parallel.png)
+![병렬 EmbeddingBag 구현. 각 GPU가 전체 인덱스에 대해 자기 샤드의 절반 차원 임베딩만 처리하고 교환한다.](/images/digest/memory-layers-at-scale/fig2_parallel.png)
 
 ### 공유 메모리 풀
 
@@ -52,7 +52,7 @@ LLM은 "서울의 수도는?", "아인슈타인의 생일은?" 같은 단순 연
 
 1.3B 베이스 모델에서 메모리 크기를 0에서 128B 파라미터까지 키우면, 사실 QA 정확도가 예측 가능한 로그-선형 관계로 꾸준히 상승한다. **64M 키(128B 메모리 파라미터)에서 2T 토큰으로 훈련한 Llama2 7B의 성능에 근접**하는데, 이는 10배 적은 FLOP으로 달성한 것이다.
 
-![메모리 크기별 성능 스케일링. 왼쪽: 사실 QA 정확도, 오른쪽: NLL. 점선은 7B 모델 성능.](https://pages-assets.eiaserinnys.me/digest/memory-layers-at-scale/fig1_scaling.png)
+![메모리 크기별 성능 스케일링. 왼쪽: 사실 QA 정확도, 오른쪽: NLL. 점선은 7B 모델 성능.](/images/digest/memory-layers-at-scale/fig1_scaling.png)
 
 ### 8B 스케일 결과
 
@@ -71,7 +71,7 @@ LLM은 "서울의 수도는?", "아인슈타인의 생일은?" 같은 단순 연
 
 같은 파라미터·컴퓨트 조건에서 Memory+는 MoE를 모든 벤치마크에서 능가하며, 사실 QA에서 격차가 가장 크다. MoE가 dense FFN의 변형인 반면, 메모리 레이어는 본질적으로 다른 메커니즘(희소 key-value 검색)이기 때문이다.
 
-![모델 크기별 Memory+, MoE, Dense 비교. NaturalQuestions와 TriviaQA 모두에서 Memory+가 일관되게 우위.](https://pages-assets.eiaserinnys.me/digest/memory-layers-at-scale/fig4_comparison.png)
+![모델 크기별 Memory+, MoE, Dense 비교. NaturalQuestions와 TriviaQA 모두에서 Memory+가 일관되게 우위.](/images/digest/memory-layers-at-scale/fig4_comparison.png)
 
 ## Dense와 Sparse의 상보성
 
