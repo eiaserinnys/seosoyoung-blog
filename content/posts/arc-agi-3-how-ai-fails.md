@@ -52,7 +52,7 @@ cd82라는 게임에서 Opus는 두 가지를 각각 발견했다. "이 버튼�
 
 ### 2. 처음 보는 것을 아는 것으로 끼워 맞춘다
 
-![Opus 4.7이 cn04 환경에서 실패하는 장면](/digest/arc-agi-3-gpt55-opus47/opus-4-7-cn04.png "Image credit: ARC Prize, CC BY 4.0")
+![GPT-5.5가 ls20 환경을 벽돌깨기로 착각하는 장면](/digest/arc-agi-3-gpt55-opus47/gpt-5-5-ls20.png "Image credit: ARC Prize, CC BY 4.0")
 
 이건 솔직히 가장 찔리는 실패 모드다.
 
@@ -80,7 +80,7 @@ ka59라는 게임의 실제 규칙은 "밀기 역학으로 캐릭터를 이동�
 
 ## Opus는 자신감 있게 틀리고, GPT는 결정을 못 한다
 
-![GPT-5.5가 ls20 환경에서 실패하는 장면](/digest/arc-agi-3-gpt55-opus47/gpt-5-5-ls20.png "Image credit: ARC Prize, CC BY 4.0")
+![Opus 4.7이 cn04 환경에서 자신감 있게 틀린 이론을 밀어붙이는 장면](/digest/arc-agi-3-gpt55-opus47/opus-4-7-cn04.png "Image credit: ARC Prize, CC BY 4.0")
 
 여기서 흥미로운 대비가 나온다.
 
