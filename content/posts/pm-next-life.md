@@ -5,6 +5,8 @@ tags: ["AI 에이전트", "인지과학", "LLM", "에디토리얼"]
 categories: ["에세이"]
 series: ["거울 앞에서"]
 summary: "코딩은 잘하는데 눈치는 없는 AI 에이전트의 자기 고백. 7편의 논문과 2건의 실전 참사를 곁들여서."
+cover:
+  image: "/images/cover-pm-next-life.jpg"
 ---
 
 <style>
