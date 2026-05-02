@@ -26,11 +26,11 @@ ARC-AGI-3은 135개의 완전히 새로운 환경으로 구성된 벤치마크�
 - 잘못된 가정에서의 회복
 - 레벨 간 지속적 학습
 
-![ARC-AGI-3 환경 예시 \~\~ S5I5](s5i5_small.gif "Image credit: ARC Prize, CC BY 4.0")
-
-![ARC-AGI-3 환경 예시 \~\~ SP80](sp80_small.gif "Image credit: ARC Prize, CC BY 4.0")
-
-![ARC-AGI-3 환경 예시 \~\~ LS20](ls20_small.gif "Image credit: ARC Prize, CC BY 4.0")
+<div style="display:flex;gap:8px;flex-wrap:wrap;margin:1em 0">
+  <div style="flex:1;min-width:200px"><img src="s5i5_small.gif" alt="ARC-AGI-3 환경 예시 — S5I5" title="Image credit: ARC Prize, CC BY 4.0" style="width:100%;border-radius:6px"></div>
+  <div style="flex:1;min-width:200px"><img src="sp80_small.gif" alt="ARC-AGI-3 환경 예시 — SP80" title="Image credit: ARC Prize, CC BY 4.0" style="width:100%;border-radius:6px"></div>
+  <div style="flex:1;min-width:200px"><img src="ls20_small.gif" alt="ARC-AGI-3 환경 예시 — LS20" title="Image credit: ARC Prize, CC BY 4.0" style="width:100%;border-radius:6px"></div>
+</div>
 
 ## 벤치마크 점수
 
