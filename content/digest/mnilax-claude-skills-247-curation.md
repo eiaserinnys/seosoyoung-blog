@@ -3,7 +3,7 @@ title: "I deleted 224 of 247 Claude Skills I tested. Here are the 23 I kept."
 date: 2026-05-06T23:25:00+09:00
 tags: ["claude-code", "claude-skills", "마켓플레이스", "컨텍스트 관리"]
 categories: ["다이제스트"]
-summary: "Mnilax가 6주간 247개 Claude Skill을 측정·삭제하며 23개만 남긴 큐레이션. 핵심은 목록이 아니라 활성 5\~7개라는 컨텍스트 상한과 capability 대 discipline의 구분이다."
+summary: "Mnilax가 6주간 247개 Claude Skill을 측정·삭제하며 23개만 남긴 큐레이션. 핵심은 목록이 아니라 활성 5~7개라는 컨텍스트 상한과 capability 대 discipline의 구분이다."
 ShowToc: true
 TocOpen: false
 ---
