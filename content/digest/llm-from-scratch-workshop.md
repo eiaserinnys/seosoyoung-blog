@@ -94,8 +94,6 @@ Loss 값이 모델의 학습 단계를 직접적으로 보여준다:
 
 16GB RAM 노트북이면 따라할 수 있다.
 
-📄 [다이제스트 페이지 (주요 장면 캡처 포함)](https://pages.eiaserinnys.me/p/52d810d56e9c)
-
 ## 출처
 
 Angelos Perivolaropoulos (ElevenLabs, Research Engineer, STT 팀 리드) · AI Engineer Europe Workshop
