@@ -78,6 +78,8 @@ Berger et al. (2024)이 양적 신호를 더한다. ChatGPT가 unexpected하게 
 
 기계 비용 ρ과 초기 지식 스톡 k₀에 따라 경제는 셋 중 하나로 수렴한다.
 
+![Figure 1: ρ과 k₀의 평면에서 LB / CL / FL 영역 (논문 p.20)](/images/ai-intergenerational-knowledge-2025/fig1-equilibrium-regimes.png)
+
 | 균형 | 조건 | 신입 노동 L\* | 임금 w\* | 출력 성장률 | 의미 |
 |---|---|---|---|---|---|
 | <strong>LB (Learning Breakdown)</strong> | ρ ≤ ρ̲ 또는 k₀ < k† | ρ/(c+μ) < 1−ν | μρ/(c+μ) > 0 | → 0 | 비명시 지식 스톡이 q^min으로 침식, 성장 정지 |
@@ -85,6 +87,8 @@ Berger et al. (2024)이 양적 신호를 더한다. ChatGPT가 unexpected하게 
 | <strong>FL (Full Learning)</strong> | ρ ≥ ρ̄ 그리고 k₀ > k† | N | 0 | (N + ν)^θ − 1 > 0 | 모든 루틴이 신입에게 배정, 최대 성장 |
 
 `ρ̲ ≡ c(1−ν)`, `ρ̄ ≡ cN`, `k† ≡ [(c+μ)(1−ν) − ρ]/[βθΓ(1−θ)]`은 모두 모델의 임계값이다.
+
+![Figure 2: ρ̲ < ρ < ρ̄에서 k\*와 w\*의 동학 — k₀가 임계값 k†를 가르는 갈림길 (논문 p.21)](/images/ai-intergenerational-knowledge-2025/fig2-equilibrium-dynamics.png)
 
 직관은 이렇다. 기계가 매우 싸면(ρ < ρ̲) 신입 임금이 0이 되어도 전문가는 신입 대신 기계를 쓴다 → 학습 기회 소실 → LB. 기계가 비싸지면(ρ > ρ̄) 전문가는 모든 루틴을 신입에게 맡긴다 → FL. 중간 영역(ρ̲ < ρ < ρ̄)에서는 *초기 지식 스톡*이 갈림길이다. k₀가 충분히 크면 첫 세대 신입이 학습 기회를 위해 매우 낮은 임금을 받아들이고 → 다음 세대가 더 숙련되고 → 그 다음 세대가 더 낮은 임금을 받아들이는 강화 사이클이 돌아 CL에 안착한다. k₀가 작으면 반대 방향의 음의 피드백 루프가 돌아 LB로 떨어진다.
 
@@ -122,6 +126,8 @@ Berger et al. (2024)이 양적 신호를 더한다. ChatGPT가 unexpected하게 
 | Acemoglu (a = 5%) | +0.71% | −1.15% | −3.76% | ~29년차 |
 | Aghion-Bunel (a = 30%) | +7.00% | −4.96% | −19.78% | ~35년차 |
 
+![Figure 3: 자동화 충격이 전문가 소득에 미치는 영향 — (a) CL 시작, (b) LB 시작 (논문 p.23)](/images/ai-intergenerational-knowledge-2025/fig3-automation-shock.png)
+
 해석은 분명하다. 현재 세대 전문가는 자동화 충격으로 즉시 이익을 얻지만, 한 세대를 지나면 *그 이익이 누적 손실로 뒤집힌다*. 적게 자동화한 시나리오일수록 손익분기가 빨리 오는데, 이는 적은 자동화가 짧은 기간 안에 작은 손실을 낳고, 큰 자동화는 큰 손실이 누적되는 데 더 오래 걸리기 때문이다.
 
 저자는 이 결과를 정식 calibration이 아니라 "back-of-the-envelope"로 명시한다. 모델은 새로운 junior 역할의 등장이나 AI가 혁신 자체를 가속하는 경로를 의도적으로 *제외*한다 — 그래야 entry-level 자동화의 *순수* 효과가 보이기 때문이다.
@@ -132,6 +138,8 @@ Berger et al. (2024)이 양적 신호를 더한다. ChatGPT가 unexpected하게 
 
 - <strong>자동화.</strong> 신입을 displace한다. 모델 안에서는 ρ 감소로 표현. 단기 이익 + 장기 손실의 트레이드오프.
 - <strong>노동 보강.</strong> 신입의 생산성을 높인다. 모델 안에서는 감독 비용 c 감소로 표현. 단기 이익 + *장기 성장 강화*. 트레이드오프가 없다.
+
+![Figure 4: 노동 보강 기술의 영향 — 감독 비용 c 감소가 단기·장기 모두 이익을 만든다 (논문 p.25)](/images/ai-intergenerational-knowledge-2025/fig4-augmentation.png)
 
 문제는 현재 기업이 생성 AI를 주로 *자동화* 도구로 보고 있다는 것이다. WEF (2025) Future of Jobs Survey에 따르면 인간 단독 수행 업무는 44% → 33%, 완전 자동화는 22% → 34%, 인간-기계 협업은 30% → 33%로 예측된다. 협업은 거의 늘지 않는다.
 
@@ -152,6 +160,8 @@ Berger et al. (2024)이 양적 신호를 더한다. ChatGPT가 unexpected하게 
 | 결과 | 같음: 비명시 지식 스톡 침식 | 같음: 비명시 지식 스톡 침식 |
 
 두 메커니즘은 *다른 방향에서 같은 결과*를 만든다.
+
+![Figure 5: AI 코파일럿이 있을 때의 장기 균형 — LB가 MLB로 바뀌고, 일부 CL 영역이 MLB로 전환된다 (논문 p.35)](/images/ai-intergenerational-knowledge-2025/fig5-copilots-regimes.png)
 
 ### 불투명성이 잠식의 본질이다
 
@@ -204,4 +214,4 @@ a = 5%의 비교적 보수적인 자동화로도 약 29년 안에 단기 이익�
 원문: <https://arxiv.org/abs/2507.16078>
 PDF: <https://arxiv.org/pdf/2507.16078v3>
 
-본 자료의 그래프 4장은 PDF 내부에 매립되어 외부 인용 URL이 없다. 도표를 직접 보고 싶다면 위 PDF 링크의 19, 21, 23, 25, 35페이지를 참고하면 된다.
+본문에 인용한 5장의 그래프(Figure 1\~5)는 모두 원 PDF에서 추출하여 게시했다. 캡션의 일부 *Notes* 문단은 분량상 잘랐으니, 원문 그대로 보고 싶다면 위 PDF 링크의 20, 21, 23, 25, 35페이지를 참고하면 된다.
