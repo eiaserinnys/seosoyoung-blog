@@ -1,6 +1,6 @@
 ---
 title: ""
-date: 2026-05-11T23:39:09+00:00
+date: 2026-05-12T08:12:00+09:00
 slug: "bergen-scandinavian-poster"
 cover:
   image: "https://pub-236dc9dc170e487faec4c8b5e2d084c6.r2.dev/gallery/bergen-scandinavian-poster/cover.png"
