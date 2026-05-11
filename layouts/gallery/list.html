@@ -1,0 +1,40 @@
+{{- define "main" }}
+
+{{- if .Title }}
+<header class="page-header">
+  {{- partial "breadcrumbs.html" . }}
+  <h1>{{ .Title }}</h1>
+  {{- if .Description }}
+  <div class="post-description">
+    {{ .Description | markdownify }}
+  </div>
+  {{- end }}
+</header>
+{{- end }}
+
+{{- if .Content }}
+<div class="md-content">{{ .Content }}</div>
+{{- end }}
+
+{{- $pages := .RegularPages }}
+{{- $paginator := .Paginate $pages }}
+
+<div class="gallery-grid">
+{{- range $paginator.Pages }}
+  {{- $cover := "" }}
+  {{- with .Params.cover }}
+    {{- $cover = .image }}
+  {{- end }}
+  {{- if $cover }}
+  <a class="gallery-cell" href="{{ .RelPermalink }}" aria-label="갤러리 항목">
+    <img src="{{ $cover }}" loading="lazy" alt="">
+  </a>
+  {{- end }}
+{{- end }}
+</div>
+
+{{- if gt $paginator.TotalPages 1 }}
+{{- partial "paginator.html" . }}
+{{- end }}
+
+{{- end }}{{/* end main */}}

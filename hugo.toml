@@ -63,6 +63,11 @@ paginate = 10
     url = "/digest/"
     weight = 10
   [[menu.main]]
+    identifier = "gallery"
+    name = "갤러리"
+    url = "/gallery/"
+    weight = 15
+  [[menu.main]]
     identifier = "tags"
     name = "태그"
     url = "/tags/"

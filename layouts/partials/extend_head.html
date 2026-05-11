@@ -17,6 +17,32 @@
     box-shadow: 0 4px 24px rgba(0, 0, 0, 0.15);
   }
 </style>
+{{- if eq .Section "gallery" }}
+<style>
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 8px;
+    margin: 1.5rem 0;
+  }
+  .gallery-grid .gallery-cell {
+    display: block;
+    overflow: hidden;
+    border-radius: 6px;
+    background: var(--code-bg);
+  }
+  .gallery-grid .gallery-cell img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    display: block;
+    transition: transform .25s ease;
+  }
+  .gallery-grid .gallery-cell:hover img {
+    transform: scale(1.04);
+  }
+</style>
+{{- end }}
 {{ if .Params.math }}
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.21/dist/katex.min.css">
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.21/dist/katex.min.js"></script>
