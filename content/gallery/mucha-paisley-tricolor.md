@@ -5,7 +5,7 @@ slug: "mucha-paisley-tricolor"
 cover:
   image: "https://pub-236dc9dc170e487faec4c8b5e2d084c6.r2.dev/gallery/mucha-paisley-tricolor/cover.png"
   hiddenInList: false
-  focus: "50% 22%"
+  focus: "50% 12%"
 model: "gpt-image-2"
 mode: "edit"
 draft: false
