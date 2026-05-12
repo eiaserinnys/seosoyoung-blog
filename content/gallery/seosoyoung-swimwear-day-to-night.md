@@ -32,12 +32,12 @@ draft: false
 誌面には、時間帯ごとの見出し、キャッチコピー、短いテキストを配置してください。プロフィール欄は不要です。全体は「1日を一緒に過ごしたような気分になれる水着写真集」にしてください。
 ```
 
+## 출처
+
+[원본](https://x.com/coharrie_ai/status/2053309609742573796)
+
 ## 메모
 
 정식 image-to-image 변환. 윈도우 D:\Pictures\seosoyoung\서소영.png를 input으로 사용.
 프롬프트는 트윗 원문(일본어) 그대로 — 같은 인물 유지 + 4페이지 매거진 형식.
 gpt-image-2 /v1/images/edits 호출.
-
-## 출처
-
-[원본](https://x.com/coharrie_ai/status/2053309609742573796)

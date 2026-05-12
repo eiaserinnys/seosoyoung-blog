@@ -42,12 +42,12 @@ draft: false
 - print-ready, editorial reference sheet aesthetic
 ```
 
+## 출처
+
+[원본](https://x.com/gufutokuku999/status/2053000139275641034)
+
 ## 메모
 
 서소영 (포트레이트).png를 input으로 FACS Reference Grid를 변환 생성.
 정면샷은 직전에 gpt-image-2 generations로 1024x1024 생성 후 inputs/에 보관 (서소영의 표준 정면 레퍼런스).
 이번 카드: 그 정면샷을 시드로 9가지 표정 변환 시연. 원본 트윗은 FACS 시스템 소개·일람표.
-
-## 출처
-
-[원본](https://x.com/gufutokuku999/status/2053000139275641034)

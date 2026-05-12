@@ -25,12 +25,12 @@ draft: false
 - ネガティブスペース（白）を十分に活かす
 ```
 
+## 출처
+
+[원본](https://x.com/notoro_ai/status/2053082564865528087)
+
 ## 메모
 
 정식 image-to-image 변환. 윈도우 D:\Pictures\seosoyoung\서소영 (도서관).png를 input으로 사용.
 프롬프트는 트윗 원문(일본어)에 색지정 보강 — 흰색 배경 + 어두운 선으로 세련된 미학.
 gpt-image-2 /v1/images/edits 호출.
-
-## 출처
-
-[원본](https://x.com/notoro_ai/status/2053082564865528087)

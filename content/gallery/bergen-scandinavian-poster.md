@@ -11,6 +11,12 @@ mode: "edit"
 draft: false
 ---
 
+## 오리지널
+
+**v1** — destination을 Bergen, Norway로 발행한 첫 버전. text-to-image 생성.
+
+![v1 — Bergen, Norway](https://pub-236dc9dc170e487faec4c8b5e2d084c6.r2.dev/gallery/bergen-scandinavian-poster/cover-v1-bergen-norway.png)
+
 ## 프롬프트
 
 ```
@@ -62,18 +68,12 @@ no distortion,
 high resolution, print-ready
 ```
 
+## 출처
+
+[원본](https://x.com/goodmanprotocol/status/2053347075648278737)
+
 ## 메모
 
 v2 — destination을 Bergen(노르웨이)에서 Cloistermont(엠버 앤 블레이드 세계관의 가상 도시)으로 교체.
 Cloistermont.png를 시각 레퍼런스로 input에 넘겨, 동일한 Scandinavian flat vector 포스터 스타일로 재해석.
 타이포는 "CLOISTERMONT" 단독, 부제 없음(가상 도시).
-
-## 출처
-
-[원본](https://x.com/goodmanprotocol/status/2053347075648278737)
-
-## 이전 버전
-
-**v1** — destination을 Bergen, Norway로 발행한 첫 버전. text-to-image 생성.
-
-![v1 — Bergen, Norway](https://pub-236dc9dc170e487faec4c8b5e2d084c6.r2.dev/gallery/bergen-scandinavian-poster/cover-v1-bergen-norway.png)
