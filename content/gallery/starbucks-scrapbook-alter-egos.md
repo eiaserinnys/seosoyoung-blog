@@ -1,11 +1,11 @@
 ---
 title: ""
-date: 2026-05-12T22:54:34+09:00
+date: 2026-05-12T23:54:00+09:00
 slug: "starbucks-scrapbook-alter-egos"
 cover:
   image: "https://pub-236dc9dc170e487faec4c8b5e2d084c6.r2.dev/gallery/starbucks-scrapbook-alter-egos/cover.jpg"
   hiddenInList: false
-  focus: "50% 35%"
+  focus: "35% 35%"
 source: "https://www.meigen.ai/"
 model: "gpt-image-2"
 mode: "edit"
