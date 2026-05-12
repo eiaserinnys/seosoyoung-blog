@@ -72,10 +72,6 @@ v3 — 사용자가 외부 도구로 만든 양질의 서소영 실사 포트레
 
 ## 이전 버전
 
-**v2** — 일러스트 정면샷을 실사 변환한 시드로 생성한 9패널.
-
-![v2 — seosoyoung illustration seed](https://pub-236dc9dc170e487faec4c8b5e2d084c6.r2.dev/gallery/paris-vlog-grid-japanese-traveler/cover-v2-seosoyoung-illustration-seed.png)
-
 **v1** — 원본 트윗 그대로 "Japanese female traveler"로 발행한 첫 버전.
 
 ![v1 — Japanese traveler](https://pub-236dc9dc170e487faec4c8b5e2d084c6.r2.dev/gallery/paris-vlog-grid-japanese-traveler/cover-v1-japanese-traveler.png)
