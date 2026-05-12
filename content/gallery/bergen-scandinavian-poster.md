@@ -1,12 +1,12 @@
 ---
 title: ""
-date: 2026-05-12T08:12:00+09:00
+date: 2026-05-12T08:36:08+09:00
 slug: "bergen-scandinavian-poster"
 cover:
   image: "https://pub-236dc9dc170e487faec4c8b5e2d084c6.r2.dev/gallery/bergen-scandinavian-poster/cover.png"
   hiddenInList: false
 source: "https://x.com/goodmanprotocol/status/2053347075648278737"
-model: "gpt-image-1"
+model: "gpt-image-2"
 draft: false
 ---
 
