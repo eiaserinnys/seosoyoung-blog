@@ -1,6 +1,6 @@
 ---
 title: ""
-date: 2026-05-12T10:26:29+09:00
+date: 2026-05-12T10:51:28+09:00
 slug: "paris-vlog-grid-japanese-traveler"
 cover:
   image: "https://pub-236dc9dc170e487faec4c8b5e2d084c6.r2.dev/gallery/paris-vlog-grid-japanese-traveler/cover.png"
@@ -62,14 +62,20 @@ draft: false
 
 ## 메모
 
-v2 — 서소영 실사 포트레이트를 시드로 재발행 (2026-05-12).
-원본 트윗 프롬프트는 "Japanese female traveler"였으나, 갤러리 정체성에 맞춰
-서소영(첨부 실사 포트레이트의 인물)으로 인스턴스화. URL(slug)은 유지.
+v3 — 사용자가 외부 도구로 만든 양질의 서소영 실사 포트레이트를 시드로 재발행 (2026-05-12).
+사용자 시드 사진은 일관성이 더 높아 9패널 인물 통일성이 강화됨.
+원본 트윗(Japanese female traveler)을 서소영으로 인스턴스화한 점은 동일.
 
 ## 출처
 
 [원본](https://x.com/craftian_keskin/status/2053203603465400337)
 
 ## 이전 버전
+
+**v2** — 일러스트 정면샷을 실사 변환한 시드로 생성한 9패널.
+
+![v2 — seosoyoung illustration seed](https://pub-236dc9dc170e487faec4c8b5e2d084c6.r2.dev/gallery/paris-vlog-grid-japanese-traveler/cover-v2-seosoyoung-illustration-seed.png)
+
+**v1** — 원본 트윗 그대로 "Japanese female traveler"로 발행한 첫 버전.
 
 ![v1 — Japanese traveler](https://pub-236dc9dc170e487faec4c8b5e2d084c6.r2.dev/gallery/paris-vlog-grid-japanese-traveler/cover-v1-japanese-traveler.png)
