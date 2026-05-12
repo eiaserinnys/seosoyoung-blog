@@ -5,7 +5,7 @@ slug: "luxury-orange-phone-burst"
 cover:
   image: "https://pub-236dc9dc170e487faec4c8b5e2d084c6.r2.dev/gallery/luxury-orange-phone-burst/cover.png"
   hiddenInList: false
-  focus: "50% 30%"
+  focus: "50% 15%"
 model: "gpt-image-2"
 mode: "edit"
 draft: false
