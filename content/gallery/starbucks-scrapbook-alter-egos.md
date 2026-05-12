@@ -108,7 +108,7 @@ draft: false
 
 ![1차 교정 — 노트북 미니 안착](https://pub-236dc9dc170e487faec4c8b5e2d084c6.r2.dev/candidates/starbucks-scrapbook-fix/fix-pass-1-large-low.png)
 
-(2)는 처음에 "한 다리로 균형 잡으며 휘청"으로 시도해 봤지만, 휘청대는 자세가 카드 전체의 단정한 결과 어울리지 않아 폐기했다.
+(2)는 처음에 "한 다리로 균형 잡으며 휘청"으로 시도해 봤지만, 바깥으로 무너져 균형을 잡지 못할 자세로 생성되어 폐기했다.
 
 ![2차 시도 — 한 다리 휘청 (폐기)](https://pub-236dc9dc170e487faec4c8b5e2d084c6.r2.dev/candidates/starbucks-scrapbook-fix2/fix-pass-2-paper-wobble.png)
 
