@@ -17,7 +17,8 @@
 {{- end }}
 
 {{- $pages := .RegularPages }}
-{{- $paginator := .Paginate $pages }}
+{{/* 9개씩 — 그리드가 3열로 떨어질 때 3×3 정사각으로 떨어지게 한다. */}}
+{{- $paginator := .Paginate $pages 9 }}
 
 <div class="gallery-grid">
 {{- range $paginator.Pages }}
