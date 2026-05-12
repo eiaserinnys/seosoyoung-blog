@@ -1,9 +1,9 @@
 ---
 title: ""
-date: 2026-05-12T08:51:56+09:00
-slug: "seoul-beams-line-art-poster"
+date: 2026-05-12T09:04:38+09:00
+slug: "kyoto-beams-line-art-poster"
 cover:
-  image: "https://pub-236dc9dc170e487faec4c8b5e2d084c6.r2.dev/gallery/seoul-beams-line-art-poster/cover.png"
+  image: "https://pub-236dc9dc170e487faec4c8b5e2d084c6.r2.dev/gallery/kyoto-beams-line-art-poster/cover.png"
   hiddenInList: false
 source: "https://x.com/goodmanprotocol/status/2052974175435026714"
 model: "gpt-image-2"
@@ -13,19 +13,19 @@ draft: false
 ## 프롬프트
 
 ```
-Create an ultra-high-resolution minimalist line-art travel poster of Seoul, portraying the city as a stylish everyday urban scene rather than a tourist postcard.
+Create an ultra-high-resolution minimalist line-art travel poster of Kyoto, portraying the city as a stylish everyday urban scene rather than a tourist postcard.
 
 CORE COMPOSITION:
-- Central composition shows the city's most iconic street, intersection, alley, tram street, or pedestrian avenue
+- Central composition shows the city's most iconic street, intersection, alley, tram street, or pedestrian avenue (consider Gion's narrow lanes, Pontocho alley, or a tram street in Higashiyama)
 - Foreground includes locals, commuters, cyclists, travelers, shoppers, students, café visitors
-- People should naturally reflect the city's local lifestyle and fashion culture
-- Background filled with realistic local signage, cafés, restaurants, transportation signs, storefronts, and architectural details
-- Landmarks should appear naturally integrated into everyday life, never exaggerated
-- Include authentic local-language typography and culturally recognizable visual elements
+- People should naturally reflect Kyoto's local lifestyle (yukata or casual modern wear, students with school bags)
+- Background filled with realistic local signage, cafés, restaurants, transportation signs, machiya storefronts, lantern-lit doorways, and architectural details (wooden lattice, tiled roofs)
+- Landmarks should appear naturally integrated into everyday life, never exaggerated (a glimpse of a pagoda, torii gate, or a hint of Yasaka Shrine in the distance)
+- Include authentic Japanese typography (kanji on shop signs) and culturally recognizable visual elements
 - Large bold typography at the top center:
-  "SEOUL"
+  "KYOTO"
 - Subtitle below:
-  서울 KOREA
+  京都 JAPAN
 
 STYLE:
 ultra clean vector illustration,
@@ -49,11 +49,11 @@ LINE STYLE:
 
 COLOR SYSTEM — VERY IMPORTANT:
 - use only ONE main color + ONE background color
-- automatically choose a color that best represents the city's atmosphere
+- muted burgundy on warm cream
 - monochrome silkscreen poster aesthetic
 - no rainbow palettes
 - no excessive neon
-- color should reflect the city's architecture, climate, nightlife, and cultural identity
+- color should reflect Kyoto's traditional architecture, calm atmosphere, and cultural identity
 
 COMPOSITION:
 - vertical poster layout
