@@ -10,6 +10,12 @@ mode: "edit"
 draft: false
 ---
 
+## 오리지널
+
+원본 프롬프트 템플릿의 기본 인스턴스 — subject=둥근 양, action=찻잔을 두 발굽으로 들고 마심.
+
+![original](https://pub-236dc9dc170e487faec4c8b5e2d084c6.r2.dev/gallery/clay-icon-sheep/cover.png)
+
 ## 프롬프트
 
 ```
