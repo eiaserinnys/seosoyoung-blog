@@ -5,6 +5,7 @@ slug: "indie-anime-papery-portrait"
 cover:
   image: "https://pub-236dc9dc170e487faec4c8b5e2d084c6.r2.dev/gallery/indie-anime-papery-portrait/cover.png"
   hiddenInList: false
+  focus: "50% 12%"
 source: "https://chatgpt.com/share/6a01793a-56f8-83a4-889e-1b5e5d02f847"
 model: "gpt-image-2"
 mode: "edit"

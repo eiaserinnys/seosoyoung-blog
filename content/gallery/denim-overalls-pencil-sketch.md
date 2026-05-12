@@ -5,6 +5,7 @@ slug: "denim-overalls-pencil-sketch"
 cover:
   image: "https://pub-236dc9dc170e487faec4c8b5e2d084c6.r2.dev/gallery/denim-overalls-pencil-sketch/cover.png"
   hiddenInList: false
+  focus: "50% 18%"
 source: "https://x.com/missdelulu9/status/2053837582187053419"
 model: "gpt-image-2"
 mode: "edit"

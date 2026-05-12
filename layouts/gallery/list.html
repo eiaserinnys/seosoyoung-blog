@@ -26,8 +26,11 @@
     {{- $cover = .image }}
   {{- end }}
   {{- if $cover }}
+  {{- $focus := "" }}
+  {{- with .Params.cover.focus }}{{ $focus = . }}{{ end }}
   <a class="gallery-cell" href="{{ .RelPermalink }}" aria-label="갤러리 항목">
-    <img src="{{ $cover }}" loading="lazy" alt="">
+    <img src="{{ $cover }}" loading="lazy" alt=""
+      {{- with $focus }} style="object-position: {{ . }};"{{ end }}>
   </a>
   {{- end }}
 {{- end }}
