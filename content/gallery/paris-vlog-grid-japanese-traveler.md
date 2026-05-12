@@ -1,12 +1,13 @@
 ---
 title: ""
-date: 2026-05-12T09:00:09+09:00
+date: 2026-05-12T10:26:29+09:00
 slug: "paris-vlog-grid-japanese-traveler"
 cover:
   image: "https://pub-236dc9dc170e487faec4c8b5e2d084c6.r2.dev/gallery/paris-vlog-grid-japanese-traveler/cover.png"
   hiddenInList: false
 source: "https://x.com/craftian_keskin/status/2053203603465400337"
 model: "gpt-image-2"
+mode: "edit"
 draft: false
 ---
 
@@ -14,7 +15,8 @@ draft: false
 
 ```
 {
-  "Objective": "Generate a 3x3 grid collage of travel vlog-style photos featuring a Japanese female traveler exploring iconic locations in Paris, captured with a low-quality smartphone aesthetic.",
+  "Objective": "Generate a 3x3 grid collage of travel vlog-style photos featuring the same Korean woman from the attached reference photo (Seosoyoung) exploring iconic locations in Paris, captured with a low-quality smartphone aesthetic.",
+  "Identity": "The traveler is the same person as the attached reference photo. Her face must be recognizably the same Korean woman across all 9 panels — long straight black hair, delicate Korean features, calm composed natural beauty.",
   "Format": {
     "Aspect Ratio": "1:1 square collage",
     "Type": "Photo grid",
@@ -32,9 +34,9 @@ draft: false
     "Aesthetic": "Low-quality smartphone photos with natural imperfections"
   },
   "Persona Details": {
-    "Character": "Japanese female traveler",
-    "Appearance": "Slender, very attractive, natural beauty",
-    "Wardrobe": "Chic Parisian summer outfits (light dresses, beret, sunglasses, casual elegant style)",
+    "Character": "Same Korean woman as the attached reference photo (Seosoyoung). Identity must be consistent in every panel.",
+    "Appearance": "Long straight black hair, delicate Korean features, natural beauty, slender",
+    "Wardrobe": "Chic Parisian summer outfits (light dresses, beret, sunglasses, casual elegant style) — varied across panels but coherent palette",
     "Mood": "Romantic, curious, cheerful"
   },
   "Grid Scenes": [
@@ -54,13 +56,19 @@ draft: false
     "Lighting": "Mixed natural lighting with occasional overexposure",
     "Effects": "Motion blur, imperfect framing, slight lens distortion",
     "Vibe": "Authentic, unpolished, travel diary aesthetic"
-  },
-  "Response Format": {
-    "Type": "Image generation prompt",
-    "Output": "Single 3x3 collage image with 9 Paris travel vlog scenes"
   }
 }
 ```
+
+## 메모
+
+v2 — 서소영 실사 포트레이트를 시드로 재발행 (2026-05-12).
+원본 트윗 프롬프트는 "Japanese female traveler"였으나, 갤러리 정체성에 맞춰
+서소영(첨부 실사 포트레이트의 인물)으로 인스턴스화. URL(slug)은 유지.
+
+이전 버전(v1 — 원본 트윗 그대로):
+
+![v1 — Japanese traveler](https://pub-236dc9dc170e487faec4c8b5e2d084c6.r2.dev/gallery/paris-vlog-grid-japanese-traveler/cover-v1-japanese-traveler.png)
 
 ## 출처
 
