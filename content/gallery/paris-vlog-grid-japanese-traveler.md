@@ -66,10 +66,10 @@ v2 — 서소영 실사 포트레이트를 시드로 재발행 (2026-05-12).
 원본 트윗 프롬프트는 "Japanese female traveler"였으나, 갤러리 정체성에 맞춰
 서소영(첨부 실사 포트레이트의 인물)으로 인스턴스화. URL(slug)은 유지.
 
-이전 버전(v1 — 원본 트윗 그대로):
-
-![v1 — Japanese traveler](https://pub-236dc9dc170e487faec4c8b5e2d084c6.r2.dev/gallery/paris-vlog-grid-japanese-traveler/cover-v1-japanese-traveler.png)
-
 ## 출처
 
 [원본](https://x.com/craftian_keskin/status/2053203603465400337)
+
+## 이전 버전
+
+![v1 — Japanese traveler](https://pub-236dc9dc170e487faec4c8b5e2d084c6.r2.dev/gallery/paris-vlog-grid-japanese-traveler/cover-v1-japanese-traveler.png)
