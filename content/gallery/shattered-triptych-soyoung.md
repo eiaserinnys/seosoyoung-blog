@@ -106,9 +106,11 @@ v6를 베이스로 깨진 거울 효과만 다양한 접근으로 적용.
 
 타협 지점으로 v8을 정본 베이스로 선택. *완벽한 cubist mosaic을 못 그릴 거라면, 가장 분위기 좋은 컷을 골라 디테일을 끌어올리자*는 판단이었다.
 
-## 6단계 · 정본 업스케일 (v11)
+## 6단계 · 정본 업스케일 (v12, fidelity-preserving)
 
-v8을 시드로 1536x2304 / `quality=high`. 248초. *shard 간 misalignment를 더 강화*해 달라고 prompt에 명시 — dress·머리·팔이 shard 경계에서 5-15픽셀 어긋나도록. 결과적으로 폴리고날 shard + black void + 좌측 cheval mirror(intact) 구조 모두 디테일 있게 잡힌 정본이 나왔다. 본 카드의 커버다.
+v8을 시드로 1536x2304 / `quality=high`. 214초. **시안의 결을 그대로 유지하면서 해상도와 디테일만 끌어올리는** fidelity-preserving 업스케일 패스. spider-web 패턴, shard 분포, 인물 포즈, 좌측 cheval mirror — 모든 요소를 v8 그대로 두고 velvet 짜임·satin 광택·글러브 결·전화기 다이얼·shard 은박 같은 디테일만 선명해졌다.
+
+첫 시도(v11)에서는 *shard 간 misalignment 강화*를 함께 요청했는데, 그게 오히려 v8의 spider-web 톤을 흩어 보였다. 한 단계 더 보수적인 *순수 업스케일*로 되돌아간 v12가 본 카드의 커버다. *모델이 시안에서 잘 잡아낸 결은 건드리지 말고 해상도만 올리는 게 옳다*는 교훈을 한 번 더 확인.
 
 ## 가장 흥미로운 지점
 
@@ -118,37 +120,27 @@ v8을 시드로 1536x2304 / `quality=high`. 248초. *shard 간 misalignment를 �
 
 **시각 레퍼런스의 효용.** v10에서 깨진 거울 사진 2장을 multi-input으로 함께 넣은 게 결정적 변곡점이었다. 어휘로만 끌고 가던 단계와 결이 명확히 달랐다. 학습 분포가 한 방향으로 강하게 편향됐을 때, *동등한 의미의 시각 레퍼런스가 어휘보다 강한 신호*임을 확인.
 
-**한계와의 타협.** v8의 overlay 톤을 정본 베이스로 받아들이고 1536x2304 + misalignment 강화로 마무리한 것이 결과적으로 가장 합리적인 결정이었다. 한 번에 완성을 노리지 않고 단계를 끊는 것, 그리고 *모델이 못 그리는 결*을 인정하고 *가장 좋은 차선*을 정본으로 굳히는 결단. 참조 카드 [psychedelic-maid-v2](https://seosoyoung.eiaserinnys.me/gallery/psychedelic-maid-v2/) · [starbucks-scrapbook-alter-egos](https://seosoyoung.eiaserinnys.me/gallery/starbucks-scrapbook-alter-egos/)의 단계 파이프라인 원리를 따랐다.
+**한계와의 타협.** v8의 overlay 톤을 정본 베이스로 받아들이고 1536x2304 *fidelity-preserving 업스케일*로 마무리한 것이 결과적으로 가장 합리적인 결정이었다. 첫 시도에서 *misalignment 강화*까지 함께 요청했더니 v8의 spider-web 톤이 오히려 흩어져 폐기 — *모델이 시안에서 잘 잡아낸 결은 건드리지 말고 해상도만 올리는 게 옳다*는 교훈을 한 번 더 확인했다. 한 번에 완성을 노리지 않고 단계를 끊는 것, 그리고 *모델이 못 그리는 결*을 인정하고 *가장 좋은 차선*을 정본으로 굳히는 결단. 참조 카드 [psychedelic-maid-v2](https://seosoyoung.eiaserinnys.me/gallery/psychedelic-maid-v2/) · [starbucks-scrapbook-alter-egos](https://seosoyoung.eiaserinnys.me/gallery/starbucks-scrapbook-alter-egos/)의 단계 파이프라인 원리를 따랐다.
 
 ## 프롬프트
 
-본 카드의 커버에 도달하기까지 11회의 프롬프트가 쌓였다. 카드의 정체성을 결정한 것은 6단계의 업스케일 프롬프트다. 그 전문을 그대로 옮긴다.
+본 카드의 커버에 도달하기까지 12회의 프롬프트가 쌓였다. 카드의 정체성을 결정한 것은 6단계의 fidelity-preserving 업스케일 프롬프트다. 그 전문을 그대로 옮긴다.
 
 ```
-A surreal vintage haute couture editorial photograph reflected in a PHYSICALLY BROKEN antique mirror. High-resolution master version of the reference image, with the shattered-mirror effect MORE pronounced.
+High-resolution master version of the reference image. Preserve EVERY detail of the reference exactly as it is — composition, layout, character pose, costume, cheval mirror on the left, scattered telephones, velvet curtains, the shattered-mirror surface with all its polygonal shards, the black voids between shards, the silvered edges, the displacement and angles of every shard.
 
-Use the reference image as the authoritative reference for the entire composition: the scattered polygonal mirror shards arrangement, the woman's identity (East Asian, early twenties, dark hair, deep scarlet satin corset gown, powder-blue opera gloves and stockings), her pose (seated on the floor, leaning back against the ornate wooden chair on the right, head tilted FAR back, throat arched, eyes closed in trance, one arm on the chair armrest, the other reaching toward a scattered telephone), the velvet curtain backdrop, the cheval mirror with gilded frame on the LEFT side reflecting her profile, the scattered cream and pale-blue rotary telephones.
+DO NOT redesign the layout. DO NOT add more displacement. DO NOT amplify the misalignment. DO NOT change the shard arrangement. DO NOT alter the woman's pose, costume, or facial features. DO NOT modify the cheval mirror's position or contents.
 
-Now enhance and amplify the shattered-mirror effect:
+ONLY upgrade:
+- Resolution from low to high (1536x2304).
+- Fine detail sharpness — texture of the velvet curtain, gloss of the satin gown, weave of the powder-blue gloves, grain of the wooden chair, label and dial details of the rotary telephones, prismatic glints along the silvered shard edges.
+- Color fidelity and tonal depth.
 
-1. Same arrangement of irregular polygonal shards as in the reference — the overall mosaic layout, shard sizes and positions are preserved. We are upgrading the same image to high resolution and pushing the cracked-mirror effect harder, not redesigning the layout.
+This is a fidelity-preserving upscale pass. Keep the reference image's exact look, just higher resolution and sharper.
 
-2. MORE PRONOUNCED MISALIGNMENT between shards. Where the reference image's shards meet, push the displacement further:
-   - At every seam between two neighboring shards, the image content visibly does NOT line up. Edges of the dress, gloves, hair, curtain folds, telephone outlines, chair contours — all should clearly break and resume at slightly OFFSET positions across the cracks (5-15 pixels of horizontal/vertical jump at each seam).
-   - Each shard is rotated 2-8 degrees relative to its neighbors — small but visible angular displacement.
-   - The woman's body in particular should clearly break apart at the seams: a forearm may shift several pixels across a crack; the shoulder line may discontinue and resume elsewhere; the hair may split into two visibly misaligned portions across a shard boundary.
+Style note (preserved from reference, not changed): 1990s–early 2000s Japanese fashion magazine editorial aesthetic. Direct on-camera flash, harsh highlights, deep shadows, slightly oversaturated reds, cool blue undertones, film grain, high contrast. The cracked-mirror surface remains as in the reference — same overall arrangement, same intensity, same shard count.
 
-3. BLACK VOID between shards is preserved and slightly widened (1-4 pixels wide gaps) — visibly empty space, not continuous image.
-
-4. SILVERED EDGES along each shard's broken perimeter catch sharper highlights at high resolution — fine bright lines of reflected light, occasionally prismatic, confirming the silvered backing of a real antique mirror.
-
-5. The cheval mirror inside the scene (on the LEFT) is itself intact (not broken) — only the LARGER mirror that IS the picture plane is broken. The cheval mirror is still visible across multiple shards of the larger broken mirror, and its profile reflection of the woman is also visible (across multiple shards, misaligned at the seams just like the rest of the scene).
-
-6. Small detached slivers near the bottom and edges have fallen entirely loose, lying on the floor below the larger shards.
-
-Style: 1990s–early 2000s Japanese fashion magazine editorial aesthetic. Direct on-camera flash, harsh highlights, deep shadows, slightly oversaturated reds, cool blue undertones, film grain, high contrast. At high resolution, the silvered shard edges catch sharp prismatic highlights against the surrounding black void.
-
-Composition: Vertical portrait orientation (3:4). Break-point near the woman's shoulder. Reference image's overall layout preserved, only sharpened and the misalignment amplified.
+Subject (preserved): East Asian woman in her early twenties, deep scarlet satin corset gown, powder-blue opera gloves and stockings, seated on the floor leaning back against an ornate wooden chair on the right, head tilted FAR back, throat arched, eyes closed in trance. One arm draped on the chair armrest, the other near scattered rotary telephones. On the LEFT, a tall antique cheval mirror with gilded ornate frame (intact, not broken) reflects her profile. Crimson velvet curtain backdrop. All seen through the shattered surface of a larger antique mirror.
 
 This is a fully clothed, modest fashion editorial in the tradition of classical painting — no nudity, no suggestive themes, no violence. Couture styling.
 ```
