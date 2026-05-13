@@ -132,26 +132,26 @@ draft: false
     <figcaption style="font-size:13px;color:#86868b;margin-top:6px;">v1. 림 라이트 또렷</figcaption>
   </figure>
   <figure style="flex:1;min-width:180px;margin:0;">
-    <a href="https://pub-236dc9dc170e487faec4c8b5e2d084c6.r2.dev/gallery/seosoyoung-shy-eyesmile/v2.png" target="_blank"><img src="https://pub-236dc9dc170e487faec4c8b5e2d084c6.r2.dev/gallery/seosoyoung-shy-eyesmile/v2.png" alt="eyesmile v2" style="width:100%;height:auto;display:block;border-radius:6px;border:2px solid #c97a4e;"></a>
-    <figcaption style="font-size:13px;color:#c97a4e;margin-top:6px;font-weight:600;">v2. dust bokeh 가장 풍성 ← 선택</figcaption>
+    <a href="https://pub-236dc9dc170e487faec4c8b5e2d084c6.r2.dev/gallery/seosoyoung-shy-eyesmile/v2.png" target="_blank"><img src="https://pub-236dc9dc170e487faec4c8b5e2d084c6.r2.dev/gallery/seosoyoung-shy-eyesmile/v2.png" alt="eyesmile v2" style="width:100%;height:auto;display:block;border-radius:6px;"></a>
+    <figcaption style="font-size:13px;color:#86868b;margin-top:6px;">v2. dust bokeh 가장 풍성</figcaption>
   </figure>
   <figure style="flex:1;min-width:180px;margin:0;">
-    <a href="https://pub-236dc9dc170e487faec4c8b5e2d084c6.r2.dev/gallery/seosoyoung-shy-eyesmile/v3.png" target="_blank"><img src="https://pub-236dc9dc170e487faec4c8b5e2d084c6.r2.dev/gallery/seosoyoung-shy-eyesmile/v3.png" alt="eyesmile v3" style="width:100%;height:auto;display:block;border-radius:6px;"></a>
-    <figcaption style="font-size:13px;color:#86868b;margin-top:6px;">v3. 컴포지션 균형</figcaption>
+    <a href="https://pub-236dc9dc170e487faec4c8b5e2d084c6.r2.dev/gallery/seosoyoung-shy-eyesmile/v3.png" target="_blank"><img src="https://pub-236dc9dc170e487faec4c8b5e2d084c6.r2.dev/gallery/seosoyoung-shy-eyesmile/v3.png" alt="eyesmile v3" style="width:100%;height:auto;display:block;border-radius:6px;border:2px solid #c97a4e;"></a>
+    <figcaption style="font-size:13px;color:#c97a4e;margin-top:6px;font-weight:600;">v3. 컴포지션 균형 ← 선택</figcaption>
   </figure>
 </div>
 
-눈이 살짝 좁아진 부드러운 크레센트 형태, 뺨이 미세하게 올라가 손가락 뒤로 미소가 새어 나오는 결. 한지창 빛 줄기를 따라 작은 황금빛 보케 원이 흩뿌려져 공기감이 더해졌다. v2가 dust bokeh의 강도와 균형이 가장 좋아 다음 단계의 visual master로 선택됐다.
+눈이 살짝 좁아진 부드러운 크레센트 형태, 뺨이 미세하게 올라가 손가락 뒤로 미소가 새어 나오는 결. 한지창 빛 줄기를 따라 작은 황금빛 보케 원이 흩뿌려져 공기감이 더해졌다. v3가 dust bokeh를 좌측 하단까지 흩뿌리며 컴포지션 균형이 가장 좋아 다음 단계의 visual master로 선택됐다.
 
 ## 6단계 · 1024x1536 / `quality=high` 정본 업스케일
 
-v2를 visual master로 두고 `quality=high`로 한 번 더 굴렸다. 구도·의상·자세·dust bokeh는 1:1로 보존하면서 디테일만 끌어올리는 패스.
+v3를 visual master로 두고 `quality=high`로 한 번 더 굴렸다. 구도·의상·자세·dust bokeh는 1:1로 보존하면서 디테일만 끌어올리는 패스.
 
 이때 input을 세 장 그대로 넘긴 것이 결정적이었다.
 
 - `서소영 (실사).png` — 정체성 보존용
 - 마네킹 C — 자세 매칭용
-- `seosoyoung-shy-eyesmile/v2.png` — 조명·구도·dust bokeh 보존용
+- `seosoyoung-shy-eyesmile/v3.png` — 조명·구도·dust bokeh 보존용
 
 세 input의 위계가 명확히 유지된 채 디테일만 한 단계 정밀해졌다. 호출 시간은 약 2분 43초, 2.1MB. 결과물은:
 
