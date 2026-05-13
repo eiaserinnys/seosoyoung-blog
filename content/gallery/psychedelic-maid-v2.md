@@ -114,4 +114,4 @@ Background: a full-frame modern psychedelic field — bold sharp-edged concentri
 
 ## 출처
 
-원본 프롬프트 모티프 — 사용자가 가져온 외부 *모던 anime 핀업* 일러스트 세 컷의 공통 결을 분석한 백본. 같은 분석에서 굴러나온 자매 카드는 [tropical-summer-plumeria](https://seosoyoung.eiaserinnys.me/gallery/tropical-summer-plumeria/) · [retro-stewardess-showa](https://seosoyoung.eiaserinnys.me/gallery/retro-stewardess-showa/).
+원본 프롬프트 모티프 — 사용자가 가져온 외부 *모던 anime 핀업* 일러스트 세 컷의 공통 결을 분석한 백본.
