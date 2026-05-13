@@ -139,14 +139,20 @@ B 자세가 정조와 맞았다. 앞팔이 머리 위로 곡선을 그리고, �
 
 ## 6단계 · 사용자 손그림 수정 적용
 
-그래서 사용자께서 직접 손으로 가이드를 잡아 가져오셨다. 5단계의 무지개 스트라이프를 지우고, 우하단에서 솟아 좌측으로 흩어지는 *진짜 가루 사진의 결*을 손으로 그려 넣으신 시드.
+그래서 사용자께서 직접 5단계 결과물 위에 손으로 가이드를 그려 가져오셨다. 빨간 X로 무지개 영역을 지우라 표시하시고, 파란 화살표로 *우하단에서 솟아 좌측으로 흩어지는 진짜 가루 트레일*의 궤적을 그려 넣으셨다.
 
-<div style="margin:20px 0;text-align:center;">
-  <a href="https://pub-236dc9dc170e487faec4c8b5e2d084c6.r2.dev/gallery/hanbok-grandjete-sorrow/chatgpt-share-grace-leap.png" target="_blank"><img src="https://pub-236dc9dc170e487faec4c8b5e2d084c6.r2.dev/gallery/hanbok-grandjete-sorrow/chatgpt-share-grace-leap.png" alt="user-guided seed" style="max-width:420px;width:100%;height:auto;display:inline-block;border-radius:6px;"></a>
-  <div style="font-size:13px;color:#86868b;margin-top:6px;">사용자가 직접 손으로 수정 — 무지개 스트라이프를 지우고 진짜 가루 결을 그려 넣은 시드</div>
+<div style="display:flex;gap:12px;margin:20px 0;flex-wrap:wrap;align-items:flex-start;">
+  <figure style="flex:1;min-width:240px;margin:0;">
+    <a href="https://pub-236dc9dc170e487faec4c8b5e2d084c6.r2.dev/gallery/hanbok-grandjete-sorrow/user-hand-guide.png" target="_blank"><img src="https://pub-236dc9dc170e487faec4c8b5e2d084c6.r2.dev/gallery/hanbok-grandjete-sorrow/user-hand-guide.png" alt="user hand-drawn guide" style="width:100%;height:auto;display:block;border-radius:6px;"></a>
+    <figcaption style="font-size:13px;color:#86868b;margin-top:6px;">사용자가 5단계 결과물 위에 직접 그린 손가이드 — 빨간 X(지우라는 영역) · 파란 화살표(진짜 트레일 궤적)</figcaption>
+  </figure>
+  <figure style="flex:1;min-width:240px;margin:0;">
+    <a href="https://pub-236dc9dc170e487faec4c8b5e2d084c6.r2.dev/gallery/hanbok-grandjete-sorrow/chatgpt-share-grace-leap.png" target="_blank"><img src="https://pub-236dc9dc170e487faec4c8b5e2d084c6.r2.dev/gallery/hanbok-grandjete-sorrow/chatgpt-share-grace-leap.png" alt="user-guided seed" style="width:100%;height:auto;display:block;border-radius:6px;"></a>
+    <figcaption style="font-size:13px;color:#86868b;margin-top:6px;">손가이드를 반영해 새로 만든 시드 — 무지개 스트라이프는 사라지고 가루 결이 자리잡혔다</figcaption>
+  </figure>
 </div>
 
-이 손그림 시드를 가져다 다시 모델에 넘긴다. 지시는 단 하나 — *나머지는 다 유지하면서 초크가 더 자연스럽게 퍼지고 가루 질감이 살아나게.*
+이 손가이드 시드를 가져다 다시 모델에 넘긴다. 지시는 단 하나 — *나머지는 다 유지하면서 초크가 더 자연스럽게 퍼지고 가루 질감이 살아나게.*
 
 <div style="display:flex;gap:12px;margin:20px 0;flex-wrap:wrap;">
   <figure style="flex:1;min-width:180px;margin:0;">
