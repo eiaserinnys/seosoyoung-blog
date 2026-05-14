@@ -37,4 +37,4 @@ Overall concept: minimal, clever, visually impactful. Negative space generous. N
 
 ## 메모
 
-xRahultripathi의 surreal 3D 광고 프롬프트 템플릿을 인스턴스화. 브랜드는 Twinings Earl Grey로 채우고, 미니어처 인물 자리에는 서소영 포트레이트를 시드로 박았다. 슬로건 'DRAWN FROM THE WORLD'는 Twinings의 실제 카피.
+xRahultripathi의 surreal 3D 광고 프롬프트 템플릿을 인스턴스화. 브랜드는 Twinings Earl Grey로 채우고, 미니어처 인물 자리에는 서소영 포트레이트를 시드로 사용했다. 슬로건 'DRAWN FROM THE WORLD'는 Twinings의 실제 카피.

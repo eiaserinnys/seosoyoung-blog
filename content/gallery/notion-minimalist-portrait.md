@@ -24,4 +24,4 @@ A simple black-and-white illustration of the young woman shown in the reference 
 
 ## 메모
 
-템플릿 프롬프트(`[subject]/[outfit]/[doing action]/[facial expression]`)를 두 가지 방식으로 발행. 오리지널은 변수만 일반 인물로 채운 text-to-image. 헤더는 `서소영 (포트레이트).png`을 input으로 image-to-image 변환하여 정체성을 박았다.
+템플릿 프롬프트(`[subject]/[outfit]/[doing action]/[facial expression]`)를 두 가지 방식으로 발행. 오리지널은 변수만 일반 인물로 채운 text-to-image. 헤더는 `서소영 (포트레이트).png`을 input으로 image-to-image 변환하여 정체성을 그대로 옮겼다.

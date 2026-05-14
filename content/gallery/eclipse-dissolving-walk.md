@@ -43,6 +43,6 @@ The setting is minimal and cinematic: a desolate concrete surface beneath a heav
 - 검은 플레어 미니 스커트
 - 무릎까지 올라오는 검은 양말
 
-서소영 (실사).png 시드로 정체성·외형을 박았다. 원본의 "soft wavy hair" 헤어스타일 지정은 시드 기준으로 일반화(헤어스타일 충돌 방지). face reference 구절도 시드 활용에 맞춰 일반화.
+서소영 (실사).png 시드로 정체성·외형을 그대로 옮겼다. 원본의 "soft wavy hair" 헤어스타일 지정은 시드 기준으로 일반화(헤어스타일 충돌 방지). face reference 구절도 시드 활용에 맞춰 일반화.
 
 `## 오리지널` 섹션에는 원본 프롬프트(sapphire pantsuit) 그대로의 결과를 함께 보존.
