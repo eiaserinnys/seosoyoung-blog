@@ -5,7 +5,7 @@ slug: "cyberpunk-techwear-bike"
 cover:
   image: "https://pub-236dc9dc170e487faec4c8b5e2d084c6.r2.dev/gallery/cyberpunk-techwear-bike/cover.png"
   hiddenInList: false
-  focus: "50% 15%"
+  focus: "50% 0%"
 source: "https://x.com/missdelulu9/status/2054756878098530567"
 model: "gpt-image-2"
 mode: "edit"
@@ -99,4 +99,4 @@ Everything else (face identity, pose, hands, expression, wardrobe silhouette, mo
 - 시드는 `서소영 (실사, 포트레이트).png` (정체성) + `cyberpunk-techwear-bike-v1-master.png` (visual master) 두 장을 multi-input edit으로 묶었다.
 - 원본 프롬프트의 첫 문장 *beautiful Asian woman* 부분은 *the woman shown in the FIRST reference image, preserving her exact facial identity*로 치환했다. 외형은 시드를 따른다.
 - 헤어스타일 지정은 원본에도 따로 없고 흰색 technical hood가 머리를 덮는 구성이라, 시드 헤어와의 충돌 정리는 별도로 필요하지 않았다.
-- 그리드 썸네일은 풀바디 vertical이라 얼굴이 위쪽에 있다. `cover.focus: "50% 15%"`로 얼굴을 노출시켰다.
+- 그리드 썸네일은 풀바디 vertical이라 얼굴이 맨 위에 있다. `cover.focus: "50% 0%"`로 썸네일 영역을 이미지 상단에 붙여 얼굴을 온전히 노출시켰다.
