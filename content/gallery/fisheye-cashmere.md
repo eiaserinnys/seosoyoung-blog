@@ -30,4 +30,4 @@ Transform the uploaded photo into a 10mm ultra-wide fisheye portrait. Use a dram
 
 ## 메모
 
-원본 프롬프트는 어안 렌즈 image-to-image 변환. 서소영(실사) 시드로 박고, 의상만 oversized cashmere sweater + flared skirt + over-the-knee socks로 교체한 헤더 컷. 다른 프롬프트(어안·top-down 앵글·빨간 배경·선글라스·왼손 제스처)는 원문 유지.
+원본 프롬프트는 어안 렌즈 image-to-image 변환. 서소영(실사) 시드를 사용하고, 의상만 oversized cashmere sweater + flared skirt + over-the-knee socks로 교체한 헤더 컷. 다른 프롬프트(어안·top-down 앵글·빨간 배경·선글라스·왼손 제스처)는 원문 유지.

@@ -42,7 +42,7 @@ Negative. Do not redesign hands or feet — only clean them up. Do not change th
 
 ## 메모
 
-- 시드: `서소영.png` (풀바디 정본) → 시안 라운드 후 draft-b를 레퍼런스로 박고 업스케일
+- 시드: `서소영.png` (풀바디 정본) → 시안 라운드 후 draft-b를 레퍼런스로 사용하여 업스케일
 - v5 (final): 1:1 정사각 2048x2048, high quality, draft-b 구도·포즈·표정을 그대로 유지하며 업스케일
 - 손가락(5개·융합 없음)·발(스니커즈·발목·양말 종단부) 해부학 정정 지침 추가
 - 헤어스타일·헤어색·얼굴은 시드 기준으로 일관성 유지 (헤어스타일·warm-accent 지정 일반화)

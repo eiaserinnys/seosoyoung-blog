@@ -33,7 +33,7 @@ Keep the reference subject's facial identity, skin tone, and hairstyle as in the
 
 ## 메모
 
-- 두 가지 버전을 함께 보존: `## 오리지널`은 원본 프롬프트 그대로의 text-to-image 결과, 헤더(frontmatter cover)는 `서소영 (실사, 포트레이트).png`를 시드로 박은 image-to-image 결과.
+- 두 가지 버전을 함께 보존: `## 오리지널`은 원본 프롬프트 그대로의 text-to-image 결과, 헤더(frontmatter cover)는 `서소영 (실사, 포트레이트).png`를 시드로 사용한 image-to-image 결과.
 - **헤더 v3 (near-profile)**: v2의 3/4 시선이 여전히 정적이라, Mucha 포스터의 우아한 옆얼굴 실루엣으로 다시 즈뽑음. 시선은 아래로 떨군 멜랑콜리 톤, 한 손은 귀고리/턱 곁으로 올려 동세 부여. 머리카락은 옆얼굴 뒤에서 한쪽으로 휘몰아치는 단일 비대칭 흐름.
 - 시드 외형 일관성 유지를 위해 프롬프트 말미에 정체성·헤어스타일·옆얼굴 보존 지시 두 문장 추가.
 - size 1536x2304 (vertical poster), quality high. 트리컬러 팔레트(crimson/black/ivory + gold linework) 유지. focus는 v2의 `50% 12%`를 그대로 두고 결과 확인 후 재조정.
