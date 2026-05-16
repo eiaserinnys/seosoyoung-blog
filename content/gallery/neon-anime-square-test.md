@@ -6,7 +6,7 @@ cover:
   image: "https://pub-236dc9dc170e487faec4c8b5e2d084c6.r2.dev/gallery/neon-anime-square-test/cover.png"
   hiddenInList: false
 model: "gpt-image-2"
-draft: false
+draft: true
 ---
 
 ## 프롬프트

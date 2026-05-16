@@ -8,7 +8,7 @@ cover:
   focus: "50% 25%"
 model: "gpt-image-2"
 mode: "edit"
-draft: false
+draft: true
 ---
 
 ## 오리지널
