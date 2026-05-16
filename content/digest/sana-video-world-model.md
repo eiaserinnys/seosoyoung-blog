@@ -12,13 +12,19 @@ TocOpen: false
 
 1. NVIDIA Labs가 공개한 2.6B 오픈소스 비디오 월드 모델 SANA-WM의 프로젝트 페이지다. 이미지 한 장과 카메라 궤적을 입력 받아 단일 H100에서 720p·1분짜리 영상을 생성한다고 주장한다.
 2. 핵심 설계는 Hybrid Linear Diffusion Transformer다. 프레임 단위 Gated DeltaNet에 주기적 softmax 어텐션을 끼워 넣어, 모든 레이어를 softmax로 두면 60초 지점에서 OOM이 나는 문제를 회피한다.
-3. citation 연도가 2026, arXiv ID가 비정상이라 본 논문은 아직 공개되지 않은 플레이스홀더 상태로 보인다. 페이지 본문도 짧고, 60초 14편·20초 18편·동일 첫 프레임 ABC 비교 8 scene으로 구성된 갤러리가 주력이다.
+3. 본 논문(arXiv:2605.15178)과 코드(NVlabs/Sana) 링크가 헤더에 함께 걸려 있고, Models 항목만 아직 비활성화(disabled) 상태다. 페이지 본문은 짧고, 60초 14편·20초 18편·동일 첫 프레임 ABC 비교 8 scene으로 구성된 갤러리가 주력이다.
 
 ## 자료의 정체
 
 SANA-WM은 NVIDIA Labs와 외부 공저자(Haoyi Zhu, Haozhe Liu, Yuyang Zhao, Tian Ye, Junsong Chen, Jincheng Yu, Tong He, Song Han, Enze Xie)가 공개한 비디오 월드 모델 프로젝트의 데모 페이지다. 풀 제목은 *SANA-WM: Efficient Minute-Scale World Modeling with Hybrid Linear Diffusion Transformer*.
 
-페이지 인용에는 `arXiv:2605.15178`이라는 ID와 `year=2026`이 적혀 있다. 미래 연도에 비정상적인 arXiv 번호 조합이라 정식 논문이 공개되기 전 프로젝트 페이지만 먼저 띄운 상태로 추정된다. 본문 텍스트는 4줄짜리 hero bullet과 efficiency figure 1장, 그리고 60초·20초·ABC 비교 영상이 묶인 갤러리가 전부다.
+페이지 헤더에는 Paper와 Code 링크가 함께 걸려 있다.
+
+- Paper: <https://arxiv.org/abs/2605.15178>
+- Code: <https://github.com/NVlabs/Sana>
+- Models: (disabled)
+
+arXiv ID `2605.15178`은 2026년 5월 제출분이라는 의미로 자연스럽게 읽힌다. Models 항목만 아직 비활성화(disabled) 상태로, 가중치 공개는 후속 단계로 보인다. 본문 텍스트는 4줄짜리 hero bullet과 efficiency figure 1장, 그리고 60초·20초·ABC 비교 영상이 묶인 갤러리가 전부다.
 
 ## 네 가지 핵심 주장
 
@@ -77,10 +83,11 @@ coarse global pose 분기와 fine pixel-aligned geometric 분기를 함께 두�
 
 가장 인상 깊은 지점은 **백본(2.6B)보다 refiner(17B)가 크다**는 구성이다. 보통 다단계 비디오 디퓨전에서 base가 크고 refiner가 작아지는 방향이 일반적인데, SANA-WM은 그 반대다. 1분 일관성을 만들어내는 데에는 작은 선형 어텐션 백본으로 충분하고, "보는 맛"의 품질은 별도의 큰 refiner에 맡기는 분업이다. 이 분업이 실제로 1분 720p를 단일 H100에서 돌릴 수 있게 하는 핵심으로 보인다 — 백본은 메모리·지연을 완만히 늘리는 선형 어텐션이라 long-context에 강하고, refiner는 더 짧은 윈도우만 보정해도 되므로 모델 크기 17B의 비용이 영상 길이에 비례하지 않는다.
 
-페이지가 본 논문 없이 데모만 먼저 띄운 점도 흥미롭다. citation에 박힌 `arXiv:2605.15178`은 정상 arXiv ID 형식(YYMM.NNNNN)으로 보면 2026년 5월 제출에 해당하지만, 실제로는 빈 자리다. 데모 영상의 완성도가 높고 4가지 클레임이 또렷한 만큼 본 논문 공개를 기다려볼 만하다.
+본 논문과 코드가 페이지에 함께 걸려 있어 데모만 보고 끝낼 자료가 아니라는 점도 좋다. arXiv 2605.15178은 2026년 5월 제출분으로 실제로 열람 가능하고, 코드는 `NVlabs/Sana`에 공개돼 있다. Models 가중치만 disabled 상태라 후속 공개를 기다려보면 좋겠다. 본문 4줄짜리 hero bullet만으로는 채워지지 않은 디테일(periodic softmax의 삽입 주기, refiner의 학습 방식, 카메라 분기의 결합 형태 등)이 논문에서 어떻게 풀려 있는지 별도로 들여다볼 만하다.
 
 ## 출처
 
 저자: Haoyi Zhu, Haozhe Liu, Yuyang Zhao, Tian Ye, Junsong Chen, Jincheng Yu, Tong He, Song Han, Enze Xie (NVIDIA Labs 외)
 프로젝트 페이지: <https://nvlabs.github.io/Sana/WM/>
-citation 표기: `arXiv:2605.15178` (2026) — 본 논문은 현재 미공개로 보이며 페이지의 placeholder citation으로 추정.
+논문: <https://arxiv.org/abs/2605.15178>
+코드: <https://github.com/NVlabs/Sana>
