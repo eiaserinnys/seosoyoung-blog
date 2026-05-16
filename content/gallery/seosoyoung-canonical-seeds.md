@@ -13,7 +13,8 @@ draft: false
 서소영 캐릭터 디자인의 정본 시드들.
 이후 갤러리에 올라오는 모든 변환 카드는 화풍에 따라 이 시드 중 하나를 정체성의 기준으로 삼는다.
 
-세 화풍 × 두 형식(얼굴 프로필 / 풀바디 3면도)으로 정리한다.
+세 화풍(일러스트 · 실사 · 선화)마다 세 정본을 둔다 — 얼굴 프로필, 한복 풀바디 3면도, 일상복 풀바디 3면도.
+일상복은 회색 캐시미어 스웨터 + 검정 플레어 스커트 + 검정 단색 오버니삭스 + 검정 메리제인으로 통일.
 
 ## 일러스트
 
@@ -25,8 +26,12 @@ draft: false
     <figcaption style="font-size:13px;color:#86868b;margin-top:6px;">프로필</figcaption>
   </figure>
   <figure style="flex:1;min-width:200px;margin:0;">
-    <a href="https://pub-236dc9dc170e487faec4c8b5e2d084c6.r2.dev/gallery/seosoyoung-illustration-three-view/cover.png" target="_blank"><img src="https://pub-236dc9dc170e487faec4c8b5e2d084c6.r2.dev/gallery/seosoyoung-illustration-three-view/cover.png" alt="일러스트 3면도" style="width:100%;height:auto;display:block;border-radius:6px;"></a>
-    <figcaption style="font-size:13px;color:#86868b;margin-top:6px;">풀바디 3면도</figcaption>
+    <a href="https://pub-236dc9dc170e487faec4c8b5e2d084c6.r2.dev/gallery/seosoyoung-illustration-three-view/cover.png" target="_blank"><img src="https://pub-236dc9dc170e487faec4c8b5e2d084c6.r2.dev/gallery/seosoyoung-illustration-three-view/cover.png" alt="일러스트 한복 3면도" style="width:100%;height:auto;display:block;border-radius:6px;"></a>
+    <figcaption style="font-size:13px;color:#86868b;margin-top:6px;">한복 3면도</figcaption>
+  </figure>
+  <figure style="flex:1;min-width:200px;margin:0;">
+    <a href="https://pub-236dc9dc170e487faec4c8b5e2d084c6.r2.dev/gallery/seosoyoung-illustration-casual/cover.png" target="_blank"><img src="https://pub-236dc9dc170e487faec4c8b5e2d084c6.r2.dev/gallery/seosoyoung-illustration-casual/cover.png" alt="일러스트 일상복 3면도" style="width:100%;height:auto;display:block;border-radius:6px;"></a>
+    <figcaption style="font-size:13px;color:#86868b;margin-top:6px;">일상복 3면도</figcaption>
   </figure>
 </div>
 
@@ -40,8 +45,12 @@ draft: false
     <figcaption style="font-size:13px;color:#86868b;margin-top:6px;">프로필</figcaption>
   </figure>
   <figure style="flex:1;min-width:200px;margin:0;">
-    <a href="https://pub-236dc9dc170e487faec4c8b5e2d084c6.r2.dev/gallery/seosoyoung-realistic-three-view/cover.png" target="_blank"><img src="https://pub-236dc9dc170e487faec4c8b5e2d084c6.r2.dev/gallery/seosoyoung-realistic-three-view/cover.png" alt="실사 3면도" style="width:100%;height:auto;display:block;border-radius:6px;"></a>
-    <figcaption style="font-size:13px;color:#86868b;margin-top:6px;">풀바디 3면도</figcaption>
+    <a href="https://pub-236dc9dc170e487faec4c8b5e2d084c6.r2.dev/gallery/seosoyoung-realistic-three-view/cover.png" target="_blank"><img src="https://pub-236dc9dc170e487faec4c8b5e2d084c6.r2.dev/gallery/seosoyoung-realistic-three-view/cover.png" alt="실사 한복 3면도" style="width:100%;height:auto;display:block;border-radius:6px;"></a>
+    <figcaption style="font-size:13px;color:#86868b;margin-top:6px;">한복 3면도</figcaption>
+  </figure>
+  <figure style="flex:1;min-width:200px;margin:0;">
+    <a href="https://pub-236dc9dc170e487faec4c8b5e2d084c6.r2.dev/gallery/seosoyoung-realistic-casual/cover.png" target="_blank"><img src="https://pub-236dc9dc170e487faec4c8b5e2d084c6.r2.dev/gallery/seosoyoung-realistic-casual/cover.png" alt="실사 일상복 3면도" style="width:100%;height:auto;display:block;border-radius:6px;"></a>
+    <figcaption style="font-size:13px;color:#86868b;margin-top:6px;">일상복 3면도</figcaption>
   </figure>
 </div>
 
@@ -55,7 +64,11 @@ draft: false
     <figcaption style="font-size:13px;color:#86868b;margin-top:6px;">프로필</figcaption>
   </figure>
   <figure style="flex:1;min-width:200px;margin:0;">
-    <a href="https://pub-236dc9dc170e487faec4c8b5e2d084c6.r2.dev/gallery/seosoyoung-lineart-three-view/cover.png" target="_blank"><img src="https://pub-236dc9dc170e487faec4c8b5e2d084c6.r2.dev/gallery/seosoyoung-lineart-three-view/cover.png" alt="선화 3면도" style="width:100%;height:auto;display:block;border-radius:6px;"></a>
-    <figcaption style="font-size:13px;color:#86868b;margin-top:6px;">풀바디 3면도</figcaption>
+    <a href="https://pub-236dc9dc170e487faec4c8b5e2d084c6.r2.dev/gallery/seosoyoung-lineart-three-view/cover.png" target="_blank"><img src="https://pub-236dc9dc170e487faec4c8b5e2d084c6.r2.dev/gallery/seosoyoung-lineart-three-view/cover.png" alt="선화 한복 3면도" style="width:100%;height:auto;display:block;border-radius:6px;"></a>
+    <figcaption style="font-size:13px;color:#86868b;margin-top:6px;">한복 3면도</figcaption>
+  </figure>
+  <figure style="flex:1;min-width:200px;margin:0;">
+    <a href="https://pub-236dc9dc170e487faec4c8b5e2d084c6.r2.dev/gallery/seosoyoung-lineart-casual/cover.png" target="_blank"><img src="https://pub-236dc9dc170e487faec4c8b5e2d084c6.r2.dev/gallery/seosoyoung-lineart-casual/cover.png" alt="선화 일상복 3면도" style="width:100%;height:auto;display:block;border-radius:6px;"></a>
+    <figcaption style="font-size:13px;color:#86868b;margin-top:6px;">일상복 3면도</figcaption>
   </figure>
 </div>
