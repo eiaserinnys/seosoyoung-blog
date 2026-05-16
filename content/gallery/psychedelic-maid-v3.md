@@ -12,9 +12,9 @@ draft: false
 
 ## 3줄 요약
 
-1. [psychedelic-maid-v2](/gallery/psychedelic-maid-v2/) 헤더의 자세 모호함(받침 다리 누락·허리 트위스트의 어색함)을 정정하려 11라운드의 도구 시도와 사용자의 손그림 가이드까지 거쳤지만 모델은 끝내 자세를 정확히 옮기지 못했고, 결국 *처음 v3 컬러 컷*을 그대로 cover로 받아들인 카드다.
-2. 모델은 *시각 단서가 모호한 영역*에서 가장 안전한 해석(낮은 엔트로피)으로 회귀한다. 치마 안의 다리·허리 트위스트처럼 명료한 단서가 없으면 매번 *정면 차렷 + 차분한 자세*로 떨어졌다.
-3. 결정적 발견은 *완벽함을 포기하는 결정*이다 — 자세의 모호함을 받아들이고 *그래픽 톤*을 우선시하면, 가장 자연스러운 마무리는 *원본 v3 그 자체*였다. 손그림 가이드는 정점이 아니라 *그 결정을 가능하게 한 검증 도구*가 됐다.
+1. [psychedelic-maid-v2](/gallery/psychedelic-maid-v2/) 헤더의 자세 모호함을 정정하려 11라운드의 도구 시도, 그리고 *모델로 자세를 선화 추출하는 시도까지* 모두 실패한 끝에, 사용자가 v9 컬러 컷을 베이스로 손그림 가이드를 직접 통합해 마무리한 카드다.
+2. 모델은 *시각 단서가 모호한 영역*에서 가장 안전한 해석(낮은 엔트로피)으로 회귀한다. 치마 안의 다리·허리 트위스트처럼 명료한 단서가 없으면 매번 *정면 차렷 + 차분한 자세*로 떨어졌고, *손그림 가이드를 input으로 넣어도 자세를 옮기지 못했다*.
+3. 결정적 발견은 *AI는 출발점이고 인간이 마무리한다*는 것. v9이라는 *반쯤 맞는 출발점*과 사용자의 손그림이 결합되어야 비로소 자세가 자리잡았다. 매끈한 자동화 파이프라인의 끝에는 결국 *손그림을 들어 직접 마무리하는 결정*이 있었다.
 
 ## 의도와 시드
 
@@ -103,33 +103,35 @@ draft: false
   </figure>
 </div>
 
-## 5단계 · 사용자 손그림 가이드, 그리고 v3 채택
+## 5단계 · 우회 시도들, 그리고 v9 위에 손으로 덧그림
 
-11라운드 끝에 사용자가 직접 자세를 그렸다. 먼저 v3 컬러 위에 흰 선으로 받침 다리·자세 보정을 표시한 가이드, 이어 흑백 선화로 *발레/니킥 자세 + 메이드 의상 + 허리 트위스트*를 정합한 정본 가이드, 그리고 빨간 선화로 정점화한 시각적 결정본.
+11라운드의 도구 시도가 자세를 끝내 못 잡자 *우회 경로*를 시도했다.
+
+**자세 선화 추출 시도** — gpt-image-2는 컬러 일러스트에서 *자세 자체를 못 이해*했다. 그러면 *자세를 선화로 추출*해 모델의 부담을 줄이면 어떨까. 그러나 모델은 *선화로 추출하는 작업조차* 자세를 정확히 옮기지 못했다. 빨간 선화는 그 시도의 실패작.
+
+**선화 위에 옷을 합성 시도** — 자세 선화가 약하게라도 잡혔다면 그 위에 메이드 의상을 합성하면 되지 않을까. 흑백 선화에는 자세 + 의상이 함께 들어갔지만 그래픽 톤이 v9 수준으로 올라오지 못했고, 자세·의상의 정합도 어그러졌다. 이마저도 실패.
 
 <div style="display:flex;gap:12px;margin:20px 0;flex-wrap:wrap;">
   <figure style="flex:1;min-width:160px;margin:0;">
-    <a href="https://pub-236dc9dc170e487faec4c8b5e2d084c6.r2.dev/gallery/psychedelic-maid-v3/v3-with-handlines.png" target="_blank"><img src="https://pub-236dc9dc170e487faec4c8b5e2d084c6.r2.dev/gallery/psychedelic-maid-v3/v3-with-handlines.png" alt="v3 위에 손가이드" style="width:100%;height:auto;display:block;border-radius:6px;"></a>
-    <figcaption style="font-size:13px;color:#86868b;margin-top:6px;">v3 위 손그림 가이드 (흰 선)</figcaption>
+    <a href="https://pub-236dc9dc170e487faec4c8b5e2d084c6.r2.dev/gallery/psychedelic-maid-v3/v3-with-handlines.png" target="_blank"><img src="https://pub-236dc9dc170e487faec4c8b5e2d084c6.r2.dev/gallery/psychedelic-maid-v3/v3-with-handlines.png" alt="v3 위 흰 선 자세 추출 시도" style="width:100%;height:auto;display:block;border-radius:6px;opacity:0.85;"></a>
+    <figcaption style="font-size:13px;color:#86868b;margin-top:6px;">v3 위 흰 선 — 자세 추출 시도 (실패)</figcaption>
   </figure>
   <figure style="flex:1;min-width:160px;margin:0;">
-    <a href="https://pub-236dc9dc170e487faec4c8b5e2d084c6.r2.dev/gallery/psychedelic-maid-v3/hand-line-bw.png" target="_blank"><img src="https://pub-236dc9dc170e487faec4c8b5e2d084c6.r2.dev/gallery/psychedelic-maid-v3/hand-line-bw.png" alt="흑백 선화" style="width:100%;height:auto;display:block;border-radius:6px;"></a>
-    <figcaption style="font-size:13px;color:#86868b;margin-top:6px;">흑백 선화 — 정본 가이드</figcaption>
+    <a href="https://pub-236dc9dc170e487faec4c8b5e2d084c6.r2.dev/pages/pose-study-mannequin/regen-v11.png" target="_blank"><img src="https://pub-236dc9dc170e487faec4c8b5e2d084c6.r2.dev/pages/pose-study-mannequin/regen-v11.png" alt="빨간 선화 자세 추출 실패" style="width:100%;height:auto;display:block;border-radius:6px;opacity:0.85;"></a>
+    <figcaption style="font-size:13px;color:#86868b;margin-top:6px;">빨간 선화 — 자세 추출 실패</figcaption>
   </figure>
   <figure style="flex:1;min-width:160px;margin:0;">
-    <a href="https://pub-236dc9dc170e487faec4c8b5e2d084c6.r2.dev/pages/pose-study-mannequin/regen-v11.png" target="_blank"><img src="https://pub-236dc9dc170e487faec4c8b5e2d084c6.r2.dev/pages/pose-study-mannequin/regen-v11.png" alt="빨간 선화 결정본" style="width:100%;height:auto;display:block;border-radius:6px;"></a>
-    <figcaption style="font-size:13px;color:#86868b;margin-top:6px;">(가이드를 prompt에 다시 넣어도 모델은 못 옮겼다)</figcaption>
+    <a href="https://pub-236dc9dc170e487faec4c8b5e2d084c6.r2.dev/gallery/psychedelic-maid-v3/hand-line-bw.png" target="_blank"><img src="https://pub-236dc9dc170e487faec4c8b5e2d084c6.r2.dev/gallery/psychedelic-maid-v3/hand-line-bw.png" alt="흑백 선화 의상 합성 실패" style="width:100%;height:auto;display:block;border-radius:6px;opacity:0.85;"></a>
+    <figcaption style="font-size:13px;color:#86868b;margin-top:6px;">흑백 선화 — 의상 합성 실패</figcaption>
   </figure>
 </div>
 
-그러나 *손그림 가이드를 prompt에 또 넣어 굴려도* 모델은 자세를 정확히 옮기지 못했다. 손그림은 *모델을 가르치는 도구*로는 한계가 있었다. 11라운드의 도구 시도와 손그림 가이드까지 모두 통과한 뒤, *결정*에 도달했다 — 자세의 모호함을 받아들이고, 가장 *그래픽적으로 자연스러운 결*인 *원본 v3 컬러 컷*을 그대로 cover로 굳히는 것.
-
-손그림 가이드는 *정점*이 아니라 *그 결정을 검증한 도구*였다 — *AI가 못 옮긴다*는 사실을 정확히 확인시켜준 마지막 시도. 그리고 v3을 받아들이게 한 발판.
+**v9 위에 손그림으로 덧그림 — 마지막 길.** 모든 우회가 막힌 끝에 남은 길은 하나였다. 11라운드 중 *그래픽 톤이 가장 자연스러웠던 v9 컬러 컷을 베이스로 사용자가 직접 손그림으로 자세 디테일을 덧그려 완성*. 매끈한 자동화 파이프라인의 끝에는 *사용자의 손이 직접 잡은 자세*가 있었고, 그것이 이 카드의 cover다.
 
 <div style="display:flex;gap:12px;margin:20px 0;flex-wrap:wrap;">
-  <figure style="flex:1;min-width:200px;margin:0;">
-    <a href="https://pub-236dc9dc170e487faec4c8b5e2d084c6.r2.dev/pages/pose-study-mannequin/regen-v3.png" target="_blank"><img src="https://pub-236dc9dc170e487faec4c8b5e2d084c6.r2.dev/pages/pose-study-mannequin/regen-v3.png" alt="v3 — 채택본" style="width:100%;height:auto;display:block;border-radius:6px;border:2px solid #c97a4e;"></a>
-    <figcaption style="font-size:13px;color:#c97a4e;margin-top:6px;font-weight:600;">v3 컬러 컷 — 최종 채택 ← cover</figcaption>
+  <figure style="flex:1;min-width:240px;margin:0;">
+    <a href="https://pub-236dc9dc170e487faec4c8b5e2d084c6.r2.dev/gallery/psychedelic-maid-v3/cover.png" target="_blank"><img src="https://pub-236dc9dc170e487faec4c8b5e2d084c6.r2.dev/gallery/psychedelic-maid-v3/cover.png" alt="v9 + 손그림 덧그림 최종본" style="width:100%;height:auto;display:block;border-radius:6px;border:2px solid #c97a4e;"></a>
+    <figcaption style="font-size:13px;color:#c97a4e;margin-top:6px;font-weight:600;">v9 위 손그림 덧그림 — 사용자 직접 마무리 ← cover</figcaption>
   </figure>
 </div>
 
@@ -139,11 +141,11 @@ draft: false
 
 **비유의 한계.** *무에타이 니킥*, *발레 en pointe* 같은 비유를 prompt에 넣어도 모델은 비유의 *전체 골격*을 적용하지 않고 *부분만 차용한 채 다른 차원은 또 안전한 해석*으로 채운다. 비유는 시작점이지 정본이 아니다.
 
-**손그림은 가이드이지 정본이 아니다.** 11라운드를 굴려도 못 잡힌 자세를 사용자가 손그림으로 잡았지만, *그 손그림을 prompt에 다시 넣어도 모델은 옮기지 못했다*. 손그림은 *모델을 정정하는 도구*가 아니라 *모델의 한계를 검증하는 도구*에 가까웠다.
+**우회로도 막힌다.** 자세를 못 옮긴다면 *선화로 추출해 부담을 덜자*, *추출된 선화 위에 옷을 합성하자* — 이런 우회 시도들도 모두 실패했다. 모델이 자세를 *못 이해하는* 영역은 정공법이든 우회로든 통과되지 않는다. 도구의 한계는 *우회로*로 넘는 게 아니라 *도구 바깥*으로 넘는다.
 
-**완벽함을 포기하는 결정.** 결정적 마무리는 *자세를 완벽히 정합하는 것*이 아니라 *그 모호함을 받아들이는 것*이었다. 그래픽 톤·색감·리본의 흐름이 살아있는 *원본 v3*이 자세의 작은 어색함을 덮을 만큼 매력적이었기 때문. 11라운드를 거친 끝에서야 *처음 결과를 받아들이는 결정*에 도달했다.
+**AI는 출발점이고 인간이 마무리한다.** 11라운드의 도구 시도와 두 가지 우회 시도가 모두 실패한 끝에 남은 길은 *v9 컬러 컷을 베이스로 손으로 직접 덧그리는 것*이었다. AI가 만든 *그래픽 톤이 좋은 출발점*과 인간의 *손그림 마무리*가 결합되어야 비로소 자세가 자리잡았다. 완성도는 자동화로 끝까지 가지 않는다.
 
-**카드의 정수.** 이 카드의 cover는 *완벽한 컬러 정본*이 아니라 *AI가 자세를 끝내 옮기지 못했음에도 그래픽 톤이 충분히 강해 받아들여진 결*이다. 11라운드의 시도와 손그림 가이드는 *그 결정의 무게를 만들어준 발판*이다.
+**카드의 정수.** 이 카드의 cover는 *완벽한 컬러 정본*이 아니라 *AI 출발점 + 인간 손그림 마무리의 결합*이다. 11라운드의 도구 시도와 우회 시도들은 *그 결합이 필요한 이유를 검증해준 발판*이다.
 
 ## 출처
 
@@ -155,4 +157,4 @@ draft: false
 - 정합 라운드 R2 prefix: `pages/pose-study-mannequin/` (페이지 작업 흐름에서 누적, 본문에서 그대로 참조)
 - 정본 cover · 사용자 손그림 R2 prefix: `gallery/psychedelic-maid-v3/`
 - 발행 모드: making-of — 라운드 시안을 본문에 figure 그리드로 노출
-- 사용자가 직접 자세를 손그림으로 그렸지만 모델은 이를 prompt input으로 받고도 정합에 실패. 11라운드 후 *v3 원본을 받아들이는 결정*으로 마무리.
+- 11라운드 도구 시도 + 자세 선화 추출 시도 + 선화 위 의상 합성 시도가 모두 실패. 마지막엔 사용자가 *v9 컬러 컷을 베이스로 직접 손그림으로 덧그려* 자세 디테일을 잡고 컬러 일러스트로 마무리.
