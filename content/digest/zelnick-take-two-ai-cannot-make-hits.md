@@ -6,6 +6,8 @@ categories: ["다이제스트"]
 summary: "Take-Two CEO 스트라우스 젤닉이 The Game Business 인터뷰에서 펼친 주장 — AI는 '에셋'을 만들 수는 있어도 '히트'를 만들지는 못한다. 데이터셋은 과거지향이고, 히트는 그 정의상 미래지향이기 때문이다."
 ShowToc: true
 TocOpen: false
+cover:
+  image: "/images/zelnick-take-two-ai-cannot-make-hits/01-zelnick-intro.jpg"
 ---
 
 ## 3줄 요약
