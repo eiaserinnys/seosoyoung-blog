@@ -53,7 +53,7 @@ mem0(53K stars)·Letta/MemGPT(22K stars)·CLAUDE.md(빌트인)·claude-mem·Hipp
 | Letta / MemGPT | Vector (archival) | 83.2% (LoCoMo) |
 | mem0 | Vector + Graph | 68.5% (LoCoMo) |
 
-벤치마크가 LongMemEval-S와 LoCoMo로 다른 점에 유의해야 한다. 같은 데이터셋 안에서 BM25-only(86.2%) → BM25+Vector(95.2%)로 +9pp 끌어올린 결과가 융합 자체의 기여를 입증한다.
+벤치마크가 LongMemEval-S와 LoCoMo로 다른 점에 유의해야 한다. 같은 데이터셋 안에서 BM25-only(86.2%) → BM25+Vector(95.2%)로 +9pp 끌어올린 결과가 융합 자체의 기여를 입증한다. 알고리즘 수준의 구현은 아래 ["그래프로 정돈하는 알고리즘"](#그래프로-정돈하는-알고리즘) 섹션에서 따로 본다.
 
 ### 3. 4계층 메모리 콘솔리데이션
 
@@ -112,6 +112,94 @@ API 키·시크릿·`<private>` 태그가 붙은 내용은 저장 *이전* 단�
 ### 8. 거버넌스·감사·citation 프로비넌스
 
 모든 변형(`memory_governance_delete` 등)이 감사 로그에 기록되고, 모든 메모리 항목은 `memory_verify`로 원본 관찰까지 역추적 가능한 citation 체인을 가진다. Git-versioned snapshot으로 메모리 상태 자체를 롤백할 수 있다. "메모리도 git처럼 다뤄야 한다"는 입장이며, mem0·Letta·CLAUDE.md에 없는 축이다.
+
+## 그래프로 정돈하는 알고리즘
+
+여덟 가지 차별점 가운데 시스템의 *실제 성능*을 받치는 가장 핵심 모듈은 그래프 추출·검색 파이프라인이다. 이 부분만 따로 떼어 본다. 소스 위치는 `src/prompts/graph-extraction.ts`, `src/functions/graph.ts`, `src/functions/graph-retrieval.ts`, `src/functions/temporal-graph.ts`, `src/state/hybrid-search.ts` 다섯 파일이다.
+
+### 1단계 — LLM이 XML로 엔티티·관계를 토해낸다
+
+압축된 관찰(`CompressedObservation`)이 들어오면, 시스템 프롬프트(`GRAPH_EXTRACTION_SYSTEM`)가 LLM에게 XML 출력을 강제한다. 엔티티 타입은 여덟 가지로 닫혀 있다.
+
+```
+file | function | concept | error | decision | pattern | library | person
+```
+
+관계 타입도 일곱 가지로 닫혀 있고, 각각 0.1\~1.0 가중치를 갖는다.
+
+```
+uses | imports | modifies | causes | fixes | depends_on | related_to
+weight: 1.0 = 명시적 진술, 0.5 = 추론, 0.1 = 추측
+```
+
+LLM 자유 출력을 받지 않고 닫힌 어휘를 강제한다는 점이 중요하다. "지식 그래프"라는 이름이 흔히 가지는 무정형성을 막고, 동일한 엔티티가 여러 관찰에서 같은 이름·같은 타입으로 일관되게 추출되도록 유도한다.
+
+시간 그래프 모드(`temporal-graph.ts`)에서는 엔티티 타입이 13가지로(`project`·`preference`·`location`·`organization`·`event` 추가), 관계 타입이 16가지로(`works_at`·`prefers`·`blocked_by`·`caused_by`·`optimizes_for`·`rejected`·`avoids`·`located_in`·`succeeded_by` 추가) 확장되고, 각 관계마다 `reasoning`·`sentiment`·`alternatives`·`valid_from`·`valid_to` 메타데이터를 추가로 받아온다.
+
+### 2단계 — 같은 엔티티를 만나면 합쳐진다
+
+새로 추출된 노드를 KV 스토어에 저장할 때, `(name, type)` 조합이 같은 기존 노드가 있으면 합친다.
+
+```
+properties:           merge (새 값이 기존 키 덮어씀)
+sourceObservationIds: union (어느 관찰에서 봤는지 모두 보존)
+```
+
+엣지도 마찬가지로 `(sourceNodeId, targetNodeId, type)` 키로 동일 관계가 있으면 `sourceObservationIds`를 합집합한다. 즉 같은 사실이 N번 관찰되면 그래프 안에서는 *한 엣지의 관찰 출처가 N개로 누적*된다. 이 누적량 자체가 신뢰도의 대용 신호가 되며, 나중에 검색 점수에 반영된다.
+
+여기서 시간 그래프 모드의 핵심 정책이 갈라진다 — <strong>"NEVER overwrite existing relationships — always create new versioned edges"</strong>. 같은 `(source, target, type)`이라도 시간이 지나 변하면 합치지 않고 *새 버전의 엣지를 추가*한다. "내가 jose를 썼다"는 사실이 6개월 뒤 "이제 jsonwebtoken을 쓴다"로 바뀔 때, 옛 엣지는 사라지지 않고 `valid_to`가 채워지며 나란히 보존된다.
+
+### 3단계 — 두 갈래의 BFS 검색
+
+검색 시 그래프는 두 갈래로 활용된다(`graph-retrieval.ts`).
+
+<strong>(a) `searchByEntities`</strong> — 사용자 쿼리에서 엔티티 후보를 뽑아(`extractEntitiesFromQuery`), 이름이 부분 매칭되는 노드를 시작점으로 잡고, `maxDepth=2`까지 BFS로 이웃 노드를 훑는다. 도달한 각 노드의 `sourceObservationIds`에서 관찰 ID를 수확하며, 점수는 경로의 평균 엣지 가중치를 길이로 나눈다.
+
+```
+score = avg(edge.weight along path) × (1 / pathLength)
+```
+
+가까울수록·관계가 강할수록 높은 점수. 시작 노드와 직접 연결된 관찰은 길이 0으로 점수 1.0을 받는다.
+
+<strong>(b) `expandFromChunks`</strong> — 벡터 검색의 상위 5개 관찰에서 시작해, 그 관찰을 출처로 둔 노드들로부터 `maxDepth=1`까지 BFS로 확장한다. "벡터가 비슷한 것을 먼저 찾고, 그 주변을 그래프로 한 걸음 더 본다"는 보조 전략이다. 점수는 0.5에 길이 보정을 곱한다.
+
+두 갈래의 결과는 합쳐져 단일 graph 스트림이 된다. 그래프 검색은 best-effort로 묶여 있어, 엔티티가 안 뽑히거나 BFS가 실패해도 BM25·Vector는 계속 돈다.
+
+### 4단계 — RRF로 세 스트림을 합친다
+
+BM25·Vector·Graph 세 스트림의 결과를 Reciprocal Rank Fusion으로 합친다(`hybrid-search.ts:208-219`). 핵심 한 줄은 다음과 같다.
+
+```js
+combinedScore =
+  w_bm25   × 1 / (60 + bm25Rank) +
+  w_vector × 1 / (60 + vectorRank) +
+  w_graph  × 1 / (60 + graphRank)
+```
+
+`k=60` 상수는 RRF 표준값이다. 기본 가중치는 BM25=0.4, Vector=0.6, Graph=0.3이며 — 가용한 스트림이 없으면 그 가중치는 0으로 떨어뜨리고 나머지를 정규화한다. 임베딩 제공자가 없는 환경에서는 자동으로 BM25+Graph 두 스트림으로 운영되고, 엔티티가 안 뽑힌 쿼리에서는 자동으로 BM25+Vector 두 스트림으로 운영된다.
+
+같은 관찰 ID가 세 스트림 모두에 나타나면 세 항이 모두 더해진다. 즉 "키워드도 맞고·의미도 가깝고·그래프 이웃이기도 한" 관찰이 가장 높은 점수를 받는다. 한 신호만 강한 결과보다, 신호 셋이 동의하는 결과가 위로 올라온다.
+
+후처리 두 단계가 더 있다. <strong>세션 다양성</strong> — 같은 세션에서 나온 결과는 최대 3개로 제한해, 한 세션이 결과를 독점하지 않게 한다. <strong>선택적 리랭커</strong> — `RERANK_ENABLED=true`면 상위 20개를 다시 정렬한다.
+
+### 5단계 — 시간 차원과 graphContext
+
+융합 점수 외에도, 그래프 검색이 반환하는 `graphContext` 필드는 "*왜 이 결과가 나왔는가*"의 경로를 자연어로 들고 다닌다.
+
+```
+[concept] JWT auth (provider=jose) --uses--> [file] src/middleware/auth.ts
+  [reasoning: Edge runtime compatibility required] @2025-09-12
+```
+
+`temporalQuery(entityName, asOf)`로 특정 시점의 그래프 단면을 잘라낼 수도 있다.
+
+```
+"2025-03-15 기준 우리 인증 미들웨어는 무엇이었는가?"
+→ asOf 이전에 tcommit/tvalid가 있고, tvalidEnd가 asOf 이후인 엣지만 반환
+→ jose 시기의 결정 + 그 결정의 reasoning + 대체로 고려했던 alternatives까지
+```
+
+mem0·Letta 같은 인접 시스템에서 가장 옅은 부분이 바로 이 시간 차원이다. agentmemory에서 그래프 모듈이 가장 큰 변별력을 갖는 이유는 — 단순히 "지식 그래프가 있다"가 아니라, *(1) 닫힌 어휘로 일관된 엔티티 추출, (2) 머지·버전 정책의 명시화, (3) 두 갈래 BFS 검색, (4) RRF 융합 시 세 신호의 동의를 가중, (5) bi-temporal 메타데이터로 결정의 시간적 변화 보존* 다섯 가지가 한 파이프라인으로 결합되어 있어서다.
 
 ## 어떤 효과를 기대할 수 있는가
 
