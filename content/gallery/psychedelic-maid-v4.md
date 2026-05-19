@@ -14,8 +14,8 @@ draft: false
 ## 3줄 요약
 
 1. *컬러 직행 → 실패 → 선화로 회귀 → 역할 분리 컬러화 → 광학 마감*의 4막 구조. 매 단계 진단이 다음 라운드의 보정 축이 되어 *광각 클로즈업 + 사이키델릭 눈동자*의 사이키델릭 메이드 인상이 비로소 자리잡았다.
-2. 컬러 단계에서 *포즈 유지*와 *다이나믹*을 한 프롬프트에 함께 요구하면 모델은 *다이나믹*을 우선해 광각 정체성을 흘려보낸다. 두 지시가 충돌하는 순간, *작가가 양보한 차원*을 모델이 자유롭게 채워 넣는다.
-3. 결정적 우회는 *선화로 돌아가는 결정*이었다. 포즈와 인상의 *골격을 흑백으로 먼저 굳히고*, 색은 *역할 분리된 reference*로 따로 입혔다. 마무리는 *도어 렌즈 광학 효과* — 광각 왜곡이라는 형식의 결정에 *"문 너머의 시선"*이라는 의미가 사후적으로 부여되었다.
+2. 1단계의 핵심 실패는 *포즈 전이*였다. 9컷 시안 중 하나의 인물·헤어·색감을 유지한 채 *다른 reference의 포즈만 옮기려* 했으나 모델은 포즈 reference의 골격을 옮기지 못하고 *매번 자유로운 새 자세*로 떨어졌다. v3에서 보았던 *시각 단서가 모호한 영역의 안전한 해석으로의 회귀*가, 이번엔 *포즈 reference 자체*에서 일어났다.
+3. 결정적 우회는 *포즈를 직접 그려 입력하는 결정*이었다 — 9컷 선화 시트에서 자세를 직접 고르고 클로즈업 선화로 굳혀 *포즈를 정본으로 등록*. 그 선화 위에 *역할 분리된 색감 reference*를 더해 컬러화. 마무리는 *도어 렌즈 광학 효과* — 광각 왜곡이라는 형식의 결정에 *"문 너머의 시선"*이라는 의미가 사후적으로 부여되었다.
 
 ## 의도와 시드
 
@@ -25,9 +25,9 @@ draft: false
 
 시드: 없음. 텍스트 prompt와 다회차 reference 입력만으로 인상을 빚어 올린다.
 
-## 1단계 · 컬러 직행 (실패)
+## 1단계 · 컬러 직행 (포즈 전이 실패)
 
-먼저 *컬러로 직행*하는 정공법을 시도했다. 9컷 컬러 시안 시트로 가능한 자세·구도의 후보를 한 번에 뽑고, 그중 하나를 시드로 잡아 "*포즈를 다이나믹하게*" 변형을 반복했다. 결과는 4컷의 *서로 다른 컬러 변형* — 정면 정적 / 공중 다이나믹 / 점프 / 다시 정적 — 였다. 모두 *완성도 자체는 높지만 무엇 하나도 "광각 클로즈업"이라는 인상의 골격을 담고 있지 않았다*.
+먼저 *컬러로 직행*하는 정공법을 시도했다. 9컷 컬러 시안 시트로 가능한 자세·구도의 후보를 한 번에 뽑고, 그중 한 컷을 시드로 골라 *인물·헤어·색감은 그대로 유지한 채 다른 reference의 다이나믹한 포즈만 옮겨오는* 시도를 반복했다. 의도는 명료했다 — *시드 컷에 부족했던 자세의 다이나믹을 별도 포즈 reference로 보충하는 것*. 4번 모두 결과는 같았다. **포즈 reference의 골격이 모델을 통과하지 못한다.** 모델은 매번 *자유롭게 새 자세*를 만들었고, 그 자세들은 *시드 컷에도, 포즈 reference에도 정합하지 않았다*.
 
 <div style="display:flex;gap:12px;margin:20px 0;flex-wrap:wrap;">
   <figure style="flex:1;min-width:160px;margin:0;">
@@ -36,23 +36,23 @@ draft: false
   </figure>
   <figure style="flex:1;min-width:160px;margin:0;">
     <a href="https://pub-236dc9dc170e487faec4c8b5e2d084c6.r2.dev/gallery/psychedelic-maid-v4-r1/s2-static.png" target="_blank"><img src="https://pub-236dc9dc170e487faec4c8b5e2d084c6.r2.dev/gallery/psychedelic-maid-v4-r1/s2-static.png" alt="정면 정적" style="width:100%;height:auto;display:block;border-radius:6px;"></a>
-    <figcaption style="font-size:13px;color:#86868b;margin-top:6px;">변형 1 — 정면 정적</figcaption>
+    <figcaption style="font-size:13px;color:#86868b;margin-top:6px;">포즈 전이 시도 1 — 포즈 reference 무시</figcaption>
   </figure>
   <figure style="flex:1;min-width:160px;margin:0;">
     <a href="https://pub-236dc9dc170e487faec4c8b5e2d084c6.r2.dev/gallery/psychedelic-maid-v4-r1/s3-airborne.png" target="_blank"><img src="https://pub-236dc9dc170e487faec4c8b5e2d084c6.r2.dev/gallery/psychedelic-maid-v4-r1/s3-airborne.png" alt="공중 다이나믹" style="width:100%;height:auto;display:block;border-radius:6px;"></a>
-    <figcaption style="font-size:13px;color:#86868b;margin-top:6px;">변형 2 — 공중 다이나믹</figcaption>
+    <figcaption style="font-size:13px;color:#86868b;margin-top:6px;">포즈 전이 시도 2 — 자유로운 새 자세</figcaption>
   </figure>
   <figure style="flex:1;min-width:160px;margin:0;">
     <a href="https://pub-236dc9dc170e487faec4c8b5e2d084c6.r2.dev/gallery/psychedelic-maid-v4-r1/s4-jump.png" target="_blank"><img src="https://pub-236dc9dc170e487faec4c8b5e2d084c6.r2.dev/gallery/psychedelic-maid-v4-r1/s4-jump.png" alt="점프" style="width:100%;height:auto;display:block;border-radius:6px;"></a>
-    <figcaption style="font-size:13px;color:#86868b;margin-top:6px;">변형 3 — 점프</figcaption>
+    <figcaption style="font-size:13px;color:#86868b;margin-top:6px;">포즈 전이 시도 3 — 또 다른 새 자세</figcaption>
   </figure>
   <figure style="flex:1;min-width:160px;margin:0;">
     <a href="https://pub-236dc9dc170e487faec4c8b5e2d084c6.r2.dev/gallery/psychedelic-maid-v4-r1/s5-static.png" target="_blank"><img src="https://pub-236dc9dc170e487faec4c8b5e2d084c6.r2.dev/gallery/psychedelic-maid-v4-r1/s5-static.png" alt="다시 정적" style="width:100%;height:auto;display:block;border-radius:6px;"></a>
-    <figcaption style="font-size:13px;color:#86868b;margin-top:6px;">변형 4 — 다시 정적</figcaption>
+    <figcaption style="font-size:13px;color:#86868b;margin-top:6px;">포즈 전이 시도 4 — 끝내 정합 실패</figcaption>
   </figure>
 </div>
 
-진단은 명료했다. *"포즈를 유지하면서 다이나믹하게 바꿔줘"* 라는 한 줄의 prompt에 **두 개의 상충 지시**가 들어 있었다 — *유지*와 *변경*. 모델은 이 충돌을 *해소*하지 않고 *다이나믹*에 가중치를 두어 자유롭게 새 자세를 만들었다. 9컷에서 흥미로웠던 광각 시안은 그 과정에서 *시드에 없는 차원*이라 통째로 사라졌다. **광각 정체성을 갖지 않은 시드에서 출발한 것이 근본 오류였다.**
+진단은 명료했다. **포즈는 reference 이미지로 옮길 수 없다.** *"인물·헤어·색감은 그대로 유지하고 포즈만 두 번째 reference를 따라 바꿔줘"* 라는 자연어로 작가의 의도는 분명히 표현되지만, 모델은 reference 이미지에서 *포즈의 골격*을 추출해 시드 위에 옮기는 작업을 수행하지 못한다. 결과는 매번 *시드도 아니고 reference도 아닌 새 자세* — 모델이 *해석할 수 없는 차원*을 자유롭게 채워 넣는 결이 또 한 번 나왔다. v3에서 마주친 *낮은 엔트로피로의 회귀*가 형식 차원에서 동일하게 일어난 셈이다.
 
 ## 2단계 · 선화로 회귀 (포즈 골격)
 
@@ -77,13 +77,13 @@ draft: false
   </figure>
 </div>
 
-2차 시트에서 *찻쟁반을 든 메이드*라는 직무·소품 축이 더해졌고, 거기서 한 컷을 골라 *얼굴이 더 가깝게 광각 왜곡되는 클로즈업*으로 끌어올렸다. 배경의 *눈동자 모티프*가 흥미로웠으나 인상이 산만해질 위험이 있어 다음 단계에서 정리. **이 선화가 v4 카드의 인상 골격**이다.
+2차 시트에서 *찻쟁반을 든 메이드*라는 직무·소품 축이 더해졌고, 거기서 한 컷을 골라 *얼굴이 더 가깝게 광각 왜곡되는 클로즈업*으로 끌어올렸다. 배경의 *눈동자 모티프*가 흥미로웠으나 인상이 산만해질 위험이 있어 다음 단계에서 정리. **이 선화가 v4 카드의 포즈와 인상의 정본**이다.
 
-핵심 통찰: *컬러는 무엇이 표현되어 있는지 결정하지만, 선화는 무엇이 표현되어야 하는지 결정한다*. 형식의 결정은 색이 입혀지기 전에 끝나 있어야 한다.
+핵심 통찰: *포즈는 reference로 옮길 수 없지만, 선화로 직접 그릴 수는 있다*. 포즈가 자연어와 reference 이미지로 다 통과되지 않는다면, *포즈 자체를 그림으로 입력*해 모델의 부담을 0으로 만들면 된다. 9컷 선화 시트는 그 입력을 작가가 *선택해 굳히는* 과정이다.
 
 ## 3단계 · 역할 분리 컬러화 (성공)
 
-선화 최종을 시드로 컬러화로 넘어갔다. 1단계와 결정적으로 달랐던 것은 **reference의 역할 분리**다.
+선화 최종을 *포즈·구도 정본*으로 두고 컬러화로 넘어갔다. 1단계와 결정적으로 달랐던 것은 **reference의 역할 분리**다. 1단계에서 *시드 한 장에 포즈 reference를 더하는* 구성으로는 모델이 포즈를 옮기지 못했지만, *선화가 포즈를 직접 기술하면* 모델은 그 위에 색만 입히면 된다 — 옮길 일이 없어진다.
 
 > 첫번째 첨부한 *포즈와 구도를 활용해서*, 두번째 첨부한 *인물과 색감*을 넣어 다시 그려줘. 인물은 호기심 어린 눈길로 미소 짓고 있는데, 눈 안이 사이키델릭한 컬러로 뱅글뱅글 돌고 있어.
 
@@ -100,7 +100,7 @@ draft: false
 
 ## 4단계 · 광학 마감
 
-채택본은 좋았지만 *조금 더*가 남아 있었다. 세 번의 정교한 보정으로 마무리.
+채택본은 좋았지만 *조금 더*가 남아 있었다. 두 갈래의 보정을 시도했고, 한쪽은 드롭, 한쪽은 cover로 자리잡았다.
 
 <div style="display:flex;gap:12px;margin:20px 0;flex-wrap:wrap;">
   <figure style="flex:1;min-width:160px;margin:0;">
@@ -108,28 +108,30 @@ draft: false
     <figcaption style="font-size:13px;color:#86868b;margin-top:6px;">① 광각 강화 + 눈동자 디테일</figcaption>
   </figure>
   <figure style="flex:1;min-width:160px;margin:0;">
-    <a href="https://pub-236dc9dc170e487faec4c8b5e2d084c6.r2.dev/gallery/psychedelic-maid-v4-r4/s2-props.png" target="_blank"><img src="https://pub-236dc9dc170e487faec4c8b5e2d084c6.r2.dev/gallery/psychedelic-maid-v4-r4/s2-props.png" alt="찻잔·그릇 사이키델릭 동조" style="width:100%;height:auto;display:block;border-radius:6px;"></a>
-    <figcaption style="font-size:13px;color:#86868b;margin-top:6px;">② 찻잔·그릇 사이키델릭 동조</figcaption>
+    <a href="https://pub-236dc9dc170e487faec4c8b5e2d084c6.r2.dev/gallery/psychedelic-maid-v4-r4/s2-props.png" target="_blank"><img src="https://pub-236dc9dc170e487faec4c8b5e2d084c6.r2.dev/gallery/psychedelic-maid-v4-r4/s2-props.png" alt="찻잔·주전자 사이키델릭 시도 (드롭)" style="width:100%;height:auto;display:block;border-radius:6px;opacity:0.85;"></a>
+    <figcaption style="font-size:13px;color:#86868b;margin-top:6px;">② 찻잔·주전자 사이키델릭 시도 — 드롭</figcaption>
   </figure>
   <figure style="flex:1;min-width:160px;margin:0;">
     <a href="https://pub-236dc9dc170e487faec4c8b5e2d084c6.r2.dev/gallery/psychedelic-maid-v4/cover.png" target="_blank"><img src="https://pub-236dc9dc170e487faec4c8b5e2d084c6.r2.dev/gallery/psychedelic-maid-v4/cover.png" alt="도어 렌즈 광학 효과 — 최종" style="width:100%;height:auto;display:block;border-radius:6px;border:2px solid #c97a4e;"></a>
-    <figcaption style="font-size:13px;color:#c97a4e;margin-top:6px;font-weight:600;">③ 도어 렌즈 광학 효과 — 최종 ← cover</figcaption>
+    <figcaption style="font-size:13px;color:#c97a4e;margin-top:6px;font-weight:600;">③ ①에 도어 렌즈 광학 효과 — 최종 ← cover</figcaption>
   </figure>
 </div>
 
-①은 *얼굴을 더 가깝게, 광각을 더 과감하게* — 1단계에서 잃었던 클로즈업의 강도를 끝까지 밀어붙임. ②는 *찻잔·그릇·티팟의 포인트 컬러를 인물 색감과 동조* — 소도구가 배경과 같은 결로 사이키델릭하게 묶이며 화면의 통일성이 잡힘. **③의 마무리가 결정타였다 — 흐림 + 색수차 + 비네팅의 도어 렌즈 광학 효과.** 이 한 줄의 후보정이 *광각 왜곡*이라는 형식의 결정에 **"문 너머에서 들여다본 시선"**이라는 의미를 사후적으로 부여한다. 광각이 *왜 광각이어야 했는지*가 비로소 설명된다.
+①은 *얼굴을 더 가깝게, 광각을 더 과감하게* — 3단계의 채택본을 인상의 정점으로 끌어올렸다. ②는 *찻잔·주전자에도 사이키델릭 포인트 컬러를 입혀 소도구와 인물을 같은 결로 묶으려는 시도*였으나, 사이키델릭 패턴이 식기 표면에서 *과잉으로 부서지고 인물 시선에서 시각이 분산*되어 헤맸다가 드롭. **③은 ①을 그대로 받아 흐림 + 색수차 + 비네팅의 도어 렌즈 광학 효과를 입힌 마감**이다. 이 한 줄의 후보정이 *광각 왜곡*이라는 형식의 결정에 **"문 너머에서 들여다본 시선"**이라는 의미를 사후적으로 부여한다. 광각이 *왜 광각이어야 했는지*가 비로소 설명된다.
+
+소도구 컬러는 *인물과 동조시키는 것이 아니라 인물에게 자리를 양보하는 것*이 정합이었다 — ②의 드롭이 그 판단을 굳혀 주었다.
 
 ## 가장 흥미로운 지점
 
-**충돌하는 지시는 모델이 알아서 풀지 않는다.** 1단계의 *"유지하면서 다이나믹하게"* 는 한 줄의 자연어로는 그럴듯해 보이지만, 모델 입장에서는 *해소할 수 없는 충돌*이다. 모델은 충돌을 *해소*하지 않고 *한쪽에 가중치를 두고 다른 쪽을 흘려보낸다*. 작가가 양보한 차원은 모델이 자유롭게 채운다 — 그 자유는 거의 항상 *작가의 의도와 다른 결*로 풀린다.
+**포즈는 reference로 옮길 수 없다.** 1단계의 모든 시도는 *시드의 색감·인물·구도를 유지하면서 별도 reference의 포즈만 가져오는 것*이었다. 자연어 지시는 명료했지만, 모델은 *reference 이미지에서 포즈 골격을 추출해 시드 위에 옮기는 작업*을 수행하지 못한다. v3에서도, v4에서도 같은 벽이다 — *포즈는 모델이 해석할 수 있는 차원에 있지 않다*. 안전한 해석으로의 회귀가 매번 자유로운 새 자세를 만들어 시드도 reference도 정합하지 않는 결과로 떨어졌다.
 
-**형식의 결정은 색이 입혀지기 전에 끝나야 한다.** 컬러로 직행하면 *완성도 자체는 빠르게 올라온다*. 하지만 *완성도와 형식*은 다른 차원이다. 광각이라는 형식의 결정은 *흑백의 단서*에서 더 명료하게 보인다. 색은 형식을 강화하지만, 색이 형식을 *결정*하게 두면 *모델의 안전한 해석*이 우선한다. v3에서 보았던 *낮은 엔트로피로의 회귀*가 형식 차원에서도 동일하게 작동한다.
+**포즈는 직접 그려 입력해야 한다.** reference로 옮길 수 없다면 *포즈 자체를 그림으로 입력*해 모델의 부담을 0으로 만들면 된다. 9컷 선화 시트는 그 입력을 *작가가 선택해 굳히는 단계*다 — 모델이 무한히 자유로운 후보 중에서 작가가 *하나의 포즈를 선택*해 *선화로 정본화*한다. 정본이 되는 순간 모델은 그 포즈를 *해석*할 필요가 없다 — *받아쓰면 된다*. 1단계와 3단계의 본질적 차이는 *여기 한 줄*에 있다.
 
-**reference의 역할 분리가 정공이다.** 한 reference에 *모든 책임*을 지우면 모델이 그 reference의 *어떤 차원을 보존하고 어떤 차원을 변형할지* 자의적으로 선택한다. *포즈는 A reference, 색감은 B reference, 디테일은 텍스트* 처럼 차원을 분리해 위임하면 모델이 *각 입력의 책임 영역을 침범하지 않는다*. 1단계가 실패하고 3단계가 성공한 본질적 차이는 *여기 한 줄에 있다*.
+**reference의 책임 영역을 침범하지 않게 분리한다.** 한 reference에 *모든 책임*을 지우면 모델이 그 reference의 *어떤 차원을 보존하고 어떤 차원을 변형할지* 자의적으로 선택한다. *포즈는 선화 reference, 색감은 별도 reference, 디테일은 텍스트* 처럼 차원을 분리해 위임하면 모델이 *각 입력의 책임 영역을 침범하지 않는다*. 입력이 정합하면 출력도 정합한다.
 
-**후보정은 의미를 부여한다.** 4단계 ③의 도어 렌즈 광학 효과는 *기술적으로는 흐림 + 색수차 + 비네팅의 합*이지만, *서사적으로는 "문 너머의 시선"이라는 메타포의 정립*이다. 후보정이 단순히 *마무리*가 아니라 *형식의 사후적 정당화*로 작동하는 순간이 있다. 광각이라는 결정의 *이유*가 이 한 번의 후보정으로 카드에 들어왔다.
+**후보정은 의미를 부여한다.** 4단계 ③의 도어 렌즈 광학 효과는 *기술적으로는 흐림 + 색수차 + 비네팅의 합*이지만, *서사적으로는 "문 너머의 시선"이라는 메타포의 정립*이다. 후보정이 단순히 *마무리*가 아니라 *형식의 사후적 정당화*로 작동하는 순간이 있다. 광각이라는 결정의 *이유*가 이 한 번의 후보정으로 카드에 들어왔다. 한편 ②의 *소도구 사이키델릭 시도*는 드롭됐다 — *모든 요소를 같은 결로 묶는 것*과 *주연에게 자리를 양보하는 것*은 다른 결의 판단이다.
 
-**카드의 정수.** v4의 cover는 *4번의 다른 결의 시도가 누적된 결과*다. 컬러 직행의 실패, 선화로의 회귀, 역할 분리의 발견, 광학 마감으로의 의미 부여 — 어느 한 단계라도 빠지면 이 컷이 나오지 않는다. *우회를 통한 성취가 정공의 실패를 헛되이 만들지 않는다*. 1단계의 실패는 *왜 선화로 돌아가야 했는지*를 증명하는 발판이고, 그 발판이 없었다면 3단계의 발견도 없다.
+**카드의 정수.** v4의 cover는 *4단계의 다른 결의 시도가 누적된 결과*다. 컬러 직행의 포즈 전이 실패, 선화로 정본화한 우회, 역할 분리 컬러화의 발견, 광학 마감으로의 의미 부여 — 어느 한 단계라도 빠지면 이 컷이 나오지 않는다. *우회를 통한 성취가 정공의 실패를 헛되이 만들지 않는다*. 1단계의 실패는 *왜 선화로 돌아가야 했는지*를 증명하는 발판이고, 그 발판이 없었다면 3단계의 발견도 없다.
 
 ## 출처
 
@@ -145,5 +147,6 @@ draft: false
   - `gallery/psychedelic-maid-v4-r3/` — 3단계 역할 분리 컬러화 (채택본 1장)
   - `gallery/psychedelic-maid-v4-r4/` — 4단계 광학 마감 (보조 시안 2장, 최종 cover는 정본 prefix)
 - 발행 모드: making-of — 모든 라운드 시안을 본문에 figure 그리드로 노출. 시안 R2 객체는 보존
-- 4단계 흐름: *컬러 직행 (실패) → 선화 회귀 (골격) → 역할 분리 컬러화 (성공) → 광학 마감 (의미 부여)*
-- 핵심 발견: *충돌하는 한 줄의 자연어 prompt는 차원 분리된 다중 reference 입력으로 풀린다*
+- 4단계 흐름: *컬러 직행 포즈 전이 실패 → 선화로 포즈 정본화 → 역할 분리 컬러화 → 광학 마감*
+- 핵심 발견: *포즈는 reference로 옮길 수 없고, 직접 그려 입력해야 한다.* 자연어와 reference 이미지를 통과하지 못하는 차원이 있고, 그 차원은 *입력 매체 자체를 바꾸어야* 풀린다 — 그림은 그림으로
+- 4단계 ②(소도구 사이키델릭 동조)는 시도했다가 *시각 분산*으로 드롭. ①을 그대로 받은 ③이 cover
