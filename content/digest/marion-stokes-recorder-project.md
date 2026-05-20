@@ -62,7 +62,11 @@ images:
 
 ![70년대 거실의 한 풍경 — 잡지 더미 옆에 TV와 베타맥스 녹화기가 놓인 시대. Stokes는 1975년경 베타맥스를 사면서 이 시스템을 자기 집 거실에서 시작했다.](/images/marion-stokes-recorder-project/recorder-doc-livingroom.jpg "다큐멘터리 'Recorder'(2019) 중. 잡지 더미와 베타맥스 데크가 놓인 1970년대 거실 재현 컷.")
 
-![1979년부터 2012년까지 — 그녀가 남긴 비디오테이프 더미.](/images/marion-stokes-recorder-project/vhs-tapes-archive.jpg "70,000여 개의 VHS — 출처: Recorder: The Marion Stokes Project")
+<p style="text-align:center;">
+  <img src="/images/marion-stokes-recorder-project/vhs-tapes-archive.jpg" alt="1979년부터 2012년까지 — 그녀가 남긴 비디오테이프 더미." style="max-width:55%;">
+  <br>
+  <em>1979년부터 2012년까지, 다중 채널·주야 무휴로 쌓인 70,000여 개의 VHS. — 출처: Recorder: The Marion Stokes Project</em>
+</p>
 
 녹화 채널은 시대마다 달라졌다. 초기에는 지역 방송과 네트워크 뉴스가 중심이었고, 케이블이 24시간 뉴스 시대를 열면서부터는 Fox, MSNBC, CNN, C-SPAN, CNBC를 동시에 잡았다. 보스턴과 필라델피아를 오가며 살던 시기(1980년대)에는 보스턴 강제 통학(busing) 사태도 함께 기록됐다.
 
