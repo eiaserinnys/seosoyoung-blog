@@ -1,0 +1,17 @@
+/* 본문 figure 이미지 중앙 정렬 */
+/* 가로폭이 본문보다 좁은 이미지(인물 포트레이트·세로 사진 등)가 좌측 정렬되어 */
+/* 어색해지는 것을 막는다. img를 inline-block으로 두어 강제 확대 없이 자기 원본 */
+/* 너비를 유지하면서 가운데로 놓이게 한다. */
+.post-content figure {
+  text-align: center;
+}
+
+.post-content figure img {
+  display: inline-block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.post-content figure figcaption {
+  text-align: center;
+}
