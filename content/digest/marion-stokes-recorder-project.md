@@ -18,7 +18,10 @@ images:
 2. 마지막 녹화는 임종일이었던 2012년 12월 14일 Sandy Hook 학살 보도였다. 남긴 비디오테이프는 71,716개. 비용은 애플 초창기 주식에 투자한 자산으로 충당했다.
 3. 사후 아들 Michael Metelits가 Internet Archive에 전량 기증했고, 80\~2000년대 미국 정치·사회·문화 원본 뉴스 영상이 — 방송국조차 갖고 있지 않은 — 디지털화 진행 중이다. 2025년 현재 자금 부족으로 작업은 일부만 완료된 상태다.
 
-![Marion Stokes의 청년기 인물 사진. 그녀는 흑인 여성 사서·사회운동가이자, 한때 공산당 활동가였고, 후에는 한 시대의 TV 뉴스 전체를 자기 거실에 옮긴 비공식 아카이비스트가 되었다.](/images/marion-stokes-recorder-project/marion-portrait-bw.jpg "Marion Stokes(1929\~2012). — 출처: Recorder: The Marion Stokes Project (Matt Wolf, 2019)")
+<p style="text-align:center;">
+  <img src="/images/marion-stokes-recorder-project/marion-portrait-bw.jpg" alt="Marion Stokes(1929\~2012)의 청년기 인물 사진.">
+  <em>Marion Stokes(1929\~2012). 흑인 여성 사서·사회운동가이자, 한때 공산당 활동가였고, 후에는 한 시대의 TV 뉴스 전체를 자기 거실에 옮긴 비공식 아카이비스트. — 출처: Recorder: The Marion Stokes Project (Matt Wolf, 2019)</em>
+</p>
 
 ## 발단 — 1979년 이란 인질 사건
 
@@ -48,7 +51,10 @@ images:
 
 다큐멘터리 'Recorder'를 본 Variety의 Owen Gleiberman은 Stokes를 "Noam Chomsky와 카우치 포테이토 뉴스 중독자의 기괴한 혼종"이라고 평했다([Variety, 2019](https://variety.com/2019/film/reviews/recorder-the-marion-stokes-project-review-1203197887/)).
 
-![1967\~1971년 WCAU-TV10의 'Input' 출연 시절의 Marion. 매체의 휘발성을 누구보다 잘 안 사람은, 한때 자신이 매체의 안쪽에 있던 사람이었다.](/images/marion-stokes-recorder-project/marion-on-input.jpg "다큐멘터리 'Recorder'(2019) 중. Marion Stokes가 진행하던 1967\~1971년 공영 토론 프로그램 'Input'의 영상.")
+<p style="text-align:center;">
+  <img src="/images/marion-stokes-recorder-project/marion-on-input.jpg" alt="1967\~1971년 WCAU-TV10의 'Input' 출연 시절의 Marion.">
+  <em>1967\~1971년 WCAU-TV10의 공영 토론 프로그램 'Input' 출연 시절의 Marion. 매체의 휘발성을 누구보다 잘 안 사람은, 한때 자신이 매체의 안쪽에 있던 사람이었다. — 출처: 다큐멘터리 'Recorder'(2019)</em>
+</p>
 
 ## 방법론 — 최대 8대 VCR, 6시간마다 테이프 교체
 
@@ -60,7 +66,10 @@ images:
 - <strong>이동</strong>: 가족 외출도 테이프 길이에 맞춰 계획. 후기에는 외출했다가도 교체 시간이 되면 집으로 뛰어 돌아왔다.
 - <strong>포맷 거부</strong>: TiVo·DVR을 거부함. "정부가 자신이 무엇을 녹화하는지 알게 될 것"이라는 우려 때문 ([Hollywood Reporter, 2019](https://www.hollywoodreporter.com/movies/movie-reviews/recorder-marion-stokes-project-1205067/)). 이메일도 평생 한 번도 보내지 않았다.
 
-![70년대 거실의 한 풍경 — 잡지 더미 옆에 TV와 베타맥스 녹화기가 놓인 시대. Stokes는 1975년경 베타맥스를 사면서 이 시스템을 자기 집 거실에서 시작했다.](/images/marion-stokes-recorder-project/recorder-doc-livingroom.jpg "다큐멘터리 'Recorder'(2019) 중. 잡지 더미와 베타맥스 데크가 놓인 1970년대 거실 재현 컷.")
+<p style="text-align:center;">
+  <img src="/images/marion-stokes-recorder-project/recorder-doc-livingroom.jpg" alt="잡지 더미 옆에 TV와 베타맥스 녹화기가 놓인 1970년대 거실 재현 컷.">
+  <em>70년대 거실의 한 풍경 — 잡지 더미 옆에 TV와 베타맥스 녹화기가 놓인 시대. Stokes는 1975년경 베타맥스를 사면서 이 시스템을 자기 집 거실에서 시작했다. — 출처: 다큐멘터리 'Recorder'(2019)</em>
+</p>
 
 <p style="text-align:center;">
   <img src="/images/marion-stokes-recorder-project/vhs-tapes-archive.jpg" alt="1979년부터 2012년까지 — 그녀가 남긴 비디오테이프 더미." style="max-width:55%;margin-left:auto;margin-right:auto">
