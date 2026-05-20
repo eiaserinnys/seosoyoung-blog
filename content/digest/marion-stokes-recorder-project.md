@@ -63,7 +63,7 @@ images:
 ![70년대 거실의 한 풍경 — 잡지 더미 옆에 TV와 베타맥스 녹화기가 놓인 시대. Stokes는 1975년경 베타맥스를 사면서 이 시스템을 자기 집 거실에서 시작했다.](/images/marion-stokes-recorder-project/recorder-doc-livingroom.jpg "다큐멘터리 'Recorder'(2019) 중. 잡지 더미와 베타맥스 데크가 놓인 1970년대 거실 재현 컷.")
 
 <p style="text-align:center;">
-  <img src="/images/marion-stokes-recorder-project/vhs-tapes-archive.jpg" alt="1979년부터 2012년까지 — 그녀가 남긴 비디오테이프 더미." style="max-width:55%; margin: 0 auto;">
+  <img src="/images/marion-stokes-recorder-project/vhs-tapes-archive.jpg" alt="1979년부터 2012년까지 — 그녀가 남긴 비디오테이프 더미." style="max-width:55%;margin-left:auto;margin-right:auto">
   <br>
   <em>1979년부터 2012년까지, 다중 채널·주야 무휴로 쌓인 70,000여 개의 VHS. — 출처: Recorder: The Marion Stokes Project</em>
 </p>
@@ -89,7 +89,7 @@ Stokes는 83세에 폐 질환으로 사망했다. 그날의 녹화 분에는 San
 함께 기증된 부속 자료도 방대하다. 55개의 뱅커스 박스에 담긴 1960년 이후의 개인 일기, 잡지, 신문, 시민단체 팸플릿, 전단지 — 이미 일부는 디지털화돼 [Internet Archive의 Marion Stokes Collection](https://archive.org/details/marionstokes)에서 열람 가능하다.
 
 <p style="text-align:center;">
-  <img src="/images/marion-stokes-recorder-project/archive-boxes-warehouse.webp" alt="해상 컨테이너에 실린 채 카세트가 든 박스들이 캘리포니아로 옮겨졌다." style="max-width:55%; margin: 0 auto;">
+  <img src="/images/marion-stokes-recorder-project/archive-boxes-warehouse.webp" alt="해상 컨테이너에 실린 채 카세트가 든 박스들이 캘리포니아로 옮겨졌다." style="max-width:55%;margin-left:auto;margin-right:auto">
   <br>
   <em>4개 해상 컨테이너에 나눠 실려 캘리포니아로 옮겨진 박스들. — 출처: All That's Interesting</em>
 </p>
