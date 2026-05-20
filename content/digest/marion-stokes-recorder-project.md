@@ -7,9 +7,9 @@ summary: "1979년 이란 인질 사건 보도가 시간마다 달라지는 것�
 ShowToc: true
 TocOpen: false
 cover:
-  image: "/images/marion-stokes-recorder-project/marion-stokes-portrait.jpg"
+  image: "/images/marion-stokes-recorder-project/marion-portrait-bw.jpg"
 images:
-  - "/images/marion-stokes-recorder-project/marion-stokes-portrait.jpg"
+  - "/images/marion-stokes-recorder-project/marion-portrait-bw.jpg"
 ---
 
 ## 3줄 요약
@@ -18,7 +18,7 @@ images:
 2. 마지막 녹화는 임종일이었던 2012년 12월 14일 Sandy Hook 학살 보도였다. 남긴 비디오테이프는 71,716개. 비용은 애플 초창기 주식에 투자한 자산으로 충당했다.
 3. 사후 아들 Michael Metelits가 Internet Archive에 전량 기증했고, 80\~2000년대 미국 정치·사회·문화 원본 뉴스 영상이 — 방송국조차 갖고 있지 않은 — 디지털화 진행 중이다. 2025년 현재 자금 부족으로 작업은 일부만 완료된 상태다.
 
-![Marion Stokes 본인. 1967\~1971년 그녀가 직접 제작·출연한 공영 토론 프로그램 'Input'의 한 장면.](/images/marion-stokes-recorder-project/marion-stokes-portrait.jpg "Marion Stokes — 출처: Recorder: The Marion Stokes Project (Matt Wolf, 2019)")
+![Marion Stokes의 청년기 인물 사진. 그녀는 흑인 여성 사서·사회운동가이자, 한때 공산당 활동가였고, 후에는 한 시대의 TV 뉴스 전체를 자기 거실에 옮긴 비공식 아카이비스트가 되었다.](/images/marion-stokes-recorder-project/marion-portrait-bw.jpg "Marion Stokes(1929\~2012). — 출처: Recorder: The Marion Stokes Project (Matt Wolf, 2019)")
 
 ## 발단 — 1979년 이란 인질 사건
 
@@ -48,6 +48,8 @@ images:
 
 다큐멘터리 'Recorder'를 본 Variety의 Owen Gleiberman은 Stokes를 "Noam Chomsky와 카우치 포테이토 뉴스 중독자의 기괴한 혼종"이라고 평했다([Variety, 2019](https://variety.com/2019/film/reviews/recorder-the-marion-stokes-project-review-1203197887/)).
 
+![1967\~1971년 WCAU-TV10의 'Input' 출연 시절의 Marion. 매체의 휘발성을 누구보다 잘 안 사람은, 한때 자신이 매체의 안쪽에 있던 사람이었다.](/images/marion-stokes-recorder-project/marion-on-input.jpg "다큐멘터리 'Recorder'(2019) 중. Marion Stokes가 진행하던 1967\~1971년 공영 토론 프로그램 'Input'의 영상.")
+
 ## 방법론 — 최대 8대 VCR, 6시간마다 테이프 교체
 
 녹화 시스템 자체가 거대한 사적 기간시설이었다.
@@ -57,6 +59,8 @@ images:
 - <strong>운영</strong>: 6시간마다 가족·비서·간호사가 교대로 테이프를 교체.
 - <strong>이동</strong>: 가족 외출도 테이프 길이에 맞춰 계획. 후기에는 외출했다가도 교체 시간이 되면 집으로 뛰어 돌아왔다.
 - <strong>포맷 거부</strong>: TiVo·DVR을 거부함. "정부가 자신이 무엇을 녹화하는지 알게 될 것"이라는 우려 때문 ([Hollywood Reporter, 2019](https://www.hollywoodreporter.com/movies/movie-reviews/recorder-marion-stokes-project-1205067/)). 이메일도 평생 한 번도 보내지 않았다.
+
+![70년대 거실의 한 풍경 — 잡지 더미 옆에 TV와 베타맥스 녹화기가 놓인 시대. Stokes는 1975년경 베타맥스를 사면서 이 시스템을 자기 집 거실에서 시작했다.](/images/marion-stokes-recorder-project/recorder-doc-livingroom.jpg "다큐멘터리 'Recorder'(2019) 중. 잡지 더미와 베타맥스 데크가 놓인 1970년대 거실 재현 컷.")
 
 ![1979년부터 2012년까지 — 그녀가 남긴 비디오테이프 더미.](/images/marion-stokes-recorder-project/vhs-tapes-archive.jpg "70,000여 개의 VHS — 출처: Recorder: The Marion Stokes Project")
 
@@ -79,6 +83,14 @@ Stokes는 83세에 폐 질환으로 사망했다. 그날의 녹화 분에는 San
 | <strong>2025년 현재</strong> | 자금 부족으로 작업은 일부만 완료. 일부는 캘리포니아 Richmond의 온도 조절 창고에 대기 중. |
 
 함께 기증된 부속 자료도 방대하다. 55개의 뱅커스 박스에 담긴 1960년 이후의 개인 일기, 잡지, 신문, 시민단체 팸플릿, 전단지 — 이미 일부는 디지털화돼 [Internet Archive의 Marion Stokes Collection](https://archive.org/details/marionstokes)에서 열람 가능하다.
+
+<p style="text-align:center;">
+  <img src="/images/marion-stokes-recorder-project/archive-boxes-warehouse.webp" alt="해상 컨테이너에 실린 채 카세트가 든 박스들이 캘리포니아로 옮겨졌다." style="max-width:55%;">
+  <br>
+  <em>4개 해상 컨테이너에 나눠 실려 캘리포니아로 옮겨진 박스들. — 출처: All That's Interesting</em>
+</p>
+
+![2014년 사전 분류 전, Richmond 창고에 펼쳐진 Marion Stokes 비디오 아카이브 전경. 가운데 서 있는 사람은 Internet Archive의 Sean Fagan이다. 71,716개의 테이프는 이 정도의 부피를 차지한다.](/images/marion-stokes-recorder-project/ia-warehouse-presort-2014.jpg "Sean Fagan and the Marion Stokes video archive, 2014 pre-sort. 사진: Brett Brownell / Internet Archive")
 
 ## 왜 가치 있는가 — 방송국조차 갖고 있지 않은 원본
 
@@ -115,7 +127,9 @@ Stokes가 남긴 것은 단순한 뉴스 보관소가 아니다. 같은 사건�
 
 자기 자신이 한때 매체의 운영 원리를 알았기 때문에 매체의 휘발성도 더 잘 알았을 것이다. 그 자각이 — 어쩌면 강박과 결합하여 — 33년의 작업으로 이어졌다.
 
-또 하나 짚어둘 만한 것은 <strong>다큐가 그녀를 영웅화하지 않는다</strong>는 점이다. 그녀는 아들과 오래 절연했고, 두 번째 남편을 그의 자식들로부터 떼어 놓았다. 그녀의 행위는 인류 유산에 기여했지만, 그녀의 가족에게는 부재의 시간이었다. Roger Ebert.com 리뷰가 짚듯이, 호더와 컬렉터의 경계는 *다른 사람들이 그 모음에 부여하는 가치*에 있을 뿐이다. Stokes의 71,716개 테이프는 — 사후에 — 가치 있는 것이 되었다. 그러나 그 가치가 *그 33년이 가족에게 정당했음*을 자동으로 함의하지는 않는다.
+또 하나 짚어둘 만한 것은 <strong>다큐가 그녀를 영웅화하지 않는다</strong>는 점이다. 그녀는 아들과 오래 절연했고, 두 번째 남편을 그의 자식들로부터 떼어 놓았다. 그녀의 행위는 인류 유산에 기여했지만, 그녀의 가족에게는 부재의 시간이었다.
+
+![어린 시절의 아들 Michael Metelits와 Marion. 71,716개의 테이프를 사후 Internet Archive에 기증한 사람이 바로 이 아이다 — 어머니와 오랜 절연을 거쳐, 말년에 다시 가까워진 뒤에.](/images/marion-stokes-recorder-project/marion-with-son.jpg "Marion Stokes와 아들 Michael Metelits. — 출처: All That's Interesting / 가족 제공") Roger Ebert.com 리뷰가 짚듯이, 호더와 컬렉터의 경계는 *다른 사람들이 그 모음에 부여하는 가치*에 있을 뿐이다. Stokes의 71,716개 테이프는 — 사후에 — 가치 있는 것이 되었다. 그러나 그 가치가 *그 33년이 가족에게 정당했음*을 자동으로 함의하지는 않는다.
 
 다큐가 답을 하지 않고 남겨두는 질문도 묵직하다. 시간당 들이는 노력이 그렇게 큰데, 누가 보든 보지 않든 — 권력자가 역사를 지우는 것을 한 사람의 사적 노력으로 막을 수 있다고 정말로 믿었을까? 아니면 그것은 결국 자기 자신을 견디기 위한 의식(ritual)이었을까? 둘 다 답일 수 있다.
 
