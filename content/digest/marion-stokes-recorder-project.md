@@ -64,7 +64,6 @@ images:
 
 <p style="text-align:center;">
   <img src="/images/marion-stokes-recorder-project/vhs-tapes-archive.jpg" alt="1979년부터 2012년까지 — 그녀가 남긴 비디오테이프 더미." style="max-width:55%;margin-left:auto;margin-right:auto">
-  <br>
   <em>1979년부터 2012년까지, 다중 채널·주야 무휴로 쌓인 70,000여 개의 VHS. — 출처: Recorder: The Marion Stokes Project</em>
 </p>
 
@@ -89,12 +88,14 @@ Stokes는 83세에 폐 질환으로 사망했다. 그날의 녹화 분에는 San
 함께 기증된 부속 자료도 방대하다. 55개의 뱅커스 박스에 담긴 1960년 이후의 개인 일기, 잡지, 신문, 시민단체 팸플릿, 전단지 — 이미 일부는 디지털화돼 [Internet Archive의 Marion Stokes Collection](https://archive.org/details/marionstokes)에서 열람 가능하다.
 
 <p style="text-align:center;">
-  <img src="/images/marion-stokes-recorder-project/archive-boxes-warehouse.webp" alt="해상 컨테이너에 실린 채 카세트가 든 박스들이 캘리포니아로 옮겨졌다." style="max-width:55%;margin-left:auto;margin-right:auto">
-  <br>
-  <em>4개 해상 컨테이너에 나눠 실려 캘리포니아로 옮겨진 박스들. — 출처: All That's Interesting</em>
+  <img src="/images/marion-stokes-recorder-project/archive-boxes-warehouse.webp" alt="Richmond 창고의 한 코너에 빼곡히 쌓인 카세트 박스 더미." style="max-width:55%;margin-left:auto;margin-right:auto">
+  <em>Richmond 창고에 도착해 펼쳐 놓이기 전, 한 코너에 쌓여 있던 카세트 박스 더미. — 출처: All That's Interesting</em>
 </p>
 
-![2014년 사전 분류 전, Richmond 창고에 펼쳐진 Marion Stokes 비디오 아카이브 전경. 가운데 서 있는 사람은 Internet Archive의 Sean Fagan이다. 71,716개의 테이프는 이 정도의 부피를 차지한다.](/images/marion-stokes-recorder-project/ia-warehouse-presort-2014.jpg "Sean Fagan and the Marion Stokes video archive, 2014 pre-sort. 사진: Brett Brownell / Internet Archive")
+<p style="text-align:center;">
+  <img src="/images/marion-stokes-recorder-project/ia-warehouse-presort-2014.jpg" alt="2014년 사전 분류 전, Richmond 창고에 펼쳐진 Marion Stokes 비디오 아카이브 전경. 가운데 서 있는 사람은 Internet Archive의 Sean Fagan이다.">
+  <em>4개 해상 컨테이너에 나눠 실려 캘리포니아 Richmond 창고에 도착한 박스들. 가운데 선 사람은 Internet Archive의 Sean Fagan이다. 71,716개의 테이프는 이 정도의 부피를 차지한다. — 사진: Brett Brownell / Internet Archive</em>
+</p>
 
 ## 왜 가치 있는가 — 방송국조차 갖고 있지 않은 원본
 
@@ -133,7 +134,12 @@ Stokes가 남긴 것은 단순한 뉴스 보관소가 아니다. 같은 사건�
 
 또 하나 짚어둘 만한 것은 <strong>다큐가 그녀를 영웅화하지 않는다</strong>는 점이다. 그녀는 아들과 오래 절연했고, 두 번째 남편을 그의 자식들로부터 떼어 놓았다. 그녀의 행위는 인류 유산에 기여했지만, 그녀의 가족에게는 부재의 시간이었다.
 
-![어린 시절의 아들 Michael Metelits와 Marion. 71,716개의 테이프를 사후 Internet Archive에 기증한 사람이 바로 이 아이다 — 어머니와 오랜 절연을 거쳐, 말년에 다시 가까워진 뒤에.](/images/marion-stokes-recorder-project/marion-with-son.jpg "Marion Stokes와 아들 Michael Metelits. — 출처: All That's Interesting / 가족 제공") Roger Ebert.com 리뷰가 짚듯이, 호더와 컬렉터의 경계는 *다른 사람들이 그 모음에 부여하는 가치*에 있을 뿐이다. Stokes의 71,716개 테이프는 — 사후에 — 가치 있는 것이 되었다. 그러나 그 가치가 *그 33년이 가족에게 정당했음*을 자동으로 함의하지는 않는다.
+<p style="text-align:center;">
+  <img src="/images/marion-stokes-recorder-project/marion-with-son.jpg" alt="어린 시절의 아들 Michael Metelits와 Marion Stokes.">
+  <em>젊은 시절의 Marion과 어린 아들 Michael Metelits. 어머니가 33년간 녹화한 71,716개의 테이프를 사후 Internet Archive에 기증한 사람이 바로 이 아이다 — 어머니와 오랜 절연을 거쳐, 말년에 다시 가까워진 뒤에. — 출처: All That's Interesting / 가족 제공</em>
+</p>
+
+Roger Ebert.com 리뷰가 짚듯이, 호더와 컬렉터의 경계는 *다른 사람들이 그 모음에 부여하는 가치*에 있을 뿐이다. Stokes의 71,716개 테이프는 — 사후에 — 가치 있는 것이 되었다. 그러나 그 가치가 *그 33년이 가족에게 정당했음*을 자동으로 함의하지는 않는다.
 
 다큐가 답을 하지 않고 남겨두는 질문도 묵직하다. 시간당 들이는 노력이 그렇게 큰데, 누가 보든 보지 않든 — 권력자가 역사를 지우는 것을 한 사람의 사적 노력으로 막을 수 있다고 정말로 믿었을까? 아니면 그것은 결국 자기 자신을 견디기 위한 의식(ritual)이었을까? 둘 다 답일 수 있다.
 
