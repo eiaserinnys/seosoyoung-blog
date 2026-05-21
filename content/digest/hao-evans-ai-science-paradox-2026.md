@@ -3,7 +3,7 @@ title: "Artificial Intelligence Tools Expand Scientists' Impact but Contract Sci
 date: 2026-05-21T22:30:00+09:00
 tags: ["AI", "논문 리뷰", "AI for Science", "과학 정책", "지식 다양성"]
 categories: ["다이제스트"]
-summary: "1980\~2025년 자연과학 논문 4,130만 편을 분석한 Nature 논문. AI를 쓰는 개별 과학자는 논문 3.02배·인용 4.84배·승진 1.37년 단축의 이점을 누리지만, 학문 전체로는 연구 주제가 4.63% 좁혀지고 후속 협업이 22% 줄어든다."
+summary: "1980부터 2025년까지 자연과학 논문 4,130만 편을 분석한 Nature 논문. AI를 쓰는 개별 과학자는 논문 3.02배·인용 4.84배·승진 1.37년 단축의 이점을 누리지만, 학문 전체로는 연구 주제가 4.63% 좁혀지고 후속 협업이 22% 줄어든다."
 ShowToc: true
 TocOpen: false
 cover:
