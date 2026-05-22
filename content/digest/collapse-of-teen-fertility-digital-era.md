@@ -156,6 +156,10 @@ FT 칼럼의 시각 자료는 이 논문의 Figure 1 Panel A2와 본질적으로
 
 미국·영국 외 국가에 같은 인과 식별 전략을 적용하는 것, 그리고 사회적 조정 차원에서 어떤 정책 개입이 실효성을 가지는지를 묻는 것이 후속 과제로 남아 있다.
 
+## 관련 글
+
+같은 FT 칼럼(John Burn-Murdoch, 2026.5.16)이 한국에 들어와 어떻게 읽혔는지, 그리고 매경이 그 위에 *국가데이터처 학력별 출산통계*와 *보사연 무자녀 보고서*를 얹어 '가족 형성의 K자형'으로 정리한 흐름은 별도 다이제스트로 묶었다 — [매경의 출산율 양극화 기사, 그 인용 자료를 끝까지 따라가다](/digest/family-formation-k-shape-2026/). 그 글은 이 논문의 *25세 이상에는 적용되지 않는다*는 한계를 한국의 K자형 양극화로 어떻게 메울 수 있는지를 다룬다.
+
 ## 출처
 
 - Nathan Hudson, Hernan J. Moscoso Boedo. **"The Collapse of Teen Fertility in the Digital Era."** Department of Economics, Carl H. Lindner College of Business, University of Cincinnati. April 25, 2026.
