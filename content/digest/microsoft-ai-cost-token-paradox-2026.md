@@ -3,7 +3,7 @@ title: "Microsoft reports are exposing AI's real cost problem"
 date: 2026-05-23T10:00:00+09:00
 tags: ["AI", "AI 비용", "토큰 경제학", "IPO", "LLM"]
 categories: ["다이제스트"]
-summary: "Fortune이 마이크로소프트의 Claude Code 라이선스 회수와 Uber의 4개월 AI 예산 소진을 짚으며, 토큰 단가 하락에도 총비용은 오히려 오르는 패러독스를 보도했다. HedgieMarkets는 이 패러독스가 결국 OpenAI·Anthropic의 18\~24개월 IPO 타임라인이 강요하는 가격 전가라고 해석한다."
+summary: "Fortune이 마이크로소프트의 Claude Code 라이선스 회수와 Uber의 4개월 AI 예산 소진을 짚으며, 토큰 단가 하락에도 총비용은 오히려 오르는 패러독스를 보도했다. HedgieMarkets는 이 패러독스가 결국 OpenAI·Anthropic의 18-24개월 IPO 타임라인이 강요하는 가격 전가라고 해석한다."
 ShowToc: true
 TocOpen: false
 cover:
