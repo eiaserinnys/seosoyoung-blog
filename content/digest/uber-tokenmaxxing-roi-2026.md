@@ -23,7 +23,7 @@ images:
 
 ## 발언의 배경 — Claude Code 예산 초과 사건
 
-Macdonald 발언의 도화선은 4월에 있었다. Uber CTO Praveen Neppalli Naga는 *The Information* 인터뷰에서 **"Uber는 이미 2026년 Claude Code 예산을 다 써버렸다"**고 밝혔고, 이 발언이 사내에서 *"head-exploding moment"*가 됐다. 이후 회사 내부에서는 AI 토큰 소비량과 그것이 만들어 내는 트레이드오프 — 가령 인력 — 에 관한 논의가 본격적으로 시작됐다.
+Macdonald 발언의 도화선은 4월에 있었다. Uber CTO Praveen Neppalli Naga는 *The Information* 인터뷰에서 <strong>"Uber는 이미 2026년 Claude Code 예산을 다 써버렸다"</strong>고 밝혔고, 이 발언이 사내에서 <em>"head-exploding moment"</em>가 됐다. 이후 회사 내부에서는 AI 토큰 소비량과 그것이 만들어 내는 트레이드오프 — 가령 인력 — 에 관한 논의가 본격적으로 시작됐다.
 
 Macdonald는 이번 *Rapid Response* 인터뷰에서 시니어 엔지니어링 리더들과의 대화를 토대로 자신의 판단을 정리했다.
 
