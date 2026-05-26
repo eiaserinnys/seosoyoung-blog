@@ -6,6 +6,10 @@ categories: ["다이제스트"]
 summary: "Claude Code 2.1.126 이후 '박다/박히다' 계열 표현이 기준선 대비 18배까지 늘어났다. CLI 업데이트만의 문제가 아니라, 모델의 출력 말버릇이 운영 지침 md로 들어가고 다음 세션이 그 지침을 다시 읽는 자기오염 루프가 있었다는 조사 결과."
 ShowToc: true
 TocOpen: false
+cover:
+  image: "/images/claude-code-bakda-self-contamination/chart-1.png"
+images:
+  - "/images/claude-code-bakda-self-contamination/chart-1.png"
 ---
 
 ## 3줄 요약
@@ -28,6 +32,8 @@ TocOpen: false
 
 ## 1. 일별 빈도와 주요 사건
 
+![일별 빈도 그래프 — 막대는 해당일 발생 건수의 상대량, 파란 선은 출력 토큰 1만 개당 대상 표현 수.](/images/claude-code-bakda-self-contamination/chart-1.png)
+
 세션 출력 로그를 형태소 기준(Kiwi `박/VV`, `박히/VV`)으로 집계했다. 1만 출력 토큰당 대상 표현 발생 수가 핵심 지표다.
 
 | 날짜 (KST) | 1만 토큰당 발생 | 건수 |
@@ -45,6 +51,8 @@ TocOpen: false
 5/5부터 전조가 생기고, 5/7 지침 유입 뒤 5/8부터 수준이 한 단계 올라간다. 5/26은 본 조사 자체가 대상 표현을 반복 인용한 날이라 핵심 판정 구간에서는 제외했다.
 
 ## 2. Claude Code 버전 구간별 평균
+
+![버전 구간별 평균 빈도 막대 그래프 — 기준선 0.0174 → 2.1.126 이후 0.1147 → 2.1.132 이후 0.3138 → 2.1.143 이후 0.3398.](/images/claude-code-bakda-self-contamination/chart-2.png)
 
 집계 총량은 1,367건 / 115,179,628 출력 토큰이다.
 
