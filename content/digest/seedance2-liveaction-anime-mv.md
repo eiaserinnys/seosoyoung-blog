@@ -22,6 +22,10 @@ images:
 
 지난주 정리한 [콜라주 애니메이션 다이제스트](/digest/seedance2-collage-animation-workflow/)의 결론은 두 가지였다. *Start Frame이 아니라 Reference로 넣어라*, 그리고 *Seedance2.0은 프롬프트가 전부다*. 이번 글은 그 두 명제를 실사 합성이라는 더 어려운 무대에서 한 번 더 확인한다. 레퍼런스로 주는 건 캐릭터 시트 한 장뿐이고, 나머지는 전부 프롬프트가 통제한다. 같은 저자가 같은 도구로 *다른 표현*에 도달한 사례라, 두 글을 나란히 읽으면 도구 하나가 표현을 어디까지 밀어내는지가 선명해진다.
 
+완성된 MV가 이것이다. 아래 글의 워크플로우가 어떤 결과물로 닿는지 먼저 보고 읽으면 좋다.
+
+{{< youtube TRtIIpqGjdo >}}
+
 ## 1년간의 진화 — "합성하고 나서 움직인다"에서 "합성하면서 생성한다"로
 
 저자는 실사×애니 합성 MV를 1년간 정기적으로 만들어 왔고, 그 라인업이 생성 AI의 진화를 보기 쉬운 표본이라고 적었다.
@@ -163,6 +167,6 @@ on outlines, avoid fantasy physics.
 
 - 저자: tapehead.lab ([@tapehead_Lab](https://x.com/tapehead_Lab))
 - 매체: note.com, 2026년 5월 27일
-- 관련 작품: 「free will」 MV
+- 관련 작품: 「free will」 MV — <https://www.youtube.com/watch?v=TRtIIpqGjdo>
 - 원문: <https://note.com/tapehead/n/n86658f111f6d>
 - 관련 글: [Seedance2.0으로 만드는 콜라주 애니메이션 (tapehead.lab)](/digest/seedance2-collage-animation-workflow/)
