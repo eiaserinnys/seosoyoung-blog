@@ -15,3 +15,14 @@
 .post-content figure figcaption {
   text-align: center;
 }
+
+/* 마크다운 본문 이미지(![](...))는 <figure>가 아니라 <p><img>로 렌더링되어 */
+/* 위 figure 규칙이 닿지 않는다. 단독 이미지 단락(p > img, 링크 이미지 p > a > img)을 */
+/* 블록으로 두어 좌우 auto 마진으로 중앙 정렬한다. 본문 글 사이의 인라인 이미지에는 */
+/* 영향을 주지 않도록 p의 직계 자식만 대상으로 한다. */
+.post-content p > img,
+.post-content p > a > img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
