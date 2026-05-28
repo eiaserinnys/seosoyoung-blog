@@ -144,8 +144,6 @@ The Korean case also demonstrates a mechanism not observed with "delve": the **s
 
 ## References
 
-- **Investigation methodology and data**: [Kiwi morpheme re-analysis report](https://pages.eiaserinnys.me/p/d66c1ad2089d) (Korean)
-- **Original investigation**: [Claude Code bakda self-contamination digest](https://seosoyoung.eiaserinnys.me/digest/claude-code-bakda-self-contamination/) (Korean)
-- **Full-scope re-investigation**: [All-agents re-investigation report](https://pages.eiaserinnys.me/p/547eb3f784f3) (Korean)
+- **Original investigation** (Korean): [Claude Code bakda self-contamination digest](https://seosoyoung.eiaserinnys.me/digest/claude-code-bakda-self-contamination/)
 - **Kiwi morpheme analyzer**: [bab2min/kiwipiepy](https://github.com/bab2min/kiwipiepy) v0.23.1
 - **Data corpus**: 114,864,200 output tokens across 4,666 Claude Code sessions, March 21 – May 25, 2026
