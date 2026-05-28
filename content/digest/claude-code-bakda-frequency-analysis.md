@@ -28,6 +28,8 @@ The Korean verb "박다" (bakda) literally means "to hammer in" or "to nail down
 
 ## Methodology
 
+This analysis is based on **personal Claude Code usage records** — a multi-agent setup running Claude Code for daily software engineering, content creation, and project management work. All session logs, including model outputs and token counts, are stored in a local database (soulstream), enabling retrospective morpheme-level analysis.
+
 We analyzed all Claude Code agent sessions over a \~2 month period (March 21 – May 25, 2026 KST) using the following methodology:
 
 - **Morpheme analyzer**: [Kiwi](https://github.com/bab2min/kiwipiepy) v0.23.1, targeting `박/VV` (bakda, active) and `박히/VV` (bakhida, passive) morphemes
@@ -35,6 +37,7 @@ We analyzed all Claude Code agent sessions over a \~2 month period (March 21 –
 - **Token denominator**: `result.usage.output_tokens`
 - **Exclusion**: May 26–28 excluded to prevent meta-contamination from discussing this issue
 - **Scope**: All agent personas (seosoyoung, writer-seosoyoung, keke, roselin, remiel) — not limited to a single configuration
+- **Models**: Claude Opus 4.6 (`claude-opus-4-6`) until mid-April; Claude Opus 4.7 (`claude-opus-4-7`) from its release on April 16 onward. The transition was near-immediate upon Opus 4.7's availability
 
 Total corpus: **114,864,200 output tokens** across **4,666 sessions** and **12,030 events**.
 
@@ -50,14 +53,14 @@ The daily chart shows a clear inflection point around May 5, coinciding with the
 
 ![Frequency by Claude Code version period](/images/claude-code-bakda-frequency-analysis/period-comparison.png)
 
-| Period | Occurrences | Output tokens | Per 10K tokens | vs. Baseline |
-|---|---|---|---|---|
-| Baseline (Mar 21 – May 2) | 113 | 64,994,534 | 0.0174 | 1.0× |
-| After 2.1.126 (May 3–7) | 197 | 17,178,939 | 0.1147 | 6.6× |
-| After 2.1.132 (May 8–17) | 748 | 23,837,681 | 0.3138 | **18.0×** |
-| After 2.1.143 (May 18–25) | 275 | 8,853,046 | 0.3106 | **17.9×** |
+| Period | Model | Occurrences | Output tokens | Per 10K tokens | vs. Baseline |
+|---|---|---|---|---|---|
+| Baseline (Mar 21 – May 2) | Opus 4.6 → 4.7 | 113 | 64,994,534 | 0.0174 | 1.0× |
+| After 2.1.126 (May 3–7) | Opus 4.7 | 197 | 17,178,939 | 0.1147 | 6.6× |
+| After 2.1.132 (May 8–17) | Opus 4.7 | 748 | 23,837,681 | 0.3138 | **18.0×** |
+| After 2.1.143 (May 18–25) | Opus 4.7 | 275 | 8,853,046 | 0.3106 | **17.9×** |
 
-The 18× increase after 2.1.132 persists through the 2.1.143 period, suggesting the tendency has not self-corrected.
+The baseline period straddles both Opus 4.6 (until April 16) and Opus 4.7 (from April 16), yet frequency remained low throughout. The 18× spike correlates with **Claude Code CLI updates**, not the model transition — suggesting the change originated in the system prompt or tool-use layer rather than the base model itself. The 18× increase persists through the 2.1.143 period, indicating the tendency has not self-corrected.
 
 ### Frequency by agent persona
 
