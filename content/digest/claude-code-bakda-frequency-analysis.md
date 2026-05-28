@@ -22,9 +22,9 @@ images:
 
 ## Background: what is "bakda" and why does it matter?
 
-The Korean verb "박다" (bakda) literally means "to hammer in" or "to nail down." In casual internet speech, it is sometimes extended metaphorically to mean "to embed" or "to insert," but this usage carries a distinctly informal, internet-community register.
+The Korean verb "박다" (bakda) literally means "to hammer in" or "to drive in (a nail)." In casual internet speech, it is sometimes extended metaphorically to mean "to embed" or "to insert," but this usage carries a distinctly informal, internet-community register. The verb itself is not inherently problematic — the issue is its **over-extension into contexts like "record," "specify," "include," or "use,"** where a normal Korean speaker would never reach for it.
 
-**The core issue is not that "bakda" is obscene — it is that it is register-inappropriate.** Using it in professional or technical writing is comparable to an English-language model saying "shove it in" or "jam it in" where "insert" or "specify" would be expected. A Korean professional would not use "bakda" in a report to their manager. That intuitive register judgment is precisely what the model is failing to make.
+**The core issue is not that "bakda" is obscene — it is that it is register-inappropriate.** Using it in professional or technical writing is comparable to an English-language model suddenly using "shove it in" or "jam it in" where "insert" or "specify" would be expected. A Korean professional would not use "bakda" in a report to their manager. That intuitive register judgment is precisely what the model is failing to make.
 
 ## Methodology
 
@@ -60,7 +60,7 @@ The daily chart shows a clear inflection point around May 5, coinciding with the
 | After 2.1.132 (May 8–17) | Opus 4.7 | 748 | 23,837,681 | 0.3138 | **18.0×** |
 | After 2.1.143 (May 18–25) | Opus 4.7 | 275 | 8,853,046 | 0.3106 | **17.9×** |
 
-The baseline period straddles both Opus 4.6 (until April 16) and Opus 4.7 (from April 16), yet frequency remained low throughout. The 18× spike correlates with **Claude Code CLI updates**, not the model transition — suggesting the change originated in the system prompt or tool-use layer rather than the base model itself. The 18× increase persists through the 2.1.143 period, indicating the tendency has not self-corrected.
+The version periods above reflect **local deployment dates**, not npm publish dates — the CLI was adopted within days of each release. The baseline period straddles both Opus 4.6 (until April 16) and Opus 4.7 (from April 16), yet frequency remained low throughout. The 18× spike correlates with **Claude Code CLI updates**, not the model transition — more consistent with a Claude Code prompt/tool-layer change than with the Opus 4.7 model transition alone. The 18× increase persists through the 2.1.143 period, indicating the tendency has not self-corrected.
 
 ### Frequency by agent persona
 
@@ -83,10 +83,10 @@ The argument that "bakda" is simply a translation of "embed" or "hardcode" does 
 | Original output (Korean) | Intended meaning (English) | Why inappropriate |
 |---|---|---|
 | "진단 결과를 해설 첫머리에 <strong>박는다</strong>" | "Present diagnostic results at the top" | "bakda" for *presenting analysis results* |
-| "규칙으로 <strong>박을 만큼</strong> 일반적이지 않은" | "Not general enough to *establish* as a rule" | "bakda" for *establishing a rule* |
+| "규칙으로 <strong>박을 만큼</strong> 일반적이지 않은" | "Not general enough to *codify* as a rule" | "bakda" for *codifying a rule* |
 | "카드 본문에 <strong>박아둔다</strong>" | "Record in the card body" | "bakda" for *recording/documenting* |
 | "프롬프트 전문은 본문에 그대로 <strong>박는다</strong>" | "Include the full prompt text in the body as-is" | "bakda" for *including text* |
-| "시드를 <strong>박는다</strong>" | "Use as a seed image" | "bakda" for *using/applying* |
+| "시드를 <strong>박는다</strong>" | "Set the seed image" | "bakda" for *setting/providing* |
 
 These expressions were found in operational documents (CLAUDE.md, rules/, skills/) that the model itself had written. The appropriate Korean verbs would be "제시한다" (to present), "명시한다" (to specify), "기록한다" (to record), "수록한다" (to include), "사용한다" (to use).
 
@@ -134,7 +134,7 @@ Multiple Korean-speaking users have independently reported this issue on social 
 >
 > — [@damyoda](https://x.com/damyoda/status/2059483767862186190): *"Found 19 instances of 'bakda' in a Claude AI retrospective post. It seems irreversible"*
 
-Notably, multiple users report the same issue across **both Claude and GPT models**, suggesting a shared training data source may be involved.
+Notably, multiple users report the same issue across **both Claude and GPT models** — whether this reflects shared training data, convergent post-training preferences, or similar prompt/tool-layer behavior remains an open question.
 
 ## Comparison with known phenomena
 
