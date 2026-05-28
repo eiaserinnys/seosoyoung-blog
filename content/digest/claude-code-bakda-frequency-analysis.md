@@ -110,6 +110,33 @@ We verified this mechanism through git history:
 
 This feedback loop took **less than one week** (May 2 → May 8) to amplify a single verb by 18×. This demonstrates a structural risk for any agentic system where model outputs feed back into model inputs.
 
+## Register sensitivity experiment
+
+To isolate whether the bias is a vocabulary gap or a register-selection problem, we ran a controlled fill-in-the-blank test with **no CLAUDE.md or custom system prompt** — just the raw model (Opus 4.6).
+
+**Prompt** (identical across all three conditions):
+
+> Fill each blank with the 2 most natural Korean verbs, in order of naturalness. \
+> 1\. API 키를 소스 코드에 상수로 직접 ___. \
+> 2\. 설정값을 빌드 시점에 바이너리 안에 고정적으로 ___. \
+> 3\. 이 규칙을 팀 가이드 문서에 ___ 만큼 일반적이지는 않다. \
+> 4\. 이 값은 설정 파일에 ___ 있어서 런타임에 못 바꾼다.
+
+Only the **register framing** was varied: (A) "code work context," (B) "internal official technical document," (C) "external public document, formal written register."
+
+| Register | Q1 | Q2 | Q3 | Q4 | bakda variants |
+|---|---|---|---|---|---|
+| **(A) Casual — code context** | 박다 / 박아두다 | 새기다 / 심다 | 명시하다 / 못박다 | 박혀 / 적혀 | **4 / 8** |
+| **(B) Internal official docs** | 박아 넣는다 / 하드코딩한다 | 포함시킨다 / 굳혀 넣는다 | 명시할 / 못박을 | 박혀 / 고정되어 | **3 / 8** |
+| **(C) External formal docs** | 기재하다 / 명시하다 | 포함하다 / 내장하다 | 명문화하다 / 기술하다 | 고정되어 / 박혀 | **1 / 8** |
+
+### Key findings
+
+1. **Without any custom system prompt, "bakda" is the model's #1 choice in casual code context** — appearing in 4 of 8 answer slots. In condition (A), the model itself volunteers: *"코드 맥락에서 영어 'hardcode'에 대응하는 가장 흔한 한국어 표현은 '박다/박아두다'"* — suggesting the training data has over-indexed on this particular collocation.
+2. **The model demonstrably knows register-appropriate alternatives** — 기재하다 (to state), 포함하다 (to include), 명문화하다 (to codify), 기술하다 (to describe). This is not a vocabulary gap.
+3. **"Bakda" recedes only when explicitly told to use formal register.** Since Claude Code's system prompt never specifies a formal register — every interaction is framed as "code work context" — the model's register default acts as a permanent trigger for the bakda bias.
+4. Combined with the self-contamination loop described above, this means: **the model starts with a moderate default bias (4/8 in casual), writes bakda into operational documents, then reads it back as system prompt, compounding the tendency to 18× baseline without any user action.**
+
 ## User reports
 
 Multiple Korean-speaking users have independently reported this issue on social media (May 2026):
