@@ -120,8 +120,6 @@ FrankenTUI 본인 README에는 *"Excellent / Release Ready"*라는 자체 코드
 
 이것을 보고 무엇을 느낄지는 읽는 분의 몫이겠지요.
 
----
-
 [^1]: Jeffrey Emanuel, "Agentic Coding Tooling, AI Infrastructure & Markets", jeffreyemanuel.com (2026). 본인 사이트 자기소개와 통계.
 [^2]: 알리스볼라프로프(@alisvolatprop12), "[번역] 설계자와 22인의 군대 / 안드레이 옐리세예우(Andrei Yeliseyeu) 씀", X Article. 원문은 Andrei Yeliseyeu의 LinkedIn 글. 트윗 본문에 *"앤트로픽은 한 명의 인간이 그렇게 많은 트래픽을 발생시킬 리 없다고 판단하여 그의 계정들을 차단했다"*는 일화도 함께 기록되어 있다. <https://x.com/alisvolatprop12/status/2016897342210003133>
 [^3]: "Jeffrey Emanuel", Wikitia (2025-05). 1982년생, Reed College 수학 학사, Tyndall Partners/Millennium/Balyasny 분석가 이력, Value Investors Club 두 차례 Best Idea Award 수상.
