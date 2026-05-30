@@ -24,7 +24,7 @@ cover:
 
 ## 그는 누구인가
 
-이 사람의 이름은 **Jeffrey Emanuel**입니다. GitHub 핸들은 `Dicklesworthstone`, X 핸들은 `@doodlestein`. 1982년생, 브루클린 거주, Reed College 수학 학사.[^3]
+이 사람의 이름은 <strong>Jeffrey Emanuel</strong>입니다. GitHub 핸들은 `Dicklesworthstone`, X 핸들은 `@doodlestein`. 1982년생, 브루클린 거주, Reed College 수학 학사.[^3]
 
 ### 12,000단어로 NVIDIA 시총 6,000억 달러를 떨어뜨린 주말
 
@@ -98,7 +98,7 @@ cover:
 
 **외부 통합 시도.** FrankenTUI의 GitHub 이슈 트래커에 외부 사용자의 통합 시도 기록이 하나 남아 있습니다(이슈 #10). `schpet`이라는 개발자가 자기 프로젝트 `mdmd`에서 FrankenTUI를 사용하려고 시도한 회고입니다.
 
-> *"나는 이 라이브러리를 사용하는 데 어려움을 겪었다. WIP 상태이기 때문에 이해는 가지만, 이 라이브러리를 쓰려는 사람이나 에이전트를 위해 통합 가능한 문서를 요청한다... 내 시도는 [링크된 커밋들에서 볼 수 있는데] 결과물은 **안정적인 TUI가 아니어서 포기했다**(abandoned it)."*[^11]
+> *"나는 이 라이브러리를 사용하는 데 어려움을 겪었다. WIP 상태이기 때문에 이해는 가지만, 이 라이브러리를 쓰려는 사람이나 에이전트를 위해 통합 가능한 문서를 요청한다... 내 시도는 [링크된 커밋들에서 볼 수 있는데] 결과물은 <strong>안정적인 TUI가 아니어서 포기했다</strong>(abandoned it)."*[^11]
 
 FrankenTUI 본인 README에는 *"Excellent / Release Ready"*라는 자체 코드 리뷰 결론과 함께, *"Stable public API: ❌ Not yet"*, *"20개 워크스페이스 크레이트 중 단 3개만 crates.io에 publish됨"*이라는 표시가 같이 있습니다.[^8]
 
