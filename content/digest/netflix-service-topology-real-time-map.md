@@ -6,6 +6,10 @@ categories: ["다이제스트"]
 summary: "Netflix가 수천 개의 마이크로서비스 의존성을 실시간으로 보여주는 Service Topology를 어떻게 설계했는지 — eBPF·IPC·트레이싱 세 소스를 독립 그래프로 두고 필요할 때 통합 뷰로 합치는 다층 아키텍처."
 ShowToc: true
 TocOpen: false
+cover:
+  image: "/images/netflix-service-topology-real-time-map/fig2-three-layers.png"
+images:
+  - "/images/netflix-service-topology-real-time-map/fig2-three-layers.png"
 ---
 
 ## 3줄 요약
@@ -25,6 +29,8 @@ TocOpen: false
 이 글은 시리즈의 첫 편이다. 다음 편에서는 Kafka 컨슈머 lag, GC, 리액티브 스트림 디버깅 같은 *엔지니어링 디테일*을 다룰 예정이라고 밝혔다.
 
 ## 문제: "새벽 3시의 의존성 추적"
+
+![중심 서비스 하나에서 수많은 다운스트림 서비스·데이터 스토어·호출 사슬이 사방으로 뻗어 나가는 의존성 웹 — 통합된 맵 없이는 엔지니어가 머릿속과 흩어진 신호로 이 구조를 추측해야 한다.](/images/netflix-service-topology-real-time-map/fig1-dependency-web.png)
 
 Netflix는 수천 개의 마이크로서비스로 돌아간다. 시청자가 *재생* 버튼을 누르는 한 번의 동작이 인증·추천·인코딩 선택·재생 최적화로 이어지는 호출 사슬을 만든다. 이 구조는 팀별 독립성을 보장하지만, 장애가 났을 때 관찰가능성에는 근본적인 빈틈을 남긴다.
 
@@ -51,6 +57,8 @@ Netflix는 수천 개의 마이크로서비스로 돌아간다. 시청자가 *�
 | 다중 관점 | 단일 소스로는 전체 그림이 안 나온다. 네트워크 연결성은 앱 컨텍스트가 없고, 앱 메트릭은 계측된 서비스만 보인다 |
 
 ## 핵심 통찰: 세 개의 진실 소스
+
+![세 개의 토폴로지 레이어 — eBPF 흐름 로그가 네트워크 그래프를, IPC 메트릭이 애플리케이션 그래프를, 분산 트레이스가 요청 그래프를 만들어 통합 뷰로 합쳐지는 도식.](/images/netflix-service-topology-real-time-map/fig2-three-layers.png)
 
 이 글의 가장 핵심적인 설계 선택은 *단일 통합 그래프를 만들지 않은 것*이다. 대신 세 가지 소스마다 *독립된 그래프*를 만들고, 사용자가 통합 뷰를 요청할 때만 병렬 쿼리로 합친다.
 
@@ -85,6 +93,8 @@ Netflix는 수천 개의 마이크로서비스로 돌아간다. 시청자가 *�
 
 ## 아키텍처: Kafka → 3단계 집계 → 그래프 DB → gRPC
 
+![다중 리전 Kafka에서 들어온 흐름 로그가 세 단계 집계(초기 배치 → 중간자 해소 → 최종 농축)를 거쳐 그래프 DB에 영속화되고 API로 노출되는 파이프라인 다이어그램.](/images/netflix-service-topology-real-time-map/fig3-pipeline.png)
+
 ```
 [다중 리전 Kafka 흐름 로그]
         ↓
@@ -102,6 +112,8 @@ Netflix는 수천 개의 마이크로서비스로 돌아간다. 시청자가 *�
 ```
 
 ### Stage 2가 푸는 문제
+
+![중간자 해소 전·후 비교 — 원시 흐름 로그가 App A → Load Balancer → App B의 두 홉으로 기록되지만, 해소된 그래프는 App A → App B의 직접 엣지로 저장된다.](/images/netflix-service-topology-real-time-map/fig4-intermediary-resolution.png)
 
 가장 흥미로운 부분이 *Stage 2 — 중간자 해소* 다. 네트워크 흐름 로그는 *개별 네트워크 홉*만 기록한다.
 
@@ -160,4 +172,4 @@ Stage 2는 로드 밸런서, NAT 게이트웨이, API 게이트웨이, 프록시
 - 원문: <https://netflixtechblog.com/from-silos-to-service-topology-why-netflix-built-a-real-time-service-map-0165ba13a7bc>
 - 관련: [Netflix's high-throughput graph abstraction (Part I)](https://netflixtechblog.medium.com/high-throughput-graph-abstraction-at-netflix-part-i-e88063e6f6d5)
 
-> 본 다이제스트는 텍스트 위주로 정리했다. 원문에는 의존성 웹·3-소스 통합 다이어그램·파이프라인 도식·중간자 해소 비교 도식 4장이 포함되어 있으나, 본 추출 과정에서 이미지 URL을 확보하지 못해 본문에 옮기지 않았다. 도식의 디테일이 궁금하면 원문을 참조하는 편이 빠르다.
+> 본문 도식 4장은 원문(Netflix Technology Blog, Medium)에서 인용했다.
