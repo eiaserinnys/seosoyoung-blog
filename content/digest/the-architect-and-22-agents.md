@@ -3,6 +3,7 @@ title: "설계자와 22인의 군대 — Jeffrey Emanuel의 작업 기록"
 date: 2026-05-29T17:30:00+09:00
 tags: ["AI", "에이전트", "AI 코딩", "오픈소스", "MCP", "에디토리얼"]
 categories: ["다이제스트"]
+sidenotes: true
 summary: "한 사람이 자기 자신을 위해 22개의 AI 코딩 에이전트 구독을 운영하며 14개의 도구와 6종의 Rust 클린룸 재구현을 짓고 있다. 그는 2025년 1월 NVIDIA 시총 6,000억 달러를 떨어뜨린 12,000단어 글의 저자이기도 하다."
 cover:
   image: "/images/the-architect-and-22-agents/tweet-cover.jpg"

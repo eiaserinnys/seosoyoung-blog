@@ -57,5 +57,200 @@
     throwOnError: false
   });"></script>
 {{ end }}
+{{- if and .IsPage .Params.sidenotes }}
+<style>
+  @media (min-width: 1200px) {
+    .main.has-sidenotes {
+      max-width: calc(720px + 40px + 280px + var(--gap) * 2);
+    }
+
+    article.post-single.has-sidenotes {
+      position: relative;
+      width: 100%;
+      max-width: 720px;
+      min-height: var(--sidenotes-height, 0);
+    }
+
+    article.post-single.has-sidenotes .footnotes {
+      display: none;
+    }
+
+    article.post-single.has-sidenotes .sidenote {
+      position: absolute;
+      left: calc(100% + 40px);
+      width: 280px;
+      box-sizing: border-box;
+      padding-inline-start: 16px;
+      border-inline-start: 1px solid var(--border);
+      color: var(--secondary);
+      font-size: 0.82rem;
+      line-height: 1.55;
+    }
+
+    article.post-single.has-sidenotes .sidenote p {
+      margin: 0 0 0.65rem;
+    }
+
+    article.post-single.has-sidenotes .sidenote p:last-child {
+      margin-bottom: 0;
+    }
+
+    article.post-single.has-sidenotes .sidenote a {
+      color: var(--primary);
+      box-shadow: none;
+    }
+  }
+
+  @media (max-width: 1199px) {
+    aside.sidenote {
+      display: none;
+    }
+  }
+</style>
+<script>
+  (function () {
+    var desktopQuery = window.matchMedia('(min-width: 1200px)');
+    var overlapGap = 12;
+    var resizeTimer = 0;
+
+    function normalizeFootnoteKey(value) {
+      if (!value) return '';
+      var key = String(value).trim();
+      if (key.charAt(0) === '#') key = key.slice(1);
+      try {
+        key = decodeURIComponent(key);
+      } catch (error) {
+        // Keep the raw key when the browser gives an already-decoded fragment.
+      }
+      return key
+        .replace(/^fnref[:\-]/, '')
+        .replace(/^fn[:\-]/, '');
+    }
+
+    function markerKey(marker) {
+      var idKey = normalizeFootnoteKey(marker.id);
+      if (idKey) return idKey;
+      var link = marker.matches('a[href^="#fn"]')
+        ? marker
+        : marker.querySelector('a[href^="#fn"]');
+      return link ? normalizeFootnoteKey(link.getAttribute('href')) : '';
+    }
+
+    function removeSidenotes(article) {
+      article.querySelectorAll('aside.sidenote').forEach(function (note) {
+        note.remove();
+      });
+      article.classList.remove('has-sidenotes');
+      article.style.removeProperty('--sidenotes-height');
+      var main = article.closest('.main');
+      if (main) main.classList.remove('has-sidenotes');
+    }
+
+    function collectMarkers(article) {
+      var markers = Array.prototype.slice.call(
+        article.querySelectorAll('.post-content sup[id^="fnref"]')
+      );
+      if (markers.length) return markers;
+      return Array.prototype.slice.call(
+        article.querySelectorAll('.post-content a.footnote-ref[href^="#fn"]')
+      );
+    }
+
+    function noteByKey(footnoteList) {
+      var notes = new Map();
+      Array.prototype.slice.call(footnoteList.children).forEach(function (item) {
+        var key = normalizeFootnoteKey(item.id);
+        if (key) notes.set(key, item);
+      });
+      return notes;
+    }
+
+    function pruneBackrefs(note) {
+      note.querySelectorAll('.footnote-backref, a[role="doc-backlink"]').forEach(function (link) {
+        link.remove();
+      });
+    }
+
+    function layoutArticle(article) {
+      removeSidenotes(article);
+      if (!desktopQuery.matches) return;
+
+      var footnoteList = article.querySelector('.footnotes > ol');
+      if (!footnoteList || !footnoteList.children.length) return;
+
+      var markers = collectMarkers(article);
+      if (!markers.length) return;
+
+      var notes = noteByKey(footnoteList);
+      article.classList.add('has-sidenotes');
+      var main = article.closest('.main');
+      if (main) main.classList.add('has-sidenotes');
+      // Reflow after widening the main column so marker coordinates use final layout.
+      article.offsetWidth;
+
+      var articleTop = article.getBoundingClientRect().top + window.scrollY;
+      var lastBottom = 0;
+      var created = 0;
+
+      markers.forEach(function (marker) {
+        var key = markerKey(marker);
+        var source = notes.get(key);
+        if (!source) return;
+
+        var sidenote = document.createElement('aside');
+        sidenote.className = 'sidenote';
+        sidenote.setAttribute('role', 'note');
+        sidenote.dataset.footnoteKey = key;
+        sidenote.innerHTML = source.innerHTML;
+        pruneBackrefs(sidenote);
+        article.appendChild(sidenote);
+
+        var markerTop = marker.getBoundingClientRect().top + window.scrollY - articleTop;
+        var top = Math.max(markerTop, lastBottom + overlapGap);
+        sidenote.style.top = Math.round(top) + 'px';
+        lastBottom = top + sidenote.offsetHeight;
+        created += 1;
+      });
+
+      if (!created) {
+        removeSidenotes(article);
+        return;
+      }
+
+      article.style.setProperty('--sidenotes-height', Math.ceil(lastBottom) + 'px');
+    }
+
+    function layoutSidenotes() {
+      document.querySelectorAll('article.post-single').forEach(layoutArticle);
+    }
+
+    function scheduleLayout(delay) {
+      window.clearTimeout(resizeTimer);
+      resizeTimer = window.setTimeout(layoutSidenotes, delay == null ? 120 : delay);
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', layoutSidenotes);
+    } else {
+      layoutSidenotes();
+    }
+    window.addEventListener('load', function () {
+      layoutSidenotes();
+      scheduleLayout(800);
+    });
+    window.addEventListener('resize', function () {
+      scheduleLayout(120);
+    });
+    if (desktopQuery.addEventListener) {
+      desktopQuery.addEventListener('change', layoutSidenotes);
+    } else if (desktopQuery.addListener) {
+      desktopQuery.addListener(layoutSidenotes);
+    }
+    if (document.fonts && document.fonts.ready) {
+      document.fonts.ready.then(layoutSidenotes).catch(function () {});
+    }
+  })();
+</script>
+{{- end }}
 {{/* Umami analytics — self-hosted at umami.eiaserinnys.me */}}
 <script defer src="https://umami.eiaserinnys.me/script.js" data-website-id="f89dd61b-4ab3-43c4-8792-52427d271a87"></script>
