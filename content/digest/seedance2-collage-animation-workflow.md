@@ -15,7 +15,7 @@ sidenotes: true
 
 ## 3줄 요약
 
-1. tapehead.lab은 X·YouTube에서 AI MV를 만드는 일본 크리에이터다. 신곡 「불쌍한 지성(かわいそうな知性)」 MV에 쓴 콜라주 애니메이션 워크플로우를 note.com에 정리해 공개했다.
+1. tapehead.lab은 X·YouTube에서 AI MV를 만드는 일본 크리에이터다. 신곡 「불쌍한 지성(かわいそうな知性)」 MV에 쓴 콜라주 애니메이션 워크플로우를 note.com에 정리해 공개했다.[^tapehead-lab]
 2. 워크플로는 ① Midjourney로 단편 소재 20장 생성 → ② Runway 노드 환경에서 Seedance2.0에 5장씩 Reference로 넣어 15초 시퀀스 88본(총 22분 넘는 분량) 생성 → ③ 편집한 뒤 *영상에 맞춰 음악을 거꾸로 만드는* 역순 마감으로 이어진다.
 4. 두 가지 명제가 핵심이다. 입력 슬롯을 *Start Frame이 아니라 Reference*로 두면 모델은 이미지의 분위기만 가져가고 동작은 프롬프트가 정한다. 그리고 *Seedance2.0은 프롬프트가 전부* — 같은 5장의 레퍼런스라도 프롬프트만 바꾸면 결과가 크게 달라진다.
 
@@ -145,3 +145,5 @@ The surface texture flows downward against the direction of the color seep.
 - 매체: note.com, 2026년 5월 18일
 - 관련 작품: 「불쌍한 지성(かわいそうな知性)」 MV (2026-05-13 공개)
 - 원문: <https://note.com/tapehead/n/n94eaf79a519b>
+
+[^tapehead-lab]: 저자: tapehead.lab ([@tapehead_Lab](https://x.com/tapehead_Lab))

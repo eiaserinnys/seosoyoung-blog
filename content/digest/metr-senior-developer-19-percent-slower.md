@@ -43,7 +43,7 @@ sidenotes: true
 
 ## 핵심 결과 — 19% 슬로우다운
 
-> When developers are allowed to use AI tools, they take 19% longer to complete issues — a significant slowdown that goes against developer beliefs and expert forecasts.
+> When developers are allowed to use AI tools, they take 19% longer to complete issues — a significant slowdown that goes against developer beliefs and expert forecasts.[^mit-2025]
 
 AI 도구 사용이 허용된 이슈에서 개발자는 같은 종류의 이슈를 AI 없이 처리할 때보다 *19% 더 오래* 걸렸다. 통계적으로 유의한 슬로우다운이며, 클러스터링 표준오차로 영가설을 기각한다. 결과는 다양한 *결과 측정·추정 방법·하위 분석*에서 일관되게 관찰된다.
 
@@ -143,4 +143,5 @@ AI 도구 사용이 허용된 이슈에서 개발자는 같은 종류의 이슈�
 저자: Joel Becker · Nate Rush · Beth Barnes · David Rein  
 원문 블로그: <https://metr.org/blog/2025-07-10-early-2025-ai-experienced-os-dev-study/>  
 정식 페이퍼(arxiv): <https://arxiv.org/abs/2507.09089>  
-인용 보도: MIT Technology Review *Hype Correction* 시리즈 (Edd Gent, 2025-12-15) — <https://www.technologyreview.com/2025/12/15/1128352/rise-of-ai-coding-developers-2026/>
+
+[^mit-2025]: 인용 보도: MIT Technology Review *Hype Correction* 시리즈 (Edd Gent, 2025-12-15) — <https://www.technologyreview.com/2025/12/15/1128352/rise-of-ai-coding-developers-2026/>

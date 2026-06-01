@@ -11,7 +11,7 @@ sidenotes: true
 
 ## 3줄 요약
 
-1. xAI가 X(트위터) For You 피드를 떠받치는 추천 시스템을 오픈소스로 공개했다 (Apache 2.0). Home Mixer / Thunder / Phoenix / candidate-pipeline 4개 컴포넌트로 분리되어 있으며, Grok-1 기반 트랜스포머가 ranking을 담당한다.
+1. xAI가 X(트위터) For You 피드를 떠받치는 추천 시스템을 오픈소스로 공개했다 (Apache 2.0). Home Mixer / Thunder / Phoenix / candidate-pipeline 4개 컴포넌트로 분리되어 있으며, Grok-1 기반 트랜스포머가 ranking을 담당한다.[^phoenix-readme][^grok-github]
 2. 핵심 설계는 "수공 피처와 휴리스틱을 모두 제거하고 트랜스포머가 engagement sequence를 직접 학습한다"는 것. 후보끼리 attention을 차단하는 candidate isolation, 다중 해시 기반 임베딩, 15개 행동 확률을 동시 예측하는 multi-action head가 핵심 디자인 결정이다.
 3. 2026-05-15 업데이트로 단순 코드 공개를 넘어 *돌아가는 시스템*이 풀렸다. 사전학습 mini Phoenix 체크포인트 (256-dim, 4 heads, 2 layers, 약 3GB)가 Git LFS로 배포되어 훈련 없이 즉시 추론할 수 있고, 537K 스포츠 글 데모 코퍼스와 예시 사용자 시퀀스도 포함되어 외부 연구자가 "같은 입력으로 같은 추천"을 재현할 수 있게 됐다.
 
@@ -181,7 +181,8 @@ xAI의 답은 우아하다. <strong>모델 구조(attention mask) 자체로 그 
 - 발행: xAI, Apache License 2.0
 - 발표일: 2026년 5월 15일 (이번 업데이트)
 - 원문 리포: <https://github.com/xai-org/x-algorithm>
-- Phoenix 모듈 README: <https://github.com/xai-org/x-algorithm/blob/main/phoenix/README.md>
-- 참고 — 트랜스포머 코어는 [Grok-1 오픈소스](https://github.com/xai-org/grok-1)에서 포팅되어 추천 시스템에 맞게 적응됨.
 
 원문에 별도 이미지는 없고 README의 ASCII 다이어그램이 핵심 도식이라, 본 다이제스트에는 이미지를 첨부하지 않고 본문에 일부 도식을 그대로 옮겨두었다.
+
+[^phoenix-readme]: Phoenix 모듈 README: <https://github.com/xai-org/x-algorithm/blob/main/phoenix/README.md>
+[^grok-github]: 참고 — 트랜스포머 코어는 [Grok-1 오픈소스](https://github.com/xai-org/grok-1)에서 포팅되어 추천 시스템에 맞게 적응됨.

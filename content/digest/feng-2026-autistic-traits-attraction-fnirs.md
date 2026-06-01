@@ -24,7 +24,7 @@ sidenotes: true
 ## 자료 정체
 
 - **원 논문**: Feng, S., Wang, M., Zhang, J., Ding, L., Yuan, Y., Zhang, P., & Bai, X. (2026). *Attraction Through Similarity in Autistic Traits: A Group Communication Study Using the Social Relations Model and Functional Near-Infrared Spectroscopy Hyperscanning.* **Biological Psychiatry**, 99(5), 418–427.
-- **DOI**: [10.1016/j.biopsych.2025.06.031](https://doi.org/10.1016/j.biopsych.2025.06.031) · **PubMed**: [PMID 40633888](https://pubmed.ncbi.nlm.nih.gov/40633888/)
+- **DOI**: [10.1016/j.biopsych.2025.06.031](https://doi.org/10.1016/j.biopsych.2025.06.031) · **PubMed**: [PMID 40633888](https://pubmed.ncbi.nlm.nih.gov/40633888/)[^doi-2025]
 - **출판일**: 2026년 3월 1일 (Issue), 온라인 사전 공개 2025년 7월
 - **소속**: 텐진사범대학(Tianjin Normal University) — 교신저자 Peng Zhang, Xuejun Bai
 - **2차 자료**: PsyPost, [Brain scans reveal how people with autistic traits connect differently](https://www.psypost.org/brain-scans-reveal-how-people-with-autistic-traits-connect-differently/) (2026-05-09, by Karina Petrova)
@@ -129,3 +129,5 @@ PsyPost 해설: <https://www.psypost.org/brain-scans-reveal-how-people-with-auti
 저자: Shuyuan Feng, Mingliang Wang, Jianing Zhang, Lin Ding, Yuqing Yuan, Peng Zhang, Xuejun Bai (Tianjin Normal University)
 저널: *Biological Psychiatry*, Vol. 99, Issue 5, 1 March 2026, Pages 418–427.
 이미지 출처: PsyPost 기사 헤더 이미지 (저작권자 PsyPost / 원본 라이선스 표기 없음, 보도 인용 목적).
+
+[^doi-2025]: 원문: <https://doi.org/10.1016/j.biopsych.2025.06.031>

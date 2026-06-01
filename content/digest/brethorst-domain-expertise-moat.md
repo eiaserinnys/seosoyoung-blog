@@ -17,7 +17,7 @@ sidenotes: true
 
 ## 글의 정체 — 자기 견해의 정정 후속편
 
-저자는 1년 전 [Agentic Coding Tools: Not Skynet, Not a Stochastic Parrot](https://www.brethorsting.com/blog/2025/07/agentic-coding-tools-not-skynet%2C-not-a-stochastic-parrot/) 글에서 "이 도구들은 시니어 개발자를 증폭한다, 왜냐하면 시니어는 판단력을 갖기 때문이다"라는 표준적 입장을 취했다고 밝힌다. 이번 글은 그 주장을 *참이지만 불완전하다*고 정정한다. 그동안 직접 관찰한 결과 *판단력이라는 단어 안에서 진짜 효력을 내는 부품*은 따로 있더라는 것이다.
+저자는 1년 전 [Agentic Coding Tools: Not Skynet, Not a Stochastic Parrot](https://www.brethorsting.com/blog/2025/07/agentic-coding-tools-not-skynet%2C-not-a-stochastic-parrot/) 글에서 "이 도구들은 시니어 개발자를 증폭한다, 왜냐하면 시니어는 판단력을 갖기 때문이다"라는 표준적 입장을 취했다고 밝힌다. 이번 글은 그 주장을 *참이지만 불완전하다*고 정정한다. 그동안 직접 관찰한 결과 *판단력이라는 단어 안에서 진짜 효력을 내는 부품*은 따로 있더라는 것이다.[^brethorsting-2025]
 
 ## 진단 — 구속 조건의 이동
 
@@ -65,6 +65,7 @@ sidenotes: true
 - 저자: Aaron Brethorst
 - 발행: 2026년 5월 30일 — Aaron Brethorst의 개인 블로그
 - 원문: <https://www.brethorsting.com/blog/2026/05/domain-expertise-has-always-been-the-real-moat/>
-- 본문에 인용된 저자의 1년 전 글: <https://www.brethorsting.com/blog/2025/07/agentic-coding-tools-not-skynet%2C-not-a-stochastic-parrot/>
 
 원문에 인용할 만한 이미지·도식은 없었다. 본문은 약 800 단어의 짧은 산문으로 구성되어 있다.
+
+[^brethorsting-2025]: 본문에 인용된 저자의 1년 전 글: <https://www.brethorsting.com/blog/2025/07/agentic-coding-tools-not-skynet%2C-not-a-stochastic-parrot/>

@@ -21,7 +21,7 @@ sidenotes: true
 
 ## 이 논문은 무엇인가
 
-1956년, Bell Labs의 물리학자 J.L. Kelly Jr.는 정보 이론의 핵심 개념인 '전송률(transmission rate)'에 코딩 없이도 의미를 부여할 수 있는지 탐구했다. Shannon의 정리는 "적절한 코딩을 하면 이 속도로 정보를 보낼 수 있다"고 말했지만, 코딩을 하지 않을 때 전송률이 무슨 의미인지는 열린 문제였다.
+1956년, Bell Labs의 물리학자 J.L. Kelly Jr.는 정보 이론의 핵심 개념인 '전송률(transmission rate)'에 코딩 없이도 의미를 부여할 수 있는지 탐구했다. Shannon의 정리는 "적절한 코딩을 하면 이 속도로 정보를 보낼 수 있다"고 말했지만, 코딩을 하지 않을 때 전송률이 무슨 의미인지는 열린 문제였다.[^new-1956][^princeton-edu]
 
 Kelly는 이 질문에 도박이라는 모델로 답했다. 통신 채널로 경마 결과를 미리 받는 도박꾼을 상상하자. 이 도박꾼의 **최대 자본 성장률이 바로 채널의 정보 전송률과 같다**는 것이다.
 
@@ -151,3 +151,6 @@ $$f^* = \frac{\mu}{\sigma^2}$$
 
 - J.L. Kelly Jr., "A New Interpretation of Information Rate", *Bell System Technical Journal*, Vol. 35, pp. 917-926, July 1956
 - [PDF 원문 (Princeton)](https://www.princeton.edu/~wbialek/rome/refs/kelly_56.pdf)
+
+[^new-1956]: J.L. Kelly Jr., "A New Interpretation of Information Rate", *Bell System Technical Journal*, Vol. 35, pp. 917-926, July 1956
+[^princeton-edu]: [PDF 원문 (Princeton)](https://www.princeton.edu/~wbialek/rome/refs/kelly_56.pdf)

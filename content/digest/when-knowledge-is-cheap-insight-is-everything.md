@@ -75,7 +75,7 @@ Atkins는 이 정의 위에서 규모의 우려가 해소된다고 본다. 면�
 
 값싼 *chiddush*가 만들어내는 더 깊은 우려가 있다. 통찰이 값싸지면, 학습자는 각자 챗봇에 프롬프트를 던지는 고독한 솔로의 무리가 된다. 코퍼스는 살아남지만, *책의 백성*은 그렇지 못한다.
 
-Atkins는 이 우려가 같은 페이지의 다른 일화로 응답된다고 적는다. Bava Metzia 85b. 3세기의 랍비 레쉬 라키시는 위대한 랍비들의 무덤을 표시하던 중, 람비 히야의 묘만은 도무지 찾지 못한다. 무너진다.
+Atkins는 이 우려가 같은 페이지의 다른 일화로 응답된다고 적는다. Bava Metzia 85b. 3세기의 랍비 레쉬 라키시는 위대한 랍비들의 무덤을 표시하던 중, 람비 히야의 묘만은 도무지 찾지 못한다. 무너진다.[^talmud-bavli]
 
 > 나는 그를 분석한 만큼 그를 분석했다.
 
@@ -126,6 +126,6 @@ Atkins는 끝에 한 줄을 덧붙인다. 자신은 랍비이자 토라 교사�
 저자: Zohar Atkins (랍비·토라 교사)
 원문: <https://x.com/zoharatkins/status/2054168204658815070>
 
-본문에 인용된 1차 자료: Talmud Bavli — Chagigah 3a, Sukkah 52b, Menachot 29b, Bava Metzia 85b, Horayot 14a. Kohelet 1:8. Mesillat Yesharim (Moshe Chaim Luzzatto). Malbim on Proverbs 21:17. William Stanley Jevons, *The Coal Question* (1865).
-
 원문은 텍스트 에세이만으로 구성되어 있어 이 다이제스트에 인용할 이미지는 따로 없다.
+
+[^talmud-bavli]: 본문에 인용된 1차 자료: Talmud Bavli — Chagigah 3a, Sukkah 52b, Menachot 29b, Bava Metzia 85b, Horayot 14a. Kohelet 1:8. Mesillat Yesharim (Moshe Chaim Luzzatto). Malbim on Proverbs 21:17. William Stanley Jevons, *The Coal Question* (1865).

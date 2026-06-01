@@ -17,7 +17,7 @@ sidenotes: true
 
 ## 슬롭 캐넌이라는 통념
 
-> A lot of people seem convinced that the point of AI coding is to write low-quality code as fast as possible. Spew out barely-passable slop, open massive PRs, and merge them unvetted.
+> A lot of people seem convinced that the point of AI coding is to write low-quality code as fast as possible. Spew out barely-passable slop, open massive PRs, and merge them unvetted.[^diminished-2026]
 
 AI 코딩의 목적이 *겨우 통과할 만한 코드를 최대한 빨리 뽑아내는 것*이라는 통념은 워낙 강해서, 저자는 그 반대편을 *굳이 글로 남길 필요까지 있나* 싶었다고 한다. 그러나 LLM을 [slop cannon](https://x.com/i/status/2021617680525172840)으로만 보는 사람들이 적지 않다는 점에서, 같은 도구가 *느리고 고품질* 모드에서도 쓰일 수 있다는 반대편 사례를 명시적으로 적기로 한다.
 
@@ -80,6 +80,7 @@ Nolan은 동의하며, 자기 스킬에 *3개 서브에이전트가 모두 끝�
 - 저자: Nolan Lawson (블로그 *[Read the Tea Leaves](https://nolanlawson.com/)*)
 - 발행일: 2026-05-25
 - 원문: <https://nolanlawson.com/2026/05/25/using-ai-to-write-better-code-more-slowly/>
-- 함께 읽기: [The diminished art of coding](https://nolanlawson.com/2026/03/22/the-diminished-art-of-coding/) (저자 이전 글)
 
 원문에 본문 일러스트는 없다 — 사이트 chrome 이미지만 포함되어 있어 이 다이제스트도 텍스트로만 진행한다.
+
+[^diminished-2026]: 함께 읽기: [The diminished art of coding](https://nolanlawson.com/2026/03/22/the-diminished-art-of-coding/) (저자 이전 글)

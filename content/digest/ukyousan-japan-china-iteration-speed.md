@@ -11,8 +11,8 @@ sidenotes: true
 
 ## 3줄 요약
 
-1. ukyousan(うきょう)은 일본 게임 업계의 진짜 위기가 품질이 아니라 *시도 횟수*에 있다고 진단한다. 중국 대형 퍼블리셔는 길어도 3개월 안에 동작하는 시제품을 만들고, 복수 안을 동시에 테스트하며, 안 되는 것은 즉시 폐기한다. 일본 대형 개발사는 같은 기간에 사내 합의 과정만 통과한다.
-2. 핵심 데이터: Sensor Tower 2025 — 일본 모바일 IAP 110억 달러 시장에서 비국내 퍼블리셔(라스트워: 서바이벌, 화이트아웃 서바이벌, 붕괴: 스타레일, 원신 등)가 고과금 유저를 가져가고 있다. GDC 2025 — 개발자 11%가 지난 12개월 안에 정리해고를 겪고 41%가 영향을 받았다. 같은 해 Steam 신작은 1만 9천 종을 넘었다.
+1. ukyousan(うきょう)은 일본 게임 업계의 진짜 위기가 품질이 아니라 *시도 횟수*에 있다고 진단한다. 중국 대형 퍼블리셔는 길어도 3개월 안에 동작하는 시제품을 만들고, 복수 안을 동시에 테스트하며, 안 되는 것은 즉시 폐기한다. 일본 대형 개발사는 같은 기간에 사내 합의 과정만 통과한다.[^nearly-2024]
+2. 핵심 데이터: Sensor Tower 2025 — 일본 모바일 IAP 110억 달러 시장에서 비국내 퍼블리셔(라스트워: 서바이벌, 화이트아웃 서바이벌, 붕괴: 스타레일, 원신 등)가 고과금 유저를 가져가고 있다. GDC 2025 — 개발자 11%가 지난 12개월 안에 정리해고를 겪고 41%가 영향을 받았다. 같은 해 Steam 신작은 1만 9천 종을 넘었다.[^japan-2025][^sensor-2025][^steam-2025][^over-2025][^game-developers]
 3. 결론: 앞으로 강한 사람은 *완성도를 한 번에 내놓는 사람*이 아니라 *출시 후 고칠 수 있는 사람*이다. 작게 책임감 있게 내놓고, 반응을 보고, 고치는 사이클의 속도가 새로운 경쟁력이다.
 
 ## 자료 정체
@@ -93,7 +93,7 @@ sidenotes: true
 
 ### 도시형 오픈월드 + 크로스플랫폼 + 글로벌의 일상화
 
-*NTE: Neverness to Everness*는 2026년 4월 29일 정식 출시되어 PC, Android, iOS, PlayStation 5, Mac에 동시 대응하는 크로스플랫폼 타이틀로 전개되었다. 도시형 오픈월드 + 애니메이션 풍 + PC·스마트폰·콘솔 횡단 + 글로벌 전제 — 이런 조합은 이제 한 줌의 예외가 아니다.
+*NTE: Neverness to Everness*는 2026년 4월 29일 정식 출시되어 PC, Android, iOS, PlayStation 5, Mac에 동시 대응하는 크로스플랫폼 타이틀로 전개되었다. 도시형 오픈월드 + 애니메이션 풍 + PC·스마트폰·콘솔 횡단 + 글로벌 전제 — 이런 조합은 이제 한 줌의 예외가 아니다.[^nte-neverness][^nte-neverness-2]
 
 > もう「スマホゲームだから」「基本無料だから」「中国ゲームだから」といった雑な分類では語れなくなっている。
 
@@ -147,15 +147,13 @@ GDC 2025 조사에 따르면 3,000명 넘는 게임 개발자 중 11%가 지난 
 저자: ukyousan(うきょう), note.com 채널 "ゲーム設計×仕事の設計論"
 발행: 2026-05-13
 
-본문이 인용한 자료:
-
-- NTE 공식 사이트, "NTE: Neverness to Everness | Official Launch: April 29"
-- NTE 일본 공식 사이트, "『NTE: Neverness to Everness』サービス開始"
-- Sensor Tower, "Japan Gaming 2025: How IPs & Live Ops Power an $11B Mobile Market and Expand Global PC & Console Footprint"
-- Sensor Tower, "2025年下半期の日本のモバイルゲーム収益トップはラストウォー、DL数ではブロックブラスト"
-- GameBusiness.jp, "2025年、Steamリリース作品数は過去最高を更新。しかしレビューが100件以上の作品は減少傾向に"
-- GamingOnLinux, "Over 19,000 games have released on Steam in 2025, with nearly half seeing fewer than 10 reviews"
-- VGC, "11% of game developers surveyed by GDC were laid off in the past year"
-- Niko Partners, "Nearly two-thirds of China PC Gamers spend more in 2024 than last year"
-
 원문에는 마크다운 이미지 인용이 포함되어 있지 않았다(크롤링 단계에서 제거되었을 가능성). 이 다이제스트도 텍스트만으로 정리한다.
+
+[^nte-neverness]: NTE 공식 사이트, "NTE: Neverness to Everness | Official Launch: April 29"
+[^nte-neverness-2]: NTE 일본 공식 사이트, "『NTE: Neverness to Everness』サービス開始"
+[^japan-2025]: Sensor Tower, "Japan Gaming 2025: How IPs & Live Ops Power an $11B Mobile Market and Expand Global PC & Console Footprint"
+[^sensor-2025]: Sensor Tower, "2025年下半期の日本のモバイルゲーム収益トップはラストウォー、DL数ではブロックブラスト"
+[^steam-2025]: GameBusiness.jp, "2025年、Steamリリース作品数は過去最高を更新。しかしレビューが100件以上の作品は減少傾向に"
+[^over-2025]: GamingOnLinux, "Over 19,000 games have released on Steam in 2025, with nearly half seeing fewer than 10 reviews"
+[^game-developers]: VGC, "11% of game developers surveyed by GDC were laid off in the past year"
+[^nearly-2024]: Niko Partners, "Nearly two-thirds of China PC Gamers spend more in 2024 than last year"

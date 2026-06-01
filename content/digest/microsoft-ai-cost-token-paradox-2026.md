@@ -16,24 +16,24 @@ sidenotes: true
 ## 3줄 요약
 
 1. Fortune은 마이크로소프트가 사내 Claude Code 라이선스를 대부분 회수하고 GitHub Copilot CLI로 이주시키고 있다고 보도했다. Uber는 2026년 AI 코딩 도구 예산을 단 4개월 만에 모두 소진했다.
-2. 엔비디아 Bryan Catanzaro는 "내 팀에서 컴퓨트 비용이 직원 비용을 한참 넘어선다"고 말했다. Gartner는 2030년이면 1조 파라미터 LLM의 추론 단가가 2025년 대비 약 90% 떨어지겠지만, 에이전트 모델이 더 많은 토큰을 쓰기 때문에 기업의 총 추론 비용은 오히려 상승한다고 예측한다.
+2. 엔비디아 Bryan Catanzaro는 "내 팀에서 컴퓨트 비용이 직원 비용을 한참 넘어선다"고 말했다. Gartner는 2030년이면 1조 파라미터 LLM의 추론 단가가 2025년 대비 약 90% 떨어지겠지만, 에이전트 모델이 더 많은 토큰을 쓰기 때문에 기업의 총 추론 비용은 오히려 상승한다고 예측한다.[^gartner-2030]
 3. HedgieMarkets는 이 모든 가격 인상이 "IPO 타이밍 이슈"라고 진단했다. OpenAI·Anthropic·xAI는 18\~24개월 안에 상장해야 하고, S-1을 제출하기 전에 손실 곡선이 꺾이는 모습을 보여야 하기 때문에 비용 전가가 지금 가속된다는 것이다.
 
 ![Satya Nadella, Microsoft CEO. Sven Hoppe/picture alliance via Getty Images](/images/microsoft-ai-cost-token-paradox-2026/cover-nadella.webp)
 
 ## 마이크로소프트의 Claude Code 후퇴
 
-The Verge 보도에 따르면 마이크로소프트는 사내 직접 Claude Code 라이선스를 대부분 취소하고, 자사 GitHub Copilot CLI로 엔지니어들을 옮기고 있다. 이 결정은 사내 액세스를 처음 연 지 *불과 6개월* 만에 나왔다. 수천 명의 개발자·PM·디자이너가 코딩 실험에 활용하면서 도구가 너무 빨리, 너무 깊이 자리 잡았다는 것이 핵심 부담이다.
+The Verge 보도에 따르면 마이크로소프트는 사내 직접 Claude Code 라이선스를 대부분 취소하고, 자사 GitHub Copilot CLI로 엔지니어들을 옮기고 있다. 이 결정은 사내 액세스를 처음 연 지 *불과 6개월* 만에 나왔다. 수천 명의 개발자·PM·디자이너가 코딩 실험에 활용하면서 도구가 너무 빨리, 너무 깊이 자리 잡았다는 것이 핵심 부담이다.[^microsoft-discontinues]
 
 다만 이번 회수가 마이크로소프트의 더 큰 Anthropic 관계를 흔드는 것은 아니다. Foundry 딜로 묶인 50억 달러 투자, Foundry 고객의 Claude 모델 접근, 그리고 Anthropic의 300억 달러 Azure 컴퓨트 약정은 모두 그대로 유지된다. 사내 사용권만 끊은 것이다.
 
-Uber도 비슷한 그림이다. CTO Praveen Neppalli Naga는 The Information에 회사가 2026년 AI 코딩 도구 예산 전체를 단 4개월 만에 태웠다고 밝혔다. Uber는 직전까지 사내 리더보드로 팀별 AI 사용량을 줄 세워가며 적극적으로 채택을 부추기던 회사였다.
+Uber도 비슷한 그림이다. CTO Praveen Neppalli Naga는 The Information에 회사가 2026년 AI 코딩 도구 예산 전체를 단 4개월 만에 태웠다고 밝혔다. Uber는 직전까지 사내 리더보드로 팀별 AI 사용량을 줄 세워가며 적극적으로 채택을 부추기던 회사였다.[^uber-cto]
 
 ## "토큰맥싱"의 역설 — 권장이 곧 청구서다
 
 Fortune은 같은 흐름을 메타·아마존에서도 짚는다. 메타에서는 직원이 사내 AI 사용량 리더보드 *"Claudeonomics"* 를 만들었고, 아마존은 직원들에게 *"tokenmaxx"* — 즉 토큰을 최대한 많이 쓰라 — 를 권장하는 캠페인을 돌렸다. 토큰 기반 가격제 아래서는 *효율적으로, 더 많이 쓸수록* 청구서가 커진다는 단순한 사실을 권장 캠페인이 가린다.
 
-Goldman Sachs는 2030년까지 에이전틱 AI 도입으로 토큰 소비가 24배 증가하여 월 *120 quadrillion(12경)* 개에 이를 것이라 전망한다. 단가가 떨어져도 총소비량이 그를 추월하면 청구서는 위로 간다.
+Goldman Sachs는 2030년까지 에이전틱 AI 도입으로 토큰 소비가 24배 증가하여 월 *120 quadrillion(12경)* 개에 이를 것이라 전망한다. 단가가 떨어져도 총소비량이 그를 추월하면 청구서는 위로 간다.[^goldman-2030]
 
 Gartner의 메시지는 더 직접적이다.
 
@@ -97,8 +97,7 @@ HedgieMarkets의 논리는 이렇게 흐른다.
 확장 분석: HedgieMarkets (@HedgieMarkets), X, 2026-05-22
 트윗 URL: <https://x.com/hedgiemarkets/status/2057975295442116889>
 
-인용된 2차 소스:
-- The Verge, *"Microsoft discontinues Claude Code, returns to Notepad"* (Microsoft의 Claude Code 회수 보도)
-- The Information, *"Uber CTO Shows Claude Code Can Blow AI Budgets"* (Uber 사례)
-- Gartner 리서치 (2030년 추론 단가 전망)
-- Goldman Sachs (2030년 토큰 소비 24배 증가 전망)
+[^microsoft-discontinues]: The Verge, *"Microsoft discontinues Claude Code, returns to Notepad"* (Microsoft의 Claude Code 회수 보도)
+[^uber-cto]: The Information, *"Uber CTO Shows Claude Code Can Blow AI Budgets"* (Uber 사례)
+[^gartner-2030]: Gartner 리서치 (2030년 추론 단가 전망)
+[^goldman-2030]: Goldman Sachs (2030년 토큰 소비 24배 증가 전망)

@@ -23,7 +23,7 @@ sidenotes: true
 
 ![Dan Shipper](/images/lennys-podcast-dan-shipper-ai-paradox/01-intro.jpg)
 
-<strong>Lenny's Podcast</strong> 2026년 5월 회차. 게스트는 미디어·소프트웨어 회사 <strong>Every</strong>의 공동 창립자 겸 CEO <strong>Dan Shipper</strong>, 진행자는 <strong>Lenny Rachitsky</strong>. 약 94분 분량의 인터뷰다.
+<strong>Lenny's Podcast</strong> 2026년 5월 회차. 게스트는 미디어·소프트웨어 회사 <strong>Every</strong>의 공동 창립자 겸 CEO <strong>Dan Shipper</strong>, 진행자는 <strong>Lenny Rachitsky</strong>. 약 94분 분량의 인터뷰다.[^lennysnewsletter-paradox]
 
 Every는 약 30명 규모의 회사로, 편집자·운영·세일즈·고객지원·엔지니어 모두가 AI 얼리어답터다. 모델 회사가 출시 전 알파·베타를 그들에게 보낼 정도의 "AI 살아있는 실험실" 포지션이다. 댄은 이 환경 덕에 "예언이 아니라 미래에 같이 살고 있는 것"에 가까운 관찰을 한다고 말한다.
 
@@ -91,7 +91,7 @@ Claude Code가 처음 떴을 때, 많은 사람이 "CLI라서 잘된 것"이라�
 
 40\~50년 묵은 CLI가 완전히 사라진다는 뜻은 아니다. 다만 AI 시대의 주요 업무 표면은 GUI로 회귀했고, "CLI가 미래"라고 베팅한 사람들은 과적합이라는 진단이다.
 
-## 4. Automation is a lie — AI 패러독스
+## 4. Automation is a lie — AI 패러독스[^after-2026]
 
 > "I'm simultaneously extremely AI-pilled and very bullish on humans. Automation is a lie. Every agent needs a human."
 
@@ -179,8 +179,8 @@ Every 내부 사례. Spiral(글쓰기 앱) 책임자 Marcus는 본래 PM이었�
 - 영상 제목: "The AI paradox: More automation, more humans, more work | Dan Shipper"
 - 길이: 약 1시간 34분
 - 원문: <https://youtu.be/4D3hDmGhFhA>
-- 에피소드 대본: <https://www.lennysnewsletter.com/p/the-ai-paradox-dan-shipper>
-
-같은 저자가 1주 전(2026년 5월 21일) 발표한 매니페스토 "After Automation"도 함께 정리해 두었다 — [After Automation 다이제스트](/digest/after-automation-shipper-2026/). 매니페스토가 "왜 자동화에도 사람이 더 필요한가"에 대한 이론이라면, 본 팟캐스트는 그 위에 12개의 구체적 예측을 얹은 후속 발화다.
 
 본문 인용은 영상의 영어 트랜스크립트에서 직접 옮긴 뒤 사실 위주로 정리했다. 스크린샷은 영상에서 직접 추출했다.
+
+[^lennysnewsletter-paradox]: 에피소드 대본: <https://www.lennysnewsletter.com/p/the-ai-paradox-dan-shipper>
+[^after-2026]: 같은 저자가 1주 전(2026년 5월 21일) 발표한 매니페스토 "After Automation"도 함께 정리해 두었다 — [After Automation 다이제스트](/digest/after-automation-shipper-2026/). 매니페스토가 "왜 자동화에도 사람이 더 필요한가"에 대한 이론이라면, 본 팟캐스트는 그 위에 12개의 구체적 예측을 얹은 후속 발화다.

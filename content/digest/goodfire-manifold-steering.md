@@ -16,7 +16,7 @@ sidenotes: true
 3. 표상→행동만이 아니라 행동→표상도 성립한다. 행동 매니폴드를 따라 활성 개입을 최적화하면 그 활성 경로가 별도로 추정한 표상 매니폴드와 모양이 일치한다. 두 기하는 사전적으로 정렬될 이유가 없는데도 정확히 대응하며, 같은 패턴이 월·글자·나이·합성 ICL·이미지-액션 모델에서도 재현된다.
 
 ![Concept geometry provides a blueprint for controlling neural network behavior](/images/steering-along-manifolds/bead-maze.webp)
-> 출처: Goodfire, *Steering Along Manifolds to Control Neural Networks* 메인 비주얼 (2026-05-07).
+> 출처: Goodfire, *Steering Along Manifolds to Control Neural Networks* 메인 비주얼 (2026-05-07).[^goodfire-manifold]
 > 원본: <https://static.goodfire.ai/manifold-steering/bead-maze-riso-wide.webp>
 
 ## 들어가며 — 왜 매니폴드 스티어링인가
@@ -102,3 +102,5 @@ sidenotes: true
 풀 페이퍼: <https://arxiv.org/abs/2605.05115>
 인터랙티브 데모: <https://static.goodfire.ai/manifold-steering/weekdays_prod.html>
 시리즈 첫 글 다이제스트: [The World Inside Neural Networks](/digest/goodfire-world-inside-neural-networks/)
+
+[^goodfire-manifold]: 원문: <https://www.goodfire.ai/research/manifold-steering>

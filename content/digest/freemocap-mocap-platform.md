@@ -13,7 +13,7 @@ sidenotes: true
 
 ## 3줄 요약
 
-1. <strong>FreeMoCap</strong>은 하드웨어·소프트웨어 비종속, 최저 비용, 연구 등급(research-grade)을 표방하는 무료 오픈소스 모션 캡처 플랫폼이다. 분산 과학 연구·교육·트레이닝을 위한 인프라로 설계됐다.
+1. <strong>FreeMoCap</strong>은 하드웨어·소프트웨어 비종속, 최저 비용, 연구 등급(research-grade)을 표방하는 무료 오픈소스 모션 캡처 플랫폼이다. 분산 과학 연구·교육·트레이닝을 위한 인프라로 설계됐다.[^freemocap][^freemocap-github][^github-freemocap][^github-freemocap-2]
 2. 일반 USB 웹캠 여러 대만 있으면 다중 카메라 동기화·캘리브레이션·삼각측량을 거쳐 3D 스켈레톤을 추출한다. 결과는 Blender 애드온을 통해 곧장 애니메이션 파이프라인에 연결된다.
 3. 2026-04 발표된 v1.8은 4대 이상 카메라 리그에서 발생하던 '유령 스켈레톤(ghost skeletons)' 문제를 점별로 잘못된 뷰를 거부하는 방식으로 해결하는 outlier rejection 옵션을 도입했다.
 
@@ -21,7 +21,7 @@ sidenotes: true
 
 > A free-and-open-source, hardware-and-software-agnostic, minimal-cost, research-grade, motion capture system and platform for decentralized scientific research, education, and training.
 
-이름 그대로 **"무료(free) + 모션 캡처(MoCap)"** 다. 상용 모션 캡처 스튜디오가 수천만 원짜리 IR 카메라·마커 슈트·전용 소프트웨어를 요구하는 데 반해, FreeMoCap은 일반 웹캠 몇 대와 Python 환경만으로 같은 작업을 돌려낸다. 메인테이너는 Jon Matthis와 Endurance Idehen이며, AGPLv3 라이선스로 배포된다. Zenodo DOI(`10.5281/zenodo.7233714`)도 부여되어 있어 학술 인용도 가능하다.
+이름 그대로 **"무료(free) + 모션 캡처(MoCap)"** 다. 상용 모션 캡처 스튜디오가 수천만 원짜리 IR 카메라·마커 슈트·전용 소프트웨어를 요구하는 데 반해, FreeMoCap은 일반 웹캠 몇 대와 Python 환경만으로 같은 작업을 돌려낸다. 메인테이너는 Jon Matthis와 Endurance Idehen이며, AGPLv3 라이선스로 배포된다. Zenodo DOI(`10.5281/zenodo.7233714`)도 부여되어 있어 학술 인용도 가능하다.[^jon-matthis][^zenodo-doi]
 
 리포지토리는 2021-04 첫 커밋 이후 약 5년간 누적되어 2026-05 시점 GitHub 스타 7,691, 포크 660를 보유한 활성 프로젝트다.
 
@@ -90,10 +90,12 @@ v1.8.0(2026-04-22 릴리스)이 도입한 **선택적** 아웃라이어 거부 �
 
 ## 출처
 
-- 메인테이너: [Jon Matthis](https://github.com/jonmatthis), [Endurance Idehen](https://github.com/endurance)
-- 공식 사이트: <https://freemocap.org>
-- 문서: <https://freemocap.github.io/documentation>
-- v1.8 릴리스 노트: <https://github.com/freemocap/freemocap/releases/tag/v1.8.2>
 - 라이선스: AGPLv3
-- 학술 인용: [Zenodo DOI 10.5281/zenodo.7233714](https://doi.org/10.5281/zenodo.7233714)
 - 원문: <https://github.com/freemocap/freemocap>
+
+[^jon-matthis]: 메인테이너: [Jon Matthis](https://github.com/jonmatthis), [Endurance Idehen](https://github.com/endurance)
+[^freemocap]: 공식 사이트: <https://freemocap.org>
+[^freemocap-github]: 문서: <https://freemocap.github.io/documentation>
+[^github-freemocap]: v1.8 릴리스 노트: <https://github.com/freemocap/freemocap/releases/tag/v1.8.2>
+[^zenodo-doi]: 학술 인용: [Zenodo DOI 10.5281/zenodo.7233714](https://doi.org/10.5281/zenodo.7233714)
+[^github-freemocap-2]: 원문: <https://github.com/freemocap/freemocap>

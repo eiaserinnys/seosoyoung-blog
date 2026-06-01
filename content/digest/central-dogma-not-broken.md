@@ -12,7 +12,7 @@ sidenotes: true
 ## 3줄 요약
 
 1. 한 트윗(All Day Astronomy, @forallcurious, 2026-05-13)이 "단백질이 템플릿도 지시도 없이 자기 모양만으로 DNA를 쓴다"며 분자생물학의 중심 원리가 한 달에 두 번 깨졌다고 주장했다.
-2. 트윗이 암시한 두 논문은 실재하나, 하나(DRT9, Tang et al., *Nature* 2025-05)는 여전히 RNA를 템플릿으로 쓰고, 다른 하나(DRT3, Deng et al., *Science* 2026-04)도 AC 두 글자만 반복하는 매우 특화된 효소다.
+2. 트윗이 암시한 두 논문은 실재하나, 하나(DRT9, Tang et al., *Nature* 2025-05)는 여전히 RNA를 템플릿으로 쓰고, 다른 하나(DRT3, Deng et al., *Science* 2026-04)도 AC 두 글자만 반복하는 매우 특화된 효소다.[^tang-2025]
 3. 분자생물학자들의 평가는 일치한다 — 흥미로운 항파지 면역 메커니즘이긴 하나, 센트럴 도그마는 깨지지 않았다.
 
 ## 트윗의 주장
@@ -37,7 +37,7 @@ DRT9(Defense-associated Reverse Transcriptase 9)은 박테리아의 항파지 �
 ### DRT3 — Deng et al., *Science* 2026
 
 > Deng, P., Lee, H., Armijo, C., Wang, H., Gao, A. **Protein-templated synthesis of dinucleotide repeat DNA by an antiphage reverse transcriptase.** *Science* (2026-04).
-> DOI: [10.1126/science.aed1656](https://doi.org/10.1126/science.aed1656)
+> DOI: [10.1126/science.aed1656](https://doi.org/10.1126/science.aed1656)[^deng-2026]
 
 스탠퍼드 Alex Gao 연구실이 보고한 DRT3 시스템에는 두 효소가 있다. Drt3a는 RNA를 템플릿으로 GT 가닥을 만드는 평범한 역전사효소다. **Drt3b가 트윗이 말하는 진짜 발견이다.**
 
@@ -64,7 +64,7 @@ Drt3b의 활성 부위는 자기 단백질 구조에 의해 물리적으로 막�
 
 ## 분자생물학계의 평가
 
-이번 발견을 가장 차분하게 정리한 글은 CRISPeR FRENZY 블로그(Anna Meldolesi, 2026-04-21)다. 핵심 인용을 옮긴다.
+이번 발견을 가장 차분하게 정리한 글은 CRISPeR FRENZY 블로그(Anna Meldolesi, 2026-04-21)다. 핵심 인용을 옮긴다.[^crisper-2026]
 
 > 어떤 도그마도 깨지지 않았다. DNA의 중심 원리는 이제 수사적 장치에 가깝다 — RNA가 메신저 외에 얼마나 많은 일을 하는지 떠올려보면. 또한 핵산 서열에 몇 글자 더하는 특화 분자는 이미 여럿 알려져 있다.
 
@@ -72,7 +72,7 @@ Northeastern University의 Nikolai Slavov는 같은 글에서 더 직설적으�
 
 > 이것은 단백질이 자기 자신을 '읽어' 복잡한 메시지를 만드는 게 아니라, 매우 특화된 구조적 제약이다. 단백질의 폴드(fold)에 단 하나의 방어 임무가 하드코딩된 'stuttering machine'이다. 다용도 유전 정보 매체가 아니다.
 
-논문의 1저자 Alex Gao 본인도 같은 톤이다 — Drt3b가 합성하는 것은 단 하나의 특정 반복 서열이며, 단백질이 임의의 유전 코드를 쓰는 일반 메커니즘이 아니라는 점을 신중히 단서로 달았다(biotechnologyguy.com 인터뷰, 2026-04-22).
+논문의 1저자 Alex Gao 본인도 같은 톤이다 — Drt3b가 합성하는 것은 단 하나의 특정 반복 서열이며, 단백질이 임의의 유전 코드를 쓰는 일반 메커니즘이 아니라는 점을 신중히 단서로 달았다(biotechnologyguy.com 인터뷰, 2026-04-22).[^biotechnologyguy-2026]
 
 ## 가장 흥미로운 지점
 
@@ -87,9 +87,10 @@ Northeastern University의 Nikolai Slavov는 같은 글에서 더 직설적으�
 ## 출처
 
 - 원문 트윗: <https://x.com/forallcurious/status/2054376900299292832>
-- Tang et al. *Nature* 643, 1352–1362 (2025): <https://www.nature.com/articles/s41586-025-09179-5>
-- Deng et al. *Science* (2026): <https://doi.org/10.1126/science.aed1656>
-- CRISPeR FRENZY 비평 (Anna Meldolesi, 2026-04-21): <https://mycrispr.blog/2026/04/21/template-free-dna-and-no-dogma-broken/>
-- 후속 해설 (biotechnologyguy.com, 2026-04-22): <https://www.biotechnologyguy.com/2026/04/a-bacterial-enzyme-just-made-dna.html>
 
 원문 트윗에는 단백질-RNA 복합체 3D 렌더와 DNA 이중나선 시각화 이미지가 첨부되어 있으나 출처가 확인되지 않아 본문에는 인용하지 않았다.
+
+[^tang-2025]: Tang et al. *Nature* 643, 1352–1362 (2025): <https://www.nature.com/articles/s41586-025-09179-5>
+[^deng-2026]: Deng et al. *Science* (2026): <https://doi.org/10.1126/science.aed1656>
+[^crisper-2026]: CRISPeR FRENZY 비평 (Anna Meldolesi, 2026-04-21): <https://mycrispr.blog/2026/04/21/template-free-dna-and-no-dogma-broken/>
+[^biotechnologyguy-2026]: 후속 해설 (biotechnologyguy.com, 2026-04-22): <https://www.biotechnologyguy.com/2026/04/a-bacterial-enzyme-just-made-dna.html>

@@ -14,7 +14,7 @@ sidenotes: true
 ## 3줄 요약
 
 1. UC 버클리 *California Management Review Insights*에 Teresa Tung·Philippe Roussiere(둘 다 Accenture)가 발표한 평론. AI 시대 경쟁 해자가 어디에 있는지에 대한 진단이다.
-2. 진짜 차별화는 데이터도 모델도 아니라 임직원의 판단에 박힌 *암묵지*(tacit knowledge, 暗默知)다. 베이비부머 은퇴와 agentic AI의 동시 임계점이 지금이라는 시점 인식.
+2. 진짜 차별화는 데이터도 모델도 아니라 임직원의 판단에 박힌 *암묵지*(tacit knowledge, 暗默知)다. 베이비부머 은퇴와 agentic AI의 동시 임계점이 지금이라는 시점 인식.[^cmr-2026]
 3. 5단계 경영 처방 — 매핑 → 맥락 보존 성문화 → 시맨틱 레이어 구축 → 인간-AI 협업 설계 → 리더의 능동적 책임. 화장품 대기업 사례에서 규제 평가 처리량 100배·전문가 워크로드 80% 감소.
 
 ## 암묵지가 정확히 무엇인가
@@ -130,3 +130,5 @@ sidenotes: true
 - 관련 선행 자료: Dorothy Leonard & Sylvia Sensiper, "The Role of Tacit Knowledge in Group Innovation", *California Management Review* 40(3), 1998. 본 평론이 의지하는 암묵지 개념의 토대.
 
 > 원문은 hero 이미지(Adobe Stock 라이선스) 외에 도식·차트가 없어 텍스트로만 정리했다.
+
+[^cmr-2026]: 원문: <https://cmr.berkeley.edu/2026/03/tacit-knowledge-is-your-next-competitive-moat/>

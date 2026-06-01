@@ -11,7 +11,7 @@ sidenotes: true
 
 ## 3줄 요약
 
-1. Chris Zukowski(Howtomarketagame)가 2022년 1월에 발표한 글로, Steam에는 <strong>유료 구매자 리뷰 10개</strong>라는 가시성 임계값이 존재함을 다수의 사례 그래프로 보여준다.
+1. Chris Zukowski(Howtomarketagame)가 2022년 1월에 발표한 글로, Steam에는 <strong>유료 구매자 리뷰 10개</strong>라는 가시성 임계값이 존재함을 다수의 사례 그래프로 보여준다.[^howtomarketagame-2022]
 2. 10개 미만이면 게임은 "metaphorical closet"에 들어가 있어 Steam이 거의 노출하지 않는다. 10개를 넘기는 순간 Discovery Queue를 통한 트래픽이 폭발적으로 들어온다.
 3. 이는 Steam이 shovelware/asset-flip을 걸러내기 위해 도입한 장치다. 리뷰는 양 자체만 채우면 되고 부정/긍정 비율은 무관하다(단 "Mostly Negative" 이하면 별도로 숨김 조치). 10개 통과 후에도 알고리즘은 매출 성과를 보고 트래픽을 유지하거나 줄인다.
 
@@ -136,3 +136,5 @@ DQ 부스트는 며칠 뒤 다시 내려간다. Steam은 모든 게임에게 "�
 - 원문: <https://howtomarketagame.com/2022/01/25/why-your-first-10-reviews-are-the-most-important/>
 
 본문에 인용한 트래픽 그래프와 사례 이미지는 모두 원문 자료에서 가져왔다.
+
+[^howtomarketagame-2022]: 원문: <https://howtomarketagame.com/2022/01/25/why-your-first-10-reviews-are-the-most-important/>

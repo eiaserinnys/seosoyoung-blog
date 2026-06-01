@@ -11,7 +11,7 @@ sidenotes: true
 
 ## 3줄 요약
 
-1. Meta AI + HKU + Waterloo 공동 연구. 통합 멀티모달 모델(UMM)에서 VAE와 표현 인코더를 모두 제거하고, 단순 패치 임베딩 레이어만으로 픽셀 공간에서 이해·생성을 동시에 수행하는 **Tuna-2**를 제안한다.
+1. Meta AI + HKU + Waterloo 공동 연구. 통합 멀티모달 모델(UMM)에서 VAE와 표현 인코더를 모두 제거하고, 단순 패치 임베딩 레이어만으로 픽셀 공간에서 이해·생성을 동시에 수행하는 **Tuna-2**를 제안한다.[^tuna][^arxiv-2604][^github-facebookresearch]
 2. 핵심 발견: 충분한 프리트레이닝 데이터가 주어지면, 인코더 프리 설계가 인코더 기반 설계를 이해 벤치마크에서 **역전**한다. 특히 세밀한 시각 인지(V\*, CountBench, VisuLogic)에서 격차가 두드러진다.
 3. 사전훈련 비전 인코더는 초기 수렴을 앞당기는 촉진제이지 성능의 상한이 아니며, end-to-end 픽셀 학습이 더 강한 시각 표현으로 가는 확장 가능한 경로라고 결론짓는다.
 
@@ -85,6 +85,6 @@ LLM 심사(GPT-5.4, Claude Opus 4.7)에서는 Tuna-2가 **다양성(Diversity) 4
 
 Zhiheng Liu, Weiming Ren, Xiaoke Huang, Shoufa Chen, Tianhong Li, Mengzhao Chen, Yatai Ji, Sen He, Jonas Schult, Belinda Zeng, Tao Xiang, Wenhu Chen, Ping Luo, Luke Zettlemoyer, Yuren Cong. Meta AI / The University of Hong Kong / University of Waterloo. CVPR 2026 Highlight.
 
-- 프로젝트 페이지: <https://tuna-ai.org/tuna-2/>
-- 논문: <https://arxiv.org/abs/2604.24763>
-- 코드: <https://github.com/facebookresearch/tuna-2>
+[^tuna]: 프로젝트 페이지: <https://tuna-ai.org/tuna-2/>
+[^arxiv-2604]: 논문: <https://arxiv.org/abs/2604.24763>
+[^github-facebookresearch]: 코드: <https://github.com/facebookresearch/tuna-2>

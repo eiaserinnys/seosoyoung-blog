@@ -11,7 +11,7 @@ sidenotes: true
 
 ## 3줄 요약
 
-1. Anthropic이 2026년 1월에 공개한 RCT다. 주니어 SWE 52명에게 새 Python 라이브러리(Trio)를 학습시키고, AI 보조 사용 여부에 따라 직후 퀴즈 점수를 비교했다.
+1. Anthropic이 2026년 1월에 공개한 RCT다. 주니어 SWE 52명에게 새 Python 라이브러리(Trio)를 학습시키고, AI 보조 사용 여부에 따라 직후 퀴즈 점수를 비교했다.[^arxiv-2601][^estimating-productivity][^lee-2025]
 2. AI 보조군은 퀴즈 평균 50%, 손코딩군은 67%로 17%p 차이(Cohen's *d* = 0.738, *p* = 0.01)였다. 격차는 디버깅 문항에서 가장 컸고, 속도 이득은 통계적으로 유의하지 않았다.
 3. 같은 AI 도구도 사용 방식에 따라 결과가 갈렸다. 코드 위임형 패턴은 점수가 낮았고, 코드 생성 후 follow-up 질문이나 개념 질문으로 이해를 보강한 패턴은 손코딩군과 비슷하거나 더 높은 점수를 받았다.
 
@@ -114,7 +114,7 @@ AI를 코드 생성용으로도 쓰지만 *이해 보강*에 함께 쓴 패턴�
 
 > "인지 노력 — 심지어 고통스럽게 막히는 것 — 도 숙달에 중요할 수 있다."
 
-저자들은 LLM 서비스가 제공하는 학습 모드를 짧게 언급한다. Claude Code의 Learning·Explanatory 모드와 ChatGPT Study Mode가 그렇다. 이해를 우선시하도록 설계된 모드들이다.
+저자들은 LLM 서비스가 제공하는 학습 모드를 짧게 언급한다. Claude Code의 Learning·Explanatory 모드와 ChatGPT Study Mode가 그렇다. 이해를 우선시하도록 설계된 모드들이다.[^claude-code][^chatgpt-study]
 
 ## 한계와 후속 질문
 
@@ -131,7 +131,7 @@ AI를 코드 생성용으로도 쓰지만 *이해 보강*에 함께 쓴 패턴�
 
 하나는 generation-then-comprehension과 AI delegation의 비교다. 두 패턴은 외형이 거의 같다. 차이는 코드를 받은 *뒤* follow-up 질문을 던지는가 한 단계뿐이다. 그런데 점수 차이는 컸다. AI 학습 도구의 설계는 "생성하지 마라"가 아니라 "생성과 이해 사이에 명시적 간격을 강제하라"로 가야 한다는 시사로 읽힌다. 사람들 사이에서 이미 떠도는 "AI로 받은 코드는 작성자에게 설명을 시켜라"라는 실천 지침이 이 데이터로 약하게 뒷받침된다.
 
-다른 하나는 디버깅 격차가 *가장* 컸다는 사실이다. METR이 시니어조차 AI로 19% 더 느려진다고 보고했고, AI 의존이 감독 역량 자체를 침식한다는 관찰이 여러 자리에서 나온다. 본 연구는 거기에 인과 가설을 하나 보탠다. AI 보조군은 오류를 *덜 만났기에* 디버깅을 *덜 훈련했다*. 만들어지는 결과물보다 잘못된 결과물을 거르는 방어선 역량이 먼저 마모된다는 그림이 된다. 고위험 환경에서 AI를 운영할 조직이라면 생산 단계의 가속만큼 검증 단계의 인간 훈련 구조를 의도적으로 설계해야 한다는 뜻이다.
+다른 하나는 디버깅 격차가 *가장* 컸다는 사실이다. METR이 시니어조차 AI로 19% 더 느려진다고 보고했고, AI 의존이 감독 역량 자체를 침식한다는 관찰이 여러 자리에서 나온다. 본 연구는 거기에 인과 가설을 하나 보탠다. AI 보조군은 오류를 *덜 만났기에* 디버깅을 *덜 훈련했다*. 만들어지는 결과물보다 잘못된 결과물을 거르는 방어선 역량이 먼저 마모된다는 그림이 된다. 고위험 환경에서 AI를 운영할 조직이라면 생산 단계의 가속만큼 검증 단계의 인간 훈련 구조를 의도적으로 설계해야 한다는 뜻이다.[^metr-2025]
 
 ## 출처
 
@@ -139,12 +139,10 @@ AI를 코드 생성용으로도 쓰지만 *이해 보강*에 함께 쓴 패턴�
 - 저자: Judy Hanwen Shen, Alex Tamkin
 - 발표일: 2026-01-29
 - 블로그 원문: <https://www.anthropic.com/research/AI-assistance-coding-skills>
-- 정본 논문: <https://arxiv.org/abs/2601.20245>
 
-관련 자료(원문이 함께 가리키는 자료들):
-
-- Anthropic, "Estimating productivity gains from AI": <https://www.anthropic.com/research/estimating-productivity-gains>
-- METR 2025-07 (AI와 개발자 생산성): <https://arxiv.org/abs/2507.09089>
-- Lee 2025 (Microsoft, AI critical thinking survey): <https://www.microsoft.com/en-us/research/wp-content/uploads/2025/01/lee_2025_ai_critical_thinking_survey.pdf>
-- Claude Code Learning·Explanatory mode: <https://code.claude.com/docs/en/output-styles>
-- ChatGPT Study Mode: <https://openai.com/index/chatgpt-study-mode/>
+[^arxiv-2601]: 정본 논문: <https://arxiv.org/abs/2601.20245>
+[^estimating-productivity]: Anthropic, "Estimating productivity gains from AI": <https://www.anthropic.com/research/estimating-productivity-gains>
+[^metr-2025]: METR 2025-07 (AI와 개발자 생산성): <https://arxiv.org/abs/2507.09089>
+[^lee-2025]: Lee 2025 (Microsoft, AI critical thinking survey): <https://www.microsoft.com/en-us/research/wp-content/uploads/2025/01/lee_2025_ai_critical_thinking_survey.pdf>
+[^claude-code]: Claude Code Learning·Explanatory mode: <https://code.claude.com/docs/en/output-styles>
+[^chatgpt-study]: ChatGPT Study Mode: <https://openai.com/index/chatgpt-study-mode/>

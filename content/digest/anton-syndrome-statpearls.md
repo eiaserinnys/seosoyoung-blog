@@ -11,7 +11,7 @@ sidenotes: true
 
 ## 3줄 요약
 
-1. 안톤 증후군(Anton-Babinski Syndrome)은 피질 실명 환자가 자신의 실명을 인지하지 못하고 정상 시력을 확신하는 희귀 신경질환이다.
+1. 안톤 증후군(Anton-Babinski Syndrome)은 피질 실명 환자가 자신의 실명을 인지하지 못하고 정상 시력을 확신하는 희귀 신경질환이다.[^insights-2024]
 2. 양측 후두엽 손상으로 시각 피질과 언어 영역이 단절되면, 언어 영역이 빈 감각 입력을 자체 생성한 서사로 채운다(작화증).
 3. 1965\~2016년 사이 의학 문헌에 확인된 사례가 약 28건에 불과할 정도로 극히 드물지만, 뇌가 자신의 한계를 부정하는 메커니즘을 극명하게 드러낸다.
 
@@ -19,7 +19,7 @@ sidenotes: true
 
 안톤 증후군(Anton syndrome, Anton-Babinski syndrome)은 두 가지 핵심 증상의 결합이다.
 
-- **시각 무인식증(visual anosognosia)**: 환자가 자신의 시력 상실을 인지하지 못한다
+- **시각 무인식증(visual anosognosia)**: 환자가 자신의 시력 상실을 인지하지 못한다[^network-2022]
 - **작화증(confabulation)**: 실제로 존재하지 않는 시각 정보를 생생하게 묘사한다
 
 피질 실명(cortical blindness)이 기저에 있으나, 환자는 자신이 볼 수 있다고 확신하며 주변을 상세하게 — 그러나 완전히 허구로 — 기술한다.
@@ -105,5 +105,6 @@ NIH StatPearls \| 저자: Jai S. Perumal, Michael J. Palka, Adam S. Lee
 원문: <https://www.ncbi.nlm.nih.gov/books/NBK538155/>
 
 추가 참고:
-- [Insights into Anton Syndrome: When the brain denies blindness (2024)](https://pubmed.ncbi.nlm.nih.gov/38262263/) — 72건 종합 리뷰
-- [Network Localization of Visual Anosognosia (2022)](https://www.neurology.org/doi/10.1212/WNL.98.18_supplement.861) — 28건 네트워크 분석
+
+[^insights-2024]: [Insights into Anton Syndrome: When the brain denies blindness (2024)](https://pubmed.ncbi.nlm.nih.gov/38262263/) — 72건 종합 리뷰
+[^network-2022]: [Network Localization of Visual Anosognosia (2022)](https://www.neurology.org/doi/10.1212/WNL.98.18_supplement.861) — 28건 네트워크 분석

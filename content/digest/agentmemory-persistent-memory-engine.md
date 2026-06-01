@@ -13,13 +13,13 @@ sidenotes: true
 
 ## 3줄 요약
 
-1. agentmemory는 코딩 에이전트가 세션 종료 후에도 코드베이스 맥락·결정·실수 패턴을 기억하도록 만드는 self-hosted 메모리 엔진이다. Karpathy의 LLM Wiki gist 패턴(1,200 stars)을 실제 운영 가능한 시스템으로 구현했다.
+1. agentmemory는 코딩 에이전트가 세션 종료 후에도 코드베이스 맥락·결정·실수 패턴을 기억하도록 만드는 self-hosted 메모리 엔진이다. Karpathy의 LLM Wiki gist 패턴(1,200 stars)을 실제 운영 가능한 시스템으로 구현했다.[^agent-memory][^karpathy-wiki]
 2. 다른 메모리 시스템과의 핵심 차별은 <strong>12개 훅으로 무수동 자동 캡처</strong>, <strong>BM25+Vector+Graph 삼중 검색</strong>, <strong>iii 엔진 단일 의존(외부 DB 0)</strong>, <strong>MCP·REST 단일 서버로 에이전트 횡단 공유</strong>, <strong>저장 이전 단계 프라이버시 필터링</strong>, <strong>멀티 에이전트 조율 프리미티브(lease·signal·routine)</strong>다.
-3. 기대 효과는 토큰 비용 \~92% 절감(세션당 \~1,900토큰), R@5 95.2%(ICLR 2025 LongMemEval-S), 에이전트 락인 해소(Claude Code·Cursor·Codex·Gemini CLI 횡단 메모리 공유), 자기 청소되는 지식 베이스(TTL·중요도 eviction·모순 탐지)다.
+3. 기대 효과는 토큰 비용 \~92% 절감(세션당 \~1,900토큰), R@5 95.2%(ICLR 2025 LongMemEval-S), 에이전트 락인 해소(Claude Code·Cursor·Codex·Gemini CLI 횡단 메모리 공유), 자기 청소되는 지식 베이스(TTL·중요도 eviction·모순 탐지)다.[^longmemeval-2025]
 
 ## 자료 개요
 
-- <strong>저자·리포</strong>: Rohit Ghumare (`rohitg00/agentmemory`)
+- <strong>저자·리포</strong>: Rohit Ghumare (`rohitg00/agentmemory`)[^github-rohitg00][^github-rohitg00-2]
 - <strong>라이선스·배포</strong>: npm `@agentmemory/agentmemory`, Docker, fly.io·Railway·Render·Coolify 원클릭 템플릿 제공
 - <strong>규모</strong>: 118 소스 파일, \~21,800 LOC, 123 함수, 34 KV scope, 950개 이상 테스트 통과
 - <strong>핵심 수치</strong>: 51 MCP 도구, 12 라이프사이클 훅, 외부 DB 의존성 0, LongMemEval-S R@5 95.2%
@@ -279,7 +279,7 @@ iii 콘솔(`iii console --port 3114`)을 띄우면 메모리 작업이 OpenTelem
 
 ## 가장 흥미로운 지점 — 융합 전략은 임베딩 크기를 대체할 수 있다
 
-agentmemory의 R@5 95.2%는 `all-MiniLM-L6-v2`(384-dim 로컬 임베딩)와 BM25+Vector+Graph 융합의 조합으로 얻은 수치다. 같은 LongMemEval-S 벤치마크에서 mempalace는 더 큰 임베딩으로 Vector-only 96.6%에 도달했다. 두 시스템이 거의 같은 95%대에 두 다른 경로로 닿았다는 사실이 흥미롭다.
+agentmemory의 R@5 95.2%는 `all-MiniLM-L6-v2`(384-dim 로컬 임베딩)와 BM25+Vector+Graph 융합의 조합으로 얻은 수치다. 같은 LongMemEval-S 벤치마크에서 mempalace는 더 큰 임베딩으로 Vector-only 96.6%에 도달했다. 두 시스템이 거의 같은 95%대에 두 다른 경로로 닿았다는 사실이 흥미롭다.[^longmemeval-github]
 
 같은 시스템 안에서 BM25-only(86.2%) → BM25+Vector(95.2%)로 +9pp 끌어올린 통제 비교는 융합 자체가 실제 일을 한다는 증거다. 시사하는 바는 분명하다 — 에이전트 메모리에서 top-K 회상 정확도는 임베딩 모델 크기만의 함수가 아니라 *융합 전략*의 함수이기도 하다. 작은 로컬 임베딩에 다중 신호 융합을 더하는 것으로 큰 임베딩 단독 수준에 도달할 수 있고, OpenAI 임베딩 API 비용 없이 온디바이스로 SOTA급 회상을 운영할 수 있다.
 
@@ -293,9 +293,9 @@ agentmemory가 보여주는 의의는 — 에이전트 영구 메모리가 더 �
 
 ## 출처
 
-- 리포: <https://github.com/rohitg00/agentmemory>
-- 벤치마크 비교: <https://github.com/rohitg00/agentmemory/blob/main/benchmark/COMPARISON.md>
-- LongMemEval 보고: <https://github.com/rohitg00/agentmemory/blob/main/benchmark/LONGMEMEVAL.md>
-- 랜딩: <https://agent-memory.dev>
-- 참고 — Karpathy LLM Wiki gist: <https://gist.github.com/rohitg00/2067ab416f7bbe447c1977edaaa681e2>
-- 참고 — LongMemEval (ICLR 2025): <https://arxiv.org/abs/2410.10813>
+[^github-rohitg00]: 리포: <https://github.com/rohitg00/agentmemory>
+[^github-rohitg00-2]: 벤치마크 비교: <https://github.com/rohitg00/agentmemory/blob/main/benchmark/COMPARISON.md>
+[^longmemeval-github]: LongMemEval 보고: <https://github.com/rohitg00/agentmemory/blob/main/benchmark/LONGMEMEVAL.md>
+[^agent-memory]: 랜딩: <https://agent-memory.dev>
+[^karpathy-wiki]: 참고 — Karpathy LLM Wiki gist: <https://gist.github.com/rohitg00/2067ab416f7bbe447c1977edaaa681e2>
+[^longmemeval-2025]: 참고 — LongMemEval (ICLR 2025): <https://arxiv.org/abs/2410.10813>

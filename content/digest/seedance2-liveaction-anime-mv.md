@@ -25,7 +25,7 @@ sidenotes: true
 
 완성된 MV가 이것이다. 아래 글의 워크플로우가 어떤 결과물로 닿는지 먼저 보고 읽으면 좋다.
 
-{{< youtube TRtIIpqGjdo >}}
+{{< youtube TRtIIpqGjdo >}}[^free-will]
 
 ## 1년간의 진화 — "합성하고 나서 움직인다"에서 "합성하면서 생성한다"로
 
@@ -168,6 +168,7 @@ on outlines, avoid fantasy physics.
 
 - 저자: tapehead.lab ([@tapehead_Lab](https://x.com/tapehead_Lab))
 - 매체: note.com, 2026년 5월 27일
-- 관련 작품: 「free will」 MV — <https://www.youtube.com/watch?v=TRtIIpqGjdo>
 - 원문: <https://note.com/tapehead/n/n86658f111f6d>
 - 관련 글: [Seedance2.0으로 만드는 콜라주 애니메이션 (tapehead.lab)](/digest/seedance2-collage-animation-workflow/)
+
+[^free-will]: 관련 작품: 「free will」 MV — <https://www.youtube.com/watch?v=TRtIIpqGjdo>

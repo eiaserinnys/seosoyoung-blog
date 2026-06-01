@@ -11,7 +11,7 @@ sidenotes: true
 
 ## 3줄 요약
 
-1. Microsoft Research가 52개 전문 도메인, 310개 작업 환경으로 구성된 DELEGATE-52 벤치마크를 만들어 LLM 문서 위임의 안전성을 측정했다.
+1. Microsoft Research가 52개 전문 도메인, 310개 작업 환경으로 구성된 DELEGATE-52 벤치마크를 만들어 LLM 문서 위임의 안전성을 측정했다.[^microsoft-delegate52]
 2. Gemini 3.1 Pro, Claude 4.6 Opus, GPT 5.4 등 프론티어 모델도 20회 상호작용 후 평균 25%의 문서 콘텐츠를 손상시켰다.
 3. Python만이 유일하게 production-ready 수준이었고, 도구 제공이 오히려 성능을 악화시켰으며, 크기와 시간의 복합 효과가 열화를 증폭시켰다.
 
@@ -108,4 +108,5 @@ GPT 5와 Kimi K2.5는 2회 상호작용에서 91.5% vs 91.1%로 거의 동일했
 
 Philippe Laban, Tobias Schnabel, Jennifer Neville (Microsoft Research), 2026년 4월
 원문: <https://arxiv.org/html/2604.15597v1>
-코드: [microsoft/DELEGATE52](https://github.com/microsoft/DELEGATE52) | 데이터: [HuggingFace](https://huggingface.co/datasets/microsoft/DELEGATE52)
+
+[^microsoft-delegate52]: 코드: [microsoft/DELEGATE52](https://github.com/microsoft/DELEGATE52) | 데이터: [HuggingFace](https://huggingface.co/datasets/microsoft/DELEGATE52)

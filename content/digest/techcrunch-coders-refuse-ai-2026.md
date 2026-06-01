@@ -12,8 +12,8 @@ sidenotes: true
 ## 3줄 요약
 
 1. TechCrunch(2026-05-29, Julie Bort)가 2026년 상반기에 누적된 연구·내부 사례를 묶어 정리한 보도다. "AI 코딩 도구를 손에서 떼지 못하는 개발자"와 "AI가 생산성을 측정 가능하게 끌어올리지 못한다는 증거"가 같은 분기에 동시에 쌓이고 있다는 진단이다.
-2. METR은 2025년의 "AI가 시니어 개발자를 19% 느리게 만든다" 실험을 다시 돌리려 했지만 *개발자들이 AI 없이 일하기를 거부해* 실험 자체가 무산됐다. 대신 자기보고 설문을 돌렸더니 개발자들은 "AI 덕에 2배 가치 있게 일한다"고 답했다.
-3. 같은 분기에 Amazon은 토큰 사용량 리더보드 Kirorank를 폐쇄했고, Uber는 4개월 만에 2026년 AI 예산을 소진했으며, James Shore·CodeRabbit·Singapore Management University 연구가 모두 "AI 코드는 유지보수 비용을 늘린다"고 입을 모았다.
+2. METR은 2025년의 "AI가 시니어 개발자를 19% 느리게 만든다" 실험을 다시 돌리려 했지만 *개발자들이 AI 없이 일하기를 거부해* 실험 자체가 무산됐다. 대신 자기보고 설문을 돌렸더니 개발자들은 "AI 덕에 2배 가치 있게 일한다"고 답했다.[^uplift-2026][^metr-2026][^metr-2025]
+3. 같은 분기에 Amazon은 토큰 사용량 리더보드 Kirorank를 폐쇄했고, Uber는 4개월 만에 2026년 AI 예산을 소진했으며, James Shore·CodeRabbit·Singapore Management University 연구가 모두 "AI 코드는 유지보수 비용을 늘린다"고 입을 모았다.[^amazon-kirorank][^information-uber][^coderabbit-state]
 
 ## 보도 요지 — 개발자는 AI를 손에서 놓지 않는다
 
@@ -50,7 +50,7 @@ METR이 이 실험을 다시 돌려 "AI와 개발자의 숙련도가 그 사이 
 
 ### James Shore (프로그래머·저자)
 
-블로그 글 "You need AI that reduces your maintenance costs"가 Hacker News에서 회자됐다. 기사가 인용한 한 줄:
+블로그 글 "You need AI that reduces your maintenance costs"가 Hacker News에서 회자됐다. 기사가 인용한 한 줄:[^james-2026]
 
 > "You write code twice as quick now? Better hope you've halved your maintenance costs. Otherwise, you're screwed. You're trading a temporary speed boost for permanent indenture."
 
@@ -82,7 +82,7 @@ AI 코딩 에이전트 Devin을 만드는 Cognition의 Wu는 "AI가 뱉어낸 �
 
 손에서 놓고 잊을 수 있는 해법은 아니라는 것이다.
 
-### "사람이 AI를 주니어처럼 다룬다" — SMU 연구진
+### "사람이 AI를 주니어처럼 다룬다" — SMU 연구진[^smu-2026]
 
 SMU 연구진의 처방은 더 인간 중심이다.
 
@@ -107,15 +107,13 @@ Wu도 마지막 4번 항목에는 동의한다.
 - 저자: Julie Bort (Venture Editor)
 - 원문: <https://techcrunch.com/2026/05/29/coders-are-refusing-to-work-without-ai-and-that-could-come-back-to-bite-them/>
 
-### 본문 인용 1차 자료
-
-- METR 2026-02 "Uplift Update": <https://metr.org/blog/2026-02-24-uplift-update/>
-- METR 2026-05 AI Usage Survey: <https://metr.org/blog/2026-05-11-ai-usage-survey/>
-- METR 2025 원 연구 (arXiv): <https://arxiv.org/pdf/2507.09089>
-- FT — Amazon Kirorank 폐쇄: <https://www.ft.com/content/b1a62a7f-6df5-4c90-94ce-64ce9c9961b6>
-- The Information — Uber AI 예산 소진: <https://www.theinformation.com/newsletters/applied-ai/uber-cto-shows-claude-code-can-blow-ai-budgets>
-- James Shore: <https://www.jamesshore.com/v2/blog/2026/you-need-ai-that-reduces-your-maintenance-costs>
-- CodeRabbit 리포트: <https://www.coderabbit.ai/blog/state-of-ai-vs-human-code-generation-report>
-- SMU 연구 (arXiv 2026-04): <https://arxiv.org/abs/2603.28592>
-
 원문에 본문 이미지로 인용할 만한 도식·차트가 없고 헤더 이미지가 Getty Images 라이선스 작품이라, 이 다이제스트는 텍스트만으로 정리했다.
+
+[^uplift-2026]: METR 2026-02 "Uplift Update": <https://metr.org/blog/2026-02-24-uplift-update/>
+[^metr-2026]: METR 2026-05 AI Usage Survey: <https://metr.org/blog/2026-05-11-ai-usage-survey/>
+[^metr-2025]: METR 2025 원 연구 (arXiv): <https://arxiv.org/pdf/2507.09089>
+[^amazon-kirorank]: FT — Amazon Kirorank 폐쇄: <https://www.ft.com/content/b1a62a7f-6df5-4c90-94ce-64ce9c9961b6>
+[^information-uber]: The Information — Uber AI 예산 소진: <https://www.theinformation.com/newsletters/applied-ai/uber-cto-shows-claude-code-can-blow-ai-budgets>
+[^james-2026]: James Shore: <https://www.jamesshore.com/v2/blog/2026/you-need-ai-that-reduces-your-maintenance-costs>
+[^coderabbit-state]: CodeRabbit 리포트: <https://www.coderabbit.ai/blog/state-of-ai-vs-human-code-generation-report>
+[^smu-2026]: SMU 연구 (arXiv 2026-04): <https://arxiv.org/abs/2603.28592>

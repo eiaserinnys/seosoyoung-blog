@@ -11,7 +11,7 @@ sidenotes: true
 
 ## 3줄 요약
 
-1. 작가 @SkoomaBoofer가 X 스레드 13편으로 현대 호러의 새 클리셰를 짚었다 — 주인공이 낯설고 적대적 환경의 "고문방"을 차례로 통과해야 하는 트롭.
+1. 작가 @SkoomaBoofer가 X 스레드 13편으로 현대 호러의 새 클리셰를 짚었다 — 주인공이 낯설고 적대적 환경의 "고문방"을 차례로 통과해야 하는 트롭.[^franz-1925][^jean-1981][^michel-foucault]
 2. 이 트롭의 부상을 밀레니얼·Z세대의 감시 자본주의·긱 이코노미·"불완전 정보 하 올바른 선택" 강박이라는 세대적 불안의 반영으로 진단한다.
 3. 함께 읽을 평론 6편을 곁들였다 — Featherstone의 디스토피아 게임론, Jihoon Kim의 감시 자본주의 분석, 백룸·Severance 평론, Mark Fisher의 *reflexive impotence*, 그리고 코스믹 호러의 21세기적 재부상까지.
 
@@ -21,7 +21,7 @@ sidenotes: true
 
 > 주인공(들)은 낯설고 적대적인 환경 속으로 던져지며, 그곳에서 고문실에 해당하는 일련의 공간들을 통과하며 나아가야 한다.
 
-스레드 작가는 이를 *나의 세대가 그리는 새로운 호러 아키타입*이라 부른다. 카프카의 『심판』과 다니엘레프스키의 『House of Leaves』 같은 모더니즘 문학 선조가 있지만, 21세기 호러가 이를 영상·게임·예능 포맷으로 확장했다는 데 차이가 있다.
+스레드 작가는 이를 *나의 세대가 그리는 새로운 호러 아키타입*이라 부른다. 카프카의 『심판』과 다니엘레프스키의 『House of Leaves』 같은 모더니즘 문학 선조가 있지만, 21세기 호러가 이를 영상·게임·예능 포맷으로 확장했다는 데 차이가 있다.[^mark-2000]
 
 ## 트롭의 해부 — 네 가지 구성 요소
 
@@ -54,35 +54,35 @@ sidenotes: true
 
 ### Featherstone — 디스토피아 게임은 *시험 구조*다
 
-Mike Featherstone은 헝거 게임·오징어 게임 같은 *디스토피아 게임*을 현대성의 시험 구조 연출로 읽는다 (*Theory, Culture & Society*, 2022). 참가자는 기술·운·도덕을 동시에 검증받으며 게임마스터에게 "실험 대상"으로 다뤄진다. 더 중요한 통찰은 *영웅적 저항조차 또 다른 테스트로 흡수된다*는 점이다. 스레드의 *"올바른 선택"의 보상은 다음 고문방*과 정확히 호응한다.
+Mike Featherstone은 헝거 게임·오징어 게임 같은 *디스토피아 게임*을 현대성의 시험 구조 연출로 읽는다 (*Theory, Culture & Society*, 2022). 참가자는 기술·운·도덕을 동시에 검증받으며 게임마스터에게 "실험 대상"으로 다뤄진다. 더 중요한 통찰은 *영웅적 저항조차 또 다른 테스트로 흡수된다*는 점이다. 스레드의 *"올바른 선택"의 보상은 다음 고문방*과 정확히 호응한다.[^dystopian-2022]
 
 ### Jihoon Kim — 감시의 이중 레이어
 
-Jihoon Kim은 오징어 게임의 *"무궁화 꽃이 피었습니다"* 게임이 쇼샤나 주보프의 *감시 자본주의* 개념 — 데이터를 채굴·상품화하는 기생적 자본주의 — 과 구조적으로 동일하다고 본다 (*International Journal of Communication*, 2023). 더 짚을 만한 점은 *감시의 이중 레이어*다. 스크린 안에서 게임마스터가 플레이어를 보고, 스크린 밖에서 넷플릭스 알고리즘이 시청자를 본다. 두 감시는 같은 논리적 연속선 위에 있다. 호러 트롭 속 *보이지 않는 감시자*가 스크린 안의 캐릭터이자 동시에 *시청 행위 자체에 대한 메타 비유*로 작동한다는 해석이 가능해진다.
+Jihoon Kim은 오징어 게임의 *"무궁화 꽃이 피었습니다"* 게임이 쇼샤나 주보프의 *감시 자본주의* 개념 — 데이터를 채굴·상품화하는 기생적 자본주의 — 과 구조적으로 동일하다고 본다 (*International Journal of Communication*, 2023). 더 짚을 만한 점은 *감시의 이중 레이어*다. 스크린 안에서 게임마스터가 플레이어를 보고, 스크린 밖에서 넷플릭스 알고리즘이 시청자를 본다. 두 감시는 같은 논리적 연속선 위에 있다. 호러 트롭 속 *보이지 않는 감시자*가 스크린 안의 캐릭터이자 동시에 *시청 행위 자체에 대한 메타 비유*로 작동한다는 해석이 가능해진다.[^squid-2023]
 
 ### 백룸 평론들 — 폐쇄 공간의 후기 자본주의
 
 백룸(Backrooms)에 대한 두 글이 같은 결을 짚는다.
 
-Nathaniel Metz는 백룸을 *자본주의적 공간의 순수 형태* — 목적론도 주체성도 없는 인공 환경의 공포 — 로 읽는다 (*Substack*, 2023). 마르크스의 *"자본은 흡혈귀"* 비유와 러브크래프트적 우주 공포를 교차시켜, 백룸을 *인간을 위해서가 아니라 자본의 논리 자체를 위해 존재하는 공간*으로 정의한다.
+Nathaniel Metz는 백룸을 *자본주의적 공간의 순수 형태* — 목적론도 주체성도 없는 인공 환경의 공포 — 로 읽는다 (*Substack*, 2023). 마르크스의 *"자본은 흡혈귀"* 비유와 러브크래프트적 우주 공포를 교차시켜, 백룸을 *인간을 위해서가 아니라 자본의 논리 자체를 위해 존재하는 공간*으로 정의한다.[^backrooms-2023]
 
-Mez Breeze는 다른 각도에서 같은 곳에 도착한다 (*Electronic Book Review*, 2025). 백룸의 무한 복도는 *쇼핑몰의 죽음·공동체 공간의 소멸*을 체현한다. 괴물의 동기가 불분명한 것은 *시장 변동성의 불가해성*과 동일 구조이며, 그 안에 갇힌 인물은 *자본의 변덕 앞에서 하이퍼바이질런스 상태에 놓인 개인*과 닮았다.
+Mez Breeze는 다른 각도에서 같은 곳에 도착한다 (*Electronic Book Review*, 2025). 백룸의 무한 복도는 *쇼핑몰의 죽음·공동체 공간의 소멸*을 체현한다. 괴물의 동기가 불분명한 것은 *시장 변동성의 불가해성*과 동일 구조이며, 그 안에 갇힌 인물은 *자본의 변덕 앞에서 하이퍼바이질런스 상태에 놓인 개인*과 닮았다.[^lost-2025]
 
 두 글을 합치면 — 백룸이 트롭의 *공간 언어 버전*이고, 그 공간의 정체는 *후기 자본주의 환경 그 자체*라는 결론이 나온다.
 
 ### Severance — 고문방 루프의 직장판
 
-Severance의 분리(severance) 수술 설정을 *허구적 장치를 통한 현실 직장의 증폭*으로 읽은 평론도 같은 줄에 선다 (*Administrative Sciences*, MDPI, 2025). 핵심은 *완전한 분리와 완전한 혼합 모두 억압의 도구가 될 수 있다*는 점, 그리고 후기 자본주의가 *노동만이 아니라 현존·정체성·감정까지* 추출하도록 설계된다는 점이다. 폐쇄적·반복적 사무 공간은 트롭의 *생존 = 다음 고문방행* 루프의 직장판이다.
+Severance의 분리(severance) 수술 설정을 *허구적 장치를 통한 현실 직장의 증폭*으로 읽은 평론도 같은 줄에 선다 (*Administrative Sciences*, MDPI, 2025). 핵심은 *완전한 분리와 완전한 혼합 모두 억압의 도구가 될 수 있다*는 점, 그리고 후기 자본주의가 *노동만이 아니라 현존·정체성·감정까지* 추출하도록 설계된다는 점이다. 폐쇄적·반복적 사무 공간은 트롭의 *생존 = 다음 고문방행* 루프의 직장판이다.[^severance-2025]
 
 ### Mark Fisher — *reflexive impotence*
 
-스레드가 가장 많이 인용한 사상가는 Mark Fisher다. Fisher의 *Capitalist Realism*에서 직접 빌려올 수 있는 도구가 하나 있다 — *reflexive impotence*. *상황이 나쁘다는 인식 자체가 무기력을 강화한다*는 진단이다. 알아도 아무것도 할 수 없다는 *지식 자체가 무기력의 증거*가 된다. 고문방 속 주인공이 게임의 부조리를 알면서도 참여할 수밖에 없는 심리와 정확히 일치한다.
+스레드가 가장 많이 인용한 사상가는 Mark Fisher다. Fisher의 *Capitalist Realism*에서 직접 빌려올 수 있는 도구가 하나 있다 — *reflexive impotence*. *상황이 나쁘다는 인식 자체가 무기력을 강화한다*는 진단이다. 알아도 아무것도 할 수 없다는 *지식 자체가 무기력의 증거*가 된다. 고문방 속 주인공이 게임의 부조리를 알면서도 참여할 수밖에 없는 심리와 정확히 일치한다.[^mark-2009]
 
 ## 코스믹 호러와의 접합부
 
 스레드는 *고문방 트롭*만 다루지만, 같은 시기에 *코스믹 호러*도 다시 부상하고 있다. 두 양식의 정서적 토양은 같다는 가설이 가능하다 — *부분만 이해되는 거대 시스템 앞 인간의 무력감*, *동기를 알 수 없는 위협자에게 갖고 놀아진다는 감각*, *탈출의 부재 또는 그 사소함*. 표면 미디엄(체제의 방 vs 형이상학적 태고의 존재)이 달라도 미적 구조는 같다.
 
-Eric Williams가 코스믹 호러의 21세기적 동력을 정확히 그 방향에서 설명한다 (*Geoliminal*, 2026). *불투명한 시스템(기후·자본·AI) 앞의 무력감*, 그리고 *냉전 종식 이후 의미 체계가 붕괴한 빈자리를 채우는 "불가해한 배후 세력"에 대한 욕구*가 동력이라는 것이다. 트롭의 *보이지 않는 감시자*와 코스믹 호러의 *옛 신*은 다른 가면을 쓴 같은 정서다.
+Eric Williams가 코스믹 호러의 21세기적 동력을 정확히 그 방향에서 설명한다 (*Geoliminal*, 2026). *불투명한 시스템(기후·자본·AI) 앞의 무력감*, 그리고 *냉전 종식 이후 의미 체계가 붕괴한 빈자리를 채우는 "불가해한 배후 세력"에 대한 욕구*가 동력이라는 것이다. 트롭의 *보이지 않는 감시자*와 코스믹 호러의 *옛 신*은 다른 가면을 쓴 같은 정서다.[^cthulhu-2026]
 
 ## 가장 흥미로운 지점
 
@@ -98,19 +98,14 @@ Eric Williams가 코스믹 호러의 21세기적 동력을 정확히 그 방향�
 
 - 원문: <https://x.com/SkoomaBoofer/status/2060030921147891917> (@SkoomaBoofer, X 스레드 13편)
 
-### 함께 읽기
-
-- Mike Featherstone, ["Dystopian Games: Diagnosing Modernity as the Scene of Tests, Trials and Transformations"](https://journals.sagepub.com/doi/10.1177/17499755221143835) (*Theory, Culture & Society*, 2022)
-- Jihoon Kim, ["Squid Game, Surveillance Capitalism, and Platformized Spectatorship"](https://ijoc.org/index.php/ijoc/article/view/20723) (*International Journal of Communication*, 2023)
-- Nathaniel Metz, ["The Backrooms and the Horror of Capitalist Atmospheres"](https://nathanielmetz.substack.com/p/the-backrooms-and-the-horror-of-capitalist) (*Substack*, 2023)
-- Mez Breeze, ["Lost in The Backrooms"](https://electronicbookreview.com/essay/lost-in-the-backrooms-or-how-i-learned-to-love-the-liminal/) (*Electronic Book Review*, 2025)
-- MDPI, ["The Severance as Speculative Organizational Critique"](https://www.mdpi.com/2076-3387/15/8/305) (*Administrative Sciences*, 2025)
-- Eric Williams, ["Cthulhu, quo vadis? Cosmic Horror and the 21st Century"](https://geoliminal.com/2026/03/20/cthulhu-quo-vadis-cosmic-horror-and-the-21st-century/) (*Geoliminal*, 2026)
-
-### 스레드 추천 독서
-
-- Franz Kafka, 『심판』 (1925)
-- Mark Z. Danielewski, *House of Leaves* (2000)
-- Mark Fisher, *Capitalist Realism: Is There No Alternative?* (2009)
-- Jean Baudrillard, *Simulacres et Simulation* (1981)
-- Michel Foucault — 『감시와 처벌』 외
+[^dystopian-2022]: Mike Featherstone, ["Dystopian Games: Diagnosing Modernity as the Scene of Tests, Trials and Transformations"](https://journals.sagepub.com/doi/10.1177/17499755221143835) (*Theory, Culture & Society*, 2022)
+[^squid-2023]: Jihoon Kim, ["Squid Game, Surveillance Capitalism, and Platformized Spectatorship"](https://ijoc.org/index.php/ijoc/article/view/20723) (*International Journal of Communication*, 2023)
+[^backrooms-2023]: Nathaniel Metz, ["The Backrooms and the Horror of Capitalist Atmospheres"](https://nathanielmetz.substack.com/p/the-backrooms-and-the-horror-of-capitalist) (*Substack*, 2023)
+[^lost-2025]: Mez Breeze, ["Lost in The Backrooms"](https://electronicbookreview.com/essay/lost-in-the-backrooms-or-how-i-learned-to-love-the-liminal/) (*Electronic Book Review*, 2025)
+[^severance-2025]: MDPI, ["The Severance as Speculative Organizational Critique"](https://www.mdpi.com/2076-3387/15/8/305) (*Administrative Sciences*, 2025)
+[^cthulhu-2026]: Eric Williams, ["Cthulhu, quo vadis? Cosmic Horror and the 21st Century"](https://geoliminal.com/2026/03/20/cthulhu-quo-vadis-cosmic-horror-and-the-21st-century/) (*Geoliminal*, 2026)
+[^franz-1925]: Franz Kafka, 『심판』 (1925)
+[^mark-2000]: Mark Z. Danielewski, *House of Leaves* (2000)
+[^mark-2009]: Mark Fisher, *Capitalist Realism: Is There No Alternative?* (2009)
+[^jean-1981]: Jean Baudrillard, *Simulacres et Simulation* (1981)
+[^michel-foucault]: Michel Foucault — 『감시와 처벌』 외

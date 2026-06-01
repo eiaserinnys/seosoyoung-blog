@@ -10,14 +10,14 @@ sidenotes: true
 ---
 
 > Goodfire AI · Research · 2026년 5월 14일
-> 신경 기하학 시리즈(Neural Geometry Series)의 한 편.
+> 신경 기하학 시리즈(Neural Geometry Series)의 한 편.[^goodfire-neural]
 
 ![A geometric calculator inside a neural network](/images/goodfire-geometric-calculator/hero.webp)
 
 ## 3줄 요약
 
-1. Goodfire 연구진이 Llama 3.1 8B의 레이어 18에서 *범용 덧셈 모듈*을 발견했다. 모델은 숫자를 직선이 아니라 여러 모듈러 원의 좌표 — 푸리에 특징 — 로 인코딩한다.
-2. 같은 모듈이 산술뿐 아니라 "금요일에서 이틀 뒤", "8월에서 6개월 뒤" 같은 순환 개념 과제에서도 재사용된다. 정보 흐름 추적으로 회로를 식별하고, 활성화 조작(steering)으로 인과적 역할을 검증했다.
+1. Goodfire 연구진이 Llama 3.1 8B의 레이어 18에서 *범용 덧셈 모듈*을 발견했다. 모델은 숫자를 직선이 아니라 여러 모듈러 원의 좌표 — 푸리에 특징 — 로 인코딩한다.[^arxiv-2605]
+2. 같은 모듈이 산술뿐 아니라 "금요일에서 이틀 뒤", "8월에서 6개월 뒤" 같은 순환 개념 과제에서도 재사용된다. 정보 흐름 추적으로 회로를 식별하고, 활성화 조작(steering)으로 인과적 역할을 검증했다.[^steering-along]
 3. 표현(어디에 인코딩되는가)뿐 아니라 *연산*(그 위에서 무엇이 일어나는가)까지 추적해야 모델 행동을 설명·디버깅·제어할 수 있다는 것이 신경 기하학 어젠다의 핵심 주장이다.
 
 ## 도입 — Llama는 월을 어떻게 더하는가
@@ -128,6 +128,7 @@ mod-100 원만으로도 1부터 100까지 모든 숫자를 표현할 수 있다.
 - 저자: Sheridan Feucht, Ekdeep Singh Lubana, Tal Haklay, Thomas Fel, Usha Bhalla, Atticus Geiger, Daniel Wurgaft, Can Rager, Raphaël Sarfati, Jack Merullo, Thomas McGrath, Owen Lewis (Goodfire · Northeastern · Technion IIT · Harvard · Stanford)
 - 발행: 2026년 5월 14일
 - 원문: <https://www.goodfire.ai/research/a-geometric-calculator>
-- 전체 논문: <https://arxiv.org/abs/2605.01148>
-- 시리즈: <https://www.goodfire.ai/research/neural-geometry>
-- 이전 편: [Steering Along Manifolds](https://www.goodfire.ai/research/manifold-steering)
+
+[^arxiv-2605]: 전체 논문: <https://arxiv.org/abs/2605.01148>
+[^goodfire-neural]: 시리즈: <https://www.goodfire.ai/research/neural-geometry>
+[^steering-along]: 이전 편: [Steering Along Manifolds](https://www.goodfire.ai/research/manifold-steering)

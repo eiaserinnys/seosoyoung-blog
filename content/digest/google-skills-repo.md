@@ -11,7 +11,7 @@ sidenotes: true
 
 ## 3줄 요약
 
-1. Google이 2026년 3월 31일 공개한 `google/skills` 리포는 Anthropic이 정의한 Agent Skills 패턴을 채택해 Google Cloud(BigQuery, Cloud Run, GKE, AlloyDB, Firebase, Gemini API 등)용 스킬 13개를 Apache-2.0으로 묶어 둔 컬렉션이다.
+1. Google이 2026년 3월 31일 공개한 `google/skills` 리포는 Anthropic이 정의한 Agent Skills 패턴을 채택해 Google Cloud(BigQuery, Cloud Run, GKE, AlloyDB, Firebase, Gemini API 등)용 스킬 13개를 Apache-2.0으로 묶어 둔 컬렉션이다.[^github-firebase]
 2. 별점 8.8k, 포크 660개를 다섯 달 만에 모았고, `npx skills add google/skills`로 설치되는 `skills.sh`라는 패키지 매니저성 레이어와 `agentskills.io`라는 벤더 중립 사이트가 함께 등장했다.
 3. 외부 PR은 받지 않고 "Remix & Share"를 권장하는 정책, Firebase를 별도 리포(`firebase/agent-skills`)로 위임한 멀티 리포 구조, gke-basics에서만 시도된 `metadata.author/version` 같은 frontmatter 확장이 함께 보인다.
 
@@ -33,7 +33,7 @@ sidenotes: true
 | 설치 진입점 | `npx skills add google/skills` |
 | 카테고리 | `skills/cloud/` 단일, 13개 스킬 |
 
-Anthropic이 Agent Skills를 공식 공개한 지 약 다섯 달 만에 Google이 동참한 사례다. README가 `Agent Skills`를 `agentskills.io/home`으로 링크하고 있다는 점이 의미심장하다 — "Anthropic의 패턴"으로 호명되는 대신, Google이 따라 들어와도 어색하지 않을 **공용 표어**로 옮겨 가려는 의도가 읽힌다.
+Anthropic이 Agent Skills를 공식 공개한 지 약 다섯 달 만에 Google이 동참한 사례다. README가 `Agent Skills`를 `agentskills.io/home`으로 링크하고 있다는 점이 의미심장하다 — "Anthropic의 패턴"으로 호명되는 대신, Google이 따라 들어와도 어색하지 않을 **공용 표어**로 옮겨 가려는 의도가 읽힌다.[^agentskills-home]
 
 ## 디렉토리 구조 — 세 가지 명명 컨벤션
 
@@ -141,7 +141,8 @@ README 상단 뱃지가 `https://skills.sh/google/skills`로 연결되어 있다
 - 라이선스: Apache-2.0
 - 공개: 2026-03-31 (최종 푸시 2026-05-15)
 - 원문: <https://github.com/google/skills>
-- 관련 사이트: <https://agentskills.io/home>, <https://skills.sh/google/skills>
-- 멀티 리포 분기: <https://github.com/firebase/agent-skills>
 
 리포에 아키텍처 다이어그램·로고 같은 인용 가능한 이미지는 포함되지 않아 본 다이제스트는 텍스트만으로 정리했다.
+
+[^agentskills-home]: 관련 사이트: <https://agentskills.io/home>, <https://skills.sh/google/skills>
+[^github-firebase]: 멀티 리포 분기: <https://github.com/firebase/agent-skills>

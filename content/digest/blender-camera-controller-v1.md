@@ -13,13 +13,13 @@ sidenotes: true
 
 ## 3줄 요약
 
-1. *Blender Camera Controller*는 Android 스마트폰의 센서와 화면을 그대로 Blender 카메라 컨트롤러로 쓰는 애드온이다.
-2. v1.0.0에서 Google Play Store 배포가 시작됐고, World Tracking·Streaming·키프레임 스무딩이 개선됐다.
+1. *Blender Camera Controller*는 Android 스마트폰의 센서와 화면을 그대로 Blender 카메라 컨트롤러로 쓰는 애드온이다.[^gumroad-blender]
+2. v1.0.0에서 Google Play Store 배포가 시작됐고, World Tracking·Streaming·키프레임 스무딩이 개선됐다.[^google-play]
 3. 흥미로운 지점은 *기능 자체*가 아니라, 모두가 가진 스마트폰의 자이로/제스처를 PC 응용프로그램의 외부 입력 장치로 끌어들이는 *발상*이다.
 
 ## 영상
 
-{{< youtube H2XPE1L_SXs >}}
+{{< youtube H2XPE1L_SXs >}}[^youtube-watch]
 
 ## 무엇을 하는 애드온인가
 
@@ -52,7 +52,8 @@ Android 스마트폰을 실제 카메라처럼 들고 움직이면, 그 센서 �
 ## 출처
 
 - 원문: <https://modelinghappy.com/archives/68642>
-- Gumroad: <https://blender-addons.gumroad.com/l/blender_camera_controller_addon>
-- Google Play Store: <https://play.google.com/store/apps/details?id=com.wpm.blender_camera_controller>
-- 영상: <https://www.youtube.com/watch?v=H2XPE1L_SXs>
 - 매체: MODELING HAPPY (3DCG 정보 사이트, 2026년 5월 13일 게재)
+
+[^gumroad-blender]: Gumroad: <https://blender-addons.gumroad.com/l/blender_camera_controller_addon>
+[^google-play]: Google Play Store: <https://play.google.com/store/apps/details?id=com.wpm.blender_camera_controller>
+[^youtube-watch]: 영상: <https://www.youtube.com/watch?v=H2XPE1L_SXs>

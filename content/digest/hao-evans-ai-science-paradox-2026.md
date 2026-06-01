@@ -27,7 +27,7 @@ AI 논문 식별은 BERT 기반 두 단계 분류기를 썼다. 제목과 초록
 
 저자들은 AI 발전을 세 시대로 나눈다.
 
-- <strong>머신러닝(ML) 시대</strong>: 1980\~2014
+- <strong>머신러닝(ML) 시대</strong>: 1980\~2014[^s41586-strong][^strong-arxiv][^iam-2026]
 - <strong>딥러닝(DL) 시대</strong>: 2015\~2022
 - <strong>생성형 AI(GAI) 시대</strong>: 2023\~현재
 
@@ -104,7 +104,7 @@ AI가 잘하는 일(데이터 풍부한 분야의 알려진 문제 가속)이 �
 이 우려가 더 큰 이유는 두 가지 요인이 겹쳐 있기 때문이다.
 
 1. <strong>개인적 인센티브</strong>: 논문 3배, 인용 5배, 승진 1.37년 빠름. AI 채택을 거부하는 합리적 이유가 개인 차원에선 없다.
-2. <strong>정책적 가속</strong>: 연구비 정책은 AI for Science 지원을 늘리는 방향으로 움직인다.
+2. <strong>정책적 가속</strong>: 연구비 정책은 AI for Science 지원을 늘리는 방향으로 움직인다.[^npr-2026]
 
 두 힘이 합쳐지면 데이터 빈약한 프런티어는 더 비워진다. 저자들은 마지막 문단에서 처방을 제시한다 — *AI의 인지적 능력 확장*에서 *감각적·실험적 능력 확장*으로 방향을 전환해야 한다는 것이다. 기존 데이터를 더 잘 분석하는 AI가 아니라, *지금까지 접근 불가능했던 새로운 종류의 데이터*를 수집하고 관측할 수 있게 해 주는 AI. 과학사의 큰 발견들이 새 도구로 자연을 새로 본 데서 왔다는 점을 떠올리면 자연스러운 결론이다.
 
@@ -121,7 +121,8 @@ AI가 자동화하는 일들 — 문헌 검색, 데이터 정리, 가설 후보 
 ## 출처
 
 - <strong>논문</strong>: Hao, Q., Xu, F., Li, Y., & Evans, J. (2026). Artificial intelligence tools expand scientists' impact but contract science's focus. *Nature*, 649(8099), 1237–1243.
-- <strong>DOI</strong>: [10.1038/s41586-025-09922-y](https://doi.org/10.1038/s41586-025-09922-y)
-- <strong>arXiv 프리프린트</strong>: <https://arxiv.org/abs/2412.07727>
-- <strong>트윗 소개</strong>: [@iam_elias1, 2026-05](https://x.com/iam_elias1/status/2057380658088165660)
-- <strong>언론 보도</strong>: [NPR (2026-02-17)](https://www.npr.org/2026/02/17/nx-s1-5711344/ai-is-helping-individual-scientists-study-suggests-but-not-science), [China Daily (2026-01-28)](https://www.chinadaily.com.cn/a/202601/28/WS697961e4a310d6866eb361e7.html)
+
+[^s41586-strong]: <strong>DOI</strong>: [10.1038/s41586-025-09922-y](https://doi.org/10.1038/s41586-025-09922-y)
+[^strong-arxiv]: <strong>arXiv 프리프린트</strong>: <https://arxiv.org/abs/2412.07727>
+[^iam-2026]: <strong>트윗 소개</strong>: [@iam_elias1, 2026-05](https://x.com/iam_elias1/status/2057380658088165660)
+[^npr-2026]: <strong>언론 보도</strong>: [NPR (2026-02-17)](https://www.npr.org/2026/02/17/nx-s1-5711344/ai-is-helping-individual-scientists-study-suggests-but-not-science), [China Daily (2026-01-28)](https://www.chinadaily.com.cn/a/202601/28/WS697961e4a310d6866eb361e7.html)

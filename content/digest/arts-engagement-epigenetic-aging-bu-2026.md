@@ -15,7 +15,7 @@ sidenotes: true
 
 ## 3줄 요약
 
-1. UCL Daisy Fancourt·Feifei Bu 팀이 영국 대표 패널 UKHLS의 DNA 메틸화 하위표본(n=3,354)을 7가지 후성유전 시계로 분석한 연구가 *Innovation in Aging*에 게재됐다 (CNN 일본판이 5월 15일에 보도).
+1. UCL Daisy Fancourt·Feifei Bu 팀이 영국 대표 패널 UKHLS의 DNA 메틸화 하위표본(n=3,354)을 7가지 후성유전 시계로 분석한 연구가 *Innovation in Aging*에 게재됐다 (CNN 일본판이 5월 15일에 보도).[^cnn-2026]
 2. 예술·문화 참여(ACEng)와 신체활동(PA) 모두 2·3세대 시계(PhenoAge·DunedinPoAm·DunedinPACE)에서 노화 둔화와 유의하게 관련됐고, **두 활동의 효과 크기는 거의 동등했다.** 1세대 시계 4종에서는 효과가 보이지 않았다.
 3. 효과는 빈도뿐 아니라 *다양성*에서도 나왔고, 40세 이상 표본으로 좁히면 더 강해졌다 — 예술 참여를 공중보건 전략의 정식 후보로 올릴 근거가 마련된 셈이다.
 
@@ -23,7 +23,7 @@ sidenotes: true
 
 이번 연구는 영국 정부 지원의 대형 패널 조사 *Understanding Society — UK Household Longitudinal Study(UKHLS)*의 DNA 메틸화(DNAm) 하위표본을 사용했다. 2010\~2012년(2·3차 웨이브) 간호사 방문 시 채혈한 혈액 시료에서 Illumina Methylation EPIC BeadChip으로 85만+ CpG 사이트를 측정했고, 결측·이상치를 제거한 분석 표본은 백인 유럽 혈통 성인 3,354명(평균 52.3세)이다.
 
-저자는 UCL Behavioural Science & Health 소속 5인 — **Daisy Fancourt**(교신저자), Lehané Masebo, Saoirse Finn, Hei Wan Mak, **Feifei Bu**(senior author). 자금은 Wellcome Discovery Award와 미국 National Endowment for the Arts의 EpiArts Lab 등.
+저자는 UCL Behavioural Science & Health 소속 5인 — **Daisy Fancourt**(교신저자), Lehané Masebo, Saoirse Finn, Hei Wan Mak, **Feifei Bu**(senior author). 자금은 Wellcome Discovery Award와 미국 National Endowment for the Arts의 EpiArts Lab 등.[^geroni-2026][^ucl-2026]
 
 CNN 일본판은 Bu의 코멘트를 인용했지만, 논문 자체는 Fancourt 팀의 연속 작업의 일부다 — 그래서 이 다이제스트는 논문 저자명을 본문 인용 기준으로 삼는다.
 
@@ -71,7 +71,7 @@ UKHLS에 사전 구축된 시계 7종을 *전부* 결과 변수로 썼다 (outco
 ### ACEng — 예술·문화 참여
 
 ![Figure 1. 예술·문화 참여 빈도(상)와 다양성(하)이 7가지 후성유전 시계에 미친 평균 처치 효과(95% CI). IPWRA, n=3,324.](/images/arts-engagement-epigenetic-aging-bu-2026/figure1-aceng-clocks.jpg)
-*Figure 1 — ACEng 빈도(상)·다양성(하)의 평균 처치 효과와 95% CI. 1세대 시계(좌측 4종)에서는 모두 0 근처에 머물고, 우측의 PhenoAge·DunedinPoAm·DunedinPACE에서만 음(-) 방향으로 유의하게 벗어난다. (출처: Fancourt et al., 2026, medRxiv 프리프린트 v3)*
+*Figure 1 — ACEng 빈도(상)·다양성(하)의 평균 처치 효과와 95% CI. 1세대 시계(좌측 4종)에서는 모두 0 근처에 머물고, 우측의 PhenoAge·DunedinPoAm·DunedinPACE에서만 음(-) 방향으로 유의하게 벗어난다. (출처: Fancourt et al., 2026, medRxiv 프리프린트 v3)*[^medrxiv-2024]
 
 1세대 시계 4종(Hannum·Horvath2013·Horvath2018·Lin)에서는 빈도·다양성 어느 쪽도 유의한 효과가 없었다. 유의한 결과는 모두 2·3세대 시계에서 나왔다.
 
@@ -134,10 +134,9 @@ PA도 같은 패턴이었다. 1·2세대 일부에서는 빈도·다양성의 �
 
 ## 출처
 
-- **원 논문 (저널 게재)**
-  Fancourt, D., Masebo, L., Finn, S., Mak, H. W., & Bu, F. (2026). *Does frequency or diversity of leisure activity matter more for epigenetic ageing? Analyses of arts engagement and physical activity in the UK Household Longitudinal Study.* **Innovation in Aging**, advance article. DOI: [10.1093/geroni/igag038](https://academic.oup.com/innovateage/advance-article/doi/10.1093/geroni/igag038/8669801)
-- **medRxiv 프리프린트 v3** (본문·figure 인용 출처): [10.1101/2024.11.01.24316559](https://www.medrxiv.org/content/10.1101/2024.11.01.24316559v3.full)
-- **UCL 보도자료** (2026-05-12): <https://www.ucl.ac.uk/news/2026/may/engaging-arts-linked-slower-pace-ageing>
-- **CNN 일본판 기사** (2026-05-15, 본 다이제스트의 진입점): <https://www.cnn.co.jp/fringe/35247563.html>
-
 본문에 인용한 두 figure는 medRxiv 프리프린트 v3(저자 CC-BY 가정)에서 가져왔다.
+
+[^geroni-2026]: **원 논문 (저널 게재)** Fancourt, D., Masebo, L., Finn, S., Mak, H. W., & Bu, F. (2026). *Does frequency or diversity of leisure activity matter more for epigenetic ageing? Analyses of arts engagement and physical activity in the UK Household Longitudinal Study.* **Innovation in Aging**, advance article. DOI: [10.1093/geroni/igag038](https://academic.oup.com/innovateage/advance-article/doi/10.1093/geroni/igag038/8669801)
+[^medrxiv-2024]: **medRxiv 프리프린트 v3** (본문·figure 인용 출처): [10.1101/2024.11.01.24316559](https://www.medrxiv.org/content/10.1101/2024.11.01.24316559v3.full)
+[^ucl-2026]: **UCL 보도자료** (2026-05-12): <https://www.ucl.ac.uk/news/2026/may/engaging-arts-linked-slower-pace-ageing>
+[^cnn-2026]: **CNN 일본판 기사** (2026-05-15, 본 다이제스트의 진입점): <https://www.cnn.co.jp/fringe/35247563.html>

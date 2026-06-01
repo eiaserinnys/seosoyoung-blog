@@ -24,7 +24,7 @@ sidenotes: true
 - **저자**: Shiv (블로그명 *Shiv After Dark*, [shvbsle.in](https://shvbsle.in/))
 - **발행일**: 2026년 5월 28일
 - **분량**: 짧은 관찰 노트(원문 본문 ~2.7KB)
-- **HN 노출**: 발행 직후 Hacker News 프론트페이지 진입 — [HN Thread #48313810](https://news.ycombinator.com/item?id=48313810)
+- **HN 노출**: 발행 직후 Hacker News 프론트페이지 진입 — [HN Thread #48313810](https://news.ycombinator.com/item?id=48313810)[^ycombinator-item]
 - **계기**: 작년 말 운영하던 수학 블로그(이후 삭제)에서 LLM의 문장 다듬기를 사용. 당시에는 "AI slop"으로 보이지 않았으나 약 3개월 뒤 같은 구조가 인터넷 전반에 퍼지는 것을 보고 정리
 
 ## 1. 글쓰기에 남는 LLM 흔적 — em-dash 너머
@@ -115,5 +115,6 @@ sidenotes: true
 
 - 저자: Shiv (*Shiv After Dark*)
 - 원문: <https://shvbsle.in/various-llm-smells/>
-- HN 토론: <https://news.ycombinator.com/item?id=48313810>
 - 발행일: 2026년 5월 28일
+
+[^ycombinator-item]: HN 토론: <https://news.ycombinator.com/item?id=48313810>

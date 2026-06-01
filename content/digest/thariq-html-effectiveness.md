@@ -67,7 +67,7 @@ ClaudeAI나 Claude Design이 아니라 Claude Code로 HTML을 만드는 이유�
 
 ## 사용 사례
 
-Thariq는 자신의 사용 사례 모음을 [thariqs.github.io/html-effectiveness](https://thariqs.github.io/html-effectiveness/)에 공개했다. 본문에서는 다섯 묶음으로 정리한다.
+Thariq는 자신의 사용 사례 모음을 [thariqs.github.io/html-effectiveness](https://thariqs.github.io/html-effectiveness/)에 공개했다. 본문에서는 다섯 묶음으로 정리한다.[^thariqs-github]
 
 ### 스펙·계획·탐색
 
@@ -158,5 +158,6 @@ Thariq는 자기 글이 `/html` 스킬로 박제될까 우려한다. "HTML 파�
 - 저자: Thariq Shihipar ([@trq212](https://x.com/trq212), Anthropic Claude Code 팀)
 - 발표일: 2025-10
 - 원문: <https://x.com/trq212/status/2052809885763747935>
-- 사용 사례 모음: <https://thariqs.github.io/html-effectiveness/>
 - 커버 이미지 출처: 원문 첨부 헤더 이미지(Thariq Shihipar)
+
+[^thariqs-github]: 사용 사례 모음: <https://thariqs.github.io/html-effectiveness/>

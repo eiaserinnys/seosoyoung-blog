@@ -116,7 +116,7 @@ Needle은 26M으로 FunctionGemma-270M, Qwen-0.6B, Granite-350M, LFM2.5-350M보�
 작은 모델의 변동성 문제는 알고 있고, 그래서 web UI에서 자기 도구로 파인튜닝하는 흐름을 기본 사용 경로로 제시한다.
 
 ```bash
-git clone https://github.com/cactus-compute/needle.git
+git clone https://github.com/cactus-compute/needle.git[^github-cactus]
 cd needle && source ./setup
 needle playground
 ```
@@ -178,3 +178,5 @@ HuggingFace 가중치: <https://huggingface.co/Cactus-Compute/needle>
 Cactus 런타임: <https://github.com/cactus-compute/cactus>
 
 원문은 README와 아키텍처 노트, 모델 카드 형식으로 짧게 정리되어 있다. 외부 URL로 인용 가능한 도식이 없어 본 다이제스트에는 이미지를 싣지 않았다. 리포 안에는 ASCII 아키텍처 다이어그램과 `assets/banner.png` 한 장이 있다.
+
+[^github-cactus]: 원문 리포: <https://github.com/cactus-compute/needle>

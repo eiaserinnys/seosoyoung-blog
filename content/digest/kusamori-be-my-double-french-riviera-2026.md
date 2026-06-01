@@ -17,7 +17,7 @@ sidenotes: true
 
 ## 무슨 일이 있었나
 
-마이니치신문은 5월 21일자 기사에서 지바현 이치카와시 거주 멀티미디어 아티스트 쿠사모리 후유비의 단편 영상 「Be my double（ビー・マイ・ダブル、私の似姿になれ）」이 프렌치 리비에라 영화제(French Riviera Film Festival, FRFF) 마이크로 쇼트 부문에서 최고상을 받았다고 전했다. 영화제는 칸 국제영화제와 같은 시기·같은 도시(칸 Eden Hotel & Spa)에서 열리지만, **칸의 공식 부문이 아니라 별개로 운영되는 단편 전문 영화제**다.
+마이니치신문은 5월 21일자 기사에서 지바현 이치카와시 거주 멀티미디어 아티스트 쿠사모리 후유비의 단편 영상 「Be my double（ビー・マイ・ダブル、私の似姿になれ）」이 프렌치 리비에라 영화제(French Riviera Film Festival, FRFF) 마이크로 쇼트 부문에서 최고상을 받았다고 전했다. 영화제는 칸 국제영화제와 같은 시기·같은 도시(칸 Eden Hotel & Spa)에서 열리지만, **칸의 공식 부문이 아니라 별개로 운영되는 단편 전문 영화제**다.[^mainichi-2026]
 
 같은 영화제에 출품한 또 다른 작품 「Épiphanie des Limites」는 실험영상 부문 정식 상영작으로 선정되었다. 두 작품 모두 결선까지 진출한 끝에 받은 결과다.
 
@@ -33,24 +33,24 @@ sidenotes: true
 
 ## 작가 쿠사모리 후유비 — 사서이자 멀티미디어 아티스트
 
-작가의 약력은 마이니치 본문과 이치카와뉴스 인터뷰를 합쳐 다음과 같이 정리된다.
+작가의 약력은 마이니치 본문과 이치카와뉴스 인터뷰를 합쳐 다음과 같이 정리된다.[^award-2026]
 
 | 항목 | 내용 |
 | --- | --- |
 | 출생·거주 | 지바현 이치카와시 출신, 같은 시 거주 |
-| 학력 | 메이지가쿠인대 문학부 예술학과 영상예술학 코스 (영상 표현 전공) |
+| 학력 | 메이지가쿠인대 문학부 예술학과 영상예술학 코스 (영상 표현 전공)[^meijigakuin-2026] |
 | 본업 | 도립 고등학교 사서 |
 | 창작 영역 | 회화·영상·음악을 아우르는 멀티미디어 |
 | 작업 시간 | 점심시간과 휴일·주말 |
 | AI 영상 경력 | 약 3년 |
 | 제작 환경 | 자택 PC, 단독 작업 |
-| 공식 사이트 | <a href="https://aprilsnow.ciao.jp/">aprilsnow.ciao.jp</a> |
+| 공식 사이트 | <a href="https://aprilsnow.ciao.jp/">aprilsnow.ciao.jp</a>[^aprilsnow-ciao] |
 
 이치카와뉴스에 따르면 작가는 본업과 창작을 일과로 함께 굴리는 형태로 활동을 이어왔고, 그 흐름의 한 단계에서 생성형 AI 영상을 시작했다. 사용된 구체 도구명은 두 자료 모두 명시하지 않았다.
 
 ## 프렌치 리비에라 영화제 — 칸 옆에 자란 단편 영화제
 
-영화제 자체는 FilmFreeway에 등재된 정식 단편 영화제로, 다음 구조를 갖는다.
+영화제 자체는 FilmFreeway에 등재된 정식 단편 영화제로, 다음 구조를 갖는다.[^filmfreeway-frenchrivierafilmfestival]
 
 - **시기·장소**: 매년 칸 국제영화제 회기와 겹치도록 칸 Eden Hotel & Spa에서 개최. 2026년이 8회째.
 - **출품 요건**: 40분 이내 단편. 제작 기간 2023년 5월 1일 이후.
@@ -90,10 +90,10 @@ sidenotes: true
 
 ## 출처
 
-- 마이니치신문 2026-05-21 「「千葉で構想」生成AI使った短編 フランスの短編映画祭で最高賞」 (글: 石塚孝志): <https://mainichi.jp/articles/20260521/k00/00m/200/036000c>
-- 이치카와뉴스 2026-05-20 「【快挙】市川市在住アーティスト草森冬弥さんの生成AI映像作品が仏・映画祭のAward Winnerに選出」: <https://ichi-24.jp/archives/53744>
-- 메이지가쿠인대학 예술학과 2026-05-19 발표: <https://www.meijigakuin.ac.jp/art/news/archive/2026/2026-05-19.html>
-- 프렌치 리비에라 영화제 FilmFreeway 페이지: <https://filmfreeway.com/FrenchRivieraFilmFestival>
-- 작가 공식 사이트: <https://aprilsnow.ciao.jp/>
-
 본 다이제스트는 작품 스틸을 직접 인용하지 않고 텍스트로만 정리한다. 마이니치 본문에 「草森冬弥さん提供」으로 게재된 작품 스틸은 마이니치 원문 링크에서 확인할 수 있다.
+
+[^mainichi-2026]: 마이니치신문 2026-05-21 「「千葉で構想」生成AI使った短編 フランスの短編映画祭で最高賞」 (글: 石塚孝志): <https://mainichi.jp/articles/20260521/k00/00m/200/036000c>
+[^award-2026]: 이치카와뉴스 2026-05-20 「【快挙】市川市在住アーティスト草森冬弥さんの生成AI映像作品が仏・映画祭のAward Winnerに選出」: <https://ichi-24.jp/archives/53744>
+[^meijigakuin-2026]: 메이지가쿠인대학 예술학과 2026-05-19 발표: <https://www.meijigakuin.ac.jp/art/news/archive/2026/2026-05-19.html>
+[^filmfreeway-frenchrivierafilmfestival]: 프렌치 리비에라 영화제 FilmFreeway 페이지: <https://filmfreeway.com/FrenchRivieraFilmFestival>
+[^aprilsnow-ciao]: 작가 공식 사이트: <https://aprilsnow.ciao.jp/>

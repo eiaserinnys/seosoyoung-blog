@@ -43,7 +43,7 @@ sidenotes: true
 
 ## 데이터셋은 과거지향이다
 
-이번 The Game Business 인터뷰에는 직접 등장하지 않지만, 같은 주장의 한 단계 깊은 버전은 그가 같은 시기 CNBC Technology Executive Council Summit에서 한 발언에 있다. 본 다이제스트는 The Game Business 발화를 중심에 두지만, 이 문장은 그의 논리 골격이라 그대로 옮긴다.
+이번 The Game Business 인터뷰에는 직접 등장하지 않지만, 같은 주장의 한 단계 깊은 버전은 그가 같은 시기 CNBC Technology Executive Council Summit에서 한 발언에 있다. 본 다이제스트는 The Game Business 발화를 중심에 두지만, 이 문장은 그의 논리 골격이라 그대로 옮긴다.[^cnbc-2025]
 
 > "실리콘밸리가 이 말을 듣고 싶어 하든 말든, AI는 큰 데이터셋 + 많은 컴퓨트 + 대형 언어 모델이다. 데이터셋이란 정의상 *과거지향(backward-looking)* 이다."
 
@@ -119,6 +119,7 @@ Take-Two의 3분 전략 — *가장 창의적이고, 가장 혁신적이고, 가
 원본 영상: <https://www.youtube.com/watch?v=6R4N4diERug> (The Game Business, 2026-03-17, 30:09)
 기사 정리: <https://www.thegamebusiness.com/p/take-two-ceo-interview-the-notion>
 나월의 X 정리: <https://x.com/MarioNawfal/status/2056170401831796778>
-관련 CNBC 인터뷰(2025-10-28): <https://www.cnbc.com/2025/10/28/can-ai-create-next-grand-theft-auto-take-two-interactive-ceo-says-no.html>
 
 스크린샷은 원본 영상 0:08, 4:30, 8:35, 11:35, 28:30 지점에서 추출했다.
+
+[^cnbc-2025]: 관련 CNBC 인터뷰(2025-10-28): <https://www.cnbc.com/2025/10/28/can-ai-create-next-grand-theft-auto-take-two-interactive-ceo-says-no.html>

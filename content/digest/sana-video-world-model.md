@@ -22,8 +22,8 @@ SANA-WM은 NVIDIA Labs와 외부 공저자(Haoyi Zhu, Haozhe Liu, Yuyang Zhao, T
 
 세 곳에 자료가 흩어져 있다.
 
-- 프로젝트 페이지: <https://nvlabs.github.io/Sana/WM/>
-- 논문: <https://arxiv.org/abs/2605.15178> (2026-05-14, cs.CV, 25페이지)
+- 프로젝트 페이지: <https://nvlabs.github.io/Sana/WM/>[^nvlabs-github][^github-nvlabs]
+- 논문: <https://arxiv.org/abs/2605.15178> (2026-05-14, cs.CV, 25페이지)[^arxiv-2605]
 - 코드: <https://github.com/NVlabs/Sana>
 - Models: (페이지 헤더에 항목은 있으나 disabled)
 
@@ -142,6 +142,7 @@ attention-level UCPE가 FVD를 가장 낮추고, dual-branch(UCPE + Plücker)가
 ## 출처
 
 저자: Haoyi Zhu, Haozhe Liu, Yuyang Zhao, Tian Ye, Junsong Chen, Jincheng Yu, Tong He, Song Han, Enze Xie (NVIDIA Labs 외)
-프로젝트 페이지: <https://nvlabs.github.io/Sana/WM/>
-논문: <https://arxiv.org/abs/2605.15178> (2026-05-14, cs.CV, 25페이지)
-코드: <https://github.com/NVlabs/Sana>
+
+[^nvlabs-github]: 프로젝트 페이지: <https://nvlabs.github.io/Sana/WM/>
+[^arxiv-2605]: 논문: <https://arxiv.org/abs/2605.15178> (2026-05-14, cs.CV, 25페이지)
+[^github-nvlabs]: 코드: <https://github.com/NVlabs/Sana>

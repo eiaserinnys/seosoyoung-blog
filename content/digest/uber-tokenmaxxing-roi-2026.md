@@ -15,7 +15,7 @@ sidenotes: true
 
 ## 3줄 요약
 
-1. Uber COO Andrew Macdonald가 *Rapid Response* 인터뷰(2026-05-23 공개)에서 사내 AI 지출, 특히 Claude Code 토큰 비용을 정당화하기가 점점 어려워지고 있다고 발언했다.
+1. Uber COO Andrew Macdonald가 *Rapid Response* 인터뷰(2026-05-23 공개)에서 사내 AI 지출, 특히 Claude Code 토큰 비용을 정당화하기가 점점 어려워지고 있다고 발언했다.[^rapid-2026]
 2. 토큰 사용량이 늘었지만 "25% 더 유용한 소비자 기능이 만들어졌다"는 식의 비례 산출은 보이지 않는다 — 그 인과의 연결선이 아직 없다는 진단이다.
 3. CEO Khosrowshahi는 채용 둔화로 AI 비용을 상쇄하고 있으며, Big Tech의 *tokenmaxxing* 흐름과 달리 Duolingo는 'AI를 위한 AI 사용'을 평가에서 빼는 방향으로 후퇴했다.
 
@@ -72,4 +72,5 @@ Duolingo의 후퇴는 이 비대칭에 대한 한 가지 응답으로 보인다.
 - **저자**: Aditi Bharade (Business Insider Singapore)
 - **발행일**: 2026-05-25
 - **원문**: <https://www.businessinsider.com/uber-coo-andrew-macdonald-ai-token-spending-harder-justify-2026-5>
-- **인용 인터뷰**: *Rapid Response* (YouTube, 2026-05-23 공개) <https://www.youtube.com/watch?v=y_mQ6xLcKyc&t=1776s>
+
+[^rapid-2026]: **인용 인터뷰**: *Rapid Response* (YouTube, 2026-05-23 공개) <https://www.youtube.com/watch?v=y_mQ6xLcKyc&t=1776s>

@@ -11,7 +11,7 @@ sidenotes: true
 
 ## 3줄 요약
 
-1. GameDiscoverCo의 Simon Carless가 데이터 파트너 Gamalytic과 함께 2023년 9월 이후 출시된 Steam 게임 약 700개 표본을 분석해, 위시리스트 → 1개월 판매 전환률의 분포·평점·얼리액세스·가격대·태그별 차이를 정리했다.
+1. GameDiscoverCo의 Simon Carless가 데이터 파트너 Gamalytic과 함께 2023년 9월 이후 출시된 Steam 게임 약 700개 표본을 분석해, 위시리스트 → 1개월 판매 전환률의 분포·평점·얼리액세스·가격대·태그별 차이를 정리했다.[^gamalytic-exploring]
 2. 핵심 발견은 평점 라벨의 임계값에서 전환률이 비선형적으로 점프한다는 것이다. Overwhelmingly Positive(95%+) 구간에서 0.51배로 크게 도약하고, Mixed(<70%) 구간에서 두드러진 하락이 관찰된다.
 3. 얼리액세스 게임은 동일 시점 정식 출시작 대비 1개월 전환률이 약 1/3 낮으며(0.20배 vs 0.30배), 가격대는 저가($10 미만)·고가($50+)에서 전환률이 높고 $15\~30 구간이 평균을 밑도는 U자형이다.
 
@@ -132,6 +132,7 @@ EA는 정식 출시 대비 약 1/3 낮은 전환률을 보인다. 다만 Carless
 - 저자: Simon Carless (GameDiscoverCo 창립자)
 - 데이터 파트너: Gamalytic (Strale)
 - 원문: <https://newsletter.gamediscover.co/p/how-user-reviews-affect-your-games>
-- Gamalytic 원본 분석: <https://gamalytic.com/blog/exploring-steam-wishlist-sale-ratio>
 
 이미지는 모두 GameDiscoverCo 뉴스레터 본문에서 인용했으며, 원본 데이터는 Gamalytic이 공개 Steam 데이터를 리버스 엔지니어링한 결과다.
+
+[^gamalytic-exploring]: Gamalytic 원본 분석: <https://gamalytic.com/blog/exploring-steam-wishlist-sale-ratio>

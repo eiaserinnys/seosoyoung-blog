@@ -11,7 +11,7 @@ sidenotes: true
 
 ## 3줄 요약
 
-1. Goodfire가 'Neural Geometry Series' 첫 글로 발표한 입장문이다 (Geiger·Lubana·Fel·Merullo 외, 2026-05-07). 신경망 내부 표상은 직선 방향(linear direction)이 아니라 곡선 매니폴드 위에 산다는 입장을 정면으로 내세운다.
+1. Goodfire가 'Neural Geometry Series' 첫 글로 발표한 입장문이다 (Geiger·Lubana·Fel·Merullo 외, 2026-05-07). 신경망 내부 표상은 직선 방향(linear direction)이 아니라 곡선 매니폴드 위에 산다는 입장을 정면으로 내세운다.[^neural-geometry]
 2. mountain car에서 위치 표상은 곡선 매니폴드를 이루며, 그 매니폴드를 따라 활성을 움직이면 차가 부드럽게 이동하지만 직선 경로로 움직이면 출력이 깨지거나 다른 위치로 텔레포트한다. 매니폴드를 따라가는가, 가로지르는가가 곧 정밀 제어의 가능 여부를 가른다.
 3. 인기 기법인 sparse autoencoder(SAE)는 슬랜트 라임 매니폴드 같은 연속 구조를 23개의 무관해 보이는 국소 피처로 산산조각낸다(shattering). SAE는 폐기 대상이 아니라 보완 대상이며, 신경 기하를 존중하는 새 방법론이 정렬·디버깅·감사의 임계 경로다.
 
@@ -205,6 +205,7 @@ Goodfire는 신경망의 'black box' 내부 이해를 *불가능*이 아니라 *
 
 - 발신자: Goodfire (Atticus Geiger, Ekdeep Singh Lubana, Thomas Fel, Jack Merullo, Michael Jae Byun, Owen Lewis, Tom McGrath)
 - 발표일: 2026년 5월 7일
-- 시리즈: The Neural Geometry Series (Goodfire) — <https://www.goodfire.ai/research/neural-geometry>
 - 원문: <https://www.goodfire.ai/research/the-world-inside-neural-networks>
 - 본 다이제스트의 모든 정적 이미지는 Goodfire의 원본 자산을 그대로 인용·재게시했고, 인터랙티브 피규어(mountain car·rhymes)는 Goodfire CDN을 iframe으로 직접 임베드했다. 자료 권리는 모두 Goodfire에 있다.
+
+[^neural-geometry]: 시리즈: The Neural Geometry Series (Goodfire) — <https://www.goodfire.ai/research/neural-geometry>

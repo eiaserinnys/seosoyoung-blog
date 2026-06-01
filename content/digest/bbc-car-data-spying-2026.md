@@ -23,7 +23,7 @@ sidenotes: true
 
 ## 차는 이미 데이터 고속도로 위에 있다
 
-McKinsey가 2021년 발표한 보고서는 그해 도로 위 차량의 50%가 인터넷에 연결되어 있다고 추산했다. 같은 보고서는 2030년에 그 비율이 95%까지 오를 것으로 본다. 차가 인터넷에 붙어 있는 한 프라이버시는 더 이상 선택의 영역이 아니다.
+McKinsey가 2021년 발표한 보고서는 그해 도로 위 차량의 50%가 인터넷에 연결되어 있다고 추산했다. 같은 보고서는 2030년에 그 비율이 95%까지 오를 것으로 본다. 차가 인터넷에 붙어 있는 한 프라이버시는 더 이상 선택의 영역이 아니다.[^privacy-2023]
 
 수집되는 데이터의 범위는 직관과 차이가 크다. 자동차 회사들이 자체 프라이버시 정책에 적어 둔 항목만으로도 다음이 포함된다.
 
@@ -78,5 +78,6 @@ LexisNexis 사례가 인상적인 이유는 *데이터가 추상이 아니라는
 
 발행: BBC Future, *Keeping Tabs* 칼럼 (Thomas Germain), 2026년 5월 13일.
 원문: <https://www.bbc.com/future/article/20260513-your-car-is-spying-on-you-its-about-to-get-worse>
-인용 자료: Mozilla "*Privacy Not Included*" 자동차 보고서 (2023), McKinsey 커넥티드카 분석 (2021), FTC GM-OnStar 합의 명령 (2026.01), *뉴욕 타임스* (2024.03.11), Consumer Federation of America, EFF.
 이미지: BBC Future / Serenity Strull / Getty Images.
+
+[^privacy-2023]: 인용 자료: Mozilla "*Privacy Not Included*" 자동차 보고서 (2023), McKinsey 커넥티드카 분석 (2021), FTC GM-OnStar 합의 명령 (2026.01), *뉴욕 타임스* (2024.03.11), Consumer Federation of America, EFF.

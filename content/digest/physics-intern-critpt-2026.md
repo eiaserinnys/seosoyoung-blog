@@ -18,7 +18,7 @@ sidenotes: true
 
 1. Hugging Face의 David Louapre·Joel Niklaus·Lewis Tunstall 팀이 이론물리학 연구를 자동화하기 위한 멀티에이전트 비계 시스템 `physics-intern`을 공개했다.
 2. 9개 전문 에이전트(설문조사·기획·오케스트레이터·연구자·계산자·검토자·시니어 비평가·중재자·포맷터)가 적대적 검토와 영속 ResearchState를 사이에 두고 협업한다.
-3. 연구 수준의 이론물리학 벤치마크 CritPt에서 Gemini 3.1 Pro 기반 physics-intern이 31.4%를 기록해 GPT 5.5 Pro(30.6%)를 추월했다 — 구조가 규모를 대신할 수 있음을 보였다.
+3. 연구 수준의 이론물리학 벤치마크 CritPt에서 Gemini 3.1 Pro 기반 physics-intern이 31.4%를 기록해 GPT 5.5 Pro(30.6%)를 추월했다 — 구조가 규모를 대신할 수 있음을 보였다.[^arxiv-2025]
 
 ## 1. CritPt 벤치마크
 
@@ -118,7 +118,7 @@ RSA가 5% → 35%로 의미 있게 끌어올렸지만, **첫 시도들이 같은
 
 핵심 결과:
 
-- **31.4%의 Gemini 3.1 Pro + physics-intern이 CritPt 리더보드 신기록**이다 — 이전 1위 GPT 5.5 Pro(30.6%, 최대 reasoning)를 추월. 그것도 자체 점수가 17.7%인 모델로.
+- **31.4%의 Gemini 3.1 Pro + physics-intern이 CritPt 리더보드 신기록**이다 — 이전 1위 GPT 5.5 Pro(30.6%, 최대 reasoning)를 추월. 그것도 자체 점수가 17.7%인 모델로.[^critpt-artificialanalysis]
 - Gemini 3 DeepThink는 문제당 약 \$10의 reasoning 컴퓨트를 쓰고도 25.7%에 그쳤다. 같은 컴퓨트를 비구조화된 추론에 쏟는 것보다 **전용·구조화된 비계가 더 많이 뽑아낸다.**
 - 가장 극적인 상승은 Kimi K2.6의 8.0% → 21.4%(약 3배). 원샷 Kimi는 65K 출력 토큰 한도에 56/70 문제가 잘렸지만, 멀티에이전트 루프가 추론을 여러 호출로 분산시켜 구조적 한계를 우회했다.
 
@@ -155,5 +155,6 @@ RSA가 5% → 35%로 의미 있게 끌어올렸지만, **첫 시도들이 같은
 - 저자: David Louapre, Joel Niklaus, Lewis Tunstall (Hugging Face)
 - 발행일: 2026-04-12
 - 원문: <https://huggingface.co/spaces/huggingface/physics-intern>
-- CritPt 벤치마크: Zhu et al., 2025, [arXiv:2509.26574](https://arxiv.org/abs/2509.26574)
-- CritPt 리더보드: <https://artificialanalysis.ai/evaluations/critpt>
+
+[^arxiv-2025]: CritPt 벤치마크: Zhu et al., 2025, [arXiv:2509.26574](https://arxiv.org/abs/2509.26574)
+[^critpt-artificialanalysis]: CritPt 리더보드: <https://artificialanalysis.ai/evaluations/critpt>

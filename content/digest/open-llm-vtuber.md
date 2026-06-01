@@ -61,7 +61,7 @@ sidenotes: true
 
 ## 설치·운영 주의사항
 
-- 빠른 시작은 공식 문서의 [Quick Start](https://open-llm-vtuber.github.io/docs/quick-start) 참조.
+- 빠른 시작은 공식 문서의 [Quick Start](https://open-llm-vtuber.github.io/docs/quick-start) 참조.[^open-llm][^open-llm-2]
 - v1.0.0에는 호환성 단절 변경이 있어 재배포가 필요. `conf.yaml`이 호환되지 않고 의존성도 `uv`로 재설치해야 한다. 그 이후 버전 간 업데이트는 `uv run update.py`.
 - **원격 서버 + 다른 기기 접근**(예: PC에 서버 띄우고 폰에서 접근) 구성을 하려면 **HTTPS가 필수**. 프론트엔드 마이크가 secure context(HTTPS 또는 localhost)에서만 동작하기 때문(MDN `getUserMedia` 명세). 리버스 프록시로 HTTPS 종단을 두어야 한다.
 - ModelScope·Hugging Face로 받은 모델은 `MODELSCOPE_CACHE`·`HF_HOME`에도 남을 수 있어 삭제 시 직접 확인 권장.
@@ -73,7 +73,7 @@ sidenotes: true
 2026-05 시점 기준, 프로젝트는 <strong>v2.0 전면 재작성</strong>을 준비 중이다. 운영 정책이 두 가지로 나뉜다.
 
 - **v1**: 버그 수정과 기존 PR 정리만 받는다. 신규 기능 요청 이슈·PR은 받지 않는다.
-- **v2**: 초기 논의·기획 단계. 참여하려면 [Zulip 개발자 커뮤니티](https://olv.zulipchat.com)에 합류해야 한다. 주간 회의 일정도 Zulip에서 공지된다.
+- **v2**: 초기 논의·기획 단계. 참여하려면 [Zulip 개발자 커뮤니티](https://olv.zulipchat.com)에 합류해야 한다. 주간 회의 일정도 Zulip에서 공지된다.[^zulip-discord]
 
 이런 식으로 <strong>메인테이너 리소스를 v2 설계에 집중시키기 위해 v1의 기능 요청 창구를 닫는 운영 패턴</strong>은 활성 OSS 프로젝트에서 종종 나타나며, 이 프로젝트도 같은 길을 따른다.
 
@@ -95,8 +95,9 @@ sidenotes: true
 
 ## 출처
 
-- 프로젝트: Open-LLM-VTuber 메인테이너 및 컨트리뷰터 ([Open-LLM-VTuber GitHub Org](https://github.com/Open-LLM-VTuber))
-- 문서: <https://open-llm-vtuber.github.io/docs/quick-start>
-- 커뮤니티: [Zulip](https://olv.zulipchat.com), [Discord](https://discord.gg/3UDA8YFDXx)
 - 라이선스: MIT (Live2D 샘플 모델은 별도 라이선스)
 - 원문: <https://github.com/Open-LLM-VTuber/Open-LLM-VTuber>
+
+[^open-llm]: 프로젝트: Open-LLM-VTuber 메인테이너 및 컨트리뷰터 ([Open-LLM-VTuber GitHub Org](https://github.com/Open-LLM-VTuber))
+[^open-llm-2]: 문서: <https://open-llm-vtuber.github.io/docs/quick-start>
+[^zulip-discord]: 커뮤니티: [Zulip](https://olv.zulipchat.com), [Discord](https://discord.gg/3UDA8YFDXx)
