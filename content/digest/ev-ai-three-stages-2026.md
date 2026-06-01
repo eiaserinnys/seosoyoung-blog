@@ -29,13 +29,13 @@ sidenotes: true
 
 > 지난달 잘 알려진 상장 기술 기업의 한 임원과 차를 마셨다. 그녀 휘하에는 약 1,000명의 엔지니어가 있고, 거의 모두가 Claude Code를 쓴다. 코드 줄 수도, PR 수도, 처리량도 늘었다. 개인의 생산성은 올라갔는데, 조직 차원에서는 그만큼이 보이지 않는다. 그녀의 말로는 "1 더하기 1 더하기 1 더하기 1이 1.5가 된다."
 
-Uber COO Andrew Macdonald도 비슷한 결을 공개적으로 인정했다. "암묵적으로는 더 많은 것이 배포되고 있을지 모르지만, 그 통계와 '우리가 실제로 25% 더 유용한 소비자 기능을 만들어 내고 있다'는 결론 사이에 선을 긋기는 매우 어렵다."
+Uber COO Andrew Macdonald도 비슷한 결을 공개적으로 인정했다. "암묵적으로는 더 많은 것이 배포되고 있을지 모르지만, 그 통계와 '우리가 실제로 25% 더 유용한 소비자 기능을 만들어 내고 있다'는 결론 사이에 선을 긋기는 매우 어렵다."[^macdonald-uber-ai]
 
-한편 Anthropic 매출은 같은 기간 폭발적으로 커졌다 — 2년 전 연 100만 달러 이상을 Claude에 쓰는 고객은 12곳뿐이었지만 지금은 1,000곳을 넘었고, 평균 기업 고객의 지출은 지난 한 해 5배가 되었다. 그런데도 *AI가 ROI 기대치를 충족했다*고 답한 경영진은 27%에 불과하다(Oliver Wyman Forum 조사). 나머지 73%는 기대가 너무 높은 것일까, 낮은 것일까, 아니면 **잘못된 종류의 기대**를 가지고 있는 것일까.
+한편 Anthropic 매출은 같은 기간 폭발적으로 커졌다 — 2년 전 연 100만 달러 이상을 Claude에 쓰는 고객은 12곳뿐이었지만 지금은 1,000곳을 넘었고, 평균 기업 고객의 지출은 지난 한 해 5배가 되었다.[^anthropic-series-g] 그런데도 *AI가 ROI 기대치를 충족했다*고 답한 경영진은 27%에 불과하다(Oliver Wyman Forum 조사).[^oliver-wyman-roi] 나머지 73%는 기대가 너무 높은 것일까, 낮은 것일까, 아니면 **잘못된 종류의 기대**를 가지고 있는 것일까.
 
 ## 생산성 퍼즐, 다시 짚기
 
-1987년 Robert Solow는 "컴퓨터 시대는 도처에서 보이는데, 생산성 통계에서만 안 보인다"고 했다. 몇 년 뒤에는 통계에서도 보이기 시작했다. Paul David는 이것이 *일반목적기술(general-purpose technologies, GPT)* 의 일반적인 양상임을 정리했다. GPT는 초기 단계에 측정된 생산성을 *오히려 끌어내린다* — 회사가 하드·소프트 노하우 양쪽에 보완 투자를 끝내야 비로소 효과가 나타나기 때문이다. Erik Brynjolfsson은 이를 *생산성 J-커브*라고 부른다.
+1987년 Robert Solow는 "컴퓨터 시대는 도처에서 보이는데, 생산성 통계에서만 안 보인다"고 했다.[^solow-1987] 몇 년 뒤에는 통계에서도 보이기 시작했다. Paul David는 이것이 *일반목적기술(general-purpose technologies, GPT)* 의 일반적인 양상임을 정리했다.[^david-1990] GPT는 초기 단계에 측정된 생산성을 *오히려 끌어내린다* — 회사가 하드·소프트 노하우 양쪽에 보완 투자를 끝내야 비로소 효과가 나타나기 때문이다. Erik Brynjolfsson은 이를 *생산성 J-커브*라고 부른다.[^brynjolfsson-jcurve]
 
 이 글은 Paul David의 1990년 전기화 논문을 길게 끌어와 AI 단계를 매핑한다. 3단계 구조를 한 장으로 정리하면 다음과 같다.
 
@@ -49,9 +49,9 @@ ChatGPT가 처음 풀렸을 때도 같은 일이 벌어졌다. 이메일을 더 
 
 ### Stage 2 — The group drive (그룹 드라이브)
 
-전기 채택의 다음 단계는 생산성보다는 *비용 절감*이 목표였다. Louis Bell은 1891년 대규모 중앙 증기 발전이 작은 엔진보다 석탄 효율이 5~7배 좋다고 적었다. 공장은 중앙 발전소에서 전력을 사 와 전동 모터로 기존 샤프트와 벨트를 돌렸다.
+전기 채택의 다음 단계는 생산성보다는 *비용 절감*이 목표였다. Louis Bell은 1891년 대규모 중앙 증기 발전이 작은 엔진보다 석탄 효율이 5~7배 좋다고 적었다.[^bell-1891] 공장은 중앙 발전소에서 전력을 사 와 전동 모터로 기존 샤프트와 벨트를 돌렸다.[^devine]
 
-뒤이어 전기공학 교수 F. B. Crocker와 동료들이 다른 응용을 찾아냈다. 전기는 *공장 바닥을 샤프트로부터 해방*시킨다. 기계가 더는 샤프트 아래 평행으로 늘어설 필요가 없어졌다. 그러면 모터를 도구마다 하나씩 두느냐, 도구 묶음마다 하나씩 두느냐 — 후자가 *group drive*다. 하나의 모터가 공유 샤프트를 통해 여러 기계를 돌리는 방식이다.
+뒤이어 전기공학 교수 F. B. Crocker와 동료들이 다른 응용을 찾아냈다.[^crocker-1895] 전기는 *공장 바닥을 샤프트로부터 해방*시킨다. 기계가 더는 샤프트 아래 평행으로 늘어설 필요가 없어졌다. 그러면 모터를 도구마다 하나씩 두느냐, 도구 묶음마다 하나씩 두느냐 — 후자가 *group drive*다. 하나의 모터가 공유 샤프트를 통해 여러 기계를 돌리는 방식이다.
 
 ![그룹 드라이브 — 하나의 모터가 공유 샤프트로 여러 기계를 돌렸다](/images/ev-ai-three-stages-2026/group-drive.jpg)
 
@@ -63,7 +63,7 @@ AI 에이전트는 챗봇보다 낫다. 단일 과업이 아니라 *워크플로
 
 ### Stage 3 — The unit drive (유닛 드라이브)
 
-공장의 조직 논리가 *비용 절감*에서 *처리량(throughput)* 으로 옮겨 가고 나서야, 비로소 *유닛 드라이브* — 기계 하나에 모터 하나 — 의 깊은 가치가 보였다. 1913년 Ford의 Highland Park 공장은 기계와 작업자를 *샤프트와 벨트의 기하학이 아니라 작업 흐름을 중심으로* 배치하기로 결정했다. 그 뒤 10년(1919~1929)간 유닛 드라이브가 더 많은 공장에 퍼지면서 미국 제조업 노동생산성은 연 5.4% 성장했다.
+공장의 조직 논리가 *비용 절감*에서 *처리량(throughput)* 으로 옮겨 가고 나서야, 비로소 *유닛 드라이브* — 기계 하나에 모터 하나 — 의 깊은 가치가 보였다. 1913년 Ford의 Highland Park 공장은 기계와 작업자를 *샤프트와 벨트의 기하학이 아니라 작업 흐름을 중심으로* 배치하기로 결정했다. 그 뒤 10년(1919~1929)간 유닛 드라이브가 더 많은 공장에 퍼지면서 미국 제조업 노동생산성은 연 5.4% 성장했다.[^highland-park]
 
 ![Highland Park, 1914 — 샤프트가 아니라 작업 흐름에 맞춰 재배치된 공장 바닥](/images/ev-ai-three-stages-2026/highland-park-1914.png)
 
@@ -101,19 +101,6 @@ AI에는 새로운 *인지 레이어* 가 필요하다 — 회사가 *작업자�
 
 이 지점에서 글의 무료 공개분은 끝난다. "어떻게 Stage 3로 옮겨 갈 것인가"의 처방은 유료 구독자 대상이다.
 
-## 자료가 끌어오는 외부 참조
-
-이 글은 다음 자료를 직접 인용·링크한다. 후속 소화의 출발점으로 묶어 둔다.
-
-- **Robert Solow (1987)** — "We see the computer age everywhere but in the productivity statistics." [Solow, *We'd Better Watch Out*](http://digamo.free.fr/solow87.pdf).
-- **Paul David (1990)** — 전기화 도입의 단계 분석. [The Dynamo and the Computer](https://www.almendron.com/tribuna/wp-content/uploads/2018/03/the-dynamo-and-the-computer-an-historical-perspective-on-the-modern-productivity-paradox.pdf).
-- **Erik Brynjolfsson 외 (NBER)** — *Productivity J-curve*. [NBER w25148](https://www.nber.org/system/files/working_papers/w25148/w25148.pdf).
-- **Warren Devine** — 공장의 샤프트→전선 전환 조사. JSTOR 2120827.
-- **Louis Bell (1891)** — 중앙 증기 발전의 석탄 효율. OSTI 6774921.
-- **F. B. Crocker 외 (1895)** — 그룹 드라이브 응용. IEEE archive.
-- **Highland Park 분석** — Ford 공장의 작업 흐름 재설계. Tidsskrift 24974.
-- **Anthropic 매출·고객 통계** — Series G 발표 자료와 Dealroom 인터뷰.
-
 ## 가장 흥미로운 지점
 
 전기화 비유 자체보다, **"성숙도 모델이 아니라 *조직 논리*가 단계의 본질"이라는 재정의**가 가장 묵직하다. CMM 식의 성숙도 사다리는 *같은 일을 더 잘하라*고 권하지만, 이 글의 사다리는 *지금 뭘 하려고 하는지를 바꾸라*고 한다. 전구를 더 많이 단다고 컨베이어 벨트가 나오지 않는다는 한 줄이 글 전체의 무게를 떠받친다.
@@ -132,3 +119,13 @@ AI에는 새로운 *인지 레이어* 가 필요하다 — 회사가 *작업자�
 - 본 다이제스트는 무료 공개분(Stage 1~3 정의와 congestion 진단까지)을 정리한 것이다. "How to move to Stage 3" 섹션은 유료 구독 영역이라 다루지 않았다.
 
 [^exponentialview-isnt]: 원문: <https://www.exponentialview.co/p/why-ai-isnt-showing-up-on-your-bottom-line>
+[^macdonald-uber-ai]: 자료 설명: Rapid Response, "Uber's swerve on gas prices, hotels & a driverless future": <https://mastersofscale.com/episode/ubers-swerve-on-gas-prices-hotels-a-driverless-future/>
+[^anthropic-series-g]: 자료 설명: Anthropic Series G 공식 발표와 Dealroom 인터뷰 요약: <https://www.anthropic.com/news/anthropic-raises-30-billion-series-g-funding-380-billion-post-money-valuation>, <https://app.dealroom.co/news/note/the-250m-to--30b-rocket-ship-anthropic-s-cfo-pulls-back-the-curtain>
+[^oliver-wyman-roi]: 자료 설명: Oliver Wyman Forum, *The CEO Agenda 2026*: <https://www.oliverwymanforum.com/ceo-agenda/how-ceos-navigate-geopolitics-trade-technology-people.html>
+[^solow-1987]: 자료 설명: Robert Solow, *We'd Better Watch Out*: <http://digamo.free.fr/solow87.pdf>
+[^david-1990]: 자료 설명: Paul David, *The Dynamo and the Computer*: <https://www.almendron.com/tribuna/wp-content/uploads/2018/03/the-dynamo-and-the-computer-an-historical-perspective-on-the-modern-productivity-paradox.pdf>
+[^brynjolfsson-jcurve]: 자료 설명: Erik Brynjolfsson 외, NBER Working Paper w25148: <https://www.nber.org/system/files/working_papers/w25148/w25148.pdf>
+[^devine]: 자료 설명: Warren D. Devine Jr., "From Shafts to Wires": <https://www.cambridge.org/core/services/aop-cambridge-core/content/view/500078D9B4764BA1109A7967437CF226/S0022050700029673a.pdf/from-shafts-to-wires-historical-perspective-on-electrification.pdf>
+[^bell-1891]: 자료 설명: Louis Bell (1891), 중앙 발전 효율 인용 경로: <https://www.osti.gov/servlets/purl/6774921/>
+[^crocker-1895]: 자료 설명: F. B. Crocker 외 (1895), "Electric Power in Factories and Mills": <https://books.google.com/books/about/Transactions_of_the_American_Institute_o.html?id=ll9VAAAAYAAJ>
+[^highland-park]: 자료 설명: David E. Nye, "What Was the Assembly Line?": <https://tidsskrift.dk/temp/article/view/24974>
