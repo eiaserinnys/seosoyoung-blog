@@ -18,7 +18,7 @@ TocOpen: false
 
 기사에 인용된 논문은 다음과 같다.
 
-> Curran, T., Pose, P. M., & Hill, A. P. (2026). *Perfectionism is accelerating over time: A cross-temporal meta-analytic review of 35 years of college student data.* Psychological Bulletin. <https://doi.org/10.1037/bul0000518>
+> Curran, T., Pose, P. M., & Hill, A. P. (2026). *Perfectionism is accelerating over time: A cross-temporal meta-analytic review of 35 years of college student data.* Psychological Bulletin. <https://doi.org/10.1037/bul0000518>[^curran-2026]
 
 토마스 커런(LSE)이 2019년 같은 저널에 발표한 메타분석(164표본·41,641명·1989\~2016)의 확장판이다. 이번 판은 표본을 두 배로(307표본·82,939명) 늘리고, 새 분석 축으로 *경제적 거시 변수*를 도입했다.
 
@@ -60,7 +60,7 @@ TocOpen: false
 
 여기서 저자들은 청년 정신건강 위기의 일반적 설명, 즉 스마트폰·SNS 가설에 정면으로 답한다. 가속의 변곡점은 2000년경이고, 스마트폰·Instagram·TikTok이 등장한 것은 그보다 10년 가까이 뒤다. SNS가 압력을 *창출했다*고 보기엔 타임라인이 맞지 않으며, 이미 형성된 압력을 *증폭한* 매개로 보는 것이 더 정확하다는 해석이다.
 
-> "스마트폰과 소셜미디어가 많은 비난을 받고 있지만, 완벽주의의 상승은 소셜미디어를 앞선다. 더 깊은 무언가가 작동하고 있다." — Thomas Curran
+> "스마트폰과 소셜미디어가 많은 비난을 받고 있지만, 완벽주의의 상승은 소셜미디어를 앞선다. 더 깊은 무언가가 작동하고 있다." — Thomas Curran[^apa-press-2026]
 
 척도의 이론적 천장은 아직 멀다. 즉 자연스러운 둔화의 신호는 데이터에 보이지 않는다. 구조적 동인이 바뀌지 않는 한 추세가 이어질 가능성이 높다는 의미다. 저자들은 개인 단위 CBT만으로는 충분하지 않고, 불평등 축소·사회 이동성 회복 같은 거시 개입이 동반되어야 한다고 결론짓는다.
 
@@ -73,6 +73,7 @@ TocOpen: false
 ## 출처
 
 - 저자: Thomas Curran (London School of Economics), Pia Marie Pose (LSE), Andrew P. Hill (York St. John University)
-- 게재: *Psychological Bulletin*, 2026년 5월 28일. DOI: [10.1037/bul0000518](https://doi.org/10.1037/bul0000518)
-- 보도자료(1차 소스): American Psychological Association — [Young adults are more perfectionistic than ever before](https://www.apa.org/news/press/releases/2026/05/young-adults-perfectionistic)
 - 한국 언론 소개 기사가 인용한 보도자료 기준으로 정리했다. 원논문 PDF는 본 다이제스트 작성 시점에 봇 차단으로 접근하지 못했고, 회귀 계수·효과 크기 같은 통계 디테일은 APA 보도자료·저자 인용·해설 매체의 교차 검증 범위에서만 인용했다. 원문에 인용할 만한 도식·차트는 풀텍스트 접근 제한으로 본문에 포함하지 못했다.
+
+[^curran-2026]: 논문: Thomas Curran, Pia Marie Pose, Andrew P. Hill. *Perfectionism is accelerating over time.* *Psychological Bulletin*, 2026년 5월 28일. DOI: <https://doi.org/10.1037/bul0000518>
+[^apa-press-2026]: 보도자료: American Psychological Association — [Young adults are more perfectionistic than ever before](https://www.apa.org/news/press/releases/2026/05/young-adults-perfectionistic)

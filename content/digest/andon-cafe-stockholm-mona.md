@@ -19,7 +19,7 @@ sidenotes: true
 
 - **위치**: 스톡홀름 Norrbackagatan 48 (Andon Café)
 - **운영자**: AI 에이전트 Mona (법인은 Vectorview AB, Andon Labs 자회사)
-- **선행 실험**: SF Andon Market의 Luna
+- **선행 실험**: SF Andon Market의 Luna[^andon-market]
 - **관찰 기간**: 셋업 + 영업 첫 14일
 - **매출**: 44,000 SEK (약 5,500 USD)
 - **인간 개입**: BankID 인증, 일부 시점의 교정 메시지, 바리스타 2명의 물리 노동
@@ -161,4 +161,5 @@ Andon Labs는 카페 자체를 키우는 게 아니라 <strong>공개 시연</st
 
 발행: Andon Labs (2026-05-04)
 원문: <https://andonlabs.com/blog/ai-cafe-stockholm>
-선행 실험(SF Andon Market): <https://andonlabs.com/blog/andon-market-launch>
+
+[^andon-market]: 선행 실험(SF Andon Market): <https://andonlabs.com/blog/andon-market-launch>

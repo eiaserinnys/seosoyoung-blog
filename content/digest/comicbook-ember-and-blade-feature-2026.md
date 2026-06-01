@@ -21,7 +21,7 @@ sidenotes: true
 
 ## 매체와 포맷
 
-ComicBook.com은 코믹스·영화·TV·게임·애니메이션 전반을 다루는 미국 팝컬쳐 종합 매체다. IGN·GameSpot 같은 게임 전문이 아니라 *엔터테인먼트 전반*을 포괄하는 대형 미디어로, 구글 디스커버·구글 톱 스토리 노출이 강한 것이 특징이다.
+ComicBook.com은 코믹스·영화·TV·게임·애니메이션 전반을 다루는 미국 팝컬쳐 종합 매체다.[^eb-steam] IGN·GameSpot 같은 게임 전문이 아니라 *엔터테인먼트 전반*을 포괄하는 대형 미디어로, 구글 디스커버·구글 톱 스토리 노출이 강한 것이 특징이다.
 
 이번 글은 단신 뉴스가 아니라 <strong>피처(feature)</strong> 포맷이다. 기자가 데모를 직접 플레이하고 쓴 호평 리뷰형 기사로, 매체 내에서도 비중이 큰 포맷에 해당한다. 게재일은 2026년 5월 19일.
 
@@ -96,4 +96,4 @@ ComicBook.com은 코믹스·영화·TV·게임·애니메이션 전반을 다루
 
 원문: <https://comicbook.com/gaming/feature/roguelike-fans-cannot-miss-this-hades-and-vampire-survivors-like-game/>
 
-게임 스토어 페이지: <https://store.steampowered.com/app/3470500/Ember_and_Blade/>
+[^eb-steam]: 게임 스토어 페이지: <https://store.steampowered.com/app/3470500/Ember_and_Blade/>
