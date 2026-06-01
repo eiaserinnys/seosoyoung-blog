@@ -9,6 +9,7 @@ cover:
   image: "/images/cover-tuna-2-less-is-more.jpg"
 ShowToc: true
 TocOpen: false
+sidenotes: true
 ---
 
 ## 복잡한 것을 빼면 오히려 나아진다

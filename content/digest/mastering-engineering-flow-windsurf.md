@@ -6,6 +6,7 @@ categories: ["다이제스트"]
 summary: "Mastering Engineering Flow with Windsurf — Eashan Sinha"
 ShowToc: true
 TocOpen: false
+sidenotes: true
 ---
 
 > AI-Assisted Engineering Talk #27/27

@@ -6,6 +6,7 @@ categories: ["다이제스트"]
 summary: "Mozilla가 agentic harness 파이프라인을 구축해 Firefox 150에서 271개 잠재 보안 버그를 발견·수정한 과정. 핵심은 모델보다 파이프라인이며, 정적 분석의 false positive 한계는 동적 testcase 검증으로 돌파됐다."
 ShowToc: true
 TocOpen: false
+sidenotes: true
 ---
 
 ## 3줄 요약

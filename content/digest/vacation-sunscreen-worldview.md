@@ -6,6 +6,7 @@ categories: ["다이제스트"]
 summary: "미국 선크림 브랜드 Vacation이 '1980년대 해변 세계관'을 일관되게 구축하여, 런칭 3년 만에 연 매출 590억원을 달성한 사례를 분석한다."
 ShowToc: true
 TocOpen: false
+sidenotes: true
 ---
 
 ## 3줄 요약

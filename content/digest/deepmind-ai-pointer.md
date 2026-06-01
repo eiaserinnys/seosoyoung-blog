@@ -6,6 +6,7 @@ categories: ["다이제스트"]
 summary: "Google DeepMind가 50년 된 마우스 포인터를 Gemini로 증강하는 실험을 공개했다. 정밀한 프롬프트 대신 가리키기와 자연스러운 단축 어휘로 의도를 전달하는 네 가지 인터랙션 원칙을 제시한다."
 ShowToc: true
 TocOpen: false
+sidenotes: true
 ---
 
 ![DeepMind AI 마우스 포인터 컨셉 — 3개의 커서가 음성 명령 'Move this', 'Merge those', 'Add that'와 함께 표시된 인터페이스 mockup](/images/deepmind-ai-pointer/cover.png)

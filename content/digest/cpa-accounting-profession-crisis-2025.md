@@ -6,6 +6,7 @@ categories: ["다이제스트"]
 summary: "미국 CPA 시험 첫 응시자가 5년 만에 33% 감소했다. 150시간 교육 요건이 품질은 높이지 못한 채 진입만 차단하고 있다는 진단과, 자격 경로를 유연화하자는 제안."
 ShowToc: true
 TocOpen: false
+sidenotes: true
 ---
 
 ## 3줄 요약

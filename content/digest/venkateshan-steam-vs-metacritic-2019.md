@@ -6,6 +6,7 @@ categories: ["다이제스트"]
 summary: "Karthik Venkateshan이 2019년에 Steam 유저 리뷰와 Metacritic 점수를 매출(units sold)과 회귀시켜 비교한 분석. Superstar 타이틀에선 유저 리뷰가 Metacritic을 누르고 더 강한 매출 설명력을 보이지만, Indie에선 유저 리뷰조차 매출과 유의미한 관계를 잃어버린다."
 ShowToc: true
 TocOpen: false
+sidenotes: true
 ---
 
 ## 3줄 요약

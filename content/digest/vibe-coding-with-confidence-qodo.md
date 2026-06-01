@@ -6,6 +6,7 @@ categories: ["다이제스트"]
 summary: "Vibe coding이 빠르게 코드를 뽑아내는 데 성공했지만, 프로덕션에서는 그것만으로 부족합니다."
 ShowToc: true
 TocOpen: false
+sidenotes: true
 ---
 
 > AI-Assisted Engineering Talk #17/27

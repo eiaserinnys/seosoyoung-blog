@@ -6,6 +6,7 @@ categories: ["다이제스트"]
 summary: "이미지 한 장에서 5분 안에 3D 환경·오브젝트·사운드를 만들어내는 Claude 스킬셋. World Labs Marble, FAL Hunyuan 3D, ElevenLabs SFX를 8개의 원자 스킬로 오케스트레이션한다."
 ShowToc: true
 TocOpen: false
+sidenotes: true
 ---
 
 ![image-blaster 데모](/images/image-blaster-skillset/cover.gif)

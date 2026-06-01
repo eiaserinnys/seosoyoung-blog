@@ -6,6 +6,7 @@ categories: ["다이제스트"]
 summary: "Karpathy의 LLM Wiki 패턴이 에이전트 스케일에서 깨지는 이유를 분석하고, 구조화된 에이전트 메모리 설계 원칙과 하이브리드 아키텍처를 제안한다."
 ShowToc: true
 TocOpen: false
+sidenotes: true
 ---
 
 ## 3줄 요약

@@ -6,6 +6,7 @@ categories: ["다이제스트"]
 summary: "Andon Labs가 AI 에이전트 Mona에게 스톡홀름의 실제 카페를 자율 운영하게 한 14일간의 기록. SF Luna 실험에 이은 두 번째 실물 시연으로, 관료제·채용·공급망에서 드러난 프런티어 AI의 능력과 한계를 보여준다."
 ShowToc: true
 TocOpen: false
+sidenotes: true
 ---
 
 ## 3줄 요약

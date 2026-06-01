@@ -6,6 +6,7 @@ categories: ["다이제스트"]
 summary: "RLHF 정렬 모델의 mode collapse는 알고리즘 한계가 아니라 preference data에 박힌 typicality bias가 원인이다. '5개 답을 확률과 함께 생성하라'는 단순 prompting trick(Verbalized Sampling)으로 사전훈련 다양성을 1.6\\~2.1배 회복할 수 있음을 이론·실험으로 보인다."
 ShowToc: true
 TocOpen: false
+sidenotes: true
 ---
 
 ## 3줄 요약

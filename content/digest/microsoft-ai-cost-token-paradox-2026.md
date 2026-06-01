@@ -10,6 +10,7 @@ cover:
   image: "/images/microsoft-ai-cost-token-paradox-2026/cover-nadella.webp"
 images:
   - "/images/microsoft-ai-cost-token-paradox-2026/cover-nadella.webp"
+sidenotes: true
 ---
 
 ## 3줄 요약

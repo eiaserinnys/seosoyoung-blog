@@ -6,6 +6,7 @@ categories: ["다이제스트"]
 summary: "Nolan Lawson이 'slop cannon' 통념(LLM 코딩 = 빠르고 저품질)을 정면으로 반박하며, 다중 모델 PR 리뷰 스킬로 LLM을 느리지만 고품질 코드 작성에 쓰는 방법을 정리한다. 결과는 velocity 상승이 아니라 코드베이스 헬스와 친밀도다."
 ShowToc: true
 TocOpen: false
+sidenotes: true
 ---
 
 ## 3줄 요약

@@ -6,6 +6,7 @@ categories: ["다이제스트"]
 summary: "Cactus Compute가 Gemini 3.1을 26M 파라미터로 증류한 함수 호출 전용 모델. FFN을 통째로 들어낸 인코더-디코더 'Simple Attention Network'와 INT4 QAT, 게이트드 잔차, 토큰 가중 손실 등 작은 모델을 위한 설계 결정을 정리한다."
 ShowToc: true
 TocOpen: false
+sidenotes: true
 ---
 
 ## 3줄 요약

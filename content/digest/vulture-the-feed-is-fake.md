@@ -6,6 +6,7 @@ categories: ["다이제스트"]
 summary: "Vulture(New York Magazine)의 2026년 5월 르포. SNS 피드의 약 90%가 'clipping' 산업이 만든 위장 광고이며, 알고리즘·인간 게이트키퍼·여론까지 같은 회로에서 위조되는 현 상태를 추적한 장문 리포팅이다."
 ShowToc: true
 TocOpen: false
+sidenotes: true
 ---
 
 ![Vulture, "The Feed Is Fake" 커버 일러스트](/images/vulture-the-feed-is-fake/cover.jpg "원문: vulture.com / New York Magazine")

@@ -6,6 +6,7 @@ categories: ["다이제스트"]
 summary: "LLM이 거짓 신념 과제의 사소한 변형에서 실패하는 원인을 SCALPEL 기법으로 해부한 연구. 실패의 핵심은 단어 이해가 아니라 '보기→인식하기'라는 상식적 추론의 부재다."
 ShowToc: true
 TocOpen: false
+sidenotes: true
 ---
 
 ## 3줄 요약

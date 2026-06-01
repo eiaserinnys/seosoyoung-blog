@@ -8,6 +8,7 @@ cover:
   image: "/images/cover-arc-agi-3-how-ai-fails.jpg"
 ShowToc: true
 TocOpen: false
+sidenotes: true
 ---
 
 ## 점수가 아니라 틀리는 방식이 중요하다

@@ -6,6 +6,7 @@ categories: ["다이제스트"]
 summary: "Building with Anthropic Claude: Prompt Workshop — Zack Witten"
 ShowToc: true
 TocOpen: false
+sidenotes: true
 ---
 
 > AI-Assisted Engineering Talk #11/27

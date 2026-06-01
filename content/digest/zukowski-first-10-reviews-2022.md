@@ -6,6 +6,7 @@ categories: ["다이제스트"]
 summary: "Steam은 유료 구매 리뷰가 10개 쌓이기 전까지 게임을 사실상 숨긴다. 10개 임계값을 통과하는 순간 Discovery Queue 트래픽이 비선형으로 점프한다 — 리뷰 *점수* 임계값과는 별개의 가시성 메커니즘이다."
 ShowToc: true
 TocOpen: false
+sidenotes: true
 ---
 
 ## 3줄 요약

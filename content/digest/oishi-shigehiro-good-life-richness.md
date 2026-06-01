@@ -6,6 +6,7 @@ categories: ["다이제스트"]
 summary: "30년간 행복을 연구한 시카고대 오이시 시게히로 교수가 제안하는 좋은 삶의 제3경로 — 행복도 의미도 아닌, 관점을 바꿔주는 우여곡절로 채워진 '정신적으로 풍요로운 삶'."
 ShowToc: true
 TocOpen: false
+sidenotes: true
 ---
 
 ## 3줄 요약

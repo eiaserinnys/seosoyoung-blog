@@ -7,6 +7,7 @@ summary: "LLM에게 랜덤 문자열을 생성하게 한 뒤 해시 연산을 �
 math: true
 cover:
   image: "/images/cover-llm-can-roll-dice.jpg"
+sidenotes: true
 ---
 
 ## 결론: LLM은 자기 자신으로 주사위를 만들 수 있다

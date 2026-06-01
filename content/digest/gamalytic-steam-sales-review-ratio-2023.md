@@ -6,6 +6,7 @@ categories: ["다이제스트"]
 summary: "Steam의 sales/review 비율을 9개 변수(연도·가격·할인·평점·장르·플레이타임·인구·청중·인기)로 분해한 Gamalytic의 2023년 분석. 평점과 비율의 관계가 단순한 양의 상관이 아니라 U자형이라는 점이 핵심이다."
 ShowToc: true
 TocOpen: false
+sidenotes: true
 ---
 
 ## 3줄 요약

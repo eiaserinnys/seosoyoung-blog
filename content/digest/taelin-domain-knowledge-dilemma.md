@@ -6,6 +6,7 @@ categories: ["다이제스트"]
 summary: "AGENTS.md, RAG, Skills 어느 것도 에이전트의 도메인 지식 문제를 풀지 못한다. 가시성과 검색성 사이의 딜레마를 벗어나는 길은 도메인 파인튜닝뿐이라는 주장."
 ShowToc: true
 TocOpen: false
+sidenotes: true
 ---
 
 ## 3줄 요약

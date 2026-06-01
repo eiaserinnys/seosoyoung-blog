@@ -6,6 +6,7 @@ categories: ["다이제스트"]
 summary: "지바현 이치카와시의 사서이자 멀티미디어 아티스트 쿠사모리 후유비(草森冬弥)의 생성형 AI 단편 「Be my double」이 칸과 같은 도시·같은 기간에 열린 프렌치 리비에라 영화제 마이크로 쇼트 부문 최우수상을 받았다."
 ShowToc: true
 TocOpen: false
+sidenotes: true
 ---
 
 ## 3줄 요약

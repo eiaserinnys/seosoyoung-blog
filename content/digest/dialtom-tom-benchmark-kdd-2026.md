@@ -6,6 +6,7 @@ categories: ["다이제스트"]
 summary: "자연 대화 기반 ToM 벤치마크. 정신 상태 식별(Literal ToM)과 대화 궤적 예측(Functional ToM)을 분리 평가하여, LLM이 정신 상태를 '알면서도 활용하지 못하는' 추론 비대칭을 밝혀냈다."
 ShowToc: true
 TocOpen: false
+sidenotes: true
 ---
 
 ## 3줄 요약

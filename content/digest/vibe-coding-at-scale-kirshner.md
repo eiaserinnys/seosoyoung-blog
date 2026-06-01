@@ -6,6 +6,7 @@ categories: ["다이제스트"]
 summary: "4천만 개발자의 에디터를 만드는 사람이 묻는 질문 하나."
 ShowToc: true
 TocOpen: false
+sidenotes: true
 ---
 
 > AI-Assisted Engineering Talk #19/27

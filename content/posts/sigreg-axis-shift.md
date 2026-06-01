@@ -10,6 +10,7 @@ cover:
 ShowToc: true
 TocOpen: true
 math: true
+sidenotes: true
 ---
 
 > **3줄 요약**

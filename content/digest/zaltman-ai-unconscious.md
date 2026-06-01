@@ -6,6 +6,7 @@ categories: ["다이제스트"]
 summary: "89세 하버드 명예교수 제럴드 잘트만이 ZMET 기법과 심층 은유, '대리 사고' 비판, 만화경 사고법을 통해 AI 시대에 무의식을 길어 올리는 사고법을 제안한다."
 ShowToc: true
 TocOpen: false
+sidenotes: true
 ---
 
 ## 3줄 요약

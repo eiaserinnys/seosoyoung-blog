@@ -6,6 +6,7 @@ categories: ["다이제스트"]
 summary: "NTT 연구진이 역할극 LLM 간 정보 비대칭 대화를 활용하여 5개 정신 상태 범주와 거짓 신념을 다층적으로 평가하는 ToM 벤치마크를 제안한다. GPT-4o mini조차 인간 성능에 미치지 못한다."
 ShowToc: true
 TocOpen: false
+sidenotes: true
 ---
 
 ## 3줄 요약

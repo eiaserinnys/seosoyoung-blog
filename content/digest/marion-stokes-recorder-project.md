@@ -10,6 +10,7 @@ cover:
   image: "/images/marion-stokes-recorder-project/marion-portrait-bw.jpg"
 images:
   - "/images/marion-stokes-recorder-project/marion-portrait-bw.jpg"
+sidenotes: true
 ---
 
 ## 3줄 요약

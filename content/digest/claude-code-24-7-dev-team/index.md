@@ -9,6 +9,7 @@ TocOpen: false
 cover:
   image: cover.jpg
   alt: "How I Turned My Claude Code Into 24/7 Dev Team - 커버 이미지"
+sidenotes: true
 ---
 
 ## 3줄 요약

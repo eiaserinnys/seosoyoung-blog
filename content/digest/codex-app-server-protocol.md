@@ -6,6 +6,7 @@ categories: ["다이제스트"]
 summary: "OpenAI Codex의 리치 인터페이스(VS Code 확장 등)를 구동하는 JSON-RPC 2.0 기반 양방향 통신 프로토콜의 전체 구조를 정리한다."
 ShowToc: true
 TocOpen: false
+sidenotes: true
 ---
 
 ## 3줄 요약

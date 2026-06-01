@@ -6,6 +6,7 @@ categories: ["다이제스트"]
 summary: "METR이 시니어 OSS 개발자 16명·246 이슈를 무작위 통제하여 측정한 결과, AI 사용 시 19% *더 오래* 걸렸으면서도 같은 개발자는 AI가 자신을 20% 빠르게 했다고 인식하였다. 자기 보고 생산성 통계의 신뢰성을 흔드는 39%포인트 간극이다."
 ShowToc: true
 TocOpen: false
+sidenotes: true
 ---
 
 > Joel Becker · Nate Rush · Beth Barnes · David Rein / METR / 2025.07.10

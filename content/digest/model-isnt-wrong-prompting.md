@@ -6,6 +6,7 @@ categories: ["다이제스트"]
 summary: "The Model Isn't Wrong — You're Just Bad at Prompting"
 ShowToc: true
 TocOpen: false
+sidenotes: true
 ---
 
 > AI-Assisted Engineering Talk #9/27

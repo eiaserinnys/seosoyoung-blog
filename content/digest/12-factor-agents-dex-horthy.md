@@ -6,6 +6,7 @@ categories: ["다이제스트"]
 summary: "100여 SaaS 빌더와 대화한 끝에 내린 결론 하나."
 ShowToc: true
 TocOpen: false
+sidenotes: true
 ---
 
 > AI-Assisted Engineering Talk #1/27

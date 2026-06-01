@@ -6,6 +6,7 @@ categories: ["다이제스트"]
 summary: "AI는 일자리를 단순히 빼앗는 것이 아니다. 전문직 노동을 소비자의 무급 자기서비스로 전가한다. 세탁기에서 시작된 패턴이 회계·법률·의료까지 확장되고 있다는, Oxford 경제학자 Carl Benedikt Frey의 진단."
 ShowToc: true
 TocOpen: false
+sidenotes: true
 ---
 
 ## 3줄 요약

@@ -6,6 +6,7 @@ categories: ["다이제스트"]
 summary: "외주를 쓰면서 solo dev를 자칭할 수 있는가? 영어권 X에서 게임 개발자들 사이에 벌어진 정의 논쟁을 정리한다."
 ShowToc: true
 TocOpen: false
+sidenotes: true
 ---
 
 ## 3줄 요약

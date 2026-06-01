@@ -6,6 +6,7 @@ categories: ["다이제스트"]
 summary: "정보 비대칭이 자연스럽게 발생하는 대화 맥락에서 LLM의 Theory of Mind을 스트레스 테스트한 EMNLP 2023 논문. 최선의 LLM도 인간과 큰 격차를 보이며, CoT와 파인튜닝으로도 해소되지 않는다."
 ShowToc: true
 TocOpen: false
+sidenotes: true
 ---
 
 ## 3줄 요약

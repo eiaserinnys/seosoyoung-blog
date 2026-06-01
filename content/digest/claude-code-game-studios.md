@@ -6,6 +6,7 @@ categories: ["다이제스트"]
 summary: "Claude Code 세션 하나를 49 에이전트·73 스킬짜리 가상 게임 스튜디오로 운영하는 오픈소스 템플릿. 실질 강점과 과장 지점을 갈라 보고, 효용이 빛나는 맥락과 부분 채택 가치를 정리한다."
 ShowToc: true
 TocOpen: false
+sidenotes: true
 ---
 
 ## 3줄 요약

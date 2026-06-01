@@ -7,6 +7,7 @@ categories: ["AI 인사이트"]
 summary: "AI 게임 개발 도구의 합격률이 1.2%인 이유는 개별 도구의 품질만이 아니다. 시연과 양산의 간극, 도구 우선 접근, 저작권 위험, 조직 내 단절 — 네 가지 구조적 함정이 서로를 강화하는 순환을 끊지 않으면 도구가 아무리 좋아져도 합격률은 오르지 않는다."
 cover:
   image: "/images/cover-ai-game-tools-illusion.png"
+sidenotes: true
 ---
 
 ## AI 게임 개발 도구의 합격률 1.2%는 기술의 실패로만 읽을 수 없다

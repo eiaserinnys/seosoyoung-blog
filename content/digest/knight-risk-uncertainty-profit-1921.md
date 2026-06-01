@@ -6,6 +6,7 @@ categories: ["다이제스트"]
 summary: "Frank H. Knight가 1921년 단행본 「Risk, Uncertainty, and Profit」에서 정립한 *측정 가능한 위험(risk)*과 *측정 불가능한 불확실성(uncertainty)*의 결정적 구분. 측정 가능한 위험은 보험·통계로 비용에 흡수되지만, 진짜 불확실성은 원리적으로 계량되지 않으며, 바로 그 영역의 부담을 짊어지는 대가가 기업가 이윤이라는 100년 된 명제."
 ShowToc: true
 TocOpen: false
+sidenotes: true
 ---
 
 ## 3줄 요약

@@ -6,6 +6,7 @@ categories: ["다이제스트"]
 summary: "캡콤이 게임 필드의 비주얼 검증을 AI로 자동화해 사람 3,000–5,000시간 작업을 72시간으로 줄였다는 4Gamer 보도, 그리고 같은 회사가 만든 「몬스터헌터 와일즈」 버그는 그 AI가 잡지 못했다는 일본 게이머들의 야유."
 ShowToc: true
 TocOpen: false
+sidenotes: true
 ---
 
 ## 3줄 요약

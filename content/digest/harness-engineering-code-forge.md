@@ -6,6 +6,7 @@ categories: ["다이제스트"]
 summary: "프롬프트는 부탁이지 강제가 아니다. code-forge 프로젝트를 만들며 사고 모델 단순화, 에이전트 컴파일, hooks 기반 하네스 3층 구조, 멀티모델 협업까지 도달한 실전 여정 기록."
 ShowToc: true
 TocOpen: false
+sidenotes: true
 ---
 
 ## 3줄 요약

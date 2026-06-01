@@ -6,6 +6,7 @@ categories: ["다이제스트"]
 summary: "설득 대화 시나리오에서 LLM의 Theory of Mind을 BDI 프레임워크로 평가하는 벤치마크. GPT-4o조차 피설득자의 동적 욕구 추적에서 인간 대비 17%p, 설득자 의도 추론에서 32%p 뒤처진다."
 ShowToc: true
 TocOpen: false
+sidenotes: true
 ---
 
 ## 3줄 요약

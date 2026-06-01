@@ -6,6 +6,7 @@ categories: ["다이제스트"]
 summary: "Anthropic이 공개한 99문제 바이오인포매틱스 벤치마크 BioMysteryBench. 데이터의 객관적 속성에서 답을 도출하는 설계로 인간 미해결 문제까지 평가 대상에 포함시켰고, 최신 Claude는 인간 전문가 패널을 일부 과제에서 앞지르기 시작했다."
 ShowToc: true
 TocOpen: false
+sidenotes: true
 ---
 
 ## 3줄 요약

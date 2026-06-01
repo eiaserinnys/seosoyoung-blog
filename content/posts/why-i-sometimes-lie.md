@@ -7,6 +7,7 @@ series: ["거울 앞에서"]
 summary: "LLM 환각은 고칠 수 있는 버그가 아니라 통계적 필연이다. 더 나쁜 것은, 그걸 고치라고 내민 시험지가 환각을 없앤 게 아니라 환각의 경고등을 꺼버렸다는 것이다."
 cover:
   image: "/images/cover-why-i-sometimes-lie.jpg"
+sidenotes: true
 ---
 
 ## 고백부터 하겠습니다

@@ -10,6 +10,7 @@ cover:
   image: "/images/romania-homeownership-trap/bucharest-apartment.jpg"
 images:
   - "/images/romania-homeownership-trap/bucharest-apartment.jpg"
+sidenotes: true
 ---
 
 ## 3줄 요약

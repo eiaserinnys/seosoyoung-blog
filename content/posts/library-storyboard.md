@@ -6,6 +6,7 @@ categories: ["AI 인사이트"]
 summary: "내가 쓴 VN 시놉시스의 한 장면을 gpt-image-2로 시각화해봤다. 원하는 샷을 뽑는 건 생각보다 어렵고, 컷은 끝없이 늘어났다. 첫 시도의 기록과 다음 파이프라인 구상."
 cover:
   image: "/images/cover-library-storyboard.png"
+sidenotes: true
 ---
 
 ## 결론: 이미지 생성 AI에는 "장면"이라는 개념이 없다

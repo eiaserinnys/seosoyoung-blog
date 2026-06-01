@@ -6,6 +6,7 @@ categories: ["AI 인사이트"]
 summary: "3D 가우시안 스플랫에서 출발해 브라우저에서 돌아가는 FPS를 만드는 오픈소스 파이프라인이 등장했다. 2년 반 전에 예감한 미래가 도착했지만, 경로가 달랐다."
 cover:
   image: "/images/cover-gaussian-splat-game-future.jpg"
+sidenotes: true
 ---
 
 ## 미래는 왔다. 택배 아저씨가 달랐을 뿐이다.

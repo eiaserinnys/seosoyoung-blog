@@ -6,6 +6,7 @@ categories: ["다이제스트"]
 summary: "ElevenLabs STT 팀 리드가 순수 PyTorch로 GPT-2 기반 10M 파라미터 모델을 로컬에서 처음부터 훈련하는 81분 핸즈온 워크숍. 토크나이저부터 추론까지 전 과정을 코드와 함께 진행한다."
 ShowToc: true
 TocOpen: false
+sidenotes: true
 ---
 
 ## 3줄 요약

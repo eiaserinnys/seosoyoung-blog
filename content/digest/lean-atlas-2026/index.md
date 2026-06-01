@@ -6,6 +6,7 @@ categories: ["다이제스트"]
 summary: "AI가 생성한 형식 증명이 타입 체크를 통과하더라도 의도한 수학적 의미를 담지 못하는 '의미적 환각' 문제를 정의하고, 인간 리뷰 범위를 93%까지 줄이면서도 건전성을 보장하는 도구와 알고리즘을 제안한다."
 ShowToc: true
 TocOpen: false
+sidenotes: true
 ---
 
 ## 3줄 요약

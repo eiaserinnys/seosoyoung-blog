@@ -6,6 +6,7 @@ categories: ["다이제스트"]
 summary: "X의 한 스레드가 현대 호러에서 부상한 '고문방 순회' 트롭을 짚고, 그 인기를 밀레니얼·Z세대의 감시 자본주의·긱 이코노미 불안으로 진단한다. 함께 읽을 평론 6편을 더해 트롭의 사회적 함의를 두텁게 본다."
 ShowToc: true
 TocOpen: false
+sidenotes: true
 ---
 
 ## 3줄 요약

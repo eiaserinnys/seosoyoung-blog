@@ -6,6 +6,7 @@ categories: ["다이제스트"]
 summary: "Factory AI CTO가 14분 안에 내린 진단 하나."
 ShowToc: true
 TocOpen: false
+sidenotes: true
 ---
 
 > AI-Assisted Engineering Talk #2/27

@@ -6,6 +6,7 @@ categories: ["다이제스트"]
 summary: "KAIST 연구진이 태아기 자발적 신경 활동에서 영감을 받아, 랜덤 노이즈 워밍업으로 신경망의 과신 문제를 해결하는 초기화 전략을 제안한다. Nature Machine Intelligence 2026."
 ShowToc: true
 TocOpen: false
+sidenotes: true
 ---
 
 ## 3줄 요약

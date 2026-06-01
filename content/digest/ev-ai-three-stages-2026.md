@@ -10,6 +10,7 @@ cover:
   image: "/images/ev-ai-three-stages-2026/stages-diagram.png"
 images:
   - "/images/ev-ai-three-stages-2026/stages-diagram.png"
+sidenotes: true
 ---
 
 ## 3줄 요약

@@ -6,6 +6,7 @@ categories: ["다이제스트"]
 summary: "AI 도구에 '엔지니어'라는 직책을 부여하는 순간, 사용자는 인간 엔지니어의 평가 기준—정확성, 자율 종결, 동료 검토 통과—으로 도구를 판단하기 시작합니다."
 ShowToc: true
 TocOpen: false
+sidenotes: true
 ---
 
 > AI-Assisted Engineering Talk #7/27

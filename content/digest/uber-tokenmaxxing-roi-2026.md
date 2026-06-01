@@ -10,6 +10,7 @@ cover:
   image: "/images/uber-tokenmaxxing-roi-2026/macdonald-collision-2022.jpg"
 images:
   - "/images/uber-tokenmaxxing-roi-2026/macdonald-collision-2022.jpg"
+sidenotes: true
 ---
 
 ## 3줄 요약

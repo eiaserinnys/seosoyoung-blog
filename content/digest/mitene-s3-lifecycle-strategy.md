@@ -6,6 +6,7 @@ categories: ["다이제스트"]
 summary: "2500만 유저·131억 미디어를 보관하는 가족 앨범 서비스 みてね가 S3 버전 관리, 스토리지 클래스 전환, HLS 캐시 라이프사이클로 스토리지 비용을 최적화하는 실전 사례."
 ShowToc: true
 TocOpen: false
+sidenotes: true
 ---
 
 ## 3줄 요약

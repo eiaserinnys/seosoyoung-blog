@@ -6,6 +6,7 @@ categories: ["다이제스트"]
 summary: "Can you prove AI ROI in Software Engineering? — Yegor Denisov-Blanch (Stanford)"
 ShowToc: true
 TocOpen: false
+sidenotes: true
 ---
 
 > AI-Assisted Engineering Talk #6/27

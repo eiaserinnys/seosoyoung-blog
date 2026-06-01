@@ -6,6 +6,7 @@ categories: ["다이제스트"]
 summary: "Claude의 인격을 설계하는 철학자 Amanda Askell이 밝히는 soul document의 철학 — 규칙이 아니라 덕성을, 도구가 아니라 인격을 훈련한다는 접근과 그 긴장."
 ShowToc: true
 TocOpen: false
+sidenotes: true
 ---
 
 > Vox · Future Perfect — Sigal Samuel (2026-01-28)

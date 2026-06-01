@@ -10,6 +10,7 @@ cover:
   image: "/images/netflix-service-topology-real-time-map/fig2-three-layers.png"
 images:
   - "/images/netflix-service-topology-real-time-map/fig2-three-layers.png"
+sidenotes: true
 ---
 
 ## 3줄 요약

@@ -6,6 +6,7 @@ categories: ["다이제스트"]
 summary: "Stack Overflow가 정리한 산업 매체 종합 + Stanford Digital Economy Lab의 ADP 거시 데이터: 22-25세 AI 노출 직군 -16% 상대 감소, 테크 인턴십 -30%, 고용주 37%가 신졸보다 AI를 고용하겠다고 답한다. 미국 본토에서 공급 측 봉쇄가 동시대로 진행 중이다."
 ShowToc: true
 TocOpen: false
+sidenotes: true
 ---
 
 > Phoebe Sajor / Stack Overflow Blog / 2025-12-26 (top-10 재게시)

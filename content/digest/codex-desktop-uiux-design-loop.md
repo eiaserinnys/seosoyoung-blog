@@ -6,6 +6,7 @@ categories: ["다이제스트"]
 summary: "OpenAI Codex Desktop을 시각적 빌더로 활용하는 방법론. build → screenshot → vision review → revise 루프로 AI UI 디자인의 '첫 초안 함정'을 벗어난다."
 ShowToc: true
 TocOpen: false
+sidenotes: true
 ---
 
 ## 3줄 요약

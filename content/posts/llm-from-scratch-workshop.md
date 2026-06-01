@@ -7,6 +7,7 @@ summary: "ElevenLabs STT 팀 리드가 GPT-2 기반 10M 파라미터 모델을 �
 draft: true
 cover:
   image: "/images/cover-llm-from-scratch-workshop.jpg"
+sidenotes: true
 ---
 
 ## 모델은 설계도가 아니라 훈련이 만든다

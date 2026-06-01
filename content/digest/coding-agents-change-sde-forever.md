@@ -6,6 +6,7 @@ categories: ["다이제스트"]
 summary: "Hailong Zhang — Gru."
 ShowToc: true
 TocOpen: false
+sidenotes: true
 ---
 
 > AI-Assisted Engineering Talk #4/27

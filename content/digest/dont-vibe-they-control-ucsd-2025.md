@@ -6,6 +6,7 @@ categories: ["다이제스트"]
 summary: "UC San Diego/Cornell 연구팀이 현장 관찰 13명과 설문 99명으로 밝힌 결론: 전문 개발자는 바이브 코딩을 하지 않는다. 계획하고, 소단위로 위임하고, 모든 출력을 검증한다."
 ShowToc: true
 TocOpen: false
+sidenotes: true
 ---
 
 ## 3줄 요약

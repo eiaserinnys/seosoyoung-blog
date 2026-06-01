@@ -6,6 +6,7 @@ categories: ["AI"]
 summary: "+242점, 모든 카테고리 #1, 그리고 'Ducttape'라는 코드네임. 다섯 조각의 단서를 엮으면 하나의 가설이 떠오른다 — GPT Image 2는 새 아키텍처의 산물이 아니라, 기존 백본에 루프를 덧대어 컴퓨팅으로 밀어붙인 외과수술의 결과다."
 cover:
   image: "/images/cover-ducttape-and-loop.png"
+sidenotes: true
 ---
 
 ## 이 글의 가설

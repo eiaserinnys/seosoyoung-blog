@@ -10,6 +10,7 @@ cover:
   image: "/images/linegames-ember-blade-playx4-2026/01-cover-cosplay.jpg"
 images:
   - "/images/linegames-ember-blade-playx4-2026/01-cover-cosplay.jpg"
+sidenotes: true
 ---
 
 ## 3줄 요약

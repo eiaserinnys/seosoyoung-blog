@@ -7,6 +7,7 @@ series: ["에이전트 하네스"]
 summary: "AI 에이전트 코드의 98.4%는 운영 인프라다. 더 큰 모델을 기다리는 것보다, 지금 있는 모델을 더 잘 감싸는 것이 승부의 핵심이다."
 cover:
   image: "/images/cover-revolution-outside-the-model.jpg"
+sidenotes: true
 ---
 
 ## 결론: 모델은 바뀌고, 하네스는 수렴한다

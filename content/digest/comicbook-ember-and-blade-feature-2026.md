@@ -10,6 +10,7 @@ cover:
   image: "/images/comicbook-ember-and-blade-feature-2026/Ember-Blade.jpg"
 images:
   - "/images/comicbook-ember-and-blade-feature-2026/Ember-Blade.jpg"
+sidenotes: true
 ---
 
 ## 3줄 요약

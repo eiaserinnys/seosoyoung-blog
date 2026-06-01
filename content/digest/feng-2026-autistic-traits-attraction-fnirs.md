@@ -10,6 +10,7 @@ cover:
   image: "/images/feng-2026-autistic-traits-attraction-fnirs/brain-connection.jpg"
 images:
   - "/images/feng-2026-autistic-traits-attraction-fnirs/brain-connection.jpg"
+sidenotes: true
 ---
 
 ## 3줄 요약

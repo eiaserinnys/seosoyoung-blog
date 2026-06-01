@@ -6,6 +6,7 @@ categories: ["다이제스트"]
 summary: "프론티어 랩의 토큰 가격이 빠르게 오르는 동안 DeepSeek 같은 OSS 모델은 30분의 1 수준에 머문다. SignalBloom AI는 저렴한 국가의 엔지니어 한 명 + LocalAI 조합이 곧 프론티어 추론 단독보다 경제적이 되는 임계가 다가오고 있으며, 이 동학이 프론티어 가격에 천장을 씌운다고 진단한다."
 ShowToc: true
 TocOpen: false
+sidenotes: true
 ---
 
 ## 3줄 요약

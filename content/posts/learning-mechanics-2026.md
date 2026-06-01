@@ -7,6 +7,7 @@ summary: "딥러닝은 왜 작동하는가? 14명의 연구자가 '학습 역학
 math: true
 cover:
   image: "/images/cover-learning-mechanics-2026.jpg"
+sidenotes: true
 ---
 
 ## 딥러닝은 아직 연금술이다 — 그러나 과학이 오고 있다

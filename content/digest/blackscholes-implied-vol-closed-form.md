@@ -7,6 +7,7 @@ summary: "50년간 수치 탐색으로만 풀리던 블랙-숄즈 내재 변동�
 math: true
 ShowToc: true
 TocOpen: false
+sidenotes: true
 ---
 
 ## 3줄 요약

@@ -6,6 +6,7 @@ categories: ["다이제스트"]
 summary: "안드레 카파시의 '바이브 코딩' 개념을 축으로, 카페 사장·가구 기업·디자인 스튜디오의 AI 활용 사례와 협업 원칙, 그리고 AI 슬롭의 위험을 정리한다."
 ShowToc: true
 TocOpen: false
+sidenotes: true
 ---
 
 ## 3줄 요약

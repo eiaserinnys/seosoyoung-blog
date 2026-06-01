@@ -6,6 +6,7 @@ categories: ["논문 소화"]
 summary: "현대 웹 데이터를 모두 빼고 1930년 이전 텍스트만으로 훈련한 13B 모델 talkie가 던지는 질문 — AI의 능력은 언어에서 오는가, 데이터에서 오는가."
 cover:
   image: "/images/cover-vintage-lm-mirror.jpg"
+sidenotes: true
 ---
 
 ## 우리가 '능력'이라 부르던 것의 상당 부분은 '기억'이었을지 모른다

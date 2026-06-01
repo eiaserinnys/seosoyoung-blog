@@ -6,6 +6,7 @@ categories: ["다이제스트"]
 summary: "Android 스마트폰을 카메라처럼 들고 흔들면 Blender 안 카메라가 따라 움직이는 애드온. v1.0.0에서 Google Play 배포·World Tracking·Streaming이 개선됐다. 기능보다 흥미로운 건, 스마트폰을 PC 응용프로그램의 외부 입력 장치로 끌어들이는 발상이다."
 ShowToc: true
 TocOpen: false
+sidenotes: true
 ---
 
 ![Blender Camera Controller v1.0.0](/images/blender-camera-controller-v1/cover.jpg)

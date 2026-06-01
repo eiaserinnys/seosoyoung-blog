@@ -6,6 +6,7 @@ categories: ["다이제스트"]
 summary: "GameDiscoverCo가 추적한 2025년 EA→1.0 졸업 게임 225개의 매출 분석. 1.0 첫 달 매출 중간값이 EA 첫 달의 70%였던 2023년 대비 2025년에는 약 40%로 후퇴했다는 시계열 변화가 핵심이다."
 ShowToc: true
 TocOpen: false
+sidenotes: true
 ---
 
 ![Steam Early Access Graduates in 2025 — GameDiscoverCo 데이터 기반 GAMES.GG 정리 표지](/images/steam-ea-graduates-2025/cover.png)

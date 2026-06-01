@@ -6,6 +6,7 @@ categories: ["다이제스트"]
 summary: "한 트윗이 '40억 년 깨지지 않았던 생물학의 규칙이 한 달에 두 번 깨졌다'고 알렸다. 원논문 두 편과 분자생물학자들의 비평을 대조해 보니, 새로운 메커니즘은 실재하나 도그마 붕괴는 과장이었다."
 ShowToc: true
 TocOpen: false
+sidenotes: true
 ---
 
 ## 3줄 요약

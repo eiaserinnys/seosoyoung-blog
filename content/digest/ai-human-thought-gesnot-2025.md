@@ -6,6 +6,7 @@ categories: ["다이제스트"]
 summary: "AI가 인간의 인지를 증강하면서 동시에 비판적 사고를 약화하고 집단 사고를 동질화한다는 역설을 체계적으로 분석한 연구 보고서."
 ShowToc: true
 TocOpen: false
+sidenotes: true
 ---
 
 ## 3줄 요약

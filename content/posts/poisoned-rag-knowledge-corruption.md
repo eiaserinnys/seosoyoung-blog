@@ -7,6 +7,7 @@ summary: "PoisonedRAG는 RAG 시스템의 지식 DB에 5개의 악성 텍스트�
 math: false
 cover:
   image: "/images/cover-poisoned-rag-knowledge-corruption.jpg"
+sidenotes: true
 ---
 
 ## RAG의 보안 구멍은 모델이 아니라 지식 DB에 있다

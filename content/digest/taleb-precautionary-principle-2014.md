@@ -6,6 +6,7 @@ categories: ["다이제스트"]
 summary: "Nassim Taleb 외 4인이 NYU Extreme Risk Initiative 워킹 페이퍼로 정리한 예방 원칙(PP)의 학술적 정의. 시스템적·비가역적 ruin 영역에서만 발동되는 non-naive PP를 fat tail·fragility·비대칭 불확실성의 형식 안에 위치시킨다."
 ShowToc: true
 TocOpen: false
+sidenotes: true
 ---
 
 ## 3줄 요약

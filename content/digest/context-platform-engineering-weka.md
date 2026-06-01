@@ -6,6 +6,7 @@ categories: ["다이제스트"]
 summary: "\"토큰 구독 서비스에 가입할 때 우리가 실제로 구매하는 것은 KV cache slot이다."
 ShowToc: true
 TocOpen: false
+sidenotes: true
 ---
 
 > AI-Assisted Engineering Talk #10/27

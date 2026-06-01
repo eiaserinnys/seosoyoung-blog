@@ -10,6 +10,7 @@ cover:
   image: "/images/persuading-llms-pnas-2026/fig1-compliance-bars.jpg"
 images:
   - "/images/persuading-llms-pnas-2026/fig1-compliance-bars.jpg"
+sidenotes: true
 ---
 
 ## 3줄 요약

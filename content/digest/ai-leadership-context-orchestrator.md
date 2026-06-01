@@ -6,6 +6,7 @@ categories: ["다이제스트"]
 summary: "가영은 강점코치가 정리한 AI 네이티브 시대 리더의 새 부담 — '검증의 부채' — 과 3가지 구조적 딜레마, 그리고 'Context Orchestrator'로의 전환 전략."
 ShowToc: true
 TocOpen: false
+sidenotes: true
 ---
 
 > 가영은 리더십 & 강점코치 · up-people 블로그 · 2026.05.11

@@ -6,6 +6,7 @@ categories: ["다이제스트"]
 summary: "AI로 노동자를 해고하면 소비자도 사라진다. 이 사실을 모든 기업이 알고 있어도, 경쟁이 과잉 자동화를 강제한다. 게임이론으로 증명된 덫과, 그 덫에서 빠져나오는 유일한 정책."
 ShowToc: true
 TocOpen: false
+sidenotes: true
 ---
 
 ## 3줄 요약

@@ -6,6 +6,7 @@ categories: ["다이제스트"]
 summary: "Arnaud Aubry가 Vampire Survivors와 Cities: Skylines II의 정반대 궤적을 통해, 출시 직후의 Steam 리뷰 점수가 위시리스트·IP·마케팅보다 강력한 매출 결정 요인임을 보인다."
 ShowToc: true
 TocOpen: false
+sidenotes: true
 ---
 
 ![원문 커버 이미지](/images/aubry-review-score-multiplier-2025/cover.jpg "출처: Arnaud Aubry, LinkedIn (2025-03-25)")
