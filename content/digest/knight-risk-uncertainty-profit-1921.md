@@ -11,7 +11,7 @@ sidenotes: true
 
 ## 3줄 요약
 
-1. Frank H. Knight(시카고대)가 1916년 박사학위 논문(코넬대)을 1921년 Houghton Mifflin에서 단행본으로 묶어 낸 「Risk, Uncertainty, and Profit」이며, *Knightian uncertainty* 명제의 정수가 압축된 단원은 Pt.III, Ch.VII "The Meaning of Risk and Uncertainty"다.
+1. Frank H. Knight(시카고대)가 1916년 박사학위 논문(코넬대)을 1921년 Houghton Mifflin에서 단행본으로 묶어 낸 「Risk, Uncertainty, and Profit」이며, *Knightian uncertainty* 명제의 정수가 압축된 단원은 Pt.III, Ch.VII "The Meaning of Risk and Uncertainty"다.[^meaning-1921]
 2. 핵심 진단: 일상에서 'risk'라 부르는 개념은 사실 *확률 분포가 알려진 측정 가능한 위험*과 *확률 분포 자체가 알려질 수 없는 불확실성* 두 가지를 뭉뚱그린 용어다. 두 영역은 경제 조직 안에서 인과적 역할이 범주적으로 다르므로 분리해서 다루어야 한다.
 3. 결론: 측정 가능한 위험은 보험·통계 처리를 거쳐 *고정 비용*으로 흡수되어 사실상 불확실성으로 작동하지 않는다. 완전 경쟁이 이윤을 0으로 수렴시키지 못하는 이유는 *측정 불가능한* 진짜 불확실성이 남아 있기 때문이며, 기업가가 받는 이윤은 바로 이 *true uncertainty*의 보상이다.
 
@@ -21,7 +21,7 @@ sidenotes: true
 
 본문은 14개 장이며, *Knightian* 명제의 정수가 가장 압축적으로 등장하는 단원은 Pt.III, Ch.VII "The Meaning of Risk and Uncertainty"다. 책 전체의 thesis 선언은 Pt.I, Ch.I 서론에서 이미 이루어진다.
 
-본 다이제스트는 1921년 초판이 public domain이므로 [Library of Economics and Liberty(Econlib)](https://www.econlib.org/library/Knight/knRUP.html)의 텍스트(Liberty Fund 디지털판)를 1차 자료로 사용했다. 보조 자료로는 Knight의 명제를 100년 후 시점에서 학술적으로 정리·재평가한 Amar Bhidé(HBS) 2021년 워킹페이퍼 「Renewing Knightian Uncertainty: A Pragmatic Prospectus and Demonstration」(WP 21-129)을 함께 읽었다.
+본 다이제스트는 1921년 초판이 public domain이므로 [Library of Economics and Liberty(Econlib)](https://www.econlib.org/library/Knight/knRUP.html)의 텍스트(Liberty Fund 디지털판)를 1차 자료로 사용했다. 보조 자료로는 Knight의 명제를 100년 후 시점에서 학술적으로 정리·재평가한 Amar Bhidé(HBS) 2021년 워킹페이퍼 「Renewing Knightian Uncertainty: A Pragmatic Prospectus and Demonstration」(WP 21-129)을 함께 읽었다.[^renewing-2021]
 
 본 다이제스트는 학술 토대 시리즈의 세 번째이자 마지막에 해당한다. 시간 순으로 역행하면서 *비가역성 × 불확실성* 명제의 가장 깊은 학술 뿌리에 도달한다. 시리즈의 앞 두 글은 [Taleb 외 — The Precautionary Principle (2014)](/digest/taleb-precautionary-principle-2014/), [Dixit & Pindyck — The Options Approach to Capital Investment (1995/1994)](/digest/dixit-pindyck-real-options-1994/)다. Knight의 *risk vs uncertainty* 구분이 D&P가 옵션 가치를 정의하는 *불확실성* 차원의 학술 토대이고, Taleb의 예방 원칙이 *측정 불가능한 ruin*에 대해 적용한 행동 원칙이라는 점에서, 1921 → 1994 → 2014의 시간 역행이 한 사슬에 묶인다.
 
@@ -138,10 +138,7 @@ Bhidé는 이 차이가 흐려질 때 Knight 명제의 실용적 용처가 사�
 ## 출처
 
 - 저자: Frank H. Knight (1885–1972, 시카고대 경제학과)
-- 단행본: 「Risk, Uncertainty, and Profit」, Houghton Mifflin Co., Boston 1921. 1916년 코넬대 박사학위 논문이 모태이며, Hart, Schaffner & Marx 경제 에세이 공모전 수상작이 그 전신이다.
-  - 1차 정독 자료(전문, public domain): <https://www.econlib.org/library/Knight/knRUP.html>
-  - 정수 단원 Pt.III Ch.VII "The Meaning of Risk and Uncertainty": <https://www.econlib.org/library/Knight/knRUP.html?chapter_num=9>
-  - thesis 선언 Pt.I Ch.I: <https://www.econlib.org/library/Knight/knRUP.html?chapter_num=3>
-- 보조 자료: Amar Bhidé, "Renewing Knightian Uncertainty: A Pragmatic Prospectus and Demonstration", Harvard Business School Working Paper 21-129, 2021.
-  - PDF: <https://www.hbs.edu/ris/Publication%20Files/21-129_3a817910-dfb9-4fc9-b913-164151c27b4e.pdf>
 - 본 다이제스트는 원문에 인용할 만한 도식·차트가 없는 순수 텍스트 자료이므로 텍스트 다이제스트로 정리했다.
+
+[^meaning-1921]: 단행본: 「Risk, Uncertainty, and Profit」, Houghton Mifflin Co., Boston 1921. 1916년 코넬대 박사학위 논문이 모태이며, Hart, Schaffner & Marx 경제 에세이 공모전 수상작이 그 전신이다. - 1차 정독 자료(전문, public domain): <https://www.econlib.org/library/Knight/knRUP.html> - 정수 단원 Pt.III Ch.VII "The Meaning of Risk and Uncertainty": <https://www.econlib.org/library/Knight/knRUP.html?chapter_num=9> - thesis 선언 Pt.I Ch.I: <https://www.econlib.org/library/Knight/knRUP.html?chapter_num=3>
+[^renewing-2021]: 보조 자료: Amar Bhidé, "Renewing Knightian Uncertainty: A Pragmatic Prospectus and Demonstration", Harvard Business School Working Paper 21-129, 2021. - PDF: <https://www.hbs.edu/ris/Publication%20Files/21-129_3a817910-dfb9-4fc9-b913-164151c27b4e.pdf>

@@ -11,7 +11,7 @@ sidenotes: true
 
 ## 3줄 요약
 
-1. Karthik Venkateshan(EA Sports FC 라인 프로듀서)이 2019년 8월에 LinkedIn에 게재한 독립 분석으로, Steam 타이틀의 유저 리뷰 점수와 Metacritic 점수를 매출(units sold)과 회귀시켜 신호 효과를 비교한다.
+1. Karthik Venkateshan(EA Sports FC 라인 프로듀서)이 2019년 8월에 LinkedIn에 게재한 독립 분석으로, Steam 타이틀의 유저 리뷰 점수와 Metacritic 점수를 매출(units sold)과 회귀시켜 신호 효과를 비교한다.[^linkedin-pulse]
 2. 결론은 매출 규모에 따라 갈린다. <strong>Superstar 타이틀(>500k)</strong>에서는 Steam 유저 리뷰가 매출의 약 10%(1% 유의수준)를, Metacritic이 약 5%(5% 유의수준)를 설명하여 유저 리뷰가 우세하다. 반면 <strong>Indie 타이틀(<100k)</strong>에서는 유저 리뷰조차 매출과 유의미한 관계가 없다.
 3. Valve의 "유저 리뷰 전면 노출" 전략은 Superstar에는 정확히 맞지만 Niche·Indie에는 빈 구멍이라는 함의가 따라온다. 저자는 Niche 타이틀용 별도 리뷰 시스템(예: 속성 기반 yes/no 질문) 설계를 제안한다.
 
@@ -134,3 +134,5 @@ Super Indie 구간(100k\~500k)은 그 사이에 있다.
 - 원문: <https://www.linkedin.com/pulse/steam-user-reviews-better-predictor-video-game-sales-than-karthik>
 
 원문에는 분포 그래프, 회귀 결과 표, 구간별 유저 리뷰 분포 비교 차트가 포함되어 있다. 본 다이제스트 작성 시점에 LinkedIn 원본의 이미지 토큰이 만료되어 있었고 Internet Archive 스냅샷에도 이미지가 캐시되어 있지 않아, 본문 텍스트의 수치를 표로 재구성하는 방식으로 옮겼다.
+
+[^linkedin-pulse]: 원문: <https://www.linkedin.com/pulse/steam-user-reviews-better-predictor-video-game-sales-than-karthik>

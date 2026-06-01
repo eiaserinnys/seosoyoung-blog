@@ -152,7 +152,7 @@ MNP는 세 형태로 구현할 수 있다.
 1. **만들 도메인의 개념을 AI에게 충분히 이해시킨다.** 예: 서비스 에코시스템이 무엇이고, 어떻게 그리고, 무엇이 좋은 결과물인가. Why에 가깝다.
 2. **그 개념을 HTML 등으로 재현시킨다.** 이 시점에 좋은 결과물이 안 만들어지면 AI화해도 좋아지지 않는다.
 3. **사람이 직접 쓸 수 있는 에디터로 다듬는다.** AI 없이도 작업이 되는 도구를 먼저 완성한다.
-4. **그제야 AI에게 'MNP화해 줘'를 부탁한다.** 사양 설명까지 일일이 적을 필요 없이, 샘플 HTML과 Claude Skill을 같이 넘기면 AI가 알아서 한다고 한다.
+4. **그제야 AI에게 'MNP화해 줘'를 부탁한다.** 사양 설명까지 일일이 적을 필요 없이, 샘플 HTML과 Claude Skill을 같이 넘기면 AI가 알아서 한다고 한다.[^mnp-claude]
 
 좋은 도구가 먼저, AI화는 나중. 좋은 도구가 안 만들어지면 AI화로 좋아지지 않는다는 결론이다.
 
@@ -209,4 +209,5 @@ MNP는 이 명제의 *도구 제작 차원 변주*다. 통상의 spec-driven은 
 - 저자: なつ (생활자/디자이너/리서처) — note `@art_reflection`, X [@Dia_Nexus](https://twitter.com/Dia_Nexus)
 - 게시일: 2026년 5월 24일
 - 원문: <https://note.com/art_reflection/n/nccfe6cc57073>
-- 부속 자료: Claude Skill(zip), MNP Infix Notation HTML, [MNP 기술 데모](https://mnp-demo.vercel.app/)
+
+[^mnp-claude]: 부속 자료: Claude Skill(zip), MNP Infix Notation HTML, [MNP 기술 데모](https://mnp-demo.vercel.app/)

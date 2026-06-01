@@ -11,7 +11,7 @@ sidenotes: true
 
 ## 3줄 요약
 
-1. 2007년경 청소년 출산율이 거의 모든 나라에서 동시에 꺾였다. 보건 체계·복지·낙태법·종교 전통·경기·인구 구조가 매우 다른 128개국에서 같은 시점에 같은 형태의 단절이 나타났다.
+1. 2007년경 청소년 출산율이 거의 모든 나라에서 동시에 꺾였다. 보건 체계·복지·낙태법·종교 전통·경기·인구 구조가 매우 다른 128개국에서 같은 시점에 같은 형태의 단절이 나타났다.[^lugaricano-status]
 2. 저자들은 스마트폰을 또래 시간 배분의 조정 문제(coordination)에 거는 가격으로 본다. 폰 가격이 임계점을 넘어 떨어지자 면대면 균형이 사라지고 또래 네트워크가 디지털 균형으로 점프했으며, 비구조화 면대면 접촉이 줄어든 결과 의도치 않은 임신이 함께 무너졌다.
 3. 미국·영국 행정 데이터에서 4G·광대역의 인과 효과가 식별되며, 같은 도구변수로 청소년 자살률은 정반대 부호로 솟는다. 한 메커니즘이 두 결과를 동시에 설명한다.
 
@@ -21,7 +21,7 @@ sidenotes: true
 
 > Nathan Hudson, Hernan J. Moscoso Boedo. "The Collapse of Teen Fertility in the Digital Era." Department of Economics, Carl H. Lindner College of Business, University of Cincinnati. April 25, 2026.
 
-JEL 코드 J13(출산력)·J11(인구 동학)·J12(가족)·O33(기술 확산)·L96(통신)·D85(네트워크 구조)로 분류되어 있고, SSRN에 working paper로 올라가 있다.
+JEL 코드 J13(출산력)·J11(인구 동학)·J12(가족)·O33(기술 확산)·L96(통신)·D85(네트워크 구조)로 분류되어 있고, SSRN에 working paper로 올라가 있다.[^ssrn-papers]
 
 ## 글로벌·동시·연령 특정 — 진단된 사실
 
@@ -64,7 +64,7 @@ Aizcorbe-Byrne-Sichel 헤도닉 가격 지수에서 스마트폰의 품질 조�
 
 저자들이 강조하는 두 번째 결과는 정책적으로 무겁다. 가격이 다시 오르더라도 시스템은 디지털 균형에 머문다(Proposition 2). 개인이 폰을 끊어도 또래 네트워크가 폰에 자리 잡고 있으면, 그 사람은 *비어 있는 면대면 균형*과 *남아 있는 디지털 균형*을 마주한다. 폰을 일방적으로 끊을수록 자기 비용이 커지므로, 결국 디지털 쪽으로 돌아간다. 균형 자체의 좌표 이동이 일어나야 한다.
 
-> "removing individual smartphones does not restore the in-person equilibrium because the peer network remains in the new one."
+> "removing individual smartphones does not restore the in-person equilibrium because the peer network remains in the new one."[^homepages-edu]
 
 ## 인과 식별: 지형 험준도를 도구변수로
 
@@ -159,12 +159,13 @@ FT 칼럼의 시각 자료는 이 논문의 Figure 1 Panel A2와 본질적으로
 
 ## 관련 글
 
-같은 FT 칼럼(John Burn-Murdoch, 2026.5.16)이 한국에 들어와 어떻게 읽혔는지, 그리고 매경이 그 위에 *국가데이터처 학력별 출산통계*와 *보사연 무자녀 보고서*를 얹어 '가족 형성의 K자형'으로 정리한 흐름은 별도 다이제스트로 묶었다 — [매경의 출산율 양극화 기사, 그 인용 자료를 끝까지 따라가다](/digest/family-formation-k-shape-2026/). 그 글은 이 논문의 *25세 이상에는 적용되지 않는다*는 한계를 한국의 K자형 양극화로 어떻게 메울 수 있는지를 다룬다.
+같은 FT 칼럼(John Burn-Murdoch, 2026.5.16)이 한국에 들어와 어떻게 읽혔는지, 그리고 매경이 그 위에 *국가데이터처 학력별 출산통계*와 *보사연 무자녀 보고서*를 얹어 '가족 형성의 K자형'으로 정리한 흐름은 별도 다이제스트로 묶었다 — [매경의 출산율 양극화 기사, 그 인용 자료를 끝까지 따라가다](/digest/family-formation-k-shape-2026/). 그 글은 이 논문의 *25세 이상에는 적용되지 않는다*는 한계를 한국의 K자형 양극화로 어떻게 메울 수 있는지를 다룬다.[^john-burn]
 
 ## 출처
 
 - Nathan Hudson, Hernan J. Moscoso Boedo. **"The Collapse of Teen Fertility in the Digital Era."** Department of Economics, Carl H. Lindner College of Business, University of Cincinnati. April 25, 2026.
-- 원문 PDF: <https://homepages.uc.edu/~moscoshn/Personal_webpage/papers/Smartphone_web.pdf>
-- SSRN: <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6676839>
-- 발견 경로 트윗: <https://x.com/lugaricano/status/2055778470878449892>
-- 같은 자료를 정리한 FT 칼럼(John Burn-Murdoch): <https://www.ft.com/content/fba35eca-df3a-4ad6-b42d-eb08eb7c9ad3>
+
+[^homepages-edu]: 원문 PDF: <https://homepages.uc.edu/~moscoshn/Personal_webpage/papers/Smartphone_web.pdf>
+[^ssrn-papers]: SSRN: <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6676839>
+[^lugaricano-status]: 발견 경로 트윗: <https://x.com/lugaricano/status/2055778470878449892>
+[^john-burn]: 같은 자료를 정리한 FT 칼럼(John Burn-Murdoch): <https://www.ft.com/content/fba35eca-df3a-4ad6-b42d-eb08eb7c9ad3>

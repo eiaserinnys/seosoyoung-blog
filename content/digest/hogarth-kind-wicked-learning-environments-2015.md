@@ -11,13 +11,13 @@ sidenotes: true
 
 ## 3줄 요약
 
-1. Robin Hogarth, Tomás Lejarraga, Emre Soyer가 2015년 *Current Directions in Psychological Science*에 게재한 짧은 개관 논문이다. "착한(kind) 학습 환경 / 사악한(wicked) 학습 환경"이라는 개념의 학술 정본 문헌이다.
+1. Robin Hogarth, Tomás Lejarraga, Emre Soyer가 2015년 *Current Directions in Psychological Science*에 게재한 짧은 개관 논문이다. "착한(kind) 학습 환경 / 사악한(wicked) 학습 환경"이라는 개념의 학술 정본 문헌이다.[^doi-2015][^max-planck]
 2. 사람의 추론은 한 모집단이 아니라 **두 개의 설정**(*two settings*)을 다룬다. 정보가 쌓이는 학습 설정 L과 그 정보가 적용되는 타깃 설정 T 사이의 정보 원소가 얼마나 일치하는가가 직관의 정확성을 결정한다. 매칭 양상을 6가지 케이스(A\~F)로 분류해 kind와 wicked의 경계를 명확히 한다.
 3. 처방은 단순하다 — 학습 환경을 일부러 kind하게 설계하면 통계적·경제적 판단 정확도가 올라간다. 사람의 합리성을 가정하는 대신, 사람이 학습한 환경을 정교하게 만드는 쪽이 더 빠른 길이라는 것이 결론이다.
 
 ## 원전과 트윗 사이의 거리 — 왜 정리가 필요한가
 
-이 다이제스트는 [David Epstein의 *Range*를 인용한 트윗](https://x.com/ihtesham2005/status/2053103815482859767)을 계기로 원전을 추적해 정리한 결과다. 트윗은 *Range*의 흐름을 그대로 따라 "체스는 kind 환경, 의료·투자·창업은 wicked 환경"이라고 단순화한다. 그러나 *Range*가 인용한 Hogarth 2001의 개념은 14년 뒤 *Current Directions in Psychological Science*에 실린 본 논문에서 보다 정교한 분류 도구로 다듬어진다. 트윗에서 빠진 것 두 가지가 핵심이다.
+이 다이제스트는 [David Epstein의 *Range*를 인용한 트윗](https://x.com/ihtesham2005/status/2053103815482859767)을 계기로 원전을 추적해 정리한 결과다. 트윗은 *Range*의 흐름을 그대로 따라 "체스는 kind 환경, 의료·투자·창업은 wicked 환경"이라고 단순화한다. 그러나 *Range*가 인용한 Hogarth 2001의 개념은 14년 뒤 *Current Directions in Psychological Science*에 실린 본 논문에서 보다 정교한 분류 도구로 다듬어진다. 트윗에서 빠진 것 두 가지가 핵심이다.[^ihtesham2005-2005]
 
 첫째, kind와 wicked는 <strong>이분법이 아니라 연속체</strong>다. 둘째, kind/wicked의 기준은 단순한 "피드백 품질"이 아니라 <strong>학습 단계의 정보(L)와 타깃 단계의 정보(T) 사이의 집합론적 매칭</strong>이다. 이 두 가지가 이 논문의 핵심 기여다.
 
@@ -109,7 +109,8 @@ sidenotes: true
 
 ## 출처
 
-- Hogarth, R. M., Lejarraga, T., & Soyer, E. (2015). The Two Settings of Kind and Wicked Learning Environments. *Current Directions in Psychological Science*, 24(5), 379–385. [doi:10.1177/0963721415591878](https://doi.org/10.1177/0963721415591878)
-- 풀텍스트 PDF (Max Planck PuRe, CC 알리안츠 라이선스): <https://pure.mpg.de/pubman/item/item_2225074_9>
 - 개념의 원전: Hogarth, R. M. (2001). *Educating Intuition*. Chicago: The University of Chicago Press. (특히 Chapter 3)
-- 다이제스트 계기 트윗: <https://x.com/ihtesham2005/status/2053103815482859767>
+
+[^doi-2015]: Hogarth, R. M., Lejarraga, T., & Soyer, E. (2015). The Two Settings of Kind and Wicked Learning Environments. *Current Directions in Psychological Science*, 24(5), 379–385. [doi:10.1177/0963721415591878](https://doi.org/10.1177/0963721415591878)
+[^max-planck]: 풀텍스트 PDF (Max Planck PuRe, CC 알리안츠 라이선스): <https://pure.mpg.de/pubman/item/item_2225074_9>
+[^ihtesham2005-2005]: 다이제스트 계기 트윗: <https://x.com/ihtesham2005/status/2053103815482859767>

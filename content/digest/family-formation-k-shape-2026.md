@@ -11,11 +11,11 @@ sidenotes: true
 
 ## 3줄 요약
 
-1. **국가데이터처 「모(母)의 교육정도별 출산통계」(2026.5.18)** — 2020\~2024년 사이 고졸 이하 여성의 출산은 27% 줄고, 대졸 이상 여성의 출산은 8.4%만 줄었다. 감소폭이 3배 차이다.
+1. **국가데이터처 「모(母)의 교육정도별 출산통계」(2026.5.18)** — 2020\~2024년 사이 고졸 이하 여성의 출산은 27% 줄고, 대졸 이상 여성의 출산은 8.4%만 줄었다. 감소폭이 3배 차이다.[^kosis-2026]
 2. **한국보건사회연구원 「기혼부부의 무자녀 선택과 정책과제」(조성호, 2022)** — 한국은 영미·유럽과 정반대로 *저학력일수록* 무자녀 비중이 높다. 양육비 부담이 결혼한 부부의 자녀 선택을 가른다.
 3. **FT 「Why birth rates are falling everywhere all at once」(John Burn-Murdoch, 2026.5.16)** — 전세계 195개국 중 2/3 이상이 합계출산율 2.1명 미달. 스마트폰 보급 시점과 출산율 급락 시점이 맞물린다고 분석한다. 단, FT가 인용한 학술 원본은 이 효과가 *10대에 한정*된다고 명시하고 있다 — 25세 이상에는 적용되지 않는다.
 
-매경 원문: 나현준 기자, [«"누가 애 안 낳는지 밝혀졌다"…전세계적인 출산율 하락, 이유는?»](https://www.mk.co.kr/news/economy/12050867), 매일경제, 2026.5.18.
+매경 원문: 나현준 기자, [«"누가 애 안 낳는지 밝혀졌다"…전세계적인 출산율 하락, 이유는?»](https://www.mk.co.kr/news/economy/12050867), 매일경제, 2026.5.18.[^economy-2026]
 
 ## 자료 1 — 국가데이터처: 학력별 출산이 갈라졌다
 
@@ -43,11 +43,11 @@ sidenotes: true
 
 연구자의 진단은 한 줄로 요약된다 — *"양육비 부담 때문에 자녀를 낳지 않는 경향이 있다."* 결혼한 부부 안에서도 자녀를 가질 여력이 학력·소득에 따라 갈리고 있다는 뜻이다.
 
-원문: 조성호, [「기혼부부의 무자녀 선택과 정책과제」](https://repository.kihasa.re.kr/handle/201002/41809), 한국보건사회연구원 연구보고서 2021-33, 2022.4.25, 213쪽.
+원문: 조성호, [「기혼부부의 무자녀 선택과 정책과제」](https://repository.kihasa.re.kr/handle/201002/41809), 한국보건사회연구원 연구보고서 2021-33, 2022.4.25, 213쪽.[^repository-2021]
 
 ## 자료 3 — FT: 스마트폰 가설과 그 한계
 
-매경 기사가 세 번째로 인용한 자료는 **FT(Financial Times)의 John Burn-Murdoch 수석 데이터 기자**가 2026년 5월 16일자로 발행한 분석 기사 [「Why birth rates are falling everywhere all at once」](https://www.ft.com/content/fba35eca-df3a-4ad6-b42d-eb08eb7c9ad3)다.
+매경 기사가 세 번째로 인용한 자료는 **FT(Financial Times)의 John Burn-Murdoch 수석 데이터 기자**가 2026년 5월 16일자로 발행한 분석 기사 [「Why birth rates are falling everywhere all at once」](https://www.ft.com/content/fba35eca-df3a-4ad6-b42d-eb08eb7c9ad3)다.[^why-2026]
 
 FT의 핵심 주장 세 가지를 정리하면 이렇다.
 
@@ -96,11 +96,12 @@ FT의 스마트폰 가설은, 정확히 말하면, '동시성'을 설명한다 �
 
 ## 출처
 
-- 나현준 기자, [«"누가 애 안 낳는지 밝혀졌다"…전세계적인 출산율 하락, 이유는?»](https://www.mk.co.kr/news/economy/12050867), 매일경제, 2026.5.18.
-- 국가데이터처, 「모(母)의 교육정도별 출산통계」, 2026.5.18 발표. 원자료는 [국가통계포털 KOSIS](https://kosis.kr).
-- 조성호, [「기혼부부의 무자녀 선택과 정책과제」](https://repository.kihasa.re.kr/handle/201002/41809), 한국보건사회연구원 연구보고서 2021-33, 2022.4.25.
-- John Burn-Murdoch, [«Why birth rates are falling everywhere all at once»](https://www.ft.com/content/fba35eca-df3a-4ad6-b42d-eb08eb7c9ad3), Financial Times, 2026.5.16.
 - Hudson, N. & Moscoso Boedo, H., "The Collapse of Teen Fertility in the Digital Era", SSRN working paper.
 - Moscoso Boedo, H., "Wide and Shallow: Digital Technology and the Post-2007 Fertility Decline", working paper.
 
 원문 이미지(연합뉴스 산후조리원 사진, FT 페이지 캡쳐)는 저작권 사유로 본 다이제스트에 포함하지 않았다. 시각 자료는 매경·FT 원문에서 직접 확인하기 바란다.
+
+[^economy-2026]: 나현준 기자, [«"누가 애 안 낳는지 밝혀졌다"…전세계적인 출산율 하락, 이유는?»](https://www.mk.co.kr/news/economy/12050867), 매일경제, 2026.5.18.
+[^kosis-2026]: 국가데이터처, 「모(母)의 교육정도별 출산통계」, 2026.5.18 발표. 원자료는 [국가통계포털 KOSIS](https://kosis.kr).
+[^repository-2021]: 조성호, [「기혼부부의 무자녀 선택과 정책과제」](https://repository.kihasa.re.kr/handle/201002/41809), 한국보건사회연구원 연구보고서 2021-33, 2022.4.25.
+[^why-2026]: John Burn-Murdoch, [«Why birth rates are falling everywhere all at once»](https://www.ft.com/content/fba35eca-df3a-4ad6-b42d-eb08eb7c9ad3), Financial Times, 2026.5.16.

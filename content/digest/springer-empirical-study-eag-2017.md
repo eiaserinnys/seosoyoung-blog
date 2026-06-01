@@ -11,15 +11,15 @@ sidenotes: true
 
 ## 3줄 요약
 
-1. Dayi Lin·Cor-Paul Bezemer·Ahmed E. Hassan이 2017년 7월에 *Empirical Software Engineering*(Springer)에 발표한 학술 논문으로, Steam의 얼리액세스(EA) 모델을 1,182개 EAG 표본으로 본격 분석한 최초의 대규모 실증 연구다.
+1. Dayi Lin·Cor-Paul Bezemer·Ahmed E. Hassan이 2017년 7월에 *Empirical Software Engineering*(Springer)에 발표한 학술 논문으로, Steam의 얼리액세스(EA) 모델을 1,182개 EAG 표본으로 본격 분석한 최초의 대규모 실증 연구다.[^springer-link]
 2. <strong>EAG의 88%가 인디 게임</strong>이며, 가장 인기 있는 EAG는 *Killing Floor 2*로 owner 약 2,888만 명. EA 단계에서 개발자는 더 자주 업데이트(중간값 11일 vs 15일)하고 플레이어는 토론에 더 많이 참여하지만 리뷰는 덜 남긴다.
 3. 가장 강한 발견은 <strong>EA 단계의 평균 평점이 1.0 이후보다 통계적으로 유의하게 높다</strong>는 것이다(Cliff's δ=0.454, medium effect). 그리고 EAG의 89%가 EA 단계에서 더 높거나 동일한 긍정 평점률을 받는다. 이 긍정 평점률은 <strong>EA 기간 길이·업데이트 빈도와 상관이 없다</strong>(Spearman -0.06, 0.01).
 
 ## 자료의 정체
 
-- <strong>저자</strong>: Dayi Lin, Cor-Paul Bezemer, Ahmed E. Hassan (Software Analysis and Intelligence Lab(SAIL), Queen's University).
+- <strong>저자</strong>: Dayi Lin, Cor-Paul Bezemer, Ahmed E. Hassan (Software Analysis and Intelligence Lab(SAIL), Queen's University).[^sail-2017]
 - <strong>발표</strong>: *Empirical Software Engineering* Volume 23, pages 771–799 (2018). 온라인 선공개 2017-07-08.
-- <strong>DOI</strong>: 10.1007/s10664-017-9531-3.
+- <strong>DOI</strong>: 10.1007/s10664-017-9531-3.[^s10664-doi]
 - <strong>분석 대상</strong>: 2016년 3월 7일 시점 Steam 스토어의 모든 게임 8,025종, 그 중 EAG 1,182종.
 
 이 논문은 EA 모델을 단일 사례 보고가 아닌 *플랫폼 전체 표본*으로 통계 분석한 최초의 학술 작업이다. 이후 EA 관련 업계 글들이 인용·전제로 삼는 토대 자료다.
@@ -29,7 +29,7 @@ sidenotes: true
 논문은 세 개의 RQ로 구성된다.
 
 > <strong>RQ1</strong>: What are the characteristics of the early access model?
-> Steam 게임의 15%가 EA 모델을 사용한다. EA는 주로 개인이나 소규모 스튜디오의 인디 게임 출시 통로로 작동한다. 다만 EA가 개발 자금 조달을 보장하지는 않는다.
+> Steam 게임의 15%가 EA 모델을 사용한다. EA는 주로 개인이나 소규모 스튜디오의 인디 게임 출시 통로로 작동한다. 다만 EA가 개발 자금 조달을 보장하지는 않는다.[^fair-use]
 
 > <strong>RQ2</strong>: How do developers and players of EAGs interact with the Steam platform?
 > 개발자는 EA 단계에서 더 자주 업데이트한다. 플레이어는 EA 단계에서 리뷰는 덜 남기지만 토론 게시물은 더 많이 작성한다.
@@ -221,8 +221,8 @@ EA 기간과 업데이트 빈도는 평점에 큰 영향이 없으므로 개발�
 
 - 저자: Dayi Lin, Cor-Paul Bezemer, Ahmed E. Hassan (Software Analysis and Intelligence Lab(SAIL), Queen's University)
 - 게재지: *Empirical Software Engineering* 23(2), 771–799 (2018). 온라인 선공개 2017-07-08.
-- DOI: [10.1007/s10664-017-9531-3](https://doi.org/10.1007/s10664-017-9531-3)
-- 원문(Springer 페이월드): <https://link.springer.com/article/10.1007/s10664-017-9531-3>
-- 저자 사본(SAIL Lab PDF): <https://sailresearch.github.io/sail-website/data/pdfs/EMSE2017_AnEmpiricalStudyOfEarlyAccessGamesOnTheSteamPlatform.pdf>
 
-본문 인용 그림은 모두 위 PDF에서 발췌했으며, 학술 인용 목적의 fair use로 사용한다.
+[^s10664-doi]: DOI: [10.1007/s10664-017-9531-3](https://doi.org/10.1007/s10664-017-9531-3)
+[^springer-link]: 원문(Springer 페이월드): <https://link.springer.com/article/10.1007/s10664-017-9531-3>
+[^sail-2017]: 저자 사본(SAIL Lab PDF): <https://sailresearch.github.io/sail-website/data/pdfs/EMSE2017_AnEmpiricalStudyOfEarlyAccessGamesOnTheSteamPlatform.pdf>
+[^fair-use]: 본문 인용 그림은 모두 위 PDF에서 발췌했으며, 학술 인용 목적의 fair use로 사용한다.

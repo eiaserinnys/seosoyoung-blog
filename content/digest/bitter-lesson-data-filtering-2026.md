@@ -23,8 +23,8 @@ sidenotes: true
 
 - **제목**: A Bitter Lesson for Data Filtering
 - **저자**: Christopher Mohri, John Duchi, Tatsunori Hashimoto (Stanford University)
-- **발표**: arXiv:2605.19407v1 [cs.LG], 2026-05-19
-- **코드**: <https://github.com/chrismohrii/bitter-lesson-data-filtering>
+- **발표**: arXiv:2605.19407v1 [cs.LG], 2026-05-19[^arxiv-2605]
+- **코드**: <https://github.com/chrismohrii/bitter-lesson-data-filtering>[^github-chrismohrii]
 
 제목은 Rich Sutton의 2019년 에세이 *"The Bitter Lesson"* — "결국 인간이 설계한 prior가 단순한 compute scaling에 의해 압도된다"는 논점 — 의 데이터 필터링 버전이다.
 
@@ -137,5 +137,6 @@ compute-performance Pareto frontier로 보면, compute가 늘수록 무필터가
 - **저자**: Christopher Mohri, John Duchi, Tatsunori Hashimoto (Stanford University)
 - **발표**: arXiv:2605.19407v1 [cs.LG], 2026-05-19
 - **라이선스**: CC BY 4.0
-- 원문 PDF: <https://arxiv.org/pdf/2605.19407>
-- 코드 리포: <https://github.com/chrismohrii/bitter-lesson-data-filtering>
+
+[^arxiv-2605]: 원문 PDF: <https://arxiv.org/pdf/2605.19407>
+[^github-chrismohrii]: 코드 리포: <https://github.com/chrismohrii/bitter-lesson-data-filtering>

@@ -13,7 +13,7 @@ sidenotes: true
 
 ## 3줄 요약
 
-1. Vulture 기자 Lane Brown이 *clipping* 에이전시(Floodify, Chaotic Good Projects 등)를 추적하여 정리한 SNS 마케팅 산업 르포. 핵심 진단은 업계인 Joe Lim의 추정 — "당신이 인터넷에서 보는 것의 90%는 위장 광고다."
+1. Vulture 기자 Lane Brown이 *clipping* 에이전시(Floodify, Chaotic Good Projects 등)를 추적하여 정리한 SNS 마케팅 산업 르포. 핵심 진단은 업계인 Joe Lim의 추정 — "당신이 인터넷에서 보는 것의 90%는 위장 광고다."[^nymag-status][^chaotic-good]
 2. clipping은 원본을 짧은 조각으로 잘라 평범해 보이는 계정들로 동시 다발 게시해 알고리즘을 속이는 기법이다. $1 CPM이라는 압도적 가성비 덕에 음악·영화·정치·소비재 전반으로 산업화되었고, 최근에는 댓글·여론 자체를 조작하는 *narrative campaigns* 단계로 진화했다.
 3. 결과는 신호의 동시 붕괴다 — 알고리즘이 뽑는 트렌드, 인간 저널리스트가 보는 화제, 시청자가 댓글에서 읽는 분위기까지 같은 회로에 포섭됐다. FTC 룰은 사실상 집행되지 않으며, Lim은 다음 무대가 "AI 에이전트에게 콘텐츠를 유통해 그들이 인간에게 무엇을 원해야 할지 가르치는 시대"라 본다.
 
@@ -163,6 +163,6 @@ Bad Bunny 슈퍼볼의 양면 동시 증폭 사례는 그 연장에서 더 충�
 - **매체**: Vulture, New York Magazine (One Great Story 뉴스레터 선정)
 - **발행일**: 2026-05-15
 - **원문**: <https://www.vulture.com/article/social-media-feeds-chaotic-good-projects-clipping.html>
-- **트윗 출처**: <https://x.com/nymag/status/2055289587761914220>
 
-본문 인용은 모두 원문에서 가져왔다. 등장하는 회사·인물의 입장 — Chaotic Good Projects의 번복 답변, Justin Bieber·American Eagle·Bad Bunny 측의 무응답, Baldoni 측 변호인의 부인 — 도 원문이 명기한 그대로다.
+[^nymag-status]: **트윗 출처**: <https://x.com/nymag/status/2055289587761914220>
+[^chaotic-good]: 본문 인용은 모두 원문에서 가져왔다. 등장하는 회사·인물의 입장 — Chaotic Good Projects의 번복 답변, Justin Bieber·American Eagle·Bad Bunny 측의 무응답, Baldoni 측 변호인의 부인 — 도 원문이 명기한 그대로다.

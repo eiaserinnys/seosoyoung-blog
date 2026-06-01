@@ -11,7 +11,7 @@ sidenotes: true
 
 ## 3줄 요약
 
-1. Quan Zhou 등(2026, *Nature Communications*)이 영국 TEDS 쌍둥이 코호트 5,016명을 7·9·12·16세 네 시점에 추적해, 교육 관련 다유전자 점수(EA·Cog·NonCog PGS)와 학업 성취 사이를 비인지 기술이 얼마나 매개하는지 검증했다.
+1. Quan Zhou 등(2026, *Nature Communications*)이 영국 TEDS 쌍둥이 코호트 5,016명을 7·9·12·16세 네 시점에 추적해, 교육 관련 다유전자 점수(EA·Cog·NonCog PGS)와 학업 성취 사이를 비인지 기술이 얼마나 매개하는지 검증했다.[^github-coderesearchlab][^osf-vmpf7][^teds-datadictionary]
 2. 매개 비율은 5% 미만에서 최대 64%까지 분포했고, 학습 흥미·자기개념·호기심처럼 학생 본인 안에 자리잡힌 특성이 교실 만족도 같은 환경 지각보다 매개가 강했다.
 3. 매개 효과는 종단으로 지속되었고, DZ 쌍둥이 형제 내 차이 분석에서도 최대 83%가 살아남아 — 단순한 가족 공유 환경이 아니라 아이가 자기 유전 소인에 맞춰 환경을 능동적으로 선택·유발한다는 능동·유발 유전-환경 상관 모델을 경험적으로 지지했다.
 
@@ -144,7 +144,8 @@ sidenotes: true
 Zhou Q, Liao W, Allegrini AG, Rimfeld K, Wertz J, Morris TT, Raffington L, Plomin R, Malanchini M. *Non-cognitive skills mediate education-related polygenic score associations with academic achievement across development.* **Nature Communications** (2026, in press). Article DOI 10.1038/s41467-026-72838-2.
 
 - 원문: <https://doi.org/10.1038/s41467-026-72838-2>
-- 코드: <https://github.com/CoDEresearchlab/Noncognitive_mediation>
-- 사전 등록(OSF): <https://osf.io/vmpf7/>
-- TEDS 데이터 사전: <https://www.teds.ac.uk/datadictionary/home.htm>
 - 라이선스: CC BY 4.0
+
+[^github-coderesearchlab]: 코드: <https://github.com/CoDEresearchlab/Noncognitive_mediation>
+[^osf-vmpf7]: 사전 등록(OSF): <https://osf.io/vmpf7/>
+[^teds-datadictionary]: TEDS 데이터 사전: <https://www.teds.ac.uk/datadictionary/home.htm>

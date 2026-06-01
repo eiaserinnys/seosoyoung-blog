@@ -54,7 +54,7 @@ sidenotes: true
 
 ## 토큰 소비는 가격과 같은 방향으로 가속한다
 
-가격만 오르는 것이 아니라 토큰 소비량 자체도 빠르게 늘고 있다. 저자는 [Pragmatic Engineer의 'tokenmaxxing' 분석](https://blog.pragmaticengineer.com/the-pulse-tokenmaxxing-as-a-weird-new-trend/)을 인용한다. 거의 모든 엔지니어가 "토큰 사용량을 KPI로 두는 건 어리석다"고 입을 모으는데도, 현장의 평균 소비는 우상향이다. GPU 만성 부족이 그 증거다.
+가격만 오르는 것이 아니라 토큰 소비량 자체도 빠르게 늘고 있다. 저자는 [Pragmatic Engineer의 'tokenmaxxing' 분석](https://blog.pragmaticengineer.com/the-pulse-tokenmaxxing-as-a-weird-new-trend/)을 인용한다. 거의 모든 엔지니어가 "토큰 사용량을 KPI로 두는 건 어리석다"고 입을 모으는데도, 현장의 평균 소비는 우상향이다. GPU 만성 부족이 그 증거다.[^tokenmaxxing-weird]
 
 요약하면 *단가가 오르고 + 사용량이 늘어나는* 이중 곡선이 동시에 그어지고 있다.
 
@@ -129,8 +129,7 @@ sidenotes: true
 
 - 발신자: SignalBloom AI
 - 원문: <https://www.signalbloom.ai/posts/outsourcing-plus-localai-will-soon-become-more-economical-vs-frontier-labs/>
-- 관련 자료:
-  - Pragmatic Engineer, "Tokenmaxxing as a weird new trend": <https://blog.pragmaticengineer.com/the-pulse-tokenmaxxing-as-a-weird-new-trend/>
-  - SignalBloom AI, "Why Task Proficiency Doesn't Equal AI Autonomy": <https://www.signalbloom.ai/posts/why-task-proficiency-doesnt-equal-ai-autonomy/>
 
 원문에는 정적 이미지가 없고 인터랙티브 시뮬레이터 차트만 포함되어 있어, 이 다이제스트는 텍스트 정리체로 작성했다.
+
+[^tokenmaxxing-weird]: 관련 자료: - Pragmatic Engineer, "Tokenmaxxing as a weird new trend": <https://blog.pragmaticengineer.com/the-pulse-tokenmaxxing-as-a-weird-new-trend/> - SignalBloom AI, "Why Task Proficiency Doesn't Equal AI Autonomy": <https://www.signalbloom.ai/posts/why-task-proficiency-doesnt-equal-ai-autonomy/>

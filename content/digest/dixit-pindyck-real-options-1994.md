@@ -17,9 +17,9 @@ sidenotes: true
 
 ## 자료의 정체
 
-단행본 「Investment under Uncertainty」(Princeton University Press, 1994)는 1980년대 후반부터 Pindyck와 동료들이 축적한 비가역 투자 이론을 책 한 권으로 묶어 낸 정통 텍스트로, 이후 30년의 real options 연구의 표준 참고문헌이 되었다.
+단행본 「Investment under Uncertainty」(Princeton University Press, 1994)는 1980년대 후반부터 Pindyck와 동료들이 축적한 비가역 투자 이론을 책 한 권으로 묶어 낸 정통 텍스트로, 이후 30년의 real options 연구의 표준 참고문헌이 되었다.[^investment-1994]
 
-본 다이제스트의 1차 자료는 동일한 두 저자가 일반 독자용으로 압축해 다시 쓴 1995년 5월–6월 HBR 기사 「The Options Approach to Capital Investment」다. 단행본의 수학을 전부 걷어내고, 핵심 직관과 사례를 11쪽으로 압축했다. 페이월 우회를 위해 Pindyck의 MIT 개인 사이트에 공개된 PDF(아래 출처 참조)를 사용했다.
+본 다이제스트의 1차 자료는 동일한 두 저자가 일반 독자용으로 압축해 다시 쓴 1995년 5월–6월 HBR 기사 「The Options Approach to Capital Investment」다. 단행본의 수학을 전부 걷어내고, 핵심 직관과 사례를 11쪽으로 압축했다. 페이월 우회를 위해 Pindyck의 MIT 개인 사이트에 공개된 PDF(아래 출처 참조)를 사용했다.[^options-1995]
 
 본 다이제스트는 학술 토대 시리즈의 두 번째에 해당한다. 첫 번째인 [Taleb 외 — The Precautionary Principle (2014)](/digest/taleb-precautionary-principle-2014/)와 *비가역성*이라는 같은 개념적 토대를 공유한다. Taleb이 *손해 영역*의 비가역(ruin)에 적용한 원리를 Dixit & Pindyck은 *투자 영역*의 비가역(sunk capital)에 적용한 셈이다.
 
@@ -124,8 +124,7 @@ NPV가 답하지 못하는 두 종류의 미스터리가 있다. 하나는 "왜 
 ## 출처
 
 - 저자: Avinash K. Dixit (Princeton University), Robert S. Pindyck (MIT Sloan School of Management)
-- 단행본: 「Investment under Uncertainty」, Princeton University Press, 1994. <https://press.princeton.edu/books/hardcover/9780691034102/investment-under-uncertainty>
-- 1차 정독 자료: 「The Options Approach to Capital Investment」, *Harvard Business Review*, May–June 1995, pp. 105–115.
-  - HBR 페이지(페이월): <https://hbr.org/1995/05/the-options-approach-to-capital-investment>
-  - PDF (Pindyck의 MIT 개인 사이트): <https://web.mit.edu/rpindyck/www/Papers/Options_Approach.pdf>
 - 본 다이제스트는 원문에 인용할 만한 도식·차트가 잡지 일러스트 외에는 거의 없어 텍스트 다이제스트로 정리했다.
+
+[^investment-1994]: 단행본: 「Investment under Uncertainty」, Princeton University Press, 1994. <https://press.princeton.edu/books/hardcover/9780691034102/investment-under-uncertainty>
+[^options-1995]: 1차 정독 자료: 「The Options Approach to Capital Investment」, *Harvard Business Review*, May–June 1995, pp. 105–115. - HBR 페이지(페이월): <https://hbr.org/1995/05/the-options-approach-to-capital-investment> - PDF (Pindyck의 MIT 개인 사이트): <https://web.mit.edu/rpindyck/www/Papers/Options_Approach.pdf>

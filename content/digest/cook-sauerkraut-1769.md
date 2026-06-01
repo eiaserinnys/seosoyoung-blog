@@ -15,7 +15,7 @@ sidenotes: true
 
 ## 3줄 요약
 
-1. 1768년 HMS Endeavour 출항 시 Captain James Cook은 3톤이 넘는 사우어크라우트를 실었다. 그러나 영국 선원들은 낯선 발효 양배추를 거부했다.
+1. 1768년 HMS Endeavour 출항 시 Captain James Cook은 3톤이 넘는 사우어크라우트를 실었다. 그러나 영국 선원들은 낯선 발효 양배추를 거부했다.[^captain-1969][^finding-2021][^brief-2021]
 2. Cook은 강제하지 않았다. 장교 식탁에만 매일 사우어크라우트를 올리고, 선원에게는 *그저 허용*했다. 몇 주 뒤 선원들이 스스로 자기 몫을 요구했다.
 3. 3년·40,000마일의 1차 세계 일주 항해에서 단 한 명도 괴혈병으로 잃지 않았다. Cook은 1776년 Royal Society Copley Medal을 받았다 — *함정 식이 위생*으로 받은 최초의 영예였다.
 
@@ -25,7 +25,7 @@ Captain James Cook은 1768년 8월부터 1771년 7월까지 HMS Endeavour를 지
 
 > **사실 확인**: 트윗 원문은 "Cook이 단 한 명도 잃지 않았다(without losing a single man)"고 적었지만, 정확히는 "괴혈병으로는" 한 명도 잃지 않았다. 항해 후반 바타비아(현 자카르타) 정박 중 이질·말라리아로 약 30명이 사망했다. 그래도 *괴혈병 0명*이라는 결과는 동시대 기준 압도적이었다.
 
-귀국 후 Cook은 1776년 Royal Society에 「The Method Taken for Preserving the Health of the Crew of His Majesty's Ship the Resolution during her Late Voyage Round the World」라는 논문을 제출하고 Copley Medal을 수상했다. 영국 과학사에서 가장 권위 있는 메달 중 하나가 *항해 위생*에 주어진 사건이었다.
+귀국 후 Cook은 1776년 Royal Society에 「The Method Taken for Preserving the Health of the Crew of His Majesty's Ship the Resolution during her Late Voyage Round the World」라는 논문을 제출하고 Copley Medal을 수상했다. 영국 과학사에서 가장 권위 있는 메달 중 하나가 *항해 위생*에 주어진 사건이었다.[^james-cook][^method-taken][^sauerkraut-2018]
 
 ## 항해의 살림살이
 
@@ -64,9 +64,9 @@ Cook은 1769년 4월 13일, 타히티 체류 중 일지에 자기 방법을 직�
 
 Cook의 전략은 현대 사회심리학에서 *복수의 메커니즘이 동시에 작동한 사례*로 분류된다.
 
-**1) 사회적 증명(Social Proof)** — Robert Cialdini가 1984년 *Influence*에서 정리한 6대 영향력 원칙 중 하나다. 불확실한 상황에서 신뢰할 만한 타인이 어떤 행동을 하면 그것이 "옳다"는 신호로 작동한다. 선원 입장에서 *낯선 외국 음식의 안전성 판단*은 가장 불확실한 영역이었고, 장교들이 매일 먹는 모습은 가장 강력한 신호였다.
+**1) 사회적 증명(Social Proof)** — Robert Cialdini가 1984년 *Influence*에서 정리한 6대 영향력 원칙 중 하나다. 불확실한 상황에서 신뢰할 만한 타인이 어떤 행동을 하면 그것이 "옳다"는 신호로 작동한다. 선원 입장에서 *낯선 외국 음식의 안전성 판단*은 가장 불확실한 영역이었고, 장교들이 매일 먹는 모습은 가장 강력한 신호였다.[^robert-1984]
 
-**2) 지위 모방(Status Signaling)** — Thorstein Veblen이 1899년 *The Theory of the Leisure Class*에서 분석한 것처럼, 상위 계층이 독점하는 재화는 그 자체로 욕망의 대상이 된다. Cook은 *희소성*을 인위적으로 만들지 않았다 — 단지 *지위와 함께 묶었을* 뿐이다. 그러나 효과는 같았다.
+**2) 지위 모방(Status Signaling)** — Thorstein Veblen이 1899년 *The Theory of the Leisure Class*에서 분석한 것처럼, 상위 계층이 독점하는 재화는 그 자체로 욕망의 대상이 된다. Cook은 *희소성*을 인위적으로 만들지 않았다 — 단지 *지위와 함께 묶었을* 뿐이다. 그러나 효과는 같았다.[^thorstein-veblen]
 
 **3) 심리적 반발 이론(Reactance Theory)** — Jack Brehm이 1966년 정리한 모델. 자유가 박탈됐다고 인식할 때 사람은 그것을 더 강하게 원한다. Cook은 *명시적으로 금지하지 않았다*. 그러나 "장교만 먹는다"는 구조가 *묵시적 접근 제한*을 만들었고, 그것이 욕망을 키웠다. 이른바 *Forbidden Fruit Effect*의 약한 형태다.
 
@@ -112,12 +112,11 @@ Cook이 한 일은 *명령의 비용*과 *심리의 비용*을 비교한 뒤, �
 
 원문 트윗: <https://x.com/dr_thehistories/status/2057690727048511522>
 
-주요 1차·2차 자료:
-- James Cook, *Journal of the First Voyage*, 1768\~1771 — Project Gutenberg 전자본 (1769년 4월 13일자)
-- James Cook, "The Method Taken for Preserving the Health of the Crew of His Majesty's Ship the Resolution during her Late Voyage Round the World", *Philosophical Transactions of the Royal Society*, 1776
-- E. Kodicek, "Captain Cook and Scurvy", 1969
-- US Naval Institute, "Finding the Cure for Scurvy", *Naval History Magazine*, 2021
-- British Library Untold Lives Blog, "Sauerkraut, Sugar and Salt Pork — the Diet on Board Cook's Resolution", 2018
-- Hektoen International, "A Brief History of Fermented Cabbage as Antiscorbutic", 2021
-- Robert Cialdini, *Influence: The Psychology of Persuasion*, 1984
-- Thorstein Veblen, *The Theory of the Leisure Class*, 1899
+[^james-cook]: James Cook, *Journal of the First Voyage*, 1768\~1771 — Project Gutenberg 전자본 (1769년 4월 13일자)
+[^method-taken]: James Cook, "The Method Taken for Preserving the Health of the Crew of His Majesty's Ship the Resolution during her Late Voyage Round the World", *Philosophical Transactions of the Royal Society*, 1776
+[^captain-1969]: E. Kodicek, "Captain Cook and Scurvy", 1969
+[^finding-2021]: US Naval Institute, "Finding the Cure for Scurvy", *Naval History Magazine*, 2021
+[^sauerkraut-2018]: British Library Untold Lives Blog, "Sauerkraut, Sugar and Salt Pork — the Diet on Board Cook's Resolution", 2018
+[^brief-2021]: Hektoen International, "A Brief History of Fermented Cabbage as Antiscorbutic", 2021
+[^robert-1984]: Robert Cialdini, *Influence: The Psychology of Persuasion*, 1984
+[^thorstein-veblen]: Thorstein Veblen, *The Theory of the Leisure Class*, 1899

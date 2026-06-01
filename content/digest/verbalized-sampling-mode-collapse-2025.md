@@ -13,7 +13,7 @@ sidenotes: true
 
 1. Northeastern·Stanford·CMU·West Virginia 공동 연구진이 2025년 10월 arxiv에 공개한 논문(2510.01171). RLHF로 정렬한 LLM이 다양한 답을 못 만들고 한 점으로 수렴하는 *mode collapse* 현상의 원인을 파고든다.
 2. 진짜 원인은 알고리즘이 아니라 *preference data에 박힌 typicality bias* — 인간 annotator가 친숙·유창·예측 가능한 텍스트를 체계적으로 helpful하다고 판정하는 인지심리학적 정설 — 이며, KL-regularized RLHF가 이 편향을 sharpening하여 mode collapse를 일으킨다는 것을 수식과 데이터로 증명한다.
-3. 해결책으로 "5개 답을 확률 분포와 함께 생성하라"는 prompting trick인 Verbalized Sampling(VS)을 제안한다. training-free·model-agnostic하면서 creative writing 다양성을 1.6\~2.1배 회복하고, 더 큰 모델일수록 효과가 크다.
+3. 해결책으로 "5개 답을 확률 분포와 함께 생성하라"는 prompting trick인 Verbalized Sampling(VS)을 제안한다. training-free·model-agnostic하면서 creative writing 다양성을 1.6\~2.1배 회복하고, 더 큰 모델일수록 효과가 크다.[^verbalized-sampling][^github-chats]
 
 ![Figure 1 — Typicality bias가 mode collapse를 일으키고, Verbalized Sampling이 이를 완화하는 구조 (출처: 논문 PDF)](/images/verbalized-sampling-mode-collapse-2025/fig1-overview.png)
 
@@ -158,6 +158,7 @@ VS가 회복하는 것이 정확히 무엇인지가 이 논문의 가장 미묘�
 - 저자: Jiayi Zhang, Simon Yu, Derek Chong, Anthony Sicilia, Michael R. Tomz, Christopher D. Manning, Weiyan Shi (Northeastern·Stanford·CMU·West Virginia)
 - 발행: 2025년 10월 10일 (arxiv preprint v3)
 - 원문: <https://arxiv.org/abs/2510.01171>
-- 페이퍼 사이트: <https://www.verbalized-sampling.com/>
-- 코드: <https://github.com/CHATS-lab/verbalized-sampling>
 - 인용 이미지(Figure 1·4·7)는 모두 원문 PDF에서 추출한 것이다.
+
+[^verbalized-sampling]: 페이퍼 사이트: <https://www.verbalized-sampling.com/>
+[^github-chats]: 코드: <https://github.com/CHATS-lab/verbalized-sampling>

@@ -15,8 +15,8 @@ sidenotes: true
 
 ## 3줄 요약
 
-1. "포르투갈이 노잼 코딩 수업을 다 집어치우고 마인크래프트를 정규 수업으로 도입했다"는 트윗이 화제다. 실제는 마데이라 자치주(RAM)·아조레스 중심의 *지역 단위* 도입에 가깝고, 컴퓨터과학(`Ciências da Computação`)의 의무교육 편입은 2025년 *검토* 단계다.
-2. 마인크래프트 에듀케이션의 정식 커리큘럼은 K-12를 가로지르는 4단계·약 200시간 분량의 CS Progression이다. **Code Builder의 Agent**라는 로봇 NPC를 통해 블록 코딩 → JavaScript → Python으로 자연스럽게 전환되고, College Board가 인정한 AP CSP **Endorsed Provider**이기도 하다.
+1. "포르투갈이 노잼 코딩 수업을 다 집어치우고 마인크래프트를 정규 수업으로 도입했다"는 트윗이 화제다. 실제는 마데이라 자치주(RAM)·아조레스 중심의 *지역 단위* 도입에 가깝고, 컴퓨터과학(`Ciências da Computação`)의 의무교육 편입은 2025년 *검토* 단계다.[^kingwest0219-status][^observador-2024]
+2. 마인크래프트 에듀케이션의 정식 커리큘럼은 K-12를 가로지르는 4단계·약 200시간 분량의 CS Progression이다. **Code Builder의 Agent**라는 로봇 NPC를 통해 블록 코딩 → JavaScript → Python으로 자연스럽게 전환되고, College Board가 인정한 AP CSP **Endorsed Provider**이기도 하다.[^progression-education][^csp-endorsed]
 3. 효과 연구는 공간 추론·수학 자기효능감 등에서 긍정 결과가 누적되었으나, 2025년 systematic review는 29개 연구 모두 편향 위험이 중·고 수준이라 평가했다. 문제해결력에서 *유의차 없음* 보고도 존재한다.
 
 ![Minecraft School Challenge 발표 장면](/images/minecraft-edu-portugal-evidence/challenge-presentation.png "출처: kingwest0219의 트윗 첨부 사진")
@@ -40,7 +40,7 @@ sidenotes: true
 
 ### 운영 주체와 대상
 
-- **운영 주체**: Microsoft Portugal + Visionarium(2018년부터의 파트너) + 지역 교육청(마데이라 DRE, 아조레스 DRAE). Happy Code가 코딩 트레이너 역할.
+- **운영 주체**: Microsoft Portugal + Visionarium(2018년부터의 파트너) + 지역 교육청(마데이라 DRE, 아조레스 DRAE). Happy Code가 코딩 트레이너 역할.[^dre-microsoft]
 - **대상**: 주로 1·2·3기 기초교육(초·중학교). 5\~7학년이 중심이고, 마데이라는 1·2 ciclo 전반에 걸쳐 있다.
 - **수업 형태**: 정보통신기술(TIC) + `Ciências da Computação` 정규 수업 *안의 보조 도구* / 방과 후 워크숍 / e스포츠 형식의 대회.
 
@@ -63,7 +63,7 @@ sidenotes: true
 
 별도로 **GameCode**라는 5일 워크숍 코스가 있다. 10세 이상 대상이고, 파쿠르·Obby 같은 아케이드 미니게임을 학생이 *직접 만드는* 모듈식 코스다. CSTA·ISTE·영국 Computing PoS·호주 F-10에 모두 정렬되어 있다.
 
-중학교 표준 코스 *Intro to CS with MakeCode for Minecraft*의 10단원은 다음과 같다.
+중학교 표준 코스 *Intro to CS with MakeCode for Minecraft*의 10단원은 다음과 같다.[^intro-makecode][^lgw-2023]
 
 > Introduction → Events → Coordinates → Variables → Iteration → Conditionals → Functions and Parameters → Arrays → AI → Final Project
 
@@ -75,7 +75,7 @@ sidenotes: true
 
 코드는 **Agent**라는 작은 로봇 NPC가 실행한다. 채팅창에 명령어를 입력하면 등록된 함수가 트리거되어 Agent가 코드대로 움직인다. 즉 `player.onChat("build", function() {...})` 같은 *이벤트 핸들러* 개념이 게임 플레이에 자연스럽게 녹아 들어간다.
 
-다음은 *Agent Build* 튜토리얼의 Python 예시다 — Agent가 사암(sandstone) 블록을 쥐고 정사각형 벽을 쌓도록 시키는 코드다.
+다음은 *Agent Build* 튜토리얼의 Python 예시다 — Agent가 사암(sandstone) 블록을 쥐고 정사각형 벽을 쌓도록 시키는 코드다.[^agent-build]
 
 ```python
 agent.teleport_to_player()
@@ -100,20 +100,20 @@ for i in range(4):
 12월 첫째 주의 *Hour of Code* 캠페인을 위해 마인크래프트 팀은 매년 새 단원을 낸다. 1시간짜리 미니 코스인데, 매년 *스토리는 다르지만 다루는 코딩 개념은 비슷한* 구조다.
 
 - **Tale of Two Villages (2020)** — Villager와 Illager 두 마을을 코드로 화해시키는 스토리. *시퀀스·반복·문제 분해*를 가르치면서 *편견과 다양성*에 대한 토론을 함께 진행한다.
-- **TimeCraft (2021)** — 시간여행 어드벤처. 1920년대 뉴욕에서 카주 연주자에게 트럼펫을 전달하거나, 고대 주(周) 왕조에서 만리장성 건설을 돕기 위해 판다 경로를 우회시키는 식이다. *시퀀스·이벤트·루프·디버깅·문제 분해*를 다루며 7세 이상 대상, 29개 언어로 번역되었다.
+- **TimeCraft (2021)** — 시간여행 어드벤처. 1920년대 뉴욕에서 카주 연주자에게 트럼펫을 전달하거나, 고대 주(周) 왕조에서 만리장성 건설을 돕기 위해 판다 경로를 우회시키는 식이다. *시퀀스·이벤트·루프·디버깅·문제 분해*를 다루며 7세 이상 대상, 29개 언어로 번역되었다.[^timecraft-2021]
 - **Generation AI (2023)** — Agent와 함께 AI 발명품을 만든다. *책임 있는 AI*의 원칙(공정성·신뢰성)을 퍼즐로 풀어 본다.
 - **Escape Estate / AI for Good (2025)** — 컴퓨테이셔널 사고 퍼즐과 AI 윤리.
 
 "코딩 1시간"은 교사 입장에서 진입 장벽이 가장 낮은 단원이다. 학교 단위 도입의 첫 접점인 경우가 많다.
 
-### 포르투갈 특수 미션 — *Missão Minecraft: Heróis do Oceano* (2025)
+### 포르투갈 특수 미션 — *Missão Minecraft: Heróis do Oceano* (2025)[^miss-minecraft]
 
 올해 여름 포르투갈에서 진행된 정식 명칭은 *Missão Minecraft: Heróis do Oceano*(바다의 영웅들)다. 트윗이 언급한 "마크 수업"의 가장 최근 사례다.
 
 - **주최**: Microsoft Portugal × Oceanário de Lisboa × Happy Code Portugal
 - **장소·기간**: Microsoft Portugal 사옥 내 *Dream Space*. 2025년 9월 10일까지 매주 수요일
 - **대상·규모**: 6\~12세 약 500명. Oceanário 여름캠프 *Férias Debaixo de Água* 프로그램의 일환
-- **도구**: Minecraft Education + **MakeCode Arcade**. 해양 생태계 보전을 주제로 한 프로그래밍 워크숍
+- **도구**: Minecraft Education + **MakeCode Arcade**. 해양 생태계 보전을 주제로 한 프로그래밍 워크숍[^gamecode-education]
 - **역량 목표**: 프로그래밍 + 창의성·협업·문제 해결·디지털 시민성·환경 책임 의식
 
 > "프로그래밍 교육은 의식 있고 창의적이며 세상을 바꿀 수 있는 시민을 길러내는 강력한 도구가 될 수 있다."
@@ -154,7 +154,7 @@ AP CSP는 다섯 개의 Big Idea로 구성되고, 시험 비중은 다음과 같
 
 ### 한계 — 2025년 systematic review의 평가
 
-가장 신경 써서 읽어야 할 자료는 Slattery et al.의 2025년 systematic review다(*Review of Education*). 마인크래프트를 활용한 디지털 게임 기반 학습(DGBL) 연구 29편을 모두 검토했고, 결론은 신중했다.
+가장 신경 써서 읽어야 할 자료는 Slattery et al.의 2025년 systematic review다(*Review of Education*). 마인크래프트를 활용한 디지털 게임 기반 학습(DGBL) 연구 29편을 모두 검토했고, 결론은 신중했다.[^slattery-2025]
 
 > 29개 연구 모두 편향 위험(risk of bias) 중·고 평가. 효과의 방향성은 일관되게 긍정이지만, 표본 크기·블라인딩·교사 효과 통제 등에서 약한 설계가 다수. 효과 재현(replication)이 필요하다.
 
@@ -162,7 +162,7 @@ AP CSP는 다섯 개의 Big Idea로 구성되고, 시험 비중은 다음과 같
 
 ### 반대 결과 — 문제해결력에서 유의차 없음
 
-- **터키 IJTES 2022** — 7학년 대상 *Minecraft EDU + Python* 수업. 코딩 태도·문제해결력에서 통제군과 유의미한 차이를 발견하지 못했다.
+- **터키 IJTES 2022** — 7학년 대상 *Minecraft EDU + Python* 수업. 코딩 태도·문제해결력에서 통제군과 유의미한 차이를 발견하지 못했다.[^minecraft-2022]
 
 이 결과는 "마크가 만능"이라는 주장과 정면으로 충돌한다. *어떤* 효과는 있지만 *모든* 효과가 자동으로 따라오지는 않는다는 뜻이다.
 
@@ -186,16 +186,16 @@ AP CSP는 다섯 개의 Big Idea로 구성되고, 시험 비중은 다음과 같
 
 ## 출처
 
-- 원 트윗: <https://x.com/kingwest0219/status/2058481459611246766>
-- 마인크래프트 에듀케이션 CS Progression: <https://education.minecraft.net/en-us/blog/new-coding-progression>
-- *Intro to CS with MakeCode for Minecraft* 10단원: <https://minecraft.makecode.com/courses/csintro>
-- *Agent Build* Python 튜토리얼: <https://minecraft.makecode.com/tutorials/python/agent-build>
-- GameCode 5일 워크숍 코스: <https://education.minecraft.net/en-us/resources/game-code>
-- *TimeCraft* (Hour of Code 2021): <https://www.minecraft.net/en-us/article/save-future-through-timecraft>
-- *Missão Minecraft: Heróis do Oceano* (Microsoft Portugal 보도자료): <https://news.cision.com/pt/microsoft-portugal/i/minecraft-education-ao-servico-da-protecao-do-oceano--microsoft-portugal--oceanario-de-lisboa-e-happ,c-1589110020>
-- AP CSP Endorsed Providers: <https://apcentral.collegeboard.org/courses/ap-computer-science-principles/classroom-resources/curricula-pedagogical-support>
-- 마데이라 DRE × Microsoft 도입 보도: <https://www.madeira.gov.pt/draescolar/pesquisar/ctl/ReadInformcao/mid/2173/InformacaoId/148624>
-- LGW Minecraft eSports Challenge 2023: <https://freguesias.dnoticias.pt/escola-do-estreito-de-camara-de-lobos-vence-lgw-minecraft-esports-challenge/>
-- 포르투갈 컴퓨터과학 의무교육 편입 검토(Observador 2024-11-21): <https://observador.pt/2024/11/21/ciencias-da-computacao-pode-entrar-no-ensino-obrigatorio-em-2025-diz-associacao/>
-- Slattery et al. 2025 systematic review (*Review of Education*): <https://doras.dcu.ie/30744/1/Review%20of%20Education%20-%202025%20-%20Slattery%20-%20Assessing%20the%20benefits%20of%20digital%20game%E2%80%90based%20learning%20with%20Minecraft%20in%20children%20.pdf>
-- Minecraft EDU + Python 코딩 효과 연구 (터키 IJTES 2022): <https://dergipark.org.tr/en/pub/goputeb/issue/76483/1242871>
+[^kingwest0219-status]: 원 트윗: <https://x.com/kingwest0219/status/2058481459611246766>
+[^progression-education]: 마인크래프트 에듀케이션 CS Progression: <https://education.minecraft.net/en-us/blog/new-coding-progression>
+[^intro-makecode]: *Intro to CS with MakeCode for Minecraft* 10단원: <https://minecraft.makecode.com/courses/csintro>
+[^agent-build]: *Agent Build* Python 튜토리얼: <https://minecraft.makecode.com/tutorials/python/agent-build>
+[^gamecode-education]: GameCode 5일 워크숍 코스: <https://education.minecraft.net/en-us/resources/game-code>
+[^timecraft-2021]: *TimeCraft* (Hour of Code 2021): <https://www.minecraft.net/en-us/article/save-future-through-timecraft>
+[^miss-minecraft]: *Missão Minecraft: Heróis do Oceano* (Microsoft Portugal 보도자료): <https://news.cision.com/pt/microsoft-portugal/i/minecraft-education-ao-servico-da-protecao-do-oceano--microsoft-portugal--oceanario-de-lisboa-e-happ,c-1589110020>
+[^csp-endorsed]: AP CSP Endorsed Providers: <https://apcentral.collegeboard.org/courses/ap-computer-science-principles/classroom-resources/curricula-pedagogical-support>
+[^dre-microsoft]: 마데이라 DRE × Microsoft 도입 보도: <https://www.madeira.gov.pt/draescolar/pesquisar/ctl/ReadInformcao/mid/2173/InformacaoId/148624>
+[^lgw-2023]: LGW Minecraft eSports Challenge 2023: <https://freguesias.dnoticias.pt/escola-do-estreito-de-camara-de-lobos-vence-lgw-minecraft-esports-challenge/>
+[^observador-2024]: 포르투갈 컴퓨터과학 의무교육 편입 검토(Observador 2024-11-21): <https://observador.pt/2024/11/21/ciencias-da-computacao-pode-entrar-no-ensino-obrigatorio-em-2025-diz-associacao/>
+[^slattery-2025]: Slattery et al. 2025 systematic review (*Review of Education*): <https://doras.dcu.ie/30744/1/Review%20of%20Education%20-%202025%20-%20Slattery%20-%20Assessing%20the%20benefits%20of%20digital%20game%E2%80%90based%20learning%20with%20Minecraft%20in%20children%20.pdf>
+[^minecraft-2022]: Minecraft EDU + Python 코딩 효과 연구 (터키 IJTES 2022): <https://dergipark.org.tr/en/pub/goputeb/issue/76483/1242871>

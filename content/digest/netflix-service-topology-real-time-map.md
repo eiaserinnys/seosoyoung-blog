@@ -125,7 +125,7 @@ Stage 2는 로드 밸런서, NAT 게이트웨이, API 게이트웨이, 프록시
 
 ### 그래프 저장소
 
-[Netflix의 자체 그래프 DB](https://netflixtechblog.medium.com/high-throughput-graph-abstraction-at-netflix-part-i-e88063e6f6d5)에 토폴로지를 영속화한다. 분산 키-값 인프라 위에 얹은 추상화 레이어이고, Netflix 규모의 고처리량·다중 홉 traversal에 맞춰져 있다.
+[Netflix의 자체 그래프 DB](https://netflixtechblog.medium.com/high-throughput-graph-abstraction-at-netflix-part-i-e88063e6f6d5)에 토폴로지를 영속화한다. 분산 키-값 인프라 위에 얹은 추상화 레이어이고, Netflix 규모의 고처리량·다중 홉 traversal에 맞춰져 있다.[^netflix-high]
 
 ## 엔지니어가 지금 할 수 있는 것
 
@@ -171,6 +171,7 @@ Stage 2는 로드 밸런서, NAT 게이트웨이, API 게이트웨이, 프록시
 - 저자: Parth Jain, Rakesh Sukumar, Yingwu Zhao, Renzo Sanchez-Silva, Nathan Fisher
 - 발행일: 2026-05-29
 - 원문: <https://netflixtechblog.com/from-silos-to-service-topology-why-netflix-built-a-real-time-service-map-0165ba13a7bc>
-- 관련: [Netflix's high-throughput graph abstraction (Part I)](https://netflixtechblog.medium.com/high-throughput-graph-abstraction-at-netflix-part-i-e88063e6f6d5)
 
 > 본문 도식 4장은 원문(Netflix Technology Blog, Medium)에서 인용했다.
+
+[^netflix-high]: 관련: [Netflix's high-throughput graph abstraction (Part I)](https://netflixtechblog.medium.com/high-throughput-graph-abstraction-at-netflix-part-i-e88063e6f6d5)

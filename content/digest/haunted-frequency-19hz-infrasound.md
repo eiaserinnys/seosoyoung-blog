@@ -15,7 +15,7 @@ sidenotes: true
 
 ## 3줄 요약
 
-1. 영국 코번트리의 의료기기 회사 엔지니어 빅 탠디(Vic Tandy)는 1998년 *Journal of the Society for Psychical Research*에 발표한 「The Ghost in the Machine」에서, 자기 실험실의 "유령"이 새로 설치된 환기 팬이 만든 19 Hz 인프라사운드 정상파(standing wave)였음을 보였다.
+1. 영국 코번트리의 의료기기 회사 엔지니어 빅 탠디(Vic Tandy)는 1998년 *Journal of the Society for Psychical Research*에 발표한 「The Ghost in the Machine」에서, 자기 실험실의 "유령"이 새로 설치된 환기 팬이 만든 19 Hz 인프라사운드 정상파(standing wave)였음을 보였다.[^ghost-1998]
 2. 19 Hz는 인체 안구의 공명 주파수(NASA 보고서 기준 18 Hz)와 가깝다. 안구가 미세하게 떨리면 시야 가장자리에 형체가 보이고, 흉부 진동은 호흡 곤란과 막연한 공포를 만든다.
 3. 후속 연구들은 인프라사운드가 "유령 체험"의 일부를 설명한다는 점은 재확인했지만, 결정적 변수는 음향보다 *암시 감수성*임을 함께 짚었다. 유령은 공기에도 있고 사람의 마음에도 있다.
 
@@ -53,7 +53,7 @@ sidenotes: true
 
 ### Mary King's Close 2007 — 인프라사운드 vs 주변음
 
-에든버러의 지하 골목 Mary King's Close에서 진행된 2007년 ghost tour 실험에서, 일부 그룹에게는 숨겨진 발생기로 인프라사운드를 들려주고 일부 그룹에게는 들려주지 않았다. *LiveScience*(2015)의 정리에 따르면:
+에든버러의 지하 골목 Mary King's Close에서 진행된 2007년 ghost tour 실험에서, 일부 그룹에게는 숨겨진 발생기로 인프라사운드를 들려주고 일부 그룹에게는 들려주지 않았다. *LiveScience*(2015)의 정리에 따르면:[^science-2015]
 
 - 양 그룹의 "paranormal experience" 보고 인원 수에는 유의한 차이가 없었다.
 - 그러나 인프라사운드 그룹은 1인당 "오싹한 경험" 횟수가 더 많았다.
@@ -100,9 +100,10 @@ sidenotes: true
 ## 출처
 
 - 원문: <https://higgs.ph.ed.ac.uk/outreach/higgshalloween-2021/haunted-frequency> — Jason Segall, Higgs Centre for Theoretical Physics (University of Edinburgh) Halloween 2021 outreach 시리즈.
-- Tandy, V. & Lawrence, T. R. (1998). "The Ghost in the Machine." *Journal of the Society for Psychical Research*, Vol. 62, No. 851. <http://www.richardwiseman.com/resources/ghost-in-machine.pdf>
-- Pappas, S. (2015). "Science of the Paranormal: Can You Trust Your Own Mind?" *LiveScience*. <https://www.livescience.com/52641-science-of-paranormal-ghosts.html>
 - Wikipedia, "Infrasound" (Wiseman 17 Hz 콘서트 실험 절). 본문에서는 와이즈먼이 BA(British Association for the Advancement of Science)에서 직접 발표한 결과를 정리본으로 인용했다.
 - Mary King's Close 2005년 측정값(*"infrasound 200× higher in haunted locations"*)은 Higgs Centre outreach 페이지(2021)의 2차 인용을 그대로 옮긴 것이다. 1차 자료는 *The Ghost Experiment*(2005) 아카이브.
 
 커버 일러스트: Higgs Centre for Theoretical Physics, Halloween 2021 outreach 페이지. 학술 outreach 목적의 인용.
+
+[^ghost-1998]: Tandy, V. & Lawrence, T. R. (1998). "The Ghost in the Machine." *Journal of the Society for Psychical Research*, Vol. 62, No. 851. <http://www.richardwiseman.com/resources/ghost-in-machine.pdf>
+[^science-2015]: Pappas, S. (2015). "Science of the Paranormal: Can You Trust Your Own Mind?" *LiveScience*. <https://www.livescience.com/52641-science-of-paranormal-ghosts.html>

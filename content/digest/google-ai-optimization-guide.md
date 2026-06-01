@@ -68,7 +68,7 @@ sidenotes: true
 
 가이드의 가장 강한 진술은 이 섹션에 있다. AEO/GEO 시장에서 흔히 권하는 다섯 가지 작업을 Google이 명시적으로 부정한다.
 
-> 1. **llms.txt 같은 특수 마크업** — AI 검색 노출을 위해 새 머신리더블 파일이나 AI 텍스트 파일, 마크업, 마크다운을 만들 필요가 없다. Google은 HTML 외에도 여러 [파일 유형](https://developers.google.com/search/docs/crawling-indexing/indexable-file-types)을 발견·크롤·인덱싱하지만, 그 파일이 "특별하게" 취급된다는 뜻은 아니다.
+> 1. **llms.txt 같은 특수 마크업** — AI 검색 노출을 위해 새 머신리더블 파일이나 AI 텍스트 파일, 마크업, 마크다운을 만들 필요가 없다. Google은 HTML 외에도 여러 [파일 유형](https://developers.google.com/search/docs/crawling-indexing/indexable-file-types)을 발견·크롤·인덱싱하지만, 그 파일이 "특별하게" 취급된다는 뜻은 아니다.[^developers-google]
 >
 > 2. **콘텐츠 청킹** — AI가 잘 이해하도록 콘텐츠를 작은 조각으로 나눌 필요가 없다. Google 시스템은 한 페이지의 여러 주제를 구분해 관련 부분만 보여줄 수 있다. 이상적인 페이지 길이는 정해져 있지 않다.
 >
@@ -116,3 +116,5 @@ AI 에이전트는 사람을 대신해 예약·상품 비교 같은 작업을 �
 - 발행: Google for Developers — Search Central
 - 게시 시점 / 최종 수정: 2026-05-15 UTC
 - 원문: <https://developers.google.com/search/docs/fundamentals/ai-optimization-guide>
+
+[^developers-google]: 원문: <https://developers.google.com/search/docs/fundamentals/ai-optimization-guide>

@@ -16,7 +16,7 @@ sidenotes: true
 
 ## 3줄 요약
 
-1. SkillOpt는 Microsoft가 2026년 5월 공개한 **자연어 기술 문서 옵티마이저**다. 모델 가중치는 그대로 두고, `skill.md` 한 장을 딥러닝 학습 루프처럼 반복 갱신하여 LLM 에이전트의 능력을 키운다.
+1. SkillOpt는 Microsoft가 2026년 5월 공개한 **자연어 기술 문서 옵티마이저**다. 모델 가중치는 그대로 두고, `skill.md` 한 장을 딥러닝 학습 루프처럼 반복 갱신하여 LLM 에이전트의 능력을 키운다.[^youtu-jubmdtcim0m]
 2. 동작 전제는 *태스크가 자동으로 채점 가능해야 한다*는 것이다. 6개 채점 가능한 벤치마크에서 7개 모델 × 3개 실행 환경의 **52/52 셀 모두에서 최고 또는 공동 최고**를 기록했고, 학습된 스킬은 다른 모델·환경·벤치마크로 재학습 없이 전이된다.
 3. 추론 시점에는 옵티마이저가 사라지고 `best_skill.md` 한 장만 남기 때문에 **배포 후 추가 비용은 0**이다. 학습은 만만치 않다 — 한 벤치마크당 20만\~2억 토큰 정도가 소요된다.
 
@@ -36,9 +36,9 @@ LLM 에이전트의 성능을 끌어올리는 길은 보통 둘이다. 하나는
 
 - **저자(15인):** Yifan Yang, Ziyang Gong, Weiquan Huang, Qihao Yang, Ziwei Zhou, Zisu Huang, Yan Li, Xuemei Gao, Qi Dai, Bei Liu, Kai Qiu, Yuqing Yang, Dongdong Chen, Xue Yang, Chong Luo
 - **소속:** Microsoft
-- **공개 시점:** arXiv 2026-05-22(v1) / 2026-05-25(v2). GitHub 리포는 2026-05-08 생성, 2026-05-27 기준 Stars 562·Forks 49.
+- **공개 시점:** arXiv 2026-05-22(v1) / 2026-05-25(v2). GitHub 리포는 2026-05-08 생성, 2026-05-27 기준 Stars 562·Forks 49.[^arxiv-2605]
 - **라이선스:** MIT
-- **동반 프로젝트:** [SkillLens](https://microsoft.github.io/SkillLens/)
+- **동반 프로젝트:** [SkillLens](https://microsoft.github.io/SkillLens/)[^skilllens-microsoft]
 
 ## 어디서 동작하고 어디서는 동작하지 않는가
 
@@ -255,7 +255,7 @@ SkillOpt/
 설치와 최소 학습 명령:
 
 ```bash
-git clone https://github.com/microsoft/SkillOpt.git
+git clone https://github.com/microsoft/SkillOpt.git[^microsoft-github][^github-microsoft]
 pip install -e .
 
 python scripts/train.py \
@@ -281,8 +281,9 @@ Slow update가 가중치 공간의 모멘텀을 그대로 모사한다는 점도
 
 - 저자: Yifan Yang 외 14인 (Microsoft)
 - 공개: arXiv 2026-05-22(v1) / 2026-05-25(v2)
-- 프로젝트 사이트: <https://microsoft.github.io/SkillOpt/>
-- 논문: <https://arxiv.org/abs/2605.23904>
-- GitHub: <https://github.com/microsoft/SkillOpt>
-- 데모 영상: <https://youtu.be/JUBMDTCiM0M>
-- 동반 프로젝트(SkillLens): <https://microsoft.github.io/SkillLens/>
+
+[^microsoft-github]: 프로젝트 사이트: <https://microsoft.github.io/SkillOpt/>
+[^arxiv-2605]: 논문: <https://arxiv.org/abs/2605.23904>
+[^github-microsoft]: GitHub: <https://github.com/microsoft/SkillOpt>
+[^youtu-jubmdtcim0m]: 데모 영상: <https://youtu.be/JUBMDTCiM0M>
+[^skilllens-microsoft]: 동반 프로젝트(SkillLens): <https://microsoft.github.io/SkillLens/>

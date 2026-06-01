@@ -23,7 +23,7 @@ sidenotes: true
 - 제목: <em>LLMs Get Lost In Multi-Turn Conversation</em>
 - 저자: Philippe Laban (Microsoft Research), Hiroaki Hayashi·Yingbo Zhou (Salesforce Research), Jennifer Neville (Microsoft Research)
 - 발표: arXiv 2505.06120, 2025년 5월 9일
-- 코드·데이터: `github.com/microsoft/lost_in_conversation`, `huggingface.co/datasets/Microsoft/lost_in_conversation`
+- 코드·데이터: `github.com/microsoft/lost_in_conversation`, `huggingface.co/datasets/Microsoft/lost_in_conversation`[^github-microsoft]
 - 실험 비용: 약 USD 5,000 (저자 추산)
 
 저자들은 기존 LLM 평가가 거의 모두 단일턴·fully-specified 조건에 머물러 있다고 진단한다. 그러나 실제 사용자들은 자기 요구를 처음부터 완전히 명세하지 않으며, 여러 턴에 걸쳐 점진적으로 드러낸다. 이 논문은 그 간극을 메우기 위한 첫 대규모 시뮬레이션이다.
@@ -120,7 +120,8 @@ sidenotes: true
 > Laban, P., Hayashi, H., Zhou, Y., & Neville, J. (2025). *LLMs Get Lost In Multi-Turn Conversation*. arXiv preprint arXiv:2505.06120.
 
 원문: <https://arxiv.org/abs/2505.06120>
-코드: <https://github.com/microsoft/lost_in_conversation>
 데이터: <https://huggingface.co/datasets/Microsoft/lost_in_conversation>
 
 본 다이제스트의 모든 그림은 원문 논문에서 발췌했다.
+
+[^github-microsoft]: 코드: <https://github.com/microsoft/lost_in_conversation>

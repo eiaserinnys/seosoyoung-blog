@@ -35,7 +35,7 @@ LLM은 다음 단어(또는 픽셀)를 글자 그대로 맞히려 한다. 이 �
 본론에 들어가기 전에 그림 한 장으로 무대를 정리해 두자.
 
 ![LeJEPA가 월드 모델을 학습한다 — 숨은 변수 → 복잡하게 뒤섞임 → 방향만 돌려 복원](/images/lejepa-world-model-identifiability/fig_lejepa_demo.jpg)
-*(좌) 세계에는 그 상태를 정하는 '숨은 변수(진짜 좌표)'가 있다. (중) 알 수 없는 과정이 그것을 우리가 보는 복잡한 데이터로 뒤섞는다. (우) LeJEPA는 그 좌표를 방향만 돌아간 채로 되찾는다 — 이것이 유일한 최적해임을 증명한다. 출처: klindtlab.github.io/lejepa-identifiability*
+*(좌) 세계에는 그 상태를 정하는 '숨은 변수(진짜 좌표)'가 있다. (중) 알 수 없는 과정이 그것을 우리가 보는 복잡한 데이터로 뒤섞는다. (우) LeJEPA는 그 좌표를 방향만 돌아간 채로 되찾는다 — 이것이 유일한 최적해임을 증명한다. 출처: klindtlab.github.io/lejepa-identifiability*[^klindtlab-github]
 
 <strong>① 세계 — 숨은 변수(진짜 좌표).</strong> 세계가 실제로 움직이는 데는 몇 개의 핵심 변수면 충분하다. 로봇 팔이라면 관절 각도 두세 개. 이 글은 그것을 잠재변수 $z$라 부른다. 이 변수들이 만드는 공간이 곧 *그 세계에서 일어날 수 있는 일들이 사는 공간*이다 — 공간의 한 점은 '지금 세계의 상태', 점들 사이의 이동은 '그 세계에서 유효한 조작'이다. 우리는 이 변수를 직접 보지 못한다. 대신 그것이 복잡하게 뒤섞여 나온 결과 — 카메라 이미지 같은 관측 $x$ — 만 본다. 수학으로는 알 수 없는 뒤섞기 함수 $g$가 있어 $x = g(z)$다. 또 이 변수는 시간에 따라 조금씩 변한다($z'$는 $z$의 다음 순간).
 
@@ -123,3 +123,5 @@ David Klindt(Cold Spring Harbor Laboratory), Yann LeCun(New York University), Ra
 [Code](https://github.com/klindtlab/lejepa-identifiability) · [Colab](https://colab.research.google.com/drive/1ozjRk3FfUIDX7WBqlOKvhNcIamy0JxCH) · [Video](https://youtu.be/EioGDo67ZDs)
 
 원 LeJEPA 논문: Randall Balestriero, Yann LeCun, "LeJEPA: Provable and Scalable Self-Supervised Learning Without the Heuristics" (2025-11), arXiv:2511.08544.
+
+[^klindtlab-github]: 원문: <https://klindtlab.github.io/lejepa-identifiability/>

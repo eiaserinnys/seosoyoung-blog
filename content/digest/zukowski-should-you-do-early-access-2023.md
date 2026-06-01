@@ -26,7 +26,7 @@ sidenotes: true
 
 ## 용어 정리
 
-- <strong>EA</strong>: Steam Early Access 프로그램으로 출시되어 판매 중이지만 아직 1.0이 아닌 게임. (Electronic Arts 회사가 아니다.)
+- <strong>EA</strong>: Steam Early Access 프로그램으로 출시되어 판매 중이지만 아직 1.0이 아닌 게임. (Electronic Arts 회사가 아니다.)[^strong-2023][^estimating-2023]
 - <strong>1.0</strong>: EA로 먼저 출시된 후 정식 출시까지 마친 게임.
 - <strong>Normal Launch (일반 출시)</strong>: EA를 거치지 않고 처음부터 정식으로 출시된 게임.
 
@@ -158,5 +158,6 @@ EA 출시 자체가 부진하면 게임은 즉시 갇힌다. 매출 없음, 나�
 - <strong>저자</strong>: Chris Zukowski (zukalous), How To Market A Game
 - <strong>발행</strong>: 2023년 7월 27일 (2023년 8월 21일 갱신)
 - <strong>데이터</strong>: vginsights.com (CSV) + ChatGPT-4 Code Interpreter
-- <strong>원문</strong>: <https://howtomarketagame.com/2023/07/27/should-you-do-early-access/>
-- <strong>이어지는 글</strong>: [Estimating Early Access success based on your EA launch numbers (2023-08-21)](https://howtomarketagame.com/2023/08/21/estimating-early-access-success/)
+
+[^strong-2023]: <strong>원문</strong>: <https://howtomarketagame.com/2023/07/27/should-you-do-early-access/>
+[^estimating-2023]: <strong>이어지는 글</strong>: [Estimating Early Access success based on your EA launch numbers (2023-08-21)](https://howtomarketagame.com/2023/08/21/estimating-early-access-success/)

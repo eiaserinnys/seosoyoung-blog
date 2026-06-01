@@ -10,20 +10,20 @@ sidenotes: true
 ---
 
 > Phoebe Sajor / Stack Overflow Blog / 2025-12-26 (top-10 재게시)
-> Erik Brynjolfsson · Bharat Chandar · Ruyu Chen / Stanford Digital Economy Lab / 2025-11-13
+> Erik Brynjolfsson · Bharat Chandar · Ruyu Chen / Stanford Digital Economy Lab / 2025-11-13[^erik-2025]
 
 ![Stack Overflow의 「AI vs Gen Z」 표지 이미지. 코딩이 약속한 안정된 진로가 AI 시대에 바뀌었다는 메시지의 시각적 후크.](/images/ai-vs-gen-z-stack-overflow/hero.jpg)
 *Credit: Alexandra Francis / Stack Overflow Blog. 산업 매체 차원의 종합 보고서가 한 세대의 진입로 봉쇄를 정리한 자료다.*
 
 ## 3줄 요약
 
-1. Stack Overflow가 2025년 12월 산업 매체·학술 자료를 종합해 발표한 「AI vs Gen Z」와, 그것이 인용한 Stanford Digital Economy Lab의 ADP 거시 데이터 보고서 「Canaries in the Coal Mine?」 두 자료를 묶어 정리한다. *주니어 개발자의 진입로가 무엇으로, 얼마나, 어떻게 봉쇄되고 있는가*를 정량으로 본다.
+1. Stack Overflow가 2025년 12월 산업 매체·학술 자료를 종합해 발표한 「AI vs Gen Z」와, 그것이 인용한 Stanford Digital Economy Lab의 ADP 거시 데이터 보고서 「Canaries in the Coal Mine?」 두 자료를 묶어 정리한다. *주니어 개발자의 진입로가 무엇으로, 얼마나, 어떻게 봉쇄되고 있는가*를 정량으로 본다.[^digitaleconomy-2025]
 2. 핵심 수치 셋. (a) 22-25세 AI 노출 직군 -16% 상대 고용 감소 (firm-time fixed effects 통제 후, ADP 350-500만 노동자 패널). (b) 테크 인턴십 공고 2023년 대비 -30%, 엔트리급 테크 채용 -25% YoY. (c) 고용주 37%가 "신졸 졸업자보다 AI를 고용하겠다"고 답하고, 70%가 "AI가 인턴의 일을 할 수 있다"고 답한다. CS·컴퓨터 공학 졸업생 실업률은 6.1%·7.5%로 Fine Arts(7.4%)보다도 높다.
 3. 본 자료는 *AI가 단독 원인이라는 인과적 입증*은 아니고 *AI 가설과 정합적인 패턴*을 제시한다. 그러나 임금이 아닌 *고용*으로 조정된다는 점, 즉 신입은 *해고*로 사라지는 것이 아니라 *처음부터 뽑히지 않아* 통계에서 사라진다는 점에서, 일본 1993-2005 취업빙하기의 메커니즘과 *형태적 동형*이라는 신호가 분명하다.
 
 ## 자료의 위치
 
-두 자료를 함께 다루는 이유는 *서사*와 *데이터*가 분리되어 있어서다. Stack Overflow Blog의 「AI vs Gen Z: How AI has changed the career pathway for junior developers」(Phoebe Sajor, 2025-12-26)는 Stanford Digital Economy Lab의 학술 페이퍼, 뉴욕 연준의 노동시장 보고서, SHRM·Handshake·Indeed의 인턴십 데이터, NYT 보도를 한 글에서 종합한 *산업 매체 차원의 1차 보고서*다. 한편 Stack Overflow가 인용한 Stanford 측 학술 자료는 — 외부 보도에서 종종 "Stanford AI Index 2026"과 혼용되지만 — 정확히는 Erik Brynjolfsson·Bharat Chandar·Ruyu Chen이 2025년 11월에 발표한 working paper 「Canaries in the Coal Mine? Six Facts about the Recent Employment Effects of Artificial Intelligence」이다. ADP의 페이로 데이터(매월 350-500만 노동자 패널)로 firm-time fixed effects를 통제하여 AI의 *경험적* 고용 영향을 측정한 이른 시기의 대규모 연구다.
+두 자료를 함께 다루는 이유는 *서사*와 *데이터*가 분리되어 있어서다. Stack Overflow Blog의 「AI vs Gen Z: How AI has changed the career pathway for junior developers」(Phoebe Sajor, 2025-12-26)는 Stanford Digital Economy Lab의 학술 페이퍼, 뉴욕 연준의 노동시장 보고서, SHRM·Handshake·Indeed의 인턴십 데이터, NYT 보도를 한 글에서 종합한 *산업 매체 차원의 1차 보고서*다. 한편 Stack Overflow가 인용한 Stanford 측 학술 자료는 — 외부 보도에서 종종 "Stanford AI Index 2026"과 혼용되지만 — 정확히는 Erik Brynjolfsson·Bharat Chandar·Ruyu Chen이 2025년 11월에 발표한 working paper 「Canaries in the Coal Mine? Six Facts about the Recent Employment Effects of Artificial Intelligence」이다. ADP의 페이로 데이터(매월 350-500만 노동자 패널)로 firm-time fixed effects를 통제하여 AI의 *경험적* 고용 영향을 측정한 이른 시기의 대규모 연구다.[^digitaleconomy-stanford][^newyorkfed-2025][^shrm-2024][^handshake-2025][^indeed-2025]
 
 본 다이제스트는 두 자료의 *데이터*를 함께 정리한다. Stack Overflow가 산업 매체에서 모은 통계와 Stanford가 학술 데이터에서 추출한 6가지 사실을 두 절로 나누어 본다.
 
@@ -80,7 +80,7 @@ Phoebe Sajor가 산업 매체에서 모은 보조 데이터의 핵심을 정리�
 
 | 지표 | 수치 | 출처 |
 |---|---|---|
-| "신졸보다 AI를 고용하겠다" | 37% | Newsweek 인용 SHRM 2024 |
+| "신졸보다 AI를 고용하겠다" | 37% | Newsweek 인용 SHRM 2024[^new-2025] |
 | "AI가 인턴의 일을 할 수 있다" | 70% | SHRM 2024 |
 | "인턴·신졸의 결과물보다 AI 결과물을 더 신뢰" | 57% | 같은 조사 |
 | "신규 채용 Z세대를 1년 내 해고" | 60% | Newsweek 2024 |
@@ -135,14 +135,11 @@ Phoebe Sajor가 산업 매체에서 모은 보조 데이터의 핵심을 정리�
 발행: Stack Overflow Blog (Phoebe Sajor) / 2025-12-26 (top-10 재게시)
 원문: <https://stackoverflow.blog/2025/12/26/ai-vs-gen-z/>
 
-학술 출처: Erik Brynjolfsson · Bharat Chandar · Ruyu Chen / Stanford Digital Economy Lab / 2025-11-13
-정식 페이퍼: <https://digitaleconomy.stanford.edu/publications/canaries-in-the-coal-mine/>
-PDF: <https://digitaleconomy.stanford.edu/wp-content/uploads/2025/08/Canaries_BrynjolfssonChandarChen.pdf>
-
-보조 보강(산업 매체):
-
-- 뉴욕 연준 2025년 대학 노동시장 보고서: <https://www.newyorkfed.org/research/college-labor-market>
-- SHRM 2024 인턴 대체 가능성 조사 (Newsweek 인용)
-- Handshake Internships Index 2025
-- Indeed Hiring Lab 2025-04
-- New York Times 「Goodbye, $165,000 Tech Jobs」 (2025-08-10)
+[^erik-2025]: 학술 출처: Erik Brynjolfsson · Bharat Chandar · Ruyu Chen / Stanford Digital Economy Lab / 2025-11-13
+[^digitaleconomy-stanford]: 정식 페이퍼: <https://digitaleconomy.stanford.edu/publications/canaries-in-the-coal-mine/>
+[^digitaleconomy-2025]: PDF: <https://digitaleconomy.stanford.edu/wp-content/uploads/2025/08/Canaries_BrynjolfssonChandarChen.pdf>
+[^newyorkfed-2025]: 뉴욕 연준 2025년 대학 노동시장 보고서: <https://www.newyorkfed.org/research/college-labor-market>
+[^shrm-2024]: SHRM 2024 인턴 대체 가능성 조사 (Newsweek 인용)
+[^handshake-2025]: Handshake Internships Index 2025
+[^indeed-2025]: Indeed Hiring Lab 2025-04
+[^new-2025]: New York Times 「Goodbye, $165,000 Tech Jobs」 (2025-08-10)

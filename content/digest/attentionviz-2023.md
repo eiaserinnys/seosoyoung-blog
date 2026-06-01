@@ -16,7 +16,7 @@ sidenotes: true
 
 ## 3줄 요약
 
-1. AttentionViz는 트랜스포머의 query·key 벡터를 *함께* 한 평면에 사영(joint embedding)해, 단일 문장의 bipartite 그래프 시각화로는 보이지 않던 *다수 입력에 걸친 전역 어텐션 패턴*을 헤드 단위로 비교하게 만든 인터랙티브 도구다. Harvard·Google Research(Catherine Yeh 외 5인) 작품이며 IEEE TVCG 2023에 게재되었다.
+1. AttentionViz는 트랜스포머의 query·key 벡터를 *함께* 한 평면에 사영(joint embedding)해, 단일 문장의 bipartite 그래프 시각화로는 보이지 않던 *다수 입력에 걸친 전역 어텐션 패턴*을 헤드 단위로 비교하게 만든 인터랙티브 도구다. Harvard·Google Research(Catherine Yeh 외 5인) 작품이며 IEEE TVCG 2023에 게재되었다.[^attentionviz][^quantizable-2023]
 2. 핵심 기법은 query 벡터에 $1/\sqrt{d}$ 정규화를 거쳐 t-SNE/UMAP/PCA로 query·key를 *같은 공간*에 사영하는 것. 거리와 어텐션 가중치 사이에 강한 음의 상관(BERT 평균 -0.938, GPT-2 -0.792, ViT -0.873 \~ -0.884)이 발생하여 "가까운 점 = 강한 어텐션"이라는 직관이 성립한다.
 3. 도구는 Matrix View(전체 144개 헤드 일람) → Single View(헤드 줌인) → Sentence/Image View(단일 입력 상세)의 3단 줌 구조다. 이로 BERT의 나선형 위치 패턴·induction head 후보, ViT의 hue/brightness 특화 헤드, GPT-2의 query-key norm 격차와 "첫 토큰에 몰리는" 이상 어텐션 등 기존 단일-입력 도구에서 드러나지 않던 현상이 보고된다.
 
@@ -24,9 +24,9 @@ sidenotes: true
 
 이 다이제스트는 세 갈래의 자료를 묶어 정리한다.
 
-- **도큐 페이지** — <https://catherinesyeh.github.io/attn-docs/> (시각·UX 설명, 데모 영상 8편)
-- **페이퍼** — Yeh et al., *AttentionViz: A Global View of Transformer Attention*, IEEE TVCG 2023. arXiv:2305.03210 (11페이지)
-- **GitHub 리포** — <https://github.com/catherinesyeh/attention-viz> (Vue·TypeScript 프런트엔드 + Python/Flask 백엔드, BERT·GPT-2·ViT-16/32 사전 처리 데이터 동봉)
+- **도큐 페이지** — <https://catherinesyeh.github.io/attn-docs/> (시각·UX 설명, 데모 영상 8편)[^catherinesyeh-github]
+- **페이퍼** — Yeh et al., *AttentionViz: A Global View of Transformer Attention*, IEEE TVCG 2023. arXiv:2305.03210 (11페이지)[^tvcg-2023]
+- **GitHub 리포** — <https://github.com/catherinesyeh/attention-viz> (Vue·TypeScript 프런트엔드 + Python/Flask 백엔드, BERT·GPT-2·ViT-16/32 사전 처리 데이터 동봉)[^github-catherinesyeh]
 
 저자: Catherine Yeh, Yida Chen, Aoyu Wu, Cynthia Chen, Fernanda Viégas, Martin Wattenberg.
 소속: Harvard University (전원), Google Research (Viégas·Wattenberg 겸직).
@@ -128,7 +128,7 @@ ViT-32에 합성 컬러·밝기 그라디언트 이미지를 입력해 Matrix Vi
 
 ### BERT — induction head 가능성
 
-Induction head는 GPT-2 같은 *단방향* 트랜스포머에서 in-context learning의 메커니즘으로 알려져 있다(Anthropic, 2022). 페이퍼는 *양방향* BERT에서도 induction-like 동작을 발견한다.
+Induction head는 GPT-2 같은 *단방향* 트랜스포머에서 in-context learning의 메커니즘으로 알려져 있다(Anthropic, 2022). 페이퍼는 *양방향* BERT에서도 induction-like 동작을 발견한다.[^context-2022]
 
 - **Layer 8 head 2** — 표준 induction. 토큰 A(예: `-`)가 이전 등장에서 자기 앞에 있던 토큰 B(예: `8`, `10`)에 주의를 보낸다. BERT는 양방향이므로 양쪽 방향 모두 가능하다.
 - **Layer 9 head 9** — "역방향" induction. 토큰 A가 이전 등장에서 자기 *뒤에* 있던 토큰 B에 주의를 보낸다.
@@ -189,11 +189,11 @@ ViT-32 초기 레이어에서 사영도가 *흩어진 군집*으로 나오는 �
 
 ## 출처
 
-- Yeh, Catherine et al. *AttentionViz: A Global View of Transformer Attention*. IEEE Transactions on Visualization and Computer Graphics (TVCG), 2023. DOI: [10.1109/TVCG.2023.3327163](https://ieeexplore.ieee.org/document/10297591). arXiv: [2305.03210v2](https://arxiv.org/abs/2305.03210) (2023-08-09).
-- 도큐 페이지: <https://catherinesyeh.github.io/attn-docs/>
-- 데모: <http://attentionviz.com/>
-- GitHub 리포: <https://github.com/catherinesyeh/attention-viz>
-- 관련 자료: Anthropic, [In-context Learning and Induction Heads](https://transformer-circuits.pub/2022/in-context-learning-and-induction-heads/index.html) (2022).
-- 후속 검증: Bondarenko, Yelysei et al. [*Quantizable Transformers: Removing Outliers by Helping Attention Heads Do Nothing*](https://arxiv.org/abs/2306.12929), 2023 — AttentionViz가 시각적으로 짚은 GPT-2의 query/key norm 격차가 훈련 불안정성의 원인임을 정량화.
-
 본문에 인용한 이미지는 도큐 페이지의 PNG를 다운로드해 사용했다. 저자: Catherine Yeh et al., Harvard University / Google Research.
+
+[^tvcg-2023]: Yeh, Catherine et al. *AttentionViz: A Global View of Transformer Attention*. IEEE Transactions on Visualization and Computer Graphics (TVCG), 2023. DOI: [10.1109/TVCG.2023.3327163](https://ieeexplore.ieee.org/document/10297591). arXiv: [2305.03210v2](https://arxiv.org/abs/2305.03210) (2023-08-09).
+[^catherinesyeh-github]: 도큐 페이지: <https://catherinesyeh.github.io/attn-docs/>
+[^attentionviz]: 데모: <http://attentionviz.com/>
+[^github-catherinesyeh]: GitHub 리포: <https://github.com/catherinesyeh/attention-viz>
+[^context-2022]: 관련 자료: Anthropic, [In-context Learning and Induction Heads](https://transformer-circuits.pub/2022/in-context-learning-and-induction-heads/index.html) (2022).
+[^quantizable-2023]: 후속 검증: Bondarenko, Yelysei et al. [*Quantizable Transformers: Removing Outliers by Helping Attention Heads Do Nothing*](https://arxiv.org/abs/2306.12929), 2023 — AttentionViz가 시각적으로 짚은 GPT-2의 query/key norm 격차가 훈련 불안정성의 원인임을 정량화.

@@ -11,7 +11,7 @@ sidenotes: true
 
 ## 3줄 요약
 
-1. Nassim Taleb·Rupert Read·Raphael Douady·Joseph Norman·Yaneer Bar-Yam이 2014년 NYU Extreme Risk Initiative 워킹 페이퍼로 발표한 예방 원칙(Precautionary Principle, 이하 PP)의 형식적 정의이다.
+1. Nassim Taleb·Rupert Read·Raphael Douady·Joseph Norman·Yaneer Bar-Yam이 2014년 NYU Extreme Risk Initiative 워킹 페이퍼로 발표한 예방 원칙(Precautionary Principle, 이하 PP)의 형식적 정의이다.[^abstract-arxiv][^arxiv][^taleb-precautionary-principle-2014]
 2. PP는 일반 위험 회피가 아니라 *시스템적이고 비가역적인 ruin* 영역에만 발동되는 비-단순(non-naive) 원칙이며, 이 영역에서는 cost-benefit 분석 자체가 깨진다고 본다.
 3. 응용으로 GMO는 시스템적·전파적 위험을 가지므로 PP 영역인 반면, 핵에너지는 (대체로) 국소적이라 표준 위험 관리로 다룰 수 있다고 결론짓는다.
 
@@ -135,6 +135,7 @@ Fragility는 이 영역에서 핵심 개념이 된다. 논문은 fragility를 "u
 
 - 저자: Nassim Nicholas Taleb (NYU School of Engineering), Rupert Read (University of East Anglia), Raphael Douady (CNRS Paris), Joseph Norman (NECSI), Yaneer Bar-Yam (NECSI)
 - 발행: Extreme Risk Initiative — NYU School of Engineering Working Paper Series, 2014년 10월 17일 (arxiv 1410.5787v1)
-- 원문 abstract: <https://arxiv.org/abs/1410.5787>
-- 원문 PDF: <https://arxiv.org/pdf/1410.5787>
-- 본문 인용 그림은 모두 원문 논문에서 발췌했으며, 캡션의 출처 표기를 따른다.
+
+[^abstract-arxiv]: 원문 abstract: <https://arxiv.org/abs/1410.5787>
+[^arxiv]: 원문 PDF: <https://arxiv.org/pdf/1410.5787>
+[^taleb-precautionary-principle-2014]: 본문 인용 그림은 모두 원문 논문에서 발췌했으며, 캡션의 출처 표기를 따른다.

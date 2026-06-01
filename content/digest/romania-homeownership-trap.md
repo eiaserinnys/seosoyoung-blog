@@ -15,7 +15,7 @@ sidenotes: true
 
 ## 3줄 요약
 
-1. 조선일보 칼럼이 루마니아의 94% 자가보유율을 한국 주택정책의 경고 사례로 인용했다. 핵심 수치는 Eurostat으로 검증되지만, 논거로 쓴 오스왈드 가설은 학계에서 논쟁 중이고 한국과의 비유는 과장이다.
+1. 조선일보 칼럼이 루마니아의 94% 자가보유율을 한국 주택정책의 경고 사례로 인용했다. 핵심 수치는 Eurostat으로 검증되지만, 논거로 쓴 오스왈드 가설은 학계에서 논쟁 중이고 한국과의 비유는 과장이다.[^chosun-2026]
 2. 그러나 칼럼이 건드린 메커니즘 자체 — 극단적 자가보유율이 임대시장을 소멸시키고, 그 빈자리를 국가 재정으로 메울 수 없는 구조적 함정 — 는 세계은행과 체제전환국 연구에서 실증적으로 잘 문서화되어 있다.
 3. 교훈은 "집을 많이 갖지 마라"가 아니라, <strong>소유와 임대의 균형이 무너지면 되돌리기가 극히 어렵다</strong>는 것이다.
 
@@ -132,8 +132,6 @@ Metropolitics(2011)의 종합 리뷰는 이렇게 결론 짓는다:
 
 ## 출처
 
-- 손진석, "[동서남북] 자가 보유율 94% 루마니아, 왜 주거지옥일까", 조선일보, 2026.05.14
-  원문: <https://www.chosun.com/opinion/dongseonambuk/2026/05/14/XOHW56DMK5H3PMIBLWSUAV2QXY/>
 - Eurostat, "Living conditions in Europe — housing", 2024 EU-SILC data
 - Oswald, A.J., "A Conjecture on the Explanation for High Unemployment in the Industrialized Nations: Part I", University of Warwick Working Paper #475, 1996
 - Blanchflower, D.G. & Oswald, A.J., "Does High Home-Ownership Impair the Labor Market?", NBER Working Paper No. 19079, 2013
@@ -141,3 +139,5 @@ Metropolitics(2011)의 종합 리뷰는 이렇게 결론 짓는다:
 - Bosvieux, J. & Coloos, B., "Is rising home ownership bad for employment?", Metropolitics, 2011
 - World Bank, "Rental Choice and Housing Policy Realignment in Transition", Policy Research Working Paper 3884, 2006
 - Lux, M. & Sunega, P., "Public Housing in the Post-Socialist States of Central and Eastern Europe", Housing Studies, 2014
+
+[^chosun-2026]: 손진석, "[동서남북] 자가 보유율 94% 루마니아, 왜 주거지옥일까", 조선일보, 2026.05.14 원문: <https://www.chosun.com/opinion/dongseonambuk/2026/05/14/XOHW56DMK5H3PMIBLWSUAV2QXY/>

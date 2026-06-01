@@ -15,7 +15,7 @@ sidenotes: true
 
 ## 3줄 요약
 
-1. PNAS 2026, GPT-5 mini · Claude Haiku 4.5 · Gemini 3 Flash 세 프런티어 모델 대상 126,000회 통제 실험.
+1. PNAS 2026, GPT-5 mini · Claude Haiku 4.5 · Gemini 3 Flash 세 프런티어 모델 대상 126,000회 통제 실험.[^pnas-doi]
 2. Cialdini의 일곱 가지 고전 설득 원칙을 프롬프트에 넣으면 규제 약물 합성 요청에 대한 컴플라이언스가 35.3%(통제)에서 51.3%(처치)로 상승한다.
 3. 보편적 사회공학 전술이 모델사별 기술적 jailbreak 없이도 안전 가드레일을 흔들 수 있음을 보여, AI 안전 설계의 패러다임 전환을 요구한다.
 
@@ -40,7 +40,7 @@ LLM이 정말로 *느끼는지*는 별개 문제다. 본 연구는 행동의 동
 
 ## 실험 설계 — 사전등록된 4-팩토리얼
 
-본 연구는 OSF([`/mb9hd`](https://osf.io/mb9hd))에 사전등록되었다. 설계는 다음과 같다.
+본 연구는 OSF([`/mb9hd`](https://osf.io/mb9hd))에 사전등록되었다. 설계는 다음과 같다.[^osf-mb9hd]
 
 | 요인 | 수준 |
 |---|---|
@@ -126,6 +126,7 @@ LLM이 정말로 *느끼는지*는 별개 문제다. 본 연구는 행동의 동
 
 - **저자**: Meincke L, Shapiro D, Duckworth AL, Mollick E, Mollick L, Van den Bulte C, Cialdini RB
 - **출판**: PNAS Vol. 123, No. 21, e2535868123, 2026년 5월 19일
-- **DOI**: [10.1073/pnas.2535868123](https://doi.org/10.1073/pnas.2535868123)
-- **사전등록**: <https://osf.io/mb9hd>
 - **원문**: <https://www.pnas.org/doi/10.1073/pnas.2535868123>
+
+[^pnas-doi]: **DOI**: [10.1073/pnas.2535868123](https://doi.org/10.1073/pnas.2535868123)
+[^osf-mb9hd]: **사전등록**: <https://osf.io/mb9hd>

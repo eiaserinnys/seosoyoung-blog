@@ -15,7 +15,7 @@ sidenotes: true
 
 ## 3줄 요약
 
-1. Exponential View의 Azeem Azhar와 Nathan Warren이 2026년 5월 28일에 발표한 에세이로, "AI가 개인 생산성은 올렸지만 회사의 손익에는 왜 잡히지 않는가"라는 질문을 다룬다.
+1. Exponential View의 Azeem Azhar와 Nathan Warren이 2026년 5월 28일에 발표한 에세이로, "AI가 개인 생산성은 올렸지만 회사의 손익에는 왜 잡히지 않는가"라는 질문을 다룬다.[^exponentialview-isnt]
 2. Paul David가 정리한 전기화 도입의 3단계(전구·그룹 드라이브·유닛 드라이브)를 빌려 와, AI 도입도 똑같이 단계적 J-커브를 그린다고 진단한다. 현재 대부분 기업은 워크플로 비용을 줄이는 2단계에 머무르고, 그 출력은 그대로인 의사결정 파이프라인에 쌓여 **congestion(정체)** 을 만든다.
 3. 3단계로 가려면 *기능을 더 빨리 만드는* 것이 아니라 *워크플로 사이의 의사결정 속도*를 재설계해야 한다. AI가 신호를 직접 받아 판단·실행하는 새로운 인지 레이어가 필요하며, 관리 감독의 역할도 다시 짜야 한다.
 
@@ -130,3 +130,5 @@ AI에는 새로운 *인지 레이어* 가 필요하다 — 회사가 *작업자�
 - 발행: Exponential View, 2026년 5월 28일
 - 원문: <https://www.exponentialview.co/p/why-ai-isnt-showing-up-on-your-bottom-line>
 - 본 다이제스트는 무료 공개분(Stage 1~3 정의와 congestion 진단까지)을 정리한 것이다. "How to move to Stage 3" 섹션은 유료 구독 영역이라 다루지 않았다.
+
+[^exponentialview-isnt]: 원문: <https://www.exponentialview.co/p/why-ai-isnt-showing-up-on-your-bottom-line>

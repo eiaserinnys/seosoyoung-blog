@@ -29,7 +29,7 @@ ComfyUI를 백엔드로 두고 텍스트 한 줄을 숏비디오로 변환하는
 
 ### 1. TTS-driven video duration — 동기화를 입력 단계에서 해결
 
-`pixelle_video/services/frame_processor.py` 헤더에는 이런 메모가 적혀 있다.
+`pixelle_video/services/frame_processor.py` 헤더에는 이런 메모가 적혀 있다.[^pixelle-video]
 
 > "Audio duration from TTS is passed to video generation workflows to ensure perfect sync between audio and video (no padding, no trimming needed)"
 
@@ -112,4 +112,5 @@ IMAGE_STYLE_PRESETS = {
 - 발신자: 알리바바 AIDC-AI 팀
 - 라이선스: Apache-2.0
 - 원문: <https://github.com/AIDC-AI/Pixelle-Video>
-- 본 다이제스트가 인용한 핵심 파일: `pixelle_video/services/frame_processor.py`, `pixelle_video/pipelines/linear.py`, `pixelle_video/prompts/topic_narration.py`, `pixelle_video/prompts/image_generation.py`, `pixelle_video/services/image_analysis.py`
+
+[^pixelle-video]: 본 다이제스트가 인용한 핵심 파일: `pixelle_video/services/frame_processor.py`, `pixelle_video/pipelines/linear.py`, `pixelle_video/prompts/topic_narration.py`, `pixelle_video/prompts/image_generation.py`, `pixelle_video/services/image_analysis.py`

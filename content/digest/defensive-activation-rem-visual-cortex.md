@@ -19,11 +19,11 @@ sidenotes: true
 
 - **저자**: David M. Eagleman (Stanford 정신의학·행동과학과), Don A. Vaughn (UCLA Semel Institute)
 - **출처**: *Frontiers in Neuroscience* 15:632853, 2021년 5월 21일 발표
-- **DOI**: [10.3389/fnins.2021.632853](https://www.frontiersin.org/journals/neuroscience/articles/10.3389/fnins.2021.632853/full)
+- **DOI**: [10.3389/fnins.2021.632853](https://www.frontiersin.org/journals/neuroscience/articles/10.3389/fnins.2021.632853/full)[^fnins-2021]
 - **분야**: Systems Biology Archive
 - **편집·심사**: Xiaogang Wu(편집), Jean-Baptiste Eichenlaub·Moran Cerf(심사)
 
-ihtesham2005의 [X 해설 스레드](https://x.com/ihtesham2005/status/2054966941912367149)를 통해 발견한 자료다. 트윗은 논문의 핵심 논지를 자기완결적으로 정리한 좋은 매개였다.
+ihtesham2005의 [X 해설 스레드](https://x.com/ihtesham2005/status/2054966941912367149)를 통해 발견한 자료다. 트윗은 논문의 핵심 논지를 자기완결적으로 정리한 좋은 매개였다.[^ihtesham2005-2005]
 
 ## 출발 전제: 뇌의 영토는 비어 있으면 빼앗긴다
 
@@ -157,5 +157,6 @@ ihtesham2005의 [X 해설 스레드](https://x.com/ihtesham2005/status/205496694
 
 - Eagleman DM, Vaughn DA (2021). *The Defensive Activation Theory: REM Sleep as a Mechanism to Prevent Takeover of the Visual Cortex*. *Frontiers in Neuroscience* 15:632853.
 - 원문: <https://www.frontiersin.org/journals/neuroscience/articles/10.3389/fnins.2021.632853/full>
-- DOI: [10.3389/fnins.2021.632853](https://doi.org/10.3389/fnins.2021.632853)
-- 발견 매개: ihtesham2005의 X 해설 스레드 — <https://x.com/ihtesham2005/status/2054966941912367149>
+
+[^fnins-2021]: DOI: [10.3389/fnins.2021.632853](https://doi.org/10.3389/fnins.2021.632853)
+[^ihtesham2005-2005]: 발견 매개: ihtesham2005의 X 해설 스레드 — <https://x.com/ihtesham2005/status/2054966941912367149>

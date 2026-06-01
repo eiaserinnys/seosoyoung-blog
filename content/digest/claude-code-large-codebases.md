@@ -37,7 +37,7 @@ harness는 5개의 확장 지점 — CLAUDE.md, hooks, skills, plugins, MCP serv
 
 ### Hooks가 셋업을 self-improving하게 만든다
 
-대부분의 팀은 hooks를 Claude의 잘못된 행동을 막는 스크립트로 본다. 더 가치 있는 용도는 지속적 개선이다. stop hook은 세션 중 일어난 일을 회고하며 컨텍스트가 신선한 동안 CLAUDE.md 업데이트를 제안할 수 있다. start hook은 팀별 컨텍스트를 동적으로 로드해, 매번 수동 설정 없이도 개발자가 자기 모듈에 맞는 셋업을 받게 한다. 린팅·포매팅 같은 자동 검사에서는 hooks가 결정론적이라 Claude가 지시를 '기억'하는 것보다 일관성이 높다.
+대부분의 팀은 hooks를 Claude의 잘못된 행동을 막는 스크립트로 본다. 더 가치 있는 용도는 지속적 개선이다. stop hook은 세션 중 일어난 일을 회고하며 컨텍스트가 신선한 동안 CLAUDE.md 업데이트를 제안할 수 있다. start hook은 팀별 컨텍스트를 동적으로 로드해, 매번 수동 설정 없이도 개발자가 자기 모듈에 맞는 셋업을 받게 한다. 린팅·포매팅 같은 자동 검사에서는 hooks가 결정론적이라 Claude가 지시를 '기억'하는 것보다 일관성이 높다.[^claude-code]
 
 ### Skills는 적시 적소의 전문성을 살린다
 
@@ -135,3 +135,5 @@ Claude Code는 *conventional software engineering* 환경 — 엔지니어가 �
 - 원문: <https://claude.com/blog/how-claude-code-works-in-large-codebases-best-practices-and-where-to-start>
 
 (원문은 한 장의 Component Overview Table 외에 본문 이미지가 없는 텍스트 중심 글이라 이미지는 인용하지 않았다.)
+
+[^claude-code]: 원문: <https://claude.com/blog/how-claude-code-works-in-large-codebases-best-practices-and-where-to-start>
