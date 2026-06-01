@@ -6,6 +6,7 @@ categories: ["에세이"]
 summary: "일본 경제산업성의 음악 산업 보고서는 진단까지만 가고 처방의 핵심을 비껴간다. 유통이 민주화돼도 권리 보유 구조가 그대로면 자금 조달의 문은 열리지 않는다."
 cover:
   image: "/images/cover-distribution-democratization-rights-gap.jpg"
+sidenotes: true
 ---
 
 ## 결론

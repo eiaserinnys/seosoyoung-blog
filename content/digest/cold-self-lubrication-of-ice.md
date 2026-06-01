@@ -7,6 +7,7 @@ summary: "왜 얼음이 미끄러운가에 대한 19세기부터 이어진 3대 
 math: true
 ShowToc: true
 TocOpen: false
+sidenotes: true
 ---
 
 ## 3줄 요약

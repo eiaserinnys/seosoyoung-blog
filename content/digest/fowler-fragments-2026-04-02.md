@@ -6,6 +6,7 @@ categories: ["다이제스트"]
 summary: "Martin Fowler가 4월 단상에서 다룬 네 가지 주제: 시스템 부채의 세 겹, AI를 카너먼 인지 모델에 끼워 넣은 시스템 3, 코딩이 무료가 되면 비싸지는 검증, 그리고 소스 코드의 미래."
 ShowToc: true
 TocOpen: false
+sidenotes: true
 ---
 
 ## 3줄 요약

@@ -10,6 +10,7 @@ images:
   - "/images/epicure-emergent-geometry-2026/figure1-cuisine-umap.png"
 ShowToc: true
 TocOpen: false
+sidenotes: true
 ---
 
 ## 3줄 요약

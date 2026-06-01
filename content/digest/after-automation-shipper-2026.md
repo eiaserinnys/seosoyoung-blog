@@ -10,6 +10,7 @@ cover:
   image: "/images/after-automation-shipper-2026/ai-sandwich.png"
 images:
   - "/images/after-automation-shipper-2026/ai-sandwich.png"
+sidenotes: true
 ---
 
 ## 3줄 요약

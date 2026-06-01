@@ -6,6 +6,7 @@ categories: ["다이제스트"]
 summary: "Z.ai(Zhipu AI)가 GLM-5 코딩 에이전트 서빙에서 발견한 저수준 레이스 컨디션 버그 디버깅 경험기. 추론 인프라의 숨겨진 가정이 모델 품질 실패로 표면화되는 'Scaling Pain'의 실체를 다룬다."
 ShowToc: true
 TocOpen: false
+sidenotes: true
 ---
 
 ## 3줄 요약

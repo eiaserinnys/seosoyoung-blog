@@ -11,6 +11,7 @@ cover:
   image: "/images/mottus-personality-life-satisfaction-2024/figure1-item-correlations.jpg"
 images:
   - "/images/mottus-personality-life-satisfaction-2024/figure1-item-correlations.jpg"
+sidenotes: true
 ---
 
 ## 3줄 요약

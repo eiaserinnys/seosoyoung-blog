@@ -11,6 +11,7 @@ cover:
   image: "/images/skillopt-text-space-optimizer-2026/teaser.png"
 images:
   - "/images/skillopt-text-space-optimizer-2026/teaser.png"
+sidenotes: true
 ---
 
 ## 3줄 요약

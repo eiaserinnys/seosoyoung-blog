@@ -6,6 +6,7 @@ categories: ["다이제스트"]
 summary: "Google이 Anthropic의 Agent Skills 패턴을 채택해 Google Cloud용 13개 스킬을 Apache-2.0으로 공개했다. skills.sh라는 패키지 매니저 레이어와 agentskills.io라는 벤더 중립 사이트가 함께 등장해, Skills가 한 벤더의 컨벤션에서 공용 표준으로 옮겨가는 신호로 읽힌다."
 ShowToc: true
 TocOpen: false
+sidenotes: true
 ---
 
 ## 3줄 요약

@@ -10,6 +10,7 @@ cover:
   image: "/images/firefield-ai-solo-dev/keyart.jpg"
 images:
   - "/images/firefield-ai-solo-dev/keyart.jpg"
+sidenotes: true
 ---
 
 ## 3줄 요약

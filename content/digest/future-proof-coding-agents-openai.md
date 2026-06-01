@@ -6,6 +6,7 @@ categories: ["다이제스트"]
 summary: "코딩 에이전트는 생각보다 단순한 구조로 이루어져 있습니다."
 ShowToc: true
 TocOpen: false
+sidenotes: true
 ---
 
 > AI-Assisted Engineering Talk #25/27

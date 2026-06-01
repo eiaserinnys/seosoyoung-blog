@@ -6,6 +6,7 @@ categories: ["다이제스트"]
 summary: "AI 미녀 이미지를 두 달간 1,500장 만든 K_polar_AI가 도달한 결론은 \"본 적 있는데, 그냥 지나칠 수 없다\"였다. 노출도 리얼리즘도 답이 아니다. 기시감으로 입구를 열고 발견·신체성·이야기의 여백으로 멈춰 세운 뒤, 모든 요소를 하나의 사건으로 통합하는 \"공간의 지배\"가 인상을 만든다."
 ShowToc: true
 TocOpen: false
+sidenotes: true
 ---
 
 ![空間の支配が作り出す — 人の心を掌握する画像生成術 배너](/images/k-polar-ai-spatial-domination/cover-example.jpg)

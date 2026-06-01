@@ -6,6 +6,7 @@ categories: ["다이제스트"]
 summary: "Don't Build Agents, Build Skills Instead — Barry Zhang & Mahesh Murag"
 ShowToc: true
 TocOpen: false
+sidenotes: true
 ---
 
 > AI-Assisted Engineering Talk #13/27

@@ -6,6 +6,7 @@ categories: ["다이제스트"]
 summary: "MOBA(LoL)와 턴제 카드 게임을 5개월간 플레이한 68명의 뇌파를 종단 분석한 연구. 복잡한 게임일수록 인지 기능 개선이 크고, 게임을 멈춘 뒤 10주가 지나도 뇌파 변화가 지속되었다."
 ShowToc: true
 TocOpen: false
+sidenotes: true
 ---
 
 ## 3줄 요약

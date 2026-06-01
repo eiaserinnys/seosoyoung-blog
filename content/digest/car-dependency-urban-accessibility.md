@@ -7,6 +7,7 @@ summary: "유럽·북미 18개 도시의 자동차-대중교통 접근성 격차
 math: true
 ShowToc: true
 TocOpen: false
+sidenotes: true
 ---
 
 ## 3줄 요약

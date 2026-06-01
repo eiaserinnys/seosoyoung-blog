@@ -6,6 +6,7 @@ categories: ["다이제스트"]
 summary: "나이스신용평가가 한국 상업영화 산업을 진단했다. 팬데믹 이후 평균 수익률은 -27%로 추락했고, OTT로의 인력 이탈이 극장 영화의 질적 저하와 관객 이탈의 악순환을 만들고 있다."
 ShowToc: true
 TocOpen: false
+sidenotes: true
 ---
 
 ## 3줄 요약

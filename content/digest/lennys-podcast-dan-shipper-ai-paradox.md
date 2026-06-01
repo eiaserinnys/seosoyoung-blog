@@ -10,6 +10,7 @@ cover:
   image: "/images/lennys-podcast-dan-shipper-ai-paradox/01-intro.jpg"
 images:
   - "/images/lennys-podcast-dan-shipper-ai-paradox/01-intro.jpg"
+sidenotes: true
 ---
 
 ## 3줄 요약

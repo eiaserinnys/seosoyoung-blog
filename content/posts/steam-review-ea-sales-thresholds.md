@@ -8,6 +8,7 @@ cover:
   image: "/images/cover-steam-review-ea-sales-thresholds.jpg"
 ShowToc: true
 TocOpen: false
+sidenotes: true
 ---
 
 ## 결론 — 게임의 운명이 갈라지는 메커니즘

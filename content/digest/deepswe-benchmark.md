@@ -10,6 +10,7 @@ cover:
   image: "/images/deepswe-benchmark/leaderboard.jpg"
 images:
   - "/images/deepswe-benchmark/leaderboard.jpg"
+sidenotes: true
 ---
 
 ## 3줄 요약

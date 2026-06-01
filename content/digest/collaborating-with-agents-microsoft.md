@@ -6,6 +6,7 @@ categories: ["다이제스트"]
 summary: "Copilot은 코드를 컴파일하거나 실행하지 않고 사람처럼 읽는다."
 ShowToc: true
 TocOpen: false
+sidenotes: true
 ---
 
 > AI-Assisted Engineering Talk #5/27

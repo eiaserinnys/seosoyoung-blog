@@ -6,6 +6,7 @@ categories: ["다이제스트"]
 summary: "지식 협의(consultation) 비용이 무너지면 보틀넥은 사라지지 않고 통찰의 생산으로 이동한다 — 와트의 증기기관에서 토라 학습으로 옮겨 읽은 Jevons Paradox."
 ShowToc: true
 TocOpen: false
+sidenotes: true
 ---
 
 ## 3줄 요약

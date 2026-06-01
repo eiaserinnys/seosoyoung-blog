@@ -6,6 +6,7 @@ categories: ["AI 인사이트"]
 summary: "영상이 코드가 되면 바뀌는 건 품질의 상한선이 아니라 생산 비용의 하한선이다."
 cover:
   image: "/images/cover-code-as-cinema.jpg"
+sidenotes: true
 ---
 
 ## 바뀌는 건 품질이 아니라 비용이다

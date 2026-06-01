@@ -6,6 +6,7 @@ categories: ["다이제스트"]
 summary: "Meta FAIR가 트랜스포머의 FFN 레이어를 학습 가능한 key-value 메모리로 대체하여, FLOP 증가 없이 파라미터를 128B까지 확장하고 사실 기반 QA에서 2배 이상 컴퓨트 예산의 dense 모델을 능가한 논문."
 ShowToc: true
 TocOpen: false
+sidenotes: true
 ---
 
 ## 3줄 요약

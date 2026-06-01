@@ -7,6 +7,7 @@ summary: "NVIDIA Labs가 공개한 2.6B 오픈소스 비디오 월드 모델 SAN
 math: true
 ShowToc: true
 TocOpen: false
+sidenotes: true
 ---
 
 ## 3줄 요약

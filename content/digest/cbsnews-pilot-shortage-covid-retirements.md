@@ -6,6 +6,7 @@ categories: ["다이제스트"]
 summary: "코로나 때 비용 절감을 위해 베테랑 파일럿을 조기은퇴시킨 항공사들이, 수요 회복 후 5년 이상 해결 불가능한 구조적 인력 부족에 직면했다. 단기 합리성이 중기 비가역성으로 전환되는 교과서적 사례."
 ShowToc: true
 TocOpen: false
+sidenotes: true
 ---
 
 ## 3줄 요약

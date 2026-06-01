@@ -6,6 +6,7 @@ categories: ["다이제스트"]
 summary: "ukyousan(うきょう)이 2026년 5월 note.com에 게시한 일본 게임 업계 분석 에세이. 일본이 중국·한국 게임에 밀리는 진짜 원인은 품질이 아니라 '시도 횟수'와 '갱신 속도'의 격차라고 진단하고, Sensor Tower 데이터와 GDC 2025 레이오프 조사, 자기 경험을 근거로 일본 대형 개발사의 사내 합의 비용이 만든 구조적 함정을 해부한다."
 ShowToc: true
 TocOpen: false
+sidenotes: true
 ---
 
 ## 3줄 요약

@@ -6,6 +6,7 @@ categories: ["다이제스트"]
 summary: "The Cure for the Vibe Coding Hangover — Corey J."
 ShowToc: true
 TocOpen: false
+sidenotes: true
 ---
 
 > AI-Assisted Engineering Talk #18/27

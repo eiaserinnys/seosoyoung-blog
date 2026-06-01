@@ -6,6 +6,7 @@ categories: ["다이제스트"]
 summary: "유전 소인(EA·Cog·NonCog PGS)이 학업 성취로 표현되는 통로의 절반 가까이가 비인지 기술 — 학습 흥미·자기개념·호기심 — 을 통과한다. TEDS 쌍둥이 5,016명을 7\\~16세에 추적한 종단 분석에서, 매개 효과는 형제 차이 디자인 내에서도 최대 83% 유지되었다."
 ShowToc: true
 TocOpen: false
+sidenotes: true
 ---
 
 ## 3줄 요약

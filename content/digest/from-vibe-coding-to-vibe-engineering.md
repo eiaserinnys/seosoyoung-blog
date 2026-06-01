@@ -6,6 +6,7 @@ categories: ["다이제스트"]
 summary: "Karpathy의 vibe coding(코드 무관심·accept 연타)도, 그저 관찰만 하는 half coding도 아닌 제3의 길."
 ShowToc: true
 TocOpen: false
+sidenotes: true
 ---
 
 > AI-Assisted Engineering Talk #15/27

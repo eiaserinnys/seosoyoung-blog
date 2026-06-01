@@ -6,6 +6,7 @@ categories: ["다이제스트"]
 summary: "Anthropic Applied AI 팀이 정리한 대규모 코드베이스에서의 Claude Code 모범 사례. 성능을 결정하는 것은 모델이 아니라 그 주변에 쌓이는 harness이며, harness 셋업의 첫 단계는 코드베이스를 Claude가 읽을 수 있게 만드는 일이라고 말한다."
 ShowToc: true
 TocOpen: false
+sidenotes: true
 ---
 
 ## 3줄 요약

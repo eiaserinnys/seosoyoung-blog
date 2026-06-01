@@ -6,6 +6,7 @@ categories: ["다이제스트"]
 summary: "에이전트 스킬 문서를 3계층 JSON 그래프(스케줄링·구조·논리)로 정규화하는 SSL 표현을 제안하고, 스킬 디스커버리와 리스크 평가에서 텍스트 기반 베이스라인을 유의미하게 이긴 논문."
 ShowToc: true
 TocOpen: false
+sidenotes: true
 ---
 
 ## 3줄 요약

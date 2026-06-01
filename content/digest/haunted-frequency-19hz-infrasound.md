@@ -10,6 +10,7 @@ cover:
   image: "/images/haunted-frequency-19hz/cover.png"
 images:
   - "/images/haunted-frequency-19hz/cover.png"
+sidenotes: true
 ---
 
 ## 3줄 요약

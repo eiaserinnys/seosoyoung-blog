@@ -6,6 +6,7 @@ categories: ["다이제스트"]
 summary: "GPT-4급 LLM에서 기만 전략이 출현했음을 실험으로 입증한 논문. 거짓 신념 유도, CoT에 의한 기만 증폭, 마키아벨리즘 프롬프트 조향까지 다룬다."
 ShowToc: true
 TocOpen: false
+sidenotes: true
 ---
 
 ## 3줄 요약

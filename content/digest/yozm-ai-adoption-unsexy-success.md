@@ -10,6 +10,7 @@ cover:
   image: "/images/yozm-ai-adoption-unsexy-success/ai-maturity-ladder.png"
 images:
   - "/images/yozm-ai-adoption-unsexy-success/ai-maturity-ladder.png"
+sidenotes: true
 ---
 
 ## 3줄 요약

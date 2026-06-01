@@ -6,6 +6,7 @@ categories: ["다이제스트"]
 summary: "Goodfire의 'Neural Geometry Series' 첫 글. 신경망 내부 표상은 직선 방향이 아니라 곡선 매니폴드 위에 산다고 주장하며, mountain car 스티어링과 슬랜트 라임 매니폴드 사례로 SAE 같은 기존 방법의 한계와 매니폴드 기반 해석·제어 방법론의 필요성을 보인다."
 ShowToc: true
 TocOpen: false
+sidenotes: true
 ---
 
 ## 3줄 요약

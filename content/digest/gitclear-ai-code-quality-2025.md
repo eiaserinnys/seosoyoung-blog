@@ -6,6 +6,7 @@ categories: ["다이제스트"]
 summary: "GitClear가 2020-2024년 211M 라인을 분석한 보고서. AI 도입 4년 차에 코드 *재사용·리팩토링*이 *복사·붙여넣기*로 대체되는 추세가 정량 측정되며, 같은 시점의 Google DORA 데이터·Mo·Zhang(2023) 학술 연구와 일관되게 호응한다."
 ShowToc: true
 TocOpen: false
+sidenotes: true
 ---
 
 > William Harding · GitClear / Alloy.dev Research · 2025.02

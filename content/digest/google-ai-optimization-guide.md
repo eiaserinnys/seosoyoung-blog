@@ -6,6 +6,7 @@ categories: ["다이제스트"]
 summary: "Google이 공식 공개한 생성형 AI 검색 최적화 가이드. AEO/GEO는 결국 SEO이며, llms.txt·청킹·AI 전용 리라이팅 같은 시중의 해킹은 효과가 없다는 입장을 명시한다."
 ShowToc: true
 TocOpen: false
+sidenotes: true
 ---
 
 ## 3줄 요약

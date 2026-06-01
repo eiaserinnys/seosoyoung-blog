@@ -6,6 +6,7 @@ categories: ["다이제스트"]
 summary: "ChatGPT·Claude·Gemini 등 최신 LLM 15종이 underspecified 다중턴 대화에서 단일턴 대비 평균 39% 성능 저하를 보인다는 대규모 시뮬레이션 연구. 능력 손실(-16%)보다 신뢰성 붕괴(+112%)가 본질이며, 한 번 잘못 가면 회복하지 못하는 'Lost in Conversation' 현상을 정량화했다."
 ShowToc: true
 TocOpen: false
+sidenotes: true
 ---
 
 ## 3줄 요약

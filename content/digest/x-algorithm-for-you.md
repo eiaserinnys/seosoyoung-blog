@@ -6,6 +6,7 @@ categories: ["다이제스트"]
 summary: "xAI가 X(트위터) For You 피드의 추천 시스템을 오픈소스로 공개했다. Grok-1 기반 트랜스포머가 수공 피처 없이 engagement sequence만 보고 직접 학습하며, 2026-05-15 업데이트로 사전학습 mini Phoenix 체크포인트와 end-to-end 추론 파이프라인이 함께 풀려 외부 재현이 가능해졌다."
 ShowToc: true
 TocOpen: false
+sidenotes: true
 ---
 
 ## 3줄 요약

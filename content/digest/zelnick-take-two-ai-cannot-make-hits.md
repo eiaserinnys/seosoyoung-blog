@@ -10,6 +10,7 @@ cover:
   image: "/images/zelnick-take-two-ai-cannot-make-hits/01-zelnick-intro.jpg"
 images:
   - "/images/zelnick-take-two-ai-cannot-make-hits/01-zelnick-intro.jpg"
+sidenotes: true
 ---
 
 ## 3줄 요약

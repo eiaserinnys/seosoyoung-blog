@@ -6,6 +6,7 @@ categories: ["다이제스트"]
 summary: "프로덕션 소프트웨어 엔지니어링은 코드 생성이 아니라 안전한 변경이옵니다."
 ShowToc: true
 TocOpen: false
+sidenotes: true
 ---
 
 > AI-Assisted Engineering Talk #8/27

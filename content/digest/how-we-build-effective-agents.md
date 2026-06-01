@@ -6,6 +6,7 @@ categories: ["다이제스트"]
 summary: "에이전트의 정의는 놀라울 만큼 단순합니다."
 ShowToc: true
 TocOpen: false
+sidenotes: true
 ---
 
 > AI-Assisted Engineering Talk #23/27

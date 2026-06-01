@@ -10,6 +10,7 @@ cover:
   image: "/images/seedance2-collage-animation-workflow/00-cover.jpeg"
 images:
   - "/images/seedance2-collage-animation-workflow/00-cover.jpeg"
+sidenotes: true
 ---
 
 ## 3줄 요약

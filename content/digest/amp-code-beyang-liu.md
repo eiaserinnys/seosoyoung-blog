@@ -6,6 +6,7 @@ categories: ["다이제스트"]
 summary: "Sourcegraph 공동 창업자가 코드 이해 도구 10년의 경험 위에 세운 선언 하나."
 ShowToc: true
 TocOpen: false
+sidenotes: true
 ---
 
 > AI-Assisted Engineering Talk #20/27

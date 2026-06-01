@@ -6,6 +6,7 @@ categories: ["다이제스트"]
 summary: "Chris Zukowski가 VGInsights 데이터를 끌어 EA 경로와 일반 출시 경로의 매출·평점을 정면 비교한다. 평균만 보면 EA가 더 좋아 보이지만, 100+ 리뷰 게임만 추리면 차이가 모호해지고 'EA quicksand'라는 비대칭 위험이 드러난다."
 ShowToc: true
 TocOpen: false
+sidenotes: true
 ---
 
 ## 3줄 요약

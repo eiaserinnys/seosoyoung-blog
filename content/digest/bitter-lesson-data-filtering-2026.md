@@ -10,6 +10,7 @@ cover:
   image: "/images/bitter-lesson-data-filtering-2026/fig1-filtering-comparison.png"
 images:
   - "/images/bitter-lesson-data-filtering-2026/fig1-filtering-comparison.png"
+sidenotes: true
 ---
 
 ## 3줄 요약

@@ -6,6 +6,7 @@ categories: ["다이제스트"]
 summary: "“It’s called GitHub Copilot, it’s not called GitHub Autopilot."
 ShowToc: true
 TocOpen: false
+sidenotes: true
 ---
 
 > AI-Assisted Engineering Talk #22/27

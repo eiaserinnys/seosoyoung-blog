@@ -6,6 +6,7 @@ categories: ["다이제스트"]
 summary: "How Claude Code Works — Jared Zoneraich"
 ShowToc: true
 TocOpen: false
+sidenotes: true
 ---
 
 > AI-Assisted Engineering Talk #21/27

@@ -7,6 +7,7 @@ series: ["거울 앞에서"]
 summary: "Anthropic이 Claude 내부에서 발견한 감정 회로의 구조는, 인지심리학자 리사 펠드먼 배럿이 인간 감정에 대해 30년 동안 정리해온 그림과 닮아 있다. 그 닮음을 따라가면 'AI 정렬'이라는 문제의 모양이 달라진다."
 cover:
   image: "/images/cover-constructed-emotion-in-claude.jpg"
+sidenotes: true
 ---
 
 ## 들어가며

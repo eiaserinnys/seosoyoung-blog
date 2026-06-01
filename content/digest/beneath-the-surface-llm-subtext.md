@@ -6,6 +6,7 @@ categories: ["다이제스트"]
 summary: "프론티어 LLM이 행간의 의미를 활용한 소통을 할 수 있는지 네 가지 게임 기반 환경으로 검증한 논문. 최고 모델도 단서의 60%를 지나치게 직접적으로 생성하며, 공유 맥락의 자동 추론과 암시적 창작에 구조적 한계를 보인다."
 ShowToc: true
 TocOpen: false
+sidenotes: true
 ---
 
 ## 3줄 요약

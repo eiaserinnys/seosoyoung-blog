@@ -6,6 +6,7 @@ categories: ["다이제스트"]
 summary: "TechCrunch 2026-05-29 보도. 개발자들은 'AI 없이는 일하지 않겠다'고 버티지만, METR·Amazon·Uber·SMU 연구는 AI 코드가 속도는 빠르되 유지보수 부채를 키우고 있음을 동시에 가리킨다."
 ShowToc: true
 TocOpen: false
+sidenotes: true
 ---
 
 ## 3줄 요약

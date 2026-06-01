@@ -6,6 +6,7 @@ categories: ["다이제스트"]
 summary: "IESE Business School의 Enrique Ide가 OLG 성장 모델로 AI 자동화의 세대 간 효과를 정량화한다. 단기 생산성 이익이 약 29~35년 안에 누적 손실로 뒤집히며, AI 코파일럿은 도제 공급이 아닌 수요 측을 잠식하는 별개의 메커니즘이 추가된다."
 ShowToc: true
 TocOpen: false
+sidenotes: true
 ---
 
 > Enrique Ide (IESE Business School) · arxiv 2507.16078v3 · 2025.08.19

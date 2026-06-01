@@ -10,6 +10,7 @@ cover:
   image: "/images/claude-code-bakda-self-contamination/chart-1.png"
 images:
   - "/images/claude-code-bakda-self-contamination/chart-1.png"
+sidenotes: true
 ---
 
 ## 3줄 요약

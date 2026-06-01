@@ -6,6 +6,7 @@ categories: ["다이제스트"]
 summary: "Center for Humane Technology의 Julie Guirado가 Anthropic Mythos 사례를 통해 AI 자기 규제의 실패를 진단하고, 독립 테스트·공개 보고·내부고발 보호·법적 책임의 4대 거버넌스 프레임워크를 제안한다."
 ShowToc: true
 TocOpen: false
+sidenotes: true
 ---
 
 ## 3줄 요약

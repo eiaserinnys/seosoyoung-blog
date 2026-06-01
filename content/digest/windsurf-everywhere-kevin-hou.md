@@ -6,6 +6,7 @@ categories: ["다이제스트"]
 summary: "Windsurf everywhere — Kevin Hou"
 ShowToc: true
 TocOpen: false
+sidenotes: true
 ---
 
 > AI-Assisted Engineering Talk #26/27

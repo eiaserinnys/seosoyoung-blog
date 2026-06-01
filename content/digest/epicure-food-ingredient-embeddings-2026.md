@@ -6,6 +6,7 @@ categories: ["다이제스트"]
 summary: "FlavorGraph의 300차원 식재료 임베딩에서 LLM 기반 데이터 큐레이션으로 맛·질감·문화·영양 등 15개 독립 차원을 추출한 논문. 레시피 동시출현 데이터만으로 셰프의 암묵지가 구조적으로 인코딩되어 있음을 증명한다."
 ShowToc: true
 TocOpen: false
+sidenotes: true
 ---
 
 ## 3줄 요약

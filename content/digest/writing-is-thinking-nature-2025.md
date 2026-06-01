@@ -6,6 +6,7 @@ categories: ["다이제스트"]
 summary: "Nature Reviews Bioengineering 에디토리얼. 글쓰기는 단순한 결과 보고가 아니라 구조적 사고를 강제하는 인지 도구이며, LLM에 전면 위임하면 그 사고의 기회를 잃는다."
 ShowToc: true
 TocOpen: false
+sidenotes: true
 ---
 
 ## 3줄 요약

@@ -6,6 +6,7 @@ categories: ["다이제스트"]
 summary: "코드는 명세의 손실 투영(lossy projection)이다."
 ShowToc: true
 TocOpen: false
+sidenotes: true
 ---
 
 > AI-Assisted Engineering Talk #12/27

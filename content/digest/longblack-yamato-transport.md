@@ -10,6 +10,7 @@ cover:
   image: "/images/longblack-yamato-transport/logo-black-cat.png"
 images:
   - "/images/longblack-yamato-transport/logo-black-cat.png"
+sidenotes: true
 ---
 
 ## 3줄 요약

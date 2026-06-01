@@ -6,6 +6,7 @@ categories: ["다이제스트"]
 summary: "AI 시대의 진짜 차별화는 데이터도 모델도 아니라 사람의 판단에 박힌 암묵지라는 진단. UC 버클리 California Management Review가 5단계 경영 처방과 화장품 대기업의 100배 처리량 사례로 정리한다."
 ShowToc: true
 TocOpen: false
+sidenotes: true
 ---
 
 > California Management Review Insights · Frontier · 2026.03.16

@@ -6,6 +6,7 @@ categories: ["다이제스트"]
 summary: "Vibe coding의 옹호자가 오히려 데이터로 vibe coding의 한계를 가장 솔직하게 보여줍니다."
 ShowToc: true
 TocOpen: false
+sidenotes: true
 ---
 
 > AI-Assisted Engineering Talk #14/27

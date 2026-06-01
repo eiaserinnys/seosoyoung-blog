@@ -10,6 +10,7 @@ cover:
   image: "/images/cook-sauerkraut-1769/cover.jpg"
 images:
   - "/images/cook-sauerkraut-1769/cover.jpg"
+sidenotes: true
 ---
 
 ## 3줄 요약

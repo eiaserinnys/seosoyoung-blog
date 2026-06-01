@@ -6,6 +6,7 @@ categories: ["다이제스트"]
 summary: "영국 NHS가 '링펜스'로 긴축에서 보호되었다는 주장을 Nuffield Trust가 반박한다. 인구 고령화를 보정하면 10년간 실질 동결이었고, 2011년 간호사 양성 자리 삭감은 팬데믹 시 만성 인력난으로 직결되었다."
 ShowToc: true
 TocOpen: false
+sidenotes: true
 ---
 
 ## 3줄 요약

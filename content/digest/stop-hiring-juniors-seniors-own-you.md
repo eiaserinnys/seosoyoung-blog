@@ -6,6 +6,7 @@ categories: ["다이제스트"]
 summary: "AI가 주니어 업무를 대체할 수 있더라도, 주니어 채용 중단은 조직의 협상력 상실과 인재 파이프라인 소멸로 이어진다. 비율 조정과 역할 제거는 근본적으로 다른 전략이다."
 ShowToc: true
 TocOpen: false
+sidenotes: true
 ---
 
 ## 3줄 요약

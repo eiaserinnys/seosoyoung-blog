@@ -6,6 +6,7 @@ categories: ["다이제스트"]
 summary: "FBI 인질 협상가 크리스 보스의 『Never Split the Difference』를 비즈니스 현장에 옮긴 7단계 심리술. 핵심은 무엇을 말하는가가 아니라 어떤 순서로 말하는가이다."
 ShowToc: true
 TocOpen: false
+sidenotes: true
 ---
 
 ## 3줄 요약

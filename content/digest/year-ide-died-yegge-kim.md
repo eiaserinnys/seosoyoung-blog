@@ -6,6 +6,7 @@ categories: ["다이제스트"]
 summary: "공저 'Vibe Coding' 책을 기반으로 Steve(전반)는 IDE의 종말과 다중 에이전트 전환을, Gene(후반)은 조직 변혁 사례와 DORA 연구를 다룹니다."
 ShowToc: true
 TocOpen: false
+sidenotes: true
 ---
 
 > AI-Assisted Engineering Talk #16/27

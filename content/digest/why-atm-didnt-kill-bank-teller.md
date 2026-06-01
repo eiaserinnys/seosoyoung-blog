@@ -6,6 +6,7 @@ categories: ["다이제스트"]
 summary: "ATM은 은행원을 죽이지 않았지만, 아이폰은 죽였다. David Oks가 과업 자동화와 패러다임 교체의 차이를 은행업 사례로 분석한다."
 ShowToc: true
 TocOpen: false
+sidenotes: true
 ---
 
 ## 3줄 요약

@@ -6,6 +6,7 @@ categories: ["다이제스트"]
 summary: "@gippp69가 만료된 미국 특허 수백만 건을 Claude로 스코어링하여 단종된 소비재 6개를 재발굴하고, 그중 자급수 화분 인서트를 $1.80에 제조해 Amazon에 $11.99로 올린 파이프라인 공개."
 ShowToc: true
 TocOpen: false
+sidenotes: true
 ---
 
 ## 3줄 요약

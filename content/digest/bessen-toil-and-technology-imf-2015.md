@@ -6,6 +6,7 @@ categories: ["다이제스트"]
 summary: "ATM이 은행 텔러를 없애지 않은 이유를 데이터로 보여주고, 자동화가 직무를 '제거'하는 것이 아니라 '대체'한다는 논지를 편 2015년 IMF 기고문."
 ShowToc: true
 TocOpen: false
+sidenotes: true
 ---
 
 ## 3줄 요약

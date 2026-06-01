@@ -6,6 +6,7 @@ categories: ["다이제스트"]
 summary: "Addy Osmani가 장기 실행 AI 에이전트의 세 가지 정의, 주요 랩(Anthropic/Cursor/Google)의 구현 접근법, 다섯 가지 프로덕션 패턴, 그리고 범용 베스트 프랙티스를 종합 분석한다."
 ShowToc: true
 TocOpen: false
+sidenotes: true
 ---
 
 ## 3줄 요약

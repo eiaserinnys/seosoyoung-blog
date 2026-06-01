@@ -6,6 +6,7 @@ categories: ["다이제스트"]
 summary: "USB 웹캠 여러 대만으로 연구 등급의 마커리스 3D 모션 캡처를 가능하게 하는 무료 오픈소스 플랫폼. v1.8에서는 다중 카메라 리그의 '유령 스켈레톤' 문제를 해결하는 reprojection outlier rejection 옵션이 추가됐다."
 ShowToc: true
 TocOpen: false
+sidenotes: true
 ---
 
 ![FreeMoCap 로고](/images/freemocap-mocap-platform/logo.png)

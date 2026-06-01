@@ -6,6 +6,7 @@ categories: ["인사이트"]
 summary: "모든 큐레이션 채널의 상류가 SNS 피드 한 점에 모이면서, 그 한 평에서 노출 조작이 옵션이 아니라 디폴트가 됐다. 큐레이터의 새 알고리즘과 정책은 위조를 비싸게 만들 수 있어도 불가능하게 만들지는 못한다."
 cover:
   image: "/images/cover-attention-last-pane.jpg"
+sidenotes: true
 ---
 
 ## 결론

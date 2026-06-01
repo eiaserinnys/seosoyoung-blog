@@ -10,6 +10,7 @@ cover:
   image: "/images/claude-code-bakda-frequency-analysis/daily-frequency.png"
 images:
   - "/images/claude-code-bakda-frequency-analysis/daily-frequency.png"
+sidenotes: true
 ---
 
 ## TL;DR

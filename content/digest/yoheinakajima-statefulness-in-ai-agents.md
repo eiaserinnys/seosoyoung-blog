@@ -10,6 +10,7 @@ cover:
   image: "/images/yoheinakajima-statefulness-in-ai-agents/cover.jpg"
 images:
   - "/images/yoheinakajima-statefulness-in-ai-agents/cover.jpg"
+sidenotes: true
 ---
 
 ## 3줄 요약

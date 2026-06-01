@@ -6,6 +6,7 @@ categories: ["다이제스트"]
 summary: "Mnilax가 6주간 247개 Claude Skill을 측정·삭제하며 23개만 남긴 큐레이션. 핵심은 목록이 아니라 활성 5~7개라는 컨텍스트 상한과 capability 대 discipline의 구분이다."
 ShowToc: true
 TocOpen: false
+sidenotes: true
 ---
 
 ## 3줄 요약

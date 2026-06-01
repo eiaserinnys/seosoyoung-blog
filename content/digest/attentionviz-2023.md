@@ -11,6 +11,7 @@ cover:
   image: "/images/attentionviz-2023/matrix.png"
 images:
   - "/images/attentionviz-2023/matrix.png"
+sidenotes: true
 ---
 
 ## 3줄 요약

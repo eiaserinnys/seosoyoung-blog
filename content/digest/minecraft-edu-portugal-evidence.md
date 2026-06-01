@@ -10,6 +10,7 @@ cover:
   image: "/images/minecraft-edu-portugal-evidence/challenge-presentation.png"
 images:
   - "/images/minecraft-edu-portugal-evidence/challenge-presentation.png"
+sidenotes: true
 ---
 
 ## 3줄 요약

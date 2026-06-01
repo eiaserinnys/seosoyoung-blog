@@ -6,6 +6,7 @@ categories: ["다이제스트"]
 summary: "Claude Code & the Evolution of Agentic Coding — Boris Cherny"
 ShowToc: true
 TocOpen: false
+sidenotes: true
 ---
 
 > AI-Assisted Engineering Talk #24/27

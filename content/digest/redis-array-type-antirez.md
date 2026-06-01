@@ -6,6 +6,7 @@ categories: ["다이제스트"]
 summary: "Redis 창시자 antirez가 새로운 Array 데이터 타입을 AI와 함께 4개월에 걸쳐 설계·구현한 과정을 회고한다. 명세 문서 우선 작성이 성공의 열쇠였고, AI는 복잡성에 도전할 수 있게 해주는 안전망이었다."
 ShowToc: true
 TocOpen: false
+sidenotes: true
 ---
 
 ## 3줄 요약

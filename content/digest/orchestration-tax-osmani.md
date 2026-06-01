@@ -10,6 +10,7 @@ cover:
   image: "/images/orchestration-tax-osmani/cover.jpg"
 images:
   - "/images/orchestration-tax-osmani/cover.jpg"
+sidenotes: true
 ---
 
 ## 3줄 요약

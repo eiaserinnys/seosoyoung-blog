@@ -10,6 +10,7 @@ cover:
   image: "/images/hao-evans-ai-science-paradox-2026/fig3-knowledge.png"
 images:
   - "/images/hao-evans-ai-science-paradox-2026/fig3-knowledge.png"
+sidenotes: true
 ---
 
 ## 3줄 요약

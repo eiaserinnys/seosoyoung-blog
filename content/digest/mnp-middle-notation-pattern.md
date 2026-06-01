@@ -10,6 +10,7 @@ cover:
   image: "/images/mnp-middle-notation-pattern/cover.png"
 images:
   - "/images/mnp-middle-notation-pattern/cover.png"
+sidenotes: true
 ---
 
 ## 3줄 요약

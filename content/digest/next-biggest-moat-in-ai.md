@@ -6,6 +6,7 @@ categories: ["다이제스트"]
 summary: "AI 시대에 제품·카테고리·기술 우위는 빠르게 모방되지만 회사의 *모양 자체* — 누구를 모으고, 그들에게 어떤 정체성을 주고, 어떤 권한을 분배하느냐 — 는 모방되지 않는다. Jaya Gupta가 OpenAI·Palantir·Anthropic 사례로 새 talent 시장의 논리를 그린다."
 ShowToc: true
 TocOpen: false
+sidenotes: true
 ---
 
 ## 3줄 요약

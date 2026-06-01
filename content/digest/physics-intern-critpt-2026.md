@@ -11,6 +11,7 @@ cover:
   image: "/images/physics-intern-critpt/quantum_error_detection.webp"
 images:
   - "/images/physics-intern-critpt/quantum_error_detection.webp"
+sidenotes: true
 ---
 
 ## 3줄 요약

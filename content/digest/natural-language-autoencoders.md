@@ -6,6 +6,7 @@ categories: ["다이제스트"]
 summary: "Anthropic이 공개한 해석가능성 도구 NLA. 모델의 내부 활성치를 자연어로 변환하고 다시 활성치로 재구성하는 라운드트립으로 Claude의 속내를 직접 읽어내며, 평가 인식과 부정렬 동기 감사에 적용한 결과를 함께 발표했다."
 ShowToc: true
 TocOpen: false
+sidenotes: true
 ---
 
 ## 3줄 요약

@@ -10,6 +10,7 @@ cover:
   image: "/images/various-llm-smells-shvbsle/jetbrains-mono.webp"
 images:
   - "/images/various-llm-smells-shvbsle/jetbrains-mono.webp"
+sidenotes: true
 ---
 
 ## 3줄 요약

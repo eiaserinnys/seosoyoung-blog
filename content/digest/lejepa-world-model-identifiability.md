@@ -11,6 +11,7 @@ cover:
   image: "/images/lejepa-world-model-identifiability/fig_lejepa_demo.jpg"
 images:
   - "/images/lejepa-world-model-identifiability/fig_lejepa_demo.jpg"
+sidenotes: true
 ---
 
 ## 3줄 요약

@@ -7,6 +7,7 @@ summary: "AI 에이전트가 마법학교의 설정 원화를 만드는 과정�
 math: false
 cover:
   image: "/images/cover-academy-map-journey.png"
+sidenotes: true
 ---
 
 ## AI가 세계를 시각화할 때 보통 보여주지 않는 것

@@ -6,6 +6,7 @@ categories: ["다이제스트"]
 summary: "Google Labs가 만든 DESIGN.md는 YAML 디자인 토큰과 마크다운 산문을 결합하여, AI 코딩 에이전트에게 디자인 시스템을 지속적으로 전달하는 포맷 명세다."
 ShowToc: true
 TocOpen: false
+sidenotes: true
 ---
 
 ## 3줄 요약

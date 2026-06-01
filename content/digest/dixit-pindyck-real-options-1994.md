@@ -6,6 +6,7 @@ categories: ["다이제스트"]
 summary: "Avinash K. Dixit & Robert S. Pindyck가 1994년 단행본 「Investment under Uncertainty」와 1995년 HBR 압축 요약본에서 정립한 실물 옵션(real options) 프레임. 비가역적이고 지연 가능한 투자 결정에서는 단순 NPV가 체계적으로 잘못된 답을 주며, 투자 기회를 콜옵션으로 다시 모형화해야 한다고 주장한다."
 ShowToc: true
 TocOpen: false
+sidenotes: true
 ---
 
 ## 3줄 요약

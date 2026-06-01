@@ -6,6 +6,7 @@ categories: ["다이제스트"]
 summary: "LLM에 문서 편집을 위임하면 프론티어 모델조차 20회 상호작용 후 평균 25%의 콘텐츠를 손상시킨다. Microsoft Research가 52개 전문 도메인 벤치마크(DELEGATE-52)로 실증했다."
 ShowToc: true
 TocOpen: false
+sidenotes: true
 ---
 
 ## 3줄 요약

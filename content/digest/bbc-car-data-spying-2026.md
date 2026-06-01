@@ -10,6 +10,7 @@ cover:
   image: "/images/bbc-car-data-spying-2026/cover-collage.jpg.webp"
 images:
   - "/images/bbc-car-data-spying-2026/cover-collage.jpg.webp"
+sidenotes: true
 ---
 
 ## 3줄 요약

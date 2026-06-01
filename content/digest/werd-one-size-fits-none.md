@@ -6,6 +6,7 @@ categories: ["다이제스트"]
 summary: "Elgg 공동창업자 Ben Werdmuller가 2007년 \"No features\" 키노트로 던졌던 화두를 19년 만에 다시 꺼낸다. 에이전틱 코딩과 ActivityPub·ATProto가 결합하면 커뮤니티가 자기 손으로 맞춤 소셜 플랫폼을 빚을 수 있는 시대가 열린다는 주장."
 ShowToc: true
 TocOpen: false
+sidenotes: true
 ---
 
 ![퍼즐을 함께 맞추는 사람들 — Getty Images via Unsplash](/images/werd-one-size-fits-none/cover-puzzle.jpg)

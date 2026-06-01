@@ -6,6 +6,7 @@ categories: ["다이제스트"]
 summary: "Google/EPFL 연구팀이 제안한 Simula는 택소노미 분해 → 에이전틱 메타프롬프팅 → 이중 비평 필터링의 3단계로 합성 데이터를 생성하며, 데이터 스케일링의 핵심이 양이 아닌 속성임을 실증한다."
 ShowToc: true
 TocOpen: false
+sidenotes: true
 ---
 
 ## 3줄 요약

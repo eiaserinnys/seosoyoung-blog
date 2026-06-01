@@ -6,6 +6,7 @@ categories: ["다이제스트"]
 summary: "Claude Code·Cursor·Codex 등 MCP 클라이언트 전반에 영구 메모리를 공급하는 self-hosted 엔진. 12개 라이프사이클 훅으로 무수동 캡처하고, BM25+Vector+Graph 삼중 검색으로 LongMemEval-S R@5 95.2%를 달성한다."
 ShowToc: true
 TocOpen: false
+sidenotes: true
 ---
 
 ![agentmemory 배너](/images/agentmemory-persistent-memory-engine/banner.png)

@@ -6,6 +6,7 @@ categories: ["다이제스트"]
 summary: "직관이 정확해지는 학습 환경(kind)과 호도하는 학습 환경(wicked)을 구분하는 Hogarth(2001)의 개념을, '학습(L) 설정'과 '타깃(T) 설정' 사이의 정보 매칭 6단계로 재공식화한 2015년 정본 논문."
 ShowToc: true
 TocOpen: false
+sidenotes: true
 ---
 
 ## 3줄 요약

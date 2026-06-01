@@ -8,6 +8,7 @@ cover:
   image: "/images/cover-mindset-is-environment.jpg"
 ShowToc: true
 TocOpen: false
+sidenotes: true
 ---
 
 ## 처방을 다시 씁니다

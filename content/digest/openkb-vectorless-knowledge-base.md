@@ -6,6 +6,7 @@ categories: ["다이제스트"]
 summary: "VectifyAI의 OpenKB는 문서를 한 번 컴파일하여 살아 있는 위키로 누적하는 오픈소스 지식 베이스 도구다. PageIndex로 긴 문서를 벡터 없이 검색하고, 결과물은 옵시디언 호환 마크다운으로 남긴다."
 ShowToc: true
 TocOpen: false
+sidenotes: true
 ---
 
 ## 3줄 요약

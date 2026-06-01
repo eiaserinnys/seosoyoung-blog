@@ -6,6 +6,7 @@ categories: ["다이제스트"]
 summary: "Goodfire가 Llama 3.1 8B의 레이어 18에서 발견한 범용 덧셈 모듈. 숫자를 푸리에 기반 원형으로 표현하고, 산술·요일·월 과제에서 같은 회로를 공유하며, steering으로 인과적 역할을 검증했다."
 ShowToc: true
 TocOpen: false
+sidenotes: true
 ---
 
 > Goodfire AI · Research · 2026년 5월 14일

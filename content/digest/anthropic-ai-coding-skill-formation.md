@@ -6,6 +6,7 @@ categories: ["다이제스트"]
 summary: "Anthropic이 주니어 소프트웨어 엔지니어 52명을 대상으로 한 무작위 대조 실험. AI 보조군은 새 라이브러리 학습 직후 퀴즈에서 손코딩군보다 17%p 낮은 점수를 받았고, 격차는 디버깅 항목에서 가장 컸다. 다만 AI 사용 방식에 따라 결과가 크게 갈렸다."
 ShowToc: true
 TocOpen: false
+sidenotes: true
 ---
 
 ## 3줄 요약

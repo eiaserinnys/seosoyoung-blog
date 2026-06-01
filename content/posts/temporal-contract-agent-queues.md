@@ -7,6 +7,7 @@ series: ["에이전트 하네스"]
 summary: "에이전트에게 메시지를 끼워넣는 행위는 하나가 아니다. '방향을 틀어라'와 '이것도 해라'는 시간축에서 완전히 다른 계약이며, 이것을 API 수준에서 분리한 설계가 pi-agent-core에 있다."
 cover:
   image: "/images/cover-temporal-contract-agent-queues.jpg"
+sidenotes: true
 ---
 
 ## 메시지 주입은 하나의 행위가 아니다

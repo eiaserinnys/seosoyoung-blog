@@ -6,6 +6,7 @@ categories: ["다이제스트"]
 summary: "Apollo 11의 유도 컴퓨터 어셈블리 코드를 '궁극의 레거시 코드'로 두고, Augment Agent가 1202 알람을 조사하고 P65 착륙 알고리즘을 자율로 구현해 보인다."
 ShowToc: true
 TocOpen: false
+sidenotes: true
 ---
 
 > AI-Assisted Engineering Talk #3/27

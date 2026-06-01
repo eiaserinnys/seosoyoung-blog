@@ -11,6 +11,7 @@ cover:
   image: "/images/diffusionblocks-blockwise-training/overview.jpg"
 images:
   - "/images/diffusionblocks-blockwise-training/overview.jpg"
+sidenotes: true
 ---
 
 ## 3줄 요약

@@ -10,6 +10,7 @@ cover:
   image: "/images/arts-engagement-epigenetic-aging-bu-2026/figure1-aceng-clocks.jpg"
 images:
   - "/images/arts-engagement-epigenetic-aging-bu-2026/figure1-aceng-clocks.jpg"
+sidenotes: true
 ---
 
 ## 3줄 요약

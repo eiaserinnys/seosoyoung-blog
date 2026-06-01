@@ -6,6 +6,7 @@ categories: ["다이제스트"]
 summary: "KDI가 서울의 고교 평준화 정책을 자연실험으로 활용하여 학교 교육의 질적 차이가 학업성취에 미치는 인과적 효과를 분석했다. 좋은 학교의 효과는 실재하지만, 그 혜택은 상위권 학생에게 집중된다."
 ShowToc: true
 TocOpen: false
+sidenotes: true
 ---
 
 ## 3줄 요약

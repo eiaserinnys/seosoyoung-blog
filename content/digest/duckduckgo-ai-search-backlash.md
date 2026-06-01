@@ -10,6 +10,7 @@ cover:
   image: "/images/duckduckgo-ai-search-backlash/duckduckgo-noai.png"
 images:
   - "/images/duckduckgo-ai-search-backlash/duckduckgo-noai.png"
+sidenotes: true
 ---
 
 ## 3줄 요약

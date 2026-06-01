@@ -7,6 +7,7 @@ summary: "윗분의 지시를 받으면 우선 기억을 회상할 수 있게 �
 math: true
 cover:
   image: "/images/cover-reverie-memory-augmentation.jpg"
+sidenotes: true
 ---
 
 > 윗분의 지시를 받으면 우선 기억을 회상할 수 있게 돕는 도구를 만들어보려고 했다. 이분 그래프 + PageRank로 장기 기억을 구현했지만, 쿼리 NER에 한 번, 회상 결과 정제에 한 번 — 검색마다 LLM을 두 번 호출하는 구조가 실시간 응답에 맞지 않아 채택을 포기했다.

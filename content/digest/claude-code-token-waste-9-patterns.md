@@ -6,6 +6,7 @@ categories: ["다이제스트"]
 summary: "430시간, 600만 입력 토큰, $1,340을 추적한 결과 생산적 토큰은 27%에 불과했다. 9가지 보이지 않는 오버헤드 패턴을 제거하자 65%로 뛰었다."
 ShowToc: true
 TocOpen: false
+sidenotes: true
 ---
 
 ## 3줄 요약
