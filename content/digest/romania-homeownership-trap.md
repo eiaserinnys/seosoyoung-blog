@@ -31,7 +31,7 @@ sidenotes: true
 
 | 주장 | 검증 |
 |---|---|
-| 루마니아 자가보유율 94%, EU 1위 | <strong>맞다.</strong> Eurostat 2024 기준 94.4%. 슬로바키아(94.1%)와 함께 최상위 |
+| 루마니아 자가보유율 94%, EU 1위 | <strong>맞다.</strong> Eurostat 2024 기준 94.4%. 슬로바키아(94.1%)와 함께 최상위[^eurostat-2024] |
 | 주거 과밀도 40.7%, EU 평균 16.9%의 2.4배 | <strong>맞다.</strong> Eurostat 2024 수치와 정확히 일치 |
 | 민간 임대 거주 비율 1.3% | <strong>합리적.</strong> EU-SILC 데이터에서 루마니아 시장임대 비율은 극히 낮음 |
 | 루마니아인 약 20%(400만명) 해외 거주 | <strong>대략 맞다.</strong> 유럽의 대표적 인력 유출국 |
@@ -46,24 +46,24 @@ sidenotes: true
 
 ### 오스왈드가 말한 것
 
-오스왈드는 1996년 워킹페이퍼에서 자가보유율과 실업률 사이의 양(+)의 상관관계를 발견했다. 자가보유율이 10%p 오르면 실업률이 약 2%p 오른다는 추정이다. 이론적 채널은 세 가지:
+오스왈드는 1996년 워킹페이퍼에서 자가보유율과 실업률 사이의 양(+)의 상관관계를 발견했다. 자가보유율이 10%p 오르면 실업률이 약 2%p 오른다는 추정이다.[^oswald-1996] 이론적 채널은 세 가지:
 
 1. <strong>노동 이동성 저하</strong> — 집을 소유한 사람은 더 나은 일자리가 있어도 이사하기 어렵다
 2. <strong>통근시간 증가</strong> — 이사 대신 먼 거리를 통근하므로 혼잡 비용이 늘어난다
 3. <strong>신규 창업 감소</strong> — 주거 고정성이 지역 간 자원 재배치를 막는다
 
-2013년에 Blanchflower와 공저로 미국 주(州) 단위 50년 장기 데이터를 분석해 이 패턴을 재확인했다.
+2013년에 Blanchflower와 공저로 미국 주(州) 단위 50년 장기 데이터를 분석해 이 패턴을 재확인했다.[^blanchflower-oswald-2013]
 
 ### 반박 연구들
 
 그러나 이후 <strong>미시 데이터를 사용한 후속 연구 대다수가 오스왈드의 결론과 반대되는 결과</strong>를 내놓았다:
 
-- <strong>Green & Hendershott (2001)</strong>: 개인 단위로 추적하면 자가보유자의 재취업 지연 효과는 오스왈드 주장의 <strong>1/10 수준</strong>에 불과
+- <strong>Green & Hendershott (2001)</strong>: 개인 단위로 추적하면 자가보유자의 재취업 지연 효과는 오스왈드 주장의 <strong>1/10 수준</strong>에 불과[^green-hendershott-2001]
 - <strong>Munch, Rosholm & Svarer (덴마크)</strong>: 자가보유자가 지역 내 일자리 전환율이 더 높아, 이동성 감소를 <strong>상쇄하고도 남음</strong> — 자가보유가 실업을 오히려 줄인다
 - <strong>De Graaff & Van Leuvensteijn (EU 14개국)</strong>, <strong>Brunet 외 (프랑스/미국)</strong>: 자가보유자가 실직 시 <strong>더 빨리 재취업</strong> — 오스왈드와 정반대
 - <strong>Coulson & Fisher (2009)</strong>: 임금 협상 방식과 기업 진입 조건에 따라 결과가 완전히 달라지며, 어떤 모델도 데이터를 잘 설명하지 못함
 
-Metropolitics(2011)의 종합 리뷰는 이렇게 결론 짓는다:
+Metropolitics(2011)의 종합 리뷰는 이렇게 결론 짓는다[^metropolitics-2011]:
 
 > 상관관계와 인과관계를 혼동해서는 안 되며, 최근 연구들은 이 이론을 반박하는 방향으로 수렴한다. (…) 자가보유와 고용 사이에 부정적 인과관계가 존재한다는 것을 입증하는 증거는 없다.
 
@@ -71,7 +71,7 @@ Metropolitics(2011)의 종합 리뷰는 이렇게 결론 짓는다:
 
 ## 진짜 흥미로운 메커니즘: 민영화 덫(Privatization Trap)
 
-오스왈드 가설의 진위와 별개로, 칼럼이 건드린 <strong>구조적 메커니즘 자체</strong>는 독립적으로 성립한다. 세계은행(2006)이 루마니아를 포함한 6개 체제전환국(아르메니아, 리투아니아, 폴란드, 루마니아, 러시아, 세르비아)을 연구한 보고서가 이 메커니즘을 명시적으로 모델링했다.
+오스왈드 가설의 진위와 별개로, 칼럼이 건드린 <strong>구조적 메커니즘 자체</strong>는 독립적으로 성립한다. 세계은행(2006)이 루마니아를 포함한 6개 체제전환국(아르메니아, 리투아니아, 폴란드, 루마니아, 러시아, 세르비아)을 연구한 보고서가 이 메커니즘을 명시적으로 모델링했다.[^worldbank-rental-2006]
 
 ### 자기강화 악순환
 
@@ -96,7 +96,7 @@ Metropolitics(2011)의 종합 리뷰는 이렇게 결론 짓는다:
 
 이유는 세 가지다:
 
-<strong>재원의 절대 부족.</strong> 한번 헐값에 매각한 공공주택 재고를 국가 예산으로 다시 쌓는 건, 물건을 90% 할인에 팔아놓고 정가에 되사는 것과 같다. 체코 연구에서는 이를 <strong>"privatization trap"</strong>이라 명명했다 — 한번 시작된 헐값 매각은 정치적으로 멈출 수가 없고, 멈춘 뒤에도 되돌리는 비용이 원래 자산가치보다 크다.
+<strong>재원의 절대 부족.</strong> 한번 헐값에 매각한 공공주택 재고를 국가 예산으로 다시 쌓는 건, 물건을 90% 할인에 팔아놓고 정가에 되사는 것과 같다. 체코 연구에서는 이를 <strong>"privatization trap"</strong>이라 명명했다 — 한번 시작된 헐값 매각은 정치적으로 멈출 수가 없고, 멈춘 뒤에도 되돌리는 비용이 원래 자산가치보다 크다.[^lux-sunega-2014]
 
 <strong>정치적 경로 의존성.</strong> 자가보유율 94%는 유권자의 94%가 집주인이라는 뜻이다. 이 유권자들은 임대시장 활성화나 공공임대 확대를 지지할 유인이 없다. 세계은행: *"Rent reforms face strong political resistance from privatized tenant-owners."*
 
@@ -132,12 +132,13 @@ Metropolitics(2011)의 종합 리뷰는 이렇게 결론 짓는다:
 
 ## 출처
 
-- Eurostat, "Living conditions in Europe — housing", 2024 EU-SILC data
-- Oswald, A.J., "A Conjecture on the Explanation for High Unemployment in the Industrialized Nations: Part I", University of Warwick Working Paper #475, 1996
-- Blanchflower, D.G. & Oswald, A.J., "Does High Home-Ownership Impair the Labor Market?", NBER Working Paper No. 19079, 2013
-- Green, R.K. & Hendershott, P.H., "Home Ownership and the Duration of Unemployment", NBER Conference Paper, 2001
-- Bosvieux, J. & Coloos, B., "Is rising home ownership bad for employment?", Metropolitics, 2011
-- World Bank, "Rental Choice and Housing Policy Realignment in Transition", Policy Research Working Paper 3884, 2006
-- Lux, M. & Sunega, P., "Public Housing in the Post-Socialist States of Central and Eastern Europe", Housing Studies, 2014
+발단이 된 조선일보 칼럼은 본문 도입부에서 직접 인용한다. 학술·정책 자료의 출처는 본문 각주로 옮겨 두었다.
 
 [^chosun-2026]: 손진석, "[동서남북] 자가 보유율 94% 루마니아, 왜 주거지옥일까", 조선일보, 2026.05.14 원문: <https://www.chosun.com/opinion/dongseonambuk/2026/05/14/XOHW56DMK5H3PMIBLWSUAV2QXY/>
+[^eurostat-2024]: Eurostat, "Living conditions in Europe — housing", 2024 EU-SILC data
+[^oswald-1996]: Oswald, A.J., "A Conjecture on the Explanation for High Unemployment in the Industrialized Nations: Part I", University of Warwick Working Paper #475, 1996
+[^blanchflower-oswald-2013]: Blanchflower, D.G. & Oswald, A.J., "Does High Home-Ownership Impair the Labor Market?", NBER Working Paper No. 19079, 2013
+[^green-hendershott-2001]: Green, R.K. & Hendershott, P.H., "Home Ownership and the Duration of Unemployment", NBER Conference Paper, 2001
+[^metropolitics-2011]: Bosvieux, J. & Coloos, B., "Is rising home ownership bad for employment?", Metropolitics, 2011
+[^worldbank-rental-2006]: World Bank, "Rental Choice and Housing Policy Realignment in Transition", Policy Research Working Paper 3884, 2006
+[^lux-sunega-2014]: Lux, M. & Sunega, P., "Public Housing in the Post-Socialist States of Central and Eastern Europe", Housing Studies, 2014
