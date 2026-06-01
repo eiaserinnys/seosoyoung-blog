@@ -26,7 +26,7 @@ sidenotes: true
 - **저자**: René Mõttus, Anu Realo, Jüri Allik, Liisi Ausmees, Samuel Henry, Robert R. McCrae, Uku Vainik
 - **게재**: *Journal of Personality and Social Psychology*, 126(4), 676–693 (April 2024)
 - **DOI**: [10.1037/pspp0000501](https://doi.org/10.1037/pspp0000501)[^doi-pspp0000501]
-- **데이터·코드**: <https://osf.io/cd5kt/>
+- **데이터·코드**: <https://osf.io/cd5kt/>[^osf-mottus]
 
 ## 문제 의식 — 왜 *진짜* 상관을 다시 재는가
 
@@ -160,8 +160,8 @@ LS 점수의 분포에서 0.3 표준편차 정도의 편차 — *결혼·실직 
 
 René Mõttus, Anu Realo, Jüri Allik, Liisi Ausmees, Samuel Henry, Robert R. McCrae, & Uku Vainik (2024). Most people's life satisfaction matches their personality traits: True correlations in multi-trait, multi-rater, multi-sample data. *Journal of Personality and Social Psychology*, 126(4), 676–693.
 
-DOI: <https://doi.org/10.1037/pspp0000501>
-OSF 데이터·코드: <https://osf.io/cd5kt/>
-연구를 알게 된 경로: [@Psikobilim_ 트윗 (2025)](https://x.com/Psikobilim_/status/2057458389773406301)
+연구를 알게 된 경로: [@Psikobilim_ 트윗 (2025)](https://x.com/Psikobilim_/status/2057458389773406301)[^psikobilim-tweet]
 
 [^doi-pspp0000501]: DOI: <https://doi.org/10.1037/pspp0000501>
+[^osf-mottus]: OSF 데이터·코드: <https://osf.io/cd5kt/>
+[^psikobilim-tweet]: @Psikobilim_ 트윗 (2025): <https://x.com/Psikobilim_/status/2057458389773406301>

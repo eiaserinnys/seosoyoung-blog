@@ -15,7 +15,7 @@ sidenotes: true
 
 ## 3줄 요약
 
-1. 요즘IT(2026-05-20)에 실린 벤(benjamin74)의 글로, Turing Post 한국판 〈unsexy-truth-of-ai-adoption〉을 번역·재구성한 비즈니스 칼럼이다.
+1. 요즘IT(2026-05-20)에 실린 벤(benjamin74)의 글로, Turing Post 한국판 〈unsexy-truth-of-ai-adoption〉을 번역·재구성한 비즈니스 칼럼이다.[^turing-post-original]
 2. AI 도입은 컨설팅 매뉴얼이 그리는 선형 단계도가 아니라 *의존성의 적층(Stack of Dependencies)* 구조라, L1\~L5 사다리에서 아래층이 부실하면 위층은 시연용 데모로만 머문다.
 3. L1→L2(데이터로 읽히게 만들기), L2→L3(데이터를 믿을 수 있게), L3→L4(시스템이 판단·행동), L4→L5(조직의 근간 변화) 네 전환기를 통과하는 일은 결국 *조직 재설계*의 문제이며, 최후의 승자는 비싼 모델을 쓴 기업이 아니라 *섹시하지 않은 기초 공사*를 해낸 기업이라는 결론에 닿는다.
 
@@ -110,4 +110,5 @@ L5는 *선순환 피드백 루프*가 완성되는 단계다. AI는 실행만 �
 
 벤(benjamin74), 〈AI 도입, 섹시한 기술에 숨겨진 '섹시하지 않은' 성공 법칙〉, 요즘IT 매거진 #3762, 2026-05-20.
 원문: <https://yozm.wishket.com/magazine/detail/3762/>
-원 출처: Turing Post Korea, 〈unsexy-truth-of-ai-adoption〉, <https://turingpost.co.kr/p/unsexy-truth-of-ai-adoption>
+
+[^turing-post-original]: 원 출처: Turing Post Korea, 〈unsexy-truth-of-ai-adoption〉 — <https://turingpost.co.kr/p/unsexy-truth-of-ai-adoption>

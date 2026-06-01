@@ -95,7 +95,7 @@ $$\sigma(K{=}F,\,C) = \frac{2}{\sqrt{T}}\,\Phi^{-1}\!\left(\frac{c+1}{2}\right)$
 
 ## 인터랙티브 시각화
 
-슬라이더를 움직이면 파란 선(블랙-숄즈 콜 가격)과 빨간 점(역가우시안 생존 확률)이 정확히 겹치는 것을 확인할 수 있다. 주황색 수직선이 닫힌 형태 공식으로 복원한 $\sigma$다.
+슬라이더를 움직이면 파란 선(블랙-숄즈 콜 가격)과 빨간 점(역가우시안 생존 확률)이 정확히 겹치는 것을 확인할 수 있다. 주황색 수직선이 닫힌 형태 공식으로 복원한 $\sigma$다.[^marimo-bs]
 
 {{< blackscholes-interactive >}}
 
@@ -110,4 +110,4 @@ $$\sigma(K{=}F,\,C) = \frac{2}{\sqrt{T}}\,\Phi^{-1}\!\left(\frac{c+1}{2}\right)$
 Wolfgang Schadner, University of Liechtenstein. arXiv 2604.24480v1, 2026년 4월 28일 공개.
 원문: <https://arxiv.org/html/2604.24480v1>
 
-marimo 인터랙티브 노트북(Myles S): <https://molab.marimo.io/notebooks/nb_uJxQqWSNepkqVEkRdTJc92/app>
+[^marimo-bs]: 인터랙티브 구현(Myles S): <https://molab.marimo.io/notebooks/nb_uJxQqWSNepkqVEkRdTJc92/app>

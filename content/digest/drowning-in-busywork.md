@@ -17,7 +17,7 @@ sidenotes: true
 
 ## 도입 — 옥스퍼드 학자의 쥐덫
 
-저자 Carl Benedikt Frey는 옥스퍼드 마틴 스쿨의 노동·기술 경제학자다. 글의 도입은 그의 개인적 일화로 시작한다. 정원에서 쥐를 발견했을 때 평소라면 해충구제업자를 불렀겠지만, 그는 ChatGPT에 자문해서 직접 케이지 트랩을 설치했다. 스스로 처리한다는 작은 만족감을 느꼈다고 그는 적는다. (덧붙임: 트랩은 효과가 없었다. 쥐가 무시했다.)
+저자 Carl Benedikt Frey는 옥스퍼드 마틴 스쿨의 노동·기술 경제학자다.[^frey-nyt] 글의 도입은 그의 개인적 일화로 시작한다. 정원에서 쥐를 발견했을 때 평소라면 해충구제업자를 불렀겠지만, 그는 ChatGPT에 자문해서 직접 케이지 트랩을 설치했다. 스스로 처리한다는 작은 만족감을 느꼈다고 그는 적는다. (덧붙임: 트랩은 효과가 없었다. 쥐가 무시했다.)
 
 옥스퍼드 학자의 일상이 보통 잘 일반화되지는 않지만, 최근 스스로 해충구제업자·수리공·회계사가 된 사람이 그만은 아니다. 본문이 인용하는 수치는 다음과 같다.
 
@@ -50,7 +50,7 @@ Frey의 핵심 명제는 이것이다.
 
 세탁기와 그 기반 인프라(수도·전기·합성세제)가 점차 이 세계를 끝냈다. 그러나 노동을 끝낸 것은 아니다. 고객들이 기계를 사서 직접 빨래를 했다. 세탁부는 자신의 고객에 의해 대체되었다.
 
-여기서 역사가 Ruth Schwartz Cowan이 기록한 한 가지 아이러니가 따라붙는다. 주부는 더 많은 가사노동을, 더 자주, 더 높은 기준으로, 무급으로 했다.
+여기서 역사가 Ruth Schwartz Cowan이 기록한 한 가지 아이러니가 따라붙는다.[^cowan-1983] 주부는 더 많은 가사노동을, 더 자주, 더 높은 기준으로, 무급으로 했다.
 
 - 남성들이 분리식 칼라·커프스를 그만 쓰자 셔츠 전체를 빨아야 했다.
 - 아이들 옷은 일주일에 한 번이 아니라 매일 갈아입혔다.
@@ -130,10 +130,6 @@ AI 일자리 논쟁은 보통 양분된다 — "AI가 일자리를 빼앗는다"
 
 Frey가 옥스퍼드 학자라는 점은 살짝 아이러니하다 — 자기서비스로 쥐덫을 놓는 *고학력 사용자*가 AI 잡무 경제의 주요 수혜자이자 *동시에* 주요 피해자임을 그의 도입 일화가 보여준다. 회계사·법률가에게 접근 가능했던 계층조차 시간 비용을 잘못 계산하면서 더 일하게 된다.
 
-## 출처
 
-Carl Benedikt Frey, "[This Is Why You're Drowning in Busywork](https://www.nytimes.com/2026/05/11/opinion/ai-jobs-chores-work.html)", *New York Times Opinion* (Guest Essay), 2026-05-11.
-
-저자는 Oxford Martin School의 노동·기술 경제학자로, *The Technology Trap* (2019)과 *How Progress Ends: Technology, Innovation and the Fate of Nations* (2026)의 저자다.
-
-본문에는 원문 이미지가 없어 텍스트 다이제스트로 정리했다.
+[^frey-nyt]: Carl Benedikt Frey, "[This Is Why You're Drowning in Busywork](https://www.nytimes.com/2026/05/11/opinion/ai-jobs-chores-work.html)", *New York Times Opinion* (Guest Essay), 2026-05-11. 저자는 Oxford Martin School의 노동·기술 경제학자로, *The Technology Trap* (2019)과 *How Progress Ends: Technology, Innovation and the Fate of Nations* (2026)의 저자다.
+[^cowan-1983]: Cowan, R. S. (1983). *More Work for Mother: The Ironies of Household Technology from the Open Hearth to the Microwave*. Basic Books.

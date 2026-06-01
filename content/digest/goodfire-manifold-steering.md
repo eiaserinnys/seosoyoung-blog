@@ -47,7 +47,7 @@ sidenotes: true
 
 ## 기하 인지 스티어링 — 직선 vs 매니폴드
 
-저자들은 데모에서 슬라이더를 끌면 두 종류 개입을 동시에 수행한다. 활성에 직선 스티어링 벡터를 더하는 길과, 표상 매니폴드의 곡선을 따라 움직이는 길이다.
+저자들은 데모에서[^demo-manifold] 슬라이더를 끌면 두 종류 개입을 동시에 수행한다. 활성에 직선 스티어링 벡터를 더하는 길과, 표상 매니폴드의 곡선을 따라 움직이는 길이다.
 
 매니폴드를 따라가면 출력 분포가 행동 매니폴드의 자연스러운 원을 따라간다. Monday→Tuesday→Wednesday→Thursday→Friday로 확률 질량이 깔끔하게 이동한다. 반면 직선 스티어링은
 
@@ -74,7 +74,7 @@ sidenotes: true
 
 ## 일반화 — 요일을 넘어
 
-요일은 깨끗한 사례일 뿐이다. 풀 페이퍼는 같은 매니폴드 대응이 다른 도메인에서도 재현됨을 보고한다.
+요일은 깨끗한 사례일 뿐이다. 풀 페이퍼는[^arxiv-manifold] 같은 매니폴드 대응이 다른 도메인에서도 재현됨을 보고한다.
 
 - 언어 모델: 월(months), 글자, 나이, 사전 정의된 기하의 합성 ICL 태스크.
 - 다른 모달리티: 시리즈 첫 글의 mountain car 후속으로, 차의 위치를 예측하는 image-action 모델.
@@ -98,9 +98,8 @@ sidenotes: true
 발신: Goodfire (Stanford, UCL, Northeastern, Harvard, Technion 협력)
 저자: Daniel Wurgaft·Can Rager·Matthew Kowal·Vasudev Shyam·Sheridan Feucht·Usha Bhalla·Tal Haklay·Eric Bigelow·Raphaël Sarfati·Thomas McGrath·Owen Lewis·Jack Merullo·Noah Goodman·Thomas Fel·Atticus Geiger·Ekdeep Singh Lubana
 발표: 2026-05-07
-원문: <https://www.goodfire.ai/research/manifold-steering>
-풀 페이퍼: <https://arxiv.org/abs/2605.05115>
-인터랙티브 데모: <https://static.goodfire.ai/manifold-steering/weekdays_prod.html>
 시리즈 첫 글 다이제스트: [The World Inside Neural Networks](/digest/goodfire-world-inside-neural-networks/)
 
 [^goodfire-manifold]: 원문: <https://www.goodfire.ai/research/manifold-steering>
+[^arxiv-manifold]: 풀 페이퍼: <https://arxiv.org/abs/2605.05115>
+[^demo-manifold]: 인터랙티브 데모: <https://static.goodfire.ai/manifold-steering/weekdays_prod.html>

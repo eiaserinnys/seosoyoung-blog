@@ -15,7 +15,7 @@ sidenotes: true
 
 ## 3줄 요약
 
-1. Take-Two(GTA·Red Dead·NBA 2K 모회사) CEO 스트라우스 젤닉이 The Game Business의 크리스토퍼 드링과 가진 30분 인터뷰. 2026년 3월 17일 공개되었고, 같은 해 마리오 나월의 X 트윗이 이를 다시 끄집어내 화제가 되었다.
+1. Take-Two(GTA·Red Dead·NBA 2K 모회사) CEO 스트라우스 젤닉이 The Game Business의 크리스토퍼 드링과 가진 30분 인터뷰.[^game-business-article][^youtube-zelnick] 2026년 3월 17일 공개되었고, 같은 해 마리오 나월의 X 트윗이[^nawfal-tweet] 이를 다시 끄집어내 화제가 되었다.
 2. 핵심 주장은 두 가지다. 첫째, AI는 *에셋*을 만들 수는 있어도 *히트*를 만들지는 못한다 — 둘은 전혀 다른 일이다. 둘째, AI 데이터셋은 본질적으로 과거지향이고, 창작은 미래지향이므로 AI는 정의상 새로운 것을 만들지 못한다.
 3. 젤닉은 반(反)AI론자가 아니다. Take-Two는 사내에서 수백 개의 AI 파일럿을 돌리고 있다. 그의 결론은 단순하다 — "히트는 모든 병을 고친다(hits cure all ills)." 그리고 히트는 도구가 아니라 사람이 만든다.
 
@@ -116,10 +116,9 @@ Take-Two의 3분 전략 — *가장 창의적이고, 가장 혁신적이고, 가
 
 ## 출처
 
-원본 영상: <https://www.youtube.com/watch?v=6R4N4diERug> (The Game Business, 2026-03-17, 30:09)
-기사 정리: <https://www.thegamebusiness.com/p/take-two-ceo-interview-the-notion>
-나월의 X 정리: <https://x.com/MarioNawfal/status/2056170401831796778>
-
 스크린샷은 원본 영상 0:08, 4:30, 8:35, 11:35, 28:30 지점에서 추출했다.
 
+[^youtube-zelnick]: 원본 영상: <https://www.youtube.com/watch?v=6R4N4diERug> (The Game Business, 2026-03-17, 30:09)
+[^game-business-article]: 기사 정리: <https://www.thegamebusiness.com/p/take-two-ceo-interview-the-notion>
+[^nawfal-tweet]: 나월의 X 정리: <https://x.com/MarioNawfal/status/2056170401831796778>
 [^cnbc-2025]: 관련 CNBC 인터뷰(2025-10-28): <https://www.cnbc.com/2025/10/28/can-ai-create-next-grand-theft-auto-take-two-interactive-ceo-says-no.html>
