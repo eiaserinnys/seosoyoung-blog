@@ -11,7 +11,7 @@ sidenotes: true
 
 ## 3줄 요약
 
-1. Pine AI의 Bojie Li가 제안한 IKP는 7단계 난이도의 사실 질문 1,400개로 LLM의 '비압축적 지식 용량'을 측정하여, 블랙박스 API만으로 모델의 파라미터 수를 역추정하는 벤치마크다.
+1. Pine AI의 Bojie Li가 제안한 IKP는[^ikp-paper] 7단계 난이도의 사실 질문 1,400개로 LLM의 '비압축적 지식 용량'을 측정하여, 블랙박스 API만으로 모델의 파라미터 수를 역추정하는 벤치마크다.
 2. 89개 오픈웨이트 모델에서 IKP 정확도와 파라미터 수 사이에 R²=0.917의 로그-선형 관계를 확인했으며, 이를 프론티어 모델에 적용해 GPT-5.5를 \~9.7T, Claude Opus 4.6을 \~5.3T으로 추정한다.
 3. '같은 크기 모델이 매 3.5개월마다 2배 성능을 낸다'는 Densing Law는 추론 벤치마크에서만 성립하며, 사실 지식 축에서는 시간 계수가 0에 수렴한다 (p < 10⁻¹⁵로 기각).
 
@@ -27,7 +27,7 @@ sidenotes: true
 
 Densing Law("파라미터당 역량이 \~3.5개월마다 2배")는 N_proc과 N_ling의 효율 개선을 포착한다. 더 좋은 아키텍처와 학습법이 같은 파라미터 예산으로 더 많은 절차적 역량을 압축하는 것은 사실이다.
 
-그러나 N_fact는 다르다. "USTC Hackergame이 2014년에 시작되었다"는 사실은 계산이나 추론으로 도출할 수 없고, 반드시 저장해야 한다. 파라미터당 \~2\~4비트의 사실 지식을 담을 수 있다는 선행 연구(Allen-Zhu & Li 2025, Morris et al. 2025)에 기반하면, 모델이 *아는 것*의 양이 곧 파라미터 수의 하한을 결정한다.
+그러나 N_fact는 다르다. "USTC Hackergame이 2014년에 시작되었다"는 사실은 계산이나 추론으로 도출할 수 없고, 반드시 저장해야 한다. 파라미터당 \~2\~4비트의 사실 지식을 담을 수 있다는 선행 연구(Allen-Zhu & Li 2025[^allen-zhu-2025], Morris et al. 2025[^morris-2025])에 기반하면, 모델이 *아는 것*의 양이 곧 파라미터 수의 하한을 결정한다.
 
 ## IKP 벤치마크 설계
 
@@ -170,8 +170,7 @@ T5\~T6의 희귀 사실에 대한 모델 쌍별 응답 패턴으로 "지식 지�
 
 지식 핑거프린팅도 실용적 가치가 높다. 모델 가중치 없이 API 응답만으로 "이 모델이 저 모델의 증류인가, 독립 학습인가"를 판별할 수 있다는 것은 모델 공급망 투명성의 새로운 도구다. 특히 Baidu ERNIE 4.5의 교차 벤더 유사성 발견은 혼합 증류 학습의 실증적 증거로서 흥미롭다.
 
-## 출처
 
-Bojie Li (Pine AI), 2026년 4월 27일
-원문: <https://arxiv.org/abs/2604.24827>
-코드: <https://github.com/19PINE-AI/ikp>
+[^ikp-paper]: Bojie Li (Pine AI), *Incompressible Knowledge Probes: Estimating Black-Box LLM Parameter Counts via Factual Capacity* (2026.04.27). 원문: <https://arxiv.org/abs/2604.24827>. 코드: <https://github.com/19PINE-AI/ikp>.
+[^allen-zhu-2025]: Allen-Zhu, Z., & Li, Y. (2025). Physics of Language Models: Knowledge Storage and Extraction. *arXiv*.
+[^morris-2025]: Morris, J. X., et al. (2025). Language Model Inversion. *arXiv*.

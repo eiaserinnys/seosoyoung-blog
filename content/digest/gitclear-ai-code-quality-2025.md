@@ -19,7 +19,7 @@ sidenotes: true
 
 ## 자료의 위치
 
-저자는 GitClear의 CEO이자 Alloy.dev Research 리드 리서처 William Harding. 본문 33페이지. 2025년 2월 발행, 보고서 버전 v2025.2.5. 부제는 *Evaluating 2024's Increased Defect Rate via Code Quality Metrics — 211m lines of analyzed code + projections for 2025*이다.
+저자는 GitClear의 CEO이자 Alloy.dev Research 리드 리서처 William Harding.[^gitclear-report] 본문 33페이지. 2025년 2월 발행, 보고서 버전 v2025.2.5. 부제는 *Evaluating 2024's Increased Defect Rate via Code Quality Metrics — 211m lines of analyzed code + projections for 2025*이다.
 
 본 자료는 GitClear의 2024년 1월 보고서 *Coding on Copilot: 2023 Data Suggests Downward Pressure on Code Quality*의 후속편이다. 2024년 보고서는 "결함률이 오를 것"이라 예측하였고, 같은 해 10월 발표된 Google DORA 2024가 그 예측을 데이터로 확인하였다. 본 2025년판은 *예측이 빗나갔다면 어떻게 되었을까*가 아니라 *얼마나 더 빠르게 빗나갔는가*를 다룬다.
 
@@ -114,7 +114,7 @@ GitClear는 본 보고서에서 처음으로 *5라인 이상 연속된 중복 �
 
 ## 학술 보강 — Mo·Zhang(2023)의 클론과 버그
 
-GitClear는 *중복이 곧 버그를 부른다*는 직관에 학술적 근거를 댄다. ACM 2023의 *Exploring the Impact of Code Clones on Deep Learning Software*(Ran Mo·Yao Zhang 외)가 핵심 인용이다. 핵심 결과 셋이다.
+GitClear는 *중복이 곧 버그를 부른다*는 직관에 학술적 근거를 댄다. ACM 2023의 *Exploring the Impact of Code Clones on Deep Learning Software*(Ran Mo·Yao Zhang 외)[^mo-zhang-2023]가 핵심 인용이다. 핵심 결과 셋이다.
 
 - 딥러닝 프로젝트의 *코드 조각 16.3%*가 클론을 포함 — 전통 소프트웨어의 약 두 배
 - 3,113쌍의 *공동 변경된 클론*을 분석한 결과, *57.1%가 버그에 관여*
@@ -127,7 +127,7 @@ GitClear의 인용 의도는 분명하다. 코드 중복은 단순한 스타일 
 
 ## 외부 검증 — Google DORA 2024
 
-본 보고서는 자기 데이터의 정합성을 외부 데이터로도 확인한다. Google DORA 2024 보고서(39,000명 응답)가 핵심 비교 대상이다. 이 보고서의 자체 회귀 모델은 다음을 추정한다.
+본 보고서는 자기 데이터의 정합성을 외부 데이터로도 확인한다. Google DORA 2024 보고서(39,000명 응답)[^dora-2024]가 핵심 비교 대상이다. 이 보고서의 자체 회귀 모델은 다음을 추정한다.
 
 - AI 채택률 *25% 증가* → Delivery Stability *7.2% 감소*
 - 같은 자극 → Delivery Throughput *1.5% 감소*
@@ -204,11 +204,7 @@ GitClear의 결론은 간결하다.
 
 이 네 한계를 인정해도, 같은 시기 Google DORA의 39,000명 응답·Mo·Zhang의 학술 결과·GitClear의 211M 라인이 *세 메트릭이 같은 방향으로 이동한다*는 사실은 우연으로 보기 어렵다.
 
-## 출처
 
-저자: William Harding (CEO, GitClear / Lead Researcher, Alloy.dev Research)
-발표: GitClear, 2025년 2월 (보고서 버전 v2025.2.5)
-원문: <https://www.gitclear.com/ai_assistant_code_quality_2025_research>
-PDF: <https://gitclear-public.s3.us-west-2.amazonaws.com/GitClear-AI-Copilot-Code-Quality-2025.pdf>
-
-본 다이제스트의 도표 9장은 모두 GitClear 2025 보고서 PDF 본문에서 그대로 인용한 것이다.
+[^gitclear-report]: William Harding (CEO, GitClear / Lead Researcher, Alloy.dev Research), *AI Copilot Code Quality: 2025 Data Suggests 4x Growth in Code Clones* (보고서 버전 v2025.2.5). GitClear, 2025년 2월. 원문: <https://www.gitclear.com/ai_assistant_code_quality_2025_research>. PDF: <https://gitclear-public.s3.us-west-2.amazonaws.com/GitClear-AI-Copilot-Code-Quality-2025.pdf>. 본 다이제스트의 도표 9장은 모두 이 보고서 PDF 본문에서 그대로 인용한 것이다.
+[^mo-zhang-2023]: Mo, R., Zhang, Y., et al. (2023). Exploring the Impact of Code Clones on Deep Learning Software. *ACM TOSEM*.
+[^dora-2024]: Google, *DORA 2024 State of DevOps Report* (39,000명 응답). <https://dora.dev/research/2024/dora-report/>.
