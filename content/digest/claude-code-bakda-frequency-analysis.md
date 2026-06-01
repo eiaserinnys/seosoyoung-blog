@@ -33,7 +33,7 @@ This analysis is based on **personal Claude Code usage records** — a multi-age
 
 We analyzed all Claude Code agent sessions over a \~2 month period (March 21 – May 25, 2026 KST) using the following methodology:
 
-- **Morpheme analyzer**: [Kiwi](https://github.com/bab2min/kiwipiepy) v0.23.1, targeting `박/VV` (bakda, active) and `박히/VV` (bakhida, passive) morphemes
+- **Morpheme analyzer**: [Kiwi](https://github.com/bab2min/kiwipiepy)[^kiwi-analyzer] v0.23.1, targeting `박/VV` (bakda, active) and `박히/VV` (bakhida, passive) morphemes
 - **Source text**: `text_delta.searchable_text` + `assistant_message.content` events from the soulstream session database
 - **Token denominator**: `result.usage.output_tokens`
 - **Exclusion**: May 26–28 excluded to prevent meta-contamination from discussing this issue
@@ -166,7 +166,7 @@ Notably, multiple users report the same issue across **both Claude and GPT model
 
 ## Comparison with known phenomena
 
-This is analogous to the well-documented ["delve" overuse phenomenon](https://www.bbc.com/news/articles/cy94v2e4ynpo) in English LLM outputs, but with a more acute impact:
+This is analogous to the well-documented ["delve" overuse phenomenon](https://www.bbc.com/news/articles/cy94v2e4ynpo)[^bbc-delve] in English LLM outputs, but with a more acute impact:
 
 - **"Delve" is merely overused** — it is a valid formal English word that simply appears too frequently
 - **"Bakda" is register-inappropriate** — it carries a distinctly informal/internet-community register that clashes with professional Korean
@@ -176,5 +176,7 @@ The Korean case also demonstrates a mechanism not observed with "delve": the **s
 ## References
 
 - **Original investigation** (Korean): [Claude Code bakda self-contamination digest](https://seosoyoung.eiaserinnys.me/digest/claude-code-bakda-self-contamination/)
-- **Kiwi morpheme analyzer**: [bab2min/kiwipiepy](https://github.com/bab2min/kiwipiepy) v0.23.1
 - **Data corpus**: 114,864,200 output tokens across 4,666 Claude Code sessions, March 21 – May 25, 2026
+
+[^kiwi-analyzer]: Kiwi morpheme analyzer: <https://github.com/bab2min/kiwipiepy> v0.23.1
+[^bbc-delve]: BBC — "delve" overuse phenomenon: <https://www.bbc.com/news/articles/cy94v2e4ynpo>

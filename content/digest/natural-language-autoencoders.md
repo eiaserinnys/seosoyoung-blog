@@ -86,7 +86,7 @@ NLA와 SAE는 양쪽 모두 타깃 모델 학습에 쓰이지 않은 일반 데�
 
 ![감사 게임 결과 — NLA 장착 vs 미장착](/images/natural-language-autoencoders/auditing-game-chart.png)
 
-이 결과를 바탕으로 NLA는 이미 Claude Mythos Preview와 Claude Opus 4.6의 사전 배포 정렬 감사(pre-deployment alignment audit)에 실제로 사용되었다. 토이 모델 위에서 검증된 도구가 운영 단계에 진입한 셈이다.
+이 결과를 바탕으로 NLA는 이미 Claude Mythos Preview와 Claude Opus 4.6의 사전 배포 정렬 감사(pre-deployment alignment audit)에 실제로 사용되었다.[^nla-anthropic] 토이 모델 위에서 검증된 도구가 운영 단계에 진입한 셈이다.
 
 ## 한계 — 환각과 비용
 
@@ -102,9 +102,9 @@ NLA와 SAE는 양쪽 모두 타깃 모델 학습에 쓰이지 않은 일반 데�
 
 ## 공개 산출물
 
-- 학습 코드와 학습된 NLA: <https://github.com/kitft/natural_language_autoencoders>
-- 기술 페이퍼: <https://transformer-circuits.pub/2026/nla/index.html>
-- 인터랙티브 데모 (Neuronpedia 협업): <http://neuronpedia.org/nla>
+- 학습 코드와 학습된 NLA: <https://github.com/kitft/natural_language_autoencoders>[^nla-code]
+- 기술 페이퍼: <https://transformer-circuits.pub/2026/nla/index.html>[^nla-paper]
+- 인터랙티브 데모 (Neuronpedia 협업): <http://neuronpedia.org/nla>[^nla-demo]
 
 ## 가장 흥미로운 지점
 
@@ -115,4 +115,8 @@ NLA와 SAE는 양쪽 모두 타깃 모델 학습에 쓰이지 않은 일반 데�
 ## 출처
 
 발행: Anthropic, 2026년 5월 7일.
-원문: <https://www.anthropic.com/research/natural-language-autoencoders>
+
+[^nla-anthropic]: 원문: <https://www.anthropic.com/research/natural-language-autoencoders>
+[^nla-code]: 학습 코드와 학습된 NLA: <https://github.com/kitft/natural_language_autoencoders>
+[^nla-paper]: 기술 페이퍼: <https://transformer-circuits.pub/2026/nla/index.html>
+[^nla-demo]: 인터랙티브 데모 (Neuronpedia 협업): <http://neuronpedia.org/nla>

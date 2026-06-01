@@ -12,7 +12,7 @@ sidenotes: true
 ## 3줄 요약
 
 1. Cactus Compute가 Gemini 3.1을 26M 파라미터 모델로 증류한 함수 호출 전용 모델 Needle을 공개했다. 가중치, 학습 코드, 데이터셋 합성 코드까지 MIT로 풀려 있다.
-2. 핵심은 트랜스포머에서 FFN을 통째로 들어낸 'Simple Attention Network'이다. 도구 호출은 라우팅·복사 작업이므로 위치별 비선형 재작성(FFN)이 필요 없다는 가설을 실증한다.
+2. 핵심은 트랜스포머에서 FFN을 통째로 들어낸 'Simple Attention Network'이다.[^arch-doc] 도구 호출은 라우팅·복사 작업이므로 위치별 비선형 재작성(FFN)이 필요 없다는 가설을 실증한다.
 3. 동급보다 작은 26M으로 FunctionGemma-270M, Qwen-0.6B, Granite-350M, LFM2.5-350M을 단일샷 함수 호출에서 능가한다. Cactus 런타임 위에서 prefill 6000 tok/s, decode 1200 tok/s. 단, 대화 능력은 갖추지 않은 태스크 특화 모델이다.
 
 ## 모델 개요
@@ -121,7 +121,7 @@ cd needle && source ./setup
 needle playground
 ```
 
-`needle playground`를 띄우면 브라우저(http://127.0.0.1:7860)에서 Gemini로 데이터를 합성하고, Needle을 파인튜닝하고, 평가하고, 결과를 패키징한다. 가중치는 자동으로 다운로드된다.
+`needle playground`를 띄우면 브라우저(http://127.0.0.1:7860)에서 Gemini로 데이터를 합성하고, Needle을 파인튜닝하고, 평가하고, 결과를 패키징한다. 가중치는 자동으로 다운로드된다.[^huggingface-needle]
 
 CLI도 풍부하다.
 
@@ -139,7 +139,7 @@ needle tpu <action>                TPU management (see docs/tpu.md)
 
 ## Cactus 런타임 — 엣지 디바이스 추론 속도
 
-배포 시 Needle은 같은 회사의 [Cactus](https://github.com/cactus-compute/cactus) 런타임 위에서 동작한다. 보고된 속도는 prefill 6000 tok/s, decode 1200 tok/s. 휴대전화·시계·안경 같은 소비자 디바이스를 타깃으로 한다.
+배포 시 Needle은 같은 회사의 [Cactus](https://github.com/cactus-compute/cactus) 런타임 위에서 동작한다.[^cactus-runtime] 보고된 속도는 prefill 6000 tok/s, decode 1200 tok/s. 휴대전화·시계·안경 같은 소비자 디바이스를 타깃으로 한다.
 
 저자들의 노선은 "AI를 작은 디바이스에 다시 집어넣기 위해 모델만 줄이는 게 아니라, 모델 구조 자체를 디바이스 형태에 맞춰 다시 설계한다"이다. Needle은 그 노선의 구체 사례다.
 
@@ -172,11 +172,9 @@ print(result)
 
 저자: Henry Ndubuaku, Jakub Mroz, Karen Mosoyan, Roman Shemet, Parkirat Sandhu, Satyajit Kumar, Noah Cylich, Justin H. Lee (Cactus Compute, 2026).
 
-원문 리포: <https://github.com/cactus-compute/needle>
-아키텍처 문서: <https://github.com/cactus-compute/needle/blob/main/docs/simple_attention_networks.md>
-HuggingFace 가중치: <https://huggingface.co/Cactus-Compute/needle>
-Cactus 런타임: <https://github.com/cactus-compute/cactus>
-
 원문은 README와 아키텍처 노트, 모델 카드 형식으로 짧게 정리되어 있다. 외부 URL로 인용 가능한 도식이 없어 본 다이제스트에는 이미지를 싣지 않았다. 리포 안에는 ASCII 아키텍처 다이어그램과 `assets/banner.png` 한 장이 있다.
 
 [^github-cactus]: 원문 리포: <https://github.com/cactus-compute/needle>
+[^arch-doc]: 아키텍처 문서: <https://github.com/cactus-compute/needle/blob/main/docs/simple_attention_networks.md>
+[^huggingface-needle]: HuggingFace 가중치: <https://huggingface.co/Cactus-Compute/needle>
+[^cactus-runtime]: Cactus 런타임: <https://github.com/cactus-compute/cactus>
