@@ -6,6 +6,10 @@ categories: ["인사이트"]
 summary: "텍스트 헤비 포스터, 포토리얼 사진, 캐릭터 시리즈, 벡터 로고, 애니메이션. 모델이 어디까지 왔는지를 작업별로 정리하고, 자기 스타일을 모델에 가르치는 파인튜닝의 단계까지 짚어 본다."
 ShowToc: true
 TocOpen: false
+cover:
+  image: "/images/cover-ai-image-2026-h1-creative-shift.jpg"
+images:
+  - "/images/cover-ai-image-2026-h1-creative-shift.jpg"
 ---
 
 ## 용도별 모델표
