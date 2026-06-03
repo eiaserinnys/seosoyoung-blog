@@ -26,6 +26,9 @@ images:
 
 ## 1. gpt-image-2의 충격 (2026-04-21)
 
+![gpt-image-2의 다국어 텍스트 렌더링 — 일본어·한국어·중국어·힌디어·벵골어 동시 출력](/images/ai-image-models-2026-h1-overview/fig01b-multilingual-poster.jpg)
+*단일 이미지 안에 다섯 가지 문자 체계가 모두 정확히 렌더링됐다. ([OpenAI 공식 발표](https://openai.com/index/introducing-chatgpt-images-2-0/), 2026-04-21)*
+
 OpenAI가 키노트 없이 모델 페이지와 갤러리만으로 공개한 이 모델은 출시 당일 *모든* 카테고리에서 1위를 차지했다.
 
 | 카테고리 | gpt-image-2 ELO | 2위 모델과의 격차 |
@@ -44,6 +47,12 @@ OpenAI가 키노트 없이 모델 페이지와 갤러리만으로 공개한 이 
 - **두 가지 운영 모드** — Instant(\~3\~5초, 일반 작업) vs Thinking(10\~30초, 인포그래픽·복합 텍스트)
 - **웹 검색 그라운딩** — 생성 전 실시간 정보 참조 (기상 지도, 최신 제품 등)
 - **네이티브 2K\~4K 해상도**
+
+![일본 판타지 망가 — 단일 프롬프트로 생성된 다패널 스토리보드와 일본어 말풍선](/images/ai-image-models-2026-h1-overview/fig02-manga-multiimage.webp)
+*단일 프롬프트가 생성한 일본 판타지 망가 페이지. 패널 사이의 캐릭터·구도 일관성이 유지되고, 말풍선의 일본어와 효과음이 모두 정확히 렌더링된다. ([OpenAI 공식 발표](https://openai.com/index/introducing-chatgpt-images-2-0/), 2026-04-21)*
+
+![gpt-image-2가 만든 샌프란시스코 날씨 활동 인포그래픽](/images/ai-image-models-2026-h1-overview/fig05-weather-infographic.jpg)
+*실시간 날씨 데이터를 웹에서 가져온 뒤 추론 모드로 합성한 인포그래픽. 텍스트·아이콘·체크리스트가 한 호출에서 정합적으로 자리 잡았다. ([Wired](https://www.wired.com/story/openai-beefs-up-chatgpts-image-generation-model/), 2026-04-21)*
 
 ### 약점·한계
 
@@ -68,6 +77,9 @@ Cliprise의 2월 가이드를 비롯한 많은 비교 글이 "DALL-E 4o"를 모�
 DALL-E 브랜드는 gpt-image-1 시점에 사실상 퇴역했다. ChatGPT 내부에서는 4월 21일 이후 대부분의 트래픽이 gpt-image-2로 자동 전환되었다.
 
 ## 3. Big5 재편 — 누가 어디로 갔는가
+
+![gpt-image-2 · Midjourney V8 · Imagen 4의 동일 프롬프트 결과 — 갤러리 벽 비교](/images/ai-image-models-2026-h1-overview/fig03-big5-comparison-grid.webp)
+*같은 풍경 프롬프트에 대한 세 모델의 응답을 한 벽에 모은 비교 갤러리. 미적 해석의 결이 모델마다 분명하게 다르다. ([Pixo](https://pixo.video/blog/gpt-image-2-vs-midjourney-vs-imagen4), 2026-04-25)*
 
 ### Midjourney V8.1
 
@@ -139,6 +151,9 @@ DALL-E 브랜드는 gpt-image-1 시점에 사실상 퇴역했다. ChatGPT 내부
 Black Forest Labs의 FLUX.1 Kontext는 멀티턴 캐릭터 일관성 *97% (20턴 기준)*로 GPT-Image-2·Gen-4보다 느린 드리프트를 보인다. 2025년 5월 업데이트로 아이덴티티 드리프트율 *38% → 6%* 개선. KontextBench 기준 캐릭터 레퍼런스(CREF) 전 카테고리 1위.
 
 ## 5. 사용 사례별 표준이 바뀐 부분
+
+![gpt-image-2가 생성한 "2025년 6대 디자인 트렌드" 6격자 인포그래픽](/images/ai-image-models-2026-h1-overview/fig06-design-trends-infographic.webp)
+*단일 프롬프트가 만든 6격자 마케팅 인포그래픽. 비주얼·헤드라인·설명·태그가 한 번에 정렬된 결과물은 디자이너 없이 마케팅 파이프라인에 투입 가능한 수준이다. ([OpenAI 공식 발표](https://openai.com/index/introducing-chatgpt-images-2-0/), 2026-04-21)*
 
 | 작업 | 2025년 말 권고 | 2026년 5월 이후 |
 |---|---|---|
