@@ -18,12 +18,6 @@ images:
 2. Midjourney V8.1은 미적 천장을 지키되 "예술 전문 도구"로 좁혀졌고, Flux 2 Pro/Max는 포토리얼리즘과 오픈웨이트 커스터마이징을 동시에 잡았으며, 중국 진영(Seedream·Qwen·GLM-Image·Z-Image·Hunyuan·Kolors)이 텍스트·이중언어·가성비 영역에서 약진했다.
 3. 이미지→영상 워크플로우가 표준화되고(Sora 종료, Kling 3.0·Seedance 2.0·Veo 3.1·Runway Gen-4.5가 분담), 이미지 단가는 2022년 대비 94% 하락했으며, 2026년 8월 2일 발효 예정인 EU AI Act Article 50이 워터마킹 의무화의 임계점에 다가서고 있다.
 
-## 글의 정체
-
-- **시점**: 2026년 6월 3일 기준 종합 정리
-- **취재 범위**: 메이저 모델 평가 5종 + 신흥·특화 모델 15종 이상 + 시장 흐름·규제 자료 7건. 외부 비교 글·벤치마크 사이트·공식 발표·전문 분석가 평가를 다층으로 교차 확인했다
-- **이 글의 위치**: 같은 날 발행한 [Cliprise의 2월 가이드 다이제스트](/digest/ai-image-generation-2026-cliprise/)는 gpt-image-2 출시 *이전* 시점의 지도였다. 4월 21일을 기점으로 풍경이 크게 바뀌었기에, 6월 시점의 종합판이 별도로 필요하다
-
 ## 1. gpt-image-2의 충격 (2026-04-21)
 
 ![gpt-image-2의 다국어 텍스트 렌더링 — 일본어·한국어·중국어·힌디어·벵골어 동시 출력](/images/ai-image-models-2026-h1-overview/fig01b-multilingual-poster.jpg)
@@ -117,8 +111,8 @@ Pixo의 프리랜서 설문이 잡은 흐름이 인상적이다.{{< sn >}}[Pixo 
 | Seedream 4.5 | ByteDance | 폐쇄 | LongText 영어 0.989 / 중국어 0.987 (1위) |
 | Nano Banana 2 | Google (Gemini 3.1 Flash Image) | 폐쇄 | LongText 중국어 0.983 / 영어 0.981 |
 
-![Qwen-Image 2.0가 만든 이중언어 인포그래픽](/images/ai-image-models-2026-h1-overview/fig08-qwen-image.png)
-*Qwen-Image 2.0의 단일 프롬프트 출력. 영문 헤드라인·소제목·본문·아이콘이 한 호출에 정합적으로 배치된다. DPG-Bench 88.32로 GPT Image 1 High(85.15)를 앞선다 ([Alibaba Cloud 발표](https://www.alibabacloud.com/blog/alibaba-cloud-releases-qwen-image-2-0)).*
+![Qwen-Image 9패널 쇼케이스 — 텍스트 렌더링·다양한 스타일](/images/ai-image-models-2026-h1-overview/fig08-qwen.jpg)
+*Qwen-Image의 공식 쇼케이스. "Welcome to Qwen Coffee" 칠판, "Imagination Unleashed" 포스터, "天空名酒" 한자 간판 등 영어·중국어 텍스트 렌더링과 사진·일러스트·동양화·페인팅 스타일을 단일 모델로 처리한다 ([QwenLM GitHub](https://github.com/QwenLM/Qwen-Image)).*
 
 ![GLM-Image — 영중 이중언어 포스터 / 인포그래픽](/images/ai-image-models-2026-h1-overview/fig19-glm-image.jpg)
 *GLM-Image의 텍스트 렌더링 능력 시연. 한자·영문 혼합 레이아웃에서 글자 자형이 무너지지 않는다. CVTG-2K 영어 91.16% · LongText 중국어 97.88%로 양 영역 모두 1위 ([Zhipu AI 공식](https://z.ai/blog/glm-image)).*
@@ -133,8 +127,8 @@ Pixo의 프리랜서 설문이 잡은 흐름이 인상적이다.{{< sn >}}[Pixo 
 - **HunyuanImage 3.0** — Tencent, 80B MoE(13B 활성), 텐센트 클라우드 API $0.011/이미지
 - **Kolors 2.0** — Kuaishou, ChatGLM3-6B 텍스트 인코더, Apache 2.0, INT8 양자화로 8GB VRAM 실행
 
-![Seedream 4.5 — 텍스트·이미지 합성 편집의 정확도 1위](/images/ai-image-models-2026-h1-overview/fig09-seedream-picassoia.jpg)
-*Seedream 4.5의 텍스트-이미지 합성 출력. LongText-Bench 영어 0.989·중국어 0.987로 양 언어 동시 1위 ([picassoia 리뷰](https://blog.picassoia.com/)).*
+![Seedream 4.5 — "Sealdim GreenGlow BB CREAM" 상품 광고 합성](/images/ai-image-models-2026-h1-overview/fig09-seedream.jpg)
+*Seedream 4.5 출력. "Sealdim" 캘리그래피 + "GreenGlow BB CREAM" 정밀 본문 텍스트를 동백꽃·이끼·물방울 배경과 합성한 4K 광고 포스터. LongText-Bench 영중 동시 1위의 능력을 단일 이미지에서 시연한다 ([fal.ai 데모](https://fal.ai/models/fal-ai/bytedance/seedream/v4.5/edit)).*
 
 ![Z-Image Turbo — 6B 오픈웨이트가 만든 포토리얼리즘](/images/ai-image-models-2026-h1-overview/fig10-z-image.png)
 *Z-Image Turbo 출력. 6B 파라미터 Apache 2.0 오픈웨이트로 Artificial Analysis 오픈소스 1위, 추론 비용 $5/1,000장 ([Tongyi-MAI 블로그](https://tongyi-mai.github.io/Z-Image-blog/)).*
@@ -175,15 +169,6 @@ Pixo의 프리랜서 설문이 잡은 흐름이 인상적이다.{{< sn >}}[Pixo 
 
 Black Forest Labs의 FLUX.1 Kontext는 멀티턴 캐릭터 일관성 *97% (20턴 기준)*로 GPT-Image-2·Gen-4보다 느린 드리프트를 보인다. 2025년 5월 업데이트로 아이덴티티 드리프트율 *38% → 6%* 개선. KontextBench 기준 캐릭터 레퍼런스(CREF) 전 카테고리 1위.{{< sn >}}Black Forest Labs, [FLUX.1 Kontext](https://bfl.ai/models/flux-kontext); KontextBench [arXiv:2506.15742](https://arxiv.org/abs/2506.15742).{{< /sn >}}
 
-<div style="display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:1em 0;">
-<figure style="margin:0;"><img src="/images/ai-image-models-2026-h1-overview/fig14-flux-kontext-input.jpg" alt="입력 — 원본 갈매기 사진" style="width:100%;height:auto;"><figcaption style="font-size:0.85em;text-align:center;color:#888;margin-top:4px;">입력</figcaption></figure>
-<figure style="margin:0;"><img src="/images/ai-image-models-2026-h1-overview/fig14-flux-kontext-0.jpg" alt="1턴 편집 — 장애물 제거" style="width:100%;height:auto;"><figcaption style="font-size:0.85em;text-align:center;color:#888;margin-top:4px;">1턴: 장애물 제거</figcaption></figure>
-<figure style="margin:0;"><img src="/images/ai-image-models-2026-h1-overview/fig14-flux-kontext-2.jpg" alt="2턴 편집 — 배경 교체" style="width:100%;height:auto;"><figcaption style="font-size:0.85em;text-align:center;color:#888;margin-top:4px;">2턴: 배경 교체</figcaption></figure>
-<figure style="margin:0;"><img src="/images/ai-image-models-2026-h1-overview/fig14-flux-kontext-4.jpg" alt="3턴 편집 — 날씨 변경" style="width:100%;height:auto;"><figcaption style="font-size:0.85em;text-align:center;color:#888;margin-top:4px;">3턴: 날씨 변경</figcaption></figure>
-</div>
-
-*FLUX.1 Kontext의 멀티턴 편집 시퀀스. 동일한 갈매기 객체를 *장애물 제거 → 배경 이동 → 눈 날씨 적용* 순으로 편집해도 캐릭터 동일성이 유지된다 ([KontextBench, arXiv:2506.15742 Fig. 2](https://arxiv.org/abs/2506.15742)).*
-
 ## 4. 사용 사례별 표준이 바뀐 부분
 
 ![gpt-image-2가 생성한 "2025년 6대 디자인 트렌드" 6격자 인포그래픽](/images/ai-image-models-2026-h1-overview/fig06-design-trends-infographic.webp)
@@ -200,8 +185,8 @@ Black Forest Labs의 FLUX.1 Kontext는 멀티턴 캐릭터 일관성 *97% (20턴
 | 벡터 로고·아이콘 | (불가) | **Recraft V3** (SVG 네이티브) |
 | 이중언어(중국어 포함) 자료 | (제한적) | **GLM-Image / Qwen-Image 2.0 / Seedream 4.5** |
 
-![Flux 2 Pro의 포토리얼 제품 사진](/images/ai-image-models-2026-h1-overview/fig15-flux2-product.jpg)
-*Flux 2 Pro 출력. 피부·소재 질감 평가 1위, HEX 컬러 매칭과 Pose guidance로 정확도 통제 가능. 브랜드 LoRA와 결합하면 커스터마이징 제품 이미지 파이프라인이 가능하다 ([picassoia 리뷰](https://blog.picassoia.com/flux-2-pro-review-best-ai-image-tool-2026)).*
+![Flux 2 Pro — 포토리얼 인물 포트레이트](/images/ai-image-models-2026-h1-overview/fig15-flux2-product.jpg)
+*Flux 2 Pro 출력. 피부 윤기·머리카락 가닥·역광 보케가 카메라 사진과 구분이 어려운 수준. 피부 질감 평가 1위, HEX 컬러 매칭과 Pose guidance로 정확도 통제 가능 ([picassoia 리뷰](https://blog.picassoia.com/flux-2-pro-review-best-ai-image-tool-2026)).*
 
 ### 추천 스택 두 가지
 
@@ -235,7 +220,16 @@ Sora 서비스는 2026년 3월 24일 종료를 발표하고 4월 26일 다운되
 | Seedance 2.0 (ByteDance) | 2026 상반기 | 20초 | 텍스트·로고 일관성 1위, AA Text-to-Video ELO 1,273 1위 |
 
 ![Kling 3.0 — 이미지를 첫 프레임으로 받은 영상 워크플로우](/images/ai-image-models-2026-h1-overview/fig16-image-to-video.jpg)
-*Kling 3.0의 이미지→영상 워크플로우 예시. 4K 60fps, 얼굴 일관성 1위, Director Mode로 최대 6컷 일괄 처리. Sora 종료 이후 이미지→영상 표준 모델 중 하나로 자리잡았다 ([picassoia 가이드](https://blog.picassoia.com/)).*
+*Kling 3.0의 영상 데모 키프레임. 4K 60fps, 얼굴 일관성 1위, Director Mode로 최대 6컷 일괄 처리.*
+
+![Runway Gen-4.5 — 정원 테이블 위 앵무새·수박·선인장](/images/ai-image-models-2026-h1-overview/fig26-runway.jpg)
+*Runway Gen-4.5의 영상 키프레임. 다중 객체가 한 장면에 자리한 복잡한 구성에서도 카메라 컨트롤·Aleph 인컨텍스트 편집의 정밀도를 시연한다 ([Runway 공식](https://runwayml.com/)).*
+
+![Google Veo 3.1 — 미래 도시의 백호와 한복 인물](/images/ai-image-models-2026-h1-overview/fig27-veo.webp)
+*Veo 3.1의 영상 키프레임. Ingredients to Video로 참조 이미지 3장을 합성한 결과. 네이티브 오디오·4K, 시네마틱 SF 풍경 ([Google DeepMind Veo](https://deepmind.google/technologies/veo/)).*
+
+![Seedance 2.0 — 핑크 픽셀 배경 + 흰 조각 두상 시네마틱 키프레임](/images/ai-image-models-2026-h1-overview/fig28-seedance.jpg)
+*Seedance 2.0의 영상 데모 키프레임. 예술적 무드와 물리적 일관성을 결합한 시네마틱 씬. AA Text-to-Video ELO 1,273로 1위 ([fal.ai Seedance i2v](https://fal.ai/models/bytedance/seedance-2.0/image-to-video)).*
 
 워크플로우의 표준 패턴은 다음과 같다.{{< sn >}}[Studiolist — AI Video Model Comparison 2026](https://studiolist.co/guides/ai-video-model-comparison-2026/), 2026-04-06.{{< /sn >}}
 
