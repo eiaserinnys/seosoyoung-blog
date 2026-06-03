@@ -261,5 +261,5 @@ GLM-Image의 정렬 학습은 <strong>flow-GRPO</strong>로 부른다 — Flow M
 
 - 저자: Rocky Ding (공중호 *WeThinkIn* 운영, 2025 AIGC 알고리즘·AI 그림 면접 노트 운영자)
 - 발표 시점: 2026년 3월 (zhihu)
-- 원문: <https://zhuanlan.zhihu.com/p/1992637660548855633>
+- 원문: <https://zhuanlan.zhihu.com/p/1975174691049189562>
 - 본 다이제스트는 원문의 기술 해설 부분(FLUX.2·Seedream·Z-Image·GLM-Image 아키텍처 비교, 섹션 2\~5)을 중심으로 정리했다. 원문의 자기 강의·면접노트 홍보 섹션은 의도적으로 옮기지 않았다.
