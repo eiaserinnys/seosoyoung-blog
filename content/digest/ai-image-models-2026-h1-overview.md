@@ -80,6 +80,9 @@ Pixo의 프리랜서 설문이 잡은 흐름이 인상적이다.{{< sn >}}[Pixo 
 
 > "70% of professionals start creative projects in Midjourney but finish them in GPT-Image-2."
 
+![Midjourney V8.1 — 차 안의 여성과 고양이, HD 시네마틱 포토리얼](/images/ai-image-models-2026-h1-overview/fig17-midjourney.jpg)
+*Midjourney V8.1 출력. 피부·머리카락·고양이 털·가죽 시트 질감이 카메라 사진과 거의 구분되지 않는다. V8 대비 해부학적 정확도와 HD 포토리얼리즘이 크게 개선됐다 ([Geeky Curiosity 리뷰](https://geekycuriosity.substack.com/p/midjourney-v81-is-here-and-it-feels)).*
+
 ### Flux 2 (Black Forest Labs)
 
 - **출시**: FLUX.2 Pro / FLUX.2 Max (2026-01)
@@ -158,6 +161,15 @@ Pixo의 프리랜서 설문이 잡은 흐름이 인상적이다.{{< sn >}}[Pixo 
 
 ![Reve Image 1.0 — Halfmoon 엔진 기반 포토리얼리즘](/images/ai-image-models-2026-h1-overview/fig13-reve.png)
 *Reve Image 1.0 출력. Halfmoon 엔진이 생성·편집·스타일 리믹스를 프롬프트에서 자동 분기한다. 포토리얼리즘 평가에서 Midjourney·Flux를 제친 모델 ([Oakgen 리뷰](https://oakgen.ai/blog/reve-image-1-review)).*
+
+![Ideogram 3.0 — "FUTURE BUILD 2026" 컨퍼런스 포스터](/images/ai-image-models-2026-h1-overview/fig22-ideogram.png)
+*Ideogram 3.0 출력. 헤드라인·서브타이틀·날짜·로케이션이 모두 정확히 렌더링된 미니멀 포스터. 타이포그래피 정확도 90\~95%를 실증한다 ([Segmind 모델 페이지](https://blog.segmind.com/ideogram-3-0-on-segmind-features-api-pricing-and-use-cases/)).*
+
+![Kling Image O1 — 얼음 협곡을 질주하는 오토바이](/images/ai-image-models-2026-h1-overview/fig24-kling.webp)
+*Kling Image O1 출력. 얼음 협곡을 질주하는 라이더. 멀티 레퍼런스 합성과 시네마틱 라이팅 능력을 보여준다 ([Krea — Kling O1 모델](https://www.krea.ai/models/kling-o1)).*
+
+![Anima — 다양한 애니메이션 스타일 12컷 몽타주](/images/ai-image-models-2026-h1-overview/fig23-anima.jpg)
+*Anima의 다양한 출력 스펙트럼. 수채화 초상화, 펜 스케치, 셀 쉐이딩 액션, RPG 야영 씬 등. 2B 파라미터·6GB VRAM 모델로 다양한 애니 스타일을 처리한다 ([kombitz 리뷰](https://www.kombitz.com/2026/05/20/anima-ai-the-new-anime-image-generator-explained/)).*
 
 ### Flux Kontext — 별도 언급
 

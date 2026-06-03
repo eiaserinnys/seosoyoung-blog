@@ -1,0 +1,8 @@
+{{- /* 사이드노트 (Tufte 스타일) — 본문 옆 마진에 출처·부연을 작은 글씨로 띄운다. */ -}}
+{{- /* 사용: {{< sn >}}본문 내용 (마크다운 가능){{< /sn >}} */ -}}
+{{- /* 모바일에서는 본문 아래로 인라인 fallback. */ -}}
+{{- $idx := add .Ordinal 1 -}}
+<span class="sn">
+  <sup class="sn-marker" aria-hidden="true">{{ $idx }}</sup>
+  <span class="sn-body" role="note">{{ .Inner | markdownify }}</span>
+</span>

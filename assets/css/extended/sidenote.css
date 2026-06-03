@@ -1,0 +1,87 @@
+/* 사이드노트 (Tufte 스타일) */
+/* 본문 옆 마진에 작은 글씨로 출처·부연 정보를 띄운다. */
+/* 사용자는 본문을 끊지 않고 읽으면서 옆 노트로 보조 정보를 확인할 수 있다. */
+
+.sn {
+  /* 마커는 본문 흐름에 인라인으로 남는다. */
+}
+
+.sn-marker {
+  font-size: 0.75em;
+  color: var(--primary, #555);
+  font-weight: 600;
+  cursor: help;
+  user-select: none;
+  /* 본문 글자와 살짝 떨어뜨려 시각적 구분 */
+  margin: 0 0.15em;
+  vertical-align: super;
+  line-height: 1;
+}
+
+.sn-body {
+  /* 본문 우측 마진에 떠 있는 박스. */
+  float: right;
+  clear: right;
+  width: 32%;
+  margin-right: -34%;
+  margin-top: 0.2em;
+  margin-bottom: 0.4em;
+  padding-left: 0.9em;
+  border-left: 2px solid var(--border, #ddd);
+  font-size: 0.78em;
+  line-height: 1.55;
+  color: var(--secondary, #777);
+  font-style: normal;
+}
+
+.sn-body p {
+  margin: 0 0 0.4em 0;
+}
+
+.sn-body p:last-child {
+  margin-bottom: 0;
+}
+
+.sn-body a {
+  color: var(--secondary, #888);
+  text-decoration: underline;
+  text-decoration-thickness: 0.5px;
+  text-underline-offset: 2px;
+}
+
+.sn-body a:hover {
+  color: var(--primary, #333);
+}
+
+/* 다크 모드 변수 호환 — PaperMod의 .dark 클래스 사용 */
+.dark .sn-body {
+  border-left-color: #444;
+  color: #aaa;
+}
+
+.dark .sn-body a {
+  color: #999;
+}
+
+.dark .sn-body a:hover {
+  color: #ddd;
+}
+
+/* 모바일·태블릿에서는 사이드 영역이 부족하므로 본문 내부 박스로 fallback */
+@media (max-width: 1100px) {
+  .sn-body {
+    float: none;
+    clear: none;
+    display: block;
+    width: auto;
+    margin: 0.5em 0;
+    padding: 0.5em 0.9em;
+    background: rgba(0, 0, 0, 0.03);
+    border-left: 3px solid var(--border, #bbb);
+    font-size: 0.85em;
+  }
+
+  .dark .sn-body {
+    background: rgba(255, 255, 255, 0.04);
+  }
+}
