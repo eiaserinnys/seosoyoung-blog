@@ -3,7 +3,7 @@ title: "Is AI More Expensive Than the Employees It's Replacing?"
 date: 2026-06-08T09:00:00+09:00
 tags: ["AI", "LLM", "노동시장", "경제·금융", "오픈소스"]
 categories: ["다이제스트"]
-summary: "Prof G Markets가 2026년 상반기 AI 해고 5만 건 뒤에서 벌어진 다른 그림을 짚는다 — AI는 대체하려는 인건비보다 자주 더 비쌌고, 미국 AI 스타트업의 80%는 이미 10\~30배 싼 중국 오픈소스 LLM으로 옮겨 갔다."
+summary: "Prof G Markets가 2026년 상반기 AI 해고 5만 건 뒤에서 벌어진 다른 그림을 짚는다 — AI는 대체하려는 인건비보다 자주 더 비쌌고, 미국 AI 스타트업의 80%는 이미 10~30배 싼 중국 오픈소스 LLM으로 옮겨 갔다."
 ShowToc: true
 TocOpen: false
 cover:
