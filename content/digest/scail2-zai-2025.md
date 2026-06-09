@@ -85,7 +85,7 @@ End-to-end로 학습하려면 *동일 동작을 다른 캐릭터가 수행한 �
 
 <video controls src="https://teal024.github.io/SCAIL-2/static/videos/Zero-shot/001_gt_overlay.mp4" style="max-width:100%;"></video>
 
-동물의 동작을 사람 캐릭터에 옮긴다. 학습 데이터에는 없는 driving source다.
+동물 캐릭터의 동작을 실제 동물에 옮긴다. 학습 데이터에는 없는 driving source다.
 
 <video controls src="https://teal024.github.io/SCAIL-2/static/videos/Zero-shot/001_gt_overlay_2.mp4" style="max-width:100%;"></video>
 
