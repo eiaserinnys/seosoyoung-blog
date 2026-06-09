@@ -27,7 +27,7 @@ sidenotes: true
 
 ## 책의 출발점 — risk와 uncertainty의 분리
 
-Knight는 책의 첫 장에서부터 자기 명제의 척추를 박는다. 이윤을 진지하게 설명하려면 'risk'라는 용어 안에 두 종류가 섞여 있다는 사실을 풀어야 한다는 선언이다.
+Knight는 책의 첫 장에서부터 자기 명제의 척추를 세운다. 이윤을 진지하게 설명하려면 'risk'라는 용어 안에 두 종류가 섞여 있다는 사실을 풀어야 한다는 선언이다.
 
 > But Uncertainty must be taken in a sense radically distinct from the familiar notion of Risk, from which it has never been properly separated. The term "risk," as loosely used in everyday speech and in economic discussion, really covers two things which, functionally at least, in their causal relations to the phenomena of economic organization, are categorically different. ... It will appear that a *measurable* uncertainty, or "risk" proper, as we shall use the term, is so far different from an *unmeasurable* one that it is not in effect an uncertainty at all. (Pt.I, Ch.I)
 

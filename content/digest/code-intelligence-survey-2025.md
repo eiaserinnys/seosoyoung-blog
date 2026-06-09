@@ -136,7 +136,7 @@ rloo가 양 metric 모두 최고지만 약 43% 더 많은 step이 필요. wall-c
 
 - **Pass@1 최대화**: 16K 토큰 — 복잡한 문제의 완전 해답을 담을 컨텍스트.
 - **Pass@5 최대화**: 2K 토큰 — 짧은 컨텍스트가 *다양한 탐색 전략*을 촉진.
-- **8K는 "performance valley"** — Pass@1 0.311 / Pass@5 0.334로 양쪽 다 떨어진다. 이 *전이 구간*은 권고에서 피하라고 못 박는다.
+- **8K는 "performance valley"** — Pass@1 0.311 / Pass@5 0.334로 양쪽 다 떨어진다. 이 *전이 구간*은 권고에서 피하라고 분명히 한다.
 - **4K가 균형 잡힌 기본값**.
 
 ### Group 3 — Rollouts per Prompt (rf++baseline, 4K)

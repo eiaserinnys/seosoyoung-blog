@@ -26,7 +26,7 @@ sidenotes: true
 - 자동화·AI의 노동시장 영향에 대한 task-based 문헌 (Acemoglu·Restrepo 2018·2019, Autor 2024)
 - 아이디어 흐름과 경제성장에 대한 OLG·knowledge-hierarchies 문헌 (Lucas 2009, Lucas-Moll 2014, De la Croix·Doepke·Mokyr 2018, Ide·Talamàs 2024·2025)
 
-기존 task-based 분석이 직접적인 노동시장 효과를 다룬 반면, 본 논문은 *세대 간 지식 전수의 단절*이라는 메커니즘을 OLG 성장 모델 안에 명시적으로 박아 넣는다.
+기존 task-based 분석이 직접적인 노동시장 효과를 다룬 반면, 본 논문은 *세대 간 지식 전수의 단절*이라는 메커니즘을 OLG 성장 모델 안에 명시적으로 심어 넣는다.
 
 ## 핵심 문제 의식
 

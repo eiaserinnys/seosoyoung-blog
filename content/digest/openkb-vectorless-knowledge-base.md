@@ -13,7 +13,7 @@ sidenotes: true
 
 1. OpenKB는 VectifyAI가 공개한 CLI 기반 LLM 지식 베이스 도구로, Karpathy의 LLM Wiki 발상을 실제 패키지로 구현한 것이다.
 2. 짧은 문서는 markitdown으로, 20페이지 이상의 긴 PDF는 자체 도구 PageIndex로 처리해 벡터 DB 없이 추론 기반 검색을 한다.
-3. 출력물은 `[[wikilinks]]`가 박힌 평범한 마크다운이라 Obsidian에서 그대로 열리고, OpenKB가 사라져도 지식 자산은 남는다.
+3. 출력물은 `[[wikilinks]]`가 들어간 평범한 마크다운이라 Obsidian에서 그대로 열리고, OpenKB가 사라져도 지식 자산은 남는다.
 
 ## 정체와 발신자
 
@@ -94,7 +94,7 @@ LLM에게 "한 번에 다 해줘"라고 시키지 않고, 캐시 친화적으로
 
 ## AGENTS.md — 위키 스키마를 데이터로 외재화
 
-위키의 디렉토리 구조, 페이지 유형, 인덱스 포맷, 로그 포맷, 작성 규약은 코드에 박혀 있지 않고 `wiki/AGENTS.md`라는 마크다운 파일에 적혀 있다. OpenKB는 매 LLM 호출마다 이 파일을 디스크에서 다시 읽어 시스템 프롬프트에 끼워 넣는다.
+위키의 디렉토리 구조, 페이지 유형, 인덱스 포맷, 로그 포맷, 작성 규약은 코드에 새겨져 있지 않고 `wiki/AGENTS.md`라는 마크다운 파일에 적혀 있다. OpenKB는 매 LLM 호출마다 이 파일을 디스크에서 다시 읽어 시스템 프롬프트에 끼워 넣는다.
 
 ```python
 def get_agents_md(wiki_dir: Path) -> str:

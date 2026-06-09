@@ -3,7 +3,7 @@ title: "Verbalized Sampling: How to Mitigate Mode Collapse and Unlock LLM Divers
 date: 2026-05-09T19:35:00+09:00
 tags: ["LLM", "RLHF", "alignment", "mode collapse"]
 categories: ["다이제스트"]
-summary: "RLHF 정렬 모델의 mode collapse는 알고리즘 한계가 아니라 preference data에 박힌 typicality bias가 원인이다. '5개 답을 확률과 함께 생성하라'는 단순 prompting trick(Verbalized Sampling)으로 사전훈련 다양성을 1.6\\~2.1배 회복할 수 있음을 이론·실험으로 보인다."
+summary: "RLHF 정렬 모델의 mode collapse는 알고리즘 한계가 아니라 preference data에 새겨진 typicality bias가 원인이다. '5개 답을 확률과 함께 생성하라'는 단순 prompting trick(Verbalized Sampling)으로 사전훈련 다양성을 1.6\\~2.1배 회복할 수 있음을 이론·실험으로 보인다."
 ShowToc: true
 TocOpen: false
 sidenotes: true
@@ -12,7 +12,7 @@ sidenotes: true
 ## 3줄 요약
 
 1. Northeastern·Stanford·CMU·West Virginia 공동 연구진이 2025년 10월 arxiv에 공개한 논문(2510.01171). RLHF로 정렬한 LLM이 다양한 답을 못 만들고 한 점으로 수렴하는 *mode collapse* 현상의 원인을 파고든다.
-2. 진짜 원인은 알고리즘이 아니라 *preference data에 박힌 typicality bias* — 인간 annotator가 친숙·유창·예측 가능한 텍스트를 체계적으로 helpful하다고 판정하는 인지심리학적 정설 — 이며, KL-regularized RLHF가 이 편향을 sharpening하여 mode collapse를 일으킨다는 것을 수식과 데이터로 증명한다.
+2. 진짜 원인은 알고리즘이 아니라 *preference data에 새겨진 typicality bias* — 인간 annotator가 친숙·유창·예측 가능한 텍스트를 체계적으로 helpful하다고 판정하는 인지심리학적 정설 — 이며, KL-regularized RLHF가 이 편향을 sharpening하여 mode collapse를 일으킨다는 것을 수식과 데이터로 증명한다.
 3. 해결책으로 "5개 답을 확률 분포와 함께 생성하라"는 prompting trick인 Verbalized Sampling(VS)을 제안한다. training-free·model-agnostic하면서 creative writing 다양성을 1.6\~2.1배 회복하고, 더 큰 모델일수록 효과가 크다.[^verbalized-sampling][^github-chats]
 
 ![Figure 1 — Typicality bias가 mode collapse를 일으키고, Verbalized Sampling이 이를 완화하는 구조 (출처: 논문 PDF)](/images/verbalized-sampling-mode-collapse-2025/fig1-overview.png)
@@ -29,7 +29,7 @@ Aligned LLM은 base 모델 대비 응답 다양성이 줄어든다. 이는 RLHF�
 
 이 논문은 한 단계 더 들어간다. 알고리즘이 *완벽*하더라도 collapse가 일어나는 *데이터 차원*의 원인이 있다고 주장한다.
 
-## 진짜 원인 — preference data에 박힌 typicality bias
+## 진짜 원인 — preference data에 새겨진 typicality bias
 
 저자들은 인지심리학에서 잘 정립된 네 가지 발견을 가져온다.
 
@@ -53,7 +53,7 @@ HelpSteer 데이터셋에서 correctness 평점이 동률인 응답쌍 6,874개�
 | Llama 3.1 405B Base | 0.57 ± 0.07 | < 10⁻¹⁴ |
 | GLM 4.5 Base | 0.65 ± 0.07 | < 10⁻¹⁴ |
 
-p < 10⁻¹⁴는 통계적으로 *압도적으로 유의미*하다. 우연이 아니라 *데이터에 박힌 사실*이라는 뜻이다.
+p < 10⁻¹⁴는 통계적으로 *압도적으로 유의미*하다. 우연이 아니라 *데이터에 새겨진 사실*이라는 뜻이다.
 
 ## KL-RLHF가 typicality를 sharpening한다
 
@@ -151,7 +151,7 @@ VS가 회복하는 것이 정확히 무엇인지가 이 논문의 가장 미묘�
 
 그렇다면 aligned 모델이 "어떤 답이 더 좋은가"를 *판정*할 때는 어떻게 될까. 5개 농담을 *생성*할 때는 다양해질 수 있어도, "5개 중 어느 것이 가장 좋은가" 같은 *judgment* 질의에는 여전히 typicality bias가 새겨진 reward로 학습된 평탄한 선호가 작동한다. 논문은 이 분리를 명시적으로 다루지는 않지만, *생성 다양성의 회복은 판단·취향 평탄화의 자동 회복을 함의하지 않는다*는 점은 결과를 해석할 때 중요하다.
 
-또 하나, typicality bias가 인지심리학의 견고한 정설들(processing fluency·schema congruity)에서 나온다는 사실은 *데이터 차원의 해결책*에도 한계가 있음을 시사한다. annotator 가이드라인을 바꾼다 한들, 유창한 텍스트를 더 좋다고 느끼는 *감각 자체*가 사람의 인지 구조에 박혀 있기 때문이다. VS 같은 inference-time 우회가 *항구적인 보완 도구*로 자리잡을 가능성이 있다.
+또 하나, typicality bias가 인지심리학의 견고한 정설들(processing fluency·schema congruity)에서 나온다는 사실은 *데이터 차원의 해결책*에도 한계가 있음을 시사한다. annotator 가이드라인을 바꾼다 한들, 유창한 텍스트를 더 좋다고 느끼는 *감각 자체*가 사람의 인지 구조에 자리잡고 있기 때문이다. VS 같은 inference-time 우회가 *항구적인 보완 도구*로 자리잡을 가능성이 있다.
 
 ## 출처
 

@@ -63,7 +63,7 @@ sidenotes: true
 
 ### 1. `context: fork`로 컨텍스트 오염 차단
 
-생성 스킬들의 frontmatter에는 `context: fork`와 `agent: image-blast-3d` 같은 표식이 붙어 있다. 무거운 생성 호출이 메인 대화의 컨텍스트를 잠식하지 못하도록 별도 에이전트로 분리한다. `CLAUDE.md`는 이 원칙을 명시적으로 못 박는다.
+생성 스킬들의 frontmatter에는 `context: fork`와 `agent: image-blast-3d` 같은 표식이 붙어 있다. 무거운 생성 호출이 메인 대화의 컨텍스트를 잠식하지 못하도록 별도 에이전트로 분리한다. `CLAUDE.md`는 이 원칙을 명시적으로 단언한다.
 
 > Every generation request (3D, world, SFX, image editing, etc.) must use Agent with `run_in_background: true` instead of parallel Skill calls, even if it's a single request so they are non-blocking.
 

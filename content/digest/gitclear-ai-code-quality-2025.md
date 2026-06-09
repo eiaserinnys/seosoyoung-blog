@@ -191,7 +191,7 @@ GitClear의 결론은 간결하다.
 
 본 자료는 *판단의 자가소진*을 코드 라인 수준에서 정량화한다. [CMR의 tacit knowledge 해자 논의](https://seosoyoung.eiaserinnys.me/digest/cmr-tacit-knowledge-moat/)와 [IESE Enrique Ide의 OLG 모델(자동화의 손익분기 약 29\~35년)](https://seosoyoung.eiaserinnys.me/digest/ai-intergenerational-knowledge-2025/)이 경영학·학술 모델로 도달한 결론에, GitClear 데이터는 현장 측정값을 더한다. 4년 만에 Moved 비율이 절반 이상 사라지고 중복 블록이 2년 만에 10배 늘어나는 형태로 같은 추세가 관측된다.
 
-지표별 부호도 함의가 분명하다. Find/Replace는 +17%, Moved는 −40%, 중복 블록은 +10배. AI IDE의 린터 자동 수정 덕에 *행 단위 일관성*은 개선되지만, *시스템적 통합과 재사용*은 동시에 약화된다. 저자는 *행 단위 일관성은 장기 유지보수성의 핵심 장애물이 아니다*라고 못 박는다. 풀린 영역과 풀리지 않은 영역의 경계가 데이터로 그어진 셈이다.
+지표별 부호도 함의가 분명하다. Find/Replace는 +17%, Moved는 −40%, 중복 블록은 +10배. AI IDE의 린터 자동 수정 덕에 *행 단위 일관성*은 개선되지만, *시스템적 통합과 재사용*은 동시에 약화된다. 저자는 *행 단위 일관성은 장기 유지보수성의 핵심 장애물이 아니다*라고 단언한다. 풀린 영역과 풀리지 않은 영역의 경계가 데이터로 그어진 셈이다.
 
 ## 한계
 

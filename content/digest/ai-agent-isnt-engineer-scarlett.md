@@ -33,7 +33,7 @@ Stack Overflow 2024에서 개발자 76%가 AI를 사용 중이거나 도입 예�
 
 ### 어휘 설계는 곧 권한 분배의 코드다
 
-GitHub이 'Copilot'을 명명한 순간, '조종사는 인간, AI는 부조종사'라는 권한 구도가 어휘에 박혔습니다. 반면 'AI Software Engineer'는 인간 수준의 자율성과 책임을 암시하여 검증 요구를 무력화합니다. Scarlett의 프레임워크에서 어휘 선택은 마케팅 결정이 아니라 시스템 설계 결정이옵니다.
+GitHub이 'Copilot'을 명명한 순간, '조종사는 인간, AI는 부조종사'라는 권한 구도가 어휘에 새겨졌습니다. 반면 'AI Software Engineer'는 인간 수준의 자율성과 책임을 암시하여 검증 요구를 무력화합니다. Scarlett의 프레임워크에서 어휘 선택은 마케팅 결정이 아니라 시스템 설계 결정이옵니다.
 
 
 ### 라이브 실패는 약점이 아니라 신뢰 자산이다
@@ -65,7 +65,7 @@ AI는 본질적으로 non-sentient이며, 학습 데이터 패턴에 기반하�
 ## Thoughtful Anthropomorphism 8원칙
 
 - **동작 원리를 이해하라** — DevRel과 마케터는 LLM 기초, 토큰, 컨텍스트 윈도우, tool calling, agentic loop를 이해할 책임이 있다. 'Customer zero'가 되어 출시 전부터 도그푸딩한다.
-- **Thoughtful Naming** — 'AI Engineer' 같은 직책 라벨은 인간 수준 평가 기준을 자동 호출하므로 금지. 'co-pilot/agent/assistant'처럼 통제권이 어휘에 박힌 명명을 권장한다.
+- **Thoughtful Naming** — 'AI Engineer' 같은 직책 라벨은 인간 수준 평가 기준을 자동 호출하므로 금지. 'co-pilot/agent/assistant'처럼 통제권이 어휘에 새겨진 명명을 권장한다.
 - **Augmentation over Replacement** — 현대 개발자는 부모, OSS 메인테이너, 강사 등 multitasker. 에이전트는 도구 키트의 한 칸을 차지할 뿐이다. '추가 capacity'로 메시지를 정렬하면 채택 저항이 최소화된다.
 - **Transparency** — 사용자가 잘못된 narrative를 만들기 전에 선점하라. 오픈소스, 백서, 컨퍼런스 토크로 동작 원리를 공개한다. 초기 Copilot 시절 NDA로 오해를 정정 못한 경험에서 나온 교훈이다.
 - **Developer Control** — LLM 선택권, 응답 verbosity 조절, 디버그 로그, MCP 확장점을 제공한다. 통제할 수 있는 도구가 검증할 수 있는 도구이고, 검증할 수 있어야 신뢰 가능하다.

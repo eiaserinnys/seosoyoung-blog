@@ -137,7 +137,7 @@ attention-level UCPE가 FVD를 가장 낮추고, dual-branch(UCPE + Plücker)가
 
 **non-distilled에서 LoRA 학습 → distilled에 zero-shot merge.** distilled few-step refiner를 직접 finetune하면 불안정하다는 발견 자체가 흥미롭다. 우회로 — multi-step non-distilled LTX-2에서 rank-384 LoRA를 학습한 뒤 distilled few-step 모델에 그대로 머지하면 추론은 3-step만 — 가 실용적이다. 큰 모델의 학습 비용을 LoRA로 떨어뜨리고, 추론은 distilled의 적은 step을 쓰는 *학습-추론 분리*가 깔끔하다.
 
-**20개 블록 중 정확히 5개 위치에 softmax.** {3, 7, 11, 15, 19}라는 위치 선택이 매 4번째라는 단순 규칙으로 충분하다는 점이 좋다. 더 정교한 학습형 게이팅이 아니라 인덱스를 박아 두는 정도로 충분한 attention–GDN 혼합이 가능하다는 신호다.
+**20개 블록 중 정확히 5개 위치에 softmax.** {3, 7, 11, 15, 19}라는 위치 선택이 매 4번째라는 단순 규칙으로 충분하다는 점이 좋다. 더 정교한 학습형 게이팅이 아니라 인덱스를 고정해 두는 정도로 충분한 attention–GDN 혼합이 가능하다는 신호다.
 
 ## 출처
 

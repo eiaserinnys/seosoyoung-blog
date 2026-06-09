@@ -17,7 +17,7 @@ sidenotes: true
 
 ## 리포의 정체
 
-`google/skills`는 Google 공식 org가 운영하는 Agent Skills 컬렉션이다. README 첫 줄은 한 문장으로 자기 정체를 못 박는다.
+`google/skills`는 Google 공식 org가 운영하는 Agent Skills 컬렉션이다. README 첫 줄은 한 문장으로 자기 정체를 단언한다.
 
 > Agent Skills for Google products and technologies, including Google Cloud.
 

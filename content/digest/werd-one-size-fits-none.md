@@ -69,7 +69,7 @@ Werdmuller는 여기서 두 개의 인프라 비전을 제시한다.
 
 **도메인 특화 빌더** — 커뮤니티 리더가 엔지니어가 아니더라도 플랫폼을 빚을 수 있게 하는 도구. 디버깅·인프라 같은 복잡성은 가린다. 추상화된 UI지만 그 뒤엔 오픈 프로토콜이 있기에 — 다른 호스팅으로 옮길 수도 있고 데이터가 잠기지도 않는다.
 
-이 둘은 LLM에 의존적이지 않다. Werdmuller는 분명히 못 박는다.
+이 둘은 LLM에 의존적이지 않다. Werdmuller는 분명히 단언한다.
 
 > If you hate LLMs or just want to write everything by hand — both reasonable positions — there's nothing stopping this kind of infrastructure from being useful for *you*, too.
 

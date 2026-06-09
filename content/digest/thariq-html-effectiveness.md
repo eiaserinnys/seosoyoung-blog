@@ -57,7 +57,7 @@ HTML 문서는 탭·일러스트·링크로 구조화되어 있어 마크다운�
 
 ### 양방향 인터랙션
 
-HTML은 문서를 인터페이스로 만들 수 있다. 슬라이더·놉을 박아 디자인 파라미터를 직접 조정하거나, 알고리즘 옵션을 토글하면서 결과를 살펴볼 수 있다. 핵심은 마지막에 `copy as JSON` 또는 `copy as prompt` 버튼을 두어 사용자가 UI에서 한 작업을 다시 텍스트로 변환해 Claude Code에 붙여넣게 하는 것이다.
+HTML은 문서를 인터페이스로 만들 수 있다. 슬라이더·놉을 달아 디자인 파라미터를 직접 조정하거나, 알고리즘 옵션을 토글하면서 결과를 살펴볼 수 있다. 핵심은 마지막에 `copy as JSON` 또는 `copy as prompt` 버튼을 두어 사용자가 UI에서 한 작업을 다시 텍스트로 변환해 Claude Code에 붙여넣게 하는 것이다.
 
 > The trick is always to end with an export: a "copy as JSON" or "copy as prompt" button that turns whatever I did in the UI back into something I can paste into Claude Code.
 
