@@ -35,8 +35,8 @@ images:
 
 원문에는 방향을 잡지 못하던 시기의 중간 출력 두 개가 실려 있다.
 
-<iframe width="100%" height="170" src="https://note.com/embed/sounds/e66f1ff71dc8403885b4ed3048c8b4da" frameborder="0" title="미완 출력 1"></iframe>
-<iframe width="100%" height="170" src="https://note.com/embed/sounds/a67332bf832b91705bd738b38a3bc47f" frameborder="0" title="미완 출력 2"></iframe>
+<iframe width="100%" height="275" src="https://note.com/embed/sounds/e66f1ff71dc8403885b4ed3048c8b4da" frameborder="0" scrolling="no" style="border:none;" title="미완 출력 1"></iframe>
+<iframe width="100%" height="275" src="https://note.com/embed/sounds/a67332bf832b91705bd738b38a3bc47f" frameborder="0" scrolling="no" style="border:none;" title="미완 출력 2"></iframe>
 
 ## 전환점: Suno v5의 Mashup
 
@@ -54,11 +54,11 @@ images:
 
 ![ElevenLabs UI](/images/suno-poetry-reading-mashup/elevenlabs-ui.png)
 
-<iframe width="100%" height="170" src="https://note.com/embed/sounds/e2a5028f41856a58c7da6badef421ccd" frameborder="0" title="ElevenLabs로 생성한 낭독 트랙"></iframe>
+<iframe width="100%" height="275" src="https://note.com/embed/sounds/e2a5028f41856a58c7da6badef421ccd" frameborder="0" scrolling="no" style="border:none;" title="ElevenLabs로 생성한 낭독 트랙"></iframe>
 
 **2단계 — 음악 트랙 생성 (Suno).** Mashup에 넣을 음악 트랙을 평소처럼 Suno로 생성한다.
 
-<iframe width="100%" height="170" src="https://note.com/embed/sounds/d229b57936c29176b55f8ff42b7bc378" frameborder="0" title="Suno로 생성한 음악 트랙"></iframe>
+<iframe width="100%" height="275" src="https://note.com/embed/sounds/d229b57936c29176b55f8ff42b7bc378" frameborder="0" scrolling="no" style="border:none;" title="Suno로 생성한 음악 트랙"></iframe>
 
 **3단계 — 두 트랙을 Mashup으로 융합.** ElevenLabs에서 만든 낭독 파일은 Upload Audio로 Suno에 올려서 지정한다. 이때 낭독의 가사를 Lyrics 칸에도 넣어 두면 출력이 안정된다.
 
@@ -66,7 +66,7 @@ images:
 
 두 트랙을 Mashup한 결과가 아래다.
 
-<iframe width="100%" height="170" src="https://note.com/embed/sounds/85a0def9401487cfd1575074256aab30" frameborder="0" title="두 트랙을 Mashup한 결과"></iframe>
+<iframe width="100%" height="275" src="https://note.com/embed/sounds/85a0def9401487cfd1575074256aab30" frameborder="0" scrolling="no" style="border:none;" title="두 트랙을 Mashup한 결과"></iframe>
 
 결과물에 대해 저자는 낭독 트랙의 보이스와 인토네이션을 유지하면서 곡에 맞춰 정돈해 준다는 점을 핵심 성과로 든다. 여기까지 되면 나머지는 평소의 Suno 작업과 같다. Mashup 단계에서 Styles와 Lyrics의 프롬프트·메타태그를 조정해 취향의 음악으로 마무리한다.
 
