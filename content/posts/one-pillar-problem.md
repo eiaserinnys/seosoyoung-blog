@@ -15,7 +15,7 @@ images:
 부수는 것부터 시작하시지요. 아래는 이 글이 다루는 결과물, 레드 팩션 게릴라식 건물 파괴 샌드박스의 최종판입니다. 화면을 클릭하면 시작됩니다. 마우스를 움직여 시점을 돌리고, WASD와 스페이스로 날아다니고, 클릭으로 쏩니다. 숫자 1과 2로 철구와 로켓을 바꾸고, F를 누르면 각 부재에 걸린 하중이 색으로 보입니다.
 
 <div id="geomod-embed" style="position:relative;width:100%;aspect-ratio:16/9;margin:1.2rem 0 0.4rem;">
-<iframe id="geomod-frame" src="https://pages.eiaserinnys.me/p/5f58493fe42e" style="position:absolute;inset:0;width:100%;height:100%;border:1px solid #e5e5ea;border-radius:12px;" loading="lazy" allow="pointer-lock; fullscreen" allowfullscreen title="GeoMod Sandbox v2.4"></iframe>
+<iframe id="geomod-frame" src="https://pages.eiaserinnys.me/p/8877fcceb368" style="position:absolute;inset:0;width:100%;height:100%;border:1px solid #e5e5ea;border-radius:12px;" loading="lazy" allow="pointer-lock; fullscreen" allowfullscreen title="GeoMod Sandbox v2.5"></iframe>
 <button id="geomod-fs-btn" type="button" aria-label="전체화면 전환" style="position:absolute;top:10px;right:10px;z-index:2;padding:6px 12px;border:none;border-radius:8px;background:rgba(0,0,0,0.55);color:#fff;font-size:0.85rem;line-height:1.4;cursor:pointer;backdrop-filter:blur(4px);">⛶ 전체화면</button>
 </div>
 
@@ -52,7 +52,7 @@ images:
 })();
 </script>
 
-<figcaption style="text-align:center;">GeoMod Sandbox v2.4, 24동의 도시, 구조 블록 2,592개. 우측 상단 버튼으로 전체화면 전환이 되고, Esc로 돌아옵니다.</figcaption>
+<figcaption style="text-align:center;">GeoMod Sandbox v2.5, 24동의 도시, 구조 블록 2,592개. 우측 상단 버튼으로 전체화면 전환이 되고, Esc로 돌아옵니다.</figcaption>
 
 ## 결론부터
 
