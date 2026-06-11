@@ -51,3 +51,5 @@ images:
 발행: 日本経済新聞 (니혼게이자이신문), 2026년 6월 8일
 집계: 帝国データバンク (데이코쿠데이터뱅크)
 원문: <https://www.nikkei.com/article/DGXZQOUC087ZG0Y6A600C2000000/>
+
+이 기사의 원 출처인 TDB 조사 리포트 전문은 [별도 다이제스트](/digest/tdb-consulting-shakeout-survey-2026/)로 정리했다. 무너지는 사업자 유형(보조금 신청 대행, 절세 스킴)과 수요 이동의 구체적인 내용이 담겨 있다.
