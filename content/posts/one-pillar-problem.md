@@ -52,7 +52,7 @@ images:
 })();
 </script>
 
-<figcaption style="text-align:center;">GeoMod Sandbox v2.4, 24동의 도시, 구조 블록 2,592개. 우측 상단 버튼으로 전체화면 전환이 되고, Esc로 돌아옵니다. 환경이 여의치 않다면 <a href="https://pages.eiaserinnys.me/p/5f58493fe42e" target="_blank" rel="noopener">새 창</a>도 열어 두었습니다.</figcaption>
+<figcaption style="text-align:center;">GeoMod Sandbox v2.4, 24동의 도시, 구조 블록 2,592개. 우측 상단 버튼으로 전체화면 전환이 되고, Esc로 돌아옵니다.</figcaption>
 
 ## 결론부터
 
