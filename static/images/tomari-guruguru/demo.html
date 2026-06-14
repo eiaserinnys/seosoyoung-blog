@@ -15,8 +15,10 @@
     background:#FFF8EE;border-radius:20px;overflow:hidden;cursor:crosshair;
     touch-action:none;-webkit-user-select:none;user-select:none;border:1px solid var(--line);
   }
-  #char{width:440px;height:440px;background-repeat:no-repeat;background-size:500% 500%;
-    mix-blend-mode:multiply;will-change:background-position,background-image;}
+  #char{width:440px;height:440px;position:relative;}
+  #char .lyr{position:absolute;inset:0;background-repeat:no-repeat;background-size:500% 500%;
+    mix-blend-mode:multiply;opacity:0;will-change:background-position;}
+  #char .lyr.on{opacity:1;}
   #hint{position:absolute;top:12px;left:0;right:0;text-align:center;font-size:12px;color:var(--sub);pointer-events:none}
   .controls{padding:16px 4px 4px;display:flex;flex-direction:column;gap:14px;touch-action:auto}
   .row{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
@@ -64,9 +66,17 @@
 (function(){
   const BASE="/images/tomari-guruguru/frames/";
   const SHEETS={A:BASE+"A.png",B:BASE+"B.png",C:BASE+"C.png",D:BASE+"D.png"};
-  Object.values(SHEETS).forEach(u=>{const i=new Image();i.src=u;});
   const char=document.getElementById('char'), stage=document.getElementById('stage');
   const cellStatus=document.getElementById('cellStatus');
+  // 4장을 레이어로 쌓아 디코드해 두고 opacity만 토글 → 깜빡임 시 빈 프레임 없음
+  const layers={};
+  ['A','B','C','D'].forEach(k=>{
+    const d=document.createElement('div'); d.className='lyr';
+    const img=new Image(); img.src=SHEETS[k];
+    if(img.decode) img.decode().catch(()=>{});
+    d.style.backgroundImage="url('"+SHEETS[k]+"')";
+    char.appendChild(d); layers[k]=d;
+  });
   const ROWS=5,COLS=5;
   const pos=(r,c)=>(c*25)+"% "+(r*25)+"%";
   let smoothing=0.28;
@@ -87,8 +97,8 @@
   let lastR=2,lastC=2;
   function render(){
     const s=blink?'D':(mouth===0?'A':(mouth===1?'B':'C'));
-    char.style.backgroundImage="url('"+SHEETS[s]+"')";
-    char.style.backgroundPosition=pos(lastR,lastC);
+    const bp=pos(lastR,lastC);
+    for(const k in layers){ layers[k].style.backgroundPosition=bp; layers[k].classList.toggle('on',k===s); }
   }
   function tick(){
     cur.x+=(target.x-cur.x)*smoothing; cur.y+=(target.y-cur.y)*smoothing;
