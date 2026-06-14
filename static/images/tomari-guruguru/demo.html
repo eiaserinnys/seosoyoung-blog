@@ -69,14 +69,16 @@
   const cellStatus=document.getElementById('cellStatus');
   const ROWS=5,COLS=5;
   const pos=(r,c)=>(c*25)+"% "+(r*25)+"%";
-  let range=340,smoothing=0.28;
+  let smoothing=0.28;
   const target={x:0,y:0},cur={x:0,y:0};
   let blink=false,mouth=0,autoBlink=true;
   const clamp=(v,a,b)=>Math.min(b,Math.max(a,v));
   function updateFromXY(x,y){
     const r=char.getBoundingClientRect();
-    const cx=r.left+r.width/2, cy=r.top+r.height*0.42;
-    target.x=clamp((x-cx)/range,-1,1); target.y=clamp((y-cy)/range,-1,1);
+    const cx=r.left+r.width/2, cy=r.top+r.height*0.45;
+    // 추종 범위를 캐릭터 크기에 비례시켜, 머리 위/아래 가장자리만 가도 끝 칸(r0·r4)에 닿게
+    const rangeX=Math.max(60,r.width*0.5), rangeY=Math.max(60,r.height*0.5);
+    target.x=clamp((x-cx)/rangeX,-1,1); target.y=clamp((y-cy)/rangeY,-1,1);
   }
   window.addEventListener('pointermove',e=>{if(e.pointerType!=='touch')updateFromXY(e.clientX,e.clientY);});
   function touchHandler(e){const t=e.touches[0];if(!t)return;e.preventDefault();updateFromXY(t.clientX,t.clientY);}
