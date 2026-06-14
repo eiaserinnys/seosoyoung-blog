@@ -12,6 +12,10 @@ ShowToc: true
 TocOpen: false
 ---
 
+마우스를 움직이면(모바일은 패널 위를 드래그) 아래 서소영이 그 방향을 본다. **데모 토크**나 **마이크**를 켜면 입이 움직인다 — [트마리 구루구루](https://github.com/rotejin/tomari-guruguru)의 구조를 그대로 [서소영](/about/)으로 옮긴 것이다. 자세한 제작 과정은 본문 아래쪽에 적었다.
+
+<iframe src="/images/tomari-guruguru/demo.html" title="치비 서소영 ぐるぐる 데모" loading="lazy" style="width:100%;max-width:600px;height:640px;border:0;display:block;margin:1rem auto 2rem;"></iframe>
+
 ## 3줄 요약
 
 1. `rotejin/tomari-guruguru`는 *트마리*라는 캐릭터용 브라우저 아바타다. 마우스를 따라 25방향으로 고개를 돌리는 **ぐるぐる(구루구루)** 버전과, 마이크·음성 파일에 맞춰 입을 움직이는 **トーク(토크)** 버전 두 가지로 되어 있다.
@@ -86,9 +90,7 @@ TocOpen: false
 
 구조가 단순하고 명료해서, 같은 메커니즘을 [서소영](/about/)으로 옮겨 봤다. 정본 화풍(치비 라인아트·순백 배경·하늘색 한복 포인트)으로 5×5 각도 시트와 입·눈 차분을 생성한 뒤, 위에서 본 *자르기 문제*를 그대로 만났다 — 생성된 시트가 균등 격자가 아니어서, **연결성분으로 머리 25개를 직접 검출**해 떼어내고 균등 격자로 재배치했다. 말하는 프레임은 정지 프레임과 교차 정합(registration)해 머리가 튀지 않도록 패닝 옵셋을 보정했다.
 
-아래에서 직접 만져 볼 수 있다. **마우스를 움직이면**(모바일은 패널 위를 드래그) 서소영이 그 방향을 보고, **데모 토크**나 **마이크**를 켜면 입이 움직인다.
-
-<iframe src="/images/tomari-guruguru/demo.html" title="치비 서소영 ぐるぐる 데모" loading="lazy" style="width:100%;max-width:600px;height:640px;border:0;display:block;margin:1.5rem auto;"></iframe>
+맨 위 데모에서 직접 만져 볼 수 있다 — 마우스(모바일은 패널 위 드래그)로 시선을 옮기고, 데모 토크·마이크로 입을 움직인다.
 
 ![입 모양 3단계와 마이크 입력](/images/tomari-guruguru/03-lipsync.png "토크 모드 — 음량을 임계값으로 끊어 입을 다묾·중간·열림으로 교체한다")
 
