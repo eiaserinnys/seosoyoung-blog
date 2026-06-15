@@ -50,7 +50,12 @@ images:
 
 해법의 첫 절반은 backbone 쪽에 있다. *In-betweening*을 기본 패러다임으로 삼는다. 컨텍스트 키프레임은 캐릭터의 최근 상태, 타깃 키프레임은 smart primitive가 공급하는 목표 — backbone은 그 사이를 채운다.
 
-![MotionBricks 추론 파이프라인의 4단계 (논문 Fig. 2 재현 영상 포스터)](/images/nvidia-motionbricks-2026/overview-demo.jpg)
+아래는 프로젝트 페이지의 Overview 데모다 — backbone이 단일 모델로 다양한 모션을 만들어 내는 것을 한 번에 보여 준다.
+
+<video controls poster="/images/nvidia-motionbricks-2026/overview-demo.jpg" preload="none" style="width:100%;max-width:960px;display:block;margin:1em auto;">
+  <source src="https://research.nvidia.com/labs/gear/motionbricks/videos/motionbricks_demo_1080p30f.mp4" type="video/mp4">
+  영상이 재생되지 않으면 <a href="https://research.nvidia.com/labs/gear/motionbricks/videos/motionbricks_demo_1080p30f.mp4">원본 영상</a>을 직접 열어 보라.
+</video>
 
 추론 루프는 4단계로 짜여 있다.
 
@@ -77,31 +82,57 @@ images:
 
 ### Smart Locomotion — 스타일과 믹싱
 
-![Smart Locomotion: 좀비 스타일 보행 (zero-shot 단일 프롬프트로 생성)](/images/nvidia-motionbricks-2026/smart-locomotion-zombie.jpg)
-
 속도·헤딩·스타일 명령으로부터 *재학습이나 태스크별 튜닝 없이* 자연스러운 로코모션을 만든다. 시연된 스타일: Zombie · Injured-Leg · Injured-Torso · Skipping · Strafing · Crouch Strafing. 모두 단일 smart-primitive 프롬프트의 zero-shot 결과다.
 
-블렌드스페이스(blendspace) 믹싱도 같은 인터페이스 안에 들어 있다.
+<video controls poster="/images/nvidia-motionbricks-2026/smart-locomotion-zombie.jpg" preload="none" style="width:100%;max-width:960px;display:block;margin:1em auto;">
+  <source src="https://research.nvidia.com/labs/gear/motionbricks/videos/smart_locomotion/locomotion_zombie_style_1080p.mp4" type="video/mp4">
+  영상이 재생되지 않으면 <a href="https://research.nvidia.com/labs/gear/motionbricks/videos/smart_locomotion/locomotion_zombie_style_1080p.mp4">원본 영상</a>을 직접 열어 보라.
+</video>
 
-![Smart Locomotion: 여러 블렌드스페이스를 자유롭게 섞는 freestyle 모드](/images/nvidia-motionbricks-2026/smart-locomotion-mixing.jpg)
+블렌드스페이스(blendspace) 믹싱도 같은 인터페이스 안에 들어 있다. 아래 영상은 여러 블렌드스페이스를 한꺼번에 섞어 freestyle로 이어 가는 데모다.
+
+<video controls poster="/images/nvidia-motionbricks-2026/smart-locomotion-mixing.jpg" preload="none" style="width:100%;max-width:960px;display:block;margin:1em auto;">
+  <source src="https://research.nvidia.com/labs/gear/motionbricks/videos/smart_locomotion/locomotion_mixing_all_bs_1080p.mp4" type="video/mp4">
+  영상이 재생되지 않으면 <a href="https://research.nvidia.com/labs/gear/motionbricks/videos/smart_locomotion/locomotion_mixing_all_bs_1080p.mp4">원본 영상</a>을 직접 열어 보라.
+</video>
 
 ### Smart Objects — 오브젝트 상호작용
 
 오브젝트 인터랙션은 *proxy keyframe* 집합으로 명시한다. 검을 잡는 손의 위치, 벤치를 넘는 양발의 위치 — 이런 부분 제약만 주면 backbone이 접근·접촉·후속 동작을 자연스럽게 채운다. 같은 명령을 여러 번 실행해도 매번 *자연스러운 변주(variation)* 가 들어간다.
 
-![Smart Object: 검 줍기 — 여러 접근 방향에 따라 생성된 변주들](/images/nvidia-motionbricks-2026/smart-object-pickup-sword.jpg)
+<video controls poster="/images/nvidia-motionbricks-2026/smart-object-pickup-sword.jpg" preload="none" style="width:100%;max-width:960px;display:block;margin:1em auto;">
+  <source src="https://research.nvidia.com/labs/gear/motionbricks/videos/smart_object/pickup_sword_approach_variations_v2_1080p.mp4" type="video/mp4">
+  영상이 재생되지 않으면 <a href="https://research.nvidia.com/labs/gear/motionbricks/videos/smart_object/pickup_sword_approach_variations_v2_1080p.mp4">원본 영상</a>을 직접 열어 보라.
+</video>
 
-![Smart Object: 벤치 점프 — 접근 각도와 속도에 따른 다양한 동작](/images/nvidia-motionbricks-2026/smart-object-jump-bench.jpg)
+검 줍기 영상은 캐릭터가 다양한 방향에서 같은 검에 접근할 때마다 손의 궤적·발의 디딤 위치·상체의 기울임이 *매번 다르게* 생성되는 것을 한눈에 보여 준다.
 
-벤치 점프 영상은 같은 "벤치를 넘어라"라는 명령에 대해 캐릭터의 접근 속도·각도에 따라 도약 폭이 어떻게 달라지는지를 보여준다. 데이터 매칭이 아니라 *생성된* 변주다.
+<video controls poster="/images/nvidia-motionbricks-2026/smart-object-jump-bench.jpg" preload="none" style="width:100%;max-width:960px;display:block;margin:1em auto;">
+  <source src="https://research.nvidia.com/labs/gear/motionbricks/videos/smart_object/jump_bench_approach_variations_1080p.mp4" type="video/mp4">
+  영상이 재생되지 않으면 <a href="https://research.nvidia.com/labs/gear/motionbricks/videos/smart_object/jump_bench_approach_variations_1080p.mp4">원본 영상</a>을 직접 열어 보라.
+</video>
+
+벤치 점프 영상은 같은 "벤치를 넘어라"라는 명령에 대해 캐릭터의 접근 속도·각도에 따라 도약 폭이 어떻게 달라지는지를 보여 준다. 데이터 매칭이 아니라 *생성된* 변주다. Smart Object의 다른 시연 — 앉기(sitting), 떨어지기(falling)도 같은 패턴이다(<a href="https://nvlabs.github.io/motionbricks/#smart-objects">프로젝트 페이지의 Smart Objects 섹션</a>에 4종이 모두 정리돼 있다).
 
 ### UE5 안에서의 저작 — brick을 쌓듯이
 
 backbone과 smart primitive를 게임 엔진과 묶는 저작 도구도 함께 공개됐다. Unreal Engine 5 안에서 *애니메이션 그래프 배선 없이, 전문 애니메이션 지식 없이* primitive를 끼워 맞추는 방식이다.
 
-![UE5 인 엔진 저작 — animation graph 배선 없이 brick을 끼워 넣는다](/images/nvidia-motionbricks-2026/ue5-authoring.jpg)
+<video controls poster="/images/nvidia-motionbricks-2026/ue5-authoring.jpg" preload="none" style="width:100%;max-width:960px;display:block;margin:1em auto;">
+  <source src="https://research.nvidia.com/labs/gear/motionbricks/videos/runtime_aibm_so_authoring_1.5x_1080p.mp4" type="video/mp4">
+  영상이 재생되지 않으면 <a href="https://research.nvidia.com/labs/gear/motionbricks/videos/runtime_aibm_so_authoring_1.5x_1080p.mp4">원본 영상</a>을 직접 열어 보라.
+</video>
 
 저자들의 표현 그대로다 — "brick을 쌓듯이 plug-and-play".
+
+### In-betweening 비교 — 같은 패러다임의 기준선들
+
+논문의 supplementary는 in-betweening 패러다임을 공유하는 다른 모델들과의 직접 비교를 담는다. 같은 컨텍스트·타깃 키프레임을 주고 그 사이를 채우게 했을 때, 품질·복원력·자연스러움이 어떻게 갈리는지를 보여 준다.
+
+<video controls poster="https://nvlabs.github.io/motionbricks/static/posters/supp_inbetweening.jpg" preload="none" style="width:100%;max-width:960px;display:block;margin:1em auto;">
+  <source src="https://research.nvidia.com/labs/gear/motionbricks/videos/supp_inbetweening_1080p.mp4" type="video/mp4">
+  영상이 재생되지 않으면 <a href="https://research.nvidia.com/labs/gear/motionbricks/videos/supp_inbetweening_1080p.mp4">원본 영상</a>을 직접 열어 보라.
+</video>
 
 ## 결과 — 2분 40초 컷 없는 UE5 데모
 
