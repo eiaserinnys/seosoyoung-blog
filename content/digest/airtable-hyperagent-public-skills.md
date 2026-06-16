@@ -6,25 +6,131 @@ categories: ["다이제스트"]
 summary: "Airtable의 Alex McDonnell이 공개한 12개 에이전트 스킬은 코드 자동화가 아니라 Müller-Brockmann·Vignelli·NYT 그래픽의 디자인 규율을 강제로 주입하는 메타 스킬군에 가깝다. 그 규율대로 직접 짜본 카탈로그 랜딩과 함께 정리한다."
 ShowToc: true
 TocOpen: false
+cover:
+  image: "/images/airtable-hyperagent-public-skills/landing-preview.png"
+images:
+  - "/images/airtable-hyperagent-public-skills/landing-preview.png"
 ---
 
 ## 손 댄 시연 — 리포의 디자인 규율대로 짜본 카탈로그 랜딩
 
 이 다이제스트의 대상은 <em>에이전트에게 디자인 디시플린을 강제로 주입하는</em> 12개의 메타 스킬 묶음이다. 글로 정리하기 전에, 리포가 가르치는 규율 중 하나를 그대로 따라 카탈로그 랜딩을 한 장 짜봤다.
 
-수록 스킬 중 하나인 **nyt-data-viz**는 The New York Times Graphics와 The Upshot의 디시플린 — 세리프 헤드라인, Franklin Gothic 풍 산세리프 본문, 가는 회색 룰, 빨간 액센트 한 점, 720px 본문 폭, 챕터 헤더의 small-caps 라벨 — 을 차트 생성에 강제한다. 그 규칙들을 카탈로그 페이지에 그대로 옮긴 결과가 아래 임베드다.
+수록 스킬 중 하나인 **nyt-data-viz**는 The New York Times Graphics와 The Upshot의 디시플린 — 세리프 헤드라인, Franklin Gothic 풍 산세리프 본문, 가는 회색 룰, 빨간 액센트 한 점, 720px 본문 폭, 챕터 헤더의 small-caps 라벨 — 을 차트 생성에 강제한다. 그 규칙들을 카탈로그 페이지에 그대로 옮긴 결과를 아래 카드로 펼쳐 둔다.
 
-<iframe
-  src="/landing/hyperagent-skills/index.html"
-  width="100%"
-  height="3400"
-  frameborder="0"
-  loading="lazy"
-  style="border: 1px solid #d4d4d4; border-radius: 4px; background: white; max-width: 100%; display: block;"
-  title="Hyperagent Public Skills — 카탈로그 시연">
-</iframe>
+<a class="landing-card" href="/landing/hyperagent-skills/index.html" target="_blank" rel="noopener" aria-label="카탈로그 랜딩 페이지 열기">
+  <div class="landing-card__thumb">
+    <img src="/images/airtable-hyperagent-public-skills/landing-preview.png" alt="Hyperagent Public Skills 카탈로그 랜딩 미리보기 — NYT 그래픽 디스크 풍 에디토리얼 레이아웃" loading="lazy" />
+    <span class="landing-card__tag">Embedded · Landing Page</span>
+  </div>
+  <div class="landing-card__body">
+    <div class="landing-card__kicker">Tools · Design · The Reading Room</div>
+    <div class="landing-card__title">Hyperagent의 12개 스킬, 디자인 디시플린을 에이전트에 주입하다</div>
+    <div class="landing-card__deck">NYT 그래픽 디스크 풍 에디토리얼 톤으로 짠 카탈로그 시연 — 12개 스킬을 디자인 디시플린·비디오 시즐·오퍼레이션 세 챕터로 갈라 진열한다.</div>
+    <div class="landing-card__cta">전체 페이지에서 열기<span class="landing-card__arrow" aria-hidden="true">↗</span></div>
+  </div>
+</a>
 
-전체 화면으로 보려면 [/landing/hyperagent-skills/](/landing/hyperagent-skills/index.html). 12개 스킬을 디자인 디시플린·비디오 시즐·오퍼레이션 세 챕터로 갈라 진열했다.
+<style>
+.landing-card {
+  display: block;
+  text-decoration: none !important;
+  color: inherit !important;
+  background: #fff;
+  border: 1px solid #d4d4d4;
+  border-radius: 4px;
+  overflow: hidden;
+  margin: 1.6em 0 2em;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.03), 0 4px 14px rgba(0,0,0,0.04);
+  transition: box-shadow 0.2s ease, transform 0.2s ease, border-color 0.2s ease;
+}
+.landing-card:hover {
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05), 0 12px 28px rgba(0,0,0,0.08);
+  border-color: #c92a2a;
+  transform: translateY(-1px);
+}
+.landing-card__thumb {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background: #f7f7f7;
+  border-bottom: 1px solid #ebebeb;
+}
+.landing-card__thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  display: block;
+  margin: 0;
+}
+.landing-card__tag {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #fff;
+  background: rgba(18,18,18,0.88);
+  padding: 6px 10px;
+  border-radius: 2px;
+  line-height: 1;
+}
+.landing-card__body {
+  padding: 18px 22px 20px;
+  border-top: 3px solid #121212;
+}
+.landing-card__kicker {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #c92a2a;
+  margin-bottom: 8px;
+}
+.landing-card__title {
+  font-family: 'Newsreader', Georgia, 'Times New Roman', serif;
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 1.22;
+  letter-spacing: -0.005em;
+  color: #121212;
+  margin-bottom: 10px;
+}
+.landing-card__deck {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 14px;
+  line-height: 1.55;
+  color: #444;
+  margin-bottom: 14px;
+}
+.landing-card__cta {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #c92a2a;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.landing-card__arrow {
+  font-size: 14px;
+  transition: transform 0.2s ease;
+}
+.landing-card:hover .landing-card__arrow { transform: translate(2px, -2px); }
+@media (max-width: 600px) {
+  .landing-card__title { font-size: 19px; }
+  .landing-card__deck { font-size: 13px; }
+  .landing-card__body { padding: 16px 16px 18px; }
+}
+</style>
 
 ## 3줄 요약
 
@@ -107,4 +213,4 @@ LICENSE 파일이 없다. `gh repo view`도 `licenseInfo: null`을 반환한다.
 - 리포지터리: <https://github.com/alexmcdonnell-airtable/hyperagent-public-skills>
 - 발신자: Alex McDonnell (Airtable / Hyperagent 팀)
 - 공개: 2026.05.28 (최종 푸시 2026.06.12)
-- 본 다이제스트의 카탈로그 랜딩: [/landing/hyperagent-skills/](/landing/hyperagent-skills/index.html) (이 글의 도입부에 임베드된 시연물)
+- 본 다이제스트의 카탈로그 랜딩: [/landing/hyperagent-skills/](/landing/hyperagent-skills/index.html) (이 글의 도입부에 카드로 펼쳐 둔 시연물)
