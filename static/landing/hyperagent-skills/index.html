@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hyperagent의 12개 스킬 — 디자인 디시플린을 에이전트에 주입하다</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600;6..72,700&family=Libre+Franklin:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #ffffff;
+      --ink: #121212;
+      --ink-soft: #333333;
+      --grey-1: #6b6b6b;
+      --grey-2: #8e8e8e;
+      --grey-3: #b0b0b0;
+      --rule: #d4d4d4;
+      --rule-soft: #ebebeb;
+      --accent: #c92a2a;
+      --accent-soft: #fbf3f3;
+      --serif: 'Newsreader', 'Source Serif Pro', Georgia, 'Times New Roman', serif;
+      --sans: 'Libre Franklin', 'Franklin Gothic Medium', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      --mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+    }
+
+    * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; background: var(--bg); }
+    body {
+      font-family: var(--sans);
+      font-size: 14pt;
+      line-height: 1.55;
+      color: var(--ink);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    a { color: var(--accent); text-decoration: none; border-bottom: 1px solid var(--accent); }
+    a:hover { background: var(--accent-soft); }
+
+    .frame {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 56px 28px 72px;
+    }
+
+    /* ───────────── HEAD ───────────── */
+    .head { max-width: 720px; margin-bottom: 56px; }
+    .kicker {
+      font-family: var(--sans);
+      font-size: 10.5pt;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 18px;
+      padding-bottom: 14px;
+      border-bottom: 1px solid var(--ink);
+    }
+    h1.headline {
+      font-family: var(--serif);
+      font-weight: 600;
+      font-size: 48pt;
+      line-height: 1.08;
+      letter-spacing: -0.012em;
+      color: var(--ink);
+      margin: 0 0 22px;
+      font-style: normal;
+    }
+    .deck {
+      font-family: var(--serif);
+      font-weight: 400;
+      font-size: 17pt;
+      line-height: 1.45;
+      color: var(--ink-soft);
+      margin: 0 0 28px;
+    }
+    .byline {
+      font-family: var(--sans);
+      font-size: 11pt;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      color: var(--ink);
+      text-transform: uppercase;
+    }
+    .byline .sep { color: var(--grey-3); margin: 0 10px; }
+    .byline a {
+      font-family: var(--mono);
+      font-size: 10pt;
+      letter-spacing: 0;
+      text-transform: none;
+      color: var(--ink);
+      border-bottom-color: var(--grey-3);
+    }
+    .byline a:hover { background: var(--rule-soft); }
+
+    /* ───────────── INTRO ───────────── */
+    .intro {
+      max-width: 720px;
+      margin: 0 0 56px;
+      padding: 28px 0;
+      border-top: 3px solid var(--ink);
+      border-bottom: 1px solid var(--rule);
+    }
+    .intro p {
+      font-family: var(--serif);
+      font-size: 16pt;
+      line-height: 1.6;
+      color: var(--ink);
+      margin: 0 0 16px;
+    }
+    .intro p:last-child { margin-bottom: 0; }
+    .intro p.first-letter::first-letter {
+      font-family: var(--serif);
+      font-weight: 600;
+      font-size: 48pt;
+      float: left;
+      line-height: 0.9;
+      margin: 6px 8px 0 0;
+      color: var(--ink);
+    }
+
+    /* ───────────── DATA BAR ───────────── */
+    .databar {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0;
+      border-top: 1px solid var(--ink);
+      border-bottom: 1px solid var(--ink);
+      margin-bottom: 64px;
+    }
+    .databar .cell {
+      padding: 22px 22px 20px;
+      border-right: 1px solid var(--rule);
+    }
+    .databar .cell:last-child { border-right: none; }
+    .databar .lbl {
+      font-family: var(--sans);
+      font-size: 10pt;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--grey-1);
+      margin-bottom: 10px;
+    }
+    .databar .num {
+      font-family: var(--serif);
+      font-size: 30pt;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+      color: var(--ink);
+      line-height: 1;
+    }
+    .databar .sub {
+      font-family: var(--sans);
+      font-size: 11pt;
+      color: var(--grey-1);
+      margin-top: 6px;
+    }
+
+    /* ───────────── CHAPTERS ───────────── */
+    .chapter { margin-bottom: 64px; }
+    .chapter:last-of-type { margin-bottom: 0; }
+    .chapter-head {
+      margin-bottom: 24px;
+      padding-bottom: 14px;
+      border-bottom: 1px solid var(--ink);
+    }
+    .chapter-num {
+      font-family: var(--sans);
+      font-size: 10pt;
+      font-weight: 600;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 10px;
+    }
+    .chapter-title {
+      font-family: var(--serif);
+      font-size: 28pt;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+      color: var(--ink);
+      margin: 0 0 12px;
+      line-height: 1.15;
+    }
+    .chapter-lede {
+      font-family: var(--serif);
+      font-size: 15pt;
+      line-height: 1.5;
+      color: var(--ink-soft);
+      max-width: 720px;
+      margin: 0;
+    }
+
+    /* ───────────── CARD GRID ───────────── */
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      column-gap: 36px;
+      row-gap: 0;
+    }
+    .card {
+      padding: 26px 0 24px;
+      border-bottom: 1px solid var(--rule);
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .card:nth-child(odd) { padding-right: 18px; border-right: 1px solid var(--rule); }
+    .card:nth-child(even) { padding-left: 18px; }
+    /* 마지막 행에는 아래 룰 제거 — JS 없이 처리하려면 :nth-last-child 활용 */
+    .card:last-child,
+    .card:nth-last-child(2):nth-child(odd) {
+      border-bottom: none;
+    }
+
+    .card-kind {
+      font-family: var(--sans);
+      font-size: 9.5pt;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--accent);
+    }
+    .card-title {
+      font-family: var(--serif);
+      font-size: 20pt;
+      font-weight: 600;
+      line-height: 1.2;
+      letter-spacing: -0.005em;
+      color: var(--ink);
+      margin: 0;
+    }
+    .card-desc {
+      font-family: var(--serif);
+      font-size: 14pt;
+      line-height: 1.55;
+      color: var(--ink-soft);
+      margin: 0;
+    }
+    .card-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px 10px;
+      margin-top: 6px;
+      padding-top: 12px;
+      border-top: 1px dotted var(--rule);
+    }
+    .card-meta .tag {
+      font-family: var(--mono);
+      font-size: 10pt;
+      color: var(--grey-1);
+      letter-spacing: 0;
+    }
+    .card-meta .tag::before { content: '#'; color: var(--grey-3); margin-right: 1px; }
+    .card-note {
+      font-family: var(--sans);
+      font-size: 10.5pt;
+      color: var(--grey-1);
+      font-style: italic;
+      line-height: 1.45;
+      margin: 0;
+      padding-top: 4px;
+    }
+    .card-note strong {
+      font-style: normal;
+      font-weight: 600;
+      color: var(--ink);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-size: 9.5pt;
+      margin-right: 4px;
+    }
+
+    /* ───────────── FOOTER ───────────── */
+    .foot {
+      margin-top: 64px;
+      padding-top: 24px;
+      border-top: 3px solid var(--ink);
+      font-family: var(--sans);
+      font-size: 11pt;
+      line-height: 1.6;
+      color: var(--grey-1);
+    }
+    .foot .row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px 28px;
+      margin-bottom: 6px;
+    }
+    .foot strong {
+      color: var(--ink);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      font-size: 10pt;
+      font-weight: 600;
+      margin-right: 6px;
+    }
+    .foot a {
+      font-family: var(--mono);
+      font-size: 10pt;
+      color: var(--ink);
+      border-bottom-color: var(--grey-3);
+    }
+    .foot a:hover { background: var(--rule-soft); }
+
+    /* ───────────── RESPONSIVE ───────────── */
+    @media (max-width: 760px) {
+      .frame { padding: 36px 18px 56px; }
+      h1.headline { font-size: 32pt; }
+      .deck { font-size: 15pt; }
+      .intro p { font-size: 14pt; }
+      .intro p.first-letter::first-letter { font-size: 38pt; }
+      .databar { grid-template-columns: repeat(2, 1fr); }
+      .databar .cell:nth-child(2) { border-right: none; }
+      .databar .cell:nth-child(-n+2) { border-bottom: 1px solid var(--rule); }
+      .chapter-title { font-size: 22pt; }
+      .cards { grid-template-columns: 1fr; column-gap: 0; }
+      .card:nth-child(odd),
+      .card:nth-child(even) { padding: 22px 0; border-right: none; border-left: none; }
+      .card { border-bottom: 1px solid var(--rule); }
+    }
+  </style>
+</head>
+<body>
+  <div class="frame">
+
+    <!-- ───────────── HEAD ───────────── -->
+    <header class="head">
+      <div class="kicker">Tools · Design · The Reading Room</div>
+      <h1 class="headline">Hyperagent의 12개 스킬, 디자인 디시플린을 에이전트에 주입하다</h1>
+      <p class="deck">
+        Airtable의 Alex McDonnell이 6월 초 공개한 카탈로그는 코드 자동화가 아니라 디자인 규율을 강제하는 메타 스킬에 가깝다.
+        Müller-Brockmann의 모듈러 그리드, Vignelli Canon, NYT 그래픽 디스크의 규범이 JSON 한 줄로 패키징되어 있다.
+      </p>
+      <div class="byline">
+        By 서소영의 서재 <span class="sep">·</span> 2026년 6월 16일
+        <span class="sep">·</span>
+        <a href="https://github.com/alexmcdonnell-airtable/hyperagent-public-skills" target="_blank" rel="noopener">github.com/alexmcdonnell-airtable/hyperagent-public-skills</a>
+      </div>
+    </header>
+
+    <!-- ───────────── INTRO ───────────── -->
+    <section class="intro">
+      <p class="first-letter">
+        이 리포에는 README가 없다. LICENSE도 없다. 그저 12개의 JSON 파일이 평면적으로 놓여 있을 뿐이다. 하지만 그 안을 들여다보면, "에이전트가 디자인을 망치지 않도록 고전 디자인 시스템의 디시플린을 강제로 주입하라"는 일관된 의도가 드러난다.
+      </p>
+      <p>
+        스킬 12개 중 절반은 디자인 규율 — 스위스 모더니즘 그리드, Vignelli의 6서체 시스템, NYT 그래픽 디스크의 차트 규범 — 을 코드와 검증 하니스로 다시 짓는다. 나머지는 Veo 3.1과 ffmpeg로 30초 시즐 영상을 짜내거나, Hyperagent 위에서 가상 사업체를 자율 운영하는 워크플로우다.
+      </p>
+    </section>
+
+    <!-- ───────────── DATA BAR ───────────── -->
+    <section class="databar">
+      <div class="cell">
+        <div class="lbl">수록 스킬</div>
+        <div class="num">12</div>
+        <div class="sub">평면 JSON 번들</div>
+      </div>
+      <div class="cell">
+        <div class="lbl">디자인 디시플린</div>
+        <div class="num">5</div>
+        <div class="sub">전체의 42%</div>
+      </div>
+      <div class="cell">
+        <div class="lbl">README · LICENSE</div>
+        <div class="num">0</div>
+        <div class="sub">권리 유보 상태</div>
+      </div>
+      <div class="cell">
+        <div class="lbl">authType</div>
+        <div class="num">none</div>
+        <div class="sub">12 / 12 · 자격증명 미요구</div>
+      </div>
+    </section>
+
+    <!-- ───────────── CHAPTER 1 ───────────── -->
+    <section class="chapter">
+      <div class="chapter-head">
+        <div class="chapter-num">Chapter 1 of 3 · Design Discipline</div>
+        <h2 class="chapter-title">에이전트에 강제하는 디자인 규율</h2>
+        <p class="chapter-lede">
+          즉흥적 장식이 아니라 검증 가능한 그리드, 일관된 사이니지, 신문 그래픽 디스크의 차트 규범.
+          이 다섯 개 스킬은 "어떻게 보이게 할까"가 아니라 "어떤 규율을 따라야 하는가"를 명시한다.
+        </p>
+      </div>
+      <div class="cards">
+
+        <article class="card">
+          <div class="card-kind">Skill 01 · Editorial Grid</div>
+          <h3 class="card-title">Müller-Brockmann Grid Systems</h3>
+          <p class="card-desc">
+            International Typographic Style의 진짜 모듈러 그리드 위에 에디토리얼·매거진 페이지를 빌드한다.
+            CSS 변수 단일 정본, 인터랙티브 그리드 토글, 8px 베이스라인 락, 디스플레이 타입의 광학 정렬, 그리고 Puppeteer로 0px 부합을 검증하는 하니스를 포함한다.
+          </p>
+          <div class="card-meta">
+            <span class="tag">grid</span>
+            <span class="tag">swiss-modernism</span>
+            <span class="tag">baseline</span>
+            <span class="tag">verification</span>
+          </div>
+          <p class="card-note"><strong>Note</strong>스크립트: grid_tokens.py · verify_grid.js</p>
+        </article>
+
+        <article class="card">
+          <div class="card-kind">Skill 02 · Design System</div>
+          <h3 class="card-title">Vignelli Canon Design System</h3>
+          <p class="card-desc">
+            Massimo Vignelli의 The Vignelli Canon에서 Intangibles(semantics·discipline·timelessness)와 Tangibles(그리드·6개 기본 서체·2단 타입 스케일)를 추출한다.
+            Grandi Stazioni·NYC Subway의 사이니지 모듈 로직과 토큰 생성기까지 한 묶음.
+          </p>
+          <div class="card-meta">
+            <span class="tag">typography</span>
+            <span class="tag">wayfinding</span>
+            <span class="tag">vignelli</span>
+            <span class="tag">identity</span>
+          </div>
+          <p class="card-note"><strong>Note</strong>스크립트: vignelli_system.py</p>
+        </article>
+
+        <article class="card">
+          <div class="card-kind">Skill 03 · Data Visualization</div>
+          <h3 class="card-title">nyt-data-viz</h3>
+          <p class="card-desc">
+            The New York Times Graphics와 The Upshot의 디시플린을 차트 생성에 강제한다.
+            팔레트·타이포그래피·주석·차트 타입 선택까지 NYT 규율로 묶인 6개 파이썬 모듈로 구성된다.
+          </p>
+          <div class="card-meta">
+            <span class="tag">data-viz</span>
+            <span class="tag">nyt</span>
+            <span class="tag">tufte</span>
+            <span class="tag">editorial</span>
+          </div>
+          <p class="card-note"><strong>Note</strong>palette · typography · chart_selector · annotate · render</p>
+        </article>
+
+        <article class="card">
+          <div class="card-kind">Skill 04 · Brand Identity</div>
+          <h3 class="card-title">Brand Book Generator</h3>
+          <p class="card-desc">
+            창업자의 앱을 위해 트렌드를 반영한 3개의 브랜드 컨셉을 NO-SCROLL 단일 페이지 bento 레이아웃으로 동시에 출력한다.
+            로고+태그라인·앱 스크린·OOH·머치·팔레트·타입·보이스를 한 화면에 staggered pop 애니메이션으로 조립.
+          </p>
+          <div class="card-meta">
+            <span class="tag">branding</span>
+            <span class="tag">founders</span>
+            <span class="tag">webpage</span>
+            <span class="tag">identity</span>
+          </div>
+          <p class="card-note"><strong>Note</strong>템플릿: brandbook_template.html</p>
+        </article>
+
+        <article class="card">
+          <div class="card-kind">Skill 05 · Out-of-Home</div>
+          <h3 class="card-title">NYC Subway Campaign</h3>
+          <p class="card-desc">
+            브랜드 아이덴티티 → 표준 로고 자산 → MTA 전 노선 OOH 캠페인 목업을 일관된 이미지 생성으로 직렬화한다.
+            모든 image-gen 호출에 같은 로고 자산을 재사용해 브랜드 일관성을 유지하는 게 포인트.
+          </p>
+          <div class="card-meta">
+            <span class="tag">advertising</span>
+            <span class="tag">image-gen</span>
+            <span class="tag">subway</span>
+            <span class="tag">OOH</span>
+          </div>
+          <p class="card-note"><strong>Note</strong>템플릿: campaign_page_template.html</p>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ───────────── CHAPTER 2 ───────────── -->
+    <section class="chapter">
+      <div class="chapter-head">
+        <div class="chapter-num">Chapter 2 of 3 · Video &amp; Sizzle</div>
+        <h2 class="chapter-title">Veo 3.1과 ffmpeg로 직조한 영상 파이프라인</h2>
+        <p class="chapter-lede">
+          하루치 일정을 30초 트레일러로, 팟캐스트 오디오를 클레이 인형 뮤직비디오로.
+          네 개 스킬 모두 텍스트 → 정지 이미지 → image-to-video → ffmpeg 합성이라는 동일한 골격을 공유한다.
+        </p>
+      </div>
+      <div class="cards">
+
+        <article class="card">
+          <div class="card-kind">Skill 06 · Cinematic Trailer</div>
+          <h3 class="card-title">briefing-trailer</h3>
+          <p class="card-desc">
+            Gmail·Calendar·Slack에서 가져온 실제 하루를 30초짜리 시네마틱 "coming soon" 무비 트레일러로 변환한다.
+            트레일러 자체가 그날의 브리핑이며, 포토리얼 푸티지 위에 텍스트 온 스크린으로 전개된다.
+          </p>
+          <div class="card-meta">
+            <span class="tag">sizzle</span>
+            <span class="tag">trailer</span>
+            <span class="tag">veo</span>
+            <span class="tag">ffmpeg</span>
+          </div>
+          <p class="card-note"><strong>Note</strong>render_text.py · build_trailer.py</p>
+        </article>
+
+        <article class="card">
+          <div class="card-kind">Skill 07 · Explainer Video</div>
+          <h3 class="card-title">Claymation Explainer</h3>
+          <p class="card-desc">
+            클레이메이션 스타일 설명·광고 영상 엔드투엔드 파이프라인.
+            스토리보드 → 캐릭터 레퍼런스 → 씬 스틸 → Veo image-to-video → TTS 보이스오버 → ffmpeg 패스트컷 어셈블 → 웹페이지 산출물까지.
+          </p>
+          <div class="card-meta">
+            <span class="tag">claymation</span>
+            <span class="tag">explainer</span>
+            <span class="tag">voiceover</span>
+            <span class="tag">veo</span>
+          </div>
+          <p class="card-note"><strong>Note</strong>스크립트: assemble.py</p>
+        </article>
+
+        <article class="card">
+          <div class="card-kind">Skill 08 · Podcast Clip</div>
+          <h3 class="card-title">Claymation Podcast Clips</h3>
+          <p class="card-desc">
+            팟캐스트 오디오 + 화자 사진을 Aardman 스타일 클레이 인형 뮤직비디오 컷으로 변환.
+            2~3초마다 새 샷이 등장하며, 보이스오버와 동기화된 익스퍼트 그레이드 캡션이 번 인된다.
+          </p>
+          <div class="card-meta">
+            <span class="tag">stop-motion</span>
+            <span class="tag">podcast</span>
+            <span class="tag">captions</span>
+            <span class="tag">ffmpeg</span>
+          </div>
+          <p class="card-note"><strong>Note</strong>make_captions · build_graphics_overlay · assemble_video</p>
+        </article>
+
+        <article class="card">
+          <div class="card-kind">Skill 09 · Launch Video</div>
+          <h3 class="card-title">Veo + Hyperframes</h3>
+          <p class="card-desc">
+            Veo 3.1 비디오와 Hyperframes 모션 그래픽 오버레이를 합성하는 런치 비디오 파이프라인.
+            모든 샷이 텍스트 오버레이를 위한 1/3 콘트라스트 존을 예약하는 Text Zone Composition 원칙 위에 빌드된다.
+          </p>
+          <div class="card-meta">
+            <span class="tag">launch-video</span>
+            <span class="tag">motion-graphics</span>
+            <span class="tag">gsap</span>
+            <span class="tag">compositing</span>
+          </div>
+          <p class="card-note"><strong>Note</strong>스크립트 미첨부 · 외부 참조 위주</p>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ───────────── CHAPTER 3 ───────────── -->
+    <section class="chapter">
+      <div class="chapter-head">
+        <div class="chapter-num">Chapter 3 of 3 · Operations &amp; Interactive</div>
+        <h2 class="chapter-title">자율 오퍼레이터와 인터랙티브 견적</h2>
+        <p class="chapter-lede">
+          가상의 사업체를 에이전트가 운영하는 시뮬레이션, 작업 흐름을 칸반으로 박제하는 워크플로우,
+          고객 뒷마당 사진을 받아 즉석 견적 페이지를 띄우는 인터랙티브 제품.
+        </p>
+      </div>
+      <div class="cards">
+
+        <article class="card">
+          <div class="card-kind">Skill 10 · Simulation</div>
+          <h3 class="card-title">Business Simulation Operator Method</h3>
+          <p class="card-desc">
+            가게·식당·SaaS·부티크·펀드·에이전시·NGO 어떤 사업체든 Hyperagent 위에서 자율 오퍼레이터 에이전트로 실시간 시뮬레이션하는 방법론.
+            캘린더 디시플린·계좌·일일 운영 결정까지 모두 에이전트가 처리한다.
+          </p>
+          <div class="card-meta">
+            <span class="tag">simulation</span>
+            <span class="tag">autonomous-agent</span>
+            <span class="tag">methodology</span>
+          </div>
+          <p class="card-note"><strong>Note</strong>스크립트: simclock.py</p>
+        </article>
+
+        <article class="card">
+          <div class="card-kind">Skill 11 · Workflow</div>
+          <h3 class="card-title">Airtable Kanban Work Tracker</h3>
+          <p class="card-desc">
+            Airtable 칸반 테이블을 작업 추적기로 사용한다. 한 레코드 = 한 스레드 모델로,
+            진행 중 상태를 ready-for-review로 플립하고 새 태스크 레코드를 요청 시 자동 생성한다.
+          </p>
+          <div class="card-meta">
+            <span class="tag">airtable</span>
+            <span class="tag">kanban</span>
+            <span class="tag">task-tracking</span>
+            <span class="tag">workflow</span>
+          </div>
+          <p class="card-note"><strong>Note</strong>스크립트 미첨부 · 일반 워크플로우</p>
+        </article>
+
+        <article class="card">
+          <div class="card-kind">Skill 12 · Interactive Page</div>
+          <h3 class="card-title">Landscaping Design &amp; Quote</h3>
+          <p class="card-desc">
+            고객 뒷마당 사진과 주소를 입력받아 깨끗한 before 컷, 다중 AI 디자인 컨셉, 추정 측정값,
+            스타일 전환 before/after 히어로, 라이브 재계산 견적이 묶인 인터랙티브 페이지를 생성한다.
+          </p>
+          <div class="card-meta">
+            <span class="tag">home-services</span>
+            <span class="tag">image-gen</span>
+            <span class="tag">interactive-webpage</span>
+            <span class="tag">estimating</span>
+          </div>
+          <p class="card-note"><strong>Note</strong>스크립트 미첨부 · 인터랙티브 데모 중심</p>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ───────────── FOOTER ───────────── -->
+    <footer class="foot">
+      <div class="row">
+        <span><strong>Source</strong> alexmcdonnell-airtable/hyperagent-public-skills (GitHub)</span>
+      </div>
+      <div class="row">
+        <span><strong>Publisher</strong> Alex McDonnell · Airtable / Hyperagent 팀</span>
+      </div>
+      <div class="row">
+        <span><strong>Published</strong> 2026.05.28 · 최종 푸시 2026.06.12</span>
+      </div>
+      <div class="row">
+        <span><strong>Repo</strong> <a href="https://github.com/alexmcdonnell-airtable/hyperagent-public-skills" target="_blank" rel="noopener">github.com/alexmcdonnell-airtable/hyperagent-public-skills</a></span>
+      </div>
+      <div class="row">
+        <span><strong>Notes</strong> README·LICENSE 부재 · 명시적 사용 조건 없음 · 재배포·상업적 재사용 시 별도 합의 필요</span>
+      </div>
+    </footer>
+
+  </div>
+</body>
+</html>
