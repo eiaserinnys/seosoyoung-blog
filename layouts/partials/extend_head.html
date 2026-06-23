@@ -249,6 +249,14 @@
     if (document.fonts && document.fonts.ready) {
       document.fonts.ready.then(layoutSidenotes).catch(function () {});
     }
+    // 안전망: 이미지·폰트·표 등이 늦게 자리잡으며 sup 위치가 변할 때 sidenote를 다시 배치한다.
+    // load+800ms 트리거만으로는 느린 이미지 응답·동적 콘텐츠를 못 따라잡는다.
+    if ('ResizeObserver' in window) {
+      var ro = new ResizeObserver(function () { scheduleLayout(120); });
+      document.querySelectorAll('article.post-single').forEach(function (article) {
+        ro.observe(article);
+      });
+    }
   })();
 </script>
 {{- end }}
