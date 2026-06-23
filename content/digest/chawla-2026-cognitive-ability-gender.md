@@ -1,6 +1,6 @@
 ---
 title: "Understanding the Intersection of Gender and Cognitive Ability on Interpersonal Outcomes: A Multi-Study Investigation"
-date: 2026-06-23T16:00:00+09:00
+date: 2026-06-23T15:30:00+09:00
 tags: ["조직심리", "젠더", "인지능력", "직장 내 평가", "사회 역할 이론", "팀 동학"]
 categories: ["다이제스트"]
 summary: "Chawla 외(2026, Journal of Applied Psychology)는 미국 학부생 432명·중국 직장인 394명을 라운드 로빈 방식으로 추적해, 인지능력이 높은 여성(남성은 아님)이 동료에게 적대적·반공동체적으로 인식되고 그 인식이 피해자화 증가·도움 받기 감소로 이어진다는 패턴을 두 번 확인했다."
