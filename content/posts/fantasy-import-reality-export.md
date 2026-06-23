@@ -114,7 +114,7 @@ sidenotes: true
 
 ## 왜 일본인가
 
-반세기 가까이 누적된 판타지 마켓플레이스가 비행기로 두 시간 거리에 있다. 갸루, 로리타, 고스로리, 메이드, 부카츠, 아이돌 오타쿠가 각자 매장과 잡지와 동인지로 받쳐졌고, 그 인프라의 역사는 1979년부터 2019년까지 이어진다.[^15]
+반세기 가까이 누적된 판타지 마켓플레이스가 비행기로 두 시간 거리에 있다. 애니, 만화, 게임, 피규어, 동인지, 메이드 카페, 아이돌 오타쿠가 각자 매장과 잡지와 행사와 팬덤 유통망으로 받쳐졌고, 그 상업적 중심지 중 하나인 아키하바라는 전후 전자상가에서 1980년대 PC·게임 시장을 거쳐 1990년대 후반 이후 오타쿠 문화의 물리적 성지로 재편됐다.[^15]
 
 한국 시장이 그런 긴 꼬리를 키우지 못한 이유는 단순하다. 인구 5천만 시장은 일본의 1억 2천만 시장이 가진 틈새 세분화의 두께를 만들지 못한다. 큰 시장이 긴 꼬리를 살리고, 작은 시장은 주류로 자원이 몰린다. 한국에서 자생한 판타지 콘텐츠가 거의 다 신분 상승, 복수, 먼치킨 같은 현실 욕망의 채널이었던 이유도 이 때문이다.
 
@@ -172,7 +172,7 @@ sidenotes: true
 
 [^14c]: 빙하기 세대의 노동시장 충격에 대해서는 일본노동정책연구·연수기구(JILPT)의 Hori Yukie 글이 거품 붕괴 이후 신졸 취업과 안정 경력 형성이 어려워졌고, 해당 세대가 중년에 이른 뒤에도 불안정 고용·비취업 문제를 안고 있다고 정리한다. Ohta·Genda·Kondo도 취업 빙하기에 졸업 시점의 실업률 상승이 임시 고용 또는 실업의 가능성을 높였고 그 효과가 장기화됐다고 분석한다. 히키코모리 쪽 고리는 Genda의 『Solitary Non-Employed Persons』 소개가 비취업과 사회적 고립을 함께 다루며, 2010년대 일본에서 빙하기 세대를 포함한 중년 비취업층이 SNEP가 될 가능성이 특히 높았다고 설명한다. 패러사이트 싱글은 야마다 마사히로가 1997년 닛케이 기사에서 제시한 개념으로, 미혼 성인이 부모와 동거하며 생활 기반을 의존하는 현상을 가리킨다. Hori Yukie, 「Japan's “Employment Ice-age Generation” Today」 — Japan Labor Issues. <https://www.jil.go.jp/english/jli/documents/2020/020-01.pdf> Ohta, Genda, Kondo, 「The Endless Ice Age」. <https://louischauvel.org/gendayuji.pdf> UTokyo BiblioPlaza, 「Solitary Non-Employed Persons」. <https://www.u-tokyo.ac.jp/biblioplaza/en/F_00211.html> Yamada Masahiro, 「Japan's Deepening Social Divides」 — Nippon.com. <https://www.nippon.com/en/in-depth/a01002/>
 
-[^15]: 잡지 egg는 1995년 창간해 2014년 휴간했다가 2019년 '레이와판'으로 복간했다. 시부야 109는 1979년 개업해 1990년대 후반 '카리스마 점원'의 시대를 거치며 갸루 패션의 본거지가 됐다. 파라파라 댄스는 1986년 가부키초 동아회관 1차 붐부터 2002년 4차 모색기까지 네 차례에 걸쳐 재부상했다. 「egg (雑誌)」 「109 (商業施設)」 「パラパラ」 — ja.wikipedia. <https://ja.wikipedia.org/wiki/egg_(%E9%9B%91%E8%AA%8C)> <https://ja.wikipedia.org/wiki/SHIBUYA109> <https://ja.wikipedia.org/wiki/%E3%83%91%E3%83%A9%E3%83%91%E3%83%A9>
+[^15]: 여기서 말하는 반세기 가까운 누적은 단일 유행의 연속이 아니라 동인지 시장, 전자상가, PC·게임 취미, 애니·만화 상품, 메이드 카페 같은 층이 겹쳐진 상업·팬덤 인프라를 가리킨다. 코미켓은 1975년에 시작해 동인지 유통의 핵심 제도로 성장했고, 모리카와 가이치로는 아키하바라가 전자상가에서 오타쿠의 취향과 캐릭터 이미지가 도시 표면을 바꾸는 공간으로 재편된 과정을 『취도의 탄생』에서 분석했다. Patrick W. Galbraith의 메이드 카페 연구도 아키하바라의 메이드 카페를 데이트 시뮬레이션 게임, 망가·애니, 캐릭터 감응이 물리적 서비스 공간으로 확장된 사례로 본다. Comic Market Preparatory Committee, 「Comic Market's Ideals and Vision」. <https://www.comiket.co.jp/info-c/IdealsAndVision.html> Morikawa Kaichiro, 「Learning from Akihabara: The Birth of a Personapolis」. <https://www.db-thueringen.de/servlets/MCRFileNodeServlet/dbt_derivate_00042811/morikawa_pdfa.pdf> Meiji University, 「Kaichiro Morikawa」. <https://www.meiji.ac.jp/cip/english/frontline/morikawa/index.html> Patrick W. Galbraith, 「Maid Cafés: The Affect of Fictional Characters in Akihabara, Japan」. <https://www.tandfonline.com/doi/abs/10.1080/1683478X.2013.854882>
 
 [^16]: 「유튜브뮤직에 뺏긴 안방…K-음원 플랫폼 이용 6년 연속 하락세」 — 서울경제. <https://www.sedaily.com/article/20055316>
 
