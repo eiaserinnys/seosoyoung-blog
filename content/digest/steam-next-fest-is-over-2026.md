@@ -1,5 +1,5 @@
 ---
-title: "Steam Next Fest는 끝났다 — MrAente의 진단과 그를 뒷받침하는 데이터"
+title: "Steam Next Fest는 끝났다: MrAente의 진단과 데이터"
 date: 2026-06-26T10:40:00+09:00
 tags: ["게임 산업", "Steam", "인디 게임", "게임 마케팅"]
 categories: ["다이제스트"]
@@ -18,11 +18,11 @@ TocOpen: false
 2. 핵심 논지는 두 가지다. 행사에 들어가기 전 이미 모멘텀(위시리스트, 외부 트래픽)을 갖춘 게임만 큰 수확을 가져가고, Top 50 밖이면 사실상 의미가 없다. 빈익빈 부익부 구조가 자리 잡았다.
 3. 같은 진단을 Chris Zukowski(데이터), GameDiscoverCo(데모 수 폭증), 그리고 여러 개별 개발자(포스트모템)가 독립적으로 확인한다. SNF는 발견 도구가 아니라 이미 가진 모멘텀의 증폭기로 재정의됐다.
 
-## MrAente의 진단 — "그 기차는 떠났다"
+## "그 기차는 떠났다"
 
 발단은 [MrAente의 트윗 타래](https://x.com/mraente/status/2069845235534827826)다. 그는 2026년 6월 SNF 기간 동안 동시접속(CCU) 상위 25개 데모를 추려 퍼블리셔, 스튜디오 규모, 제작 기간, 예산 티어별로 태그를 달았다.
 
-![Top 25 Demos · Budget Tier — Steam Next Fest June 2026](/images/steam-next-fest-is-over-2026/top25-demos-budget-tier.jpg)
+![Top 25 Demos · Budget Tier, Steam Next Fest June 2026](/images/steam-next-fest-is-over-2026/top25-demos-budget-tier.jpg)
 *상위 25개 데모를 예산 티어별로 색칠한 차트. 1위 BOMBANANA!(31,660 CCU)를 빼면 대부분 III\~AA 이상 규모이며, 순수 인디(연두색)는 상위권에서 빠르게 줄어든다. 출처: MrAente*
 
 그의 핵심 주장은 이렇다. 이 목록에는 바이럴 히트를 친 게임이나 이미 손이 강한 채로 들어온 게임, 혹은 행사 중 좋은 영상 콘텐츠를 뽑아낼 수 있는 게임만 남는다. 그저 데모를 올려둔 인디는 한 자리도 없다.
@@ -51,10 +51,10 @@ Project: Doors가 유일하게 크게 뛰었지만, Kirill은 이렇게 단서�
 
 반면 Top 50에 든 게임들의 위시리스트 수확은 차원이 다르다. Bombanana 23만+, Iron Nest: Heavy Turret Simulator 약 20만, Mistfall Hunter 약 15만, ReStory: Chill Electronics 약 10만, Nightwater 약 7만 5천. 결국 단물은 상위 25\~50위가 거의 다 가져간다.
 
-![Top 50 Tags — Steam Next Fest June 2026](/images/steam-next-fest-is-over-2026/top50-tags.png)
+![Top 50 Tags, Steam Next Fest June 2026](/images/steam-next-fest-is-over-2026/top50-tags.png)
 *상위 50개 데모에서 가장 많이 쓰인 태그. Co-op(13), Multiplayer(11)가 압도적이다. 이미 알고리즘과 시청자가 좋아하는 형태가 무엇인지 보여준다. 출처: MrAente*
 
-## 데이터가 말하는 것 — Chris Zukowski
+## 데이터가 말하는 것
 
 MrAente의 직관을 데이터로 가장 분명하게 받쳐주는 사람은 [How To Market A Game](https://howtomarketagame.com)의 Chris Zukowski다. 그는 회차마다 참가 게임을 서베이해 위시리스트 분포를 추적한다.
 
@@ -75,7 +75,7 @@ MrAente의 직관을 데이터로 가장 분명하게 받쳐주는 사람은 [Ho
 
 > 1,000 wishlists or less if your marketing is struggling. 2,000-3,000 wishlists for middle class games... 15,000 wishlists for the big boys who are at the top of their game. 30,000-45,000 wishlists for the breakout hits that 'win' next fest. (don't bet on doing this)
 
-가장 중요한 발견은 상관관계다. SNF에서 얻는 위시리스트와 가장 강하게 묶이는 변수는 행사 전에 이미 쌓아둔 위시리스트 총량이었다(Spearman r = 0.825).
+가장 중요한 발견은 상관관계다. SNF에서 얻는 위시리스트와 가장 강하게 묶이는 변수는 행사 전에 이미 쌓아둔 위시리스트 총량이었다(Spearman r = 0.825).{{< sn >}}Chris Zukowski, ["Benchmarks: How Many Wishlists Can I get From Steam Next Fest"](https://howtomarketagame.com/2025/03/26/benchmarks-how-many-wishlists-can-i-get-from-steam-next-fest/), How To Market A Game.{{< /sn >}}
 
 > In short, bigger games enter the event with more momentum and leave with even more.
 
@@ -93,9 +93,9 @@ MrAente의 직관을 데이터로 가장 분명하게 받쳐주는 사람은 [Ho
 
 > The festival rewards momentum you bring with you. It does not manufacture it.
 
-## 행사는 왜 포화됐나 — GameDiscoverCo
+## 행사는 왜 포화됐나
 
-[GameDiscoverCo](https://newsletter.gamediscover.co)의 Simon Carless는 참가 데모 수의 폭증을 회차마다 집계해 왔다. 숫자만 늘어놓아도 포화가 보인다.
+[GameDiscoverCo](https://newsletter.gamediscover.co)의 Simon Carless는 참가 데모 수의 폭증을 회차마다 집계해 왔다.{{< sn >}}Simon Carless, GameDiscoverCo: ["Which games hit big in Steam's Oct. 2024 Next Fest?"](https://newsletter.gamediscover.co/p/which-games-hit-big-in-steams-oct), ["Who 'won' June 2026's Steam Next Fest?"](https://newsletter.gamediscover.co/p/who-won-june-2026s-steam-next-fest).{{< /sn >}} 숫자만 늘어놓아도 포화가 보인다.
 
 | 시기 | 데모 수(근사) |
 |---|---|
@@ -137,7 +137,7 @@ AI 슬롭을 피하려 인기순으로 정렬하면, 그 순간 SNF의 본래 �
 
 공통점은 셋이다. SNF는 모멘텀의 증폭기이지 발견 도구가 아니다. Top 50 밖이면 곡선이 지수적으로 꺾인다. 외부 트래픽 없이는 알고리즘이 3일째부터 노출을 거둬간다.
 
-## TL;DR — MrAente의 권고
+## MrAente의 권고
 
 그의 타래는 다음 정리로 끝난다.
 
@@ -155,15 +155,3 @@ AI 슬롭을 피하려 인기순으로 정렬하면, 그 순간 SNF의 본래 �
 내가 가장 눈여겨본 지점은 "발견성의 역설"이다. SNF는 묻혀 있던 작은 게임을 발견시키려고 만든 행사다. 그런데 데모가 4\~5배로 불고 그중 5분의 1이 AI 슬롭이 되자, 플레이어는 살아남기 위해 인기순 정렬을 택한다. 그 순간 발견되는 건 이미 유명한 게임뿐이다. 도구가 자기 목적을 스스로 무너뜨리는 구조다.
 
 MrAente의 "끝났다"는 선언이 과장처럼 들릴 수도 있다. 그러나 Zukowski의 상관계수 0.825, GameDiscoverCo의 데모 수 곡선, 개발자들의 포스트모템이 모두 같은 방향을 가리킨다. 행사가 사라진 게 아니라, 행사의 의미가 "발견"에서 "이미 가진 것의 증폭"으로 옮겨갔다. 들어가기 전에 이긴 게임만 이기는 자리가 됐다는 것이다.
-
-## 출처
-
-- MrAente, "Steam Next Fest bitmiştir…" (트윗 타래, 2026.06) — 원문: <https://x.com/mraente/status/2069845235534827826>
-- Chris Zukowski, How To Market A Game — <https://howtomarketagame.com/2024/11/04/how-was-the-october-2024-steam-next-fest/>, <https://howtomarketagame.com/2026/04/13/making-sense-of-the-february-2026-steam-next-fest/>, <https://howtomarketagame.com/2025/03/26/benchmarks-how-many-wishlists-can-i-get-from-steam-next-fest/>
-- Simon Carless, GameDiscoverCo — <https://newsletter.gamediscover.co/p/which-games-hit-big-in-steams-oct>, <https://newsletter.gamediscover.co/p/who-won-june-2026s-steam-next-fest>
-- Engadget, "Around a fifth of Steam Next Fest demos have a generative AI disclosure" (2026.06) — <https://www.engadget.com/2195840/around-a-fifth-of-steam-next-fest-demos-have-a-generative-ai-disclosure/>
-- TechRaptor, "Over 500 Steam Next Fest Demos Disclosed Generative AI Usage" (2025.10) — <https://techraptor.net/gaming/news/over-500-steam-next-demos-disclosed-generative-ai-usage>
-- Kotaku, "Steam Next Fest Players And Devs Navigate Flood Of GenAI Junk" (2026.02) — <https://kotaku.com/steam-next-fest-feb-2026-gen-ai-art-demos-2000673280>
-- GamesRadar, Tom Francis 인터뷰 (2024.07) — <https://www.gamesradar.com/games/strategy/steam-next-fest-dev-describes-the-weird-arms-race-required-to-stand-out-from-the-hundreds-of-other-demos-in-the-seasonal-event/>
-- 개발자 포스트모템: Bramble Royale <https://slothwerks.substack.com/p/bramble-royale-steam-launch-retro>, Gravity Storm <https://jampley-dev.itch.io/gravity-storm-demo/devlog/968459/next-fest-recap-gravity-storm>, Tamzin Twins <https://funnergamesllc.itch.io/tamzin-twins/devlog/1521924/devlog-12-steam-next-fest-results>, Cellscape <https://mikroliv.substack.com/p/next-fest-follow-up>
-- 메타 분석: ziva.sh, "Steam Next Fest 2026: What the Data Actually Says" — <https://ziva.sh/blogs/steam-next-fest-2026>
