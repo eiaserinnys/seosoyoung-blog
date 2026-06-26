@@ -15,7 +15,7 @@ TocOpen: false
 ## 3줄 요약
 
 1. 터키 인디 개발자 MrAente가 2026년 6월 Steam Next Fest(SNF)의 동시접속 상위 게임들을 분석한 뒤 "SNF는 끝났다"고 선언했다. 기술적으로 행사가 사라진 건 아니지만, 데모 하나 올려두면 터진다는 시대는 지났다는 진단이다.
-2. 핵심 논지는 두 가지다. 행사에 들어가기 전 이미 모멘텀(위시리스트, 외부 트래픽)을 갖춘 게임만 큰 수확을 가져가고, Top 50 밖이면 사실상 의미가 없다. 빈익빈 부익부 구조가 굳었다.
+2. 핵심 논지는 두 가지다. 행사에 들어가기 전 이미 모멘텀(위시리스트, 외부 트래픽)을 갖춘 게임만 큰 수확을 가져가고, Top 50 밖이면 사실상 의미가 없다. 빈익빈 부익부 구조가 자리 잡았다.
 3. 같은 진단을 Chris Zukowski(데이터), GameDiscoverCo(데모 수 폭증), 그리고 여러 개별 개발자(포스트모템)가 독립적으로 확인한다. SNF는 발견 도구가 아니라 이미 가진 모멘텀의 증폭기로 재정의됐다.
 
 ## MrAente의 진단 — "그 기차는 떠났다"
@@ -56,7 +56,7 @@ Project: Doors가 유일하게 크게 뛰었지만, Kirill은 이렇게 단서�
 
 ## 데이터가 말하는 것 — Chris Zukowski
 
-MrAente의 직관을 가장 단단한 숫자로 받쳐주는 사람은 [How To Market A Game](https://howtomarketagame.com)의 Chris Zukowski다. 그는 회차마다 참가 게임을 서베이해 위시리스트 분포를 추적한다.
+MrAente의 직관을 데이터로 가장 분명하게 받쳐주는 사람은 [How To Market A Game](https://howtomarketagame.com)의 Chris Zukowski다. 그는 회차마다 참가 게임을 서베이해 위시리스트 분포를 추적한다.
 
 [2024년 10월 SNF 분석](https://howtomarketagame.com/2024/11/04/how-was-the-october-2024-steam-next-fest/)에서 그는 알고리즘 개편의 효과를 이렇게 요약했다.
 
@@ -86,6 +86,9 @@ MrAente의 직관을 가장 단단한 숫자로 받쳐주는 사람은 [How To M
 | 10,000\~99,999 (n=36) | 5,215 |
 | 100,000+ (n=7) | 12,882 |
 
+![진입 전 위시리스트 구간별 SNF 중 획득 위시리스트 중앙값](/images/steam-next-fest-is-over-2026/wishlist-rich-get-richer.png)
+*행사 전 보유 위시리스트가 많을수록 SNF에서 더 많이 가져간다. 0\~999 구간은 중앙값 322개에 그치지만 10만+ 구간은 12,882개. 데이터: How To Market A Game*
+
 차갑게 진입한 게임이 95th percentile로 올라갈 확률은 [한 메타 분석](https://ziva.sh/blogs/steam-next-fest-2026)의 표현을 빌리면 약 20분의 1이다. 그 글의 한 문장이 MrAente의 진단과 정확히 겹친다.
 
 > The festival rewards momentum you bring with you. It does not manufacture it.
@@ -103,6 +106,9 @@ MrAente의 직관을 가장 단단한 숫자로 받쳐주는 사람은 [How To M
 | October 2025 | 약 2,960 |
 | February 2026 | 3,500+ |
 | June 2026 | 4,300+ (등록 기준 8,700) |
+
+![Steam Next Fest 참가 데모 수 추이 2023-2026](/images/steam-next-fest-is-over-2026/demo-count-growth.png)
+*참가 데모 수는 회차마다 사상 최대를 갱신해 왔다. 같은 노출 공간을 두고 경쟁하는 게임만 늘었다. 데이터: GameDiscoverCo*
 
 3년 만에 4\~5배다. Carless는 이 폭증의 이유를 대형 개발사들의 인식 변화에서 찾는다.
 
