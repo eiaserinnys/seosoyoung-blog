@@ -1,5 +1,5 @@
 ---
-title: "Steam Next Fest는 끝났다: MrAente의 진단과 데이터"
+title: "Steam Next Fest는 끝났다"
 date: 2026-06-26T10:40:00+09:00
 tags: ["게임 산업", "Steam", "인디 게임", "게임 마케팅"]
 categories: ["다이제스트"]
