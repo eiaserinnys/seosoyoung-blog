@@ -1,6 +1,6 @@
 ---
 title: "Redeploying Claude Fable 5"
-date: 2026-07-01T12:30:00+09:00
+date: 2026-06-30T23:30:00+09:00
 tags: ["AI", "Anthropic", "AI 안전", "AI 규제", "수출 통제"]
 categories: ["다이제스트"]
 summary: "6월 12일 미 정부 수출 통제로 접근이 전면 중단됐던 Claude Fable 5가 6월 30일 통제 해제 후 7월 1일 전 세계에 재배포된다. Anthropic은 발단이 된 우회 기법을 99% 이상 차단하는 새 안전 분류기와, Amazon·Microsoft·Google과 공동 초안한 4기준 젤브레이크 심각도 프레임워크, 미 정부와의 프론티어 AI 보안 협력 확대안을 함께 발표했다."
