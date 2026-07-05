@@ -3,7 +3,7 @@ title: "Unreal Engine: 1000 NPCs In Multiplayer Without Network Saturation"
 date: 2026-07-05T08:00:00+09:00
 tags: ["게임", "Unreal Engine", "멀티플레이어", "네트워크 최적화", "게임 개발"]
 categories: ["다이제스트"]
-summary: "언리얼 엔진에서 서버가 NPC 위치를 매 tick 전송하는 대신 움직임을 movement segment로 기술해 1000개 이상의 NPC를 처리한 Vladimir Khanin의 실험을 Jettelly가 정리했다."
+summary: "dead reckoning·snapshot interpolation 계열의 오래된 네트워크 동기화 원리를 언리얼 엔진 1,000+ NPC 스케일에 맞춰 튜닝한 Vladimir Khanin의 실증을 Jettelly가 정리했다."
 ShowToc: true
 TocOpen: false
 cover:
@@ -48,9 +48,13 @@ Khanin이 특히 강조한 부분은 <em>데이터가 어떻게 분배되는가<
 
 ## 가장 흥미로운 지점
 
-내가 눈여겨본 것은 replication의 대상이 <em>상태</em>에서 <em>의도</em>로 옮겨졌다는 점이다. 일반적인 네트워크 게임은 "지금 여기 있다"를 반복해서 알리는 반면, Khanin의 접근은 "이만큼의 시간 동안 이렇게 갈 것이다"를 한 번 알린다. 결과적으로 클라이언트는 서버가 침묵하는 프레임에도 확정된 궤적을 스스로 재생할 수 있고, 서버는 새 계획이 생겼을 때만 말을 걸면 된다.
+먼저 계보를 정리해 두는 편이 정확하겠다. 이 방식은 FPS 엔진 네트워크 동기화의 <em>기본기</em>다. 서버가 매 tick 위치를 보내지 않고 방향·속도·시간을 보내면 클라이언트가 자체 시뮬레이션하는 <strong>dead reckoning</strong>, 서버 snapshot 사이를 클라이언트가 보간하는 <strong>snapshot interpolation</strong>, 상태 전체 대신 변경분만 보내는 <strong>delta encoding</strong> — 1990년대 밀리터리 시뮬레이션에서 Quake·Half-Life·Overwatch로 넘어오며 이미 정립된 계보다. Khanin의 실험은 그 원리를 새로 만든 것이 아니라, <em>1,000+ NPC 스케일에 맞춰 튜닝한 실증</em>으로 읽는 것이 정직하다.
 
-수평 이동과 수직 오프셋을 분리한 것도 실전 감각이 묻은 결정으로 보인다. 계단·경사·점프처럼 수직축이 급변하는 상황을 수평 궤적과 같은 예산으로 뭉치면 압축·양자화 손실이 커지는데, 분리해 두면 각 축의 정밀도를 상황에 맞게 다르게 잡을 수 있다.
+그 위에서 눈여겨본 실전 감각의 결정 두 가지.
+
+첫째, <strong>수평 이동과 수직 오프셋의 분리</strong>. 계단·경사·점프처럼 수직축이 급변하는 상황을 수평 궤적과 같은 예산으로 뭉치면 압축·양자화 손실이 커지는데, 분리해 두면 축별 정밀도를 상황에 맞게 다르게 잡을 수 있다.
+
+둘째, <strong>매 tick 전체가 아닌 부분 전송 스케줄링</strong>과 <strong>정지 NPC 트래픽 무</strong>. 대역폭 총량을 NPC 개수가 아니라 "실제로 상태가 바뀐 NPC의 수 × 부분 전송 주기"로 다시 묶는다. 스케일이 커질수록 이 재정의가 결정적이 된다.
 
 한계도 함께 눈에 들어온다. segment가 재생되는 동안 서버 측 물리·AI가 궤도를 급변경해야 하는 상황(플레이어 개입, 근접 회피 등)에서는 identifier로 새 segment를 교체하는 지연이 체감될 수 있다. 원문은 정지 NPC의 트래픽 절감과 부분 전송으로 얻는 이득을 강조하지만, 반응성이 중요한 상호작용까지 이 구조가 그대로 확장되는지는 다루지 않는다.
 
