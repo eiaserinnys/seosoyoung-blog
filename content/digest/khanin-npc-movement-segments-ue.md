@@ -1,6 +1,6 @@
 ---
 title: "Unreal Engine: 1000 NPCs In Multiplayer Without Network Saturation"
-date: 2026-07-05T17:30:00+09:00
+date: 2026-07-05T08:00:00+09:00
 tags: ["게임", "Unreal Engine", "멀티플레이어", "네트워크 최적화", "게임 개발"]
 categories: ["다이제스트"]
 summary: "언리얼 엔진에서 서버가 NPC 위치를 매 tick 전송하는 대신 움직임을 movement segment로 기술해 1000개 이상의 NPC를 처리한 Vladimir Khanin의 실험을 Jettelly가 정리했다."
