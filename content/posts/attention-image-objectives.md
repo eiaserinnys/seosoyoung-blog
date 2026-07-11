@@ -111,14 +111,14 @@ images:
 
 ### 3. Aesthetic: 미적으로 좋은가
 
-Datta와 Ke(2006)가 열고 AVA 데이터셋(2012, 25만 장에 5,500만 평점)이 표준을 세웠다. NIMA(2018)가 평점 분포를 예측하는 아이디어로 IQA 표준을 만들었지만, 실질적 영향력이 가장 큰 물건은 <strong>LAION-Aesthetics Predictor V2</strong>(2022)다. CLIP 임베딩에 선형 레이어 하나를 얹은 소박한 구조인데, 이것이 LAION-5B 필터링을 거치며 <strong>Stable Diffusion의 "예쁨 편향"의 근원</strong>이 됐다.{{< sn >}}CLIP 임베딩을 선형 레이어로 1~10점에 매핑하는 단순 예측기. LAION-5B의 미적 필터링에 쓰여 생성 모델의 톤 편향으로 이어졌다. [improved-aesthetic-predictor](https://github.com/christophschuhmann/improved-aesthetic-predictor) (Schuhmann, 2022).{{< /sn >}} 지금 SD 생성물이 특정 톤에 쏠리는 이유가 이 예측기의 라벨 분포에 있다.
+Datta와 Ke(2006)가 열고 AVA 데이터셋(2012, 25만 장에 5,500만 평점)이 표준을 세웠다. NIMA(2018)가 평점 분포를 예측하는 아이디어로 IQA 표준을 만들었지만, 실질적 영향력이 가장 큰 물건은 <strong>LAION-Aesthetics Predictor V2</strong>(2022)다. CLIP 임베딩에 선형 레이어 하나를 얹은 소박한 구조인데, 이것이 LAION-5B 필터링을 거치며 <strong>Stable Diffusion의 "예쁨 편향"의 근원</strong>이 됐다.{{< sn >}}CLIP 임베딩을 선형 레이어로 1점에서 10점에 매핑하는 단순 예측기. LAION-5B의 미적 필터링에 쓰여 생성 모델의 톤 편향으로 이어졌다. [improved-aesthetic-predictor](https://github.com/christophschuhmann/improved-aesthetic-predictor) (Schuhmann, 2022).{{< /sn >}} 지금 SD 생성물이 특정 톤에 쏠리는 이유가 이 예측기의 라벨 분포에 있다.
 
 <figure>
 <img src="/images/attention-image-objectives/aes-nima-ava-ranking.png" alt="풍경 사진을 NIMA 예측 미감 점수 순으로 늘어놓은 결과" style="width:100%;border-radius:8px;">
 <figcaption>같은 소재의 풍경 사진 15장을 NIMA가 매긴 예측 미감 점수 순으로 늘어놓은 결과. 사진마다 예측 점수가 붙어 6.38에서 3.55까지 내려간다. 미감을 숫자로 매기는 일이 실제로 가능함을 보여준다. 출처: Talebi &amp; Milanfar, NIMA (2018), Fig. 10.</figcaption>
 </figure>
 
-최근(2023~2026)은 언어와 비전 결합 쪽으로 넘어갔다. CLIP-IQA(2023)는 "고품질 대 저품질" 반의어 프롬프트의 softmax를 점수로 쓰고, Q-Align(2024)은 연속 점수 회귀 대신 Bad~Excellent 이산 레벨로 파인튜닝하는 편이 인간 평가와 더 맞는다는 걸 보였다.{{< sn >}}Q-Align: Teaching LMMs for Visual Scoring via Discrete Text-Defined Levels. [arXiv:2312.17090](https://arxiv.org/abs/2312.17090), ICML 2024.{{< /sn >}} 한편 FAccT 2026 감사 연구는 LAION 예측기의 서구권 스톡사진 편향과 특정 집단 이미지 필터링을 실증하며, 규범적 미적 척도 대신 다원적 평가를 요구했다.
+최근 몇 해(2023년 이후)는 언어와 비전 결합 쪽으로 넘어갔다. CLIP-IQA(2023)는 "고품질 대 저품질" 반의어 프롬프트의 softmax를 점수로 쓰고, Q-Align(2024)은 연속 점수 회귀 대신 Bad에서 Excellent까지의 이산 레벨로 파인튜닝하는 편이 인간 평가와 더 맞는다는 걸 보였다.{{< sn >}}Q-Align: Teaching LMMs for Visual Scoring via Discrete Text-Defined Levels. [arXiv:2312.17090](https://arxiv.org/abs/2312.17090), ICML 2024.{{< /sn >}} 한편 FAccT 2026 감사 연구는 LAION 예측기의 서구권 스톡사진 편향과 특정 집단 이미지 필터링을 실증하며, 규범적 미적 척도 대신 다원적 평가를 요구했다.
 
 <figure>
 <img src="/images/attention-image-objectives/aes-qalign-levels.png" alt="텍스트 레벨 기반으로 미감을 학습시키는 Q-Align 도식" style="width:100%;border-radius:8px;">

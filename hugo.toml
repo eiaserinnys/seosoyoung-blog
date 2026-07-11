@@ -45,6 +45,12 @@ paginate = 10
     [markup.goldmark.renderer]
       unsafe = true
     [markup.goldmark.extensions]
+      # 취소선(GFM strikethrough) 비활성화.
+      # goldmark는 단일 물결표(~)도 취소선 구분자로 인식하므로
+      # "2023~2026", "Bad~Excellent" 같은 한국어 범위 표기의 물결표 두 개가
+      # 한 문단 안에서 <del>로 잘못 페어링되어 취소선 깨짐을 일으킨다.
+      # 블로그 전체에서 의도적 취소선을 쓰는 글이 없으므로 엔진 레벨에서 끈다.
+      strikethrough = false
       [markup.goldmark.extensions.passthrough]
         enable = true
         [markup.goldmark.extensions.passthrough.delimiters]
