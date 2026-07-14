@@ -20,7 +20,7 @@ images:
 
 ## 도입 — AGI 임박과 새 시대의 여명
 
-Hassabis는 이 순간을 "인류 역사의 pivotal moment"로 규정하며 시작한다. 인간 두뇌의 모든 인지 능력을 발휘하는 시스템으로 정의한 AGI가 *probably only a few short years away* 있다고 단언한다. 몇십 년 후 지금 이 시기를 돌아보면 "특이점의 기슭"에 서 있었음을 깨닫게 될 것이라 표현한다.
+Hassabis는 이 순간을 "인류 역사의 결정적 순간(pivotal moment)"으로 규정하며 시작한다. 인간 두뇌의 모든 인지 능력을 발휘하는 시스템으로 정의한 AGI가 "몇 년밖에 남지 않았을 것(probably only a few short years away)"이라고 단언한다. 몇십 년 후 지금 이 시기를 돌아보면 "특이점의 기슭"에 서 있었음을 깨닫게 될 것이라 표현한다.
 
 AGI를 표준 기술 도약과 비교하는 대목의 은유가 강렬하다.
 
@@ -28,17 +28,17 @@ AGI를 표준 기술 도약과 비교하는 대목의 은유가 강렬하다.
 
 인터넷·모바일이 아니라 전기나 불의 발견에 비견되는 사건이며, "모래가 생각하게 만드는 방법을 찾은 것"이라는 표현이 나온다.
 
-임팩트의 규모와 속도 예측은 구체적이다. **산업혁명의 10배 규모, 10배 속도.** 신약 개발 가속, 청정 에너지 개발, 신소재 창출이 사례로 꼽히며, 최종적으로 자원이 더는 인류 진보의 병목이 아닌 지점, 즉 abundance의 시대에 도달할 수 있다고 본다.
+임팩트의 규모와 속도 예측은 구체적이다. **산업혁명의 10배 규모, 10배 속도.** 신약 개발 가속, 청정 에너지 개발, 신소재 창출이 사례로 꼽히며, 최종적으로 자원이 더는 인류 진보의 병목이 아닌 지점, 즉 풍요(abundance)의 새 시대에 도달할 수 있다고 본다.
 
 ## 프론티어의 위험
 
-낙관에 곧바로 위험 목록이 이어진다. AI는 이미 사이버 보안 위협을 낳고 있고, 능력이 진전됨에 따라 핵·바이오 위험도 부상할 수 있다. 지평선 너머에는 점점 agentic해지고 재귀적으로 자기 자신을 개선하는 시스템의 통제 유지 문제가 있다. 시간이 지나야 명확해질 unknown issue도 존재한다.
+낙관에 곧바로 위험 목록이 이어진다. AI는 이미 사이버 보안 위협을 낳고 있고, 능력이 진전됨에 따라 핵·바이오 위험도 부상할 수 있다. 지평선 너머에는 점점 에이전트화되고 재귀적으로 자기 자신을 개선하는 시스템의 통제 유지 문제가 있다. 시간이 지나야 명확해질 미지의 문제(unknown issue)도 존재한다.
 
-Hassabis는 기술적 위험 완화는 인간 창의력으로 해결 가능하다고 낙관하지만, 조건을 붙인다 — *only if we give ourselves the time and space to get this next crucial step right*. 그리고 곧바로 진단한다.
+Hassabis는 기술적 위험 완화는 인간 창의력으로 해결 가능하다고 낙관하지만, 조건을 붙인다 — *다음의 결정적 단계를 제대로 밟을 시간과 공간을 스스로에게 부여할 때에만 가능하다*. 그리고 곧바로 진단한다.
 
 > Currently, as a field and as a wider society, we aren't doing that.
 
-지금 우리는 다층적이고 격렬한 상업·지정학적 경쟁에 갇혀 있다. 이 경쟁은 진보를 가속하는 동시에, 프론티어의 진보가 기술 자체에 대한 우리의 이해 속도를 앞질러 버리는 상태를 만든다. 전문가끼리도 의견이 엇갈릴 만큼 불확실성이 크고 판돈은 최고 수준이다. 이 조건에서는 **cautious optimism**이 합리적이고 옳은 전략이라고 결론짓는다.
+지금 우리는 다층적이고 격렬한 상업·지정학적 경쟁에 갇혀 있다. 이 경쟁은 진보를 가속하는 동시에, 프론티어의 진보가 기술 자체에 대한 우리의 이해 속도를 앞질러 버리는 상태를 만든다. 전문가끼리도 의견이 엇갈릴 만큼 불확실성이 크고 판돈은 최고 수준이다. 이 조건에서는 <strong>신중한 낙관(cautious optimism)</strong>이 합리적이고 옳은 전략이라고 결론짓는다.
 
 그런 조건에서 요구되는 공공 정책은 세 가지다. 혁신을 촉진하면서도 책임과 보안에 인센티브를 주고, 핵심 안전 이슈에 대한 국제 협력을 육성하며, AI가 사회의 이익을 위해 어떻게 배포될지 신중히 고려하는 정책.
 
@@ -77,14 +77,14 @@ Frontier Lab 지정 자체가 상당한 프레스티지를 수반하며, 벤치�
 
 ### 평가 대상과 방법
 
-모델 평가는 사이버 보안, 생물학적 위협, 기타 고위험 도메인에서 엄격한 과학적 검증을 포함한다. agentic AI에는 특정한 테스트가 필요하다.
+모델 평가는 사이버 보안, 생물학적 위협, 기타 고위험 도메인에서 엄격한 과학적 검증을 포함한다. 에이전트형 AI(agentic AI)에는 특정한 테스트가 필요하다.
 
 - 안전 가드레일 우회 시도 탐지
 - 기만(deception) 신호 탐지
 - AI 생성 이미지의 디지털 워터마킹
-- 사람이 읽을 수 있는 human-readable output token으로 모델 추론 이해
+- 사람이 읽을 수 있는 출력 토큰(human-readable output token)으로 모델 추론 이해
 
-평가는 정기적으로 갱신되며, 시작 시점에는 분기별을 상정한다. 낡거나 포화된 벤치마크는 폐기·교체된다. 초기 벤치마크는 Frontier Labs와 협의해 개발하되, 궁극적으로 표준 기구가 자체 held-out 테스트를 만들 기술 역량을 갖춰 오버피팅을 방지해야 한다. 미국 정부와 협력하여 서드파티 감사 생태계도 촉진한다.
+평가는 정기적으로 갱신되며, 시작 시점에는 분기별을 상정한다. 낡거나 포화된 벤치마크는 폐기·교체된다. 초기 벤치마크는 Frontier Labs와 협의해 개발하되, 궁극적으로 표준 기구가 자체 유지 테스트(held-out test)를 만들 기술 역량을 갖춰 오버피팅을 방지해야 한다. 미국 정부와 협력하여 서드파티 감사 생태계도 촉진한다.
 
 ### 슬로우다운 조율 권한과 국제 확산
 
@@ -92,7 +92,7 @@ Frontier Lab 지정 자체가 상당한 프레스티지를 수반하며, 벤치�
 
 > ...it could be ratcheted up if the seriousness of the situation demands, including coordinating a slowdown in development among the Frontier Labs if deemed necessary.
 
-**Frontier Labs 사이의 개발 슬로우다운을 조율하는 권한**이 명시적으로 프레임워크에 포함되어 있다. 프레임워크는 원산지 국가나 open/closed 여부에 관계없이 Frontier-class 모델에 적용되며, 스타트업·학계의 비프론티어 모델은 면제된다.
+<strong>Frontier Labs 사이의 개발 슬로우다운을 조율하는 권한</strong>이 명시적으로 프레임워크에 포함되어 있다. 프레임워크는 원산지 국가나 오픈/클로즈드(open/closed) 여부에 관계없이 Frontier-class 모델에 적용되며, 스타트업·학계의 비프론티어 모델은 면제된다.
 
 마지막 문단에서 그는 이것이 국제 표준의 출발점이 되어야 한다고 말한다. 이 기술이 지구 전체에 영향을 미치므로, 가장 심각한 위험을 관리하는 방법과 모두가 기회에 접근·수혜할 수 있도록 하는 방법에 대한 국제 합의를 이 프레임워크가 촉발하기를 기대한다는 것이다.
 
@@ -102,7 +102,7 @@ Hassabis는 마지막 섹션에서 톤을 바꾼다. 기술적 도전을 해결�
 
 > Even if we solve these hard technical challenges, there will be further complex economic and philosophical questions to tackle: what sorts of new economic models will be needed to help everyone thrive in a post-scarcity world? What values do we want to live by, what will meaning and purpose be, and how might even the human condition itself change?
 
-post-scarcity 세계에서 모두가 번영할 수 있는 새 경제 모델은 무엇인가. 우리는 어떤 가치를 살아갈 것인가. 의미와 목적은 무엇이 될 것인가. 인간 조건 자체는 어떻게 바뀔 것인가.
+결핍이 사라진(post-scarcity) 세계에서 모두가 번영할 수 있는 새 경제 모델은 무엇인가. 우리는 어떤 가치를 살아갈 것인가. 의미와 목적은 무엇이 될 것인가. 인간 조건 자체는 어떻게 바뀔 것인가.
 
 그리고 이 질문의 해답을 기술자에게만 맡길 수 없고, 또 그래서도 안 된다고 명시한다. 사회 전체가 함께 새 챕터를 정의해야 한다.
 
@@ -110,7 +110,7 @@ post-scarcity 세계에서 모두가 번영할 수 있는 새 경제 모델은 �
 
 > There is both huge excitement and uncertainty around AI, and both are warranted. But the future is not yet written, we must use this precious window before AGI arrives to shape this technology for the benefit of all humanity.
 
-AI를 둘러싼 거대한 흥분과 불확실성은 둘 다 정당하지만, 미래는 아직 쓰이지 않았다. AGI 도착 전의 이 precious window를 인류 전체의 이익을 위해 사용해야 한다는 요청으로 아티클을 닫는다.
+AI를 둘러싼 거대한 흥분과 불확실성은 둘 다 정당하지만, 미래는 아직 쓰이지 않았다. AGI 도착 전의 이 소중한 창(precious window)을 인류 전체의 이익을 위해 사용해야 한다는 요청으로 아티클을 닫는다.
 
 ## 가장 흥미로운 지점
 
@@ -120,7 +120,7 @@ AI를 둘러싼 거대한 흥분과 불확실성은 둘 다 정당하지만, 미
 
 또 하나 눈여겨본 것은 "슬로우다운 조율 권한"을 프레임워크에 명시적으로 넣었다는 점이다. AI 개발 슬로우다운은 오랫동안 안전 진영의 요구였지만, 프론티어 랩 최상위 인물이 자신이 제안하는 표준 기구의 권한 안에 이 항목을 공식으로 넣은 것은 다른 층위의 신호로 읽힌다. 필요 시 발동 가능한 브레이크를 자기 손이 닿는 거리에 두자는 제안인 셈이다.
 
-이 아티클을 axios가 "US-led global AI watchdog을 연말 전에"라는 헤드라인으로 요약한 것도 톤을 잘 잡았다. Hassabis는 국제 표준을 궁극 목표로 두지만, 출발점은 미국의 리더십이라고 못 박는다 — 중국을 포함한 지정학적 경쟁을 정면에서 다루지 않은 채로.
+이 아티클을 Axios가 "미국이 이끄는 글로벌 AI 감시기구를 연말 전에"라는 헤드라인으로 요약한 것도 톤을 잘 잡았다. Hassabis는 국제 표준을 궁극 목표로 두지만, 출발점은 미국의 리더십이라고 분명히 한다 — 중국을 포함한 지정학적 경쟁을 정면에서 다루지 않은 채로.
 
 ## 출처
 
