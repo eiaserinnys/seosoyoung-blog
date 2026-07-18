@@ -64,6 +64,12 @@ TocOpen: false
 
 저자가 진짜 가치를 포착할 것으로 보는 기업의 조건은 세 가지다. 이미 거대한 기반을 가지고 있고, 그 안에서 데이터가 계속 나오며, 현장 도메인 지식이 깊은 회사. 히타치가 Lumada 사업을 그룹 매출의 상당 부분까지 끌어올리는 것을 이미 그 방향으로 움직이는 증거로 든다.
 
+## 이 흐름에는 이미 이름이 있다: 서비타이제이션
+
+저자의 관찰은 새로운 발견이라기보다, 학계와 기관투자자가 오래전에 이름을 붙여 둔 흐름에 가깝다. 제품에 서비스를 얹어 파는 전환을 경영학에서는 '서비타이제이션(servitization)'이라 부르는데, 이 용어는 1988년 반더머베와 라다가 《European Management Journal》에 실은 「Servitization of Business」에서 처음 제시됐고 지금까지 2,600회 넘게 인용됐다. 가장 오래된 실증 사례는 저자의 논지보다 앞선다. 롤스로이스는 1960년대부터 'Power by the Hour(시간당 과금)' 모델로 엔진이라는 하드웨어가 아니라 보장된 비행 시간을 팔았고, 지금의 TotalCare 계약도 엔진의 정비와 관리 책임을 제조사가 계속 떠안은 채 가동 그 자체를 판다. 저자가 든 미츠비시중공업의 TOMONI, 다이킨의 공조 서비스와 정확히 같은 구조다. 기관투자자들이 이런 기업의 애프터마켓과 설치 기반(installed base) 매출을 오래전부터 높게 평가해 온 이유도, 반복적이고 마진 높은 운영 매출이 경기를 덜 타기 때문이다.
+
+다만 진지한 문헌은 저자가 건너뛴 함정에도 이름을 붙여 두었다. '서비스 패러독스(service paradox)'다. 게바우어, 플라이시, 프리들리가 2005년 같은 저널에서 설비 제조사 30곳 이상을 분석해 정리한 개념으로, 서비스 사업을 키우려 큰돈을 넣으면 서비스 항목과 비용은 늘어나지만 기대만큼의 수익은 따라오지 않더라는 것이다. 가장 뼈아픈 반례는 저자가 승자의 조건으로 꼽은 바로 그 프로필 안에 있다. GE는 거대한 설치 기반, 터빈과 엔진에서 쏟아지는 데이터, 깊은 현장 지식이라는 세 조건을 모두 갖추고도, 2010년대에 산업용 IoT 플랫폼 Predix에 70억 달러가 넘는 돈을 쏟아부었다가 완전한 실패로 평가받았고, 이는 2024년 GE 그룹 해체의 주요 원인 중 하나로 꼽힌다. 포레스터의 진단은 짧다. 산업 제품 기업이 소프트웨어 플랫폼 사업을 세우는 일은 결코 쉽지 않다는 것이다. 그러니 저자가 그린 방향 자체는 옳고 오래됐지만, 세 개의 필터가 놓치는 것은 데이터와 설치 기반을 확보하는 것이 필요조건일 뿐 충분조건과는 거리가 멀다는 점이다. 해자로 들어가는 입구와 돈 먹는 늪으로 들어가는 입구가 같은 자리에 있다.
+
 ## 가장 눈여겨본 대목
 
 내가 곱씹은 것은 인과의 방향을 뒤집은 문장이다. 흔히 "AI가 와서 일본의 절약 기술이 주목받는다"고 말하지만, 저자는 "일본은 원래 시스템을 만들어놨고 AI가 거기 올라탔을 뿐"이라고 뒤집는다. 자원이 없어 허투루 쓰는 것을 허용하지 않았던 생존 전략이, AI 시대에 와서 필승 전략으로 전환되고 있다는 관점이다.
@@ -75,3 +81,11 @@ TocOpen: false
 저자: TheObserverLee(@theobserverlee)
 발표일: 2026년 7월 17일 (X 아티클)
 원문: <https://x.com/theobserverlee/status/2078106960235278426>
+
+### 보강 자료 (편집자 추가)
+
+- 서비타이제이션 개념의 출처: Vandermerwe, S. & Rada, J. (1988). "Servitization of Business: Adding Value by Adding Services." *European Management Journal.* DOI: 10.1016/0263-2373(88)90033-3
+- 서비스 패러독스: Gebauer, H., Fleisch, E. & Friedli, T. (2005). "Overcoming the Service Paradox in Manufacturing Companies." *European Management Journal.* DOI: 10.1016/j.emj.2004.12.006
+- 롤스로이스 TotalCare(Power by the Hour): <https://www.rolls-royce.com/media/our-stories/discover/2017/totalcare.aspx>
+- GE Predix 실패와 GE 해체: <https://en.wikipedia.org/wiki/Predix_(software)> · WSJ, "The Dimming of GE's Bold Digital Dreams"(2020)
+- GE의 소프트웨어 플랫폼 전환 난항(포레스터 진단): <https://www.computerweekly.com/feature/Lessons-from-GEs-flight-to-digital-platforms>
