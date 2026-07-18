@@ -73,6 +73,8 @@ sidenotes: true
 
 다만 문헌은 저자가 건너뛴 함정에도 이름을 붙여 뒀다. '서비스 패러독스(service paradox)'로, 게바우어 등이 2005년 설비 제조사 30곳 이상에서 서비스에 큰돈을 넣어도 비용만 늘고 기대한 수익은 따라오지 않더라고 정리한 현상이다.{{< sn >}}Gebauer, H., Fleisch, E. & Friedli, T. (2005). "Overcoming the Service Paradox in Manufacturing Companies." *European Management Journal.* DOI: 10.1016/j.emj.2004.12.006{{< /sn >}} 가장 뼈아픈 반례는 저자가 승자의 조건으로 꼽은 프로필 안에도 있다. GE는 거대한 설치 기반과 터빈, 엔진에서 쏟아지는 데이터, 깊은 현장 지식을 모두 갖추고도 산업용 IoT 플랫폼 Predix에 70억 달러 넘게 쏟았다가 실패해, 2024년 GE 그룹 해체의 주요 원인 중 하나로 꼽혔다.{{< sn >}}Predix는 GE가 70억 달러 이상을 투입한 산업용 IoT 플랫폼으로, 널리 실패로 평가되며 2024년 GE 그룹 해체의 한 요인으로 꼽힌다. [Predix (Wikipedia)](<https://en.wikipedia.org/wiki/Predix_(software)>) · WSJ, "The Dimming of GE's Bold Digital Dreams"(2020) · [포레스터 진단, Computer Weekly](https://www.computerweekly.com/feature/Lessons-from-GEs-flight-to-digital-platforms){{< /sn >}} 데이터와 설치 기반을 확보하는 것은 필요조건일 뿐 충분조건과는 거리가 멀다.
 
+흥미롭게도 이 함정을 피해가는 충분조건은 저자가 진짜 가치를 포착할 것으로 보는 기업의 세 가지 조건에 넣지 않았다. 자원을 허투루 쓰지 않고 운영을 파고드는 규율, 저자가 일본 제조업의 뿌리로 든 '아끼는 정신'이다. 단순히 비용을 아끼는 문제가 아니라, 비용을 아끼기 위해서 무엇을 측정하고 언제 어떤 행동을 해야 하는지 축적된 경험이 네 번째 충분조건인 셈이다.
+
 ## 가장 눈여겨본 대목
 
 내가 곱씹은 것은 인과의 방향을 뒤집은 문장이다. 흔히 "AI가 와서 일본의 절약 기술이 주목받는다"고 말하지만, 저자는 "일본은 원래 시스템을 만들어놨고 AI가 거기 올라탔을 뿐"이라고 뒤집는다. 자원이 없어 허투루 쓰는 것을 허용하지 않았던 생존 전략이, AI 시대에 와서 필승 전략으로 전환되고 있다는 관점이다.
