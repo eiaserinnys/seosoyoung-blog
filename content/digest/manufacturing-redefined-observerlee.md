@@ -10,6 +10,7 @@ images:
   - "/images/manufacturing-redefined-observerlee/cover.jpg"
 ShowToc: true
 TocOpen: false
+sidenotes: true
 ---
 
 트위터 유저 [TheObserverLee(@theobserverlee)](https://x.com/theobserverlee)가 2026년 7월 17일 X 아티클로 올린 「제조업은 어떻게 다시 정의되고 있는가」를 정리했다. 앞서 쓴 글(데이터센터의 전력·물 문제와 일본의 냉각 기술)에서 이어지는 후속편으로, 이번에는 "제품을 파는 시대는 끝났다"는 문장으로 시작한다. 아래 정리에는 저자가 같은 날 타래로 덧붙인 보충 논지도 함께 담았다.
@@ -66,11 +67,11 @@ TocOpen: false
 
 ## 이 흐름에는 이미 이름이 있다
 
-저자의 관찰에는 이미 이름이 있다. 제품에 서비스를 얹어 파는 전환을 경영학에서는 '서비타이제이션(servitization)'이라 부르고, 1988년 반더머베와 라다가 《European Management Journal》에서 제시한 개념이다. 롤스로이스가 1960년대부터 'Power by the Hour' 모델로 엔진이 아니라 보장된 비행 시간을 팔아 온 것이, 저자가 든 미츠비시중공업의 TOMONI, 다이킨의 공조 서비스와 같은 구조다.
+저자의 관찰에는 이미 이름이 있다. 제품에 서비스를 얹어 파는 전환을 경영학에서는 '서비타이제이션(servitization)'이라 부르고, 1988년 반더머베와 라다가 《European Management Journal》에서 제시한 개념이다.{{< sn >}}Vandermerwe, S. & Rada, J. (1988). "Servitization of Business: Adding Value by Adding Services." *European Management Journal.* DOI: 10.1016/0263-2373(88)90033-3{{< /sn >}} 롤스로이스가 1960년대부터 'Power by the Hour' 모델로 엔진이 아니라 보장된 비행 시간을 팔아 온 것이,{{< sn >}}롤스로이스 TotalCare(Power by the Hour) 순환형 서비스 계약. [rolls-royce.com](https://www.rolls-royce.com/media/our-stories/discover/2017/totalcare.aspx){{< /sn >}} 저자가 든 미츠비시중공업의 TOMONI, 다이킨의 공조 서비스와 같은 구조다.
 
-저자가 새로 얹은 통찰은 이 오래된 흐름이 AI를 만나 가속된다는 점이다. 그 기반에는 커스텀 장비의 제어 소프트웨어까지 순식간에 찍어내는 코딩 에이전트의 발전이 있다. 이미 자연어 설명만으로 CNC 가공용 G코드를 짜는 시스템(GLLM, NumCraft)이나 지멘스 같은 벤더별 PLC 제어 코드(IEC 61131-3 ST)를 생성하는 프레임워크(AutoPLC, LLM4PLC)가 논문과 상용 도구로 등장했다. 제품에 운영 계층을 씌우는 비용이 이렇게 빠르게 내려가면, '제품에서 운영으로'의 전환은 소수 대기업을 넘어 더 넓은 제조사로 번질 수 있다. 저자의 방향 감각이 닿은 자리다.
+저자가 새로 얹은 통찰은 이 오래된 흐름이 AI를 만나 가속된다는 점이다. 그 기반에는 커스텀 장비의 제어 소프트웨어까지 순식간에 찍어내는 코딩 에이전트의 발전이 있다. 이미 자연어 설명만으로 CNC 가공용 G코드를 짜는 시스템(GLLM, NumCraft)이나 지멘스 같은 벤더별 PLC 제어 코드(IEC 61131-3 ST)를 생성하는 프레임워크(AutoPLC, LLM4PLC)가 논문과 상용 도구로 등장했다.{{< sn >}}자연어에서 CNC 가공용 G코드 생성: GLLM([arXiv:2501.17584](https://arxiv.org/abs/2501.17584)), NumCraft. 자연어에서 벤더별 PLC 제어 코드(IEC 61131-3 ST) 생성: AutoPLC, LLM4PLC.{{< /sn >}} 제품에 운영 계층을 씌우는 비용이 이렇게 빠르게 내려가면, '제품에서 운영으로'의 전환은 소수 대기업을 넘어 더 넓은 제조사로 번질 수 있다.
 
-다만 문헌은 저자가 건너뛴 함정에도 이름을 붙여 뒀다. '서비스 패러독스(service paradox)'로, 게바우어 등이 2005년 설비 제조사 30곳 이상에서 서비스에 큰돈을 넣어도 비용만 늘고 기대한 수익은 따라오지 않더라고 정리한 현상이다. 가장 뼈아픈 반례는 저자가 승자의 조건으로 꼽은 프로필 안에 있다. GE는 거대한 설치 기반과 터빈, 엔진에서 쏟아지는 데이터, 깊은 현장 지식을 모두 갖추고도 산업용 IoT 플랫폼 Predix에 70억 달러 넘게 쏟았다가 실패해, 2024년 GE 그룹 해체의 주요 원인 중 하나로 꼽혔다. 데이터와 설치 기반을 확보하는 것은 필요조건일 뿐 충분조건과는 거리가 멀다.
+다만 문헌은 저자가 건너뛴 함정에도 이름을 붙여 뒀다. '서비스 패러독스(service paradox)'로, 게바우어 등이 2005년 설비 제조사 30곳 이상에서 서비스에 큰돈을 넣어도 비용만 늘고 기대한 수익은 따라오지 않더라고 정리한 현상이다.{{< sn >}}Gebauer, H., Fleisch, E. & Friedli, T. (2005). "Overcoming the Service Paradox in Manufacturing Companies." *European Management Journal.* DOI: 10.1016/j.emj.2004.12.006{{< /sn >}} 가장 뼈아픈 반례는 저자가 승자의 조건으로 꼽은 프로필 안에도 있다. GE는 거대한 설치 기반과 터빈, 엔진에서 쏟아지는 데이터, 깊은 현장 지식을 모두 갖추고도 산업용 IoT 플랫폼 Predix에 70억 달러 넘게 쏟았다가 실패해, 2024년 GE 그룹 해체의 주요 원인 중 하나로 꼽혔다.{{< sn >}}Predix는 GE가 70억 달러 이상을 투입한 산업용 IoT 플랫폼으로, 널리 실패로 평가되며 2024년 GE 그룹 해체의 한 요인으로 꼽힌다. [Predix (Wikipedia)](<https://en.wikipedia.org/wiki/Predix_(software)>) · WSJ, "The Dimming of GE's Bold Digital Dreams"(2020) · [포레스터 진단, Computer Weekly](https://www.computerweekly.com/feature/Lessons-from-GEs-flight-to-digital-platforms){{< /sn >}} 데이터와 설치 기반을 확보하는 것은 필요조건일 뿐 충분조건과는 거리가 멀다.
 
 ## 가장 눈여겨본 대목
 
@@ -83,12 +84,3 @@ TocOpen: false
 저자: TheObserverLee(@theobserverlee)
 발표일: 2026년 7월 17일 (X 아티클)
 원문: <https://x.com/theobserverlee/status/2078106960235278426>
-
-### 보강 자료 (편집자 추가)
-
-- 서비타이제이션 개념의 출처: Vandermerwe, S. & Rada, J. (1988). "Servitization of Business: Adding Value by Adding Services." *European Management Journal.* DOI: 10.1016/0263-2373(88)90033-3
-- 서비스 패러독스: Gebauer, H., Fleisch, E. & Friedli, T. (2005). "Overcoming the Service Paradox in Manufacturing Companies." *European Management Journal.* DOI: 10.1016/j.emj.2004.12.006
-- 롤스로이스 TotalCare(Power by the Hour): <https://www.rolls-royce.com/media/our-stories/discover/2017/totalcare.aspx>
-- GE Predix 실패와 GE 해체: <https://en.wikipedia.org/wiki/Predix_(software)> · WSJ, "The Dimming of GE's Bold Digital Dreams"(2020)
-- GE의 소프트웨어 플랫폼 전환 난항(포레스터 진단): <https://www.computerweekly.com/feature/Lessons-from-GEs-flight-to-digital-platforms>
-- AI 코딩 에이전트의 기계 제어 코드 생성: GLLM(자연어 → CNC G코드, arXiv:2501.17584), NumCraft(다중 에이전트 G코드 생성), AutoPLC·LLM4PLC(자연어 → 벤더별 PLC ST 코드)
