@@ -1,9 +1,9 @@
 ---
 title: "Bridging the Gap Between Latent and Explicit Reasoning with Looped Transformers"
 date: 2026-07-21T06:00:00+09:00
-tags: ["AI", "LLM", "추론", "루프 트랜스포머", "잠재 추론", "논문 리뷰"]
+tags: ["AI", "AI 에이전트", "LLM", "추론", "루프 트랜스포머", "잠재 추론"]
 categories: ["다이제스트"]
-summary: "Fan·Svete·Lee는 3B 스케일에서 latent CoT와 explicit CoT의 성능 격차를 처음으로 좁혔다. Looped padded Transformer가 K개 latent 블록을 R번 병렬 순회하며 gold CoT 토큰에 직접 cross-entropy를 걸어, GSM8K 정확도는 explicit CoT 1점 이내, thought-phase 지연은 2.5배~6.9배 감소한다."
+summary: "앞으로 에이전트는 생각을 화면에 줄줄 출력하지 않아도 될 수 있다. LOTUS 논문은 언어 모델의 추론을 사람이 읽는 문장이 아니라 모델 내부의 계산 상태에서 진행하는 방향이, 3B 규모에서 실제로 통한다는 첫 증거를 제시한다. Chain-of-Thought가 사라지는 미래가 성능·효율의 필연으로 다가온다."
 math: true
 ShowToc: true
 TocOpen: false
@@ -13,123 +13,110 @@ images:
   - "/images/lotus-looped-transformers-latent-cot/fig1-scaling.png"
 ---
 
-## 3줄 요약
+앞으로 에이전트는 생각을 화면에 줄줄 출력하지 않아도 될 수 있다.
 
-1. Microsoft Research의 Ying Fan, ETH Zürich의 Anej Svete, KRAFTON·Ludo Robotics의 Kangwook Lee가 2026년 6월 30일 arXiv에 올린 논문(v2는 7월 13일). 언어 모델의 chain-of-thought(CoT)를 hidden state에서 처리하는 *latent* 추론이 1B 파라미터를 넘어가면 명시적 CoT에 밀리고 격차가 스케일과 함께 벌어지는 문제를, looped(recurrent-depth) Transformer로 좁힐 수 있는지 검증한다.
-2. 저자들은 **LOTUS**(Looped Transformers with parallel supervision on latents)라는 간단한 레시피를 제안한다. K개 latent 블록을 R번 병렬 순회하는 looped padded Transformer에, 각 블록의 gold CoT 토큰을 base LM head를 통해 병렬 cross-entropy로 지도하는 방식이다. 파라미터를 늘리는 대신 계산 깊이만 늘리고, 지도는 explicit CoT와 동일한 정확도로 그라운딩된다.
-3. Llama-3.2-3B-Instruct 백본에서 LOTUS는 GSM8K 인도메인 격차를 명시적 CoT의 1점 이내로 좁히고 out-of-domain 평균에서는 오히려 앞선다. thought-phase 지연은 수식 CoT에서 $2.5\times$, 자연어 CoT에서 $6.9\times$ 감소한다. 게다가 post-loop latent를 그대로 base LM head에 통과시키면 gold 추론 단계가 복원되고, 훈련 데이터에 없는 유효한 대안 단계까지 상위 확률로 떠오른다.
+대신 내부에서 훨씬 빠르게 계산하고, 정말 필요한 순간에만 사람에게 설명을 보여주는 방향으로 진화하고 있다. Microsoft Research·ETH Zürich·KRAFTON의 세 저자가 2026년 6월에 올린 이 논문은, 그 가능성을 3B 규모에서 처음으로 설득력 있게 보여준 사례다.
 
-![Figure 1 — LOTUS bridges the latent-explicit CoT accuracy gap across scale](/images/lotus-looped-transformers-latent-cot/fig1-scaling.png)
+## 지금 우리가 보는 CoT는 사실 사람이 읽으라고 출력하는 텍스트다
 
-*Figure 1. GSM8K 테스트에서 LOTUS(빨강)는 백본이 커져도 명시적 CoT(회색)의 상한을 따라간다. 반면 기존 latent 방법(Coconut·CODI·SIM-CoT·KaVa)은 백본이 커질수록 더 벌어진다. 3B에서 thought-phase 지연은 수식 CoT $2.5\times$, 자연어 CoT $6.9\times$ 감소.*
+Claude Code나 Codex, Gemini CLI, OpenAI Agent를 써본 사람이라면 "생각하는 중..." 아래로 줄줄 흐르는 문장을 본 적이 있다. Chain-of-Thought(CoT)라 부르는 이 중간 서술이 모델의 정답률을 크게 올린다는 사실은 이제 상식이다. 하지만 여기 숨은 비용이 있다.
 
-## Latent CoT의 두 가지 병목
+**모델 입장에서는 굳이 영어 문장을 만들 필요가 없다.** 토큰을 하나씩 순차적으로 디코딩하느라 응답이 느려지고, 어차피 다음 계산으로 소비될 뿐인 중간 단계를 매번 문법에 맞는 자연어로 뽑아 낸다. CoT의 정확도 이득은 진짜지만, "사람이 읽는 문장" 부분은 부수 효과에 가깝다.
 
-논문은 기존 latent 추론 방법이 스케일에서 무너지는 이유를 두 가지로 정리한다.
+그래서 "생각을 언어로 뽑지 말고, 모델의 내부 상태에서 그냥 계산하자"는 아이디어가 나왔다. 이걸 *latent reasoning*이라 부른다. 문제는 이 접근이 GPT-2 급의 작은 모델에서는 CoT와 비등한데, 1B 파라미터를 넘어가는 순간 CoT에 밀리고 격차가 스케일과 함께 벌어졌다는 것이다. **큰 모델일수록 오히려 내부 사고가 통하지 않았다.** 그래서 그동안은 실제 프론티어 에이전트에 이 아이디어가 이식되지 않았다.
 
-**P1. 순차 생성이 여전히 남아 있다.** Coconut·CODI·SIM-CoT는 latent thought를 autoregressive하게 만든다. 그러니까 latent 토큰 수만큼 forward pass가 순차적으로 늘어난다. 명시적 CoT의 대안이라기보다는 명시적 CoT의 병목을 그대로 안은 채 중간 표현만 숨긴 형태다.
+이 논문 LOTUS는 그 격차를 3B 규모에서 처음으로 좁혔다.
 
-**P2. CoT 그라운딩이 부재하다.** 명시적 CoT는 각 추론 단계가 gold 토큰과 위치 정렬된다. 이 정도로 직접적인 target 없이 latent를 그저 hidden state distillation이나 teacher key-value cache 압축으로 지도하면, latent trace가 의미 있는 계산에서 이탈해 대규모 학습이 불안정해진다.
+![Figure 1 — LOTUS는 백본이 커져도 명시적 CoT의 정확도 상한을 따라간다](/images/lotus-looped-transformers-latent-cot/fig1-scaling.png)
 
-두 문제를 동시에 해결하려면, latent를 **몇 번의 병렬 순회로 다듬으면서** 그 결과를 **명시적 CoT만큼 직접적인 target에 그라운딩해야** 한다. Looped(=recurrent-depth) Transformer는 가중치를 재사용해 계산 깊이를 늘리므로 P1에 잘 맞는다. Merrill·Sabharwal은 looped padded Transformer가 그래프 도달성 문제를 CoT 대비 로그 시간(지수적 향상)으로 풀 수 있음을 보였다. 문제는 여기에 어떤 지도를 붙일지다.
+*Figure 1. 기존 latent 방법(Coconut·CODI·SIM-CoT·KaVa)은 모델이 커질수록 명시적 CoT와의 격차가 벌어진다. LOTUS(빨강)만 상한선을 따라간다. 그러면서도 생각 단계 지연은 $2.5\times$~$6.9\times$ 줄인다.*
 
-## LOTUS의 레시피
+## LOTUS의 핵심 아이디어 — 같은 층을 여러 번 돌린다
 
-LOTUS는 두 재료로 구성된다.
+먼저 배경 하나. 지금까지의 GPT 계열은 층(layer)이 계속 이어지는 구조다. 아래 층의 출력이 위 층의 입력이 되며 한 방향으로 흘러간다. 층을 더 넣으려면 파라미터가 더 필요하다.
 
-1. **Padded latent prefix** — 질문 $Q$ 뒤에 K개의 학습 가능한 latent 블록(블록당 c개 토큰)을 붙이고, 그 앞뒤를 `<BoT>`·`<EoT>` 특수 토큰으로 감싼다. 블록 예산 $K$는 데이터의 최대 단계 수를 덮도록 고정한다. GSM8K는 99%가 6단계 이하라 $K=6$이 자연스럽다.
-2. **Looped 계산** — base LM $f_\theta$를 K개 블록 전체에 대해 $R$번 반복 순회하며 hidden state를 점진적으로 다듬는다. 질문 $Q$의 KV 캐시는 한 번만 계산해 재사용한다. 각 반복은 $\mathbf{h}^{(t)} = f_\theta(\mathbf{E} + \mathbf{h}^{(t-1)} \mid \mathcal{C}_{\text{pre}})$ 형태다.
+*Looped Transformer*는 다르다. **같은 층을 여러 번 돌린다.** 파라미터를 늘리지 않고 같은 무게를 재사용해서 계산을 깊게 한다. 그래서 생각을 여러 번 다듬기에 잘 맞는다. 최근 이 방식이 십억 파라미터 급 사전학습에서도 통한다는 연구가 나왔고, LOTUS는 여기에 편승해 latent 추론에 적용했다.
 
-지도는 두 손실로 나뉜다.
+레시피는 두 부분이다.
 
-$$\mathcal{L}_{\text{step}} = \frac{1}{N_{\text{step}}} \sum_{i=1}^{K} \sum_{j=1}^{c} \mathrm{CE}\!\left(f_{\text{head}}(\mathbf{h}^{(R)}_{i,j}),\ T_{i,j}\right)$$
+1. **질문 뒤에 "생각용 자리(latent block)"를 K개 붙인다.** 각 자리는 CoT 한 단계에 해당한다. GSM8K는 대부분 6단계 이내라 K=6.
+2. **모델을 이 자리들 위에서 R번 반복 순회한다.** 각 반복마다 내부 상태가 조금씩 다듬어진다.
 
-$$\mathcal{L}_{\text{ans}} = \frac{1}{|A|} \sum_{m=0}^{|A|-1} \mathrm{CE}\!\left(f_{\text{head}}(\mathbf{z}_m),\ A_{m+1}\right)$$
+여기까지가 구조. 그런데 이것만으로는 잘 안 된다. 저자들의 관찰은 이렇다. 내부 상태를 무엇으로 지도해야 하는가가 관건이다.
 
-전체 목적함수는 $\mathcal{L} = \mathcal{L}_{\text{ans}} + \lambda_{\text{step}}\, \mathcal{L}_{\text{step}}$.
+**LOTUS의 결정적인 선택**: 각 자리의 내부 상태를 그대로 원래 모델의 출력 헤드(LM head)에 통과시켜, 실제 CoT 토큰과 비교한다. **모델이 최종 답을 만들 때 쓰는 것과 똑같은 헤드로 지도한다.** 그것도 K개 자리 전체를 병렬로.
 
-핵심은 세 가지다.
+![Figure 2 — R번 순회한 뒤 내부 상태를 LM head로 gold CoT에 병렬 매칭한다](/images/lotus-looped-transformers-latent-cot/fig2-architecture.png)
 
-- **직접적**: 답을 만드는 것과 같은 base LM head $f_{\text{head}}$로 각 블록의 target $T_i$를 채점한다.
-- **병렬**: K개 블록 전체를 동시에 지도한다. 즉 CoT 길이가 $N$이라도 $R \ll N$번의 조밀한 병렬 계산으로 처리된다.
-- **Post-loop**: 매 반복이 아니라 마지막 반복 $R$의 hidden state에서만 지도한다.
+*Figure 2. 위: 백본을 R번 반복하고 마지막 상태를 CoT 토큰과 매칭. 아래: 그 내부 상태를 조건으로 답을 예측.*
 
-![Figure 2 — LOTUS 아키텍처 (looped forward + final forward)](/images/lotus-looped-transformers-latent-cot/fig2-architecture.png)
+이 지도가 왜 중요한지 감을 잡으려면, 기존 방법과 비교하면 된다. Coconut·CODI·SIM-CoT는 내부 상태를 여전히 자기회귀적으로 하나씩 만들고, 지도 신호는 교사 모델의 hidden state distillation이나 KV 캐시 압축 같은 간접 target에 의존했다. LOTUS는 두 가지를 동시에 뒤집는다. **병렬로 계산하고, 명시적 CoT와 같은 target에 그라운딩한다.**
 
-*Figure 2. (a) Looped forward: 백본을 R번 반복해 post-loop hidden state를 얻고 이를 LM head로 gold CoT 토큰에 병렬 매칭한다. (b) Final forward: post-loop latent를 그대로 답 위치의 조건으로 넣어 다음 토큰 예측 손실로 답을 지도한다.*
+수식으로 쓰면 두 개 손실이 있다. $\mathcal{L}_{\text{step}}$은 각 자리에 gold CoT 토큰을 병렬로 매칭하고, $\mathcal{L}_{\text{ans}}$은 최종 답을 예측한다. 저자들이 곱씹은 지점: **위치별 독립 지도가 왜 학습을 무너뜨리지 않는가.** 답은 loss가 아니라 loop이 위치 간 의존성을 담아내기 때문이다. Loss는 "각 자리에 올바른 토큰이 앉게 하는" 역할($\mathcal{L}_{\text{step}}$), 그리고 "그 자리 조합이 실제 답을 만들 수 있는가"의 역할($\mathcal{L}_{\text{ans}}$) 둘로 갈리고, 하나라도 빼면 성능이 무너진다.
 
-### 왜 위치별 독립 지도가 학습을 무너뜨리지 않는가
+## 결과 — 정확도는 CoT급, 지연은 최대 6.9배 감소
 
-저자들은 이 지도를 **parallel chain likelihood(PCL)** 라는 렌즈로 정당화한다. $\mathcal{L}_{\text{step}}$은 개별 위치의 marginal 분포에 대한 cross-entropy이므로, chain을 각 위치의 conditional이 아닌 marginal의 곱으로 인수분해한다. 언뜻 보면 위치 간 의존성을 버리는 것처럼 보이지만, 실제 dependence는 loss가 아니라 **jointly 계산된 latent state**가 담아낸다.
+Llama-3.2-3B-Instruct 백본에서 GSM8K 정확도는 명시적 CoT의 1점 이내(70.0% vs 71.0%). 이전에는 어떤 latent 방법도 3B에서 이 격차를 좁히지 못했다.
 
-두 손실은 상보적이다.
+Out-of-domain 평균(GSM-Hard·MultiArith·SVAMP)에서는 오히려 앞섰다. 즉 **훈련 도메인에서 배운 것을 다른 문제로 옮길 때 CoT보다 무너지지 않는다.**
 
-- $\mathcal{L}_{\text{step}}$은 **support coverage** — 각 위치가 올바른 gold 토큰 위에 확률 질량을 두게 한다.
-- $\mathcal{L}_{\text{ans}}$은 **global selection** — 전체 latent configuration을 조건으로 답을 훈련하므로, 실제로 답을 만들 수 있는 jointly 결정된 상태에만 gradient가 기울어진다.
+지연에서 격차가 크게 벌어진다. H100 단일 GPU, 배치 1 기준으로 생각 단계 지연은:
 
-이 상보성은 5.3절 ablation에서 실증된다. 두 손실 중 하나만 있으면 gold CoT NLL이 나빠진다.
+| 방법 | 수식 CoT 지연 | 자연어 CoT 지연 |
+|---|---|---|
+| 명시적 CoT | 328 ms | 963.6 ms |
+| SIM-CoT | 156 ms | — |
+| **LOTUS** | **133 ms** | **140.8 ms** |
+| CODI(정확도 밀림) | 88 ms | — |
 
-### 변종 — LOTUS-aux
+CoT가 자연어로 길어질수록 격차가 벌어지는 방향이 특히 흥미롭다. 수식 단계에서 $2.5\times$, 자연어 문장 단계에서 $6.9\times$. 명시적 CoT는 자연어를 만들 때마다 토큰을 다 뽑아야 하지만, LOTUS는 어차피 내부에서 계산하므로 CoT가 길어도 R=6번의 병렬 스텝만 밟는다.
 
-기존 방법(SIM-CoT)이 사용한 autoregressive chain likelihood와 비교하기 위해, 저자들은 동일한 looped 백본 위에 auxiliary decoder $g_\phi$를 얹은 LOTUS-aux를 함께 실험한다. Loop 반복 $t$마다 블록 $i=t$의 latent를 aux decoder의 프리픽스로 넣어 gold CoT 단계 $T_t$를 teacher forcing으로 채점하는 구조다. 학습 때만 쓰고 inference에서는 사용하지 않으므로 지연 비용은 동일하다.
+## 정말 흥미로운 발견 — 내부 상태가 사실 CoT였다
 
-![Figure 3 — LOTUS-aux의 auxiliary decoder 지도](/images/lotus-looped-transformers-latent-cot/fig3-aux.png)
+내가 가장 눈여겨본 것은 정확도·지연이 아니다. **내부 상태를 그대로 원래 모델의 LM head에 통과시켰더니 gold CoT의 중간 계산 단계가 그대로 복원됐다.** Top-1 정확도 70.9%, 즉 자리마다 원래 나올 CoT 토큰 그 자체가 최상위 후보로 잡힌다.
 
-*Figure 3. Loop iteration $t$에서 블록 $t$의 latent를 aux decoder $g_\phi$가 $c$-토큰 프리픽스로 받아 gold CoT 단계 $T_t$를 teacher forcing으로 예측한다. Base LM head 지도(Figure 2a) 자리에만 aux decoder가 대신 들어가는 형태다.*
+더 놀라운 관찰. **훈련 데이터에 없는 다른 유효한 풀이 경로**도 내부 상태에 함께 담긴다. 예를 들어 답이 108로 같은데 중간 계산이 다른 두 풀이가 있을 때, 훈련에는 한쪽만 썼는데도 다른 풀이의 중간 숫자(24, 18)가 Top-5에 64% 확률로 잡혔다.
 
-## 결과
+이 결과는 latent가 사람이 읽을 수 없는 opaque한 벡터가 아니라, **원래 언어 모델의 어휘 공간 위에 사는 확률 분포**임을 보여준다. 즉 내부 사고는 discrete CoT와 **같은 공간**에서 일어나되, 단 하나의 문장이 아니라 여러 유효한 풀이를 동시에 지지하는 이산 분포로 존재한다. 문장으로 뽑으면 하나만 나오지만, 내부에서는 그물처럼 걸려 있다.
 
-### 3B에서 격차가 실제로 좁혀졌다
+이건 latent CoT의 매력이 **효율만이 아니라는 신호다.** 하나의 내부 상태가 여러 정답 경로를 동시에 담을 수 있고, 최종 답을 뽑는 순간에만 그중 하나로 붕괴한다. 어쩌면 이게 앞으로 **에이전트의 "생각"이라는 개념 자체를 재정의**할지도 모른다.
 
-Llama-3.2-3B-Instruct에서 LOTUS는 GSM8K 인도메인 격차를 명시적 CoT의 약 1.5점 이내로 좁혔고, LOTUS + CODI는 1점 이내로 더 좁혔다. Out-of-domain 평균(GSM-Hard, MultiArith, SVAMP)에서는 오히려 앞섰다. 논문이 논거의 무게를 두는 지점이 여기다.
+![Figure 3 — LOTUS-aux 변종 (auxiliary decoder를 통한 지도)](/images/lotus-looped-transformers-latent-cot/fig3-aux.png)
 
-- 기존 최강 baseline인 CODI + SIM-CoT는 GPT-2 스케일에서 명시적 CoT와 동률($42.6$ vs $42.7$)이지만 3B에서는 $9.2$점 뒤진다.
-- KaVa도 같은 방향으로 벌어진다 (GPT-2 $1.9$점 → 3B $5.8$점).
-- LOTUS는 스케일이 커져도 격차가 $\sim 1.5$점 안에서 안정된다.
+*Figure 3. 논문은 auxiliary decoder를 통한 지도 라우팅(LOTUS-aux)도 함께 실험한다. 3B에서는 LOTUS와 동등하지만 작은 모델에서 무너져, 결국 LM head 직접 지도가 규모 전반에 강건하다는 결론에 이른다.*
 
-### Thought-phase 지연이 2.5\~6.9배 줄었다
+## 그래서 에이전트에게 왜 중요한가
 
-수식 CoT(GSM8K-Aug)에서 3B 백본 기준:
+> **이 논문이 에이전트 실무에 던지는 함의**
+>
+> - **긴 CoT를 화면에 뽑지 않아도 정확도를 유지할 수 있다.** 자연어 CoT가 길어질수록 이득이 커진다($6.9\times$).
+> - **내부 추론 비용이 줄어든다.** 같은 모델을 여러 번 돌리므로 파라미터는 안 늘고 계산 깊이만 늘어난다.
+> - **응답 속도가 실질적으로 빨라진다.** 사용자가 "생각 중" 스피너를 덜 보게 된다.
+> - **사람에게는 최종 설명만 보여줄 수도 있다.** 필요할 때만 latent를 텍스트로 풀어내는 UX가 가능해진다.
+> - **여러 에이전트가 latent 상태를 그대로 주고받는 연구도 가능해진다.** 텍스트 직렬화 없이 내부 표현을 공유하면 대역폭·손실이 크게 줄 수 있다.
+> - **하지만 대가는 있다.** CoT가 사라지면 사람이 모델의 실수를 중간에 잡아내기 어려워진다. 관측 가능성(observability)과 정렬(alignment) 관점의 새 문제가 생긴다.
 
-- 명시적 CoT: 328 ms (thought)
-- LOTUS: 133 ms — $\mathbf{2.5\times}$ 빠름
-- SIM-CoT: 156 ms — LOTUS가 $1.2\times$ 빠름
-- CODI: 88 ms — LOTUS보다 빠르나 정확도가 밀림
+## 앞으로 뭐가 달라질까
 
-논문의 latency 측정은 H100 NVL 단일 GPU, 배치 1, greedy decoding. LOTUS는 latent prefix가 150개 위치(K=6, c=25)로 크지만 병렬로 소비되므로 R=6 순차 스텝만 남고, 이것이 지연 절감의 원천이다. Prefix 폭을 6에서 300으로 늘려도 thought 지연은 약 30 ms만 증가한다.
+지금의 AI는 대체로 이렇게 움직인다.
 
-자연어 CoT stress test(GSM8K를 자연어 문장 단계로 확장)에서 격차는 훨씬 크다. 명시적 CoT thought 963.6 ms → LOTUS 140.8 ms로 $\mathbf{6.9\times}$ 감소하고, 정확도는 $68.13$ vs $68.41$로 variance 안에 들어온다. PCCoT($47.6\%$), CODI($55.9\%$), KaVa($60.0\%$) 같은 latent baseline은 이 setting에서 크게 밀린다.
+**생각 → 말 → 다시 생각 → 다시 말**
 
-### Ablation — 어느 하나도 뺄 수 없다
+LOTUS가 지향하는 방향은 이렇다.
 
-- **Looped 백본만** 두고 지도를 지워도 63.3%로 CODI + SIM-CoT(62.3%)를 능가한다. Looped padded 백본 자체가 이미 이득이다.
-- **지도를 붙이면** 70.0%로 올라간다. Looped 백본 + parallel gold CoT 지도가 함께 필요하다.
-- **블록 폭 $c$**: 1이면 49.7%, 5이면 67.5%, 25~30에서 70.0%로 plateau. 단일 토큰은 direct-readout 지도에 너무 좁다.
-- **Loop 깊이 $R$**: $R=2$이면 14.6%, $R=6$이면 70.0%. $R=7$에서는 소폭 하락($69.3\%$). 훈련 시 $R$을 넘어서면 이득이 없다.
-- **지도 스케줄**: LOTUS는 post-loop readout(70.0%)이 per-iteration(68.2%)보다 좋다. 반대로 LOTUS-aux는 per-iteration(69.9%)이 post-loop(68.4%)보다 좋다 — aux decoder가 이미 gradient path를 늘리므로 짧은 경로가 유리하다는 해석.
+**생각 → 생각 → 생각 → 마지막에만 말하기**
 
-**라우팅의 비대칭성**: LOTUS-aux는 3B에서만 LOTUS와 동등하고 작은 백본에서는 무너진다. 반면 base LM head 직접 지도(LOTUS)는 GPT-2\~3B 모두에서 강건하다. 명시적 CoT와 동일한 head로 지도하는 단순함이 규모에 걸쳐 유리하다는 것이 논문의 관찰이다.
+앞으로는 추론 속도가 빨라질 뿐 아니라, **우리가 보는 CoT 자체가 점점 사라질 가능성도 있다.** 지금 Claude Code가 보여주는 "Thinking..." 아래의 긴 서술이, 어느 시점부터는 그저 요약 한 줄로 대체되고 실제 사고는 모델 내부에서 병렬로 압축되는 세계.
 
-## 가장 흥미로운 지점 — Latent 공간이 실제로 CoT와 정렬된다
+그 세계에서 남는 질문은 성능이 아니라 **관측이다.** 모델이 무슨 생각을 하는지 사람이 어떻게 확인할 것인가. 흥미롭게도 LOTUS의 발견 — 내부 상태가 여전히 원래 어휘 공간의 이산 분포라는 것 — 은 이 질문에 대한 첫 답을 이미 갖고 있다. **필요하면 언제든지 내부 상태를 LM head에 통과시켜 "생각을 텍스트로 뽑아낼 수 있다."** 다만 항상 뽑을 필요는 없을 뿐이다.
 
-LOTUS의 결과 중 내가 가장 눈여겨본 것은 정확도나 지연이 아니라 **latent 공간의 해석 가능성**이다.
+에이전트가 언젠가 "말수 적은 프로"가 되는 날, 이 논문은 그 방향의 초석 중 하나로 기억될 것이다.
 
-Post-loop latent $\mathbf{h}^{(R)}$을 그대로 base LM head에 통과시켜 gold CoT 토큰의 negative log-likelihood를 재면 $3.07$이 나오고, top-1 정확도는 $70.9\%$다. 훈련 시 명시적으로 이 방향으로 지도했으니 그럴 만하다. 놀라운 부분은 다음이다.
+## 한계
 
-- LOTUS-aux는 $\mathbf{h}^{(R)}$을 base LM head로 읽도록 훈련된 적이 없다. 그런데도 top-5에서 $25.8\%$의 확률로 gold 토큰이 잡힌다. Aux decoder를 통해 지도했음에도 latent가 여전히 base LM head 좌표계에서 CoT 방향으로 정렬된다.
-- 훈련 데이터에 없는 **유효한 대안 chain**에 대해서도 mass가 크게 붙는다. Ground-truth 답 108에 도달하는 두 가지 다른 중간 경로 중 학습에 안 쓰인 경로의 숫자(24, 18)를, post-loop readout이 top-1 $15.3\%$, top-5 $64.0\%$로 잡아낸다. 무작위 대조 대비 압도적으로 낮은 NLL이다.
-
-이 결과는 latent가 opaque한 embedding이 아니라 **discrete CoT 어휘와 같은 좌표계에 사는 이산 분포**임을 시사한다. Wei et al.이 "Latent thoughts carry strictly more information than discrete tokens"라는 이론적 주장을 편 지점(같은 문제를 CoT 대비 log 스텝으로 풀 수 있다)을, LOTUS는 표현 공간의 실제 관찰로 뒷받침한다. Latent CoT의 promise가 **효율만이 아니라 확장성** — 하나의 latent 상태가 여러 유효한 명시적 CoT를 동시에 지지할 수 있다는 확률 그래프 — 에 있다는 방향을 열어 준다.
-
-또 하나 놓치기 아까운 관찰. $\mathcal{L}_{\text{step}}$만 두면 latent가 gold 토큰에 붙긴 하지만 답을 정합적으로 만들지 못하고, $\mathcal{L}_{\text{ans}}$만 두면 답 근방으로는 가지만 gold 체인에 정렬되지 않는다. 저자들이 "support coverage vs joint selection"이라 부르는 이 분업이 latent CoT 학습의 새로운 문법일 수 있다.
-
-## 한계와 후속
-
-논문 스스로 밝힌 한계 세 가지.
-
-1. **수학 벤치마크에만 검증**했다. Coconut·SIM-CoT의 흐름을 따랐지만, 자연어 이해·다중 홉 질의응답·코드 등 다른 도메인으로 이 레시피가 이관될지는 열린 문제다.
-2. **블록 예산 $K$, 폭 $c$, 깊이 $R$이 고정 하이퍼파라미터**다. $K$ 단계를 넘는 chain은 tail을 autoregressive 완성으로 넘긴다.
-3. $K$, $c$, $R$을 문제 난이도에 따라 적응적으로 조절하는 방향이 다음 개선 축으로 열려 있다.
+- **수학 벤치마크에만 검증됐다.** 코드·자연어 이해·다중 홉 QA 같은 다른 도메인은 열린 문제다.
+- **블록 수·폭·깊이가 고정 하이퍼파라미터다.** 난이도에 따라 자동으로 조절되지 않는다.
+- **관측 가능성**을 위한 도구가 아직 없다. 내부 사고가 사라지는 방향은 정렬 관점에서 별도 연구가 필요하다.
 
 ## 출처
 
