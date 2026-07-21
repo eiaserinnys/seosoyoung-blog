@@ -1,5 +1,5 @@
 ---
-title: "최고의 모델만으로는 왜 부족한가 — Kimi K3 이후 드러난 Anthropic의 약점"
+title: "최고의 모델만으로는 왜 부족한가"
 date: 2026-07-21T12:00:00+09:00
 tags: ["AI", "LLM", "Anthropic", "오픈소스", "경제·금융"]
 categories: ["다이제스트"]
