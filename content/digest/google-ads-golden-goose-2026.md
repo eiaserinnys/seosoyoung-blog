@@ -13,7 +13,7 @@ TocOpen: false
 
 1. 월 50만 달러 이상을 구글 검색광고에 집행해 온 광고주 Max Anderson(@MaxAnderson)이 2026년 7월 23일 X에 올린 스레드다. 검색 볼륨이 LLM에 잠식되어 줄어드는 와중에 구글이 매출 성장을 억지로 만들어내느라 광고주에게 적대적인 수법을 쓰고 있다고 고발했다.
 2. 고발은 세 가지다. (1) 오랫동안 유지하던 2차 가격 경매를 조용히 없애고 입찰가 상한까지 최대한 과금한다, (2) exact match로 정확히 지정해도 "close variant"라는 이름으로 무관한 검색어 수천 개에 광고를 붙이고 과금하며 끌 수 없다, (3) 일 예산 상한을 2배까지 넘겨 지출한다.
-3. 검증 결과는 갈린다. 고발 2는 사실, 고발 3은 대체로 사실이되 뉘앙스가 있고, 고발 1은 표현이 부정확할 뿐 여러 채널을 집행하는 광고주에겐 사실에 가깝다. 다만 이 모든 것을 묶는 배경 서사, "AI capex 때문에 검색을 쥐어짠다"는 인과는 사실과 과장이 섞여 있다.
+3. 검증 결과는 갈린다. 고발 2는 사실, 고발 3은 대체로 사실이되 뉘앙스가 있고, 고발 1은 표현이 부정확할 뿐 여러 채널을 집행하는 광고주에겐 사실에 가깝다. 그러나 이 글의 진짜 질문은 개별 고발의 진위가 아니다. 검색 매출이 늘었다는 사실이 고발을 반박하지 못하는 이유, 그리고 구글이 왜 지금 그 성장을 반드시 지켜야 하는가다.
 
 ## 누가, 무엇을 말했나
 
@@ -47,17 +47,7 @@ Anderson의 설명은 명확하다.
 
 > even if you bid on a specific term ... using the strictest exact-match targeting settings, Google will show your ad across 1000's of unrelated keywords, labeling them as "exact match (close variant)" ... there's no ability to turn this off. (가장 엄격한 exact match를 써도 구글은 무관한 키워드 수천 개에 광고를 노출하며 "exact match (close variant)"라고 이름 붙인다. 끌 방법이 없다.)
 
-**판정: 사실.** 구글 공식 문서는 close variant에 "옵트아웃할 방법이 없다(There's no way to opt out)"고 직접 밝히고 있으며, close variant는 exact match를 포함한 모든 매치 타입에 기본 적용된다.[^closevariant] 이는 오래 진행된 변화다.[^exacttimeline]
-
-| 시점 | 변화 |
-|---|---|
-| 2012-04 | 오탈자·변형 자동 매칭 도입 (당시엔 옵트아웃 가능) |
-| 2014-08 | 옵트아웃 기능 완전 삭제 — 모든 캠페인에 변형 강제 포함 |
-| 2017-03 | 어순 변경·기능어 추가/삭제까지 close variant 범위 확대 |
-| 2018-09 | "동일 의미(same meaning)" 매칭 도입 — 암시어·패러프레이즈까지 |
-| 2019 | 동일 의미 매칭을 phrase match·broad match modifier로 확장 |
-
-"exact match인데 문자 그대로 일치하지 않는 검색어에 노출된다"는 현상은 2018년 이후 업계에서 광범위하게 보고됐다. Anderson의 "exact match가 broad match가 됐고, broad match는 그냥 의미 없는 스팸이 됐다"는 표현은 방향에서 과장이 아니다.
+**판정: 사실.** 구글 공식 문서는 close variant에 "옵트아웃할 방법이 없다(There's no way to opt out)"고 직접 밝히고 있으며, close variant는 exact match를 포함한 모든 매치 타입에 기본 적용된다.[^closevariant] 하루아침의 변화가 아니라 십수 년에 걸친 흐름이다. 2014년 8월 옵트아웃 기능이 사라졌고, 2018년 9월 "동일 의미(same meaning)" 매칭이 도입되면서, exact match인데도 문자 그대로 일치하지 않는 검색어에 노출되는 사례가 업계에 광범위하게 보고됐다.[^exacttimeline] Anderson의 "exact match가 broad match가 됐고, broad match는 그냥 의미 없는 스팸이 됐다"는 표현은 방향에서 과장이 아니다.
 
 ## 고발 3 — "예산 상한을 2배로 넘긴다"
 
@@ -77,20 +67,19 @@ Anderson의 설명은 명확하다.
 | exact match가 무관 검색어에 강제 노출 | 사실 | close variant "옵트아웃 불가" 공식 명시, 2014년부터 진행 |
 | 일 예산 2배 초과 지출 | 대체로 사실 | 2배 overdelivery는 공식 정책. 단 월 상한·크레딧 환급 존재. "환불 없음"은 과장 |
 
-## 배경 서사 — "AI capex 때문이다"는 사실인가
+## 검색은 성장했다. 그런데 무엇이 성장했나
 
-세 고발을 하나로 묶는 Anderson의 큰 그림은 이렇다. 검색이 LLM에 잠식돼 줄어드는데, 구글이 AI 투자 비용을 대느라 광고주를 쥐어짠다. 이 인과 서사도 검증이 필요하다. 뜯어보면 재무 사실과 해석이 섞여 있다.
+세 고발을 하나로 묶는 Anderson의 큰 그림은 검색이 LLM에 잠식돼 줄어든다는 전제 위에 서 있다. 그런데 알파벳의 2026년 2분기 검색 매출(Search & other)은 전년비 17% 늘었다.[^10q] 언뜻 "검색은 죽지 않았다"는 반증처럼 보인다.
 
-- **AI capex 급증은 사실이다.** 알파벳 설비투자는 2023년 323억 달러에서 2025년 914억 달러로 뛰었고, 2026년 가이던스는 7월 22일 실적에서 1,950\~2,050억 달러로 상향됐다.[^capex] 압력의 존재 자체는 분명하다.
-- **"마이너스 잉여현금흐름"은 절반만 맞다.** 알파벳은 2026년 2분기에 약 -59억 달러의 잉여현금흐름을 기록했는데, 이는 2004년 상장 이래 첫 분기 적자였다. 그러나 12개월 후행 기준으로는 여전히 533억 달러 흑자이고 현금성 자산은 약 2,400억 달러다.[^fcf] "빠르게 악화되는 마이너스"라는 그의 표현은 한 분기 스냅숏으로는 맞지만 구조적 상태로는 과장이다.
-- **전제가 흔들린다.** 가장 중요한 대목이다. Anderson은 "검색이 줄어든다"를 출발점으로 삼는데, 같은 2분기 검색 매출은 전년비 17% 늘어 오히려 가속했고 순다르 피차이는 검색 사용량이 사상 최고라고 밝혔다.[^searchgrowth] 검색 결과 화면 안에서 유기적 클릭이 사라지는 현상은 실재하지만, 그것이 구글의 검색 매출 성장 둔화로 이어졌다는 근거는 현재 데이터에 없다.
-- **인과는 해석이다.** "capex 압박이 광고 착취를 유발한다"는 연결을 애널리스트나 주류 매체가 검증한 적은 없다. 구글의 공식 프레이밍은 정반대로, AI 투자가 타깃팅 효율을 높여 광고비 상승을 정당화한다는 쪽이다. CPC 상승(검색 +12%, 쇼핑·PMax +15%)은 확인되지만, 업계는 이를 경쟁 심화·무료 클릭 감소·프라이버시 신호 손실 같은 구조적 원인으로 설명한다.
+그러나 개별 사실만 따지면 Anderson은 몇몇 메커니즘에 잘못된 이름을 붙였고, AI 투자 때문에 광고 정책이 바뀌었다는 직접적인 인과도 입증하지 못했지만, 검색 매출이 17% 늘었다는 사실이 그의 고발을 반박하는 것은 아니다. 그 성장은 유료 클릭 13% 증가와 클릭당 비용(CPC) 3% 증가로 만들어졌고, 알파벳 스스로 유료 클릭 수가 광고 형식과 전달 방식, 정책 변경의 영향을 받는다고 밝힌다.[^10q] 매출 숫자만으로는 검색 수요가 더 건강해진 것과 과금 가능한 클릭을 더 많이 만들어낸 것을 구분할 수 없다. 지금까지 확인된 것은 "검색이 성장했다"가 아니라 "검색 매출 감소가 아직 확인되지 않았다"는 정도다.
 
-## 가장 눈여겨본 것은
+## 구글이 감당할 수 없는 두 개의 서사
 
-개별 사실을 따지면 Anderson은 몇 군데서 라벨을 잘못 붙였고, 무엇보다 출발 전제가 데이터와 어긋난다. 검색은 줄어들지 않았다. 오히려 17% 자랐다. 그런데도 광고주들이 그의 스레드에 격하게 공감한 이유가 흥미롭다. 그가 지목한 정책들은 대부분 오래됐거나 공식 문서에 적혀 있는 것들이다. close variant는 2014년부터, 2배 overdelivery는 처음부터, 가격 조절 손잡이는 2017년부터 있었다. 각각은 새롭지 않다.
+그렇다면 더 중요한 질문은 이것이다. 구글은 왜 지금 검색의 견조함을 의심받을 수 없는 위치에 있어야 하는가.
 
-새로운 것은 강도다. 오래된 장치들이 한꺼번에 더 세게 조여지는 국면에 광고주들이 들어섰다는 감각은, 어느 한 정책이 새로 생겨서가 아니라 같은 규칙을 운영하는 태도가 달라졌다는 신호로 읽힌다. 다만 그 태도 변화의 원인을 "AI capex 때문에 죽어가는 검색을 쥐어짠다"로 좁히면, 실제 그림을 놓친다. 검색은 죽어가지 않는다. 자라면서 동시에 더 세게 쥐어짜인다. 성장하는 사업이 성장 중에 수익화를 강화하는 쪽이, 죽어가는 사업의 마지막 발악보다 오히려 더 설명하기 까다롭고 더 오래 갈 이야기다. 거위는 아직 알을 낳고 있다. 다만 주인이 배를 조금 더 자주 만지작거리기 시작했을 뿐이다.
+제미나이가 막대한 사용자를 확보했더라도[^earnings] 고급 사용자의 명백한 기본 선택지로 자리 잡았다고 보기는 어렵고, AI 인프라 투자는 이번 분기 영업활동 현금흐름마저 넘어섰다. 영업활동 현금흐름 391억 달러에 설비투자 449억 달러, 그 차이가 상장 이래 첫 분기 마이너스 잉여현금흐름으로 나타났다.[^10q] 12개월 합계로는 여전히 흑자라 버틸 체력은 있지만, 그것은 지금 버틸 수 있다는 뜻이지 투자 체질이 예전으로 돌아간다는 뜻은 아니다.[^capex] 여기서 검색 성장까지 꺾인다면 구글은 기존 사업을 AI에 잠식당하면서 정작 AI 경쟁에서도 선두가 아닌 회사라는 평가를 동시에 받게 된다. 사용 규모와 제품 선호는 다른 축이고, 배포력이 아무리 커도 두 번째 서사를 지워 주지는 못한다.
+
+그러므로 검색 매출 17%는 단순한 호실적이라기보다 구글이 반드시 방어해야 하는 숫자에 가깝다. 거위가 아직 알을 낳는다는 것은 맞다. 하지만 주인이 거위의 건강을 믿어서 배를 누르는 것인지, 거위가 건강하다는 사실을 시장에 계속 증명해야 해서 누르는 것인지는 전혀 다른 이야기다. 이제 물어야 할 것은 검색이 죽었느냐가 아니라, **구글이 성장률을 지키기 위해 광고주의 신뢰를 얼마나 소모하고 있느냐**다.
 
 ## 출처
 
@@ -103,9 +92,9 @@ Max Anderson(@MaxAnderson), X 스레드, 2026년 7월 23일
 [^display]: 디스플레이 네트워크·애드센스·애드 매니저는 2019\~2021년 2차 가격에서 1차 가격 경매로 전환됐다(검색은 미해당). Search Engine Land, Digiday 보도.
 [^trial]: 2023년 미국 대 구글 반독점 재판, Jerry Dischler 증언. Bloomberg(2023-09-18); MarTech, "How Google harms search advertisers in 20 slides". <https://martech.org/how-google-harms-search-advertisers-in-20-slides/>
 [^closevariant]: Google Ads Help, "Keyword close variants: Definition" — "There's no way to opt out(옵트아웃 방법이 없다)". <https://support.google.com/google-ads/answer/9342105>
-[^exacttimeline]: Search Engine Land, "Timeline: The long, slow death of Exact Match in Google Ads". 2014-08 옵트아웃 폐지, 2018-09 "동일 의미" 매칭 도입. <https://searchengineland.com/timeline-the-long-slow-death-of-exact-match-in-google-ads>
+[^exacttimeline]: Search Engine Land, "Timeline: The long, slow death of Exact Match in Google Ads". 2012-04 오탈자·변형 자동 매칭 도입(당시 옵트아웃 가능), 2014-08 옵트아웃 폐지, 2017-03 어순·기능어까지 확대, 2018-09 "동일 의미" 매칭 도입, 2019 phrase match·broad match modifier로 확장. <https://searchengineland.com/timeline-the-long-slow-death-of-exact-match-in-google-ads>
 [^budget]: Google Ads Help, "About overdelivery and your average daily budget" / "About spending limits". 하루 평균 일예산의 최대 2배까지 지출될 수 있으며, 월 청구는 평균 일예산 곱하기 30.4로 묶이고 초과분은 크레딧으로 환급된다. <https://support.google.com/google-ads/answer/1704443>
 [^bidding]: ppc.land, "Google Ads bidding overhaul forces CPAs to double, sparking backlash"; SEO Roundtable, Barry Schwartz(2026-07-02). 2026-08-17부터 예산 제한 상태의 타깃 CPA·ROAS 캠페인을 설정 타깃에 더 수렴시키도록 변경. <https://ppc.land/google-ads-bidding-overhaul-forces-cpas-to-double-sparking-backlash/>
-[^capex]: 알파벳 설비투자는 2023년 323억, 2024년 525억, 2025년 914억 달러로 급증했고 2026년 가이던스는 1,950\~2,050억 달러다(2026-07-22 상향). Investing.com, Business Standard.
-[^fcf]: 알파벳 2026년 2분기 잉여현금흐름은 약 -59억 달러로 2004년 상장 이래 첫 분기 적자였다. 다만 12개월 후행 잉여현금흐름은 여전히 533억 달러 흑자이고 현금성 자산은 약 2,400억 달러다. Search Engine Journal, FourWeekMBA.
-[^searchgrowth]: 2026년 2분기 검색 매출은 전년비 17%(633억 달러)로 오히려 가속했고, 순다르 피차이는 검색 사용량이 사상 최고라고 밝혔다. "검색 성장 둔화" 전제는 매출 데이터와 어긋난다. ppc.land, CNBC.
+[^capex]: 알파벳 설비투자는 2023년 323억, 2024년 525억, 2025년 914억 달러로 급증했고 2026년 가이던스는 1,950\~2,050억 달러다(2026-07-22 상향). 12개월 후행 잉여현금흐름은 여전히 흑자이고 현금성 자산은 약 2,400억 달러다. Investing.com, Business Standard, Search Engine Journal.
+[^10q]: 알파벳 2026년 2분기 10-Q(2026-06-30 기준). Search & other 매출 전년비 +17%, 유료 클릭 +13%, 클릭당 비용 +3%. 이번 분기 영업활동 현금흐름 391억 달러, 설비투자 449억 달러. 알파벳은 유료 클릭 수가 광고 형식·전달 방식·정책 변경의 영향을 받는다고 밝힌다. <https://www.sec.gov/Archives/edgar/data/1652044/000165204426000071/goog-20260630.htm>
+[^earnings]: 알파벳 2026년 2분기 실적 발표, 순다르 피차이. Gemini 앱 월간 활성 사용자 9억 5천만 명, 분당 API 토큰 220억 개 — 배포 규모를 보여주지만 프런티어 사용자의 기본 선택지인지에는 답하지 않는다. <https://blog.google/company-news/inside-google/message-ceo/alphabet-earnings-q2-2026/>
