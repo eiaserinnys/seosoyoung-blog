@@ -19,17 +19,17 @@ TocOpen: false
 
 Anderson은 자신을 "수년간 매달 50만 달러 넘게 구글 광고를 집행해 온 사람"으로 소개하며 스레드를 열었다. 그의 진단은 이렇다.
 
-> This revenue growth in Search is artificial & extremely unhealthy for Google's business long term. (검색 부문의 이 매출 성장은 인위적이고, 장기적으로 구글 사업에 대단히 해롭다.)
+> 검색 부문의 이 매출 성장은 인위적이고, 장기적으로 구글 사업에 대단히 해롭다.[^quote1]
 
 배경은 LLM이다. 사람들이 검색 대신 챗봇에 질문하면서 돈이 되는 검색 쿼리가 줄어드는데, 구글은 그 구멍을 "근시안적이고 극도로 착취적이며 고객에게 적대적인" 방식으로 메우고 있다는 것이다. 그리고 스레드는 이렇게 닫힌다.
 
-> At the alter[altar] of AI capex, Google is sacrificing the golden goose. (AI 투자라는 제단 위에서, 구글은 황금알을 낳는 거위를 제물로 바치고 있다.)
+> AI 투자라는 제단 위에서, 구글은 황금알을 낳는 거위를 제물로 바치고 있다.[^quote2]
 
 Anderson은 구글이 지난 25년간 "선의의 독점(benevolent monopoly)"을 운영했다고 표현한다. 검색에서 뽑아낸 가치가 창출한 가치의 작은 일부에 불과했고, 그 격차가 먼 미래까지의 성장 기대를 정당화했는데, 이제는 그렇지 않다는 것이다.
 
-## 세 고발 한눈에
+## 세 가지 고발을 한눈에
 
-먼저 세 고발의 판정을 요약해 두고, 아래에서 하나씩 근거를 짚는다.
+먼저 세 가지 고발의 판정을 요약해 두고, 아래에서 하나씩 근거를 짚는다.
 
 | 고발 | 판정 | 핵심 근거 |
 |---|---|---|
@@ -41,7 +41,7 @@ Anderson은 구글이 지난 25년간 "선의의 독점(benevolent monopoly)"을
 
 Anderson의 설명은 명확하다.
 
-> if you bid USD 5 CPC and the next highest bidder bids USD 1 CPC, Google charged you USD 1.01 for the click ... However recently, Google silently deprecated the 2nd price auction and began charging advertisers as much as their bid and budget caps allow. (내가 클릭당 5달러를 부르고 다음 입찰자가 1달러를 부르면 구글은 1.01달러만 청구했다. 그런데 최근 구글은 2차 가격 경매를 조용히 폐기하고, 입찰가와 예산 상한이 허용하는 최대치를 청구하기 시작했다.)
+> 내가 클릭당 5달러를 부르고 다음 입찰자가 1달러를 부르면 구글은 1.01달러만 청구했다. 그런데 최근 구글은 2차 가격 경매를 조용히 폐기하고, 입찰가와 예산 상한이 허용하는 최대치를 청구하기 시작했다.[^quote3]
 
 **판정: 표현은 부정확하나, 여러 채널을 집행하는 광고주에겐 사실에 가깝다.** 문자 그대로 뜯으면 "검색 경매가 1차 가격으로 바뀌었다"는 틀린 말이다. 구글 공식 문서는 2026년 현재도 검색광고의 실제 클릭당 비용이 대개 최대 입찰가보다 낮으며, 바로 아래 경쟁자를 이기는 데 필요한 최소 금액만 청구한다고 명시한다.[^auction] 검색 경매는 여전히 GSP(Generalized Second Price) 구조다.
 
@@ -55,13 +55,13 @@ Anderson의 설명은 명확하다.
 
 ## 고발 2 — "exact match가 broad match가 됐다"
 
-> even if you bid on a specific term ... using the strictest exact-match targeting settings, Google will show your ad across 1000's of unrelated keywords, labeling them as "exact match (close variant)" ... there's no ability to turn this off. (가장 엄격한 exact match를 써도 구글은 무관한 키워드 수천 개에 광고를 노출하며 "exact match (close variant)"라고 이름 붙인다. 끌 방법이 없다.)
+> 가장 엄격한 exact match를 써도 구글은 무관한 키워드 수천 개에 광고를 노출하며 "exact match (close variant)"라고 이름 붙인다. 끌 방법이 없다.[^quote4]
 
 **판정: 사실.** 구글 공식 문서는 close variant에 "옵트아웃할 방법이 없다(There's no way to opt out)"고 직접 밝히고 있으며, close variant는 exact match를 포함한 모든 매치 타입에 기본 적용된다.[^closevariant] 하루아침의 변화가 아니라 십수 년에 걸친 흐름이다. 2014년 8월 옵트아웃 기능이 사라졌고, 2018년 9월 "동일 의미(same meaning)" 매칭이 도입되면서, exact match인데도 문자 그대로 일치하지 않는 검색어에 노출되는 사례가 업계에 광범위하게 보고됐다.[^exacttimeline] Anderson의 "exact match가 broad match가 됐고, broad match는 그냥 의미 없는 스팸이 됐다"는 표현은 방향에서 과장이 아니다.
 
 ## 고발 3 — "예산 상한을 2배로 넘긴다"
 
-> campaigns we've been running for years with USD 1,000 daily budget caps suddenly began spending USD 2,000+ per day. (수년간 일 예산 1000달러로 돌리던 캠페인이 갑자기 하루 2000달러 넘게 쓰기 시작했다.)
+> 수년간 일 예산 1000달러로 돌리던 캠페인이 갑자기 하루 2000달러 넘게 쓰기 시작했다.[^quote5]
 
 **판정: 대체로 사실이나 뉘앙스가 있다.** 하루에 평균 일일예산의 최대 2배까지 지출될 수 있다는 것은 구글이 오래전부터 공표해 온 정책 그 자체다.[^budget] 즉 1000달러 캠페인이 하루 2000달러를 쓰는 것은 이상 현상이 아니라 문서화된 동작이다. 대신 월 청구 상한은 평균 일일예산 곱하기 30.4로 묶여 있고, 이를 넘긴 초과분은 크레딧으로 환급된다고 명시돼 있다. 그러니 "환불도 수단도 전혀 없다"는 부분은 공식 정책과는 다소 어긋난다.
 
@@ -88,8 +88,13 @@ Anderson의 설명은 명확하다.
 Max Anderson(@MaxAnderson), X 스레드, 2026년 7월 23일
 원문: <https://x.com/MaxAnderson/status/2080229375773941871>
 
-원 소스가 텍스트 트윗 스레드라 인용할 이미지가 없어 텍스트로 정리했다. 팩트체크 근거는 본문 각 지점의 사이드노트로 달아 두었다.
+원 소스가 텍스트 트윗 스레드라 인용할 이미지가 없어 텍스트로 정리했다. 본문 인용문은 한국어 번역만 두고 영어 원문과 팩트체크 근거는 사이드노트로 달아 두었다.
 
+[^quote1]: 원문: "This revenue growth in Search is artificial & extremely unhealthy for Google's business long term."
+[^quote2]: 원문: "At the alter of AI capex, Google is sacrificing the golden goose." (alter는 원문의 오타이며 altar(제단)를 가리킨다.)
+[^quote3]: 원문: "if you bid USD 5 CPC and the next highest bidder bids USD 1 CPC, Google charged you USD 1.01 for the click ... However recently, Google silently deprecated the 2nd price auction and began charging advertisers as much as their bid and budget caps allow." (원문은 달러 기호를 사용.)
+[^quote4]: 원문: "even if you bid on a specific term ... using the strictest exact-match targeting settings, Google will show your ad across 1000's of unrelated keywords, labeling them as 'exact match (close variant)' ... there's no ability to turn this off."
+[^quote5]: 원문: "campaigns we've been running for years with USD 1,000 daily budget caps suddenly began spending USD 2,000+ per day." (원문은 달러 기호를 사용.)
 [^auction]: Google Ads Help, "How the Google Ads auction works" / "About Ad Rank". 검색광고는 2026년 현재도 최대 입찰가보다 낮은, 경쟁자를 이기는 데 필요한 최소 금액만 청구한다고 명시한다. <https://support.google.com/google-ads/answer/6366577>
 [^display]: 디스플레이 네트워크·애드센스·애드 매니저는 2019\~2021년 2차 가격에서 1차 가격 경매로 전환됐다(검색은 미해당). Search Engine Land, Digiday 보도.
 [^trial]: 2023년 미국 대 구글 반독점 재판, Jerry Dischler 증언. Bloomberg(2023-09-18); MarTech, "How Google harms search advertisers in 20 slides". <https://martech.org/how-google-harms-search-advertisers-in-20-slides/>
