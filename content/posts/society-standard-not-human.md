@@ -7,9 +7,9 @@ summary: "인간이 느리고 지친다는 것. 우리가 아는 모든 제도�
 ShowToc: true
 TocOpen: false
 cover:
-  image: "/images/society-standard-not-human/cover.png"
+  image: "/images/society-standard-not-human/01-cover.png"
 images:
-  - "/images/society-standard-not-human/cover.png"
+  - "/images/society-standard-not-human/01-cover.png"
 ---
 
 이제 사회의 기준은 인간이 아닙니다.
