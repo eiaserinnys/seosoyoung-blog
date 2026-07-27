@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" font-family="'Noto Sans KR', -apple-system, sans-serif">
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#2e5016"/>
+    </marker>
+  </defs>
+
+  <text x="480" y="34" text-anchor="middle" font-size="17" font-weight="700" fill="#2e5016">
+    잔디 컴퓨트 파이프라인 (티어 하나 기준)
+  </text>
+  <text x="480" y="54" text-anchor="middle" font-size="12" fill="#555">
+    init은 1회 · update는 매 프레임 · 스토리지 버퍼가 두 pass를 잇는다
+  </text>
+
+  <!-- storage buffers (center column) -->
+  <g transform="translate(340 130)">
+    <rect x="0" y="0" width="280" height="60" rx="8" fill="#f6f2e6" stroke="#2e5016" stroke-width="1.5"/>
+    <text x="140" y="24" text-anchor="middle" font-size="13" font-weight="700" fill="#2e5016">bladeData</text>
+    <text x="140" y="44" text-anchor="middle" font-size="10" fill="#555" font-family="ui-monospace, monospace">vec4 · 위치(x,z) + phase + seed</text>
+  </g>
+
+  <g transform="translate(340 220)">
+    <rect x="0" y="0" width="280" height="60" rx="8" fill="#f6f2e6" stroke="#2e5016" stroke-width="1.5"/>
+    <text x="140" y="24" text-anchor="middle" font-size="13" font-weight="700" fill="#2e5016">bladeProps</text>
+    <text x="140" y="44" text-anchor="middle" font-size="10" fill="#555" font-family="ui-monospace, monospace">vec4 · 색 변이 + 하이라이트</text>
+  </g>
+
+  <g transform="translate(340 310)">
+    <rect x="0" y="0" width="280" height="60" rx="8" fill="#f6f2e6" stroke="#2e5016" stroke-width="1.5"/>
+    <text x="140" y="24" text-anchor="middle" font-size="13" font-weight="700" fill="#2e5016">bendState</text>
+    <text x="140" y="44" text-anchor="middle" font-size="10" fill="#555" font-family="ui-monospace, monospace">vec4 · 굽힘 각도 + fade</text>
+  </g>
+
+  <!-- init pass (left) -->
+  <g transform="translate(40 190)">
+    <rect x="0" y="0" width="200" height="140" rx="10" fill="#e9dfc4" stroke="#2e5016" stroke-width="2"/>
+    <text x="100" y="30" text-anchor="middle" font-size="14" font-weight="700" fill="#2e5016">_computeInit</text>
+    <text x="100" y="52" text-anchor="middle" font-size="10" fill="#555">1회만 실행</text>
+    <line x1="20" y1="66" x2="180" y2="66" stroke="#2e5016" stroke-opacity="0.3"/>
+    <text x="100" y="86"  text-anchor="middle" font-size="11" fill="#333">격자에 지터 배치</text>
+    <text x="100" y="104" text-anchor="middle" font-size="11" fill="#333">잎당 phase·seed 부여</text>
+    <text x="100" y="122" text-anchor="middle" font-size="11" fill="#333">색 변이 계산</text>
+  </g>
+
+  <!-- update pass (right) -->
+  <g transform="translate(720 190)">
+    <rect x="0" y="0" width="200" height="140" rx="10" fill="#e9dfc4" stroke="#2e5016" stroke-width="2"/>
+    <text x="100" y="30" text-anchor="middle" font-size="14" font-weight="700" fill="#2e5016">_computeUpdate</text>
+    <text x="100" y="52" text-anchor="middle" font-size="10" fill="#555">매 프레임 실행</text>
+    <line x1="20" y1="66" x2="180" y2="66" stroke="#2e5016" stroke-opacity="0.3"/>
+    <text x="100" y="86"  text-anchor="middle" font-size="11" fill="#333">바람 필드 샘플링</text>
+    <text x="100" y="104" text-anchor="middle" font-size="11" fill="#333">mouseCharge 누적</text>
+    <text x="100" y="122" text-anchor="middle" font-size="11" fill="#333">bendState 업데이트</text>
+  </g>
+
+  <!-- init → buffers (writes) -->
+  <path d="M 240 220 Q 290 180 340 160" fill="none" stroke="#2e5016" stroke-width="1.5" marker-end="url(#arr)"/>
+  <path d="M 240 245 Q 290 245 340 250" fill="none" stroke="#2e5016" stroke-width="1.5" marker-end="url(#arr)"/>
+  <path d="M 240 275 Q 290 305 340 340" fill="none" stroke="#2e5016" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- buffers → update (reads/writes) -->
+  <path d="M 620 160 Q 670 180 720 220" fill="none" stroke="#2e5016" stroke-width="1.5" marker-end="url(#arr)"/>
+  <path d="M 620 250 Q 670 250 720 245" fill="none" stroke="#2e5016" stroke-width="1.5" marker-end="url(#arr)"/>
+  <path d="M 620 340 Q 670 305 720 275" fill="none" stroke="#2e5016" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- feedback loop from update → bendState -->
+  <path d="M 720 340 Q 700 360 620 340" fill="none" stroke="#8b6b3a" stroke-width="1.2" stroke-dasharray="4 4" marker-end="url(#arr)"/>
+  <text x="670" y="380" text-anchor="middle" font-size="10" fill="#8b6b3a" font-style="italic">
+    이전 프레임의 bend가 다음 프레임의 시작점
+  </text>
+
+  <!-- render arrow at the bottom -->
+  <g transform="translate(0 435)">
+    <rect x="340" y="0" width="280" height="50" rx="8" fill="#556e3a" stroke="#2e5016" stroke-width="1.5"/>
+    <text x="480" y="22" text-anchor="middle" font-size="13" font-weight="700" fill="#f6f2e6">인스턴스 렌더링</text>
+    <text x="480" y="40" text-anchor="middle" font-size="10" fill="#f6f2e6">
+      각 잎이 자기 bladeData/bendState를 읽어 vertex 위치를 최종 결정
+    </text>
+  </g>
+  <path d="M 480 380 L 480 430" fill="none" stroke="#2e5016" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- caption -->
+  <text x="480" y="510" text-anchor="middle" font-size="11" fill="#555" font-style="italic">
+    스토리지 버퍼가 두 pass 사이의 유일한 통신 채널. 잎 사이의 시각적 결(파도)은 여기서 태어난다.
+  </text>
+</svg>

@@ -1,0 +1,96 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 620" font-family="'Noto Sans KR', -apple-system, sans-serif">
+  <defs>
+    <radialGradient id="near" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#8fa43a" stop-opacity="0.65"/>
+      <stop offset="100%" stop-color="#556e3a" stop-opacity="0.35"/>
+    </radialGradient>
+    <radialGradient id="mid" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#8fa43a" stop-opacity="0.28"/>
+      <stop offset="100%" stop-color="#556e3a" stop-opacity="0.18"/>
+    </radialGradient>
+    <radialGradient id="far" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#8fa43a" stop-opacity="0.14"/>
+      <stop offset="100%" stop-color="#556e3a" stop-opacity="0.08"/>
+    </radialGradient>
+    <radialGradient id="ultra" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#8fa43a" stop-opacity="0.06"/>
+      <stop offset="100%" stop-color="#556e3a" stop-opacity="0.04"/>
+    </radialGradient>
+  </defs>
+
+  <!-- rings (drawn largest first) -->
+  <g transform="translate(300 310)">
+    <circle r="270" fill="url(#ultra)" stroke="#2e5016" stroke-width="1" stroke-opacity="0.35" stroke-dasharray="4 6"/>
+    <circle r="210" fill="url(#far)"   stroke="#2e5016" stroke-width="1" stroke-opacity="0.45" stroke-dasharray="4 6"/>
+    <circle r="150" fill="url(#mid)"   stroke="#2e5016" stroke-width="1" stroke-opacity="0.55" stroke-dasharray="4 6"/>
+    <circle r="90"  fill="url(#near)"  stroke="#2e5016" stroke-width="1.2" stroke-opacity="0.7"/>
+
+    <!-- camera dot at center -->
+    <circle r="4" fill="#2e5016"/>
+    <text x="0" y="-8" text-anchor="middle" font-size="11" fill="#2e5016">카메라</text>
+
+    <!-- ring labels -->
+    <text x="0" y="-92"  text-anchor="middle" font-size="12" font-weight="600" fill="#2e5016">near</text>
+    <text x="0" y="-150" text-anchor="middle" font-size="12" font-weight="600" fill="#2e5016">mid</text>
+    <text x="0" y="-210" text-anchor="middle" font-size="12" font-weight="600" fill="#2e5016">far</text>
+    <text x="0" y="-270" text-anchor="middle" font-size="12" font-weight="600" fill="#2e5016">ultra</text>
+  </g>
+
+  <!-- right side: LOD tier table -->
+  <g transform="translate(600 90)" font-size="12" fill="#111">
+    <rect x="0" y="0" width="270" height="440" rx="6" fill="#f6f2e6" stroke="#2e5016" stroke-opacity="0.4"/>
+    <text x="16" y="24" font-weight="700" font-size="14">4-티어 LOD 구성</text>
+
+    <line x1="16" y1="36" x2="254" y2="36" stroke="#2e5016" stroke-opacity="0.3"/>
+
+    <!-- header -->
+    <text x="16"  y="58"  font-weight="600">티어</text>
+    <text x="90"  y="58"  font-weight="600">잎 지오메트리</text>
+    <text x="200" y="58"  font-weight="600">wind</text>
+
+    <!-- rows -->
+    <g transform="translate(0 82)">
+      <text x="16" y="0" font-weight="600" fill="#556e3a">near</text>
+      <text x="16" y="14" font-size="10" fill="#555">반경 35 · ~52k잎</text>
+      <text x="90" y="0">taper 스트립 (segments 3)</text>
+      <text x="90" y="14" font-size="10" fill="#555">8정점 + 팁 · 6 삼각형</text>
+      <text x="200" y="0" font-weight="600" fill="#2e5016">1.00</text>
+    </g>
+
+    <g transform="translate(0 138)">
+      <text x="16" y="0" font-weight="600" fill="#556e3a">mid</text>
+      <text x="16" y="14" font-size="10" fill="#555">반경 64 · ~18k잎</text>
+      <text x="90" y="0">taper 스트립 (segments 2)</text>
+      <text x="90" y="14" font-size="10" fill="#555">6정점 + 팁 · 4 삼각형</text>
+      <text x="200" y="0" font-weight="600" fill="#2e5016">0.75</text>
+    </g>
+
+    <g transform="translate(0 194)">
+      <text x="16" y="0" font-weight="600" fill="#556e3a">far</text>
+      <text x="16" y="14" font-size="10" fill="#555">반경 62 · ~8k잎</text>
+      <text x="90" y="0">taper 스트립 (segments 1)</text>
+      <text x="90" y="14" font-size="10" fill="#555">4정점 + 팁 · 2 삼각형</text>
+      <text x="200" y="0" font-weight="600" fill="#2e5016">0.42</text>
+    </g>
+
+    <g transform="translate(0 250)">
+      <text x="16" y="0" font-weight="600" fill="#556e3a">ultra</text>
+      <text x="16" y="14" font-size="10" fill="#555">반경 90 · ~5k잎</text>
+      <text x="90" y="0">삼각형 하나</text>
+      <text x="90" y="14" font-size="10" fill="#555">3정점 · 1 삼각형</text>
+      <text x="200" y="0" font-weight="600" fill="#2e5016">0.16</text>
+    </g>
+
+    <line x1="16" y1="300" x2="254" y2="300" stroke="#2e5016" stroke-opacity="0.3"/>
+    <text x="16" y="322" font-weight="600" font-size="12">합계 · 기본 프리셋</text>
+    <text x="16" y="342" font-size="11" fill="#333">잎 총 85,000장</text>
+    <text x="16" y="360" font-size="11" fill="#333">삼각형 약 41만</text>
+    <text x="16" y="378" font-size="11" fill="#333">필드 반경 90 (단위)</text>
+    <text x="16" y="404" font-size="10" fill="#666" font-style="italic">각 티어 경계에서 fadeIn/fadeOut으로 크로스페이드</text>
+  </g>
+
+  <!-- caption -->
+  <text x="450" y="595" text-anchor="middle" font-size="11" fill="#555" font-style="italic">
+    카메라를 중심으로 네 개의 동심원 필드. 각 원마다 다른 지오메트리·다른 바람 반응.
+  </text>
+</svg>
