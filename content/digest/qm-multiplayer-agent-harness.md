@@ -54,6 +54,34 @@ TocOpen: false
 
 QM은 헤드리스 코어(headless core)를 중심에 둔다. 모든 턴은 중앙 코어를 거치며, 코어는 여러 모델과 하네스를 써서 응답을 생성한다.
 
+<figure style="text-align:center;margin:1.6rem 0">
+<svg viewBox="0 0 760 250" role="img" aria-label="QM 아키텍처: Postgres 지속 계층, 헤드리스 코어(API와 에이전트 루프), 스코프별 샌드박스가 화살표로 연결된 구성도" style="width:100%;max-width:720px;height:auto;font-family:inherit">
+  <defs>
+    <marker id="qmArrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="currentColor"/>
+    </marker>
+  </defs>
+  <rect x="20" y="80" width="150" height="90" rx="10" fill="currentColor" fill-opacity="0.04" stroke="#3b82f6" stroke-width="1.5"/>
+  <text x="95" y="118" text-anchor="middle" font-size="15" font-weight="600" fill="currentColor">Postgres</text>
+  <text x="95" y="140" text-anchor="middle" font-size="11.5" fill="currentColor" opacity="0.72">세션 · 메모리 · 큐</text>
+  <rect x="235" y="35" width="280" height="180" rx="12" fill="currentColor" fill-opacity="0.04" stroke="currentColor" stroke-width="1.5"/>
+  <text x="375" y="60" text-anchor="middle" font-size="13" font-weight="600" fill="currentColor" opacity="0.7">헤드리스 코어</text>
+  <rect x="258" y="74" width="234" height="48" rx="8" fill="currentColor" fill-opacity="0.07" stroke="currentColor" stroke-width="1"/>
+  <text x="375" y="103" text-anchor="middle" font-size="12.5" fill="currentColor">API · 정체성 · 정책 · 스케줄러</text>
+  <rect x="258" y="150" width="234" height="52" rx="8" fill="currentColor" fill-opacity="0.07" stroke="currentColor" stroke-width="1"/>
+  <text x="375" y="172" text-anchor="middle" font-size="12.5" fill="currentColor">에이전트 루프</text>
+  <text x="375" y="190" text-anchor="middle" font-size="11" fill="currentColor" opacity="0.72">Pi · OpenCode · Claude Code</text>
+  <line x1="375" y1="122" x2="375" y2="150" stroke="currentColor" stroke-width="1.4" marker-start="url(#qmArrow)" marker-end="url(#qmArrow)"/>
+  <rect x="580" y="80" width="160" height="90" rx="10" fill="currentColor" fill-opacity="0.04" stroke="#3b82f6" stroke-width="1.5"/>
+  <text x="660" y="110" text-anchor="middle" font-size="13" font-weight="600" fill="currentColor">스코프별 샌드박스</text>
+  <text x="660" y="132" text-anchor="middle" font-size="11" fill="currentColor" opacity="0.72">파일 · 도구</text>
+  <text x="660" y="148" text-anchor="middle" font-size="11" fill="currentColor" opacity="0.72">로그인된 서비스</text>
+  <line x1="172" y1="125" x2="233" y2="125" stroke="currentColor" stroke-width="1.4" marker-start="url(#qmArrow)" marker-end="url(#qmArrow)"/>
+  <line x1="517" y1="125" x2="578" y2="125" stroke="currentColor" stroke-width="1.4" marker-start="url(#qmArrow)" marker-end="url(#qmArrow)"/>
+</svg>
+<figcaption style="font-size:0.85em;opacity:0.7;margin-top:0.6rem">QM 아키텍처 — 모든 턴이 코어를 거쳐, 스코프마다 격리된 샌드박스에서 실행된다.</figcaption>
+</figure>
+
 - **Postgres 지속 계층** — 세션·메모리·큐, 즉 사용자 데이터와 세션 이력, 그 밖의 지속 상태를 담는다.
 - **코어(API + 에이전트 루프)** — 정체성·정책·스케줄러를 다루는 API와, Pi·OpenCode·Claude Code 등을 구동하는 에이전트 루프가 서로 맞물린다.
 - **스코프별 샌드박스** — 파일·도구·로그인된 서비스가 들어 있는, 각 스코프의 "지속되는 컴퓨터"다.
@@ -66,19 +94,15 @@ QM은 헤드리스 코어(headless core)를 중심에 둔다. 모든 턴은 중�
 
 코어 자체는 제네릭하다. 한 회사에 특화된 모든 것(조직 설정, 커스텀 도구와 스킬, 샌드박스 이미지, 인프라)은 `qm` CLI가 검증하고 배포하는 <em>deployment 디렉토리</em>에 들어간다. 하네스·세션 저장소·샌드박스·메모리 같은 모든 기반(substrate)은 인터페이스 뒤에 놓여, 프로덕션 구현은 배선 파일(wiring file) 하나로 교체된다.
 
-## 샌드박스 구현을 뜯어보면
+## 샌드박스를 들여다보면
 
-README는 샌드박스를 "스코프의 지속되는 컴퓨터"라는 한 문단으로만 소개한다. 실제 구현이 궁금해 소스(`src/sandbox/`)를 직접 열어 정리했다. 아래는 원문 문서가 아니라 코드를 읽어 확인한 내용이다.
+README는 샌드박스를 "스코프의 지속되는 컴퓨터"라는 한 줄로 소개하고 지나간다. 어떻게 만들었는지 궁금해 소스를 열어 봤더니, 핵심은 "겉은 하나, 속은 둘"이었다.
 
-**추상화 하나, 백엔드 셋.** `Sandbox` 인터페이스는 `provision`(레이어를 받아 핸들 발급), `run`(명령 실행), 파일 read/write, `listDir`·`removeDir`, `teardown`을 노출한다. 프로세스 세션·홈 백업·블롭 스테이징 같은 확장 능력은 옵셔널이라 백엔드마다 지원 여부가 갈리고, 미지원 호출은 `CapabilityUnsupportedError`로 걸러진다. 백엔드는 `local`·`aws`·`sprites` 셋이며, 스코프 ID를 백엔드로 매핑하는 라우터가 provision 시점에 백엔드를 고정해 핸들에 실어 보낸다. 이후 모든 연산은 핸들에 실린 백엔드로 되돌아가 라우팅된다. (`sandbox.ts`, `sandbox-routing.ts`)
+겉에서 보면 샌드박스는 어디서나 똑같이 생겼다. 명령을 실행하고, 파일을 읽고 쓰고, 다 쓰면 정리하는 공통 창구 하나로 감싸 두었다. 그 뒤의 실제 몸통은 환경에 따라 갈린다. 개발자 노트북에서는 사람마다 도커 컨테이너를 하나씩 띄우고, 실제 서비스에서는 AWS가 굴리는 경량 가상머신(microVM)을 스코프마다 띄운다. 같은 도구를 부르는데 한쪽은 컨테이너가, 다른 쪽은 가상머신이 답하는 셈이다.
 
-**로컬은 Docker, 프로덕션은 AWS Lambda MicroVM.** 로컬 구현은 스코프마다 컨테이너 하나(`qm-sbx-<slug>`)와 도커 볼륨 하나(`qm-home-<slug>`)를 홈 디렉터리에 붙여 영속화한다. 코드 주석에 dev 전용이라고 밝혀 두었다. 프로덕션은 `aws-microvm` 백엔드로, AWS Lambda 서비스의 MicroVM API(`/2025-09-09/microvms`)를 SigV4로 서명 호출해 microVM을 띄우고 suspend·resume·terminate로 수명을 관리한다. 흔히 떠올릴 "Firecracker"라는 단어는 소스 어디에도 없다. 코드가 부르는 것은 Lambda의 관리형 microVM API다. (`local-sandbox.ts`, `aws-sandbox.ts`, `aws-microvm-api.ts`)
+"지속되는 컴퓨터"라는 말이 지켜지는 방식도 두 갈래다. 노트북 쪽은 볼륨에 파일을 그대로 남겨 두면 끝이다. 서비스 쪽은 가상머신이 오래 살지 않으므로, 자리를 비우기 전에 홈 디렉터리를 통째로 묶어 S3에 넣어 두었다가 다음에 깨어날 때 되살린다. 한 번 설치한 도구가 다음에도 남아 있는 비결이 여기 있다. 오래 놀고 있는 스코프는 저장만 해두고 아예 꺼서 비용을 아낀다.
 
-**"지속"의 실체는 백엔드마다 다르다.** 로컬은 도커 볼륨으로 디스크를 물리적으로 남긴다(`resident_disk`). AWS는 microVM 디스크가 아니라 홈 디렉터리를 tar로 묶어 S3에 올리는 스냅샷 방식이다(`snapshot_to_workspace`). 새 VM이 뜨면 S3에서 tar를 내려받아 이전 상태를 복원한다. VM이 일정 시간(기본 27,000초)을 넘겨 살아 있으면 스냅샷을 찍고 새 VM으로 갈아 태우는 로테이션이 돌고, 오래 유휴한 스코프는 스냅샷 뒤 완전히 종료한다. 같은 추상화를 쓰면서도 영속의 실체는 완전히 다른 두 길인 셈이다. (`aws-sandbox.ts`)
-
-**읽기 전용 레이어는 overlayfs가 아니라 tar 재배포.** 공유 스킬 같은 읽기 전용 레이어는 파일시스템 오버레이로 겹치지 않는다. 대신 (경로, 내용 해시)를 정렬해 SHA-256 지문을 만들고, 샌드박스 안의 매니페스트와 비교해 다를 때만 전체를 tar로 다시 밀어 넣는다. 단순하지만 캐시 무효화가 명확한 방식이다. (`ro-layers.ts`)
-
-**exec는 얇은 daemon과 셸로 흉내 낸 프로세스 관리.** 명령은 셸에 직접 붙지 않는다. 컨테이너·VM 안에 떠 있는 얇은 HTTP daemon에 `/exec`·`/read`·`/write`로 요청한다. dev 서버 같은 장수 백그라운드 프로세스는 OS job control 없이 `$HOME/.agent-proc/<uuid>/` 아래 fifo와 파일로 상태를 남기는 셸 스크립트만으로 구현했다. 재부팅은 `boot_id` 값을 비교해 감지하고, 로컬은 취소 신호가 오면 프로세스 그룹째 종료한다. 다만 AWS 실행 경로에는 이 취소 배선이 로컬만큼 갖춰져 있지 않다. (`exec-process-session.ts`, `exec-kill.ts`)
+세부로 들어가도 결이 실용적이다. 여럿이 함께 쓰는 읽기 전용 파일(공유 스킬 같은 것)은 복잡한 파일시스템 기교 없이 통째로 얹되, 내용이 바뀌었을 때만 다시 밀어 넣는다. 에이전트가 명령을 돌릴 때는 샌드박스 안에 상주하는 작은 접수 프로그램에게 말을 거는 구조이고, 개발 서버처럼 오래 도는 작업도 그 접수원이 뒤에서 계속 지켜본다. 무겁게 두르기보다, 있는 재료로 단정하게 엮은 인상이다.
 
 ## 보안과 시크릿
 
