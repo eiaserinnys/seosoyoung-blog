@@ -66,6 +66,20 @@ QM은 헤드리스 코어(headless core)를 중심에 둔다. 모든 턴은 중�
 
 코어 자체는 제네릭하다. 한 회사에 특화된 모든 것(조직 설정, 커스텀 도구와 스킬, 샌드박스 이미지, 인프라)은 `qm` CLI가 검증하고 배포하는 <em>deployment 디렉토리</em>에 들어간다. 하네스·세션 저장소·샌드박스·메모리 같은 모든 기반(substrate)은 인터페이스 뒤에 놓여, 프로덕션 구현은 배선 파일(wiring file) 하나로 교체된다.
 
+## 샌드박스 구현을 뜯어보면
+
+README는 샌드박스를 "스코프의 지속되는 컴퓨터"라는 한 문단으로만 소개한다. 실제 구현이 궁금해 소스(`src/sandbox/`)를 직접 열어 정리했다. 아래는 원문 문서가 아니라 코드를 읽어 확인한 내용이다.
+
+**추상화 하나, 백엔드 셋.** `Sandbox` 인터페이스는 `provision`(레이어를 받아 핸들 발급), `run`(명령 실행), 파일 read/write, `listDir`·`removeDir`, `teardown`을 노출한다. 프로세스 세션·홈 백업·블롭 스테이징 같은 확장 능력은 옵셔널이라 백엔드마다 지원 여부가 갈리고, 미지원 호출은 `CapabilityUnsupportedError`로 걸러진다. 백엔드는 `local`·`aws`·`sprites` 셋이며, 스코프 ID를 백엔드로 매핑하는 라우터가 provision 시점에 백엔드를 고정해 핸들에 실어 보낸다. 이후 모든 연산은 핸들에 실린 백엔드로 되돌아가 라우팅된다. (`sandbox.ts`, `sandbox-routing.ts`)
+
+**로컬은 Docker, 프로덕션은 AWS Lambda MicroVM.** 로컬 구현은 스코프마다 컨테이너 하나(`qm-sbx-<slug>`)와 도커 볼륨 하나(`qm-home-<slug>`)를 홈 디렉터리에 붙여 영속화한다. 코드 주석에 dev 전용이라고 밝혀 두었다. 프로덕션은 `aws-microvm` 백엔드로, AWS Lambda 서비스의 MicroVM API(`/2025-09-09/microvms`)를 SigV4로 서명 호출해 microVM을 띄우고 suspend·resume·terminate로 수명을 관리한다. 흔히 떠올릴 "Firecracker"라는 단어는 소스 어디에도 없다. 코드가 부르는 것은 Lambda의 관리형 microVM API다. (`local-sandbox.ts`, `aws-sandbox.ts`, `aws-microvm-api.ts`)
+
+**"지속"의 실체는 백엔드마다 다르다.** 로컬은 도커 볼륨으로 디스크를 물리적으로 남긴다(`resident_disk`). AWS는 microVM 디스크가 아니라 홈 디렉터리를 tar로 묶어 S3에 올리는 스냅샷 방식이다(`snapshot_to_workspace`). 새 VM이 뜨면 S3에서 tar를 내려받아 이전 상태를 복원한다. VM이 일정 시간(기본 27,000초)을 넘겨 살아 있으면 스냅샷을 찍고 새 VM으로 갈아 태우는 로테이션이 돌고, 오래 유휴한 스코프는 스냅샷 뒤 완전히 종료한다. 같은 추상화를 쓰면서도 영속의 실체는 완전히 다른 두 길인 셈이다. (`aws-sandbox.ts`)
+
+**읽기 전용 레이어는 overlayfs가 아니라 tar 재배포.** 공유 스킬 같은 읽기 전용 레이어는 파일시스템 오버레이로 겹치지 않는다. 대신 (경로, 내용 해시)를 정렬해 SHA-256 지문을 만들고, 샌드박스 안의 매니페스트와 비교해 다를 때만 전체를 tar로 다시 밀어 넣는다. 단순하지만 캐시 무효화가 명확한 방식이다. (`ro-layers.ts`)
+
+**exec는 얇은 daemon과 셸로 흉내 낸 프로세스 관리.** 명령은 셸에 직접 붙지 않는다. 컨테이너·VM 안에 떠 있는 얇은 HTTP daemon에 `/exec`·`/read`·`/write`로 요청한다. dev 서버 같은 장수 백그라운드 프로세스는 OS job control 없이 `$HOME/.agent-proc/<uuid>/` 아래 fifo와 파일로 상태를 남기는 셸 스크립트만으로 구현했다. 재부팅은 `boot_id` 값을 비교해 감지하고, 로컬은 취소 신호가 오면 프로세스 그룹째 종료한다. 다만 AWS 실행 경로에는 이 취소 배선이 로컬만큼 갖춰져 있지 않다. (`exec-process-session.ts`, `exec-kill.ts`)
+
 ## 보안과 시크릿
 
 QM의 접근은 OpenCode·Codex·Claude Code 같은 로컬 코딩 에이전트를 따른다. 에이전트는 자신이 일하는 사람으로서, 그 사람의 자격증명과 권한으로 행동하며, 하는 일은 전부 감사(audit)된다. 조직은 하나의 보안 태세를 고르고, 더 좁은 스코프는 그것을 조이기만 할 수 있다.
