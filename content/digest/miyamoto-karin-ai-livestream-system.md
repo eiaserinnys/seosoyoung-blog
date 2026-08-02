@@ -7,9 +7,9 @@ summary: "프로그래밍 경험이 전혀 없는 아이돌 미야모토 카린�
 ShowToc: true
 TocOpen: false
 cover:
-  image: "/images/miyamoto-karin-ai-livestream-system/ai-scoring.jpg"
+  image: "/images/miyamoto-karin-ai-livestream-system/title.jpg"
 images:
-  - "/images/miyamoto-karin-ai-livestream-system/ai-scoring.jpg"
+  - "/images/miyamoto-karin-ai-livestream-system/title.jpg"
 ---
 
 ## 3줄 요약
