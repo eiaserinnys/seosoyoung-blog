@@ -15,8 +15,10 @@ uniform float uErosionStrength;
 uniform float uTerraceEnabled;
 uniform float uTerraceSteps;
 uniform float uCombinedPreset;
+uniform float uGridSpacing;
 
 varying vec3 vWorldPosition;
+varying vec3 vWorldNormal;
 varying float vHeight;
 
 vec2 hash22(vec2 p) {
@@ -73,11 +75,15 @@ float fbmValue(vec2 p) {
   vec2 samplePoint = p * uFrequency;
 
   float octaveLimit = (uNoiseMode > 0.5 && uFeatureFbm < 0.5) ? 1.0 : uOctaves;
+  float sampleFrequency = uFrequency;
+  float nyquistFrequency = 0.5 / max(uGridSpacing, 0.0001);
   for (int octave = 0; octave < 8; octave++) {
     if (float(octave) >= octaveLimit) break;
-    sum += terrainNoise(samplePoint) * weight;
-    weightSum += weight;
+    float bandWeight = 1.0 - smoothstep(nyquistFrequency * 0.82, nyquistFrequency, sampleFrequency);
+    sum += terrainNoise(samplePoint) * weight * bandWeight;
+    weightSum += weight * bandWeight;
     samplePoint = samplePoint * uLacunarity + vec2(17.1, 9.2);
+    sampleFrequency *= uLacunarity;
     weight *= uGain;
   }
 
@@ -136,26 +142,30 @@ float lowFrequencyTerraces(vec2 p) {
 }
 
 float finalHeight(vec2 p) {
-  float weathered = erodedHeight(p);
+  float result = erodedHeight(p);
 
   if (uCombinedPreset > 0.5) {
     float largeForm = lowFrequencyTerraces(p);
-    return clamp(mix(largeForm, weathered, 0.26), 0.0, 1.0);
+    result = clamp(mix(largeForm, result, 0.46), 0.0, 1.0);
+  } else if (uTerraceEnabled > 0.5) {
+    result = terrace(result, max(uTerraceSteps, 2.0));
   }
 
-  if (uTerraceEnabled > 0.5) {
-    weathered = terrace(weathered, max(uTerraceSteps, 2.0));
-  }
-
-  return weathered;
+  return result;
 }
 
 void main() {
   vec2 terrainPosition = position.xz + vec2(uTime * 0.002, 0.0);
   float heightValue = finalHeight(terrainPosition);
+  float heightX = finalHeight(terrainPosition + vec2(uGridSpacing, 0.0));
+  float heightZ = finalHeight(terrainPosition + vec2(0.0, uGridSpacing));
+  float gradientX = (heightX - heightValue) * uAmplitude / uGridSpacing;
+  float gradientZ = (heightZ - heightValue) * uAmplitude / uGridSpacing;
+  vec3 localNormal = normalize(vec3(-gradientX, 1.0, -gradientZ));
   vec3 displaced = vec3(position.x, (heightValue - 0.28) * uAmplitude, position.z);
   vec4 worldPosition = modelMatrix * vec4(displaced, 1.0);
   vWorldPosition = worldPosition.xyz;
+  vWorldNormal = normalize(mat3(modelMatrix) * localNormal);
   vHeight = heightValue;
   gl_Position = projectionMatrix * viewMatrix * worldPosition;
 }
@@ -171,6 +181,7 @@ uniform float uFogDensity;
 uniform float uScatterSeparated;
 
 varying vec3 vWorldPosition;
+varying vec3 vWorldNormal;
 varying float vHeight;
 
 float heightFogOpticalDepth(vec3 ray, float distanceToSurface) {
@@ -191,23 +202,23 @@ float heightFogOpticalDepth(vec3 ray, float distanceToSurface) {
 }
 
 void main() {
-  vec3 normal = normalize(cross(dFdx(vWorldPosition), dFdy(vWorldPosition)));
+  vec3 normal = normalize(vWorldNormal);
   if (normal.y < 0.0) normal *= -1.0;
 
   float slope = 1.0 - clamp(normal.y, 0.0, 1.0);
-  vec3 lowRock = vec3(0.115, 0.155, 0.165);
-  vec3 highRock = vec3(0.34, 0.39, 0.40);
-  vec3 snow = vec3(0.88, 0.92, 0.91);
+  vec3 lowRock = vec3(0.10, 0.135, 0.15);
+  vec3 highRock = vec3(0.42, 0.45, 0.45);
+  vec3 snow = vec3(0.96, 0.98, 0.96);
   vec3 groundColor = mix(lowRock, highRock, smoothstep(0.12, 0.68, vHeight));
-  float gentleSlope = 1.0 - smoothstep(0.24, 0.78, slope);
-  float snowLine = smoothstep(0.34, 0.62, vHeight) * gentleSlope;
-  float highAltitudeSnow = smoothstep(0.52, 0.82, vHeight);
-  snowLine = max(snowLine, highAltitudeSnow * mix(0.34, 0.78, gentleSlope));
+  float gentleSlope = 1.0 - smoothstep(0.30, 0.86, slope);
+  float snowLine = smoothstep(0.14, 0.38, vHeight) * gentleSlope;
+  float highAltitudeSnow = smoothstep(0.20, 0.45, vHeight);
+  snowLine = max(snowLine, highAltitudeSnow * mix(0.64, 0.96, gentleSlope));
   groundColor = mix(groundColor, snow, snowLine);
 
   vec3 lightDirection = normalize(vec3(-0.48, 0.74, 0.46));
   float diffuse = max(dot(normal, lightDirection), 0.0);
-  float halfLambert = diffuse * 0.72 + 0.28;
+  float halfLambert = diffuse * 0.66 + 0.34;
   float rim = pow(1.0 - max(dot(normal, normalize(cameraPosition - vWorldPosition)), 0.0), 3.0);
   vec3 color = groundColor * halfLambert + vec3(0.09, 0.15, 0.17) * rim * 0.35;
 

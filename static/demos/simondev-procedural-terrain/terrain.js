@@ -18,6 +18,7 @@ export const TRICK_INVENTORY = Object.freeze([
 ]);
 
 const settings = {
+  gridDensity: 1024,
   frequency: 0.48,
   amplitude: 11.5,
   octaves: 6,
@@ -66,18 +67,27 @@ const PRESETS = Object.freeze({
     distanceFog: true, heightFog: false, scatterSeparated: false,
   },
   Full: {
-    frequency: 0.48, amplitude: 11.5, octaves: 6, lacunarity: 2.03, gain: 0.49,
-    reshapePower: 2.65, noiseType: 'value', featureFbm: true,
-    erosion: true, erosionStrength: 2.1, terrace: true, terraceSteps: 9,
+    frequency: 0.48, amplitude: 10.5, octaves: 6, lacunarity: 2.03, gain: 0.49,
+    reshapePower: 1.9, noiseType: 'ridged', featureFbm: true,
+    erosion: true, erosionStrength: 1.7, terrace: true, terraceSteps: 9,
     combinedPreset: true, distanceFog: true, heightFog: true,
-    fogDensity: 0.22, scatterSeparated: true,
+    fogDensity: 0.14, scatterSeparated: true,
   },
 });
 
 const noiseModes = { value: 0, ridged: 1, voronoi: 2 };
+const GRID_SIZE = 48;
+const GRID_DENSITIES = Object.freeze({
+  '128 × 128 · 가벼움': 128,
+  '256 × 256': 256,
+  '512 × 512': 512,
+  '1024 × 1024 · 정밀': 1024,
+});
 const loading = document.querySelector('#loading');
 const errorPanel = document.querySelector('#error');
+const app = document.querySelector('#app');
 const canvas = document.querySelector('#terrain');
+const fullscreenToggle = document.querySelector('#fullscreen-toggle');
 
 function makeUniforms() {
   return {
@@ -95,6 +105,7 @@ function makeUniforms() {
     uTerraceEnabled: { value: Number(settings.terrace) },
     uTerraceSteps: { value: settings.terraceSteps },
     uCombinedPreset: { value: Number(settings.combinedPreset) },
+    uGridSpacing: { value: GRID_SIZE / settings.gridDensity },
     uDistanceFogEnabled: { value: Number(settings.distanceFog) },
     uHeightFogEnabled: { value: Number(settings.heightFog) },
     uFogDensity: { value: settings.fogDensity },
@@ -123,7 +134,7 @@ function syncUniforms(uniforms) {
   uniforms.uScatterSeparated.value = Number(settings.scatterSeparated);
 }
 
-function createGui(uniforms) {
+function createGui(uniforms, onGridDensityChange) {
   const gui = new GUI({ title: '11 TERRAIN TRICKS', width: 328 });
   const controllers = [];
   const track = (controller) => {
@@ -148,6 +159,9 @@ function createGui(uniforms) {
   Object.keys(PRESETS).forEach((name) => presets.add(presetActions, name));
 
   const basic = gui.addFolder('1 · 하이트맵 기초');
+  const gridController = basic.add(settings, 'gridDensity', GRID_DENSITIES).name('격자 밀도');
+  controllers.push(gridController);
+  gridController.onChange((value) => onGridDensityChange(Number(value)));
   track(basic.add(settings, 'frequency', 0.08, 1.2, 0.01).name('주파수'));
   track(basic.add(settings, 'amplitude', 2, 18, 0.1).name('진폭'));
 
@@ -195,6 +209,36 @@ function showFailure(error) {
   errorPanel.hidden = false;
 }
 
+function createTerrainGeometry(density) {
+  const geometry = new THREE.PlaneGeometry(GRID_SIZE, GRID_SIZE, density, density);
+  geometry.deleteAttribute('normal');
+  geometry.deleteAttribute('uv');
+  geometry.rotateX(-Math.PI / 2);
+  return geometry;
+}
+
+function syncFullscreenState() {
+  const active = document.fullscreenElement === app;
+  fullscreenToggle.classList.toggle('is-active', active);
+  fullscreenToggle.setAttribute('aria-pressed', String(active));
+  fullscreenToggle.setAttribute('aria-label', active ? '전체화면 종료' : '전체화면');
+  fullscreenToggle.querySelector('.fullscreen-label').textContent = active ? '전체화면 종료' : '전체화면';
+}
+
+async function toggleFullscreen() {
+  if (document.fullscreenElement === app) {
+    await document.exitFullscreen();
+  } else {
+    await app.requestFullscreen();
+  }
+}
+
+function showFullscreenFailure() {
+  fullscreenToggle.classList.add('has-error');
+  fullscreenToggle.title = '이 브라우저에서는 전체화면을 열 수 없습니다.';
+  fullscreenToggle.querySelector('.fullscreen-label').textContent = '전체화면 사용 불가';
+}
+
 function init() {
   if (!canvas.getContext('webgl2') && !canvas.getContext('webgl')) {
     throw new Error('WebGL is unavailable');
@@ -229,13 +273,25 @@ function init() {
     fragmentShader,
     side: THREE.DoubleSide,
   });
-  const geometry = new THREE.PlaneGeometry(48, 48, 256, 256);
-  geometry.rotateX(-Math.PI / 2);
+  let geometry = createTerrainGeometry(settings.gridDensity);
   const terrain = new THREE.Mesh(geometry, material);
   scene.add(terrain);
 
-  const { gui, applyPreset } = createGui(uniforms);
+  const rebuildGeometry = (density) => {
+    const normalizedDensity = Number(density);
+    if (normalizedDensity === geometry.parameters.widthSegments) return;
+    const nextGeometry = createTerrainGeometry(normalizedDensity);
+    terrain.geometry = nextGeometry;
+    geometry.dispose();
+    geometry = nextGeometry;
+    settings.gridDensity = normalizedDensity;
+    uniforms.uGridSpacing.value = GRID_SIZE / normalizedDensity;
+    document.body.dataset.gridDensity = String(normalizedDensity);
+  };
+
+  const { gui, applyPreset } = createGui(uniforms, rebuildGeometry);
   applyPreset('Full');
+  document.body.dataset.gridDensity = String(settings.gridDensity);
 
   const resize = () => {
     const width = canvas.clientWidth;
@@ -245,8 +301,19 @@ function init() {
     camera.updateProjectionMatrix();
   };
   const observer = new ResizeObserver(resize);
-  observer.observe(canvas);
+  observer.observe(app);
   resize();
+
+  const handleFullscreenChange = () => {
+    syncFullscreenState();
+    requestAnimationFrame(resize);
+  };
+  const handleFullscreenClick = () => {
+    toggleFullscreen().catch(showFullscreenFailure);
+  };
+  document.addEventListener('fullscreenchange', handleFullscreenChange);
+  fullscreenToggle.addEventListener('click', handleFullscreenClick);
+  syncFullscreenState();
 
   const clock = new THREE.Clock();
   let elapsed = 0;
@@ -278,8 +345,10 @@ function init() {
     settings,
     applyPreset,
     setSettings(patch) {
+      const previousDensity = settings.gridDensity;
       Object.assign(settings, patch);
       syncUniforms(uniforms);
+      if (settings.gridDensity !== previousDensity) rebuildGeometry(settings.gridDensity);
       gui.controllersRecursive().forEach((controller) => controller.updateDisplay());
     },
     setControl(property, value) {
@@ -305,12 +374,26 @@ function init() {
       clock.getDelta();
       renderer.setAnimationLoop(renderFrame);
     },
+    toggleFullscreen,
+    get isFullscreen() {
+      return document.fullscreenElement === app;
+    },
+    getGridStats() {
+      const density = settings.gridDensity;
+      return {
+        density,
+        vertices: (density + 1) ** 2,
+        triangles: density * density * 2,
+      };
+    },
     renderer,
   };
 
   window.addEventListener('beforeunload', () => {
     renderer.setAnimationLoop(null);
     observer.disconnect();
+    document.removeEventListener('fullscreenchange', handleFullscreenChange);
+    fullscreenToggle.removeEventListener('click', handleFullscreenClick);
     gui.destroy();
     geometry.dispose();
     material.dispose();

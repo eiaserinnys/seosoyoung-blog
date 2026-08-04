@@ -22,7 +22,7 @@ images:
 
 원문의 트릭을 같은 순서로 붙여 라이브 데모를 만들었다. 오른쪽 패널에서 주파수와 진폭을 밀어 보고, 노이즈 종류를 바꾸고, 침식과 테라스와 안개를 하나씩 켜면 각 트릭이 화면을 어떻게 바꾸는지 바로 보인다. 상단 PRESETS의 Basic부터 Full까지를 차례로 눌러 보면 아래 본문의 순서를 그대로 따라갈 수 있다.
 
-<iframe src="/demos/simondev-procedural-terrain/" title="절차적 지형을 만드는 손잡이들" loading="lazy" style="width:100%;height:clamp(560px,62vw,720px);border:0;border-radius:16px;"></iframe>
+<iframe src="/demos/simondev-procedural-terrain/" title="절차적 지형을 만드는 손잡이들" loading="lazy" allow="fullscreen" allowfullscreen style="width:100%;height:clamp(560px,62vw,720px);border:0;border-radius:16px;"></iframe>
 
 원문이 도달한 지점은 이렇다. 안개에 잠긴 능선이 겹겹이 물러나는 60초짜리 비행 영상으로 스레드가 열린다.
 

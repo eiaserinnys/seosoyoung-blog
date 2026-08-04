@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="color-scheme" content="dark">
   <title>절차적 지형 실험실</title>
+  <link rel="icon" href="../../favicon-16x16.png" sizes="16x16">
   <link rel="stylesheet" href="./styles.css">
   <script type="importmap">
     {
@@ -18,6 +19,11 @@
 <body>
   <main id="app" aria-label="절차적 지형 인터랙티브 데모">
     <canvas id="terrain" aria-label="절차적으로 생성된 산악 지형"></canvas>
+
+    <button id="fullscreen-toggle" type="button" aria-label="전체화면" aria-pressed="false">
+      <span class="fullscreen-icon" aria-hidden="true"></span>
+      <span class="fullscreen-label">전체화면</span>
+    </button>
 
     <header class="title-card">
       <p class="eyebrow">PROCEDURAL TERRAIN LAB</p>
