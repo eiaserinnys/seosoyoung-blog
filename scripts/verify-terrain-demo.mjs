@@ -68,10 +68,47 @@ for (const [id, ...markers] of controls) {
   }
 }
 
-assert(runtime.includes("applyPreset('Full')"), 'Full preset must be the initial state');
-assert(runtime.includes('new THREE.PlaneGeometry(48, 48, 256, 256)'), 'terrain grid must remain 256×256');
+const settingsBlock = runtime.match(/const settings = \{([\s\S]*?)\n\};/)?.[1] ?? '';
+const expectedDefaults = [
+  ['gridDensity', '1024'],
+  ['frequency', '0.19'],
+  ['amplitude', '11.2'],
+  ['octaves', '6'],
+  ['lacunarity', '2.02'],
+  ['gain', '0.54'],
+  ['reshapePower', '1.05'],
+  ['noiseType', "'value'"],
+  ['featureFbm', 'false'],
+  ['erosion', 'true'],
+  ['erosionStrength', '0.4'],
+  ['terrace', 'true'],
+  ['terraceSteps', '3'],
+  ['combinedPreset', 'true'],
+  ['distanceFog', 'true'],
+  ['heightFog', 'true'],
+  ['fogDensity', '0.02'],
+  ['scatterSeparated', 'true'],
+];
+for (const [property, value] of expectedDefaults) {
+  assert(
+    new RegExp(`\\b${property}:\\s*${value.replace(/[.*+?^${}()|[\\]\\\\]/g, '\\$&')}[,\\n]`).test(settingsBlock),
+    `initial setting mismatch: ${property} must be ${value}`,
+  );
+}
+
+assert(!runtime.includes("applyPreset('Full')"), 'initial settings must not be overwritten by a preset');
+assert(/new GUI\(\{[\s\S]*?container:\s*app[,\n]/.test(runtime), 'lil-gui must live inside the fullscreen app container');
+assert(runtime.includes('new THREE.PlaneGeometry(GRID_SIZE, GRID_SIZE, density, density)'), 'terrain grid must use the selected density');
 assert(shaders.includes('gl_Position = projectionMatrix * viewMatrix * worldPosition'), 'vertex displacement path is missing');
-assert(shaders.includes('dFdx(vWorldPosition)'), 'fragment derivative normal path is missing');
+assert(shaders.includes('vWorldNormal = normalize(mat3(modelMatrix) * localNormal)'), 'smooth vertex normal path is missing');
+assert(!/\bdFdx\b|\bdFdy\b/.test(shaders), 'fragment derivative normals must stay removed');
+
+const combinedBranch = shaders.indexOf('if (uCombinedPreset > 0.5)');
+const terraceBranch = shaders.indexOf('else if (uTerraceEnabled > 0.5)');
+assert(combinedBranch >= 0 && terraceBranch > combinedBranch, 'combined terrain must take precedence over standalone terraces');
+assert(/#fullscreen-toggle\s*\{[\s\S]*?position:\s*absolute;[\s\S]*?left:\s*16px;[\s\S]*?top:\s*16px;/.test(styles), 'fullscreen button must stay in the top-left corner');
+assert(/\.lil-gui\.root\s*\{[\s\S]*?position:\s*absolute;[\s\S]*?max-height:\s*calc\(100% - 32px\);/.test(styles), 'GUI must remain positioned and scrollable inside the app');
+assert(/\.lil-gui\.root\s*>\s*\.children\s*\{[\s\S]*?overflow-y:\s*auto;/.test(styles), 'long GUI content must scroll vertically');
 
 if (failures.length) {
   console.error(`terrain demo contract failed (${failures.length})`);

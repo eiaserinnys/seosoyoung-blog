@@ -19,22 +19,22 @@ export const TRICK_INVENTORY = Object.freeze([
 
 const settings = {
   gridDensity: 1024,
-  frequency: 0.48,
-  amplitude: 11.5,
+  frequency: 0.19,
+  amplitude: 11.2,
   octaves: 6,
-  lacunarity: 2.03,
-  gain: 0.49,
-  reshapePower: 2.8,
-  noiseType: 'ridged',
-  featureFbm: true,
+  lacunarity: 2.02,
+  gain: 0.54,
+  reshapePower: 1.05,
+  noiseType: 'value',
+  featureFbm: false,
   erosion: true,
-  erosionStrength: 2.1,
+  erosionStrength: 0.4,
   terrace: true,
-  terraceSteps: 9,
+  terraceSteps: 3,
   combinedPreset: true,
   distanceFog: true,
   heightFog: true,
-  fogDensity: 0.22,
+  fogDensity: 0.02,
   scatterSeparated: true,
   autoFlight: true,
 };
@@ -135,7 +135,11 @@ function syncUniforms(uniforms) {
 }
 
 function createGui(uniforms, onGridDensityChange) {
-  const gui = new GUI({ title: '11 TERRAIN TRICKS', width: 328 });
+  const gui = new GUI({
+    title: '11 TERRAIN TRICKS',
+    width: 328,
+    container: app,
+  });
   const controllers = [];
   const track = (controller) => {
     controllers.push(controller);
@@ -290,7 +294,6 @@ function init() {
   };
 
   const { gui, applyPreset } = createGui(uniforms, rebuildGeometry);
-  applyPreset('Full');
   document.body.dataset.gridDensity = String(settings.gridDensity);
 
   const resize = () => {

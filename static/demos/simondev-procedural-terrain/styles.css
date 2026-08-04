@@ -49,7 +49,7 @@ body {
 .title-card {
   position: absolute;
   z-index: 2;
-  top: clamp(18px, 3vw, 38px);
+  top: 64px;
   left: clamp(18px, 4vw, 54px);
   max-width: min(660px, calc(100vw - 390px));
   padding: 18px 20px;
@@ -117,7 +117,7 @@ h1 {
 #fullscreen-toggle {
   position: absolute;
   z-index: 3;
-  right: 360px;
+  left: 16px;
   top: 16px;
   display: flex;
   align-items: center;
@@ -203,6 +203,7 @@ h1 {
   --string-color: #b7e2c8;
   --font-size: 11px;
   --name-width: 48%;
+  position: absolute;
   z-index: 4;
   top: 16px;
   right: 16px;
@@ -212,6 +213,11 @@ h1 {
   overflow: auto;
   box-shadow: 0 18px 60px rgba(0, 0, 0, 0.28);
   backdrop-filter: blur(16px);
+}
+
+.lil-gui.root > .children {
+  overflow-y: auto;
+  overscroll-behavior: contain;
 }
 
 .lil-gui .title {
@@ -228,7 +234,7 @@ h1 {
   }
 
   .title-card {
-    top: 48px;
+    top: 52px;
     left: 12px;
     max-width: calc(100vw - 24px);
     padding: 12px 14px;
@@ -263,8 +269,6 @@ h1 {
 
   #fullscreen-toggle {
     top: 10px;
-    right: auto;
-    bottom: auto;
     left: 12px;
     min-width: 36px;
     justify-content: center;
