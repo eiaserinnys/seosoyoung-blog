@@ -30,6 +30,12 @@ body {
 #app {
   position: relative;
   isolation: isolate;
+  background: #081018;
+}
+
+#app:fullscreen {
+  width: 100vw;
+  height: 100vh;
 }
 
 #terrain {
@@ -106,6 +112,43 @@ h1 {
   border: 1px solid currentColor;
   border-radius: 5px;
   vertical-align: -2px;
+}
+
+#fullscreen-toggle {
+  position: absolute;
+  z-index: 3;
+  right: 360px;
+  top: 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 32px;
+  padding: 7px 11px;
+  border: 1px solid var(--panel-border);
+  border-radius: 9px;
+  background: var(--panel);
+  color: #dce9eb;
+  font: 600 11px/1 Inter, Pretendard, "Noto Sans KR", system-ui, sans-serif;
+  cursor: pointer;
+  backdrop-filter: blur(12px);
+}
+
+#fullscreen-toggle:hover,
+#fullscreen-toggle:focus-visible {
+  border-color: rgba(158, 215, 218, 0.52);
+  background: rgba(20, 42, 54, 0.92);
+}
+
+.fullscreen-icon {
+  width: 13px;
+  height: 13px;
+  border: solid currentColor;
+  border-width: 2px 0 0 2px;
+  box-shadow: 4px 4px 0 -2px #081018, 6px 6px 0 -2px currentColor;
+}
+
+#fullscreen-toggle.is-active .fullscreen-icon {
+  transform: rotate(180deg);
 }
 
 #loading,
@@ -216,6 +259,24 @@ h1 {
 
   .lil-gui.root:not(.closed) {
     width: min(310px, calc(100vw - 20px));
+  }
+
+  #fullscreen-toggle {
+    top: 10px;
+    right: auto;
+    bottom: auto;
+    left: 12px;
+    min-width: 36px;
+    justify-content: center;
+  }
+
+  .fullscreen-label {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
   }
 }
 
