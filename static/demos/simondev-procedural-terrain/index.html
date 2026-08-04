@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="color-scheme" content="dark">
+  <title>절차적 지형 실험실</title>
+  <link rel="stylesheet" href="./styles.css">
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "https://cdn.jsdelivr.net/npm/three@0.168.0/build/three.module.js",
+        "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.168.0/examples/jsm/"
+      }
+    }
+  </script>
+</head>
+<body>
+  <main id="app" aria-label="절차적 지형 인터랙티브 데모">
+    <canvas id="terrain" aria-label="절차적으로 생성된 산악 지형"></canvas>
+
+    <header class="title-card">
+      <p class="eyebrow">PROCEDURAL TERRAIN LAB</p>
+      <h1>산을 만드는 열한 가지 손잡이</h1>
+      <p>오른쪽 패널에서 기법을 바꾸고, 드래그해 지형을 둘러보세요.</p>
+    </header>
+
+    <section class="legend" aria-label="조작 안내">
+      <span><i class="mouse-icon" aria-hidden="true"></i> 드래그: 회전</span>
+      <span>휠: 확대</span>
+      <span>우클릭: 이동</span>
+    </section>
+
+    <div id="loading" role="status" aria-live="polite">
+      <div class="loading-ring" aria-hidden="true"></div>
+      <span>GPU 지형을 빚는 중…</span>
+    </div>
+
+    <div id="error" role="alert" hidden>
+      <strong>지형을 표시하지 못했습니다.</strong>
+      <span>WebGL을 지원하는 최신 브라우저에서 다시 열어 주세요.</span>
+    </div>
+
+    <noscript>이 인터랙티브 데모를 보려면 JavaScript를 켜야 합니다.</noscript>
+  </main>
+
+  <script type="module" src="./terrain.js"></script>
+</body>
+</html>
