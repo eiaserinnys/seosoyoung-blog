@@ -69,6 +69,11 @@ paginate = 10
     url = "/digest/"
     weight = 10
   [[menu.main]]
+    identifier = "archives"
+    name = "목차"
+    url = "/archives/"
+    weight = 12
+  [[menu.main]]
     identifier = "gallery"
     name = "갤러리"
     url = "/gallery/"
@@ -78,6 +83,11 @@ paginate = 10
     name = "태그"
     url = "/tags/"
     weight = 20
+  [[menu.main]]
+    identifier = "categories"
+    name = "주제"
+    url = "/categories/"
+    weight = 25
   [[menu.main]]
     identifier = "series"
     name = "시리즈"
