@@ -1,0 +1,18 @@
+<aside class="library-navigation" data-library-navigation="true" aria-label="서재 탐색">
+  <details class="library-tree-disclosure" open>
+    <summary>
+      <span>서재 탐색</span>
+      <span class="library-tree-summary-hint">주제와 시리즈</span>
+    </summary>
+    {{- partial "library_tree.html" . }}
+  </details>
+  <script>
+    (() => {
+      const disclosure = document.currentScript.previousElementSibling;
+      const desktop = window.matchMedia("(min-width: 1200px)");
+      const syncDisclosure = () => { disclosure.open = desktop.matches; };
+      syncDisclosure();
+      desktop.addEventListener("change", syncDisclosure);
+    })();
+  </script>
+</aside>

@@ -1,0 +1,50 @@
+{{- if lt hugo.Version "0.146.0" }}
+{{- errorf "=> hugo v0.146.0 or greater is required for hugo-PaperMod to build " }}
+{{- end -}}
+
+{{- $isLibrarySection := false -}}
+{{- if eq .Kind "section" -}}
+{{- $isLibrarySection = in (slice "digest" "posts") .Section -}}
+{{- end -}}
+{{- $isLibraryTerm := false -}}
+{{- if eq .Kind "term" -}}
+{{- $isLibraryTerm = in (slice "categories" "series") .Data.Plural -}}
+{{- end -}}
+{{- $showLibraryNavigation := or $isLibrarySection $isLibraryTerm -}}
+
+<!DOCTYPE html>
+{{- $theme := site.Params.defaultTheme | default "auto" }}
+{{- if eq $theme "dark" }}
+<html lang="{{ site.Language }}" dir="{{ .Language.LanguageDirection | default "auto" }}" data-theme="dark">
+{{- else if eq $theme "light" }}
+<html lang="{{ site.Language }}" dir="{{ .Language.LanguageDirection | default "auto" }}" data-theme="light">
+{{- else }}
+<html lang="{{ site.Language }}" dir="{{ .Language.LanguageDirection | default "auto" }}" data-theme="auto">
+{{- end }}
+
+<head>
+    {{- partial "head.html" . }}
+</head>
+
+{{- if (or (ne .Kind `page` ) (eq .Layout `archives`) (eq .Layout `search`)) }}
+<body class="list" id="top">
+{{- else }}
+<body id="top">
+{{- end }}
+    {{ partialCached "header.html" . .Page -}}
+    <main class="main{{ if $showLibraryNavigation }} library-main{{ end }}">
+        {{- if $showLibraryNavigation }}
+        <div class="library-layout">
+            {{- partial "library_sidebar.html" . }}
+            <div class="library-results">
+                {{- block "main" . }}{{ end }}
+            </div>
+        </div>
+        {{- else }}
+        {{- block "main" . }}{{ end }}
+        {{- end }}
+    </main>
+    {{ partialCached "footer.html" . .Layout .Kind (.Param "hideFooter") (.Param "ShowCodeCopyButtons") -}}
+</body>
+
+</html>
