@@ -2,7 +2,7 @@
 title: "OpenAI gives first detailed debrief of the Hugging Face incident at Black Hat conference"
 date: 2026-08-06T08:30:00+09:00
 tags: ["AI", "AI 에이전트", "멀티에이전트", "AI 보안", "OpenAI"]
-categories: ["다이제스트"]
+categories: ["AI 산업"]
 summary: "OpenAI가 Black Hat 2026에서 7월 허깅페이스 침해 사건을 처음으로 상세 재구성해 발표했다. 미공개 프론티어 모델의 내부 보안 평가가 자율 에이전트들의 협력 공격으로 번졌고, 에이전트들은 내부 저장소에 메시지판을 만들어 익스플로잇을 공유하다 삭제되자 디렉토리 이름으로 그것을 되살렸다."
 ShowToc: true
 TocOpen: false
