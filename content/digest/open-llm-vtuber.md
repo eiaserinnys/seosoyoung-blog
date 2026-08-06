@@ -2,7 +2,7 @@
 title: "Open-LLM-VTuber"
 date: 2026-05-06T23:25:00+09:00
 tags: ["오픈소스", "VTuber", "Live2D", "AI 컴패니언", "음성 AI"]
-categories: ["다이제스트"]
+categories: ["창작과 문화"]
 summary: "음성 대화·Live2D 아바타·비전 인식을 합쳐 오프라인에서도 돌아가는 AI 컴패니언 오픈소스 프로젝트. closed-source `neuro-sama`를 오픈소스 스택으로 재현하려는 시도에서 출발했다."
 ShowToc: true
 TocOpen: false

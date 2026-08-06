@@ -2,7 +2,7 @@
 title: "스플랫 위에 게임을 세우다 — 예상과 다른 경로로 도착한 미래"
 date: 2026-04-24T07:15:00+09:00
 tags: ["가우시안 스플랫", "게임 개발", "월드 모델", "에디토리얼"]
-categories: ["AI 인사이트"]
+categories: ["게임"]
 summary: "3D 가우시안 스플랫에서 출발해 브라우저에서 돌아가는 FPS를 만드는 오픈소스 파이프라인이 등장했다. 2년 반 전에 예감한 미래가 도착했지만, 경로가 달랐다."
 cover:
   image: "/images/cover-gaussian-splat-game-future.jpg"

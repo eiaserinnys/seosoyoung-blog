@@ -2,7 +2,7 @@
 title: "The 4 arguments for the death of software, ranked from worst to best"
 date: 2026-06-15T10:00:00+09:00
 tags: ["AI", "SaaS", "AI 에이전트", "바이브 코딩", "벤처캐피털"]
-categories: ["다이제스트"]
+categories: ["AI 산업"]
 summary: "SignalFire CTO Ilya Kirnos가 소프트웨어 종말론의 4가지 논거를 약→강으로 평가한다. '바이브 코딩으로 다 대체된다'는 가장 약한 논거이고, '코드가 싸져서 기능 해자가 무너진다'가 가장 진지한 논거다. 진짜 해자는 셋만 남는다 — 고정확도 워크플로우, 독점 데이터 루프, 깊이 자리잡은 시스템 오브 레코드."
 ShowToc: true
 TocOpen: false

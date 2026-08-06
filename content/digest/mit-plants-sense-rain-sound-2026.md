@@ -2,7 +2,7 @@
 title: "Plants can sense the sound of rain, a new study finds"
 date: 2026-04-29T13:37:00+09:00
 tags: ["plant-biology", "acoustics", "mechanotransduction", "MIT"]
-categories: ["다이제스트"]
+categories: ["모델과 연구"]
 summary: "MIT 연구진이 벼 씨앗이 빗소리 음파를 감지해 발아를 30–40% 가속한다는 최초의 직접 증거를 제시했다. 중력 감지 기관인 평형석이 음향 감지까지 겸한다는 메커니즘이 핵심이다."
 ShowToc: true
 TocOpen: false

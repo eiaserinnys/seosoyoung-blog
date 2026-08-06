@@ -2,7 +2,7 @@
 title: "GTA Online Has Become Less Toxic Thanks To AI Says Rockstar"
 date: 2026-07-08T15:00:00+09:00
 tags: ["AI", "게임", "게임 산업", "콘텐츠 모더레이션"]
-categories: ["다이제스트"]
+categories: ["게임"]
 summary: "Modulate의 AI 음성 채팅 모더레이션 ToxMod가 GTA Online에 전면 도입된 뒤, 2025년 한 해 동안 일일 평균 위반이 약 35% 줄고 위반 유저 비율이 3.2%에서 0.49%로 떨어졌다. 음성 채팅 학대는 반복 사망보다 강한 분노·이탈 요인이었다는 계량 결과가 함께 공개됐다."
 ShowToc: true
 TocOpen: false

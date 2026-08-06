@@ -2,7 +2,7 @@
 title: "Incompressible Knowledge Probes: Estimating Black-Box LLM Parameter Counts via Factual Capacity"
 date: 2026-04-30T05:17:08+09:00
 tags: ["LLM", "스케일링 법칙", "벤치마크", "파라미터 추정"]
-categories: ["다이제스트"]
+categories: ["모델과 연구"]
 summary: "LLM이 '아는 것'의 양으로 파라미터 수를 역추정하는 벤치마크 IKP. 89개 오픈웨이트 모델에서 R²=0.917의 로그-선형 관계를 입증하고, Densing Law가 사실 지식에는 적용되지 않음을 보인다."
 ShowToc: true
 TocOpen: false

@@ -2,7 +2,7 @@
 title: "Suno로 만드는 포에트리 리딩"
 date: 2026-06-12T00:00:00+09:00
 tags: ["AI", "창작·미디어", "음악 생성", "Suno", "ElevenLabs"]
-categories: ["다이제스트"]
+categories: ["창작과 문화"]
 summary: "Suno 단독으로는 일본어 포에트리 리딩 곡을 만들 수 없었던 크리에이터가, ElevenLabs로 낭독 트랙을 따로 생성한 뒤 Suno v5의 Mashup 기능으로 음악 트랙과 융합해 문제를 해결한 제작기."
 ShowToc: true
 TocOpen: false

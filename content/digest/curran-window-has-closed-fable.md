@@ -2,7 +2,7 @@
 title: "The Window Has Closed"
 date: 2026-06-15T18:30:00+09:00
 tags: ["AI", "Anthropic", "수출 통제", "오픈소스", "지정학"]
-categories: ["다이제스트"]
+categories: ["AI 산업"]
 summary: "Anthropic의 신모델 Fable이 잠깐 공개되었다 사라진 사건을 두고, Andrew Curran은 프론티어에 진입할 수 있던 창은 2023년 2월부터 2026년 2월까지였으며 이미 닫혔다고 선언한다. 이제부터의 경쟁은 선도 모델이 다음 선도 모델을 만드는 자가가속과, 우라늄처럼 통제되기 시작할 컴퓨트의 문제다."
 ShowToc: true
 TocOpen: false

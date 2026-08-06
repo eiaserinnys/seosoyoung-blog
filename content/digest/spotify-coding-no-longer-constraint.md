@@ -2,7 +2,7 @@
 title: "Coding Is No Longer the Constraint: Scaling Developer Experience to Teams and Agents at Spotify"
 date: 2026-06-14T20:00:00+09:00
 tags: ["AI 코딩", "Anthropic", "코딩 에이전트", "플랫폼 엔지니어링", "조직 변화"]
-categories: ["다이제스트"]
+categories: ["에이전트와 코딩"]
 summary: "Spotify가 사내 AI 코딩 도구 채택과 백그라운드 에이전트 Honk를 공개한 자료. 수년 전 만든 Backstage·Fleet Management·Soundcheck가 에이전트의 가드레일이 됐고, 병목이 코딩에서 의사결정으로 이동했다는 것이 골자다."
 ShowToc: true
 TocOpen: false

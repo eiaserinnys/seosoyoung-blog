@@ -2,7 +2,7 @@
 title: "MrBeast — 10% 더 좋은 영상이 4배 뷰를 만든다"
 date: 2026-06-15T08:30:00+09:00
 tags: ["창작·미디어", "유튜브", "MrBeast", "콘텐츠 전략", "크리에이터 경제"]
-categories: ["다이제스트"]
+categories: ["창작과 문화"]
 summary: "Joe Rogan Experience #1788에서 MrBeast가 멘토링한 유튜버 한 명을 4M 뷰·월 24,000달러에서 45M 뷰·월 400,000달러까지 끌어올린 사례를 들며, 10% 더 좋은 영상이 10% 더 많은 뷰가 아니라 4배의 뷰를 가져온다는 비선형 보상 법칙을 정리한 클립."
 ShowToc: true
 TocOpen: false

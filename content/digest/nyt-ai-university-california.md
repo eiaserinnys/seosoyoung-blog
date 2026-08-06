@@ -2,7 +2,7 @@
 title: "A University System Went All In on A.I. Now It's Tearing Itself Apart."
 date: 2026-06-02T06:00:00+09:00
 tags: ["AI", "교육 정책", "사회·노동", "OpenAI", "캘리포니아"]
-categories: ["다이제스트"]
+categories: ["경제와 사회"]
 summary: "캘리포니아 주립대(CSU)가 재정 위기 한가운데서 OpenAI와 맺은 16.9M 달러 ChatGPT.edu 계약, 그리고 1년 뒤 교실의 합의 부재 — Linda Kinstler가 60명 이상을 인터뷰한 NYT Magazine 심층 보도."
 ShowToc: true
 TocOpen: false

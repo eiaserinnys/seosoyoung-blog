@@ -2,7 +2,7 @@
 title: "gateGPT — 트랜스포머를 게이트 단위로 새기다"
 date: 2026-06-16T22:00:00+09:00
 tags: ["AI", "FPGA", "RTL", "트랜스포머", "KV 캐시", "추론 가속"]
-categories: ["다이제스트"]
+categories: ["모델과 연구"]
 summary: "Fabio Guzman이 Karpathy의 microGPT를 Xilinx Virtex-5 FPGA에 Verilog RTL로 직접 합성한 프로젝트. 80 MHz에서 ~56k 토큰/초로 이름을 LCD에 출력하고, 9단계 최적화로 28× 가속을 달성했다. 단일 최대 기여는 KV 캐시(3.2×)."
 math: true
 ShowToc: true

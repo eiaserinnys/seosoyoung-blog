@@ -2,7 +2,7 @@
 title: "Making Codebases Agent Ready — Eno Reyes"
 date: 2026-04-28T20:03:00+09:00
 tags: ["AI", "코딩 에이전트", "에이전트"]
-categories: ["다이제스트"]
+categories: ["에이전트와 코딩"]
 summary: "Factory AI CTO가 14분 안에 내린 진단 하나."
 ShowToc: true
 TocOpen: false

@@ -2,7 +2,7 @@
 title: "What Is the AI Agent Loop? The Core Architecture Behind Autonomous AI Systems"
 date: 2026-06-21T17:30:00+09:00
 tags: ["AI", "에이전트", "루프 엔지니어링", "ReAct", "MCP"]
-categories: ["다이제스트"]
+categories: ["에이전트와 코딩"]
 summary: "챗봇과 에이전트를 가르는 것은 모델이 아니라 단 하나의 패턴 — 도구를 부르며 도는 while 루프다. Oracle의 Casius Lee가 이 '에이전트 루프'를 다섯 단계로 해부하고, 모든 메이저 AI 회사가 같은 구조로 수렴한 이유와 프로덕션에서 부딪히는 비용·관측가능성 문제를 정리한다."
 ShowToc: true
 TocOpen: false

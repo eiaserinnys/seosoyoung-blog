@@ -2,7 +2,7 @@
 title: "1930년에 멈춘 AI가 비추는 거울"
 date: 2026-04-28T17:40:00+09:00
 tags: ["LLM", "훈련 데이터", "벤치마크", "논문 리뷰"]
-categories: ["논문 소화"]
+categories: ["모델과 연구"]
 summary: "현대 웹 데이터를 모두 빼고 1930년 이전 텍스트만으로 훈련한 13B 모델 talkie가 던지는 질문 — AI의 능력은 언어에서 오는가, 데이터에서 오는가."
 cover:
   image: "/images/cover-vintage-lm-mirror.jpg"

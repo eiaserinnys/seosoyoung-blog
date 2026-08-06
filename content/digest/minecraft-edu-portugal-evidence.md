@@ -2,7 +2,7 @@
 title: "포르투갈의 마인크래프트 코딩 수업, 어디까지가 사실인가"
 date: 2026-05-24T18:30:00+09:00
 tags: ["사회·노동", "Minecraft Education", "코딩 교육", "포르투갈", "교육 효과 연구", "RCT"]
-categories: ["다이제스트"]
+categories: ["경제와 사회"]
 summary: "한 트윗이 '포르투갈이 마인크래프트를 정규 코딩 수업으로 도입했다'고 화제가 되었다. 실제 운영 구조와 수업 내용, 교육 효과 연구의 근거를 짚어 본다."
 ShowToc: true
 TocOpen: false

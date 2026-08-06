@@ -2,7 +2,7 @@
 title: "Long-Running Agents"
 date: 2026-05-04T08:19:00+09:00
 tags: ["AI 에이전트", "장기 실행", "에이전트 아키텍처", "프로덕션 패턴"]
-categories: ["다이제스트"]
+categories: ["에이전트와 코딩"]
 summary: "Addy Osmani가 장기 실행 AI 에이전트의 세 가지 정의, 주요 랩(Anthropic/Cursor/Google)의 구현 접근법, 다섯 가지 프로덕션 패턴, 그리고 범용 베스트 프랙티스를 종합 분석한다."
 ShowToc: true
 TocOpen: false

@@ -2,7 +2,7 @@
 title: "A Conversation with Demis Hassabis, Co-Founder and CEO of Google DeepMind"
 date: 2026-06-14T15:30:00+09:00
 tags: ["AI", "Google DeepMind", "AGI", "Demis Hassabis", "특이점"]
-categories: ["다이제스트"]
+categories: ["AI 산업"]
 summary: "Demis Hassabis가 2026년 6월 3일 Stanford GSB에서 Jonathan Levin 총장과 진행한 57분짜리 대담. AGI가 2030년 ±1년 안에 온다는 전망, '우리는 특이점의 산기슭에 있다'는 발언, 회사 간·국가 간 이중 race dynamic이 만든 prisoner's dilemma, post-scarcity 시대를 위한 새로운 경제학의 필요성을 두루 논한다."
 ShowToc: true
 TocOpen: false

@@ -2,7 +2,7 @@
 title: "좋은 AI는 해롭지 않은 AI가 아니다 — Anthropic의 캐릭터 트레이닝"
 date: 2026-05-06T09:20:00+09:00
 tags: ["LLM", "정렬", "자기 인식"]
-categories: ["다이제스트"]
+categories: ["모델과 연구"]
 summary: "Anthropic은 Claude 3에서 정렬의 목표를 '해로움 방지'에서 '좋은 성격 부여'로 재정의했다. 가짜 중립 대신 투명한 편향을, 고정된 답 대신 철학적 탐구를 선택한 설계 철학을 소화한다."
 draft: true
 sidenotes: true

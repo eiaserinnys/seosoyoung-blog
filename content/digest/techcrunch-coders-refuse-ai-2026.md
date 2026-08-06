@@ -2,7 +2,7 @@
 title: "Coders are refusing to work without AI — and that could come back to bite them"
 date: 2026-06-01T10:30:00+09:00
 tags: ["AI", "AI 코딩", "코딩 에이전트", "노동시장", "조직 변화"]
-categories: ["다이제스트"]
+categories: ["경제와 사회"]
 summary: "TechCrunch 2026-05-29 보도. 개발자들은 'AI 없이는 일하지 않겠다'고 버티지만, METR·Amazon·Uber·SMU 연구는 AI 코드가 속도는 빠르되 유지보수 부채를 키우고 있음을 동시에 가리킨다."
 ShowToc: true
 TocOpen: false

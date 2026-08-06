@@ -2,7 +2,7 @@
 title: "how to be good at research"
 date: 2026-06-14T22:00:00+09:00
 tags: ["AI", "Anthropic", "연구 방법", "학습 역학", "글쓰기"]
-categories: ["다이제스트"]
+categories: ["모델과 연구"]
 summary: "Anthropic 리서치 펠로우 Vivek이 X 아티클로 정리한 리서치 메타 가이드. 리서치를 잘하는 능력은 8개의 작은 스킬 스택이며 모두 의도적으로 훈련할 수 있다는 주장."
 ShowToc: true
 TocOpen: false

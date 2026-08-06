@@ -2,7 +2,7 @@
 title: "Inkling: Our open-weights model"
 date: 2026-07-16T15:30:00+09:00
 tags: ["AI", "LLM", "오픈소스", "멀티모달", "Thinking Machines"]
-categories: ["다이제스트"]
+categories: ["모델과 연구"]
 summary: "Thinking Machines Lab이 처음부터 학습한 첫 오픈웨이트 모델 Inkling을 공개했다. 975B 파라미터(41B 활성)의 MoE 멀티모달 모델로, 최강 성능보다 파인튜닝하기 좋은 베이스라는 자리를 노린다."
 ShowToc: true
 TocOpen: false

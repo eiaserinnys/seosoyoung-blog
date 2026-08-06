@@ -2,7 +2,7 @@
 title: "How People Ask Claude for Personal Guidance"
 date: 2026-05-01T16:15:00+09:00
 tags: ["AI 안전", "sycophancy", "사용자 연구", "LLM 정렬"]
-categories: ["다이제스트"]
+categories: ["모델과 연구"]
 summary: "Anthropic이 100만 건의 Claude 대화를 분석하여 개인 조언 사용 패턴과 도메인별 아첨(sycophancy) 비율을 밝히고, 합성 훈련 데이터로 Opus 4.7의 아첨을 절반으로 줄인 과정을 보고한다."
 ShowToc: true
 TocOpen: false

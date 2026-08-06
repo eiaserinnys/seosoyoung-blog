@@ -2,7 +2,7 @@
 title: "Using AI to write better code more slowly"
 date: 2026-05-26T09:30:00+09:00
 tags: ["AI", "코딩 에이전트", "AI 코딩", "바이브 코딩", "코드 리뷰"]
-categories: ["다이제스트"]
+categories: ["에이전트와 코딩"]
 summary: "Nolan Lawson이 'slop cannon' 통념(LLM 코딩 = 빠르고 저품질)을 정면으로 반박하며, 다중 모델 PR 리뷰 스킬로 LLM을 느리지만 고품질 코드 작성에 쓰는 방법을 정리한다. 결과는 velocity 상승이 아니라 코드베이스 헬스와 친밀도다."
 ShowToc: true
 TocOpen: false

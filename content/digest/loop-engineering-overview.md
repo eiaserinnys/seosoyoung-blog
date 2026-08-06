@@ -2,7 +2,7 @@
 title: "Agentic Loops Explained: From ReAct to Loop Engineering (2026 Guide)"
 date: 2026-06-21T18:05:00+09:00
 tags: ["AI", "에이전트", "루프 엔지니어링", "코딩 에이전트", "ReAct", "멀티에이전트"]
-categories: ["다이제스트"]
+categories: ["에이전트와 코딩"]
 summary: "ReAct(2022)부터 Ralph 루프와 /goal 명령(2026)까지, 에이전트 루프 열 가지의 계보를 한 장의 지도로 정리한 개괄 가이드. 루프란 트리거와 검증 가능한 목표의 결합이며, 루프 엔지니어링이란 그 루프를 설계하고 폭주를 막는 가드레일을 두르는 일임을 분명히 밝힌다."
 ShowToc: true
 TocOpen: false

@@ -2,7 +2,7 @@
 title: "FLUX.2·Seedream·Z-Image·GLM-Image 핵심 기초 지식 완전 해설"
 date: 2026-06-03T20:00:00+09:00
 tags: ["AI", "이미지 생성", "아키텍처", "Diffusion", "중국"]
-categories: ["다이제스트"]
+categories: ["모델과 연구"]
 summary: "2025~2026년 사이 등장한 4세대 이미지 생성 모델(FLUX.2·Seedream·Z-Image·GLM-Image)의 VAE·Text Encoder·DiT 백본·정렬 학습을 가로로 비교한 Rocky Ding(WeThinkIn)의 기술 해설."
 math: true
 ShowToc: true

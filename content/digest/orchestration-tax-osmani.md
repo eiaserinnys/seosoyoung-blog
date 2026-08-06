@@ -2,7 +2,7 @@
 title: "The Orchestration Tax"
 date: 2026-05-29T20:00:00+09:00
 tags: ["AI", "코딩 에이전트", "멀티에이전트", "인지·심리", "아키텍처"]
-categories: ["다이제스트"]
+categories: ["에이전트와 코딩"]
 summary: "AI 에이전트를 N개 띄우는 것은 쉽지만, 그 결과를 검토·병합하는 직렬 자원은 단 하나뿐이다. Addy Osmani가 Google I/O 패널 뒤 정리한 '오케스트레이션 세금' — 바쁨과 생산성을 분리해서 보는 아키텍처 관점."
 ShowToc: true
 TocOpen: false

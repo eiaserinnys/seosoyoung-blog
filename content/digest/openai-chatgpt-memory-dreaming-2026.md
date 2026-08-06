@@ -2,7 +2,7 @@
 title: "Dreaming: Better Memory for a More Helpful ChatGPT"
 date: 2026-06-05T22:00:00+09:00
 tags: ["AI", "OpenAI", "ChatGPT", "메모리 시스템", "개인화"]
-categories: ["다이제스트"]
+categories: ["AI 산업"]
 summary: "OpenAI가 ChatGPT의 메모리 시스템을 백그라운드 합성 방식 'dreaming V3'으로 전환했다. 저장 메모리 보조에서 독립 시스템으로 격상되었으며, 컴퓨트를 5배 줄여 무료 사용자에게도 곧 풀린다."
 cover:
   image: "/images/openai-chatgpt-memory-dreaming-2026/memory-summary.png"

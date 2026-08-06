@@ -2,7 +2,7 @@
 title: "Induction of cortical on/off periods in awake mice fulfills sleep functions"
 date: 2026-06-09T17:30:00+09:00
 tags: ["신경과학", "수면", "시냅스 항상성", "광유전학", "기억 통합"]
-categories: ["다이제스트"]
+categories: ["모델과 연구"]
 summary: "위스콘신 대학 Tononi·Cirelli 팀의 Nature Neuroscience 논문(2026.06.08). 깨어 있는 쥐의 대뇌 피질에 광유전학으로 NREM 수면 같은 on/off 패턴을 인위적으로 만들면, 단순한 발화 감소로는 불가능한 수면의 핵심 기능(국소 수면 압력 해소, 시냅스 다운셀렉션, 기억 통합)이 깨어 있는 동안에도 일어난다."
 ShowToc: true
 TocOpen: false

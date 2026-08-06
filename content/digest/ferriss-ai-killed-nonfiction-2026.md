@@ -2,7 +2,7 @@
 title: "Has AI Already Killed How-To Nonfiction?"
 date: 2026-06-19T11:00:00+09:00
 tags: ["AI", "LLM", "창작·미디어", "콘텐츠 산업", "출판"]
-categories: ["다이제스트"]
+categories: ["창작과 문화"]
 summary: "Tim Ferriss가 자기 책 5권의 BookScan 판매 데이터를 공개했다. 2022년 대비 2026년 약 80% 감소, 'how-to' 비문학은 챗봇으로 대체되는 중이다."
 ShowToc: true
 TocOpen: false

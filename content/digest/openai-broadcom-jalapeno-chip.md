@@ -2,7 +2,7 @@
 title: "OpenAI·Broadcom, LLM 추론 전용 칩 'Jalapeño' 공개"
 date: 2026-06-24T23:00:00+09:00
 tags: ["AI", "OpenAI", "AI 인프라", "추론", "Broadcom"]
-categories: ["다이제스트"]
+categories: ["AI 산업"]
 summary: "OpenAI가 Broadcom·Celestica와 함께 LLM 추론에 백지부터 설계한 첫 자체 칩 Jalapeño(인텔리전스 프로세서)를 공개했다. 설계에서 tape-out까지 9개월, 와트당 성능에서 현세대 최고 수준을 앞서고, 2026년 말부터 Microsoft 등 파트너와 함께 기가와트 규모 데이터센터에 배포한다."
 cover:
   image: "/images/openai-broadcom-jalapeno-chip/cover.png"

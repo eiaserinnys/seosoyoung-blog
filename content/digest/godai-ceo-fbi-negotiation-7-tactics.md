@@ -2,7 +2,7 @@
 title: "FBIで24年間人質交渉をしてきた男が使う 相手を操る心理術"
 date: 2026-05-16T08:30:00+09:00
 tags: ["인지·심리", "협상", "설득", "행동경제학", "자기결정 이론", "프로스펙트 이론"]
-categories: ["다이제스트"]
+categories: ["창작과 문화"]
 summary: "FBI 인질 협상가 크리스 보스의 『Never Split the Difference』를 비즈니스 현장에 옮긴 7단계 심리술. 핵심은 무엇을 말하는가가 아니라 어떤 순서로 말하는가이다."
 ShowToc: true
 TocOpen: false

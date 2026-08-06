@@ -2,7 +2,7 @@
 title: "When Knowledge Is Cheap, Insight Is Everything: Jevons Paradox applied to Torah Learning"
 date: 2026-05-13T21:30:00+09:00
 tags: ["AI", "Jevons Paradox", "지식 노동", "학습", "토라"]
-categories: ["다이제스트"]
+categories: ["경제와 사회"]
 summary: "지식 협의(consultation) 비용이 무너지면 보틀넥은 사라지지 않고 통찰의 생산으로 이동한다 — 와트의 증기기관에서 토라 학습으로 옮겨 읽은 Jevons Paradox."
 ShowToc: true
 TocOpen: false

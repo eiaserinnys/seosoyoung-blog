@@ -2,7 +2,7 @@
 title: "Brain-inspired warm-up training with random noise for uncertainty calibration"
 date: 2026-04-29T08:40:00+09:00
 tags: ["딥러닝", "캘리브레이션", "신경과학", "초기화"]
-categories: ["다이제스트"]
+categories: ["모델과 연구"]
 summary: "KAIST 연구진이 태아기 자발적 신경 활동에서 영감을 받아, 랜덤 노이즈 워밍업으로 신경망의 과신 문제를 해결하는 초기화 전략을 제안한다. Nature Machine Intelligence 2026."
 ShowToc: true
 TocOpen: false

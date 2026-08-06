@@ -2,7 +2,7 @@
 title: "Vibes won't cut it — Chris Kelly (Augment)"
 date: 2026-04-28T20:21:00+09:00
 tags: ["AI", "코딩 에이전트", "바이브 코딩"]
-categories: ["다이제스트"]
+categories: ["에이전트와 코딩"]
 summary: "프로덕션 소프트웨어 엔지니어링은 코드 생성이 아니라 안전한 변경이옵니다."
 ShowToc: true
 TocOpen: false

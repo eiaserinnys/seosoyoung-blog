@@ -2,7 +2,7 @@
 title: "Language Models Need Sleep: Learning to Self-Modify and Consolidate Memories"
 date: 2026-07-14T19:00:00+09:00
 tags: ["AI", "LLM", "지속 학습", "모델 메모리", "자기 개선"]
-categories: ["다이제스트"]
+categories: ["모델과 연구"]
 summary: "Google Research와 Cornell 연구진이 LLM의 생애를 학습·추론이 아니라 각성·수면으로 나눈다. 수면 중에는 빠르고 불안정한 기억을 느리고 안정적인 파라미터로 상향 증류하고, 합성 데이터를 꿈처럼 만들어 새 지식을 연습한다. 지속 학습·장문 이해·지식 편입·추상 추론에서 성능이 올랐지만, 추가 연산과 사전 할당 용량, 과제별 보상 신호가 필요한 개념 증명 단계다."
 ShowToc: true
 TocOpen: false

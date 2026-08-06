@@ -2,7 +2,7 @@
 title: "LLM Oriented Engineering"
 date: 2026-06-01T15:30:00+09:00
 tags: ["AI", "LLM", "AI 코딩", "코딩 에이전트", "조직 변화"]
-categories: ["다이제스트"]
+categories: ["에이전트와 코딩"]
 summary: "Reindeer CTO Yair Wein이 LLM 기반 제품·개발 조직을 1년 반 동안 운영하며 굳힌 9가지 원칙. 인간 컨텍스트가 가장 희소한 자원이라는 전제에서 출발해, load-bearing 코드와 padded rooms, 자동 enforcement, PM의 별도 MVP 레포, 보상 함수로서의 테스트, 미래 개발자의 능력까지 펼친다."
 ShowToc: true
 TocOpen: false

@@ -2,7 +2,7 @@
 title: "I Shipped 10 Apps With Claude Code. The UI Was Always the Weak Point."
 date: 2026-06-09T16:00:00+09:00
 tags: ["AI", "Claude Code", "바이브 코딩", "디자인 시스템", "MCP", "코딩 에이전트"]
-categories: ["다이제스트"]
+categories: ["에이전트와 코딩"]
 summary: "코딩 에이전트로 앱 10개를 출시한 솔로 빌더가 UI 품질의 일관된 약점을 진단한다. 텍스트는 디자인 의도를 손실 없이 전달하지 못한다는 결론과, 디자인 시스템을 MCP로 직접 노출하는 Moonchild 도입기."
 ShowToc: true
 TocOpen: false

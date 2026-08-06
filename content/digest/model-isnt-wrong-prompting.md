@@ -2,7 +2,7 @@
 title: "The Model Isn't Wrong — You're Just Bad at Prompting"
 date: 2026-04-28T20:24:00+09:00
 tags: ["AI", "코딩 에이전트", "프롬프팅"]
-categories: ["다이제스트"]
+categories: ["에이전트와 코딩"]
 summary: "The Model Isn't Wrong — You're Just Bad at Prompting"
 ShowToc: true
 TocOpen: false

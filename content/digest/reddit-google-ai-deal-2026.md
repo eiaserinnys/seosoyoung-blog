@@ -2,7 +2,7 @@
 title: "Reddit May Block Google AI Access as $60 Million Deal Nears Expiry: Will RDDT Stock Crash?"
 date: 2026-07-24T10:00:00+09:00
 tags: ["AI", "창작·미디어", "경제·금융", "AI 검색", "데이터 라이선싱"]
-categories: ["다이제스트"]
+categories: ["AI 산업"]
 summary: "연 6천만 달러 규모의 Reddit·구글 콘텐츠 라이선스 계약이 만료를 앞두고, Reddit이 구글 AI의 데이터 접근 차단을 협상 카드로 꺼냈다. 배경에는 구글 AI Overviews가 퍼블리셔 트래픽을 잠식하는 구조와, 옵트아웃 권리를 부여한 영국 CMA의 규제가 있다."
 ShowToc: true
 TocOpen: false

@@ -2,7 +2,7 @@
 title: "SkillOpt: Executive Strategy for Self-Evolving Skills of Frozen LLM Agents"
 date: 2026-05-27T00:00:00+09:00
 tags: ["AI", "LLM", "AI 에이전트", "프롬프트 엔지니어링", "논문 리뷰"]
-categories: ["다이제스트"]
+categories: ["모델과 연구"]
 summary: "Microsoft가 공개한 SkillOpt는 모델 가중치를 동결한 채 자연어 기술 문서 한 장을 딥러닝 옵티마이저처럼 반복 학습하여 LLM 에이전트의 성능을 끌어올리는 텍스트 공간 최적화 프레임워크다. 채점 가능한 태스크에 한정되며, 6개 벤치마크 52/52 셀에서 최고 또는 공동 최고를 기록했다."
 math: true
 ShowToc: true

@@ -2,7 +2,7 @@
 title: "Toil and Technology"
 date: 2026-04-30T22:20:00+09:00
 tags: ["자동화", "노동시장", "Jevons-Paradox", "기술격차"]
-categories: ["다이제스트"]
+categories: ["경제와 사회"]
 summary: "ATM이 은행 텔러를 없애지 않은 이유를 데이터로 보여주고, 자동화가 직무를 '제거'하는 것이 아니라 '대체'한다는 논지를 편 2015년 IMF 기고문."
 ShowToc: true
 TocOpen: false

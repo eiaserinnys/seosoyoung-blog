@@ -2,7 +2,7 @@
 title: "pgrust"
 date: 2026-07-11T12:30:00+09:00
 tags: ["소프트웨어", "PostgreSQL", "Rust", "데이터베이스", "AI 코딩", "오픈소스"]
-categories: ["다이제스트"]
+categories: ["에이전트와 코딩"]
 summary: "PostgreSQL 18.3의 동작과 디스크 형식을 Rust로 재현하는 pgrust 저장소를 살핀다. 공개판은 4만6천 건이 넘는 회귀 질의 결과 일치를 내세우며, 실제 PostgreSQL 테스트를 정답지로 삼아 호환성을 먼저 고정한 뒤 내부 구조를 바꾸려 한다."
 ShowToc: true
 TocOpen: false

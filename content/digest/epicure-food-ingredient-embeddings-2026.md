@@ -2,7 +2,7 @@
 title: "Epicure: Multidimensional Flavor Structure in Food Ingredient Embeddings"
 date: 2026-04-30T07:55:00+09:00
 tags: ["food-ai", "embedding", "data-centric-ai", "computational-gastronomy"]
-categories: ["다이제스트"]
+categories: ["모델과 연구"]
 summary: "FlavorGraph의 300차원 식재료 임베딩에서 LLM 기반 데이터 큐레이션으로 맛·질감·문화·영양 등 15개 독립 차원을 추출한 논문. 레시피 동시출현 데이터만으로 셰프의 암묵지가 구조적으로 인코딩되어 있음을 증명한다."
 ShowToc: true
 TocOpen: false

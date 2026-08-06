@@ -2,7 +2,7 @@
 title: "Bipartisan members introduce new bill to protect creators from AI style theft"
 date: 2026-06-04T17:30:00+09:00
 tags: ["AI", "법·정책", "저작권", "창작·미디어", "크리에이터 경제"]
-categories: ["다이제스트"]
+categories: ["창작과 문화"]
 summary: "미 하원 초당파 4인이 시각 예술가의 '화풍'을 AI 모방으로부터 보호하는 CREATOR Act를 2026-06-02 발의했다. Adobe가 후원하고, 영감과 사칭을 법적으로 구분하려는 첫 연방 통일 표준이다."
 ShowToc: true
 TocOpen: false

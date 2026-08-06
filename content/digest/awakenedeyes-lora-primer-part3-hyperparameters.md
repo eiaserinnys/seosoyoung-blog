@@ -2,7 +2,7 @@
 title: "A Primer on the Most Important Concepts to Train a LoRA - part 3: Hyperparameters"
 date: 2026-07-23T00:40:00+09:00
 tags: ["AI", "이미지 생성", "LoRA", "Stable Diffusion", "Flux", "하이퍼파라미터"]
-categories: ["다이제스트"]
+categories: ["창작과 문화"]
 summary: "r/StableDiffusion 3부작 LoRA 훈련 가이드의 마지막 편. Rank·Alpha·Repeats·LR·LR 스케줄러·Timestep 분포·Optimizer의 역할과 실전 기준값, 오버트레이닝 감지 프롬프트 체크리스트, 정규화 데이터셋의 목적을 정리한다."
 ShowToc: true
 TocOpen: false

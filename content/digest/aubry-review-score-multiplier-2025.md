@@ -2,7 +2,7 @@
 title: "Steam Sales: Why Your Review Score is the Ultimate Sales Multiplier"
 date: 2026-05-06T15:38:00+09:00
 tags: ["스팀", "리뷰 점수", "인디 게임", "런치 전략"]
-categories: ["다이제스트"]
+categories: ["게임"]
 summary: "Arnaud Aubry가 Vampire Survivors와 Cities: Skylines II의 정반대 궤적을 통해, 출시 직후의 Steam 리뷰 점수가 위시리스트·IP·마케팅보다 강력한 매출 결정 요인임을 보인다."
 ShowToc: true
 TocOpen: false

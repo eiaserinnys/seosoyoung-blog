@@ -2,7 +2,7 @@
 title: "What Bank Tellers and Radiologists Can Tell Us About Our Job Security in the AI Era"
 date: 2026-04-30T22:55:00+09:00
 tags: ["AI와 고용", "자동화", "노동 시장", "Jevons Paradox"]
-categories: ["다이제스트"]
+categories: ["경제와 사회"]
 summary: "CCIA가 ATM·영상의학과 사례와 MIT Sloan 등의 실증 연구를 종합하여 'AI 과업 자동화 ≠ 직업 소멸'을 논증한 기사. 자동화 범위가 임계값을 넘을 때만 고용이 감소한다는 정량적 근거를 제시한다."
 ShowToc: true
 TocOpen: false

@@ -2,7 +2,7 @@
 title: "Steering Along Manifolds to Control Neural Networks"
 date: 2026-05-08T11:26:00+09:00
 tags: ["interpretability", "neural-geometry", "manifold-steering", "activation-steering"]
-categories: ["다이제스트"]
+categories: ["모델과 연구"]
 summary: "Goodfire의 'Neural Geometry Series' 둘째 글. 요일이라는 순환 개념을 사례로 Llama-3.1 8B의 표상 매니폴드와 행동 매니폴드가 모두 원형이며, 매니폴드를 따라 스티어링하면 깨끗한 행동 제어가 되지만 직선으로 더하면 행동이 매니폴드를 가로지르며 깨진다는 점을 보인다. 두 기하의 정합은 양방향이며, 안과 밖이 같은 거울이라는 경험적 증거를 제시한다."
 ShowToc: true
 TocOpen: false

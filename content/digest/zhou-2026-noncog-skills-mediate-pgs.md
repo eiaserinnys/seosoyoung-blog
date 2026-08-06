@@ -2,7 +2,7 @@
 title: "Non-cognitive skills mediate education-related polygenic score associations with academic achievement across development"
 date: 2026-05-18T12:30:00+09:00
 tags: ["인지·심리", "행동유전학", "비인지 기술", "학업 성취", "다유전자 점수", "쌍둥이 연구"]
-categories: ["다이제스트"]
+categories: ["경제와 사회"]
 summary: "유전 소인(EA·Cog·NonCog PGS)이 학업 성취로 표현되는 통로의 절반 가까이가 비인지 기술 — 학습 흥미·자기개념·호기심 — 을 통과한다. TEDS 쌍둥이 5,016명을 7\\~16세에 추적한 종단 분석에서, 매개 효과는 형제 차이 디자인 내에서도 최대 83% 유지되었다."
 ShowToc: true
 TocOpen: false

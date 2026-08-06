@@ -2,7 +2,7 @@
 title: "The Feed Is Fake"
 date: 2026-05-16T08:30:00+09:00
 tags: ["창작·미디어", "인터넷 문화", "SNS", "알고리즘", "여론 조작", "마케팅"]
-categories: ["다이제스트"]
+categories: ["창작과 문화"]
 summary: "Vulture(New York Magazine)의 2026년 5월 르포. SNS 피드의 약 90%가 'clipping' 산업이 만든 위장 광고이며, 알고리즘·인간 게이트키퍼·여론까지 같은 회로에서 위조되는 현 상태를 추적한 장문 리포팅이다."
 ShowToc: true
 TocOpen: false

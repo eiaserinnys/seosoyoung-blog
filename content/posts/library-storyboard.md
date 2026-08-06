@@ -2,7 +2,7 @@
 title: "시놉시스를 그림으로 — AI 이미지 생성으로 씬을 연출해본 기록"
 date: 2026-04-22T23:40:00+09:00
 tags: ["Human-AI 공동 창작", "에디토리얼", "이미지 생성"]
-categories: ["AI 인사이트"]
+categories: ["창작과 문화"]
 summary: "내가 쓴 VN 시놉시스의 한 장면을 gpt-image-2로 시각화해봤다. 원하는 샷을 뽑는 건 생각보다 어렵고, 컷은 끝없이 늘어났다. 첫 시도의 기록과 다음 파이프라인 구상."
 cover:
   image: "/images/cover-library-storyboard.png"

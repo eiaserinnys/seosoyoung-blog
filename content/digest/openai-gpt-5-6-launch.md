@@ -2,7 +2,7 @@
 title: "GPT-5.6: Frontier intelligence that scales with your ambition"
 date: 2026-07-10T06:30:00+09:00
 tags: ["AI", "OpenAI", "LLM", "벤치마크", "AI 안전"]
-categories: ["다이제스트"]
+categories: ["AI 산업"]
 summary: "OpenAI가 GPT-5.6 패밀리(Sol, Terra, Luna)를 정식 출시했다. 토큰당 유효 작업량이라는 효율 지표를 전면에 세우고, 코딩과 지식 노동, 사이버보안, 과학에서 다수의 최고 기록과 함께 병렬 멀티에이전트 설정 ultra, 강화된 안전 체계를 공개했다."
 ShowToc: true
 TocOpen: false

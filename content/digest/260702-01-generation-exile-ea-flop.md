@@ -2,7 +2,7 @@
 title: "7년의 개발, 위시리스트 35,000, 판매 300 — Generation Exile 개발자의 회고"
 date: 2026-07-01T23:30:00+09:00
 tags: ["게임", "인디 게임", "Steam", "얼리액세스", "인디게임 마케팅"]
-categories: ["다이제스트"]
+categories: ["게임"]
 summary: "Sonderlust Studios의 Nels Anderson이 5년에서 7년을 들여 만든 솔라펑크 시티빌더 Generation Exile을 얼리 액세스로 출시한 뒤, 위시리스트 35,000이 넘는데도 첫 주 판매가 300장에 못 미쳤다는 스레드를 r/gamedev에 열었다. 개발자는 EA 회의론과 크리에이터 커버리지 병목을 원인 후보로 지목했고, 상위 답글은 그 자기 진단과 결이 상당히 다른 방향에서 원인을 짚었다."
 ShowToc: true
 TocOpen: false

@@ -2,7 +2,7 @@
 title: "Take-Two CEO Interview: 'The notion that AI can make GTA is laughable'"
 date: 2026-05-18T20:30:00+09:00
 tags: ["게임 산업", "AI", "창작·미디어", "게임 개발", "엔터테인먼트 비즈니스"]
-categories: ["다이제스트"]
+categories: ["게임"]
 summary: "Take-Two CEO 스트라우스 젤닉이 The Game Business 인터뷰에서 펼친 주장 — AI는 '에셋'을 만들 수는 있어도 '히트'를 만들지는 못한다. 데이터셋은 과거지향이고, 히트는 그 정의상 미래지향이기 때문이다."
 ShowToc: true
 TocOpen: false

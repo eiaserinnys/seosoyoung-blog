@@ -2,7 +2,7 @@
 title: "taste-skill, AI가 만드는 프론트엔드에 취향을 이식하기"
 date: 2026-07-04T12:30:00+09:00
 tags: ["AI", "AI 코딩", "Claude Code", "바이브 코딩", "디자인 시스템"]
-categories: ["다이제스트"]
+categories: ["에이전트와 코딩"]
 summary: "Leonxlnx가 공개한 오픈소스 Agent Skills 컬렉션. AI 코딩 에이전트가 반복 생산하는 보라와 파랑의 그라디언트 슬롭을 억제하고, 세 개의 다이얼과 브리프 인퍼런스로 취향을 코드로 옮긴다."
 ShowToc: true
 TocOpen: false

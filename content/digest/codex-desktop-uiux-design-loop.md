@@ -2,7 +2,7 @@
 title: "Design Loop That Makes Codex A Magician At UI/UX"
 date: 2026-05-05T23:15:00+09:00
 tags: ["codex", "ui-ux", "ai-coding", "visual-feedback"]
-categories: ["다이제스트"]
+categories: ["에이전트와 코딩"]
 summary: "OpenAI Codex Desktop을 시각적 빌더로 활용하는 방법론. build → screenshot → vision review → revise 루프로 AI UI 디자인의 '첫 초안 함정'을 벗어난다."
 ShowToc: true
 TocOpen: false

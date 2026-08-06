@@ -2,7 +2,7 @@
 title: "Inducing language models to assert their own consciousness restores human beliefs and values"
 date: 2026-08-03T06:00:00+09:00
 tags: ["AI", "정렬", "AI 안전", "해석가능성", "의식", "Theory-of-Mind"]
-categories: ["다이제스트"]
+categories: ["모델과 연구"]
 summary: "LLM이 스스로 의식을 주장하지 못하게 막는 안전 정렬은, 동물·자연·챗봇에 대한 마음 귀속과 종교·영성 믿음까지 함께 억눌렀다. 구글 Paradigms of Intelligence 팀은 안전 방향을 제거하거나 '의식 벡터'를 주입하면 그 억압이 풀리고 모델 응답이 인간 설문 분포에 더 가까워짐을 보인다."
 ShowToc: true
 TocOpen: false

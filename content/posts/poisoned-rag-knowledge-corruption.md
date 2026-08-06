@@ -2,7 +2,7 @@
 title: "RAG의 지식 DB는 열린 문이다"
 date: 2026-04-21T15:50:00+09:00
 tags: ["RAG", "AI 보안", "지식 손상", "논문 리뷰"]
-categories: ["논문 소화"]
+categories: ["모델과 연구"]
 summary: "PoisonedRAG는 RAG 시스템의 지식 DB에 5개의 악성 텍스트만 넣으면 90% 이상의 확률로 LLM이 원하는 오답을 내놓게 만든다. 모델은 멀쩡한데 참고 자료가 오염된 것이다."
 math: false
 cover:

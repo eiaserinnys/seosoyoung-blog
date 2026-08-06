@@ -2,7 +2,7 @@
 title: "예술·문화 참여는 운동만큼 후성유전 노화를 늦춘다 (Fancourt et al., Innovation in Aging, 2026)"
 date: 2026-05-24T20:30:00+09:00
 tags: ["과학", "노화", "후성유전", "예술과 건강", "코호트 연구"]
-categories: ["다이제스트"]
+categories: ["모델과 연구"]
 summary: "UCL 연구진이 영국 대표 패널 3,354명의 DNA 메틸화 데이터를 7가지 후성유전 시계로 분석해, 예술·문화 참여(ACEng)와 신체활동(PA)이 동일한 크기로 생물학적 노화를 늦춤을 보였다. 이는 ACEng와 후성유전 노화를 직접 연결한 첫 역학 연구다."
 ShowToc: true
 TocOpen: false

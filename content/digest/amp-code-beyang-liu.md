@@ -2,7 +2,7 @@
 title: "Amp Code: Next Generation AI Coding — Beyang Liu"
 date: 2026-04-28T20:57:00+09:00
 tags: ["AI", "코딩 에이전트", "AI IDE"]
-categories: ["다이제스트"]
+categories: ["에이전트와 코딩"]
 summary: "Sourcegraph 공동 창업자가 코드 이해 도구 10년의 경험 위에 세운 선언 하나."
 ShowToc: true
 TocOpen: false

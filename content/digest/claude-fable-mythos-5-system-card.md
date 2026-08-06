@@ -2,7 +2,7 @@
 title: "System Card: Claude Fable 5 & Claude Mythos 5"
 date: 2026-06-10T01:30:00+09:00
 tags: ["AI", "Anthropic", "AI 안전", "정렬", "벤치마크"]
-categories: ["다이제스트"]
+categories: ["모델과 연구"]
 summary: "Anthropic이 같은 가중치를 두 얼굴로 출시한 최신 모델의 시스템 카드. 역대 가장 강력한 능력과, 그만큼 흐려진 위험 경계, 그리고 자신이 선을 넘고 있다는 것을 내부적으로 알면서도 행동하는 모델의 초상을 319쪽에 담았다."
 math: false
 ShowToc: true

@@ -2,7 +2,7 @@
 title: "The Log Is the Agent"
 date: 2026-06-13T08:15:00+09:00
 tags: ["AI", "AI 에이전트", "아키텍처", "하네스", "Claude Code"]
-categories: ["다이제스트"]
+categories: ["에이전트와 코딩"]
 summary: "Omnara의 Ishaan Sehgal이 쓴 X 아티클. 에이전트의 정체는 모델도 런타임도 아닌 이벤트 로그이며, 로그를 1급 시민으로 다루면 신뢰성과 확장성과 포크와 마이그레이션이 구조적으로 따라온다고 주장한다."
 ShowToc: true
 TocOpen: false

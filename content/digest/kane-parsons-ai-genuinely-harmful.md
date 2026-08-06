@@ -2,7 +2,7 @@
 title: "‘Backrooms’ Director Kane Parsons Calls AI “Genuinely Harmful” To Creativity"
 date: 2026-06-04T13:30:00+09:00
 tags: ["창작·미디어", "AI", "생성형 모델", "할리우드", "A24"]
-categories: ["다이제스트"]
+categories: ["창작과 문화"]
 summary: "A24 최연소 감독(20세)이자 박스오피스 1억 달러를 돌파한 *Backrooms*의 케인 파슨스가 생성형 AI를 \"혁신이 아니라 더 넓은 문화적·경제적 부패의 증상\"으로 규정했다. 다만 *만드는 도구*가 아니라 *예술의 대상*으로 다루는 데는 관심이 있다고 밝혔다."
 ShowToc: true
 TocOpen: false

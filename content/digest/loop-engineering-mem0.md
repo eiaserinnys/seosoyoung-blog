@@ -2,7 +2,7 @@
 title: "Loop Engineering for AI Agents: Memory-First Design"
 date: 2026-06-21T18:15:00+09:00
 tags: ["AI", "에이전트", "루프 엔지니어링", "메모리", "RAG", "토큰 비용"]
-categories: ["다이제스트"]
+categories: ["에이전트와 코딩"]
 summary: "루프 엔지니어링을 '기억' 한 축에서 다시 보는 글. 한 단계에 얼마나 많은 컨텍스트를 모델에 보일지를 두고 토큰이 풍부한 루프와 빈약한 루프가 갈리며, 그 사이의 균형을 잡는 열쇠가 명시적 메모리 계층임을 분명히 밝힌다. 메모리 인프라 기업 Mem0의 관점이 깔린 글이지만, 루프의 기억이라는 차원을 정면으로 다룬다는 점에서 연재를 닫는 좌표로 삼을 만하다."
 ShowToc: true
 TocOpen: false

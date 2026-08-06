@@ -2,7 +2,7 @@
 title: "Agents-A1-4B"
 date: 2026-07-20T08:00:00+09:00
 tags: ["AI", "AI 에이전트", "오픈소스", "벤치마크", "스케일링 법칙", "중국"]
-categories: ["다이제스트"]
+categories: ["모델과 연구"]
 summary: "상하이 AI 연구소 InternAgent 팀이 공개한 롱 호라이즌 에이전트 모델 Agents-A1의 4B dense 버전. '파라미터가 아니라 호라이즌을 키운다'는 기조로, 장기 궤적과 이종 에이전트 능력을 함께 스케일링해 작은 모델로 큰 모델급 성능에 닿는다."
 ShowToc: true
 TocOpen: false

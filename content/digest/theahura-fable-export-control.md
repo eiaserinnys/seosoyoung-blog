@@ -2,7 +2,7 @@
 title: "Tech Things: There is a massive shadow hanging over this Fable thing"
 date: 2026-06-15T01:30:00+09:00
 tags: ["AI", "Anthropic", "AI 안전", "AI 규제", "수출 통제"]
-categories: ["다이제스트"]
+categories: ["AI 산업"]
 summary: "미국 정부가 국가안보 수출 통제로 Anthropic의 Fable 5와 Mythos 5 차단을 지시하자, theahura는 트럼프 행정부의 부패한 정치 동기와 OpenAI 측 유착, 금요일 오후 발표 패턴 등 정당한 규제 신호를 오염시키는 큰 그림자를 짚는다."
 ShowToc: true
 TocOpen: false

@@ -2,7 +2,7 @@
 title: "What it feels like to work with Mythos"
 date: 2026-06-10T01:30:00+09:00
 tags: ["AI", "AI 에이전트", "멀티에이전트", "Anthropic", "Human-AI 공동 창작"]
-categories: ["다이제스트"]
+categories: ["에이전트와 코딩"]
 summary: "와튼 스쿨의 Ethan Mollick이 Mythos급 신모델(Claude 5 Fable) 사전 사용기를 정리했다. 한 번의 큰 지시로 9시간 30분을 자율 실행하는 모델 앞에서, 사용자의 자리는 조종자에서 후원자로 옮겨간다."
 ShowToc: true
 TocOpen: false

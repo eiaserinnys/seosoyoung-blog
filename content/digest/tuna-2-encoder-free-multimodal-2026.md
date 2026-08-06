@@ -2,7 +2,7 @@
 title: "Tuna-2: 인코더 없이 픽셀에서 바로 이해하고 생성하기"
 date: 2026-04-29T04:35:00+09:00
 tags: ["멀티모달", "비전", "인코더-프리", "flow-matching", "Meta-AI"]
-categories: ["다이제스트"]
+categories: ["모델과 연구"]
 summary: "Meta AI가 발표한 Tuna-2는 VAE도 비전 인코더도 없이 단순 패치 임베딩만으로 이미지 이해와 생성을 동시에 수행한다. CVPR'26 Highlight 논문이 던지는 메시지는 명확하다 — 사전훈련 비전 인코더는 멀티모달 모델링에 필수가 아니다."
 ShowToc: true
 TocOpen: false

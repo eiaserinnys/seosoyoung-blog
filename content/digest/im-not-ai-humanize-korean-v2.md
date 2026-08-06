@@ -2,7 +2,7 @@
 title: "Humanize KR (Korean AI Writing Remover)"
 date: 2026-07-22T18:30:00+09:00
 tags: ["창작·미디어", "글쓰기", "Claude Code", "오픈소스", "한국어"]
-categories: ["다이제스트"]
+categories: ["창작과 문화"]
 summary: "한국어 LLM 출력의 티를 걷어내는 클로드 코드 플러그인. 70여 개 서브패턴을 A~J 10대 카테고리와 3단 심각도로 정리한 taxonomy가 정본이고, 원문의 AI 냄새 강도에 따라 light·standard·heavy 세 경로로 갈라 처리한다."
 math: true
 ShowToc: true

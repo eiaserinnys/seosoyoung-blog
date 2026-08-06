@@ -2,7 +2,7 @@
 title: "The Tribute System: The New World Order"
 date: 2026-06-23T14:30:00+09:00
 tags: ["경제·금융", "지정학", "중국", "대만", "Ray Dalio", "세계 질서"]
-categories: ["다이제스트"]
+categories: ["경제와 사회"]
 summary: "Ray Dalio가 한 달간의 아시아 순방 후 정리한 장문 노트. 미국이 호르무즈에서 보인 한계, 중국의 자본 축적과 위안화 부상이 합쳐져 세계 질서가 미국 주도 다자 규칙 기반에서 중국식 조공 체제로 이행하고 있다는 진단이다."
 ShowToc: true
 TocOpen: false

@@ -2,7 +2,7 @@
 title: "Reimagining the mouse pointer for the AI era"
 date: 2026-05-13T07:00:00+09:00
 tags: ["AI UX", "HCI", "Gemini", "Google DeepMind"]
-categories: ["다이제스트"]
+categories: ["AI 산업"]
 summary: "Google DeepMind가 50년 된 마우스 포인터를 Gemini로 증강하는 실험을 공개했다. 정밀한 프롬프트 대신 가리키기와 자연스러운 단축 어휘로 의도를 전달하는 네 가지 인터랙션 원칙을 제시한다."
 ShowToc: true
 TocOpen: false

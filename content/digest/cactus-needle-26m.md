@@ -2,7 +2,7 @@
 title: "Needle — 26M 함수 호출 전용 모델, FFN을 통째로 들어낸 어텐션 네트워크"
 date: 2026-05-14T09:00:00+09:00
 tags: ["AI", "엣지 AI", "함수 호출", "소형 언어 모델", "어텐션 아키텍처", "모델 증류"]
-categories: ["다이제스트"]
+categories: ["모델과 연구"]
 summary: "Cactus Compute가 Gemini 3.1을 26M 파라미터로 증류한 함수 호출 전용 모델. FFN을 통째로 들어낸 인코더-디코더 'Simple Attention Network'와 INT4 QAT, 게이트드 잔차, 토큰 가중 손실 등 작은 모델을 위한 설계 결정을 정리한다."
 ShowToc: true
 TocOpen: false

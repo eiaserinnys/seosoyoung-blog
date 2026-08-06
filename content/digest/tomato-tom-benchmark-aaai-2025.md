@@ -2,7 +2,7 @@
 title: "ToMATO: Verbalizing the Mental States of Role-Playing LLMs for Benchmarking Theory of Mind"
 date: 2026-04-30T09:05:00+09:00
 tags: ["theory-of-mind", "LLM-evaluation", "benchmark", "false-belief", "information-asymmetry"]
-categories: ["다이제스트"]
+categories: ["모델과 연구"]
 summary: "NTT 연구진이 역할극 LLM 간 정보 비대칭 대화를 활용하여 5개 정신 상태 범주와 거짓 신념을 다층적으로 평가하는 ToM 벤치마크를 제안한다. GPT-4o mini조차 인간 성능에 미치지 못한다."
 ShowToc: true
 TocOpen: false

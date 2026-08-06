@@ -2,7 +2,7 @@
 title: "Memory Layers at Scale"
 date: 2026-05-01T13:50:00+09:00
 tags: ["LLM 아키텍처", "메모리 레이어", "Meta FAIR", "sparse activation", "스케일링"]
-categories: ["다이제스트"]
+categories: ["모델과 연구"]
 summary: "Meta FAIR가 트랜스포머의 FFN 레이어를 학습 가능한 key-value 메모리로 대체하여, FLOP 증가 없이 파라미터를 128B까지 확장하고 사실 기반 QA에서 2배 이상 컴퓨트 예산의 dense 모델을 능가한 논문."
 ShowToc: true
 TocOpen: false

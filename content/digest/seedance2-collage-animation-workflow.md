@@ -2,7 +2,7 @@
 title: "Seedance2.0으로 만드는 콜라주 애니메이션 (tapehead.lab)"
 date: 2026-05-18T17:00:00+09:00
 tags: ["AI", "영상 생성", "프롬프트 엔지니어링", "Seedance", "Runway", "Midjourney"]
-categories: ["다이제스트"]
+categories: ["창작과 문화"]
 summary: "AI MV 크리에이터 tapehead.lab이 신곡 「불쌍한 지성(かわいそうな知性)」 MV의 콜라주 애니메이션 워크플로우를 공개했다. Midjourney로 단편 소재 20장을 모으고 → Runway 노드에서 Seedance2.0에 5장씩 Reference로 묶어 15초 시퀀스 88본을 만들고 → 편집과 작곡을 거꾸로 돌린다. 그리는 사람이 아니라 찍는 사람의 일에 가깝다."
 ShowToc: true
 TocOpen: false

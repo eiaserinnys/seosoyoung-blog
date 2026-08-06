@@ -2,7 +2,7 @@
 title: "How People Are Really Using AI in 2026"
 date: 2026-07-06T15:00:00+09:00
 tags: ["AI", "사용자 연구", "감정", "인지 부채"]
-categories: ["다이제스트"]
+categories: ["경제와 사회"]
 summary: "Marc Zao-Sanders의 AI in the Wild 3차 연례 연구. 실사용 사례 12,637건에서 치료·동반이 2년 연속 1위에 오르고, 사고를 외주화하는 '씽크슬롭'과 직장 내 그림자 사용이 새 흐름으로 드러난다."
 ShowToc: true
 TocOpen: false

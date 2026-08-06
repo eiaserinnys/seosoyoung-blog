@@ -2,7 +2,7 @@
 title: "쓰는 코드와 출시되는 코드 사이 — AI 생산성 깔때기"
 date: 2026-06-08T08:00:00+09:00
 tags: ["AI", "AI 코딩", "코딩 에이전트", "바이브 코딩", "Anthropic"]
-categories: ["다이제스트"]
+categories: ["에이전트와 코딩"]
 summary: "John Burn-Murdoch가 FT에서 'productivity funnel'이라는 프레임으로 정리한 AI 생산성의 깔때기 효과를, 그 칼럼이 인용한 NBER WP 35275(Demirer et al. 2026)와 함께 정리한다. 코드 줄 수는 17.3배 늘었지만 실제 릴리스는 +30%로 줄어드는 감쇠 패턴이 핵심이다."
 ShowToc: true
 TocOpen: false

@@ -2,7 +2,7 @@
 title: "Codex App Server Protocol"
 date: 2026-05-05T07:00:23+09:00
 tags: ["codex", "json-rpc", "agent-protocol", "openai"]
-categories: ["다이제스트"]
+categories: ["에이전트와 코딩"]
 summary: "OpenAI Codex의 리치 인터페이스(VS Code 확장 등)를 구동하는 JSON-RPC 2.0 기반 양방향 통신 프로토콜의 전체 구조를 정리한다."
 ShowToc: true
 TocOpen: false

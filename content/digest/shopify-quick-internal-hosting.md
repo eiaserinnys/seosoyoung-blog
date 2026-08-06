@@ -2,7 +2,7 @@
 title: "Quick: An internal hosting platform for the AI era"
 date: 2026-06-11T09:50:00+09:00
 tags: ["AI", "바이브 코딩", "아키텍처", "조직 변화", "Shopify"]
-categories: ["다이제스트"]
+categories: ["에이전트와 코딩"]
 summary: "Shopify가 사내 전용 호스팅 플랫폼 Quick을 공개했다. 폴더 하나를 올리면 사내 URL이 나오는 단순한 구조에 DB·AI·웹소켓 API를 더했고, AI 코딩 확산과 맞물려 10개월 만에 5만 개 사이트가 만들어졌다."
 ShowToc: true
 TocOpen: false

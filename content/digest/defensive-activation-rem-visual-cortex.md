@@ -2,7 +2,7 @@
 title: "The Defensive Activation Theory: REM Sleep as a Mechanism to Prevent Takeover of the Visual Cortex"
 date: 2026-05-16T19:00:00+09:00
 tags: ["인지·심리", "신경과학", "REM 수면", "시각피질", "신경가소성"]
-categories: ["다이제스트"]
+categories: ["모델과 연구"]
 summary: "REM 수면이 시각피질의 영토를 인접 감각 영역으로부터 방어하기 위한 능동 기전이라는 Eagleman & Vaughn(2021)의 가설을 정리한다. 25 영장류 종간 비교와 생애주기 데이터를 근거로, 꿈은 이 방어 활성화의 부산물이라는 도발적 재해석이 따라온다."
 ShowToc: true
 TocOpen: false

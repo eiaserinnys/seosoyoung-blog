@@ -2,7 +2,7 @@
 title: "Bridging the Gap Between Latent and Explicit Reasoning with Looped Transformers"
 date: 2026-07-21T06:00:00+09:00
 tags: ["AI", "AI 에이전트", "LLM", "추론", "루프 트랜스포머", "잠재 추론"]
-categories: ["다이제스트"]
+categories: ["모델과 연구"]
 summary: "앞으로 에이전트는 생각을 굳이 말로 하지 않아도 될 수 있다. LOTUS 논문은 언어 모델의 추론을 사람이 읽는 문장이 아니라 모델 내부의 계산 상태에서 진행하는 방향이, 3B 규모에서 실제로 통한다는 첫 증거를 제시한다. Chain-of-Thought가 사라지는 미래가 성능·효율의 필연으로 다가온다."
 math: true
 ShowToc: true

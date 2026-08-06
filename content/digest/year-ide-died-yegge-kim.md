@@ -2,7 +2,7 @@
 title: "2026: The Year The IDE Died — Steve Yegge & Gene Kim"
 date: 2026-04-28T20:45:00+09:00
 tags: ["AI", "코딩 에이전트", "AI IDE"]
-categories: ["다이제스트"]
+categories: ["에이전트와 코딩"]
 summary: "공저 'Vibe Coding' 책을 기반으로 Steve(전반)는 IDE의 종말과 다중 에이전트 전환을, Gene(후반)은 조직 변혁 사례와 DORA 연구를 다룹니다."
 ShowToc: true
 TocOpen: false

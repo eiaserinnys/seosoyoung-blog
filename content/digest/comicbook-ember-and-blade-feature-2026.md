@@ -2,7 +2,7 @@
 title: "Roguelike Fans Cannot Miss This Hades and Vampire Survivors-Like Game"
 date: 2026-05-20T09:30:00+09:00
 tags: ["게임 산업", "로그라이크", "Ember and Blade", "Vampire Survivors", "Hades"]
-categories: ["다이제스트"]
+categories: ["게임"]
 summary: "ComicBook.com이 라인게임즈의 <Ember and Blade> 데모를 피처로 다뤘다. 헤이디스의 연출과 뱀파이어 서바이버즈의 전투 고조를 결합하면서도 기계적으로 베끼지 않았다는 평이 핵심이다."
 ShowToc: true
 TocOpen: false

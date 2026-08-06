@@ -2,7 +2,7 @@
 title: "Unreal Engine: 1000 NPCs In Multiplayer Without Network Saturation"
 date: 2026-07-05T08:00:00+09:00
 tags: ["게임", "Unreal Engine", "멀티플레이어", "네트워크 최적화", "게임 개발"]
-categories: ["다이제스트"]
+categories: ["게임"]
 summary: "dead reckoning·snapshot interpolation 계열의 오래된 네트워크 동기화 원리를 언리얼 엔진 1,000+ NPC 스케일에 맞춰 튜닝한 Vladimir Khanin의 실증을 Jettelly가 정리했다."
 ShowToc: true
 TocOpen: false

@@ -2,7 +2,7 @@
 title: "Don't Build Agents, Build Skills Instead — Barry Zhang & Mahesh Murag"
 date: 2026-04-28T20:36:00+09:00
 tags: ["AI", "코딩 에이전트", "에이전트"]
-categories: ["다이제스트"]
+categories: ["에이전트와 코딩"]
 summary: "Don't Build Agents, Build Skills Instead — Barry Zhang & Mahesh Murag"
 ShowToc: true
 TocOpen: false

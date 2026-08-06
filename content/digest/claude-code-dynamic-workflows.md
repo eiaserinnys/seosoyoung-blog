@@ -2,7 +2,7 @@
 title: "A harness for every task: dynamic workflows in Claude Code"
 date: 2026-06-03T16:00:00+09:00
 tags: ["AI", "Claude Code", "에이전트", "워크플로우", "하네스", "Anthropic"]
-categories: ["다이제스트"]
+categories: ["에이전트와 코딩"]
 summary: "Anthropic이 Claude Code에 출시한 동적 워크플로우 해설. Claude가 작업마다 즉석에서 JS 하니스를 작성해 서브에이전트를 spawn·조율한다. 단일 컨텍스트의 3대 실패 모드를 우회하는 6가지 합성 가능한 패턴과 10가지 활용 사례를 카탈로그로 정리한다."
 ShowToc: true
 TocOpen: false

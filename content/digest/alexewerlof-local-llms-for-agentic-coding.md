@@ -2,7 +2,7 @@
 title: "Using local LLMs for agentic coding"
 date: 2026-06-15T10:00:00+09:00
 tags: ["AI", "LLM", "코딩 에이전트", "Copilot", "로컬 LLM"]
-categories: ["다이제스트"]
+categories: ["에이전트와 코딩"]
 summary: "GitHub Copilot이 사용량 기반 과금으로 전환된 시점에, 로컬 LLM과 무료 클라우드 모델로 비용 부담 없이 에이전틱 코딩 환경을 꾸리는 실용 가이드. Gemma 4·LM Studio·Copilot Custom Endpoint·Pi·OpenRouter 무료 모델까지 단계별로 다룬다."
 math: true
 ShowToc: true

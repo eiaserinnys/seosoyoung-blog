@@ -2,7 +2,7 @@
 title: "SCAIL-2: Unifying Controlled Character Animation with End-to-end In-Context Conditioning"
 date: 2026-06-09T23:30:00+09:00
 tags: ["AI", "비디오 생성", "캐릭터 애니메이션", "디퓨전 모델", "오픈소스"]
-categories: ["다이제스트"]
+categories: ["모델과 연구"]
 summary: "Z.ai가 공개한 SCAIL-2는 포즈 스켈레톤·인페인팅 마스크 같은 중간 표현을 거치지 않고 driving 비디오 latent를 시퀀스에 직접 이어 붙여 캐릭터 애니메이션을 end-to-end로 합성한다. 60K motion pair 데이터셋, in-context mask conditioning, mode-specific RoPE, Bias-Aware DPO를 결합하여 동물 driving과 egocentric 같은 제로샷 능력까지 끌어냈다."
 ShowToc: true
 TocOpen: false

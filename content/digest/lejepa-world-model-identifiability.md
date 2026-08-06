@@ -2,7 +2,7 @@
 title: "When Does LeJEPA Learn a World Model?"
 date: 2026-05-27T14:00:00+09:00
 tags: ["AI", "월드 모델", "JEPA", "자기지도학습", "표현 학습"]
-categories: ["다이제스트"]
+categories: ["모델과 연구"]
 summary: "LeJEPA가 복잡한 관측에서 세계의 '진짜 좌표(숨은 변수)'를 거의 그대로 되찾는다는 것, 그리고 그게 가능한 분포는 가우시안이 유일함을 증명한 글. 되찾은 좌표만으로 최적 계획까지 가능하다 — 르쿤의 월드 모델 구상에 형식 검증된 받침대를 놓았다."
 math: true
 ShowToc: true

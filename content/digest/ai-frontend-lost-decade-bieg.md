@@ -2,7 +2,7 @@
 title: "Is AI causing a repeat of Frontend's Lost Decade?"
 date: 2026-05-31T12:30:00+09:00
 tags: ["AI", "AI 코딩", "LLM", "프론트엔드", "탈숙련화", "사회·노동"]
-categories: ["다이제스트"]
+categories: ["경제와 사회"]
 summary: "Mauro Bieg는 지금 AI가 프로그래밍에 일으키는 변화가 지난 10년 프론트엔드의 '잃어버린 10년'과 닮았다고 본다. 탈숙련화·누수 많은 추상화·Stack Overflow 복붙의 연장이라는 세 렌즈로 현 국면을 진단하고, 바우하우스 운동에서 응답의 단서를 찾는다."
 ShowToc: true
 TocOpen: false

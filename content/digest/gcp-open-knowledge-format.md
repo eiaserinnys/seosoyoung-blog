@@ -2,7 +2,7 @@
 title: "How the Open Knowledge Format can improve data sharing"
 date: 2026-06-15T02:00:00+09:00
 tags: ["AI", "AI 에이전트", "Google Cloud", "오픈소스", "컨텍스트 관리"]
-categories: ["다이제스트"]
+categories: ["에이전트와 코딩"]
 summary: "Google Cloud의 Data Cloud 팀이 LLM-wiki 패턴을 휴대 가능한 상호운용 포맷으로 정형화한 Open Knowledge Format(OKF) v0.1을 공개했다. YAML frontmatter가 붙은 마크다운 파일 디렉토리로 지식을 표현하며, 벤더·플랫폼·에이전트 프레임워크에 종속되지 않는 형식만으로 에이전트 간 컨텍스트 공유를 가능하게 한다."
 ShowToc: true
 TocOpen: false

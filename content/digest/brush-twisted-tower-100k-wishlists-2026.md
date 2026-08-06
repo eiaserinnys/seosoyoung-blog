@@ -2,7 +2,7 @@
 title: "My Game Just Got 100,000 Wishlists... Here's How To Do It"
 date: 2026-07-13T23:00:00+09:00
 tags: ["게임", "인디 게임", "Steam", "게임 개발", "마케팅"]
-categories: ["다이제스트"]
+categories: ["게임"]
 summary: "인디 개발자 Thomas Brush가 자신의 게임 Twisted Tower로 스팀 위시리스트 10만 명을 모은 방법을 세 갈래로 정리한다. 소셜 미디어 반복 게시, 스트리머와 NextFest를 통한 거인의 어깨, 그리고 Trinity Hook이라 이름 붙인 시각·메커닉·서사 세 축의 후크."
 ShowToc: true
 TocOpen: false

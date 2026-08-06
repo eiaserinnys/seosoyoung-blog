@@ -2,7 +2,7 @@
 title: "A Framework for Frontier AI and the Dawning of a New Age"
 date: 2026-07-14T21:50:00+09:00
 tags: ["AI", "AGI", "AI 거버넌스", "AI 안전", "Demis Hassabis", "Google DeepMind"]
-categories: ["다이제스트"]
+categories: ["AI 산업"]
 summary: "Google DeepMind CEO Demis Hassabis가 X에 발표한 매니페스토. AGI 임박을 전제로 FINRA를 본뜬 미국 주도 프론티어 AI 표준 기구를 제안하고, 30일 사전 리뷰·능력 벤치마크·슬로우다운 조율 권한을 구체적으로 설계한다."
 ShowToc: true
 TocOpen: false

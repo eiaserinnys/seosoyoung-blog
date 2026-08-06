@@ -2,7 +2,7 @@
 title: "Trillions of miles of data: Your car is spying on you, and it's only just the beginning"
 date: 2026-05-30T12:30:00+09:00
 tags: ["사회·노동", "프라이버시", "자동차", "데이터 브로커", "보험", "규제"]
-categories: ["다이제스트"]
+categories: ["경제와 사회"]
 summary: "BBC Future가 자동차 데이터 수집의 실태를 정리한 칼럼. 현대차는 위치·생체·심리 데이터를 광범위하게 수집해 보험사·데이터 브로커에 판매하며, 곧 의무화될 음주운전 방지 카메라는 데이터 사용을 제한하는 조항이 없다."
 ShowToc: true
 TocOpen: false

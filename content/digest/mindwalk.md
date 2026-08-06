@@ -2,7 +2,7 @@
 title: "mindwalk"
 date: 2026-07-19T14:00:00+09:00
 tags: ["코딩 에이전트", "오픈소스", "시각화", "Claude Code", "아키텍처"]
-categories: ["다이제스트"]
+categories: ["에이전트와 코딩"]
 summary: "Claude Code·Codex의 세션 로그를 코드베이스의 3D '밤의 지도' 위에서 빛의 이동으로 재생하는 로컬 시각화 도구. 에이전트가 무엇을 했는가가 아니라 태스크를 어떻게 이해했는가를 한눈에 보여준다."
 cover:
   image: "/images/mindwalk/screenshot-terrain.png"

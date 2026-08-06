@@ -2,7 +2,7 @@
 title: 'Steamユーザーの43％は「ゲームに生成AI使われてても気にせず買う」との調査結果。"使い方次第"など、温度差くっきり'
 date: 2026-07-08T16:00:00+09:00
 tags: ["게임", "Steam", "AI", "생성 AI", "GameDiscoverCo"]
-categories: ["다이제스트"]
+categories: ["게임"]
 summary: "GameDiscoverCo가 Steam 유저 약 3,800명을 대상으로 진행한 설문 조사. 43%는 생성 AI가 쓰인 게임 구매에 지장이 없다고 답했고, 31%는 부정적, 25%는 중립. 자유 응답에서는 코딩·프로토타입 등 조건부 허용이 다수였다."
 ShowToc: true
 TocOpen: false

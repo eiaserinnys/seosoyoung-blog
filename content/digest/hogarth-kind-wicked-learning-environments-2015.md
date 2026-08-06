@@ -2,7 +2,7 @@
 title: "The Two Settings of Kind and Wicked Learning Environments"
 date: 2026-05-13T10:30:00+09:00
 tags: ["인지·심리", "학습 환경", "판단 편향", "직관", "행동경제학"]
-categories: ["다이제스트"]
+categories: ["모델과 연구"]
 summary: "직관이 정확해지는 학습 환경(kind)과 호도하는 학습 환경(wicked)을 구분하는 Hogarth(2001)의 개념을, '학습(L) 설정'과 '타깃(T) 설정' 사이의 정보 매칭 6단계로 재공식화한 2015년 정본 논문."
 ShowToc: true
 TocOpen: false

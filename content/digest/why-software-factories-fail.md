@@ -2,7 +2,7 @@
 title: "Why Software Factories Fail"
 date: 2026-07-25T20:00:00+09:00
 tags: ["소프트웨어", "AI 코딩", "코딩 에이전트", "코드 리뷰", "강화학습"]
-categories: ["다이제스트"]
+categories: ["에이전트와 코딩"]
 summary: "HumanLayer 창업자 Dex Horthy의 에세이. 사람이 코드를 아예 읽지 않는 '불 끄고 돌아가는 소프트웨어 공장'은 작동하지 않는다. 하네스를 아무리 쌓아도 소용없는 이유는, 코딩 모델을 훈련시키는 검증기에 나쁜 설계를 벌하는 항목이 없기 때문이다."
 ShowToc: true
 TocOpen: false

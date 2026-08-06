@@ -2,7 +2,7 @@
 title: "How to Be a 30x AI Engineer with a Taste"
 date: 2026-06-10T12:40:00+09:00
 tags: ["AI", "코딩 에이전트", "테이스트", "커리어", "소프트웨어 엔지니어링"]
-categories: ["다이제스트"]
+categories: ["에이전트와 코딩"]
 summary: "코드 생성이 범용재가 된 시대에 엔지니어의 가치를 가르는 것은 '테이스트'라는 모호한 단어를 세 가지 형태로 분해하고, 90일 훈련 계획과 다섯 가지 프로젝트로 구체화한 글."
 ShowToc: true
 TocOpen: false

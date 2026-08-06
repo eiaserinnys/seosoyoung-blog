@@ -2,7 +2,7 @@
 title: "Will your Steam 1.0 launch outpace your Early Access start?"
 date: 2026-05-06T15:10:01+09:00
 tags: ["Steam", "얼리액세스", "게임 출시", "데이터 분석"]
-categories: ["다이제스트"]
+categories: ["게임"]
 summary: "GameDiscoverCo와 Gamalytic이 1,500개 이상의 Steam EA 졸업작 데이터를 분석한 결과, 중간값 1.0 출시는 EA 첫 3개월의 0.7배에 그친다. 그러나 분포가 매우 넓어 상위 5%는 5배 이상을 기록하고, EA 기간이 길수록 1.0 배수는 낮아지는 음의 상관이 관찰된다."
 ShowToc: true
 TocOpen: false

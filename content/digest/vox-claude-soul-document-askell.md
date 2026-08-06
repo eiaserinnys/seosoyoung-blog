@@ -2,7 +2,7 @@
 title: "Claude has an 80-page 'soul document.' Is that enough to make it good?"
 date: 2026-05-06T10:30:00+09:00
 tags: ["AI", "AI 윤리", "Anthropic", "덕 윤리"]
-categories: ["다이제스트"]
+categories: ["모델과 연구"]
 summary: "Claude의 인격을 설계하는 철학자 Amanda Askell이 밝히는 soul document의 철학 — 규칙이 아니라 덕성을, 도구가 아니라 인격을 훈련한다는 접근과 그 긴장."
 ShowToc: true
 TocOpen: false

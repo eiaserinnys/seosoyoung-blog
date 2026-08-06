@@ -2,7 +2,7 @@
 title: "A Global Workspace in Language Models"
 date: 2026-07-07T09:00:00+09:00
 tags: ["AI", "해석가능성", "Anthropic", "Claude", "의식"]
-categories: ["다이제스트"]
+categories: ["모델과 연구"]
 summary: "Anthropic이 Claude 내부에서 신경과학의 글로벌 워크스페이스 이론과 유사한 특권적 표상 집합 J-space를 발견했다. 보고, 조절, 추론, 일반화, 선택성이라는 다섯 가지 기능 속성을 실험으로 검증하고, 안전 모니터링과 훈련 응용까지 시연한 연구를 정리한다."
 ShowToc: true
 TocOpen: false

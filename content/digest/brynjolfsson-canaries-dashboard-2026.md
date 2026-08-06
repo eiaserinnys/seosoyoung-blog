@@ -2,7 +2,7 @@
 title: "'It's not going away': The Stanford economist who called the AI entry-level jobs crisis early has the receipts"
 date: 2026-06-30T07:00:00+09:00
 tags: ["사회·노동", "AI", "노동시장", "Brynjolfsson", "Acemoglu"]
-categories: ["다이제스트"]
+categories: ["경제와 사회"]
 summary: "Stanford의 Erik Brynjolfsson과 ADP의 Nela Richardson이 460만 명·730여 직업을 추적하는 Canaries Dashboard를 공개해 작년 paper의 결론을 2026년 4월까지 연장했다. 22\\~25세 신입의 AI 고노출 직업 고용은 연 -3.8% 속도로 줄고 있고, 그 감속은 매월 0.5%p씩 더 깊어진다. 논쟁의 위치는 이제 \"AI가 변혁적이냐\"에서 \"규모와 시기\"로 옮겨졌다."
 ShowToc: true
 TocOpen: false

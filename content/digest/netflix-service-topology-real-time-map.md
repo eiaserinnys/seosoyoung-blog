@@ -2,7 +2,7 @@
 title: "From Silos to Service Topology: Why Netflix Built a Real-Time Service Map"
 date: 2026-05-31T20:50:00+09:00
 tags: ["소프트웨어", "분산 시스템", "관찰가능성", "마이크로서비스", "Netflix", "아키텍처"]
-categories: ["다이제스트"]
+categories: ["에이전트와 코딩"]
 summary: "Netflix가 수천 개의 마이크로서비스 의존성을 실시간으로 보여주는 Service Topology를 어떻게 설계했는지 — eBPF·IPC·트레이싱 세 소스를 독립 그래프로 두고 필요할 때 통합 뷰로 합치는 다층 아키텍처."
 ShowToc: true
 TocOpen: false

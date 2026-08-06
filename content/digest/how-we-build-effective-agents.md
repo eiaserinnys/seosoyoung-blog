@@ -2,7 +2,7 @@
 title: "How We Build Effective Agents — Barry Zhang (Anthropic)"
 date: 2026-04-28T21:06:00+09:00
 tags: ["AI", "코딩 에이전트", "에이전트"]
-categories: ["다이제스트"]
+categories: ["에이전트와 코딩"]
 summary: "에이전트의 정의는 놀라울 만큼 단순합니다."
 ShowToc: true
 TocOpen: false

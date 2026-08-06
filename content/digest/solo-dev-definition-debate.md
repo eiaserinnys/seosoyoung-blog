@@ -2,7 +2,7 @@
 title: "게임의 '개인 개발자'는, 어디까지 혼자 만들어야 자칭할 수 있는가"
 date: 2026-04-29T13:25:00+09:00
 tags: ["게임 산업", "인디게임", "solo dev", "정체성"]
-categories: ["다이제스트"]
+categories: ["게임"]
 summary: "외주를 쓰면서 solo dev를 자칭할 수 있는가? 영어권 X에서 게임 개발자들 사이에 벌어진 정의 논쟁을 정리한다."
 ShowToc: true
 TocOpen: false

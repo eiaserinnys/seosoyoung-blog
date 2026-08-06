@@ -2,7 +2,7 @@
 title: "최고의 모델만으로는 왜 부족한가"
 date: 2026-07-21T12:00:00+09:00
 tags: ["AI", "LLM", "Anthropic", "오픈소스", "경제·금융"]
-categories: ["다이제스트"]
+categories: ["AI 산업"]
 summary: "Emerging Trajectories의 Wojciech Gryc는 Anthropic의 약점이 모델 성능이 아니라 그 성능에 너무 많은 것을 걸고 있다는 데 있다고 진단한다. Kimi K3·Qwen 3.8·GLM 5.2가 그 위험을 드러냈다는 관점의 다이제스트."
 ShowToc: true
 TocOpen: false

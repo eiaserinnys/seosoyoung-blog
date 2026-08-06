@@ -2,7 +2,7 @@
 title: "A Geometric Calculator Inside a Neural Network"
 date: 2026-05-15T07:30:00+09:00
 tags: ["AI", "해석가능성", "신경 기하", "LLM", "메커니즘 분석"]
-categories: ["다이제스트"]
+categories: ["모델과 연구"]
 summary: "Goodfire가 Llama 3.1 8B의 레이어 18에서 발견한 범용 덧셈 모듈. 숫자를 푸리에 기반 원형으로 표현하고, 산술·요일·월 과제에서 같은 회로를 공유하며, steering으로 인과적 역할을 검증했다."
 ShowToc: true
 TocOpen: false

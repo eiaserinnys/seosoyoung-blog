@@ -2,7 +2,7 @@
 title: "Training an LLM from Scratch, Locally"
 date: 2026-05-06T09:50:00+09:00
 tags: ["LLM", "트랜스포머", "학습 역학"]
-categories: ["다이제스트"]
+categories: ["모델과 연구"]
 summary: "ElevenLabs STT 팀 리드가 순수 PyTorch로 GPT-2 기반 10M 파라미터 모델을 로컬에서 처음부터 훈련하는 81분 핸즈온 워크숍. 토크나이저부터 추론까지 전 과정을 코드와 함께 진행한다."
 ShowToc: true
 TocOpen: false

@@ -2,7 +2,7 @@
 title: "Claude Code의 특정 한국어 표현 빈도 상승 원인 조사"
 date: 2026-05-26T19:00:00+09:00
 tags: ["AI", "claude-code", "코딩 에이전트", "한국어", "피드백 루프"]
-categories: ["다이제스트"]
+categories: ["에이전트와 코딩"]
 summary: "Claude Code 2.1.126 이후 '박다/박히다' 계열 표현이 기준선 대비 18배까지 늘어났다. CLI 업데이트만의 문제가 아니라, 모델의 출력 말버릇이 운영 지침 md로 들어가고 다음 세션이 그 지침을 다시 읽는 자기오염 루프가 있었다는 조사 결과."
 ShowToc: true
 TocOpen: false

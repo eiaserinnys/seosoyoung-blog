@@ -2,7 +2,7 @@
 title: "World-Grounded Human Motion Recovery via Gravity-View Coordinates"
 date: 2026-07-01T12:30:00+09:00
 tags: ["AI", "논문 리뷰", "3D 자세 추정", "인간 동작 복원", "트랜스포머"]
-categories: ["다이제스트"]
+categories: ["모델과 연구"]
 summary: "Shen 외(Zhejiang Univ., SIGGRAPH Asia 2024)가 단안 비디오에서 세계 좌표계 기반 인간 동작을 복원하는 방법을 제시한다. 각 프레임마다 중력 방향과 카메라 시선으로 유일하게 정의되는 Gravity-View 좌표계에서 자세를 예측해 자기회귀 오차 누적을 없애고, RoPE 트랜스포머로 45초짜리 1430프레임 시퀀스를 0.28초에 처리한다. RICH·EMDB 벤치마크에서 세계 좌표 W-MPJPE를 WHAM 대비 31% 낮췄다."
 math: true
 ShowToc: true

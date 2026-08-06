@@ -2,7 +2,7 @@
 title: "Tacit Knowledge Is Your Next Competitive Moat"
 date: 2026-05-09T11:18:00+09:00
 tags: ["AI", "암묵지", "tacit knowledge", "경영전략", "경쟁우위"]
-categories: ["다이제스트"]
+categories: ["경제와 사회"]
 summary: "AI 시대의 진짜 차별화는 데이터도 모델도 아니라 사람의 판단에 깃든 암묵지라는 진단. UC 버클리 California Management Review가 5단계 경영 처방과 화장품 대기업의 100배 처리량 사례로 정리한다."
 ShowToc: true
 TocOpen: false

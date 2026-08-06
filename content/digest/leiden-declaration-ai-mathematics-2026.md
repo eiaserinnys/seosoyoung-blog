@@ -2,7 +2,7 @@
 title: "Leiden Declaration on Artificial Intelligence and Mathematics"
 date: 2026-06-03T21:00:00+09:00
 tags: ["AI", "AI 안전", "수학", "학술 출판", "연구 윤리"]
-categories: ["다이제스트"]
+categories: ["모델과 연구"]
 summary: "5개국 16명의 수학자가 작성하고 국제수학연맹(IMU)이 지지한 선언. AI가 수학의 핵심 가치 — 증명·귀속·검증·자율성 — 를 위협한다고 진단하고, 개인·기관·정부·산업을 향한 23개 권고를 제시한다."
 ShowToc: true
 TocOpen: false

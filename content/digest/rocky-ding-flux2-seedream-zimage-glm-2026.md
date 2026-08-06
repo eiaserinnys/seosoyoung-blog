@@ -2,7 +2,7 @@
 title: "深入浅出完整解析FLUX.2、Seedream、Z-image、GLM-Image核心基础知识"
 date: 2026-06-03T20:00:00+09:00
 tags: ["AI", "이미지 생성", "확산 모델", "아키텍처", "AIGC"]
-categories: ["다이제스트"]
+categories: ["모델과 연구"]
 summary: "Rocky Ding이 2026년 3월 정리한 약 7만 자 분량의 종합 해설. FLUX.2·Seedream·Z-Image·GLM-Image 네 AIGC 이미지 대모델의 VAE·텍스트 인코더·DiT 백본·학습/추론 최적화를 분해하고, GRPO 알고리즘의 AIGC 적용까지 다룬다. 글의 메타 주장은 2025년 하반기를 AIGC 이미지 창작 영역의 ‘하프타임’으로 규정하고, 단일 문생도 모델은 가치가 사라지며 통합 멀티모달과 ‘주기 횡단’ 가치를 가진 기술만 살아남는다는 것이다."
 math: true
 ShowToc: true

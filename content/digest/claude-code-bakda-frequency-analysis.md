@@ -2,7 +2,7 @@
 title: "Claude Code Korean outputs use slang verb \"bakda\" at 18× baseline frequency — a morpheme-level investigation"
 date: 2026-05-28T07:30:00+09:00
 tags: ["claude-code", "LLM", "코딩 에이전트", "정렬", "AI 안전"]
-categories: ["다이제스트"]
+categories: ["에이전트와 코딩"]
 summary: "Kiwi morpheme analysis across 114.9M output tokens reveals that Claude Code's Korean outputs use the informal verb \"박다\" (bakda) at 18× the baseline rate after version 2.1.132, with a self-contamination feedback loop amplifying the tendency in under one week."
 ShowToc: true
 TocOpen: false

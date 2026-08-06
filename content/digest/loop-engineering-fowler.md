@@ -2,7 +2,7 @@
 title: "Harness engineering for coding agent users"
 date: 2026-06-21T18:00:00+09:00
 tags: ["AI", "에이전트", "루프 엔지니어링", "하네스", "코딩 에이전트", "사이버네틱스"]
-categories: ["다이제스트"]
+categories: ["에이전트와 코딩"]
 summary: "코딩 에이전트를 덜 감독하면서도 믿으려면, 결과에 대한 신뢰를 끌어올릴 장치가 필요하다. Birgitta Böckeler가 컨텍스트·하네스 엔지니어링의 떠오르는 개념들을 사이버네틱스의 피드포워드·피드백 틀로 묶어, 코딩 에이전트 '사용자'가 직접 두를 수 있는 바깥 하네스의 멘탈 모델을 정리한다."
 ShowToc: true
 TocOpen: false

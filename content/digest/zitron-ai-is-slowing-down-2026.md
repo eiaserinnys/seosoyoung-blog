@@ -2,7 +2,7 @@
 title: "AI Is Slowing Down"
 date: 2026-06-09T14:20:00+09:00
 tags: ["경제·금융", "AI 거품", "OpenAI", "Anthropic", "데이터센터", "AI"]
-categories: ["다이제스트"]
+categories: ["AI 산업"]
 summary: "Ed Zitron이 6월 8일에 올린 글. 2030년까지 데이터센터 빌드아웃에 9.5조에서 15조 달러가 필요하지만, OpenAI와 Anthropic에 89% 집중된 수요로는 채워질 수 없다는 자본 산수와, 토큰 빌링 도입 2개월에서 3개월 만에 도입 기업들이 사용자당 한도를 거는 둔화 신호를 모은 자료."
 ShowToc: true
 TocOpen: false

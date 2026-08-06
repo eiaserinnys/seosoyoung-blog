@@ -2,7 +2,7 @@
 title: "Space X IPO 시리즈 1편: 왜 일론 머스크는 지금 상장을 할까요?"
 date: 2026-06-03T15:30:00+09:00
 tags: ["경제·금융", "IPO", "SpaceX", "Elon Musk", "거버넌스"]
-categories: ["다이제스트"]
+categories: ["경제와 사회"]
 summary: "SpaceX는 현금이 마르지 않은 회사인데도 트럼프 친화 백악관의 돈벌이 창이 가장 넓은 시점에 상장한다. 통제권은 지배주주 회사 구조와 일몰 없는 10배 의결권으로 잠가 두고, *사고-빌리고-죽는다* 회로의 다음 담보를 만드는 사건이라는 분석."
 ShowToc: true
 TocOpen: false

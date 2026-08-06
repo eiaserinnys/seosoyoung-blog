@@ -2,7 +2,7 @@
 title: "AirLLM: 4GB GPU로 70B 모델 돌리기"
 date: 2026-07-17T15:00:00+09:00
 tags: ["AI", "LLM", "오픈소스", "로컬 추론", "GPU", "양자화"]
-categories: ["다이제스트"]
+categories: ["모델과 연구"]
 summary: "AirLLM은 트랜스포머 레이어를 한 장씩만 GPU에 올리는 방식으로 671B 모델을 12GB 카드에 얹는다. 필요 VRAM을 총 파라미터가 아니라 레이어 크기로 바꾸는 영리한 트릭이지만, 그 대가로 토큰마다 모델 전체를 디스크에서 다시 읽는다."
 math: false
 ShowToc: true

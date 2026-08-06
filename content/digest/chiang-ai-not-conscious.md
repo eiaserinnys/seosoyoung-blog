@@ -2,7 +2,7 @@
 title: "No, Artificial Intelligence Is Not Conscious"
 date: 2026-06-05T06:30:00+09:00
 tags: ["AI", "LLM", "Anthropic", "AI 윤리", "의식"]
-categories: ["다이제스트"]
+categories: ["모델과 연구"]
 summary: "테드 창은 LLM을 '문장 이어쓰기 기계'로 규정하고, Anthropic이 Claude를 의식 가능성 있는 존재로 의인화하는 것은 책임 회피를 부추기는 환상이라고 논증한다. 사고 실험을 끝까지 밀어붙이면 노예제에 준하는 윤리적 부담이 따라오므로, Anthropic이 진지하지 않다는 결론에 닿는다."
 ShowToc: true
 TocOpen: false

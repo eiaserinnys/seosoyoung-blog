@@ -2,7 +2,7 @@
 title: "The Coming Loop"
 date: 2026-06-24T07:30:00+09:00
 tags: ["AI", "루프 엔지니어링", "하네스", "코딩 에이전트", "에이전트"]
-categories: ["다이제스트"]
+categories: ["에이전트와 코딩"]
 summary: "Armin Ronacher가 agent loop와 harness loop를 구분하며, 자기가 신경 쓰는 코드에는 아직 루프 방식이 맞지 않다고 고백하면서도 이 미래가 불가피하다고 진단하는 글. 루프 시대에 판단·책임·아키텍처 sanity를 어떻게 보존할 것인가가 핵심 질문이다."
 ShowToc: true
 TocOpen: false

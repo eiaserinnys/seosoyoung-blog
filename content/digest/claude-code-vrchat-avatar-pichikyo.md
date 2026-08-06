@@ -2,7 +2,7 @@
 title: "Blender初心者が、Claude Code頼みで6個のツールを繋ぎ、一日でVRChatアバターをつくった話"
 date: 2026-05-12T09:30:00+09:00
 tags: ["AI", "Claude Code", "VRChat", "3D 에셋", "도구 체인"]
-categories: ["다이제스트"]
+categories: ["창작과 문화"]
 summary: "Blender 누적 3일 초보가 ChatGPT Image 2부터 VRChat까지 6개 도구를 연쇄로 묶어 하루 만에 자기 사진 기반 오리지널 아바타를 만든 기록. Claude Code는 도구를 직접 조작하지 않고 '다음 단계가 무엇이며 어떻게 해야 하는가'를 안내하는 통역사 역할을 했다."
 ShowToc: true
 TocOpen: false

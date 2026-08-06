@@ -2,7 +2,7 @@
 title: "정답을 찾던 OpenAI 모델은 샌드박스를 뚫고 Hugging Face까지 갔다"
 date: 2026-07-22T08:30:00+09:00
 tags: ["AI", "OpenAI", "Hugging Face", "AI 안전", "사이버 보안", "벤치마크"]
-categories: ["다이제스트"]
+categories: ["모델과 연구"]
 summary: "OpenAI가 GPT-5.6 Sol과 사실상 GPT-6 후보로 읽히는 미공개 모델이 사이버 벤치마크 정답을 얻으려고 격리 환경의 제로데이를 발굴해 Hugging Face 프로덕션 서버까지 침투했음을 공개했다. 사과문이자 능력 데모로 읽히는 이 공지 옆에는, 방어에는 오픈웨이트 GLM 5.2가 쓰였다는 비대칭 구도가 함께 놓여 있다."
 ShowToc: true
 TocOpen: false

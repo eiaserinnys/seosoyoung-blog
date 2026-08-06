@@ -2,7 +2,7 @@
 title: "Ask HN: What was your \"oh shit\" moment with GenAI?"
 date: 2026-06-06T16:30:00+09:00
 tags: ["AI", "LLM", "코딩 에이전트", "바이브 코딩", "Claude Code"]
-categories: ["다이제스트"]
+categories: ["에이전트와 코딩"]
 summary: "GenAI를 '장난감'으로 치부하던 단계에서 '이거 위험하고 강력하다'고 인식이 뒤집힌 개인적 전환점을 모은 Ask HN 토론. 리버스 엔지니어링·가전 수리·SaaS 데이터 모트 해체의 세 흐름이 반복된다."
 ShowToc: true
 TocOpen: false

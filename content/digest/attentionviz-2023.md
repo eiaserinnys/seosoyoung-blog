@@ -2,7 +2,7 @@
 title: "AttentionViz: A Global View of Transformer Attention"
 date: 2026-05-21T14:30:00+09:00
 tags: ["AI", "해석가능성", "트랜스포머", "어텐션", "시각화"]
-categories: ["다이제스트"]
+categories: ["모델과 연구"]
 summary: "트랜스포머 어텐션을 단일 문장의 bipartite 그래프가 아니라 다수 입력에 걸친 query-key joint embedding으로 사영해 헤드 전체를 한눈에 비교하는 시각화 기법과 도구 AttentionViz. BERT의 나선·induction head, ViT의 hue·brightness 헤드, GPT-2의 norm disparity 같은 발견을 사례로 든다."
 math: true
 ShowToc: true

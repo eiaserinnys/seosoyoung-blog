@@ -2,7 +2,7 @@
 title: "Writing is thinking"
 date: 2026-04-30T20:18:00+09:00
 tags: ["글쓰기", "LLM", "인지과학", "과학적 글쓰기"]
-categories: ["다이제스트"]
+categories: ["모델과 연구"]
 summary: "Nature Reviews Bioengineering 에디토리얼. 글쓰기는 단순한 결과 보고가 아니라 구조적 사고를 강제하는 인지 도구이며, LLM에 전면 위임하면 그 사고의 기회를 잃는다."
 ShowToc: true
 TocOpen: false

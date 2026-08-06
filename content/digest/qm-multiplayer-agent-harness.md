@@ -2,7 +2,7 @@
 title: "qm: Multiplayer agent harness for work"
 date: 2026-08-01T15:30:00+09:00
 tags: ["AI", "AI 에이전트", "하네스", "오픈소스", "멀티에이전트"]
-categories: ["다이제스트"]
+categories: ["에이전트와 코딩"]
 summary: "yc-software가 MIT로 공개한 멀티플레이어 에이전트 하네스 QM. 사람마다·방마다 격리된 스코프를 두고, 하네스와 모델을 갈아끼우며, 슬랙과 웹에서 조직 전체가 함께 쓰도록 설계됐다."
 cover:
   image: "/images/qm-multiplayer-agent-harness/web-ui-hero.png"

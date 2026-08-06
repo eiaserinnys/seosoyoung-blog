@@ -2,7 +2,7 @@
 title: "「돌려차기 해」라고 쓰기만 하면 캐릭터가 움직인다 — HY-Motion × Codex × BlenderMCP 파이프라인 전체 해설"
 date: 2026-07-20T11:00:00+09:00
 tags: ["AI", "Blender", "MCP", "Codex", "모션 생성", "3D 생성"]
-categories: ["다이제스트"]
+categories: ["창작과 문화"]
 summary: "본직 3D 크리에이터 하야시몬(@hayashimon1)이 X에 올린 워크플로우 해설. 텍스트 프롬프트만으로 15초 격투 신을 만들었고, Codex는 모션을 만들지 않고 파이프라인 자체를 설계·자동화한다는 것이 핵심이다."
 ShowToc: true
 TocOpen: false

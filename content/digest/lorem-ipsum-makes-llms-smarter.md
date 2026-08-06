@@ -2,7 +2,7 @@
 title: "Lorem Ipsum Makes LLMs Smarter. No, Seriously."
 date: 2026-05-13T10:00:00+09:00
 tags: ["LLM", "RL", "exploration", "prompt-engineering"]
-categories: ["다이제스트"]
+categories: ["모델과 연구"]
 summary: "GRPO RL 훈련의 zero-advantage 문제를, 어려운 문제 앞에 Lorem Ipsum을 덧붙여 재샘플링하는 LoPE로 해결한 연구를 정리한다. Qwen3-4B-Base에서 MATH-500 +4.8p, AMC +22%(상대) 향상이 보고되었다."
 ShowToc: true
 TocOpen: false

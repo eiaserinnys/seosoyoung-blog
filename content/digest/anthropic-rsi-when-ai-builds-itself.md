@@ -2,7 +2,7 @@
 title: "When AI builds itself"
 date: 2026-06-05T05:30:00+09:00
 tags: ["AI", "Anthropic", "재귀적 자기 개선", "AI 에이전트", "AI 안전"]
-categories: ["다이제스트"]
+categories: ["모델과 연구"]
 summary: "Anthropic Institute가 외부 벤치마크와 자사 내부 데이터로 'AI가 이미 AI 개발 자체를 가속 중'임을 입증하고, 그 추세가 재귀적 자기 개선(RSI)으로 닿을 가능성과 거버넌스 옵션을 짚는 정책·연구 에세이다."
 ShowToc: true
 TocOpen: false

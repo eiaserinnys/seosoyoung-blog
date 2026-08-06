@@ -2,7 +2,7 @@
 title: "Domain Expertise Has Always Been the Real Moat"
 date: 2026-06-01T09:30:00+09:00
 tags: ["AI", "AI 코딩", "코딩 에이전트", "암묵지", "노동시장"]
-categories: ["다이제스트"]
+categories: ["에이전트와 코딩"]
 summary: "Aaron Brethorst이 2026년 5월 30일에 자신의 블로그에 올린 짧은 에세이. 에이전틱 AI 시대의 구속 조건은 '코드를 만들 수 있는가'에서 '그 결과가 맞는지 판별할 수 있는가'로 이동했고, 그 판별 능력의 원천인 도메인 전문성이야말로 늘 진짜 해자였다는 주장."
 ShowToc: true
 TocOpen: false

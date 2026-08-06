@@ -2,7 +2,7 @@
 title: "AI 구독은 보조금이었다 — Copilot 토큰 청구 사건과 4인 체인"
 date: 2026-06-08T20:30:00+09:00
 tags: ["AI", "코딩 에이전트", "오픈소스", "경제·금융", "토큰 이코노미"]
-categories: ["다이제스트"]
+categories: ["AI 산업"]
 summary: "GitHub Copilot이 토큰 기반 청구로 전환된 첫날 쏟아진 사용자 반발을 시작으로, HedgieMarkets·Patrick O'Shaughnessy·Brian Armstrong·Marc Andreessen이 인용 체인으로 이어간 AI 구독·토큰 이코노미 논쟁의 정리."
 ShowToc: true
 TocOpen: false

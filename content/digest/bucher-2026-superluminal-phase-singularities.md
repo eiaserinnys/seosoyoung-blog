@@ -2,7 +2,7 @@
 title: "Superluminal correlations in ensembles of optical phase singularities"
 date: 2026-06-29T17:37:00+09:00
 tags: ["과학", "광학", "초광속", "위상 특이점", "상대성이론", "논문 리뷰"]
-categories: ["다이제스트"]
+categories: ["모델과 연구"]
 summary: "빛보다 빠른 어둠이 측정되었다. 1974년 Nye와 Berry가 예측한 광학 위상 특이점의 초광속 운동을, Technion 연구팀이 hBN 막 위에서 초고속 전자현미경으로 직접 포착해 Nature에 보고했다. 추적된 어두운 점의 29%가 광속을 넘었고, 소멸 직전에는 속도가 발산한다. 정보도 에너지도 운반하지 않으므로 상대성이론은 멀쩡하다."
 ShowToc: true
 TocOpen: false

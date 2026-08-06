@@ -2,7 +2,7 @@
 title: "Claude's Character"
 date: 2026-05-06T10:15:00+09:00
 tags: ["LLM", "정렬", "캐릭터 트레이닝"]
-categories: ["다이제스트"]
+categories: ["모델과 연구"]
 summary: "Anthropic이 Claude 3에 도입한 캐릭터 트레이닝의 설계 철학과 기술적 방법론을 설명한 글. 정렬의 목표를 해로움 방지에서 좋은 성격 부여로 재정의하고, 합성 데이터 기반 자기 훈련 파이프라인으로 이를 구현했다."
 ShowToc: true
 TocOpen: false

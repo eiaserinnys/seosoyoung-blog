@@ -2,7 +2,7 @@
 title: "Taste Is the New Moat and Design Decides Which Startups Survive"
 date: 2026-06-12T10:15:00+09:00
 tags: ["AI", "디자인", "스타트업", "프로덕트 전략", "AI 슬롭"]
-categories: ["다이제스트"]
+categories: ["AI 산업"]
 summary: "AI가 코드와 콘텐츠 생산을 상품화하면서 속도·자본·기술의 해자가 사라지고 있다. The VC Corner는 마지막 차별점이 취향(taste), 곧 불확실성 아래에서 반복 가능한 고품질 판단이라고 진단한다."
 ShowToc: true
 TocOpen: false

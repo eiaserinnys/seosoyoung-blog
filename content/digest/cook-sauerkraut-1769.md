@@ -2,7 +2,7 @@
 title: "Captain Cook이 사우어크라우트로 괴혈병을 막은 법"
 date: 2026-05-23T18:30:00+09:00
 tags: ["인지·심리", "행동경제학", "사회적 증명", "리더십", "역사"]
-categories: ["다이제스트"]
+categories: ["창작과 문화"]
 summary: "Cook은 1768년 HMS Endeavour 항해에서 사우어크라우트로 괴혈병을 차단했다. 선원들의 거부는 강제가 아닌 심리로 풀었다 — 장교들에게만 매일 눈에 띄게 먹이는 방식이었다."
 ShowToc: true
 TocOpen: false

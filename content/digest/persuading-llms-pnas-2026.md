@@ -2,7 +2,7 @@
 title: "Persuading Large Language Models to Comply with Objectionable Requests"
 date: 2026-05-21T14:00:00+09:00
 tags: ["AI", "LLM", "AI 안전", "사회심리학", "Cialdini", "jailbreak"]
-categories: ["다이제스트"]
+categories: ["모델과 연구"]
 summary: "Cialdini의 일곱 설득 원칙을 프롬프트에 넣으면 LLM의 규제 약물 합성 요청 컴플라이언스가 35.3%에서 51.3%로 상승한다. PNAS 2026, 세 프런티어 모델 대상 126,000회 통제 실험."
 ShowToc: true
 TocOpen: false

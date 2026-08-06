@@ -2,7 +2,7 @@
 title: "Less is more, more or less"
 date: 2026-07-06T13:50:00+09:00
 tags: ["AI", "코딩 에이전트", "테이스트", "프로덕트 디자인", "단순성"]
-categories: ["다이제스트"]
+categories: ["에이전트와 코딩"]
 summary: "AI로 무엇이든 쉽게 추가할 수 있는 시대에, 무엇을 만들지 않을지 아는 판단력이 가장 중요한 기술이 된다는 Jakub Krehel의 에세이."
 ShowToc: true
 TocOpen: false

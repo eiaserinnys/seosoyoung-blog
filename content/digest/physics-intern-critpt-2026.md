@@ -2,7 +2,7 @@
 title: "physics-intern: an autonomous agentic framework for physics research"
 date: 2026-05-22T21:30:00+09:00
 tags: ["AI", "AI 에이전트", "멀티에이전트", "벤치마크", "추론", "물리학"]
-categories: ["다이제스트"]
+categories: ["모델과 연구"]
 summary: "Hugging Face가 공개한 멀티에이전트 프레임워크 physics-intern은 9개 전문 에이전트와 적대적 검토 루프로 이론물리학 벤치마크 CritPt에서 31.4%를 기록해 GPT 5.5 Pro(30.6%)를 넘어섰다 — 스케일 대신 비계(scaffolding)로 프론티어를 추월한 사례."
 math: true
 ShowToc: true

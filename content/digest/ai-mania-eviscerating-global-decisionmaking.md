@@ -2,7 +2,7 @@
 title: "AI Mania Is Eviscerating Global Decision-Making"
 date: 2026-08-03T22:00:00+09:00
 tags: ["AI", "조직 변화", "노동시장", "AI 버블", "의사결정"]
-categories: ["다이제스트"]
+categories: ["경제와 사회"]
 summary: "데이터 컨설턴트 니킬 수레시가 300여 건의 현장 대화를 근거로, AI 열풍에 사로잡힌 조직에서 합리적 의사결정이 어떻게 마비되는지 진단한다. 실패한 프로젝트, 신앙 고백이 된 AI 찬양, 그리고 아무도 먼저 진실을 말하지 못하는 조율 실패의 구조."
 cover:
   image: "/images/ai-mania-eviscerating-global-decisionmaking/01-cover.png"

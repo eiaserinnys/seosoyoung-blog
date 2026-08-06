@@ -2,7 +2,7 @@
 title: "TSMC's Debacle in the American Desert"
 date: 2026-04-30T22:30:00+09:00
 tags: ["반도체", "산업정책", "파이프라인", "암묵지", "TSMC"]
-categories: ["다이제스트"]
+categories: ["AI 산업"]
 summary: "30년간 반도체 제조가 공동화된 미국이 CHIPS Act 530억 달러를 쏟아부어도 기술자 파이프라인을 복원하지 못하는 현실을 추적한 Rest of World의 2024년 현장 르포."
 ShowToc: true
 TocOpen: false
