@@ -2,7 +2,7 @@
 title: "InfiniteDiffusion: Bridging Learned Fidelity and Procedural Utility for Open-World Terrain Generation"
 date: 2026-06-26T10:00:00+09:00
 tags: ["AI", "생성 모델", "3D 생성", "절차적 생성", "Minecraft"]
-categories: ["다이제스트"]
+categories: ["모델과 연구"]
 summary: "Alexander Goslin이 SIGGRAPH 2026에 발표한 InfiniteDiffusion과 Terrain Diffusion. diffusion 모델을 학습 없이 무한하고 결정적이며 O(1) random access가 가능한 형태로 재구성하고, 그 위에서 지구 규모 지형을 consumer GPU로 실시간 생성한다."
 ShowToc: true
 TocOpen: false

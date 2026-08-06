@@ -2,7 +2,7 @@
 title: "Why I Stopped Arguing With People"
 date: 2026-07-03T15:00:00+09:00
 tags: ["인지·심리", "에고", "자기 개발", "논쟁", "창업"]
-categories: ["다이제스트"]
+categories: ["창작과 문화"]
 summary: "소프트웨어 엔지니어 Cong Wang이 왜 사람들과의 논쟁을 접었는지 밝히는 개인 에세이. 논쟁은 아이디어가 아니라 자아를 다투는 게임이고, 이견은 논쟁 대신 사업의 해자로 환원해야 하며, 결국 바꿀 수 있는 건 자신뿐이라는 결론에 도달한다."
 ShowToc: true
 TocOpen: false

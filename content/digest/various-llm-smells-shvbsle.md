@@ -2,7 +2,7 @@
 title: "Various LLM smells"
 date: 2026-05-31T20:00:00+09:00
 tags: ["AI", "LLM", "AI 콘텐츠", "AI 글쓰기", "AI 웹 디자인"]
-categories: ["다이제스트"]
+categories: ["창작과 문화"]
 summary: "수학 블로그에 LLM 문장 다듬기를 쓰던 저자가 3개월 뒤 인터넷 전반에서 같은 문장 구조와 디자인 클리셰가 반복되는 것을 발견하고, 글쓰기·웹사이트 두 도메인의 'AI 냄새(AI smell)' 사례를 짧게 모은 관찰 노트."
 ShowToc: true
 TocOpen: false

@@ -2,7 +2,7 @@
 title: "“앤트로픽 IPO? 급할 것 없다”…오픈AI CFO \"속도전 안 한다, 진짜 무기는 컴퓨팅 요새”"
 date: 2026-06-03T03:17:00+09:00
 tags: ["AI", "OpenAI", "AI 인프라", "데이터센터", "IPO"]
-categories: ["다이제스트"]
+categories: ["AI 산업"]
 summary: "오픈AI CFO 사라 프라이어가 올인 팟캐스트에서 1,220억 달러 프라이빗 펀딩을 바탕으로 IPO 속도전을 거부하고, 기가와트 데이터센터 한 기당 500억 달러·3년 리드타임이라는 인프라 장벽과 토큰 비용 97% 폭락에 기반한 가치 기반 과금 전환을 공개했다."
 cover:
   image: "/images/openai-cfo-friar-compute-fortress-2026/friar-allin-podcast.png"

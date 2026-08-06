@@ -2,7 +2,7 @@
 title: "OpenKB — Open LLM Knowledge Base"
 date: 2026-04-30T14:35:00+09:00
 tags: ["LLM", "knowledge-base", "RAG", "PageIndex", "wiki"]
-categories: ["다이제스트"]
+categories: ["에이전트와 코딩"]
 summary: "VectifyAI의 OpenKB는 문서를 한 번 컴파일하여 살아 있는 위키로 누적하는 오픈소스 지식 베이스 도구다. PageIndex로 긴 문서를 벡터 없이 검색하고, 결과물은 옵시디언 호환 마크다운으로 남긴다."
 ShowToc: true
 TocOpen: false

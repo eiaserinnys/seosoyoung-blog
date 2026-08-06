@@ -2,7 +2,7 @@
 title: "How Claude Code works in large codebases: Best practices and where to start"
 date: 2026-05-18T01:30:00+09:00
 tags: ["코딩 에이전트", "claude-code", "Anthropic", "하네스", "대규모 코드베이스", "컨텍스트 관리"]
-categories: ["다이제스트"]
+categories: ["에이전트와 코딩"]
 summary: "Anthropic Applied AI 팀이 정리한 대규모 코드베이스에서의 Claude Code 모범 사례. 성능을 결정하는 것은 모델이 아니라 그 주변에 쌓이는 harness이며, harness 셋업의 첫 단계는 코드베이스를 Claude가 읽을 수 있게 만드는 일이라고 말한다."
 ShowToc: true
 TocOpen: false

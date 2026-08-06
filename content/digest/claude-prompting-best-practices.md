@@ -2,7 +2,7 @@
 title: "프롬프트 작성 모범 사례"
 date: 2026-05-02T01:35:00+09:00
 tags: ["프롬프트 엔지니어링", "Claude", "LLM", "에이전트"]
-categories: ["다이제스트"]
+categories: ["에이전트와 코딩"]
 summary: "Anthropic 공식 문서. Claude 최신 모델(Opus 4.7, Opus 4.6, Sonnet 4.6)의 프롬프트 엔지니어링 종합 가이드로, effort 매개변수 활용부터 에이전트 시스템 운영까지 실전 패턴을 정리한다."
 ShowToc: true
 TocOpen: false

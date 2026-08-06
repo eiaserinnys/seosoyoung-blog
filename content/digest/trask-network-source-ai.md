@@ -2,7 +2,7 @@
 title: "BREAKING: Today's Frontier AI companies will never exceed the AI capability frontier again"
 date: 2026-06-14T18:30:00+09:00
 tags: ["AI", "오픈소스", "LLM", "스케일링 법칙", "분산 시스템"]
-categories: ["다이제스트"]
+categories: ["모델과 연구"]
 summary: "Andrew Trask는 더 큰 단일 모델이 AI 한계를 독점하리라는 통념이 끝났다고 선언한다. 작은 모델들의 가중 앙상블이 정확도·속도·비용에서 이미 단일 프런티어 모델을 추월하기 시작했고, AI의 미래는 회사 단위가 아닌 세계 단위의 'network-source AI'다."
 ShowToc: true
 TocOpen: false

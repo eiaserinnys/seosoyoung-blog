@@ -2,7 +2,7 @@
 title: "Celeris-1 — The Fastest LLM on Earth"
 date: 2026-07-26T10:30:00+09:00
 tags: ["AI", "LLM", "확산 모델", "아키텍처", "벤치마크"]
-categories: ["다이제스트"]
+categories: ["모델과 연구"]
 summary: "Celeris AI Labs가 확산 기반 추론 아키텍처로 만든 첫 모델 Celeris-1을 공개했다. GPT-5에 근접한 지능을 유지하면서 응답 지연을 15배 이상 줄이고, 초당 1,600토큰대의 생성 속도를 낸다고 주장한다."
 ShowToc: true
 TocOpen: false

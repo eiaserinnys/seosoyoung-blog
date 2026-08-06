@@ -2,7 +2,7 @@
 title: "Code as Agent Harness: 실행 가능하고 검증 가능하며 상태를 지닌 에이전트 시스템을 향하여"
 date: 2026-06-09T18:30:00+09:00
 tags: ["AI", "코딩 에이전트", "하네스", "AI 에이전트", "논문 리뷰", "멀티에이전트"]
-categories: ["다이제스트"]
+categories: ["에이전트와 코딩"]
 summary: "UIUC·Meta·Stanford 합동 서베이(2026.05). 코드를 LLM이 *생성하는* 산출물이 아니라, 에이전트가 추론·행동·환경 모델링·검증을 수행하는 *운영 매개체*로 다시 잡는 통합적 시각을 제시한다. Harness Interface / Mechanisms / Scaling 세 층으로 문헌을 정리하고, PEV(Plan-Execute-Verify) 루프와 다섯 응용 영역(코드 어시스턴트, GUI/OS, 과학, 개인화, 임베디드)을 짚는다."
 math: true
 ShowToc: true

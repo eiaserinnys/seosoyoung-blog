@@ -2,7 +2,7 @@
 title: "A Field Guide to Fable: Finding Your Unknowns"
 date: 2026-07-04T14:00:00+09:00
 tags: ["AI", "Claude Code", "Anthropic", "에이전트", "프롬프트 엔지니어링", "Fable 5"]
-categories: ["다이제스트"]
+categories: ["에이전트와 코딩"]
 summary: "Anthropic Claude Code 팀 Thariq이 Fable 5로 일하며 재발견한 오래된 교훈. 이제 작업의 병목은 모델이 아니라 내가 unknown을 얼마나 명확히 하는가로 옮겨갔다."
 ShowToc: true
 TocOpen: false

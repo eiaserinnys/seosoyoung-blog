@@ -2,7 +2,7 @@
 title: "Schema — 올바른 하니스만으로 프론티어 모델이 ARC-AGI-3 Public에서 99%에 닿다"
 date: 2026-07-19T22:40:00+09:00
 tags: ["AI", "벤치마크", "하네스", "월드 모델", "ARC-AGI-3", "코딩 에이전트"]
-categories: ["다이제스트"]
+categories: ["에이전트와 코딩"]
 summary: "모델 가중치는 그대로 두고 '쓰는 방식'만 바꾼 에이전트 하니스 Schema가 ARC-AGI-3 Public에서 자가보고 98.98%를 기록했다. 핵심은 세계 모델을 읽고 diff할 수 있는 실행 가능한 프로그램으로 만들어, 기록된 현실 전체에 대해 검증하고, 그 안에서 계획을 탐색하는 것이다."
 math: true
 ShowToc: true

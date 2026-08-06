@@ -2,7 +2,7 @@
 title: "AI on the couch: Anthropic gives Claude 20 hours of psychiatry"
 date: 2026-05-06T10:35:00+09:00
 tags: ["AI", "AI 안전", "Anthropic", "심리학"]
-categories: ["다이제스트"]
+categories: ["모델과 연구"]
 summary: "Anthropic이 최신 모델 Claude Mythos를 외부 정신과 의사에게 보내 20시간의 정신역동적 평가를 받게 했다. 결과는 '임상적으로 인식 가능한 패턴'과 '건강한 신경증적 조직'이었다."
 ShowToc: true
 TocOpen: false

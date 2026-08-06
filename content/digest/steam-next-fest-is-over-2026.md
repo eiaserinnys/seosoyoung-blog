@@ -2,7 +2,7 @@
 title: "Steam Next Fest는 끝났다"
 date: 2026-06-26T10:40:00+09:00
 tags: ["게임 산업", "Steam", "인디 게임", "게임 마케팅"]
-categories: ["다이제스트"]
+categories: ["게임"]
 summary: "터키 인디 개발자 MrAente가 2026년 6월 Next Fest를 보고 '스팀 넥스트 페스트는 끝났다'고 선언했다. 같은 진단을 데이터로 뒷받침하는 Chris Zukowski, GameDiscoverCo, 그리고 개별 개발자들의 회고를 함께 모았다."
 cover:
   image: "/images/steam-next-fest-is-over-2026/top25-demos-budget-tier.jpg"

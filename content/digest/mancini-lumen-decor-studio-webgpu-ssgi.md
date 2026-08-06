@@ -2,7 +2,7 @@
 title: "Lumen Decor Studio 2"
 date: 2026-07-22T14:00:00+09:00
 tags: ["소프트웨어", "Three.js", "WebGPU", "글로벌 일루미네이션", "렌더링", "TSL"]
-categories: ["다이제스트"]
+categories: ["게임"]
 summary: "Anderson Mancini가 만든 브라우저 인테리어 configurator. Three.js r185의 TSL 위에서 WebGPU deferred 파이프라인, GTAO 기반 SSGI, SSR, bilateral과 temporal이 겹친 디노이저를 직접 짜서, 태양광이 실시간으로 색을 튕겨내는 3D 로프트를 로컬호스트급 비용으로 굴린다."
 ShowToc: true
 TocOpen: false

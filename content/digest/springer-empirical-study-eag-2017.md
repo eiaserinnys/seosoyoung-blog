@@ -2,7 +2,7 @@
 title: "An empirical study of early access games on the Steam platform"
 date: 2026-05-06T15:40:00+09:00
 tags: ["Steam", "얼리액세스", "인디게임", "학술 논문"]
-categories: ["다이제스트"]
+categories: ["게임"]
 summary: "Lin·Bezemer·Hassan이 2016년 3월 시점 Steam 게임 8,025종을 크롤링해 1,182개 EAG(15%)를 동정하고, EA 단계와 1.0 단계 사이의 업데이트 빈도·리뷰 참여율·평점·토론 활동을 통계적으로 비교한 첫 대규모 실증 연구다. 핵심 발견은 \"EA 단계의 평균 평점이 1.0 이후보다 유의하게 높다\"이며, 긍정 평점률은 EA 길이·업데이트 빈도와 무관하다."
 ShowToc: true
 TocOpen: false

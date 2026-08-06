@@ -2,7 +2,7 @@
 title: "MotionBricks: Scalable Real-Time Motions with Modular Latent Generative Model and Smart Primitives"
 date: 2026-06-15T13:00:00+09:00
 tags: ["AI", "논문 리뷰", "모션 생성", "게임 개발", "휴머노이드 로봇"]
-categories: ["다이제스트"]
+categories: ["모델과 연구"]
 summary: "NVIDIA가 SIGGRAPH 2026 / ACM TOG에 발표한 실시간 모션 생성 프레임워크. 35만+ 모션 클립을 단일 신경 backbone으로 학습해 2ms 지연·15,000 FPS로 생성한다. UE5 게임 캐릭터와 Unitree G1 휴머노이드 로봇이 같은 모델 위에서 움직이는 것이 핵심 시연이다."
 ShowToc: true
 TocOpen: false

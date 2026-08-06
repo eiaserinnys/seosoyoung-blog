@@ -2,7 +2,7 @@
 title: "A.I. and Our Economic Future"
 date: 2026-07-25T15:40:00+09:00
 tags: ["AI", "경제·금융", "노동시장", "AI 안전"]
-categories: ["다이제스트"]
+categories: ["경제와 사회"]
 summary: "스탠퍼드 성장이론가 채드 존스의 강연. AI가 성장을 폭발시킬 수 있지만 '약한 고리' 때문에 그 폭발은 수십 년에 걸쳐 느리게 온다. 반면 하방 위험은 빠르게 온다."
 math: true
 ShowToc: true

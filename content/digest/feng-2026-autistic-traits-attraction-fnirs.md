@@ -2,7 +2,7 @@
 title: "Attraction Through Similarity in Autistic Traits"
 date: 2026-05-26T00:30:00+09:00
 tags: ["인지·심리", "신경과학", "자폐 스펙트럼", "fNIRS", "하이퍼스캐닝", "Theory-of-Mind"]
-categories: ["다이제스트"]
+categories: ["모델과 연구"]
 summary: "비슷한 자폐 특성을 가진 사람끼리는 서로 더 끌리고, 대화 중 뇌가 다른 경로로 동기화된다. Tianjin Normal University 연구진이 사회관계모형과 fNIRS 하이퍼스캐닝으로 보여준 결과는 자폐를 결핍이 아니라 '서로 다른 의사소통 양식의 부조화'로 다시 보게 한다."
 ShowToc: true
 TocOpen: false

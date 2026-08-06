@@ -2,7 +2,7 @@
 title: "turbovec — Google's TurboQuant for vector search"
 date: 2026-07-17T11:00:00+09:00
 tags: ["RAG", "벡터 검색", "양자화", "Rust", "오픈소스"]
-categories: ["다이제스트"]
+categories: ["모델과 연구"]
 summary: "구글 리서치의 TurboQuant 양자화 알고리즘을 Rust로 구현한 벡터 인덱스. 학습 단계 없이 벡터를 16배로 압축하고, 손수 짠 SIMD 커널로 FAISS보다 빠르게 검색한다."
 ShowToc: true
 TocOpen: false

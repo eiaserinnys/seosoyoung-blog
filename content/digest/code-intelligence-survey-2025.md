@@ -2,7 +2,7 @@
 title: "From Code Foundation Models to Agents and Applications: A Comprehensive Survey and Practical Guide to Code Intelligence"
 date: 2026-06-04T03:30:00+09:00
 tags: ["AI", "LLM", "코딩 에이전트", "AI 코딩", "논문 리뷰"]
-categories: ["다이제스트"]
+categories: ["모델과 연구"]
 summary: "BUAA·알리바바·바이트댄스·텐센트 등 71인 컨소시엄이 정리한 303페이지짜리 코드 LLM 종합 서베이 + 실무 가이드. 데이터 큐레이션부터 사전훈련·SFT·RL·자율 코딩 에이전트까지 전 생애주기를 훑고, 사전훈련·SFT·RL 각각에 대한 데이터 기반 권고안을 직접 실험으로 검증한다."
 math: true
 ShowToc: true

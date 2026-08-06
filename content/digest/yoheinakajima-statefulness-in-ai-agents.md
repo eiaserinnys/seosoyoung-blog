@@ -2,7 +2,7 @@
 title: "The State of Statefulness in AI Agents"
 date: 2026-05-19T17:30:00+09:00
 tags: ["AI", "AI 에이전트", "아키텍처", "이벤트 소싱", "상태 관리"]
-categories: ["다이제스트"]
+categories: ["에이전트와 코딩"]
 summary: "Yohei Nakajima가 X에 올린 long-form 아티클의 요약. AI 에이전트 인프라가 모델의 무상태성을 보완하느라 같은 구조를 독립적으로 재발명 중이며, 진짜 문제는 메모리가 아니라 연속성(continuity)이라는 진단."
 ShowToc: true
 TocOpen: false

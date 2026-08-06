@@ -2,7 +2,7 @@
 title: "Pixelle-Video — AI 전자동 숏비디오 엔진"
 date: 2026-05-13T21:30:00+09:00
 tags: ["AI", "영상 생성", "ComfyUI", "프롬프트 엔지니어링", "오픈소스"]
-categories: ["다이제스트"]
+categories: ["창작과 문화"]
 summary: "주제 한 줄을 영상 한 편으로 자동 합성하는 알리바바 AIDC-AI 팀의 오픈소스 엔진. 코드를 직접 들여다보니 '단순히 모델을 잇기만 한 파이프라인'은 아니었다 — 흔히 깨지는 지점 일곱 군데를 프롬프트와 데이터 흐름으로 묶어두려는 설계가 보였다."
 ShowToc: true
 TocOpen: false

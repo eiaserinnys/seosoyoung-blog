@@ -2,7 +2,7 @@
 title: "AI 모델 랜덤 넘버 지문 데이터셋"
 date: 2026-07-03T07:30:00+09:00
 tags: ["AI", "LLM", "LLM 평가", "벤치마크", "해석가능성", "Anthropic"]
-categories: ["다이제스트"]
+categories: ["모델과 연구"]
 summary: "1부터 355 사이의 랜덤한 수를 뽑으라는 프롬프트를 대량 반복시켜 얻은 통계 분포로 24개 AI 모델의 지문을 만들고, 그 지문으로 제3자 API 중계의 모델 위조까지 잡아낸 실측 데이터셋."
 ShowToc: true
 TocOpen: false

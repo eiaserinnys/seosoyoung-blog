@@ -2,7 +2,7 @@
 title: "A Primer on the Most Important Concepts to Train a LoRA - part 2: Captioning"
 date: 2026-07-23T00:35:00+09:00
 tags: ["AI", "이미지 생성", "LoRA", "Stable Diffusion", "Flux", "캡션"]
-categories: ["다이제스트"]
+categories: ["창작과 문화"]
 summary: "r/StableDiffusion 3부작 LoRA 훈련 가이드의 2편. 캡션이 왜 훈련 신호를 결정짓는가, 무엇을 캡션하고 무엇을 캡션하지 않아야 하는가, 그리고 익스트림 클로즈업의 소유격 결속 기법과 다중 개념 disentanglement까지 정리한다."
 ShowToc: true
 TocOpen: false

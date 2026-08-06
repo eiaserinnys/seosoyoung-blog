@@ -2,7 +2,7 @@
 title: "Most people's life satisfaction matches their personality traits: True correlations in multi-trait, multi-rater, multi-sample data"
 date: 2026-05-22T00:00:00+09:00
 tags: ["인지·심리", "성격심리학", "Big Five", "삶의 만족도", "심리측정", "논문 리뷰"]
-categories: ["다이제스트"]
+categories: ["모델과 연구"]
 summary: "성격 5요인과 삶의 만족도(LS)의 상관은 단일-방법 연구에서 r ≈ .30에서 .65로 알려져 있었다. 자기보고와 정보제공자(informant) 보고를 교차 결합해 측정 오류·방법 편향을 제거했더니 '진짜 상관(r_true)'은 .80에서 .90까지 올라갔다. 단 세 항목 — '오해받는다고 느낀다', '흥미진진한 게 없다', '결정을 미룬다' — 만으로도 삶의 만족도를 r ≈ .80으로 예측한다."
 math: true
 ShowToc: true

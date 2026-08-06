@@ -2,7 +2,7 @@
 title: "Why Karpathy's Second Brain Breaks at Agent Scale"
 date: 2026-04-29T09:10:00+09:00
 tags: ["agent-memory", "LLM", "knowledge-management", "context-engineering"]
-categories: ["다이제스트"]
+categories: ["에이전트와 코딩"]
 summary: "Karpathy의 LLM Wiki 패턴이 에이전트 스케일에서 깨지는 이유를 분석하고, 구조화된 에이전트 메모리 설계 원칙과 하이브리드 아키텍처를 제안한다."
 ShowToc: true
 TocOpen: false

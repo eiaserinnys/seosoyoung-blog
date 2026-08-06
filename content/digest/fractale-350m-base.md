@@ -2,7 +2,7 @@
 title: "Fractale-350M-base: 오직 8개의 fast-weight 슬롯으로 기억하는 386M LM"
 date: 2026-07-22T06:45:00+09:00
 tags: ["AI", "LLM", "아키텍처", "장기 메모리", "오픈소스"]
-categories: ["다이제스트"]
+categories: ["모델과 연구"]
 summary: "386M 파라미터 사전학습 모델 Fractale-350M-base는 8개의 fast-weight 슬롯을 유일한 장기 기억 채널로 삼는다. 컨텍스트 창 확장이나 추론시점 역전파와는 다른 세 번째 축을 겨눈다. 모델이 스스로 요약 벡터를 쓰고 하이퍼네트워크로 되읽는 학습된 메모리 정책을 386M 스케일에서 검증한 연구 아티팩트다."
 math: false
 ShowToc: true

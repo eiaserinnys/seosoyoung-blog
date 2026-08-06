@@ -2,7 +2,7 @@
 title: "Policy on the AI Exponential"
 date: 2026-06-11T06:00:00+09:00
 tags: ["AI", "Anthropic", "AI 정책", "AI 안전", "노동시장"]
-categories: ["다이제스트"]
+categories: ["AI 산업"]
 summary: "다리오 아모데이가 AI의 지수적 발전 속도와 느린 정책 기구 사이의 간극을 진단하고, 규제·거시경제·과학 혁신·시민 자유·지정학 다섯 영역의 정책 재설계를 제안한 에세이."
 ShowToc: true
 TocOpen: false

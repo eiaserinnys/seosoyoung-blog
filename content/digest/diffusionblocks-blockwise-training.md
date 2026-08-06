@@ -2,7 +2,7 @@
 title: "DiffusionBlocks: Block-wise Neural Network Training via Diffusion Interpretation"
 date: 2026-05-28T00:30:00+09:00
 tags: ["AI", "논문 리뷰", "확산 모델", "트랜스포머", "학습 효율"]
-categories: ["다이제스트"]
+categories: ["모델과 연구"]
 summary: "엔드투엔드 역전파의 메모리 병목을, 트랜스포머의 잔차 연결이 확산 모델 ODE의 이산화와 같다는 통찰로 푼 논문. 네트워크를 노이즈 구간별 독립 블록으로 쪼개 한 번에 한 블록만 학습하니 메모리가 블록 수만큼 줄고, 5개 아키텍처에서 엔드투엔드에 필적했다."
 math: true
 ShowToc: true

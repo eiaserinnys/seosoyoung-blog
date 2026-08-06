@@ -2,7 +2,7 @@
 title: "「明るすぎる鼻の穴」問題 — パストレーシングが可能にする「人間らしい鼻の穴」とは？"
 date: 2026-06-19T18:30:00+09:00
 tags: ["게임", "Path Tracing", "렌더링", "NVIDIA", "일본", "AI 음악"]
-categories: ["다이제스트"]
+categories: ["게임"]
 summary: "게임 캐릭터의 콧구멍은 왜 30년 동안 어색했는가. 西川善司는 라스터라이즈의 구조적 한계로부터 path tracing이 콧구멍 내부의 투과광까지 재현하는 시점까지를 추적하고, 이 칼럼을 가상 밴드 Nostrils의 노래로 만들었다."
 cover:
   image: "/images/pathtracing-nostrils-nishikawa/32412.png"

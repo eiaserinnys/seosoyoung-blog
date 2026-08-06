@@ -2,7 +2,7 @@
 title: "Why ATMs didn't kill bank teller jobs, but the iPhone did"
 date: 2026-04-30T22:10:00+09:00
 tags: ["자동화", "노동시장", "패러다임-전환", "은행"]
-categories: ["다이제스트"]
+categories: ["경제와 사회"]
 summary: "ATM은 은행원을 죽이지 않았지만, 아이폰은 죽였다. David Oks가 과업 자동화와 패러다임 교체의 차이를 은행업 사례로 분석한다."
 ShowToc: true
 TocOpen: false

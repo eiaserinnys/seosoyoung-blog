@@ -2,7 +2,7 @@
 title: "LLMs Reproduce Human Purchase Intent via Semantic Similarity Elicitation of Likert Ratings"
 date: 2026-06-12T20:00:00+09:00
 tags: ["AI", "LLM", "논문 리뷰", "합성 소비자", "시장조사"]
-categories: ["다이제스트"]
+categories: ["모델과 연구"]
 summary: "LLM에게 리커트 점수를 직접 묻는 대신 자유 텍스트 응답을 임베딩 유사도로 점수 분포에 사상하는 SSR 기법을 제안한 논문. 9,300명 실제 설문 대비 인간 재검사 신뢰도의 90%를 달성했다."
 ShowToc: true
 TocOpen: false

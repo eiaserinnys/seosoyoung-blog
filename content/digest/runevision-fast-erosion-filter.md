@@ -2,7 +2,7 @@
 title: "Fast and Gorgeous Erosion Filter"
 date: 2026-07-09T23:30:00+09:00
 tags: ["게임", "게임 개발", "절차적 생성", "셰이더", "지형 생성"]
-categories: ["다이제스트"]
+categories: ["게임"]
 summary: "World Machine 스타일의 침식 지형을, 시뮬레이션 없이 단일 픽셀 셰이더 한 패스로 재현하는 필터의 8개월치 발전 기록. Rune Skovbo Johansen이 Clay John(2018)·Fewes(2023) 계보 위에 fade approach와 stacked fading을 새로 얹었다."
 ShowToc: true
 TocOpen: false

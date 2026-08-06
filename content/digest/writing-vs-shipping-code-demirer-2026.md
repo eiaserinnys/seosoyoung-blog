@@ -2,7 +2,7 @@
 title: "Writing Code vs. Shipping Code: Productivity Effects Across Generations of AI Coding Tools"
 date: 2026-06-24T23:00:00+09:00
 tags: ["AI", "AI 코딩", "코딩 에이전트", "노동시장", "경제·금융", "논문 리뷰"]
-categories: ["다이제스트"]
+categories: ["경제와 사회"]
 summary: "Demirer, Musolff, Yang(NBER WP 35275)은 GitHub 개발자 10만 명 이상의 활동 데이터로 자동완성, 동기식 에이전트, 비동기식 에이전트 세 세대의 AI 코딩 도구를 측정한다. 코드 작성 단계에서는 누적 +180%의 작업 단위 효과가 나오지만, 같은 도구가 릴리스 단계로 가면 +20%까지 압축된다. 약한 연결 가설을 단일 생산 공정의 수직 계층에 적용한 첫 실증이다."
 ShowToc: true
 TocOpen: false

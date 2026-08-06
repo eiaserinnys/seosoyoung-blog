@@ -2,7 +2,7 @@
 title: "하네스 엔지니어링으로 AI 에이전트를 길들여봤습니다"
 date: 2026-04-30T20:25:00+09:00
 tags: ["ai-agent", "harness-engineering", "hooks", "multi-model", "claude-code"]
-categories: ["다이제스트"]
+categories: ["에이전트와 코딩"]
 summary: "프롬프트는 부탁이지 강제가 아니다. code-forge 프로젝트를 만들며 사고 모델 단순화, 에이전트 컴파일, hooks 기반 하네스 3층 구조, 멀티모델 협업까지 도달한 실전 여정 기록."
 ShowToc: true
 TocOpen: false

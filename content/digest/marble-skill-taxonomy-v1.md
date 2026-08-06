@@ -2,7 +2,7 @@
 title: "Marble Skill Taxonomy"
 date: 2026-07-09T16:00:00+09:00
 tags: ["사회·노동", "교육", "지식 그래프", "오픈 데이터", "커리큘럼"]
-categories: ["다이제스트"]
+categories: ["경제와 사회"]
 summary: "아이가 초등학년 사이에 배우는 모든 것을 1,590개 마이크로 토픽으로 잘게 쪼개고, 그 사이 3,221개 선수학습 엣지로 엮은 뒤 7개국 커리큘럼 표준까지 정렬해 공개한 오픈 데이터셋."
 ShowToc: true
 TocOpen: false

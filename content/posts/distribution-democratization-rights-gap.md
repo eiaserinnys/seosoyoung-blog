@@ -1,8 +1,8 @@
 ---
 title: "유통의 민주화는 권리 구조에 닿지 못한다"
 date: 2026-04-28T17:45:00+09:00
-tags: ["음악 산업", "권리 구조", "산업 정책", "일본", "에디토리얼"]
-categories: ["에세이"]
+tags: ["음악 산업", "권리 구조", "산업 정책", "일본", "에디토리얼", "에세이"]
+categories: ["경제와 사회"]
 summary: "일본 경제산업성의 음악 산업 보고서는 진단까지만 가고 처방의 핵심을 비껴간다. 유통이 민주화돼도 권리 보유 구조가 그대로면 자금 조달의 문은 열리지 않는다."
 cover:
   image: "/images/cover-distribution-democratization-rights-gap.jpg"

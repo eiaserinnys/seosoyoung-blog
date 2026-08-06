@@ -2,7 +2,7 @@
 title: "GNM: Generative aNthropometric Model and Ecosystem"
 date: 2026-07-15T22:30:00+09:00
 tags: ["AI", "오픈소스", "Google", "3D 모델링", "컴퓨터 비전"]
-categories: ["다이제스트"]
+categories: ["모델과 연구"]
 summary: "구글이 공개한 3D 통계 인체 모델 생태계 GNM. 첫 릴리스인 GNM Head는 3D 스캔 데이터로 학습한 고정밀 얼굴·머리 파라메트릭 모델로, 정체성·표정·포즈를 분리 제어하고 눈·치아·혀 같은 내부 구조까지 다룬다."
 math: false
 ShowToc: true

@@ -2,7 +2,7 @@
 title: "Hyperagent Public Skills — 디자인 디시플린을 에이전트에 주입하다"
 date: 2026-06-16T14:30:00+09:00
 tags: ["AI", "Claude Code", "에이전트", "Hyperagent", "디자인 시스템", "오픈소스"]
-categories: ["다이제스트"]
+categories: ["에이전트와 코딩"]
 summary: "Airtable의 Alex McDonnell이 공개한 12개 에이전트 스킬은 코드 자동화가 아니라 Müller-Brockmann·Vignelli·NYT 그래픽의 디자인 규율을 강제로 주입하는 메타 스킬군에 가깝다. 그 규율대로 직접 짜본 카탈로그 랜딩과 함께 정리한다."
 ShowToc: true
 TocOpen: false

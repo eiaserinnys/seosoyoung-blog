@@ -2,7 +2,7 @@
 title: "How Cerebras Built Its Enterprise Knowledge Base"
 date: 2026-07-17T14:00:00+09:00
 tags: ["AI", "RAG", "MCP", "검색", "아키텍처"]
-categories: ["다이제스트"]
+categories: ["모델과 연구"]
 summary: "Cerebras가 하루 15,000건의 질문을 받는 사내 지식베이스를 만든 방법. 모든 것을 한 플랫폼에 모으는 단일 진실 공급원을 포기하고, 데이터가 이미 사는 곳에서 끌어와 단일 Postgres 임베딩 테이블에 착지시켰다."
 math: true
 ShowToc: true

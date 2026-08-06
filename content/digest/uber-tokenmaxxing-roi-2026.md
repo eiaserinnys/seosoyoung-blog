@@ -2,7 +2,7 @@
 title: "Uber's COO says it's getting harder to justify the money spent on AI tokenmaxxing"
 date: 2026-05-27T00:30:00+09:00
 tags: ["AI", "코딩 에이전트", "Claude Code", "AI ROI", "노동시장"]
-categories: ["다이제스트"]
+categories: ["경제와 사회"]
 summary: "Uber COO Andrew Macdonald가 사내 AI 토큰 지출의 ROI를 정당화하기 어렵다고 발언했다. CTO의 'Claude Code 2026년 예산 소진' 폭로 이후 토큰 사용량과 유용한 기능 산출 사이의 인과 링크가 약하다는 진단이 본격화됐다."
 ShowToc: true
 TocOpen: false

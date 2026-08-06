@@ -2,7 +2,7 @@
 title: "Epicure: Navigating the Emergent Geometry of Food Ingredient Embeddings"
 date: 2026-05-27T19:00:00+09:00
 tags: ["food-ai", "embedding", "computational-gastronomy", "graph-embedding", "논문 리뷰"]
-categories: ["다이제스트"]
+categories: ["모델과 연구"]
 summary: "FlavorGraph 후속작. 414만 다국어 레시피로 학습한 세 자매 식재료 임베딩(Cooc·Core·Chem)을 통해 '화학 vs 레시피-맥락'을 조정 가능한 설계 축으로 만들고, 페어링과 SLERP 회전이라는 두 연산자로 임베딩 공간을 항해한다."
 cover:
   image: "/images/epicure-emergent-geometry-2026/figure1-cuisine-umap.png"

@@ -2,7 +2,7 @@
 title: "학습 루프가 진짜 차이를 만든다 — LLM을 밑바닥부터 훈련하는 81분"
 date: 2026-05-06T09:30:00+09:00
 tags: ["LLM", "딥러닝 이론", "학습 역학"]
-categories: ["다이제스트"]
+categories: ["모델과 연구"]
 summary: "ElevenLabs STT 팀 리드가 GPT-2 기반 10M 파라미터 모델을 처음부터 훈련하며 보여준 것 — 모델 아키텍처가 아니라 학습 전략이 성능을 결정한다."
 draft: true
 cover:

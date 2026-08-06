@@ -2,7 +2,7 @@
 title: "Steam Early Access Graduates in 2025"
 date: 2026-05-06T15:07:00+09:00
 tags: ["Steam", "Early Access", "GameDiscoverCo", "게임 데이터"]
-categories: ["다이제스트"]
+categories: ["게임"]
 summary: "GameDiscoverCo가 추적한 2025년 EA→1.0 졸업 게임 225개의 매출 분석. 1.0 첫 달 매출 중간값이 EA 첫 달의 70%였던 2023년 대비 2025년에는 약 40%로 후퇴했다는 시계열 변화가 핵심이다."
 ShowToc: true
 TocOpen: false

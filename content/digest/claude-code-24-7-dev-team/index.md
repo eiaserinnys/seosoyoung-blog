@@ -2,7 +2,7 @@
 title: "How I Turned My Claude Code Into 24/7 Dev Team"
 date: 2026-05-02T16:25:00+09:00
 tags: ["claude-code", "agentic-coding", "developer-tools", "automation"]
-categories: ["다이제스트"]
+categories: ["에이전트와 코딩"]
 summary: "regent0x_가 Claude Code를 CLAUDE.md, 영속 메모리, 스킬, 서브에이전트, 훅, 오케스트레이션 6개 레이어로 구성하여 $20/월짜리 24/7 개발팀으로 운용하는 방법을 정리한 가이드."
 ShowToc: true
 TocOpen: false

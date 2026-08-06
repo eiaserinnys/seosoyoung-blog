@@ -2,7 +2,7 @@
 title: "Introducing MAI-Thinking-1"
 date: 2026-06-03T19:00:00+09:00
 tags: ["AI", "LLM", "추론", "벤치마크", "Microsoft", "정렬"]
-categories: ["다이제스트"]
+categories: ["AI 산업"]
 summary: "Microsoft AI가 자사 첫 추론 모델 MAI-Thinking-1을 공개했다. 35B-active·1T-total 규모의 sparse MoE로, 타사 모델 증류 없이 자체 데이터·자체 가속기 위에서 처음부터 학습한 'Hill-Climbing Machine' 파이프라인의 첫 결실이다."
 math: false
 ShowToc: true

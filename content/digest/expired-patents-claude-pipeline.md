@@ -2,7 +2,7 @@
 title: "He feeds expired patents to Claude. $0 for the blueprint. $1.80 to manufacture. $11.99 on Amazon."
 date: 2026-04-30T14:45:00+09:00
 tags: ["AI 비즈니스", "에이전트 응용", "특허", "Amazon FBA", "차익 거래"]
-categories: ["다이제스트"]
+categories: ["에이전트와 코딩"]
 summary: "@gippp69가 만료된 미국 특허 수백만 건을 Claude로 스코어링하여 단종된 소비재 6개를 재발굴하고, 그중 자급수 화분 인서트를 $1.80에 제조해 Amazon에 $11.99로 올린 파이프라인 공개."
 ShowToc: true
 TocOpen: false

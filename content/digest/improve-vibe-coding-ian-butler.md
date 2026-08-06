@@ -2,7 +2,7 @@
 title: "How to Improve your Vibe Coding — Ian Butler (Bismouth)"
 date: 2026-04-28T20:39:00+09:00
 tags: ["AI", "코딩 에이전트", "바이브 코딩"]
-categories: ["다이제스트"]
+categories: ["에이전트와 코딩"]
 summary: "Vibe coding의 옹호자가 오히려 데이터로 vibe coding의 한계를 가장 솔직하게 보여줍니다."
 ShowToc: true
 TocOpen: false

@@ -2,7 +2,7 @@
 title: "AI 이미지 모델, 어떤 작업에 어떤 모델인가"
 date: 2026-06-04T06:30:00+09:00
 tags: ["AI", "이미지 생성", "Midjourney", "Flux", "gpt-image-2", "디자인 워크플로우", "에디토리얼"]
-categories: ["인사이트"]
+categories: ["창작과 문화"]
 summary: "텍스트 헤비 포스터, 포토리얼 사진, 캐릭터 시리즈, 벡터 로고, 애니메이션. 모델이 어디까지 왔는지를 작업별로 정리하고, 자기 스타일을 모델에 가르치는 파인튜닝의 단계까지 짚어 본다."
 ShowToc: true
 TocOpen: false

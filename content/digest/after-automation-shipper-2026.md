@@ -2,7 +2,7 @@
 title: "After Automation"
 date: 2026-05-22T20:00:00+09:00
 tags: ["AI", "AI 에이전트", "벤치마크", "노동시장", "에디토리얼"]
-categories: ["다이제스트"]
+categories: ["경제와 사회"]
 summary: "Every의 Dan Shipper가 쓴 매니페스토. 사내에서 가능한 모든 작업을 자동화했음에도 사람이 할 일은 오히려 늘었다는 역설에서 출발해, 벤치마크의 프레임 구조와 AGI에 닿아도 사라지지 않는 'framer'의 자리를 짚는다."
 ShowToc: true
 TocOpen: false

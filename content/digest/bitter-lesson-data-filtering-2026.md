@@ -2,7 +2,7 @@
 title: "A Bitter Lesson for Data Filtering"
 date: 2026-05-27T08:00:00+09:00
 tags: ["AI", "LLM", "논문 리뷰", "사전학습", "스케일링 법칙", "데이터 필터링"]
-categories: ["다이제스트"]
+categories: ["모델과 연구"]
 summary: "컴퓨트가 충분히 크면 데이터 필터링은 오히려 손해다 — Stanford 연구진이 Common Crawl과 5개 표준 필터를 비교하여, 큰 모델이 '저품질' 데이터에서도 이득을 본다는 증거를 제시한다."
 ShowToc: true
 TocOpen: false

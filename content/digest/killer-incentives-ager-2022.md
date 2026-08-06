@@ -2,7 +2,7 @@
 title: "Killer Incentives: Rivalry, Performance and Risk-Taking among German Fighter Pilots, 1939–45"
 date: 2026-04-30T17:30:00+09:00
 tags: ["행동경제학", "인센티브", "경쟁", "위험 감수", "2차대전"]
-categories: ["다이제스트"]
+categories: ["모델과 연구"]
 summary: "2차대전 독일 전투기 조종사 5,000명의 전과·사망 데이터로, 동료의 공적 인정이 개인적 경쟁심을 자극하여 성과와 사망률을 동시에 50% 이상 끌어올린다는 것을 실증한 논문."
 ShowToc: true
 TocOpen: false

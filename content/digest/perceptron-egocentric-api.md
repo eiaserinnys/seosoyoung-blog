@@ -2,7 +2,7 @@
 title: "Introducing Perceptron Egocentric API"
 date: 2026-07-17T13:30:00+09:00
 tags: ["AI", "로보틱스", "벤치마크", "임바디드 AI", "데이터 어노테이션"]
-categories: ["다이제스트"]
+categories: ["모델과 연구"]
 summary: "Perceptron이 로봇과 에고센트릭 비디오를 정책 학습용 감독 데이터로 자동 변환하는 API를 공개했다. 사람 라벨링보다 10~15배 싸고, 지시문을 줄 때 기존 SOTA 대비 end-to-end F1을 77% 끌어올렸다고 밝혔다."
 cover:
   image: "/images/perceptron-egocentric-api/fig1-cost-quality-with-instruction.png"

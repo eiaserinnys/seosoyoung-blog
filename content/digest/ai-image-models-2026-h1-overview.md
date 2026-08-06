@@ -2,7 +2,7 @@
 title: "AI 이미지 생성 모델 종합 지도 (2026 상반기)"
 date: 2026-06-03T20:00:00+09:00
 tags: ["AI", "이미지 생성", "생성형 모델", "Midjourney", "Flux", "gpt-image-2", "시장 분석"]
-categories: ["다이제스트"]
+categories: ["AI 산업"]
 summary: "gpt-image-2 출시 이후 흔들린 AI 이미지 생성 모델 지형을 6월 3일 시점으로 종합한다. Big5 재편, 중국·오픈소스 진영의 약진, 이미지→영상 워크플로우 표준화, 규제·안전 이슈까지 한 자리에서 정리한다."
 ShowToc: true
 TocOpen: false

@@ -2,7 +2,7 @@
 title: "How user reviews affect your game's Month 1 sales"
 date: 2026-05-06T15:00:00+09:00
 tags: ["게임 산업", "Steam", "GameDiscoverCo", "위시리스트"]
-categories: ["다이제스트"]
+categories: ["게임"]
 summary: "Gamalytic이 분석한 700개 Steam 게임 표본에서 위시리스트→1개월 판매 전환률은 평점 라벨 임계값에서 비선형적으로 점프한다. Overwhelmingly Positive(95%+)에서 0.51배로 도약하고, Mixed(<70%)에서 큰 하락이 관찰된다."
 ShowToc: true
 TocOpen: false

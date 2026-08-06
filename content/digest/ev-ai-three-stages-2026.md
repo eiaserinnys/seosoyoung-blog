@@ -2,7 +2,7 @@
 title: "Why AI isn't showing up on your bottom line"
 date: 2026-05-30T09:30:00+09:00
 tags: ["AI", "조직 변화", "AI 에이전트", "생산성 패러독스", "노동시장"]
-categories: ["다이제스트"]
+categories: ["경제와 사회"]
 summary: "AI는 개인 생산성을 올렸지만 회사 손익에는 아직 안 나타난다. Azeem Azhar는 전기화의 3단계(전구·그룹 드라이브·유닛 드라이브)를 빌려와, 지금 대부분 기업이 2단계에 갇혀 의사결정 정체(congestion)에 시달리고 있다고 진단한다."
 ShowToc: true
 TocOpen: false

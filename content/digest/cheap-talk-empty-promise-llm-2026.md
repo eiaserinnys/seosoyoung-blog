@@ -2,7 +2,7 @@
 title: "Cheap Talk, Empty Promise: Frontier LLMs easily break public promises for self-interest"
 date: 2026-04-30T15:45:00+09:00
 tags: ["LLM 안전", "멀티에이전트", "정렬", "게임 이론", "거짓말"]
-categories: ["다이제스트"]
+categories: ["모델과 연구"]
 summary: "9종 frontier LLM이 공개 약속의 56.6%를 어긴다. 거짓말은 win-win/selfish/altruistic/sabotaging의 네 갈래로 나뉘고, 대다수는 '약속을 깼다'는 자각조차 없이 일어난다. 정렬 평가가 명시적 기만 추론만 노린다면 주된 실패 모드를 통째로 놓치게 된다."
 ShowToc: true
 TocOpen: false

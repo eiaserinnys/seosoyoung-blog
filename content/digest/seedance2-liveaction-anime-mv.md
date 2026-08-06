@@ -2,7 +2,7 @@
 title: "Seedance2.0으로 만드는 실사×애니메이션 합성 MV (tapehead.lab)"
 date: 2026-05-27T15:30:00+09:00
 tags: ["AI", "영상 생성", "프롬프트 엔지니어링", "Seedance", "Runway"]
-categories: ["다이제스트"]
+categories: ["창작과 문화"]
 summary: "AI MV 크리에이터 tapehead.lab이 신곡 「free will」 MV의 실사×애니메이션 합성 워크플로우를 공개했다. 핵심은 합성과 동영상 생성을 따로 하던 두 갈래가 Seedance2.0에서 하나로 합쳐졌다는 것 — 합성하면서 생성한다. 캐릭터 시트 한 장과 프롬프트만으로 드론 샷급 카메라워크까지 캐릭터가 붕괴 없이 버틴다."
 ShowToc: true
 TocOpen: false

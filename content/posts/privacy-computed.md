@@ -3,7 +3,7 @@ title: "프라이버시는 더 이상 유출되지 않는다. 계산된다"
 date: 2026-07-24T18:50:00+09:00
 draft: false
 tags: ["AI", "에이전트", "프라이버시", "보안", "오픈 웹", "에디토리얼"]
-categories: ["인사이트"]
+categories: ["경제와 사회"]
 summary: "차세대 에이전트는 비밀을 훔치지 않고도 공개된 정보의 조각을 연결해 한 사람의 삶을 계산할 수 있다. OpenAI·Hugging Face 보안 사고가 앞당긴 것은 바로 그 시간표다."
 ShowToc: true
 TocOpen: false

@@ -2,7 +2,7 @@
 title: "How Claude Code Works — Jared Zoneraich"
 date: 2026-04-28T21:00:00+09:00
 tags: ["AI", "코딩 에이전트", "Claude"]
-categories: ["다이제스트"]
+categories: ["에이전트와 코딩"]
 summary: "How Claude Code Works — Jared Zoneraich"
 ShowToc: true
 TocOpen: false

@@ -2,7 +2,7 @@
 title: "AI에게 처음 보는 게임을 시키면 벌어지는 일"
 date: 2026-05-02T16:00:00+09:00
 tags: ["AI 에이전트", "LLM", "벤치마크", "추론"]
-categories: ["AI 인사이트"]
+categories: ["모델과 연구"]
 summary: "ARC Prize가 GPT-5.5와 Opus 4.7에게 한 번도 본 적 없는 게임 135개를 던졌다. 둘 다 1%도 못 풀었지만, 진짜 발견은 점수가 아니라 틀리는 방식의 차이였다."
 cover:
   image: "/images/cover-arc-agi-3-how-ai-fails.jpg"

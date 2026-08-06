@@ -2,7 +2,7 @@
 title: "하워드 마크스: 시장 사이클과 AI 자율성 (TBPN 2026)"
 date: 2026-06-09T19:00:00+09:00
 tags: ["경제·금융", "Howard Marks", "시장 사이클", "역발상 투자", "AI 노동 대체"]
-categories: ["다이제스트"]
+categories: ["경제와 사회"]
 summary: "오크트리 공동 회장 하워드 마크스가 TBPN(2026.02.26)에서 시장 사이클의 본질, 역발상 투자, AI 시대의 노동과 자율성, 미중 경쟁을 36분간 풀어낸 인터뷰를 정리한다."
 ShowToc: true
 TocOpen: false

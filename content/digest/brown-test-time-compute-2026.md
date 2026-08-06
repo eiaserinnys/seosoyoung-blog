@@ -2,7 +2,7 @@
 title: "노암 브라운: 대규모 테스트 타임 컴퓨트의 함의 (2026)"
 date: 2026-06-09T22:00:00+09:00
 tags: ["AI", "LLM", "벤치마크", "AI 안전", "추론"]
-categories: ["다이제스트"]
+categories: ["모델과 연구"]
 summary: "OpenAI 추론 연구자 노암 브라운(@polynoamial)이 X에 올린 장문 글을 정리한다. 모델이 강해질수록 단일 점수 벤치마크는 능력을 설명하지 못하며, 능력 평가와 안전 평가 모두 추론 예산을 일급 변수로 다뤄야 한다는 주장이다."
 ShowToc: true
 TocOpen: false

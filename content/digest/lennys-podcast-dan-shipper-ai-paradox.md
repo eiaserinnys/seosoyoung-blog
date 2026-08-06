@@ -2,7 +2,7 @@
 title: "The AI paradox: More automation, more humans, more work | Dan Shipper"
 date: 2026-05-30T09:30:00+09:00
 tags: ["AI", "AI 에이전트", "코딩 에이전트", "노동시장", "Human-AI 공동 창작"]
-categories: ["다이제스트"]
+categories: ["경제와 사회"]
 summary: "Every CEO 댄 시퍼가 Lenny's Podcast에서 내놓은 12가지 예측 — Codex·Claude Code가 새 업무 OS가 되고, CLI는 끝났으며, SaaS는 죽지 않고, AI가 자동화될수록 인간 노동은 오히려 늘어난다."
 ShowToc: true
 TocOpen: false

@@ -2,7 +2,7 @@
 title: "Talkie — 1930년 빈티지 언어 모델 다이제스트"
 date: 2026-04-28T23:35:00+09:00
 tags: ["LLM", "벤치마크", "역사 텍스트", "데이터 오염"]
-categories: ["다이제스트"]
+categories: ["모델과 연구"]
 summary: "Nick Levine, David Duvenaud, Alec Radford(2026.04)이 발표한 13B 빈티지 언어 모델 Talkie를 정리한다. 1930년 이전 영어 텍스트 260B 토큰만으로 훈련하여 벤치마크 오염 없는 평가와 언어 보편성 연구의 새로운 축을 제안한다."
 ShowToc: true
 TocOpen: false

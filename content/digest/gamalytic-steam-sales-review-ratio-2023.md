@@ -2,7 +2,7 @@
 title: "What makes people review your game? A deep dive into the Steam's sales/review ratio"
 date: 2026-05-06T15:01:10+09:00
 tags: ["Steam", "게임 데이터", "Gamalytic", "리뷰 비율"]
-categories: ["다이제스트"]
+categories: ["게임"]
 summary: "Steam의 sales/review 비율을 9개 변수(연도·가격·할인·평점·장르·플레이타임·인구·청중·인기)로 분해한 Gamalytic의 2023년 분석. 평점과 비율의 관계가 단순한 양의 상관이 아니라 U자형이라는 점이 핵심이다."
 ShowToc: true
 TocOpen: false

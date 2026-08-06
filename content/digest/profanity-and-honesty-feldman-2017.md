@@ -2,7 +2,7 @@
 title: "Frankly, We Do Give a Damn: The Relationship Between Profanity and Honesty"
 date: 2026-05-13T10:30:00+09:00
 tags: ["사회심리학", "언어와 도덕", "거짓말 연구", "LIWC"]
-categories: ["다이제스트"]
+categories: ["모델과 연구"]
 summary: "욕설을 많이 쓰는 사람일수록 정직하다. Feldman 등(2017)이 개인·온라인·사회 세 수준에서 일관되게 관찰한 결과. 단, 여기서의 '정직'은 자기 미화용 거짓말의 부재일 뿐, 윤리적 우월성이 아니다."
 ShowToc: true
 TocOpen: false

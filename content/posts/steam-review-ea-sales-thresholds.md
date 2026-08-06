@@ -2,7 +2,7 @@
 title: "Steam 평점과 얼리액세스, 그리고 매출"
 date: 2026-05-06T22:55:00+09:00
 tags: ["스팀", "인디 게임", "마케팅 & 노출", "데이터 분석", "에디토리얼"]
-categories: ["게임 산업 인사이트"]
+categories: ["게임"]
 summary: "Steam의 리뷰 점수는 매출에 직접 작용하지 않는다. 점수는 알고리즘 노출을 거쳐, 두 단계의 경계를 통과하며 매출에 닿는다 — 9편의 자료가 같은 결론으로 수렴한다."
 cover:
   image: "/images/cover-steam-review-ea-sales-thresholds.jpg"

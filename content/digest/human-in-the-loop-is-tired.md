@@ -2,7 +2,7 @@
 title: "The Human-in-the-Loop is Tired"
 date: 2026-07-20T00:50:00+09:00
 tags: ["AI", "LLM", "코딩 에이전트", "AI 코딩", "번아웃", "Pydantic"]
-categories: ["다이제스트"]
+categories: ["에이전트와 코딩"]
 summary: "LLM으로 코드를 짜는 일은 생산성을 끌어올리는 동시에 개발자를 소진시킨다. Pydantic의 Laura Summers가 '감독의 피로'와 '인간 보상 함수 문제'를 이름 붙이고, 병목은 처음부터 코드가 아니라 인간의 주의력이었다고 진단한다."
 cover:
   image: "/images/human-in-the-loop-is-tired/hero.png"

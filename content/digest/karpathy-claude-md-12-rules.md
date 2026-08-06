@@ -2,7 +2,7 @@
 title: "Karpathy의 CLAUDE.md 4규칙이 실수율을 41%에서 11%로. 30개 코드베이스를 거치고 8가지를 더했다"
 date: 2026-05-12T00:35:00+09:00
 tags: ["Claude Code", "CLAUDE.md", "AI 코딩", "에이전트 운영"]
-categories: ["다이제스트"]
+categories: ["에이전트와 코딩"]
 summary: "Mnilax가 Karpathy 발 4규칙 CLAUDE.md 템플릿을 30개 코드베이스에서 6주간 테스트하고 8규칙을 추가한 기록. 4규칙으로 실수율이 41%에서 11%로, 12규칙으로 3%까지 떨어지지만 14개를 넘으면 컴플라이언스가 76%에서 52%로 무너진다."
 ShowToc: true
 TocOpen: false

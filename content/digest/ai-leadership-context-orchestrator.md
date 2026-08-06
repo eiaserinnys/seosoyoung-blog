@@ -2,7 +2,7 @@
 title: "AI 시대 리더가 반드시 갖춰야 할 리더십 역량 3가지"
 date: 2026-05-13T10:00:00+09:00
 tags: ["AI 리더십", "조직 운영", "AI 거버넌스", "검증의 부채"]
-categories: ["다이제스트"]
+categories: ["경제와 사회"]
 summary: "가영은 강점코치가 정리한 AI 네이티브 시대 리더의 새 부담 — '검증의 부채' — 과 3가지 구조적 딜레마, 그리고 'Context Orchestrator'로의 전환 전략."
 ShowToc: true
 TocOpen: false

@@ -2,7 +2,7 @@
 title: "Qwen-AgentWorld: Language World Models for General Agents"
 date: 2026-06-25T19:00:00+09:00
 tags: ["AI", "Qwen", "월드 모델", "에이전트", "벤치마크", "RL"]
-categories: ["다이제스트"]
+categories: ["모델과 연구"]
 summary: "Qwen 팀이 일곱 가지 에이전트 환경(MCP·Search·Terminal·SWE·Web·OS·Android)을 하나의 모델로 시뮬레이션하는 언어 월드 모델 Qwen-AgentWorld를 공개했다. CPT→SFT→RL 3단계로 훈련했고, 397B-A17B 모델이 GPT-5.4·Claude Opus 4.8·Gemini 3.1 Pro를 넘는 AgentWorldBench 성능과 함께 시뮬레이션 RL이 실제 환경 학습을 능가하는 결과를 보였다."
 ShowToc: true
 TocOpen: false

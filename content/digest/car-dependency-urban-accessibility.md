@@ -2,7 +2,7 @@
 title: "Car Dependency in Urban Accessibility"
 date: 2026-04-29T16:30:00+09:00
 tags: ["도시 계획", "교통", "접근성", "데이터 분석"]
-categories: ["다이제스트"]
+categories: ["경제와 사회"]
 summary: "유럽·북미 18개 도시의 자동차-대중교통 접근성 격차를 정량화하는 Car Dependency Index(CDI). 음수 CDI 도시는 파리와 취리히뿐이며, 소득을 통제해도 CDI가 자동차 보유를 결정한다."
 math: true
 ShowToc: true

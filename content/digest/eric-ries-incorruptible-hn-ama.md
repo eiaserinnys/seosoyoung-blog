@@ -2,7 +2,7 @@
 title: "I'm Eric Ries, author of \"The Lean Startup\" and new book \"Incorruptible\" – AMA"
 date: 2026-06-11T10:30:00+09:00
 tags: ["경제·금융", "거버넌스", "조직 변화", "스타트업", "Eric Ries"]
-categories: ["다이제스트"]
+categories: ["경제와 사회"]
 summary: "린 스타트업의 에릭 리스가 신작 Incorruptible로 연 HN AMA. 좋은 회사가 나빠지는 원인을 '재정 중력'이라는 구조적 힘으로 진단하고, 리더십이 아닌 거버넌스 설계가 저항의 핵심이라고 주장한다."
 ShowToc: true
 TocOpen: false

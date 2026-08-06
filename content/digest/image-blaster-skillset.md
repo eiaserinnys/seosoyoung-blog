@@ -2,7 +2,7 @@
 title: "image-blaster"
 date: 2026-05-15T09:30:00+09:00
 tags: ["AI", "Claude 스킬", "3D 생성", "에이전트", "오픈소스"]
-categories: ["다이제스트"]
+categories: ["에이전트와 코딩"]
 summary: "이미지 한 장에서 5분 안에 3D 환경·오브젝트·사운드를 만들어내는 Claude 스킬셋. World Labs Marble, FAL Hunyuan 3D, ElevenLabs SFX를 8개의 원자 스킬로 오케스트레이션한다."
 ShowToc: true
 TocOpen: false

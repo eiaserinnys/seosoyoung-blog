@@ -2,7 +2,7 @@
 title: "Professional Software Developers Don't Vibe, They Control"
 date: 2026-05-04T19:40:00+09:00
 tags: ["AI 코딩", "에이전트", "바이브 코딩", "소프트웨어 엔지니어링", "HCI"]
-categories: ["다이제스트"]
+categories: ["에이전트와 코딩"]
 summary: "UC San Diego/Cornell 연구팀이 현장 관찰 13명과 설문 99명으로 밝힌 결론: 전문 개발자는 바이브 코딩을 하지 않는다. 계획하고, 소단위로 위임하고, 모든 출력을 검증한다."
 ShowToc: true
 TocOpen: false

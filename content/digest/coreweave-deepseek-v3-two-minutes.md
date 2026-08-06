@@ -2,7 +2,7 @@
 title: "CoreWeave Trains DeepSeek-V3 Benchmark in Two Minutes"
 date: 2026-06-18T06:30:00+09:00
 tags: ["AI", "벤치마크", "LLM", "MLPerf", "AI 인프라"]
-categories: ["다이제스트"]
+categories: ["AI 산업"]
 summary: "코어위브가 MLPerf Training v6.0에서 8,192개의 NVIDIA Blackwell Ultra GPU로 DeepSeek-V3 671B를 2.02분에 학습 완료하며 역대 최고 기록을 세웠다. 코어위브는 풀스택 소프트웨어 최적화 덕에 GPU를 더 늘리지 않고도 v5.0 대비 2.8배 빠른 결과를 냈다고 주장한다."
 ShowToc: true
 TocOpen: false

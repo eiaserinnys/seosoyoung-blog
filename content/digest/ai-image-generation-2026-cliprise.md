@@ -2,7 +2,7 @@
 title: "The Complete Guide to AI Image Generation in 2026: Midjourney, Flux 2, Imagen 4, DALL-E, and the Models Nobody's Talking About"
 date: 2026-06-03T20:00:00+09:00
 tags: ["AI", "이미지 생성", "생성형 모델", "Midjourney", "Flux", "창작·미디어"]
-categories: ["다이제스트"]
+categories: ["창작과 문화"]
 summary: "Cliprise 운영자가 2026년 2월 시점의 AI 이미지 생성 모델 8종을 용도별로 정리한 가이드. 'Midjourney vs DALL-E' 구도가 더 이상 의미 없는 이유와, 작업별로 모델을 갈아 끼우는 라우팅 전략을 다룬다."
 ShowToc: true
 TocOpen: false

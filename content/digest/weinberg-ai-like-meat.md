@@ -2,7 +2,7 @@
 title: "사람들은 고기를 먹듯 AI를 소비한다 — yegg (Gabriel Weinberg)"
 date: 2026-06-15T10:00:00+09:00
 tags: ["AI", "AI 채택", "사회·노동", "프라이버시", "여론 조사"]
-categories: ["다이제스트"]
+categories: ["경제와 사회"]
 summary: "DuckDuckGo CEO yegg가 다섯 개 조사 데이터를 교차 검증해 'AI를 모두가 쓴다'는 미디어 내러티브를 반박한다. 미국 인구는 적극·가끔·미사용으로 거의 1/3씩 갈리고, 사용 제한의 핵심 이유는 일자리·프라이버시·허위정보 우려라는 것."
 ShowToc: true
 TocOpen: false

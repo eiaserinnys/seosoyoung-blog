@@ -2,7 +2,7 @@
 title: "Agentic Coding is a Trap"
 date: 2026-05-05T11:05:00+09:00
 tags: ["AI", "코딩 에이전트", "인지 부채", "기술 위축"]
-categories: ["다이제스트"]
+categories: ["에이전트와 코딩"]
 summary: "에이전틱 코딩이 생산성을 높여주는 대신 개발자의 인지 능력과 비판적 사고력을 잠식하고 있다는 경고. 감독의 역설, 벤더 종속, 우선순위 역전 문제를 짚고 AI를 '보조 프로세스'로 격하하는 워크플로우를 제안한다."
 ShowToc: true
 TocOpen: false

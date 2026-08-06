@@ -2,7 +2,7 @@
 title: "포털 검색 늘었네…제로클릭, 허상이었나"
 date: 2026-05-14T10:30:00+09:00
 tags: ["AI", "검색", "SEO", "GEO", "VEO"]
-categories: ["다이제스트"]
+categories: ["AI 산업"]
 summary: "AI가 검색을 죽인다는 통념이 데이터에서 정반대로 나왔다. ChatGPT 이용자 95%가 포털 검색을 병행하고 네이버 점유율은 오히려 상승했다. 포털이 '최종 검증지'로 격상되며 SEO·GEO를 함께 가져가는 VEO가 새 화두로 떠올랐다."
 ShowToc: true
 TocOpen: false

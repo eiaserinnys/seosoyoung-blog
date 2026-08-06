@@ -2,7 +2,7 @@
 title: "Steam에서 'AI 생성 컨텐츠 공개'가 붙은 게임은 리뷰가 적다는 분석"
 date: 2026-06-25T06:00:00+09:00
 tags: ["게임", "Steam", "게임 산업", "생성 AI", "데이터 분석"]
-categories: ["다이제스트"]
+categories: ["게임"]
 summary: "Game Oracle의 Ross Burton이 2025년 1~10월 Steam에 출시된 유료 게임 9879본을 분석한 결과, 'AI 생성 컨텐츠 공개' 라벨이 붙은 게임은 발매 후 1개월 리뷰 수가 약 53% 적은 것으로 추정된다."
 ShowToc: true
 TocOpen: false

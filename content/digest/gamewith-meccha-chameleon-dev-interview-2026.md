@@ -2,7 +2,7 @@
 title: "『메차 카멜레온』개발자 인터뷰 — 2명·2개월로 만든 세계적 히트"
 date: 2026-06-24T21:00:00+09:00
 tags: ["게임", "인디 게임", "게임 개발", "일본", "Steam", "Unreal Engine"]
-categories: ["다이제스트"]
+categories: ["게임"]
 summary: "2명·2개월·광고비 0엔·서버비 0엔으로 누계 700만 본을 돌파한 일본 인디게임 『메차 카멜레온』의 개발자 레모리온 인터뷰. UEFN에서 시작해 Unreal Engine + EOS 무료 백엔드 스택으로 동시접속 20만 명을 받아낸 흐름과, MVP 우선 개발 방식이 어떻게 좌초를 막았는지를 정리한다."
 ShowToc: true
 TocOpen: false

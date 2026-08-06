@@ -2,7 +2,7 @@
 title: "From Skill Text to Skill Structure: The SSL Representation for Agent Skills"
 date: 2026-04-29T13:40:00+09:00
 tags: ["에이전트", "스킬 표현", "지식 표현", "검색", "리스크 평가"]
-categories: ["다이제스트"]
+categories: ["에이전트와 코딩"]
 summary: "에이전트 스킬 문서를 3계층 JSON 그래프(스케줄링·구조·논리)로 정규화하는 SSL 표현을 제안하고, 스킬 디스커버리와 리스크 평가에서 텍스트 기반 베이스라인을 유의미하게 이긴 논문."
 ShowToc: true
 TocOpen: false

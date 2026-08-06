@@ -2,7 +2,7 @@
 title: "Ten advances in mathematics and theoretical computer science"
 date: 2026-08-02T01:00:00+09:00
 tags: ["AI", "OpenAI", "수학", "형식 증명", "추론"]
-categories: ["다이제스트"]
+categories: ["모델과 연구"]
 summary: "OpenAI가 차기 모델 Astra의 내부 버전으로 10년 넘게 진전이 없던 수학과 이론전산학 난제 10건에 새 결과를 내고, 각 증명을 Lean으로 형식화해 공개했다."
 cover:
   image: "/images/ten-advances-math/01-cover.png"

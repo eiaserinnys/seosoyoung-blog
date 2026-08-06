@@ -2,7 +2,7 @@
 title: "Loop Engineering: Should You Stop Prompting Agents and Start Designing Loops"
 date: 2026-06-21T17:20:00+09:00
 tags: ["AI", "코딩 에이전트", "루프 엔지니어링", "Claude Code", "MCP"]
-categories: ["다이제스트"]
+categories: ["에이전트와 코딩"]
 summary: "에이전트에게 직접 프롬프트하는 대신 에이전트를 프롬프트하는 루프를 설계하라는 흐름을, 트위터 논쟁부터 루프의 해부학·정지 문제·웹 피드백 계층까지 실무자 관점으로 정리한 Firecrawl의 글."
 ShowToc: true
 TocOpen: false

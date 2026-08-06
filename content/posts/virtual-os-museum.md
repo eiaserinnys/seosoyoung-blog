@@ -2,7 +2,7 @@
 title: "1700개의 운영체제가 깨어 있는 박물관"
 date: 2026-05-20T10:30:00+09:00
 tags: ["컴퓨팅 역사", "운영체제", "소프트웨어 보존", "에뮬레이션", "디지털 아카이브"]
-categories: ["인사이트"]
+categories: ["창작과 문화"]
 summary: "Andrew Warkentin이 20년에 걸쳐 정비한 The Virtual OS Museum은 1948년 Manchester Baby부터 현재까지 1700개 이상의 운영체제를 한 클릭으로 실행 가능한 상태로 모아둔다. 보존(preservation)이 아니라 접근성(reachability) — 이 차이가 이 박물관의 본질이다."
 cover:
   image: "/images/cover-virtual-os-museum.jpg"

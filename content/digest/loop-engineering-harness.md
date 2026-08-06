@@ -2,7 +2,7 @@
 title: "Harness engineering: leveraging Codex in an agent-first world"
 date: 2026-06-21T17:50:00+09:00
 tags: ["AI", "에이전트", "루프 엔지니어링", "Codex", "하네스", "OpenAI"]
-categories: ["다이제스트"]
+categories: ["에이전트와 코딩"]
 summary: "OpenAI의 한 팀이 다섯 달 동안 사람이 코드를 한 줄도 쓰지 않고 백만 줄짜리 제품을 출시했다. 엔지니어의 일은 코드를 짜는 것이 아니라 에이전트가 일할 환경·피드백 루프·점검망을 설계하는 것으로 옮겨 갔다 — 이것이 OpenAI가 '하네스 엔지니어링'이라 부르는 것이다."
 ShowToc: true
 TocOpen: false

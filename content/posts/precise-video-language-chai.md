@@ -2,7 +2,7 @@
 title: "영상을 정밀하게 말하는 법 — VideoSpec과 CHAI가 여는 길"
 date: 2026-04-28T08:20:00+09:00
 tags: ["Human-AI 공동 창작", "AI 영상 생성", "논문 리뷰"]
-categories: ["논문 소화"]
+categories: ["모델과 연구"]
 summary: "AI 영상 생성의 진짜 병목은 모델이 아니라 언어다. 시네마틱 요소를 정밀하게 기술하는 VideoSpec과, 'AI가 쓰고 인간이 검증하는' CHAI 프레임워크가 소량의 전문가 비평만으로 오픈소스 8B 모델을 Gemini-2.5 위에 올려놓았다."
 cover:
   image: "/images/cover-precise-video-language-chai.jpg"

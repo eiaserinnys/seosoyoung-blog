@@ -2,7 +2,7 @@
 title: "Reasoning-Driven Synthetic Data Generation and Evaluation"
 date: 2026-04-29T22:47:00+09:00
 tags: ["합성 데이터", "데이터 생성", "LLM", "스케일링", "평가"]
-categories: ["다이제스트"]
+categories: ["모델과 연구"]
 summary: "Google/EPFL 연구팀이 제안한 Simula는 택소노미 분해 → 에이전틱 메타프롬프팅 → 이중 비평 필터링의 3단계로 합성 데이터를 생성하며, 데이터 스케일링의 핵심이 양이 아닌 속성임을 실증한다."
 ShowToc: true
 TocOpen: false

@@ -2,7 +2,7 @@
 title: "[게임인플루언서] 한국 게임의 서구 진출과 크리에이터 마케팅"
 date: 2026-06-16T22:00:00+09:00
 tags: ["게임 산업", "마케팅", "Steam", "인디 게임", "글로벌 진출"]
-categories: ["다이제스트"]
+categories: ["게임"]
 summary: "GameInfluencer 창립자 Georg Broxtermann 인터뷰 3편. 한국 게임이 서구에서 막히는 다섯 가지 이유, 인플루언서 마케팅 운용 원칙, PC·콘솔로 넘어갈 때 달라지는 것들."
 ShowToc: true
 TocOpen: false

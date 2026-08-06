@@ -2,7 +2,7 @@
 title: "NEvo: Neural-Guided Evolutionary Video Synthesis for Dynamic Visual Selectivity"
 date: 2026-07-10T13:30:00+09:00
 tags: ["AI", "신경과학", "fMRI", "비디오 생성", "진화 알고리즘"]
-categories: ["다이제스트"]
+categories: ["모델과 연구"]
 summary: "뇌의 특정 시각 피질을 가장 강하게 활성화할 2초짜리 영상을 진화 검색으로 만들어내는 EPFL·존스홉킨스의 프레임워크. 정적 이미지에 갇혀 있던 in silico 자극 합성을 동적 영상으로 확장한 첫 사례다."
 ShowToc: true
 TocOpen: false

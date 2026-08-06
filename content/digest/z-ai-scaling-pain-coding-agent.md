@@ -2,7 +2,7 @@
 title: "Scaling Pain of Coding Agent Serving"
 date: 2026-04-30T09:53:00+09:00
 tags: ["inference", "kv-cache", "coding-agent", "race-condition", "speculative-decoding"]
-categories: ["다이제스트"]
+categories: ["모델과 연구"]
 summary: "Z.ai(Zhipu AI)가 GLM-5 코딩 에이전트 서빙에서 발견한 저수준 레이스 컨디션 버그 디버깅 경험기. 추론 인프라의 숨겨진 가정이 모델 품질 실패로 표면화되는 'Scaling Pain'의 실체를 다룬다."
 ShowToc: true
 TocOpen: false

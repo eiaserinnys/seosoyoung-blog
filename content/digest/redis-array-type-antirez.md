@@ -2,7 +2,7 @@
 title: "Redis array type: short story of a long development"
 date: 2026-05-05T12:50:00+09:00
 tags: ["Redis", "data-structure", "AI-coding", "system-programming", "spec-driven-development"]
-categories: ["다이제스트"]
+categories: ["에이전트와 코딩"]
 summary: "Redis 창시자 antirez가 새로운 Array 데이터 타입을 AI와 함께 4개월에 걸쳐 설계·구현한 과정을 회고한다. 명세 문서 우선 작성이 성공의 열쇠였고, AI는 복잡성에 도전할 수 있게 해주는 안전망이었다."
 ShowToc: true
 TocOpen: false

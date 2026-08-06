@@ -2,7 +2,7 @@
 title: "제조업은 어떻게 다시 정의되고 있는가"
 date: 2026-07-18T18:00:00+09:00
 tags: ["경제·금융", "제조업", "일본", "AI", "투자"]
-categories: ["다이제스트"]
+categories: ["경제와 사회"]
 summary: "일본 제조 기업들이 제품 자체가 아니라 그 제품이 만들어내는 '운영'을 파는 방향으로 이동하고 있다는 관찰. 미츠비시중공업, 다이킨, 히타치 사례를 통해 제조업이 시스템 제공자와 고객으로 양극화되는 그림을 그린다."
 cover:
   image: "/images/manufacturing-redefined-observerlee/cover.jpg"

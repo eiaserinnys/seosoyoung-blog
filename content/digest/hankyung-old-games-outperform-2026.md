@@ -2,7 +2,7 @@
 title: '"AI로 만든 건 재미없어"…더 잘나가는 옛날 게임'
 date: 2026-07-21T20:00:00+09:00
 tags: ["게임", "Steam", "게임 산업", "AI 슬롭", "IP", "자본 배분"]
-categories: ["다이제스트"]
+categories: ["게임"]
 summary: "스팀 상반기 매출이 반기 사상 최대인데 신작이 가져간 몫은 21%로 떨어졌다. 한국경제 안정훈 기자의 관찰을 축으로 알리니아·SteamDB·Gamalytic·Valve GDC 발표·넥슨 어닝레터를 대조해 본다."
 cover:
   image: "/images/hankyung-old-games-outperform-2026/hero.jpg"

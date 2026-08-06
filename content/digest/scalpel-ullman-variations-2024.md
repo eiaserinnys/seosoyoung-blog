@@ -2,7 +2,7 @@
 title: "Dissecting the Ullman Variations with a SCALPEL"
 date: 2026-04-30T09:00:00+09:00
 tags: ["LLM", "Theory-of-Mind", "벤치마크", "인지과학", "SCALPEL"]
-categories: ["다이제스트"]
+categories: ["모델과 연구"]
 summary: "LLM이 거짓 신념 과제의 사소한 변형에서 실패하는 원인을 SCALPEL 기법으로 해부한 연구. 실패의 핵심은 단어 이해가 아니라 '보기→인식하기'라는 상식적 추론의 부재다."
 ShowToc: true
 TocOpen: false

@@ -2,7 +2,7 @@
 title: "The Collapse of Teen Fertility in the Digital Era"
 date: 2026-05-17T13:00:00+09:00
 tags: ["사회·노동", "출산율", "청소년", "스마트폰", "행동경제학", "인과 추론"]
-categories: ["다이제스트"]
+categories: ["경제와 사회"]
 summary: "2007년 전후 청소년 출산율이 거의 모든 나라에서 동시에 무너졌다. Hudson·Moscoso Boedo는 스마트폰 가격 하락이 또래 시간 배분의 조정 균형을 면대면에서 디지털로 점프시켰고, 그 결과로 비구조화 면대면 접촉과 의도치 않은 임신이 함께 무너졌다고 본다."
 ShowToc: true
 TocOpen: false

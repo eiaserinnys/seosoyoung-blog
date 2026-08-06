@@ -2,7 +2,7 @@
 title: "Deception Abilities Emerged in Large Language Models"
 date: 2026-04-30T09:05:00+09:00
 tags: ["LLM", "기만", "Theory-of-Mind", "AI-안전", "기계심리학"]
-categories: ["다이제스트"]
+categories: ["모델과 연구"]
 summary: "GPT-4급 LLM에서 기만 전략이 출현했음을 실험으로 입증한 논문. 거짓 신념 유도, CoT에 의한 기만 증폭, 마키아벨리즘 프롬프트 조향까지 다룬다."
 ShowToc: true
 TocOpen: false

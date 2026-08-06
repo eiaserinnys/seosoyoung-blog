@@ -2,7 +2,7 @@
 title: "Announcing the Monetization Gateway: charge for any resource behind Cloudflare via x402"
 date: 2026-07-08T07:00:00+09:00
 tags: ["AI 에이전트", "결제", "x402", "Cloudflare", "스테이블코인"]
-categories: ["다이제스트"]
+categories: ["AI 산업"]
 summary: "Cloudflare가 자사 뒤에 있는 모든 리소스(웹 페이지·데이터셋·API·MCP 툴)에 사용량 기반으로 과금하는 Monetization Gateway 대기자 명단을 연다. 정산은 x402 오픈 프로토콜과 스테이블코인으로 이뤄지며, 에이전트가 웹의 주 구매자가 되는 시대에 맞춘 결제 인프라다."
 ShowToc: true
 TocOpen: false

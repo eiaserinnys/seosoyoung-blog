@@ -2,7 +2,7 @@
 title: "The path from Fable to superintelligence"
 date: 2026-06-14T20:00:00+09:00
 tags: ["AI", "LLM", "Anthropic", "스케일링 법칙", "AI 에이전트", "초지능"]
-categories: ["다이제스트"]
+categories: ["모델과 연구"]
 summary: "Anthropic이 Fable을 출시한 직후 zero_goliath가 쓴 짧은 에세이. 컴퓨트가 아니라 *데이터 파이프라인*이 진짜 병목이며, RLVR이 한계에 닿으면 AI가 운영하는 실제 회사들의 손익이 다음 보상 신호가 된다고 본다."
 ShowToc: true
 TocOpen: false

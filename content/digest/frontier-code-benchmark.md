@@ -2,7 +2,7 @@
 title: "Introducing FrontierCode"
 date: 2026-06-09T22:30:00+09:00
 tags: ["AI", "벤치마크", "코딩 에이전트", "LLM 평가", "Cognition", "오픈소스"]
-categories: ["다이제스트"]
+categories: ["모델과 연구"]
 summary: "Cognition이 공개한 신규 코딩 벤치마크. 정답 여부가 아니라 '메인테이너가 실제로 머지하겠는가'를 측정한다. Diamond 50문항에서 최강 모델 Claude Opus 4.8도 13.4%에 그쳤다."
 ShowToc: true
 TocOpen: false

@@ -2,7 +2,7 @@
 title: "AI가 고래 언어를 어디까지 해독했는가 — Sharma 2024와 McCowan 2023"
 date: 2026-07-06T18:30:00+09:00
 tags: ["AI", "과학", "동물 커뮤니케이션", "향유고래", "혹등고래", "Project CETI"]
-categories: ["다이제스트"]
+categories: ["모델과 연구"]
 summary: "AI로 고래의 언어가 '완전히 분석'되었다는 트윗을 사실 검증한다. 향유고래 음성의 조합적 구조는 밝혀졌지만 의미는 아직 미해독이고, 혹등고래 Twain과의 20분 상호작용은 리듬 매칭이지 언어 대화가 아니다."
 ShowToc: true
 TocOpen: false

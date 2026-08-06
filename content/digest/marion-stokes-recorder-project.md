@@ -2,7 +2,7 @@
 title: "Marion Stokes — 33년간 24시간 TV 뉴스를 녹화한 사서"
 date: 2026-05-20T16:00:00+09:00
 tags: ["미디어", "아카이브", "Internet Archive", "다큐멘터리", "디지털 보존", "저널리즘 비평"]
-categories: ["다이제스트"]
+categories: ["창작과 문화"]
 summary: "1979년 이란 인질 사건 보도가 시간마다 달라지는 것을 보고 충격받은 한 흑인 여성 사서가 33년간 8대의 VCR로 24시간 TV 뉴스를 녹화했다. 71,716개의 비디오테이프는 사후 Internet Archive에 기증되어 디지털화 중이다."
 ShowToc: true
 TocOpen: false

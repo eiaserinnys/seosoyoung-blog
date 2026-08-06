@@ -2,7 +2,7 @@
 title: "How Agents Are Transforming Work"
 date: 2026-06-26T06:00:00+09:00
 tags: ["AI", "AI 에이전트", "OpenAI", "Codex", "노동시장"]
-categories: ["다이제스트"]
+categories: ["경제와 사회"]
 summary: "OpenAI가 사내 Codex 사용 데이터로 에이전트형 AI의 업무 침투를 수치화한 공식 보고서. 부서별 사용량은 1년 새 최대 56배 늘었고, 비개발자 사용자는 137배 증가했다. 단, 모든 데이터는 OpenAI 자체 보고이며 외부 검증은 없다."
 ShowToc: true
 TocOpen: false

@@ -2,7 +2,7 @@
 title: "One size fits none: let communities build for themselves"
 date: 2026-05-12T07:00:00+09:00
 tags: ["fediverse", "open-protocols", "agentic-coding", "platform-design"]
-categories: ["다이제스트"]
+categories: ["에이전트와 코딩"]
 summary: "Elgg 공동창업자 Ben Werdmuller가 2007년 \"No features\" 키노트로 던졌던 화두를 19년 만에 다시 꺼낸다. 에이전틱 코딩과 ActivityPub·ATProto가 결합하면 커뮤니티가 자기 손으로 맞춤 소셜 플랫폼을 빚을 수 있는 시대가 열린다는 주장."
 ShowToc: true
 TocOpen: false

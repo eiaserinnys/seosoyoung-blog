@@ -2,7 +2,7 @@
 title: "The 37signals Guide to Making Decisions"
 date: 2026-06-27T09:00:00+09:00
 tags: ["의사결정", "37signals", "Jason Fried", "경영", "조직 운영"]
-categories: ["다이제스트"]
+categories: ["경제와 사회"]
 summary: "Basecamp/37signals 공동 창업자 Jason Fried가 X 아티클로 공개한 의사결정 가이드. 회사를 사람과 결정의 집합으로 정의하고, 37signals가 결정 시 참고하는 38가지 자문(rules of thumb)을 정리한다. 체크리스트라기보다 프레임으로 쓰자고 말한다."
 ShowToc: true
 TocOpen: false

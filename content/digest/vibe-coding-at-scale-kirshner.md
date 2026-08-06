@@ -2,7 +2,7 @@
 title: "Vibe Coding at Scale — Harald Kirschner"
 date: 2026-04-28T20:54:00+09:00
 tags: ["AI", "코딩 에이전트", "바이브 코딩"]
-categories: ["다이제스트"]
+categories: ["에이전트와 코딩"]
 summary: "4천만 개발자의 에디터를 만드는 사람이 묻는 질문 하나."
 ShowToc: true
 TocOpen: false

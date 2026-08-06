@@ -2,7 +2,7 @@
 title: "Previewing GPT-5.6 Sol: a next-generation model"
 date: 2026-06-27T06:30:00+09:00
 tags: ["AI", "OpenAI", "AI 안전", "벤치마크", "AI 에이전트", "정렬"]
-categories: ["다이제스트"]
+categories: ["AI 산업"]
 summary: "OpenAI가 차세대 모델 패밀리 GPT-5.6(Sol·Terra·Luna)을 공개했다. 미 정부와 사전 조율한 제한적 프리뷰로 출시하며, Preparedness Framework상 생물·화학·사이버 모두 High 등급에 닿았지만 Critical 임계는 넘지 않았다고 명시한다."
 ShowToc: true
 TocOpen: false

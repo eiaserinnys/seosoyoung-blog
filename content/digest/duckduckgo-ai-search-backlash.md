@@ -2,7 +2,7 @@
 title: "DuckDuckGo installs are up 30% as users reject being 'force-fed' Google's AI Search"
 date: 2026-05-27T14:30:00+09:00
 tags: ["AI", "AI 검색", "DuckDuckGo", "Google", "검색 시장", "프라이버시"]
-categories: ["다이제스트"]
+categories: ["AI 산업"]
 summary: "구글이 검색을 AI 에이전트로 전면 개편하자 사용자 반발이 일었고, 'AI 없는 검색'을 내건 DuckDuckGo의 미국 앱 설치가 6일 연속 늘어 5월 25일 주간 30.5% 증가로 정점을 찍었다."
 ShowToc: true
 TocOpen: false

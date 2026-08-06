@@ -2,7 +2,7 @@
 title: "DeepSWE: 오염 없는 장기 호라이즌 코딩 에이전트 벤치마크"
 date: 2026-05-27T21:00:00+09:00
 tags: ["AI", "코딩 에이전트", "벤치마크", "LLM-evaluation"]
-categories: ["다이제스트"]
+categories: ["모델과 연구"]
 summary: "Datacurve가 처음부터 새로 쓴 오염 없는 과제로 프론티어 코딩 에이전트를 평가하니, SWE-Bench류에서 근접하던 모델들이 넓게 갈라졌다. gpt-5.5 70% vs claude-sonnet-4.6 32%."
 ShowToc: true
 TocOpen: false

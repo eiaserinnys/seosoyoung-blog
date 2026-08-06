@@ -2,7 +2,7 @@
 title: "Your AI Agent Isn't an Engineer — Rizel Scarlett"
 date: 2026-04-28T20:18:00+09:00
 tags: ["AI", "코딩 에이전트", "에이전트"]
-categories: ["다이제스트"]
+categories: ["에이전트와 코딩"]
 summary: "AI 도구에 '엔지니어'라는 직책을 부여하는 순간, 사용자는 인간 엔지니어의 평가 기준—정확성, 자율 종결, 동료 검토 통과—으로 도구를 판단하기 시작합니다."
 ShowToc: true
 TocOpen: false

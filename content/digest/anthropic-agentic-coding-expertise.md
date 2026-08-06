@@ -2,7 +2,7 @@
 title: "Agentic Coding and Persistent Returns to Expertise"
 date: 2026-06-17T07:30:00+09:00
 tags: ["AI", "Claude Code", "코딩 에이전트", "노동시장", "Anthropic"]
-categories: ["다이제스트"]
+categories: ["에이전트와 코딩"]
 summary: "Anthropic이 약 40만 건의 Claude Code 세션을 분석해, 에이전틱 코딩의 성공을 가르는 것은 코딩 훈련 여부가 아니라 해당 작업 도메인의 전문성임을 보였다."
 ShowToc: true
 TocOpen: false

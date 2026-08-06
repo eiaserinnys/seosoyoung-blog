@@ -2,7 +2,7 @@
 title: "Loop Engineering"
 date: 2026-06-21T16:30:00+09:00
 tags: ["AI", "코딩 에이전트", "하네스", "Claude Code", "OpenAI"]
-categories: ["다이제스트"]
+categories: ["에이전트와 코딩"]
 summary: "에이전트에게 일일이 프롬프트를 넣는 시대가 저물고, 에이전트를 프롬프트하는 시스템(루프)을 설계하는 일로 레버리지가 옮겨간다. Addy Osmani가 루프를 이루는 다섯 조각과 한 개의 기억, 그리고 루프가 여전히 대신해 주지 못하는 것을 정리한다."
 ShowToc: true
 TocOpen: false

@@ -2,7 +2,7 @@
 title: "GitReverse"
 date: 2026-07-23T18:00:00+09:00
 tags: ["AI", "오픈소스", "바이브 코딩", "프롬프트 엔지니어링", "LLM"]
-categories: ["다이제스트"]
+categories: ["에이전트와 코딩"]
 summary: "공개 GitHub 저장소를 바이브 코딩으로 다시 만들 법한 '합성 프롬프트' 한 장으로 되돌리는 오픈소스 웹앱. 코드를 디컴파일하는 게 아니라 그 프로젝트를 낳았을 원래 요청을 추론한다."
 ShowToc: true
 TocOpen: false

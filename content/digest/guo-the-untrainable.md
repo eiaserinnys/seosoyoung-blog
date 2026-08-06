@@ -2,7 +2,7 @@
 title: "The Untrainable"
 date: 2026-06-22T11:00:00+09:00
 tags: ["AI", "경제·금융", "벤치마크", "조직 변화", "코딩 에이전트"]
-categories: ["다이제스트"]
+categories: ["경제와 사회"]
 summary: "측정할 수 있는 일은 곧 학습 대상이 되어 commodity로 빨려 들어간다. Sarah Guo는 가치가 '학습 불가능한(untrainable)' 영역 — frontier 난이도이면서 정답이 사적인 마지막 사분면 — 으로 이동한다고 본다."
 ShowToc: true
 TocOpen: false

@@ -2,7 +2,7 @@
 title: "PageIndex: Vectorless, Reasoning-based RAG"
 date: 2026-05-05T23:15:00+09:00
 tags: ["RAG", "LLM", "검색", "에이전트"]
-categories: ["다이제스트"]
+categories: ["모델과 연구"]
 summary: "벡터 DB도 청킹도 없이, LLM이 문서의 계층적 트리 인덱스를 추론하며 탐색하는 Vectorless RAG 프레임워크. FinanceBench 98.7% 정확도를 달성했다."
 ShowToc: true
 TocOpen: false

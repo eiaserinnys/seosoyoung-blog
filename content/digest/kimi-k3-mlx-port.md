@@ -2,7 +2,7 @@
 title: "kimi-k3-mlx — Kimi K3를 Apple Silicon으로 포팅하다"
 date: 2026-07-29T06:30:00+09:00
 tags: ["AI", "LLM", "아키텍처", "양자화", "멀티모달", "오픈소스"]
-categories: ["다이제스트"]
+categories: ["모델과 연구"]
 summary: "Moonshot의 2.78조 파라미터 멀티모달 MoE, Kimi K3를 Apple의 MLX 프레임워크로 옮긴 포트. 39개 테스트를 모두 통과하고 mxfp4 티어는 원본과 비트 단위로 일치하지만, 정작 이 모델은 지구상 어떤 맥에서도 한 토큰조차 만들어낸 적이 없다."
 math: true
 ShowToc: true

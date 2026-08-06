@@ -2,7 +2,7 @@
 title: "「코드는 한 줄도 안 썼어요」 아이돌이 AI와 10시간 생방송 시스템을 통째로 만든 이야기"
 date: 2026-08-02T13:30:00+09:00
 tags: ["AI", "바이브 코딩", "Claude Code", "Human-AI 공동 창작", "일본"]
-categories: ["다이제스트"]
+categories: ["에이전트와 코딩"]
 summary: "프로그래밍 경험이 전혀 없는 아이돌 미야모토 카린이 코드를 한 줄도 쓰지 않고 Claude Code에 일본어로 지시만 하여, 10시간 참여형 생방송을 지탱한 시스템 4종을 직접 만든 제작기."
 ShowToc: true
 TocOpen: false

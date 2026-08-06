@@ -2,7 +2,7 @@
 title: "은행이 숨막힌다 — AI 부채 거품은 이미 터지기 시작했다"
 date: 2026-06-06T10:30:00+09:00
 tags: ["AI", "경제·금융", "AI 인프라", "데이터센터", "거품 우려"]
-categories: ["다이제스트"]
+categories: ["AI 산업"]
 summary: "ZeroHedge가 'Banks Are Choking'이라 부른 진단을 BIS·CNBC·Bloomberg·The Register·Apollo 등 2025년부터 2026년의 동심원 자료와 함께 묶었다. 빅테크 capex가 내부 현금흐름을 넘어 부채로 옮겨가는 구간, 미국 은행들이 SRT와 SPV로 익스포저를 떼어내려는 정황, Nvidia에서 OpenAI를 거쳐 Oracle로 돌아오는 순환 자금 흐름까지 한 줄로 잇는다."
 ShowToc: true
 TocOpen: false

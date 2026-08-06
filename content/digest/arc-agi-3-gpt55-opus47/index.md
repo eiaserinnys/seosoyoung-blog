@@ -2,7 +2,7 @@
 title: "Analyzing GPT-5.5 & Opus 4.7 with ARC-AGI-3"
 date: 2026-05-02T13:50:00+09:00
 tags: ["LLM 평가", "벤치마크", "에이전트", "추론", "ARC Prize"]
-categories: ["다이제스트"]
+categories: ["모델과 연구"]
 summary: "ARC Prize가 GPT-5.5와 Opus 4.7을 ARC-AGI-3으로 평가한 분석 보고서. 두 모델 모두 1% 미만의 점수를 기록했지만, 진짜 발견은 점수가 아니라 실패의 질적 차이에 있다."
 ShowToc: true
 TocOpen: false

@@ -2,7 +2,7 @@
 title: "Revised rules of engineering leadership."
 date: 2026-07-01T13:00:00+09:00
 tags: ["AI", "엔지니어링 리더십", "조직 변화", "하네스", "코딩 에이전트"]
-categories: ["다이제스트"]
+categories: ["에이전트와 코딩"]
 summary: "Will Larson(Imprint CTO)이 하이퍼그로스와 AI 툴링 시대를 1년 겪고 자기 엔지니어링 리더십 원칙 5개를 개정한 글. 개별의 판단, 개발 하네스, 에이전트 우선 프로세스, 오래 가는 팀, 빠르고 결정적인 의사결정이 새로운 다섯 축이라 결론 낸다."
 ShowToc: true
 TocOpen: false

@@ -2,7 +2,7 @@
 title: "Windsurf everywhere — Kevin Hou"
 date: 2026-04-28T21:15:00+09:00
 tags: ["AI", "코딩 에이전트", "AI IDE"]
-categories: ["다이제스트"]
+categories: ["에이전트와 코딩"]
 summary: "Windsurf everywhere — Kevin Hou"
 ShowToc: true
 TocOpen: false

@@ -2,7 +2,7 @@
 title: "Revealing Algorithmic Deductive Circuits for Logical Reasoning"
 date: 2026-06-09T22:30:00+09:00
 tags: ["AI", "LLM", "해석가능성", "추론", "어텐션", "논문 리뷰"]
-categories: ["다이제스트"]
+categories: ["모델과 연구"]
 summary: "LLM이 연역 추론을 수행할 때 전체 attention head의 약 3%만이 핵심 회로를 이룬다는 것을 인과 매개 분석으로 보인 논문. 추론 흐름은 규칙 조건 매칭에서 출발해 순회 알고리즘 구현, 전제와 규칙 선택, 종료 결정으로 순차 진행된다."
 math: true
 ShowToc: true

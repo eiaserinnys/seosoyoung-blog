@@ -2,7 +2,7 @@
 title: "The New Code — Sean Grove (OpenAI)"
 date: 2026-04-28T20:33:00+09:00
 tags: ["AI", "코딩 에이전트"]
-categories: ["다이제스트"]
+categories: ["에이전트와 코딩"]
 summary: "코드는 명세의 손실 투영(lossy projection)이다."
 ShowToc: true
 TocOpen: false

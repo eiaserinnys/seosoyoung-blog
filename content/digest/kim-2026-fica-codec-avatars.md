@@ -2,7 +2,7 @@
 title: "FiCA: Feed-forward Instant Gaussian Codec Avatars from a Single Portrait Image"
 date: 2026-06-25T10:30:00+09:00
 tags: ["AI", "3D 생성", "디퓨전 모델", "Codec Avatar", "Gaussian Splatting", "Meta"]
-categories: ["다이제스트"]
+categories: ["모델과 연구"]
 summary: "Meta와 POSTECH이 인물 사진 한 장에서 5초 안에 실시간 구동 가능한 3D 가우시안 코덱 아바타를 만들었다. Sapiens 파운데이션 모델, UV 공간 디퓨전, 피드포워드 정제망, 보편 사전 모델을 차례로 잇는 완전한 피드포워드 파이프라인이다."
 ShowToc: true
 TocOpen: false

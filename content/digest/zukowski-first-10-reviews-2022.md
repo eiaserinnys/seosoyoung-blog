@@ -2,7 +2,7 @@
 title: "Why your first 10 reviews are the most important"
 date: 2026-05-06T15:00:00+09:00
 tags: ["스팀", "인디게임 마케팅", "디스커버리 큐", "리뷰 임계값"]
-categories: ["다이제스트"]
+categories: ["게임"]
 summary: "Steam은 유료 구매 리뷰가 10개 쌓이기 전까지 게임을 사실상 숨긴다. 10개 임계값을 통과하는 순간 Discovery Queue 트래픽이 비선형으로 점프한다 — 리뷰 *점수* 임계값과는 별개의 가시성 메커니즘이다."
 ShowToc: true
 TocOpen: false

@@ -2,7 +2,7 @@
 title: "Understanding and Coding the KV Cache in LLMs from Scratch — Sebastian Raschka"
 date: 2026-04-30T14:10:00+09:00
 tags: ["LLM", "추론 효율성", "KV 캐시", "PyTorch"]
-categories: ["다이제스트"]
+categories: ["모델과 연구"]
 summary: "KV 캐시가 무엇이고, PyTorch로 어떻게 처음부터 구현하며, 왜 CPU에서는 5배 빨라지지만 작은 GPU 모델에서는 효과가 사라지는지를 from-scratch 코드로 짚은 튜토리얼."
 ShowToc: true
 TocOpen: false

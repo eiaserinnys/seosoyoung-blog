@@ -2,7 +2,7 @@
 title: "Anthropic's Boris Cherny: Why Coding Is Solved, and What Comes Next"
 date: 2026-06-06T13:30:00+09:00
 tags: ["AI", "Claude Code", "Anthropic", "코딩 에이전트", "하네스", "조직 변화"]
-categories: ["다이제스트"]
+categories: ["에이전트와 코딩"]
 summary: "Claude Code 창시자 보리스 체르니가 Sequoia AI Ascent 2026에서 밝힌 자기 워크플로우. 더 이상 클로드에 프롬프트를 던지지 않고, 루프를 짜서 루프가 일하게 한다. 본인 직무는 '루프를 쓰는 것'이라고 선언한다."
 cover:
   image: "/images/boris-cherny-coding-is-solved-2026/thumbnail.jpg"

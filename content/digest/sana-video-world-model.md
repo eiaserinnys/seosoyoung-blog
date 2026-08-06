@@ -2,7 +2,7 @@
 title: "SANA-WM: Efficient Minute-Scale World Modeling with Hybrid Linear Diffusion Transformer"
 date: 2026-05-16T10:00:00+09:00
 tags: ["AI", "비디오 생성", "월드 모델", "오픈소스", "아키텍처"]
-categories: ["다이제스트"]
+categories: ["모델과 연구"]
 summary: "NVIDIA Labs가 공개한 2.6B 오픈소스 비디오 월드 모델 SANA-WM. 프로젝트 페이지의 데모 갤러리와 본 논문(arXiv 2605.15178)의 method·벤치마크 디테일을 함께 정리한다."
 math: true
 ShowToc: true

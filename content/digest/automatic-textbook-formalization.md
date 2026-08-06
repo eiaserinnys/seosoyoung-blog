@@ -2,7 +2,7 @@
 title: "Automatic Textbook Formalization"
 date: 2026-08-01T15:30:00+09:00
 tags: ["AI", "LLM", "멀티에이전트", "코딩 에이전트", "논문 리뷰"]
-categories: ["다이제스트"]
+categories: ["에이전트와 코딩"]
 summary: "500쪽 넘는 대학원 대수적 조합론 교과서 전체를 3만 개 Claude 4.5 Opus 에이전트가 1주 만에 Lean으로 형식화한 사례 연구. 13만 줄, 5,900개 선언, 약 10만 달러. 형식 수학의 규모 기록이자 멀티에이전트 소프트웨어 공학의 규모 기록이기도 하다."
 math: true
 ShowToc: true

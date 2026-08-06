@@ -2,7 +2,7 @@
 title: "Future-Proof Coding Agents — Bill Chen & Brian Fioca (OpenAI)"
 date: 2026-04-28T21:12:00+09:00
 tags: ["AI", "코딩 에이전트", "에이전트"]
-categories: ["다이제스트"]
+categories: ["에이전트와 코딩"]
 summary: "코딩 에이전트는 생각보다 단순한 구조로 이루어져 있습니다."
 ShowToc: true
 TocOpen: false

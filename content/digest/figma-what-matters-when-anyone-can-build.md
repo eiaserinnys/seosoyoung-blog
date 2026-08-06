@@ -2,7 +2,7 @@
 title: "What matters when anyone can build"
 date: 2026-06-03T12:00:00+09:00
 tags: ["AI", "Figma", "Human-AI 공동 창작", "프로덕트 디자인", "장인정신"]
-categories: ["다이제스트"]
+categories: ["창작과 문화"]
 summary: "AI가 누구나 빌더로 만든 시대, 진짜 차별점은 무엇을 만들 가치가 있는지 고르는 방향성과 디테일을 다듬는 장인정신에 있다는 Figma CPO Yuhki Yamashita의 단상."
 ShowToc: true
 TocOpen: false

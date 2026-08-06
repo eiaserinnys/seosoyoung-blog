@@ -2,7 +2,7 @@
 title: "Zuckerberg 'Admits' Meta's Layoffs Were Ineffective"
 date: 2026-07-04T12:20:00+09:00
 tags: ["AI", "노동시장", "조직 변화", "AI 코딩", "Meta"]
-categories: ["다이제스트"]
+categories: ["경제와 사회"]
 summary: "Zuckerberg가 town hall에서 지난 넉 달간 에이전틱 AI 개발 궤적이 기대만큼 빨라지지 않았다고 시인했다. Eshu Marneedi는 이것을 속도의 문제가 아니라 전략 부재의 문제로 읽는다. 메타버스 실패에서 배우지 못한 채, Alexandr Wang의 '프로그래머는 소모품' 이론으로 대규모 감원과 키스트로크 감시까지 밀어붙인 판단이 어떻게 조립되어 있었는지를 짚는다."
 ShowToc: true
 TocOpen: false

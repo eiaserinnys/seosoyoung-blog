@@ -2,7 +2,7 @@
 title: "A Primer on the Most Important Concepts to Train a LoRA - part 1: Dataset"
 date: 2026-07-23T00:30:00+09:00
 tags: ["AI", "이미지 생성", "LoRA", "Stable Diffusion", "Flux", "데이터셋"]
-categories: ["다이제스트"]
+categories: ["창작과 문화"]
 summary: "r/StableDiffusion 3부작 LoRA 훈련 가이드의 1편. 데이터셋 준비의 원리와 자주 하는 오해, 각도·해상도·다양성 설계, v0 LoRA로 인공 캐릭터의 데이터 부족을 우회하는 전략을 정리한다."
 ShowToc: true
 TocOpen: false

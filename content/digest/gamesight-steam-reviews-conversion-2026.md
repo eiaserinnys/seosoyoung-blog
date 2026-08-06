@@ -2,7 +2,7 @@
 title: "Boosting Steam reviews post-release leads to increased conversion rates, says Gamesight"
 date: 2026-06-11T10:10:00+09:00
 tags: ["게임", "Steam", "유저 리뷰", "마케팅", "전환율"]
-categories: ["다이제스트"]
+categories: ["게임"]
 summary: "Gamesight의 Performance Marketing Playbook 분석. 프리미엄 게임에서 스팀 리뷰 등급이 'Mixed'에서 'Very Positive'로 오르면 광고 전환율이 약 3배가 되지만, 무료 게임에서는 리뷰 점수가 전환율에 측정 가능한 영향을 주지 못했다."
 ShowToc: true
 TocOpen: false

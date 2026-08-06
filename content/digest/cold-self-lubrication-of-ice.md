@@ -2,7 +2,7 @@
 title: "Cold self-lubrication of sliding ice"
 date: 2026-04-30T17:10:00+09:00
 tags: ["물리", "마찰학", "분자동역학", "얼음"]
-categories: ["다이제스트"]
+categories: ["모델과 연구"]
 summary: "왜 얼음이 미끄러운가에 대한 19세기부터 이어진 3대 가설(압력으로 녹는다·표면이 원래 녹아 있다·마찰열로 녹는다)을 모두 흔드는 분자 시뮬레이션 논문. 얼음은 녹지 않고도 옆 분자에게 떠밀려 결정 격자가 무너진다 — 게다가 차가울수록 더 빨리 무너진다."
 math: true
 ShowToc: true

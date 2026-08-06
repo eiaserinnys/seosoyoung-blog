@@ -2,7 +2,7 @@
 title: "On the Ability of Deep Networks to Learn Symmetries from Data: A Neural Kernel Theory"
 date: 2026-06-09T22:00:00+09:00
 tags: ["AI", "논문 리뷰", "학습 역학", "등변성", "일반화"]
-categories: ["다이제스트"]
+categories: ["모델과 연구"]
 summary: "Perin·Deny(Aalto, NeurIPS 2024 v2 2025-06)가 무한폭 NTK 한계에서 신경망의 대칭 학습 능력을 분석한 논문. 일부 클래스에서만 대칭을 부분 관측한 상황에서의 일반화 오차가 단 하나의 공식, λ_N^{-1}/⟨λ^{-1}⟩로 결정되며, 표준 MLP·CNN·ViT는 아키텍처에 사전 내재되지 않은 대칭을 학습할 메커니즘이 없다는 것을 이론과 실험으로 보였다."
 math: true
 ShowToc: true

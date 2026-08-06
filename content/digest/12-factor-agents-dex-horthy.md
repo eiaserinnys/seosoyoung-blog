@@ -2,7 +2,7 @@
 title: "12-Factor Agents — Dex Horthy"
 date: 2026-04-28T20:00:00+09:00
 tags: ["AI", "코딩 에이전트", "에이전트"]
-categories: ["다이제스트"]
+categories: ["에이전트와 코딩"]
 summary: "100여 SaaS 빌더와 대화한 끝에 내린 결론 하나."
 ShowToc: true
 TocOpen: false

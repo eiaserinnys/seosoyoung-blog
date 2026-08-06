@@ -2,7 +2,7 @@
 title: "Can the stockmarket swallow Anthropic, SpaceX and OpenAI?"
 date: 2026-06-03T11:50:00+09:00
 tags: ["경제·금융", "IPO", "AI", "Anthropic", "OpenAI", "SpaceX"]
-categories: ["다이제스트"]
+categories: ["AI 산업"]
 summary: "SpaceX·Anthropic·OpenAI 세 회사가 합쳐 약 $200bn 규모의 IPO를 몇 달 안에 추진한다. 미국 시장의 깊이와 락업 구조 덕에 단기 흡수는 가능하지만, 향후 수년의 소화 불량은 별개의 문제다."
 ShowToc: true
 TocOpen: false

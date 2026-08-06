@@ -2,7 +2,7 @@
 title: "jamesob's guide to running SOTA LLMs locally"
 date: 2026-07-08T17:00:00+09:00
 tags: ["AI", "LLM", "로컬 LLM", "GPU", "오픈소스"]
-categories: ["다이제스트"]
+categories: ["모델과 연구"]
 summary: "2,000달러로는 Qwen과 로컬 STT까지, 40,000달러로는 거의 Opus급 GLM-5.2까지. Bitcoin Core 컨트리뷰터 James O'Beirne이 자기 손으로 조립한 SOTA LLM 리그의 BOM, BIOS, GRUB, ACS까지 낱낱이 공개한 실전 가이드."
 math: true
 ShowToc: true

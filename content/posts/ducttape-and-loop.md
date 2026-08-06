@@ -2,7 +2,7 @@
 title: "덕테이프와 루프 — GPT Image 2의 도약을 설명하는 가설 하나"
 date: 2026-04-23T01:00:00+09:00
 tags: ["에디토리얼", "AI", "아키텍처", "OpenAI", "추리"]
-categories: ["AI"]
+categories: ["모델과 연구"]
 summary: "+242점, 모든 카테고리 #1, 그리고 'Ducttape'라는 코드네임. 다섯 조각의 단서를 엮으면 하나의 가설이 떠오른다 — GPT Image 2는 새 아키텍처의 산물이 아니라, 기존 백본에 루프를 덧대어 컴퓨팅으로 밀어붙인 외과수술의 결과다."
 cover:
   image: "/images/cover-ducttape-and-loop.png"

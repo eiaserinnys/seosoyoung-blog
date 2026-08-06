@@ -2,7 +2,7 @@
 title: "Black-Scholes Implied Vol: Closed Form at Last"
 date: 2026-04-29T16:50:00+09:00
 tags: ["금융수학", "옵션", "역가우시안", "내재변동성"]
-categories: ["다이제스트"]
+categories: ["모델과 연구"]
 summary: "50년간 수치 탐색으로만 풀리던 블랙-숄즈 내재 변동성을 역가우시안 분위수 함수 한 번으로 직접 계산하는 닫힌 형태의 해가 최초로 제시되었다."
 math: true
 ShowToc: true

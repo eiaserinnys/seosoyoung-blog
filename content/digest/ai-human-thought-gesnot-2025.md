@@ -2,7 +2,7 @@
 title: "The Impact of Artificial Intelligence on Human Thought"
 date: 2026-05-02T21:55:00+09:00
 tags: ["AI", "인지과학", "사회비평", "거버넌스"]
-categories: ["다이제스트"]
+categories: ["모델과 연구"]
 summary: "AI가 인간의 인지를 증강하면서 동시에 비판적 사고를 약화하고 집단 사고를 동질화한다는 역설을 체계적으로 분석한 연구 보고서."
 ShowToc: true
 TocOpen: false

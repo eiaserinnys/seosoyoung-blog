@@ -2,7 +2,7 @@
 title: "Claude's Constitution"
 date: 2026-05-06T10:18:00+09:00
 tags: ["AI 안전", "AI 윤리", "Anthropic", "헌법적 AI"]
-categories: ["다이제스트"]
+categories: ["모델과 연구"]
 summary: "Anthropic이 공개한 Claude의 인격 설계서 전문. 약 3만 단어에 달하는 이 문서는 규칙 나열이 아니라 '덕의 배양'을 지향하며, 안전 > 윤리 > 가이드라인 > 도움이라는 우선순위 체계, corrigibility 다이얼, AI의 도덕적 지위에 대한 열린 태도까지 포괄하는 AI 인격론의 정본이다."
 ShowToc: true
 TocOpen: false

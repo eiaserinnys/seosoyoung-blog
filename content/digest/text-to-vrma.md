@@ -2,7 +2,7 @@
 title: "Text-To-VRMA: 텍스트로 VRM 캐릭터를 움직이는 웹앱"
 date: 2026-07-18T07:20:00+09:00
 tags: ["AI", "오픈소스", "LLM", "VRM", "3D 애니메이션", "일본"]
-categories: ["다이제스트"]
+categories: ["창작과 문화"]
 summary: "「그 자리에서 손을 흔든다」 같은 텍스트를 넣으면 AI가 VRM 캐릭터의 모션을 만들어 브라우저 안에서 재생하고 .vrma 파일로 저장하는 웹앱. 개발자가 내세운 「낮은 VRAM으로도 돌아간다」는 주장을 코드에서 확인해 보니, VRAM 병목이 어디였는지 정확히 짚어 그 한 덩어리만 CPU로 옮긴 결과였다."
 math: false
 ShowToc: true

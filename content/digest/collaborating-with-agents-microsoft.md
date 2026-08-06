@@ -2,7 +2,7 @@
 title: "Collaborating with Agents in your Software Dev Workflow"
 date: 2026-04-28T20:12:00+09:00
 tags: ["AI", "코딩 에이전트", "에이전트"]
-categories: ["다이제스트"]
+categories: ["에이전트와 코딩"]
 summary: "Copilot은 코드를 컴파일하거나 실행하지 않고 사람처럼 읽는다."
 ShowToc: true
 TocOpen: false

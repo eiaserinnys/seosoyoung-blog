@@ -2,7 +2,7 @@
 title: "Using Claude Code: The Unreasonable Effectiveness of HTML"
 date: 2026-05-09T09:18:00+09:00
 tags: ["claude-code", "html", "agent-output", "ai-tools"]
-categories: ["다이제스트"]
+categories: ["에이전트와 코딩"]
 summary: "Anthropic Claude Code 팀의 Thariq Shihipar가 마크다운 대신 HTML을 에이전트 출력 형식으로 쓰는 이유를 정리한 장문 글. 정보 밀도·공유성·양방향성에서 HTML이 우월하며, 대신 토큰·시간·diff 노이즈는 트레이드오프로 받아들인다."
 ShowToc: true
 TocOpen: false

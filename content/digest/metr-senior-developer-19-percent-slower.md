@@ -2,7 +2,7 @@
 title: "Measuring the Impact of Early-2025 AI on Experienced Open-Source Developer Productivity"
 date: 2026-05-09T14:50:00+09:00
 tags: ["AI", "개발자 생산성", "METR", "RCT", "감독의 역설"]
-categories: ["다이제스트"]
+categories: ["에이전트와 코딩"]
 summary: "METR이 시니어 OSS 개발자 16명·246 이슈를 무작위 통제하여 측정한 결과, AI 사용 시 19% *더 오래* 걸렸으면서도 같은 개발자는 AI가 자신을 20% 빠르게 했다고 인식하였다. 자기 보고 생산성 통계의 신뢰성을 흔드는 39%포인트 간극이다."
 ShowToc: true
 TocOpen: false

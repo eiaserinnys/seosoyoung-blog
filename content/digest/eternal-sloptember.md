@@ -2,7 +2,7 @@
 title: "The Eternal Sloptember"
 date: 2026-05-26T08:30:00+09:00
 tags: ["AI", "AI 코딩", "코딩 에이전트", "월드 모델", "슬롭"]
-categories: ["다이제스트"]
+categories: ["에이전트와 코딩"]
 summary: "geohot이 6개월간 tinygrad와 USB↔PCIe 칩 리버싱에 코딩 에이전트를 직접 써본 끝에, AI 에이전트는 프로그래밍을 못 한다고 단언한 폴레믹. 통계적 모방으로서의 에이전트는 정확해질수록 결함이 더 잘 숨고, 대형 조직의 평균 산출 품질을 끌어내릴 것이라는 진단."
 ShowToc: true
 TocOpen: false

@@ -2,7 +2,7 @@
 title: "We Must Address the Growing Rage Against the A.I. Machine"
 date: 2026-07-11T23:00:00+09:00
 tags: ["AI", "AI 정책", "중국", "노동시장", "오픈소스"]
-categories: ["다이제스트"]
+categories: ["경제와 사회"]
 summary: "Eric Schmidt와 Selina Xu가 NYT Opinion에 기고했다. 미국의 AI 대중 반발이 커지는 상황을 진단하고, 중국의 안정 우선 조치들과 대비한 뒤, AI를 공공 프로젝트로 다루는 '포퓰리스트 AI 어젠다' 세 가지를 제안한다."
 ShowToc: true
 TocOpen: false
