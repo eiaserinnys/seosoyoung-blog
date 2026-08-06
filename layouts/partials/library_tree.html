@@ -1,0 +1,44 @@
+<nav class="library-tree" aria-label="글 분류">
+  {{- $digestURL := "/digest/" | relURL -}}
+  {{- $isDigest := eq .RelPermalink $digestURL -}}
+  <a class="library-tree-link library-tree-all{{ if $isDigest }} is-current{{ end }}"
+    href="{{ $digestURL }}"{{ if $isDigest }} aria-current="page"{{ end }}>
+    <span>전체 <small>요약</small></span>
+  </a>
+
+  {{- with site.Taxonomies.categories }}
+  <section class="library-tree-group" aria-labelledby="library-tree-categories">
+    <h2 id="library-tree-categories">주제</h2>
+    <ul>
+      {{- range .ByCount }}
+      {{- $isCurrent := eq $.RelPermalink .Page.RelPermalink }}
+      <li>
+        <a class="library-tree-link{{ if $isCurrent }} is-current{{ end }}"
+          data-library-taxonomy="categories" href="{{ .Page.RelPermalink }}"{{ if $isCurrent }} aria-current="page"{{ end }}>
+          <span>{{ .Page.LinkTitle }}</span>
+          <span class="library-tree-count" data-count="{{ .Count }}" aria-label="{{ .Count }}편">{{ .Count }}</span>
+        </a>
+      </li>
+      {{- end }}
+    </ul>
+  </section>
+  {{- end }}
+
+  {{- with site.Taxonomies.series }}
+  <section class="library-tree-group" aria-labelledby="library-tree-series">
+    <h2 id="library-tree-series">시리즈</h2>
+    <ul>
+      {{- range .ByCount }}
+      {{- $isCurrent := eq $.RelPermalink .Page.RelPermalink }}
+      <li>
+        <a class="library-tree-link{{ if $isCurrent }} is-current{{ end }}"
+          data-library-taxonomy="series" href="{{ .Page.RelPermalink }}"{{ if $isCurrent }} aria-current="page"{{ end }}>
+          <span>{{ .Page.LinkTitle }}</span>
+          <span class="library-tree-count" data-count="{{ .Count }}" aria-label="{{ .Count }}편">{{ .Count }}</span>
+        </a>
+      </li>
+      {{- end }}
+    </ul>
+  </section>
+  {{- end }}
+</nav>
