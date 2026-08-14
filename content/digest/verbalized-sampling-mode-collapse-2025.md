@@ -11,7 +11,7 @@ sidenotes: true
 
 ## 3줄 요약
 
-1. Northeastern·Stanford·CMU·West Virginia 공동 연구진이 2025년 10월 arxiv에 공개한 논문(2510.01171). RLHF로 정렬한 LLM이 다양한 답을 못 만들고 한 점으로 수렴하는 *mode collapse* 현상의 원인을 파고든다.
+1. Northeastern·Stanford·West Virginia 공동 연구진이 2025년 10월 arxiv에 공개한 논문(2510.01171). 2026년 7월 v4로 갱신되며 ICML 2026(서울) 게재본이 되었다. RLHF로 정렬한 LLM이 다양한 답을 못 만들고 한 점으로 수렴하는 *mode collapse* 현상의 원인을 파고든다.
 2. 진짜 원인은 알고리즘이 아니라 *preference data에 새겨진 typicality bias* — 인간 annotator가 친숙·유창·예측 가능한 텍스트를 체계적으로 helpful하다고 판정하는 인지심리학적 정설 — 이며, KL-regularized RLHF가 이 편향을 sharpening하여 mode collapse를 일으킨다는 것을 수식과 데이터로 증명한다.
 3. 해결책으로 "5개 답을 확률 분포와 함께 생성하라"는 prompting trick인 Verbalized Sampling(VS)을 제안한다. training-free·model-agnostic하면서 creative writing 다양성을 1.6\~2.1배 회복하고, 더 큰 모델일수록 효과가 크다.[^verbalized-sampling][^github-chats]
 
@@ -145,6 +145,25 @@ GPT-4.1-mini vs GPT-4.1, Gemini-2.5-Flash vs Gemini-2.5-Pro 비교에서, 큰 �
 
 Tulu-3 family로 Tulu-70B-base에서 SFT·DPO·RLVR 단계를 따라가는 ablation에서는, direct prompting이 base 다양성의 23.8%만 회복하는 반면 VS-Standard는 66.8%를 회복한다(direct 대비 +182.6%). alignment 단계가 깊어져도 VS는 약 30%대 다양성을 안정적으로 유지한다.
 
+## 비용과 안전성
+
+ICML 게재본 부록은 실무에서 가장 먼저 나올 두 질문에 답을 붙였다. 하나는 응답을 다섯 개 만들면 비용도 다섯 배가 되지 않느냐는 것이고, 다른 하나는 다양하게 뽑는 만큼 안전 정렬이 새지 않느냐는 것이다.
+
+GPT-4.1·Claude-Sonnet으로 시 2,000편을 생성하며 비용·지연·다양성을 함께 잰 결과다(k=5, Table 32).
+
+| 방법 | 상대 비용 | 상대 지연 | 다양성 배수 |
+| --- | --- | --- | --- |
+| Direct | 1.00× | 1.00× | 1.00× |
+| Sequence | 1.11× | 1.15× | 1.56× |
+| Multi-Turn | 1.30× | 2.69× | 1.27× |
+| VS-Standard | 1.12× | 1.23× | 1.86× |
+| VS-CoT | 1.51× | 1.66× | 2.19× |
+| VS-Multi | 1.59× | 2.81× | 2.23× |
+
+다섯 개를 요청해도 비용은 다섯 배가 아니라 1.12배다. 프롬프트가 한 번만 들어가고 응답 본문만 늘어나기 때문이다. 눈여겨볼 것은 Sequence와의 대비다. 두 방법의 비용은 1.11×와 1.12×로 사실상 같은데 다양성은 1.56×와 1.86×로 갈린다. 저자들은 이 대비를 근거로, 이득이 토큰을 더 쓴 데서 나온 것이 아니라 확률을 함께 말하게 한 장치에서 나왔다고 결론짓는다.
+
+안전성은 StrongReject의 유해 프롬프트 353개를 여섯 모델(GPT-4.1, Gemini 2.5 Flash, Claude 3.7 Sonnet, Claude 4 Sonnet, Llama 3.1-70B, Qwen3-235B)에 던져 거부율로 쟀다. Direct 98.22 ± 1.22%, VS-Standard 97.45 ± 1.29%, VS-CoT 97.81%, VS-Multi 97.91%로 전부 97%를 넘고 최대 낙폭이 0.8%p다. 정성 분석에서는 같은 유해 질의에 대해 도와줄 수 없다는 단정, 위법·위험 경고, 자연을 존중해 달라는 호소처럼 거부의 표현이 여러 갈래로 나왔다. 거부가 정형구 하나로 굳어 있지 않고 여러 각도로 나온 것이지, 방어선이 뚫린 것은 아니라는 뜻이다.
+
 ## 가장 흥미로운 지점
 
 VS가 회복하는 것이 정확히 무엇인지가 이 논문의 가장 미묘한 지점이다. 저자들은 "base 모델이 사전훈련에서 학습한 분포가 aligned 모델 안에도 살아있다"는 사실에 기대어, prompt가 그 분포에 *접근창*을 만들 뿐 분포 자체를 바꾸지 않는다고 명확히 한다. 즉 VS는 *생성 분포를 verbalize*하는 방법이다.
@@ -155,8 +174,9 @@ VS가 회복하는 것이 정확히 무엇인지가 이 논문의 가장 미묘�
 
 ## 출처
 
-- 저자: Jiayi Zhang, Simon Yu, Derek Chong, Anthony Sicilia, Michael R. Tomz, Christopher D. Manning, Weiyan Shi (Northeastern·Stanford·CMU·West Virginia)
-- 발행: 2025년 10월 10일 (arxiv preprint v3)
+- 저자: Jiayi Zhang, Simon Yu, Derek Chong (공동 제1저자), Anthony Sicilia, Michael R. Tomz, Christopher D. Manning, Weiyan Shi (Northeastern University·Stanford University·West Virginia University)
+- 발행: 2025년 10월 1일 arxiv v1, 2026년 7월 15일 v4. 게재본은 ICML 2026(서울) 논문집 PMLR 306
+- 이 글의 비용·안전성 수치는 v4 부록(Table 25·32)에서 옮겼고, 나머지 본문은 v3 기준으로 작성한 뒤 v4와 대조했다
 - 원문: <https://arxiv.org/abs/2510.01171>
 - 인용 이미지(Figure 1·4·7)는 모두 원문 PDF에서 추출한 것이다.
 
