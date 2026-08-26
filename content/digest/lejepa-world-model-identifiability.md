@@ -8,9 +8,9 @@ math: true
 ShowToc: true
 TocOpen: false
 cover:
-  image: "/images/lejepa-world-model-identifiability/fig_lejepa_demo.jpg"
+  image: "https://img.seosoyoung.eiaserinnys.me/images/lejepa-world-model-identifiability/fig_lejepa_demo.jpg"
 images:
-  - "/images/lejepa-world-model-identifiability/fig_lejepa_demo.jpg"
+  - "https://img.seosoyoung.eiaserinnys.me/images/lejepa-world-model-identifiability/fig_lejepa_demo.jpg"
 sidenotes: true
 ---
 
@@ -34,7 +34,7 @@ LLM은 다음 단어(또는 픽셀)를 글자 그대로 맞히려 한다. 이 �
 
 본론에 들어가기 전에 그림 한 장으로 무대를 정리해 두자.
 
-![LeJEPA가 월드 모델을 학습한다 — 숨은 변수 → 복잡하게 뒤섞임 → 방향만 돌려 복원](/images/lejepa-world-model-identifiability/fig_lejepa_demo.jpg)
+![LeJEPA가 월드 모델을 학습한다 — 숨은 변수 → 복잡하게 뒤섞임 → 방향만 돌려 복원](https://img.seosoyoung.eiaserinnys.me/images/lejepa-world-model-identifiability/fig_lejepa_demo.jpg)
 *(좌) 세계에는 그 상태를 정하는 '숨은 변수(진짜 좌표)'가 있다. (중) 알 수 없는 과정이 그것을 우리가 보는 복잡한 데이터로 뒤섞는다. (우) LeJEPA는 그 좌표를 방향만 돌아간 채로 되찾는다 — 이것이 유일한 최적해임을 증명한다. 출처: klindtlab.github.io/lejepa-identifiability*[^klindtlab-github][^code-lejepa][^colab-lejepa][^video-lejepa]
 
 <strong>① 세계 — 숨은 변수(진짜 좌표).</strong> 세계가 실제로 움직이는 데는 몇 개의 핵심 변수면 충분하다. 로봇 팔이라면 관절 각도 두세 개. 이 글은 그것을 잠재변수 $z$라 부른다. 이 변수들이 만드는 공간이 곧 *그 세계에서 일어날 수 있는 일들이 사는 공간*이다 — 공간의 한 점은 '지금 세계의 상태', 점들 사이의 이동은 '그 세계에서 유효한 조작'이다. 우리는 이 변수를 직접 보지 못한다. 대신 그것이 복잡하게 뒤섞여 나온 결과 — 카메라 이미지 같은 관측 $x$ — 만 본다. 수학으로는 알 수 없는 뒤섞기 함수 $g$가 있어 $x = g(z)$다. 또 이 변수는 시간에 따라 조금씩 변한다($z'$는 $z$의 다음 순간).
@@ -74,7 +74,7 @@ $$\min_h\ \underbrace{\mathbb{E}\big[\,\lVert h(z') - h(z)\rVert^2\,\big]}_{\tex
 
 <strong>2D 장난감.</strong> 숨은 변수 2개짜리 세계를 여러 방식(나선·전단·RealNVP)으로 뒤섞은 뒤 인코더에게 풀게 했다. 네 경우 모두 뒤섞인 점구름을 *회전된 원본*으로 되돌렸다(정리 1과 일치). 눈으로 바로 확인되는 결과다.
 
-![세 가지 방식으로 뒤섞은 2D를 회전 차이로 복원](/images/lejepa-world-model-identifiability/fig_2d_other_mixing.png)
+![세 가지 방식으로 뒤섞은 2D를 회전 차이로 복원](https://img.seosoyoung.eiaserinnys.me/images/lejepa-world-model-identifiability/fig_2d_other_mixing.png)
 *각 패널 왼쪽은 뒤섞인 관측, 오른쪽은 인코더가 되찾은 표현. 방향만 돌리면 원본과 같은 모양이다.*
 
 <strong>고차원으로 키우기.</strong> 숨은 변수의 개수 $N$을 2개에서 1024개까지 늘려도 SIGReg는 복원 정확도(1에 가까울수록 완벽)를 $R^2 > 0.999$로 유지했다. 대조군 InfoNCE는 변수가 많아질수록 무너진다.
@@ -87,12 +87,12 @@ $$\min_h\ \underbrace{\mathbb{E}\big[\,\lVert h(z') - h(z)\rVert^2\,\big]}_{\tex
 
 <strong>분포 모양 바꿔보기.</strong> 숨은 변수의 분포 모양을 무거운 꼬리에서 종 모양($\alpha = 2$)을 거쳐 평평한 모양까지 바꿔가며 실험하니, 복원 정확도가 정확히 종 모양에서 가장 뾰족하게 정점을 찍었다 — 정리 2(종 모양만 된다)를 눈으로 보여준 셈이다.
 
-![근사 경계 검증, 종 모양에서의 복원 정점, 제어 비용 결과](/images/lejepa-world-model-identifiability/fig_bound_unique_plan.png)
+![근사 경계 검증, 종 모양에서의 복원 정점, 제어 비용 결과](https://img.seosoyoung.eiaserinnys.me/images/lejepa-world-model-identifiability/fig_bound_unique_plan.png)
 *(a) 정리 3의 오차 한계가 모든 실험에서 지켜진다. (b) 복원 정확도가 종 모양($\alpha = 2$)에서 정점(정리 2). (c)(d) 복원이 정확할수록 제어(움직임) 비용이 낮아진다(정리 4).*
 
 <strong>픽셀로 로봇 제어.</strong> DMC Reacher라는 가상 로봇 팔을 64×64 화면으로만 보고 인코더를 학습시킨 뒤, 그 표현 공간에서 시작 지점과 목표 지점을 직선으로 이어 계획을 세웠다. 좌표를 제대로 되찾은 인코더의 계획은 정답(oracle)을 거의 그대로 따라갔지만, 그러지 못한 인코더는 길을 벗어났다. 계획의 품질이 복원 정확도를 그대로 따라간 것이다(정리 4).
 
-![Reacher 표현 공간에서의 계획: 정답 vs 잘 배운 인코더 vs 못 배운 인코더](/images/lejepa-world-model-identifiability/planning_demo.png)
+![Reacher 표현 공간에서의 계획: 정답 vs 잘 배운 인코더 vs 못 배운 인코더](https://img.seosoyoung.eiaserinnys.me/images/lejepa-world-model-identifiability/planning_demo.png)
 *위: 정답(관절 공간 직선). 가운데: 잘 배운 인코더 — 정답을 바짝 따라간다. 아래: 못 배운 인코더 — 좌표를 제대로 못 되찾아 길을 벗어난다.*
 
 ## 가장 흥미로운 지점

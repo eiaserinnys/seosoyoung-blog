@@ -5,7 +5,7 @@ tags: ["인지·심리", "성장 마인드셋", "평생 학습", "통제 소재"
 categories: ["창작과 문화"]
 summary: "VUCA 시대가 평생 학습자에게 보상을 준다는 명제는 옳습니다. 다만 그 다음에 따라붙는 '성장 마인드셋을 가져라'라는 처방은 위태롭습니다. 학습 의욕은 기질과 환경이 수년에 걸쳐 다듬은 산물이지, 의지로 조립할 수 있는 변수가 아니기 때문입니다. 어른의 처방은 마음을 바꾸는 것이 아니라 마음이 자라는 환경을 바꾸는 것입니다."
 cover:
-  image: "/images/cover-mindset-is-environment.jpg"
+  image: "https://img.seosoyoung.eiaserinnys.me/images/cover-mindset-is-environment.jpg"
 ShowToc: true
 TocOpen: false
 sidenotes: true

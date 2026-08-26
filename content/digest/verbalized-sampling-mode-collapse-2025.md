@@ -15,7 +15,7 @@ sidenotes: true
 2. 진짜 원인은 알고리즘이 아니라 *preference data에 새겨진 typicality bias* — 인간 annotator가 친숙·유창·예측 가능한 텍스트를 체계적으로 helpful하다고 판정하는 인지심리학적 정설 — 이며, KL-regularized RLHF가 이 편향을 sharpening하여 mode collapse를 일으킨다는 것을 수식과 데이터로 증명한다.
 3. 해결책으로 "5개 답을 확률 분포와 함께 생성하라"는 prompting trick인 Verbalized Sampling(VS)을 제안한다. training-free·model-agnostic하면서 creative writing 다양성을 1.6\~2.1배 회복하고, 더 큰 모델일수록 효과가 크다.[^verbalized-sampling][^github-chats]
 
-![Figure 1 — Typicality bias가 mode collapse를 일으키고, Verbalized Sampling이 이를 완화하는 구조 (출처: 논문 PDF)](/images/verbalized-sampling-mode-collapse-2025/fig1-overview.png)
+![Figure 1 — Typicality bias가 mode collapse를 일으키고, Verbalized Sampling이 이를 완화하는 구조 (출처: 논문 PDF)](https://img.seosoyoung.eiaserinnys.me/images/verbalized-sampling-mode-collapse-2025/fig1-overview.png)
 
 ## 배경 — 정렬은 다양성을 죽인다
 
@@ -93,7 +93,7 @@ VS-Standard 시스템 프롬프트는 다음 형태다.
 
 ### Creative writing
 
-![Figure 4 — Creative writing 다양성·품질 결과 (출처: 논문 PDF)](/images/verbalized-sampling-mode-collapse-2025/fig4-creative-writing.png)
+![Figure 4 — Creative writing 다양성·품질 결과 (출처: 논문 PDF)](https://img.seosoyoung.eiaserinnys.me/images/verbalized-sampling-mode-collapse-2025/fig4-creative-writing.png)
 
 semantic diversity score(% pairwise dissimilarity, 100% = 최대 다양성)에서 baseline 대비 다음과 같이 향상한다.
 
@@ -139,7 +139,7 @@ direct prompt 합성 데이터는 baseline보다 *오히려 떨어진다* — mo
 
 ## 큰 모델일수록 효과가 크다
 
-![Figure 7 — Tulu-70B post-training stages별 다양성 (출처: 논문 PDF)](/images/verbalized-sampling-mode-collapse-2025/fig7-post-training.png)
+![Figure 7 — Tulu-70B post-training stages별 다양성 (출처: 논문 PDF)](https://img.seosoyoung.eiaserinnys.me/images/verbalized-sampling-mode-collapse-2025/fig7-post-training.png)
 
 GPT-4.1-mini vs GPT-4.1, Gemini-2.5-Flash vs Gemini-2.5-Pro 비교에서, 큰 모델의 다양성 향상폭(Δ Diversity)이 작은 모델 대비 *일관되게 1.5\~2배* 더 크다. 더 흥미로운 것은 *품질*도 큰 모델에서는 VS-CoT·VS-Multi 같은 복잡한 변형이 오히려 향상된다는 점이다. Hu et al.(2024)이 보고한 "prompt cognitive burden"(복잡한 프롬프트가 품질을 깎는다는 현상)을 큰 모델은 극복한다.
 

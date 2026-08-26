@@ -7,9 +7,9 @@ summary: "Cook은 1768년 HMS Endeavour 항해에서 사우어크라우트로 �
 ShowToc: true
 TocOpen: false
 cover:
-  image: "/images/cook-sauerkraut-1769/cover.jpg"
+  image: "https://img.seosoyoung.eiaserinnys.me/images/cook-sauerkraut-1769/cover.jpg"
 images:
-  - "/images/cook-sauerkraut-1769/cover.jpg"
+  - "https://img.seosoyoung.eiaserinnys.me/images/cook-sauerkraut-1769/cover.jpg"
 sidenotes: true
 ---
 

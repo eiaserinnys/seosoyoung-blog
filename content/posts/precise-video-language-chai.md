@@ -5,7 +5,7 @@ tags: ["Human-AI 공동 창작", "AI 영상 생성", "논문 리뷰"]
 categories: ["모델과 연구"]
 summary: "AI 영상 생성의 진짜 병목은 모델이 아니라 언어다. 시네마틱 요소를 정밀하게 기술하는 VideoSpec과, 'AI가 쓰고 인간이 검증하는' CHAI 프레임워크가 소량의 전문가 비평만으로 오픈소스 8B 모델을 Gemini-2.5 위에 올려놓았다."
 cover:
-  image: "/images/cover-precise-video-language-chai.jpg"
+  image: "https://img.seosoyoung.eiaserinnys.me/images/cover-precise-video-language-chai.jpg"
 sidenotes: true
 ---
 
@@ -19,7 +19,7 @@ AI 영상 생성에서 가장 답답한 순간은 모델이 못 만들 때가 �
 
 이 글에서는 VideoSpec이 왜 필요한지, CHAI가 어떻게 작동하는지, 그리고 이것이 실제로 영상 생성에 어떤 변화를 가져오는지를 순서대로 살펴본다.
 
-{{< figure src="/images/chai-teaser.png" caption="기존 접근(위)과 CHAI(아래)의 차이. 모호한 명세 → 구조화된 명세, 단독 어노테이션 → 인간-AI 분업, 출력 비교 → 명시적 비평 기반 학습. ©Lin et al. 2026[^1], arXiv License" >}}
+{{< figure src="https://img.seosoyoung.eiaserinnys.me/images/chai-teaser.png" caption="기존 접근(위)과 CHAI(아래)의 차이. 모호한 명세 → 구조화된 명세, 단독 어노테이션 → 인간-AI 분업, 출력 비교 → 명시적 비평 기반 학습. ©Lin et al. 2026[^1], arXiv License" >}}
 
 ## 영상의 언어가 없었다
 
@@ -43,7 +43,7 @@ VideoSpec은 영상의 시각 요소를 다섯 가지 차원으로 나눈다.
 - **Spatial** — 공간 구성. 샷 사이즈, 프레임 내 위치, 깊이, 이동 방향
 - **Camera** — 카메라 역학. 앵글, 높이, 렌즈, 초점, 흔들림, 이동
 
-{{< figure src="/images/chai-videospec-taxonomy.png" caption="VideoSpec의 5축 분류 체계. 각 축이 세부 카테고리로 나뉘고, 각 카테고리 아래에 구체적 프리미티브가 정의된다. ©Lin et al. 2026[^1], arXiv License" >}}
+{{< figure src="https://img.seosoyoung.eiaserinnys.me/images/chai-videospec-taxonomy.png" caption="VideoSpec의 5축 분류 체계. 각 축이 세부 카테고리로 나뉘고, 각 카테고리 아래에 구체적 프리미티브가 정의된다. ©Lin et al. 2026[^1], arXiv License" >}}
 
 각 축 아래에 225개의 시각 프리미티브와 17개의 스킬 카테고리가 정의되어 있다. "dramatic angle" 같은 모호한 표현 대신, "Dutch angle at 15 degrees"처럼 해석의 여지를 좁힌 구체적 용어를 쓴다. 이 명세를 전문 영상인 — 영화감독, 촬영감독, 콘텐츠 크리에이터 — 100명 이상과 1년에 걸쳐 공동 설계했다는 점이 눈에 띈다[^1]. 학술적 분류 체계가 아니라, 현장에서 실제로 쓰이는 어휘를 체계화한 것이다.
 
@@ -61,7 +61,7 @@ CHAI는 이 딜레마를 분업으로 해결한다. 핵심 통찰이 아주 실�
 2. **인간 비평(Critique)**: 전문가가 캡션의 오류를 식별하고 건설적 피드백을 작성한다
 3. **AI 수정(Post-caption)**: VLM이 피드백을 반영하여 정확한 캡션을 다시 생성한다
 
-{{< figure src="/images/chai-critique-quality.png" caption="비평 품질의 세 축: 정밀도(precision), 재현율(recall), 건설성(constructiveness). 오른쪽 초록 영역이 세 축을 모두 충족하는 좋은 비평이다. ©Lin et al. 2026[^1], arXiv License" >}}
+{{< figure src="https://img.seosoyoung.eiaserinnys.me/images/chai-critique-quality.png" caption="비평 품질의 세 축: 정밀도(precision), 재현율(recall), 건설성(constructiveness). 오른쪽 초록 영역이 세 축을 모두 충족하는 좋은 비평이다. ©Lin et al. 2026[^1], arXiv License" >}}
 
 여기서 중요한 건 비평의 품질이다. 선행 연구들은 비평 데이터를 수집할 때 50% 이상이 비건설적인 — "잘 모르겠다", "괜찮은 것 같다" 수준의 — 피드백이었다고 한다[^1]. CHAI는 비평의 정밀도(precision), 재현율(recall), 건설성(constructiveness) 세 축으로 품질 게이트를 적용한다. 이 세 축 중 어느 하나라도 약화시키면 최종 성능이 떨어진다는 걸 실험으로 보여줬다.
 

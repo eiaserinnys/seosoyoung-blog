@@ -7,9 +7,9 @@ summary: "ReAct(2022)부터 Ralph 루프와 /goal 명령(2026)까지, 에이전�
 ShowToc: true
 TocOpen: false
 cover:
-  image: "/images/loop-engineering-overview/cover.jpeg"
+  image: "https://img.seosoyoung.eiaserinnys.me/images/loop-engineering-overview/cover.jpeg"
 images:
-  - "/images/loop-engineering-overview/cover.jpeg"
+  - "https://img.seosoyoung.eiaserinnys.me/images/loop-engineering-overview/cover.jpeg"
 ---
 
 ## 3줄 요약
@@ -20,7 +20,7 @@ images:
 
 이 글은 ["루프 엔지니어링" 연재](/tags/루프-엔지니어링/)의 여섯 번째 편이다. 앞선 다섯 편이 각각 한 저자·한 조직의 1차 사료였다면 — [1편(Addy Osmani)](/digest/loop-engineering-osmani/)이 "루프를 설계하라"는 선언을, [2편(Firecrawl)](/digest/loop-engineering-firecrawl/)이 그 실천 노트를, [3편(Oracle)](/digest/loop-engineering-oracle/)이 ReAct에서 출발한 에이전트 루프의 계보를, [4편(OpenAI)](/digest/loop-engineering-harness/)이 하네스를 직접 짠 생산자의 사례를, [5편(Böckeler/Fowler)](/digest/loop-engineering-fowler/)이 그 하네스를 사용자 관점의 멘탈 모델로 정리했다면 — 이 6편은 그 모두를 *한 장의 지도 위에* 올리는 개관이다. 특히 3편이 짚은 ReAct 계보를 더 넓게 펼쳐, 학술 프레임워크부터 실무자의 루프 엔지니어링까지 4세대를 한눈에 비교한다. 연재 전체를 묶어 읽는 좌표계로 삼기 좋은 편이다.
 
-![ReAct에서 루프 엔지니어링까지 — 에이전트 루프를 설명하는 2026 가이드의 표제 이미지.](/images/loop-engineering-overview/cover.jpeg)
+![ReAct에서 루프 엔지니어링까지 — 에이전트 루프를 설명하는 2026 가이드의 표제 이미지.](https://img.seosoyoung.eiaserinnys.me/images/loop-engineering-overview/cover.jpeg)
 
 ## 에이전트 루프란 무엇인가
 
@@ -55,7 +55,7 @@ Claude Code의 `/loop` 명령이 가장 단순한 사람 시작 유형이다 —
 
 ## 에이전트 루프는 내부에서 어떻게 도는가
 
-![에이전트 루프의 5단계 — 인식·추론·계획·행동·관찰이 정지 조건까지 반복된다.](/images/loop-engineering-overview/five-stages.png)
+![에이전트 루프의 5단계 — 인식·추론·계획·행동·관찰이 정지 조건까지 반복된다.](https://img.seosoyoung.eiaserinnys.me/images/loop-engineering-overview/five-stages.png)
 
 모든 에이전트 루프는 다섯 단계를 거쳐, 정지 조건이 만족될 때까지 반복한다.
 
@@ -81,7 +81,7 @@ LLM에는 "완료"라는 내장 개념이 없다. 명시적 정지 조건이 없
 
 ## 에이전트 루프 유형 전부 — 4세대 계보
 
-![에이전트 루프와 루프 엔지니어링의 진화 — 4세대에 걸친 루프 열 가지의 계보도.](/images/loop-engineering-overview/evolution.png)
+![에이전트 루프와 루프 엔지니어링의 진화 — 4세대에 걸친 루프 열 가지의 계보도.](https://img.seosoyoung.eiaserinnys.me/images/loop-engineering-overview/evolution.png)
 
 ### 1세대: 개념 증명 (2023)
 
@@ -105,7 +105,7 @@ LLM에는 "완료"라는 내장 개념이 없다. 명시적 정지 조건이 없
 
 ### 4세대: 실무자의 루프 엔지니어링 (2025-2026)
 
-![Ralph 루프 — 무한 셸 루프 안에서 매 반복마다 같은 프롬프트 파일을 읽고 컨텍스트를 리셋하는 에이전트 루프.](/images/loop-engineering-overview/ralph-loop.png)
+![Ralph 루프 — 무한 셸 루프 안에서 매 반복마다 같은 프롬프트 파일을 읽고 컨텍스트를 리셋하는 에이전트 루프.](https://img.seosoyoung.eiaserinnys.me/images/loop-engineering-overview/ralph-loop.png)
 
 **Ralph 루프(Ralph Wiggum 기법)** — Geoffrey Huntley가 2025년 7월 고안했다. 문틀에 부딪히며 "나 돕고 있어!"라고 외치는 심슨 캐릭터에서 이름을 땄다. 의도적으로 단순한데 놀랍도록 효과적이다. 코딩 에이전트가 무한 셸 루프 안에서 돌고, 매 반복마다 디스크의 같은 프롬프트 파일을 읽고, 코드베이스를 고치고 종료하면, 새 컨텍스트 창으로 루프가 다시 시작한다. 상태는 파일 시스템에 산다 — 코드베이스·TODO 파일·git 이력. 이 단순함이 두 문제를 푼다.
 

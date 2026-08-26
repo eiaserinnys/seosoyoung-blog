@@ -8,9 +8,9 @@ math: true
 ShowToc: true
 TocOpen: false
 cover:
-  image: "/images/flux2-seedream-zimage-glm-image-architecture/fig9-glm-ar-diffusion.jpg"
+  image: "https://img.seosoyoung.eiaserinnys.me/images/flux2-seedream-zimage-glm-image-architecture/fig9-glm-ar-diffusion.jpg"
 images:
-  - "/images/flux2-seedream-zimage-glm-image-architecture/fig9-glm-ar-diffusion.jpg"
+  - "https://img.seosoyoung.eiaserinnys.me/images/flux2-seedream-zimage-glm-image-architecture/fig9-glm-ar-diffusion.jpg"
 ---
 
 ## 3줄 요약
@@ -32,13 +32,13 @@ images:
 
 ## 2. FLUX.2 — 16→32채널 VAE, 4D RoPE, 그리고 32B로의 스케일업
 
-![](/images/flux2-seedream-zimage-glm-image-architecture/fig1-flux2-overview.jpg)
+![](https://img.seosoyoung.eiaserinnys.me/images/flux2-seedream-zimage-glm-image-architecture/fig1-flux2-overview.jpg)
 
 Black Forest Labs는 FLUX.1을 *파인튜닝하지 않고* 처음부터 다시 학습한 새 모델을 내놓았다. VAE·Text Encoder·DiT 백본 모두 새로 짰다는 점이 핵심이다.
 
 ### 2.1 4종 라인업과 라이선스
 
-![](/images/flux2-seedream-zimage-glm-image-architecture/fig2-flux2-lineup.jpg)
+![](https://img.seosoyoung.eiaserinnys.me/images/flux2-seedream-zimage-glm-image-architecture/fig2-flux2-lineup.jpg)
 
 | 라인 | 규모/성격 | 채널 | 가격/라이선스 |
 |---|---|---|---|
@@ -61,7 +61,7 @@ FLUX.2의 핵심 변경은 VAE 채널 수다.
 
 토큰당 픽셀 정보량을 두 배로 늘리면 같은 해상도를 더 적은 토큰으로 표현하게 되고, Transformer에 들어가는 시퀀스 길이가 짧아진다. 같은 연산량으로 더 큰 이미지를 다룰 수 있다.
 
-![](/images/flux2-seedream-zimage-glm-image-architecture/fig3-vae-benchmark.jpg)
+![](https://img.seosoyoung.eiaserinnys.me/images/flux2-seedream-zimage-glm-image-architecture/fig3-vae-benchmark.jpg)
 
 저자는 네 VAE를 LPIPS·SSIM·PSNR·rFID로 비교한 표를 그대로 옮긴다.
 
@@ -82,7 +82,7 @@ FLUX.1까지 이어진 CLIP+T5 이중 구조는 FLUX.2에서 사라지고, **Mis
 
 ### 2.4 DiT 백본 — 12B → 32B, 활성화 함수, 4D RoPE
 
-![](/images/flux2-seedream-zimage-glm-image-architecture/fig4-dit-swiglu.jpg)
+![](https://img.seosoyoung.eiaserinnys.me/images/flux2-seedream-zimage-glm-image-architecture/fig4-dit-swiglu.jpg)
 
 DiT 쪽 변경은 네 가지다.
 
@@ -124,7 +124,7 @@ Seedream 4.0은 AdaCoT(Adaptive Chain-of-Thought)까지 도입했다. PE가 항�
 
 ### 3.2 Glyph-Aligned ByT5 — 글자만을 위한 전용 인코더
 
-![](/images/flux2-seedream-zimage-glm-image-architecture/fig5-glyph-byt5.jpg)
+![](https://img.seosoyoung.eiaserinnys.me/images/flux2-seedream-zimage-glm-image-architecture/fig5-glyph-byt5.jpg)
 
 중국어·한글처럼 글자 모양이 복잡한 언어를 이미지 안에 정확히 렌더링하려면, 의미 인코더만으로는 모자라다. Seedream은 <strong>Glyph-Aligned ByT5</strong>라는 *바이트 단위* 글자 전용 인코더를 별도로 두고, 본 LLM 임베딩과 concat해서 DiT에 넘긴다.
 
@@ -139,7 +139,7 @@ ByT5는 BPE 같은 서브워드 단위가 아니라 바이트 단위로 텍스�
 
 ### 3.3 위치 인코딩 — Scaling RoPE와 token ID 재설계
 
-![](/images/flux2-seedream-zimage-glm-image-architecture/fig6-seedream-rope.jpg)
+![](https://img.seosoyoung.eiaserinnys.me/images/flux2-seedream-zimage-glm-image-architecture/fig6-seedream-rope.jpg)
 
 - **Seedream 2.0**: 이미지 토큰에 Learned PE, 텍스트 토큰에 2D RoPE. 훈련 해상도 너머로 일반화하기 위해 *Scaling RoPE*를 도입.
 - **Seedream 3.0**: 이미지 토큰의 풀링 ID를 `[1, L]` 범위의 2D RoPE로 통합, 텍스트 토큰 ID는 그 뒤에 이어붙인다. 토큰 종류·위치를 한 좌표계 안에 담는 시도.
@@ -157,7 +157,7 @@ Seedream 2.0에서 4.0까지의 개선분 중 *본 DiT 자체*의 변경은 일�
 
 ## 4. Z-Image — 6B로 80B급과 경쟁한 단일 스트림 DiT
 
-![](/images/flux2-seedream-zimage-glm-image-architecture/fig7-zimage-s3dit.jpg)
+![](https://img.seosoyoung.eiaserinnys.me/images/flux2-seedream-zimage-glm-image-architecture/fig7-zimage-s3dit.jpg)
 
 알리바바 Tongyi-MAI 팀의 Z-Image는 *큰 모델로 가는* 흐름과 정반대로 간다. 총 6.15B 파라미터로, 30개 Transformer 블록·히든 차원 3840·헤드 32·FFN 10240·3D U-RoPE(32, 48, 48)의 단일 스트림 DiT다. 훈련에 H800 GPU·시간으로 314K(약 63일).
 
@@ -177,7 +177,7 @@ FLUX의 MM-DiT나 Seedream의 MMDiT는 이미지 토큰과 텍스트 토큰을 �
 
 ### 4.2 데이터 파이프라인 3엔진
 
-![](/images/flux2-seedream-zimage-glm-image-architecture/fig8-zimage-pipeline.jpg)
+![](https://img.seosoyoung.eiaserinnys.me/images/flux2-seedream-zimage-glm-image-architecture/fig8-zimage-pipeline.jpg)
 
 Z-Image 논문이 공개한 데이터 처리 파이프라인은 세 엔진으로 구성된다.
 
@@ -201,7 +201,7 @@ Z-Image-Turbo는 8 NFE로 빠른 추론을 제공하는 라인업이다. 6B 모�
 
 ## 5. GLM-Image — AR로 구조, Diffusion으로 픽셀
 
-![](/images/flux2-seedream-zimage-glm-image-architecture/fig9-glm-ar-diffusion.jpg)
+![](https://img.seosoyoung.eiaserinnys.me/images/flux2-seedream-zimage-glm-image-architecture/fig9-glm-ar-diffusion.jpg)
 
 智谱AI(ZhipuAI)와 칭화대의 GLM-Image는 네 모델 중 가장 급진적인 아키텍처 선택을 한다. *이미지 생성을 LLM의 자기회귀 작업과 Diffusion의 픽셀 작업으로 분리한다*. PyTorch가 아니라 **MindSpore + Huawei Atlas 800T A2(Ascend NPU)** 위에서 학습됐다는 인프라 결정도 특이하다.
 
@@ -215,7 +215,7 @@ Z-Image-Turbo는 8 NFE로 빠른 추론을 제공하는 라인업이다. 6B 모�
 
 ### 5.2 MRoPE와 단계적 생성
 
-![](/images/flux2-seedream-zimage-glm-image-architecture/fig10-glm-progressive.jpg)
+![](https://img.seosoyoung.eiaserinnys.me/images/flux2-seedream-zimage-glm-image-architecture/fig10-glm-progressive.jpg)
 
 AR Generator는 텍스트 토큰의 1D 위치와 이미지 토큰의 2D 위치를 통합한 <strong>MRoPE(Multimodal Rotary Position Embedding)</strong>로 동작한다. 텍스트 차원과 이미지 공간 차원을 한 좌표계로 묶어, 같은 어텐션 블록이 두 종류 토큰을 모두 다룬다.
 

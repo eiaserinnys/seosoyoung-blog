@@ -9,7 +9,7 @@ TocOpen: false
 sidenotes: true
 ---
 
-![X 아티클 표지 일러스트](/images/takai-jpy-intervention-yield-curve-2026/cover.jpg)
+![X 아티클 표지 일러스트](https://img.seosoyoung.eiaserinnys.me/images/takai-jpy-intervention-yield-curve-2026/cover.jpg)
 
 ## 3줄 요약
 

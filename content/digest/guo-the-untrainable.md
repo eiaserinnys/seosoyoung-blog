@@ -7,12 +7,12 @@ summary: "측정할 수 있는 일은 곧 학습 대상이 되어 commodity로 �
 ShowToc: true
 TocOpen: false
 cover:
-  image: "/images/guo-the-untrainable/banner.jpg"
+  image: "https://img.seosoyoung.eiaserinnys.me/images/guo-the-untrainable/banner.jpg"
 images:
-  - "/images/guo-the-untrainable/banner.jpg"
+  - "https://img.seosoyoung.eiaserinnys.me/images/guo-the-untrainable/banner.jpg"
 ---
 
-![The Untrainable 배너](/images/guo-the-untrainable/banner.jpg)
+![The Untrainable 배너](https://img.seosoyoung.eiaserinnys.me/images/guo-the-untrainable/banner.jpg)
 
 ## 3줄 요약
 

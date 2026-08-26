@@ -8,9 +8,9 @@ math: true
 ShowToc: true
 TocOpen: false
 cover:
-  image: "/images/ai-scaling-logistic-saturation/chart.jpg"
+  image: "https://img.seosoyoung.eiaserinnys.me/images/ai-scaling-logistic-saturation/chart.jpg"
 images:
-  - "/images/ai-scaling-logistic-saturation/chart.jpg"
+  - "https://img.seosoyoung.eiaserinnys.me/images/ai-scaling-logistic-saturation/chart.jpg"
 ---
 
 ## 3줄 요약
@@ -69,12 +69,12 @@ Cramér\~Rao는 데이터 품질 논증을 형식화한다 — $\text{MSE} = \te
 
 작성자는 이 메커니즘을 의학통계 도식 한 장으로 보강했다.
 
-![EHR vs RCT 신뢰성 — 표본을 아무리 키워도 편향은 남는다](/images/ai-scaling-logistic-saturation/bias-variance.jpg)
+![EHR vs RCT 신뢰성 — 표본을 아무리 키워도 편향은 남는다](https://img.seosoyoung.eiaserinnys.me/images/ai-scaling-logistic-saturation/bias-variance.jpg)
 *Frank Harrell(@f2harrell)의 도식. 전자건강기록(EHR)은 표본을 무한히 늘려도 RMSE가 2에서 멈추지만(편향 바닥), 편향 없는 무작위 임상시험(RCT)은 표본 64명만으로 무한 EHR과 같은 정확도에 닿는다. 작성자는 표본 크기를 컴퓨트에, EHR의 편향을 훈련 분포의 편향에 빗댄다.*
 
 ## 차트 해부
 
-![AI Scaling Saturates — 로지스틱 적합 차트](/images/ai-scaling-logistic-saturation/chart.jpg)
+![AI Scaling Saturates — 로지스틱 적합 차트](https://img.seosoyoung.eiaserinnys.me/images/ai-scaling-logistic-saturation/chart.jpg)
 *차트 제목: "AI Scaling Saturates: Logistic Fit with Free Asymptote & 95% Bootstrap CI". 출처: @5_utr (X), 2026-06-20.*
 
 | 항목 | 내용 |

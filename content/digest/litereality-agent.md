@@ -7,9 +7,9 @@ summary: "아이폰 LiDAR 스캔 한 번을 편집 가능한 3D 실내 씬으로
 ShowToc: true
 TocOpen: false
 cover:
-  image: "/images/litereality-agent/teaser.jpg"
+  image: "https://img.seosoyoung.eiaserinnys.me/images/litereality-agent/teaser.jpg"
 images:
-  - "/images/litereality-agent/teaser.jpg"
+  - "https://img.seosoyoung.eiaserinnys.me/images/litereality-agent/teaser.jpg"
 ---
 
 ## 3줄 요약
@@ -18,7 +18,7 @@ images:
 2. 핵심은 씬 전체를 하나의 파이썬 프로그램(`Room.py`)으로 표현한다는 점이다. 에이전트는 메시를 직접 주무르지 않고 코드를 편집하며, 렌더링 결과를 실제 촬영본과 대조해 품질 검증(QC)을 통과할 때까지 고쳐 나간다.
 3. 씬이 곧 프로그램이라 평문 요청이 그대로 코드 편집이 된다. 리텍스처링, 가구 재배치, 데코, 세그멘테이션·깊이·노멀·알베도 같은 intrinsics 무료 렌더까지 같은 파이프라인에서 나온다.
 
-![LiteReality-Agent 티저. 실내 스캔이 편집 가능한 3D 씬으로 재구성된다.](/images/litereality-agent/teaser.jpg)
+![LiteReality-Agent 티저. 실내 스캔이 편집 가능한 3D 씬으로 재구성된다.](https://img.seosoyoung.eiaserinnys.me/images/litereality-agent/teaser.jpg)
 
 ## 무엇을 만들었나
 
@@ -60,29 +60,29 @@ LiteReality-Agent는 "방을 한 번 스캔하면 그래픽스에 바로 쓸 수
 
 **텍스트 기반 편집.** 타이핑한 요청으로 벽과 바닥을 다시 텍스처링한다. 노출 벽돌, 월넛 패널, 세이지 그린 페인트 같은 지시가 그대로 반영되며, 이때 지오메트리는 전혀 움직이지 않는다.
 
-![텍스트 요청으로 벽과 바닥을 리텍스처링한다.](/images/litereality-agent/app-text.jpg)
+![텍스트 요청으로 벽과 바닥을 리텍스처링한다.](https://img.seosoyoung.eiaserinnys.me/images/litereality-agent/app-text.jpg)
 
 **재배치.** 프롬프트로 방 배치를 다시 짠다. 이때도 모든 물체가 바닥에 붙어 있고 서로 충돌하지 않으며, 아무것도 삭제되지 않는다.
 
-![프롬프트로 가구를 재배치한다. 충돌 없이 바닥에 붙어 있다.](/images/litereality-agent/app-rearrange.jpg)
+![프롬프트로 가구를 재배치한다. 충돌 없이 바닥에 붙어 있다.](https://img.seosoyoung.eiaserinnys.me/images/litereality-agent/app-rearrange.jpg)
 
 **데코.** 에이전트가 실제 에셋을 가져오고 절차적 지오메트리를 직접 작성한다. 펜던트 조명, 배너, 파티 세팅 같은 소품을 문이 열리는 반경을 피해 배치한다.
 
-![실제 에셋과 절차적 지오메트리로 방을 꾸민다.](/images/litereality-agent/app-decor.jpg)
+![실제 에셋과 절차적 지오메트리로 방을 꾸민다.](https://img.seosoyoung.eiaserinnys.me/images/litereality-agent/app-decor.jpg)
 
 **Intrinsics.** 완전히 저작된 씬은 intrinsics를 공짜로 렌더한다. 같은 카메라에서 픽셀 단위로 정확한 세그멘테이션, 깊이, 노멀, 알베도가 나온다. 학습 데이터가 필요한 쪽에서 특히 반가운 대목이다.
 
-![저작된 씬에서 세그멘테이션·깊이·노멀·알베도를 무료로 렌더한다.](/images/litereality-agent/app-intrinsics.jpg)
+![저작된 씬에서 세그멘테이션·깊이·노멀·알베도를 무료로 렌더한다.](https://img.seosoyoung.eiaserinnys.me/images/litereality-agent/app-intrinsics.jpg)
 
 ## 갤러리와 뷰어
 
 프로젝트 페이지는 재구성한 씬들을 브라우저에서 직접 걸어 다닐 수 있게 공개했다. Studio Office, Private Office, Boardroom, Meeting Room, Seminar Room, Kitchenette, Garden Room, Bedroom, Library 같은 사무·주거 공간이 목록에 있다. 씬을 클릭하면 궤도 회전, 그룹 분리, 렌더링과 실제 촬영본 비교, 1인칭 워크스루가 모두 브라우저 안에서 된다.
 
-![Studio Office. 실제 촬영본과 재구성 결과를 대조한다.](/images/litereality-agent/studio-office.jpg)
+![Studio Office. 실제 촬영본과 재구성 결과를 대조한다.](https://img.seosoyoung.eiaserinnys.me/images/litereality-agent/studio-office.jpg)
 
-![The Library. 선반과 책이 있는 공간의 재구성.](/images/litereality-agent/gallery-library.jpg)
+![The Library. 선반과 책이 있는 공간의 재구성.](https://img.seosoyoung.eiaserinnys.me/images/litereality-agent/gallery-library.jpg)
 
-![The Garden Room. 유리창이 있는 선룸.](/images/litereality-agent/gallery-garden-room.jpg)
+![The Garden Room. 유리창이 있는 선룸.](https://img.seosoyoung.eiaserinnys.me/images/litereality-agent/gallery-garden-room.jpg)
 
 ## 스캐너 앱
 

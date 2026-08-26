@@ -8,12 +8,12 @@ math: false
 ShowToc: true
 TocOpen: false
 cover:
-  image: "/images/gnm-generative-anthropometric-model/cover.png"
+  image: "https://img.seosoyoung.eiaserinnys.me/images/gnm-generative-anthropometric-model/cover.png"
 images:
-  - "/images/gnm-generative-anthropometric-model/cover.png"
+  - "https://img.seosoyoung.eiaserinnys.me/images/gnm-generative-anthropometric-model/cover.png"
 ---
 
-![GNM 로고](/images/gnm-generative-anthropometric-model/gnm_logo.png)
+![GNM 로고](https://img.seosoyoung.eiaserinnys.me/images/gnm-generative-anthropometric-model/gnm_logo.png)
 
 ## 3줄 요약
 
@@ -42,7 +42,7 @@ GNM Head는 3D 스캔 데이터로 학습한 얼굴·머리 통계 모델이다.
 - **시맨틱 파라미터 샘플링:** 의미 라벨에서 정체성·표정 파라미터를 뽑는 사전 학습 모델을 포함한다.
 - **멀티 프레임워크:** NumPy·JAX·PyTorch·TensorFlow 네이티브 지원.
 
-![GNM Head 데모](/images/gnm-generative-anthropometric-model/gnm_head_demo.gif)
+![GNM Head 데모](https://img.seosoyoung.eiaserinnys.me/images/gnm-generative-anthropometric-model/gnm_head_demo.gif)
 
 ## 파라미터 구조
 
@@ -100,7 +100,7 @@ identity_sample = id_sampler.sample_identity(
 )[0]
 ```
 
-![시맨틱 샘플링 데모](/images/gnm-generative-anthropometric-model/semantic_demo.gif)
+![시맨틱 샘플링 데모](https://img.seosoyoung.eiaserinnys.me/images/gnm-generative-anthropometric-model/semantic_demo.gif)
 
 ## 설치와 사용
 

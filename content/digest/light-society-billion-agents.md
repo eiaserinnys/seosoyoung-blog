@@ -8,9 +8,9 @@ math: true
 ShowToc: true
 TocOpen: false
 cover:
-  image: "/images/light-society-billion-agents/fig1-framework.png"
+  image: "https://img.seosoyoung.eiaserinnys.me/images/light-society-billion-agents/fig1-framework.png"
 images:
-  - "/images/light-society-billion-agents/fig1-framework.png"
+  - "https://img.seosoyoung.eiaserinnys.me/images/light-society-billion-agents/fig1-framework.png"
 ---
 
 ## 3줄 요약
@@ -25,7 +25,7 @@ images:
 
 문제는 비용이다. 논문은 기존 LLM 시뮬레이션 연구들이 수십 대의 GPU와 수 주의 연산으로 겨우 100만 에이전트 수준을 다뤘다고 정리한다. 규모가 커지면 저장 공간, 지연, 연산비가 빠르게 불어나 행성 규모 시뮬레이션은 사실상 불가능해진다. 선행 시스템의 상한이 $10^7$ 에이전트였다(아래 Figure 5).
 
-![여러 대표 연구의 보고된 시뮬레이션 규모 비교. 선행 시스템은 수십에서 약 10^7 에이전트에 머물렀고 Light Society는 10^9에 도달한다.](/images/light-society-billion-agents/fig5-scale.png)
+![여러 대표 연구의 보고된 시뮬레이션 규모 비교. 선행 시스템은 수십에서 약 10^7 에이전트에 머물렀고 Light Society는 10^9에 도달한다.](https://img.seosoyoung.eiaserinnys.me/images/light-society-billion-agents/fig5-scale.png)
 
 Light Society는 사회 시뮬레이션을 몇 개의 LLM 기반 연산자로 분해하고, 이 연산자들을 이벤트 큐로 배차한다. 알고리즘과 시스템 최적화를 함께 쌓아 행동 충실도를 지키면서 10억 에이전트까지 확장한다는 것이 이 논문의 주장이다.
 
@@ -33,7 +33,7 @@ Light Society는 사회 시뮬레이션을 몇 개의 LLM 기반 연산자로 �
 
 프레임워크는 단일 추상화 위에 선다. 두 에이전트의 경제 게임이든 10억 노드 네트워크의 상호작용이든, 모든 사회적 상호작용을 "에이전트나 환경 상태를 갱신하고 이벤트 큐로 배차되는 LLM 연산"으로 표현한다.
 
-![Light Society의 개념 구조. 에이전트, 환경, 이벤트 큐, 그리고 상태를 갱신하는 LLM 기반 시뮬레이션 연산으로 구성된다.](/images/light-society-billion-agents/fig1-framework.png)
+![Light Society의 개념 구조. 에이전트, 환경, 이벤트 큐, 그리고 상태를 갱신하는 LLM 기반 시뮬레이션 연산으로 구성된다.](https://img.seosoyoung.eiaserinnys.me/images/light-society-billion-agents/fig1-framework.png)
 
 구성 요소는 셋이다. 에이전트 집단, 환경, 그리고 시간 순으로 상호작용을 예약하는 이벤트 큐다. 각 에이전트는 변하지 않는 정적 프로필(인구통계, 성격), 시간에 따라 진화하는 내부 상태(기억, 신념, 목표), 관찰 가능한 외부 상태(위치, 사회적 연결)를 지닌다.
 
@@ -51,7 +51,7 @@ Light Society는 사회 시뮬레이션을 몇 개의 LLM 기반 연산자로 �
 
 첫 사례 연구는 신뢰 게임이다. 신뢰자는 10달러 밑천에서 정수 $N$을 익명의 수탁자에게 보내고, 그 금액은 3배가 되어 $3N$으로 전달된다. 수탁자는 받은 돈 중 얼마를 돌려줄지 정한다. 에이전트 프로필은 WVS Wave 7에서 정제한 9만 6,125개 항목으로 만들었고, 각 프로필은 2인칭("You are...")의 자연어 페르소나로 변환했다.
 
-![신뢰 게임 시뮬레이션. 사회 계급과 교육 수준에 따른 신뢰 행동, 그리고 인구 규모에 따른 연령 간 격차의 변화.](/images/light-society-billion-agents/fig2-trust-game.png)
+![신뢰 게임 시뮬레이션. 사회 계급과 교육 수준에 따른 신뢰 행동, 그리고 인구 규모에 따른 연령 간 격차의 변화.](https://img.seosoyoung.eiaserinnys.me/images/light-society-billion-agents/fig2-trust-game.png)
 
 결과는 세 갈래로 읽힌다.
 
@@ -65,7 +65,7 @@ Light Society는 사회 시뮬레이션을 몇 개의 LLM 기반 연산자로 �
 
 두 번째 사례가 이 논문을 행성 규모로 밀어붙이는 지점이다. 10억 노드의 Barabási–Albert(BA) 척도 없는 네트워크 위에서 의견 확산을 시뮬레이션한다. 각 새 노드는 $m=3$개의 기존 노드에 선호적 연결로 붙어 $P(k) \sim k^{-3}$의 거듭제곱 분포를 만든다. 차수 상위 20%(2억 노드)가 인플루언서, 나머지 80%(8억 노드)가 피영향자다.
 
-![10억 에이전트 네트워크의 인플루언서-피영향자 의견 확산. 시딩 방식과 주제에 따라 의견 궤적이 갈라진다.](/images/light-society-billion-agents/fig3-opinion-1b.png)
+![10억 에이전트 네트워크의 인플루언서-피영향자 의견 확산. 시딩 방식과 주제에 따라 의견 궤적이 갈라진다.](https://img.seosoyoung.eiaserinnys.me/images/light-society-billion-agents/fig3-opinion-1b.png)
 
 모든 에이전트에게 "AI 자동화는 대량 실업을 부를 것이다"라는 논쟁적 진술을 주고 초기 의견(찬성, 반대, 중립)을 배정한다. 인플루언서 초기값은 세 가지 시딩 방식(1D1N: 반대 절반·중립 절반, 1A1N: 찬성 절반·중립 절반, Random)으로 설정한다.
 
@@ -83,7 +83,7 @@ Light Society는 사회 시뮬레이션을 몇 개의 LLM 기반 연산자로 �
 
 논문은 이 결과들이 얼마나 믿을 만한지 여러 축에서 캐본다.
 
-![Light Society의 다면 분석. 실행 간 분산, 언어 효과, 대체 모델 선택, 네트워크 위상, 최후통첩 게임.](/images/light-society-billion-agents/fig4-analysis.png)
+![Light Society의 다면 분석. 실행 간 분산, 언어 효과, 대체 모델 선택, 네트워크 위상, 최후통첩 게임.](https://img.seosoyoung.eiaserinnys.me/images/light-society-billion-agents/fig4-analysis.png)
 
 **실행 간 분산.** 10억 에이전트 시뮬레이션을 다섯 개 시드로 반복하자, 라운드별 변동계수(CV) 최댓값이 찬성 0.0038%, 중립 0.0060%, 반대 0.0038%에 그쳤다. 매 라운드 인플루언서 표본 추출이 만드는 요동이 이 규모에서는 사실상 무시할 만하다는 뜻이다. 시드를 고정하고 상호작용의 절반을 실제 LLM으로 돌린 100만 에이전트 변형에서는 CV가 0.14%에서 0.34%로 올랐지만, 여전히 0.5% 아래에 머물렀다.
 

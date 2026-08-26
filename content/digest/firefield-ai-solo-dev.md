@@ -7,9 +7,9 @@ summary: "퍼스널 트레이너 출신 45세 일본인이 Claude Code만으로 
 ShowToc: true
 TocOpen: false
 cover:
-  image: "/images/firefield-ai-solo-dev/keyart.jpg"
+  image: "https://img.seosoyoung.eiaserinnys.me/images/firefield-ai-solo-dev/keyart.jpg"
 images:
-  - "/images/firefield-ai-solo-dev/keyart.jpg"
+  - "https://img.seosoyoung.eiaserinnys.me/images/firefield-ai-solo-dev/keyart.jpg"
 sidenotes: true
 ---
 
@@ -19,7 +19,7 @@ sidenotes: true
 2. 첫 달은 무계획한 vibe coding으로 컨텍스트가 폭발했고, 중반부터 *시스템별 파일 분리·CLAUDE.md를 인덱스 디렉토리로 운영·1\~2주 주기 정기 리팩토링* 세 가지를 도입해 '문맥과의 싸움'을 통제했다.
 3. 인터뷰의 마지막 메시지는 "AI가 게임 창작을 민주화하는 이 순간에도, 베테랑 개발자들이 수십 년간 피와 땀으로 쌓아 올린 토대 위에 우리가 서 있다는 사실을 잊어선 안 된다"는 당부다.
 
-![파이어필드 키 아트](/images/firefield-ai-solo-dev/keyart.jpg)
+![파이어필드 키 아트](https://img.seosoyoung.eiaserinnys.me/images/firefield-ai-solo-dev/keyart.jpg)
 
 ## 어떤 게임인가
 
@@ -27,22 +27,22 @@ sidenotes: true
 
 기자가 직접 플레이한 첫인상은 영락없는 1996년작 `<디아블로>`의 카피였다. 이글거리는 불꽃 위의 게임 타이틀, 영어 폰트, 클래스 선택 화면, 아이소메트릭 시점의 작은 마을과 캐릭터까지.
 
-![디아블로 카피처럼 보이는 첫인상](/images/firefield-ai-solo-dev/diablo-clone.jpg)
+![디아블로 카피처럼 보이는 첫인상](https://img.seosoyoung.eiaserinnys.me/images/firefield-ai-solo-dev/diablo-clone.jpg)
  ▶ 흐린 눈으로 봐도 영락없는 `<디아블로>`의 카피 게임처럼 보인다.
 
 그러나 튜토리얼·메인 퀘스트가 제대로 존재했고, 인벤토리·상태창·스킬창이 단축키로 열렸으며, 'WASD'로 이동도 됐다. NPC에게 말을 걸면 AI 생성 음성이 세계관을 설명했고(이유는 알 수 없으나 모든 NPC에 눈동자가 없다), 던전에서는 익숙한 핵앤슬래시가 이어졌다.
 
-![눈동자 없는 NPC](/images/firefield-ai-solo-dev/npc-no-eyes.jpg)
+![눈동자 없는 NPC](https://img.seosoyoung.eiaserinnys.me/images/firefield-ai-solo-dev/npc-no-eyes.jpg)
  ▶ 이유는 알 수 없으나 모든 NPC들의 눈에 눈동자가 없다.
 
 장비 외형이 캐릭터에 반영되고, 스킬마다 고유 이펙트가 붙어 있었다. 던전 2층부터는 챔피언 몬스터와 보스 몬스터가 등장하고 화면 중앙에 보스 체력바가 표시됐다.
 
-![화려한 스킬 연출](/images/firefield-ai-solo-dev/skill-effect.jpg)
+![화려한 스킬 연출](https://img.seosoyoung.eiaserinnys.me/images/firefield-ai-solo-dev/skill-effect.jpg)
  ▶ 게임의 전체적인 그래픽과는 맞지 않지만, 나름 화려한 스킬 연출도 있다.
 
 물론 완벽하진 않다. 포탈을 탔더니 맵 밖에 갇혀서 못 나올 뻔한 버그도 있었다.
 
-![포탈 버그](/images/firefield-ai-solo-dev/portal-bug.jpg)
+![포탈 버그](https://img.seosoyoung.eiaserinnys.me/images/firefield-ai-solo-dev/portal-bug.jpg)
 
 ## 개발자 배경과 프로젝트 동기
 
@@ -52,7 +52,7 @@ sidenotes: true
 
 게임 이름 '파이어필드'는 1997년 `<울티마 온라인>` 베타에서 Rainz라는 플레이어가 *파이어 필드* 마법으로 로드 브리티시를 암살한 MMO 역사상 전설적 사건에 대한 오마주다. 게임 내 서사도 'Rainz가 왕을 살해한 이후, 그의 후손인 플레이어가 조상이 왕을 죽인 이유를 찾는다'는 줄거리로 그 사건을 차용한다.
 
-![울티마 온라인 로드 브리티시 암살 사건](/images/firefield-ai-solo-dev/uo-assassination.jpg)
+![울티마 온라인 로드 브리티시 암살 사건](https://img.seosoyoung.eiaserinnys.me/images/firefield-ai-solo-dev/uo-assassination.jpg)
  ▶ 유명한 `<울티마 온라인>`의 로드 브리티시 암살 사건.
 
 본인은 "직업적 지식이 AI 개발 작업에 직접적으로 기여한 순간은 단 한 번도 없었다"고 말한다. 굳이 도움된 것을 꼽자면 보디빌딩 대회 우승 과정에서 길러진 '인내력' 하나. "그 끔찍했던 훈련과 감량 기간에 비해서도 지난 3개월간의 게임 개발이 더 힘들었다"는 표현을 썼다.
@@ -114,7 +114,7 @@ sidenotes: true
 - <strong>목표는 전문 로컬라이제이션 회사 수준이 아니라 '플레이에 지장 없는 실용 수준'.</strong>
 - <strong>음성 더빙은 단일 서비스가 아니라 언어별 서비스 조합.</strong> 서비스마다 지원 언어가 크게 달라 각 언어에 가장 적합한 것을 골라 썼다.
 
-![파이어필드 언어 설정 화면](/images/firefield-ai-solo-dev/language-settings.jpg)
+![파이어필드 언어 설정 화면](https://img.seosoyoung.eiaserinnys.me/images/firefield-ai-solo-dev/language-settings.jpg)
  ▶ `<파이어필드>`의 언어 지원 목록. 모두 AI를 활용해 제작 및 검수됐다.
 
 ## 밸런싱 — AI 초기 설계 + 테스터 폴리싱
@@ -130,7 +130,7 @@ ARPG의 수치 밸런싱은 두 단계로 접근했다.
 
 결국 이번 프로젝트의 밸런스는 AI에게 전적으로 맡긴 것도 아니고, 본인 혼자 수천 시간 플레이 테스트한 결과도 아니다. AI는 데이터 연구 보조, 폴리싱은 커뮤니티와 함께 수행한 셈이다.
 
-![보스 Balron 전투](/images/firefield-ai-solo-dev/boss-balron.jpg)
+![보스 Balron 전투](https://img.seosoyoung.eiaserinnys.me/images/firefield-ai-solo-dev/boss-balron.jpg)
 
 ## 멀티플레이도 AI와 함께
 

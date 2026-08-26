@@ -7,9 +7,9 @@ summary: "코어위브가 MLPerf Training v6.0에서 8,192개의 NVIDIA Blackwel
 ShowToc: true
 TocOpen: false
 cover:
-  image: "/images/coreweave-deepseek-v3-two-minutes/mlperf-hero.jpg"
+  image: "https://img.seosoyoung.eiaserinnys.me/images/coreweave-deepseek-v3-two-minutes/mlperf-hero.jpg"
 images:
-  - "/images/coreweave-deepseek-v3-two-minutes/mlperf-hero.jpg"
+  - "https://img.seosoyoung.eiaserinnys.me/images/coreweave-deepseek-v3-two-minutes/mlperf-hero.jpg"
 ---
 
 ## 3줄 요약

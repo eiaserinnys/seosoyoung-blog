@@ -7,9 +7,9 @@ summary: "Every CEO 댄 시퍼가 Lenny's Podcast에서 내놓은 12가지 예�
 ShowToc: true
 TocOpen: false
 cover:
-  image: "/images/lennys-podcast-dan-shipper-ai-paradox/01-intro.jpg"
+  image: "https://img.seosoyoung.eiaserinnys.me/images/lennys-podcast-dan-shipper-ai-paradox/01-intro.jpg"
 images:
-  - "/images/lennys-podcast-dan-shipper-ai-paradox/01-intro.jpg"
+  - "https://img.seosoyoung.eiaserinnys.me/images/lennys-podcast-dan-shipper-ai-paradox/01-intro.jpg"
 sidenotes: true
 ---
 
@@ -21,7 +21,7 @@ sidenotes: true
 
 ## 자료의 정체
 
-![Dan Shipper](/images/lennys-podcast-dan-shipper-ai-paradox/01-intro.jpg)
+![Dan Shipper](https://img.seosoyoung.eiaserinnys.me/images/lennys-podcast-dan-shipper-ai-paradox/01-intro.jpg)
 
 <strong>Lenny's Podcast</strong> 2026년 5월 회차. 게스트는 미디어·소프트웨어 회사 <strong>Every</strong>의 공동 창립자 겸 CEO <strong>Dan Shipper</strong>, 진행자는 <strong>Lenny Rachitsky</strong>. 약 94분 분량의 인터뷰다.[^lennysnewsletter-paradox]
 
@@ -46,7 +46,7 @@ Every는 약 30명 규모의 회사로, 편집자·운영·세일즈·고객지�
 
 ## 1. 새 업무 OS: Codex와 Claude Code
 
-![Codex와 Claude Code가 업무의 운영체제가 된다](/images/lennys-podcast-dan-shipper-ai-paradox/02-codex-claude-code-as-os.jpg)
+![Codex와 Claude Code가 업무의 운영체제가 된다](https://img.seosoyoung.eiaserinnys.me/images/lennys-podcast-dan-shipper-ai-paradox/02-codex-claude-code-as-os.jpg)
 
 댄의 첫 번째 예측은 일하는 표면(work surface)이 두 갈래로 갈라진다는 것이다.
 
@@ -80,7 +80,7 @@ Every는 약 30명 규모의 회사로, 편집자·운영·세일즈·고객지�
 
 ## 3. CLI는 끝났다
 
-![CLI는 끝났다 — GUI로 회귀](/images/lennys-podcast-dan-shipper-ai-paradox/04-automation-is-a-lie.jpg)
+![CLI는 끝났다 — GUI로 회귀](https://img.seosoyoung.eiaserinnys.me/images/lennys-podcast-dan-shipper-ai-paradox/04-automation-is-a-lie.jpg)
 
 > "We speed-ran the CLI era. It was nice while it lasted. CLIs are over."
 
@@ -127,7 +127,7 @@ GPT-5.5가 다른 모델 대비 30점 점프를 보인 이유는 단 하나 — 
 
 ## 5. 누가 슈퍼히어로가 되는가
 
-![Lenny Rachitsky 진행](/images/lennys-podcast-dan-shipper-ai-paradox/03-lenny-host.jpg)
+![Lenny Rachitsky 진행](https://img.seosoyoung.eiaserinnys.me/images/lennys-podcast-dan-shipper-ai-paradox/03-lenny-host.jpg)
 
 ### PM — 진단·문제 발견 능력이 그대로 보상받는 시대
 
@@ -139,7 +139,7 @@ Every 내부 사례. Spiral(글쓰기 앱) 책임자 Marcus는 본래 PM이었�
 
 ### 풀스택 디자이너 — 모두가 똑같이 만들수록 미감이 차별점
 
-![풀스택 디자이너가 슈퍼히어로가 된다](/images/lennys-podcast-dan-shipper-ai-paradox/06-fullstack-designers.jpg)
+![풀스택 디자이너가 슈퍼히어로가 된다](https://img.seosoyoung.eiaserinnys.me/images/lennys-podcast-dan-shipper-ai-paradox/06-fullstack-designers.jpg)
 
 > "Designers can make stuff that looks so different — and now they can actually build it."
 
@@ -153,7 +153,7 @@ Every 내부 사례. Spiral(글쓰기 앱) 책임자 Marcus는 본래 PM이었�
 
 ### 일자리 대란? — 일어나지 않는다, 단 한 가지 조건이 있다
 
-![Ride the models — 모델을 라이드하라](/images/lennys-podcast-dan-shipper-ai-paradox/07-ride-the-models.jpg)
+![Ride the models — 모델을 라이드하라](https://img.seosoyoung.eiaserinnys.me/images/lennys-podcast-dan-shipper-ai-paradox/07-ride-the-models.jpg)
 
 > "The only thing you need to do is ride the models."
 

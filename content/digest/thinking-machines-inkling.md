@@ -7,9 +7,9 @@ summary: "Thinking Machines Lab이 처음부터 학습한 첫 오픈웨이트 �
 ShowToc: true
 TocOpen: false
 cover:
-  image: "/images/thinking-machines-inkling/cover-social-inkling-post.png"
+  image: "https://img.seosoyoung.eiaserinnys.me/images/thinking-machines-inkling/cover-social-inkling-post.png"
 images:
-  - "/images/thinking-machines-inkling/cover-social-inkling-post.png"
+  - "https://img.seosoyoung.eiaserinnys.me/images/thinking-machines-inkling/cover-social-inkling-post.png"
 ---
 
 ## 3줄 요약

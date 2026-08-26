@@ -7,9 +7,9 @@ summary: "5개국 16명의 수학자가 작성하고 국제수학연맹(IMU)이 
 ShowToc: true
 TocOpen: false
 cover:
-  image: "/images/leiden-declaration-ai-mathematics-2026/header-formula-ai.jpg"
+  image: "https://img.seosoyoung.eiaserinnys.me/images/leiden-declaration-ai-mathematics-2026/header-formula-ai.jpg"
 images:
-  - "/images/leiden-declaration-ai-mathematics-2026/header-formula-ai.jpg"
+  - "https://img.seosoyoung.eiaserinnys.me/images/leiden-declaration-ai-mathematics-2026/header-formula-ai.jpg"
 ---
 
 ## 3줄 요약
@@ -18,7 +18,7 @@ images:
 2. 선언은 AI가 수학의 다섯 가지 핵심 가치 — 증명의 신뢰성, 저작 귀속, 독립 검증, 적절한 평가, 연구 자율성 — 를 위협한다고 진단한다. AI를 금지하자는 것이 아니라, 기술이 학문을 훼손하지 않도록 공동체 규범을 세우자는 호소다.
 3. 개인 수학자·연구기관·정부·상업 AI를 향해 총 23개 권고를 제시한다. 핵심은 AI 사용의 투명한 공개, 정확성에 대한 인간의 책임 유지, 산업과 학계의 비대칭을 줄이는 공적 투자다.
 
-![선언 헤더 이미지 — 수식과 AI](/images/leiden-declaration-ai-mathematics-2026/header-formula-ai.jpg)
+![선언 헤더 이미지 — 수식과 AI](https://img.seosoyoung.eiaserinnys.me/images/leiden-declaration-ai-mathematics-2026/header-formula-ai.jpg)
 
 ## 어떤 문서인가
 

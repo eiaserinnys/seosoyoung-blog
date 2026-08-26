@@ -7,9 +7,9 @@ summary: "OpenAI의 한 팀이 다섯 달 동안 사람이 코드를 한 줄도 
 ShowToc: true
 TocOpen: false
 cover:
-  image: "/images/loop-engineering-harness/fig1-codex-devtools.png"
+  image: "https://img.seosoyoung.eiaserinnys.me/images/loop-engineering-harness/fig1-codex-devtools.png"
 images:
-  - "/images/loop-engineering-harness/fig1-codex-devtools.png"
+  - "https://img.seosoyoung.eiaserinnys.me/images/loop-engineering-harness/fig1-codex-devtools.png"
 ---
 
 ## 3줄 요약
@@ -48,11 +48,11 @@ images:
 
 예를 들어 앱을 git worktree마다 부팅할 수 있게 만들어, Codex가 변경 하나당 인스턴스 하나를 띄워 직접 몰 수 있게 했다. Chrome DevTools Protocol을 에이전트 런타임에 연결하고 DOM 스냅숏·스크린숏·내비게이션을 다루는 스킬을 만들었다. 덕분에 Codex는 버그를 재현하고, 수정을 검증하고, UI 동작을 직접 추론할 수 있게 됐다.
 
-![Codex가 Chrome DevTools MCP로 앱을 직접 몰며 자기 작업을 검증한다. 대상을 고르고, UI 경로를 작동시키기 전후의 상태를 스냅숏으로 찍고, 런타임 이벤트를 관찰하고, 수정을 적용하고, 재시작해, 앱이 깨끗해질 때까지 검증을 다시 돌리는 루프.](/images/loop-engineering-harness/fig1-codex-devtools.png)
+![Codex가 Chrome DevTools MCP로 앱을 직접 몰며 자기 작업을 검증한다. 대상을 고르고, UI 경로를 작동시키기 전후의 상태를 스냅숏으로 찍고, 런타임 이벤트를 관찰하고, 수정을 적용하고, 재시작해, 앱이 깨끗해질 때까지 검증을 다시 돌리는 루프.](https://img.seosoyoung.eiaserinnys.me/images/loop-engineering-harness/fig1-codex-devtools.png)
 
 관측 도구도 똑같이 했다. 로그·메트릭·트레이스를 worktree마다 임시로 뜨는 로컬 관측 스택을 통해 Codex에 노출한다. Codex는 로그와 메트릭까지 포함해 완전히 격리된 버전의 앱 위에서 일하고, 작업이 끝나면 그 스택은 헐린다. 에이전트는 로그를 LogQL로, 메트릭을 PromQL로 질의할 수 있다. 이 맥락이 주어지면 "서비스 시작이 800ms 안에 끝나게 하라"거나 "이 네 개의 핵심 사용자 여정에서 어떤 스팬도 2초를 넘기지 않게 하라" 같은 프롬프트가 다룰 수 있는 일이 된다.
 
-![Codex에게 로컬 개발 환경에서 완전한 관측 스택을 준다. 앱이 로그·메트릭·트레이스를 Vector로 보내면, Vector가 데이터를 Victoria Logs·Metrics·Traces로 갈라 보내고, 각각 LogQL·PromQL·TraceQL API로 질의된다. Codex는 이 신호로 질의·상관·추론하고, 코드에 수정을 넣고, 앱을 재시작해 워크로드를 다시 돌리고, UI 여정을 테스트하며 피드백 루프를 반복한다.](/images/loop-engineering-harness/fig2-observability.png)
+![Codex에게 로컬 개발 환경에서 완전한 관측 스택을 준다. 앱이 로그·메트릭·트레이스를 Vector로 보내면, Vector가 데이터를 Victoria Logs·Metrics·Traces로 갈라 보내고, 각각 LogQL·PromQL·TraceQL API로 질의된다. Codex는 이 신호로 질의·상관·추론하고, 코드에 수정을 넣고, 앱을 재시작해 워크로드를 다시 돌리고, UI 여정을 테스트하며 피드백 루프를 반복한다.](https://img.seosoyoung.eiaserinnys.me/images/loop-engineering-harness/fig2-observability.png)
 
 단일 Codex 실행이 하나의 작업을 두고 여섯 시간 넘게 (종종 사람이 자는 동안) 일하는 모습을 정기적으로 본다.
 
@@ -117,7 +117,7 @@ docs/
 
 에이전트의 관점에서, 돌아가는 동안 인-컨텍스트로 접근할 수 없는 것은 사실상 *존재하지 않는다*. Google Docs나 채팅 스레드, 사람의 머릿속에 사는 지식은 시스템에 접근 가능하지 않다. 저장소에 로컬로, 버전 관리되는 산물(코드·마크다운·스키마·실행 가능한 계획)만이 에이전트가 볼 수 있는 전부다.
 
-![에이전트 지식의 한계: Codex가 볼 수 없는 것은 존재하지 않는다. Codex의 지식은 경계 지어진 거품으로 그려지고, 그 아래에 보이지 않는 지식의 예 — Google Docs, Slack 메시지, 사람의 암묵지 — 가 있다. 이 정보를 Codex에게 보이게 하려면 마크다운으로 코드베이스에 인코딩해야 한다.](/images/loop-engineering-harness/fig3-agent-knowledge.png)
+![에이전트 지식의 한계: Codex가 볼 수 없는 것은 존재하지 않는다. Codex의 지식은 경계 지어진 거품으로 그려지고, 그 아래에 보이지 않는 지식의 예 — Google Docs, Slack 메시지, 사람의 암묵지 — 가 있다. 이 정보를 Codex에게 보이게 하려면 마크다운으로 코드베이스에 인코딩해야 한다.](https://img.seosoyoung.eiaserinnys.me/images/loop-engineering-harness/fig3-agent-knowledge.png)
 
 ## 아키텍처와 취향을 강제하다
 
@@ -125,7 +125,7 @@ docs/
 
 에이전트는 [엄격한 경계와 예측 가능한 구조](https://bits.logic.inc/p/ai-is-forcing-us-to-write-good-code)를 갖춘 환경에서 가장 효과적이므로, 애플리케이션을 단단한 아키텍처 모델 위에 지었다. 각 비즈니스 도메인은 고정된 계층 집합으로 나뉘고, 엄격히 검증되는 의존 방향과 허용되는 간선의 제한된 집합을 가진다. 이 제약은 (물론 Codex가 생성한) 커스텀 린터와 구조 테스트로 기계적으로 강제된다.
 
-![명시적 횡단 관심사 경계를 가진 계층형 도메인 아키텍처. 비즈니스 로직 도메인 안에 Types → Config → Repo, 그리고 Providers → Service → Runtime → UI 모듈이 있고, 맨 아래에 App Wiring + UI가 있다. Utils 모듈은 경계 바깥에 앉아 Providers로 들어간다.](/images/loop-engineering-harness/fig4-layered-architecture.png)
+![명시적 횡단 관심사 경계를 가진 계층형 도메인 아키텍처. 비즈니스 로직 도메인 안에 Types → Config → Repo, 그리고 Providers → Service → Runtime → UI 모듈이 있고, 맨 아래에 App Wiring + UI가 있다. Utils 모듈은 경계 바깥에 앉아 Providers로 들어간다.](https://img.seosoyoung.eiaserinnys.me/images/loop-engineering-harness/fig4-layered-architecture.png)
 
 도식의 규칙은 이렇다. 각 비즈니스 도메인(예: App Settings) 안에서 코드는 고정된 계층(Types → Config → Repo → Service → Runtime → UI)을 따라 "앞으로만" 의존할 수 있다. 횡단 관심사(인증·커넥터·텔레메트리·피처 플래그)는 단 하나의 명시적 인터페이스인 Providers를 통해서만 들어온다. 그 밖의 모든 것은 금지되고 기계적으로 강제된다.
 

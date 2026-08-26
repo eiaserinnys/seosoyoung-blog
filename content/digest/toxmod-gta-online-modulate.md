@@ -7,9 +7,9 @@ summary: "Modulate의 AI 음성 채팅 모더레이션 ToxMod가 GTA Online에 �
 ShowToc: true
 TocOpen: false
 cover:
-  image: "/images/toxmod-gta-online-modulate/gta-online-hero.jpg"
+  image: "https://img.seosoyoung.eiaserinnys.me/images/toxmod-gta-online-modulate/gta-online-hero.jpg"
 images:
-  - "/images/toxmod-gta-online-modulate/gta-online-hero.jpg"
+  - "https://img.seosoyoung.eiaserinnys.me/images/toxmod-gta-online-modulate/gta-online-hero.jpg"
 ---
 
 ## 3줄 요약
@@ -38,7 +38,7 @@ Modulate와 Rockstar Games가 함께 낸 [사례 연구](https://www.modulate.ai
 | GTA Online 초기 위반율 | 3.2% | 2023 도입 초기 테스트 |
 | GTA Online 위반율 (최신) | 0.49% | 2025년 말 주간 유저 기준 |
 
-![GTA Online 히어로 이미지](/images/toxmod-gta-online-modulate/gta-online-hero.jpg)
+![GTA Online 히어로 이미지](https://img.seosoyoung.eiaserinnys.me/images/toxmod-gta-online-modulate/gta-online-hero.jpg)
 
 3.2%에서 0.49%로의 하락은 상대 기준으로 약 -85% 수준의 감소다. 원문은 이 두 수치를 나란히 놓아 "ToxMod가 효과적으로 작동한 이후 이렇게 떨어졌다"고 명시한다.
 

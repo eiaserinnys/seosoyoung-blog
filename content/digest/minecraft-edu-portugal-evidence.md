@@ -7,9 +7,9 @@ summary: "한 트윗이 '포르투갈이 마인크래프트를 정규 코딩 수
 ShowToc: true
 TocOpen: false
 cover:
-  image: "/images/minecraft-edu-portugal-evidence/challenge-presentation.png"
+  image: "https://img.seosoyoung.eiaserinnys.me/images/minecraft-edu-portugal-evidence/challenge-presentation.png"
 images:
-  - "/images/minecraft-edu-portugal-evidence/challenge-presentation.png"
+  - "https://img.seosoyoung.eiaserinnys.me/images/minecraft-edu-portugal-evidence/challenge-presentation.png"
 sidenotes: true
 ---
 
@@ -19,7 +19,7 @@ sidenotes: true
 2. 마인크래프트 에듀케이션의 정식 커리큘럼은 K-12를 가로지르는 4단계·약 200시간 분량의 CS Progression이다. **Code Builder의 Agent**라는 로봇 NPC를 통해 블록 코딩 → JavaScript → Python으로 자연스럽게 전환되고, College Board가 인정한 AP CSP **Endorsed Provider**이기도 하다.[^progression-education][^csp-endorsed]
 3. 효과 연구는 공간 추론·수학 자기효능감 등에서 긍정 결과가 누적되었으나, 2025년 systematic review는 29개 연구 모두 편향 위험이 중·고 수준이라 평가했다. 문제해결력에서 *유의차 없음* 보고도 존재한다.
 
-![Minecraft School Challenge 발표 장면](/images/minecraft-edu-portugal-evidence/challenge-presentation.png "출처: kingwest0219의 트윗 첨부 사진")
+![Minecraft School Challenge 발표 장면](https://img.seosoyoung.eiaserinnys.me/images/minecraft-edu-portugal-evidence/challenge-presentation.png "출처: kingwest0219의 트윗 첨부 사진")
 
 ## 트윗이 주장한 것 vs 실제
 
@@ -44,7 +44,7 @@ sidenotes: true
 - **대상**: 주로 1·2·3기 기초교육(초·중학교). 5\~7학년이 중심이고, 마데이라는 1·2 ciclo 전반에 걸쳐 있다.
 - **수업 형태**: 정보통신기술(TIC) + `Ciências da Computação` 정규 수업 *안의 보조 도구* / 방과 후 워크숍 / e스포츠 형식의 대회.
 
-![학생들이 컴퓨터실에서 수업을 듣는 모습](/images/minecraft-edu-portugal-evidence/classroom.png)
+![학생들이 컴퓨터실에서 수업을 듣는 모습](https://img.seosoyoung.eiaserinnys.me/images/minecraft-edu-portugal-evidence/classroom.png)
 
 ## 교육 내용 — 무엇을 어떻게 가르치는가
 
@@ -93,7 +93,7 @@ for i in range(4):
 
 이 한 스니펫에 변수·반복·조건문·메서드 호출·열거형 상수가 모두 들어 있다. 같은 동작을 JavaScript로 작성하면 `agent.teleportToPlayer()`, `agent.move(FORWARD, 3)` 같은 카멜케이스 표기로 바뀌고, 블록 코딩에서는 `||agent: agent move forward by 3||` 같은 직소 블록을 끼워 맞춘다. 학생은 *같은 논리의 세 표기*를 한 화면의 토글로 오갈 수 있다.
 
-![학생들의 노트북 화면에서 마인크래프트 에듀케이션이 실행되고 있다](/images/minecraft-edu-portugal-evidence/laptops.png)
+![학생들의 노트북 화면에서 마인크래프트 에듀케이션이 실행되고 있다](https://img.seosoyoung.eiaserinnys.me/images/minecraft-edu-portugal-evidence/laptops.png)
 
 ### Hour of Code — 매년 다른 스토리, 같은 개념
 

@@ -7,9 +7,9 @@ summary: "컴퓨트가 충분히 크면 데이터 필터링은 오히려 손해�
 ShowToc: true
 TocOpen: false
 cover:
-  image: "/images/bitter-lesson-data-filtering-2026/fig1-filtering-comparison.png"
+  image: "https://img.seosoyoung.eiaserinnys.me/images/bitter-lesson-data-filtering-2026/fig1-filtering-comparison.png"
 images:
-  - "/images/bitter-lesson-data-filtering-2026/fig1-filtering-comparison.png"
+  - "https://img.seosoyoung.eiaserinnys.me/images/bitter-lesson-data-filtering-2026/fig1-filtering-comparison.png"
 sidenotes: true
 ---
 
@@ -32,7 +32,7 @@ sidenotes: true
 
 저자들은 5개 필터를 적용한 CC 서브셋과 무필터 CC pool을 비교했다. 작은 모델(15M)에서는 필터링이 우세하지만, 모델이 커질수록 무필터 풀이 우세해진다.
 
-![모델 크기별 필터 vs 무필터 비교 (Figure 1)](/images/bitter-lesson-data-filtering-2026/fig1-filtering-comparison.png "Figure 1: 670M 토큰 CC pool과 5개 필터링 서브셋 비교. 330M+ 모델에서 무필터 풀(검정)이 모든 필터(컬러)를 이긴다.")
+![모델 크기별 필터 vs 무필터 비교 (Figure 1)](https://img.seosoyoung.eiaserinnys.me/images/bitter-lesson-data-filtering-2026/fig1-filtering-comparison.png "Figure 1: 670M 토큰 CC pool과 5개 필터링 서브셋 비교. 330M+ 모델에서 무필터 풀(검정)이 모든 필터(컬러)를 이긴다.")
 
 비교한 필터:
 
@@ -49,7 +49,7 @@ sidenotes: true
 compute-performance Pareto frontier로 보면, compute가 늘수록 무필터가 최악에서 최선으로 전이한다. Repetition 필터는 어느 compute 수준에서도 다른 두 데이터셋보다 좋지 않아 frontier에 한 번도 올라오지 못한다.
 
 <figure style="text-align: center;">
-<img src="/images/bitter-lesson-data-filtering-2026/fig2-pareto-frontier.png" alt="Pareto frontier (Figure 2)" style="max-width: 500px;">
+<img src="https://img.seosoyoung.eiaserinnys.me/images/bitter-lesson-data-filtering-2026/fig2-pareto-frontier.png" alt="Pareto frontier (Figure 2)" style="max-width: 500px;">
 <figcaption>Figure 2: compute가 커지면 무필터 pool(검정)이 모든 필터를 추월한다.</figcaption>
 </figure>
 
@@ -62,7 +62,7 @@ compute-performance Pareto frontier로 보면, compute가 늘수록 무필터가
 - **Random strings**: a-z 알파벳에서 3\~8자 단어 1만 개를 무작위 추출하여 공백으로 이어붙인 문서
 - **Shuffled words**: CC 문서의 단어 순서를 무작위로 섞은 문서
 
-![junk 주입 강건성 (Figure 3)](/images/bitter-lesson-data-filtering-2026/fig3-junk-robustness.png "Figure 3: 위 — random strings 주입(+20~200%). 아래 — shuffled words 주입(+100~800%). 330M+ 모델에서는 junk를 섞은 데이터셋이 pool만 사용한 경우보다 *낮은* loss에 도달한다.")
+![junk 주입 강건성 (Figure 3)](https://img.seosoyoung.eiaserinnys.me/images/bitter-lesson-data-filtering-2026/fig3-junk-robustness.png "Figure 3: 위 — random strings 주입(+20~200%). 아래 — shuffled words 주입(+100~800%). 330M+ 모델에서는 junk를 섞은 데이터셋이 pool만 사용한 경우보다 *낮은* loss에 도달한다.")
 
 330M 모델에서 shuffled-word를 +400% 주입한 데이터셋은 NLL 3.36으로 pool만 사용한 3.40보다 좋다. +20% random string도 NLL 3.38로 약간 좋다. **+800% shuffled (원본 10%만 남기고 셔플)** 도 큰 모델에서는 거의 따라잡는다. random 가비지를 1배 추가해도 큰 모델 성능은 거의 떨어지지 않는다.
 
@@ -72,7 +72,7 @@ compute-performance Pareto frontier로 보면, compute가 늘수록 무필터가
 
 작은 풀(670M\~10B)에서 본 효과가 240T 토큰 규모에서도 성립할까? 저자들은 풀 크기 m, 모델 크기 M, 학습 스텝 N의 3차원 공간에서 crossing point(N\*) — pool이 RefinedWeb을 처음 이기는 시점 — 를 측정하여 스케일링 법칙을 만든다.
 
-![pool size별 crossing point (Figure 5)](/images/bitter-lesson-data-filtering-2026/fig5-pool-size-scaling.png "Figure 5: 풀이 커질수록 필요한 학습 스텝과 epoch 수가 super-linear로 증가하지만, 모델 크기가 커지면 그 부담은 다시 줄어든다.")
+![pool size별 crossing point (Figure 5)](https://img.seosoyoung.eiaserinnys.me/images/bitter-lesson-data-filtering-2026/fig5-pool-size-scaling.png "Figure 5: 풀이 커질수록 필요한 학습 스텝과 epoch 수가 super-linear로 증가하지만, 모델 크기가 커지면 그 부담은 다시 줄어든다.")
 
 두 가지 방식으로 scaling law를 적합한다:
 
@@ -80,7 +80,7 @@ compute-performance Pareto frontier로 보면, compute가 늘수록 무필터가
 - **4 epoch 제약** (Muennighoff et al. 2025 기반)
 
 <figure style="text-align: center;">
-<img src="/images/bitter-lesson-data-filtering-2026/fig6-compute-scaling-law.png" alt="compute scaling law (Figure 6)" style="max-width: 520px;">
+<img src="https://img.seosoyoung.eiaserinnys.me/images/bitter-lesson-data-filtering-2026/fig6-compute-scaling-law.png" alt="compute scaling law (Figure 6)" style="max-width: 520px;">
 <figcaption>Figure 6: 두 적합 방식 모두 R² > 0.99로 240T 풀에 대해 비슷한 임계점을 가리킨다 — 약 1e30 FLOPs.</figcaption>
 </figure>
 

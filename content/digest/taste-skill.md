@@ -7,9 +7,9 @@ summary: "Leonxlnx가 공개한 오픈소스 Agent Skills 컬렉션. AI 코딩 �
 ShowToc: true
 TocOpen: false
 cover:
-  image: "/images/taste-skill/readme-banner.webp"
+  image: "https://img.seosoyoung.eiaserinnys.me/images/taste-skill/readme-banner.webp"
 images:
-  - "/images/taste-skill/readme-banner.webp"
+  - "https://img.seosoyoung.eiaserinnys.me/images/taste-skill/readme-banner.webp"
 ---
 
 ## 3줄 요약
@@ -18,7 +18,7 @@ images:
 2. 핵심 개념은 세 개의 다이얼과 브리프 인퍼런스다. DESIGN_VARIANCE 8 / MOTION_INTENSITY 6 / VISUAL_DENSITY 4가 기본값이고, 코드를 쓰기 전에 "이 요청을 나는 이렇게 읽었다"를 한 줄로 선언하도록 강제한다. AI 에이전트가 자기 판단을 내리기 전에 브리프를 다시 읽는 훅을 심는 방식이다.
 3. 11개의 스킬 배리언트가 함께 배포된다. 기본 taste-skill 외에 프리미엄용 soft, 미니멀리스트, 브루탈리스트, 기존 프로젝트 진단과 수정용 redesign, 출력 절단 방지용 output, 이미지 우선 파이프라인, Google Stitch용 등이 각각의 미학과 금지 목록을 들고 있다.
 
-![taste-skill 리포지토리 배너](/images/taste-skill/readme-banner.webp)
+![taste-skill 리포지토리 배너](https://img.seosoyoung.eiaserinnys.me/images/taste-skill/readme-banner.webp)
 
 ## 무엇을 해결하는가
 
@@ -95,9 +95,9 @@ taste-skill은 하나의 미학이 아니라 미학 카탈로그를 배포한다
 
 브루탈리스트 배리언트는 정반대의 결이다. 스위스 산업 인쇄와 항공, 군용 CRT 터미널이 결합된 미학으로, `border-radius`를 전 프로젝트에서 완전히 금지한다. 모든 코너가 90도다. 매크로 타이포는 Neue Haas Grotesk, Archivo Black, Monument Extended 중에서 고르고, `clamp(4rem, 10vw, 15rem)` 크기, 자간 -0.03em에서 -0.06em, 대문자만 허용한다. 마이크로 타이포는 JetBrains Mono, 10에서 14px. 두 페어링만 허용된다.
 
-![Floria, taste-skill이 실제로 만드는 결과물 (상단)](/images/taste-skill/floria-top.webp)
+![Floria, taste-skill이 실제로 만드는 결과물 (상단)](https://img.seosoyoung.eiaserinnys.me/images/taste-skill/floria-top.webp)
 
-![Floria, taste-skill이 실제로 만드는 결과물 (하단)](/images/taste-skill/floria-bottom.webp)
+![Floria, taste-skill이 실제로 만드는 결과물 (하단)](https://img.seosoyoung.eiaserinnys.me/images/taste-skill/floria-bottom.webp)
 
 ## 랜덤화를 강제하는 방식
 

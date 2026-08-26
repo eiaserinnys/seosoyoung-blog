@@ -7,9 +7,9 @@ summary: "흔들린 사진 한 장을 사전학습 비디오 확산 모델에 �
 ShowToc: true
 TocOpen: false
 cover:
-  image: "/images/motion-blur-past-present-future/teaser.png"
+  image: "https://img.seosoyoung.eiaserinnys.me/images/motion-blur-past-present-future/teaser.png"
 images:
-  - "/images/motion-blur-past-present-future/teaser.png"
+  - "https://img.seosoyoung.eiaserinnys.me/images/motion-blur-past-present-future/teaser.png"
 ---
 
 ## 3줄 요약
@@ -18,7 +18,7 @@ images:
 2. 흔들린 사진 한 장을 사전학습 비디오 확산 모델(CogVideoX-2B)에 조건으로 넣어, 노출이 열려 있던 동안의 영상뿐 아니라 촬영 직전과 직후까지 생성한다. 각 출력 프레임의 노출 시작 시각과 길이를 따로 지정하는 인코딩이 핵심 장치다.
 3. GoPro와 B-AIST++ 벤치마크의 모든 지표에서 기존 기법을 앞섰고(GoPro PSNR 30.01 대 26.54, FVD 21.46 대 94.90), 1944년 노르망디 상륙 사진 같은 역사 사진에도 일반화된다. 출력 영상은 카메라 궤적 복원, 4D 장면 재구성, 3D 얼굴 자세 추정 같은 후속 작업의 입력이 된다.
 
-![입력 모션 블러 이미지에서 생성한 영상 프레임, 추적 결과, 역사 사진 복원, 3D 구조 복원](/images/motion-blur-past-present-future/teaser.png)
+![입력 모션 블러 이미지에서 생성한 영상 프레임, 추적 결과, 역사 사진 복원, 3D 구조 복원](https://img.seosoyoung.eiaserinnys.me/images/motion-blur-past-present-future/teaser.png)
 *Figure 1. 흔들린 사진 한 장(a)에서 노출 중의 장면 움직임을 복원하고(b, c), 역사 사진을 되살리며(d), 동적 3D 구조와 카메라 자세까지 얻는다(e). Tedla et al., CC BY-SA 4.0*
 
 ## 흔들림은 손실인가 기록인가
@@ -29,7 +29,7 @@ images:
 
 논문은 여기서 방향을 튼다. 이 과제를 이미지 복원으로 다루는 대신 조건부 영상 생성으로 옮긴다. 수백만 개 영상 클립과 수십억 장 이미지로 학습된 비디오 확산 모델은 이미 모션 블러를 숱하게 봤을 테니, 흔들림과 장면 움직임의 관계에 대한 사전 지식을 내장하고 있으리라는 가정이다.
 
-![흔들린 축구공 이미지를 조건으로 준 기성 비디오 확산 모델이 블러 방향과 일치하는 영상을 생성한다](/images/motion-blur-past-present-future/soccer-ball.png)
+![흔들린 축구공 이미지를 조건으로 준 기성 비디오 확산 모델이 블러 방향과 일치하는 영상을 생성한다](https://img.seosoyoung.eiaserinnys.me/images/motion-blur-past-present-future/soccer-ball.png)
 *Figure 2. 미세 조정 없이 기성 비디오 확산 모델에 흔들린 축구공 사진과 "회전 없이 움직이는 축구공"이라는 같은 문장을 주면, 공의 수평 이동과 수직 이동을 블러 방향에 맞춰 각각 옳게 예측한다. Tedla et al., CC BY-SA 4.0*
 
 이 예비 실험이 논문 전체의 출발점이다. 대형 비디오 모델은 흔들림을 읽을 줄 안다. 남은 일은 읽은 것을 원하는 시각 구간으로 정확히 뱉게 만드는 것이다.
@@ -69,21 +69,21 @@ images:
 
 FVD 격차가 특히 크다. GoPro에서 94.90에서 21.46으로, B-AIST++에서 138.27에서 37.16으로 줄었다. 픽셀 정확도보다 "정답 영상 분포에 얼마나 가까운가"에서 차이가 벌어졌다는 뜻이다. 논문은 이를 바탕 모델의 대규모 사전학습이 남긴 자연 영상 사전 지식 덕으로 본다.
 
-![GoPro와 B-AIST++ 데이터셋에서 기존 기법과 제안 기법의 출력 프레임 및 추적 결과 비교](/images/motion-blur-past-present-future/gopro.png)
+![GoPro와 B-AIST++ 데이터셋에서 기존 기법과 제안 기법의 출력 프레임 및 추적 결과 비교](https://img.seosoyoung.eiaserinnys.me/images/motion-blur-past-present-future/gopro.png)
 *Figure 5. 왼쪽부터 기존 기법들과 제안 기법, 정답. 추적 궤적은 Cotracker로 계산했다. 아래 두 행은 야생 사진에서 기존 기법들이 선명한 프레임을 아예 만들지 못하는 사례다. Tedla et al., CC BY-SA 4.0*
 
 ## 노출 바깥은 어디까지 버티는가
 
 240 FPS 프레임 7장을 평균해 흔들린 이미지를 만들고, 모델에게 13프레임을 요구했다. 촬영 전 3장, 노출 중 7장, 촬영 후 3장이다.
 
-![프레임별 PSNR 그래프. 노출 구간 내부에서는 평탄하고 바깥으로 갈수록 낮아진다](/images/motion-blur-past-present-future/psnrplot.png)
+![프레임별 PSNR 그래프. 노출 구간 내부에서는 평탄하고 바깥으로 갈수록 낮아진다](https://img.seosoyoung.eiaserinnys.me/images/motion-blur-past-present-future/psnrplot.png)
 *Figure 4. 13프레임 예측의 프레임별 PSNR. Tedla et al., CC BY-SA 4.0*
 
 노출 안쪽 7프레임의 품질이 거의 일정하다. 노출 중 어느 순간이든 흔들림이 똑같이 잘 구속한다는 뜻이다. 바깥으로 나가면 정확도가 떨어지지만 그래도 20\~30 dB 범위에 머문다. 흔들림 한 장이 촬영 전후에 대해서도 꽤 강한 단서를 준다는 결과다.
 
 ## 사진이 다시 움직이기 시작할 때
 
-![야생 사진, 역사 사진, 4D 재구성, 3D 얼굴 자세 복원 응용 사례 모음](/images/motion-blur-past-present-future/applications.png)
+![야생 사진, 역사 사진, 4D 재구성, 3D 얼굴 자세 복원 응용 사례 모음](https://img.seosoyoung.eiaserinnys.me/images/motion-blur-past-present-future/applications.png)
 *Figure 6. (a) 야생 사진에서 노출 전, 노출 중, 노출 후를 생성한 결과 (b) 역사 사진의 장면 움직임 복원 (c) 구조 복원으로 얻은 3D 장면과 카메라 자세 (d) 80여 년 전 흑백 사진의 미세한 움직임 (e) 흔들린 인물 사진에서 복원한 3D 얼굴 움직임. Tedla et al., CC BY-SA 4.0*
 
 **야생 사진.** 달리기, 자전거, 서핑, 체조, 물 튀김, 회전목마 같은 원운동까지 다룬다. 도심 교차로처럼 서로 다른 궤적으로 움직이는 물체가 여럿 섞인 장면에서도 프레임을 회복한다. 반면 GoPro로 학습된 기존 기법들은 이런 사진에서 선명한 프레임 자체를 만들지 못했고, 애초에 노출 구간 바깥을 생성하는 기능이 없다.
@@ -98,24 +98,24 @@ FVD 격차가 특히 크다. GoPro에서 94.90에서 21.46으로, B-AIST++에서
 
 **여러 답이 있는 질문.** 하나의 흔들린 사진을 설명하는 영상은 원리상 무한히 많다. 같은 입력으로 여러 번 표본을 뽑아 보면 모델이 학습한 분포가 드러난다.
 
-![택시 사진에서 네 번 표본을 뽑아도 모두 같은 방향으로 진행한다](/images/motion-blur-past-present-future/taxi-direction.png)
+![택시 사진에서 네 번 표본을 뽑아도 모두 같은 방향으로 진행한다](https://img.seosoyoung.eiaserinnys.me/images/motion-blur-past-present-future/taxi-direction.png)
 *Figure 8. 택시는 네 표본 모두 오른쪽에서 왼쪽으로, 즉 차량의 정면 방향으로 움직인다. Tedla et al., CC BY-SA 4.0*
 
-![흔들린 얼굴 사진에서는 좌우 양방향의 움직임이 모두 표본으로 나온다](/images/motion-blur-past-present-future/face-direction.png)
+![흔들린 얼굴 사진에서는 좌우 양방향의 움직임이 모두 표본으로 나온다](https://img.seosoyoung.eiaserinnys.me/images/motion-blur-past-present-future/face-direction.png)
 *Figure 7. 고개를 젓는 얼굴처럼 방향이 모호한 경우에는 좌에서 우, 우에서 좌 양쪽이 모두 표본으로 나온다. Tedla et al., CC BY-SA 4.0*
 
 사람, 자동차, 동물은 대체로 정면 방향으로 나아가도록 예측된다. 현실 세계의 운동 사전 지식이 반영된 결과다. 논문은 이 절의 결론을 분명히 밝힌다. 모델은 촬영 순간에 실제로 일어난 움직임을 되찾는 것이 아니라, 일어났을 법한 일의 표본을 만들어 낸다.
 
 **3D 일관성.** 카메라 이동으로 생긴 흔들림 장면에서 첫 프레임과 마지막 프레임에 SIFT와 RANSAC을 적용해 대응점을 찾고 기본 행렬과 호모그래피를 구했다.
 
-![트럭 장면의 에피폴라 선과 호모그래피 잔차 시각화](/images/motion-blur-past-present-future/car.png)
+![트럭 장면의 에피폴라 선과 호모그래피 잔차 시각화](https://img.seosoyoung.eiaserinnys.me/images/motion-blur-past-present-future/car.png)
 *Figure 9. 에피폴라 선이 전진하는 카메라 운동과 일치한다. 호모그래피는 배경을 잘 맞추지만 표지판에서 큰 오차를 남기는데, 이는 장면의 3D 구조에서 생기는 시차 때문이다. Tedla et al., CC BY-SA 4.0*
 
 시점 변화 없이 패닝만 한 장면에서는 움직임이 2D 호모그래피로 정확히 설명된다. 3D 지도를 따로 감독하지 않았는데도 출력이 기하학적으로 그럴듯하다는 정황이다.
 
 **입력과의 일치.** 생성 프레임들을 평균해 입력 흔들린 사진과 비교한 PSNR은 GoPro에서 35.47 dB로 Jin et al.(33.64)과 MotionETR(32.17)보다 높지만, B-AIST++에서는 32.32로 Animation from Blur(33.76)보다 낮다. 논문은 이 지표 하나만으로는 의미가 없다고 명시한다. 입력 사진을 그대로 반복 출력하는 자명한 해가 만점을 받기 때문이다.
 
-![입력 흔들린 이미지와 각 기법이 생성한 프레임들의 평균 비교](/images/motion-blur-past-present-future/motionblur-consistency.png)
+![입력 흔들린 이미지와 각 기법이 생성한 프레임들의 평균 비교](https://img.seosoyoung.eiaserinnys.me/images/motion-blur-past-present-future/motionblur-consistency.png)
 *Figure 11. 입력 흔들린 이미지와, 각 기법이 생성한 프레임을 평균한 이미지의 비교. Tedla et al., CC BY-SA 4.0*
 
 **노출 구간 제어.** GoPro 테스트 세트 20장으로 같은 입력에서 2, 4, 8, 16프레임을 요청해 봤다. 프레임 수가 늘수록(개별 노출이 짧아질수록) PSNR은 31.10에서 26.15로 완만하게 내려간다. 프레임 사이에 한 프레임씩 빈 시간을 두는 비연속 구간에서는 23.00까지 떨어지지만 여전히 그럴듯한 영상이 나온다.
@@ -124,7 +124,7 @@ FVD 격차가 특히 크다. GoPro에서 94.90에서 21.46으로, B-AIST++에서
 
 ## 한계
 
-![합성 사진, 타임랩스, 빠른 패닝 사진에서의 실패 사례](/images/motion-blur-past-present-future/limitations.png)
+![합성 사진, 타임랩스, 빠른 패닝 사진에서의 실패 사례](https://img.seosoyoung.eiaserinnys.me/images/motion-blur-past-present-future/limitations.png)
 *Figure 12. 실패 사례. Tedla et al., CC BY-SA 4.0*
 
 첫째, 서로 다른 시각에 찍은 사진을 합성해 만든 이미지는 단일 연속 노출이라는 전제를 어기므로 출력 품질이 나빠진다. 둘째, 불꽃 막대의 타임랩스처럼 극단적으로 긴 노출은 실패한다. 셋째, 빠른 패닝과 복잡한 장면 운동이 겹친 스포츠 사진에서는 아티팩트가 생긴다.

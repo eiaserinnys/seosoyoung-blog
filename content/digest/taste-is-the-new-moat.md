@@ -7,9 +7,9 @@ summary: "AI가 코드와 콘텐츠 생산을 상품화하면서 속도·자본�
 ShowToc: true
 TocOpen: false
 cover:
-  image: "/images/taste-is-the-new-moat/robots-cubicles.png"
+  image: "https://img.seosoyoung.eiaserinnys.me/images/taste-is-the-new-moat/robots-cubicles.png"
 images:
-  - "/images/taste-is-the-new-moat/robots-cubicles.png"
+  - "https://img.seosoyoung.eiaserinnys.me/images/taste-is-the-new-moat/robots-cubicles.png"
 ---
 
 ## 3줄 요약
@@ -27,13 +27,13 @@ images:
 - Coinbase: 코드베이스의 40%가 AI 도구에서 생성
 - Lovable: 1분 안에 작동하는 앱을 생성
 
-![AI가 코드를 쓰는 소프트웨어 공장을 풍자한 일러스트](/images/taste-is-the-new-moat/robots-cubicles.png)
+![AI가 코드를 쓰는 소프트웨어 공장을 풍자한 일러스트](https://img.seosoyoung.eiaserinnys.me/images/taste-is-the-new-moat/robots-cubicles.png)
 
 모델 성능은 수렴하고 API는 누구나 쓸 수 있으며 클라우드 인프라는 턴키로 제공된다. Anthropic 내부에서도 개발자가 코드를 직접 쓰는 대신 여러 자율 에이전트를 관리하는 역할로 이동하고 있다고 인용한다. 저자의 표현으로는, 모두가 같은 제트 엔진을 갖게 되면 속도는 더 이상 해자가 아니다.
 
 풍요의 어두운 면도 다룬다. 저품질 AI 산출물, 이른바 AI 슬롭이 피드와 검색 결과를 덮고 있고, Reuters Institute는 이것이 정보 생태계의 신뢰를 위협한다고 경고한다. 회사 내부에서는 그럴듯해 보이지만 속이 빈 AI 메모·보고서, 이른바 워크슬롭(workslop)이 시간을 잡아먹는다. Axios가 요약한 연구에 따르면 사무직 노동자의 약 40%가 최근 한 달 사이 워크슬롭을 접했고, 건당 약 2시간의 재작업 비용이 발생했다.
 
-![AI SLOP이라고 적힌 쓰레기통이 넘치는 일러스트](/images/taste-is-the-new-moat/ai-slop-trash.png)
+![AI SLOP이라고 적힌 쓰레기통이 넘치는 일러스트](https://img.seosoyoung.eiaserinnys.me/images/taste-is-the-new-moat/ai-slop-trash.png)
 
 생산이 넘쳐날 때 희소해지는 것은 지각, 일관성, 정성이며 이를 한 단어로 줄이면 디자인이고, 그 뒤에 있는 해자가 취향이라는 것이 1장의 결론이다.
 
@@ -64,11 +64,11 @@ images:
 
 헬스케어 사례가 생생하다. 업계 지배 사업자 Epic Systems가 AI 의료 스크라이브를 출시했을 때, 비대한 폼과 중첩 메뉴 때문에 스크린샷이 조롱거리가 되었다.
 
-![Epic의 복잡한 AI 스크라이브 UI를 조롱하는 소셜 미디어 포스트](/images/taste-is-the-new-moat/epic-scribe-ui.jpg)
+![Epic의 복잡한 AI 스크라이브 UI를 조롱하는 소셜 미디어 포스트](https://img.seosoyoung.eiaserinnys.me/images/taste-is-the-new-moat/epic-scribe-ui.jpg)
 
 반면 2018년 창업한 소규모 스타트업 Abridge는 같은 종류의 AI 스크라이브를 명료하고 따뜻하게 설계했고, 의사들이 "아름답다", "신뢰하기 쉽다"고 평가한다. Epic의 규모 우위에도 불구하고 Abridge가 병원들에서 지지자를 얻고 있다는 것이 저자의 관찰이다.
 
-![Abridge의 AI 의료 스크라이브 인터페이스](/images/taste-is-the-new-moat/abridge-ui.png)
+![Abridge의 AI 의료 스크라이브 인터페이스](https://img.seosoyoung.eiaserinnys.me/images/taste-is-the-new-moat/abridge-ui.png)
 
 신뢰는 더 이상 평판만으로 얻어지지 않고 인터페이스에 내장된다. 저자는 디자인을 "인간과 기계 사이의 악수, 믿음의 아키텍처"라고 표현한다.
 
@@ -78,7 +78,7 @@ images:
 
 Arc Browser는 차분하고 지적인 느낌을, Notion은 가볍고 촉각적인 느낌을 준다. 사용자가 제품을 "아름답다"고 말할 때 그것은 색상 팔레트 이야기가 아니라 내적 일관성, 즉 모든 디테일이 같은 가치를 말하고 있다는 뜻이다.
 
-![Apple, Tesla, Dyson 로고](/images/taste-is-the-new-moat/apple-tesla-dyson.png)
+![Apple, Tesla, Dyson 로고](https://img.seosoyoung.eiaserinnys.me/images/taste-is-the-new-moat/apple-tesla-dyson.png)
 
 Apple은 타이포그래피·제스처·소재가 "기술을 인간답게"라는 하나의 생각을 표현하고, Tesla는 엔지니어링 성능을 정서적 열망으로 바꿨으며, Dyson은 기계 내부의 정밀함을 그대로 디자인 언어로 만들었다. 취향이 문화에 자리잡으면 자본처럼 복리로 불어난다. 새 릴리스마다 이전 선택의 DNA가 실리고, 사용자는 그 기대치로 다른 모든 제품을 무의식적으로 평가하게 된다.
 
@@ -104,7 +104,7 @@ AI를 인쇄기에 비유하는 대목이 이어진다. 인쇄기가 위대한 �
 
 지난 10년은 속도를 찬양했다. 그러나 AI로 포화된 세계에서 무결성 없는 속도는 역효과를 내기 시작했다. 저자는 다음 경쟁 지표가 출시까지의 시간(time-to-ship)이 아니라 <strong>신뢰까지의 시간(time-to-trust)</strong>이 될 것이라고 주장한다.
 
-![NOT HUMAN 팻말을 든 로봇 일러스트](/images/taste-is-the-new-moat/not-human-robot.png)
+![NOT HUMAN 팻말을 든 로봇 일러스트](https://img.seosoyoung.eiaserinnys.me/images/taste-is-the-new-moat/not-human-robot.png)
 
 즉답하지만 불투명한 AI 어시스턴트보다, 조금 느려도 출처를 인용하는 어시스턴트가 더 많은 확신을 준다. 신뢰는 사용자가 기꺼이 기다려 주는 사치재가 되고 있다는 것이다. 실천 원칙은 세 가지다.
 

@@ -9,7 +9,7 @@ TocOpen: false
 sidenotes: true
 ---
 
-![Vulture, "The Feed Is Fake" 커버 일러스트](/images/vulture-the-feed-is-fake/cover.jpg "원문: vulture.com / New York Magazine")
+![Vulture, "The Feed Is Fake" 커버 일러스트](https://img.seosoyoung.eiaserinnys.me/images/vulture-the-feed-is-fake/cover.jpg "원문: vulture.com / New York Magazine")
 
 ## 3줄 요약
 

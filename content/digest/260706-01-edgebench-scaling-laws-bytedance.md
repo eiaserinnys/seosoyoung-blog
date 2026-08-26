@@ -8,9 +8,9 @@ math: true
 ShowToc: true
 TocOpen: false
 cover:
-  image: "/images/260706-01-edgebench-scaling-laws-bytedance/scaling-curve.png"
+  image: "https://img.seosoyoung.eiaserinnys.me/images/260706-01-edgebench-scaling-laws-bytedance/scaling-curve.png"
 images:
-  - "/images/260706-01-edgebench-scaling-laws-bytedance/scaling-curve.png"
+  - "https://img.seosoyoung.eiaserinnys.me/images/260706-01-edgebench-scaling-laws-bytedance/scaling-curve.png"
 ---
 
 ## 3줄 요약
@@ -19,7 +19,7 @@ images:
 2. 5개 프론티어 모델의 총 **약 38,000시간** 상호작용 데이터를 분석한 결과, 환경 학습 성능은 상호작용 시간의 **로그-시그모이드 함수**를 따르며 $R^2 = 0.998$의 정밀도로 맞춰진다. 사전학습 스케일링 법칙과 같은 수학적 형태다.
 3. **프론티어 모델의 환경 학습 속도는 대략 3개월마다 두 배가 된다.** 12시간 리더보드에서 Claude Opus 4.8이 51.3점으로 선두, GPT-5.5가 48.4점으로 뒤를 잇는다.
 
-![134개 태스크 평균 학습 곡선 — 로그-시그모이드 정합](/images/260706-01-edgebench-scaling-laws-bytedance/scaling-curve.png)
+![134개 태스크 평균 학습 곡선 — 로그-시그모이드 정합](https://img.seosoyoung.eiaserinnys.me/images/260706-01-edgebench-scaling-laws-bytedance/scaling-curve.png)
 
 ## 왜 EdgeBench가 필요한가
 
@@ -32,7 +32,7 @@ EdgeBench의 저자들은 이 격차를 두 가지 설계 요건으로 정리했
 
 ## 태스크 태소노미 — 134개, 6개 능력군
 
-![EdgeBench 태소노미](/images/260706-01-edgebench-scaling-laws-bytedance/taxonomy.png)
+![EdgeBench 태소노미](https://img.seosoyoung.eiaserinnys.me/images/260706-01-edgebench-scaling-laws-bytedance/taxonomy.png)
 
 각 태스크는 현재 어떤 에이전트도 포화시키지 못하는 성능 상한을 갖도록 설계됐다. 인간 전문가가 태스크 하나에 투입한 시간의 평균은 **57.2시간**, 최대는 **320시간**이다.
 

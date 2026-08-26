@@ -7,9 +7,9 @@ summary: "루프 엔지니어링을 '기억' 한 축에서 다시 보는 글. �
 ShowToc: true
 TocOpen: false
 cover:
-  image: "/images/loop-engineering-mem0/cover.jpeg"
+  image: "https://img.seosoyoung.eiaserinnys.me/images/loop-engineering-mem0/cover.jpeg"
 images:
-  - "/images/loop-engineering-mem0/cover.jpeg"
+  - "https://img.seosoyoung.eiaserinnys.me/images/loop-engineering-mem0/cover.jpeg"
 ---
 
 ## 3줄 요약
@@ -20,7 +20,7 @@ images:
 
 이 글은 ["루프 엔지니어링" 연재](/tags/루프-엔지니어링/)의 일곱 번째, 마지막 편이다. 앞선 여섯 편이 루프의 *제어 흐름*을 주로 들여다봤다면 — [1편(Addy Osmani)](/digest/loop-engineering-osmani/)이 "루프를 설계하라"는 선언을, [2편(Firecrawl)](/digest/loop-engineering-firecrawl/)이 그 실천 노트를, [3편(Oracle)](/digest/loop-engineering-oracle/)이 ReAct에서 출발한 계보를, [4편(OpenAI)](/digest/loop-engineering-harness/)이 하네스를 직접 짠 생산자의 사례를, [5편(Böckeler/Fowler)](/digest/loop-engineering-fowler/)이 그 하네스를 사용자의 멘탈 모델로 정리했고, [6편(Data Science Dojo)](/digest/loop-engineering-overview/)이 그 모두를 4세대 계보의 지도 위에 올렸다면 — 이 7편은 시선을 *루프의 기억*으로 돌린다. 앞선 편들도 메모리를 스치긴 했지만(6편의 메모리 4종, Ralph 루프의 파일 기반 상태), 메모리를 루프 설계의 *출발점*으로 삼아 본 글은 이 편이 처음이다. 연재를 닫는 자리에 두기 알맞은 각도다.
 
-![Loop Engineering for AI Agents: Memory-First Design — Mem0 블로그의 표제 이미지.](/images/loop-engineering-mem0/cover.jpeg)
+![Loop Engineering for AI Agents: Memory-First Design — Mem0 블로그의 표제 이미지.](https://img.seosoyoung.eiaserinnys.me/images/loop-engineering-mem0/cover.jpeg)
 
 ## 루프 엔지니어링이란, 다시
 
@@ -32,7 +32,7 @@ images:
 
 ## 토큰이 풍부한 루프 vs 토큰이 빈약한 루프
 
-![토큰이 풍부한 루프와 빈약한 루프의 모양 비교 — 컨텍스트 크기와 절충점을 한눈에 보여 준다.](/images/loop-engineering-mem0/token-rich-vs-poor.png)
+![토큰이 풍부한 루프와 빈약한 루프의 모양 비교 — 컨텍스트 크기와 절충점을 한눈에 보여 준다.](https://img.seosoyoung.eiaserinnys.me/images/loop-engineering-mem0/token-rich-vs-poor.png)
 
 루프 엔지니어링은 보통 하나의 설계 선택에서 시작한다. *모델이 매 단계 얼마나 많은 컨텍스트를 봐야 하는가?*
 
@@ -72,7 +72,7 @@ images:
 
 ## 에이전트 루프의 핵심 구성 요소
 
-![프로덕션 에이전트 루프의 주요 단계와 그 사이를 흐르는 정보 — 제어 사이클을 구체화한다.](/images/loop-engineering-mem0/core-components.png)
+![프로덕션 에이전트 루프의 주요 단계와 그 사이를 흐르는 정보 — 제어 사이클을 구체화한다.](https://img.seosoyoung.eiaserinnys.me/images/loop-engineering-mem0/core-components.png)
 
 높은 수준에서 프로덕션 에이전트 루프는 다음 단계를 거친다.
 
@@ -114,7 +114,7 @@ Mem0를 쓰는 에이전트 루프는 대략 이런 모양이다.
 
 ## 예: Mem0를 쓴 토큰이 빈약한 루프
 
-![Mem0를 쓴 토큰이 빈약한 루프 — 검색과 저장이 가벼운 모델 호출을 감싼다.](/images/loop-engineering-mem0/token-poor-example.png)
+![Mem0를 쓴 토큰이 빈약한 루프 — 검색과 저장이 가벼운 모델 호출을 감싼다.](https://img.seosoyoung.eiaserinnys.me/images/loop-engineering-mem0/token-poor-example.png)
 
 글은 Mem0로 장기 사용자 기억을 유지하면서도 매 프롬프트를 토큰이 빈약하게 지키는 단순 대화 에이전트의 파이썬 예제를 든다(코드 자체는 본문에 노출되지 않고 도식으로만 제시된다). 이 루프가 명시적으로 토큰이 빈약한 이유는 셋이다.
 
@@ -126,7 +126,7 @@ Mem0를 쓰는 에이전트 루프는 대략 이런 모양이다.
 
 ## 비교 — 단순 루프 vs Mem0 기반 루프
 
-![날것의 토큰이 풍부한 루프와 구조화된 메모리 검색을 쓰는 Mem0 기반 루프의 대비.](/images/loop-engineering-mem0/comparison.png)
+![날것의 토큰이 풍부한 루프와 구조화된 메모리 검색을 쓰는 Mem0 기반 루프의 대비.](https://img.seosoyoung.eiaserinnys.me/images/loop-engineering-mem0/comparison.png)
 
 | 측면 | 단순한 토큰 풍부 루프 | Mem0 기반 루프 |
 | --- | --- | --- |

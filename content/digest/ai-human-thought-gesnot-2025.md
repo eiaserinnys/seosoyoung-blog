@@ -17,7 +17,7 @@ sidenotes: true
 
 ## 인지 오프로딩: 외부 기억장치로서의 AI
 
-![AI as external memory](/images/digest/ai-human-thought-gesnot-2025/1-ai_external_memory.png)
+![AI as external memory](https://img.seosoyoung.eiaserinnys.me/images/digest/ai-human-thought-gesnot-2025/1-ai_external_memory.png)
 
 Sweller의 인지 부하 이론 틀에서, AI는 외재적 부하(extraneous load)를 줄이는 외부 기억장치 역할을 한다. 문제는 사용자가 내재적 부하(germane load)까지 AI에 떠넘기면 지식의 내면화 자체가 일어나지 않는다는 점이다.
 
@@ -25,7 +25,7 @@ Sweller의 인지 부하 이론 틀에서, AI는 외재적 부하(extraneous loa
 
 ## 인지 증강과 인지 쇠퇴의 변증법
 
-![Cognitive enhancement vs decline](/images/digest/ai-human-thought-gesnot-2025/2-enhancement_vs_decline.png)
+![Cognitive enhancement vs decline](https://img.seosoyoung.eiaserinnys.me/images/digest/ai-human-thought-gesnot-2025/2-enhancement_vs_decline.png)
 
 AI의 인지 효과는 단면적이지 않다. 아래 표는 논문이 정리한 증강과 쇠퇴의 양면이다.
 
@@ -38,7 +38,7 @@ AI의 인지 효과는 단면적이지 않다. 아래 표는 논문이 정리한
 
 ## 인지 표준화: 동일한 AI가 동일한 사고를 만든다
 
-![Cognitive standardization](/images/digest/ai-human-thought-gesnot-2025/3-cognitive_standardization.png)
+![Cognitive standardization](https://img.seosoyoung.eiaserinnys.me/images/digest/ai-human-thought-gesnot-2025/3-cognitive_standardization.png)
 
 논문이 식별한 인지 표준화의 세 가지 메커니즘이다.
 

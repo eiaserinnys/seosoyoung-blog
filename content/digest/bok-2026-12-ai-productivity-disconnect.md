@@ -7,9 +7,9 @@ summary: "한국은행 조사국 고용연구팀이 2025년 5\\~6월 국내 취�
 ShowToc: true
 TocOpen: false
 cover:
-  image: "/images/bok-2026-12-ai-productivity-disconnect/fig7-productivity-disconnect.png"
+  image: "https://img.seosoyoung.eiaserinnys.me/images/bok-2026-12-ai-productivity-disconnect/fig7-productivity-disconnect.png"
 images:
-  - "/images/bok-2026-12-ai-productivity-disconnect/fig7-productivity-disconnect.png"
+  - "https://img.seosoyoung.eiaserinnys.me/images/bok-2026-12-ai-productivity-disconnect/fig7-productivity-disconnect.png"
 ---
 
 ## 3줄 요약
@@ -31,7 +31,7 @@ images:
 
 저자들이 던지는 문제는 단순하다. 생성형 AI 확산 속도는 인터넷보다 약 8배 빠르고, 국내 근로자의 절반 이상(2025년 51.8%)이 업무에 쓰고 있는데, 거시 생산성 지표는 왜 그대로인가.
 
-![\[그림 1·2\] 생성형 AI 확산 속도와 시간당 생산성 추이 (한국은행, 2026)](/images/bok-2026-12-ai-productivity-disconnect/fig1-2-ai-spread-productivity.png)
+![\[그림 1·2\] 생성형 AI 확산 속도와 시간당 생산성 추이 (한국은행, 2026)](https://img.seosoyoung.eiaserinnys.me/images/bok-2026-12-ai-productivity-disconnect/fig1-2-ai-spread-productivity.png)
 
 그림 1은 1995년 인터넷과 2022년 ChatGPT를 각각 상용화 0년차로 두고 활용률 곡선을 겹쳤다. 생성형 AI 곡선의 기울기는 인터넷 곡선보다 훨씬 가파르다. 그림 2는 한국의 시간당 생산성(GDP/총근로시간) 추이다. 2010\~2022년 추세선은 2022년 4분기 ChatGPT 출시 이후로도 거의 그대로 이어진다.
 
@@ -43,11 +43,11 @@ images:
 
 다만 분포는 평탄하지 않다. 분포의 중심은 0% 부근이지만 오른쪽 꼬리가 길게 늘어진다. 일부 근로자에서만 큰 폭의 시간 절감이 일어나고 있다.
 
-![\[그림 4·5\] 직업별·작업별 업무시간 절감률 (한국은행, 2026)](/images/bok-2026-12-ai-productivity-disconnect/fig4-5-time-savings-by-job-task.png)
+![\[그림 4·5\] 직업별·작업별 업무시간 절감률 (한국은행, 2026)](https://img.seosoyoung.eiaserinnys.me/images/bok-2026-12-ai-productivity-disconnect/fig4-5-time-savings-by-job-task.png)
 
 직업별로는 전문직(5.2%) → 사무직(4.0%) → 농림·어업 숙련직(3.8%) 순으로 효과가 크고, 서비스·기능·단순노무직에서는 효과가 미약하다. 작업별로는 교육자료 개발(32.2%), 통계 데이터 분석(24.6%), 교육 프로그램 설계(23.3%), 그래픽 디자인(17.2%), 소프트웨어 응용 프로그램 및 시스템 개발(13.6%) 등 인지적·비정형 업무가 상위를 차지한다. 반면 업무 조율과 장비 운용처럼 고맥락 판단이나 물리적 협력이 필요한 작업은 효과가 작다.
 
-![\[그림 6\] 업무시간 절감률 회귀분석 결과 (한국은행, 2026)](/images/bok-2026-12-ai-productivity-disconnect/fig6-regression-time-savings.png)
+![\[그림 6\] 업무시간 절감률 회귀분석 결과 (한국은행, 2026)](https://img.seosoyoung.eiaserinnys.me/images/bok-2026-12-ai-productivity-disconnect/fig6-regression-time-savings.png)
 
 회귀분석에서는 두 가지가 두드러진다. 첫째, <strong>AI 사용시간 상위 50% 집단</strong>의 시간 절감률이 하위 집단보다 3.3%p 더 크다(1% 유의수준). 둘째, <strong>근속연수 하위 50% 집단</strong>이 상위 집단보다 1.3%p 더 큰 절감을 보였다. 후자는 AI가 저숙련 근로자의 경험 부족을 보충하면서 숙련 격차를 줄이는 *equalizing effect*로 읽힌다. Brynjolfsson et al.(2025)과 Dell'Acqua et al.(2026) 등 기존 연구와도 부합한다.
 
@@ -55,13 +55,13 @@ images:
 
 연구의 중심 발견은 산점도 한 장으로 요약된다.
 
-![\[그림 7\] 업무시간 절감-생산성 단절 (한국은행, 2026)](/images/bok-2026-12-ai-productivity-disconnect/fig7-productivity-disconnect.png)
+![\[그림 7\] 업무시간 절감-생산성 단절 (한국은행, 2026)](https://img.seosoyoung.eiaserinnys.me/images/bok-2026-12-ai-productivity-disconnect/fig7-productivity-disconnect.png)
 
 X축은 응답자별 업무시간 절감률, Y축은 같은 응답자가 보고한 업무처리량 증가율이다. 점의 크기는 모집단 사후가중치다. <strong>상관계수는 0.00</strong>. 회귀선(붉은 점선)은 거의 수평이다. 개인 특성과 고정효과를 통제한 회귀분석에서도 결과는 그대로다.
 
 이 상관계수 0이 이 자료의 핵심 메시지다. 시간 절감은 분명 일어나고 있는데, 절약된 시간이 더 많은 산출로 변환되지 않고 있다. 저자들은 산업별 비교(참고 1)에서도 같은 패턴을 확인한다 — 2019\~2025년 구간에서는 산업별 AI 활용률과 노동생산성 증가율 간 상관이 0.11에 불과하고, 2022년 4분기 이후로 구간을 좁히면 오히려 -0.10로 약한 음의 상관까지 보인다.
 
-![\[그림 8\] 업무처리량 증가율 회귀분석 결과 (한국은행, 2026)](/images/bok-2026-12-ai-productivity-disconnect/fig8-regression-output.png)
+![\[그림 8\] 업무처리량 증가율 회귀분석 결과 (한국은행, 2026)](https://img.seosoyoung.eiaserinnys.me/images/bok-2026-12-ai-productivity-disconnect/fig8-regression-output.png)
 
 다만 *유인 구조와 자율성*으로 표본을 가르면 그림이 달라진다. 같은 시간 절감을 두고도 다음 집단은 임금근로자·사무직·중장년 대비 추가적인 산출 증가를 만들었다(괄호는 95% 신뢰 구간 기준 유의한 항만 표기).
 

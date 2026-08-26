@@ -8,9 +8,9 @@ math: true
 ShowToc: true
 TocOpen: false
 cover:
-  image: "/images/combining-llms-cofailure-ceiling/fig3.png"
+  image: "https://img.seosoyoung.eiaserinnys.me/images/combining-llms-cofailure-ceiling/fig3.png"
 images:
-  - "/images/combining-llms-cofailure-ceiling/fig3.png"
+  - "https://img.seosoyoung.eiaserinnys.me/images/combining-llms-cofailure-ceiling/fig3.png"
 ---
 
 ## 3줄 요약
@@ -53,7 +53,7 @@ $$\bar{\rho} = \frac{\pi + (1-\pi)\alpha_0^2 - \alpha^2}{\alpha(1-\alpha)} > 0$$
 
 Chen은 pillar 실험(15개 모델)에서 시작해 시장 스케일 측정을 위해 OpenRouter의 라이브 프론티어 카탈로그를 그대로 끌어와 67개 모델·21개 프로바이더 풀로 확장한다 — GPT-5.5, Claude Opus 4.8, Gemini 3.1 Pro, Grok-4.3, DeepSeek V4, Qwen3.7-Max, Kimi K2.7부터 작은 open-weight까지. 하드 도메인 세 종을 겨눈다: open-ended 수학(MATH-500, MATH-Hard Level-5, AIME 2024/2025), 대학원 수준 과학(GPQA-Diamond), 그리고 실행 채점 코드(code_contests, 레이팅 1900–3500).
 
-![Refer to caption](/images/combining-llms-cofailure-ceiling/fig2.png)
+![Refer to caption](https://img.seosoyoung.eiaserinnys.me/images/combining-llms-cofailure-ceiling/fig2.png)
 *Figure 2: Co-failure 잔차는 common-mode atom이지 copula misspecification이 아니다. 세 예측(단일요인 tetrachoric 0.021, 완전 67×67 Gaussian copula 0.023) 대비 실측 $\beta = 0.052$는 nearest-PSD full-$\Sigma$ Gaussian fit도 2.25배 초과한다. 우측: pool 크기를 무작위로 스캔하면 underpricing 비율이 $k=2$의 1.0에서 $k=67$의 median 2.5까지 단조 증가한다.*
 
 핵심 발견을 순서대로 짚는다.
@@ -69,7 +69,7 @@ MATH-Hard(n=298)에서도 $\beta = 0.044$, 실행 채점 코드(n=63)에서도 $
 
 이득 분해 identity $G = \Pr[\text{single-best 오답}] - \beta$는 오케스트레이션 헤드룸이 두 가지 정반대 방식으로 봉쇄될 수 있음을 알려 준다.
 
-![Refer to caption](/images/combining-llms-cofailure-ceiling/fig4.png)
+![Refer to caption](https://img.seosoyoung.eiaserinnys.me/images/combining-llms-cofailure-ceiling/fig4.png)
 *Figure 4: 두 국면. 도메인별 all-models-wrong 비율 $\beta$와 95% Clopper–Pearson 신뢰구간. Ceiling-bound 도메인(open-ended 수학·코드, free-response GPQA)은 $\beta > 0$의 co-failure tail이 모든 selection policy를 $1-\beta$에서 봉쇄하며 pairwise $\rho$는 2.5–8.3배(tetrachoric) 과소예측한다. Realizability-bound 도메인(객관식 GPQA, MMLU-Pro)은 $\beta \approx 0$이라 오라클 이득이 순수 resolvable disagreement인데도 라우터가 이를 잡지 못한다.*
 
 - **Ceiling-bound (수학·코드).** MATH-500은 $\beta = 0.052$의 co-failure tail로 모든 정책을 $1-\beta$에서 봉쇄한다. Pairwise $\rho$가 이 상한을 원리적으로 볼 수 없어 시장 리포트가 잘못된 신호를 준다. Single-best가 이미 상한 근처에 있어 오케스트레이션 이득 자체가 원천적으로 작다.
@@ -81,7 +81,7 @@ MATH-Hard(n=298)에서도 $\beta = 0.044$, 실행 채점 코드(n=63)에서도 $
 
 Chen이 개인적으로 가장 강조하는 실험은 content-controlled test다. 같은 79개 GPQA-Diamond 문항을 두 형식으로 출제했다.
 
-![Refer to caption](/images/combining-llms-cofailure-ceiling/fig3.png)
+![Refer to caption](https://img.seosoyoung.eiaserinnys.me/images/combining-llms-cofailure-ceiling/fig3.png)
 *Figure 3: 형식이, 내용이 아니라, 국면을 결정한다. 동일한 79개 GPQA-Diamond 문항을 객관식(위)과 자유서술(아래, 옵션 제거 후 5-judge LLM panel 채점, $\kappa$ 0.73–0.92)로 각각 출제. 형식만 바꿔도 객관식에서 $\beta \approx 0$이던 co-failure 블록이 자유서술에서 10/79($\beta = 0.127$, CP [0.062, 0.220])로 열리고, 평균 정확도는 $0.66 \to 0.51$로 떨어진다. 오렌지 셀은 모든 모델이 함께 틀린 문항.*
 
 - 객관식(원본): $\beta \approx 0$.

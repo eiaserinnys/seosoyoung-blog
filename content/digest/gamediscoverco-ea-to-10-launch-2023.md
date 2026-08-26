@@ -19,7 +19,7 @@ sidenotes: true
 
 Carless가 글의 도입에서 인용한 "fantasy 1.0"의 표본은 Supergiant의 ARPG <strong>Hades</strong>다. Hades는 Epic Games Store 독점 후 2019년 12월에 Steam EA로 진입했고, 2020년 9월 1.0으로 졸업하면서 폭발적으로 팔렸다. 글의 추정으로는 Steam에서만 LTD 600만 장 이상이 팔렸다 (GameDiscoverCo 추정치).
 
-![Hades Steam 리뷰 곡선 — 2020년 9월 1.0 출시 시점에 리뷰 수가 급격히 치솟는다](/images/gamediscoverco-ea-to-10-launch-2023/hades-review-curve.jpeg)
+![Hades Steam 리뷰 곡선 — 2020년 9월 1.0 출시 시점에 리뷰 수가 급격히 치솟는다](https://img.seosoyoung.eiaserinnys.me/images/gamediscoverco-ea-to-10-launch-2023/hades-review-curve.jpeg)
 
 (2020년 11\~12월의 추가 리뷰 점프는 Steam Awards 투표 영향이라고 Carless는 주석을 단다.)
 
@@ -35,7 +35,7 @@ Carless가 글의 도입에서 인용한 "fantasy 1.0"의 표본은 Supergiant�
 
 즉 EA 첫 3개월에 1만 장 판 게임은 1.0 첫 3개월에 약 7천 장 더 파는 것이 중간값이다. EA 전체 기간 동안 추가로 판매되는 분량은 별도 계산이며, 위 비율은 어디까지나 "각 단계의 첫 3개월"만을 비교한 것이다.
 
-![모든 매출 구간에서 중간값 EA→1.0 비율은 약 0.7배](/images/gamediscoverco-ea-to-10-launch-2023/median-ea-to-10-ratio.png)
+![모든 매출 구간에서 중간값 EA→1.0 비율은 약 0.7배](https://img.seosoyoung.eiaserinnys.me/images/gamediscoverco-ea-to-10-launch-2023/median-ea-to-10-ratio.png)
 
 게임이 클수록 중간값 비율이 약간 더 낮아지는 경향도 같은 차트에서 확인된다.
 
@@ -52,7 +52,7 @@ EA 전체 기간 누적 판매 **2만\~10만 단위** 구간을 예시로 들면
 | 상위 10% | 3.34배 |
 | **상위 5%** | **5.53배** |
 
-![EA 전체 누적 판매 구간별 백분위 분포 — 매출 구간이 커질수록 상단의 outlier가 더 극단적으로 벌어진다](/images/gamediscoverco-ea-to-10-launch-2023/distribution-by-sales-band.jpeg)
+![EA 전체 누적 판매 구간별 백분위 분포 — 매출 구간이 커질수록 상단의 outlier가 더 극단적으로 벌어진다](https://img.seosoyoung.eiaserinnys.me/images/gamediscoverco-ea-to-10-launch-2023/distribution-by-sales-band.jpeg)
 
 매출 구간이 커질수록 상단의 outlier가 더 극단적이다. 같은 차트에서 추출한 상위 5% 배수는 다음과 같다.
 
@@ -71,7 +71,7 @@ EA 전체 기간 누적 판매 **2만\~10만 단위** 구간을 예시로 들면
 
 마지막 분석은 EA 체류 기간이 1.0 배수에 미치는 영향이다.
 
-![EA 체류 기간이 길수록 1.0 첫 3개월의 EA 대비 배수가 낮아진다](/images/gamediscoverco-ea-to-10-launch-2023/ea-length-vs-multiplier.png)
+![EA 체류 기간이 길수록 1.0 첫 3개월의 EA 대비 배수가 낮아진다](https://img.seosoyoung.eiaserinnys.me/images/gamediscoverco-ea-to-10-launch-2023/ea-length-vs-multiplier.png)
 
 > the longer you are in Early Access, the lower the 1.0 unit multiplier compared to EA.
 

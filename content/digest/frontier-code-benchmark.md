@@ -7,9 +7,9 @@ summary: "Cognition이 공개한 신규 코딩 벤치마크. 정답 여부가 �
 ShowToc: true
 TocOpen: false
 cover:
-  image: "/images/frontier-code-benchmark/cover.png"
+  image: "https://img.seosoyoung.eiaserinnys.me/images/frontier-code-benchmark/cover.png"
 images:
-  - "/images/frontier-code-benchmark/cover.png"
+  - "https://img.seosoyoung.eiaserinnys.me/images/frontier-code-benchmark/cover.png"
 ---
 
 ## 3줄 요약
@@ -65,7 +65,7 @@ Diamond는 여전히 포화되지 않았다. 최고 모델조차 87%의 태스�
 - **False Positive**: 채점기가 *틀린* 솔루션을 통과시키는 경우. 테스트 커버리지가 불완전할 때 발생.
 - **False Negative**: 채점기가 *맞는* 솔루션을 떨어뜨리는 경우. 테스트가 함수명·에러 문자열을 너무 좁게 검사하거나, 명세에 없는 동작을 요구할 때 발생.
 
-![Trajectory false positive and false negative rates by benchmark](/images/frontier-code-benchmark/false-positive-negative-rates.svg)
+![Trajectory false positive and false negative rates by benchmark](https://img.seosoyoung.eiaserinnys.me/images/frontier-code-benchmark/false-positive-negative-rates.svg)
 
 FrontierCode는 에이전트 trajectory 분석을 통해 SWE-Bench Pro 대비 오분류 발생률을 81% 낮췄다고 보고한다. Cognition은 이 수치가 "현재 가장 정확한 모델 순위"의 근거라고 주장한다.
 
@@ -73,15 +73,15 @@ FrontierCode는 에이전트 trajectory 분석을 통해 SWE-Bench Pro 대비 �
 
 기존 벤치마크는 단일 PR을 프로그래밍 방식으로 스크래핑해 만들었다. FrontierCode는 메인테이너가 다중 PR 체인과 자유형 요청에서 직접 골라냈다. 표현 언어 수는 SWE-Bench Pro의 3배.
 
-![Language composition by benchmark, normalized for task count](/images/frontier-code-benchmark/language-composition.svg)
+![Language composition by benchmark, normalized for task count](https://img.seosoyoung.eiaserinnys.me/images/frontier-code-benchmark/language-composition.svg)
 
 프롬프트 길이도 다르다. 기존 벤치마크는 과도하게 상세한 안내를 주어 모델이 받아쓰기에 가까운 작업을 한다. FrontierCode의 프롬프트는 SWE-Bench Pro의 1/3 길이이며, 메인테이너의 의도를 *추론*해야 한다.
 
-![FrontierCode prompt length distribution](/images/frontier-code-benchmark/prompt-length.svg)
+![FrontierCode prompt length distribution](https://img.seosoyoung.eiaserinnys.me/images/frontier-code-benchmark/prompt-length.svg)
 
 난이도는 패치 크기를 키워서 올리지 않았다. 오히려 DeepSWE 등보다 패치가 더 작아도, *품질 루브릭*으로 난이도가 올라간다.
 
-![FrontierCode patch size distribution](/images/frontier-code-benchmark/patch-size.svg)
+![FrontierCode patch size distribution](https://img.seosoyoung.eiaserinnys.me/images/frontier-code-benchmark/patch-size.svg)
 
 ## 신규 채점 기법 3종
 
@@ -134,7 +134,7 @@ LOG_WARNING() << "You are opting in to remove schema identifiers...\n";
 
 이진 채점은 비교적 쉽다. 정답·오답 두 통으로 나뉘니, 통마다 솔루션을 들여다보고 테스트를 강화하면 된다. 루브릭은 다르다. 두 솔루션이 모두 기능상 맞아도 다른 점수를 받을 수 있으니, *상대 평가*가 작동해야 한다.
 
-![Rubric hardening pipeline](/images/frontier-code-benchmark/rubric-hardening-pipeline.svg)
+![Rubric hardening pipeline](https://img.seosoyoung.eiaserinnys.me/images/frontier-code-benchmark/rubric-hardening-pipeline.svg)
 
 Cognition의 루브릭 단단하게 만들기 파이프라인은 5단계다.
 

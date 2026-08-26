@@ -8,9 +8,9 @@ math: true
 ShowToc: true
 TocOpen: false
 cover:
-  image: "/images/polynomial-time-mimo-detection-ml-threshold/01-cover.png"
+  image: "https://img.seosoyoung.eiaserinnys.me/images/polynomial-time-mimo-detection-ml-threshold/01-cover.png"
 images:
-  - "/images/polynomial-time-mimo-detection-ml-threshold/01-cover.png"
+  - "https://img.seosoyoung.eiaserinnys.me/images/polynomial-time-mimo-detection-ml-threshold/01-cover.png"
 ---
 
 ## 3줄 요약

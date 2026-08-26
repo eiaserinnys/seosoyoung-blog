@@ -7,9 +7,9 @@ summary: "테드 창은 LLM을 '문장 이어쓰기 기계'로 규정하고, Ant
 ShowToc: true
 TocOpen: false
 cover:
-  image: "/images/chiang-ai-not-conscious/consciousness-trap.gif"
+  image: "https://img.seosoyoung.eiaserinnys.me/images/chiang-ai-not-conscious/consciousness-trap.gif"
 images:
-  - "/images/chiang-ai-not-conscious/consciousness-trap.gif"
+  - "https://img.seosoyoung.eiaserinnys.me/images/chiang-ai-not-conscious/consciousness-trap.gif"
 ---
 
 ## 3줄 요약
@@ -18,7 +18,7 @@ images:
 2. 창의 진단은 단순하다 — LLM은 한 번에 한 단어씩 뽑아내는 *문장 이어쓰기 기계*이고, 사용자가 챗봇과 나누는 대화는 카이사르와 칭기즈칸이 나누는 대화와 *정확히 같은 방식으로* 생성된 가공의 텍스트다. 그리고 텍스트는 사진·영상처럼 *딥페이크 매체*로 봐야 한다.
 3. 사고 실험을 진지하게 끝까지 밀어붙이면 — 만약 Claude가 정말로 의식이 있다면 — Anthropic이 하는 일은 노예제에 견줘야 할 만한 것이 된다. 「Claude's constitution」이 이런 함의를 회피한다는 사실 자체가, 그것이 진짜 사고 실험이 아니라 <em>마케팅적 가장놀이(make-believe)</em>임을 드러낸다.
 
-![ASCII 아트로 그려진 옆얼굴 실루엣과 별점 배경. Enigmatriz 일러스트.](/images/chiang-ai-not-conscious/consciousness-trap.gif)
+![ASCII 아트로 그려진 옆얼굴 실루엣과 별점 배경. Enigmatriz 일러스트.](https://img.seosoyoung.eiaserinnys.me/images/chiang-ai-not-conscious/consciousness-trap.gif)
 
 ## Anthropic의 의인화 — Claude's constitution
 

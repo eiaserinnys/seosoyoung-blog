@@ -49,7 +49,7 @@ ihtesham2005의 [X 해설 스레드](https://x.com/ihtesham2005/status/205496694
 
 저자들의 답은 PGO 파다. REM 수면 중 뇌간(pons)에서 시작되어 외측슬상핵(lateral geniculate nucleus)을 거쳐 후두피질(occipital cortex)로 흘러가는 신경 활동이, 어둠 속에서도 시각피질의 점화 패턴을 능동으로 유지한다.
 
-![Figure 1 — PGO 파 경로 (Eagleman & Vaughn 2021, Frontiers in Neuroscience, CC BY 4.0)](/images/defensive-activation-rem-visual-cortex/fig1.jpg)
+![Figure 1 — PGO 파 경로 (Eagleman & Vaughn 2021, Frontiers in Neuroscience, CC BY 4.0)](https://img.seosoyoung.eiaserinnys.me/images/defensive-activation-rem-visual-cortex/fig1.jpg)
 
 이 가설을 받아들이면 *꿈*에 대한 재해석이 따라온다.
 
@@ -76,7 +76,7 @@ ihtesham2005의 [X 해설 스레드](https://x.com/ihtesham2005/status/205496694
 
 모든 가소성 지표가 REM 비율과 유의한 양의 상관을 보였다. 통제 변수(체중·수명 등)는 무관해 *REM과 가소성*이라는 결합이 특이적임을 뒷받침한다. 통계 처리는 Holm-Bonferroni 다중 비교 보정, Shapiro-Wilk 정규성 검정, 로그 변환, PCA, OLS 다변수 회귀를 거쳤다.
 
-![Figure 2 — 영장류 25종에서 가소성 지표와 REM 비율의 양의 상관](/images/defensive-activation-rem-visual-cortex/fig2.jpg)
+![Figure 2 — 영장류 25종에서 가소성 지표와 REM 비율의 양의 상관](https://img.seosoyoung.eiaserinnys.me/images/defensive-activation-rem-visual-cortex/fig2.jpg)
 
 ### 시각 정보량과 REM의 양적 관계
 
@@ -88,7 +88,7 @@ ihtesham2005의 [X 해설 스레드](https://x.com/ihtesham2005/status/205496694
 
 또한 가소성과 REM 비율 모두 *인간과의 계통적 거리*와도 유의한 상관(각각 p < 0.001, p < 0.01)을 보였다.
 
-![Figure 3 — 인간과의 계통적 거리에 따른 가소성·REM의 증가, 삼색시 vs 단·이색시 비교](/images/defensive-activation-rem-visual-cortex/fig3.jpg)
+![Figure 3 — 인간과의 계통적 거리에 따른 가소성·REM의 증가, 삼색시 vs 단·이색시 비교](https://img.seosoyoung.eiaserinnys.me/images/defensive-activation-rem-visual-cortex/fig3.jpg)
 
 ## 증거 2 — 생애주기
 
@@ -98,7 +98,7 @@ ihtesham2005의 [X 해설 스레드](https://x.com/ihtesham2005/status/205496694
 
 이 감소 곡선은 동일 생애에 걸친 기억력·운동피질 가소성·시냅스 반응 감소 곡선과 평행한다. *시점이 같은 두 개의 다른 측정*이 같은 곡선을 그린다 — 이는 종간 비교의 횡단면 데이터와 함께 생애 종단면 데이터로 가설을 지지한다.
 
-![Figure 4 — 인간 생애주기에 걸친 REM과 신경가소성의 평행 감소 곡선](/images/defensive-activation-rem-visual-cortex/fig4.jpg)
+![Figure 4 — 인간 생애주기에 걸친 REM과 신경가소성의 평행 감소 곡선](https://img.seosoyoung.eiaserinnys.me/images/defensive-activation-rem-visual-cortex/fig4.jpg)
 
 ## 증거 3 — 만숙성·조숙성, 그리고 예외들
 
@@ -127,13 +127,13 @@ ihtesham2005의 [X 해설 스레드](https://x.com/ihtesham2005/status/205496694
 
 저자들은 PGO 파를 *고정된 회로 시계*가 아니라 *입력 감소에 의해 임계점을 넘어 발화되는 피드백 루프*로 본다. 시각피질에서 뇌간으로 거꾸로 가는 axon이 입력 부족 신호를 보내고, 그 신호가 임계를 넘으면 PGO 파가 점화된다는 모형이다. 이 임계 모형은 REM·이명·환상지·환각을 모두 같은 일반 원리의 발현으로 묶는다.
 
-![Figure 5 — 임계 기반 PGO 점화 모형 (피드백 루프)](/images/defensive-activation-rem-visual-cortex/fig5.jpg)
+![Figure 5 — 임계 기반 PGO 점화 모형 (피드백 루프)](https://img.seosoyoung.eiaserinnys.me/images/defensive-activation-rem-visual-cortex/fig5.jpg)
 
 > 더 가소성 있는 시스템일수록 더 적극적인 유지가 필요하다.
 
 이 일반 원리는 가소성과 안정성을 동시에 가져야 하는 시스템 — 신경계든 다른 어떤 시스템이든 — 에 적용될 수 있는 도식이다.
 
-![Figure 6 — 방어 활성화 이론의 전체 프레임](/images/defensive-activation-rem-visual-cortex/fig6.jpg)
+![Figure 6 — 방어 활성화 이론의 전체 프레임](https://img.seosoyoung.eiaserinnys.me/images/defensive-activation-rem-visual-cortex/fig6.jpg)
 
 ## 가장 흥미로운 지점
 

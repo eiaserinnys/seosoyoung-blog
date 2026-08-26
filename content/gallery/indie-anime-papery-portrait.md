@@ -40,4 +40,4 @@ draft: false
 v2 — 캐릭터를 서소영(서소영.png 일러스트 시드)으로 인스턴스화.
 원본 프롬프트의 양산형 아닌 인디 anime 미감·종이질감·여백·낮은 채도는 유지하되,
 캐릭터의 검은 머리·한복풍 검정·보라 의상 모티프를 살림.
-gpt-image-2 /v1/images/edits.
+gpt-image-2 /v1https://img.seosoyoung.eiaserinnys.me/images/edits.

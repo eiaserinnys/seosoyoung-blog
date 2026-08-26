@@ -7,12 +7,12 @@ summary: "Alexander Goslin이 SIGGRAPH 2026에 발표한 InfiniteDiffusion과 Te
 ShowToc: true
 TocOpen: false
 cover:
-  image: "/images/goslin-2026-infinite-diffusion-terrain/world-combined.jpeg"
+  image: "https://img.seosoyoung.eiaserinnys.me/images/goslin-2026-infinite-diffusion-terrain/world-combined.jpeg"
 images:
-  - "/images/goslin-2026-infinite-diffusion-terrain/world-combined.jpeg"
+  - "https://img.seosoyoung.eiaserinnys.me/images/goslin-2026-infinite-diffusion-terrain/world-combined.jpeg"
 ---
 
-![Terrain Diffusion으로 생성한 지구 규모 월드의 합성 시각화](/images/goslin-2026-infinite-diffusion-terrain/world-combined.jpeg)
+![Terrain Diffusion으로 생성한 지구 규모 월드의 합성 시각화](https://img.seosoyoung.eiaserinnys.me/images/goslin-2026-infinite-diffusion-terrain/world-combined.jpeg)
 *Terrain Diffusion 월드 시각화. 출처: xandergos.github.io/terrain-diffusion*
 
 ## 3줄 요약
@@ -46,7 +46,7 @@ InfiniteDiffusion은 *임의의* diffusion 모델을 무한하고 논리적으�
 
 이는 MultiDiffusion의 일반화이다. 기존 MultiDiffusion이 미리 정해진 bounded canvas 위에서 eagerly 동작하던 것을, 요청된 영역만 lazy하게 계산하도록 풀어낸 drop-in replacement다. 저자는 품질 면에서 MultiDiffusion 대비 손실이 거의 없다고 밝혔다.
 
-![MultiDiffusion(위)과 InfiniteDiffusion(아래) 비교](/images/goslin-2026-infinite-diffusion-terrain/multidiffusion-vs-infinitediffusion.jpg)
+![MultiDiffusion(위)과 InfiniteDiffusion(아래) 비교](https://img.seosoyoung.eiaserinnys.me/images/goslin-2026-infinite-diffusion-terrain/multidiffusion-vs-infinitediffusion.jpg)
 *위: MultiDiffusion — 사전 정의된 bounded canvas 위에서 eagerly 생성. 아래: InfiniteDiffusion — 같은 모델을 unbounded하고 lazy한 생성으로 재구성. 출처: xandergos.github.io/terrain-diffusion*
 
 ### Auto-Regression과의 비교
@@ -76,10 +76,10 @@ InfiniteDiffusion의 유용성을 보이려고 저자는 학습된 procedural te
 
 성능은 *consumer GPU 한 장에서 궤도 속도(orbital velocity)의 9배*. 즉 인터랙티브 프레임레이트로 지표면 위를 9배 궤도 속도로 비행하면서 새 지형이 즉시 생성된다.
 
-![Terrain Diffusion이 생성한 100km × 100km relief map 샘플](/images/goslin-2026-infinite-diffusion-terrain/terrain-01.jpg)
+![Terrain Diffusion이 생성한 100km × 100km relief map 샘플](https://img.seosoyoung.eiaserinnys.me/images/goslin-2026-infinite-diffusion-terrain/terrain-01.jpg)
 *Terrain Diffusion이 생성한 100km × 100km relief map. 출처: xandergos.github.io/terrain-diffusion*
 
-![Terrain Diffusion이 생성한 또 다른 지형 샘플](/images/goslin-2026-infinite-diffusion-terrain/terrain-04.jpg)
+![Terrain Diffusion이 생성한 또 다른 지형 샘플](https://img.seosoyoung.eiaserinnys.me/images/goslin-2026-infinite-diffusion-terrain/terrain-04.jpg)
 *다른 시드로 생성한 지형. 출처: xandergos.github.io/terrain-diffusion*
 
 ## Minecraft mod로의 시연
@@ -91,7 +91,7 @@ Terrain Diffusion의 무상태이고 결정적인 속성은 게임 엔진에 자
 - 코드: <https://github.com/xandergos/terrain-diffusion>
 - Minecraft mod: <https://github.com/xandergos/terrain-diffusion-mc>
 
-![Terrain Diffusion 기반 Minecraft mod 스크린샷](/images/goslin-2026-infinite-diffusion-terrain/minecraft-03.jpg)
+![Terrain Diffusion 기반 Minecraft mod 스크린샷](https://img.seosoyoung.eiaserinnys.me/images/goslin-2026-infinite-diffusion-terrain/minecraft-03.jpg)
 *Terrain Diffusion으로 생성된 Minecraft 월드. 출처: xandergos.github.io/terrain-diffusion*
 
 Unity 데모에서는 플레이어가 지표면 위를 궤도 속도의 3배로 편안하게 비행한다. 두 데모 영상은 프로젝트 페이지에서 직접 볼 수 있다.

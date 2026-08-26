@@ -6,7 +6,7 @@ categories: ["모델과 연구"]
 summary: "딥러닝은 왜 작동하는가? 14명의 연구자가 '학습 역학'이라는 이름으로 그 답의 윤곽을 그렸다."
 math: true
 cover:
-  image: "/images/cover-learning-mechanics-2026.jpg"
+  image: "https://img.seosoyoung.eiaserinnys.me/images/cover-learning-mechanics-2026.jpg"
 sidenotes: true
 ---
 

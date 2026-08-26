@@ -36,7 +36,7 @@ Gamalytic의 Strale은 중간값을 다음과 같이 정리한다.
 
 ## 1. 백분위수별 전환률 — "wildly varies"
 
-![백분위수별 위시리스트→1개월 매출 전환률 분포](/images/gdc-month1-reviews-2024/percentile-conversion.png)
+![백분위수별 위시리스트→1개월 매출 전환률 분포](https://img.seosoyoung.eiaserinnys.me/images/gdc-month1-reviews-2024/percentile-conversion.png)
 
 Carless의 표기 그대로 옮긴다. 본 원문은 백분위수를 통상 통계 관례와 반대로 "상위에서 본 순위"로 쓴다 — 즉 "10th percentile"이 상위 10%, "90th percentile"이 하위 10%다.
 
@@ -54,7 +54,7 @@ Carless의 표기 그대로 옮긴다. 본 원문은 백분위수를 통상 통�
 
 ## 2. 평점 라벨별 전환률 — 임계값에서의 비선형 점프
 
-![Steam 평점 라벨별 위시리스트→1개월 매출 전환률](/images/gdc-month1-reviews-2024/review-score.png)
+![Steam 평점 라벨별 위시리스트→1개월 매출 전환률](https://img.seosoyoung.eiaserinnys.me/images/gdc-month1-reviews-2024/review-score.png)
 
 이 자료의 핵심 발견이다. 원문 인용:
 
@@ -72,7 +72,7 @@ Carless의 표기 그대로 옮긴다. 본 원문은 백분위수를 통상 통�
 
 ## 3. 얼리액세스 vs 정식 출시
 
-![얼리액세스 vs 정식 출시 전환률 비교](/images/gdc-month1-reviews-2024/early-access.png)
+![얼리액세스 vs 정식 출시 전환률 비교](https://img.seosoyoung.eiaserinnys.me/images/gdc-month1-reviews-2024/early-access.png)
 
 > "Early Access games convert worse than their full release counterparts. Early Access games have median Month 1 sales as around 20% of their launch wishlists, while full release games have their median at around 30% of their launch wishlists."
 
@@ -85,7 +85,7 @@ EA는 정식 출시 대비 약 1/3 낮은 전환률을 보인다. 다만 Carless
 
 ## 4. 가격대별 전환률 — U자형
 
-![Steam 정가대별 위시리스트→1개월 매출 전환률](/images/gdc-month1-reviews-2024/base-price.png)
+![Steam 정가대별 위시리스트→1개월 매출 전환률](https://img.seosoyoung.eiaserinnys.me/images/gdc-month1-reviews-2024/base-price.png)
 
 전환률은 가격대에 대해 U자형(양극단 우위) 분포를 보인다.
 
@@ -103,7 +103,7 @@ EA는 정식 출시 대비 약 1/3 낮은 전환률을 보인다. 다만 Carless
 
 ## 5. 태그별 전환률
 
-![태그별 위시리스트→1개월 매출 전환률](/images/gdc-month1-reviews-2024/tag-conversion.png)
+![태그별 위시리스트→1개월 매출 전환률](https://img.seosoyoung.eiaserinnys.me/images/gdc-month1-reviews-2024/tag-conversion.png)
 
 원문은 "데이터가 더 필요할 수도 있다"는 단서를 단다. 다만 Visual Novel·Sexy 같은 니치 태그가 위시리스트 대비 전환률 상위에 위치한다.
 

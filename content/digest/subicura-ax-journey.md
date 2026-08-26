@@ -5,9 +5,9 @@ tags: ["AI", "AX", "조직 변화", "바이브 코딩", "Claude Code", "컨텍�
 categories: ["에이전트와 코딩"]
 summary: "\"배포해줘~\" 한마디로 보안 점검 후 사내망에 배포되는 시스템을 완성한 subicura(조성일)가 회고한, 퍼플아이오의 1년간 전사 AX 여정. 세 번의 실험이 공통으로 가리킨 결론은 AI 성능이 아니라 요구사항 정의와 조직의 맥락(Context)이었다."
 cover:
-  image: "/images/subicura-ax-journey/koco-main.png"
+  image: "https://img.seosoyoung.eiaserinnys.me/images/subicura-ax-journey/koco-main.png"
 images:
-  - "/images/subicura-ax-journey/koco-main.png"
+  - "https://img.seosoyoung.eiaserinnys.me/images/subicura-ax-journey/koco-main.png"
 ShowToc: true
 TocOpen: false
 ---
@@ -26,7 +26,7 @@ TocOpen: false
 
 > 구독에 $400이라니 말도 안 되게 비싸 보였지만, 개발자 인건비를 생각하면 한없이 혜자스러운 가격입니다.
 
-![Claude Code](/images/subicura-ax-journey/claude-code.png)
+![Claude Code](https://img.seosoyoung.eiaserinnys.me/images/subicura-ax-journey/claude-code.png)
 
 이때부터 Nano Banana Pro의 한글 품질, Typeless 음성인식, 끝까지 일을 해내는 OpenClaw 같은 툴이 쏟아졌다. 저자가 짚은 변화의 핵심은 도구의 다양성이 아니라 접근 범위였다. 이전까지 AI는 메일 초안이나 이미지 생성 수준에 머물렀지만, 이제는 내가 가진 데이터와 맥락(Context)에 접근하고 실제 액션까지 수행하게 되었다는 것이다.
 
@@ -54,7 +54,7 @@ TocOpen: false
 
 실패의 원인은 대부분 'AI'가 아니라 '태스크 설명이 부실해서'였다. 문제는 모델이 아니라 요구사항 정의였다.
 
-![벤치마크 결과 보고서 일부](/images/subicura-ax-journey/pr-1.jpg)
+![벤치마크 결과 보고서 일부](https://img.seosoyoung.eiaserinnys.me/images/subicura-ax-journey/pr-1.jpg)
 
 ### 두 번째 — 레거시 시스템 마이그레이션
 
@@ -64,7 +64,7 @@ AI에게 전체 소스코드 접근 권한을 주고 브라우저로 페이지�
 
 > 보통 AI가 만든 결과가 이상한 건 "내 맘에 안 들어서"입니다. 내 맘에 안 드는 이유는 요청을 모호하게 했기 때문이고(예: "기획전 관리 기능 만들어줘"), 반대로 '기존 페이지 소스코드와 화면' 자체가 완벽한 기획서가 될 수 있다면 결과는 거의 의도한 대로 나옵니다.
 
-![좌=기존, 우=AI](/images/subicura-ax-journey/ai-generate-after-2.png)
+![좌=기존, 우=AI](https://img.seosoyoung.eiaserinnys.me/images/subicura-ax-journey/ai-generate-after-2.png)
 
 기본 기능은 완벽하게 동작했다. 저자는 여기서 "이제 코드를 잘 타이핑하는 것보다 기능을 어떻게 명확히 정의하느냐가 더 중요해졌다"며 "Spec이 짱이다!"라고 정리한다. 이후 큰 규모의 차세대 마이그레이션 프로젝트를 기존 계획 대비 절반도 안 되는 리소스로 완료했다. 가장 오래 걸린 작업은 코딩이 아니라 기존 로직을 `.md` 파일로 정리하고 테스트 케이스를 빠짐없이 짜는 일이었다.
 
@@ -74,7 +74,7 @@ AI에게 전체 소스코드 접근 권한을 주고 브라우저로 페이지�
 
 흐름은 이렇다. 3\~4줄짜리 요구사항을 받으면 그걸로 PRD(제품 요구사항 정의서)를 만들고, 그 파일로 기능 명세를 정의한 뒤, 기능별 페이지·UI/컴포넌트·API/모델 설계·사용자 Flow를 한 번에 생성한다. 사용자가 검토·승인하면 그대로 Ralph Loop으로 밤새 코드를 짠다. 명세를 보고 구현하고, 제대로 짰는지 체크하고, 다시 검증하는 루프까지 돌리면 구현에만 6시간 정도 걸렸다.
 
-![Ralph Loop 작업의 흔적 — build 1회, 검증 3회](/images/subicura-ax-journey/ai-gen-task.png)
+![Ralph Loop 작업의 흔적 — build 1회, 검증 3회](https://img.seosoyoung.eiaserinnys.me/images/subicura-ax-journey/ai-gen-task.png)
 
 이렇게 잡은 매장관리 시스템 초안은 첫 미팅 때 이미 동작하는 화면으로 논의를 시작할 수 있어 방향 잡기가 훨씬 쉬웠다. 최종 버전은 초안과 달라졌지만, 이 역시 기존 계획 대비 절반의 리소스로 구현했다.
 
@@ -88,7 +88,7 @@ AI에게 전체 소스코드 접근 권한을 주고 브라우저로 페이지�
 
 단기적으로 한 달 내에 할 수 있는 것부터 하자며 사내 AI 챌린지 'Quick Win'을 열었다. 총 28개 프로젝트가 등록됐고, 참가자들은 평균 83%의 업무 시간 절감을 확인했다.
 
-![Purple IO AI Quick Win](/images/subicura-ax-journey/quickwin-purpleio.png)
+![Purple IO AI Quick Win](https://img.seosoyoung.eiaserinnys.me/images/subicura-ax-journey/quickwin-purpleio.png)
 
 구체적 사례는 이렇다.
 
@@ -115,7 +115,7 @@ AI에게 전체 소스코드 접근 권한을 주고 브라우저로 페이지�
 
 그래서 툴을 바꿨다. 구글이 만든 IDE인 Antigravity였다. GUI 기반에 AI Assistant를 지원해 초보자도 바로 쓸 수 있었다.
 
-![Antigravity](/images/subicura-ax-journey/antigravity.png)
+![Antigravity](https://img.seosoyoung.eiaserinnys.me/images/subicura-ax-journey/antigravity.png)
 
 이 전략은 성공했다. 초기 허들이 크게 낮아졌고, 여기서 자연스럽게 Claude Code와 cmd 환경으로 넘어왔다. 내부 데이터에 접근하는 커스텀 스킬을 배포하자 사내 자동화 앱과 대시보드가 폭발적으로 늘었다. 현업이 직접 만들기 때문에 뭐가 필요한지 더 잘 알았다. 저자가 가장 기분 좋았다고 꼽은 피드백은 이것이다.
 
@@ -134,7 +134,7 @@ AI에게 전체 소스코드 접근 권한을 주고 브라우저로 페이지�
 
 개발자가 한 땀 한 땀 도와주는 데는 한계가 있고, 결국 스스로 자생할 수 있어야 했다. 그래서 Quick Win 때 만든 DocSync를 전면 개조해 사내 AI 플랫폼 <strong>코코(KOCO)</strong>를 만들었다. Claude/Claude Cowork와 유사하되, 사용자가 최대한 쉽게 쓰도록 설계했다.
 
-![KOCO 메인 화면](/images/subicura-ax-journey/koco-main.png)
+![KOCO 메인 화면](https://img.seosoyoung.eiaserinnys.me/images/subicura-ax-journey/koco-main.png)
 
 주요 특징은 다음과 같다.
 
@@ -156,13 +156,13 @@ AI에게 전체 소스코드 접근 권한을 주고 브라우저로 페이지�
 - 배포 전에 보안 검토(Security Review)를 받을 것
 - 사용자별로 인증하고, 공유 범위(전체 / 일부 사용자 / 비공개)를 설정할 수 있을 것
 
-![최종 아키텍처](/images/subicura-ax-journey/purple-access.jpg)
+![최종 아키텍처](https://img.seosoyoung.eiaserinnys.me/images/subicura-ax-journey/purple-access.jpg)
 
 배포 대상은 사내 EKS(Kubernetes) 환경으로 구축했고, 배포 파이프라인은 별도 솔루션 없이 GitLab CI/CD를 그대로 썼다. 사용자가 "배포해줘~"라고 하면, 현재 로그인한 사용자 아이디로 GitLab에 연동 로그인하고 랜덤한 이름의 프로젝트를 생성한 뒤 파일을 전부 올린다. 그러면 자동으로 빌드·배포까지 이어진다. 데이터베이스는 기본 SQLite이고 `/data` 폴더를 persistence volume으로 설정했다.
 
 보안 검토도 파이프라인에 얹었다. CI/CD 중간에 보안 스캔 단계를 넣었고, 검토가 끝나면 Slack으로 알람이 온다. 실제 배포는 담당자가 한 번 더 확인하고 승인한다. 저자는 "완전 자동은 아직 좀 불안하다"고 덧붙였다.
 
-![배포 파이프라인](/images/subicura-ax-journey/koco-deploy.png)
+![배포 파이프라인](https://img.seosoyoung.eiaserinnys.me/images/subicura-ax-journey/koco-deploy.png)
 
 마지막 퍼즐은 인증이었다. 전체 공개가 아니라 비공개로, 혹은 특정 사람에게만 공유하는 권한 제어가 필요했다. 앱마다 일일이 인증 코드를 넣는 가이드를 만들까 하다가 Cloudflare Access를 소개받고, 프록시처럼 모든 트래픽이 한곳을 거치게 하면 된다는 아이디어를 얻었다.
 
@@ -180,7 +180,7 @@ AI에게 전체 소스코드 접근 권한을 주고 브라우저로 페이지�
 
 그래서 다음 단계도 데이터와 맥락을 향한다. 데이터 맵으로 가시성을 높이고, 업무의 input/output이 자연스럽게 마크다운으로 쌓이도록 프로세스를 리팩토링하며, 부족한 맥락은 업무 흐름 개선이나 신규 시스템으로 채운다. 전자결재에 AI 스크리닝·검수 단계만 보완해도 의미 있는 맥락이 데이터로 모인다는 것이 저자의 생각이다.
 
-![저자의 옵시디언 지식 그래프](/images/subicura-ax-journey/obsidian-graph.png)
+![저자의 옵시디언 지식 그래프](https://img.seosoyoung.eiaserinnys.me/images/subicura-ax-journey/obsidian-graph.png)
 
 > 지난 1년 동안 우리가 만든 것은 여러 개의 AI 도구와 하나의 배포 시스템이었습니다. 하지만 그 과정에서 정말 바뀐 것은 도구가 아니라 일하는 방식이었습니다. 이제 우리는 사람이 모든 일을 직접 처리하는 조직이 아니라, 사람이 남긴 맥락 위에서 AI가 함께 일하는 조직을 만들고 있습니다.
 

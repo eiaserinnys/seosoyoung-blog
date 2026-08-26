@@ -7,9 +7,9 @@ summary: "본직 3D 크리에이터 하야시몬(@hayashimon1)이 X에 올린 �
 ShowToc: true
 TocOpen: false
 cover:
-  image: "/images/hayashimon-hy-motion-codex-blender-2026/cover.jpg"
+  image: "https://img.seosoyoung.eiaserinnys.me/images/hayashimon-hy-motion-codex-blender-2026/cover.jpg"
 images:
-  - "/images/hayashimon-hy-motion-codex-blender-2026/cover.jpg"
+  - "https://img.seosoyoung.eiaserinnys.me/images/hayashimon-hy-motion-codex-blender-2026/cover.jpg"
 ---
 
 ## 3줄 요약
@@ -18,7 +18,7 @@ images:
 2. 실제로 만들어 낸 것은 캐릭터 2체가 붙는 15초 격투 신(30fps·450프레임)이다. 회전 발차기·측전·비상 발차기 같은 격투 동작은 1컷도 손으로 붙이지 않았고 텍스트에서만 뽑았다. 카메라만 수동이다.
 3. 저자가 강조하는 요점은 Codex 자신이 3D 모션을 만들지 않는다는 것이다. Codex는 프롬프트 작성부터 API 호출·리타깃·검증까지의 공정을 설계하고 자동화하는 도구다. 그러니까 이건 특정 제품 이야기가 아니라 파일을 다루고 Python을 쓰고 Blender를 실행하며 결과를 검증할 수 있는 에이전트 환경만 있으면 재현 가능한 이야기다.
 
-![원문 커버 이미지](/images/hayashimon-hy-motion-codex-blender-2026/cover.jpg)
+![원문 커버 이미지](https://img.seosoyoung.eiaserinnys.me/images/hayashimon-hy-motion-codex-blender-2026/cover.jpg)
 
 ## 무엇을 만들었나
 

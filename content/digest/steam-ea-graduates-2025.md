@@ -9,7 +9,7 @@ TocOpen: false
 sidenotes: true
 ---
 
-![Steam Early Access Graduates in 2025 — GameDiscoverCo 데이터 기반 GAMES.GG 정리 표지](/images/steam-ea-graduates-2025/cover.png)
+![Steam Early Access Graduates in 2025 — GameDiscoverCo 데이터 기반 GAMES.GG 정리 표지](https://img.seosoyoung.eiaserinnys.me/images/steam-ea-graduates-2025/cover.png)
 
 ## 3줄 요약
 

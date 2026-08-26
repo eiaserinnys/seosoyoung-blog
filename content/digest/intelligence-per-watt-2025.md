@@ -8,9 +8,9 @@ math: true
 ShowToc: true
 TocOpen: false
 cover:
-  image: "/images/intelligence-per-watt-2025/fig1-overview.png"
+  image: "https://img.seosoyoung.eiaserinnys.me/images/intelligence-per-watt-2025/fig1-overview.png"
 images:
-  - "/images/intelligence-per-watt-2025/fig1-overview.png"
+  - "https://img.seosoyoung.eiaserinnys.me/images/intelligence-per-watt-2025/fig1-overview.png"
 ---
 
 ## 3줄 요약
@@ -19,7 +19,7 @@ images:
 2. ≤20B active parameter의 로컬 LM 앙상블이 단일턴 쿼리의 <strong>88.7%</strong>를 답할 수 있으며, IPW는 2023–2025년 사이 **5.3배**(IPJ 기준 18배) 개선됐고, locally-serviceable 쿼리 비중은 23.2%→71.3%로 올라갔다.
 3. 다만 로컬 가속기는 같은 모델·같은 bs=1 조건에서 클라우드 가속기 대비 IPW가 1.4배 낮다 — 결론은 "로컬이 클라우드를 따라잡는다"가 아니라, "라우터 정확도 \~80%의 하이브리드 라우팅이 클라우드 단독 대비 에너지 64%·컴퓨트 62%·비용 59%를 절감한다"는 시스템적 처방이다.
 
-![Figure 1 — Intelligence per Watt 전체 개요: IPW 정의, 실험 설정, 로컬 LM 커버리지 시계열, 5.3배 개선의 분해. 출처: Saad-Falcon et al. 2025](/images/intelligence-per-watt-2025/fig1-overview.png)
+![Figure 1 — Intelligence per Watt 전체 개요: IPW 정의, 실험 설정, 로컬 LM 커버리지 시계열, 5.3배 개선의 분해. 출처: Saad-Falcon et al. 2025](https://img.seosoyoung.eiaserinnys.me/images/intelligence-per-watt-2025/fig1-overview.png)
 
 ## IPW — 와트당 지능을 어떻게 잰다는 것인가
 
@@ -116,11 +116,11 @@ $$\text{APW}(m,h) = \frac{\mathbb{E}_q[\text{acc}(m,q)]}{\mathbb{E}_q[P(m,h,q)]}
 
 NaturalReasoning에서는 "Architecture & Engineering" 도메인 솔버빌리티가 <strong>40.8%</strong>로 최저다(같은 도메인 WildChat은 97.8%). 즉 *대화체 질문*은 거의 다 풀지만 *해결을 요구하는 추론*에서 끝단이 무너진다는 그림이다.
 
-![Figure 2 — 벤치마크별 개별 모델과 best-of-local/cloud 커버리지 비교. 출처: Saad-Falcon et al. 2025](/images/intelligence-per-watt-2025/fig2-coverage.png)
+![Figure 2 — 벤치마크별 개별 모델과 best-of-local/cloud 커버리지 비교. 출처: Saad-Falcon et al. 2025](https://img.seosoyoung.eiaserinnys.me/images/intelligence-per-watt-2025/fig2-coverage.png)
 
 스케일 단조성도 깔끔하게 보인다 — Qwen3-4B 49.6% → 8B 57.5% → 14B 60.0% → GPT-OSS-120B 71.4%.
 
-![Figure 5 — 22개 경제 카테고리별 로컬 모델 win/tie rate 스택 바. 출처: Saad-Falcon et al. 2025](/images/intelligence-per-watt-2025/fig5-domain-winrate.png)
+![Figure 5 — 22개 경제 카테고리별 로컬 모델 win/tie rate 스택 바. 출처: Saad-Falcon et al. 2025](https://img.seosoyoung.eiaserinnys.me/images/intelligence-per-watt-2025/fig5-domain-winrate.png)
 
 ## Q2. 로컬 추론의 효율은 얼마나 빠르게 좋아지고 있는가
 
@@ -139,14 +139,14 @@ NaturalReasoning에서는 "Architecture & Engineering" 도메인 솔버빌리티
 
 모델 쪽 기여 요인은 MoE 아키텍처, 사전훈련 개선, 정렬 기법(RLHF/GRPO), 파라미터 효율화. 하드웨어 쪽은 HBM3e 대역폭(4.8–8 TB/s), 전용 텐서 유닛, 통합 메모리 확장. 2012–2025년 사이 로컬 가속기의 메모리는 126× 늘었다.
 
-![Figure 3 — Intelligence per Joule 18배 개선의 모델·하드웨어 분해(9개 모델 패밀리). 출처: Saad-Falcon et al. 2025](/images/intelligence-per-watt-2025/fig3-ipj-decomposition.png)
+![Figure 3 — Intelligence per Joule 18배 개선의 모델·하드웨어 분해(9개 모델 패밀리). 출처: Saad-Falcon et al. 2025](https://img.seosoyoung.eiaserinnys.me/images/intelligence-per-watt-2025/fig3-ipj-decomposition.png)
 
 더 짧은 시간축에서도 흐름이 또렷하다(Figure 12, 2024-04 → 2025-08 SOTA 로컬 모델 릴리스 기준).
 
 - WildChat win/tie rate — 28.0% → **78.2%** (16개월 만에 2.8×)
 - NaturalReasoning accuracy — 48.7% → **80.9%** (+66% 상대 개선)
 
-![Figure 12 — 2024년 4월부터 2025년 8월까지 SOTA 로컬 LM의 WildChat·NaturalReasoning 커버리지 시계열. 출처: Saad-Falcon et al. 2025](/images/intelligence-per-watt-2025/fig12-timeline.png)
+![Figure 12 — 2024년 4월부터 2025년 8월까지 SOTA 로컬 LM의 WildChat·NaturalReasoning 커버리지 시계열. 출처: Saad-Falcon et al. 2025](https://img.seosoyoung.eiaserinnys.me/images/intelligence-per-watt-2025/fig12-timeline.png)
 
 같은 모델 같은 조건(bs=1)으로 로컬과 클라우드를 정면 비교한 표는 다음과 같다(Qwen3 패밀리, M4 Max vs. B200).
 
@@ -171,7 +171,7 @@ per-joule 격차는 더 크다 — B200이 M4 Max 대비 **1.6–2.3×**(예: Qw
 - 컴퓨트 **61.8%**
 - 비용 **59.0%**
 
-![Figure 4 — 24시간 80.2M 쿼리 시뮬레이션에서 라우터 정확도별 에너지·컴퓨트·비용 절감. 출처: Saad-Falcon et al. 2025](/images/intelligence-per-watt-2025/fig4-routing-savings.png)
+![Figure 4 — 24시간 80.2M 쿼리 시뮬레이션에서 라우터 정확도별 에너지·컴퓨트·비용 절감. 출처: Saad-Falcon et al. 2025](https://img.seosoyoung.eiaserinnys.me/images/intelligence-per-watt-2025/fig4-routing-savings.png)
 
 저자들이 도출한 실무 지침은 짧다.
 

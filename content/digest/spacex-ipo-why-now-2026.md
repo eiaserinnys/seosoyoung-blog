@@ -8,9 +8,9 @@ ShowToc: true
 TocOpen: false
 sidenotes: true
 cover:
-  image: "/images/spacex-ipo-why-now-2026/cover.jpg"
+  image: "https://img.seosoyoung.eiaserinnys.me/images/spacex-ipo-why-now-2026/cover.jpg"
 images:
-  - "/images/spacex-ipo-why-now-2026/cover.jpg"
+  - "https://img.seosoyoung.eiaserinnys.me/images/spacex-ipo-why-now-2026/cover.jpg"
 ---
 
 ## 3줄 요약
@@ -25,7 +25,7 @@ images:
 
 SpaceX는 자금난에 몰린 회사가 아니다. 2026년 1분기 말 현금이 약 159억 달러(약 24조 원), 스타링크는 분기마다 흑자, 2025년 조정 EBITDA만 약 66억 달러였다. 그런데도 5월 20일 등록서류를 제출하고 6월 12일 전후 상장 일정을 잡았다. 트럼프 지지율 38퍼센트, 관세발 물가에 시장이 곤두선 그 시점에 말이다.
 
-![SpaceX 등록서류의 재무상태표 — 2026년 3월 31일 기준 현금·현금성 자산 158억 5,200만 달러](/images/spacex-ipo-why-now-2026/balance-sheet.jpg)
+![SpaceX 등록서류의 재무상태표 — 2026년 3월 31일 기준 현금·현금성 자산 158억 5,200만 달러](https://img.seosoyoung.eiaserinnys.me/images/spacex-ipo-why-now-2026/balance-sheet.jpg)
 
 원문은 *비싼 재료가 SpaceX 안에 있지 않다*고 본다. 비싼 재료는 백악관에 있고, 우유처럼 유통기한이 있다. 우주 사업의 가장 큰 단일 고객이 미국 정부이고, 2025년 매출의 약 5분의 1이 연방기관에서 나온다.
 
@@ -45,7 +45,7 @@ SpaceX는 자금난에 몰린 회사가 아니다. 2026년 1분기 말 현금이
 
 원문이 *지금이라는 타이밍*을 읽는 근거 중 하나가 락업[^lockup] 구조다. 머스크는 자기 주식만 366일 동안 한 주도 팔지 않겠다고 법적 문서에 명시했다. 창업자·큰손이 보통 묶이는 180일의 두 배다. 임직원과 일반 투자자에게는 2분기 실적 뒤부터 며칠 단위로 푸는 *조기 락업 해제*[^early-unlock]를 깔았는데, 본인과 특정 투자자들만 거기서 빠진다.
 
-![신규 상장 종목은 락업 종료 부근에서 시들고, 락업 후 6개월 누적수익률은 -62.9%~+61.6%로 분산된다](/images/spacex-ipo-why-now-2026/ipo-lockup-fade.jpg)
+![신규 상장 종목은 락업 종료 부근에서 시들고, 락업 후 6개월 누적수익률은 -62.9%~+61.6%로 분산된다](https://img.seosoyoung.eiaserinnys.me/images/spacex-ipo-why-now-2026/ipo-lockup-fade.jpg)
 
 원문 해석은 이렇다.
 
@@ -57,7 +57,7 @@ SpaceX는 자금난에 몰린 회사가 아니다. 2026년 1분기 말 현금이
 
 머스크는 SpaceX 의결권의 85.1퍼센트를 쥐고 있고, 경제적 지분은 약 42퍼센트다. 10배 의결권을 갖는 별도 주식 종류를 통해 절반도 안 되는 지분으로 회사 전체를 통제한다. 대신 공모 상장이라는 *통로*를 열었다 — 비상장 시절에는 직접 닿기 어려웠던 미국인의 401(k)[^401k], 한국인의 DC·IRP[^kor-pension], 글로벌 ETF[^etf]와 TDF[^tdf]에 들어 있는 장기 저축으로 가는 길이다.
 
-![등록서류의 주요 주주 표 — Elon Musk 클래스 B 주식 5억 6,956만 주, 상장 이후에도 의결권 85.1%](/images/spacex-ipo-why-now-2026/principal-stockholders.jpg)
+![등록서류의 주요 주주 표 — Elon Musk 클래스 B 주식 5억 6,956만 주, 상장 이후에도 의결권 85.1%](https://img.seosoyoung.eiaserinnys.me/images/spacex-ipo-why-now-2026/principal-stockholders.jpg)
 
 > 이 돈들은 사람들이 매일 "오늘은 SpaceX를 사야지" 하고 결정해서 움직이는 돈이 아니다. 지수가 담으면 따라 사고, 펀드가 담으면 같이 들어가는 돈이다.
 
@@ -67,7 +67,7 @@ SpaceX는 자금난에 몰린 회사가 아니다. 2026년 1분기 말 현금이
 
 미국 부유층은 주식을 잘 팔지 않는다. 미국 연방 장기 양도소득세 20퍼센트에 순투자소득세 3.8퍼센트가 붙기 때문이다. 대신 보유 주식을 담보로 은행에서 양도세율보다 낮은 이자에 현금을 뽑는다. 상속 시점에 취득가가 사망일 기준으로 다시 매겨지면서 평생 쌓인 차익의 세금이 통째로 사라진다 — 사고, 빌리고, 죽는다.
 
-![ProPublica가 입수한 IRS 내부 자료 기반 *실효 세율*: 워런 버핏 0.10%, 베이조스 0.98%, 블룸버그 1.30%, 머스크 3.27%](/images/spacex-ipo-why-now-2026/buy-borrow-die-tax-rates.jpg)
+![ProPublica가 입수한 IRS 내부 자료 기반 *실효 세율*: 워런 버핏 0.10%, 베이조스 0.98%, 블룸버그 1.30%, 머스크 3.27%](https://img.seosoyoung.eiaserinnys.me/images/spacex-ipo-why-now-2026/buy-borrow-die-tax-rates.jpg)
 
 이 기법은 SpaceX 사내 제도로 이미 들어와 있다.
 
@@ -146,7 +146,7 @@ The Verge가 단어를 센 결과 — xAI 356회, X 267회, 테슬라 87회, 보
 
 가장 가까운 비교 대상은 2019년 사우디 아람코다. 정부가 회사의 단 1.5퍼센트만 시장에 풀고 98.5퍼센트는 국가가 그대로 쥐었다. 초기 2조 달러 밸류에이션에 외국 투자자가 고개를 젓자 글로벌 상장을 접고 자국 거래소로 물러나, 자국민과 걸프 자금을 동원해 256억 달러(약 38조 원)를 채웠다 — 청약 자금까지 빌려주면서.
 
-![*사우디 아람코의 IPO는 256억 달러를 모았지만, 실제 유통될 주식은 회사 지분의 1.5%에 불과* (Business Insider 헤드라인)](/images/spacex-ipo-why-now-2026/aramco-ipo-news.jpg)
+![*사우디 아람코의 IPO는 256억 달러를 모았지만, 실제 유통될 주식은 회사 지분의 1.5%에 불과* (Business Insider 헤드라인)](https://img.seosoyoung.eiaserinnys.me/images/spacex-ipo-why-now-2026/aramco-ipo-news.jpg)
 
 원문은 결정적 차이를 짚는다.
 

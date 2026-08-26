@@ -7,9 +7,9 @@ summary: "BBC Future가 자동차 데이터 수집의 실태를 정리한 칼럼
 ShowToc: true
 TocOpen: false
 cover:
-  image: "/images/bbc-car-data-spying-2026/cover-collage.jpg.webp"
+  image: "https://img.seosoyoung.eiaserinnys.me/images/bbc-car-data-spying-2026/cover-collage.jpg.webp"
 images:
-  - "/images/bbc-car-data-spying-2026/cover-collage.jpg.webp"
+  - "https://img.seosoyoung.eiaserinnys.me/images/bbc-car-data-spying-2026/cover-collage.jpg.webp"
 sidenotes: true
 ---
 
@@ -19,7 +19,7 @@ sidenotes: true
 2. 현대 자동차는 위치·동승자·심박·체중·표정·심리 경향까지 수집해 보험사와 데이터 브로커에 판매한다. GM이 위치 데이터를 LexisNexis에 넘긴 결과, 한 운전자의 보험료가 21% 오른 사례가 확인되었다.
 3. 미국은 곧 음주운전 방지를 위한 적외선 생체 카메라 설치를 의무화한다. 그러나 그 카메라가 만들어내는 의료성 데이터의 사용을 제한하는 조항은 법안에 없다.
 
-![BBC Future / Serenity Strull / Getty Images — 두 개의 브라우저 창에 운전석의 여성이 잡혀 있고, 얼굴 위에는 안면 인식용 스캐너 표시가, 차 안에는 카메라 모양의 방향제가 매달려 있다.](/images/bbc-car-data-spying-2026/cover-collage.jpg.webp)
+![BBC Future / Serenity Strull / Getty Images — 두 개의 브라우저 창에 운전석의 여성이 잡혀 있고, 얼굴 위에는 안면 인식용 스캐너 표시가, 차 안에는 카메라 모양의 방향제가 매달려 있다.](https://img.seosoyoung.eiaserinnys.me/images/bbc-car-data-spying-2026/cover-collage.jpg.webp)
 
 ## 차는 이미 데이터 고속도로 위에 있다
 
@@ -45,7 +45,7 @@ GM은 운전자 위치 데이터를 LexisNexis라는 데이터 브로커에게 �
 
 미국 FTC는 GM에 5년간 차량 데이터 판매를 금지했다. 다만 5년 이후에는 운전자의 명시 동의와 일부 조건을 충족하면 다시 판매할 수 있다. 그리고 LexisNexis는 다른 자동차 제조사들과 운전용 앱들로부터 들어오는 데이터를 *지금도* 계속 판매한다. 보험사·자동차 회사·데이터 브로커 사이의 거래는 광범위하며, 프라이버시 정책에 명시되어 동의를 받기만 하면 합법이다.
 
-![BBC Future / Serenity Strull / Getty Images — 차 안에서 어두운 표정으로 정면을 응시하는 운전자. 프라이버시 전문가들은 자동차가 우리 삶에서 가장 침입적인 제품 중 하나라고 본다.](/images/bbc-car-data-spying-2026/invasive-products.jpg.webp)
+![BBC Future / Serenity Strull / Getty Images — 차 안에서 어두운 표정으로 정면을 응시하는 운전자. 프라이버시 전문가들은 자동차가 우리 삶에서 가장 침입적인 제품 중 하나라고 본다.](https://img.seosoyoung.eiaserinnys.me/images/bbc-car-data-spying-2026/invasive-products.jpg.webp)
 
 ## 음주운전 방지법, 새 감시의 입구
 

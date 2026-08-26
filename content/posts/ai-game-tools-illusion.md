@@ -6,7 +6,7 @@ tags: ["AI", "게임 개발", "조직 변화", "도구 도입"]
 categories: ["게임"]
 summary: "AI 게임 개발 도구의 합격률이 1.2%인 이유는 개별 도구의 품질만이 아니다. 시연과 양산의 간극, 도구 우선 접근, 저작권 위험, 조직 내 단절 — 네 가지 구조적 함정이 서로를 강화하는 순환을 끊지 않으면 도구가 아무리 좋아져도 합격률은 오르지 않는다."
 cover:
-  image: "/images/cover-ai-game-tools-illusion.png"
+  image: "https://img.seosoyoung.eiaserinnys.me/images/cover-ai-game-tools-illusion.png"
 sidenotes: true
 ---
 

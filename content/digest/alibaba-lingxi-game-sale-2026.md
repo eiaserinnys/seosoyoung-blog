@@ -7,9 +7,9 @@ summary: "알리바바가 게임 사업 브랜드 링시후위(灵犀互娱)를 
 ShowToc: true
 TocOpen: false
 cover:
-  image: "/images/alibaba-lingxi-game-sale-2026/bytedance-moonton-headline.jpg"
+  image: "https://img.seosoyoung.eiaserinnys.me/images/alibaba-lingxi-game-sale-2026/bytedance-moonton-headline.jpg"
 images:
-  - "/images/alibaba-lingxi-game-sale-2026/bytedance-moonton-headline.jpg"
+  - "https://img.seosoyoung.eiaserinnys.me/images/alibaba-lingxi-game-sale-2026/bytedance-moonton-headline.jpg"
 ---
 
 ## 3줄 요약
@@ -40,7 +40,7 @@ images:
 
 알리바바 그룹의 전략이 완전히 AI로 이동하면서, 링시는 그룹 안에서 점점 *주변부*로 밀려나 왔다.
 
-![알리바바 링시후위 매각 보도 상세](/images/alibaba-lingxi-game-sale-2026/alibaba-lingxi-detail.jpg)
+![알리바바 링시후위 매각 보도 상세](https://img.seosoyoung.eiaserinnys.me/images/alibaba-lingxi-game-sale-2026/alibaba-lingxi-detail.jpg)
 > 알리바바가 접촉한 5개 후보와 매각가 의향이 명시된 매체 캡처. 출처: 게임신지(游戏新知).
 
 ## 바이트댄스 — 3개월 전, 무퉁을 60억 달러에 팔다
@@ -63,7 +63,7 @@ images:
 
 매각 대금은 생성형 AI, 자체 칩 개발, 대규모 언어모델(LLM) 운영에 재배치된다. 텐센트의 게임 제국에 정면으로 맞서겠다는 *바이트댄스의 게임 야망*은, 60억 달러라는 차익을 남기는 *깨끗한 퇴장*으로 마무리됐다.
 
-![바이트댄스 무퉁 매각 보도](/images/alibaba-lingxi-game-sale-2026/bytedance-moonton-headline.jpg)
+![바이트댄스 무퉁 매각 보도](https://img.seosoyoung.eiaserinnys.me/images/alibaba-lingxi-game-sale-2026/bytedance-moonton-headline.jpg)
 > "60억 달러에 무퉁을 팔고, 바이트댄스는 결국 게임과의 줄다리기를 그만뒀다." 2026년 3월 23일자 *관조과기 Pro(观潮科技pro)* 헤드라인.
 
 ## 비교 — 두 거래의 규모와 결

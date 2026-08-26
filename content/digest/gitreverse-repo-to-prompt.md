@@ -7,9 +7,9 @@ summary: "공개 GitHub 저장소를 바이브 코딩으로 다시 만들 법한
 ShowToc: true
 TocOpen: false
 cover:
-  image: "/images/gitreverse-repo-to-prompt/gitreverse-og.png"
+  image: "https://img.seosoyoung.eiaserinnys.me/images/gitreverse-repo-to-prompt/gitreverse-og.png"
 images:
-  - "/images/gitreverse-repo-to-prompt/gitreverse-og.png"
+  - "https://img.seosoyoung.eiaserinnys.me/images/gitreverse-repo-to-prompt/gitreverse-og.png"
 ---
 
 ## 3줄 요약

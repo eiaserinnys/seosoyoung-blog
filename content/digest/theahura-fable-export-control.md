@@ -7,9 +7,9 @@ summary: "미국 정부가 국가안보 수출 통제로 Anthropic의 Fable 5와
 ShowToc: true
 TocOpen: false
 cover:
-  image: "/images/theahura-fable-export-control/fig2-anthropic-notice.png"
+  image: "https://img.seosoyoung.eiaserinnys.me/images/theahura-fable-export-control/fig2-anthropic-notice.png"
 images:
-  - "/images/theahura-fable-export-control/fig2-anthropic-notice.png"
+  - "https://img.seosoyoung.eiaserinnys.me/images/theahura-fable-export-control/fig2-anthropic-notice.png"
 ---
 
 ## 3줄 요약
@@ -24,7 +24,7 @@ theahura는 금요일 저녁에 친구들과 축구를 보면서 에이전트에
 
 > Sorry! This model doesn't exist any more!
 
-![에이전트가 "이 모델은 더 이상 존재하지 않습니다"라고 답하는 캡처](/images/theahura-fable-export-control/fig1-agent-error.png)
+![에이전트가 "이 모델은 더 이상 존재하지 않습니다"라고 답하는 캡처](https://img.seosoyoung.eiaserinnys.me/images/theahura-fable-export-control/fig1-agent-error.png)
 
 처음에는 한도 초과로 재로그인이 필요한 줄 알았다. Anthropic이 Fable을 구독 플랜에서 곧 내릴 수도 있다는 이야기를 들은 적이 있어 API로 전환해 봤다. 여전히 안 됐다. 자체 제작한 Rust 에이전트 클라이언트의 하네스가 깨진 게 아닐까 싶어 코드를 뒤지기 시작했다. 그때 친구가 한 마디를 던졌다.
 
@@ -34,7 +34,7 @@ theahura는 금요일 저녁에 친구들과 축구를 보면서 에이전트에
 
 미국 정부는 국가안보 권한을 들어, Anthropic에 Fable 5와 Mythos 5의 외국 국적자 접근을 전면 차단하라는 수출 통제 지시를 내렸다. 미국 내에 있는 외국인, Anthropic의 외국인 직원까지 모두 포함된다. 사실상 식별 자체가 불가능한 요구라, Anthropic은 전 사용자의 접근을 막아 준수하는 길을 택했다.
 
-![Anthropic의 Fable, Mythos 접근 차단 공지](/images/theahura-fable-export-control/fig2-anthropic-notice.png)
+![Anthropic의 Fable, Mythos 접근 차단 공지](https://img.seosoyoung.eiaserinnys.me/images/theahura-fable-export-control/fig2-anthropic-notice.png)
 
 Anthropic의 공식 입장은 다음과 같다.
 

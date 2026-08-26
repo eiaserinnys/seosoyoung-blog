@@ -7,9 +7,9 @@ summary: "Anthropic이 Fable을 출시한 직후 zero_goliath가 쓴 짧은 에�
 ShowToc: true
 TocOpen: false
 cover:
-  image: "/images/path-from-fable-to-superintelligence/cover.jpg"
+  image: "https://img.seosoyoung.eiaserinnys.me/images/path-from-fable-to-superintelligence/cover.jpg"
 images:
-  - "/images/path-from-fable-to-superintelligence/cover.jpg"
+  - "https://img.seosoyoung.eiaserinnys.me/images/path-from-fable-to-superintelligence/cover.jpg"
 ---
 
 ## 3줄 요약

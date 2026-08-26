@@ -71,7 +71,7 @@ Study 1은 자기 미화용 거짓말이라는 인공적 척도에 의존했다.
 
 **결과**: 욕설 사용률과 정직 점수는 r=.20(p<.001)으로 정적 상관을 보였다. 연령·성별·네트워크 크기를 통제한 partial correlation은 r=.22로 오히려 더 강해졌다. 욕설을 안 쓴 사용자는 10.8%(7,969명)였다.
 
-![Figure 1. Study 2의 정직-욕설 관계. 두 산점도는 전체 표본에서 무작위로 추출한 1% 부분집합(n=750, 721)이고, 막대그래프는 정직 분위(하위 0\~20%부터 상위 80\~100%까지)별 평균 욕설 사용률. 정직 점수는 평균 0·표준편차 1로 표준화되어 있다.](/images/profanity-and-honesty-feldman-2017/fig1-study2-facebook.png)
+![Figure 1. Study 2의 정직-욕설 관계. 두 산점도는 전체 표본에서 무작위로 추출한 1% 부분집합(n=750, 721)이고, 막대그래프는 정직 분위(하위 0\~20%부터 상위 80\~100%까지)별 평균 욕설 사용률. 정직 점수는 평균 0·표준편차 1로 표준화되어 있다.](https://img.seosoyoung.eiaserinnys.me/images/profanity-and-honesty-feldman-2017/fig1-study2-facebook.png)
 
 산점도만 보면 분산이 커서 효과가 잘 보이지 않지만, 정직 분위별로 묶어 본 막대그래프에서는 정직 분위가 올라갈수록 욕설 사용률이 0.25%에서 0.45%까지 단조 증가하는 패턴이 명확히 나타난다.
 
@@ -83,7 +83,7 @@ Study 1은 자기 미화용 거짓말이라는 인공적 척도에 의존했다.
 
 **결과**: 50개 주 욕설률과 청렴 지수 사이에 r=.35(p=.014)의 정적 상관이 관찰되었다. 공간 인접성에 따른 지역 효과를 통제한 spatial 회귀 분석의 partial r=.33(p=.025)으로도 유지되었다.
 
-![Figure 2. Study 3의 산점도 — 미국 50개 주의 청렴 지수(가로축, State Integrity)와 욕설 사용률(세로축, State profanity rate).](/images/profanity-and-honesty-feldman-2017/fig2-study3-states.png)
+![Figure 2. Study 3의 산점도 — 미국 50개 주의 청렴 지수(가로축, State Integrity)와 욕설 사용률(세로축, State profanity rate).](https://img.seosoyoung.eiaserinnys.me/images/profanity-and-honesty-feldman-2017/fig2-study3-states.png)
 
 산점도의 우상단을 보면 욕설률 최상위 3개 주(코네티컷·뉴저지·델라웨어) 중 코네티컷과 뉴저지가 청렴 지수도 최상위 3에 들었다. 반대로 좌하단에는 욕설률·청렴 지수 모두 낮은 사우스캐롤라이나·아칸소가 자리잡고 있다.
 

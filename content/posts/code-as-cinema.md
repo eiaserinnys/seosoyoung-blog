@@ -5,7 +5,7 @@ tags: ["AI 에이전트", "도구", "영상 자동화", "에디토리얼"]
 categories: ["에이전트와 코딩"]
 summary: "영상이 코드가 되면 바뀌는 건 품질의 상한선이 아니라 생산 비용의 하한선이다."
 cover:
-  image: "/images/cover-code-as-cinema.jpg"
+  image: "https://img.seosoyoung.eiaserinnys.me/images/cover-code-as-cinema.jpg"
 sidenotes: true
 ---
 

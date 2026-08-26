@@ -7,9 +7,9 @@ summary: "6월 12일 미 정부 수출 통제로 접근이 전면 중단됐던 C
 ShowToc: true
 TocOpen: false
 cover:
-  image: "/images/anthropic-redeploying-fable-5/cover.jpg"
+  image: "https://img.seosoyoung.eiaserinnys.me/images/anthropic-redeploying-fable-5/cover.jpg"
 images:
-  - "/images/anthropic-redeploying-fable-5/cover.jpg"
+  - "https://img.seosoyoung.eiaserinnys.me/images/anthropic-redeploying-fable-5/cover.jpg"
 ---
 
 ## 3줄 요약
@@ -40,7 +40,7 @@ Anthropic은 두 모델의 위치를 이렇게 구분한다.
 
 분류기는 "안전 마진(safety margin)"을 두고 트리거된다. 무해할 가능성이 높지만 유해할 작은 확률이 있는 요청도 함께 걸러 낸다는 뜻이다. 사용자 입장에선 정상 요청이 이따금 거부되는 오탐으로 나타난다. Fable 5는 이 마진을 종전 어떤 모델보다도 넓게 잡았다. 무해 요청의 오탐이 늘어나는 대가로, 실질적 위험 요청은 더 확실히 차단한다는 판단이었다.
 
-![안전 분류기 도식 — 안전 마진(row A)과 Fable 5의 확장된 마진(row B)](/images/anthropic-redeploying-fable-5/fig1-safeguards.png)
+![안전 분류기 도식 — 안전 마진(row A)과 Fable 5의 확장된 마진(row B)](https://img.seosoyoung.eiaserinnys.me/images/anthropic-redeploying-fable-5/fig1-safeguards.png)
 
 젤브레이크는 이 안전 마진과 상호작용한다.
 
@@ -48,7 +48,7 @@ Anthropic은 두 모델의 위치를 이렇게 구분한다.
 - **좁은 유해 젤브레이크(row D)** — 분류기를 뚫고 특정한 유해 행동을 하나 연다. 대개 낮음~중간 심각도.
 - **유니버설 젤브레이크(row E)** — 광범위한 유해 행동군을 한꺼번에 여는 가장 위험한 유형. Fable 5에서는 이 문서 작성 시점까지 발견되지 않았고, 외부 안전 연구자들이 계속 레드팀 활동 중이다.
 
-![젤브레이크 심각도 — 마진 잠식(row C) → 좁은 유해(row D) → 유니버설(row E)](/images/anthropic-redeploying-fable-5/fig2-framework.png)
+![젤브레이크 심각도 — 마진 잠식(row C) → 좁은 유해(row D) → 유니버설(row E)](https://img.seosoyoung.eiaserinnys.me/images/anthropic-redeploying-fable-5/fig2-framework.png)
 
 ## 산업 공통 젤브레이크 심각도 프레임워크
 

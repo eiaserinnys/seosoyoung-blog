@@ -7,9 +7,9 @@ summary: "Prof G Markets가 2026년 상반기 AI 해고 5만 건 뒤에서 벌�
 ShowToc: true
 TocOpen: false
 cover:
-  image: "/images/profg-markets-ai-vs-employee-cost-2026/chart-china-vs-us-tokens.png"
+  image: "https://img.seosoyoung.eiaserinnys.me/images/profg-markets-ai-vs-employee-cost-2026/chart-china-vs-us-tokens.png"
 images:
-  - "/images/profg-markets-ai-vs-employee-cost-2026/chart-china-vs-us-tokens.png"
+  - "https://img.seosoyoung.eiaserinnys.me/images/profg-markets-ai-vs-employee-cost-2026/chart-china-vs-us-tokens.png"
 ---
 
 ## 3줄 요약
@@ -18,7 +18,7 @@ images:
 2. 우버는 2026년 AI 예산을 4개월 만에 소진했고, 마이크로소프트는 여러 부서의 Claude Code 라이선스를 끊었고, Nvidia 임원은 "컴퓨트 비용이 인건비보다 훨씬 비싸다"고 말했다. ROI를 확신할 수 있다고 답한 조직은 절반뿐이다.
 3. 그 결과 미국 AI 스타트업의 80%가 10\~30배 싼 중국 오픈소스 LLM으로 갈아탔다 — 개발자 사용 점유율은 2024년 1%에서 2026년 5월 60%대로 올라섰다.
 
-![OpenRouter API 콜에서 본 미국·중국·기타 모델의 주간 토큰 소비](/images/profg-markets-ai-vs-employee-cost-2026/chart-china-vs-us-tokens.png)
+![OpenRouter API 콜에서 본 미국·중국·기타 모델의 주간 토큰 소비](https://img.seosoyoung.eiaserinnys.me/images/profg-markets-ai-vs-employee-cost-2026/chart-china-vs-us-tokens.png)
 *OpenRouter LLM 랭킹 리더보드. 2026년 2분기부터 황색(중국 모델) 영역이 폭발적으로 늘어나 미국 모델 사용량을 추월한다. 출처: Prof G Media*
 
 ## AI는 대체하려는 인건비보다 비싸지고 있다
@@ -27,7 +27,7 @@ images:
 
 그런데 최근 몇 주, 이 명제가 장벽에 부딪혔다. 점점 더 많은 기업이 "AI가 그 막강한 위력에도 불구하고, 정작 대체하려는 인간보다 비싸다"고 보고하기 시작했다.
 
-![엔터프라이즈가 인용한 AI 비용 사례 — Uber, Microsoft, Nvidia, Meta, Pinterest, Spotify](/images/profg-markets-ai-vs-employee-cost-2026/chart-ai-cost-vs-employees.png)
+![엔터프라이즈가 인용한 AI 비용 사례 — Uber, Microsoft, Nvidia, Meta, Pinterest, Spotify](https://img.seosoyoung.eiaserinnys.me/images/profg-markets-ai-vs-employee-cost-2026/chart-ai-cost-vs-employees.png)
 *기업별 AI 비용 압박 정리. 출처: Prof G Media*
 
 - **우버**는 2026년 전체 AI 예산을 4개월 만에 소진했다. COO는 "회사 내부에서 AI 비용을 정당화하기가 점점 어려워지고 있다"고 말했다.
@@ -43,7 +43,7 @@ Anthropic에서는 한 직원이 한 달에 **15만 달러어치** Claude Code�
 
 이 시장에서는 효율성의 *외양*이 워낙 꾸준히 보상받아 왔기 때문에, 실제로 효율성을 *계산*해야 할 필요가 없었다. S&P 500 기업의 <strong>79%</strong>가 가장 최근 어닝콜에서 AI를 언급했지만, <strong>AI 매출을 공시한 기업은 단 8%</strong>뿐이다.
 
-![S&P 500 어닝콜의 AI 언급 비율 vs AI 매출 공시 비율](/images/profg-markets-ai-vs-employee-cost-2026/chart-sp500-ai-mentions.png)
+![S&P 500 어닝콜의 AI 언급 비율 vs AI 매출 공시 비율](https://img.seosoyoung.eiaserinnys.me/images/profg-markets-ai-vs-employee-cost-2026/chart-sp500-ai-mentions.png)
 *79% vs 8%의 간극. 출처: Prof G Media*
 
 같은 CloudZero 보고서는 AI 투자 수익을 확신할 수 있다고 답한 조직이 **절반**뿐임을 보여줬다. Match Group CEO 스펜서 라스코프는 자사 AI 비용이 연 500만\~1,000만 달러라고 말한 뒤, ROI에 대해 이렇게 답했다.

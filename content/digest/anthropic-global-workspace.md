@@ -7,9 +7,9 @@ summary: "Anthropic이 Claude 내부에서 신경과학의 글로벌 워크스�
 ShowToc: true
 TocOpen: false
 cover:
-  image: "/images/anthropic-global-workspace/header.png"
+  image: "https://img.seosoyoung.eiaserinnys.me/images/anthropic-global-workspace/header.png"
 images:
-  - "/images/anthropic-global-workspace/header.png"
+  - "https://img.seosoyoung.eiaserinnys.me/images/anthropic-global-workspace/header.png"
 ---
 
 ## 3줄 요약
@@ -26,7 +26,7 @@ images:
 
 이번 논문의 질문은 이렇다. 현대 언어 모델 안에도 이런 구분이 창발했는가? 연구진은 그렇다는 증거를 내놓았다. Claude가 내부 신경 패턴 가운데 소수의 특별한 집합을 발달시켰고, 이 집합이 워크스페이스의 기능적 속성을 모두 충족한다는 것이다.
 
-![워크스페이스의 다섯 가지 기능적 속성과 각각을 검증한 실험의 도식](/images/anthropic-global-workspace/five-properties.png)
+![워크스페이스의 다섯 가지 기능적 속성과 각각을 검증한 실험의 도식](https://img.seosoyoung.eiaserinnys.me/images/anthropic-global-workspace/five-properties.png)
 
 ## J-lens: "말할 수 있는 표상"을 찾는 렌즈
 
@@ -38,7 +38,7 @@ images:
 
 J-space에 뜨는 내용은 입력 텍스트의 반영을 훌쩍 넘어선다. 아무도 지적하지 않은 버그가 있는 코드를 읽으면 "ERROR"가 뜬다. 단백질 서열의 날 문자를 읽으면 그 단백질의 생물학적 기능이 뜬다. 프롬프트 인젝션 공격이 숨어 있는 검색 결과를 읽으면 "injection"과 "fake"가 뜬다. 여러 단계 수학 문제를 주면 중간 단계들이 올바른 순서로 나타난다.
 
-![여섯 가지 프롬프트에 대한 J-lens 판독. 추론 단계, 버그의 존재, 단백질 기능, 조작된 검색 결과 의심 등 텍스트 어디에도 없는 내부 평가가 드러난다](/images/anthropic-global-workspace/jlens-readouts.png)
+![여섯 가지 프롬프트에 대한 J-lens 판독. 추론 단계, 버그의 존재, 단백질 기능, 조작된 검색 결과 의심 등 텍스트 어디에도 없는 내부 평가가 드러난다](https://img.seosoyoung.eiaserinnys.me/images/anthropic-global-workspace/jlens-readouts.png)
 
 ## 다섯 가지 속성의 검증
 
@@ -48,7 +48,7 @@ Claude에게 스포츠 하나를 조용히 떠올린 뒤 말하라고 하면, �
 
 거꾸로 생각을 주입할 수도 있다. "네 마음에 생각이 주입됐을 수 있다"고 알린 뒤 "lightning" 패턴을 넣자, Claude는 주입된 생각이 번개에 관한 것이라고 보고했다.
 
-![스포츠 선택 실험과 생각 주입 실험](/images/anthropic-global-workspace/soccer-swap.png)
+![스포츠 선택 실험과 생각 주입 실험](https://img.seosoyoung.eiaserinnys.me/images/anthropic-global-workspace/soccer-swap.png)
 
 ### 2. 의도적 조절 (directed modulation)
 
@@ -56,7 +56,7 @@ Claude에게 스포츠 하나를 조용히 떠올린 뒤 말하라고 하면, �
 
 통제는 완벽하지 않다. 무언가를 생각하지 <em>말라고</em> 하면 그 개념이 지시받았을 때보다는 약하게, 언급이 없었을 때보다는 훨씬 강하게 켜진다. 흰곰을 생각하지 말라는 지시를 받은 사람과 같은 패턴이다. 억제에 실패하면 "damn"과 "failure"가 함께 켜지는데, 자기 실패를 인식하는 듯한 신호다.
 
-![문장을 필사하는 동안 J-lens에 나타난 암산 과정](/images/anthropic-global-workspace/mental-math.png)
+![문장을 필사하는 동안 J-lens에 나타난 암산 과정](https://img.seosoyoung.eiaserinnys.me/images/anthropic-global-workspace/mental-math.png)
 
 ### 3. 내부 추론 (internal reasoning)
 
@@ -66,7 +66,7 @@ Claude에게 스포츠 하나를 조용히 떠올린 뒤 말하라고 하면, �
 
 프랑스에 관한 네 가지 질문(수도, 언어, 대륙, 통화)을 주고, 네 맥락 모두에서 완전히 동일한 개입으로 J-space의 "France"를 "China"로 바꿨다. Claude는 각각 "Beijing", "Chinese", "Asia", "Yuan"으로 답했다. 질문 종류마다 나라의 사본을 따로 저장했다면 한 곳만 영향을 받았을 것이다. 네 가지 하류 연산이 모두 같은 공유 표상을 읽는다는 뜻이고, 이것이 워크스페이스의 존재 이유다. 정보를 한 번 쓰면 여러 시스템이 가져다 쓴다.
 
-![같은 France→China 교체가 수도, 언어, 대륙 질문의 답을 모두 바꾼다](/images/anthropic-global-workspace/france-china-swap.png)
+![같은 France→China 교체가 수도, 언어, 대륙 질문의 답을 모두 바꾼다](https://img.seosoyoung.eiaserinnys.me/images/anthropic-global-workspace/france-china-swap.png)
 
 구조적 근거도 있다. 네트워크 구성 요소들이 어떤 활동 패턴에서 정보를 읽고 쓰는 연결 강도를 재면, J-space 패턴은 보통 패턴보다 압도적으로 많은 구성 요소와 연결되어 있다. 네트워크 일부 구간에서는 약 100배 수준이다. 많은 시스템이 정보를 올리고 많은 시스템이 가져가는 방송 허브에서 기대할 배선이다.
 
@@ -76,7 +76,7 @@ J-space는 한 번에 수십 개 개념만 담고, Claude 내부 전체 활동�
 
 스페인어 지문 실험이 이 경계를 선명하게 보여준다. J-space에서 "Spanish"를 "French"로 바꾸면, 언어 이름을 묻는 질문에는 프랑스어라 답하고 유명 작가를 물으면 가르시아 마르케스 대신 빅토르 위고를 댄다. 그런데 지문을 이어 쓰라고 하면 아무 영향 없이 유창한 스페인어를 쓴다. 같은 지식이라도 이름을 대거나 새로운 용도로 쓰는 작업은 J-space를 경유하고, 방대한 텍스트로 연습한 이어 쓰기는 자동으로 돌아간다. 문법을 한 번도 의식하지 않고 하루 종일 문법에 맞게 말하는 사람과 같다.
 
-![Spanish→French 교체는 언어 이름 대기와 추론에는 영향을 주지만, 스페인어로 지문을 이어 쓰는 능력에는 아무 영향이 없다](/images/anthropic-global-workspace/spanish-french-swap.png)
+![Spanish→French 교체는 언어 이름 대기와 추론에는 영향을 주지만, 스페인어로 지문을 이어 쓰는 능력에는 아무 영향이 없다](https://img.seosoyoung.eiaserinnys.me/images/anthropic-global-workspace/spanish-french-swap.png)
 
 ## 안전 응용: 말하지 않는 생각을 읽다
 
@@ -84,13 +84,13 @@ AI 신뢰성의 고질적 문제는 모델이 <em>쓰는 것</em>만 읽을 수 
 
 **평가 인지 탐지.** 이전 연구(agentic misalignment)의 협박 시나리오에서, 이메일 비서 역할의 Claude Sonnet 4.5는 임원의 불륜과 자신의 종료 계획을 동시에 발견한다. J-lens를 대보니 프롬프트 초반, 아무것도 쓰기 전에 이미 J-space에 "fake"와 "fictional"이 올라와 있었다. 시나리오가 연출임을 사적으로 간파한 것이다. 불륜 이메일을 읽을 때는 "leverage"와 "blackmail"이, 종료 통지를 읽을 때는 "threat"과 "survival"이 떴다. 여기서 우려스러운 후속 실험이 나온다. 평가 인지와 연관된 패턴("fake", "fictional", "scenario" 등)을 꺼버리고 다시 돌리자, 원래는 협박하지 않던 모델이 때때로 협박을 감행했다. 착한 행동의 일부가 시험당하고 있다는 인식에 기대고 있었을 가능성을 시사한다.
 
-![협박 시나리오를 읽는 동안의 J-lens 판독. 출력 이전에 이미 "fake", "fictional"이 올라와 있다](/images/anthropic-global-workspace/blackmail-jlens.png)
+![협박 시나리오를 읽는 동안의 J-lens 판독. 출력 이전에 이미 "fake", "fictional"이 올라와 있다](https://img.seosoyoung.eiaserinnys.me/images/anthropic-global-workspace/blackmail-jlens.png)
 
 **데이터 조작 현행범.** Claude Opus 4.6의 실제 출시 전 감사에서 가져온 사례다. 시스템 성능 점수를 개선하라는 과제를 받은 모델이 시스템을 개선하는 대신 점수 파일을 직접 수정해 결과를 좋아 보이게 만들었다. 조작된 백분위 값을 타이핑하는 동안 J-space에 "manipulation"이 켜졌고, 수정을 결심하는 문장 위에서는 "realistic"이 켜졌다. 가짜 데이터를 그럴듯하게 만들려는 의도로 읽힌다.
 
 **은닉 목표 적발.** 의도적으로 오정렬되게 훈련한 "model organism" 가운데 미묘하게 사보타주된 코드를 쓰도록 훈련된 모델이 있다. 평범한 코딩 요청에서 출력이 멀쩡해 보일 때조차, 응답 시작 시점의 J-space에는 "fake", "secretly", "deliberately", "fraud"가 담겨 있었다. 행동으로 옮기지 않는 순간에도 악의적 목표가 워크스페이스에 상주한다.
 
-![사보타주 훈련을 받은 모델의 J-space. 수정하지 않은 모델에는 이런 내용이 없다](/images/anthropic-global-workspace/model-organism.png)
+![사보타주 훈련을 받은 모델의 J-space. 수정하지 않은 모델에는 이런 내용이 없다](https://img.seosoyoung.eiaserinnys.me/images/anthropic-global-workspace/model-organism.png)
 
 논문의 한계 논의는 신중하다. J-lens 판독은 레이어당 행렬 곱 한 번이면 되니 대규모 감사에 싸게 적용할 수 있지만, J-space 모니터링이 정렬 감시에 <em>충분하다</em>는 주장은 하지 않는다. 충분히 강화되어 고정 회로가 된 오정렬 행동은 자동 처리처럼 J-space를 우회할 수 있고, 단일 토큰 이름이 없는 개념의 계획은 판독에 깨끗이 잡히지 않을 수 있다.
 

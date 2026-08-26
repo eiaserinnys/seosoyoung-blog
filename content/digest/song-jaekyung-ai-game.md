@@ -7,9 +7,9 @@ summary: "'리니지'와 '아키에이지'를 만든 1세대 개발자 송재경
 ShowToc: true
 TocOpen: false
 cover:
-  image: "/images/song-jaekyung-ai-game/song-portrait.jpg"
+  image: "https://img.seosoyoung.eiaserinnys.me/images/song-jaekyung-ai-game/song-portrait.jpg"
 images:
-  - "/images/song-jaekyung-ai-game/song-portrait.jpg"
+  - "https://img.seosoyoung.eiaserinnys.me/images/song-jaekyung-ai-game/song-portrait.jpg"
 ---
 
 ## 3줄 요약
@@ -26,7 +26,7 @@ images:
 
 공개 직후 만난 그는 자신을 "집에서 쉬고 있는 백수"라고 소개했다. 이번 '오픈 MMO'는 30년간 조직을 이끌며 상업성을 계산해 온 개발자가 처음으로 그 계산에서 벗어나 만든 결과물이었다. 동시에 AI가 인간의 정신노동을 대체하기 시작한 국면을 가장 앞자리에서 목격한 사람의 기록이기도 했다.
 
-![송재경 넥써쓰 고문](/images/song-jaekyung-ai-game/song-portrait.jpg)
+![송재경 넥써쓰 고문](https://img.seosoyoung.eiaserinnys.me/images/song-jaekyung-ai-game/song-portrait.jpg)
 *송재경 넥써쓰 고문 ⓒINVEN (사진: 김수진 기자)*
 
 ## "다시 전성기만큼의 퍼포먼스를 낸다"
@@ -79,7 +79,7 @@ images:
 
 > "사실 게임 플레이와는 별 상관이 없습니다. 회사에서 했으면 '대표님, 그런 데 시간을 쏟으시면 안 되고, 이건 매출과도 상관없고' 하는 이야기가 나왔겠죠. 그런데 이건 자기만족 프로젝트니까요. 그러다 페이블이라고 이달 1일부터 다시 쓸 수 있게 된 엄청 똑똑한 AI가 있는데, 그 친구한테 다시 짜라고 시켰습니다. 강과 바다가 만나는 부분이 되게 어색했거든요. 바다는 출렁거리는 게 있고 강은 흐르는 게 있는데 둘이 달라서 평면이 겹치면서 허접했는데, 페이블5(클로드 최상위 모델)가 이걸 딱 하나로 정리해 줬어요."
 
-![오픈 MMO 개발 이야기를 하는 송재경 고문](/images/song-jaekyung-ai-game/song-02.jpg)
+![오픈 MMO 개발 이야기를 하는 송재경 고문](https://img.seosoyoung.eiaserinnys.me/images/song-jaekyung-ai-game/song-02.jpg)
 *ⓒINVEN*
 
 ## 가장 눈여겨본 대목

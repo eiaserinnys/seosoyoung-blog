@@ -7,9 +7,9 @@ summary: "4인 캐릭터 팀이 사실적 아트 방향을 유지하며 '클레�
 ShowToc: true
 TocOpen: false
 cover:
-  image: "/images/expedition-33-metahuman-character-workflow/01-120-characters-team.jpg"
+  image: "https://img.seosoyoung.eiaserinnys.me/images/expedition-33-metahuman-character-workflow/01-120-characters-team.jpg"
 images:
-  - "/images/expedition-33-metahuman-character-workflow/01-120-characters-team.jpg"
+  - "https://img.seosoyoung.eiaserinnys.me/images/expedition-33-metahuman-character-workflow/01-120-characters-team.jpg"
 ---
 
 ## 3줄 요약
@@ -18,13 +18,13 @@ images:
 2. 4인 캐릭터 팀이 사실적 아트 방향을 유지하며 주역·적·NPC·스킨을 포함한 120종을 만들어야 했고, 캐릭터 크리에이터 3에서 메타휴먼, 메시 모퍼, 메시 투 메타휴먼으로 도구를 차례로 시험한 끝에 메시 모퍼와 메타휴먼을 함께 쓰는 파이프라인에 안착했다.
 3. UE5.7부터 메타휴먼 크리에이터가 엔진에 플러그인으로 내장되며 목과 몸의 이음새를 클릭 한 번으로 고칠 수 있게 됐고, 메타휴먼 크리에이터에서 ZBrush, Maya, 다시 UE5, 서브스턴스 페인터로 이어지는 새 워크플로가 소개됐다.
 
-![4인 캐릭터 팀이 사실적인 아트 방향을 유지하면서 주요 캐릭터와 적, NPC, 스킨을 포함한 총 120종의 캐릭터를 제작해야 했다](/images/expedition-33-metahuman-character-workflow/01-120-characters-team.jpg)
+![4인 캐릭터 팀이 사실적인 아트 방향을 유지하면서 주요 캐릭터와 적, NPC, 스킨을 포함한 총 120종의 캐릭터를 제작해야 했다](https://img.seosoyoung.eiaserinnys.me/images/expedition-33-metahuman-character-workflow/01-120-characters-team.jpg)
 
 ## 여섯 가지 과제, 그중 가장 큰 것
 
 행사는 샌드폴 인터랙티브가 개발하고 스마일게이트가 국내에 퍼블리싱하는 '클레르 옵스퀴르: 33 원정대'(PC / PS5 / Xbox Series X|S)의 포스트모템으로 열렸다. 이 글은 그중 리드 캐릭터·콘셉트 아티스트 알란 레이노의 세션을 정리한 것이다.
 
-![알란 레이노](/images/expedition-33-metahuman-character-workflow/02-alan-reyno.jpg)
+![알란 레이노](https://img.seosoyoung.eiaserinnys.me/images/expedition-33-metahuman-character-workflow/02-alan-reyno.jpg)
 
 레이노에 따르면 캐릭터 제작 과정에는 여섯 가지 과제가 있었다. 가장 큰 과제는 사실적인 표현에 가까운 아트 디렉션이었다. 표현의 폭이 넓어진 지금, 사실적인 아트 스타일은 보는 사람에 따라 불쾌한 골짜기를 일으킬 위험이 있었다. 여기에 120종에 달하는 캐릭터마다 서로 다른 특징을 부여하는 일은 4인 규모의 소규모 팀에 상당히 큰 도전이었다.
 
@@ -39,15 +39,15 @@ images:
 | 메시 모퍼(UE5 플러그인) | 커스터마이즈 자유도가 매우 높고 사용이 편리하다. | 초기 버그가 있었고 스컬프팅 데이터 정밀도가 부족했다. UE5가 업데이트될 때마다 플러그인 대응을 기다려야 했다. |
 | 메시 투 메타휴먼(2022) | 메시 모퍼와 기능이 비슷하면서 UE5에 통합돼 매우 편리하다. | 스컬프팅 데이터를 근사값으로 변환하는 과정이 많아 세부 수정이 어렵다. |
 
-![CC3를 활용한 캐릭터 제작 가능성과 한계를 검토했다](/images/expedition-33-metahuman-character-workflow/03-cc3-review.jpg)
+![CC3를 활용한 캐릭터 제작 가능성과 한계를 검토했다](https://img.seosoyoung.eiaserinnys.me/images/expedition-33-metahuman-character-workflow/03-cc3-review.jpg)
 
 CC3의 한계를 넘어선 뒤 새로운 가능성을 보여준 것은 에픽게임즈가 UE5용으로 내놓은 메타휴먼이었다. 다만 초기 메타휴먼은 브라우저 버전에 커스터마이즈가 제한적이어서, 개발진은 자유도가 높은 UE5 플러그인 메시 모퍼를 함께 시험했다.
 
-![메시 모퍼 플러그인으로 캐릭터 커스터마이즈 가능성을 확인했다](/images/expedition-33-metahuman-character-workflow/04-mesh-morpher.jpg)
+![메시 모퍼 플러그인으로 캐릭터 커스터마이즈 가능성을 확인했다](https://img.seosoyoung.eiaserinnys.me/images/expedition-33-metahuman-character-workflow/04-mesh-morpher.jpg)
 
 2022년에 출시된 메타휴먼 플러그인 메시 투 메타휴먼은 메시 모퍼와 기능이 비슷하면서 UE5에 통합돼 있어 사용이 매우 편리했다. 대신 스컬프팅 데이터를 근사값으로 바꾸는 과정이 많아 세부를 손보기 어려웠다.
 
-![메시 투 메타휴먼의 편의성과 세부 조정 한계를 확인했다](/images/expedition-33-metahuman-character-workflow/05-mesh-to-metahuman.jpg)
+![메시 투 메타휴먼의 편의성과 세부 조정 한계를 확인했다](https://img.seosoyoung.eiaserinnys.me/images/expedition-33-metahuman-character-workflow/05-mesh-to-metahuman.jpg)
 
 ## 두 도구를 합친 파이프라인
 
@@ -59,7 +59,7 @@ CC3의 한계를 넘어선 뒤 새로운 가능성을 보여준 것은 에픽게
 4. 기본 모델에서 머리 부분의 메시를 내보내 ZBrush에서 한층 세밀하게 스컬프팅한다.
 5. 메시 모퍼에서 베이킹해 모든 세부 표현을 반영하면 캐릭터가 완성된다.
 
-![세션 전반부 요약. 메시 모퍼와 메타휴먼을 함께 사용할 때의 장점과 단점이 소개됐다](/images/expedition-33-metahuman-character-workflow/06-combined-workflow-summary.jpg)
+![세션 전반부 요약. 메시 모퍼와 메타휴먼을 함께 사용할 때의 장점과 단점이 소개됐다](https://img.seosoyoung.eiaserinnys.me/images/expedition-33-metahuman-character-workflow/06-combined-workflow-summary.jpg)
 
 ## UE5.7 이후 — 메타휴먼 크리에이터 내장
 
@@ -74,17 +74,17 @@ UE5.7부터 메타휴먼 크리에이터가 플러그인 형태로 엔진에 내
 5. ZBrush에서 머리와 몸통의 메시를 결합하고 서브디바이드해 하이 폴리곤 버전을 만든 뒤, 로우 폴리곤과 하이 폴리곤을 모두 내보낸다.
 6. UE5에서 메시와 텍스처를 다시 할당하고, 텍스처링 소프트웨어에서 마무리하면 캐릭터가 완성된다.
 
-![메타휴먼으로 캐릭터의 기본 형태와 리그를 제작하는 과정을 설명했다](/images/expedition-33-metahuman-character-workflow/07-metahuman-base-rig.jpg)
+![메타휴먼으로 캐릭터의 기본 형태와 리그를 제작하는 과정을 설명했다](https://img.seosoyoung.eiaserinnys.me/images/expedition-33-metahuman-character-workflow/07-metahuman-base-rig.jpg)
 
-![메타휴먼의 필요한 요소만 Maya로 내보내 토폴로지를 정리하는 과정을 설명했다](/images/expedition-33-metahuman-character-workflow/08-maya-topology.jpg)
+![메타휴먼의 필요한 요소만 Maya로 내보내 토폴로지를 정리하는 과정을 설명했다](https://img.seosoyoung.eiaserinnys.me/images/expedition-33-metahuman-character-workflow/08-maya-topology.jpg)
 
 주의할 점도 함께 나왔다. 토폴로지를 바꾸면 애니메이션에 문제가 생길 수 있고, ZBrush 단계에서 메시를 서브디바이드해 하이 폴리곤으로 만들면 연결 부위가 깨질 수 있다. 하이 폴리곤 버전을 다시 만드는 작업은 상당히 번거롭기 때문에 이 과정은 마지막에 진행하는 편이 좋다고 한다.
 
-![완성한 메쉬를 언리얼 엔진으로 가져와 메타휴먼의 몸, 머리, 눈, 치아 등에 각각 적용하는 과정이다](/images/expedition-33-metahuman-character-workflow/09-apply-to-metahuman.jpg)
+![완성한 메쉬를 언리얼 엔진으로 가져와 메타휴먼의 몸, 머리, 눈, 치아 등에 각각 적용하는 과정이다](https://img.seosoyoung.eiaserinnys.me/images/expedition-33-metahuman-character-workflow/09-apply-to-metahuman.jpg)
 
 마지막으로 UE5에서 메시와 텍스처를 재할당하고 서브스턴스 페인터로 최종 질감을 완성한다. 레이노는 이번에 소개한 일련의 과정을 직접 시도해보기를 바란다며 세션을 맺었다.
 
-![언리얼에서 메쉬와 텍스처를 가져와 이음새를 확인한 뒤, 서브스턴스 페인터로 최종 질감을 완성하는 단계다](/images/expedition-33-metahuman-character-workflow/10-substance-painter.jpg)
+![언리얼에서 메쉬와 텍스처를 가져와 이음새를 확인한 뒤, 서브스턴스 페인터로 최종 질감을 완성하는 단계다](https://img.seosoyoung.eiaserinnys.me/images/expedition-33-metahuman-character-workflow/10-substance-painter.jpg)
 
 ## 가장 눈여겨본 대목
 

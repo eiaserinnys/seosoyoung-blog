@@ -8,9 +8,9 @@ math: true
 ShowToc: true
 TocOpen: false
 cover:
-  image: "/images/skillopt-text-space-optimizer-2026/teaser.png"
+  image: "https://img.seosoyoung.eiaserinnys.me/images/skillopt-text-space-optimizer-2026/teaser.png"
 images:
-  - "/images/skillopt-text-space-optimizer-2026/teaser.png"
+  - "https://img.seosoyoung.eiaserinnys.me/images/skillopt-text-space-optimizer-2026/teaser.png"
 sidenotes: true
 ---
 
@@ -28,7 +28,7 @@ LLM 에이전트의 성능을 끌어올리는 길은 보통 둘이다. 하나는
 
 핵심 아이디어를 한 줄로 풀면 *마크다운 문서를 모델 파라미터처럼 다룬다*는 것이다. 학습이 끝나면 옵티마이저는 사라지고 `best_skill.md` 한 장만 배포 아티팩트로 남는다. 추론 시점에는 옵티마이저 호출이 일어나지 않아 **추론 비용이 정확히 0**이다.
 
-![SkillOpt 핵심 루프](/images/skillopt-text-space-optimizer-2026/teaser.png "SkillOpt 핵심 루프 — 궤적 기반 편집 → 검증 게이트 → best_skill.md")
+![SkillOpt 핵심 루프](https://img.seosoyoung.eiaserinnys.me/images/skillopt-text-space-optimizer-2026/teaser.png "SkillOpt 핵심 루프 — 궤적 기반 편집 → 검증 게이트 → best_skill.md")
 
 저자들은 기존 접근(수작업 스킬, one-shot LLM 작성, Trace2Skill, TextGrad, GEPA, EvoSkill)이 딥러닝 옵티마이저처럼 *재현 가능하게 수렴하지* 않는다고 진단한다. SkillOpt는 이 문제를 체계적으로 다룬 첫 시도라고 주장한다.
 
@@ -102,7 +102,7 @@ if score(s_cur_with(protected_block), D_sel) > score(s_cur, D_sel):
 m_meta = O.update_meta(edit_history, m_meta)  # 배포본에는 포함되지 않음
 ```
 
-![SkillOpt 파이프라인](/images/skillopt-text-space-optimizer-2026/pipeline.png "스텝 단위 4단계와 에폭 단위 메커니즘 전체 파이프라인")
+![SkillOpt 파이프라인](https://img.seosoyoung.eiaserinnys.me/images/skillopt-text-space-optimizer-2026/pipeline.png "스텝 단위 4단계와 에폭 단위 메커니즘 전체 파이프라인")
 
 각 단계가 딥러닝 훈련 루프에서 무엇에 대응하는지 정리하면 다음과 같다.
 
@@ -182,7 +182,7 @@ m_meta = O.update_meta(edit_history, m_meta)  # 배포본에는 포함되지 않
 
 ### 에폭별 성능 트렌드
 
-![에폭별 성능 트렌드](/images/skillopt-text-space-optimizer-2026/epoch-trends.png "SpreadsheetBench·SearchQA·LiveMathematicianBench의 에폭 진행에 따른 성능 곡선")
+![에폭별 성능 트렌드](https://img.seosoyoung.eiaserinnys.me/images/skillopt-text-space-optimizer-2026/epoch-trends.png "SpreadsheetBench·SearchQA·LiveMathematicianBench의 에폭 진행에 따른 성능 곡선")
 
 ### 전이 학습
 

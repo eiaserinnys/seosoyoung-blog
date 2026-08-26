@@ -7,9 +7,9 @@ summary: "GameInfluencer 창립자 Georg Broxtermann 인터뷰 3편. 한국 게�
 ShowToc: true
 TocOpen: false
 cover:
-  image: "/images/thisisgame-broxtermann-game-influencer/broxtermann.jpg"
+  image: "https://img.seosoyoung.eiaserinnys.me/images/thisisgame-broxtermann-game-influencer/broxtermann.jpg"
 images:
-  - "/images/thisisgame-broxtermann-game-influencer/broxtermann.jpg"
+  - "https://img.seosoyoung.eiaserinnys.me/images/thisisgame-broxtermann-game-influencer/broxtermann.jpg"
 ---
 
 ## 3줄 요약
@@ -25,7 +25,7 @@ images:
 - **인터뷰이:** Georg Broxtermann — GameInfluencer 창립자
 - **GameInfluencer:** 9,500명 이상의 검증된 크리에이터 네트워크와 2억 개 이상의 채널 데이터베이스를 가진 게임 특화 인플루언서 마케팅 에이전시. 첫 고객은 컴투스였다.
 
-![Georg Broxtermann — GameInfluencer 창립자](/images/thisisgame-broxtermann-game-influencer/broxtermann.jpg)
+![Georg Broxtermann — GameInfluencer 창립자](https://img.seosoyoung.eiaserinnys.me/images/thisisgame-broxtermann-game-influencer/broxtermann.jpg)
 
 ## 1편: 한국 게임은 서구에서 왜 자꾸 막히나
 
@@ -37,7 +37,7 @@ Broxtermann이 반복해서 목격한 한국 게임사의 실수는 다섯 가�
 
 실제로는 그렇지 않다. 미국은 크고 통합되어 있어 당장 더 매력적인 시장처럼 보인다. 반면 유럽은 국가별로 언어·문화·커뮤니티·크리에이터 생태계가 다르다. 그 복잡함 자체가 전략적 자산이 되기도 한다. 한 국가에서 반응이 약해도 다른 국가에서 테스트할 수 있고, 특정 장르에 충성도 높은 게이머층을 찾을 수 있다.
 
-![](/images/thisisgame-broxtermann-game-influencer/western-market.jpg)
+![](https://img.seosoyoung.eiaserinnys.me/images/thisisgame-broxtermann-game-influencer/western-market.jpg)
 
 ### 2. 가챠와 공격적인 수익화에 대한 반응을 과소평가한다
 
@@ -73,7 +73,7 @@ Broxtermann은 이것을 잘못된 교훈이라고 본다. 인플루언서 마�
 
 인플루언서 마케팅을 논하기 전에 먼저 확인할 것이 있다. 게임에 이야기할 만한 무언가가 있는가. 매력 포인트, 영혼, 관심을 가질 이유가 없다면 어떤 인플루언서 캠페인도 게임을 구할 수 없다.
 
-![<산나비>로 유명한 원더포션 유승현 대표도 뇌리에 남는 확실한 방향성(Spike)이 있어야 한다고 강조한다.](/images/thisisgame-broxtermann-game-influencer/sanabi-spike.jpg)
+![<산나비>로 유명한 원더포션 유승현 대표도 뇌리에 남는 확실한 방향성(Spike)이 있어야 한다고 강조한다.](https://img.seosoyoung.eiaserinnys.me/images/thisisgame-broxtermann-game-influencer/sanabi-spike.jpg)
 
 브랜드가 저지르는 가장 큰 실수는 게임을 진심으로 믿지 않는 크리에이터에게 대본을 강요하는 것이다. 시청자는 즉시 감지한다.
 
@@ -125,7 +125,7 @@ Broxtermann은 이것을 잘못된 교훈이라고 본다. 인플루언서 마�
 
 PC 게임 마케팅에서 스팀 위시리스트는 선택이 아니다. 출시 전 수요를 만들고, 측정하고, 출시 시점의 초기 반응을 끌어올리는 핵심 지표다. 모바일 마케터에게는 낯설 수 있다. 앱스토어 사전예약과 비슷해 보이지만, 스팀 위시리스트는 이용자가 관심 게임을 저장하고 출시 알림을 받고 할인·업데이트를 따라가는 구조 속에서 **장기 수요의 축적 장치**가 된다.
 
-![지난해 게임인플루언서와 캠페인을 한 렐루게임즈의 <미메시스>는 스팀 넥스트페스트에서 4위에 올랐다.](/images/thisisgame-broxtermann-game-influencer/mimesis-nextfest.jpg)
+![지난해 게임인플루언서와 캠페인을 한 렐루게임즈의 <미메시스>는 스팀 넥스트페스트에서 4위에 올랐다.](https://img.seosoyoung.eiaserinnys.me/images/thisisgame-broxtermann-game-influencer/mimesis-nextfest.jpg)
 
 따라서 PC 게임의 인플루언서 캠페인은 단순 조회수가 아니라 위시리스트 추가를 핵심 목표로 설계해야 한다.
 

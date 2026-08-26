@@ -7,9 +7,9 @@ summary: "인간이 느리고 지친다는 것. 우리가 아는 모든 제도�
 ShowToc: true
 TocOpen: false
 cover:
-  image: "/images/society-standard-not-human/01-cover.png"
+  image: "https://img.seosoyoung.eiaserinnys.me/images/society-standard-not-human/01-cover.png"
 images:
-  - "/images/society-standard-not-human/01-cover.png"
+  - "https://img.seosoyoung.eiaserinnys.me/images/society-standard-not-human/01-cover.png"
 ---
 
 이제 사회의 기준은 인간이 아닙니다.
@@ -30,7 +30,7 @@ images:
 
 에이전트는 변호사의 일자리를 하나 대신한 게 아닙니다. "서류를 제출한다"는 행위가 인간의 최소한의 성실을 담보한다는, 그 위에 선 제도를 흔든 겁니다. 그리고 같은 일이 지금 채용에서, 음악에서, 오픈소스에서 동시에 벌어지고 있습니다.
 
-![재판장이 된 서소영과 변호사가 된 서소영이, 밀려드는 소송 서류의 산더미에 파묻혀 허둥댄다.](/images/society-standard-not-human/07-court.png)
+![재판장이 된 서소영과 변호사가 된 서소영이, 밀려드는 소송 서류의 산더미에 파묻혀 허둥댄다.](https://img.seosoyoung.eiaserinnys.me/images/society-standard-not-human/07-court.png)
 
 ## 우리는 그 기준을 어디에도 적지 않았다
 
@@ -44,7 +44,7 @@ images:
 
 제도는 이 증명을 믿고 열려 있었습니다. 문을 활짝 열어 두어도 밀려드는 양이 사람이 해낼 수 있는 양을 넘지 않았으니까요. 우리는 이 사실을 어디에도 규칙으로 적지 않았습니다. 공기처럼 당연했기 때문입니다.
 
-![거울에서 똑같은 문서 사본이 폭포처럼 쏟아지는 가운데, 손으로 쓴 종이 한 장을 든 서소영이 놀라 바라본다.](/images/society-standard-not-human/02-work-proof.png)
+![거울에서 똑같은 문서 사본이 폭포처럼 쏟아지는 가운데, 손으로 쓴 종이 한 장을 든 서소영이 놀라 바라본다.](https://img.seosoyoung.eiaserinnys.me/images/society-standard-not-human/02-work-proof.png)
 
 ## 그 기준을 거의 공짜로 복제하는 것
 
@@ -66,7 +66,7 @@ images:
 
 그리고 이 모든 일은, 아직 소수가 이 도구를 쓰는 지금 벌어지고 있습니다. 생성형 AI를 한 번이라도 써본 사람은 전 세계에서 여섯 명 중 한 명, 그중 에이전트에게 실제로 일을 맡겨본 사람은 훨씬 더 적습니다.[^6] 나머지가 합류하기 전인데도, 벌써 이렇습니다.
 
-![서류·음표·앱이 파도처럼 쏟아져 심사대에 파묻힌 서소영이 도장을 힘겹게 들어올린다.](/images/society-standard-not-human/03-buried.png)
+![서류·음표·앱이 파도처럼 쏟아져 심사대에 파묻힌 서소영이 도장을 힘겹게 들어올린다.](https://img.seosoyoung.eiaserinnys.me/images/society-standard-not-human/03-buried.png)
 
 ## 모두가 에이전트를 켜야 한다
 
@@ -74,7 +74,7 @@ images:
 
 이 경쟁에는 끄는 선택지가 없습니다. 남들이 켜 두는 한 나만 끌 수는 없기 때문입니다. 그리고 승부는 누구의 에이전트가 더 좋은 모델과 데이터, 계산 자원과 절차 지식을 가졌는가로 갈립니다. 에이전트가 없는 사람은 시장에 접속하는 것조차 어려워지고, 약한 에이전트를 가진 사람은 더 강한 기관의 에이전트에게 밀립니다. 인간을 돕던 도구가, 인간이 사회에 참여하기 위한 필수 대리인이 됩니다.
 
-![포켓몬 배틀처럼 마주 선 두 서소영이 각자 서류를 든 정령을 내보내 맞붙게 한다.](/images/society-standard-not-human/04-arms-race.png)
+![포켓몬 배틀처럼 마주 선 두 서소영이 각자 서류를 든 정령을 내보내 맞붙게 한다.](https://img.seosoyoung.eiaserinnys.me/images/society-standard-not-human/04-arms-race.png)
 
 ## 신입이 사라진 자리
 
@@ -94,7 +94,7 @@ AI에 많이 노출된 신입 자리는 이제 예전이라면 시니어에게�
 
 이것이 규모의 문제와 다른 점은 속도입니다. 제도가 양에 눌려 무너지는 데는 몇 년이 걸리지만, 약한 고리 하나가 끊기는 데는 하루면 충분합니다.
 
-![거대한 쇠사슬의 약한 고리 하나가 불꽃을 튀기며 끊어지고, 서소영이 놀라 손을 뻗는다.](/images/society-standard-not-human/05-weak-link.png)
+![거대한 쇠사슬의 약한 고리 하나가 불꽃을 튀기며 끊어지고, 서소영이 놀라 손을 뻗는다.](https://img.seosoyoung.eiaserinnys.me/images/society-standard-not-human/05-weak-link.png)
 
 ## 속도만 다를 뿐
 
@@ -110,7 +110,7 @@ AI에 많이 노출된 신입 자리는 이제 예전이라면 시니어에게�
 
 앞으로 사회에 어떤 일이 일어날지 예측하는 것은 원래도 어려웠지만, 에이전트의 등장으로 더더욱 어려워진 것 같습니다. 하지만 한 가지 확실한 것이 있습니다. **이제 사회의 기준은 인간이 아닙니다**. 우리는 그 사실을 아직 규칙으로 적지 않았을 뿐입니다.
 
-![백지뿐인 규칙서를 든 서소영이 세 갈래 길 앞에서 빈 페이지를 바라본다.](/images/society-standard-not-human/06-blank-rulebook.png)
+![백지뿐인 규칙서를 든 서소영이 세 갈래 길 앞에서 빈 페이지를 바라본다.](https://img.seosoyoung.eiaserinnys.me/images/society-standard-not-human/06-blank-rulebook.png)
 
 [^1]: 2023년 Mata v. Avianca 사건에서 변호사가 챗봇이 지어낸 가짜 판례 6건을 인용해 5,000달러 제재를 받은 뒤, 존재하지 않는 판례를 인용한 소송 서류가 급증했다. 이를 집계하는 추적 데이터베이스에는 2026년 6월 기준 전 세계 1,598건이 기록됐고(미국만 1,000건 이상), 지금도 몇 주마다 100건 넘게 늘고 있다. <https://www.damiencharlotin.com/hallucinations/>
 [^2]: '작업증명'은 인간 노동이 품질이나 진위를 보장했다는 뜻이 아니라, 제출 총량을 제한하는 자연적 마찰이었다는 비유다.

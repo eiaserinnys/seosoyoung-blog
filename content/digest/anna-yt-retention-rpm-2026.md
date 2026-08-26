@@ -7,9 +7,9 @@ summary: "FE 개발자 겸 유튜버 안나가 3번째 채널의 실패와 4번�
 ShowToc: true
 TocOpen: false
 cover:
-  image: "/images/anna-yt-retention-rpm-2026/cover.jpg"
+  image: "https://img.seosoyoung.eiaserinnys.me/images/anna-yt-retention-rpm-2026/cover.jpg"
 images:
-  - "/images/anna-yt-retention-rpm-2026/cover.jpg"
+  - "https://img.seosoyoung.eiaserinnys.me/images/anna-yt-retention-rpm-2026/cover.jpg"
 ---
 
 ## 3줄 요약
@@ -27,7 +27,7 @@ images:
 
 ## 1. 지인에게 공유하면 알고리즘이 오염된다
 
-![3번째 채널 콘텐츠](/images/anna-yt-retention-rpm-2026/ch3-content.jpg)
+![3번째 채널 콘텐츠](https://img.seosoyoung.eiaserinnys.me/images/anna-yt-retention-rpm-2026/ch3-content.jpg)
 
 두 번의 채널 실패 끝에 얻은 값진 교훈이 있다. 세 번째 채널을 시작할 때는 가족은 물론 가장 친한 친구들에게도 채널 링크를 절대 공유하지 않았다.
 
@@ -55,7 +55,7 @@ images:
 
 ## 2. 롱폼의 성패는 단 1~2개 영상이 결정한다
 
-![3번째 채널 인기 콘텐츠 순위](/images/anna-yt-retention-rpm-2026/ch3-top-videos.png)
+![3번째 채널 인기 콘텐츠 순위](https://img.seosoyoung.eiaserinnys.me/images/anna-yt-retention-rpm-2026/ch3-top-videos.png)
 
 저자가 운영했던 세 번째 채널은 20\~40분 길이의 AI 롱폼 콘텐츠였다. 채널의 인기 동영상 순위와 조회수를 보면 성과 자체는 나쁘지 않다.
 
@@ -69,9 +69,9 @@ images:
 
 ### Case 1. 18만 조회수 영상 — 예상 수익 약 90만 원
 
-![18만 조회수 영상](/images/anna-yt-retention-rpm-2026/case1-18man-views.jpg)
+![18만 조회수 영상](https://img.seosoyoung.eiaserinnys.me/images/anna-yt-retention-rpm-2026/case1-18man-views.jpg)
 
-![18만 조회수 시청 지속시간](/images/anna-yt-retention-rpm-2026/case1-18man-retention.jpg)
+![18만 조회수 시청 지속시간](https://img.seosoyoung.eiaserinnys.me/images/anna-yt-retention-rpm-2026/case1-18man-retention.jpg)
 
 - 조회수: 18.6만 회
 - 예상 수익: ₩897,346 (약 90만 원)
@@ -81,13 +81,13 @@ images:
 
 ### Case 2. 조회수의 함정 — 8.3만 vs 3.5만
 
-![8만 조회수 영상](/images/anna-yt-retention-rpm-2026/case2a-8man-views.jpg)
+![8만 조회수 영상](https://img.seosoyoung.eiaserinnys.me/images/anna-yt-retention-rpm-2026/case2a-8man-views.jpg)
 
-![8만 조회수 시청 지속시간](/images/anna-yt-retention-rpm-2026/case2a-8man-retention.jpg)
+![8만 조회수 시청 지속시간](https://img.seosoyoung.eiaserinnys.me/images/anna-yt-retention-rpm-2026/case2a-8man-retention.jpg)
 
-![3.5만 조회수 영상](/images/anna-yt-retention-rpm-2026/case2b-35man-views.jpg)
+![3.5만 조회수 영상](https://img.seosoyoung.eiaserinnys.me/images/anna-yt-retention-rpm-2026/case2b-35man-views.jpg)
 
-![3.5만 조회수 시청 지속시간](/images/anna-yt-retention-rpm-2026/case2b-35man-retention.jpg)
+![3.5만 조회수 시청 지속시간](https://img.seosoyoung.eiaserinnys.me/images/anna-yt-retention-rpm-2026/case2b-35man-retention.jpg)
 
 롱폼을 해보지 않은 초보들은 조회수만 보고 "8만 회 나온 영상이 3만 회 나온 영상보다 무조건 돈을 2배 이상 벌었겠지"라고 착각한다. 하지만 실제 데이터는 다음과 같다.
 
@@ -102,15 +102,15 @@ images:
 
 B 영상은 조회수가 A의 절반도 안 되지만 평균 시청 지속시간이 11분 6초에 달한다. 11분 동안 시청자를 채널에 묶어둔 덕분에 조회수 대비 수익 효율(RPM)이 상승했다. 만약 B 영상이 A만큼의 조회수(8.3만)를 기록했다면 수익은 21만 원이 아니라 40만 원을 넘었을 것이라고 저자는 추정한다.
 
-![4.9만 조회수 영상](/images/anna-yt-retention-rpm-2026/case3-49man.png)
+![4.9만 조회수 영상](https://img.seosoyoung.eiaserinnys.me/images/anna-yt-retention-rpm-2026/case3-49man.png)
 
 참고로 4.9만 조회수 영상 역시 평균 시청 지속시간 8분 25초를 기록하며 ₩191,466의 수익을 발생시켰다.
 
 ### 초반 30초 잔존율이 결정한다 — 64% vs 79%
 
-![8만 조회수 초반 30초 잔존율 64%](/images/anna-yt-retention-rpm-2026/intro-8man-64.jpg)
+![8만 조회수 초반 30초 잔존율 64%](https://img.seosoyoung.eiaserinnys.me/images/anna-yt-retention-rpm-2026/intro-8man-64.jpg)
 
-![3.5만 조회수 초반 30초 잔존율 79%](/images/anna-yt-retention-rpm-2026/intro-35man-79.jpg)
+![3.5만 조회수 초반 30초 잔존율 79%](https://img.seosoyoung.eiaserinnys.me/images/anna-yt-retention-rpm-2026/intro-35man-79.jpg)
 
 두 영상의 스튜디오 지표를 더 들여다보면, 유튜브 알고리즘이 왜 조회수가 훨씬 적은 3.5만 회 영상에 높은 가치를 부여했는지 결정적인 이유가 나온다. 초반 30초 구간의 시청자 잔존율(Intro Retention)이다.
 
@@ -125,7 +125,7 @@ B 영상은 조회수가 A의 절반도 안 되지만 평균 시청 지속시간
 
 ## 4. 200만 원 이상 번 채널을 접은 진짜 이유 — 타겟 분석 실패
 
-![3번째 채널 시청자층 (연령과 성별)](/images/anna-yt-retention-rpm-2026/ch3-demographics.jpg)
+![3번째 채널 시청자층 (연령과 성별)](https://img.seosoyoung.eiaserinnys.me/images/anna-yt-retention-rpm-2026/ch3-demographics.jpg)
 
 여기까지 읽은 사람은 의문이 들 만하다. "데이터도 깨끗하고, 시청 지속시간도 11분이 넘고, 200만 원 이상 벌어다 준 채널을 왜 안 하고 버렸나요?"
 
@@ -144,7 +144,7 @@ B 영상은 조회수가 A의 절반도 안 되지만 평균 시청 지속시간
 
 그렇게 4번째 채널을 개설했다.
 
-![4번째 채널 결과 — 월 1,000만 원](/images/anna-yt-retention-rpm-2026/ch4-result.jpg)
+![4번째 채널 결과 — 월 1,000만 원](https://img.seosoyoung.eiaserinnys.me/images/anna-yt-retention-rpm-2026/ch4-result.jpg)
 
 제대로 된 타겟 분석이 더해지자 조회수의 기복이 현저히 줄었고, 한 달 만에 수익 1,000만 원 이상을 벌었다. 지난 5월에도 연이어 1,000만 원의 수익을 달성했다.
 

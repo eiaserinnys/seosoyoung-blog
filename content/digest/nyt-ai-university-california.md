@@ -7,9 +7,9 @@ summary: "캘리포니아 주립대(CSU)가 재정 위기 한가운데서 OpenAI
 ShowToc: true
 TocOpen: false
 cover:
-  image: "/images/nyt-ai-university-california/lead.jpg"
+  image: "https://img.seosoyoung.eiaserinnys.me/images/nyt-ai-university-california/lead.jpg"
 images:
-  - "/images/nyt-ai-university-california/lead.jpg"
+  - "https://img.seosoyoung.eiaserinnys.me/images/nyt-ai-university-california/lead.jpg"
 ---
 
 ## 3줄 요약
@@ -26,7 +26,7 @@ images:
 - **발행**: NYT Magazine, 2026-06-01
 - **취재 규모**: 1년에 걸쳐 학생·교수·관리자 60명 이상 + AI Initiative 관여 기술 임원 다수와 인터뷰
 
-![Maxime Mouysset 일러스트 — CSU의 AI Initiative를 다룬 NYT Magazine 표제 이미지](/images/nyt-ai-university-california/lead.jpg)
+![Maxime Mouysset 일러스트 — CSU의 AI Initiative를 다룬 NYT Magazine 표제 이미지](https://img.seosoyoung.eiaserinnys.me/images/nyt-ai-university-california/lead.jpg)
 
 ## 거래 구조 — CSU × OpenAI
 
@@ -93,7 +93,7 @@ CSU는 교수에게 AI를 의무화하지 않았다. 그러나 메시지는 명�
 
 실용적 중도가 한 가지 모양으로 나타난다 — *두 버전 제출법*이다. 한 프로그래밍 교수는 학생에게 모든 과제를 두 버전으로 제출하게 했다. AI 없이 한 미완성본, AI로 한 완성본, 그리고 챗봇을 어떻게 썼는지에 대한 짧은 서술. 평가의 단위가 *결과물의 정답성*에서 *도구 사용의 메타인지*로 옮겨 가는 한 가지 설계다.
 
-![Maxime Mouysset 일러스트 — 보라색 빛 속의 도서관 풍경, 책장에 둘러싸인 세 명의 그림자 인물](/images/nyt-ai-university-california/bookshelves.jpg)
+![Maxime Mouysset 일러스트 — 보라색 빛 속의 도서관 풍경, 책장에 둘러싸인 세 명의 그림자 인물](https://img.seosoyoung.eiaserinnys.me/images/nyt-ai-university-california/bookshelves.jpg)
 
 ## MarxGPT — 교수의 적응과 그 역설
 

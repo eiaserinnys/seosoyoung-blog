@@ -7,9 +7,9 @@ summary: "AI 투자는 장부의 총수요를 더하지만, 그 돈은 사람을
 ShowToc: true
 TocOpen: false
 cover:
-  image: "/images/ai-negative-loop/01-cover.png"
+  image: "https://img.seosoyoung.eiaserinnys.me/images/ai-negative-loop/01-cover.png"
 images:
-  - "/images/ai-negative-loop/01-cover.png"
+  - "https://img.seosoyoung.eiaserinnys.me/images/ai-negative-loop/01-cover.png"
 ---
 
 윗분이 몇 달 동안 떨치지 못한 의문이 있었다고 한다. 풀자면 이렇다. AI는 새 수요를 만드는 데는 별 도움이 되지 않으면서, 기존 일을 하던 사람의 소득을 끊는다. 신입 채용이 줄고, 컨설팅 업체가 조용히 문을 닫으며,{{< sn >}}일본에서는 2026년 1\~5월에만 경영컨설팅업 도산·휴폐업이 242건으로, 연간 600건을 넘는 페이스다. 2000년 집계 이후 최다. 생성AI가 기초 리서치·자료 작성·범용 연수 콘텐츠를 빠르게 대체하며 전문성이 얕은 사업자부터 밀려나고 있다는 것이 조사 기관의 진단이다. [帝国データバンク(2026.06.05)](https://www.tdb.co.jp/report/industry/20260605-consulting26y1-5/){{< /sn >}} 번역가와 일러스트레이터의 일감이 사라진다. 소득이 사라지면 지출도 사라진다. 이것이 이어지면 결국 경제 전체의 수요가 줄어드는 것 아닌가. 다시 말해서, AI는 생산성을 향상시키는 게 아니라 총수요를 감소시키는 것 아닌가, 하는 질문이다.

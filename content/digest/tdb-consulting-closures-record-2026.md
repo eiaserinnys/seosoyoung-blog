@@ -7,9 +7,9 @@ summary: "데이코쿠데이터뱅크 집계로 2026년 1월부터 5월까지 �
 ShowToc: true
 TocOpen: false
 cover:
-  image: "/images/tdb-consulting-closures-record-2026/chart.jpg"
+  image: "https://img.seosoyoung.eiaserinnys.me/images/tdb-consulting-closures-record-2026/chart.jpg"
 images:
-  - "/images/tdb-consulting-closures-record-2026/chart.jpg"
+  - "https://img.seosoyoung.eiaserinnys.me/images/tdb-consulting-closures-record-2026/chart.jpg"
 ---
 
 ## 3줄 요약
@@ -30,7 +30,7 @@ images:
 
 242건은 집계를 시작한 2000년 이후 최다 기록이다.
 
-![경영컨설팅업 도산, 휴폐업 추이 (출처: 日本経済新聞)](/images/tdb-consulting-closures-record-2026/chart.jpg)
+![경영컨설팅업 도산, 휴폐업 추이 (출처: 日本経済新聞)](https://img.seosoyoung.eiaserinnys.me/images/tdb-consulting-closures-record-2026/chart.jpg)
 
 ## 시장 배경
 

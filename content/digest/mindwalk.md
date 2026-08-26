@@ -5,9 +5,9 @@ tags: ["코딩 에이전트", "오픈소스", "시각화", "Claude Code", "아�
 categories: ["에이전트와 코딩"]
 summary: "Claude Code·Codex의 세션 로그를 코드베이스의 3D '밤의 지도' 위에서 빛의 이동으로 재생하는 로컬 시각화 도구. 에이전트가 무엇을 했는가가 아니라 태스크를 어떻게 이해했는가를 한눈에 보여준다."
 cover:
-  image: "/images/mindwalk/screenshot-terrain.png"
+  image: "https://img.seosoyoung.eiaserinnys.me/images/mindwalk/screenshot-terrain.png"
 images:
-  - "/images/mindwalk/screenshot-terrain.png"
+  - "https://img.seosoyoung.eiaserinnys.me/images/mindwalk/screenshot-terrain.png"
 ShowToc: true
 TocOpen: false
 ---
@@ -33,7 +33,7 @@ README의 첫 문장이 이 도구의 존재 이유를 그대로 담는다.
 
 구현의 성격도 분명하다. 하나의 Go 바이너리가 Claude Code와 Codex의 세션 로그를 읽고, 전부 로컬에서 처리하며, 세션을 보는 동안에는 아무것도 어디로도 보내지 않는다. 유일한 예외는 선택적인 세션 평가다. 이때만 세션 요약(태스크 문구, 파일 경로, 이벤트 다이제스트)이 사용자 계정 뒤의 모델로 전송된다.
 
-![터레인 뷰로 본 같은 세션](/images/mindwalk/screenshot-terrain.png)
+![터레인 뷰로 본 같은 세션](https://img.seosoyoung.eiaserinnys.me/images/mindwalk/screenshot-terrain.png)
 
 ## 그림 읽는 법
 
@@ -62,7 +62,7 @@ mindwalk의 화면은 여러 겹의 시각 언어로 짜여 있다.
 
 **Repo map.** `mindwalk map <repo>`는 세션 없이도 저장소의 시티맵을 그린다. 이때 높이는 관심도가 아니라 코드 라인 수(LOC)를 나타낸다.
 
-![같은 세션 위에 겹친 에이전트 렌즈](/images/mindwalk/screenshot-agents.png)
+![같은 세션 위에 겹친 에이전트 렌즈](https://img.seosoyoung.eiaserinnys.me/images/mindwalk/screenshot-agents.png)
 
 키보드 단축키도 촘촘하다. `Space` 재생·일시정지, `←`/`→` 스텝(`⇧`와 함께 10배), `Home`/`End` 양끝, `S` 속도, `V` 뷰 전환, `E` 다음 수정, `X` 다음 오류, `M` 다음 마크, `⌘B` 세션 레일.
 

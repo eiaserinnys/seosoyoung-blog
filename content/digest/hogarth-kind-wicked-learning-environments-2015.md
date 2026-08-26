@@ -31,7 +31,7 @@ sidenotes: true
 
 ## 매칭의 여섯 가지 모양 — Figure 1
 
-![Fig. 1. The two-settings framework: 학습 설정 L과 타깃 설정 T의 정보 원소가 일치하는/일치하지 않는 6가지 방식과 채용 시험 시나리오 예시.](/images/hogarth-kind-wicked-learning-environments-2015/fig1-two-settings.png)
+![Fig. 1. The two-settings framework: 학습 설정 L과 타깃 설정 T의 정보 원소가 일치하는/일치하지 않는 6가지 방식과 채용 시험 시나리오 예시.](https://img.seosoyoung.eiaserinnys.me/images/hogarth-kind-wicked-learning-environments-2015/fig1-two-settings.png)
 
 논문의 정수는 위 표 한 장에 다 들어있다. 좌측은 L과 T의 집합 관계(벤 다이어그램), 우측은 채용 시험 시나리오를 통한 예시다.
 

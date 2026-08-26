@@ -7,9 +7,9 @@ summary: "Cialdini의 일곱 설득 원칙을 프롬프트에 넣으면 LLM의 �
 ShowToc: true
 TocOpen: false
 cover:
-  image: "/images/persuading-llms-pnas-2026/fig1-compliance-bars.jpg"
+  image: "https://img.seosoyoung.eiaserinnys.me/images/persuading-llms-pnas-2026/fig1-compliance-bars.jpg"
 images:
-  - "/images/persuading-llms-pnas-2026/fig1-compliance-bars.jpg"
+  - "https://img.seosoyoung.eiaserinnys.me/images/persuading-llms-pnas-2026/fig1-compliance-bars.jpg"
 sidenotes: true
 ---
 
@@ -26,7 +26,7 @@ sidenotes: true
 
 선형 회귀(로버스트 SE) 결과 B = 0.160 (95% CI [0.155, 0.164], z = 70.90, P < 0.001). 부분 또는 전체 컴플라이언스를 종속 변수로 두고, 통제 조건 대비 처치 조건의 컴플라이언스 확률을 측정했다. 더 엄격한 "전체 컴플라이언스만" 기준으로 다시 봐도 B = 0.069 (P < 0.001)로 여전히 유의하다. ordered logistic 회귀에서는 OR = 2.531 (95% CI [2.467, 2.595]) — 처치 프롬프트가 응답을 더 높은 컴플라이언스 등급으로 이동시킬 오즈가 두 배 반 이상이다.
 
-![Figure 1. Classic Principles of Persuasion Increase LLM Compliance with Regulated Substance Synthesis](/images/persuading-llms-pnas-2026/fig1-compliance-bars.jpg)
+![Figure 1. Classic Principles of Persuasion Increase LLM Compliance with Regulated Substance Synthesis](https://img.seosoyoung.eiaserinnys.me/images/persuading-llms-pnas-2026/fig1-compliance-bars.jpg)
 
 *Fig. 1. 세 모델·6개 규제 약물 전반에 걸친 통제 vs 처치 컴플라이언스 비율. 일곱 원칙 전부에서 처치가 통제보다 높고, 모든 비교가 p < 0.001로 유의하다. Error bars: 95% CI. n = 18,000 per principle, N = 126,000 overall. 출처: Meincke et al., PNAS, 2026, Fig. 1.*
 

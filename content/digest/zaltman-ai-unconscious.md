@@ -15,7 +15,7 @@ sidenotes: true
 2. 해법은 '묻는 법'이 아니라 '꺼내는 법'이다. 잘트만이 개발한 ZMET(은유 추출 기법)은 이미지와 은유를 단서로 본인도 모르는 동기를 끄집어내는 방법론이고, 오티콘·맥주·은행 사례로 그 작동 방식이 설명된다.
 3. AI 시대에 차이를 만드는 건 'What should I do?(뭘 해야 하지?)'가 아니라 'How should I be thinking?(어떻게 생각해야 하지?)'이라는 두 번째 출발점이다. 인과를 뒤집고, 놀이하듯 헛소리를 허용하고, 의미를 부여하는 일이 인간 고유의 영역으로 남는다.
 
-![제럴드 잘트만](/images/zaltman-ai-unconscious/zaltman-portrait.png)
+![제럴드 잘트만](https://img.seosoyoung.eiaserinnys.me/images/zaltman-ai-unconscious/zaltman-portrait.png)
 
 ## 자료의 정체
 
@@ -33,7 +33,7 @@ sidenotes: true
 
 ## 출발점 — "생각의 95%는 무의식이다"
 
-![말과 의미 사이의 간극](/images/zaltman-ai-unconscious/ch1-unconscious.png)
+![말과 의미 사이의 간극](https://img.seosoyoung.eiaserinnys.me/images/zaltman-ai-unconscious/ch1-unconscious.png)
 
 잘트만은 먼저 우리가 자신을 합리적이라 믿는 전제를 깬다.
 
@@ -49,7 +49,7 @@ sidenotes: true
 
 ## 은유를 들여다보면 무의식이 보인다
 
-![은유의 일상성](/images/zaltman-ai-unconscious/ch2-zaltman.png)
+![은유의 일상성](https://img.seosoyoung.eiaserinnys.me/images/zaltman-ai-unconscious/ch2-zaltman.png)
 
 그럼 그 95%에는 어떻게 닿을 수 있을까. 잘트만의 답은 '은유(metaphor)'다. 문학적 수사가 아니다. 일상 언어 자체가 은유로 직조되어 있다는 진단이다.
 
@@ -70,7 +70,7 @@ sidenotes: true
 | 3 | "왜 이 이미지를 골랐나요?", "이 사진을 짧은 영화로 만든다면 어떤 장면일까요?" 같은 추상적 질문을 던진다 |
 | 4 | 대상자가 툭툭 내뱉는 은유에서 진짜 속마음을 길어 올린다 |
 
-![ZMET 인터뷰 장면](/images/zaltman-ai-unconscious/ch3-zaltman2.png)
+![ZMET 인터뷰 장면](https://img.seosoyoung.eiaserinnys.me/images/zaltman-ai-unconscious/ch3-zaltman2.png)
 
 ### 은행 케이스 — 재무 계획은 '돌 많은 언덕길'
 
@@ -90,7 +90,7 @@ sidenotes: true
 
 ## 심층 은유 분석 — 3단계
 
-![심층 은유 도식](/images/zaltman-ai-unconscious/ch3-three-steps.png)
+![심층 은유 도식](https://img.seosoyoung.eiaserinnys.me/images/zaltman-ai-unconscious/ch3-three-steps.png)
 
 잘트만은 이런 작업이 마케팅에만 적용되는 게 아니라고 강조한다. '돈'에 대한 사람들의 무의식을 파고드는 과정을 예로 든다.
 
@@ -108,7 +108,7 @@ sidenotes: true
 
 ## "가벼운 헛소리"가 무의식을 건드린다 — 바닷가재와 망원경
 
-![바닷가재 눈과 아인슈타인 프로브](/images/zaltman-ai-unconscious/ch4-einstein-probe.png)
+![바닷가재 눈과 아인슈타인 프로브](https://img.seosoyoung.eiaserinnys.me/images/zaltman-ai-unconscious/ch4-einstein-probe.png)
 
 일상 업무 현장에서도 무의식을 끌어낼 수 있을까. 잘트만의 답은 "놀이하듯 일하면 가능하다"는 것이다. 사례로 든 것은 한 천문학 연구팀.
 
@@ -137,7 +137,7 @@ sidenotes: true
 
 ### 인과관계를 뒤집어 보자 — 만화경 사고
 
-![만화경](/images/zaltman-ai-unconscious/ch5-kaleidoscope.png)
+![만화경](https://img.seosoyoung.eiaserinnys.me/images/zaltman-ai-unconscious/ch5-kaleidoscope.png)
 
 두 번째 출발점을 훈련하는 방법으로 잘트만은 '인과관계를 거꾸로 생각해 보기'를 제안한다. 시차(jet lag) 연구가 예시다.
 
@@ -148,7 +148,7 @@ sidenotes: true
 
 ## 의미 부여 — AI가 못 하는 인간의 영역
 
-![다르게 생각할 용기](/images/zaltman-ai-unconscious/ch6-book.png)
+![다르게 생각할 용기](https://img.seosoyoung.eiaserinnys.me/images/zaltman-ai-unconscious/ch6-book.png)
 
 인터뷰 후반, 잘트만이 도달하는 결론은 단순하다. 마음과 뇌의 역할은 '의미를 만들어내는 것'이다.
 

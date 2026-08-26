@@ -7,9 +7,9 @@ summary: "라인게임즈가 PlayX4 2026 부스에 PC 신작 4종을 들고 나�
 ShowToc: true
 TocOpen: false
 cover:
-  image: "/images/linegames-ember-blade-playx4-2026/01-cover-cosplay.jpg"
+  image: "https://img.seosoyoung.eiaserinnys.me/images/linegames-ember-blade-playx4-2026/01-cover-cosplay.jpg"
 images:
-  - "/images/linegames-ember-blade-playx4-2026/01-cover-cosplay.jpg"
+  - "https://img.seosoyoung.eiaserinnys.me/images/linegames-ember-blade-playx4-2026/01-cover-cosplay.jpg"
 sidenotes: true
 ---
 
@@ -20,7 +20,7 @@ sidenotes: true
 3. 인벤은 "차기 뱀서류 간판 가능성"이라 평했고, 스팀 최근 30일 평가는 95% '압도적으로 긍정적'을 기록 중이다. 연내 PC 얼리액세스, 2026년 글로벌 정식 발매가 목표다.
 
 <figure style="text-align: center; margin: 2rem auto;">
-  <img src="/images/linegames-ember-blade-playx4-2026/01-cover-cosplay.jpg" alt="PlayX4 2026 라인게임즈 부스의 엠버 앤 블레이드 코스플레이 무대" />
+  <img src="https://img.seosoyoung.eiaserinnys.me/images/linegames-ember-blade-playx4-2026/01-cover-cosplay.jpg" alt="PlayX4 2026 라인게임즈 부스의 엠버 앤 블레이드 코스플레이 무대" />
   <figcaption>PlayX4 2026 라인게임즈 부스의 메인 무대 코스플레이 — 코스플레이어 희야가 '아리엘라'를, 릴루가 '그림자'를 연기하며 흰색·검은색 대비 의상으로 게임 속 캐릭터를 그대로 옮겨 놓았다. 사진=게임뷰 김태만 기자</figcaption>[^gamevu-2026-2][^gamevu-2026-3]
 </figure>
 
@@ -29,7 +29,7 @@ sidenotes: true
 부스는 화이트 톤의 개방형 구조로 설계됐다. 상단에 시연 화면을 송출하고, 작품별로 4대의 시연대를 따로 배치해 관람객이 자유롭게 이동하며 체험하도록 구성했다. 시연 환경은 레노버 게이밍 브랜드 'Lenovo Legion'과 협업한 고사양 노트북·모니터·주변기기로 꾸몄고, 부스 내 스탬프 미션 이벤트로 프리티스킨 기능성 화장품, 캐릭터 디오라마 등의 굿즈를 지급했다.
 
 <figure style="text-align: center; margin: 2rem auto;">
-  <img src="/images/linegames-ember-blade-playx4-2026/04-booth-front.jpg" alt="라인게임즈 부스 전경" />
+  <img src="https://img.seosoyoung.eiaserinnys.me/images/linegames-ember-blade-playx4-2026/04-booth-front.jpg" alt="라인게임즈 부스 전경" />
   <figcaption>라인게임즈 부스 전경 — 화이트 톤 개방형 구조에 작품별 4대의 시연대를 따로 배치하고, 상단에 시연 화면을 송출했다. 사진=파이낸셜투데이 최형주 기자</figcaption>
 </figure>
 
@@ -45,7 +45,7 @@ sidenotes: true
 경향게임스는 "각 타이틀마다 시연을 위한 대기열이 꾸준히 이어지는 등 뜨거운 호응"이라고 전했고, 게임뷰는 "라인게임즈가 단순 퍼블리싱 중심 이미지를 넘어, 개성 강한 자체 개발 타이틀과 인디 협업 라인업을 동시에 선보였다"고 평가했다.[^khgames-2026]
 
 <figure style="text-align: center; margin: 2rem auto;">
-  <img src="/images/linegames-ember-blade-playx4-2026/12-busy-booth.jpg" alt="라인게임즈 부스 시연 대기열" />
+  <img src="https://img.seosoyoung.eiaserinnys.me/images/linegames-ember-blade-playx4-2026/12-busy-booth.jpg" alt="라인게임즈 부스 시연 대기열" />
   <figcaption>시연을 위해 줄을 선 관람객들이 부스 안을 가득 채웠다. 사진=게임뷰 김태만 기자</figcaption>
 </figure>
 
@@ -60,12 +60,12 @@ sidenotes: true
 즉 *그림자*는 *아리엘라와 거의 동일한 외모의 존재*이며, 두 캐릭터가 한 쌍의 코스플레이로 무대에 올라간 캐스팅은 게임 스토리의 큰 그림을 시각적으로 먼저 풀어 보인 선택이었다.
 
 <figure style="text-align: center; margin: 2rem auto;">
-  <img src="/images/linegames-ember-blade-playx4-2026/05-booth-cosplay-event.jpg" alt="라인게임즈 부스 초입의 코스튬 플레이 행사" />
+  <img src="https://img.seosoyoung.eiaserinnys.me/images/linegames-ember-blade-playx4-2026/05-booth-cosplay-event.jpg" alt="라인게임즈 부스 초입의 코스튬 플레이 행사" />
   <figcaption>부스 초입에서 진행된 엠버 앤 블레이드 코스튬 플레이 행사 — 인벤·플레이엑스포 공동기획에 따르면 목·금 메인 무대의 공식 일정이기도 했다. 사진=파이낸셜투데이 최형주 기자</figcaption>[^inven-2026][^playx4-2026][^ftoday-2026]
 </figure>
 
 <figure style="text-align: center; margin: 2rem auto;">
-  <img src="/images/linegames-ember-blade-playx4-2026/10-shadow-cosplay.jpg" alt="엠버 앤 블레이드의 그림자를 연기한 코스플레이어 릴루" />
+  <img src="https://img.seosoyoung.eiaserinnys.me/images/linegames-ember-blade-playx4-2026/10-shadow-cosplay.jpg" alt="엠버 앤 블레이드의 그림자를 연기한 코스플레이어 릴루" />
   <figcaption>다양한 포즈로 '그림자'를 연기한 코스플레이어 릴루 — 디스이즈게임에 따르면 그림자는 게임 안에서 아리엘라와 거의 동일한 외모의 존재로 등장한다. 사진=게임뷰 김태만 기자</figcaption>
 </figure>
 
@@ -74,14 +74,14 @@ sidenotes: true
 *엠버 앤 블레이드*는 라인게임즈가 내부 개발 중인 다크 판타지 액션 타이틀이다. 디스이즈게임 기사(김승준, 2026-05-21) 게임 정보 박스의 *개발사* 표기는 *"라인게임즈 NL(나인 라이브스)"*인데, *Nine Lives*는 별도 자회사 스튜디오가 아니라 *라인게임즈 전략개발실 산하의 개발팀 중 하나*다. 게임은 서바이버 장르의 즉각적 자극과 소울라이크 장르의 패턴 대응을 결합한 '프리미엄 서바이버라이크'를 표방한다. 핵앤슬래시 특유의 타격감과 소울라이크의 치열한 보스전을 모두 제공한다는 것이 라인게임즈가 내세우는 정체성이다.[^inven-2026-3][^thisisgame-2025]
 
 <figure style="text-align: center; margin: 2rem auto;">
-  <img src="/images/linegames-ember-blade-playx4-2026/02-game-key-art.jpg" alt="엠버 앤 블레이드 메인 키 아트" />
+  <img src="https://img.seosoyoung.eiaserinnys.me/images/linegames-ember-blade-playx4-2026/02-game-key-art.jpg" alt="엠버 앤 블레이드 메인 키 아트" />
   <figcaption>엠버 앤 블레이드 메인 키 아트 — 라인게임즈 전략개발실 Nine Lives 팀이 자체 개발 중인 다크 판타지 액션 타이틀. 사진=인벤 정재훈 기자</figcaption>
 </figure>
 
 스토리는 다음과 같다. *신이 버린 세계*에 끊임없이 솟아나는 악마들 앞에서, 죽음의 순간 천사 *칼리엘*과 *불사의 계약*을 맺은 악마 사냥꾼 *펜릭스 헤이븐*은 *죽음을 피하는 대신 칼리엘이 지시하는 대로 세계를 구해야 하는 몸*이 된다. 봉인된 영역에서 고대 대악마의 부활을 막기 위해 추종자들에 맞서는 여정이 그렇게 시작된다.
 
 <figure style="text-align: center; margin: 2rem auto;">
-  <img src="/images/linegames-ember-blade-playx4-2026/03-fenrix.jpg" alt="주인공 펜릭스 헤이븐" />
+  <img src="https://img.seosoyoung.eiaserinnys.me/images/linegames-ember-blade-playx4-2026/03-fenrix.jpg" alt="주인공 펜릭스 헤이븐" />
   <figcaption>주인공 펜릭스 헤이븐 — 신이 버린 세계에서 천사 칼리엘과 불사의 계약을 맺고 세계를 구하라는 사명에 묶인 악마 사냥꾼. 봉인된 영역에서 고대 대악마의 부활을 막기 위한 여정을 따라간다. 사진=인벤 정재훈 기자</figcaption>
 </figure>
 
@@ -101,7 +101,7 @@ sidenotes: true
 스팀 최근 30일 평가는 95% '압도적으로 긍정적'이다 (2026-05-22 인벤 기준).
 
 <figure style="text-align: center; margin: 2rem auto;">
-  <img src="/images/linegames-ember-blade-playx4-2026/13-final-demo-update.jpg" alt="엠버 앤 블레이드 파이널 데모 업데이트 키 이미지" />
+  <img src="https://img.seosoyoung.eiaserinnys.me/images/linegames-ember-blade-playx4-2026/13-final-demo-update.jpg" alt="엠버 앤 블레이드 파이널 데모 업데이트 키 이미지" />
   <figcaption>엠버 앤 블레이드 파이널 데모 업데이트 키 이미지 — 4월 22일 에픽게임즈 스토어·스팀에 먼저 공개됐고, PlayX4까지 약 한 달간 유저 피드백을 받았다. 사진=ZDNet Korea 정진성 기자</figcaption>[^zdnet-2026][^zdnet-2026-2][^zdnet-2026-3][^zdnet-2026-4][^gametoc-2026-2][^pnn-2026]
 </figure>
 
@@ -112,7 +112,7 @@ PlayX4 개막일 오전에 공개된 최종 데모는 초기 데모와 비교해
 게임을 시작하면 프롤로그·튜토리얼을 지나 *망각의 성채*에 도착한다. 이곳은 정비와 강화의 허브 공간이다.
 
 <figure style="text-align: center; margin: 2rem auto;">
-  <img src="/images/linegames-ember-blade-playx4-2026/08-citadel-of-oblivion.jpg" alt="정비와 강화의 허브 공간 망각의 성채" />
+  <img src="https://img.seosoyoung.eiaserinnys.me/images/linegames-ember-blade-playx4-2026/08-citadel-of-oblivion.jpg" alt="정비와 강화의 허브 공간 망각의 성채" />
   <figcaption>정비와 강화의 허브 공간 '망각의 성채' — NPC 아리엘라가 관장하는 성채수의 은총에서 캐릭터 능력치를 영구 강화하고, 렐릭·아티팩트·룬·무기를 해금한다. 사진=게임뷰 김지만 기자</figcaption>
 </figure>
 
@@ -124,7 +124,7 @@ PlayX4 개막일 오전에 공개된 최종 데모는 초기 데모와 비교해
 본격 플레이 무대는 액트 1 '잿빛의 초원'이다. 펜릭스를 직접 조작하면서 몰려드는 적을 처치하고 구간 보스를 넘는다.
 
 <figure style="text-align: center; margin: 2rem auto;">
-  <img src="/images/linegames-ember-blade-playx4-2026/06-melee-attack.webp" alt="엠버 앤 블레이드의 호쾌한 근접 공격" />
+  <img src="https://img.seosoyoung.eiaserinnys.me/images/linegames-ember-blade-playx4-2026/06-melee-attack.webp" alt="엠버 앤 블레이드의 호쾌한 근접 공격" />
   <figcaption>다수를 휩쓰는 호쾌함은 기본기다 — 공격 버튼을 누르면 광역 판정의 근접 공격이, 누르지 않으면 자동으로 원거리 공격이 발동되는 투 트랙 구조다. 사진=인벤 정재훈 기자</figcaption>
 </figure>
 
@@ -136,12 +136,12 @@ PlayX4 개막일 오전에 공개된 최종 데모는 초기 데모와 비교해
 - **아르키나** — 최종 데모에서 새로 추가된 핵심 패시브. 하이리스크 하이리턴을 전제로 전투 흐름을 통째로 바꾼다. 특수 아르키나는 일반 플레이로는 불가능한 공격을 가능하게 한다.
 
 <figure style="text-align: center; margin: 2rem auto;">
-  <img src="/images/linegames-ember-blade-playx4-2026/07-blessing-angels.webp" alt="블레싱을 주는 천사의 등장 연출" />
+  <img src="https://img.seosoyoung.eiaserinnys.me/images/linegames-ember-blade-playx4-2026/07-blessing-angels.webp" alt="블레싱을 주는 천사의 등장 연출" />
   <figcaption>블레싱을 주는 천사의 등장 연출 — 하데스나 데스 머스트 다이를 연상시키는 결로, 도전마다 천사로부터 축복을 받아 7개 슬롯을 채워간다. 사진=인벤 정재훈 기자</figcaption>
 </figure>
 
 <figure style="text-align: center; margin: 2rem auto;">
-  <img src="/images/linegames-ember-blade-playx4-2026/09-arkina.jpg" alt="최종 데모에서 새로 추가된 핵심 패시브 아르키나" />
+  <img src="https://img.seosoyoung.eiaserinnys.me/images/linegames-ember-blade-playx4-2026/09-arkina.jpg" alt="최종 데모에서 새로 추가된 핵심 패시브 아르키나" />
   <figcaption>최종 데모에서 새로 추가된 핵심 패시브 '아르키나' — 하이리스크 하이리턴 구조로 전투 흐름을 통째로 바꾼다. 사진=게임뷰 김지만 기자</figcaption>
 </figure>
 
@@ -165,7 +165,7 @@ PlayX4 개막일 오전에 공개된 최종 데모는 초기 데모와 비교해
 - 일반 뱀서류처럼 특이점을 지나면 게임이 루즈해지는 경향이 약하다.
 
 <figure style="text-align: center; margin: 2rem auto;">
-  <img src="/images/linegames-ember-blade-playx4-2026/11-boss-fight.webp" alt="엠버 앤 블레이드의 보스전" />
+  <img src="https://img.seosoyoung.eiaserinnys.me/images/linegames-ember-blade-playx4-2026/11-boss-fight.webp" alt="엠버 앤 블레이드의 보스전" />
   <figcaption>스펙으로 밀 수도 있지만, 게이머 실력으로 뒤집을 수도 있다 — 인벤이 짚은 가장 큰 차별점은 *실력으로 스펙을 뒤집을 여지*가 함께 살아 있다는 점이다. 사진=인벤 정재훈 기자</figcaption>
 </figure>
 

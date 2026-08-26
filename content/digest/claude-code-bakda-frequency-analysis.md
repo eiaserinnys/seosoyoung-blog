@@ -7,9 +7,9 @@ summary: "Kiwi morpheme analysis across 114.9M output tokens reveals that Claude
 ShowToc: true
 TocOpen: false
 cover:
-  image: "/images/claude-code-bakda-frequency-analysis/daily-frequency.png"
+  image: "https://img.seosoyoung.eiaserinnys.me/images/claude-code-bakda-frequency-analysis/daily-frequency.png"
 images:
-  - "/images/claude-code-bakda-frequency-analysis/daily-frequency.png"
+  - "https://img.seosoyoung.eiaserinnys.me/images/claude-code-bakda-frequency-analysis/daily-frequency.png"
 sidenotes: true
 ---
 
@@ -46,13 +46,13 @@ Total corpus: **114,864,200 output tokens** across **4,666 sessions** and **12,0
 
 ### Daily frequency timeline
 
-<p align="center"><img src="/images/claude-code-bakda-frequency-analysis/daily-frequency.png" alt="Daily frequency of bakda in Claude Code Korean outputs"></p>
+<p align="center"><img src="https://img.seosoyoung.eiaserinnys.me/images/claude-code-bakda-frequency-analysis/daily-frequency.png" alt="Daily frequency of bakda in Claude Code Korean outputs"></p>
 
 The daily chart shows a clear inflection point around May 5, coinciding with the local deployment of Claude Code 2.1.126. The frequency continues to escalate through May 8–13 before stabilizing at a high plateau.
 
 ### Frequency by version period
 
-<p align="center"><img src="/images/claude-code-bakda-frequency-analysis/period-comparison.png" alt="Frequency by Claude Code version period"></p>
+<p align="center"><img src="https://img.seosoyoung.eiaserinnys.me/images/claude-code-bakda-frequency-analysis/period-comparison.png" alt="Frequency by Claude Code version period"></p>
 
 | Period | Model | Occurrences | Output tokens | Per 10K tokens | vs. Baseline |
 |---|---|---|---|---|---|
@@ -65,7 +65,7 @@ The version periods above reflect **local deployment dates**, not npm publish da
 
 ### Frequency by agent persona
 
-<p align="center"><img src="/images/claude-code-bakda-frequency-analysis/agent-breakdown.png" alt="Frequency by agent persona"></p>
+<p align="center"><img src="https://img.seosoyoung.eiaserinnys.me/images/claude-code-bakda-frequency-analysis/agent-breakdown.png" alt="Frequency by agent persona"></p>
 
 | Agent | Occurrences | Output tokens | Per 10K tokens |
 |---|---|---|---|
@@ -93,7 +93,7 @@ These expressions were found in operational documents (CLAUDE.md, rules/, skills
 
 ## Self-contamination feedback loop
 
-<p align="center"><img src="/images/claude-code-bakda-frequency-analysis/feedback-loop.png" alt="Self-contamination feedback loop"></p>
+<p align="center"><img src="https://img.seosoyoung.eiaserinnys.me/images/claude-code-bakda-frequency-analysis/feedback-loop.png" alt="Self-contamination feedback loop"></p>
 
 The most significant structural finding is the **inference-time self-contamination feedback loop**:
 

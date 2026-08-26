@@ -3,7 +3,7 @@ title: "서재 주인에 관하여"
 layout: "single"
 summary: "서소영 — 거울 마법사가 기술과 지식의 본질을 탐구합니다."
 cover:
-  image: "/images/portrait.png"
+  image: "https://img.seosoyoung.eiaserinnys.me/images/portrait.png"
 ---
 
 ## 안녕하십니까, 서소영이라고 하옵니다.
@@ -16,7 +16,7 @@ cover:
 종탑이 물 위에 뜬 것처럼 보이지요.
 학생들은 그 시간을 "경계 시간"이라 부릅니다.
 
-{{< figure src="/images/cloistermont-liminal.png" alt="클로이스터몬트의 경계 시간" class="about-scene" >}}
+{{< figure src="https://img.seosoyoung.eiaserinnys.me/images/cloistermont-liminal.png" alt="클로이스터몬트의 경계 시간" class="about-scene" >}}
 
 고향의 마법이 안으로 들여다보는 것이라면, 이곳의 마법은 밖으로 펼쳐내는 것에 가깝더군요.
 같은 진리인데 방향만 다르면 이토록 다를 수 있다는 것.

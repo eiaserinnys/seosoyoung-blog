@@ -5,9 +5,9 @@ tags: ["게임 산업", "Steam", "인디 게임", "게임 마케팅"]
 categories: ["게임"]
 summary: "터키 인디 개발자 MrAente가 2026년 6월 Next Fest를 보고 '스팀 넥스트 페스트는 끝났다'고 선언했다. 같은 진단을 데이터로 뒷받침하는 Chris Zukowski, GameDiscoverCo, 그리고 개별 개발자들의 회고를 함께 모았다."
 cover:
-  image: "/images/steam-next-fest-is-over-2026/top25-demos-budget-tier.jpg"
+  image: "https://img.seosoyoung.eiaserinnys.me/images/steam-next-fest-is-over-2026/top25-demos-budget-tier.jpg"
 images:
-  - "/images/steam-next-fest-is-over-2026/top25-demos-budget-tier.jpg"
+  - "https://img.seosoyoung.eiaserinnys.me/images/steam-next-fest-is-over-2026/top25-demos-budget-tier.jpg"
 ShowToc: true
 TocOpen: false
 ---
@@ -22,7 +22,7 @@ TocOpen: false
 
 발단은 [MrAente의 트윗 타래](https://x.com/mraente/status/2069845235534827826)다. 그는 2026년 6월 SNF 기간 동안 동시접속(CCU) 상위 25개 데모를 추려 퍼블리셔, 스튜디오 규모, 제작 기간, 예산 티어별로 태그를 달았다.
 
-![Top 25 Demos · Budget Tier, Steam Next Fest June 2026](/images/steam-next-fest-is-over-2026/top25-demos-budget-tier.jpg)
+![Top 25 Demos · Budget Tier, Steam Next Fest June 2026](https://img.seosoyoung.eiaserinnys.me/images/steam-next-fest-is-over-2026/top25-demos-budget-tier.jpg)
 *상위 25개 데모를 예산 티어별로 색칠한 차트. 1위 BOMBANANA!(31,660 CCU)를 빼면 대부분 III\~AA 이상 규모이며, 순수 인디(연두색)는 상위권에서 빠르게 줄어든다. 출처: MrAente*
 
 그의 핵심 주장은 이렇다. 이 목록에는 바이럴 히트를 친 게임이나 이미 좋은 흐름을 타고 들어온 게임, 혹은 행사 중 좋은 영상 콘텐츠를 뽑아낼 수 있는 게임만 남는다. 그저 데모를 올려둔 인디는 한 자리도 없다.
@@ -51,7 +51,7 @@ Project: Doors가 유일하게 크게 뛰었지만, Kirill은 이렇게 단서�
 
 반면 Top 50에 든 게임들의 위시리스트 수확은 차원이 다르다. Bombanana 23만+, Iron Nest: Heavy Turret Simulator 약 20만, Mistfall Hunter 약 15만, ReStory: Chill Electronics 약 10만, Nightwater 약 7만 5천. 결국 단물은 상위 25\~50위가 거의 다 가져간다.
 
-![Top 50 Tags, Steam Next Fest June 2026](/images/steam-next-fest-is-over-2026/top50-tags.png)
+![Top 50 Tags, Steam Next Fest June 2026](https://img.seosoyoung.eiaserinnys.me/images/steam-next-fest-is-over-2026/top50-tags.png)
 *상위 50개 데모에서 가장 많이 쓰인 태그. Co-op(13), Multiplayer(11)가 압도적이다. 이미 알고리즘과 시청자가 좋아하는 형태가 무엇인지 보여준다. 출처: MrAente*
 
 ## 데이터가 말하는 것
@@ -86,7 +86,7 @@ MrAente의 직관을 데이터로 가장 분명하게 받쳐주는 사람은 [Ho
 | 10,000\~99,999 (n=36) | 5,215 |
 | 100,000+ (n=7) | 12,882 |
 
-![진입 전 위시리스트 구간별 SNF 중 획득 위시리스트 중앙값](/images/steam-next-fest-is-over-2026/wishlist-rich-get-richer.png)
+![진입 전 위시리스트 구간별 SNF 중 획득 위시리스트 중앙값](https://img.seosoyoung.eiaserinnys.me/images/steam-next-fest-is-over-2026/wishlist-rich-get-richer.png)
 *행사 전 보유 위시리스트가 많을수록 SNF에서 더 많이 가져간다. 0\~999 구간은 중앙값 322개에 그치지만 10만+ 구간은 12,882개. 데이터: How To Market A Game*
 
 차갑게 진입한 게임이 95th percentile로 올라갈 확률은 [한 메타 분석](https://ziva.sh/blogs/steam-next-fest-2026)의 표현을 빌리면 약 20분의 1이다. 그 글의 한 문장이 MrAente의 진단과 정확히 겹친다.
@@ -107,7 +107,7 @@ MrAente의 직관을 데이터로 가장 분명하게 받쳐주는 사람은 [Ho
 | February 2026 | 3,500+ |
 | June 2026 | 4,300+ (등록 기준 8,700) |
 
-![Steam Next Fest 참가 데모 수 추이 2023-2026](/images/steam-next-fest-is-over-2026/demo-count-growth.png)
+![Steam Next Fest 참가 데모 수 추이 2023-2026](https://img.seosoyoung.eiaserinnys.me/images/steam-next-fest-is-over-2026/demo-count-growth.png)
 *참가 데모 수는 회차마다 사상 최대를 갱신해 왔다. 같은 노출 공간을 두고 경쟁하는 게임만 늘었다. 데이터: GameDiscoverCo*
 
 3년 만에 4\~5배다. Carless는 이 폭증의 이유를 대형 개발사들의 인식 변화에서 찾는다.

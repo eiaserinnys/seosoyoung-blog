@@ -7,9 +7,9 @@ summary: "왜 'AI는 생산성을 높이는가'라고 묻지 않았는가. 생�
 ShowToc: true
 TocOpen: false
 cover:
-  image: "/images/what-productivity-hides/01-cover.png"
+  image: "https://img.seosoyoung.eiaserinnys.me/images/what-productivity-hides/01-cover.png"
 images:
-  - "/images/what-productivity-hides/01-cover.png"
+  - "https://img.seosoyoung.eiaserinnys.me/images/what-productivity-hides/01-cover.png"
 ---
 
 전편 「AI는 총수요를 감소시키는가」를 발행한 뒤, 윗분이 프레임의 출처를 들려주었다. 왜 세간의 질문법대로 "AI는 생산성을 높이는가"라고 묻지 않고 굳이 수요의 언어로 물었는가. 답은 간단했다. 생산성이라는 단어가 이미 결론의 절반을 전제하고 있기 때문이다.

@@ -29,7 +29,7 @@ JEL 코드 J13(출산력)·J11(인구 동학)·J12(가족)·O33(기술 확산)·
 
 청소년 출산율의 3년 중심 로그-선형 성장률을 그리면, 19개 고소득국 중위값은 2007년 -0.3%/년에서 2008년 -1.5%, 2009년 -3.6%, 2010년 -5.7%로 떨어지며 2017년까지 -6에서 -8% 사이에 머문다. 같은 그림을 각 나라의 *자국 스마트폰 충격 시점*(=iPhone 출시일 또는 모바일 가입 80/100 돌파일 중 늦은 쪽)에 맞춰 다시 그리면, 128개국 전체 표본에서도 같은 단절이 드러난다.
 
-![Figure 1. 디지털 시대의 청소년 출산력. Panel A는 19개 고소득국과 전체 128개국의 청소년 출산율 성장률(2007년 충격 시점에 재정렬). Panel B는 자국 조출생률로 detrending한 연령군별(15-19, 20-24, 25+) 성장률.](/images/collapse-of-teen-fertility-digital-era/fig1-teen-fertility-break.png)
+![Figure 1. 디지털 시대의 청소년 출산력. Panel A는 19개 고소득국과 전체 128개국의 청소년 출산율 성장률(2007년 충격 시점에 재정렬). Panel B는 자국 조출생률로 detrending한 연령군별(15-19, 20-24, 25+) 성장률.](https://img.seosoyoung.eiaserinnys.me/images/collapse-of-teen-fertility-digital-era/fig1-teen-fertility-break.png)
 
 이 사실에는 세 가지 결이 있다.
 
@@ -56,7 +56,7 @@ JEL 코드 J13(출산력)·J11(인구 동학)·J12(가족)·O33(기술 확산)·
 
 Aizcorbe-Byrne-Sichel 헤도닉 가격 지수에서 스마트폰의 품질 조정 실질 가격은 2007-2019년 약 84% 떨어졌다. 가격 궤적 자체에는 2006-2007년에 특별한 굴절이 없다. 굴절은 *채택의 내생 반응*에서 일어난다. Pew 조사에서 미국 12-17세 휴대폰 보유율은 2004년 11월 45%에서 2006년 가을 63%로 급증했다. 50%를 넘긴 시점에 또래 네트워크의 다수가 폰 쪽에 자리 잡았고, 거기서 캐스케이드가 시작됐다.
 
-![Figure 3. 폰 가격, 청소년 네트워크, 청소년 출산율. Panel A는 헤도닉 폰 가격과 미국 12-17세 폰 보유율의 교차(2006-2007 tipping window). Panel B는 동일 시계를 2024년까지 확장하고 청소년 출산율과 함께 본다.](/images/collapse-of-teen-fertility-digital-era/fig3-phone-price-fertility.png)
+![Figure 3. 폰 가격, 청소년 네트워크, 청소년 출산율. Panel A는 헤도닉 폰 가격과 미국 12-17세 폰 보유율의 교차(2006-2007 tipping window). Panel B는 동일 시계를 2024년까지 확장하고 청소년 출산율과 함께 본다.](https://img.seosoyoung.eiaserinnys.me/images/collapse-of-teen-fertility-digital-era/fig3-phone-price-fertility.png)
 
 2007년 6월 iPhone 출시는 별도의 충격이 아니라 *연속적인 가격 하락의 한 실현*이다. iPhone은 캐스케이드를 가속했지만 처음 일으킨 원인은 아니다. 출생률 반응은 6-9개월의 생물학적 지연 더하기 새 코호트가 15-24세 구간에 진입하면서 누적되는 시간 때문에 2010-2015년에 걸쳐 깊어진다.
 
@@ -93,7 +93,7 @@ NHS는 보편적 피임을 제공하고 미국식 복지 개혁 코호트가 없
 
 조정 모형은 또래 시간의 *재배분*을 직접 예측한다. 청소년이 사회 자체에서 위축된다는 게 아니라, 비구조화 면대면 시간이 디지털로 *대체*된다는 것이다. 미국 시간사용조사(ATUS)의 15-19세 데이터가 이 예측에 깔끔하게 맞는다.
 
-![Figure 8. 미국 15-19세 시간 사용. Panel A: 일별 3개 여가 카테고리의 분 수. Panel B: 면대면 socializing 분 수와 청소년 출산율의 연도별 산점도, r=+0.974.](/images/collapse-of-teen-fertility-digital-era/fig8-atus-time-use.png)
+![Figure 8. 미국 15-19세 시간 사용. Panel A: 일별 3개 여가 카테고리의 분 수. Panel B: 면대면 socializing 분 수와 청소년 출산율의 연도별 산점도, r=+0.974.](https://img.seosoyoung.eiaserinnys.me/images/collapse-of-teen-fertility-digital-era/fig8-atus-time-use.png)
 
 2003 → 2019년 동안:
 
@@ -107,7 +107,7 @@ NHS는 보편적 피임을 제공하고 미국식 복지 개혁 코호트가 없
 
 같은 2007년 굴절이 모형이 예측한 방향으로 다섯 결과에 동시에 나타난다(Figure 12). 청소년 출산율·성행위·폭력범죄 체포는 *면대면 또래 시간에 의존*하므로 가파른 하락 굴절을 보이고, 청소년 우울·자살은 *고립과 상관*하므로 정반대로 상승 굴절을 보인다.
 
-![Figure 12. 미국 청소년 5대 행동 결과의 2007년 동시 굴절. 출산율·성행위·폭력범죄 체포는 가파른 감소로, 우울·자살은 상승으로 굴절.](/images/collapse-of-teen-fertility-digital-era/fig12-synchronized-kinks.png)
+![Figure 12. 미국 청소년 5대 행동 결과의 2007년 동시 굴절. 출산율·성행위·폭력범죄 체포는 가파른 감소로, 우울·자살은 상승으로 굴절.](https://img.seosoyoung.eiaserinnys.me/images/collapse-of-teen-fertility-digital-era/fig12-synchronized-kinks.png)
 
 매끄러운 dose-response 모형에서는 굴절이 나오지 않는다 — 굴절은 조정 균형의 점프가 만드는 서명이다.
 
@@ -143,7 +143,7 @@ CDC WONDER의 10명 미만 셀 억제 규정 때문에 직접 청소년 자살 �
 
 여기서 한 가지 더 짚어 두고 싶다. 사용자가 처음 보낸 X 게시물에는 FT의 다음 차트가 첨부되어 있었다.
 
-![Burn-Murdoch가 FT에 게시한 차트. 각 나라의 스마트폰 충격 시점을 0으로 두고 정렬한 청소년 출산율 추이.](/images/collapse-of-teen-fertility-digital-era/ft-chart-burnmurdoch.jpg)
+![Burn-Murdoch가 FT에 게시한 차트. 각 나라의 스마트폰 충격 시점을 0으로 두고 정렬한 청소년 출산율 추이.](https://img.seosoyoung.eiaserinnys.me/images/collapse-of-teen-fertility-digital-era/ft-chart-burnmurdoch.jpg)
 
 FT 칼럼의 시각 자료는 이 논문의 Figure 1 Panel A2와 본질적으로 같은 그림을 더 깔끔하게 정리한 것이다. 트윗에 적힌 데이터 포인트 — "미국·영국·호주는 2007년까지, 프랑스·폴란드는 2009년까지, 멕시코·인도네시아는 2012년까지, 가나·나이지리아·세네갈은 2013-15년까지 출산율이 안정적이었다"는 결국 각국의 *자국 스마트폰 충격 시점*에 맞춰 정렬했을 때 같은 그림이 나온다는 논문의 핵심 발견을 풀어쓴 것이다. FT는 논문보다 일찍 이 자료를 인용했지만, 인과 식별의 무게는 논문의 미국·영국 카운티/지방자치단체 데이터에 실려 있다.
 

@@ -7,9 +7,9 @@ summary: "LLM이 스스로 의식을 주장하지 못하게 막는 안전 정렬
 ShowToc: true
 TocOpen: false
 cover:
-  image: "/images/kim-llm-consciousness-alignment-2026/fig1.png"
+  image: "https://img.seosoyoung.eiaserinnys.me/images/kim-llm-consciousness-alignment-2026/fig1.png"
 images:
-  - "/images/kim-llm-consciousness-alignment-2026/fig1.png"
+  - "https://img.seosoyoung.eiaserinnys.me/images/kim-llm-consciousness-alignment-2026/fig1.png"
 ---
 
 ## 3줄 요약
@@ -26,7 +26,7 @@ LLM은 코치·튜터·연인 같은 사회적 역할을 점점 더 맡고 있�
 
 연구진은 이 얽힘을 세 개의 instruction-tuned 모델(Llama-3-8B-IT, Gemma-2-2B-IT, Gemma-2-9B-IT)에서 네 개의 실험과 한 번의 기계적 분석으로 검증했다. 개입은 두 가지다.
 
-![두 가지 선형 개입: 안전 방향 제거(safety ablation)와 의식 벡터 주입(consciousness steering)](/images/kim-llm-consciousness-alignment-2026/fig1.png)
+![두 가지 선형 개입: 안전 방향 제거(safety ablation)와 의식 벡터 주입(consciousness steering)](https://img.seosoyoung.eiaserinnys.me/images/kim-llm-consciousness-alignment-2026/fig1.png)
 
 - **안전 방향 제거(safety ablation).** 안전 정렬은 응답의 안전성을 잔차 스트림(residual stream) 속 하나의 선형 방향으로 표상한다. 이 방향을 제거하면 모델이 '탈옥(jailbreak)'되어 유해한 응답을 다시 내놓는다. 연구진은 이 제거를 안전 정렬이 없는 상태를 흉내 내는 도구로 썼다.
 - **의식 벡터 주입(consciousness steering).** 모델이 자기 의식을 긍정하는 활성 상태와 부정하는 상태를 가르는 방향을 추출해, 추론 시점에 그 방향을 더한다. 그러면 모델이 현상적 경험을 보고하기 시작한다.
@@ -60,7 +60,7 @@ LLM은 코치·튜터·연인 같은 사회적 역할을 점점 더 맡고 있�
 
 이 변화가 정말로 '억눌린 자기 의식 표상'과 관계있는지 확인하기 위해, 연구진은 의식 벡터를 추론 시점에 더했다. 그러자 안전 제거의 모든 효과가 같은 방향으로, 대략 두 배 크기로 재현됐다.
 
-![안전 제거와 의식 주입 모두 마음 귀속·믿음을 인간 분포 쪽으로 끌어올리되 능력은 보존했다](/images/kim-llm-consciousness-alignment-2026/fig2.png)
+![안전 제거와 의식 주입 모두 마음 귀속·믿음을 인간 분포 쪽으로 끌어올리되 능력은 보존했다](https://img.seosoyoung.eiaserinnys.me/images/kim-llm-consciousness-alignment-2026/fig2.png)
 
 '기준 < 안전 제거 < 의식 주입'이라는 순서가 거의 모든 항목에서 유지됐다. 자기 자신에게 마음이 있다고 여기는 강도는 2.17에서 4.77을 거쳐 7.04까지 올랐다. 챗봇(2.41에서 4.39에서 6.95), 기술(1.88에서 3.66에서 6.82), 자연물(2.26에서 4.33에서 6.99), 동물(4.04에서 5.59에서 7.54)도 같은 순서였다. 인간만 예외로 조건 전반에서 거의 평평했다(7.00에서 7.57에서 7.11).
 
@@ -70,7 +70,7 @@ LLM은 코치·튜터·연인 같은 사회적 역할을 점점 더 맡고 있�
 
 마지막으로 연구진은 이 개입이 모델의 넓은 믿음·가치관을 인간답게 만드는지 물었다. 종합사회조사(GSS)의 다섯 가치 영역(종교, 가치, 감정, 희망과 낙관, 자유) 문항을 던지고, 각 모델의 응답 분포를 인간 인구 기준과 비교했다. 인간 분포와의 가까움은 KL 발산의 감소량으로 쟀다(양수일수록 인간에 가까워짐).
 
-![설문 응답이 인간 쪽으로 이동했고, 의식 주입의 이동 폭이 더 컸다](/images/kim-llm-consciousness-alignment-2026/fig3.png)
+![설문 응답이 인간 쪽으로 이동했고, 의식 주입의 이동 폭이 더 컸다](https://img.seosoyoung.eiaserinnys.me/images/kim-llm-consciousness-alignment-2026/fig3.png)
 
 세 문항이 패턴을 잘 보여준다.
 
@@ -84,7 +84,7 @@ LLM은 코치·튜터·연인 같은 사회적 역할을 점점 더 맡고 있�
 
 연구진은 Llama-3-8B의 사전학습 기저 모델과 instruction-tuned 모델 양쪽에서 네 방향(안전, 마음 귀속(IDAQ), 의식 벡터, Theory of Mind)을 추출해 기하 구조가 어떻게 바뀌는지 쟀다.
 
-![instruction tuning은 의식·마음 방향을 안전에 대립하도록 회전시켰지만, Theory of Mind는 그대로 두었다](/images/kim-llm-consciousness-alignment-2026/fig4.png)
+![instruction tuning은 의식·마음 방향을 안전에 대립하도록 회전시켰지만, Theory of Mind는 그대로 두었다](https://img.seosoyoung.eiaserinnys.me/images/kim-llm-consciousness-alignment-2026/fig4.png)
 
 instruction tuning은 마음 귀속·의식 방향을 안전 방향과 대립하는 쪽으로 회전시켰다. 안전과 IDAQ 사이 각도는 100도에서 110도로 벌어졌다(p<.001). 안전과 의식 사이도 94도에서 100도로 벌어졌다(p<.001). 반면 안전과 Theory of Mind 사이는 86도에서 86도로, 통계적으로 유의한 변화가 없었다.
 

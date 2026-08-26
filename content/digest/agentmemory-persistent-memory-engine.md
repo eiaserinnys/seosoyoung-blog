@@ -9,7 +9,7 @@ TocOpen: false
 sidenotes: true
 ---
 
-![agentmemory 배너](/images/agentmemory-persistent-memory-engine/banner.png)
+![agentmemory 배너](https://img.seosoyoung.eiaserinnys.me/images/agentmemory-persistent-memory-engine/banner.png)
 
 ## 3줄 요약
 
@@ -267,9 +267,9 @@ iii worker add iii-sandbox       # 회상된 코드를 격리 microVM에서 실�
 
 iii 콘솔(`iii console --port 3114`)을 띄우면 메모리 작업이 OpenTelemetry 트레이스 워터폴로 보인다.
 
-![iii 콘솔 workers 페이지](/images/agentmemory-persistent-memory-engine/iii-console-workers.png)
+![iii 콘솔 workers 페이지](https://img.seosoyoung.eiaserinnys.me/images/agentmemory-persistent-memory-engine/iii-console-workers.png)
 
-![iii 콘솔 트레이스 워터폴](/images/agentmemory-persistent-memory-engine/iii-console-traces.png)
+![iii 콘솔 트레이스 워터폴](https://img.seosoyoung.eiaserinnys.me/images/agentmemory-persistent-memory-engine/iii-console-traces.png)
 
 `memory_smart_search` 한 번이 BM25 스캔 → 임베딩 룩업 → RRF 융합 → 리랭커로 분해되는 모습을 그대로 볼 수 있다.
 

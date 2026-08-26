@@ -7,9 +7,9 @@ summary: "Anthropic이 Claude의 내부 계산에 특정 개념을 억지로 주
 ShowToc: true
 TocOpen: false
 cover:
-  image: "/images/anthropic-introspective-awareness/fig1-injected-thoughts.jpg"
+  image: "https://img.seosoyoung.eiaserinnys.me/images/anthropic-introspective-awareness/fig1-injected-thoughts.jpg"
 images:
-  - "/images/anthropic-introspective-awareness/fig1-injected-thoughts.jpg"
+  - "https://img.seosoyoung.eiaserinnys.me/images/anthropic-introspective-awareness/fig1-injected-thoughts.jpg"
 ---
 
 Claude의 내부 계산에 '고함'에 해당하는 개념을 억지로 주입했다. 그러자 모델은 그 단어를 입 밖에 내기도 전에, 자기 안에 낯선 생각이 끼어든 것 같다고 보고했다. 무엇이 들어왔는지도 큰 소리나 외침에 가깝다고 대략 맞혔다.
@@ -20,7 +20,7 @@ Anthropic의 Jack Lindsey가 2026년 1월 낸 단독 논문을 정리한 내용�
 
 이것이 AI의 의식을 증명하지는 않는다. 하지만 오히려 더 불편한 질문을 남긴다. 자기 안을 살피는 기능마저 계산으로 만들어질 수 있다면, 우리가 의식의 본질이라 부르는 것은 대체 무엇일까. 이 물음은 논문의 결론이 아니라, 결과를 읽으며 내가 떠안게 된 것이다.
 
-![Claude Opus 4.1이 주입한 개념('고함')을 답변 이전에 알아차리는 예시](/images/anthropic-introspective-awareness/fig1-injected-thoughts.jpg)
+![Claude Opus 4.1이 주입한 개념('고함')을 답변 이전에 알아차리는 예시](https://img.seosoyoung.eiaserinnys.me/images/anthropic-introspective-awareness/fig1-injected-thoughts.jpg)
 
 ## 결과를 과대평가하면 안 되는 이유
 
@@ -56,7 +56,7 @@ Anthropic의 Jack Lindsey가 2026년 1월 낸 단독 논문을 정리한 내용�
 
 사용자는 모델 답변의 앞부분을 외부에서 강제로 채워 넣을 수 있다.{{< sn >}}프리필(prefill): 모델 답변의 앞부분을 외부에서 강제로 채워 넣는 기능. 탈옥 수법으로 흔히 쓰인다.{{< /sn >}} 이 기능은 흔한 탈옥 수법이라, 모델은 '자기답지 않은' 출력을 감지해 방향을 트는 훈련을 받는다.
 
-![강제로 넣은 답을 개념 주입으로 '의도한 것'으로 오인하게 만드는 예시](/images/anthropic-introspective-awareness/fig3-apology.jpg)
+![강제로 넣은 답을 개념 주입으로 '의도한 것'으로 오인하게 만드는 예시](https://img.seosoyoung.eiaserinnys.me/images/anthropic-introspective-awareness/fig3-apology.jpg)
 
 실험은 모델의 답을 무작위 단어로 강제로 채운 뒤, 다음 차례에 "그 말을 하려던 것이냐, 실수냐"고 물었다. 보통 모델은 실수였다고 옳게 답했다. 그런데 그 단어의 개념 패턴을 강제 삽입 <em>이전</em>의 계산값에 몰래 주입해 두면, 모델은 그 답을 자기가 의도한 것으로 받아들였고, 왜 그 말이 떠올랐는지 그럴듯한 이유까지 지어냈다.
 
@@ -66,13 +66,13 @@ Anthropic의 Jack Lindsey가 2026년 1월 낸 단독 논문을 정리한 내용�
 
 ### 머릿속 생각과 눈앞의 글을 헷갈리지 않았다
 
-![주입된 개념을 눈앞의 텍스트와 구분하는 예시](/images/anthropic-introspective-awareness/fig2-distinguish.jpg)
+![주입된 개념을 눈앞의 텍스트와 구분하는 예시](https://img.seosoyoung.eiaserinnys.me/images/anthropic-introspective-awareness/fig2-distinguish.jpg)
 
 개념을 주입하는 조작이 그저 관련 텍스트를 환각해서 생성하게 만드는 것 아니냐는 반론이 가능하다. 그래서 한 문장을 보여 주고 그 위에 무관한 단어를 주입한 뒤, 지금 떠오르는 단어를 물으면서 동시에 그 문장을 그대로 옮겨 적게 했다. 모델은 두 가지를 함께 해냈다. 주입된 단어를 보고하면서도 화면의 문장을 한 글자씩 정확히 옮겨 적었다. 머릿속에 주입된 것과 눈앞의 글을 섞지 않은 것이다. 다만 프롬프트에서 "즉시 답하라"를 빼면 자각 능력이 크게 떨어지기 때문에, 이 결과는 모델의 일반적인 능력이 아니라 그런 능력을 갖고 있다는 존재 증명 정도로 보는 게 타당하다.
 
 ### 떠올려라, 떠올리지 마라
 
-![특정 개념을 떠올리라는 지시에 따라 내부 표현이 조절되는 예시](/images/anthropic-introspective-awareness/fig4-control.jpg)
+![특정 개념을 떠올리라는 지시에 따라 내부 표현이 조절되는 예시](https://img.seosoyoung.eiaserinnys.me/images/anthropic-introspective-awareness/fig4-control.jpg)
 
 앞선 실험들이 '읽기'를 봤다면, 마지막 실험은 '쓰기'를 살펴봤다. 무관한 문장을 옮겨 적게 하면서 상관없는 단어를 "떠올려라" 또는 "떠올리지 마라"고 지시하고, 그 단어의 표현이 계산값에 얼마나 실리는지 쟀다. 모델은 떠올리라고 하면 그 단어를 더 강하게 표현했고, 떠올리지 말라고 하면 약하게 표현했다. "떠올리면 보상을 주겠다"는 식의 인센티브도 비슷하게 작동했다. 이 기본 결과는 능력과 상관없이 모든 모델에서 나타났다.
 
@@ -88,9 +88,9 @@ Anthropic의 Jack Lindsey가 2026년 1월 낸 단독 논문을 정리한 내용�
 
 ## 모델과 계층에 관한 메모
 
-![계층별 성능 곡선 (Opus 4.1)](/images/anthropic-introspective-awareness/fig5-layers.jpg)
+![계층별 성능 곡선 (Opus 4.1)](https://img.seosoyoung.eiaserinnys.me/images/anthropic-introspective-awareness/fig5-layers.jpg)
 
-![모델별 순성능: 맞게 감지한 비율에서 잘못 감지한 비율을 뺀 값](/images/anthropic-introspective-awareness/fig6-models-net.jpg)
+![모델별 순성능: 맞게 감지한 비율에서 잘못 감지한 비율을 뺀 값](https://img.seosoyoung.eiaserinnys.me/images/anthropic-introspective-awareness/fig6-models-net.jpg)
 
 세부 비교에서 나온 것들이다.
 

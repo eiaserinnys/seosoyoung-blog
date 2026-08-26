@@ -7,9 +7,9 @@ summary: "AI 도입은 컨설팅의 깔끔한 단계도가 아니라 '의존성�
 ShowToc: true
 TocOpen: false
 cover:
-  image: "/images/yozm-ai-adoption-unsexy-success/ai-maturity-ladder.png"
+  image: "https://img.seosoyoung.eiaserinnys.me/images/yozm-ai-adoption-unsexy-success/ai-maturity-ladder.png"
 images:
-  - "/images/yozm-ai-adoption-unsexy-success/ai-maturity-ladder.png"
+  - "https://img.seosoyoung.eiaserinnys.me/images/yozm-ai-adoption-unsexy-success/ai-maturity-ladder.png"
 sidenotes: true
 ---
 
@@ -29,7 +29,7 @@ sidenotes: true
 
 부서별로 성숙도가 어긋나는 *불균형은 정상*이다. 엔지니어링은 앞서가는데 재무는 제자리, 마케팅은 폭주하는데 법무는 제동을 거는 그림이다. 시스템 구축은 언제나 제도보다 빠르기 때문이라는 진단이다. 따라서 의미 있는 질문은 "우리는 몇 단계인가"가 아니라 "어느 부분이 발목을 잡고 있는가"가 된다.
 
-![AI 성숙도 사다리. L1 개인 노하우에서 L5 조직 근간 변화까지 5개 층의 의존성 적층 구조. 출처: Turing Post / 요즘IT 재가공](/images/yozm-ai-adoption-unsexy-success/ai-maturity-ladder.png)
+![AI 성숙도 사다리. L1 개인 노하우에서 L5 조직 근간 변화까지 5개 층의 의존성 적층 구조. 출처: Turing Post / 요즘IT 재가공](https://img.seosoyoung.eiaserinnys.me/images/yozm-ai-adoption-unsexy-success/ai-maturity-ladder.png)
 
 ## L1 → L2: 가장 고통스러운 구간 — 조직이 '데이터로 읽히게' 만들기
 

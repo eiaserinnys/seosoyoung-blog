@@ -7,9 +7,9 @@ summary: "Andrew Trask는 더 큰 단일 모델이 AI 한계를 독점하리라�
 ShowToc: true
 TocOpen: false
 cover:
-  image: "/images/trask-network-source-ai/cover.jpeg"
+  image: "https://img.seosoyoung.eiaserinnys.me/images/trask-network-source-ai/cover.jpeg"
 images:
-  - "/images/trask-network-source-ai/cover.jpeg"
+  - "https://img.seosoyoung.eiaserinnys.me/images/trask-network-source-ai/cover.jpeg"
 ---
 
 ## 3줄 요약
@@ -24,7 +24,7 @@ images:
 
 > Everyone I've talked to in AI has always assumed that the future of AI is bigger models held by a smaller number of players. (...) But they couldn't be more wrong, and now the numbers are showing it. Networks of smaller AI models are outperforming every frontier AI system (Fable/Mythos included) on speed, accuracy, and cost.
 
-![OpenRouter 앙상블이 Fable/Mythos를 절반 가격에 능가](/images/trask-network-source-ai/cover.jpeg)
+![OpenRouter 앙상블이 Fable/Mythos를 절반 가격에 능가](https://img.seosoyoung.eiaserinnys.me/images/trask-network-source-ai/cover.jpeg)
 
 저자는 1960년대 IBM, 미국 정부, Bell Telephone, Bell Labs 모두가 *메인프레임* 컴퓨터에 대해 틀렸던 것처럼, 오늘날 모두가 *중앙집중형 AI*에 대해 틀리고 있다고 본다. 미래는 오픈소스 AI도 클로즈드소스 AI도 아니다. <em>네트워크 소스 AI(network-source AI)</em>다.
 
@@ -36,11 +36,11 @@ AI 경쟁이 능력·속도를 극대화하고 비용을 최소화하는 경쟁�
 
 저자가 직접 6개월 전 실험한 결과는 다음과 같았다. humanity's last exam의 멀티초이스 섹션에서 프런티어 모델들의 점수는 다음 수준이다.
 
-![HLE 멀티초이스 — 프런티어 모델 점수](/images/trask-network-source-ai/hle-multichoice-frontier.png)
+![HLE 멀티초이스 — 프런티어 모델 점수](https://img.seosoyoung.eiaserinnys.me/images/trask-network-source-ai/hle-multichoice-frontier.png)
 
 그러나 이들의 *차분 프라이버시(differentially private) 결합*은 점수를 50점대 초반까지 끌어올렸다.
 
-![2~5개 모델 앙상블의 privacy-accuracy Pareto 프런티어](/images/trask-network-source-ai/pareto-ensemble.png)
+![2~5개 모델 앙상블의 privacy-accuracy Pareto 프런티어](https://img.seosoyoung.eiaserinnys.me/images/trask-network-source-ai/pareto-ensemble.png)
 
 저자의 결론은 단호하다.
 
@@ -50,7 +50,7 @@ AI 경쟁이 능력·속도를 극대화하고 비용을 최소화하는 경쟁�
 
 오픈소스 모델 호스팅 업체는 *빠르고 싸게 결과를 내야만 돈을 번다*. OpenRouter의 독립 측정은 기업의 영업 자료가 아닌 실제 운영 결과를 보여준다.
 
-![OpenRouter 속도 비교](/images/trask-network-source-ai/openrouter-speed.png)
+![OpenRouter 속도 비교](https://img.seosoyoung.eiaserinnys.me/images/trask-network-source-ai/openrouter-speed.png)
 
 ### 비용(Cost)
 
@@ -60,7 +60,7 @@ AI 경쟁이 능력·속도를 극대화하고 비용을 최소화하는 경쟁�
 
 게다가 이 차트에서 빠진 것이 하나 더 있다. *모델을 더 추가하면 능력은 계속 올라간다.* 마침 이 글이 발행되는 날 새 Kimi 모델이 공개됐는데, 이는 Opus나 GPT-5.5와 결합되어 Fable 수준에 더 싸게 도달할 것이라고 저자는 단언한다. 이유는 명확하다. Kimi K2.7은 OpenRouter가 앙상블한 모델들 중 Fable을 제외한 모든 모델보다 이미 낫기 때문이다.
 
-![새 Kimi 모델 벤치마크](/images/trask-network-source-ai/kimi-k2-benchmark.jpeg)
+![새 Kimi 모델 벤치마크](https://img.seosoyoung.eiaserinnys.me/images/trask-network-source-ai/kimi-k2-benchmark.jpeg)
 
 플레이북은 이렇다.
 
@@ -86,7 +86,7 @@ AI 경쟁이 능력·속도를 극대화하고 비용을 최소화하는 경쟁�
 
 거대 신경망 뭉치는 현재 형태로는 *말도 안 되게 비효율적*이다. 그래서 그 비효율을 공격하는 것만으로도 AI 비용은 연 10\~900배씩 떨어진다. 저자는 알고리즘적 요인 — *캐싱과 인덱싱* — 에 집중한다.
 
-![LLM 추론 가격 추이](/images/trask-network-source-ai/inference-price-trends.png)
+![LLM 추론 가격 추이](https://img.seosoyoung.eiaserinnys.me/images/trask-network-source-ai/inference-price-trends.png)
 
 여기서 글 전체의 백미인 *사서 비유*가 등장한다.
 

@@ -7,9 +7,9 @@ summary: "HumanLayer 창업자 Dex Horthy의 에세이. 사람이 코드를 아�
 ShowToc: true
 TocOpen: false
 cover:
-  image: "/images/why-software-factories-fail/cover.jpg"
+  image: "https://img.seosoyoung.eiaserinnys.me/images/why-software-factories-fail/cover.jpg"
 images:
-  - "/images/why-software-factories-fail/cover.jpg"
+  - "https://img.seosoyoung.eiaserinnys.me/images/why-software-factories-fail/cover.jpg"
 ---
 
 ## 3줄 요약

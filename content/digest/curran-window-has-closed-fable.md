@@ -7,9 +7,9 @@ summary: "Anthropic의 신모델 Fable이 잠깐 공개되었다 사라진 사�
 ShowToc: true
 TocOpen: false
 cover:
-  image: "/images/curran-window-has-closed-fable/cover.jpg"
+  image: "https://img.seosoyoung.eiaserinnys.me/images/curran-window-has-closed-fable/cover.jpg"
 images:
-  - "/images/curran-window-has-closed-fable/cover.jpg"
+  - "https://img.seosoyoung.eiaserinnys.me/images/curran-window-has-closed-fable/cover.jpg"
 ---
 
 ## 3줄 요약

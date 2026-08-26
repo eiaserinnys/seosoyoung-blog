@@ -9,7 +9,7 @@ TocOpen: false
 sidenotes: true
 ---
 
-![Open-LLM-VTuber 배너](/images/open-llm-vtuber/banner.jpg)
+![Open-LLM-VTuber 배너](https://img.seosoyoung.eiaserinnys.me/images/open-llm-vtuber/banner.jpg)
 
 ## 3줄 요약
 
@@ -25,9 +25,9 @@ sidenotes: true
 
 장기 메모리는 일시적으로 빠진 상태(곧 복귀 예정)지만 채팅 로그가 영속화되어 이전 대화를 이어갈 수 있다.
 
-| ![데모 1](/images/open-llm-vtuber/i1.jpg) | ![데모 2](/images/open-llm-vtuber/i2.jpg) |
+| ![데모 1](https://img.seosoyoung.eiaserinnys.me/images/open-llm-vtuber/i1.jpg) | ![데모 2](https://img.seosoyoung.eiaserinnys.me/images/open-llm-vtuber/i2.jpg) |
 |:---:|:---:|
-| ![데모 3](/images/open-llm-vtuber/i3.jpg) | ![데모 4](/images/open-llm-vtuber/i4.jpg) |
+| ![데모 3](https://img.seosoyoung.eiaserinnys.me/images/open-llm-vtuber/i3.jpg) | ![데모 4](https://img.seosoyoung.eiaserinnys.me/images/open-llm-vtuber/i4.jpg) |
 
 ## 기능 하이라이트
 

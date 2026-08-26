@@ -7,9 +7,9 @@ summary: "Ray Dalio가 한 달간의 아시아 순방 후 정리한 장문 노�
 ShowToc: true
 TocOpen: false
 cover:
-  image: "/images/dalio-tribute-system-new-world-order/cover.jpg"
+  image: "https://img.seosoyoung.eiaserinnys.me/images/dalio-tribute-system-new-world-order/cover.jpg"
 images:
-  - "/images/dalio-tribute-system-new-world-order/cover.jpg"
+  - "https://img.seosoyoung.eiaserinnys.me/images/dalio-tribute-system-new-world-order/cover.jpg"
 ---
 
 ## 3줄 요약

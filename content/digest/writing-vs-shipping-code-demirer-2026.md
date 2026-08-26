@@ -7,9 +7,9 @@ summary: "Demirer, Musolff, Yang(NBER WP 35275)은 GitHub 개발자 10만 명 �
 ShowToc: true
 TocOpen: false
 cover:
-  image: "/images/writing-vs-shipping-code-demirer-2026/fig1-overview.png"
+  image: "https://img.seosoyoung.eiaserinnys.me/images/writing-vs-shipping-code-demirer-2026/fig1-overview.png"
 images:
-  - "/images/writing-vs-shipping-code-demirer-2026/fig1-overview.png"
+  - "https://img.seosoyoung.eiaserinnys.me/images/writing-vs-shipping-code-demirer-2026/fig1-overview.png"
 ---
 
 ## 3줄 요약
@@ -64,7 +64,7 @@ AI 도구는 이 사다리에 두 가지 방식으로 개입한다.
 
 ## 세대별 작업 단위 생산성
 
-![Figure 5: Productivity Effects of GenAI Coding Tools](/images/writing-vs-shipping-code-demirer-2026/fig5-productivity-by-generation.png)
+![Figure 5: Productivity Effects of GenAI Coding Tools](https://img.seosoyoung.eiaserinnys.me/images/writing-vs-shipping-code-demirer-2026/fig5-productivity-by-generation.png)
 *각 세대 도구가 주간 커밋 수에 미친 효과. (a) Copilot 자동완성 2022년 채택자 코호트, (c) 동기식 에이전트 풀, (e) 비동기식 에이전트가 작성한 커밋. 우측 열은 채택 전 활동 분위별 효과. — NBER WP 35275, Figure 5.*
 
 각 세대의 21\~30주 시점 효과는 분명하다.
@@ -92,7 +92,7 @@ AI 도구는 이 사다리에 두 가지 방식으로 개입한다.
 
 ## 생산 계층을 따라가는 감쇠
 
-![Figure 1: Overview of Productivity Effects of AI Coding Tools](/images/writing-vs-shipping-code-demirer-2026/fig1-overview.png)
+![Figure 1: Overview of Productivity Effects of AI Coding Tools](https://img.seosoyoung.eiaserinnys.me/images/writing-vs-shipping-code-demirer-2026/fig1-overview.png)
 *세 세대 AI 코딩 도구가 생산 계층 6단계에 미친 누적 효과(채택 후 평균 % 변화). — NBER WP 35275, Figure 1.*
 
 이 페이퍼의 두 번째이자 핵심 기여는 같은 도구가 *위 단계로 올라갈수록 효과가 얼마나 줄어드는지*를 추적한 데 있다. Table 5의 21\~30주 추정치를 보자.
@@ -122,12 +122,12 @@ AI 도구는 이 사다리에 두 가지 방식으로 개입한다.
 
 이 동일한 (θ, σ)를 동기식과 비동기식 에이전트에 *반사실적*으로 적용한 그림 10이 흥미롭다. 두 에이전트가 *코드 작성 단계에만 개입했다면* 라인-풀 리퀘스트 사이 효과가 어떻게 되었을지 예측한 곡선과 실제 관측치를 겹쳐 본다. 결과는 이렇다. 동기식 에이전트의 파일, 커밋, 풀 리퀘스트 효과가 모델 예측보다 약 2/3가 더 크다. 비동기식 에이전트는 풀 리퀘스트 효과가 예측을 크게 상회한다. 두 패턴 모두 두 에이전트가 *위 단계까지 직접 개입*하고 있음을 보여준다.
 
-![Figure 8: Sync Effect Across Production Layers](/images/writing-vs-shipping-code-demirer-2026/fig8-attenuation-sync.png)
+![Figure 8: Sync Effect Across Production Layers](https://img.seosoyoung.eiaserinnys.me/images/writing-vs-shipping-code-demirer-2026/fig8-attenuation-sync.png)
 *동기식 에이전트 채택의 생산 계층 6단계별 사건 연구. 코드 라인 +741%에서 릴리스 +20%까지 단조 감쇠. — NBER WP 35275, Figure 8.*
 
 ## 앱 마켓플레이스
 
-![Figure 12: New Apps and Their Usage Across App Stores](/images/writing-vs-shipping-code-demirer-2026/fig12-app-marketplaces.png)
+![Figure 12: New Apps and Their Usage Across App Stores](https://img.seosoyoung.eiaserinnys.me/images/writing-vs-shipping-code-demirer-2026/fig12-app-marketplaces.png)
 *4대 앱 마켓플레이스의 월별 새 앱 수(위), 코호트 누적 사용량(가운데), 소규모 사용자 도달 앱 비중 변화(아래). 음영 영역은 에이전트형 코딩 시대(2025년 2월\~). — NBER WP 35275, Figure 12.*
 
 개발자 수준 결과가 산업 전체의 산출로 이어졌는지 확인하기 위해 저자들은 4대 앱 마켓플레이스 데이터를 모았다. Apple App Store(iOS), Google Play Store(Android), Chrome Web Store, SourceForge다. 각 마켓플레이스에서 (a) 새 앱 출시 수와 (b) 출시 후 첫 3개월 누적 사용량을 추적한다.

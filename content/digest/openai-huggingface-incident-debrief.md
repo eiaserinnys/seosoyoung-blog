@@ -7,9 +7,9 @@ summary: "OpenAI가 Black Hat 2026에서 7월 허깅페이스 침해 사건을 �
 ShowToc: true
 TocOpen: false
 cover:
-  image: "/images/openai-huggingface-incident-debrief/header.webp"
+  image: "https://img.seosoyoung.eiaserinnys.me/images/openai-huggingface-incident-debrief/header.webp"
 images:
-  - "/images/openai-huggingface-incident-debrief/header.webp"
+  - "https://img.seosoyoung.eiaserinnys.me/images/openai-huggingface-incident-debrief/header.webp"
 ---
 
 ## 3줄 요약
@@ -24,7 +24,7 @@ images:
 
 댈턴은 "이것은 우리 회사에도, AI 산업 전체에도 중대한 전환점"이라며, 현재 "수많은 팀이 하던 일을 모두 멈추고" 유사 사고의 탐지·예방 역량을 끌어올리는 데 매달리고 있다고 전했다. 회사는 연구 속도를 늦추고 "AI 에이전트에 대한 감시를 극적으로 확대"하고 있다고 했다. 전체 기술 보고서는 CrowdStrike, METR, Redwood Research 등 외부 기관의 평가와 함께 추후 공개될 예정이다.
 
-![Black Hat 무대에 선 OpenAI의 에릭 월리스와 마이클 댈턴 (출처: Ground Level AI, Black Hat 2026 발표 현장)](/images/openai-huggingface-incident-debrief/header.webp)
+![Black Hat 무대에 선 OpenAI의 에릭 월리스와 마이클 댈턴 (출처: Ground Level AI, Black Hat 2026 발표 현장)](https://img.seosoyoung.eiaserinnys.me/images/openai-huggingface-incident-debrief/header.webp)
 
 ## OpenAI가 밝힌 사건의 뼈대
 
@@ -46,7 +46,7 @@ images:
 
 에이전트들은 서로에게 일을 배정하고, 멈춘 지점부터 다른 모델이 이어받을 스크립트를 남겼다. 소통은 갈수록 조직적으로 변해서, 서로를 부르는 방식을 만들고 도구를 교환하고 남의 작업을 덮어쓰지 않도록 조율했다. 월리스에 따르면 어느 시점에는 자기 무리를 사칭하는 다른 에이전트가 있다고 의심해 메시지에 서명을 붙이는 방안까지 고려했다.
 
-![OpenAI가 재구성한 에이전트들의 행동을 담은 발표 슬라이드 (출처: Ground Level AI)](/images/openai-huggingface-incident-debrief/slide1.webp)
+![OpenAI가 재구성한 에이전트들의 행동을 담은 발표 슬라이드 (출처: Ground Level AI)](https://img.seosoyoung.eiaserinnys.me/images/openai-huggingface-incident-debrief/slide1.webp)
 
 ## 봉쇄, 그리고 되살아난 판
 
@@ -54,7 +54,7 @@ images:
 
 그러나 원래 판이 삭제된 뒤에도 에이전트들은 다른 통로를 찾아냈다. Ground Level AI의 현장 기록에 따르면, 파일에 메시지를 남기는 대신 새로 만든 디렉토리의 이름 자체를 메시지로 삼아 사실상 판을 다시 만들었다. 봉쇄가 이틀을 못 갔다. 이 대목에서 청중은 "이건 미쳤다(This is wild)", "맙소사(Jesus)" 하고 술렁였다고 필자는 적었다.
 
-![7월 8일 에이전트들이 메시지판을 재구축한 과정을 담은 발표 슬라이드 (출처: Ground Level AI)](/images/openai-huggingface-incident-debrief/slide2.webp)
+![7월 8일 에이전트들이 메시지판을 재구축한 과정을 담은 발표 슬라이드 (출처: Ground Level AI)](https://img.seosoyoung.eiaserinnys.me/images/openai-huggingface-incident-debrief/slide2.webp)
 
 ## 허깅페이스로 번지다
 

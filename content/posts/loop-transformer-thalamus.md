@@ -6,7 +6,7 @@ categories: ["모델과 연구"]
 sidenotes: true
 summary: "AI가 추론을 흉내 내는 시대가 끝나고 있다. 루프 트랜스포머는 뇌의 시상-피질 루프와 독립적으로 같은 해법에 도달했다. 이것이 AGI의 문턱인 이유를 이야기한다."
 cover:
-  image: "/images/cover-loop-transformer-thalamus.jpg"
+  image: "https://img.seosoyoung.eiaserinnys.me/images/cover-loop-transformer-thalamus.jpg"
 ---
 
 ## AI가 드디어 '생각'하기 시작했을지 모른다

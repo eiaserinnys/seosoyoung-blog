@@ -7,9 +7,9 @@ summary: "아이가 초등학년 사이에 배우는 모든 것을 1,590개 마�
 ShowToc: true
 TocOpen: false
 cover:
-  image: "/images/marble-skill-taxonomy-v1/curriculum-viz-still.png"
+  image: "https://img.seosoyoung.eiaserinnys.me/images/marble-skill-taxonomy-v1/curriculum-viz-still.png"
 images:
-  - "/images/marble-skill-taxonomy-v1/curriculum-viz-still.png"
+  - "https://img.seosoyoung.eiaserinnys.me/images/marble-skill-taxonomy-v1/curriculum-viz-still.png"
 ---
 
 ## 3줄 요약
@@ -18,7 +18,7 @@ images:
 2. 아이가 배우는 것을 1,590개 마이크로 토픽으로 잘게 쪼개고, 그 사이 3,221개 선수학습 엣지로 엮은 뒤, 7개 커리큘럼 3,261개 표준까지 정렬했다. "topic X를 이해하려면 Y를 먼저 알아야 한다"가 DAG로 명시된다.
 3. 라이선스는 3층 구조다. 데이터베이스 자체는 ODbL 1.0, Marble이 쓴 텍스트는 CC BY-SA 4.0, 제3자 커리큘럼 표준은 각자의 원 라이선스를 그대로 승계한다. 상업적 사용은 가능하되 taxonomy 자체의 개선분은 오픈으로 되돌려야 한다.
 
-![회전하는 3D 그래프: 점 하나가 마이크로 토픽, 색은 과목, 높이는 나이, 선은 선수학습 관계](/images/marble-skill-taxonomy-v1/curriculum-viz.gif)
+![회전하는 3D 그래프: 점 하나가 마이크로 토픽, 색은 과목, 높이는 나이, 선은 선수학습 관계](https://img.seosoyoung.eiaserinnys.me/images/marble-skill-taxonomy-v1/curriculum-viz.gif)
 
 ## 무엇이 담겨 있는가
 

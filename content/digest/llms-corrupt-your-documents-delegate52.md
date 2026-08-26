@@ -21,13 +21,13 @@ sidenotes: true
 
 LLM에 문서 편집을 위임하는 워크플로우가 실제로 안전한지를 체계적으로 측정하는 것이 목적이다. 단순히 "한 번 잘 고치는가"가 아니라, **장기간 반복 위임했을 때 문서가 얼마나 망가지는가**를 본다.
 
-![Figure 1: DELEGATE-52 전체 개요. 52개 도메인에서 LLM이 문서를 편집할 때 발생하는 손상을 측정한다.](/images/delegate52/figure1.png)
+![Figure 1: DELEGATE-52 전체 개요. 52개 도메인에서 LLM이 문서를 편집할 때 발생하는 손상을 측정한다.](https://img.seosoyoung.eiaserinnys.me/images/delegate52/figure1.png)
 
 ## 방법론: Round-Trip Backtranslation
 
 핵심 아이디어는 **가역적 편집 쌍**이다.
 
-![Figure 2: Round-trip backtranslation 원리. 순방향 편집 후 역방향 편집으로 원본을 복원하여 손상을 측정한다.](/images/delegate52/figure2.png)
+![Figure 2: Round-trip backtranslation 원리. 순방향 편집 후 역방향 편집으로 원본을 복원하여 손상을 측정한다.](https://img.seosoyoung.eiaserinnys.me/images/delegate52/figure2.png)
 
 - 순방향 명령으로 문서를 변환한다
 - 역방향 명령으로 원본을 복원하려 시도한다
@@ -41,7 +41,7 @@ LLM에 문서 편집을 위임하는 워크플로우가 실제로 안전한지�
 
 ## DELEGATE-52 벤치마크
 
-![Figure 3: 5개 카테고리, 52개 전문 도메인을 아이콘으로 표현한 벤치마크 구성.](/images/delegate52/figure3.png)
+![Figure 3: 5개 카테고리, 52개 전문 도메인을 아이콘으로 표현한 벤치마크 구성.](https://img.seosoyoung.eiaserinnys.me/images/delegate52/figure3.png)
 
 5개 카테고리에 걸친 52개 전문 도메인으로 구성된다.
 

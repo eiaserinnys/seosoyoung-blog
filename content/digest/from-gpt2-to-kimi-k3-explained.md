@@ -8,9 +8,9 @@ math: true
 ShowToc: true
 TocOpen: false
 cover:
-  image: "/images/from-gpt2-to-kimi-k3-explained/kimi-linear-k3-architecture.jpg"
+  image: "https://img.seosoyoung.eiaserinnys.me/images/from-gpt2-to-kimi-k3-explained/kimi-linear-k3-architecture.jpg"
 images:
-  - "/images/from-gpt2-to-kimi-k3-explained/kimi-linear-k3-architecture.jpg"
+  - "https://img.seosoyoung.eiaserinnys.me/images/from-gpt2-to-kimi-k3-explained/kimi-linear-k3-architecture.jpg"
 ---
 
 ## 3줄 요약
@@ -19,7 +19,7 @@ images:
 2. 핵심 주장은 하나다. 7년 동안 파라미터가 22,580배 커졌지만 변화의 본질은 스케일이 아니다. 각 단계는 고정 크기 상태(state)가 정보를 저장하고, 갱신하고, 검색하는 방식의 구체적 한계를 하나씩 해결한다.
 3. 결론: 고정 용량의 연상 메모리는 결국 퇴출 정책(eviction policy)이 필요하다. 게이팅·라우팅·감쇠 같은 학습된 선택 기제가 그 답이며, 어텐션은 가장 효과적인 선택적 읽기 장치다.
 
-![어텐션에서 LLM으로 이어지는 계보 타임라인. softmax attention(2017) → linear attention(2019) → flash attention(2020) → KDA(2025) → Kimi-3(2026), 그리고 그 아래로 GPT-2·FWP/DeltaNet·Gated DeltaNet·Attention Residuals가 연도별로 놓인다.](/images/from-gpt2-to-kimi-k3-explained/00-attention-history-timeline.jpg)
+![어텐션에서 LLM으로 이어지는 계보 타임라인. softmax attention(2017) → linear attention(2019) → flash attention(2020) → KDA(2025) → Kimi-3(2026), 그리고 그 아래로 GPT-2·FWP/DeltaNet·Gated DeltaNet·Attention Residuals가 연도별로 놓인다.](https://img.seosoyoung.eiaserinnys.me/images/from-gpt2-to-kimi-k3-explained/00-attention-history-timeline.jpg)
 
 ## 출발점: 22,580배
 
@@ -31,13 +31,13 @@ images:
 
 GPT-2는 디코더 전용(decoder-only) 아키텍처다. 입력은 토큰 임베딩과 위치 임베딩을 받고, 트랜스포머 블록을 여러 번 통과한 뒤, 언어모델 헤드가 최종 은닉 상태를 어휘 로짓으로 변환한다. 자기회귀 디코딩에서는 다음 토큰을 고를 때 마지막 위치의 로짓만 필요하다.
 
-![GPT-2 블록 구조. 왼쪽은 Layernorm → Multi-Head Self Attention → Layernorm → MLP를 12번 반복하는 전체 스택, 오른쪽은 헤드 하나의 Q/K/V 프로젝션과 self attention 세부다.](/images/from-gpt2-to-kimi-k3-explained/01-gpt2-architecture.jpg)
+![GPT-2 블록 구조. 왼쪽은 Layernorm → Multi-Head Self Attention → Layernorm → MLP를 12번 반복하는 전체 스택, 오른쪽은 헤드 하나의 Q/K/V 프로젝션과 self attention 세부다.](https://img.seosoyoung.eiaserinnys.me/images/from-gpt2-to-kimi-k3-explained/01-gpt2-architecture.jpg)
 
 여기에 디코더 전용 생성의 비효율이 있다. 모델은 모든 입력 위치의 표현을 계산하지만, 각 디코딩 단계는 마지막 위치의 로짓 하나만 소비한다. 캐싱이 없으면 다음 토큰을 위해 그 작업의 상당 부분을 반복하게 된다.
 
 KV 캐시는 단순한 관찰에서 나온다. 생성된 토큰을 입력에 이어 붙이면 모델은 이전 토큰 전부의 프로젝션을 다시 계산해야 한다. 키와 값 벡터를 저장해 두면 그 중복 작업을 피할 수 있다. 그 저장소가 KV 캐시다. 이전 N-1개 토큰의 벡터를 담고 있으며, 커지면 메모리 대역폭 병목을 만들 만큼 부풀 수 있다.
 
-![KV 캐시가 있을 때의 데이터 흐름. Q·K·V 프로젝션의 키와 값 벡터를 HBM 메모리에 K·V 캐시로 쌓아 두고, 새 토큰은 그 캐시를 재사용한다.](/images/from-gpt2-to-kimi-k3-explained/02-kv-cache.png)
+![KV 캐시가 있을 때의 데이터 흐름. Q·K·V 프로젝션의 키와 값 벡터를 HBM 메모리에 K·V 캐시로 쌓아 두고, 새 토큰은 그 캐시를 재사용한다.](https://img.seosoyoung.eiaserinnys.me/images/from-gpt2-to-kimi-k3-explained/02-kv-cache.png)
 
 기준선 모델의 제원은 대략 이렇다. 가능한 토큰 약 5만 개, 블록 12개, 헤드 12개, 임베딩 차원 768. 파라미터는 약 1억 2,400만 개다. 파라미터 2.8조 개인 Kimi K3 하나는 GPT-2 약 22,580개에 해당한다.
 
@@ -69,7 +69,7 @@ Schlag의 논문(Fast Weight Programmers)은 이를 우아하게 설명한다.
 
 DeltaNet의 갱신 규칙은 이렇게 작동한다. 현재 키가 캐시에서 어떤 정보를 꺼내는지 먼저 묻는다. 저장하려는 값에서 그 기존 정보를 빼고, 키에 그 차이를 곱한 뒤, 결과를 다시 더한다. 옛 정보는 제거되고 새 정보가 그 자리에 쓰인다.
 
-![MHA 트랜스포머(GPT-2)와 DeltaNet 트랜스포머의 블록 구조 비교. 오른쪽 DeltaNet은 self attention 자리에 Delta 규칙 기반의 순환 상태 갱신을 둔다.](/images/from-gpt2-to-kimi-k3-explained/03-mha-vs-deltanet.jpg)
+![MHA 트랜스포머(GPT-2)와 DeltaNet 트랜스포머의 블록 구조 비교. 오른쪽 DeltaNet은 self attention 자리에 Delta 규칙 기반의 순환 상태 갱신을 둔다.](https://img.seosoyoung.eiaserinnys.me/images/from-gpt2-to-kimi-k3-explained/03-mha-vs-deltanet.jpg)
 
 ## DeltaNet 병렬화 — 청크 단위 학습
 
@@ -77,7 +77,7 @@ DeltaNet의 갱신 규칙은 이렇게 작동한다. 현재 키가 캐시에서 
 
 실무의 문제는 프리필(prefill)이다. Delta 규칙을 T개 토큰에 순진하게 구현하면 순차적으로 돌 수밖에 없다. 청크 방식이 더 효율적인 해법을 준다. 입력과 출력을 크기 C의 여러 청크로 나누고, 각 청크의 출력을 이전 청크의 최종 상태와 현재 청크의 QKV 블록으로 계산한다.
 
-![청크 방식의 직관. 블록 안에서는 일반 어텐션(masked QKᵀV)을 그대로 계산하고, 블록 사이에서는 모든 것을 상태로 접어 넣어 한 번의 행렬 곱으로 읽어 온다. 선형 어텐션과 일반 어텐션이 청크 크기 C로 이어진다.](/images/from-gpt2-to-kimi-k3-explained/04-linear-vs-normal-attention.jpg)
+![청크 방식의 직관. 블록 안에서는 일반 어텐션(masked QKᵀV)을 그대로 계산하고, 블록 사이에서는 모든 것을 상태로 접어 넣어 한 번의 행렬 곱으로 읽어 온다. 선형 어텐션과 일반 어텐션이 청크 크기 C로 이어진다.](https://img.seosoyoung.eiaserinnys.me/images/from-gpt2-to-kimi-k3-explained/04-linear-vs-normal-attention.jpg)
 
 여기서 C의 의미가 흥미롭다. C=N으로 두면 표준 O(N²) 어텐션이 복원되고, C=1이면 일반 선형 어텐션이 된다. 그 사이 값들은 청크 내 추가 작업과 더 나은 하드웨어 활용을 맞바꾼다.{{< sn >}}실무에서 C는 흔히 64나 128이다. 텐서 코어 명령이 그 단위에서 효율적으로 작동하기 때문이다.{{< /sn >}}
 
@@ -91,7 +91,7 @@ Mamba-2의 기여가 여기 들어온다. 이전 캐시를 감쇠시킨 뒤 새 
 
 그래서 Gated Delta 규칙은 Mamba의 게이트 갱신 규칙과 Delta 규칙을 결합한다. 매개변수 alpha를 더해, 1로 두면 순수 Delta 규칙으로, 0으로 두면 메모리를 비우는 쪽으로 전환한다. 수학은 앞서의 DeltaNet 재매개변수화와 거의 같고, 이전 상태의 감쇠를 제어하는 0과 1 사이의 데이터 의존 스칼라 하나가 더해진다.
 
-![Gated DeltaNet 트랜스포머 블록. Gated DeltaNet 안에서 Q/K/V 프로젝션과 함께 Alpha·Beta 프로젝션이 추가되어, Delta 규칙에 게이트 기반 감쇠가 결합된다.](/images/from-gpt2-to-kimi-k3-explained/05-gated-deltanet-transformer.jpg)
+![Gated DeltaNet 트랜스포머 블록. Gated DeltaNet 안에서 Q/K/V 프로젝션과 함께 Alpha·Beta 프로젝션이 추가되어, Delta 규칙에 게이트 기반 감쇠가 결합된다.](https://img.seosoyoung.eiaserinnys.me/images/from-gpt2-to-kimi-k3-explained/05-gated-deltanet-transformer.jpg)
 
 ## Kimi Linear (KDA) — 채널별 세밀한 게이팅
 
@@ -99,7 +99,7 @@ Mamba-2의 기여가 여기 들어온다. 이전 캐시를 감쇠시킨 뒤 새 
 
 Kimi Linear가 Gated DeltaNet을 개선한 지점은 세밀한 게이팅(fine-grained gating)이다. 단일 스칼라 감쇠 대신, 채널마다 별도의 감쇠 값을 학습한다. 이 채널별 스케일이 메모리 감쇠에 대한 더 미세한 제어를 준다는 것이 이 논문의 가장 큰 기여다.
 
-![세 논문의 상태 갱신 규칙 진화. Parallelizing Linear Transformers(2025)의 순수 덧셈식 갱신 → Gated Delta Networks(2025)가 스칼라 감쇠 항 α를 더함 → Kimi Linear(2025)가 그 α를 채널별 대각 행렬 Diag(α)로 확장한다.](/images/from-gpt2-to-kimi-k3-explained/06-kda-equation-progression.jpg)
+![세 논문의 상태 갱신 규칙 진화. Parallelizing Linear Transformers(2025)의 순수 덧셈식 갱신 → Gated Delta Networks(2025)가 스칼라 감쇠 항 α를 더함 → Kimi Linear(2025)가 그 α를 채널별 대각 행렬 Diag(α)로 확장한다.](https://img.seosoyoung.eiaserinnys.me/images/from-gpt2-to-kimi-k3-explained/06-kda-equation-progression.jpg)
 
 DeltaNet 트랜스포머와 나란히 놓으면 Kimi Linear는 세 가지를 바꾼다.
 
@@ -113,7 +113,7 @@ DeltaNet 트랜스포머와 나란히 놓으면 Kimi Linear는 세 가지를 바
 
 최종적으로 Kimi K3의 언어 백본은 위 Kimi Linear와 닮았다. 4개 레이어짜리 매크로사이클 23개로 이루어진다. 각 매크로사이클에서 세 레이어는 Kimi Delta Attention(KDA)을, 네 번째는 MLA를 쓴다. 첫 레이어는 조밀(dense) 피드포워드 네트워크를, 나머지 모든 레이어는 잠재 공간 MoE를 쓴다.
 
-![Kimi Linear(왼쪽)와 Kimi K3(가운데·오른쪽)의 전체 아키텍처. K3는 KDA 세 레이어 + MLA 한 레이어로 된 매크로사이클을 23번 쌓고, Gated MLA·잠재 MoE·AttnRes를 더한다.](/images/from-gpt2-to-kimi-k3-explained/kimi-linear-k3-architecture.jpg)
+![Kimi Linear(왼쪽)와 Kimi K3(가운데·오른쪽)의 전체 아키텍처. K3는 KDA 세 레이어 + MLA 한 레이어로 된 매크로사이클을 23번 쌓고, Gated MLA·잠재 MoE·AttnRes를 더한다.](https://img.seosoyoung.eiaserinnys.me/images/from-gpt2-to-kimi-k3-explained/kimi-linear-k3-architecture.jpg)
 
 Kimi Linear에서 달라진 점은 언뜻 소소해 보인다.
 
@@ -140,7 +140,7 @@ KDA가 상수 크기의 순환 메모리를 공급하는 동안, 주기적으로
 
 레이어마다 잔차 어텐션을 적용하면 학습·추론 비용이 너무 커진다. 그래서 고정된 블록 경계에서만 적용해 대부분의 이점을 더 낮은 비용으로 얻는다. Kimi K3에서 경계는 12개 디코더 레이어마다 온다. 4레이어 매크로사이클 23개에 걸쳐 8개의 AttnRes 블록이 생긴다. AttnRes는 추론 지연을 약 2% 더하지만, 잔차 희석과 은닉 상태 팽창을 완화하는 선택적 검색과 1.25배의 연산 이점을 준다.
 
-![Kimi K3의 잔차 연결(왼쪽)과 AttnRes(오른쪽) 비교. 오른쪽은 각 레이어가 앞선 잔차 스트림 상태들을 학습된 쿼리로 선택적으로 끌어와 가중 결합한다.](/images/from-gpt2-to-kimi-k3-explained/07-kimi-k3-residual-vs-resattn.jpg)
+![Kimi K3의 잔차 연결(왼쪽)과 AttnRes(오른쪽) 비교. 오른쪽은 각 레이어가 앞선 잔차 스트림 상태들을 학습된 쿼리로 선택적으로 끌어와 가중 결합한다.](https://img.seosoyoung.eiaserinnys.me/images/from-gpt2-to-kimi-k3-explained/07-kimi-k3-residual-vs-resattn.jpg)
 
 AttnRes와 MLA는 같은 한계를 서로 다른 방향에서 다룬다. KDA 레이어는 상수 크기 상태로 작동해 정보를 버릴 수밖에 없다. MLA는 토큰 맥락에서 검색하고, AttnRes는 앞선 깊이 방향 표현에서 검색한다.
 

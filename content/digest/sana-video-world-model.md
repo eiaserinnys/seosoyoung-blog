@@ -79,7 +79,7 @@ coarse global pose 분기와 fine pixel-aligned geometric 분기를 함께 두�
 
 ## Efficiency Figure (프로젝트 페이지)
 
-![SANA-WM efficiency ablation and scaling](/images/sana-video-world-model/efficiency-latency-gpu.png)
+![SANA-WM efficiency ablation and scaling](https://img.seosoyoung.eiaserinnys.me/images/sana-video-world-model/efficiency-latency-gpu.png)
 
 > Efficiency ablation and scaling. (a) 60s single-GPU VAE/DiT latency by stage; bars are scaled for readability. (b) H100 latency and memory scaling: recurrent variants grow compactly, while all-softmax OOMs at 60s.
 

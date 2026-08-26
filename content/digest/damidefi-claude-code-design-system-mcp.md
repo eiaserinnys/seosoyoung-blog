@@ -7,9 +7,9 @@ summary: "코딩 에이전트로 앱 10개를 출시한 솔로 빌더가 UI 품�
 ShowToc: true
 TocOpen: false
 cover:
-  image: "/images/damidefi-claude-code-design-system-mcp/cover.jpg"
+  image: "https://img.seosoyoung.eiaserinnys.me/images/damidefi-claude-code-design-system-mcp/cover.jpg"
 images:
-  - "/images/damidefi-claude-code-design-system-mcp/cover.jpg"
+  - "https://img.seosoyoung.eiaserinnys.me/images/damidefi-claude-code-design-system-mcp/cover.jpg"
 ---
 
 ## 3줄 요약
@@ -18,7 +18,7 @@ images:
 2. 진단은 단순하다. 텍스트는 디자인 의도를 손실 없이 옮길 수 없다. 값으로 정해진 시각적 결정을 설명으로 압축하는 순간 일부는 반드시 사라지고, 코딩 에이전트는 그 설명을 재구성하면서 또 한 번 잃는다.
 3. 해결책은 디자인을 설명하지 않는 것이다. Moonchild라는 디자인 시스템 레이어에서 토큰·컴포넌트·간격 스케일을 정본으로 만들고, MCP로 Claude Code가 그 스펙을 직접 읽도록 한다.
 
-![10개의 앱 출시 → UI가 병목이었다 → Claude Code의 변화 → 더 나은 인터페이스](/images/damidefi-claude-code-design-system-mcp/cover.jpg)
+![10개의 앱 출시 → UI가 병목이었다 → Claude Code의 변화 → 더 나은 인터페이스](https://img.seosoyoung.eiaserinnys.me/images/damidefi-claude-code-design-system-mcp/cover.jpg)
 
 ## 10개의 앱, 같은 자리의 약점
 

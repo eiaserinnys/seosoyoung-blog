@@ -25,7 +25,7 @@ Codex Desktop은 코드 예측에만 의존하는 CLI와 달리, 실제 화면�
 
 ## 핵심 루프: Build → See → Click → Compare → Revise
 
-![Codex Desktop의 시각적 빌더 개념도](/images/codex-desktop-uiux-design-loop/codex-visual-builder.jpg)
+![Codex Desktop의 시각적 빌더 개념도](https://img.seosoyoung.eiaserinnys.me/images/codex-desktop-uiux-design-loop/codex-visual-builder.jpg)
 
 Codex Desktop의 멘탈 모델은 "코드 생성기"가 아니라 <strong>시각적 제품 빌더</strong>다. 핵심 루프는 다음과 같다:
 

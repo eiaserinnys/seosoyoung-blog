@@ -8,9 +8,9 @@ math: true
 ShowToc: true
 TocOpen: false
 cover:
-  image: "/images/alexewerlof-local-llms-for-agentic-coding/lm-studio-interface.png"
+  image: "https://img.seosoyoung.eiaserinnys.me/images/alexewerlof-local-llms-for-agentic-coding/lm-studio-interface.png"
 images:
-  - "/images/alexewerlof-local-llms-for-agentic-coding/lm-studio-interface.png"
+  - "https://img.seosoyoung.eiaserinnys.me/images/alexewerlof-local-llms-for-agentic-coding/lm-studio-interface.png"
 ---
 
 ## 3줄 요약
@@ -29,7 +29,7 @@ GitHub은 4일 전 사용량 기반 과금으로 전환했다. 저자는 "Micros
 - **GPT 5.5**는 GPT 5보다 +3배 비싸다.
 - **Claude**는 이미 너무 비쌌던 탓에 오히려 가격을 *내렸다.*
 
-![Gemini Flash 3.5는 2.5보다 3배 비싸다 (출처: OpenRouter)](/images/alexewerlof-local-llms-for-agentic-coding/gemini-pricing.png)
+![Gemini Flash 3.5는 2.5보다 3배 비싸다 (출처: OpenRouter)](https://img.seosoyoung.eiaserinnys.me/images/alexewerlof-local-llms-for-agentic-coding/gemini-pricing.png)
 
 GitHub은 토큰 재판매업자라서 가격 인상의 충격을 더 직접적으로 흡수해야 했다. 같은 글에 GitHub이 따로 ["AI 크레딧 사용을 최적화하는 팁"](https://code.visualstudio.com/docs/copilot/guides/optimize-usage)을 공유했다는 사실까지 인용된다.
 
@@ -79,7 +79,7 @@ QAT(Quantization-Aware Training) 변형(E4B QAT 등)은 메모리는 덜 쓰면�
 
 모델 매니저로는 *Ollama, LM Studio, Jan* 세 가지가 흔히 거론된다. Ollama는 CLI 출신의 오픈소스, LM Studio는 무료지만 *오픈소스 아님*에 더 풍부한 기능, Jan은 LM Studio와 비슷하지만 오픈소스 대안이다.
 
-![LM Studio가 저자의 Linux 노트북에서 동작하는 모습](/images/alexewerlof-local-llms-for-agentic-coding/lm-studio-interface.png)
+![LM Studio가 저자의 Linux 노트북에서 동작하는 모습](https://img.seosoyoung.eiaserinnys.me/images/alexewerlof-local-llms-for-agentic-coding/lm-studio-interface.png)
 
 ## LM Studio 서버 설정의 함정
 
@@ -95,7 +95,7 @@ LM Studio 사이드바의 "Developer"에서 서버를 켜는 것까지는 쉽다
 | 4,096 (default) | 18.16 GB |
 | 150,000 (저자 권장) | 22.45 GB |
 
-![Gemma 4 26B 모델의 LM Studio 고급 설정 — Context Length·GPU Offload·KV 캐시 양자화가 한 화면에 있다](/images/alexewerlof-local-llms-for-agentic-coding/gemma-4-26b-settings.png)
+![Gemma 4 26B 모델의 LM Studio 고급 설정 — Context Length·GPU Offload·KV 캐시 양자화가 한 화면에 있다](https://img.seosoyoung.eiaserinnys.me/images/alexewerlof-local-llms-for-agentic-coding/gemma-4-26b-settings.png)
 
 100K 토큰 이상을 못 올리면 VS Code Copilot에서 쓰기 어렵다. *시스템 프롬프트만 20\~40K*가 빠지기 때문이다. 그렇다고 너무 키워도 안 된다. 컨텍스트 사용량이 늘면 토큰 생성 속도가 느려진다. *하네스가 자동으로 컨텍스트를 압축하는 지점*이 스위트 스폿이다.
 
@@ -112,7 +112,7 @@ $$C = I + O$$
 - **K Cache Quantization Type** → `Q8_0`
 - **V Cache Quantization Type** → `Q4_0`
 
-![KV 캐시 양자화 설정 — 키는 고해상도, 값은 저해상도로](/images/alexewerlof-local-llms-for-agentic-coding/kv-cache-quantization.png)
+![KV 캐시 양자화 설정 — 키는 고해상도, 값은 저해상도로](https://img.seosoyoung.eiaserinnys.me/images/alexewerlof-local-llms-for-agentic-coding/kv-cache-quantization.png)
 
 KV 캐시는 LLM의 어텐션 메커니즘이 메모리를 다루는 방식이다. 양자화는 이미지의 해상도에 해당한다. *키는 고해상도, 값은 저해상도*가 되도록 설정한다는 것이 이 트릭의 요지다.
 
@@ -124,7 +124,7 @@ KV 캐시는 LLM의 어텐션 메커니즘이 메모리를 다루는 방식이�
 
 VS Code 1.122.1 이상에서 Copilot Custom Endpoint를 추가한다.
 
-![Copilot의 "Add Models" → "Custom Endpoint" 진입 화면](/images/alexewerlof-local-llms-for-agentic-coding/copilot-add-models.png)
+![Copilot의 "Add Models" → "Custom Endpoint" 진입 화면](https://img.seosoyoung.eiaserinnys.me/images/alexewerlof-local-llms-for-agentic-coding/copilot-add-models.png)
 
 1. Copilot 채팅창에서 모델 선택기 옆 *기어* 아이콘 클릭.
 2. "Add Models" → "Custom Endpoint".
@@ -240,7 +240,7 @@ Pi는 Copilot의 거대한 시스템 프롬프트가 없어 첫 요청에서 2\~
 
 저자는 첫 시도에서 *"농담 하나 해줘"* 프롬프트에 Opus 4.6을 골라 *비싼 농담*을 경험했다. 그 경험에서 나온 권장 절차는 다음과 같다.
 
-![OpenRouter는 사전에 크레딧을 충전해야 동작한다](/images/alexewerlof-local-llms-for-agentic-coding/openrouter-guardrail.png)
+![OpenRouter는 사전에 크레딧을 충전해야 동작한다](https://img.seosoyoung.eiaserinnys.me/images/alexewerlof-local-llms-for-agentic-coding/openrouter-guardrail.png)
 
 1. **커스텀 가드레일**을 만들고 *월 1달러 상한*을 둔다.
 2. 무료 모델만 *allow-list*에 둔다.

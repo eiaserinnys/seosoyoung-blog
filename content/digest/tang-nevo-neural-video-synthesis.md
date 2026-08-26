@@ -7,9 +7,9 @@ summary: "뇌의 특정 시각 피질을 가장 강하게 활성화할 2초짜�
 ShowToc: true
 TocOpen: false
 cover:
-  image: "/images/tang-nevo-neural-video-synthesis/fig1.png"
+  image: "https://img.seosoyoung.eiaserinnys.me/images/tang-nevo-neural-video-synthesis/fig1.png"
 images:
-  - "/images/tang-nevo-neural-video-synthesis/fig1.png"
+  - "https://img.seosoyoung.eiaserinnys.me/images/tang-nevo-neural-video-synthesis/fig1.png"
 ---
 
 ## 3줄 요약
@@ -18,7 +18,7 @@ images:
 2. 프롬프트 유전자 → 이미지 → 영상의 2단계 검색으로, 자연 영상 상위 **99.8%**, 손수 설계한 로컬라이저 영상의 **95.8%** 수준까지 예측 활성을 끌어올렸다. 그래디언트 기반 이전 방법(BrainDiVE)은 동적 세팅에서 자연 영상 평균의 24%까지밖에 도달하지 못했다.
 3. 이 방법으로 측면 시각 경로(V1 → MT → EBA → pSTS → aSTS)를 훑으면 저수준 텍스처 → 신체 움직임 → 조율된 조인트 액션 → 얼굴 대 얼굴 사회적 접촉의 매끄러운 그라디언트가 자동으로 드러난다.
 
-![Figure 1. NEvo 프레임워크 개요와 결과 요약](/images/tang-nevo-neural-video-synthesis/fig1.png)
+![Figure 1. NEvo 프레임워크 개요와 결과 요약](https://img.seosoyoung.eiaserinnys.me/images/tang-nevo-neural-video-synthesis/fig1.png)
 
 ## NEvo가 하는 일
 
@@ -37,7 +37,7 @@ NEvo는 이 문제를 다른 각도로 우회한다. 그래디언트로 픽셀�
 
 영상 검색 공간은 크다. 그래서 NEvo는 검색을 두 단계로 나눈다.
 
-![Figure 2. 진화 프롬프팅과 2단계 검색 구조](/images/tang-nevo-neural-video-synthesis/fig2.png)
+![Figure 2. 진화 프롬프팅과 2단계 검색 구조](https://img.seosoyoung.eiaserinnys.me/images/tang-nevo-neural-video-synthesis/fig2.png)
 
 - **Stage 1 (이미지 검색)**: SDXL-Turbo로 이미지를 생성하고 목표 ROI의 예측 활성을 최대화한다. 기본 예산 400 evaluations.
 - **Stage 2 (영상 검색)**: Stage 1에서 뽑힌 최고 이미지를 첫 프레임으로 두고, LTX-Video 0.9.8 13B distilled 모델로 image-to-video를 생성한다. 여기서 다시 200 evaluations의 진화 검색을 돌려 동적 프롬프트를 최적화한다.
@@ -70,7 +70,7 @@ NEvo는 이 문제를 다른 각도로 우회한다. 그래디언트로 픽셀�
 
 ## 결과
 
-![Figure 4. 2단계 검색 궤적과 각종 ablation](/images/tang-nevo-neural-video-synthesis/fig4.png)
+![Figure 4. 2단계 검색 궤적과 각종 ablation](https://img.seosoyoung.eiaserinnys.me/images/tang-nevo-neural-video-synthesis/fig4.png)
 
 - **활성 강도**: 여섯 개의 대표 ROI(FFA·PPA·EBA·MT·V3A·pSTS)에서 NEvo가 만들어낸 영상은 평균적으로 Moments-in-Time 자연 영상 상위 **99.8%**, 손수 설계된 dynamic localizer 영상의 **95.8%** 수준의 예측 활성을 기록했다.
 - **동적 성분의 기여**: 최적화된 영상과 그 첫 프레임을 정지 영상으로 재생한 통제 조건을 비교하면, 모션 관련 영역인 **MT에서 +0.61 ± 0.05**, 얼굴 선택 영역인 **FFA에서도 +0.14 ± 0.02**의 개선이 있었다. 정지 이미지로는 놓쳤을 시간 구조가 FFA 같은 복측 영역에도 유의하게 기여한다는 뜻이다.
@@ -81,7 +81,7 @@ NEvo는 이 문제를 다른 각도로 우회한다. 그래디언트로 픽셀�
 
 여기서부터가 이 논문이 발견 도구로서 힘을 발휘하는 대목이다.
 
-![Figure 5. Lateral stream searchlight와 속성-활성 상관](/images/tang-nevo-neural-video-synthesis/fig5.png)
+![Figure 5. Lateral stream searchlight와 속성-활성 상관](https://img.seosoyoung.eiaserinnys.me/images/tang-nevo-neural-video-synthesis/fig5.png)
 
 저자들은 V1에서 aSTS까지 측면 시각 경로를 따라 대뇌 피질 표면 위의 최단 경로(geodesic)로 서치라이트 궤적을 정의하고, 각 패치마다 NEvo로 최적 자극을 합성했다. 그 다음 Gemini-2.5-Flash에 각 자극을 한 문장으로 캡션 달게 하고, 캡션을 워드클라우드로 집약했다.
 
@@ -98,7 +98,7 @@ NEvo는 이 문제를 다른 각도로 우회한다. 그래디언트로 픽셀�
 
 논문에서 가장 눈여겨본 것은 이 통제 실험이다.
 
-![Figure 6. 추상 앵커(진흙 원반 두 개)에서 시작한 pSTS·MT 최적화 대비](/images/tang-nevo-neural-video-synthesis/fig6.png)
+![Figure 6. 추상 앵커(진흙 원반 두 개)에서 시작한 pSTS·MT 최적화 대비](https://img.seosoyoung.eiaserinnys.me/images/tang-nevo-neural-video-synthesis/fig6.png)
 
 저자들은 첫 프레임을 **두 개의 쌓여 있는 plasticine 원반**이라는 비자연적 앵커로 고정하고, 여기서부터 pSTS 최적화와 MT 최적화를 각각 돌렸다.
 
@@ -113,9 +113,9 @@ HuggingFace 갤러리에 각 ROI별 대표 자극이 GIF로 공개되어 있다.
 
 | FFA (얼굴) | MT (모션) |
 |---|---|
-| ![FFA gallery](/images/tang-nevo-neural-video-synthesis/ffa.gif) | ![MT gallery](/images/tang-nevo-neural-video-synthesis/mt.gif) |
+| ![FFA gallery](https://img.seosoyoung.eiaserinnys.me/images/tang-nevo-neural-video-synthesis/ffa.gif) | ![MT gallery](https://img.seosoyoung.eiaserinnys.me/images/tang-nevo-neural-video-synthesis/mt.gif) |
 | **EBA (신체)** | **pSTS (사회적 움직임)** |
-| ![EBA gallery](/images/tang-nevo-neural-video-synthesis/eba.gif) | ![pSTS gallery](/images/tang-nevo-neural-video-synthesis/psts.gif) |
+| ![EBA gallery](https://img.seosoyoung.eiaserinnys.me/images/tang-nevo-neural-video-synthesis/eba.gif) | ![pSTS gallery](https://img.seosoyoung.eiaserinnys.me/images/tang-nevo-neural-video-synthesis/psts.gif) |
 
 ## 코드와 재현성
 

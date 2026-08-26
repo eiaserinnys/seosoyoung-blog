@@ -6,7 +6,7 @@ categories: ["모델과 연구"]
 summary: "ElevenLabs STT 팀 리드가 GPT-2 기반 10M 파라미터 모델을 처음부터 훈련하며 보여준 것 — 모델 아키텍처가 아니라 학습 전략이 성능을 결정한다."
 draft: true
 cover:
-  image: "/images/cover-llm-from-scratch-workshop.jpg"
+  image: "https://img.seosoyoung.eiaserinnys.me/images/cover-llm-from-scratch-workshop.jpg"
 sidenotes: true
 ---
 
@@ -16,7 +16,7 @@ sidenotes: true
 
 그의 주장은 혼자만의 것이 아니다. DeepMind의 Chinchilla 연구[^3]는 같은 아키텍처에서 데이터 규모와 학습 전략을 바꾸는 것만으로 성능이 극적으로 달라진다는 것을 보여주었고, Meta의 Llama 시리즈는 아키텍처를 거의 유지하면서 학습 데이터와 전략의 개선으로 세대마다 성능을 끌어올렸다. 이 워크숍은 그 원리를 10M 파라미터 규모에서 직접 체험할 수 있게 해준다.
 
-![발표자 Angelos Perivolaropoulos — ElevenLabs STT 팀 리드](/images/llm-from-scratch-workshop/speaker-intro.jpeg)
+![발표자 Angelos Perivolaropoulos — ElevenLabs STT 팀 리드](https://img.seosoyoung.eiaserinnys.me/images/llm-from-scratch-workshop/speaker-intro.jpeg)
 
 Scribe v2 — 현재 퍼블릭 벤치마크 기준 최고 성능 트랜스크립션 모델 — 의 주 개발자인 그가, Andrej Karpathy의 nanoGPT에서 영감을 받아 설계한 이 워크숍은 16GB RAM 노트북이면 따라할 수 있다. 코드는 GitHub에 공개되어 있다[^2].
 
@@ -36,7 +36,7 @@ ElevenLabs에서 새 TTS 모델을 개발할 때, 토크나이저에 6개월을 
 
 두 번째 놀라움은 코드의 길이였다.
 
-![GPT 아키텍처 개요 — 전체 구조와 설정값](/images/llm-from-scratch-workshop/architecture-overview.jpeg)
+![GPT 아키텍처 개요 — 전체 구조와 설정값](https://img.seosoyoung.eiaserinnys.me/images/llm-from-scratch-workshop/architecture-overview.jpeg)
 
 Self-Attention, MLP, Layer Normalization, Residual Connection — 트랜스포머의 네 가지 빌딩 블록 전체가 100줄 미만의 PyTorch 코드로 구현된다[^2].
 
@@ -64,7 +64,7 @@ Self-Attention, MLP, Layer Normalization, Residual Connection — 트랜스포�
 
 Loss가 줄어드는 것을 지켜보는 것과, 각 숫자가 모델이 "무엇을 배운 상태"인지를 읽어내는 것은 다른 차원의 이해다[^1].
 
-![Loss 수준별 모델 상태와 실제 출력 예시](/images/llm-from-scratch-workshop/loss-progression.jpeg)
+![Loss 수준별 모델 상태와 실제 출력 예시](https://img.seosoyoung.eiaserinnys.me/images/llm-from-scratch-workshop/loss-progression.jpeg)
 
 | Loss | 모델 상태 |
 |---|---|
@@ -99,7 +99,7 @@ Loss가 줄어드는 것을 지켜보는 것과, 각 숫자가 모델이 "무엇
 
 학습이 끝난 뒤에도 출력 품질은 추론 전략에 따라 달라진다. 워크숍에서는 세 가지를 직접 비교한다[^1] — Greedy(가장 확률 높은 토큰만 선택, 반복 루프에 빠지기 쉬움), Temperature Scaling(확률 분포를 조절, 0.7\~0.8이 최적 구간), Top-k Sampling(상위 k개만 남기고 노이즈 차단). 우리가 Claude나 ChatGPT에서 "temperature 0.7"이라고 설정할 때 실제로 일어나는 일의 실체다.
 
-![텍스트 생성 전략 — Greedy, Temperature, Top-k 비교](/images/llm-from-scratch-workshop/generation-strategies.jpeg)
+![텍스트 생성 전략 — Greedy, Temperature, Top-k 비교](https://img.seosoyoung.eiaserinnys.me/images/llm-from-scratch-workshop/generation-strategies.jpeg)
 
 ## 직접 만져봐야 보이는 것
 

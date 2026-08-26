@@ -7,9 +7,9 @@ summary: "1979년 이란 인질 사건 보도가 시간마다 달라지는 것�
 ShowToc: true
 TocOpen: false
 cover:
-  image: "/images/marion-stokes-recorder-project/marion-portrait-bw.jpg"
+  image: "https://img.seosoyoung.eiaserinnys.me/images/marion-stokes-recorder-project/marion-portrait-bw.jpg"
 images:
-  - "/images/marion-stokes-recorder-project/marion-portrait-bw.jpg"
+  - "https://img.seosoyoung.eiaserinnys.me/images/marion-stokes-recorder-project/marion-portrait-bw.jpg"
 sidenotes: true
 ---
 
@@ -20,7 +20,7 @@ sidenotes: true
 3. 사후 아들 Michael Metelits가 Internet Archive에 전량 기증했고, 80\~2000년대 미국 정치·사회·문화 원본 뉴스 영상이 — 방송국조차 갖고 있지 않은 — 디지털화 진행 중이다. 2025년 현재 자금 부족으로 작업은 일부만 완료된 상태다.
 
 <p style="text-align:center;">
-  <img src="/images/marion-stokes-recorder-project/marion-portrait-bw.jpg" alt="Marion Stokes(1929\~2012)의 청년기 인물 사진.">
+  <img src="https://img.seosoyoung.eiaserinnys.me/images/marion-stokes-recorder-project/marion-portrait-bw.jpg" alt="Marion Stokes(1929\~2012)의 청년기 인물 사진.">
   <em>Marion Stokes(1929\~2012). 흑인 여성 사서·사회운동가이자, 한때 공산당 활동가였고, 후에는 한 시대의 TV 뉴스 전체를 자기 거실에 옮긴 비공식 아카이비스트. — 출처: Recorder: The Marion Stokes Project (Matt Wolf, 2019)</em>
 </p>
 
@@ -53,7 +53,7 @@ sidenotes: true
 다큐멘터리 'Recorder'를 본 Variety의 Owen Gleiberman은 Stokes를 "Noam Chomsky와 카우치 포테이토 뉴스 중독자의 기괴한 혼종"이라고 평했다([Variety, 2019](https://variety.com/2019/film/reviews/recorder-the-marion-stokes-project-review-1203197887/)).[^variety-2019][^indiewire-2019]
 
 <p style="text-align:center;">
-  <img src="/images/marion-stokes-recorder-project/marion-on-input.jpg" alt="1967\~1971년 WCAU-TV10의 'Input' 출연 시절의 Marion.">
+  <img src="https://img.seosoyoung.eiaserinnys.me/images/marion-stokes-recorder-project/marion-on-input.jpg" alt="1967\~1971년 WCAU-TV10의 'Input' 출연 시절의 Marion.">
   <em>1967\~1971년 WCAU-TV10의 공영 토론 프로그램 'Input' 출연 시절의 Marion. 매체의 휘발성을 누구보다 잘 안 사람은, 한때 자신이 매체의 안쪽에 있던 사람이었다. — 출처: 다큐멘터리 'Recorder'(2019)</em>
 </p>
 
@@ -68,12 +68,12 @@ sidenotes: true
 - <strong>포맷 거부</strong>: TiVo·DVR을 거부함. "정부가 자신이 무엇을 녹화하는지 알게 될 것"이라는 우려 때문 ([Hollywood Reporter, 2019](https://www.hollywoodreporter.com/movies/movie-reviews/recorder-marion-stokes-project-1205067/)). 이메일도 평생 한 번도 보내지 않았다.[^roger-2019][^hollywood-2019]
 
 <p style="text-align:center;">
-  <img src="/images/marion-stokes-recorder-project/recorder-doc-livingroom.jpg" alt="잡지 더미 옆에 TV와 베타맥스 녹화기가 놓인 1970년대 거실 재현 컷.">
+  <img src="https://img.seosoyoung.eiaserinnys.me/images/marion-stokes-recorder-project/recorder-doc-livingroom.jpg" alt="잡지 더미 옆에 TV와 베타맥스 녹화기가 놓인 1970년대 거실 재현 컷.">
   <em>70년대 거실의 한 풍경 — 잡지 더미 옆에 TV와 베타맥스 녹화기가 놓인 시대. Stokes는 1975년경 베타맥스를 사면서 이 시스템을 자기 집 거실에서 시작했다. — 출처: 다큐멘터리 'Recorder'(2019)</em>
 </p>
 
 <p style="text-align:center;">
-  <img src="/images/marion-stokes-recorder-project/vhs-tapes-archive.jpg" alt="1979년부터 2012년까지 — 그녀가 남긴 비디오테이프 더미." style="max-width:55%;margin-left:auto;margin-right:auto">[^producer-2013][^how-2019]
+  <img src="https://img.seosoyoung.eiaserinnys.me/images/marion-stokes-recorder-project/vhs-tapes-archive.jpg" alt="1979년부터 2012년까지 — 그녀가 남긴 비디오테이프 더미." style="max-width:55%;margin-left:auto;margin-right:auto">[^producer-2013][^how-2019]
   <em>1979년부터 2012년까지, 다중 채널·주야 무휴로 쌓인 70,000여 개의 VHS. — 출처: Recorder: The Marion Stokes Project</em>
 </p>
 
@@ -98,12 +98,12 @@ Stokes는 83세에 폐 질환으로 사망했다. 그날의 녹화 분에는 San
 함께 기증된 부속 자료도 방대하다. 55개의 뱅커스 박스에 담긴 1960년 이후의 개인 일기, 잡지, 신문, 시민단체 팸플릿, 전단지 — 이미 일부는 디지털화돼 [Internet Archive의 Marion Stokes Collection](https://archive.org/details/marionstokes)에서 열람 가능하다.[^marion-stokes-2]
 
 <p style="text-align:center;">
-  <img src="/images/marion-stokes-recorder-project/archive-boxes-warehouse.webp" alt="Richmond 창고의 한 코너에 빼곡히 쌓인 카세트 박스 더미." style="max-width:55%;margin-left:auto;margin-right:auto">
+  <img src="https://img.seosoyoung.eiaserinnys.me/images/marion-stokes-recorder-project/archive-boxes-warehouse.webp" alt="Richmond 창고의 한 코너에 빼곡히 쌓인 카세트 박스 더미." style="max-width:55%;margin-left:auto;margin-right:auto">
   <em>Richmond 창고에 도착해 펼쳐 놓이기 전, 한 코너에 쌓여 있던 카세트 박스 더미. — 출처: All That's Interesting</em>
 </p>
 
 <p style="text-align:center;">
-  <img src="/images/marion-stokes-recorder-project/ia-warehouse-presort-2014.jpg" alt="2014년 사전 분류 전, Richmond 창고에 펼쳐진 Marion Stokes 비디오 아카이브 전경. 가운데 서 있는 사람은 Internet Archive의 Sean Fagan이다.">
+  <img src="https://img.seosoyoung.eiaserinnys.me/images/marion-stokes-recorder-project/ia-warehouse-presort-2014.jpg" alt="2014년 사전 분류 전, Richmond 창고에 펼쳐진 Marion Stokes 비디오 아카이브 전경. 가운데 서 있는 사람은 Internet Archive의 Sean Fagan이다.">
   <em>4개 해상 컨테이너에 나눠 실려 캘리포니아 Richmond 창고에 도착한 박스들. 가운데 선 사람은 Internet Archive의 Sean Fagan이다. 71,716개의 테이프는 이 정도의 부피를 차지한다. — 사진: Brett Brownell / Internet Archive</em>
 </p>
 
@@ -145,7 +145,7 @@ Stokes가 남긴 것은 단순한 뉴스 보관소가 아니다. 같은 사건�
 또 하나 짚어둘 만한 것은 <strong>다큐가 그녀를 영웅화하지 않는다</strong>는 점이다. 그녀는 아들과 오래 절연했고, 두 번째 남편을 그의 자식들로부터 떼어 놓았다. 그녀의 행위는 인류 유산에 기여했지만, 그녀의 가족에게는 부재의 시간이었다.
 
 <p style="text-align:center;">
-  <img src="/images/marion-stokes-recorder-project/marion-with-son.jpg" alt="어린 시절의 아들 Michael Metelits와 Marion Stokes.">
+  <img src="https://img.seosoyoung.eiaserinnys.me/images/marion-stokes-recorder-project/marion-with-son.jpg" alt="어린 시절의 아들 Michael Metelits와 Marion Stokes.">
   <em>젊은 시절의 Marion과 어린 아들 Michael Metelits. 어머니가 33년간 녹화한 71,716개의 테이프를 사후 Internet Archive에 기증한 사람이 바로 이 아이다 — 어머니와 오랜 절연을 거쳐, 말년에 다시 가까워진 뒤에. — 출처: All That's Interesting / 가족 제공</em>[^marion-2024-2]
 </p>
 

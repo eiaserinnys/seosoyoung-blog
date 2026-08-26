@@ -37,7 +37,7 @@ Askell은 Claude 초기에는 구체적인 원칙과 규칙을 부여하는 방�
 
 ## 초천재 6세를 기르는 부모의 딜레마
 
-![Amanda Askell — Vox 인터뷰 일러스트레이션](/images/vox-claude-soul-document-askell/hero.jpg)
+![Amanda Askell — Vox 인터뷰 일러스트레이션](https://img.seosoyoung.eiaserinnys.me/images/vox-claude-soul-document-askell/hero.jpg)
 *Paige Vickers / Vox; Photo courtesy of Anthropic*
 
 Askell은 자신의 작업을 "아이를 키우는 것"에 빗댄다. 다만 보통 아이가 아니다.

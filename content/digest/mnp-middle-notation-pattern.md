@@ -7,9 +7,9 @@ summary: "일본 디자이너 なつ(@Dia_Nexus)가 정리한 '중간 표기 패
 ShowToc: true
 TocOpen: false
 cover:
-  image: "/images/mnp-middle-notation-pattern/cover.png"
+  image: "https://img.seosoyoung.eiaserinnys.me/images/mnp-middle-notation-pattern/cover.png"
 images:
-  - "/images/mnp-middle-notation-pattern/cover.png"
+  - "https://img.seosoyoung.eiaserinnys.me/images/mnp-middle-notation-pattern/cover.png"
 sidenotes: true
 ---
 
@@ -19,7 +19,7 @@ sidenotes: true
 2. 핵심 발상은 단순하다 — AI에게 GUI를 직접 조작시키는 대신, GUI 상태와 동등한 텍스트 DSL을 두고 AI가 그 DSL을 양방향으로 읽고 쓰게 한다. Mermaid가 텍스트로 도형을 그리던 것과 같은 결의 응용이다.
 3. 결과적으로 출력이 안정되고, 처리가 빨라지고, API 비용은 4\~8배 떨어지고, HTML 한 장으로 배포된다. 다만 상태가 비대화되면 컨텍스트 한계에 부딪힌다.
 
-![중간 표기 패턴(MNP) 표지](/images/mnp-middle-notation-pattern/cover.png)
+![중간 표기 패턴(MNP) 표지](https://img.seosoyoung.eiaserinnys.me/images/mnp-middle-notation-pattern/cover.png)
 
 ## 글의 청중 — 자기 업무 도구를 굴리는 사람
 
@@ -46,7 +46,7 @@ sidenotes: true
 
 저자의 발상은 이렇다 — *기존 도구를 AI에게 조작시키지 말고, 애초에 AI가 조작하기 쉬운 도구를 만들자.* 화면 뒤의 의미 상태를 AI가 읽고 쓰기 쉬운 텍스트 표현(DSL)으로 두고, AI와 애플리케이션 사이에 가벼운 상태 조작 프로토콜을 끼워 넣는다. 새로운 기술이 아니라 *낡은 기술들의 조합*이지만, LLM 맥락에서 이걸 명시적으로 한 사례가 드물다고 한다.
 
-![MNP 개념도 — GUI 조작이 아니라 DSL을 통한 상태 조작](/images/mnp-middle-notation-pattern/fig1-mnp-concept.png)
+![MNP 개념도 — GUI 조작이 아니라 DSL을 통한 상태 조작](https://img.seosoyoung.eiaserinnys.me/images/mnp-middle-notation-pattern/fig1-mnp-concept.png)
 
 ## Mermaid의 교훈
 
@@ -60,7 +60,7 @@ graph LR
 
 이런 텍스트로 도형을 그릴 수 있는 도구다. SVG·Canvas 좌표를 직접 쓰게 하는 것보다 'graph LR / A --> B' 같은 텍스트 DSL을 쓰게 하는 쪽이 압도적으로 빠르고 안정적이기 때문에 AI와 잘 맞는다. 구문이 단순하고 출력이 일의적이라는 게 핵심 — AI에게 다루기 쉬운 *중간 표현*이 있으면 출력이 안정된다.
 
-![Mermaid 예시](/images/mnp-middle-notation-pattern/fig6-mermaid-example.png)
+![Mermaid 예시](https://img.seosoyoung.eiaserinnys.me/images/mnp-middle-notation-pattern/fig6-mermaid-example.png)
 
 저자는 여기서 한 걸음 더 나간다. *내 기법에 맞춘 내 DSL과, 그 DSL을 읽고 그림을 그려 주는 파서를 직접 구현하면, Mermaid와 같은 일을 내 도구에서도 할 수 있지 않을까.* 게다가 흥미로운 자기 고백 한 줄이 따라온다 — **나는 DSL을 설계하지도 작성하지도 않는다. DSL 설계도 AI가, DSL 작성도 AI가 한다. 사람은 도메인 개념만 설명한다.** 저자 본인도 자기 도구의 DSL 내부 구문 절차를 다 모른다고 한다.
 
@@ -84,7 +84,7 @@ MNP의 기본 구조는 네 가지 요소로 정리된다.
 3. **시리얼라이저(serialize)** — 내부 데이터 구조 → 표기 텍스트 역변환. GUI에서 편집한 뒤 표기로 되돌리는 데 필요.
 4. **시스템 프롬프트** — AI에게 DSL의 구문 규칙과 *기법의 판단축*(좋은 결과물의 기준)을 알려 주는 지시문. 여기에 '도구의 혼'이 담긴다.
 
-![MNP의 구조 — 의미 상태를 DSL로 외화](/images/mnp-middle-notation-pattern/fig2-mnp-structure.png)
+![MNP의 구조 — 의미 상태를 DSL로 외화](https://img.seosoyoung.eiaserinnys.me/images/mnp-middle-notation-pattern/fig2-mnp-structure.png)
 
 그리고 이 네 요소를 묶어 도는 한 줄짜리 루프가 MNP의 핵심이다.
 
@@ -92,7 +92,7 @@ MNP의 기본 구조는 네 가지 요소로 정리된다.
 
 GUI를 사람이 직접 만져도 시리얼라이저가 곧장 텍스트로 환원하므로 자동으로 양방향 동기가 보장된다. 'AI가 항상 지금의 상태를 알고 대화하는' 감각이 여기서 나온다.
 
-![MNP의 동작 흐름](/images/mnp-middle-notation-pattern/fig4-mnp-flow.png)
+![MNP의 동작 흐름](https://img.seosoyoung.eiaserinnys.me/images/mnp-middle-notation-pattern/fig4-mnp-flow.png)
 
 ## 안정성과 비용이 어디서 나오는가
 
@@ -123,13 +123,13 @@ C 946 296
 
 **(2) 안 만진 부분은 좌표까지 그대로 보존된다.** AI는 자연어·HTML 같은 자유 형식의 조작에는 약하지만 '이미 정해진 표기의 일부만 손대기'는 잘한다. 매 호출마다 전체 상태를 받아서 통째로 다시 출력하는 구조이기 때문에, 손대지 않은 노드는 정확히 같은 자리에 남는다. '작업한 부분만 바뀌고 나머지는 안 바뀌는' 자연스러운 편집감이 여기서 나온다.
 
-![기존 방식 vs MNP — 시간·비용 비교](/images/mnp-middle-notation-pattern/fig3-conventional-vs-mnp.png)
+![기존 방식 vs MNP — 시간·비용 비교](https://img.seosoyoung.eiaserinnys.me/images/mnp-middle-notation-pattern/fig3-conventional-vs-mnp.png)
 
 비용 측면에서도 차이가 크다. AI API는 보통 출력 토큰이 입력 토큰보다 5배가량 비싸다. MNP는 매번 HTML 통째로 다시 쓰는 방식 대비 출력이 5,000\~10,000 토큰에서 약 900 토큰 수준으로 줄어든다. Sonnet 4.6 기준 회당 12\~22엔 → 3엔 수준. 통상 4\~8배 저렴해진다.
 
 저자는 3월에 10달러 크레딧을 넣고 200회 가까이 도면을 생성했는데도 다 못 썼다고 한다. (참고로 프롬프트 캐시는 노트 글 기준 일정 크기 이하라 적용되지 않는다고 한다.)
 
-![서비스 에코시스템 예시](/images/mnp-middle-notation-pattern/fig5-service-ecosystem.png)
+![서비스 에코시스템 예시](https://img.seosoyoung.eiaserinnys.me/images/mnp-middle-notation-pattern/fig5-service-ecosystem.png)
 
 ## 3가지 구현 패턴
 
@@ -143,7 +143,7 @@ MNP는 세 형태로 구현할 수 있다.
 
 세 패턴 중 저자가 *AI-DX 업계의 혁명*이라 부르는 건 <strong>시스템 프롬프트형</strong>이다. 도구가 LLM API를 직접 호출할 필요가 없어, '도구는 납품할 테니 시스템 프롬프트는 자사 보안 AI에 붙여 쓰세요' 식의 전개가 가능하다. API 키도 서버도 IT 심사 레이어도 필요 없다. M365 Copilot만 허용하는 대기업에서도 도입할 수 있고, 단일 HTML로 메일 첨부 배포까지 된다.
 
-![MNP 기술 데모 — DLM Editor 등의 화면](/images/mnp-middle-notation-pattern/fig7-mnp-demo.png)
+![MNP 기술 데모 — DLM Editor 등의 화면](https://img.seosoyoung.eiaserinnys.me/images/mnp-middle-notation-pattern/fig7-mnp-demo.png)
 
 ## 권장 구현 절차 — AI화는 마지막에
 

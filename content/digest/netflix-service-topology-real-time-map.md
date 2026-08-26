@@ -7,9 +7,9 @@ summary: "Netflix가 수천 개의 마이크로서비스 의존성을 실시간�
 ShowToc: true
 TocOpen: false
 cover:
-  image: "/images/netflix-service-topology-real-time-map/fig2-three-layers.png"
+  image: "https://img.seosoyoung.eiaserinnys.me/images/netflix-service-topology-real-time-map/fig2-three-layers.png"
 images:
-  - "/images/netflix-service-topology-real-time-map/fig2-three-layers.png"
+  - "https://img.seosoyoung.eiaserinnys.me/images/netflix-service-topology-real-time-map/fig2-three-layers.png"
 sidenotes: true
 ---
 
@@ -31,7 +31,7 @@ sidenotes: true
 
 ## 문제: "새벽 3시의 의존성 추적"
 
-![중심 서비스 하나에서 수많은 다운스트림 서비스·데이터 스토어·호출 사슬이 사방으로 뻗어 나가는 의존성 웹 — 통합된 맵 없이는 엔지니어가 머릿속과 흩어진 신호로 이 구조를 추측해야 한다.](/images/netflix-service-topology-real-time-map/fig1-dependency-web.png)
+![중심 서비스 하나에서 수많은 다운스트림 서비스·데이터 스토어·호출 사슬이 사방으로 뻗어 나가는 의존성 웹 — 통합된 맵 없이는 엔지니어가 머릿속과 흩어진 신호로 이 구조를 추측해야 한다.](https://img.seosoyoung.eiaserinnys.me/images/netflix-service-topology-real-time-map/fig1-dependency-web.png)
 
 Netflix는 수천 개의 마이크로서비스로 돌아간다. 시청자가 *재생* 버튼을 누르는 한 번의 동작이 인증·추천·인코딩 선택·재생 최적화로 이어지는 호출 사슬을 만든다. 이 구조는 팀별 독립성을 보장하지만, 장애가 났을 때 관찰가능성에는 근본적인 빈틈을 남긴다.
 
@@ -59,7 +59,7 @@ Netflix는 수천 개의 마이크로서비스로 돌아간다. 시청자가 *�
 
 ## 핵심 통찰: 세 개의 진실 소스
 
-![세 개의 토폴로지 레이어 — eBPF 흐름 로그가 네트워크 그래프를, IPC 메트릭이 애플리케이션 그래프를, 분산 트레이스가 요청 그래프를 만들어 통합 뷰로 합쳐지는 도식.](/images/netflix-service-topology-real-time-map/fig2-three-layers.png)
+![세 개의 토폴로지 레이어 — eBPF 흐름 로그가 네트워크 그래프를, IPC 메트릭이 애플리케이션 그래프를, 분산 트레이스가 요청 그래프를 만들어 통합 뷰로 합쳐지는 도식.](https://img.seosoyoung.eiaserinnys.me/images/netflix-service-topology-real-time-map/fig2-three-layers.png)
 
 이 글의 가장 핵심적인 설계 선택은 *단일 통합 그래프를 만들지 않은 것*이다. 대신 세 가지 소스마다 *독립된 그래프*를 만들고, 사용자가 통합 뷰를 요청할 때만 병렬 쿼리로 합친다.
 
@@ -94,7 +94,7 @@ Netflix는 수천 개의 마이크로서비스로 돌아간다. 시청자가 *�
 
 ## 아키텍처: Kafka → 3단계 집계 → 그래프 DB → gRPC
 
-![다중 리전 Kafka에서 들어온 흐름 로그가 세 단계 집계(초기 배치 → 중간자 해소 → 최종 농축)를 거쳐 그래프 DB에 영속화되고 API로 노출되는 파이프라인 다이어그램.](/images/netflix-service-topology-real-time-map/fig3-pipeline.png)
+![다중 리전 Kafka에서 들어온 흐름 로그가 세 단계 집계(초기 배치 → 중간자 해소 → 최종 농축)를 거쳐 그래프 DB에 영속화되고 API로 노출되는 파이프라인 다이어그램.](https://img.seosoyoung.eiaserinnys.me/images/netflix-service-topology-real-time-map/fig3-pipeline.png)
 
 ```
 [다중 리전 Kafka 흐름 로그]
@@ -114,7 +114,7 @@ Netflix는 수천 개의 마이크로서비스로 돌아간다. 시청자가 *�
 
 ### Stage 2가 푸는 문제
 
-![중간자 해소 전·후 비교 — 원시 흐름 로그가 App A → Load Balancer → App B의 두 홉으로 기록되지만, 해소된 그래프는 App A → App B의 직접 엣지로 저장된다.](/images/netflix-service-topology-real-time-map/fig4-intermediary-resolution.png)
+![중간자 해소 전·후 비교 — 원시 흐름 로그가 App A → Load Balancer → App B의 두 홉으로 기록되지만, 해소된 그래프는 App A → App B의 직접 엣지로 저장된다.](https://img.seosoyoung.eiaserinnys.me/images/netflix-service-topology-real-time-map/fig4-intermediary-resolution.png)
 
 가장 흥미로운 부분이 *Stage 2 — 중간자 해소* 다. 네트워크 흐름 로그는 *개별 네트워크 홉*만 기록한다.
 

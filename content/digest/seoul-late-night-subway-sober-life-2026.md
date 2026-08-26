@@ -7,9 +7,9 @@ summary: "서울 평일 심야 지하철 이용객이 6년 새 23.7% 줄었다�
 ShowToc: true
 TocOpen: false
 cover:
-  image: "/images/seoul-late-night-subway-sober-life-2026/ridership-comparison.jpg"
+  image: "https://img.seosoyoung.eiaserinnys.me/images/seoul-late-night-subway-sober-life-2026/ridership-comparison.jpg"
 images:
-  - "/images/seoul-late-night-subway-sober-life-2026/ridership-comparison.jpg"
+  - "https://img.seosoyoung.eiaserinnys.me/images/seoul-late-night-subway-sober-life-2026/ridership-comparison.jpg"
 ---
 
 ## 3줄 요약
@@ -18,7 +18,7 @@ images:
 2. 같은 기간 전체 시간대 승차 인원 감소율은 7.5%였다 — 심야 감소폭이 약 3배 크다. 강남역은 1109명에서 599명으로 46% 줄어 사실상 반토막이 났다.
 3. 공사는 재택근무 확산과 조기 귀가 문화, 그리고 젊은 세대를 중심으로 한 '소버 라이프(Sober Life)' 트렌드를 주된 요인으로 본다.
 
-![](/images/seoul-late-night-subway-sober-life-2026/yonhap-photo.jpg)
+![](https://img.seosoyoung.eiaserinnys.me/images/seoul-late-night-subway-sober-life-2026/yonhap-photo.jpg)
 <small>연합뉴스</small>
 
 ## 자정 이후 승차 인원 — 23.7% 감소
@@ -33,7 +33,7 @@ images:
 
 같은 기간 전체 시간대 승차 인원 감소율은 7.5%였다. 심야 시간대 감소폭이 전체 평균의 약 3배에 달한다는 의미다.
 
-![승차인원 비교. 서울교통공사 제공.](/images/seoul-late-night-subway-sober-life-2026/ridership-comparison.jpg)
+![승차인원 비교. 서울교통공사 제공.](https://img.seosoyoung.eiaserinnys.me/images/seoul-late-night-subway-sober-life-2026/ridership-comparison.jpg)
 <small>승차인원 비교. 서울교통공사 제공.</small>
 
 ## 상권 밀집 역 — 강남역 사실상 반토막

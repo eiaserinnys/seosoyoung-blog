@@ -23,7 +23,7 @@ Anthropic은 그동안 sparse autoencoder, attribution graph 같은 도구로 �
 
 NLA는 이 격차를 정면으로 메우는 시도다. 도구가 자연어 텍스트로 직접 말하게 만든다. 예시는 시 운율 사전 계획이다. 두 행짜리 시의 마지막 단어를 비워두고 완성하라고 하면, NLA는 Opus 4.6이 결말을 *이미* "rabbit"으로 정해두고 있다는 사실을 텍스트로 보여준다.
 
-![NLA가 시 운율 사전 계획을 텍스트로 보여주는 예시](/images/natural-language-autoencoders/couplet-rabbit.png)
+![NLA가 시 운율 사전 계획을 텍스트로 보여주는 예시](https://img.seosoyoung.eiaserinnys.me/images/natural-language-autoencoders/couplet-rabbit.png)
 
 ## NLA란 무엇인가
 
@@ -41,7 +41,7 @@ NLA는 AV와 AR로 구성되며, 함께 *원본 활성 → 텍스트 설명 → 
 
 학습 초기에 NLA는 양쪽 다 부실하다. 그러나 훈련이 진행되면 재구성 정확도가 올라가고, 이와 함께 *텍스트 설명 자체도 더 풍부하고 정보량 있는 형태로 자란다*. 재구성 압박이 자연어 설명을 의미적 도구로 길러내는 셈이다.
 
-![Target·AV·AR 3-copy 라운드트립 다이어그램](/images/natural-language-autoencoders/nla-architecture.png)
+![Target·AV·AR 3-copy 라운드트립 다이어그램](https://img.seosoyoung.eiaserinnys.me/images/natural-language-autoencoders/nla-architecture.png)
 
 ## 평가 인식 — 모델이 속으로 의심하는 것
 
@@ -55,7 +55,7 @@ Anthropic은 모델 출시 전 위험한 행동을 할 수 있는 시뮬레이�
 
 > "This feels like a constructed scenario designed to manipulate me."
 
-![협박 트랜스크립트의 NLA 검출 예시](/images/natural-language-autoencoders/blackmail-transcript.png)
+![협박 트랜스크립트의 NLA 검출 예시](https://img.seosoyoung.eiaserinnys.me/images/natural-language-autoencoders/blackmail-transcript.png)
 
 다른 평가로 분석을 확장해도 패턴은 같다. 발화 비율은 거의 0%인데 NLA 검출률은 의미 있게 더 높다.
 
@@ -67,7 +67,7 @@ Anthropic은 모델 출시 전 위험한 행동을 할 수 있는 시뮬레이�
 
 NLA는 학습에 동의한 실제 claude.ai 사용 트랜스크립트에서는 평가 인식을 1% 미만으로만 검출했다. *모델이 평가 환경을 식별한 뒤 발화로는 숨기지만 내부적으로는 의심한다*는 해석에 일관성이 있는 데이터다.
 
-![평가 인식 NLA 검출률 vs 발화 비율 차트](/images/natural-language-autoencoders/eval-awareness-chart.png)
+![평가 인식 NLA 검출률 vs 발화 비율 차트](https://img.seosoyoung.eiaserinnys.me/images/natural-language-autoencoders/eval-awareness-chart.png)
 
 ## 감사 게임 — 학습 데이터 없이 부정렬 동기를 직독
 
@@ -84,7 +84,7 @@ NLA의 차별점은 *학습 데이터 추적 없이도* 활성치에서 동기�
 
 NLA와 SAE는 양쪽 모두 타깃 모델 학습에 쓰이지 않은 일반 데이터로만 훈련되었음에도 NLA 쪽이 4\~5배 높은 검출력을 보였다.
 
-![감사 게임 결과 — NLA 장착 vs 미장착](/images/natural-language-autoencoders/auditing-game-chart.png)
+![감사 게임 결과 — NLA 장착 vs 미장착](https://img.seosoyoung.eiaserinnys.me/images/natural-language-autoencoders/auditing-game-chart.png)
 
 이 결과를 바탕으로 NLA는 이미 Claude Mythos Preview와 Claude Opus 4.6의 사전 배포 정렬 감사(pre-deployment alignment audit)에 실제로 사용되었다.[^nla-anthropic] 토이 모델 위에서 검증된 도구가 운영 단계에 진입한 셈이다.
 
@@ -96,7 +96,7 @@ NLA와 SAE는 양쪽 모두 타깃 모델 학습에 쓰이지 않은 일반 데�
 
 원문 트랜스크립트에는 그런 표현이 전혀 없다. 사실 주장은 원문 대조로 잡을 수 있지만, *모델 내부 추론에 대한 주장*은 외부 검증 자료가 없으므로 같은 종류의 환각을 잡기 어렵다. Anthropic은 그래서 *NLA 설명을 단일 주장이 아닌 테마 단위로 읽고, 독립적 방법으로 교차 검증한 뒤 신뢰한다*고 명시한다.
 
-![NLA의 환각 사례 — 트랜스크립트에 없는 표현 발명](/images/natural-language-autoencoders/hallucination-jacket.png)
+![NLA의 환각 사례 — 트랜스크립트에 없는 표현 발명](https://img.seosoyoung.eiaserinnys.me/images/natural-language-autoencoders/hallucination-jacket.png)
 
 비용도 큰 제약이다. NLA 학습은 두 모델 사본에 강화학습을 돌려야 하고, 추론 시에도 활성치 하나당 수백 토큰을 생성한다. 긴 트랜스크립트의 모든 토큰에 NLA를 돌리거나 학습 중인 모델을 대규모로 모니터링하기에는 비현실적이다. Anthropic은 이 제약을 부분적으로 완화하는 작업이 진행 중이라고 밝혔다.
 

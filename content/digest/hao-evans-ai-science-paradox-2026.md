@@ -7,9 +7,9 @@ summary: "1980부터 2025년까지 자연과학 논문 4,130만 편을 분석한
 ShowToc: true
 TocOpen: false
 cover:
-  image: "/images/hao-evans-ai-science-paradox-2026/fig3-knowledge.png"
+  image: "https://img.seosoyoung.eiaserinnys.me/images/hao-evans-ai-science-paradox-2026/fig3-knowledge.png"
 images:
-  - "/images/hao-evans-ai-science-paradox-2026/fig3-knowledge.png"
+  - "https://img.seosoyoung.eiaserinnys.me/images/hao-evans-ai-science-paradox-2026/fig3-knowledge.png"
 sidenotes: true
 ---
 
@@ -33,7 +33,7 @@ AI 논문 식별은 BERT 기반 두 단계 분류기를 썼다. 제목과 초록
 
 각 시대마다 AI 채택률은 가속됐다. 1980년 대비 2025년 AI 논문 비중은 지질학에서 10.70배, 생물학에서 51.89배로 늘었고, AI를 채택한 연구자 수는 지질학에서 135.46배, 물리학에서 362.16배로 증가했다.
 
-![Fig 1. 분야별 AI 채택률의 가속화 (1980\~2025)](/images/hao-evans-ai-science-paradox-2026/fig1-adoption.png)
+![Fig 1. 분야별 AI 채택률의 가속화 (1980\~2025)](https://img.seosoyoung.eiaserinnys.me/images/hao-evans-ai-science-paradox-2026/fig1-adoption.png)
 
 > Fig 1. 1980~2025년 6개 자연과학 분야의 AI 채택 추세. 모든 분야에서 AI 논문 비중과 AI 채택 연구자 수가 가속하며 증가한다. 출처: Hao et al. (2026), Nature, CC BY 4.0.
 
@@ -52,7 +52,7 @@ AI 논문 식별은 BERT 기반 두 단계 분류기를 썼다. 제목과 초록
 
 저자들은 같은 시기 같은 위치에서 출발한 과학자들을 매칭한 분석(selection bias 통제)에서도 이 격차가 유지된다고 보고한다. 즉 "원래 잘하는 사람이 AI를 쓰는" 효과가 아니라, AI 자체가 추가 가속을 만든다는 것이다.
 
-![Fig 2. AI는 논문 영향력을 키우고 연구자 경력을 가속한다](/images/hao-evans-ai-science-paradox-2026/fig2-career.png)
+![Fig 2. AI는 논문 영향력을 키우고 연구자 경력을 가속한다](https://img.seosoyoung.eiaserinnys.me/images/hao-evans-ai-science-paradox-2026/fig2-career.png)
 
 > Fig 2. (a) AI 논문 vs. 비-AI 논문의 연간 평균 인용. (b) AI 채택 연구자의 연간 인용 — 4.84배. (c) 주니어→시니어 전환 확률. (d) 전환 시간 생존 함수 — 지수 분포 적합. 출처: Hao et al. (2026), Nature.
 
@@ -67,7 +67,7 @@ AI 논문 식별은 BERT 기반 두 단계 분류기를 썼다. 제목과 초록
 
 결과는 일관적이다. AI 연구는 비-AI 연구보다 지식 범위가 4.63% 좁고, 모든 6개 분야에서 (p<0.001) 동일한 방향이다. 200개 이상의 하위 분야로 쪼개 봐도 70% 이상에서 같은 수축이 관찰된다. 엔트로피도 모든 분야에서 낮다 — AI 연구는 분야 전반보다 *특정 인기 문제*에 쏠려 있다.
 
-![Fig 3. AI 도입은 학문 내·학문 간 지식 범위의 수축과 연관된다](/images/hao-evans-ai-science-paradox-2026/fig3-knowledge.png)
+![Fig 3. AI 도입은 학문 내·학문 간 지식 범위의 수축과 연관된다](https://img.seosoyoung.eiaserinnys.me/images/hao-evans-ai-science-paradox-2026/fig3-knowledge.png)
 
 > Fig 3. (b) 768차원 임베딩의 t-SNE 투영. AI 논문(파랑)은 비-AI 논문(주황)보다 좁은 영역에 군집한다. (c) 6개 분야 모두에서 AI의 지식 범위가 더 좁다. (d) 엔트로피도 일관되게 낮다. 출처: Hao et al. (2026), Nature.
 
@@ -83,7 +83,7 @@ AI 논문 식별은 BERT 기반 두 단계 분류기를 썼다. 제목과 초록
 
 이 패턴이 누적되면 <strong>별 모양 인용 구조</strong>가 생긴다. 소수 슈퍼스타 논문이 중앙에 있고, 다수의 후속 논문이 방사형으로 매달려 있되 서로는 연결되지 않는 구조. AI 인용의 GINI 계수는 0.754로, 비-AI(0.690)보다 높다. 상위 22.2% 논문이 전체 인용의 80%를, 상위 54.14%가 95%를 가져간다.
 
-![Fig 4. AI 연구의 후속 engagement 감소와 별 모양 인용 집중](/images/hao-evans-ai-science-paradox-2026/fig4-engagement.png)
+![Fig 4. AI 연구의 후속 engagement 감소와 별 모양 인용 집중](https://img.seosoyoung.eiaserinnys.me/images/hao-evans-ai-science-paradox-2026/fig4-engagement.png)
 
 > Fig 4. (b) 같은 원본을 인용한 논문들끼리 서로 인용하는 비율 — AI 쪽이 22% 낮다. (c) 인용 분포 — AI는 상위 소수가 압도적으로 점유. (d) 같은 원본을 인용하면서도 서로 모르는 논문 쌍은 임베딩 공간에서 *가장 가까운* 쌍의 거리가 76.51% 더 짧다 — 중복 연구의 신호. 출처: Hao et al. (2026), Nature.
 

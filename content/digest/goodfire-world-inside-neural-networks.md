@@ -15,7 +15,7 @@ sidenotes: true
 2. mountain car에서 위치 표상은 곡선 매니폴드를 이루며, 그 매니폴드를 따라 활성을 움직이면 차가 부드럽게 이동하지만 직선 경로로 움직이면 출력이 깨지거나 다른 위치로 텔레포트한다. 매니폴드를 따라가는가, 가로지르는가가 곧 정밀 제어의 가능 여부를 가른다.
 3. 인기 기법인 sparse autoencoder(SAE)는 슬랜트 라임 매니폴드 같은 연속 구조를 23개의 무관해 보이는 국소 피처로 산산조각낸다(shattering). SAE는 폐기 대상이 아니라 보완 대상이며, 신경 기하를 존중하는 새 방법론이 정렬·디버깅·감사의 임계 경로다.
 
-![Neural geometry banner](/images/goodfire-world-inside-neural-networks/neural-geometry-opengraph.webp)
+![Neural geometry banner](https://img.seosoyoung.eiaserinnys.me/images/goodfire-world-inside-neural-networks/neural-geometry-opengraph.webp)
 > 출처: Goodfire, *The World Inside Neural Networks* 배너 (2026-05-07).
 > 원본 이미지: <https://static.goodfire.ai/neural-geometry-agenda/neural-geometry-opengraph.webp>
 
@@ -67,7 +67,7 @@ sidenotes: true
 
 ## 표상·계산·행동 — 세 층을 함께 봐야 한다
 
-![Three levels of analysis in neural networks](/images/goodfire-world-inside-neural-networks/representation-computation-behavior.webp)
+![Three levels of analysis in neural networks](https://img.seosoyoung.eiaserinnys.me/images/goodfire-world-inside-neural-networks/representation-computation-behavior.webp)
 > 출처: Goodfire, 신경망의 세 분석 수준(표상·계산·행동) 도식. 마(Marr 1982)의 분석 수준 관점을 차용한 것임을 본문에서 명시한다.
 > 원본 이미지: <https://static.goodfire.ai/neural-geometry-agenda/representation-computation-behavior.webp>
 
@@ -87,7 +87,7 @@ sidenotes: true
 
 ## 신경 기하는 어디서 자라나는가
 
-![Concepts arise from the structure of the world reflected in training data](/images/goodfire-world-inside-neural-networks/world-data-neural-networks.webp)
+![Concepts arise from the structure of the world reflected in training data](https://img.seosoyoung.eiaserinnys.me/images/goodfire-world-inside-neural-networks/world-data-neural-networks.webp)
 > 출처: Goodfire, 신경 기하의 기원 도식. *"개념은 마법으로 신경망에 등장하지 않는다 — 학습 데이터에 비친 세계의 구조에서 자라난다."*
 > 원본 이미지: <https://static.goodfire.ai/neural-geometry-agenda/world-data-neural-networks.webp>
 
@@ -118,7 +118,7 @@ sidenotes: true
   </figcaption>
 </figure>
 
-![A subspace of slant rhymes with -ore](/images/goodfire-world-inside-neural-networks/slant-rhyme-manifold.webp)
+![A subspace of slant rhymes with -ore](https://img.seosoyoung.eiaserinnys.me/images/goodfire-world-inside-neural-networks/slant-rhyme-manifold.webp)
 > 출처: Goodfire, 슬랜트 라임 매니폴드 정적 컷. 완벽 라임 'door'는 한쪽 끝(짙은 파랑)에, 약한 라임 'wire'는 반대 끝(노랑)에, 'car' 같은 근접 라임은 그 사이에 놓인다.
 > 원본 이미지: <https://static.goodfire.ai/neural-geometry-agenda/slant-rhyme-manifold.webp>
 
@@ -161,7 +161,7 @@ SAE FEATURES ON SLANT RHYME MANIFOLD
 
 ## 결론과 전망
 
-![Neural geometry closing banner](/images/goodfire-world-inside-neural-networks/wide_manifold_banner.webp)
+![Neural geometry closing banner](https://img.seosoyoung.eiaserinnys.me/images/goodfire-world-inside-neural-networks/wide_manifold_banner.webp)
 > 출처: Goodfire, 시리즈 클로징 배너. 실제 언어 모델에서 검출된 매니폴드들이 합쳐 한 장으로 펼쳐진다.
 > 원본 이미지: <https://static.goodfire.ai/neural-geometry-agenda/wide_manifold_banner.webp>
 

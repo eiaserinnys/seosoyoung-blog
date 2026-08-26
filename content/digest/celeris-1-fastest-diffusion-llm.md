@@ -7,9 +7,9 @@ summary: "Celeris AI Labs가 확산 기반 추론 아키텍처로 만든 첫 모
 ShowToc: true
 TocOpen: false
 cover:
-  image: "/images/celeris-1-fastest-diffusion-llm/01-cover.png"
+  image: "https://img.seosoyoung.eiaserinnys.me/images/celeris-1-fastest-diffusion-llm/01-cover.png"
 images:
-  - "/images/celeris-1-fastest-diffusion-llm/01-cover.png"
+  - "https://img.seosoyoung.eiaserinnys.me/images/celeris-1-fastest-diffusion-llm/01-cover.png"
 ---
 
 ## 3줄 요약
@@ -37,7 +37,7 @@ Celeris가 공개한 벤치마크는 두 축이다. 하나는 지능(MMLU-Pro �
 
 첫 번째 표는 MMLU-Pro(5-shot, chain-of-thought) 정확도와 응답 시간(p50)을 나란히 둔 것이다. Celeris를 포함한 GPT-5·GPT-5 mini·Gemini 계열은 추론 예산(reasoning budget)을 0으로, Mercury 2는 가장 빠른 instant 모드로 맞춰 측정했다고 밝혔다.
 
-![Celeris 공식 벤치마크 — MMLU-Pro 정확도와 응답 시간. Celeris는 왼쪽 위(빠르고 정확) 영역에 홀로 자리한다.](/images/celeris-1-fastest-diffusion-llm/fig1-intelligence.png)
+![Celeris 공식 벤치마크 — MMLU-Pro 정확도와 응답 시간. Celeris는 왼쪽 위(빠르고 정확) 영역에 홀로 자리한다.](https://img.seosoyoung.eiaserinnys.me/images/celeris-1-fastest-diffusion-llm/fig1-intelligence.png)
 
 | 모델 | MMLU-Pro | 응답 시간 (p50) |
 |---|---|---|
@@ -50,7 +50,7 @@ Celeris가 공개한 벤치마크는 두 축이다. 하나는 지능(MMLU-Pro �
 
 두 번째 표는 순수 출력 속도(p50 초당 토큰)다. 약 1,000토큰짜리 장문 프롬프트로 모델마다 50회씩 요청하고, 출력은 1,024토큰으로 상한을 둔 조건이다.
 
-![Celeris 공식 벤치마크 — 출력 속도(p50 초당 토큰). Celeris 1,664 tok/s로 2위 Mercury 2(324)의 다섯 배를 웃돈다.](/images/celeris-1-fastest-diffusion-llm/fig2-speed.png)
+![Celeris 공식 벤치마크 — 출력 속도(p50 초당 토큰). Celeris 1,664 tok/s로 2위 Mercury 2(324)의 다섯 배를 웃돈다.](https://img.seosoyoung.eiaserinnys.me/images/celeris-1-fastest-diffusion-llm/fig2-speed.png)
 
 | 모델 | 출력 속도 (p50 tok/s) |
 |---|---|

@@ -7,9 +7,9 @@ summary: "수학 블로그에 LLM 문장 다듬기를 쓰던 저자가 3개월 �
 ShowToc: true
 TocOpen: false
 cover:
-  image: "/images/various-llm-smells-shvbsle/jetbrains-mono.webp"
+  image: "https://img.seosoyoung.eiaserinnys.me/images/various-llm-smells-shvbsle/jetbrains-mono.webp"
 images:
-  - "/images/various-llm-smells-shvbsle/jetbrains-mono.webp"
+  - "https://img.seosoyoung.eiaserinnys.me/images/various-llm-smells-shvbsle/jetbrains-mono.webp"
 sidenotes: true
 ---
 
@@ -71,31 +71,31 @@ sidenotes: true
 
 본문 타이포에 코드 모노스페이스 폰트를 깔아 "기술 친화적"인 인상을 주는 패턴. 같은 폰트가 다른 톤과 결합 없이 그대로 반복된다.
 
-![JetBrains Mono 폰트를 본문에 그대로 사용한 AI 생성 페이지 예시](/images/various-llm-smells-shvbsle/jetbrains-mono.webp)
+![JetBrains Mono 폰트를 본문에 그대로 사용한 AI 생성 페이지 예시](https://img.seosoyoung.eiaserinnys.me/images/various-llm-smells-shvbsle/jetbrains-mono.webp)
 
 ### "step"과 그 정확한 불릿 양식
 
 번호가 매겨진 *step* 블록을 같은 폰트·같은 간격으로 반복.
 
-![step 번호와 불릿이 정형화된 AI 생성 페이지](/images/various-llm-smells-shvbsle/step-bullets.webp)
+![step 번호와 불릿이 정형화된 AI 생성 페이지](https://img.seosoyoung.eiaserinnys.me/images/various-llm-smells-shvbsle/step-bullets.webp)
 
 ### *정확히 이런* 버튼
 
 라운드 코너·둥근 화살표·미세한 그라데이션이 결합된 버튼이 도메인을 막론하고 반복된다.
 
-![정형화된 형태의 AI 생성 버튼](/images/various-llm-smells-shvbsle/ai-button.webp)
+![정형화된 형태의 AI 생성 버튼](https://img.seosoyoung.eiaserinnys.me/images/various-llm-smells-shvbsle/ai-button.webp)
 
 ### *이런* 카드
 
 같은 패딩·같은 보더 라운드·같은 아이콘 배치의 카드 컴포넌트.
 
-![반복되는 카드 컴포넌트 패턴](/images/various-llm-smells-shvbsle/ai-cards.webp)
+![반복되는 카드 컴포넌트 패턴](https://img.seosoyoung.eiaserinnys.me/images/various-llm-smells-shvbsle/ai-cards.webp)
 
 ### 배지 안의 깜빡이는 점
 
 "Live", "New", "Active" 같은 배지 라벨 옆에 펄스 애니메이션으로 깜빡이는 점이 붙는다.
 
-![배지 안에서 깜빡이는 점이 붙은 패턴](/images/various-llm-smells-shvbsle/blinking-badge.webp)
+![배지 안에서 깜빡이는 점이 붙은 패턴](https://img.seosoyoung.eiaserinnys.me/images/various-llm-smells-shvbsle/blinking-badge.webp)
 
 ## 저자가 명시한 단서
 

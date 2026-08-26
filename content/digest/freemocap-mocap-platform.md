@@ -9,7 +9,7 @@ TocOpen: false
 sidenotes: true
 ---
 
-![FreeMoCap 로고](/images/freemocap-mocap-platform/logo.png)
+![FreeMoCap 로고](https://img.seosoyoung.eiaserinnys.me/images/freemocap-mocap-platform/logo.png)
 
 ## 3줄 요약
 
@@ -42,7 +42,7 @@ GUI에서 처리되는 단계는 대략 다음과 같다.
 4. **3D 삼각측량**: 여러 카메라의 2D 검출을 합쳐 공간상 3D 좌표를 복원한다.
 5. **후처리·내보내기**: 스켈레톤 데이터를 Blender 애드온 등으로 가져가 애니메이션·분석에 활용한다.
 
-![FreeMoCap GUI](/images/freemocap-mocap-platform/gui.png)
+![FreeMoCap GUI](https://img.seosoyoung.eiaserinnys.me/images/freemocap-mocap-platform/gui.png)
 
 ## 모듈러 의존성 — Skelly 가족
 

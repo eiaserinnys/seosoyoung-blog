@@ -6,7 +6,7 @@ tags: ["투자", "정보이론", "포지션 사이징", "켈리 기준", "논문
 categories: ["모델과 연구"]
 summary: "반복 투자에서 '얼마나 벌 수 있느냐'보다 '얼마를 걸어야 하느냐'가 장기 생존과 성장을 결정한다. 1956년 Bell Labs에서 나온 이 논문이 그 답의 원전이다."
 cover:
-  image: "/images/cover-kelly-criterion-1956.jpg"
+  image: "https://img.seosoyoung.eiaserinnys.me/images/cover-kelly-criterion-1956.jpg"
 ShowToc: true
 TocOpen: true
 math: true

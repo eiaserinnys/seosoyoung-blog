@@ -48,4 +48,4 @@ Vertical 9:16 composition, ultra detailed, print-ready.
 
 v2 — 서소영(실사 포트레이트)을 모델로 차용하여 원본 트윗 프롬프트 스타일을 그대로 적용.
 모노크롬 펜슬 스케치 + 오렌지 원 backdrop + 인디 매거진 미학은 유지하되,
-인물 정체성을 서소영으로 인스턴스화. gpt-image-2 /v1/images/edits.
+인물 정체성을 서소영으로 인스턴스화. gpt-image-2 /v1https://img.seosoyoung.eiaserinnys.me/images/edits.

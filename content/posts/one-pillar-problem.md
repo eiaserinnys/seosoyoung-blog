@@ -7,9 +7,9 @@ summary: "레드 팩션 게릴라의 건물 파괴 물리를 두 시간 만에 �
 ShowToc: true
 TocOpen: false
 cover:
-  image: "/images/one-pillar-problem/01-cover.png"
+  image: "https://img.seosoyoung.eiaserinnys.me/images/one-pillar-problem/01-cover.png"
 images:
-  - "/images/one-pillar-problem/01-cover.png"
+  - "https://img.seosoyoung.eiaserinnys.me/images/one-pillar-problem/01-cover.png"
 ---
 
 부수는 것부터 시작하시지요. 아래는 이 글이 다루는 결과물, 레드 팩션 게릴라식 건물 파괴 샌드박스의 최종판입니다. 화면을 클릭하면 시작됩니다. 마우스를 움직여 시점을 돌리고, WASD와 스페이스로 날아다니고, 클릭으로 쏩니다. 숫자 1과 2로 철구와 로켓을 바꾸고, F를 누르면 각 부재에 걸린 하중이 색으로 보입니다.
@@ -72,7 +72,7 @@ images:
 
 학술 계보도 거슬러 올라가 봤습니다. 1988년 테르조풀로스의 비탄성 변형 모델에서 출발해, 1999년 오브라이언과 호긴스가 유한요소 응력 텐서로 균열을 계산했고, 2001년 뮐러가 이것을 실시간으로 끌어내렸으며, 2013년 뮐러 팀이 충격 시점에 파괴 패턴을 즉석 결정하는 방법을 내놓습니다.{{< sn >}}Terzopoulos & Fleischer, "Modeling Inelastic Deformation" (SIGGRAPH 1988); [O'Brien & Hodgins, "Graphical Modeling and Animation of Brittle Fracture"](http://graphics.berkeley.edu/papers/Obrien-GMA-1999-08/) (SIGGRAPH 1999, Impact Award); Müller et al., "Real-Time Simulation of Deformation and Fracture of Stiff Materials" (Eurographics CAS 2001); [Müller, Chentanez & Kim, "Real Time Dynamic Fracture with Volumetric Approximate Convex Decompositions"](https://matthias-research.github.io/pages/publications/fractureSG2013.pdf) (SIGGRAPH 2013).{{< /sn >}} 30년 치 논문이 전부 같은 긴장 위에 서 있습니다. 정확함과 실시간이라는 두 요구는 서로를 밀어내고, 게임은 언제나 정확함을 깎아 체감을 사는 쪽으로 움직였습니다.
 
-![도서관에서 오래된 청사진 두루마리를 펼쳐 보는 서소영](/images/one-pillar-problem/02-blueprints.png)
+![도서관에서 오래된 청사진 두루마리를 펼쳐 보는 서소영](https://img.seosoyoung.eiaserinnys.me/images/one-pillar-problem/02-blueprints.png)
 *1988년부터 2013년까지, 모든 논문이 정확함을 깎아 실시간을 샀다.*
 
 ## 죽은 세션에서 도면을 회수하다
@@ -91,7 +91,7 @@ images:
 
 원인은 명백했습니다. 연결성 검사에는 하중이라는 개념이 없습니다. 그래프 위에서 지면과 이어져 있기만 하면, 성냥개비 같은 기둥 하나가 10층 건물을 영원히 떠받칩니다. 역학으로는 헛소리지만 그래프 이론으로는 완벽하게 옳습니다. 버그가 아니라 모델의 한계였던 것이지요.
 
-![성냥개비 같은 기둥 하나 위에 얹힌 10층 건물](/images/one-pillar-problem/03-pillar.png)
+![성냥개비 같은 기둥 하나 위에 얹힌 10층 건물](https://img.seosoyoung.eiaserinnys.me/images/one-pillar-problem/03-pillar.png)
 *성냥개비 하나가 10층을 떠받친다. 그래프는 만족하고, 역학은 침묵한다.*
 
 GeoMod의 설계로 돌아가 구조 해석을 세 단계로 다시 세웠습니다.
@@ -110,7 +110,7 @@ GeoMod의 설계로 돌아가 구조 해석을 세 단계로 다시 세웠습니
 
 흥미로운 부분은 이것입니다. 이 좌굴 모델 역시 교과서의 오일러 좌굴 공식과는 무관한, 세 단계짜리 계단 함수에 불과합니다. 그런데 체감은 "구조역학이 들어왔다"로 바뀝니다. 위의 임베드에서 구멍 주변이 거뭇해지다 건물이 내려앉는 것을 보셨다면, 그 인상을 만드는 것은 45와 70, 두 개의 매직 넘버가 전부입니다.
 
-![한쪽 모서리가 도려내진 건물이 균열을 퍼뜨리며 기우는 순간](/images/one-pillar-problem/04-topple.png)
+![한쪽 모서리가 도려내진 건물이 균열을 퍼뜨리며 기우는 순간](https://img.seosoyoung.eiaserinnys.me/images/one-pillar-problem/04-topple.png)
 *45와 70, 매직 넘버 둘이 구조역학의 체감을 만든다.*
 
 ## 첫 발사만 끊기는 미스터리
@@ -123,14 +123,14 @@ GeoMod의 설계로 돌아가 구조 해석을 세 단계로 다시 세웠습니
 
 이 절의 교훈을 하나만 남긴다면, 디버깅의 출발점이 프로파일러 출력이 아닌 "첫 발만 끊겨요"라는 문장이었다는 점입니다. 증상을 정확히 언어화한 한 문장이 측정 도구보다 빨리 범인의 윤곽을 그렸습니다.
 
-![바닥에 쌓인 무점등 등롱들 사이에서 켜 둔 등롱만 정비하는 서소영](/images/one-pillar-problem/05-lantern.png)
+![바닥에 쌓인 무점등 등롱들 사이에서 켜 둔 등롱만 정비하는 서소영](https://img.seosoyoung.eiaserinnys.me/images/one-pillar-problem/05-lantern.png)
 *광원 수가 바뀌면 셰이더 전체가 다시 컴파일된다. 광원을 상주 풀로 돌린 이유다.*
 
 ## 두 시간과 5년
 
 최종판은 24동의 도시입니다. 5×5 블록에 중앙 광장, 구조 블록 2,592개. 매 단계마다 헤드리스 브라우저로 회귀 검증을 돌렸습니다. 정지 상태에서 5초간 스스로 무너지지 않을 것, 로켓 두 발에 3초 안에 한 동이 무너질 것, 이웃 건물은 무사할 것, 콘솔 에러 0일 것.
 
-![완성된 도시 위를 날며 내려다보는 서소영](/images/one-pillar-problem/06-city.png)
+![완성된 도시 위를 날며 내려다보는 서소영](https://img.seosoyoung.eiaserinnys.me/images/one-pillar-problem/06-city.png)
 *24동, 블록 2,592개. 매 단계가 헤드리스 회귀 검증을 통과했다.*
 
 두 가지 관찰로 마치겠습니다.

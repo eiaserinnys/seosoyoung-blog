@@ -25,4 +25,4 @@ Create a trending anime art style image from the uploaded subject. Use confident
 
 ## 메모
 
-두 장 발행. 헤더(cover.png)는 서소영 포트레이트(서소영 (포트레이트).png)를 subject로 두고 gpt-image-2 /v1/images/edits로 변환했다. 오리지널은 text-to-image(/v1/images/generations)로 임의의 캐릭터를 생성한 결과로, 프롬프트가 의도한 'uploaded subject'가 없을 때의 모델 기본 해석을 함께 보존한다.
+두 장 발행. 헤더(cover.png)는 서소영 포트레이트(서소영 (포트레이트).png)를 subject로 두고 gpt-image-2 /v1https://img.seosoyoung.eiaserinnys.me/images/edits로 변환했다. 오리지널은 text-to-image(/v1https://img.seosoyoung.eiaserinnys.me/images/generations)로 임의의 캐릭터를 생성한 결과로, 프롬프트가 의도한 'uploaded subject'가 없을 때의 모델 기본 해석을 함께 보존한다.

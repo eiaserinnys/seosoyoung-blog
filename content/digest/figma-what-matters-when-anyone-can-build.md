@@ -7,9 +7,9 @@ summary: "AI가 누구나 빌더로 만든 시대, 진짜 차별점은 무엇을
 ShowToc: true
 TocOpen: false
 cover:
-  image: "/images/figma-what-matters-when-anyone-can-build/cover-flower-burst.png"
+  image: "https://img.seosoyoung.eiaserinnys.me/images/figma-what-matters-when-anyone-can-build/cover-flower-burst.png"
 images:
-  - "/images/figma-what-matters-when-anyone-can-build/cover-flower-burst.png"
+  - "https://img.seosoyoung.eiaserinnys.me/images/figma-what-matters-when-anyone-can-build/cover-flower-burst.png"
 ---
 
 ## 3줄 요약
@@ -18,7 +18,7 @@ images:
 2. 속도는 더 이상 차별점이 아니며, 두 가지가 진짜 우위가 된다 — 무엇을 만들 가치가 있는지 고르는 **방향성(direction)** 과, 만들어진 것을 끝까지 다듬는 **장인정신(craft)**.
 3. AI 시대의 일하는 법은 사일로된 순차 작업이 아니라 *여러 방향을 동시에 깊이 탐색하고 함께 비교하는* 협업·병렬 작업으로 옮겨가야 한다.
 
-![Figma blog cover — colorful abstract flower bursts](/images/figma-what-matters-when-anyone-can-build/cover-flower-burst.png)
+![Figma blog cover — colorful abstract flower bursts](https://img.seosoyoung.eiaserinnys.me/images/figma-what-matters-when-anyone-can-build/cover-flower-burst.png)
 
 ## 시작점 — 속도는 더 이상 차별점이 아니다
 
@@ -44,7 +44,7 @@ Figma에서는 이런 식으로 일한다 — AI에게 *같은 문제에 대한 
 
 Yamashita는 이것이 *AI와 함께 일하는 새로운 방식*이라고 말한다. 사일로되고 순차적인 작업이 아니라, *집단적이고 병렬적인* 작업.
 
-![Bouquet illustration — multiple ideas in parallel](/images/figma-what-matters-when-anyone-can-build/bouquet.png)
+![Bouquet illustration — multiple ideas in parallel](https://img.seosoyoung.eiaserinnys.me/images/figma-what-matters-when-anyone-can-build/bouquet.png)
 
 ## 어떻게 만들 가치가 있는가 — 장인정신
 
@@ -60,7 +60,7 @@ AI는 *한눈에 그럴듯해 보이는 것*을 내놓는다. 통계적으로 �
 
 기준선이 올라갈수록 평균은 점점 더 *세련되게* 보일 것이다. 도구나 속도가 아니라 *얼마나 정성을 들일 것인가*가 차이를 만든다. 그 세상에서 눈에 띄는 유일한 방법은 주어진 것 너머로 가서 *분명히 당신의 것*인 무언가를 만드는 일이다.
 
-![Potted bouquet — crafted point of view](/images/figma-what-matters-when-anyone-can-build/potted.png)
+![Potted bouquet — crafted point of view](https://img.seosoyoung.eiaserinnys.me/images/figma-what-matters-when-anyone-can-build/potted.png)
 
 ## 무엇이 지금 중요한가 — 결론
 

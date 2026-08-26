@@ -7,9 +7,9 @@ summary: "AI MV 크리에이터 tapehead.lab이 신곡 「불쌍한 지성(か�
 ShowToc: true
 TocOpen: false
 cover:
-  image: "/images/seedance2-collage-animation-workflow/00-cover.jpeg"
+  image: "https://img.seosoyoung.eiaserinnys.me/images/seedance2-collage-animation-workflow/00-cover.jpeg"
 images:
-  - "/images/seedance2-collage-animation-workflow/00-cover.jpeg"
+  - "https://img.seosoyoung.eiaserinnys.me/images/seedance2-collage-animation-workflow/00-cover.jpeg"
 sidenotes: true
 ---
 
@@ -19,7 +19,7 @@ sidenotes: true
 2. 워크플로는 ① Midjourney로 단편 소재 20장 생성 → ② Runway 노드 환경에서 Seedance2.0에 5장씩 Reference로 넣어 15초 시퀀스 88본(총 22분 넘는 분량) 생성 → ③ 편집한 뒤 *영상에 맞춰 음악을 거꾸로 만드는* 역순 마감으로 이어진다.
 4. 두 가지 명제가 핵심이다. 입력 슬롯을 *Start Frame이 아니라 Reference*로 두면 모델은 이미지의 분위기만 가져가고 동작은 프롬프트가 정한다. 그리고 *Seedance2.0은 프롬프트가 전부* — 같은 5장의 레퍼런스라도 프롬프트만 바꾸면 결과가 크게 달라진다.
 
-![「불쌍한 지성」 MV 헤더](/images/seedance2-collage-animation-workflow/00-cover.jpeg)
+![「불쌍한 지성」 MV 헤더](https://img.seosoyoung.eiaserinnys.me/images/seedance2-collage-animation-workflow/00-cover.jpeg)
 
 ## 그리는 사람이 아니라 찍는 사람
 
@@ -29,17 +29,17 @@ sidenotes: true
 
 콜라주 영상은 *완성된 한 장의 그림*이 아니라 *분리되고 재조합될 수 있는 단편*을 필요로 한다. tapehead.lab은 처음부터 "단편적인 소재를 모은다(断片的な素材を集める)"는 자세로 이미지 풀을 만든다고 적었다. 완성도 높은 그림은 오히려 콜라주 단계에서 결합이 막힌다.
 
-![Midjourney 생성 일람](/images/seedance2-collage-animation-workflow/01-midjourney-gallery.png)
+![Midjourney 생성 일람](https://img.seosoyoung.eiaserinnys.me/images/seedance2-collage-animation-workflow/01-midjourney-gallery.png)
 
 스타일 통일은 두 가지 손잡이로 잡는다. 첫째, Midjourney의 `sref`(스타일 레퍼런스)를 조합한다. 둘째, *자기 생성물을 다시 스타일 레퍼런스로 넣어* 시리즈 전체의 결을 점진적으로 좁힌다. "스타일을 한 번 설정"하는 방식이 아니라 자기 출력을 피드백 루프에 넣어 결을 빚어내는 방식이다.
 
-![생성 파라미터와 chaos](/images/seedance2-collage-animation-workflow/02-midjourney-params.png)
+![생성 파라미터와 chaos](https://img.seosoyoung.eiaserinnys.me/images/seedance2-collage-animation-workflow/02-midjourney-params.png)
 
 다양성은 `chaos` 파라미터로 의도적으로 키운다. 수치를 올리면 같은 프롬프트에서도 출력이 흩어진다. 콜라주처럼 *비슷한 결의 서로 다른 조각*이 필요한 작업에 잘 맞는 손잡이다.
 
 흥미로운 점은, 이 첫 단계의 발상이 LLM 프롬프트 기법과 정확히 짝을 이룬다는 사실이다. LLM에 "평균적인 답이 아니라 90 퍼센타일의 답을 달라"라고 *확률 분포를 명시*해 중간 답변을 피하는 기법이 있다. Midjourney의 chaos 파라미터도 같은 일을 한다 — *평균 출력을 피하라*고 모델에 명시하는 것. 매체는 다르지만, *분포의 중심에서 벗어나라*는 단일 지시다.
 
-![최종 선별된 20장](/images/seedance2-collage-animation-workflow/03-selected-20.png)
+![최종 선별된 20장](https://img.seosoyoung.eiaserinnys.me/images/seedance2-collage-animation-workflow/03-selected-20.png)
 
 > 이미지 고르는 건 감각으로!
 > 인물뿐 아니라 신체 일부나 추상적인 오브젝트까지,
@@ -57,7 +57,7 @@ sidenotes: true
 
 노드 UX는 워크플로우 관리를 쉽게 만들고, Unlimited 플랜은 크레딧 걱정 없이 시안을 굴리게 한다. 720p 상한과 느린 생성 속도라는 단점을 *무한히 굴릴 수 있는 운영 방식*으로 압도하는 모델이다.
 
-![Runway 노드 구성](/images/seedance2-collage-animation-workflow/04-runway-nodes.jpg)
+![Runway 노드 구성](https://img.seosoyoung.eiaserinnys.me/images/seedance2-collage-animation-workflow/04-runway-nodes.jpg)
 
 ### Start Frame이 아니라 Reference로
 
@@ -67,7 +67,7 @@ sidenotes: true
 
 Seedance2.0의 Reference 성능이 워낙 좋아서, 이미지가 가진 분위기를 그대로 확장해 영상으로 만들어준다. 그래서 *Start Frame으로 넣지 않고* Reference 입력으로 두면 모델은 색·텍스처·분위기만 가져가고 동작은 프롬프트가 정한다. 같은 이미지를 어느 슬롯에 넣느냐가 결과 성격을 완전히 가른다.
 
-![Ref Image 입력 슬롯](/images/seedance2-collage-animation-workflow/05-ref-image-slot.jpg)
+![Ref Image 입력 슬롯](https://img.seosoyoung.eiaserinnys.me/images/seedance2-collage-animation-workflow/05-ref-image-slot.jpg)
 
 ### 5장 × 4세트 — 풀을 쪼개 운용한다
 
@@ -91,16 +91,16 @@ The surface texture flows downward against the direction of the color seep.
 
 블록은 10단계까지 이어지고 마지막 13.5-15초 블록에서는 앞선 모든 변형을 *동시에* 일으켜 누적 카오스를 만든다. 영상 모델에 던지는 프롬프트가 어디까지 정교해질 수 있는지 보여주는 사례다.
 
-![콜라주 결과 GIF 1](/images/seedance2-collage-animation-workflow/06-collage-gif-1.gif)
+![콜라주 결과 GIF 1](https://img.seosoyoung.eiaserinnys.me/images/seedance2-collage-animation-workflow/06-collage-gif-1.gif)
 
 > 프롬프트에 따라 다양한 움직임으로 콜라주가 가능하다.
 > <strong>(Seedance2.0은 무조건 프롬프트다. 프롬프트에 따라 출력이 크게 달라진다.)</strong>
 
 여기서 *Seedance2.0은 프롬프트가 전부*라는 명제가 나온다. 같은 5장의 레퍼런스라도 프롬프트만 바꾸면 결과가 크게 달라진다. 모델 통제력의 무게중심이 이미지가 아니라 텍스트 쪽에 있다는 진단이다.
 
-![콜라주 결과 GIF 2](/images/seedance2-collage-animation-workflow/07-collage-gif-2.gif)
+![콜라주 결과 GIF 2](https://img.seosoyoung.eiaserinnys.me/images/seedance2-collage-animation-workflow/07-collage-gif-2.gif)
 
-![콜라주 결과 GIF 3](/images/seedance2-collage-animation-workflow/08-collage-gif-3.gif)
+![콜라주 결과 GIF 3](https://img.seosoyoung.eiaserinnys.me/images/seedance2-collage-animation-workflow/08-collage-gif-3.gif)
 
 ## ③ 즐거운 편집 — 폐기 전제와 역순 마감
 
@@ -109,12 +109,12 @@ The surface texture flows downward against the direction of the color seep.
 
 본편보다 훨씬 많은 양을 만들고 편집에서 추린다. 15초×88본이면 22분이 넘는 분량이다. 자원 제약이 큰 전통 영상에서는 불가능했던 *대량 생성 → 대량 폐기*가 AI 영상의 기본 운영 방식으로 자리 잡는다. 사진가가 컨택트 시트를 펴놓고 셀렉트하는 결과 정확히 같다.
 
-![출력 소재 정리](/images/seedance2-collage-animation-workflow/09-output-files.png)
+![출력 소재 정리](https://img.seosoyoung.eiaserinnys.me/images/seedance2-collage-animation-workflow/09-output-files.png)
 
 > 보통은 이렇게 사치스러운 애니메이션 운용은 못 한다.
 > AI라서 가능한 짓!
 
-![편집 화면](/images/seedance2-collage-animation-workflow/10-editing.png)
+![편집 화면](https://img.seosoyoung.eiaserinnys.me/images/seedance2-collage-animation-workflow/10-editing.png)
 
 그리고 더 흥미로운 지점은 *영상을 먼저 만들고 음악을 나중에 작곡*했다는 사실이다. 보통 MV는 곡이 먼저 있고 영상이 따라오는데, 이번에는 순서가 뒤집혔다.
 

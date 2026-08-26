@@ -7,9 +7,9 @@ summary: "인디 개발자 Thomas Brush가 자신의 게임 Twisted Tower로 스
 ShowToc: true
 TocOpen: false
 cover:
-  image: "/images/brush-twisted-tower-100k-wishlists-2026/thumbnail.jpg"
+  image: "https://img.seosoyoung.eiaserinnys.me/images/brush-twisted-tower-100k-wishlists-2026/thumbnail.jpg"
 images:
-  - "/images/brush-twisted-tower-100k-wishlists-2026/thumbnail.jpg"
+  - "https://img.seosoyoung.eiaserinnys.me/images/brush-twisted-tower-100k-wishlists-2026/thumbnail.jpg"
 ---
 
 ## 3줄 요약

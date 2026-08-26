@@ -19,9 +19,9 @@ sidenotes: true
 
 ComfyUI를 백엔드로 두고 텍스트 한 줄을 숏비디오로 변환하는 엔진이다. RunningHub 클라우드와 자체 호스트(ComfyUI 로컬) 두 모드를 모두 지원하며, FLUX·WAN 2.1·Edge-TTS·Index-TTS·ChatTTS·Nano Banana 등 원자 능력을 조합해 한 편의 영상을 만든다.
 
-![Pixelle-Video 영상 생성 흐름도](/images/pixelle-video-quality-design/flow.png)
+![Pixelle-Video 영상 생성 흐름도](https://img.seosoyoung.eiaserinnys.me/images/pixelle-video-quality-design/flow.png)
 
-![Pixelle-Video 웹 UI](/images/pixelle-video-quality-design/webui.png)
+![Pixelle-Video 웹 UI](https://img.seosoyoung.eiaserinnys.me/images/pixelle-video-quality-design/webui.png)
 
 리포의 README는 "주제만 입력하면 끝"이라는 가벼운 카피로 시작한다. 그런데 자동화의 가장 어려운 부분은 *각 단계의 출력이 다음 단계의 입력으로 깨끗하게 맞물리는가*다. 코드는 어디서 이 갈등을 해결하고 있을까. 다음 일곱 가지를 찾아냈다.
 

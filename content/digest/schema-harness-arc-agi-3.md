@@ -8,9 +8,9 @@ math: true
 ShowToc: true
 TocOpen: false
 cover:
-  image: "/images/schema-harness-arc-agi-3/fig1-rhae-timeline.png"
+  image: "https://img.seosoyoung.eiaserinnys.me/images/schema-harness-arc-agi-3/fig1-rhae-timeline.png"
 images:
-  - "/images/schema-harness-arc-agi-3/fig1-rhae-timeline.png"
+  - "https://img.seosoyoung.eiaserinnys.me/images/schema-harness-arc-agi-3/fig1-rhae-timeline.png"
 ---
 
 ## 3줄 요약
@@ -27,7 +27,7 @@ ARC-AGI-3는 에이전트에게 게임 환경을 주되, 그것이 무엇인지 
 
 이 벤치마크는 프론티어 모델에게 유난히 어려웠다. Semi-private set에서 검증된 프론티어 성능은 3월 런칭 시 0.51%(Opus 4.6 Max)에서 7월 7.78%(GPT-5.6 Sol max)로 올라온 정도였다. 같은 Sol max가 Public set에서는 13.33%를 기록했지만, 사람 기준선과는 여전히 거리가 멀다.
 
-![Figure 1. 2026년 3월~7월 ARC-AGI-3 RHAE 결과. 채워진 마커는 ARC Prize 검증, 빈 마커는 Public set 자가보고. 마젠타색이 Schema이며 두 점 모두 자가보고다.](/images/schema-harness-arc-agi-3/fig1-rhae-timeline.png)
+![Figure 1. 2026년 3월~7월 ARC-AGI-3 RHAE 결과. 채워진 마커는 ARC Prize 검증, 빈 마커는 Public set 자가보고. 마젠타색이 Schema이며 두 점 모두 자가보고다.](https://img.seosoyoung.eiaserinnys.me/images/schema-harness-arc-agi-3/fig1-rhae-timeline.png)
 
 이 그림 하나가 발표문의 요지를 압축한다. 아래쪽에 깔린 검증된 프론티어 점들과, "Human 100%" 점선 바로 아래에 찍힌 마젠타색 Schema 점 두 개(98.98 / 95.35)의 거리가 곧 이 글의 주장이다.
 
@@ -91,7 +91,7 @@ $$\text{level score}_i = \min\!\left(115,\; 100 \cdot \left(\frac{h_i}{a_i}\righ
 
 Claude Code는 파일 조작과 긴 컨텍스트 관리에 강한 범용 하니스이고, 원리상 Schema의 워크플로를 흉내 낼 수도 있다. 하지만 *강제하지는 않는다*. 범용 하니스 아래에서 모델은 게임에 직접 행동하고 자기 믿음을 컨텍스트 안에 암묵적으로 둘 수 있다. Schema는 위 세 제약을 강제한다. 그래서 이 비교는 모델 능력의 차이가 아니라 *프로세스의 차이*를 분리해 낸다.
 
-![Figure 5. Claude 행은 Opus & Fable 페어링을 고정하고 하니스만 바꾼다. Sol 행은 Schema의 xhigh & max 페어링을 공식 단일 변형 최고 Public 점수와 견주므로, 통제된 대조가 아니라 참조로 표시된다.](/images/schema-harness-arc-agi-3/fig5-claude-comparison.png)
+![Figure 5. Claude 행은 Opus & Fable 페어링을 고정하고 하니스만 바꾼다. Sol 행은 Schema의 xhigh & max 페어링을 공식 단일 변형 최고 Public 점수와 견주므로, 통제된 대조가 아니라 참조로 표시된다.](https://img.seosoyoung.eiaserinnys.me/images/schema-harness-arc-agi-3/fig5-claude-comparison.png)
 
 GPT-5.6 Sol 페어링(xhigh 먼저, 80점 미만 게임만 max로 재실행)으로는 95.35%에 닿았다. 다만 이쪽은 짝을 맞춘 하니스 비교가 아니다. 가장 가까운 공식 레퍼런스인 Sol max의 Public 13.33%는 서로 다른 하니스라, 차트에 보이는 82%p 격차는 맥락상 수치일 뿐 Schema가 만든 이득의 통제된 추정치가 아니다.
 

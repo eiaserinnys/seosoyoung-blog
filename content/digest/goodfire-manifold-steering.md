@@ -15,7 +15,7 @@ sidenotes: true
 2. Llama-3.1 8B에 "What day comes five days after Sunday?" 류 질문을 던지면 출력 토큰 분포(<strong>행동 매니폴드</strong>)와 내부 활성(<strong>표상 매니폴드</strong>) 양쪽에서 일곱 요일이 같은 원형 7-클러스터를 이룬다. 표상 매니폴드의 곡선을 따라 활성을 움직이면 Mon→Tue→Wed로 확률 질량이 깨끗이 옮겨가지만, 직선 스티어링은 행동 매니폴드를 가로질러 노이즈와 비요일 토큰을 만든다.
 3. 표상→행동만이 아니라 행동→표상도 성립한다. 행동 매니폴드를 따라 활성 개입을 최적화하면 그 활성 경로가 별도로 추정한 표상 매니폴드와 모양이 일치한다. 두 기하는 사전적으로 정렬될 이유가 없는데도 정확히 대응하며, 같은 패턴이 월·글자·나이·합성 ICL·이미지-액션 모델에서도 재현된다.
 
-![Concept geometry provides a blueprint for controlling neural network behavior](/images/steering-along-manifolds/bead-maze.webp)
+![Concept geometry provides a blueprint for controlling neural network behavior](https://img.seosoyoung.eiaserinnys.me/images/steering-along-manifolds/bead-maze.webp)
 > 출처: Goodfire, *Steering Along Manifolds to Control Neural Networks* 메인 비주얼 (2026-05-07).[^goodfire-manifold]
 > 원본: <https://static.goodfire.ai/manifold-steering/bead-maze-riso-wide.webp>
 
@@ -61,7 +61,7 @@ sidenotes: true
 
 놀랍게도, 그렇게 얻은 활성 공간의 경로는 별도로 추정한 표상 매니폴드와 형태가 일치한다.
 
-![Behavior and representations trace out similar curves in activation space](/images/steering-along-manifolds/pullback-steering.webp)
+![Behavior and representations trace out similar curves in activation space](https://img.seosoyoung.eiaserinnys.me/images/steering-along-manifolds/pullback-steering.webp)
 > 출처: Goodfire, *Steering Along Manifolds to Control Neural Networks* (2026-05-07).
 > 검정: 표상(활성) 매니폴드를 따른 경로. 청록: 행동 매니폴드를 활성 공간에 매핑한 경로. 회색: 활성 공간의 직선 경로.
 > 원본: <https://static.goodfire.ai/manifold-steering/pullback-steering.webp>

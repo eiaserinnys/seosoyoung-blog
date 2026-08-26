@@ -21,7 +21,7 @@ sidenotes: true
 연구진이 제안하는 <strong>자동차 의존 지수(Car Dependency Index, CDI)</strong>의 핵심 아이디어는 단순하다. 한 지점에서 자동차로 갈 수 있는 곳과 대중교통으로 갈 수 있는 곳을 비교하는 것이다.
 
 <figure>
-<img src="/images/cdi-fig1-schematic.png" alt="POI 접근성 개념도. 중앙의 에이전트를 기준으로 자동차로만 닿는 영역(빨강), 대중교통으로만 닿는 영역(파랑), 양쪽 모두 닿는 영역(보라)을 보여준다." />
+<img src="https://img.seosoyoung.eiaserinnys.me/images/cdi-fig1-schematic.png" alt="POI 접근성 개념도. 중앙의 에이전트를 기준으로 자동차로만 닿는 영역(빨강), 대중교통으로만 닿는 영역(파랑), 양쪽 모두 닿는 영역(보라)을 보여준다." />
 <figcaption>Figure 1 — 교통 수단별 POI 접근 범위 개념도. Campanelli et al. (2026), arXiv:2604.01019, CC BY 4.0</figcaption>
 </figure>
 
@@ -38,7 +38,7 @@ $$\text{CDI}_h = \frac{O_{h,\text{Car}} - O_{h,\text{PT}}}{O_{h,\text{Car}} + O_
 CDI를 도시 위에 색칠하면, 글로만 읽을 때는 보이지 않던 풍경이 드러난다.
 
 <figure>
-<img src="/images/cdi-fig3-city-maps.png" alt="11개 도시의 CDI 지도. 파란색이 대중교통 우위, 빨간색이 자동차 의존 지역이다. 파리는 대부분 파란색이고, 로마는 거의 전부 빨간색이다." />
+<img src="https://img.seosoyoung.eiaserinnys.me/images/cdi-fig3-city-maps.png" alt="11개 도시의 CDI 지도. 파란색이 대중교통 우위, 빨간색이 자동차 의존 지역이다. 파리는 대부분 파란색이고, 로마는 거의 전부 빨간색이다." />
 <figcaption>Figure 3 — 11개 도시의 Car Dependency Index 지도. 파란색은 대중교통 우위, 빨간색은 자동차 의존을 나타낸다. Campanelli et al. (2026), arXiv:2604.01019, CC BY 4.0</figcaption>
 </figure>
 
@@ -63,7 +63,7 @@ CDI를 도시 위에 색칠하면, 글로만 읽을 때는 보이지 않던 풍�
 ## 로마의 기회 격차 — 한 도시의 두 얼굴
 
 <figure>
-<img src="/images/cdi-fig2-rome-opportunity.png" alt="로마의 기회 점수. 대중교통 기회 점수는 메트로 노선을 따라 중심부에 집중되어 있지만, 자동차 기회 점수는 도시 전역에 걸쳐 높다." />
+<img src="https://img.seosoyoung.eiaserinnys.me/images/cdi-fig2-rome-opportunity.png" alt="로마의 기회 점수. 대중교통 기회 점수는 메트로 노선을 따라 중심부에 집중되어 있지만, 자동차 기회 점수는 도시 전역에 걸쳐 높다." />
 <figcaption>Figure 2 — 로마의 대중교통(a)과 자동차(b) 기회 점수. 대중교통은 메트로 노선을 따라 좁은 회랑에 집중되지만, 자동차는 도시 전역에 걸쳐 고르게 높은 접근성을 보인다. Campanelli et al. (2026), arXiv:2604.01019, CC BY 4.0</figcaption>
 </figure>
 
@@ -74,7 +74,7 @@ CDI를 도시 위에 색칠하면, 글로만 읽을 때는 보이지 않던 풍�
 ## 빈(Vienna) — 소득이 아니라 CDI가 자동차 보유를 결정한다
 
 <figure>
-<img src="/images/cdi-fig6-vienna.png" alt="빈의 구별 순소득, 자동차 접근 비율, CDI, 그리고 이 셋의 관계를 보여주는 산점도." />
+<img src="https://img.seosoyoung.eiaserinnys.me/images/cdi-fig6-vienna.png" alt="빈의 구별 순소득, 자동차 접근 비율, CDI, 그리고 이 셋의 관계를 보여주는 산점도." />
 <figcaption>Figure 6 — 빈의 소득, 자동차 보유, 자동차 의존도 관계. 같은 소득 수준에서 CDI가 높은 구일수록 자동차 보유율이 더 높다. Campanelli et al. (2026), arXiv:2604.01019, CC BY 4.0</figcaption>
 </figure>
 
@@ -85,7 +85,7 @@ CDI를 도시 위에 색칠하면, 글로만 읽을 때는 보이지 않던 풍�
 ## 로마 메트로 확장 시뮬레이션 — 고립된 투자의 한계
 
 <figure>
-<img src="/images/cdi-fig7-rome-metro.png" alt="로마에 새 메트로 정거장을 추가했을 때의 CDI 변화. 새 노선 주변에서는 의미 있는 감소가 나타나지만, 도시 전체에 대한 영향은 제한적이다." />
+<img src="https://img.seosoyoung.eiaserinnys.me/images/cdi-fig7-rome-metro.png" alt="로마에 새 메트로 정거장을 추가했을 때의 CDI 변화. 새 노선 주변에서는 의미 있는 감소가 나타나지만, 도시 전체에 대한 영향은 제한적이다." />
 <figcaption>Figure 7 — 로마의 계획된 메트로 확장에 따른 CDI 변화. 새 정거장(점) 주변에서만 뚜렷한 개선이 나타난다. Campanelli et al. (2026), arXiv:2604.01019, CC BY 4.0</figcaption>
 </figure>
 

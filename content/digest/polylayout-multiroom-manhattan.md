@@ -8,9 +8,9 @@ math: true
 ShowToc: true
 TocOpen: false
 cover:
-  image: "/images/polylayout-multiroom-manhattan/teaser.png"
+  image: "https://img.seosoyoung.eiaserinnys.me/images/polylayout-multiroom-manhattan/teaser.png"
 images:
-  - "/images/polylayout-multiroom-manhattan/teaser.png"
+  - "https://img.seosoyoung.eiaserinnys.me/images/polylayout-multiroom-manhattan/teaser.png"
 ---
 
 ## 3줄 요약
@@ -19,7 +19,7 @@ images:
 2. 방을 직육면체로 가정하는 대신 벽이 직각으로만 꺾이는 맨해튼 다각형으로 표현하고, 벽의 개수를 최적화 도중에 늘리거나 줄인다. 한 건물 안 여러 방의 방향과 바닥·천장 높이는 하나로 묶어 함께 푼다.
 3. 합성 데이터 ASE에서 3D IoU 94.3, 실촬영 ScanNet++ v2에서 87.4를 기록해 직전 최고 방법인 PixCuboid(각각 68.1, 78.8)를 앞섰다. 성능의 출처를 갈라 본 실험에서, 새 백본보다 다각형 표현 자체의 기여가 더 컸다.
 
-![PolyLayout이 여러 장의 실내 사진에서 여러 방의 구조를 한꺼번에 복원한 결과. 방마다 색이 다르고, 각 방 안의 작은 사각뿔이 입력 이미지를 찍은 카메라다. 점구름은 시각화용이며 입력이 아니다.](/images/polylayout-multiroom-manhattan/teaser.png)
+![PolyLayout이 여러 장의 실내 사진에서 여러 방의 구조를 한꺼번에 복원한 결과. 방마다 색이 다르고, 각 방 안의 작은 사각뿔이 입력 이미지를 찍은 카메라다. 점구름은 시각화용이며 입력이 아니다.](https://img.seosoyoung.eiaserinnys.me/images/polylayout-multiroom-manhattan/teaser.png)
 
 ## 어떤 문제를 다루는가
 
@@ -34,7 +34,7 @@ images:
 
 PolyLayout은 이 셋을 한꺼번에 겨냥한다. 전체 흐름은 이렇게 생겼다.
 
-![PolyLayout의 전체 파이프라인. 왼쪽에서 신경망이 이미지마다 특징·모서리·신뢰도 지도를 뽑고, 카메라 위치로 초기 다각형을 세운 뒤, 최적화와 단순화·복구·쪼개기를 번갈아 돌려 최종 구조에 도달한다.](/images/polylayout-multiroom-manhattan/overview.png)
+![PolyLayout의 전체 파이프라인. 왼쪽에서 신경망이 이미지마다 특징·모서리·신뢰도 지도를 뽑고, 카메라 위치로 초기 다각형을 세운 뒤, 최적화와 단순화·복구·쪼개기를 번갈아 돌려 최종 구조에 도달한다.](https://img.seosoyoung.eiaserinnys.me/images/polylayout-multiroom-manhattan/overview.png)
 
 ## 방 하나를 어떻게 적는가
 
@@ -44,7 +44,7 @@ PolyLayout은 이 셋을 한꺼번에 겨냥한다. 전체 흐름은 이렇게 �
 - $d_1$은 바닥 평면 $z = d_1$, $d_2$는 천장 평면 $z = d_2$.
 - 나머지는 벽이며 $x$축과 $y$축을 번갈아 가리킨다. 첫 벽은 $x = d_3$, 둘째 벽은 $y = d_4$, 그다음은 $x = d_5$ 하는 식이다. 벽 평면의 개수는 항상 짝수이고 최소 네 개다. 정확히 네 개면 그 방은 직육면체가 된다.
 
-![ㄱ자 방을 오프셋 벡터로 적은 예. 벽은 $x$축 정렬 평면과 $y$축 정렬 평면이 번갈아 나타난다.](/images/polylayout-multiroom-manhattan/parameterization.png)
+![ㄱ자 방을 오프셋 벡터로 적은 예. 벽은 $x$축 정렬 평면과 $y$축 정렬 평면이 번갈아 나타난다.](https://img.seosoyoung.eiaserinnys.me/images/polylayout-multiroom-manhattan/parameterization.png)
 
 이 표기가 왜 중요한지는 논문이 대안과 비교하며 밝힌다. 회전·평행이동·크기 $(R, t, s_x, s_y, s_z)$로 방을 적으면 각 평면의 위치가 평행이동과 엉켜 버려서, 방들 사이에 파라미터를 나눠 쓰기가 어려워진다. 오프셋 벡터로 적으면 바닥 높이 $d_1$ 하나만 떼어내 여러 방이 공유하는 일이 그냥 된다.
 
@@ -73,7 +73,7 @@ $$E(\mathcal{P}) = E_{feat}(\mathcal{P}) + \alpha E_{edge}(\mathcal{P}) + \beta 
 
 PixCuboid와 갈라지는 두 번째 지점은 벽의 개수를 미리 정하지 않는다는 것이다. 초기값을 만들고, 최적화 도중에 벽을 쪼개거나 지운다.
 
-![카메라 위치(검은 점)에서 초기 다각형을 만드는 과정. 오목 껍질(빨강)을 구하고, 일정 거리만큼 부풀린 뒤(초록), 래스터화해 맨해튼 다각형(주황)으로 바꾼다.](/images/polylayout-multiroom-manhattan/initialization.png)
+![카메라 위치(검은 점)에서 초기 다각형을 만드는 과정. 오목 껍질(빨강)을 구하고, 일정 거리만큼 부풀린 뒤(초록), 래스터화해 맨해튼 다각형(주황)으로 바꾼다.](https://img.seosoyoung.eiaserinnys.me/images/polylayout-multiroom-manhattan/initialization.png)
 
 **초기화.** 카메라들의 $y$축 평균으로 위쪽 방향을 잡아 회전 행렬을 세우고, $E_{VP}$만 최소화하는 LM 스텝을 다섯 번 밟아 방향을 다듬는다. 그다음 카메라 위치들 주위로 알파 셰이프(오목 껍질)를 구하고 $\delta = 3$ m만큼 부풀린 뒤, 1 m 픽셀로 래스터화해 윤곽을 따라가면 맨해튼 다각형이 나온다. 바닥과 천장은 카메라 중심까지의 최소 거리가 $\delta$가 되도록 놓는다.
 
@@ -120,7 +120,7 @@ ASE 테스트 세트에서 공유의 효과만 떼어 본 결과다.
 
 ## 비교 결과
 
-![같은 ASE 장면에 대한 방법별 예측(초록)과 정답(파랑). 왼쪽부터 SceneScript, Plane-DUSt3R, PixCuboid, RoomFormer, PolyLayout.](/images/polylayout-multiroom-manhattan/comparison.jpg)
+![같은 ASE 장면에 대한 방법별 예측(초록)과 정답(파랑). 왼쪽부터 SceneScript, Plane-DUSt3R, PixCuboid, RoomFormer, PolyLayout.](https://img.seosoyoung.eiaserinnys.me/images/polylayout-multiroom-manhattan/comparison.jpg)
 
 ASE 테스트 세트 결과다.
 

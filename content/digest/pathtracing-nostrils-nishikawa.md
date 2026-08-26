@@ -5,9 +5,9 @@ tags: ["게임", "Path Tracing", "렌더링", "NVIDIA", "일본", "AI 음악"]
 categories: ["게임"]
 summary: "게임 캐릭터의 콧구멍은 왜 30년 동안 어색했는가. 西川善司는 라스터라이즈의 구조적 한계로부터 path tracing이 콧구멍 내부의 투과광까지 재현하는 시점까지를 추적하고, 이 칼럼을 가상 밴드 Nostrils의 노래로 만들었다."
 cover:
-  image: "/images/pathtracing-nostrils-nishikawa/32412.png"
+  image: "https://img.seosoyoung.eiaserinnys.me/images/pathtracing-nostrils-nishikawa/32412.png"
 images:
-  - "/images/pathtracing-nostrils-nishikawa/32412.png"
+  - "https://img.seosoyoung.eiaserinnys.me/images/pathtracing-nostrils-nishikawa/32412.png"
 ShowToc: true
 TocOpen: false
 ---
@@ -20,13 +20,13 @@ TocOpen: false
 
 ## 콧구멍은 왜 밝았는가 — 라스터라이즈의 구조적 한계
 
-![콧구멍 표현의 30년 진화 — 좌에서 우로](/images/pathtracing-nostrils-nishikawa/32412.png)
+![콧구멍 표현의 30년 진화 — 좌에서 우로](https://img.seosoyoung.eiaserinnys.me/images/pathtracing-nostrils-nishikawa/32412.png)
 
 리얼 계열 표현에 도전한 게임 타이틀에서도 PS2·PS3 세대에는 캐릭터의 콧구멍 내부가 밝게 보이는 경우가 많았다. 3D 형상으로서의 콧구멍은 존재했지만, 그 내부가 라이팅되어 환했기 때문이다.
 
 이것은 의도된 표현이 아니다. 라스터라이즈 방식의 구조적 한계 때문이다. 라스터라이즈에서는 콧구멍 내벽의 픽셀이 자신을 덮은 소비(콧벽)의 차폐 여부를 검지하지 못한다. 즉 콧구멍 안쪽 픽셀들은 소비가 없는 상태로 가정하여 라이팅되었고, 그래서 밝아졌다.
 
-![PS2 시대까지 흔했던 콧구멍 표현 — 내부가 밝다](/images/pathtracing-nostrils-nishikawa/32411.png)
+![PS2 시대까지 흔했던 콧구멍 표현 — 내부가 밝다](https://img.seosoyoung.eiaserinnys.me/images/pathtracing-nostrils-nishikawa/32411.png)
 
 ## AO 텍스처로 어둡게 만든 PS3·PS4 시대
 
@@ -36,7 +36,7 @@ PS3 후기·PS4 전기에는 콧구멍 내부의 폴리곤이 외부로 얼마�
 
 PS4 중기 이후에는 AO 텍스처의 음영을 직접 농담값으로 덮어쓰지 않고 라이팅 결과의 감쇠 조정에 활용했다. 그래서 콧구멍의 검기가 동적으로 변하게 되었고, 이 기법은 PS5 시대에도 평이하게 쓰인다.
 
-![PS3 후기~PS4 전기에 흔했던 콧구멍 표현 — AO 텍스처](/images/pathtracing-nostrils-nishikawa/32410.png)
+![PS3 후기~PS4 전기에 흔했던 콧구멍 표현 — AO 텍스처](https://img.seosoyoung.eiaserinnys.me/images/pathtracing-nostrils-nishikawa/32410.png)
 
 ## Path tracing이 가져온 콧구멍 — 소비 투과광까지
 
@@ -48,15 +48,15 @@ PS4 중기 이후에는 AO 텍스처의 음영을 직접 농담값으로 덮어�
 
 콧구멍 안에 핏기가 도는 어둠이 생기는 것이다.
 
-![Path tracing 시대의 콧구멍 표현](/images/pathtracing-nostrils-nishikawa/32413.png)
+![Path tracing 시대의 콧구멍 표현](https://img.seosoyoung.eiaserinnys.me/images/pathtracing-nostrils-nishikawa/32413.png)
 
 이 결과로 path tracing 시대의 게임 캐릭터 콧구멍 안 풍경은 기존 그래픽과 확연히 달라진다. 무미한 검정 농담만이 아니라 살색의 농담, 소비를 투과해 들어온 붉은 광이 어우러져 생신한 인간에 가까운 콧구멍 정경이 만들어진다.
 
 작가는 이번 봄 발매된 「바이오하자드: 레퀴엠」의 여주인공 그레이스를 예로 든다. 그레이스는 파이널 판타지 계열 히로인들에 비해 콧구멍이 꽤 크게 조형된 캐릭터지만, path tracing 모드에서는 콧구멍이 어두운데도 "콧구멍이 크다"는 인상은 그다지 받지 않았다고 한다. 피부의 투명도가 높아서, 콧구멍 안으로 침투하는 광의 강약이 오히려 미인도를 끌어올리는 방향으로 작용했다는 것이다.
 
-![GeForce RTX 5090 + Path tracing 모드, 최고 설정](/images/pathtracing-nostrils-nishikawa/32414.png)
+![GeForce RTX 5090 + Path tracing 모드, 최고 설정](https://img.seosoyoung.eiaserinnys.me/images/pathtracing-nostrils-nishikawa/32414.png)
 
-![GeForce RTX 5090 + Path tracing 모드, 다른 컷](/images/pathtracing-nostrils-nishikawa/32418.png)
+![GeForce RTX 5090 + Path tracing 모드, 다른 컷](https://img.seosoyoung.eiaserinnys.me/images/pathtracing-nostrils-nishikawa/32418.png)
 
 ## 노래로 만든 칼럼 — 가상 밴드 Nostrils
 
@@ -73,7 +73,7 @@ Nostrils의 4명 멤버 설정은 다음과 같다.
 | 베이스 (보컬 겸임) | 메가네짱 | 20대 중반 일본인. 활기 넘침. 윙크하면 1/2 확률로 양쪽 눈을 다 감음. 160cm. |
 | 드럼 | 히게드럼 | 40대 후반 선글라스를 낀 수염 아저씨. 묵묵히 드럼. 가끔 한 번 미소. 170cm. |
 
-![가상 밴드 Nostrils의 이미지](/images/pathtracing-nostrils-nishikawa/32417.png)
+![가상 밴드 Nostrils의 이미지](https://img.seosoyoung.eiaserinnys.me/images/pathtracing-nostrils-nishikawa/32417.png)
 
 뮤직비디오의 동영상 생성은 처음에는 Gemini 계열 Veo를 사용했지만, 작가의 구독 등급에서 하루 3개까지밖에 생성할 수 없어 거의 재촬영이 불가능했다. 담당 편집자가 추천한 X(트위터) 계열의 Grok은 재생성이 비교적 자유로워서, 다음 작품부터 Grok 사용 비중이 늘어났다고 한다.
 

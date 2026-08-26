@@ -7,9 +7,9 @@ summary: "1990~2000년대 일본 갸루 문화가 걸그룹 리센느의 '거제
 ShowToc: true
 TocOpen: false
 cover:
-  image: "/images/chosun-gyaru-revival-2026/03-recienne-portrait.jpg"
+  image: "https://img.seosoyoung.eiaserinnys.me/images/chosun-gyaru-revival-2026/03-recienne-portrait.jpg"
 images:
-  - "/images/chosun-gyaru-revival-2026/03-recienne-portrait.jpg"
+  - "https://img.seosoyoung.eiaserinnys.me/images/chosun-gyaru-revival-2026/03-recienne-portrait.jpg"
 sidenotes: true
 ---
 
@@ -23,15 +23,15 @@ sidenotes: true
 
 지난 18일 엠넷 '엠카운트다운'에 출연한 걸그룹 리센느는 멤버 전원이 짙은 눈 화장과 화려한 머리 장식, 과장된 분장으로 무대를 채웠다.[^1] 2년 전 발매곡 '러브 어택'(LOVE ATTACK)을 다시 부른 자리였다. 한국인 원이와 일본인 미나미가 갸루식 분장과 말투를 선보인 유튜브 영상이 화제가 되면서 노래도 역주행했다. 차트 진입은 지난 3월 말, 6월 22일 기준 멜론 톱100 5위. 원이의 고향 거제에서 미나미가 나른한 비음으로 외친 "거제 야\~호!"가 젊은 층의 필수 밈이 됐다.
 
-![리센느 미나미의 갸루 부캐 클로즈업. 본 다이제스트 커버 이미지로도 채택했다. /조선일보·X](/images/chosun-gyaru-revival-2026/03-recienne-portrait.jpg)
+![리센느 미나미의 갸루 부캐 클로즈업. 본 다이제스트 커버 이미지로도 채택했다. /조선일보·X](https://img.seosoyoung.eiaserinnys.me/images/chosun-gyaru-revival-2026/03-recienne-portrait.jpg)
 
-![갸루 부캐로 인기를 끈 리센느 미나미의 전신 컷. /조선일보·X](/images/chosun-gyaru-revival-2026/01-minami-cover.jpg)
+![갸루 부캐로 인기를 끈 리센느 미나미의 전신 컷. /조선일보·X](https://img.seosoyoung.eiaserinnys.me/images/chosun-gyaru-revival-2026/01-minami-cover.jpg)
 
-![리센느의 '엠카운트다운' 무대. 멤버 전원이 갸루 분장을 했다. /조선일보](/images/chosun-gyaru-revival-2026/02-recienne-stage.jpg)
+![리센느의 '엠카운트다운' 무대. 멤버 전원이 갸루 분장을 했다. /조선일보](https://img.seosoyoung.eiaserinnys.me/images/chosun-gyaru-revival-2026/02-recienne-stage.jpg)
 
 리센느만의 일은 아니다. 배우 이민정과 박한별, 가수 강남, 러블리즈 출신 미주, 모델 한혜진, 걸그룹 하츠투하츠 등 다수 연예인이 갸루 화장으로 변신한 모습을 올리거나 갸루 차림으로 일본을 여행하는 영상을 공개했다. 1990년대 갸루들이 유로비트에 맞춰 추던 파라파라 댄스도 숏폼에서 다시 소환됐다. 걸그룹뿐 아니라 엔시티 위시, 보이넥스트도어, 알파드라이브원 같은 보이그룹도 파라파라를 따라 추는 영상으로 화제를 모았다.
 
-![이민정의 갸루 화장 체험, 아이브 레이의 갸루 스타일링, 하츠투하츠의 '갸루 피스' 포즈. /조선일보·X·유튜브 캡처](/images/chosun-gyaru-revival-2026/04-leemin-rei-h2h.jpg)
+![이민정의 갸루 화장 체험, 아이브 레이의 갸루 스타일링, 하츠투하츠의 '갸루 피스' 포즈. /조선일보·X·유튜브 캡처](https://img.seosoyoung.eiaserinnys.me/images/chosun-gyaru-revival-2026/04-leemin-rei-h2h.jpg)
 
 트렌드는 수치로도 확인할 수 있다. 지니뮤직에 따르면 올 상반기(1월 1일\~6월 17일) J팝 스트리밍이 전년 동기 대비 29.5%, 2024년 대비 57.5% 늘었다. 인스타그램의 갸루 네일 해시태그도 2만 4천여 개에 달한다. 상품도 따라온다. 웨이크메이크가 '갸루 헬로키티 에디션', 컬러그램이 '갸루짱구' 립스틱 같은 한정판을 내놓았고, 스노우·틱톡에는 '교복 갸루', '스트릿 갸루', '오네(성숙한) 갸루' 필터가 등장했다.
 

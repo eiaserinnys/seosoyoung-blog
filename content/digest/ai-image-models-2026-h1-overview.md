@@ -7,9 +7,9 @@ summary: "gpt-image-2 출시 이후 흔들린 AI 이미지 생성 모델 지형�
 ShowToc: true
 TocOpen: false
 cover:
-  image: "/images/ai-image-models-2026-h1-overview/cover.png"
+  image: "https://img.seosoyoung.eiaserinnys.me/images/ai-image-models-2026-h1-overview/cover.png"
 images:
-  - "/images/ai-image-models-2026-h1-overview/cover.png"
+  - "https://img.seosoyoung.eiaserinnys.me/images/ai-image-models-2026-h1-overview/cover.png"
 draft: true
 ---
 
@@ -21,7 +21,7 @@ draft: true
 
 ## 1. gpt-image-2의 충격 (2026-04-21)
 
-![gpt-image-2의 다국어 텍스트 렌더링 — 일본어·한국어·중국어·힌디어·벵골어 동시 출력](/images/ai-image-models-2026-h1-overview/fig01b-multilingual-poster.jpg)
+![gpt-image-2의 다국어 텍스트 렌더링 — 일본어·한국어·중국어·힌디어·벵골어 동시 출력](https://img.seosoyoung.eiaserinnys.me/images/ai-image-models-2026-h1-overview/fig01b-multilingual-poster.jpg)
 *단일 이미지 안에 다섯 가지 문자 체계가 모두 정확히 렌더링됐다 ([OpenAI 공식](https://openai.com/index/introducing-chatgpt-images-2-0/)).*
 
 OpenAI가 키노트 없이 모델 페이지와 갤러리만으로 공개한 이 모델은 출시 당일 *모든* 카테고리에서 1위를 차지했다.
@@ -43,10 +43,10 @@ OpenAI가 키노트 없이 모델 페이지와 갤러리만으로 공개한 이 
 - **웹 검색 그라운딩** — 생성 전 실시간 정보 참조 (기상 지도, 최신 제품 등)
 - **네이티브 2K\~4K 해상도**
 
-![일본 판타지 망가 — 단일 프롬프트로 생성된 다패널 스토리보드와 일본어 말풍선](/images/ai-image-models-2026-h1-overview/fig02-manga-multiimage.webp)
+![일본 판타지 망가 — 단일 프롬프트로 생성된 다패널 스토리보드와 일본어 말풍선](https://img.seosoyoung.eiaserinnys.me/images/ai-image-models-2026-h1-overview/fig02-manga-multiimage.webp)
 *단일 프롬프트가 생성한 일본 판타지 망가 페이지. 패널 사이의 캐릭터·구도 일관성이 유지되고, 말풍선의 일본어와 효과음이 모두 정확히 렌더링된다 ([OpenAI 공식](https://openai.com/index/introducing-chatgpt-images-2-0/)).*
 
-![gpt-image-2가 만든 샌프란시스코 날씨 활동 인포그래픽](/images/ai-image-models-2026-h1-overview/fig05-weather-infographic.jpg)
+![gpt-image-2가 만든 샌프란시스코 날씨 활동 인포그래픽](https://img.seosoyoung.eiaserinnys.me/images/ai-image-models-2026-h1-overview/fig05-weather-infographic.jpg)
 *실시간 날씨 데이터를 웹에서 가져온 뒤 추론 모드로 합성한 인포그래픽. 텍스트·아이콘·체크리스트가 한 호출에서 정합적으로 자리 잡았다 ([Wired 리뷰](https://www.wired.com/story/openai-beefs-up-chatgpts-image-generation-model/)).*
 
 ### 약점·한계
@@ -60,7 +60,7 @@ OpenAI가 키노트 없이 모델 페이지와 갤러리만으로 공개한 이 
 
 ## 2. Big5 재편 — 누가 어디로 갔는가
 
-![gpt-image-2 · Midjourney V8 · Imagen 4의 동일 프롬프트 결과 — 갤러리 벽 비교](/images/ai-image-models-2026-h1-overview/fig03-big5-comparison-grid.webp)
+![gpt-image-2 · Midjourney V8 · Imagen 4의 동일 프롬프트 결과 — 갤러리 벽 비교](https://img.seosoyoung.eiaserinnys.me/images/ai-image-models-2026-h1-overview/fig03-big5-comparison-grid.webp)
 *같은 풍경 프롬프트에 대한 세 모델의 응답을 한 벽에 모은 비교 갤러리. 미적 해석의 결이 모델마다 분명하게 다르다 ([Pixo 8 Design Tasks Tested](https://pixo.video/blog/gpt-image-2-vs-midjourney-vs-imagen4)).*
 
 ### Midjourney V8.1
@@ -75,7 +75,7 @@ Pixo의 프리랜서 설문이 잡은 흐름이 인상적이다.{{< sn >}}[Pixo 
 
 > "70% of professionals start creative projects in Midjourney but finish them in GPT-Image-2."
 
-![Midjourney V8.1 — 차 안의 여성과 고양이, HD 시네마틱 포토리얼](/images/ai-image-models-2026-h1-overview/fig17-midjourney.jpg)
+![Midjourney V8.1 — 차 안의 여성과 고양이, HD 시네마틱 포토리얼](https://img.seosoyoung.eiaserinnys.me/images/ai-image-models-2026-h1-overview/fig17-midjourney.jpg)
 *Midjourney V8.1 출력. 피부·머리카락·고양이 털·가죽 시트 질감이 카메라 사진과 거의 구분되지 않는다. V8 대비 해부학적 정확도와 HD 포토리얼리즘이 크게 개선됐다 ([Geeky Curiosity 리뷰](https://geekycuriosity.substack.com/p/midjourney-v81-is-here-and-it-feels)).*
 
 ### Flux 2 (Black Forest Labs)
@@ -96,7 +96,7 @@ Pixo의 프리랜서 설문이 잡은 흐름이 인상적이다.{{< sn >}}[Pixo 
 - **포지션**: 고볼륨 배치 생성의 1순위. SynthID 워터마킹 내장으로 콘텐츠 진위 확인 가능
 - **추가**: ArtificialAnalysis 아레나에서 *Imagen 4 Ultra Preview 0606* 버전이 ELO 1,165\~1,175(전체 9위)로 활동 중 — 후속 라인을 시사하는 데이터
 
-![Google Imagen 4 — 자연 사진 수준의 포토리얼 출력 (물총새 클로즈업)](/images/ai-image-models-2026-h1-overview/fig18-imagen4.webp)
+![Google Imagen 4 — 자연 사진 수준의 포토리얼 출력 (물총새 클로즈업)](https://img.seosoyoung.eiaserinnys.me/images/ai-image-models-2026-h1-overview/fig18-imagen4.webp)
 *Google Imagen 4의 포토리얼 출력. 깃털 광택, 부리 광 반사, 배경 보케 분리가 일반 카메라 사진과 구분이 어려운 수준. TokenMix 벤치마크 92/100 ([Google DeepMind Imagen](https://deepmind.google/technologies/imagen/)).*
 
 ## 3. 중국 진영의 약진
@@ -112,10 +112,10 @@ Pixo의 프리랜서 설문이 잡은 흐름이 인상적이다.{{< sn >}}[Pixo 
 | Seedream 4.5 | ByteDance | 폐쇄 | LongText 영어 0.989 / 중국어 0.987 (1위) |
 | Nano Banana 2 | Google (Gemini 3.1 Flash Image) | 폐쇄 | LongText 중국어 0.983 / 영어 0.981 |
 
-![Qwen-Image 9패널 쇼케이스 — 텍스트 렌더링·다양한 스타일](/images/ai-image-models-2026-h1-overview/fig08-qwen.jpg)
+![Qwen-Image 9패널 쇼케이스 — 텍스트 렌더링·다양한 스타일](https://img.seosoyoung.eiaserinnys.me/images/ai-image-models-2026-h1-overview/fig08-qwen.jpg)
 *Qwen-Image의 공식 쇼케이스. "Welcome to Qwen Coffee" 칠판, "Imagination Unleashed" 포스터, "天空名酒" 한자 간판 등 영어·중국어 텍스트 렌더링과 사진·일러스트·동양화·페인팅 스타일을 단일 모델로 처리한다 ([QwenLM GitHub](https://github.com/QwenLM/Qwen-Image)).*
 
-![GLM-Image — 영중 이중언어 포스터 / 인포그래픽](/images/ai-image-models-2026-h1-overview/fig19-glm-image.jpg)
+![GLM-Image — 영중 이중언어 포스터 / 인포그래픽](https://img.seosoyoung.eiaserinnys.me/images/ai-image-models-2026-h1-overview/fig19-glm-image.jpg)
 *GLM-Image의 텍스트 렌더링 능력 시연. 한자·영문 혼합 레이아웃에서 글자 자형이 무너지지 않는다. CVTG-2K 영어 91.16% · LongText 중국어 97.88%로 양 영역 모두 1위 ([Zhipu AI 공식](https://z.ai/blog/glm-image)).*
 
 오픈소스 진영에서 GLM-Image와 Qwen-Image 2.0이 텍스트 렌더링 정확도로 *폐쇄 모델을 따라잡거나 추월*한 상황이다.{{< sn >}}[Zhipu AI — GLM-Image 공식](https://z.ai/blog/glm-image) · [ComputerTech — Qwen-Image 2.0 Review](https://computertech.co/qwen-image-2-0-review/).{{< /sn >}} 특히 GLM-Image는 화웨이 Ascend Atlas 800T A2 칩으로만 훈련된 *최초의 오픈소스 프론티어 모델*로, <strong>Nvidia·AMD 없이도 경쟁 가능함을 증명</strong>하는 상징적 의미가 추가된다.
@@ -128,19 +128,19 @@ Pixo의 프리랜서 설문이 잡은 흐름이 인상적이다.{{< sn >}}[Pixo 
 - **HunyuanImage 3.0** — Tencent, 80B MoE(13B 활성), 텐센트 클라우드 API $0.011/이미지
 - **Kolors 2.0** — Kuaishou, ChatGLM3-6B 텍스트 인코더, Apache 2.0, INT8 양자화로 8GB VRAM 실행
 
-![Seedream 4.5 — "Sealdim GreenGlow BB CREAM" 상품 광고 합성](/images/ai-image-models-2026-h1-overview/fig09-seedream.jpg)
+![Seedream 4.5 — "Sealdim GreenGlow BB CREAM" 상품 광고 합성](https://img.seosoyoung.eiaserinnys.me/images/ai-image-models-2026-h1-overview/fig09-seedream.jpg)
 *Seedream 4.5 출력. "Sealdim" 캘리그래피 + "GreenGlow BB CREAM" 정밀 본문 텍스트를 동백꽃·이끼·물방울 배경과 합성한 4K 광고 포스터. LongText-Bench 영중 동시 1위의 능력을 단일 이미지에서 시연한다 ([fal.ai 데모](https://fal.ai/models/fal-ai/bytedance/seedream/v4.5/edit)).*
 
-![Z-Image Turbo — 6B 오픈웨이트가 만든 포토리얼리즘](/images/ai-image-models-2026-h1-overview/fig10-z-image.png)
+![Z-Image Turbo — 6B 오픈웨이트가 만든 포토리얼리즘](https://img.seosoyoung.eiaserinnys.me/images/ai-image-models-2026-h1-overview/fig10-z-image.png)
 *Z-Image Turbo 출력. 6B 파라미터 Apache 2.0 오픈웨이트로 Artificial Analysis 오픈소스 1위, 추론 비용 $5/1,000장 ([Tongyi-MAI 블로그](https://tongyi-mai.github.io/Z-Image-blog/)).*
 
-![HunyuanImage 3.0이 단일 프롬프트로 만든 4스타일 비교](/images/ai-image-models-2026-h1-overview/fig11-hunyuan.png)
+![HunyuanImage 3.0이 단일 프롬프트로 만든 4스타일 비교](https://img.seosoyoung.eiaserinnys.me/images/ai-image-models-2026-h1-overview/fig11-hunyuan.png)
 *HunyuanImage 3.0의 4格子 출력. 단일 프롬프트로 수묵·팝아트·픽셀·수채화 4가지 스타일을 동시 생성한다. 80B MoE(13B 활성), 텐센트 클라우드 $0.011/장 ([Tencent HunyuanImage GitHub](https://github.com/Tencent-Hunyuan/HunyuanImage)).*
 
-![Nano Banana 2 — 전통 의상 인물 사진](/images/ai-image-models-2026-h1-overview/fig20-nano-banana.webp)
+![Nano Banana 2 — 전통 의상 인물 사진](https://img.seosoyoung.eiaserinnys.me/images/ai-image-models-2026-h1-overview/fig20-nano-banana.webp)
 *Nano Banana 2(Google Gemini 3.1 Flash Image)의 출력. 의상의 무늬·자수·옷감 질감이 자연스럽게 살아있다 ([Google DeepMind 발표](https://deepmind.google/technologies/gemini/)).*
 
-![Kolors 2.0 — 유화 스타일의 고양이 초상](/images/ai-image-models-2026-h1-overview/fig21-kolors.png)
+![Kolors 2.0 — 유화 스타일의 고양이 초상](https://img.seosoyoung.eiaserinnys.me/images/ai-image-models-2026-h1-overview/fig21-kolors.png)
 *Kolors 2.0(Kuaishou)의 회화 스타일 출력. ChatGLM3-6B 텍스트 인코더로 중국어 프롬프트를 네이티브 처리하며, Apache 2.0 오픈웨이트라 소비자 GPU에서도 실행 가능하다 ([Kuaishou Kolors 공식 GitHub](https://github.com/Kwai-Kolors/Kolors)).*
 
 ### 특화 영역
@@ -151,19 +151,19 @@ Pixo의 프리랜서 설문이 잡은 흐름이 인상적이다.{{< sn >}}[Pixo 
 - **Anima** — 애니메이션 특화 2B 모델, 6GB VRAM, *합성 데이터 미사용*(수백만 애니메이션 + 80만 비애니 예술 이미지 학습)
 - **Ideogram 3.0** — 텍스트 렌더링 정확도 90\~95% 유지, Custom Models for Enterprise(2026-05-15) 추가{{< sn >}}[AIUnpacking — Ideogram 3.0 Review: Still the Text-in-Image King in 2026](https://aiunpacking.com/review/ideogram/).{{< /sn >}}
 
-![Recraft V3 — SVG 네이티브 출력 (자전거 라인 아트)](/images/ai-image-models-2026-h1-overview/fig12-recraft.svg)
+![Recraft V3 — SVG 네이티브 출력 (자전거 라인 아트)](https://img.seosoyoung.eiaserinnys.me/images/ai-image-models-2026-h1-overview/fig12-recraft.svg)
 *Recraft V3가 직접 생성한 SVG 벡터 파일. 업계 유일의 SVG 네이티브 출력으로 Illustrator·Figma에 곧바로 반입 가능하다 ([Replicate Recraft V3 SVG](https://replicate.com/recraft-ai/recraft-v3-svg)).*
 
-![Reve Image 1.0 — Halfmoon 엔진 기반 포토리얼리즘](/images/ai-image-models-2026-h1-overview/fig13-reve.png)
+![Reve Image 1.0 — Halfmoon 엔진 기반 포토리얼리즘](https://img.seosoyoung.eiaserinnys.me/images/ai-image-models-2026-h1-overview/fig13-reve.png)
 *Reve Image 1.0 출력. Halfmoon 엔진이 생성·편집·스타일 리믹스를 프롬프트에서 자동 분기한다. 포토리얼리즘 평가에서 Midjourney·Flux를 제친 모델 ([Oakgen 리뷰](https://oakgen.ai/blog/reve-image-1-review)).*
 
-![Ideogram 3.0 — "FUTURE BUILD 2026" 컨퍼런스 포스터](/images/ai-image-models-2026-h1-overview/fig22-ideogram.png)
+![Ideogram 3.0 — "FUTURE BUILD 2026" 컨퍼런스 포스터](https://img.seosoyoung.eiaserinnys.me/images/ai-image-models-2026-h1-overview/fig22-ideogram.png)
 *Ideogram 3.0 출력. 헤드라인·서브타이틀·날짜·로케이션이 모두 정확히 렌더링된 미니멀 포스터. 타이포그래피 정확도 90\~95%를 실증한다 ([Segmind 모델 페이지](https://blog.segmind.com/ideogram-3-0-on-segmind-features-api-pricing-and-use-cases/)).*
 
-![Kling Image O1 — 얼음 협곡을 질주하는 오토바이](/images/ai-image-models-2026-h1-overview/fig24-kling.webp)
+![Kling Image O1 — 얼음 협곡을 질주하는 오토바이](https://img.seosoyoung.eiaserinnys.me/images/ai-image-models-2026-h1-overview/fig24-kling.webp)
 *Kling Image O1 출력. 얼음 협곡을 질주하는 라이더. 멀티 레퍼런스 합성과 시네마틱 라이팅 능력을 보여준다 ([Krea — Kling O1 모델](https://www.krea.ai/models/kling-o1)).*
 
-![Anima — 다양한 애니메이션 스타일 12컷 몽타주](/images/ai-image-models-2026-h1-overview/fig23-anima.jpg)
+![Anima — 다양한 애니메이션 스타일 12컷 몽타주](https://img.seosoyoung.eiaserinnys.me/images/ai-image-models-2026-h1-overview/fig23-anima.jpg)
 *Anima의 다양한 출력 스펙트럼. 수채화 초상화, 펜 스케치, 셀 쉐이딩 액션, RPG 야영 씬 등. 2B 파라미터·6GB VRAM 모델로 다양한 애니 스타일을 처리한다 ([kombitz 리뷰](https://www.kombitz.com/2026/05/20/anima-ai-the-new-anime-image-generator-explained/)).*
 
 ### Flux Kontext — 별도 언급
@@ -172,7 +172,7 @@ Black Forest Labs의 FLUX.1 Kontext는 멀티턴 캐릭터 일관성 *97% (20턴
 
 ## 4. 사용 사례별 표준이 바뀐 부분
 
-![gpt-image-2가 생성한 "2025년 6대 디자인 트렌드" 6격자 인포그래픽](/images/ai-image-models-2026-h1-overview/fig06-design-trends-infographic.webp)
+![gpt-image-2가 생성한 "2025년 6대 디자인 트렌드" 6격자 인포그래픽](https://img.seosoyoung.eiaserinnys.me/images/ai-image-models-2026-h1-overview/fig06-design-trends-infographic.webp)
 *단일 프롬프트가 만든 6격자 마케팅 인포그래픽. 비주얼·헤드라인·설명·태그가 한 번에 정렬된 결과물은 디자이너 없이 마케팅 파이프라인에 투입 가능한 수준이다 ([OpenAI 공식](https://openai.com/index/introducing-chatgpt-images-2-0/)).*
 
 | 작업 | 2025년 말 권고 | 2026년 5월 이후 |
@@ -186,7 +186,7 @@ Black Forest Labs의 FLUX.1 Kontext는 멀티턴 캐릭터 일관성 *97% (20턴
 | 벡터 로고·아이콘 | (불가) | **Recraft V3** (SVG 네이티브) |
 | 이중언어(중국어 포함) 자료 | (제한적) | **GLM-Image / Qwen-Image 2.0 / Seedream 4.5** |
 
-![Flux 2 Pro — 포토리얼 인물 포트레이트](/images/ai-image-models-2026-h1-overview/fig15-flux2-product.jpg)
+![Flux 2 Pro — 포토리얼 인물 포트레이트](https://img.seosoyoung.eiaserinnys.me/images/ai-image-models-2026-h1-overview/fig15-flux2-product.jpg)
 *Flux 2 Pro 출력. 피부 윤기·머리카락 가닥·역광 보케가 카메라 사진과 구분이 어려운 수준. 피부 질감 평가 1위, HEX 컬러 매칭과 Pose guidance로 정확도 통제 가능 ([picassoia 리뷰](https://blog.picassoia.com/flux-2-pro-review-best-ai-image-tool-2026)).*
 
 ### 추천 스택 두 가지
@@ -220,16 +220,16 @@ Sora 서비스는 2026년 3월 24일 종료를 발표하고 4월 26일 다운되
 | Google Veo 3.1 | 2026-01 | 8초 | Ingredients to Video(참조 3장), 네이티브 오디오, 4K |
 | Seedance 2.0 (ByteDance) | 2026 상반기 | 20초 | 텍스트·로고 일관성 1위, AA Text-to-Video ELO 1,273 1위 |
 
-![Kling 3.0 — 이미지를 첫 프레임으로 받은 영상 워크플로우](/images/ai-image-models-2026-h1-overview/fig16-image-to-video.jpg)
+![Kling 3.0 — 이미지를 첫 프레임으로 받은 영상 워크플로우](https://img.seosoyoung.eiaserinnys.me/images/ai-image-models-2026-h1-overview/fig16-image-to-video.jpg)
 *Kling 3.0의 영상 데모 키프레임. 4K 60fps, 얼굴 일관성 1위, Director Mode로 최대 6컷 일괄 처리.*
 
-![Runway Gen-4.5 — 정원 테이블 위 앵무새·수박·선인장](/images/ai-image-models-2026-h1-overview/fig26-runway.jpg)
+![Runway Gen-4.5 — 정원 테이블 위 앵무새·수박·선인장](https://img.seosoyoung.eiaserinnys.me/images/ai-image-models-2026-h1-overview/fig26-runway.jpg)
 *Runway Gen-4.5의 영상 키프레임. 다중 객체가 한 장면에 자리한 복잡한 구성에서도 카메라 컨트롤·Aleph 인컨텍스트 편집의 정밀도를 시연한다 ([Runway 공식](https://runwayml.com/)).*
 
-![Google Veo 3.1 — 미래 도시의 백호와 한복 인물](/images/ai-image-models-2026-h1-overview/fig27-veo.webp)
+![Google Veo 3.1 — 미래 도시의 백호와 한복 인물](https://img.seosoyoung.eiaserinnys.me/images/ai-image-models-2026-h1-overview/fig27-veo.webp)
 *Veo 3.1의 영상 키프레임. Ingredients to Video로 참조 이미지 3장을 합성한 결과. 네이티브 오디오·4K, 시네마틱 SF 풍경 ([Google DeepMind Veo](https://deepmind.google/technologies/veo/)).*
 
-![Seedance 2.0 — 핑크 픽셀 배경 + 흰 조각 두상 시네마틱 키프레임](/images/ai-image-models-2026-h1-overview/fig28-seedance.jpg)
+![Seedance 2.0 — 핑크 픽셀 배경 + 흰 조각 두상 시네마틱 키프레임](https://img.seosoyoung.eiaserinnys.me/images/ai-image-models-2026-h1-overview/fig28-seedance.jpg)
 *Seedance 2.0의 영상 데모 키프레임. 예술적 무드와 물리적 일관성을 결합한 시네마틱 씬. AA Text-to-Video ELO 1,273로 1위 ([fal.ai Seedance i2v](https://fal.ai/models/bytedance/seedance-2.0/image-to-video)).*
 
 워크플로우의 표준 패턴은 다음과 같다.{{< sn >}}[Studiolist — AI Video Model Comparison 2026](https://studiolist.co/guides/ai-video-model-comparison-2026/), 2026-04-06.{{< /sn >}}

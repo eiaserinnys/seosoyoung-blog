@@ -5,9 +5,9 @@ tags: ["AI", "로보틱스", "벤치마크", "임바디드 AI", "데이터 어�
 categories: ["모델과 연구"]
 summary: "Perceptron이 로봇과 에고센트릭 비디오를 정책 학습용 감독 데이터로 자동 변환하는 API를 공개했다. 사람 라벨링보다 10~15배 싸고, 지시문을 줄 때 기존 SOTA 대비 end-to-end F1을 77% 끌어올렸다고 밝혔다."
 cover:
-  image: "/images/perceptron-egocentric-api/fig1-cost-quality-with-instruction.png"
+  image: "https://img.seosoyoung.eiaserinnys.me/images/perceptron-egocentric-api/fig1-cost-quality-with-instruction.png"
 images:
-  - "/images/perceptron-egocentric-api/fig1-cost-quality-with-instruction.png"
+  - "https://img.seosoyoung.eiaserinnys.me/images/perceptron-egocentric-api/fig1-cost-quality-with-instruction.png"
 ShowToc: true
 TocOpen: false
 ---
@@ -45,17 +45,17 @@ Perceptron Egocentric은 날것의 로봇과 에고센트릭 비디오를 세 �
 1. **지시문을 함께 주는 프로필이 사람 어노테이션보다 10\~15배 싸다.** Macrodata는 사람 어노테이션 비용을 비디오 1시간당 약 $50으로 잡는다.
 2. **지시문을 함께 줄 때, Perceptron Egocentric은 Macrodata의 풀 파이프라인보다 싸면서 end-to-end F1을 77% 높인다.**
 
-![WGO-Bench에서의 비용 대 품질 — 지시문 제공(왼쪽) / 무지시문(오른쪽). 점선이 파레토 프런티어.](/images/perceptron-egocentric-api/fig1-cost-quality-with-instruction.png)
+![WGO-Bench에서의 비용 대 품질 — 지시문 제공(왼쪽) / 무지시문(오른쪽). 점선이 파레토 프런티어.](https://img.seosoyoung.eiaserinnys.me/images/perceptron-egocentric-api/fig1-cost-quality-with-instruction.png)
 
 *지시문을 줄 때(왼쪽) 파레토 프런티어는 저비용 끝의 WGO one-pass부터 고품질 끝의 Perceptron Egocentric까지 이어지고, WGO의 seeded-relabeling 파이프라인은 그 안쪽에 놓인다. 무지시문일 때(오른쪽) WGO seeded 변이가 저비용 끝을 잡지만, Perceptron의 두 프로필 모두 엄격히 더 높은 품질을 낸다.*
 
-![무지시문 프로필의 비용 대 품질 곡선.](/images/perceptron-egocentric-api/fig2-cost-quality-no-instruction.png)
+![무지시문 프로필의 비용 대 품질 곡선.](https://img.seosoyoung.eiaserinnys.me/images/perceptron-egocentric-api/fig2-cost-quality-no-instruction.png)
 
 ## WGO-Bench 정면 비교
 
 WGO 수치는 Macrodata의 최종 end-to-end 평가 표(Gemini 3.5 Flash, 지시문 제공)에서 가져왔다. WGO의 **one-pass** 변이는 세그먼트를 만드는 그 패스에서 라벨을 같이 붙이는 방식으로, Perceptron의 단일 패스 파이프라인과 동일 조건 비교다. **seeded relabeling** 변이는 그 위에 세그먼트별 Gemini 라벨링 패스를 한 번 더 얹는다.
 
-![WGO-Bench 정면 비교 표.](/images/perceptron-egocentric-api/fig3-head-to-head-table.png)
+![WGO-Bench 정면 비교 표.](https://img.seosoyoung.eiaserinnys.me/images/perceptron-egocentric-api/fig3-head-to-head-table.png)
 
 Perceptron Egocentric(지시문 제공) 대 WGO one-pass의 주요 차이는 다음과 같다.
 

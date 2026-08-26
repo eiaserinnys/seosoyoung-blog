@@ -7,9 +7,9 @@ summary: "100년 넘게 일본 택배 1위 자리를 지키는 야마토 운수�
 ShowToc: true
 TocOpen: false
 cover:
-  image: "/images/longblack-yamato-transport/logo-black-cat.png"
+  image: "https://img.seosoyoung.eiaserinnys.me/images/longblack-yamato-transport/logo-black-cat.png"
 images:
-  - "/images/longblack-yamato-transport/logo-black-cat.png"
+  - "https://img.seosoyoung.eiaserinnys.me/images/longblack-yamato-transport/logo-black-cat.png"
 sidenotes: true
 ---
 
@@ -21,7 +21,7 @@ sidenotes: true
 
 ## 검은 고양이 로고는 디자이너의 딸이 그렸다
 
-![야마토 운수의 검은 어미 고양이 로고](/images/longblack-yamato-transport/logo-black-cat.png)
+![야마토 운수의 검은 어미 고양이 로고](https://img.seosoyoung.eiaserinnys.me/images/longblack-yamato-transport/logo-black-cat.png)
 
 1919년 11월 도쿄 긴자(당시 교바시구)에서 오구라 야스오미(小倉康臣)가 직원 15명·트럭 2대로 화물 운송 회사를 차렸다. '크게 화합한다'는 뜻의 야마토(大和)라는 이름과 '짐을 정성스럽게 다루자'는 원칙은 이때부터 이미 자리 잡혀 있었다.
 
@@ -31,7 +31,7 @@ sidenotes: true
 
 시미즈가 그림 옆에 적어 둔 이 한 문장은 그대로 작업 매뉴얼이 됐다. 상하차 시 짐을 던지지 않는 것은 기본이고, 1958년 잉카 제국·로마 제국 전시회 예술품 운송을 잇달아 맡으면서 직원들은 도쿄국립박물관에서 1년간 예술품 다루는 법을 배웠다. "미라의 목 부위를 포장할 때는 고급 도자기 컵 다루듯 한다" 같은 식이었다.
 
-![루브르 미술관 부관장이 야마토 운수 직원에게 운송을 지시하는 모습](/images/longblack-yamato-transport/louvre-art-transport.png)
+![루브르 미술관 부관장이 야마토 운수 직원에게 운송을 지시하는 모습](https://img.seosoyoung.eiaserinnys.me/images/longblack-yamato-transport/louvre-art-transport.png)
 
 이 경험은 사업 확장으로 이어졌다. 1960년대에는 미쓰코시·이세탄·오다큐 같은 백화점 배송이 회사 전체 매출의 20%까지 올라갔다. 로고의 약속이 단순한 구호가 아니라 *작업 매뉴얼로 굳어진* 결과였다.
 
@@ -46,7 +46,7 @@ sidenotes: true
 
 이 결심으로 1976년 1월 20일, 야마토는 '타큐빈(宅急便)'을 출시했다. 일본 최초의 개인 택배였다.
 
-![1976년 3월, 타큐빈 최초 영업을 알린 전단지](/images/longblack-yamato-transport/takkyubin-1976-leaflet.png)
+![1976년 3월, 타큐빈 최초 영업을 알린 전단지](https://img.seosoyoung.eiaserinnys.me/images/longblack-yamato-transport/takkyubin-1976-leaflet.png)
 
 설계의 중심은 '주부'였다. 가족의 짐을 챙기는 건 대개 주부였으므로, 마사오는 일본 항공의 해외여행 패키지 상품에서 힌트를 얻어 *모든 불편을 한 묶음에 담아 단순화하는 방향*을 잡았다.
 
@@ -56,7 +56,7 @@ sidenotes: true
 
 야심차게 출시했지만 첫날 배송 건수는 11개, 첫 달도 9,000개에 못 미쳤고, 첫해엔 3억엔(약 28억원) 적자였다. 그래도 마사오는 직원들에게 "이익은 나중, 서비스가 우선"을 모토로 굳혀 두고 본인부터 현장에 나가 입소문을 냈다.
 
-![1970년대 오구라 마사오 2대 사장](/images/longblack-yamato-transport/ogura-masao-1970s.png)
+![1970년대 오구라 마사오 2대 사장](https://img.seosoyoung.eiaserinnys.me/images/longblack-yamato-transport/ogura-masao-1970s.png)
 
 1년 차 170만 개, 2년 차 300만 개, 3년 차 600만 개. 1980년 손익분기점을 넘었고 1988년부터는 업계 점유율 1위가 됐다.
 
@@ -69,21 +69,21 @@ sidenotes: true
 
 타큐빈 이후 야마토가 띄운 서비스들의 공통점은 단순하다 — *현장에서 발견된 단서가 출발점*이라는 것.
 
-![1986년 출시 당시 스키 타큐빈 배달 장면](/images/longblack-yamato-transport/ski-takkyubin.png)
+![1986년 출시 당시 스키 타큐빈 배달 장면](https://img.seosoyoung.eiaserinnys.me/images/longblack-yamato-transport/ski-takkyubin.png)
 
 - **골프 타큐빈(1984년 4월)** — '레저 타큐빈'의 원형. 무거운 골프 가방을 들고 이동하는 사람들을 본 데서 시작됐다. 롱블랙 본문에는 사진 갤러리에만 등장하는데, 시기상 가장 먼저 등장한 레저 타큐빈이다.
 - **스키 타큐빈(1986년 12월)** — 나가노현 지점에서 일하던 한 SD가 스키 장비를 메고 이동하는 사람들을 보다가 떠올린 아이디어. 1982년 '스키 빈손 서비스(スキー手ぶらサービス)'로 지점 단위 실험을 시작해 4년 만에 전국 서비스로 펴졌다.
 - **쿨 타큐빈(1988년 7월)** — 4년·150억엔을 투자한 콜드체인. 마사오가 "택배에도 쿨한 경험을 줄 수 없을까"라고 던진 한 마디에서 출발했다. 출시 시 냉장 5도 이하·빙온 0도·냉동 -18도의 3구간으로 운영했다.
 
-![1985년 7월 시작된 '이사 라쿠라쿠 팩'](/images/longblack-yamato-transport/moving-rakuraku-pack.png)
+![1985년 7월 시작된 '이사 라쿠라쿠 팩'](https://img.seosoyoung.eiaserinnys.me/images/longblack-yamato-transport/moving-rakuraku-pack.png)
 
 **'이사 라쿠라쿠 팩(引越らくらくパック)'**(1985년 7월)은 마사오 본인이 던진 질문에서 출발했다 — "이사 후엔 꼭 정신없이 집을 정리해야만 할까?" 이사개발부를 신설하고 "이사 다음날 평소처럼 식사 자리에 앉을 수 있게 하라"는 과제를 줬다. 짐 싸기부터 새집 정리·배치까지 야마토가 맡고, 사전엔 '이사 바이저(引越バイザー)'가 방문해 계획을 짜 줬다. 타큐빈에서 다듬은 *모든 불편을 한 묶음에*라는 패키지 모델이 인접 시장으로 그대로 옮겨간 사례다.
 
-![SD가 운영하는 '마고코로 타큐빈' 풍경](/images/longblack-yamato-transport/magokoro-takkyubin.png)
+![SD가 운영하는 '마고코로 타큐빈' 풍경](https://img.seosoyoung.eiaserinnys.me/images/longblack-yamato-transport/magokoro-takkyubin.png)
 
 **마고코로(まごころ, '진심') 타큐빈**은 2009년 이와테현(고령화율 약 35%의 초고령 지역)에서 일하던 한 SD가 택배를 운반하던 중 고독사한 고객을 발견한 일에서 시작됐다. 그 SD의 제안이 본부로 올라가 '안심 방문 서비스'가 됐고, 이듬해 '마고코로 타큐빈'으로 확장됐다 — 거동이 불편한 주민을 대신해 장을 보고 생필품을 배달한다.
 
-![2022년 8월 오쿠시리섬 이동판매차](/images/longblack-yamato-transport/mobile-shop-okushiri.png)
+![2022년 8월 오쿠시리섬 이동판매차](https://img.seosoyoung.eiaserinnys.me/images/longblack-yamato-transport/mobile-shop-okushiri.png)
 
 같은 패턴은 지금도 계속된다. 2022년 8월 홋카이도 오쿠시리섬(인구 약 2,200명, 약국·마트가 없다)에 생활용품·식품을 실은 이동판매차가 들어가기 시작했다. 영업소 그룹장이 사츠도라(Sapporo Drug Store)에 연락해 만든 협업이었다. 그 흐름은 2025년 8월 사람과 짐을 함께 옮기는 '섬 라이드셰어(島のりあい)' 실증으로 이어졌다.[^longblack-yamato-transport]
 

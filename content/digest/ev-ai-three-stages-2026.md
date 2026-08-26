@@ -7,9 +7,9 @@ summary: "AI는 개인 생산성을 올렸지만 회사 손익에는 아직 안 
 ShowToc: true
 TocOpen: false
 cover:
-  image: "/images/ev-ai-three-stages-2026/stages-diagram.png"
+  image: "https://img.seosoyoung.eiaserinnys.me/images/ev-ai-three-stages-2026/stages-diagram.png"
 images:
-  - "/images/ev-ai-three-stages-2026/stages-diagram.png"
+  - "https://img.seosoyoung.eiaserinnys.me/images/ev-ai-three-stages-2026/stages-diagram.png"
 sidenotes: true
 ---
 
@@ -39,7 +39,7 @@ Uber COO Andrew Macdonald도 비슷한 결을 공개적으로 인정했다. "암
 
 이 글은 Paul David의 1990년 전기화 논문을 길게 끌어와 AI 단계를 매핑한다. 3단계 구조를 한 장으로 정리하면 다음과 같다.
 
-![AI 도입의 3단계 — 전구, 그룹 드라이브, 유닛 드라이브로 매핑](/images/ev-ai-three-stages-2026/stages-diagram.png)
+![AI 도입의 3단계 — 전구, 그룹 드라이브, 유닛 드라이브로 매핑](https://img.seosoyoung.eiaserinnys.me/images/ev-ai-three-stages-2026/stages-diagram.png)
 
 ### Stage 1 — The lightbulb (전구)
 
@@ -53,7 +53,7 @@ ChatGPT가 처음 풀렸을 때도 같은 일이 벌어졌다. 이메일을 더 
 
 뒤이어 전기공학 교수 F. B. Crocker와 동료들이 다른 응용을 찾아냈다.[^crocker-1895] 전기는 *공장 바닥을 샤프트로부터 해방*시킨다. 기계가 더는 샤프트 아래 평행으로 늘어설 필요가 없어졌다. 그러면 모터를 도구마다 하나씩 두느냐, 도구 묶음마다 하나씩 두느냐 — 후자가 *group drive*다. 하나의 모터가 공유 샤프트를 통해 여러 기계를 돌리는 방식이다.
 
-![그룹 드라이브 — 하나의 모터가 공유 샤프트로 여러 기계를 돌렸다](/images/ev-ai-three-stages-2026/group-drive.jpg)
+![그룹 드라이브 — 하나의 모터가 공유 샤프트로 여러 기계를 돌렸다](https://img.seosoyoung.eiaserinnys.me/images/ev-ai-three-stages-2026/group-drive.jpg)
 
 그룹 드라이브는 기존 레이아웃을 보존하고, 매몰자본을 재활용하며, 모터 수를 줄이면서 전기의 이득을 *공장을 다시 짓지 않고도* 얻게 해 줬다. 저렴하고 쉬워서 1890년대부터 1차 세계대전까지 공장을 지배했다.
 
@@ -65,7 +65,7 @@ AI 에이전트는 챗봇보다 낫다. 단일 과업이 아니라 *워크플로
 
 공장의 조직 논리가 *비용 절감*에서 *처리량(throughput)* 으로 옮겨 가고 나서야, 비로소 *유닛 드라이브* — 기계 하나에 모터 하나 — 의 깊은 가치가 보였다. 1913년 Ford의 Highland Park 공장은 기계와 작업자를 *샤프트와 벨트의 기하학이 아니라 작업 흐름을 중심으로* 배치하기로 결정했다. 그 뒤 10년(1919~1929)간 유닛 드라이브가 더 많은 공장에 퍼지면서 미국 제조업 노동생산성은 연 5.4% 성장했다.[^highland-park]
 
-![Highland Park, 1914 — 샤프트가 아니라 작업 흐름에 맞춰 재배치된 공장 바닥](/images/ev-ai-three-stages-2026/highland-park-1914.png)
+![Highland Park, 1914 — 샤프트가 아니라 작업 흐름에 맞춰 재배치된 공장 바닥](https://img.seosoyoung.eiaserinnys.me/images/ev-ai-three-stages-2026/highland-park-1914.png)
 
 저자들은 AI 도입의 패턴이 정확히 같은 모양을 그릴 것이라 본다.
 
@@ -77,7 +77,7 @@ AI 에이전트는 챗봇보다 낫다. 단일 과업이 아니라 *워크플로
 
 > 전구를 단 작업장은 Ford 공장보다 못한 곳이 아니었다. 다른 목표 — 작업장 바닥을 안전하게 비추는 것 — 를 추구하고 있었을 뿐이다. 전구를 더 많이 단다고 컨베이어 벨트가 나오지는 않는다.
 
-![각 단계의 *조직 논리* — 개인 효율 → 워크플로 비용 → 의사결정 속도](/images/ev-ai-three-stages-2026/stage-logic.png)
+![각 단계의 *조직 논리* — 개인 효율 → 워크플로 비용 → 의사결정 속도](https://img.seosoyoung.eiaserinnys.me/images/ev-ai-three-stages-2026/stage-logic.png)
 
 여기서 글의 가장 날카로운 진단이 나온다. 회사는 모든 축에서 한 칸씩 균일하게 올라가지 않는다.
 

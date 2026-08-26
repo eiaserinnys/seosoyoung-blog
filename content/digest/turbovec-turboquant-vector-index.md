@@ -7,12 +7,12 @@ summary: "구글 리서치의 TurboQuant 양자화 알고리즘을 Rust로 구�
 ShowToc: true
 TocOpen: false
 cover:
-  image: "/images/turbovec-turboquant-vector-index/header.png"
+  image: "https://img.seosoyoung.eiaserinnys.me/images/turbovec-turboquant-vector-index/header.png"
 images:
-  - "/images/turbovec-turboquant-vector-index/header.png"
+  - "https://img.seosoyoung.eiaserinnys.me/images/turbovec-turboquant-vector-index/header.png"
 ---
 
-![turbovec — Google's TurboQuant for vector search](/images/turbovec-turboquant-vector-index/header.png)
+![turbovec — Google's TurboQuant for vector search](https://img.seosoyoung.eiaserinnys.me/images/turbovec-turboquant-vector-index/header.png)
 
 ## 3줄 요약
 
@@ -62,17 +62,17 @@ Lloyd-Max 코드북은 정보이론적 하한(섀넌의 왜곡-율 한계)의 2.
 
 기준선은 FAISS `IndexPQ`(LUT256, nbits=8)로, 논문 4.4절의 베이스라인이자 대부분의 사용자가 프로덕션에서 먼저 손대는 PQ다. 조건은 10만 벡터, k=64.
 
-![Recall — OpenAI d=1536](/images/turbovec-turboquant-vector-index/recall_d1536.svg)
+![Recall — OpenAI d=1536](https://img.seosoyoung.eiaserinnys.me/images/turbovec-turboquant-vector-index/recall_d1536.svg)
 
-![Recall — OpenAI d=3072](/images/turbovec-turboquant-vector-index/recall_d3072.svg)
+![Recall — OpenAI d=3072](https://img.seosoyoung.eiaserinnys.me/images/turbovec-turboquant-vector-index/recall_d3072.svg)
 
-![Recall — GloVe d=200](/images/turbovec-turboquant-vector-index/recall_glove.svg)
+![Recall — GloVe d=200](https://img.seosoyoung.eiaserinnys.me/images/turbovec-turboquant-vector-index/recall_glove.svg)
 
 OpenAI d=1536·d=3072에서 TurboQuant은 2-bit·4-bit 전반에 걸쳐 R@1 기준 FAISS를 0.2\~1.9포인트 앞서고, 양쪽 다 k=8에서 1.0에 닿는다(k=4에서 이미 0.997 이상). GloVe d=200은 더 까다로운 영역이다 — 저차원에서는 점근적 베타 가정이 느슨해진다. 여기서 TurboQuant은 4-bit에서 0.9포인트 앞서고 2-bit에서는 사실상 동률(0.1포인트 이내)이며, k가 16쯤 되면 둘 다 FAISS를 바짝 따라붙는다. 저자는 FAISS `IndexPQ`가 논문의 자체 u8-LUT PQ보다 오히려 강한 기준선이라고 밝힌다 — 스코어링 시점에 더 높은 정밀도의 LUT와 k-means++ 코드북 학습을 쓰기 때문이다.
 
 ## Compression
 
-![Compression](/images/turbovec-turboquant-vector-index/compression.svg)
+![Compression](https://img.seosoyoung.eiaserinnys.me/images/turbovec-turboquant-vector-index/compression.svg)
 
 1536차원 벡터 기준 6,144바이트(FP32) → 384바이트(2-bit), 16배다. 서두의 "31GB → 4GB"가 여기서 나온다.
 
@@ -82,17 +82,17 @@ OpenAI d=1536·d=3072에서 TurboQuant은 2-bit·4-bit 전반에 걸쳐 R@1 기�
 
 ### ARM (Apple M3 Max)
 
-![ARM Speed — Single-threaded](/images/turbovec-turboquant-vector-index/arm_speed_st.svg)
+![ARM Speed — Single-threaded](https://img.seosoyoung.eiaserinnys.me/images/turbovec-turboquant-vector-index/arm_speed_st.svg)
 
-![ARM Speed — Multi-threaded](/images/turbovec-turboquant-vector-index/arm_speed_mt.svg)
+![ARM Speed — Multi-threaded](https://img.seosoyoung.eiaserinnys.me/images/turbovec-turboquant-vector-index/arm_speed_mt.svg)
 
 ARM에서 TurboQuant은 모든 구성에서 FAISS FastScan을 10\~19% 앞선다.
 
 ### x86 (Intel Xeon Platinum 8481C / Sapphire Rapids, 8 vCPU)
 
-![x86 Speed — Single-threaded](/images/turbovec-turboquant-vector-index/x86_speed_st.svg)
+![x86 Speed — Single-threaded](https://img.seosoyoung.eiaserinnys.me/images/turbovec-turboquant-vector-index/x86_speed_st.svg)
 
-![x86 Speed — Multi-threaded](/images/turbovec-turboquant-vector-index/x86_speed_mt.svg)
+![x86 Speed — Multi-threaded](https://img.seosoyoung.eiaserinnys.me/images/turbovec-turboquant-vector-index/x86_speed_mt.svg)
 
 x86에서는 4-bit 구성을 최대 \~5% 앞서고(d=3072 멀티스레드는 동률), 2-bit에서는 FAISS에 다소 뒤진다 — 가장 두드러진 곳이 d=1536 싱글스레드(\~8%)다. 짧은 2-bit 누산 루프에서는 FAISS의 AVX-512 VBMI 경로가 우위를 가진다.
 

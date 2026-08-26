@@ -7,9 +7,9 @@ summary: "Z.ai가 공개한 SCAIL-2는 포즈 스켈레톤·인페인팅 마스�
 ShowToc: true
 TocOpen: false
 cover:
-  image: "/images/scail2-zai-2025/teaser.png"
+  image: "https://img.seosoyoung.eiaserinnys.me/images/scail2-zai-2025/teaser.png"
 images:
-  - "/images/scail2-zai-2025/teaser.png"
+  - "https://img.seosoyoung.eiaserinnys.me/images/scail2-zai-2025/teaser.png"
 ---
 
 ## 3줄 요약
@@ -18,7 +18,7 @@ images:
 2. 핵심 주장은 *중간 표현 의존을 끊는다* 한 가지다. 포즈 스켈레톤, 인페인팅 마스크 같은 intermediate 대신 driving 비디오의 latent를 시퀀스에 직접 결합하여 motion을 옮긴다. 다중 캐릭터 상호작용에서 깊이가 모호한 스켈레톤 겹침이 사라지고, body shape 제약도 풀린다.
 3. End-to-end 데이터가 부족한 문제는 *합성 파이프라인*으로 푼다. SCAIL-Preview, Wan-Animate, MoCha를 데이터 제너레이터로 묶어 MotionPair-60K를 만들고, 손가락처럼 미세 영역의 합성 편향은 Bias-Aware DPO로 보정했다. 동물 driving과 egocentric driving 같은 제로샷 일반화가 emergent하게 따라온다.
 
-![SCAIL-2 teaser](/images/scail2-zai-2025/teaser.png)
+![SCAIL-2 teaser](https://img.seosoyoung.eiaserinnys.me/images/scail2-zai-2025/teaser.png)
 
 ## 무엇을 푸는 모델인가
 
@@ -30,7 +30,7 @@ images:
 
 SCAIL-1은 *어떻게 포즈를 표현하고 어떻게 주입할 것인가*에 답을 내놓았지만, 여전히 intermediate에 묶여 있었다. SCAIL-2는 이 의존을 *over reliance on intermediates*라고 이름 붙이고 정면으로 끊어내는 길을 택했다.
 
-![중간 표현의 한계](/images/scail2-zai-2025/preteaser.png)
+![중간 표현의 한계](https://img.seosoyoung.eiaserinnys.me/images/scail2-zai-2025/preteaser.png)
 
 ## 어떻게 끊어내는가 — End-to-end In-Context Conditioning
 
@@ -41,9 +41,9 @@ SCAIL-1은 *어떻게 포즈를 표현하고 어떻게 주입할 것인가*에 �
 - **In-Context Mask Conditioning** — 마스킹 채널을 두 종류로 분리한다. 하나는 *environment switch*(배경을 살릴지 교체할지), 다른 하나는 *character binding slots*(어느 latent 영역이 어느 캐릭터에 묶이는지). 두 채널의 조합만으로 애니메이션·교체·다중 캐릭터를 한 인터페이스에 모은다.
 - **Mode-Specific RoPE** — 태스크 모드별로 별도의 회전 위치 인코딩을 둔다. 같은 backbone이 모드에 따라 시공간 attention을 다르게 라우팅하도록, 위치 정보 수준에서 모드를 알린다.
 
-![데이터 합성 파이프라인](/images/scail2-zai-2025/pipeline.png)
+![데이터 합성 파이프라인](https://img.seosoyoung.eiaserinnys.me/images/scail2-zai-2025/pipeline.png)
 
-![네트워크 구조](/images/scail2-zai-2025/network.png)
+![네트워크 구조](https://img.seosoyoung.eiaserinnys.me/images/scail2-zai-2025/network.png)
 
 ## 데이터 — MotionPair-60K
 

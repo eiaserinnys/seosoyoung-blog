@@ -7,12 +7,12 @@ summary: "Spotify가 사내 AI 코딩 도구 채택과 백그라운드 에이전
 ShowToc: true
 TocOpen: false
 cover:
-  image: "/images/spotify-coding-no-longer-constraint/cwc01-header.png"
+  image: "https://img.seosoyoung.eiaserinnys.me/images/spotify-coding-no-longer-constraint/cwc01-header.png"
 images:
-  - "/images/spotify-coding-no-longer-constraint/cwc01-header.png"
+  - "https://img.seosoyoung.eiaserinnys.me/images/spotify-coding-no-longer-constraint/cwc01-header.png"
 ---
 
-![Feature Image](/images/spotify-coding-no-longer-constraint/cwc01-header.png)
+![Feature Image](https://img.seosoyoung.eiaserinnys.me/images/spotify-coding-no-longer-constraint/cwc01-header.png)
 
 ## 3줄 요약
 
@@ -28,7 +28,7 @@ Spotify에서 사내에 새 도구를 도입한 일은 수도 없이 많지만, 
 - <strong>94%</strong>가 AI로 생산성이 올랐다고 보고
 - PR 빈도 **76% 증가** — 대부분 *사람 + AI 에이전트* 공동 작성
 
-![Spotify의 AI 전환 — 연말 휴가철에 잠시 떨어지지만, 오렌지색 라인이 Opus 4.5 출시와 함께 폭발적으로 올라간다](/images/spotify-coding-no-longer-constraint/cwc02-ai-transition.png)
+![Spotify의 AI 전환 — 연말 휴가철에 잠시 떨어지지만, 오렌지색 라인이 Opus 4.5 출시와 함께 폭발적으로 올라간다](https://img.seosoyoung.eiaserinnys.me/images/spotify-coding-no-longer-constraint/cwc02-ai-transition.png)
 
 > "We roll out tools internally all the time to make our developers more productive, but we have never seen the rate of adoption that we've seen rolling out AI coding tools."
 
@@ -38,7 +38,7 @@ Spotify에서 사내에 새 도구를 도입한 일은 수도 없이 많지만, 
 
 수백 개 팀에게 각자 자기 컴포넌트를 수동으로 갱신하라고 시키는 대신, Spotify는 *수백·수천 개 컴포넌트를 한 번에 변경하는 자동화*를 상상했다. 이 아이디어가 **Fleet Management**가 되었고, 그 실행 엔진이 **Fleetshift**다. 현재까지 누적 **자동 PR 250만 건**, 대부분은 사람의 개입 없이 자동 머지됐다.
 
-![Fleetshift를 통한 자동 PR의 누적 증가. 초록색 영역이 자동 머지된 PR이다](/images/spotify-coding-no-longer-constraint/cwc03-shifts.png)
+![Fleetshift를 통한 자동 PR의 누적 증가. 초록색 영역이 자동 머지된 PR이다](https://img.seosoyoung.eiaserinnys.me/images/spotify-coding-no-longer-constraint/cwc03-shifts.png)
 
 > "Instead of doing this component per component and fairly manually, can we imagine a way where we do this as a way to mutate our entire fleet of components?"
 
@@ -90,7 +90,7 @@ Fleet Management는 단순한 변경에는 잘 들어맞았지만, *복잡한 �
 
 LLM이 성숙하면서 Spotify는 *결정론적 스크립트를 계속 복잡하게 만드는 대신 모델에게 맡기는 길*을 시도했다. 그 결과가 Honk다.
 
-![Code with Claude 2026에서 공개된 Honk](/images/spotify-coding-no-longer-constraint/cwc04-meet-honk.png)
+![Code with Claude 2026에서 공개된 Honk](https://img.seosoyoung.eiaserinnys.me/images/spotify-coding-no-longer-constraint/cwc04-meet-honk.png)
 
 > "It has a silly name and a silly icon, but it's a very useful tool, as it turns out."
 
@@ -103,9 +103,9 @@ Honk의 내부 구조는 다음과 같다.
 
 Honk는 Fleet Management 도구 안에 들어앉아 있다. **Fleetshift가 오케스트레이션**을 맡고(대상 식별, 변경 스케줄, 진행 추적), **Honk는 그 가운데서 실제 코드 수정**을 수행한다. 마이그레이션을 돌리는 팀은 PR이 몇 개 생성됐고 몇 개가 머지됐는지, 어떤 PR이 사람의 손이 필요한지 한 화면에서 본다.
 
-![Honk를 Fleet Management에 끼워 넣는 구조](/images/spotify-coding-no-longer-constraint/cwc05-honk-plus-fleetshift.png)
+![Honk를 Fleet Management에 끼워 넣는 구조](https://img.seosoyoung.eiaserinnys.me/images/spotify-coding-no-longer-constraint/cwc05-honk-plus-fleetshift.png)
 
-![Fleetshift 플러그인 UI](/images/spotify-coding-no-longer-constraint/cwc06-fleetshift-plugin.png)
+![Fleetshift 플러그인 UI](https://img.seosoyoung.eiaserinnys.me/images/spotify-coding-no-longer-constraint/cwc06-fleetshift-plugin.png)
 
 가장 최근의 Java 백엔드 마이그레이션은 **3일** 만에 끝났다.
 
@@ -113,7 +113,7 @@ Honk는 Fleet Management 도구 안에 들어앉아 있다. **Fleetshift가 오�
 
 개발자들은 곧바로 새로운 사용법을 찾아냈다. 이제 Honk는 Slack에서도 호출 가능하다 — 대화 중에 멘션하면(자연스러운 컨텍스트 원천이다) Honk가 날아가 작업을 마치고 PR을 들고 돌아온다.
 
-![Goose Farm — 사내 실시간 대시보드. 각 거위 한 마리가 Honk로 구동되는 활성 백그라운드 코딩 세션이다](/images/spotify-coding-no-longer-constraint/goose-farm.gif)
+![Goose Farm — 사내 실시간 대시보드. 각 거위 한 마리가 Honk로 구동되는 활성 백그라운드 코딩 세션이다](https://img.seosoyoung.eiaserinnys.me/images/spotify-coding-no-longer-constraint/goose-farm.gif)
 
 Honk v2에서는 **멀티플레이어 협업**이 도입된다 — 공유 에이전트 세션, 팀 프로젝트, Chirp를 통한 에이전트 오케스트레이션. 한 명의 개발자가 한 터미널에서 쓰는 도구가 아니라, *여러 개발자·팀과 동시에 협업하는* 에이전트 시대를 향한다.
 
@@ -131,13 +131,13 @@ AI보다 한참 앞서 만들어진 원칙이다. 적은 수의 기술에 집중
 
 이 일관성의 출발점이 **Backstage** — Spotify가 오픈소스로 공개한 사내 개발자 포털(IDP)이다. Backstage 도입 전 Spotify는 사내 도구가 *100개 정도*로 흩어져 있었다(배포는 이 도구, CI는 저 도구, A/B 테스트는 또 다른 도구). Backstage는 이것을 *컴포넌트 카탈로그를 중심으로 한 단일 창*으로 통합했다. 오늘날 컴포넌트와 관련된 모든 작업은 Backstage에서 일어난다.
 
-![Backstage 소프트웨어 카탈로그 — 사람도 에이전트도 컴포넌트의 모든 정보를 여기서 찾는다](/images/spotify-coding-no-longer-constraint/cwc08-backstage-context.png)
+![Backstage 소프트웨어 카탈로그 — 사람도 에이전트도 컴포넌트의 모든 정보를 여기서 찾는다](https://img.seosoyoung.eiaserinnys.me/images/spotify-coding-no-longer-constraint/cwc08-backstage-context.png)
 
 흥미로운 점은 *이 단일 창이 에이전트에게도 그대로 작동한다*는 것이다. Spotify는 Backstage의 기능을 MCP와 CLI 도구로 노출했고, Claude는 컴포넌트 소유자를 조회하거나, 문서를 읽거나, 책임 팀에게 Slack으로 핑을 보낼 수 있다.
 
 또 Backstage 위에는 **Soundcheck**와 **golden state**가 올라간다. Golden state는 각 컴포넌트 유형의 *권장 기술과 관행*을 정의하고, Soundcheck는 팀이 자기 컴포넌트를 그 기준에 비추어 자가 진단할 수 있는 UI를 제공한다. 여기에 정적 분석과 린트가 결합되면 이 표준은 *능동적 가드레일*로 변한다 — Claude가 사내 인프라에 맞지 않는 패턴을 사용하면 린트 시스템에서 즉시 피드백을 받고 스스로 교정한다.
 
-![Golden state는 도달점이 아니라 여정으로 정의된다](/images/spotify-coding-no-longer-constraint/cwc09-golden-state.png)
+![Golden state는 도달점이 아니라 여정으로 정의된다](https://img.seosoyoung.eiaserinnys.me/images/spotify-coding-no-longer-constraint/cwc09-golden-state.png)
 
 > "When Claude works in our codebase, it will get immediate feedback on if it's using the right set of technologies and right set of design patterns."
 

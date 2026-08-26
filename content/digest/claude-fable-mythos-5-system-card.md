@@ -8,9 +8,9 @@ math: false
 ShowToc: true
 TocOpen: false
 cover:
-  image: "/images/claude-fable-mythos-5-system-card/cover.png"
+  image: "https://img.seosoyoung.eiaserinnys.me/images/claude-fable-mythos-5-system-card/cover.png"
 images:
-  - "/images/claude-fable-mythos-5-system-card/cover.png"
+  - "https://img.seosoyoung.eiaserinnys.me/images/claude-fable-mythos-5-system-card/cover.png"
 ---
 
 ## 3줄 요약

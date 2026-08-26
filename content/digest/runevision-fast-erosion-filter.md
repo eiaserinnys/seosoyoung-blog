@@ -7,9 +7,9 @@ summary: "World Machine 스타일의 침식 지형을, 시뮬레이션 없이 �
 ShowToc: true
 TocOpen: false
 cover:
-  image: "/images/runevision-fast-erosion-filter/ErodedTerrain.png"
+  image: "https://img.seosoyoung.eiaserinnys.me/images/runevision-fast-erosion-filter/ErodedTerrain.png"
 images:
-  - "/images/runevision-fast-erosion-filter/ErodedTerrain.png"
+  - "https://img.seosoyoung.eiaserinnys.me/images/runevision-fast-erosion-filter/ErodedTerrain.png"
 ---
 
 ## 3줄 요약
@@ -38,13 +38,13 @@ Rune Skovbo Johansen은 2025\~2026년 동안 이 기법을 자기 방식으로 �
 
 stripe 자체도 경사를 가지므로, 원래 기울기와 stripe의 기울기를 더해 새 기울기를 만든다. 다음 옥타브에서는 그 새 기울기를 따라 더 작은 stripe를 얹는다. 이 과정을 옥타브(octave) 단위로 반복하면, 각 옥타브의 gully가 이전 옥타브에서 만들어진 경사를 따라 자연스럽게 분기된다.
 
-![여러 옥타브의 gully가 층층이 쌓인 경사면](/images/runevision-fast-erosion-filter/Slant3.png)
+![여러 옥타브의 gully가 층층이 쌓인 경사면](https://img.seosoyoung.eiaserinnys.me/images/runevision-fast-erosion-filter/Slant3.png)
 
 *여러 옥타브의 gully가 이전 옥타브의 경사를 따라 분기하며 쌓인다.*
 
 이걸 그대로 실제 지형에 적용하면 문제가 드러난다. 기울기가 위치마다 달라지는 상황에서 stripe 패턴을 회전시키면 카오스한 무늬가 나온다.
 
-![카오스한 stripe](/images/runevision-fast-erosion-filter/ChaoticGullies.png)
+![카오스한 stripe](https://img.seosoyoung.eiaserinnys.me/images/runevision-fast-erosion-filter/ChaoticGullies.png)
 
 *기울기에 맞춰 stripe 패턴을 회전시키면 카오스한 결과가 나온다.*
 
@@ -56,7 +56,7 @@ stripe 패턴을 어떤 pivot point 하나를 중심으로 회전시키면, pivo
 
 셀 간 경계에서 불연속이 생기지 않도록 이웃 셀의 stripe를 블렌딩한다. stripe는 본질적으로 코사인(높이)·사인(기울기) 파형의 압출이라, 정렬되지 않은 두 사인파를 블렌딩하면 진폭이 줄어든 새로운 사인파가 나온다. 이 성질 덕분에 블렌딩만으로도 정렬되지 않은 stripe들이 연속된 하나의 stripe처럼 이어진다.
 
-![셀 간 stripe 블렌딩](/images/runevision-fast-erosion-filter/CellsBlended.png)
+![셀 간 stripe 블렌딩](https://img.seosoyoung.eiaserinnys.me/images/runevision-fast-erosion-filter/CellsBlended.png)
 
 *이웃 셀의 stripe를 블렌딩하면 정렬되지 않은 stripe들도 연속된 하나의 gully로 이어진다.*
 
@@ -68,7 +68,7 @@ Clay John과 Fewes의 원래 접근은 frequency approach다. stripe의 주기(�
 
 Johansen이 새로 제안한 것이 fade approach다. stripe의 폭은 고정하고, 대신 기울기가 0에 가까워지는 지점에서 stripe를 페이드 아웃시킨다. 이때 페이드하는 목표값(fade target)을 봉우리에서는 흰색(+1), 골짜기에서는 검은색(-1)으로 두면 봉우리는 뾰족하게, 골짜기는 V자로 선명하게 유지된다.
 
-![Fade approach로 얻은 뾰족한 봉우리와 V자 골짜기](/images/runevision-fast-erosion-filter/TerrainUniformFreqSmoothingOffWithInvPow5.png)
+![Fade approach로 얻은 뾰족한 봉우리와 V자 골짜기](https://img.seosoyoung.eiaserinnys.me/images/runevision-fast-erosion-filter/TerrainUniformFreqSmoothingOffWithInvPow5.png)
 
 *fade approach는 봉우리와 골짜기를 동시에 선명하게 유지한다.*
 
@@ -92,7 +92,7 @@ Johansen이 새로 제안한 핵심 개선이다. 봉우리와 골짜기에서 �
 
 각 옥타브를 마칠 때마다 fade target과 mask를 갱신한다. 옥타브 N의 gully를 계산한 뒤, 그 결과 자체를 옥타브 N+1의 새로운 fade target으로 쓴다. mask도 옥타브 N의 능선·골에서 불투명해지도록 새 기여분을 곱해 누적한다.
 
-![Stacked fading의 옥타브 간 정보 흐름](/images/runevision-fast-erosion-filter/FlowChart.png)
+![Stacked fading의 옥타브 간 정보 흐름](https://img.seosoyoung.eiaserinnys.me/images/runevision-fast-erosion-filter/FlowChart.png)
 
 *fade target과 mask가 각 옥타브에서 어떻게 갱신되어 다음 옥타브로 전달되는지의 흐름도.*
 
@@ -106,7 +106,7 @@ Johansen이 새로 제안한 핵심 개선이다. 봉우리와 골짜기에서 �
 
 Johansen이 발견한 것은, 코사인·사인 쌍을 단위원 위의 한 점으로 보고 그 점을 다시 반지름 1로 정규화하면 진폭을 일정하게 맞출 수 있다는 사실이다. 다만 사인·코사인이 완전히 상쇄되는 지점(반지름이 0에 근접)에서 정규화를 하면 스파이크·구멍 같은 아티팩트가 생긴다. 그래서 일정 임계값(예: 0.5) 이상인 벡터만 정규화하는 부분 정규화를 선택했다.
 
-![부분 정규화가 만들어낸 일관된 gully 크기](/images/runevision-fast-erosion-filter/NormalizedHalf.png)
+![부분 정규화가 만들어낸 일관된 gully 크기](https://img.seosoyoung.eiaserinnys.me/images/runevision-fast-erosion-filter/NormalizedHalf.png)
 
 *임계 이상의 벡터만 정규화하면 균일한 gully와 능선을 얻으면서 스파이크는 피할 수 있다.*
 
@@ -120,7 +120,7 @@ Johansen이 발견한 것은, 코사인·사인 쌍을 단위원 위의 한 점�
 
 해법은 가짜 경사 사용이다. sin 파형의 값을 그대로 쓰지 말고 부호만 취해 -1 또는 1로 대체한다. 이는 gully가 사인 파형이 아니라 삼각 파형처럼 위·아래 어디서든 일정한 경사를 유지한다고 가정하는 것과 같다.
 
-![Straight gullies 기법이 만든 깔끔한 능선 분기](/images/runevision-fast-erosion-filter/straight_gullies_on_zoom.png)
+![Straight gullies 기법이 만든 깔끔한 능선 분기](https://img.seosoyoung.eiaserinnys.me/images/runevision-fast-erosion-filter/straight_gullies_on_zoom.png)
 
 *직선 gully 기법을 적용한 뒤의 능선·골 — 큰 능선에서 작은 능선이 깔끔한 각도로 분기한다.*
 
@@ -130,19 +130,19 @@ Johansen이 발견한 것은, 코사인·사인 쌍을 단위원 위의 한 점�
 
 **Pointy peaks.** gully를 정규화하면 봉우리가 원래 높이 함수의 둥근 형태에 가까워진다. 이걸 다시 뾰족하게 만들려고 별도 처리를 시도했으나, 결국 훨씬 단순한 해법을 찾았다. faded gully의 gully 성분을 어떤 비율(예: 0.5)로 축소하는 동시에 침식 강도를 그 역수(2.0)만큼 키운다.
 
-![gully weight와 침식 강도의 조합으로 얻는 뾰족한 봉우리](/images/runevision-fast-erosion-filter/GullyWeight.png)
+![gully weight와 침식 강도의 조합으로 얻는 뾰족한 봉우리](https://img.seosoyoung.eiaserinnys.me/images/runevision-fast-erosion-filter/GullyWeight.png)
 
 *왼쪽 위: 침식 없음. 오른쪽 위: 침식 적용, 봉우리 뭉툭. 왼쪽 아래: gully weight를 0으로 낮춰 봉우리만 보임. 오른쪽 아래: 강도 2배 · gully weight 절반으로 뾰족 봉우리와 gully 공존.*
 
 **Rounding of ridges and creases.** 실제 능선은 완전 칼날이 아니고, 골 바닥은 퇴적으로 둥글어질 수 있다. mask의 shaping function 뒤에 크기 조절 가능한 ease-in 함수를 연결해 능선과 골의 라운딩을 각각 다르게 조절할 수 있게 만들었다.
 
-![능선·골 라운딩의 각각 조절](/images/runevision-fast-erosion-filter/Rounding.png)
+![능선·골 라운딩의 각각 조절](https://img.seosoyoung.eiaserinnys.me/images/runevision-fast-erosion-filter/Rounding.png)
 
 *라운딩 없음, 능선만, 골만, 둘 다 라운딩 적용.*
 
 **Water drainage.** 침식이 충분히 선명해지자 "이 기법으로 분기하는 하천망도 그릴 수 있지 않을까"라는 아이디어에 도달한다. 마지막 옥타브를 마스크로 중립값(회색)으로 페이드시키면 능선·골의 분포를 담은 ridge map이 나온다. 이 ridge map을 텍스처링에 얹으면 물이 흘러내리는 자국(dendritic drainage)을 그럴싸하게 표현할 수 있다.
 
-![Ridge map을 지형에 얹은 결과](/images/runevision-fast-erosion-filter/RidgemapTerrain.png)
+![Ridge map을 지형에 얹은 결과](https://img.seosoyoung.eiaserinnys.me/images/runevision-fast-erosion-filter/RidgemapTerrain.png)
 
 *능선을 흰색, 골을 검정으로 표시한 ridge map을 지형에 시각화한 것.*
 
@@ -150,7 +150,7 @@ Johansen이 발견한 것은, 코사인·사인 쌍을 단위원 위의 한 점�
 
 여기까지 다 적용한 최종 지형은 이렇다.
 
-![최종 텍스처링을 얹은 지형](/images/runevision-fast-erosion-filter/NewTerrainTextured.png)
+![최종 텍스처링을 얹은 지형](https://img.seosoyoung.eiaserinnys.me/images/runevision-fast-erosion-filter/NewTerrainTextured.png)
 
 *바위·흙·풀·나무·물빠짐 자국까지 얹은 최종 지형.*
 

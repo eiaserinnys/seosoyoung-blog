@@ -8,12 +8,12 @@ math: false
 ShowToc: true
 TocOpen: false
 cover:
-  image: "/images/text-to-vrma/release-1.1.0.jpg"
+  image: "https://img.seosoyoung.eiaserinnys.me/images/text-to-vrma/release-1.1.0.jpg"
 images:
-  - "/images/text-to-vrma/release-1.1.0.jpg"
+  - "https://img.seosoyoung.eiaserinnys.me/images/text-to-vrma/release-1.1.0.jpg"
 ---
 
-![Text-To-VRMA v1.1.0 릴리스](/images/text-to-vrma/release-1.1.0.jpg)
+![Text-To-VRMA v1.1.0 릴리스](https://img.seosoyoung.eiaserinnys.me/images/text-to-vrma/release-1.1.0.jpg)
 
 ## 3줄 요약
 
@@ -25,7 +25,7 @@ images:
 
 핵심은 브라우저 안에서 도는 Web 앱이라는 점이다. `git clone` 후 `npm run dev`로 띄우면 `localhost:5173`에서 열리고, VRoid 공식 샘플 모델(AvatarSample)이 로드된 3D 뷰에 텍스트 상자가 붙어 있다. 텍스트를 넣고 「모션 생성 & 재생」을 누르면 캐릭터가 움직인다. 만족스러우면 「.vrma 저장」으로 파일을 뽑아 VRMA 대응 앱에서 그대로 쓴다.
 
-![텍스트에서 모션 생성 데모](/images/text-to-vrma/demo.gif)
+![텍스트에서 모션 생성 데모](https://img.seosoyoung.eiaserinnys.me/images/text-to-vrma/demo.gif)
 
 출력 포맷인 `.vrma`는 glTF 바이너리(GLB)에 `VRMC_vrm_animation` 확장을 얹은 것으로, 휴머노이드 뼈대 매핑과 표정 트랙을 담는다. 즉 이 앱은 「모션 생성기」인 동시에 「VRMA 인코더」다. VRM 0.x와 1.0 양쪽을 자동 판별해 받고, UI는 일본어·영어·중국어·한국어 4개 언어를 지원한다.
 

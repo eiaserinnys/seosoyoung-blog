@@ -17,7 +17,7 @@ sidenotes: true
 
 ## 발표자
 
-![발표자 Angelos Perivolaropoulos — ElevenLabs STT 팀 리드](/images/llm-from-scratch-workshop/speaker-intro.jpeg)
+![발표자 Angelos Perivolaropoulos — ElevenLabs STT 팀 리드](https://img.seosoyoung.eiaserinnys.me/images/llm-from-scratch-workshop/speaker-intro.jpeg)
 
 Angelos Perivolaropoulos. ElevenLabs에서 Speech-to-Text 팀을 이끄는 Research Engineer다. Scribe v2 — 퍼블릭 벤치마크 기준 최고 성능 트랜스크립션 모델 — 의 주 개발자이며, 실시간 에이전트용 트랜스크립션 모델 훈련에 주력하고 있다.
 
@@ -34,7 +34,7 @@ ElevenLabs에서는 새 TTS 모델 개발 시 <strong>토크나이저에 6개월
 
 ## 트랜스포머 아키텍처
 
-![GPT 아키텍처 개요 — 전체 구조와 설정값](/images/llm-from-scratch-workshop/architecture-overview.jpeg)
+![GPT 아키텍처 개요 — 전체 구조와 설정값](https://img.seosoyoung.eiaserinnys.me/images/llm-from-scratch-workshop/architecture-overview.jpeg)
 
 GPT-2 기반 decoder-only causal 모델을 순수 PyTorch로 구현한다. 프레임워크나 사전 학습 가중치 없이 처음부터 작성한다. 트랜스포머의 4가지 빌딩 블록 전체가 <strong>100줄 미만</strong>이다.
 
@@ -56,7 +56,7 @@ GPT-2 기반 decoder-only causal 모델을 순수 PyTorch로 구현한다. 프�
 
 ## 학습 과정과 Loss의 의미
 
-![Loss 수준별 모델 상태와 실제 출력 예시](/images/llm-from-scratch-workshop/loss-progression.jpeg)
+![Loss 수준별 모델 상태와 실제 출력 예시](https://img.seosoyoung.eiaserinnys.me/images/llm-from-scratch-workshop/loss-progression.jpeg)
 
 Loss 값이 모델의 학습 단계를 직접적으로 보여준다:
 
@@ -81,7 +81,7 @@ Loss 값이 모델의 학습 단계를 직접적으로 보여준다:
 
 ## 텍스트 생성 전략
 
-![텍스트 생성 전략 — Greedy, Temperature, Top-k 비교](/images/llm-from-scratch-workshop/generation-strategies.jpeg)
+![텍스트 생성 전략 — Greedy, Temperature, Top-k 비교](https://img.seosoyoung.eiaserinnys.me/images/llm-from-scratch-workshop/generation-strategies.jpeg)
 
 - **Greedy Decoding** — 항상 가장 확률 높은 토큰을 선택한다. 반복적이고 지루한 출력이 나온다.
 - **Temperature Scaling** — logits를 temperature로 나눠 확률 분포를 조절한다. T→0이면 greedy, T=1.0이면 원래 분포, T>1.0이면 더 랜덤하다. 최적 구간은 0.7\~0.8이다.

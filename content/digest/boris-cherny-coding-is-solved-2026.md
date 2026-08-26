@@ -5,9 +5,9 @@ tags: ["AI", "Claude Code", "Anthropic", "코딩 에이전트", "하네스", "�
 categories: ["에이전트와 코딩"]
 summary: "Claude Code 창시자 보리스 체르니가 Sequoia AI Ascent 2026에서 밝힌 자기 워크플로우. 더 이상 클로드에 프롬프트를 던지지 않고, 루프를 짜서 루프가 일하게 한다. 본인 직무는 '루프를 쓰는 것'이라고 선언한다."
 cover:
-  image: "/images/boris-cherny-coding-is-solved-2026/thumbnail.jpg"
+  image: "https://img.seosoyoung.eiaserinnys.me/images/boris-cherny-coding-is-solved-2026/thumbnail.jpg"
 images:
-  - "/images/boris-cherny-coding-is-solved-2026/thumbnail.jpg"
+  - "https://img.seosoyoung.eiaserinnys.me/images/boris-cherny-coding-is-solved-2026/thumbnail.jpg"
 ShowToc: true
 TocOpen: false
 ---
@@ -30,7 +30,7 @@ TocOpen: false
 
 이 다이제스트가 다루는 영상은 0xCodez가 X에 올린 [트윗](https://x.com/0xcodez/status/2062464183409545224)에서 <em>"in 30 minutes Boris reveals his actual daily Claude Code setup"</em>이라 소개한 그 발표의 원본이다. 길이는 30분보다 약간 짧고, 보리스의 폰 기반 워크플로우와 루프 운용이 가장 큰 화두였다.
 
-![Boris Cherny / Anthropic — Sequoia AI Ascent 2026](/images/boris-cherny-coding-is-solved-2026/thumbnail.jpg)
+![Boris Cherny / Anthropic — Sequoia AI Ascent 2026](https://img.seosoyoung.eiaserinnys.me/images/boris-cherny-coding-is-solved-2026/thumbnail.jpg)
 
 ## Claude Code의 탄생 — 제품 오버행이라는 베팅
 

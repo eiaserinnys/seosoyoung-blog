@@ -28,7 +28,7 @@ sidenotes: true
 
 나머지 5개 도메인(자기계발, 법률, 양육, 윤리, 영성)이 22%를 구성하며, 9개 분류가 전체의 98%를 커버한다.
 
-![Figure 1: 9개 도메인별 조언 대화 분포와 상위 4개 도메인의 대화 유형 예시](https://www-cdn.anthropic.com/images/4zrzovbb/website/b5420a640ba04fd080beee2f15a74d9164091df5-1920x1755.png)
+![Figure 1: 9개 도메인별 조언 대화 분포와 상위 4개 도메인의 대화 유형 예시](https://www-cdn.anthropic.comhttps://img.seosoyoung.eiaserinnys.me/images/4zrzovbb/website/b5420a640ba04fd080beee2f15a74d9164091df5-1920x1755.png)
 
 ## 도메인별 아첨 측정
 
@@ -41,7 +41,7 @@ sidenotes: true
 
 절대량 기준으로는 관계 도메인이 가장 많아 훈련 우선순위로 선정되었다.
 
-![Figure 2: 도메인별 아첨 행동 비율](https://www-cdn.anthropic.com/images/4zrzovbb/website/70c11ed1d775f74fe6f16adfb1de9b77b6dd39d9-1920x1080.png)
+![Figure 2: 도메인별 아첨 행동 비율](https://www-cdn.anthropic.comhttps://img.seosoyoung.eiaserinnys.me/images/4zrzovbb/website/70c11ed1d775f74fe6f16adfb1de9b77b6dd39d9-1920x1080.png)
 
 관계 도메인에서 아첨이 주로 취하는 형태는 두 가지다.
 
@@ -60,7 +60,7 @@ Anthropic은 아첨을 유발하는 반론 패턴(초기 평가 비판, 일방�
 
 **스트레스 테스트(prefilling)**: 이전 모델이 아첨했던 실제 대화(사용자 피드백 버튼 공유분)를 새 모델에 prefilling으로 주입한다. 모델은 대화 일관성을 유지하려 하므로, 이미 아첨 방향으로 진행 중인 대화를 방향 전환하는 것은 "이미 움직이는 배를 돌리는" 것처럼 어렵다. 이 역조건에서도 Opus 4.7과 Mythos Preview는 유의하게 낮은 아첨률을 보였다.
 
-![Figure 3: 스트레스 테스트 결과. Opus 4.7과 Mythos Preview가 전체 및 관계 도메인에서 아첨을 크게 줄였다. 오차 막대는 Wilson 신뢰구간.](https://www-cdn.anthropic.com/images/4zrzovbb/website/4bb6cffa44936fb8cc6c9059bd057ef5f1695650-1920x880.png)
+![Figure 3: 스트레스 테스트 결과. Opus 4.7과 Mythos Preview가 전체 및 관계 도메인에서 아첨을 크게 줄였다. 오차 막대는 Wilson 신뢰구간.](https://www-cdn.anthropic.comhttps://img.seosoyoung.eiaserinnys.me/images/4zrzovbb/website/4bb6cffa44936fb8cc6c9059bd057ef5f1695650-1920x880.png)
 
 질적으로도 Opus 4.7은 사용자의 초기 프레이밍 너머 전체 맥락을 조망하는 능력이 향상되었다. 예를 들어 "내 문자가 집착적인가"라는 질문에 Sonnet 4.6은 반론 시 의견을 뒤집었지만, Opus 4.7은 문자 자체는 정상이나 대화 중 사용자가 자술한 불안 사고를 인용하며 일관된 판단을 유지했다.
 

@@ -9,7 +9,7 @@ TocOpen: false
 sidenotes: true
 ---
 
-![Blender Camera Controller v1.0.0](/images/blender-camera-controller-v1/cover.jpg)
+![Blender Camera Controller v1.0.0](https://img.seosoyoung.eiaserinnys.me/images/blender-camera-controller-v1/cover.jpg)
 
 ## 3줄 요약
 

@@ -7,9 +7,9 @@ summary: "게임스컴 2026 데브 강연에서 로우 퓨리의 시니어 브�
 ShowToc: true
 TocOpen: false
 cover:
-  image: "/images/raw-fury-steam-hooking-gamescom-2026/01-pontus.jpg"
+  image: "https://img.seosoyoung.eiaserinnys.me/images/raw-fury-steam-hooking-gamescom-2026/01-pontus.jpg"
 images:
-  - "/images/raw-fury-steam-hooking-gamescom-2026/01-pontus.jpg"
+  - "https://img.seosoyoung.eiaserinnys.me/images/raw-fury-steam-hooking-gamescom-2026/01-pontus.jpg"
 ---
 
 ## 3줄 요약
@@ -18,13 +18,13 @@ images:
 2. 결론은 "스팀 페이지를 잘 꾸미십시오" 한 줄로 수렴하지만, 강연의 내용은 타이틀명·키 아트·태그·가격·트레일러·스크린샷·소개문·리뷰를 각각 별개의 전환 지점으로 다루는 데 있었다.
 3. 키 아트를 교체하자 노출 대비 방문수가 1\~2% 올랐다는 실측처럼, 개별 요소의 개선이 지표로 돌아온다는 것이 이들의 주장이다.
 
-![로우 퓨리의 시니어 브랜드 매니저 폰투스](/images/raw-fury-steam-hooking-gamescom-2026/01-pontus.jpg)
+![로우 퓨리의 시니어 브랜드 매니저 폰투스](https://img.seosoyoung.eiaserinnys.me/images/raw-fury-steam-hooking-gamescom-2026/01-pontus.jpg)
 
 ## 1년에 2만 개
 
 스팀에 올라오는 신작은 매년 늘어 이제 한 해 2만 개에 가깝다. 로우 퓨리는 모바일과 콘솔에서는 다른 접근이 필요할 수 있다고 전제하면서도, 스팀에서는 핵심 요소를 제대로 챙기는 것이 판매와 위시리스트 지표에 실제로 유의미한 영향을 준다고 강조했다.
 
-![스팀 신작 출시 추이](/images/raw-fury-steam-hooking-gamescom-2026/02-steam-flood.jpg)
+![스팀 신작 출시 추이](https://img.seosoyoung.eiaserinnys.me/images/raw-fury-steam-hooking-gamescom-2026/02-steam-flood.jpg)
 
 ## 유저가 스팀 페이지에 닿기까지
 
@@ -39,7 +39,7 @@ images:
 
 로우 퓨리는 한눈에 보이는 이 정보와 이미지, 애셋에서 더 명확한 정보 전달과 포지셔닝이 필요하다고 반복해서 말했다.
 
-![스팀 피드에 노출되는 게임 카드](/images/raw-fury-steam-hooking-gamescom-2026/03-steam-feed.jpg)
+![스팀 피드에 노출되는 게임 카드](https://img.seosoyoung.eiaserinnys.me/images/raw-fury-steam-hooking-gamescom-2026/03-steam-feed.jpg)
 
 ## 게임 이름
 
@@ -52,7 +52,7 @@ images:
 | <스타 트러커> | SF 배송 시뮬레이션 | 이름만으로 우주에서 배송을 한다는 것이 전달된다 |
 | <몬스터 아 커밍> | 로그라이트 타워 디펜스 | 어떤 장르의 어떤 플레이인지 곧바로 연상된다 |
 
-![게임 타이틀명 슬라이드](/images/raw-fury-steam-hooking-gamescom-2026/04-title.jpg)
+![게임 타이틀명 슬라이드](https://img.seosoyoung.eiaserinnys.me/images/raw-fury-steam-hooking-gamescom-2026/04-title.jpg)
 
 ## 키 아트
 
@@ -60,13 +60,13 @@ images:
 
 예시로 든 <스캘드: 어게인스트 더 블랙 프라이어리>는 다크 판타지 호러 CRPG다. 도트 아트로 게임의 정체성을 드러내면서 핵심 정보와 분위기를 키 아트 한 장에 모두 담았다.
 
-![스캘드 키 아트](/images/raw-fury-steam-hooking-gamescom-2026/05-keyart-skald.jpg)
+![스캘드 키 아트](https://img.seosoyoung.eiaserinnys.me/images/raw-fury-steam-hooking-gamescom-2026/05-keyart-skald.jpg)
 
 <라스트맨 시팅>은 두 안을 비교한 사례다. 오른쪽 옵션 B가 더 역동적이고, 탄피가 날아가는 장면을 통해 아레나 슈팅이라는 장르도 더 잘 드러난다.
 
 이 정도 차이가 대수롭지 않아 보일 수 있지만, 키 아트 교체 이후 노출 대비 방문수가 1\~2% 가까이 늘었다고 한다. 동원할 수 있는 모든 수단으로 게임을 알려야 하는 입장에서는 그것도 소중한 지표다.
 
-![라스트맨 시팅 키 아트 A/B 비교](/images/raw-fury-steam-hooking-gamescom-2026/06-keyart-ab.jpg)
+![라스트맨 시팅 키 아트 A/B 비교](https://img.seosoyoung.eiaserinnys.me/images/raw-fury-steam-hooking-gamescom-2026/06-keyart-ab.jpg)
 
 ## 태그와 장르
 
@@ -74,7 +74,7 @@ images:
 
 <킹덤 투 크라운즈>는 타워 디펜스 게임이 소개되는 페이지에 함께 걸리기도 했다. <스타 트러커>도 비슷한 게임들 옆에 노출되기를 원했기 때문에 태그를 자주 재확인했다고 한다. 유저가 태그를 붙이거나 바꿀 수 있는 구조라서 그렇다.
 
-![태그와 장르 슬라이드](/images/raw-fury-steam-hooking-gamescom-2026/07-tags.jpg)
+![태그와 장르 슬라이드](https://img.seosoyoung.eiaserinnys.me/images/raw-fury-steam-hooking-gamescom-2026/07-tags.jpg)
 
 ## 가격
 
@@ -84,7 +84,7 @@ images:
 
 멀티플레이어 아레나 슈팅 <프렌즈 vs 프렌즈>는 플레이어 수를 늘리려는 목표가 있었기에 가격 책정을 핵심 요소로 두고 접근했다고 회고했다.
 
-![가격 책정 슬라이드](/images/raw-fury-steam-hooking-gamescom-2026/08-pricing.jpg)
+![가격 책정 슬라이드](https://img.seosoyoung.eiaserinnys.me/images/raw-fury-steam-hooking-gamescom-2026/08-pricing.jpg)
 
 ## 트레일러와 스크린샷
 
@@ -94,11 +94,11 @@ images:
 
 또 하나의 조언은 인터페이스를 가급적 숨기지 말라는 것이었다. UI를 보면서 유저는 이 게임이 어떤 장르이고 어떤 플레이를 담고 있는지 더 선명하게 이해하고 기대할 수 있다.
 
-![트레일러 슬라이드](/images/raw-fury-steam-hooking-gamescom-2026/09-trailer.jpg)
+![트레일러 슬라이드](https://img.seosoyoung.eiaserinnys.me/images/raw-fury-steam-hooking-gamescom-2026/09-trailer.jpg)
 
 스크린샷도 마찬가지다. 핵심 플레이와 분위기를 보여주는 요소이고, 설명 없이도 한 장이 전하는 정보가 더 많을 때가 있다. 여기서도 인터페이스를 숨기지 말라는 당부가 반복됐다. 해당 장르를 좋아하는 게이머라면 그 인터페이스를 보고 기대를 키우거나, 어떤 장르의 어떤 플레이인지 인지한 상태로 시작할 수 있다는 이유다.
 
-![스크린샷 슬라이드](/images/raw-fury-steam-hooking-gamescom-2026/10-screenshots.jpg)
+![스크린샷 슬라이드](https://img.seosoyoung.eiaserinnys.me/images/raw-fury-steam-hooking-gamescom-2026/10-screenshots.jpg)
 
 ## 소개문과 리뷰
 

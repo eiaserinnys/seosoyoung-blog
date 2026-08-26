@@ -23,7 +23,7 @@ sidenotes: true
 
 원문 블로그 포스트는 2025-07-10에 공개되었고, 정식 페이퍼는 arxiv:2507.09089에 올라가 있다. 2026년 2월에는 *후속 연구 업데이트*가 별도 발행되어 후기 2025 AI 도구의 생산성 영향을 측정한 새 데이터가 추가되었으나, 본 다이제스트는 원본 논문에 한정한다.
 
-![예측한 슬로우다운 vs. 관측된 슬로우다운. 사전 예측은 자료 어디에도 19%가 등장하지 않으며, 관측치만이 그 자리를 채운다.](/images/metr-senior-developer-19-percent-slower/forecasted-vs-observed.png)
+![예측한 슬로우다운 vs. 관측된 슬로우다운. 사전 예측은 자료 어디에도 19%가 등장하지 않으며, 관측치만이 그 자리를 채운다.](https://img.seosoyoung.eiaserinnys.me/images/metr-senior-developer-19-percent-slower/forecasted-vs-observed.png)
 *METR이 본 연구의 첫 그림으로 내건 차트. 사전 예측과 관측치의 거리가 본 연구의 출발점이다.*
 
 ## 방법론 — 16명·246 이슈·Cursor Pro+Sonnet
@@ -36,7 +36,7 @@ sidenotes: true
 - AI 도구: 허용 시 자유 선택이지만 대부분 Cursor Pro + Claude 3.5/3.7 Sonnet — 연구 시점의 프론티어 모델이다. 불허 시 생성 AI 일체 사용 금지.
 - 계측: 화면 녹화 + 자기 보고 구현 시간. 시간당 $150 보상.
 
-![METR 방법론 개요 다이어그램.](/images/metr-senior-developer-19-percent-slower/methodology.png)
+![METR 방법론 개요 다이어그램.](https://img.seosoyoung.eiaserinnys.me/images/metr-senior-developer-19-percent-slower/methodology.png)
 *방법론 다이어그램. 각 이슈가 두 조건 사이에 무작위 배정된다.*
 
 설계의 묘미는 *세팅의 사실성*에 있다. 작업이 합성되거나 단순화된 벤치마크 과제가 아니라, 개발자가 일상에서 처리할 *실제* 이슈이며, 채점 또한 알고리즘이 아닌 *사람이 PR 리뷰를 통과시킬 만큼의 품질*이 기준이다.
@@ -47,7 +47,7 @@ sidenotes: true
 
 AI 도구 사용이 허용된 이슈에서 개발자는 같은 종류의 이슈를 AI 없이 처리할 때보다 *19% 더 오래* 걸렸다. 통계적으로 유의한 슬로우다운이며, 클러스터링 표준오차로 영가설을 기각한다. 결과는 다양한 *결과 측정·추정 방법·하위 분석*에서 일관되게 관찰된다.
 
-![개발자가 사전에 예측한 시간과 실제 측정된 구현 시간 비교. AI 허용 조건에서 막대가 분명하게 길어진다.](/images/metr-senior-developer-19-percent-slower/core-result.png)
+![개발자가 사전에 예측한 시간과 실제 측정된 구현 시간 비교. AI 허용 조건에서 막대가 분명하게 길어진다.](https://img.seosoyoung.eiaserinnys.me/images/metr-senior-developer-19-percent-slower/core-result.png)
 *예측 시간 vs 실제 구현 시간. AI 허용 조건의 막대가 더 길다.*
 
 저자들은 *실험 인공물* 가설을 미리 처리한다.
@@ -80,7 +80,7 @@ AI 도구 사용이 허용된 이슈에서 개발자는 같은 종류의 이슈�
 
 저자들은 슬로우다운을 설명할 잠재 요인 *20개*를 검토하여, 그중 *다섯 가지*가 유의하게 기여한다고 식별한다. 다섯 요인의 명단 자체는 본문에 텍스트로 제시되지 않고 그림 형태로만 나오나, 페이퍼(arxiv:2507.09089)의 §5에서 정량 비중과 함께 분해된다.
 
-![요인 분석 표. 20개 후보 요인 가운데 다섯이 슬로우다운에 유의하게 기여하였다.](/images/metr-senior-developer-19-percent-slower/factor-analysis.png)
+![요인 분석 표. 20개 후보 요인 가운데 다섯이 슬로우다운에 유의하게 기여하였다.](https://img.seosoyoung.eiaserinnys.me/images/metr-senior-developer-19-percent-slower/factor-analysis.png)
 *요인 분석. 단일 원인이 아니라 다섯 갈래가 더해져 19%가 만들어진다는 그림이다.*
 
 배제된 가설을 명시한 점이 본 연구의 단단함을 만든다. *프론티어 모델 미사용*·*개발자가 처치를 어김*·*어려운 이슈의 차별 드롭*·*AI-허용 PR의 품질 저하* — 이 모든 *실험 인공물* 가설은 데이터로 기각되었다. 즉 19%는 *사용의 한계*에서 나오지 *측정의 한계*에서 나오지 않는다.
@@ -102,7 +102,7 @@ AI 도구 사용이 허용된 이슈에서 개발자는 같은 종류의 이슈�
 2. 벤치마크와 일화가 능력을 *과대* 평가한다. 알고리즘 채점·자기 보고가 실제 유용성과 어긋날 수 있다.
 3. 셋 다 부분적으로 옳다. 각자가 *서로 다른 부분 분포*를 측정하며, 모델은 그 부분 분포마다 다른 능력 수준을 보인다.
 
-![요약 다이어그램: RCT는 슬로우다운, 벤치마크는 인상적 점수, 일화는 광범위한 유용성. 모순처럼 보이지만 셋의 측정 대상이 다르다.](/images/metr-senior-developer-19-percent-slower/summary.png)
+![요약 다이어그램: RCT는 슬로우다운, 벤치마크는 인상적 점수, 일화는 광범위한 유용성. 모순처럼 보이지만 셋의 측정 대상이 다르다.](https://img.seosoyoung.eiaserinnys.me/images/metr-senior-developer-19-percent-slower/summary.png)
 *요약 다이어그램. 세 측정이 향한 곳이 같은 별이 아닐 수 있다는 시각화다.*
 
 저자들은 *어느 가설이 가장 큰 비중을 차지하는지*는 추가 연구가 필요하다고 보수적으로 마감한다. 다만 한 가지는 가설 선택과 무관하게 강력하다 — *자기 보고 추정치는 매우 부정확할 수 있다*는 점이다.

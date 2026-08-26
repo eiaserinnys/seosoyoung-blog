@@ -9,7 +9,7 @@ TocOpen: false
 sidenotes: true
 ---
 
-![원문 커버 이미지](/images/aubry-review-score-multiplier-2025/cover.jpg "출처: Arnaud Aubry, LinkedIn (2025-03-25)")
+![원문 커버 이미지](https://img.seosoyoung.eiaserinnys.me/images/aubry-review-score-multiplier-2025/cover.jpg "출처: Arnaud Aubry, LinkedIn (2025-03-25)")
 
 ## 3줄 요약
 

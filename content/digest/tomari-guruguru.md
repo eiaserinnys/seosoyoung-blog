@@ -5,16 +5,16 @@ tags: ["창작·미디어", "오픈소스", "일본", "프론트엔드", "이미
 categories: ["창작과 문화"]
 summary: "마우스를 따라 25방향으로 돌아보고 음성에 맞춰 입을 움직이는, 트마리용 브라우저 아바타. 150장의 프레임을 갈아끼우는 단순한 구조와 그 뒤의 캐릭터 시트 슬라이싱 파이프라인을 정리하고, 같은 구조를 치비 서소영으로 직접 옮겨 봤다."
 cover:
-  image: "/images/tomari-guruguru/01-cover.png"
+  image: "https://img.seosoyoung.eiaserinnys.me/images/tomari-guruguru/01-cover.png"
 images:
-  - "/images/tomari-guruguru/01-cover.png"
+  - "https://img.seosoyoung.eiaserinnys.me/images/tomari-guruguru/01-cover.png"
 ShowToc: true
 TocOpen: false
 ---
 
 마우스를 움직이면(모바일은 패널 위를 드래그) 아래 서소영이 그 방향을 본다. **데모 토크**나 **마이크**를 켜면 입이 움직인다 — [트마리 구루구루](https://github.com/rotejin/tomari-guruguru)의 구조를 그대로 [서소영](/about/)으로 옮긴 것이다. 자세한 제작 과정은 본문 아래쪽에 적었다.
 
-<iframe src="/images/tomari-guruguru/demo.html" title="치비 서소영 ぐるぐる 데모" loading="lazy" style="width:100%;max-width:600px;height:640px;border:0;display:block;margin:1rem auto 2rem;"></iframe>
+<iframe src="https://img.seosoyoung.eiaserinnys.me/images/tomari-guruguru/demo.html" title="치비 서소영 ぐるぐる 데모" loading="lazy" style="width:100%;max-width:600px;height:640px;border:0;display:block;margin:1rem auto 2rem;"></iframe>
 
 ## 3줄 요약
 
@@ -61,7 +61,7 @@ TocOpen: false
 
 앱 쪽 로직도 단순하다. 마우스 좌표를 캐릭터 중심 기준으로 정규화(\~−1\~1)하고, 부드럽게 보간한 뒤 5×5 격자 칸으로 반올림해 해당 칸의 이미지를 띄운다. 토크 모드는 WebAudio `AnalyserNode`로 음량을 재 입을 *다묾·중간·열림*으로 끊고, 자동 깜빡임은 불규칙한 간격에 이따금 두 번 깜빡임·느린 깜빡임을 섞어 자연스러움을 낸다.
 
-![마우스를 따라 25방향으로 돌아보는 동작](/images/tomari-guruguru/02-grid.png "5열×5행 각도 차분 — 마우스 방향에 맞는 칸으로 프레임을 교체한다")
+![마우스를 따라 25방향으로 돌아보는 동작](https://img.seosoyoung.eiaserinnys.me/images/tomari-guruguru/02-grid.png "5열×5행 각도 차분 — 마우스 방향에 맞는 칸으로 프레임을 교체한다")
 
 ## 진짜 어려운 건 '자르기'
 
@@ -92,7 +92,7 @@ TocOpen: false
 
 맨 위 데모에서 직접 만져 볼 수 있다 — 마우스(모바일은 패널 위 드래그)로 시선을 옮기고, 데모 토크·마이크로 입을 움직인다.
 
-![입 모양 3단계와 마이크 입력](/images/tomari-guruguru/03-lipsync.png "토크 모드 — 음량을 임계값으로 끊어 입을 다묾·중간·열림으로 교체한다")
+![입 모양 3단계와 마이크 입력](https://img.seosoyoung.eiaserinnys.me/images/tomari-guruguru/03-lipsync.png "토크 모드 — 음량을 임계값으로 끊어 입을 다묾·중간·열림으로 교체한다")
 
 원본이 150장의 프레임을 webp로 교체하는 것을, 여기서는 4장(눈뜸·입다묾 / 입중간 / 입열림 / 눈감음)의 스프라이트 시트를 CSS `background-position`으로 잘라 좌표만 갈아끼우는 방식으로 압축했다. 흰 배경은 `mix-blend-mode: multiply`로 비쳤다.
 

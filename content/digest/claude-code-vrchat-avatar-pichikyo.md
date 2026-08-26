@@ -9,7 +9,7 @@ TocOpen: false
 sidenotes: true
 ---
 
-![완성된 VRChat 아바타의 얼굴 클로즈업 — 어느 각도에서 봐도 아름답다는 필자의 최종 결과](/images/claude-code-vrchat-avatar-pichikyo/cover.jpg)
+![완성된 VRChat 아바타의 얼굴 클로즈업 — 어느 각도에서 봐도 아름답다는 필자의 최종 결과](https://img.seosoyoung.eiaserinnys.me/images/claude-code-vrchat-avatar-pichikyo/cover.jpg)
 
 ## 3줄 요약
 
@@ -28,7 +28,7 @@ sidenotes: true
 
 ChatGPT Image 2에서 사진 한 장과 프롬프트로 자기 캐릭터를 만드는 X 트렌드가 발단이었다. 필자는 자기 사진을 넣어보고 "꽤 귀여운 캐릭터가 나왔으니, 이걸 VRChat 아바터로 만들 수 있지 않을까"라는 생각을 했다. GPT-image-2가 사면도(정면·좌·우·후면) 생성에도 강하다는 점이 결정타였다.
 
-![ChatGPT Image 2가 사진을 캐릭터화한 결과](/images/claude-code-vrchat-avatar-pichikyo/01.jpg)
+![ChatGPT Image 2가 사진을 캐릭터화한 결과](https://img.seosoyoung.eiaserinnys.me/images/claude-code-vrchat-avatar-pichikyo/01.jpg)
 
 ## 전체 워크플로우 (6단계)
 
@@ -43,7 +43,7 @@ ChatGPT Image 2에서 사진 한 장과 프롬프트로 자기 캐릭터를 만�
 
 각 단계 사이의 데이터 변환(FBX 입출력, 머터리얼 재바인딩, MCP 연결 등)은 모두 Claude Code에 물어가며 진행했다.
 
-![GPT-image-2가 생성한 사면도 (정면·좌·우·후면) — "GPT-image-2는 정말 유능하다"](/images/claude-code-vrchat-avatar-pichikyo/02.jpg)
+![GPT-image-2가 생성한 사면도 (정면·좌·우·후면) — "GPT-image-2는 정말 유능하다"](https://img.seosoyoung.eiaserinnys.me/images/claude-code-vrchat-avatar-pichikyo/02.jpg)
 
 ## 도구별 메모
 
@@ -54,11 +54,11 @@ ChatGPT Image 2에서 사진 한 장과 프롬프트로 자기 캐릭터를 만�
 - 이미지 입력 대신 ChatGPT로 스타일을 텍스트 프롬프트로 분해한 뒤, 그 프롬프트만으로 직접 생성하기.
 - 머리와 몸을 분리 생성해 폴리곤 예산을 부위별로 따로 쓰기 (얼굴 디테일 확보).
 
-![TRIPO 3D가 사면도에서 수 분 만에 만들어낸 T-포즈 3D 모델 — "빠르다. 대단하다"](/images/claude-code-vrchat-avatar-pichikyo/03.jpg)
+![TRIPO 3D가 사면도에서 수 분 만에 만들어낸 T-포즈 3D 모델 — "빠르다. 대단하다"](https://img.seosoyoung.eiaserinnys.me/images/claude-code-vrchat-avatar-pichikyo/03.jpg)
 
-![머리만 따로 생성했을 때 나온 "농후한 버터 풍 리얼 얼굴" — 학습 모집단이 구미권이라는 방증](/images/claude-code-vrchat-avatar-pichikyo/13.jpg)
+![머리만 따로 생성했을 때 나온 "농후한 버터 풍 리얼 얼굴" — 학습 모집단이 구미권이라는 방증](https://img.seosoyoung.eiaserinnys.me/images/claude-code-vrchat-avatar-pichikyo/13.jpg)
 
-![ChatGPT로 원본 일러스트의 스타일을 분해해 프롬프트로 재시도하는 "프롬프트 가챠"](/images/claude-code-vrchat-avatar-pichikyo/14.jpg)
+![ChatGPT로 원본 일러스트의 스타일을 분해해 프롬프트로 재시도하는 "프롬프트 가챠"](https://img.seosoyoung.eiaserinnys.me/images/claude-code-vrchat-avatar-pichikyo/14.jpg)
 
 ### Blender + Tripo DCC Bridge MCP
 
@@ -66,23 +66,23 @@ ChatGPT Image 2에서 사진 한 장과 프롬프트로 자기 캐릭터를 만�
 
 별도 익스포트/임포트 옵션을 고민하지 않고도 TRIPO 결과물을 Blender로 직접 전송할 수 있는 MCP 브리지가 있다는 사실 자체를 Claude Code가 알려준 것이 도움이 됐다.
 
-![Tripo DCC Bridge MCP로 버튼 한 번에 Blender에 모델이 들어오는 화면 — "정말 편리하다"](/images/claude-code-vrchat-avatar-pichikyo/04.jpg)
+![Tripo DCC Bridge MCP로 버튼 한 번에 Blender에 모델이 들어오는 화면 — "정말 편리하다"](https://img.seosoyoung.eiaserinnys.me/images/claude-code-vrchat-avatar-pichikyo/04.jpg)
 
-![Blender로 가져온 직후의 거친 얼굴 메쉬와 텍스처](/images/claude-code-vrchat-avatar-pichikyo/05.jpg)
+![Blender로 가져온 직후의 거친 얼굴 메쉬와 텍스처](https://img.seosoyoung.eiaserinnys.me/images/claude-code-vrchat-avatar-pichikyo/05.jpg)
 
 ### Adobe Mixamo
 
 무료 웹앱이라 설치가 필요 없고, 관절 위치를 가리키는 구체 6개를 수동으로 배치하기만 하면 자동으로 본과 스킨 바인드가 끝난다. "FBX for Unity"로 받으면 곧장 다음 단계로 갈 수 있다. 정밀도는 낮지만 "움직이는 모델"의 첫 베타까지 거의 마찰 없이 도달한다.
 
-![Mixamo에서 관절 구체 6개를 손으로 배치하는 화면 — 무료 웹앱에서 자동 본/스킨 바인드까지 완결된다](/images/claude-code-vrchat-avatar-pichikyo/06.jpg)
+![Mixamo에서 관절 구체 6개를 손으로 배치하는 화면 — 무료 웹앱에서 자동 본/스킨 바인드까지 완결된다](https://img.seosoyoung.eiaserinnys.me/images/claude-code-vrchat-avatar-pichikyo/06.jpg)
 
 ### Unity
 
 머터리얼·셰이더 설정과 VRC Avatar Descriptor 초기 셋업이 필요한데, 필자는 셰이더 매핑이 막막해 Claude Code에 상담했다. 그러자 "자동으로 머터리얼과 셰이더를 세팅하는 툴"을 즉석에서 만들어줬고, 그 툴과 모델을 Unity에 넣고 버튼 하나로 마쳤다.
 
-![Blender→Unity 이행 단계 — "복잡한 부분은 Claude Code 맡김"](/images/claude-code-vrchat-avatar-pichikyo/07.jpg)
+![Blender→Unity 이행 단계 — "복잡한 부분은 Claude Code 맡김"](https://img.seosoyoung.eiaserinnys.me/images/claude-code-vrchat-avatar-pichikyo/07.jpg)
 
-![첫 빌드를 마치고 VRChat에 들어가 풀트래킹으로 찍은 셀피](/images/claude-code-vrchat-avatar-pichikyo/08.jpg)
+![첫 빌드를 마치고 VRChat에 들어가 풀트래킹으로 찍은 셀피](https://img.seosoyoung.eiaserinnys.me/images/claude-code-vrchat-avatar-pichikyo/08.jpg)
 
 ## 두 번의 좌절 — 그리고 우회
 
@@ -90,15 +90,15 @@ ChatGPT Image 2에서 사진 한 장과 프롬프트로 자기 캐릭터를 만�
 
 전신을 한 번에 생성하면 한정된 폴리곤 예산을 얼굴·몸이 나눠 써서 얼굴이 거칠게 나온다. 머리만 따로 생성하고 Blender에서 몸과 결합하는 분할 패턴으로 디테일을 확보했다. 단, 머리/몸 경계의 메쉬·머터리얼 정합은 수동 미세 조정이 필요했다.
 
-![첫 빌드에서 거칠게 나온 얼굴 메쉬와 텍스처 — 폴리곤 예산이 얼굴·몸으로 분산된 결과](/images/claude-code-vrchat-avatar-pichikyo/09.jpg)
+![첫 빌드에서 거칠게 나온 얼굴 메쉬와 텍스처 — 폴리곤 예산이 얼굴·몸으로 분산된 결과](https://img.seosoyoung.eiaserinnys.me/images/claude-code-vrchat-avatar-pichikyo/09.jpg)
 
-![머리만 따로 생성하고 Blender에서 몸과 결합 — "정점을 옮겨 메쉬 형태를 다듬는 법을 익혔다"](/images/claude-code-vrchat-avatar-pichikyo/10.jpg)
+![머리만 따로 생성하고 Blender에서 몸과 결합 — "정점을 옮겨 메쉬 형태를 다듬는 법을 익혔다"](https://img.seosoyoung.eiaserinnys.me/images/claude-code-vrchat-avatar-pichikyo/10.jpg)
 
-![사면도 기반이라 정면·측면은 자연스럽지만 비스듬한 각도에서 데생이 어긋난다 — "광대가 부족하고 턱이 너무 뾰족하다"](/images/claude-code-vrchat-avatar-pichikyo/11.jpg)
+![사면도 기반이라 정면·측면은 자연스럽지만 비스듬한 각도에서 데생이 어긋난다 — "광대가 부족하고 턱이 너무 뾰족하다"](https://img.seosoyoung.eiaserinnys.me/images/claude-code-vrchat-avatar-pichikyo/11.jpg)
 
-![Booth에서 산 머리·메가네 에셋을 얹어 빌드 — 정면에서 보면 충분히 귀엽다](/images/claude-code-vrchat-avatar-pichikyo/12.jpg)
+![Booth에서 산 머리·메가네 에셋을 얹어 빌드 — 정면에서 보면 충분히 귀엽다](https://img.seosoyoung.eiaserinnys.me/images/claude-code-vrchat-avatar-pichikyo/12.jpg)
 
-![프롬프트 가챠 끝에 다듬어진 결과 — "전날을 생각하면 꽤 익숙해진 느낌"](/images/claude-code-vrchat-avatar-pichikyo/15.jpg)
+![프롬프트 가챠 끝에 다듬어진 결과 — "전날을 생각하면 꽤 익숙해진 느낌"](https://img.seosoyoung.eiaserinnys.me/images/claude-code-vrchat-avatar-pichikyo/15.jpg)
 
 ### 2. Blender 머터리얼이 깨지는 미스터리
 
@@ -113,11 +113,11 @@ Blender에서 합친 모델을 Mixamo에 보내고 다시 Blender로 돌아오�
 
 원인과 해결 모두 끝까지 명료하게 파악하지는 못한 채, 일단 보기에 괜찮은 상태로 정리하고 다음 단계로 넘어갔다.
 
-![Mixamo 왕복 후 깨진 머터리얼 — "이게 뭐야??????"](/images/claude-code-vrchat-avatar-pichikyo/16.png)
+![Mixamo 왕복 후 깨진 머터리얼 — "이게 뭐야??????"](https://img.seosoyoung.eiaserinnys.me/images/claude-code-vrchat-avatar-pichikyo/16.png)
 
-![컨텍스트가 길어지자 헤매는 Claude Code — "무슨 말을 하고 있는지 모르겠다"](/images/claude-code-vrchat-avatar-pichikyo/17.jpg)
+![컨텍스트가 길어지자 헤매는 Claude Code — "무슨 말을 하고 있는지 모르겠다"](https://img.seosoyoung.eiaserinnys.me/images/claude-code-vrchat-avatar-pichikyo/17.jpg)
 
-![끝까지 원인은 파악 못 했지만 일단 절차를 Skill로 굳혀 재현 가능하게 만들었다](/images/claude-code-vrchat-avatar-pichikyo/18.png)
+![끝까지 원인은 파악 못 했지만 일단 절차를 Skill로 굳혀 재현 가능하게 만들었다](https://img.seosoyoung.eiaserinnys.me/images/claude-code-vrchat-avatar-pichikyo/18.png)
 
 ## 페르소나 분리 운영
 
@@ -129,21 +129,21 @@ Blender에서 합친 모델을 Mixamo에 보내고 다시 Blender로 돌아오�
 
 리깅이 들어간 모델을 Unity에서 가다듬어 VRChat에 빌드했더니 "어느 각도에서 봐도 아름다운" 결과가 나왔다. 그 자리에 있던 친구와 기념 촬영을 했다고 한다.
 
-![Booth에서 산 머리·메가네 에셋을 얹은 최종 모습 — "귀엽다… 너무 귀엽다"](/images/claude-code-vrchat-avatar-pichikyo/19.jpg)
+![Booth에서 산 머리·메가네 에셋을 얹은 최종 모습 — "귀엽다… 너무 귀엽다"](https://img.seosoyoung.eiaserinnys.me/images/claude-code-vrchat-avatar-pichikyo/19.jpg)
 
-![어느 각도에서 봐도 아름답다 — "머리와 메가네는 구매 에셋"](/images/claude-code-vrchat-avatar-pichikyo/20.jpg)
+![어느 각도에서 봐도 아름답다 — "머리와 메가네는 구매 에셋"](https://img.seosoyoung.eiaserinnys.me/images/claude-code-vrchat-avatar-pichikyo/20.jpg)
 
-![옆 얼굴의 E-line도 아름답다](/images/claude-code-vrchat-avatar-pichikyo/21.jpg)
+![옆 얼굴의 E-line도 아름답다](https://img.seosoyoung.eiaserinnys.me/images/claude-code-vrchat-avatar-pichikyo/21.jpg)
 
-![VRChat에서 만난 친구와의 기념 촬영 — "단, 아름다운 건 지금은 얼굴뿐"](/images/claude-code-vrchat-avatar-pichikyo/22.jpg)
+![VRChat에서 만난 친구와의 기념 촬영 — "단, 아름다운 건 지금은 얼굴뿐"](https://img.seosoyoung.eiaserinnys.me/images/claude-code-vrchat-avatar-pichikyo/22.jpg)
 
 다음 욕심은 텍스처 직접 페인팅이다. UV맵이 지저분해서 평면 페인트가 어렵지만, Blender에도 3D 모델 위에 직접 채색하는 도구가 있다는 것을 Claude Code가 알려줬다. 마우스로는 한계가 있어 펜타블렛 도입을 다음 과제로 두고 있다. 본격적인 의상 개조까지 가려면 현 시점에서는 Booth에서 VRChat용 범용 바디를 사서 자기가 만든 머리를 결합하는 절충안이 현실적이라고 적었다.
 
-![생성 AI 특유의 엉망인 UV 맵 — 평면 페인팅이 사실상 불가능](/images/claude-code-vrchat-avatar-pichikyo/23.jpg)
+![생성 AI 특유의 엉망인 UV 맵 — 평면 페인팅이 사실상 불가능](https://img.seosoyoung.eiaserinnys.me/images/claude-code-vrchat-avatar-pichikyo/23.jpg)
 
-![메쉬 곳곳에 남는 톱니 같은 거친 표면 — "이걸 다듬고 싶다"](/images/claude-code-vrchat-avatar-pichikyo/24.jpg)
+![메쉬 곳곳에 남는 톱니 같은 거친 표면 — "이걸 다듬고 싶다"](https://img.seosoyoung.eiaserinnys.me/images/claude-code-vrchat-avatar-pichikyo/24.jpg)
 
-![Blender 내장 도구로 3D 모델 위에 직접 채색 — "텍스처의 거친 부분을 다듬으며 메이크업 중"](/images/claude-code-vrchat-avatar-pichikyo/25.jpg)
+![Blender 내장 도구로 3D 모델 위에 직접 채색 — "텍스처의 거친 부분을 다듬으며 메이크업 중"](https://img.seosoyoung.eiaserinnys.me/images/claude-code-vrchat-avatar-pichikyo/25.jpg)
 
 ## "전 공정 정리" — 필자가 직접 압축한 7단계
 

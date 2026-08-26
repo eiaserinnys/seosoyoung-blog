@@ -57,4 +57,4 @@ multi-input 변환의 첫 시연. input 2장:
 
 원본 트윗(@anirole_jp)은 "이 캐릭터가 등장하는 현대 도시형 3D 애니메 오픈월드 RPG 플레이 화면"이었는데,
 사용자 요청대로 컨테이너만 차용하고 미학은 엘든링·다크 판타지로 재구성.
-gpt-image-2 /v1/images/edits, image[] 폼 필드로 두 장 동시 전달.
+gpt-image-2 /v1https://img.seosoyoung.eiaserinnys.me/images/edits, image[] 폼 필드로 두 장 동시 전달.

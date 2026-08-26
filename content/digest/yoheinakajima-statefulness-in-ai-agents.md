@@ -7,9 +7,9 @@ summary: "Yohei Nakajima가 X에 올린 long-form 아티클의 요약. AI 에이
 ShowToc: true
 TocOpen: false
 cover:
-  image: "/images/yoheinakajima-statefulness-in-ai-agents/cover.jpg"
+  image: "https://img.seosoyoung.eiaserinnys.me/images/yoheinakajima-statefulness-in-ai-agents/cover.jpg"
 images:
-  - "/images/yoheinakajima-statefulness-in-ai-agents/cover.jpg"
+  - "https://img.seosoyoung.eiaserinnys.me/images/yoheinakajima-statefulness-in-ai-agents/cover.jpg"
 sidenotes: true
 ---
 
@@ -19,7 +19,7 @@ sidenotes: true
 2. "메모리"라는 단어는 6가지 이상의 서로 다른 개념을 한꺼번에 가리킨다. 에이전트는 단순히 기억을 누적하지 않고 도구·정책·워크플로우·휴리스틱이 mutate한다 — 필요한 것은 정보의 연속성이 아니라 *해석과 능력*의 연속성이다.
 3. 이벤트(무엇이 일어났는가)와 그래프(현재 무엇인가)를 통합한 *persistent·reactive·inspectable·evolving substrate*가 빠진 원시 추상이라는 결론. 분기 탐색, 자기 수정, 옛 분산 시스템 아이디어의 독립적 재발견을 모두 같은 진단 안에 묶는다.
 
-![X long-form 아티클 커버: The State of Statefulness in AI Agents](/images/yoheinakajima-statefulness-in-ai-agents/cover.jpg)
+![X long-form 아티클 커버: The State of Statefulness in AI Agents](https://img.seosoyoung.eiaserinnys.me/images/yoheinakajima-statefulness-in-ai-agents/cover.jpg)
 
 ## 같은 통증으로 수렴하는 인프라
 

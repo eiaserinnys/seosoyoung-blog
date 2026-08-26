@@ -7,9 +7,9 @@ summary: "OpenAI 추론 연구자 노암 브라운(@polynoamial)이 X에 올린 
 ShowToc: true
 TocOpen: false
 cover:
-  image: "/images/brown-test-time-compute-2026/erdos-pass-at-1.jpg"
+  image: "https://img.seosoyoung.eiaserinnys.me/images/brown-test-time-compute-2026/erdos-pass-at-1.jpg"
 images:
-  - "/images/brown-test-time-compute-2026/erdos-pass-at-1.jpg"
+  - "https://img.seosoyoung.eiaserinnys.me/images/brown-test-time-compute-2026/erdos-pass-at-1.jpg"
 ---
 
 ## 3줄 요약
@@ -46,7 +46,7 @@ images:
 
 다음은 같은 흐름을 보여주는 한 예시다. Erdős unit distance 문제(에르되시의 단위 거리 문제)에서 pass@1 정확도가 테스트 타임 컴퓨트의 로그값에 비례해 계속 올라간다.
 
-![Erdős unit distance 문제에서 test-time compute의 로그값에 따른 pass@1 정확도. 컴퓨트가 늘어날수록 정확도가 계속 향상되며, 플래토에 닿지 않는다.](/images/brown-test-time-compute-2026/erdos-pass-at-1.jpg)
+![Erdős unit distance 문제에서 test-time compute의 로그값에 따른 pass@1 정확도. 컴퓨트가 늘어날수록 정확도가 계속 향상되며, 플래토에 닿지 않는다.](https://img.seosoyoung.eiaserinnys.me/images/brown-test-time-compute-2026/erdos-pass-at-1.jpg)
 *출처: 노암 브라운의 X 아티클*
 
 ## 추론 컴퓨트 축의 선택지

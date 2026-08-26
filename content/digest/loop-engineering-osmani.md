@@ -7,9 +7,9 @@ summary: "에이전트에게 일일이 프롬프트를 넣는 시대가 저물�
 ShowToc: true
 TocOpen: false
 cover:
-  image: "/images/loop-engineering-osmani/addy_2022.jpg"
+  image: "https://img.seosoyoung.eiaserinnys.me/images/loop-engineering-osmani/addy_2022.jpg"
 images:
-  - "/images/loop-engineering-osmani/addy_2022.jpg"
+  - "https://img.seosoyoung.eiaserinnys.me/images/loop-engineering-osmani/addy_2022.jpg"
 ---
 
 ## 3줄 요약

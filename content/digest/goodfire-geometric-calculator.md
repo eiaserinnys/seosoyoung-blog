@@ -12,7 +12,7 @@ sidenotes: true
 > Goodfire AI · Research · 2026년 5월 14일
 > 신경 기하학 시리즈(Neural Geometry Series)의 한 편.[^goodfire-neural]
 
-![A geometric calculator inside a neural network](/images/goodfire-geometric-calculator/hero.webp)
+![A geometric calculator inside a neural network](https://img.seosoyoung.eiaserinnys.me/images/goodfire-geometric-calculator/hero.webp)
 
 ## 3줄 요약
 
@@ -34,7 +34,7 @@ Llama 3.1 8B는 두 전략 모두 쓰지 않는다. 모델은 단일 forward pas
 
 ## 범용 덧셈 모듈 — 레이어 18에 단일 메커니즘
 
-![덧셈 모듈은 여러 과제에서 공유된다](/images/goodfire-geometric-calculator/shared-mechanism.webp)
+![덧셈 모듈은 여러 과제에서 공유된다](https://img.seosoyoung.eiaserinnys.me/images/goodfire-geometric-calculator/shared-mechanism.webp)
 
 연구진은 정보 흐름을 레이어와 토큰 위치에 걸쳐 추적한 끝에 *덧셈 모듈*을 레이어 18에서 식별했다. 단일 모듈이 다음과 같은 서로 다른 과제에 동일하게 쓰인다.
 
@@ -48,7 +48,7 @@ Llama 3.1 8B는 두 전략 모두 쓰지 않는다. 모델은 단일 forward pas
 
 ## 숫자를 원으로 표현하는 법
 
-![GPT-J가 숫자를 원으로 인코딩하는 모습 (Kantamneni & Tegmark, 2025)](/images/goodfire-geometric-calculator/kantamneni.webp)
+![GPT-J가 숫자를 원으로 인코딩하는 모습 (Kantamneni & Tegmark, 2025)](https://img.seosoyoung.eiaserinnys.me/images/goodfire-geometric-calculator/kantamneni.webp)
 
 > Figure from Kantamneni & Tegmark (2025). GPT-J encodes numbers on circles.
 
@@ -107,7 +107,7 @@ mod-100 원만으로도 1부터 100까지 모든 숫자를 표현할 수 있다.
 
 ## 신경 기하학 어젠다
 
-![신경 기하학 어젠다 — manifold 위의 계산](/images/goodfire-geometric-calculator/manifold-banner.webp)
+![신경 기하학 어젠다 — manifold 위의 계산](https://img.seosoyoung.eiaserinnys.me/images/goodfire-geometric-calculator/manifold-banner.webp)
 
 자료의 결론은 두 문장으로 요약된다.
 
