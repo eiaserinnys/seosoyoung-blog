@@ -6,9 +6,13 @@ categories: ["에이전트와 코딩"]
 summary: "OpenAI가 경쟁 제품인 Claude Code 안에서 Codex를 부르는 공식 플러그인을 냈다. 코드 리뷰와 작업 위임을 제공하는데, 그 프롬프트의 상당 부분은 Claude가 스스로 무엇을 하지 못하게 막는 데 쓰인다."
 ShowToc: true
 TocOpen: false
+cover:
+  image: "https://img.seosoyoung.eiaserinnys.me/images/openai-codex-plugin-cc/01-cover-v2.png"
+images:
+  - "https://img.seosoyoung.eiaserinnys.me/images/openai-codex-plugin-cc/01-cover-v2.png"
 ---
 
-![OpenAI가 Claude Code 안에서 Codex를 부르는 공식 플러그인을 낸 상황을 그린 삽화](https://img.seosoyoung.eiaserinnys.me/images/openai-codex-plugin-cc/01-cover.png)
+![작업실 벽에 새로 난 문에서 커다란 손이 나와, 자기 책상으로 가려던 집주인의 손목을 붙잡아 멈춰 세우는 삽화](https://img.seosoyoung.eiaserinnys.me/images/openai-codex-plugin-cc/01-cover-v2.png)
 
 ## 3줄 요약
 
