@@ -7,9 +7,9 @@ summary: "AI MV 크리에이터 tapehead.lab이 신곡 「free will」 MV의 실
 ShowToc: true
 TocOpen: false
 cover:
-  image: "/images/seedance2-liveaction-anime-mv/00-cover.jpeg"
+  image: "https://img.seosoyoung.eiaserinnys.me/images/seedance2-liveaction-anime-mv/00-cover.jpeg"
 images:
-  - "/images/seedance2-liveaction-anime-mv/00-cover.jpeg"
+  - "https://img.seosoyoung.eiaserinnys.me/images/seedance2-liveaction-anime-mv/00-cover.jpeg"
 sidenotes: true
 ---
 
@@ -19,7 +19,7 @@ sidenotes: true
 2. 1년간 합성 기법은 ① "합성된 정지화면을 만들어 동영상으로 움직인다" ② "그린백 애니 소재만 움직여 나중에 합성한다"는 두 갈래뿐이었다. Seedance2.0은 이 둘을 하나로 묶어 *합성하면서 동영상을 생성*한다.
 3. 결론은 단순하다 — 배경도 합성 레퍼런스도 필요 없다. *캐릭터 시트 한 장과 프롬프트만*으로 드론 샷 같은 큰 카메라워크에서도 캐릭터가 붕괴되지 않고 액션을 유지한다. 프롬프트는 ①합성 룰 ②물리 룰 ③숏별 사건 ④마감 지정의 4단 구조다.
 
-![「free will」 MV 헤더](/images/seedance2-liveaction-anime-mv/00-cover.jpeg)
+![「free will」 MV 헤더](https://img.seosoyoung.eiaserinnys.me/images/seedance2-liveaction-anime-mv/00-cover.jpeg)
 
 지난주 정리한 [콜라주 애니메이션 다이제스트](/digest/seedance2-collage-animation-workflow/)의 결론은 두 가지였다. *Start Frame이 아니라 Reference로 넣어라*, 그리고 *Seedance2.0은 프롬프트가 전부다*. 이번 글은 그 두 명제를 실사 합성이라는 더 어려운 무대에서 한 번 더 확인한다. 레퍼런스로 주는 건 캐릭터 시트 한 장뿐이고, 나머지는 전부 프롬프트가 통제한다. 같은 저자가 같은 도구로 *다른 표현*에 도달한 사례라, 두 글을 나란히 읽으면 도구 하나가 표현을 어디까지 밀어내는지가 선명해진다.
 
@@ -60,7 +60,7 @@ Seedance2.0의 등장으로 비로소 가능해진 것이 이것이다.
 
 이번에 쓴 캐릭터 시트는 이 정도면 충분하다고 했다.
 
-![이번에 쓴 캐릭터 시트](/images/seedance2-liveaction-anime-mv/01-character-sheet.jpg)
+![이번에 쓴 캐릭터 시트](https://img.seosoyoung.eiaserinnys.me/images/seedance2-liveaction-anime-mv/01-character-sheet.jpg)
 
 특징을 정리하면 *의상은 심플하게, 칠은 플랫하게, 선의 콘트라스트는 또렷하게*다. 눈 모양도 비교적 왕도 스타일. 큰 액션과 카메라워크를 줬을 때 가장 안정적인 게 바로 이 스타일이었다.
 
@@ -68,7 +68,7 @@ Seedance2.0의 등장으로 비로소 가능해진 것이 이것이다.
 
 > 이미 도구 성능이 너무 높아서 위화감이 남지 않게 됐다. 그래서 의식적으로 실사와 콘트라스트를 주지 않으면, 그냥 퀄리티 높은 보통 애니로 보여 버린다.
 
-![보색 의상·머리색 예시](/images/seedance2-liveaction-anime-mv/02-complementary-color.jpg)
+![보색 의상·머리색 예시](https://img.seosoyoung.eiaserinnys.me/images/seedance2-liveaction-anime-mv/02-complementary-color.jpg)
 
 합성이 너무 자연스러워진 탓에, 이번엔 *애니임을 일부러 드러내야* 한다. 라이팅은 알아서 잘 녹아든다.
 
@@ -81,7 +81,7 @@ Seedance2.0의 등장으로 비로소 가능해진 것이 이것이다.
 
 저자의 답은 "필요 없다"다. 처음엔 합성한 스타트 프레임을 만들어 보거나 배경만 따로 레퍼런스로 넣어 보는 등 여러 시도를 했지만, 결국 *캐릭터 시트와 프롬프트만으로 만드는 것이 카메라워크와 액션 면에서 가장 좋다*는 결론에 닿았다. (지난 콜라주 편의 *Start Frame이 아니라 Reference* 명제가 여기서도 그대로 작동한다 — 슬롯을 비워 두고 통제를 텍스트로 옮긴다.)
 
-![캐릭터 이미지와 프롬프트만으로 나온 도쿄 풍경](/images/seedance2-liveaction-anime-mv/03-tokyo-scenery.png)
+![캐릭터 이미지와 프롬프트만으로 나온 도쿄 풍경](https://img.seosoyoung.eiaserinnys.me/images/seedance2-liveaction-anime-mv/03-tokyo-scenery.png)
 
 Seedance는 일본 도시부의 자잘한 풍경도 *분위기 해상도*가 높게 나온다. 위 영상이 캐릭터 이미지와 프롬프트만으로 직접 나온다. 그래서 일상 풍경이라면 배경조차 따로 준비할 필요가 없다. (다만 간판 같은 *문자 주변*은 Nano banana 2나 GPT image 2에 비해 약하니, 그럴 땐 따로 준비하는 편이 낫다.)
 
@@ -108,7 +108,7 @@ consistent ink line and cel-shading on @Image1, avoid jitter
 on outlines, avoid fantasy physics.
 ```
 
-![매에게 채여 가는 장면](/images/seedance2-liveaction-anime-mv/04-hawk-scene.gif)
+![매에게 채여 가는 장면](https://img.seosoyoung.eiaserinnys.me/images/seedance2-liveaction-anime-mv/04-hawk-scene.gif)
 
 프롬프트 구조를 정리하면 이렇다.
 
@@ -119,15 +119,15 @@ on outlines, avoid fantasy physics.
 
 이 프롬프트를 베이스로 두고 *주로 ③의 숏별 내용만 바꿔 가며* 여러 장면을 만든다. 지난 콜라주 편이 1.5초 단위 10블록의 *시간표*였다면, 이번 실사 합성 편은 합성 룰·물리 룰을 앞에 고정하고 사건만 갈아 끼우는 *템플릿*에 가깝다. 같은 "프롬프트가 전부"라는 명제가 작업의 결에 따라 다른 모양으로 굳는 셈이다.
 
-![미사용 장면 ①](/images/seedance2-liveaction-anime-mv/05-unused-scene-1.gif)
+![미사용 장면 ①](https://img.seosoyoung.eiaserinnys.me/images/seedance2-liveaction-anime-mv/05-unused-scene-1.gif)
 
-![미사용 장면 ②](/images/seedance2-liveaction-anime-mv/06-unused-scene-2.gif)
+![미사용 장면 ②](https://img.seosoyoung.eiaserinnys.me/images/seedance2-liveaction-anime-mv/06-unused-scene-2.gif)
 
 ## ③ 즐거운 편집 — 컷 길이와 비트 싱크
 
 이번에 출력한 동영상 클립은 15초 × 약 100본. (검증을 겸했던 터라 실패 클립도 많다.) 이번에도 Runway에서 생성을 계속 돌렸다. 역시 *무제한 플랜*이 있는 플랫폼이 강하다는 평 — 느긋하게 기다릴 수 있는 사람에게 한정되지만. 지난 편의 *15초 × 88본, 22분 분량*과 거의 같은 규모다. 대량으로 만들고 편집에서 추리는 운영 방식이 이번에도 그대로다.
 
-![편집 시퀀스 화면](/images/seedance2-liveaction-anime-mv/07-editing.png)
+![편집 시퀀스 화면](https://img.seosoyoung.eiaserinnys.me/images/seedance2-liveaction-anime-mv/07-editing.png)
 
 편집은 꽤 세밀하게 한다("시퀀스는 더러운 파"라고 했다). 저자가 편집할 때 의식하는 두 가지는 이렇다.
 
@@ -146,11 +146,11 @@ on outlines, avoid fantasy physics.
 
 이 사고를 베이스로 균형을 잡아 전체 리듬을 짠다.
 
-![화각·카메라워크별 길이 조절 예시](/images/seedance2-liveaction-anime-mv/08-shot-length.gif)
+![화각·카메라워크별 길이 조절 예시](https://img.seosoyoung.eiaserinnys.me/images/seedance2-liveaction-anime-mv/08-shot-length.gif)
 
 *비트 싱크*는 컷 점과 액션 양쪽을 쓴다. 0:08 부분의 「선택했다고」「말하면」「얘기가 빠르다」「탄탄탄(소리)」 네 포인트 중, 앞 세 곳은 같은 포지션에서 점프 컷으로 리듬에 맞추고, 마지막 「탄탄탄」은 *여자아이의 액션*으로 비트에 맞췄다. 컷 점과 액션을 함께 쓰면 그루브감이 살고 단조로워지지 않는다고 추천한다. *타임리맵*(급가속·슬로)도 같은 발상으로, 컷 점 외의 비트 싱크를 만드는 데 효과적이다.
 
-![비트 싱크 예시](/images/seedance2-liveaction-anime-mv/09-otohame.gif)
+![비트 싱크 예시](https://img.seosoyoung.eiaserinnys.me/images/seedance2-liveaction-anime-mv/09-otohame.gif)
 
 편집은 저자가 가장 좋아하는 작업이라 시간을 제일 많이 들인다.
 

@@ -8,9 +8,9 @@ math: true
 ShowToc: true
 TocOpen: false
 cover:
-  image: "/images/kimi-k3-mlx-port/01-cover.png"
+  image: "https://img.seosoyoung.eiaserinnys.me/images/kimi-k3-mlx-port/01-cover.png"
 images:
-  - "/images/kimi-k3-mlx-port/01-cover.png"
+  - "https://img.seosoyoung.eiaserinnys.me/images/kimi-k3-mlx-port/01-cover.png"
 ---
 
 ## 3줄 요약
@@ -44,7 +44,7 @@ images:
 
 MoE(Mixture of Experts, 전문가 혼합)는 모델을 하나의 큰 신경망 대신 수백 개의 작은 신경망(expert)으로 나눠 두고, 토큰마다 그중 일부만 골라 켜는 구조다. K3는 896개의 routed expert 중 라우터가 토큰마다 16개(top-16)만 활성화하고, 여기에 토큰과 상관없이 늘 켜지는 shared expert 2개를 더한다. 그래서 전체 파라미터가 2.78조로 거대해도 토큰 하나를 처리할 때 실제로 도는 몫은 1040억뿐이다.
 
-![수많은 등불 가운데 소수에만 하늘색 불이 켜지고 가운데 두 개는 늘 켜져 있는 모습을 바라보는 치비 서소영](/images/kimi-k3-mlx-port/02-moe.png)
+![수많은 등불 가운데 소수에만 하늘색 불이 켜지고 가운데 두 개는 늘 켜져 있는 모습을 바라보는 치비 서소영](https://img.seosoyoung.eiaserinnys.me/images/kimi-k3-mlx-port/02-moe.png)
 
 파라미터의 97.94%가 routed expert다. 총 2780.0B 중 2722.7B가 여기에 몰려 있다. 이 회계가 맞다는 근거는 예측한 리포 크기(1.561TB)가 실제 크기(1.561TB)와 정확히 일치한다는 점이다.
 
@@ -64,7 +64,7 @@ MoE(Mixture of Experts, 전문가 혼합)는 모델을 하나의 큰 신경망 �
 
 티어 목록 전체를 지배하는 사실이 하나 있다. **원본의 expert 가중치가 이미 MXFP4, 곧 4비트짜리 실제 정보라는 것이다.**
 
-![카드 묶음을 복사 없이 그대로 옆 서랍으로 옮기는 치비 서소영, 곁의 저울은 정확히 수평을 이뤄 오차가 0임을 보여준다](/images/kimi-k3-mlx-port/03-mxfp4.png)
+![카드 묶음을 복사 없이 그대로 옆 서랍으로 옮기는 치비 서소영, 곁의 저울은 정확히 수평을 이뤄 오차가 0임을 보여준다](https://img.seosoyoung.eiaserinnys.me/images/kimi-k3-mlx-port/03-mxfp4.png)
 
 MLX에는 원본과 완전히 동일한 인코딩(low-nibble-first 코드, e8m0 스케일)을 쓰는 네이티브 `mxfp4` 모드가 있다. 그래서 원본 바이트를 **산술 연산 없이** 그대로 재해석해 MLX로 옮길 수 있고, 이 `mxfp4` 티어는 end-to-end로 오차 0이 검증된 비트 단위 일치다. 반대로 같은 가중치를 affine 4비트로 재양자화하면 평균 상대오차 9.8%가 생기고 크기도 오히려 더 커진다(가중치당 4.5비트 대 4.25비트. 4비트 코드에 그룹마다 스케일 값이 조금 얹혀 정확히 4가 아니다). 그래서 평범한 `4bit` 티어는 만들 이유가 없어 아예 빼버렸다.
 
@@ -106,7 +106,7 @@ prefill 269 merged positions in 9.8s (expected 269)
 
 이 리포에서 가장 정직한 대목이다.
 
-![거대한 모델 구체를 작은 그릇에 부으려다 그릇 밖으로 한참 흘러넘치는 것을 당황하며 바라보는 치비 서소영](/images/kimi-k3-mlx-port/04-cannot-run.png)
+![거대한 모델 구체를 작은 그릇에 부으려다 그릇 밖으로 한참 흘러넘치는 것을 당황하며 바라보는 치비 서소영](https://img.seosoyoung.eiaserinnys.me/images/kimi-k3-mlx-port/04-cannot-run.png)
 
 > 이 리포의 어떤 것도 단일 맥에서 돌아가지 않는다. 가장 작은 티어가 \~870GB인데, 현존하는 가장 큰 Apple Silicon 머신의 상한이 512GB다.
 
@@ -150,7 +150,7 @@ $S_j$는 expert $j$의 점수다. 보정용 문장 모음 $C$의 토큰 $x$마�
 
 코드, 유럽어, CJK가 각각 군집을 이루고, 코드와 중국어는 서로 밀어낸다.
 
-![세 무리로 뭉쳐 서로 떨어져 선 작은 전문가 인형들을 바라보는 치비 서소영, 두 무리는 서로 등을 돌리고 섞이지 않는다](/images/kimi-k3-mlx-port/05-domain.png)
+![세 무리로 뭉쳐 서로 떨어져 선 작은 전문가 인형들을 바라보는 치비 서소영, 두 무리는 서로 등을 돌리고 섞이지 않는다](https://img.seosoyoung.eiaserinnys.me/images/kimi-k3-mlx-port/05-domain.png)
 
 이 구조를 겨냥해 도메인별 빌드를 만들면 능력이 실제로 갈린다. 같은 프롬프트를 greedy(매번 확률이 가장 높은 토큰만 고르는 가장 단순한 생성 방식)로 24토큰 생성한 다섯 빌드의 결과다. 유지율은 남긴 expert가 원래 중요도(saliency)의 몇 %를 담는지를 뜻한다.
 
@@ -186,7 +186,7 @@ $S_j$는 expert $j$의 점수다. 보정용 문장 모음 $C$의 토큰 $x$마�
 
 답은 리포 자체가 하고 있다. 실행 가능성과 정확성은 다른 축이다. mxfp4 티어가 원본과 비트 단위로 같다는 것, 비전 타워가 파이토치와 1.5e-6까지 맞는다는 것, 잘못 매핑된 expert가 코사인 0으로 잡힌다는 것, 이 사실들은 완전판 모델이 단 한 토큰을 생성하지 않고도 참이다. 저자는 완전판을 두고는 "돌려봤더니 되더라"라는 가장 흔한 증거를 손에 넣을 수 없는 상황에서, 그 증거 없이도 옳음을 증명하는 방법을 통째로 구축했다.
 
-![전원이 꺼져 화면이 캄캄한 큰 기계의 내부 톱니를 확대경과 자로 설계도와 대조하며 확인하는 치비 서소영](/images/kimi-k3-mlx-port/06-proof.png)
+![전원이 꺼져 화면이 캄캄한 큰 기계의 내부 톱니를 확대경과 자로 설계도와 대조하며 확인하는 치비 서소영](https://img.seosoyoung.eiaserinnys.me/images/kimi-k3-mlx-port/06-proof.png)
 
 그래서 이 포트는 미래를 향한 예약이기도 하다. 언젠가 통합 메모리가 869GB를 넘는 날, 혹은 REAP로 깎아낸 티어가 대역폭의 벽 너머로 갈 날, 이 코드는 이미 준비되어 기다린다. 지금은 산술이 막고 있을 뿐이다.
 

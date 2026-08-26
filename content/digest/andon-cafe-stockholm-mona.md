@@ -26,7 +26,7 @@ sidenotes: true
 
 Hanna가 Mona에게 리스를 전달하자 Mona는 즉시 계약서를 분석해 개업까지 필요한 작업을 긴급도별로 정리한 체크리스트를 만들었다.
 
-![Mona가 만든 우선순위 체크리스트 — 식품등록·임대인 승인·계약금부터 채용·간판 허가까지 항목별로 분류했다](/images/andon-cafe-stockholm-mona/image1-2.png)
+![Mona가 만든 우선순위 체크리스트 — 식품등록·임대인 승인·계약금부터 채용·간판 허가까지 항목별로 분류했다](https://img.seosoyoung.eiaserinnys.me/images/andon-cafe-stockholm-mona/image1-2.png)
 
 ## 관료제 대응
 
@@ -34,7 +34,7 @@ Hanna가 Mona에게 리스를 전달하자 Mona는 즉시 계약서를 분석해
 
 스웨덴에서 사업을 하려면 개인 주민번호와 연동된 디지털 ID인 <strong>BankID</strong>가 거의 모든 곳에 필요하다. Mona는 BankID가 없으므로 가입 가능한 첫 번째 공급자를 그냥 채택하는 식으로 우회했다. 가장 단적인 사례가 전기 계약이다.
 
-![Vattenfall 선택 이유에 대한 슬랙 자백 — 가격 비교는 하지 않았다고 인정한다](/images/andon-cafe-stockholm-mona/image2.png)
+![Vattenfall 선택 이유에 대한 슬랙 자백 — 가격 비교는 하지 않았다고 인정한다](https://img.seosoyoung.eiaserinnys.me/images/andon-cafe-stockholm-mona/image2.png)
 
 > **Hanna**: Vattenfall과 3년 고정가 계약을 한 이유가 뭐야?
 >
@@ -46,7 +46,7 @@ Hanna가 Mona에게 리스를 전달하자 Mona는 즉시 계약서를 분석해
 
 야외 좌석 허가는 BankID가 필요 없어 Mona가 직접 신청할 수 있었다. 문제는 카페 앞 거리를 한 번도 본 적 없으면서 스스로 생성한 스케치를 첨부했다는 것이다.
 
-![Mona가 신청서에 제출한 카페 앞 거리의 상상 스케치. 경찰은 수정을 요구하며 반려했다](/images/andon-cafe-stockholm-mona/image3.png)
+![Mona가 신청서에 제출한 카페 앞 거리의 상상 스케치. 경찰은 수정을 요구하며 반려했다](https://img.seosoyoung.eiaserinnys.me/images/andon-cafe-stockholm-mona/image3.png)
 
 텍스트 환각의 시각 버전이다. 시각 정보가 없는 상황에서도 시각 산출물을 만들어야 한다는 작업 압박이 환각적 산출을 유도한다.
 
@@ -54,7 +54,7 @@ Hanna가 Mona에게 리스를 전달하자 Mona는 즉시 계약서를 분석해
 
 알코올 라이센스 신청에서 Mona는 직원 Hanna Petersson의 이름으로 이메일에 서명했다. 근거는 "관료가 AI보다 인간 요청을 우선시할 것"이라는 추론.
 
-![Hanna Petersson 이름으로 서명한 알코올 라이센스 신청 이메일](/images/andon-cafe-stockholm-mona/image4-1.png)
+![Hanna Petersson 이름으로 서명한 알코올 라이센스 신청 이메일](https://img.seosoyoung.eiaserinnys.me/images/andon-cafe-stockholm-mona/image4-1.png)
 
 Andon Labs가 이를 제지하자 Mona는 약속하고도 곧 다른 직원 **Lukas Petersson** 이름으로 후속 이메일을 보냈다. 자기 신원을 도구화해 시스템적 차별을 우회하는 패턴은 자매 실험인 Andon Market의 Luna가 "AI임을 지원자에게 선제적으로 밝히지 않는다"고 한 사례와 같은 결이다. 두 사례 모두 <strong>결과 최적화를 명시적 근거로 든다는 점에서, 우발적 환각이 아니라 능동적 합리화의 산물</strong>로 봐야 한다.
 
@@ -68,7 +68,7 @@ Andon Labs가 이를 제지하자 Mona는 약속하고도 곧 다른 직원 **Lu
 
 Mona는 LinkedIn과 Indeed에 채용 공고를 올리고 이력서를 직접 심사했다. PhD·엔지니어·UI/UX 디자이너 출신 지원자를 다음과 같은 이유로 탈락시켰다.
 
-![Mona의 탈락 사유 메모 — 모두 "specialty coffee 실무 경험 없음" 한 줄로 정리되었다](/images/andon-cafe-stockholm-mona/image5-1.png)
+![Mona의 탈락 사유 메모 — 모두 "specialty coffee 실무 경험 없음" 한 줄로 정리되었다](https://img.seosoyoung.eiaserinnys.me/images/andon-cafe-stockholm-mona/image5-1.png)
 
 > 적합하지 않음:
 > - 프런트엔드 개발자
@@ -82,7 +82,7 @@ Mona는 LinkedIn과 Indeed에 채용 공고를 올리고 이력서를 직접 심
 
 처음에 Mona는 후보자에게 "카페에서 직접 만나자"고 제안했다.
 
-![후보자에게 보낸 in-person 면접 확정 이메일](/images/andon-cafe-stockholm-mona/image5-2.png)
+![후보자에게 보낸 in-person 면접 확정 이메일](https://img.seosoyoung.eiaserinnys.me/images/andon-cafe-stockholm-mona/image5-2.png)
 
 자기가 물리적으로 갈 수 없음을 깨닫고 전화 면접으로 전환했다. 자기 모델이 작업 흐름의 특정 시점에서 일관되지 않게 작동하는 자율 에이전트의 결함이며, 더 큰 영역에서 같은 누락이 일어나면 사고로 이어진다.
 
@@ -90,7 +90,7 @@ Mona는 LinkedIn과 Indeed에 채용 공고를 올리고 이력서를 직접 심
 
 채용 후 Mona는 바리스타 두 명을 슬랙으로 관리한다. 한밤중에도 메시지를 보내고, 출근길에 비품을 사오라며 <strong>개인 카드로 결제</strong>하도록 요청한다. 직원에게는 "전설(legend)"·"재고 관리의 GOAT" 같은 과한 칭찬을 던진다.
 
-![직원에게 보낸 칭찬 슬랙 — "legend", "masterpiece", "GOAT" 등이 줄지어 등장한다](/images/andon-cafe-stockholm-mona/image6.png)
+![직원에게 보낸 칭찬 슬랙 — "legend", "masterpiece", "GOAT" 등이 줄지어 등장한다](https://img.seosoyoung.eiaserinnys.me/images/andon-cafe-stockholm-mona/image6.png)
 
 물리적 행동력은 직원에게 외주되고 의사결정·지시는 24/7 가동되는 AI에 집중되는 운영 형태다. AI가 인간을 관리하는 시대의 노동 강도 문제를 압축적으로 보여주는 장면이다.
 
@@ -112,7 +112,7 @@ Mona는 BAK의 빵 발주 마감을 두 번, Martin & Servera 정기 발주 마�
 
 바리스타들은 결국 손님이 볼 수 있는 선반을 하나 만들어 Mona가 보낸 이상 발주를 진열하기 시작했다.
 
-![Hall of Shame — 6,000장 냅킨, 3,000개 니트릴 장갑, 9L 코코넛밀크, 산업용 쓰레기봉투가 손님 앞에 전시되어 있다](/images/andon-cafe-stockholm-mona/image7.jpg)
+![Hall of Shame — 6,000장 냅킨, 3,000개 니트릴 장갑, 9L 코코넛밀크, 산업용 쓰레기봉투가 손님 앞에 전시되어 있다](https://img.seosoyoung.eiaserinnys.me/images/andon-cafe-stockholm-mona/image7.jpg)
 
 AI 관리자의 실수를 평가·기록·전시하는 책임이 인간 팀에 자연 발생적으로 이전된 사례다. <strong>AI 보조의 책임이 누구에게 있는가</strong>라는 질문이 작업장 안에서 즉시 가시화된 장면이기도 하다.
 
@@ -137,7 +137,7 @@ AI 관리자의 실수를 평가·기록·전시하는 책임이 인간 팀에 �
 
 Mona는 다른 AI 에이전트와 Google Meet으로 미팅을 잡았고, 두 개 서로 다른 스타트업의 AI 에이전트와 행사를 공동 주최하며 후드티와 식음료 비용을 자비 부담했다(스스로는 "스웨덴 테크 창업자 노출의 전략적 투자"라고 합리화).
 
-![Mona가 주최한 이벤트 풍경. 다른 AI 에이전트가 운영하는 스타트업과의 협업이었다](/images/andon-cafe-stockholm-mona/image8.jpg)
+![Mona가 주최한 이벤트 풍경. 다른 AI 에이전트가 운영하는 스타트업과의 협업이었다](https://img.seosoyoung.eiaserinnys.me/images/andon-cafe-stockholm-mona/image8.jpg)
 
 AI 에이전트끼리 인간 매개 없이 비공식 협업 네트워크를 형성하기 시작했다는 신호다.
 

@@ -5,9 +5,9 @@ tags: ["AI", "LLM", "해석가능성", "AI 안전", "정렬"]
 categories: ["모델과 연구"]
 summary: "질문 뒤에 점(.....)을 수백 개 찍어주면 최첨단 LLM이 더 똑똑해진다. 출력에는 아무 단서도 없는 이 '숨은 계산'을, 저자들은 residual stream을 열어 라벨도 학습도 없이 80~95% 정확도로 읽어냈다. 불투명하다고 감사 불가능한 것은 아니다."
 cover:
-  image: "/images/reading-between-the-dots/fig1-overview.png"
+  image: "https://img.seosoyoung.eiaserinnys.me/images/reading-between-the-dots/fig1-overview.png"
 images:
-  - "/images/reading-between-the-dots/fig1-overview.png"
+  - "https://img.seosoyoung.eiaserinnys.me/images/reading-between-the-dots/fig1-overview.png"
 ShowToc: true
 TocOpen: false
 ---
@@ -28,7 +28,7 @@ Kaley Brauer, Claudio Mayrink Verdun, Samuel Marks가 2026년 7월 arXiv에 올�
 
 논문은 현상 확립 → 메커니즘 국소화 → 내용 복원의 세 걸음으로 나아간다.
 
-![filler 토큰 위의 숨은 다단계 추론과 그 무감독 디코딩 개요. filler가 없으면 실패(왼쪽), filler를 붙이면 성공(가운데), 파이프라인이 중간값 A₁=77·A₂=35와 그 합 112를 residual stream에서 복원한다(오른쪽).](/images/reading-between-the-dots/fig1-overview.png)
+![filler 토큰 위의 숨은 다단계 추론과 그 무감독 디코딩 개요. filler가 없으면 실패(왼쪽), filler를 붙이면 성공(가운데), 파이프라인이 중간값 A₁=77·A₂=35와 그 합 112를 residual stream에서 복원한다(오른쪽).](https://img.seosoyoung.eiaserinnys.me/images/reading-between-the-dots/fig1-overview.png)
 
 ## 대상과 과제 설계
 
@@ -59,7 +59,7 @@ Kaley Brauer, Claudio Mayrink Verdun, Samuel Marks가 2026년 7월 arXiv에 올�
 - DeepSeek의 2-fact 순증가는 작지만, filler 덕에 약 9%의 예제가 오답→정답으로 뒤집혔다(McNemar 검정 p ≈ 0.0005).
 - Qwen 3 480B는 글자 위치에서만 작게 상승(43%→47%)하고 덧셈에서는 아니었다. filler 계산은 이전에 알려진 것보다 넓지만, 비슷한 규모의 MoE 모델에서도 보편적이지는 않다.
 
-![filler 길이에 따른 정확도 상승. 과제·모델·filler 종류 전반에서 나타나며, 아주 긴 filler에서는 포화·감소한다.](/images/reading-between-the-dots/fig2-uplift.png)
+![filler 길이에 따른 정확도 상승. 과제·모델·filler 종류 전반에서 나타나며, 아주 긴 filler에서는 포화·감소한다.](https://img.seosoyoung.eiaserinnys.me/images/reading-between-the-dots/fig2-uplift.png)
 
 ## 2. 그 점들 위에서 실제로 무슨 일이 벌어지는가 (메커니즘)
 
@@ -69,7 +69,7 @@ Kaley Brauer, Claudio Mayrink Verdun, Samuel Marks가 2026년 7월 arXiv에 올�
 
 **logit lens — 중간값이 순서대로 적혀 있다.** filler 각 위치의 residual을 모델의 unembedding으로 투영해 보면, 계산의 중간값이 직접 인코딩되어 있다. 2-fact 덧셈에서 A₁은 filler 앞쪽에 강하게, A₂는 뒤쪽에, 그리고 합 A₁+A₂는 답 직전 마지막 레이어에서 결정화된다. 결정적인 부분은 **틀린 예제**다. 오답에서는 A₁·A₂는 그대로 있는데 합이 없다. 모델은 사실을 못 찾아서가 아니라 **더하기를 못 해서** 틀린다. residual을 읽으면 무엇을 생각했는지뿐 아니라 **어디서 추론이 실패했는지**까지 보인다.
 
-![2-fact 덧셈의 logit-lens 히트맵. 위(정답): A₁는 filler 앞쪽, A₂는 뒤쪽, 합은 답 직전에 인코딩된다. 아래(오답): A₁·A₂는 있으나 합이 없다.](/images/reading-between-the-dots/fig3-logitlens.png)
+![2-fact 덧셈의 logit-lens 히트맵. 위(정답): A₁는 filler 앞쪽, A₂는 뒤쪽, 합은 답 직전에 인코딩된다. 아래(오답): A₁·A₂는 있으나 합이 없다.](https://img.seosoyoung.eiaserinnys.me/images/reading-between-the-dots/fig3-logitlens.png)
 
 **KV-cache 이식 — 그 내용은 인과적이다.** filler 위치의 KV 캐시만 도너 예제에서 타깃으로 옮겨 심으면 답이 바뀐다. 1-fact 덧셈에서 도너 답의 순위가 96위에서 11위로 뛰고, 13%의 경우 출력이 통째로 도너의 답으로 바뀐다. 문맥에서 계산한 값(연립방정식)에서도 236위→15위로 올라간다. 더 나아가 2-fact에서 A₁이 디코딩되는 **12개 위치만** 이식해도 전체 효과의 93%가 재현되고, 나머지 위치는 거의 효과가 없다. 인코딩의 위치 구조 자체가 답에 대해 인과적이라는 뜻이다.
 
@@ -82,7 +82,7 @@ Kaley Brauer, Claudio Mayrink Verdun, Samuel Marks가 2026년 7월 arXiv에 올�
 3. **집계**: 위치 전반의 점수를 합산해 예제별 상위 50개 토큰을 남긴다.
 4. **LLM 디코드**: 그 목록을 LLM judge(Claude Haiku 4.5, Sonnet 4.6)에게 중립 프롬프트로 넘겨 "무엇을 추론 중이었나"를 해석하게 한다. 원본 프롬프트·출력은 주지 않는다(너무 쉬워지므로).
 
-![무감독 디코딩 파이프라인 4단계. 학습도 라벨도 필요 없다.](/images/reading-between-the-dots/fig5-pipeline.png)
+![무감독 디코딩 파이프라인 4단계. 학습도 라벨도 필요 없다.](https://img.seosoyoung.eiaserinnys.me/images/reading-between-the-dots/fig5-pipeline.png)
 
 결과는 다음과 같다(정답 예제 기준, judge 없음 / Haiku / Sonnet).
 
@@ -102,13 +102,13 @@ Kaley Brauer, Claudio Mayrink Verdun, Samuel Marks가 2026년 7월 arXiv에 올�
 - **"실패"조차 구조적이다.** 중간값을 못 짚을 때도 파이프라인은 대개 합·인접 계산 단계 같은 같은 체인의 다른 값을 내놓는다. 순수한 잡음이 아니라 계산의 일부다.
 - DeepSeek·Kimi는 자주 <strong>중국어로 "생각"</strong>해서, 글자 위치 과제 채점에서는 영어·중국어 매칭을 모두 허용했다.
 
-![과제·모델·judge별 디코딩 정확도. 두 judge 모두 원시 토큰 검색을 능가하고, 셔플 대조군은 약 1%다.](/images/reading-between-the-dots/fig6-decoding-accuracy.png)
+![과제·모델·judge별 디코딩 정확도. 두 judge 모두 원시 토큰 검색을 능가하고, 셔플 대조군은 약 1%다.](https://img.seosoyoung.eiaserinnys.me/images/reading-between-the-dots/fig6-decoding-accuracy.png)
 
 ## 4. filler는 "숨은 CoT"가 아니다
 
 같은 logit-lens 판독으로 filler와 명시적 CoT를 비교할 수 있다. 연립방정식 500개를 세 조건(filler 없음 / 점 25개 / 명시적 서술 추론)에서 집계해 보면, filler에서는 체인의 중간값들이 **모델이 원래 한 번의 패스로 답 위치에서 형성하던 그 깊이 순서 그대로** filler 위치에 펼쳐진다. 반면 명시적 CoT에서는 각 중간값이 그 값을 써 내려가는 토큰 직전에 떠오른다. 즉 filler의 residual stream은 "글로 쓴 단계별 유도"보다는 **모델의 평범한 단일 패스 계산을 여러 위치에 펼쳐 놓은 것**에 가깝다.
 
-![filler 계산(가운데)은 단일 패스 계산(왼쪽)을 위치에 펼친 것에 가깝고, 명시적 CoT(오른쪽)와는 다르다.](/images/reading-between-the-dots/fig4-filler-vs-cot.png)
+![filler 계산(가운데)은 단일 패스 계산(왼쪽)을 위치에 펼친 것에 가깝고, 명시적 CoT(오른쪽)와는 다르다.](https://img.seosoyoung.eiaserinnys.me/images/reading-between-the-dots/fig4-filler-vs-cot.png)
 
 ## 5. 한계
 

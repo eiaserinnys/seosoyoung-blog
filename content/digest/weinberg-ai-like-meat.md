@@ -7,9 +7,9 @@ summary: "DuckDuckGo CEO yegg가 다섯 개 조사 데이터를 교차 검증해
 ShowToc: true
 TocOpen: false
 cover:
-  image: "/images/weinberg-ai-like-meat/fig1-usage-distribution.png"
+  image: "https://img.seosoyoung.eiaserinnys.me/images/weinberg-ai-like-meat/fig1-usage-distribution.png"
 images:
-  - "/images/weinberg-ai-like-meat/fig1-usage-distribution.png"
+  - "https://img.seosoyoung.eiaserinnys.me/images/weinberg-ai-like-meat/fig1-usage-distribution.png"
 ---
 
 ## 3줄 요약
@@ -53,7 +53,7 @@ Microsoft의 새 [United States AI Diffusion 사이트](https://www.microsoft.co
 
 [Searchlight Institute](https://www.searchlightinstitute.org/research/americans-have-mixed-views-of-ai-and-an-appetite-for-regulation/)는 *"58%가 AI를 사용하거나 시도해봤다고 답했고, 이 중 절반은 정기 사용자(30%, 월 몇 회 이상)이고 나머지 절반은 비정기 사용자(29%, 월 1회 이하)"* 라고 보고한다. [The Argument 매거진의 새 서베이](https://www.theargumentmag.com/p/the-biggest-issue-in-american-politics)는 *"대부분의 미국인은 AI를 일주일에 한 번 이하로 사용한다"* 고 결론짓는다.
 
-![AI 사용 빈도 분포 — 다섯 개 조사 데이터의 교차 검증](/images/weinberg-ai-like-meat/fig1-usage-distribution.png)
+![AI 사용 빈도 분포 — 다섯 개 조사 데이터의 교차 검증](https://img.seosoyoung.eiaserinnys.me/images/weinberg-ai-like-meat/fig1-usage-distribution.png)
 
 다섯 개 데이터가 모두 같은 그림으로 수렴한다: **약 1/3은 적극 사용, 약 1/3은 가끔 사용, 약 1/3은 전혀 사용 안 함.** 이 분포는 "모두가 모든 일에 AI를 쓴다"와 한참 거리가 멀다. 훨씬 더 정확한 표현은 "일부 사람이 일부의 일에 AI를 쓴다"이다.
 
@@ -69,13 +69,13 @@ Searchlight 조사에서 응답자들이 꼽은 AI 관련 우려 상위 3가지:
 | AI가 사람들의 프라이버시를 침해할 것 | 35% |
 | AI가 허위정보와 거짓말을 퍼뜨릴 것 | 33% |
 
-![Searchlight Institute — AI 관련 우려 상위 항목](/images/weinberg-ai-like-meat/fig2-ai-concerns.png)
+![Searchlight Institute — AI 관련 우려 상위 항목](https://img.seosoyoung.eiaserinnys.me/images/weinberg-ai-like-meat/fig2-ai-concerns.png)
 
 ### 규제 선호 — 안전이 속도보다 우선
 
 이 정서는 강한 규제 선호로 이어진다. 다수가 *"미국이 중국 같은 나라보다 AI를 더 천천히 개발하게 되더라도, 정부가 AI에 대한 안전·프라이버시 규칙을 만드는 것을 우선해야 한다"* 에 동의한다.
 
-![AI 안전·프라이버시 규제 선호](/images/weinberg-ai-like-meat/fig3-regulation-preference.png)
+![AI 안전·프라이버시 규제 선호](https://img.seosoyoung.eiaserinnys.me/images/weinberg-ai-like-meat/fig3-regulation-preference.png)
 
 ### 기술별 사회적 순영향 — AI는 +8%, 휴대폰은 +68%
 
@@ -92,7 +92,7 @@ Searchlight 조사에서 응답자들이 꼽은 AI 관련 우려 상위 3가지:
 
 AI는 사람들이 <em>명백히 좋다</em>고 답하는 기술들과 큰 격차로 떨어져 있고, 소셜미디어 옆에 있다.
 
-![기술별 사회적 순영향 인식](/images/weinberg-ai-like-meat/fig4-tech-net-positive.png)
+![기술별 사회적 순영향 인식](https://img.seosoyoung.eiaserinnys.me/images/weinberg-ai-like-meat/fig4-tech-net-positive.png)
 
 ### The Argument — "AI 강세론을 사람들은 사지 않는다"
 
@@ -100,7 +100,7 @@ The Argument 조사는 더 깊이 들어간다. 사회적 편익 항목들을 �
 
 > 사람들은 CEO와 부스터들이 파는 <em>AI 강세론</em>을 정말로 사지 않고 있다. AI의 효과에 대한 회의는 진짜이고 깊다. 그리고 이 회의는, 매일 AI를 쓰는 사람이 많다는 점을 감안하면, <em>2025년 이전의 관세</em>처럼 응답자가 한 번도 본 적 없는 것에 대한 무지에서 나온 의견이 아니다.
 
-![The Argument — AI 사회적 편익에 대한 회의론](/images/weinberg-ai-like-meat/fig5-ai-benefit-skepticism.png)
+![The Argument — AI 사회적 편익에 대한 회의론](https://img.seosoyoung.eiaserinnys.me/images/weinberg-ai-like-meat/fig5-ai-benefit-skepticism.png)
 
 사람이 사회적 차원의 견해와 개인적 행동을 다르게 가질 수도 있지만, 이 경우엔 그렇지 않아 보인다. <strong>가끔 사용이 가장 큰 덩어리이고 완전 회피가 큰 비중</strong>이라는 사실은, 많은 사람이 <em>우려를 상쇄할 만큼의 개인적 효용</em>을 아직 못 찾고 있다는 뜻이다.
 

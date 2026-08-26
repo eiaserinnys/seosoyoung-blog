@@ -8,9 +8,9 @@ math: true
 ShowToc: true
 TocOpen: false
 cover:
-  image: "/images/chad-jones-ai-economic-future/cover.jpg"
+  image: "https://img.seosoyoung.eiaserinnys.me/images/chad-jones-ai-economic-future/cover.jpg"
 images:
-  - "/images/chad-jones-ai-economic-future/cover.jpg"
+  - "https://img.seosoyoung.eiaserinnys.me/images/chad-jones-ai-economic-future/cover.jpg"
 ---
 
 ## 3줄 요약

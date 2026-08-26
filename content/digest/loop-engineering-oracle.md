@@ -7,9 +7,9 @@ summary: "챗봇과 에이전트를 가르는 것은 모델이 아니라 단 하
 ShowToc: true
 TocOpen: false
 cover:
-  image: "/images/loop-engineering-oracle/cover.png"
+  image: "https://img.seosoyoung.eiaserinnys.me/images/loop-engineering-oracle/cover.png"
 images:
-  - "/images/loop-engineering-oracle/cover.png"
+  - "https://img.seosoyoung.eiaserinnys.me/images/loop-engineering-oracle/cover.png"
 ---
 
 ## 3줄 요약

@@ -8,7 +8,7 @@ ShowToc: true
 TocOpen: false
 ---
 
-![OpenAI가 Claude Code 안에서 Codex를 부르는 공식 플러그인을 낸 상황을 그린 삽화](/images/openai-codex-plugin-cc/01-cover.png)
+![OpenAI가 Claude Code 안에서 Codex를 부르는 공식 플러그인을 낸 상황을 그린 삽화](https://img.seosoyoung.eiaserinnys.me/images/openai-codex-plugin-cc/01-cover.png)
 
 ## 3줄 요약
 
@@ -50,7 +50,7 @@ TocOpen: false
 
 ## 자기 런타임을 들고 오지 않는다
 
-![새 런타임을 설치하는 대신 이미 깔려 있는 Codex에 배관을 연결하는 모습. 상자는 뜯지 않은 채 그대로 놓여 있다](/images/openai-codex-plugin-cc/02-runtime.png)
+![새 런타임을 설치하는 대신 이미 깔려 있는 Codex에 배관을 연결하는 모습. 상자는 뜯지 않은 채 그대로 놓여 있다](https://img.seosoyoung.eiaserinnys.me/images/openai-codex-plugin-cc/02-runtime.png)
 
 FAQ가 이 점을 세 번 반복한다. 별도 Codex 런타임을 쓰지 않고, 같은 설치본과 같은 로컬 인증 상태와 같은 체크아웃을 쓴다. 이미 Codex에 로그인해 둔 컴퓨터라면 추가 계정이 필요 없다.
 
@@ -67,7 +67,7 @@ model_reasoning_effort = "high"
 
 ## 리뷰가 둘로 갈린다
 
-![적대적 리뷰의 성격을 그린 삽화. 리뷰어의 임무는 변경을 검증하는 것이 아니라 확신을 무너뜨리는 것이다](/images/openai-codex-plugin-cc/03-adversarial.png)
+![적대적 리뷰의 성격을 그린 삽화. 리뷰어의 임무는 변경을 검증하는 것이 아니라 확신을 무너뜨리는 것이다](https://img.seosoyoung.eiaserinnys.me/images/openai-codex-plugin-cc/03-adversarial.png)
 
 `/codex:review`는 Codex 내부의 `/review`와 같은 리뷰어를 호출한다. 초점 텍스트를 받지 않고, 조종할 수도 없다. 커맨드 정의는 Claude에게 출력을 그대로 돌려주라고 지시한다.
 
@@ -92,7 +92,7 @@ model_reasoning_effort = "high"
 
 ## 멈추려 할 때 붙잡는 훅
 
-![턴을 끝내고 나가려는 순간 BLOCK 판정이 문 앞을 가로막는 장면](/images/openai-codex-plugin-cc/04-stopgate.png)
+![턴을 끝내고 나가려는 순간 BLOCK 판정이 문 앞을 가로막는 장면](https://img.seosoyoung.eiaserinnys.me/images/openai-codex-plugin-cc/04-stopgate.png)
 
 플러그인은 `Stop` 훅을 등록해 둔다. 기본값은 꺼짐이고 `/codex:setup --enable-review-gate`로 켠다. 켜져 있으면 Claude가 응답을 마치고 턴을 끝내려는 순간 훅이 Codex 리뷰를 한 번 돌린다. 프롬프트는 직전 턴만 보라고 명시한다. 상태 보고나 설정 점검, 리뷰 결과 출력처럼 실제 편집이 없었던 턴이면 즉시 통과시키고 더 조사하지 말라고 한다.
 
@@ -127,7 +127,7 @@ model_reasoning_effort = "high"
 
 ## 대화를 통째로 옮긴다
 
-![대화 기록을 보따리에 싸 들고 건너편 집으로 넘어가는 삽화. 건너온 다리는 뒤에서 끊어져 있다](/images/openai-codex-plugin-cc/05-transfer.png)
+![대화 기록을 보따리에 싸 들고 건너편 집으로 넘어가는 삽화. 건너온 다리는 뒤에서 끊어져 있다](https://img.seosoyoung.eiaserinnys.me/images/openai-codex-plugin-cc/05-transfer.png)
 
 `/codex:transfer`는 지금 진행 중인 Claude Code 세션을 Codex 스레드로 만들고, 이어받을 `codex resume <세션ID>` 명령을 출력한다. 원본은 `~/.claude/projects` 아래의 `.jsonl` 대화 기록 파일이고, 세션 시작 훅이 그 경로를 미리 환경 변수에 넣어 두기 때문에 사용자가 경로를 찾을 일은 없다.
 

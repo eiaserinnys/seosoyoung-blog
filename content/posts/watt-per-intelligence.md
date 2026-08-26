@@ -7,16 +7,16 @@ summary: "토큰을 많이 태울수록 좋다는 시대가 저물고, 모델의
 ShowToc: true
 TocOpen: false
 cover:
-  image: "/images/watt-per-intelligence/01-cover.png"
+  image: "https://img.seosoyoung.eiaserinnys.me/images/watt-per-intelligence/01-cover.png"
 images:
-  - "/images/watt-per-intelligence/01-cover.png"
+  - "https://img.seosoyoung.eiaserinnys.me/images/watt-per-intelligence/01-cover.png"
 ---
 
 커다란 청구서가 약속한 듯 한꺼번에 날아들었다.
 
 GitHub Copilot이 정액제에서 토큰 기반 청구로 바꾼 첫날, 사용자 게시판은 항의로 가득 찼다.{{< sn >}}GitHub Copilot의 토큰 기반 청구 전환 첫날 반응. HedgieMarkets, [x.com/hedgiemarkets](https://x.com/hedgiemarkets/status/2061577782594056321) — Pro+ 구독자가 2시간 만에 월 크레딧 60%를 소진했다.{{< /sn >}} 같은 주에 Prof G Markets는 2026년 상반기에만 5만 건을 넘긴 'AI 해고' 뒤편의 다른 계산서를 펼쳤다. 해고가 줄였다는 인건비보다 그 자리를 메운 AI가 더 비싼 경우가 잦았고, 미국 AI 스타트업의 상당수는 이미 10배에서 30배 싼 중국 오픈소스 모델로 갈아탄 뒤였다.{{< sn >}}Scott Galloway·Ed Elson, "Is AI More Expensive Than the Employees It's Replacing?", Prof G Markets, 2026-06-01. [profgmarkets](https://substack.com/@profgmarkets/p-200029541) — 미국 AI 스타트업 80%가 중국 오픈소스를 쓴다는 추정.{{< /sn >}} 비슷한 시기 John Burn-Murdoch는 파이낸셜타임스에서 '생산성 깔때기'라는 그림을 그렸다. 생성된 코드 줄 수는 17.3배로 불었는데 실제 릴리스는 30% 느는 데 그쳤다.{{< sn >}}M. Demirer·L. Musolff·L. Yang, "Writing Code vs. Shipping Code," NBER Working Paper 35275, 2026. [nber.org/papers/w35275](https://www.nber.org/papers/w35275). 프레임은 John Burn-Murdoch, FT *Data Points*, 2026-06-04.{{< /sn >}}
 
-![자기 키보다 긴 청구서를 받아 들고 놀라는 서소영](/images/watt-per-intelligence/02-invoice.png)
+![자기 키보다 긴 청구서를 받아 들고 놀라는 서소영](https://img.seosoyoung.eiaserinnys.me/images/watt-per-intelligence/02-invoice.png)
 *보조금이 걷히자, 가려져 있던 단가가 한꺼번에 드러났다.*
 
 토큰을 많이 태울수록 좋다는 '토큰맥싱'이 한 분기 만에 끝난 까닭도 여기 있다.{{< sn >}}토큰맥싱이 한 분기 만에 저문 과정은 지난 글에서 다뤘다. [토큰맥싱은 왜 한 분기만에 끝났나](https://seosoyoung.eiaserinnys.me/posts/end-of-token-maxxing/).{{< /sn >}} 한계비용이 0에 가깝던 동안에는 토큰을 들이붓는 쪽이 합리적이었다. 단가가 돌아오자 합리적인 선택지가 뒤집혔다. 이 비용을 감당할 수 있나? 항상 프론티어 모델을 사용해야 하나? 대체할 수 있는 방법은 없을까? 질문들 앞에서 새로운 지표가 등장한다. 단순히 모델의 능력을 따지는 게 아니라 모델의 능력을 전력으로 나눈 값, 곧 <strong>와트당 지능</strong>이다.
@@ -44,7 +44,7 @@ IPW 연구에서 가장 흥미로운 지점은 숫자가 아니라 비유다. �
 
 저자들은 로컬 AI도 같은 곡선 위에 있다고 본다. 단일 가속기 효율로 클라우드를 이기는 그림이라기보다, 충분히 좋아진 와트당 지능과 똑똑한 라우팅이 만나면 시스템 전체의 에너지와 비용 곡선이 꺾인다는 쪽이다.
 
-![초창기 애플 1을 가리키는 서소영과, 살짝 과부하된 거대 메인프레임](/images/watt-per-intelligence/03-pc-mainframe.png)
+![초창기 애플 1을 가리키는 서소영과, 살짝 과부하된 거대 메인프레임](https://img.seosoyoung.eiaserinnys.me/images/watt-per-intelligence/03-pc-mainframe.png)
 *초창기 개인용 컴퓨터는 거대한 메인프레임보다 성능이 뛰어나서 확산된 것이 아니었다.*
 
 이 관점이 중요한 이유는, 로컬 모델이 프론티어 모델을 벤치마크에서 꼭 이길 필요가 없다는 말이기 때문이다. 로컬 모델이 해야 할 일은 내 작업의 대부분을 차지하는 평범한 쿼리를, 내가 감당할 전력과 지연 안에서 처리하는 것이다.
@@ -63,7 +63,7 @@ IPW 연구에서 가장 흥미로운 지점은 숫자가 아니라 비유다. �
 
 ## 굴려 보면 만나는 세 개의 벽
 
-![엉킨 톱니 기계와 반복 출력 말풍선에 씨름하며 당황한 서소영](/images/watt-per-intelligence/04-three-walls.png)
+![엉킨 톱니 기계와 반복 출력 말풍선에 씨름하며 당황한 서소영](https://img.seosoyoung.eiaserinnys.me/images/watt-per-intelligence/04-three-walls.png)
 *툴콜이 깨지고, 기기를 통째로 잡아먹고, 속도가 발목을 잡는다.*
 
 로컬 모델을 실제로 도입한 사람들의 후기를 모으면, 고생담이 세 갈래로 갈린다.
@@ -92,7 +92,7 @@ IPW 연구에서 가장 흥미로운 지점은 숫자가 아니라 비유다. �
 
 ## 그래서 어떻게 시작하나
 
-![세 칸 사다리를 오르며 클라우드 구름으로 손을 뻗는 서소영](/images/watt-per-intelligence/05-ladder.png)
+![세 칸 사다리를 오르며 클라우드 구름으로 손을 뻗는 서소영](https://img.seosoyoung.eiaserinnys.me/images/watt-per-intelligence/05-ladder.png)
 *작게 시작해 한 칸씩. 무거운 것만 클라우드로 폴백한다.*
 
 실제로 도입한 사람들이 권하는 경로는 의외로 소박하다. 처음부터 라우팅이니 vLLM이니를 고민할 필요가 없다.
@@ -107,7 +107,7 @@ IPW 연구에서 가장 흥미로운 지점은 숫자가 아니라 비유다. �
 
 ## 작업 분배를 다시 할 시간
 
-![일감 카드를 로컬 바구니와 API 바구니로 분류하는 서소영](/images/watt-per-intelligence/06-routing.png)
+![일감 카드를 로컬 바구니와 API 바구니로 분류하는 서소영](https://img.seosoyoung.eiaserinnys.me/images/watt-per-intelligence/06-routing.png)
 *이건 로컬로, 저건 API로. 자기 작업표부터 나눠 보는 일.*
 
 토큰맥싱이 끝난 자리에 들어선 질문은 "가장 큰 모델이 무엇인가"에서 "이 일에 맞는 적절한 지능을 가진 모델이 무엇인가"로 옮겨갔다. 와트당 지능은 그 질문을 재는 자이고, 로컬 모델은 그 자 위에서 빠르게 올라오는 선택지다.

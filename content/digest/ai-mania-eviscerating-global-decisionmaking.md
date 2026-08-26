@@ -5,9 +5,9 @@ tags: ["AI", "조직 변화", "노동시장", "AI 버블", "의사결정"]
 categories: ["경제와 사회"]
 summary: "데이터 컨설턴트 니킬 수레시가 300여 건의 현장 대화를 근거로, AI 열풍에 사로잡힌 조직에서 합리적 의사결정이 어떻게 마비되는지 진단한다. 실패한 프로젝트, 신앙 고백이 된 AI 찬양, 그리고 아무도 먼저 진실을 말하지 못하는 조율 실패의 구조."
 cover:
-  image: "/images/ai-mania-eviscerating-global-decisionmaking/01-cover.png"
+  image: "https://img.seosoyoung.eiaserinnys.me/images/ai-mania-eviscerating-global-decisionmaking/01-cover.png"
 images:
-  - "/images/ai-mania-eviscerating-global-decisionmaking/01-cover.png"
+  - "https://img.seosoyoung.eiaserinnys.me/images/ai-mania-eviscerating-global-decisionmaking/01-cover.png"
 ShowToc: true
 TocOpen: false
 ---
@@ -68,7 +68,7 @@ LLM의 정확한 효용을 두고 다툴 필요도 없이, 조직들이 전문 �
 
 Snowflake 직원의 발표에 따르면 이상적 구성에서도 정확도는 \~92% 수준이다. 대기업 데이터의 복잡성 때문이다. 저자의 비유로, 최고 수준이라 해도 CFO가 보는 숫자 열 개 중 하나가 대놓고 틀린다는 뜻이다. 운영에 쓰기엔 적합하지 않지만, 아주 화려한 시연을 만들기엔 충분하다.
 
-![AI 데모 화면을 보고 홀린 듯 신용카드를 내미는 인물과 곤란해하는 서소영](/images/ai-mania-eviscerating-global-decisionmaking/02-demo-hypnosis.png)
+![AI 데모 화면을 보고 홀린 듯 신용카드를 내미는 인물과 곤란해하는 서소영](https://img.seosoyoung.eiaserinnys.me/images/ai-mania-eviscerating-global-decisionmaking/02-demo-hypnosis.png)
 
 주력 상품엔 미지근하면서 자연어 데이터 질의만은 꼭 보고 싶어 하는 고객들이 있었다. 팀은 적절히 단서를 달아 보여주기로 했다. 이것이 끔찍한 실수였다.
 
@@ -90,7 +90,7 @@ Snowflake 직원의 발표에 따르면 이상적 구성에서도 정확도는 \
 
 > 아주 빠르게, 전 세계 임원들이 서로에게 불안하게 총구를 겨눈 채, 먼저 총 맞기는 싫지만 모든 게 서서히 통제를 벗어나는 것을 지켜보는 그림이 그려진다.
 
-![원형으로 둘러선 정장 차림 인물들이 서로 눈치만 보며 침묵하고, 서소영이 바깥에서 지켜보는 모습](/images/ai-mania-eviscerating-global-decisionmaking/03-standoff.png)
+![원형으로 둘러선 정장 차림 인물들이 서로 눈치만 보며 침묵하고, 서소영이 바깥에서 지켜보는 모습](https://img.seosoyoung.eiaserinnys.me/images/ai-mania-eviscerating-global-decisionmaking/03-standoff.png)
 
 즉 임원들이 자기가 목격한 AI 이득을 정직하게 말하는 문제를 둘러싼 조율 실패다. 협조하면(입을 맞추면) 자리를 지킨다. 이탈하면(진실을 말하면) 거짓말쟁이나 겁쟁이, 무능력자로 몰린 동료들 손에 해고되고, 어차피 노선을 따를 사람으로 교체된다. 모두가 동시에 진실을 인정하면 희망이 있겠지만, 그 순간을 조율할 방법이 없다.
 

@@ -7,9 +7,9 @@ summary: "John Burn-Murdoch가 FT에서 'productivity funnel'이라는 프레임
 ShowToc: true
 TocOpen: false
 cover:
-  image: "/images/ai-productivity-funnel-2026/ft-funnel-main.jpg"
+  image: "https://img.seosoyoung.eiaserinnys.me/images/ai-productivity-funnel-2026/ft-funnel-main.jpg"
 images:
-  - "/images/ai-productivity-funnel-2026/ft-funnel-main.jpg"
+  - "https://img.seosoyoung.eiaserinnys.me/images/ai-productivity-funnel-2026/ft-funnel-main.jpg"
 ---
 
 ## 3줄 요약
@@ -33,7 +33,7 @@ NBER 페이퍼는 100,000명 이상의 GitHub 개발자를 *AI 도구를 처음 
 
 Burn-Murdoch가 칼럼에서 제시한 프레임은 단순하다. AI가 끌어올리는 *생산 활동의 양*은 파이프라인의 입구에 가까울수록 폭증하고, 출구에 가까울수록 감쇠한다.
 
-![FT가 정리한 iOS 앱 출시·사용·리뷰 곡선 — 신규 출시만 +80%로 튀어오르고 사용량·리뷰는 정체](/images/ai-productivity-funnel-2026/ft-funnel-main.jpg "Source: Financial Times / John Burn-Murdoch (2026-06-04), data from Demirer et al. 2026 NBER WP 35275")
+![FT가 정리한 iOS 앱 출시·사용·리뷰 곡선 — 신규 출시만 +80%로 튀어오르고 사용량·리뷰는 정체](https://img.seosoyoung.eiaserinnys.me/images/ai-productivity-funnel-2026/ft-funnel-main.jpg "Source: Financial Times / John Burn-Murdoch (2026-06-04), data from Demirer et al. 2026 NBER WP 35275")
 
 > Eye-opening changes to the speed and volume of work are not always translating into genuine productivity.
 > *— John Burn-Murdoch, FT (부제)*
@@ -71,7 +71,7 @@ Demirer 외(2026)는 *세 세대*의 AI 코딩 도구가 *어디까지* 효과�
 
 공급 곡선과 수요 곡선이 같은 그래프 안에서 *반대 방향으로 갈라지는 시기*를 시각적으로 잡아낸 차트다.
 
-![FT가 정리한 코딩 활동의 폭증 — 새 웹사이트·새 iOS 앱·미국/영국 GitHub 코드 모두 지난 1년에 가팔라짐](/images/ai-productivity-funnel-2026/ft-coding-output.jpg "Source: Financial Times / John Burn-Murdoch (2026-06-04), data from Domain Name Industry Brief; SensorTower; GitHub")
+![FT가 정리한 코딩 활동의 폭증 — 새 웹사이트·새 iOS 앱·미국/영국 GitHub 코드 모두 지난 1년에 가팔라짐](https://img.seosoyoung.eiaserinnys.me/images/ai-productivity-funnel-2026/ft-coding-output.jpg "Source: Financial Times / John Burn-Murdoch (2026-06-04), data from Domain Name Industry Brief; SensorTower; GitHub")
 
 부속 차트는 *깔때기의 입구*가 얼마나 가팔라졌는지를 따로 보여준다. 새 웹사이트 +40%, 새 iOS 앱 +40% 이상, 미국 GitHub 푸시 +40%, 영국 GitHub 푸시 +20%대. *입구는 분명히 폭증*했다는 사실 자체를 부정하지는 않는다.
 

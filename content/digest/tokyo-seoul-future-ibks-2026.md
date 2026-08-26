@@ -7,9 +7,9 @@ summary: "IBK투자증권 110페이지 ESG In-Depth 보고서. 한국 부동산 
 ShowToc: true
 TocOpen: false
 cover:
-  image: "/images/tokyo-seoul-future-ibks-2026/cover.png"
+  image: "https://img.seosoyoung.eiaserinnys.me/images/tokyo-seoul-future-ibks-2026/cover.png"
 images:
-  - "/images/tokyo-seoul-future-ibks-2026/cover.png"
+  - "https://img.seosoyoung.eiaserinnys.me/images/tokyo-seoul-future-ibks-2026/cover.png"
 ---
 
 ## 3줄 요약
@@ -28,7 +28,7 @@ images:
 
 저자들은 Van den Berg et al.(1982) 『Urban Europe: A Study of Growth and Decline』의 도시 라이프 사이클 모형을 끌어와 한국 도시의 좌표를 잡는다. 도시화(urbanization) → 교외화(suburbanization) → 역도시화(deurbanization) → 재도시화(reurbanization)의 4단계 중, 한국은 이제 재도시화 국면에 진입했다는 진단이다.
 
-![그림 1. van den Berg 도시 개발 모델과 서울 인구 추이](/images/tokyo-seoul-future-ibks-2026/fig01-van-den-berg-cycle.png "Haase et al.(2008) 모형에 따른 4단계 도시 사이클과 1949~2022년 서울특별시·수도권 인구 추이.")
+![그림 1. van den Berg 도시 개발 모델과 서울 인구 추이](https://img.seosoyoung.eiaserinnys.me/images/tokyo-seoul-future-ibks-2026/fig01-van-den-berg-cycle.png "Haase et al.(2008) 모형에 따른 4단계 도시 사이클과 1949~2022년 서울특별시·수도권 인구 추이.")
 
 2020년대까지의 한국 개발 모델은 도시화·교외화 단계로 분류된다. 1·2기 신도시와 수도권 외곽 택지 개발이 그 시기의 대표 사례였다. 그러나 인구 성장률이 둔화되고 수도권 내부에서도 노후화된 도심과 기성시가지의 기능 저하가 두드러지면서, 개발의 초점은 *외곽의 빈 땅이 아니라 기존 도시 안에서 충분히 활용되지 못했던 공간*으로 이동한다.
 
@@ -38,7 +38,7 @@ images:
 
 직전 2030 서울플랜이 경관 관리와 저층 주거지 보호를 위해 *35층 일률 높이 제한* 같은 비교적 보수적인 관리체계를 유지했다면, 2040 계획은 유연한 밀도 관리와 거점 중심의 도시공간 재편을 강조한다.
 
-![그림 13. 2040 서울도시기본계획 공간구조도](/images/tokyo-seoul-future-ibks-2026/fig13-2040-seoul-spatial-plan.png "도심·강남·여의도/영등포 3대 도심과 마곡·청량리·창동 등 거점을 GTX 광역철도망이 연결하는 다핵 구조.")
+![그림 13. 2040 서울도시기본계획 공간구조도](https://img.seosoyoung.eiaserinnys.me/images/tokyo-seoul-future-ibks-2026/fig13-2040-seoul-spatial-plan.png "도심·강남·여의도/영등포 3대 도심과 마곡·청량리·창동 등 거점을 GTX 광역철도망이 연결하는 다핵 구조.")
 
 전환의 핵심 수단은 세 가지다.
 
@@ -54,7 +54,7 @@ images:
 
 국내 복합개발이 그동안 제한적이었던 이유는 명확하다. 첫째, 우리나라는 *국가 주도의 주택 공급 체계*를 구축해 왔다. 1970년대 이후 급격한 도시화와 수도권 인구 밀집에 대응하기 위해 주택 공급 + 분양 회수 모델이 정착된 것이 원인이다. 둘째, *분양을 통한 자금 회수*가 사업의 주를 이뤘다. 운영수익 기반의 장기 보유 모델은 자리 잡기 어려운 구조였다.
 
-![그림 33. 서울시 도심기능 복합화 개발 추진](/images/tokyo-seoul-future-ibks-2026/fig33-seoul-mixed-use-plan.png "상업지역 주거비율 완화(최대 80~90%)와 24시간 도시활력 창출을 결합한 도심형 복합 모델.")
+![그림 33. 서울시 도심기능 복합화 개발 추진](https://img.seosoyoung.eiaserinnys.me/images/tokyo-seoul-future-ibks-2026/fig33-seoul-mixed-use-plan.png "상업지역 주거비율 완화(최대 80~90%)와 24시간 도시활력 창출을 결합한 도심형 복합 모델.")
 
 저자들은 이 두 저해 요인이 자금 조달 방식의 변화와 기존 사업의 한계성을 탈피할 수밖에 없는 환경 변화에 따라 약화될 것으로 전망한다. 한국형 복합개발이 활성화될 것이라는 결론이 여기서 나온다.
 
@@ -98,7 +98,7 @@ images:
 
 이 보고서가 가장 공들여 풀어내는 부분이 5장이다. 도쿄권의 성장과 다핵형 도시 구조의 형성, 그리고 1991~1998년 도쿄 23구 *주거지 -53%, 상업지 -73%* 하락이라는 자산가격 충격 이후 일본 도시 개발의 논리가 어떻게 변했는지 추적한다. 2002년 도시재생특별조치법 이후 일본은 민간투자를 유도하기 위해 *도시재생긴급정비지역*을 지정했고, 도쿄에서도 주요 도심부와 교통 결절점을 중심으로 대규모 도시재생 프로젝트가 추진됐다.
 
-![그림 74. 도쿄도 정비 에리어 지도](/images/tokyo-seoul-future-ibks-2026/fig74-tokyo-zoning-map.png "도심·부도심 거점 지구, 복합 시가지 존, 임해부도심, 광역 거점이 동심원으로 분포한 도쿄의 권역 구조.")
+![그림 74. 도쿄도 정비 에리어 지도](https://img.seosoyoung.eiaserinnys.me/images/tokyo-seoul-future-ibks-2026/fig74-tokyo-zoning-map.png "도심·부도심 거점 지구, 복합 시가지 존, 임해부도심, 광역 거점이 동심원으로 분포한 도쿄의 권역 구조.")
 
 저자들이 길어 올리는 세 사례는 다이마루유·시부야 스트림·아자부다이 힐즈다. 세 사례가 공통으로 가리키는 결론은 한 줄이다. *건물이 아니라 권역을 운영한다.*
 
@@ -106,7 +106,7 @@ images:
 
 다이마루유는 오테마치(大手町)·마루노우치(丸の内)·유라쿠초(有楽町)를 묶은 일본 대표 CBD다. 100년 이상 일본 기업의 본사 기능이 집적된 지역이었지만, 1990년대 이후 *기존 오피스 중심 기능만으로는* 글로벌 도시 간 경쟁·오피스 수요 변화·보행환경 개선 요구에 대응하기 어려워졌다.
 
-![그림 81. 다이마루유의 주요 권역 — 오테마치·마루노우치·유라쿠초](/images/tokyo-seoul-future-ibks-2026/fig81-marunouchi-zone.png "도쿄역(JR 마루노우치)을 가운데 두고 황궁 동쪽 일대를 묶은 일본 최상위 업무 권역.")
+![그림 81. 다이마루유의 주요 권역 — 오테마치·마루노우치·유라쿠초](https://img.seosoyoung.eiaserinnys.me/images/tokyo-seoul-future-ibks-2026/fig81-marunouchi-zone.png "도쿄역(JR 마루노우치)을 가운데 두고 황궁 동쪽 일대를 묶은 일본 최상위 업무 권역.")
 
 핵심 주체는 미쓰비시지쇼였다. 1988년 지역 토지소유자들의 재개발 협의회 설립 → 1996년 도쿄도·지요다구·JR동일본 등이 참여하는 개발 자문위원회 → 2002년 지구계획 수립을 거쳐, 1990년대 후반 이후 마루노우치 빌딩(2002), 도쿄빌딩(2005), 신마루노우치 빌딩(2007) 등이 순차적으로 재건축됐다.
 
@@ -128,11 +128,11 @@ images:
 
 도쿄의 또 다른 핵심 개발축은 롯폰기·도라노몬·아카사카·아자부다이로 이어지는 도심 남서부 권역이다. 마루노우치처럼 전통적 대기업 본사 중심 CBD라기보다는, 외국계 기업·대사관·호텔·문화시설·고급 주거·국제학교·의료·라이프스타일 기능이 혼합된 *국제 생활권*에 가깝다.
 
-![그림 101. 아자부다이 힐즈 건물 내부 구조](/images/tokyo-seoul-future-ibks-2026/fig101-azabudai-internal.png "Mori JP Tower(64F, 325m) + Residence A/B + Hills House + Garden Plaza A/B/C/D가 두 지하철역(롯폰기잇초메·카미야초)을 잇는 하나의 권역으로 묶인 구조.")
+![그림 101. 아자부다이 힐즈 건물 내부 구조](https://img.seosoyoung.eiaserinnys.me/images/tokyo-seoul-future-ibks-2026/fig101-azabudai-internal.png "Mori JP Tower(64F, 325m) + Residence A/B + Hills House + Garden Plaza A/B/C/D가 두 지하철역(롯폰기잇초메·카미야초)을 잇는 하나의 권역으로 묶인 구조.")
 
 아자부다이 힐즈는 1989년 재개발 협의회 설립 → 2018년 3월 재개발 조합 설립 → 2019년 2월 권리변환계획 인가 → 2019년 8월 착공 → 2023년 11월 준공 순으로 진행됐다. 약 *34년 장기 프로젝트*다. 사업 진행 중 약 *300명*의 권리자들과의 논의를 거쳤다.
 
-![그림 106. 아자부다이 힐즈 — 모리타워와 레지던스](/images/tokyo-seoul-future-ibks-2026/fig106-azabudai-photo.png "Mori JP Tower(325m·64층)와 레지던스 동의 외관.")
+![그림 106. 아자부다이 힐즈 — 모리타워와 레지던스](https://img.seosoyoung.eiaserinnys.me/images/tokyo-seoul-future-ibks-2026/fig106-azabudai-photo.png "Mori JP Tower(325m·64층)와 레지던스 동의 외관.")
 
 부지 약 8.1ha, 총 연면적 약 86.2만㎡, 약 2.4ha의 녹지. 부지의 약 30%를 녹지와 오픈스페이스로 구성했고, 중앙광장을 중심으로 상업·문화·교육·의료 기능을 배치했다. 완전 입주 시 약 2만 명의 근무자와 약 3,500명의 거주자, 연간 약 3,000만 명의 방문객이 기대된다.
 
@@ -142,7 +142,7 @@ images:
 
 흥미로운 것은 한국에도 권역 개발의 *원료*는 이미 흩어져 있다는 관찰이다. 보고서는 주요 그룹의 서울 내 보유·사용 부동산을 지도 한 장으로 정리한다.
 
-![그림 108. 주요 그룹 사옥 빌딩 분포](/images/tokyo-seoul-future-ibks-2026/fig108-korean-conglomerate-hq-map.png "삼성(서초·태평로)·SK(종로·을지로·남산)·현대차(양재·계동·삼성동)·LG(여의도·강남·용산)·롯데(소공동·잠실)·한화(장교동·여의도·소공동)가 동심원처럼 분포한 권역 자산 지도.")
+![그림 108. 주요 그룹 사옥 빌딩 분포](https://img.seosoyoung.eiaserinnys.me/images/tokyo-seoul-future-ibks-2026/fig108-korean-conglomerate-hq-map.png "삼성(서초·태평로)·SK(종로·을지로·남산)·현대차(양재·계동·삼성동)·LG(여의도·강남·용산)·롯데(소공동·잠실)·한화(장교동·여의도·소공동)가 동심원처럼 분포한 권역 자산 지도.")
 
 다만 이 자산들은 일본의 마루노우치·시부야·롯폰기/아자부다이처럼 *특정 권역 안에서 연속적으로 축적되어 하나의 도시 플랫폼을 형성*했다기보다는, 그룹 본사·금융사 사옥·백화점·호텔·연구시설·업무용 건물 등으로 흩어져 존재해왔다. 여러 자산이 동일한 권역 안에서 연결되어 장기 운영형 도시자산으로 발전한 사례는 제한적이다.
 
@@ -160,7 +160,7 @@ images:
 
 또 하나의 방안은 자산의 성격에 맞는 자본시장형 개발 수단을 활용하는 것이다. 오피스·상업시설·호텔·임대주택·생활SOC처럼 준공 이후 임대수익이 중요한 자산은 배당수익과 장기 보유를 전제로 한 구조가 더 적합하다.
 
-![그림 113. 프로젝트리츠 구조](/images/tokyo-seoul-future-ibks-2026/fig113-project-reits-structure.png "토지소유자의 현물출자·기관자본의 우선주·민간차입을 REITs 한 구조에 묶고, 준공 이후 배당·자산가치 상승을 분배하는 자본시장형 개발 플랫폼.")
+![그림 113. 프로젝트리츠 구조](https://img.seosoyoung.eiaserinnys.me/images/tokyo-seoul-future-ibks-2026/fig113-project-reits-structure.png "토지소유자의 현물출자·기관자본의 우선주·민간차입을 REITs 한 구조에 묶고, 준공 이후 배당·자산가치 상승을 분배하는 자본시장형 개발 플랫폼.")
 
 기존 PFV·PF 중심의 개발 구조에서는 사업의 핵심이 분양성과 차입상환에 놓인다. 시행사는 제한된 자기자본으로 토지를 확보하고, 브릿지론과 본PF를 통해 사업을 진행한 뒤, 분양대금이나 자산 매각대금으로 차입을 상환한다. 준공 이후 자산을 장기간 보유하며 임대수익과 운영가치를 키우기보다는, 개발 완료 후 빠르게 회수하는 것이 합리적인 구조다.
 

@@ -7,9 +7,9 @@ summary: "미네소타대학 아다말라 랩이 90kbp 게놈과 36개 정제 �
 ShowToc: true
 TocOpen: false
 cover:
-  image: "/images/spudcell-first-full-cell-cycle/spudcell-6frame-biotic.jpg"
+  image: "https://img.seosoyoung.eiaserinnys.me/images/spudcell-first-full-cell-cycle/spudcell-6frame-biotic.jpg"
 images:
-  - "/images/spudcell-first-full-cell-cycle/spudcell-6frame-biotic.jpg"
+  - "https://img.seosoyoung.eiaserinnys.me/images/spudcell-first-full-cell-cycle/spudcell-6frame-biotic.jpg"
 ---
 
 ## 3줄 요약
@@ -18,7 +18,7 @@ images:
 2. 이 시스템은 90kbp 게놈을 7개의 플라스미드에 나눠 담고, 지질막 안에서 섭식, 성장, 게놈 복제, 분열, 선택까지 세포의 다섯 가지 핵심 행위를 하나의 사이클로 이어냈다. 상향식으로 조립한 시스템이 완전한 세포주기를 돌린 것은 처음이다.
 3. 그러나 이 세포는 살아있지 않다. 리보솜을 스스로 만들지 못해 5세대에서 멈추고, 분열을 여러 번 반복하려면 사람이 기계적으로 눌러 짜야 하며, 자연 발생 돌연변이가 없어 다윈적 진화도 관찰되지 않았다. 저자들은 이를 "라이트 형제의 첫 비행기"에 비유한다.
 
-![SpudCell이 6프레임에 걸쳐 자라고 분열하는 형광 현미경 시퀀스](/images/spudcell-first-full-cell-cycle/spudcell-6frame-biotic.jpg)
+![SpudCell이 6프레임에 걸쳐 자라고 분열하는 형광 현미경 시퀀스](https://img.seosoyoung.eiaserinnys.me/images/spudcell-first-full-cell-cycle/spudcell-6frame-biotic.jpg)
 *SpudCell의 성장과 분열을 담은 형광 현미경 시퀀스 6프레임. Credit: Kate Adamala, Adamala Lab / Biotic*
 
 ## SpudCell이란 무엇인가
@@ -47,7 +47,7 @@ SpudCell은 미네소타대학 생명과학대 부교수 케이트 아다말라(
 - **분열(division)** — 자연 세포는 세포골격(cytoskeleton)의 정교한 동원에 의존하지만, SpudCell은 세포골격을 완전히 우회한다. FLAG 태그를 단 대형 단백질들이 막 표면에 몰려들며 서로 반발하고, 그 기계적 응력이 막을 갈라 새 리포솜을 싹처럼 떨어뜨린다. "가장 멍청한 방법"이라고 아다말라는 Science 인터뷰에서 표현했다.
 - **선택(selection)** — 융합 단백질을 더 많이 발현하도록 유전자를 조작한 변이체를 원본과 함께 배양하면, 5세대 후 변이체 게놈이 60%를 차지한다. 영양이 부족한 조건에서 격차는 더 벌어진다.
 
-![붉은 지질 염색으로 표시한 SpudCell 단일 세포](/images/spudcell-first-full-cell-cycle/spudcell-red-newscientist.jpg)
+![붉은 지질 염색으로 표시한 SpudCell 단일 세포](https://img.seosoyoung.eiaserinnys.me/images/spudcell-first-full-cell-cycle/spudcell-red-newscientist.jpg)
 *지질 염색을 붉은색으로 입힌 SpudCell 단일 세포. Credit: Orion Venero, Adamala Lab / New Scientist*
 
 ## 살아있지 않은 이유
@@ -76,7 +76,7 @@ New Scientist, Science AAAS, Quanta Magazine 세 매체가 공통으로 지적�
 
 > "우리는 지구를 해치지 않는 방식으로, 그리고 실제로 재생 가능한 방식으로 물건을 제조할 수 있어야 한다. 지구에는 원자가 충분하며, 우리는 그 원자들을 더 지속 가능하고 분산된 방식으로 옮길 필요가 있을 뿐이다."
 
-![연구를 이끈 케이트 아다말라](/images/spudcell-first-full-cell-cycle/adamala-portrait.webp)
+![연구를 이끈 케이트 아다말라](https://img.seosoyoung.eiaserinnys.me/images/spudcell-first-full-cell-cycle/adamala-portrait.webp)
 *아다말라 랩을 이끄는 케이트 아다말라 부교수. 2016년 자기 연구실을 열 때부터 스스로 세포주기를 완성하는 인공 세포를 목표로 삼았다. Courtesy of Kate Adamala / Quanta Magazine*
 
 ## 산업적 지향과 안전 우려

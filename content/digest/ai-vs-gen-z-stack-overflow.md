@@ -12,7 +12,7 @@ sidenotes: true
 > Phoebe Sajor / Stack Overflow Blog / 2025-12-26 (top-10 재게시)
 > Erik Brynjolfsson · Bharat Chandar · Ruyu Chen / Stanford Digital Economy Lab / 2025-11-13[^erik-2025]
 
-![Stack Overflow의 「AI vs Gen Z」 표지 이미지. 코딩이 약속한 안정된 진로가 AI 시대에 바뀌었다는 메시지의 시각적 후크.](/images/ai-vs-gen-z-stack-overflow/hero.jpg)
+![Stack Overflow의 「AI vs Gen Z」 표지 이미지. 코딩이 약속한 안정된 진로가 AI 시대에 바뀌었다는 메시지의 시각적 후크.](https://img.seosoyoung.eiaserinnys.me/images/ai-vs-gen-z-stack-overflow/hero.jpg)
 *Credit: Alexandra Francis / Stack Overflow Blog. 산업 매체 차원의 종합 보고서가 한 세대의 진입로 봉쇄를 정리한 자료다.*
 
 ## 3줄 요약

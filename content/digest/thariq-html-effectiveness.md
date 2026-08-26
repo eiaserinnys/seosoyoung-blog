@@ -9,7 +9,7 @@ TocOpen: false
 sidenotes: true
 ---
 
-![Using Claude Code: The Unreasonable Effectiveness of HTML](/images/thariq-html-effectiveness/cover.jpg)
+![Using Claude Code: The Unreasonable Effectiveness of HTML](https://img.seosoyoung.eiaserinnys.me/images/thariq-html-effectiveness/cover.jpg)
 
 ## 3줄 요약
 

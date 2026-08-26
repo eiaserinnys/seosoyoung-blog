@@ -40,4 +40,4 @@ draft: false
 
 정식 image-to-image 변환. 윈도우 D:\Pictures\seosoyoung\서소영.png를 input으로 사용.
 프롬프트는 트윗 원문(일본어) 그대로 — 같은 인물 유지 + 4페이지 매거진 형식.
-gpt-image-2 /v1/images/edits 호출.
+gpt-image-2 /v1https://img.seosoyoung.eiaserinnys.me/images/edits 호출.

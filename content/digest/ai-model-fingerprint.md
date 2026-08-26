@@ -7,9 +7,9 @@ summary: "1부터 355 사이의 랜덤한 수를 뽑으라는 프롬프트를 �
 ShowToc: true
 TocOpen: false
 cover:
-  image: "/images/ai-model-fingerprint/overview.png"
+  image: "https://img.seosoyoung.eiaserinnys.me/images/ai-model-fingerprint/overview.png"
 images:
-  - "/images/ai-model-fingerprint/overview.png"
+  - "https://img.seosoyoung.eiaserinnys.me/images/ai-model-fingerprint/overview.png"
 ---
 
 ## 3줄 요약
@@ -18,7 +18,7 @@ images:
 2. 대형 언어모델은 진짜 난수 생성기가 아니다. 학습 데이터·아키텍처·RLHF·토크나이저 차이가 응답 분포에 남는다. 지문은 시스템 프롬프트로 잘 덮이지 않고, 같은 세대 내에서는 놀랄 만큼 안정적이며, 세대·후훈련 경계에서는 극적으로 갈린다.
 3. 지문은 상용 모델의 세대 관계를 되짚는 도구가 되기도 하고, 제3자 API 중계상이 광고와 다른 모델을 서빙하는 위조(掺假)를 잡아내는 실용적 감사 수단이 되기도 한다.
 
-![24개 모델 지문 종합 개요](/images/ai-model-fingerprint/overview.png)
+![24개 모델 지문 종합 개요](https://img.seosoyoung.eiaserinnys.me/images/ai-model-fingerprint/overview.png)
 
 ## 원리 — 왜 지문이 남는가
 
@@ -56,7 +56,7 @@ Qwen: 3.6-plus / 3.7-plus / 3.7-max.
 
 opus 4.6·4.7·4.8 계열은 이미 지난 두어 세대의 상용 라인이고, sonnet-5·claude-fable-5까지 포함돼 있어 채집 시점 기준으로 최신에 가까운 스냅샷이다.
 
-![코사인 유사도 매트릭스](/images/ai-model-fingerprint/similarity_cosine.png)
+![코사인 유사도 매트릭스](https://img.seosoyoung.eiaserinnys.me/images/ai-model-fingerprint/similarity_cosine.png)
 
 ## 핵심 발견
 
@@ -83,14 +83,14 @@ opus 4.6·4.7·4.8 계열은 이미 지난 두어 세대의 상용 라인이고,
 
 리포 저자는 커밋 메시지에서 이 관찰을 「정렬 가족(alignment family)이 벤더 가족(vendor family)보다 크다」로 요약한다. gemini도 같은 회사의 두 라인이 각각 다른 어트랙터 족에 붙는다. gemini-3-flash-preview는 217 족 언저리, gemini-3.5-flash는 247 족 언저리다.
 
-![217 어트랙터 족](/images/ai-model-fingerprint/attractor_217.png)
+![217 어트랙터 족](https://img.seosoyoung.eiaserinnys.me/images/ai-model-fingerprint/attractor_217.png)
 
 ### 217 어트랙터 족과 247 어트랙터 족
 
 - 24개 모델의 응답 분포에서 두 개의 큰 어트랙터가 관찰된다. 하나는 217 부근에 몰리는 무리, 다른 하나는 247 부근에 몰리는 무리.
 - 벤더가 아니라 정렬·후훈련 결이 어느 족에 붙는지를 결정한다. 위의 gemini 관찰이 그 예.
 
-![24개 모델 박스플롯](/images/ai-model-fingerprint/boxplot.png)
+![24개 모델 박스플롯](https://img.seosoyoung.eiaserinnys.me/images/ai-model-fingerprint/boxplot.png)
 
 박스플롯은 각 모델의 응답 분포 폭·중앙값·이상치를 한눈에 보여준다. opus 4.8이 사실상 한 점에 붕괴한 반면, 대부분의 모델은 넓게 퍼진 분포에 여전히 어트랙터를 갖는다는 대조가 잘 드러난다.
 
@@ -100,7 +100,7 @@ opus 4.6·4.7·4.8 계열은 이미 지난 두어 세대의 상용 라인이고,
 - 그 API의 지문과 공식 opus 4.6의 지문 코사인은 **0.207**. 사실상 다른 모델이다.
 - 이 대체품의 mode는 187 (공식 opus-4.6는 217 어트랙터). 24개 실측 모델 중 가장 유사한 지문은 **gemini-3.5-flash (0.700)**. 즉 광고와 다르게 gemini 계열로 추정되는 모델을 서빙하고 있을 가능성이 높다.
 
-![dasuapi 위조 탐지 결과](/images/ai-model-fingerprint/dasuapi_verification.png)
+![dasuapi 위조 탐지 결과](https://img.seosoyoung.eiaserinnys.me/images/ai-model-fingerprint/dasuapi_verification.png)
 
 7월 1일 커밋 `f0906c5`에서 저자는 dasuapi 데이터를 지문 대조군에서 배제하고 raw만 로컬에 남겼다. 공개 리포에는 위조 탐지 원리와 그림만 남아 있다. 이 응용 자체가 흥미로운 것은, 지문 벡터만으로 라벨 검증이 가능하다는 실증이 이만큼 저렴하고 재현 가능하게 나온 사례가 드물다는 점이다.
 

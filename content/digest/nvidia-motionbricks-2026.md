@@ -7,9 +7,9 @@ summary: "NVIDIA가 SIGGRAPH 2026 / ACM TOG에 발표한 실시간 모션 생성
 ShowToc: true
 TocOpen: false
 cover:
-  image: "/images/nvidia-motionbricks-2026/teaser.jpg"
+  image: "https://img.seosoyoung.eiaserinnys.me/images/nvidia-motionbricks-2026/teaser.jpg"
 images:
-  - "/images/nvidia-motionbricks-2026/teaser.jpg"
+  - "https://img.seosoyoung.eiaserinnys.me/images/nvidia-motionbricks-2026/teaser.jpg"
 ---
 
 ## 3줄 요약
@@ -18,7 +18,7 @@ images:
 2. Modular latent generative 백본 + smart primitives 인터페이스의 두 축으로, *2ms latency · 15,000 FPS* 라는 산업급 실시간 성능에 도달했다.
 3. 같은 모델이 Unreal Engine 5 게임 데모와 Unitree G1 휴머노이드 로봇을 함께 구동한다. 가상 캐릭터 애니메이션과 물리 로봇 제어가 하나의 backbone으로 묶이는 것이 이 논문의 진짜 지점이다.
 
-![MotionBricks 티저 — 단일 backbone이 애니메이션과 로보틱스 양쪽을 통제한다](/images/nvidia-motionbricks-2026/teaser.jpg)
+![MotionBricks 티저 — 단일 backbone이 애니메이션과 로보틱스 양쪽을 통제한다](https://img.seosoyoung.eiaserinnys.me/images/nvidia-motionbricks-2026/teaser.jpg)
 
 ## 자료 개요
 
@@ -52,7 +52,7 @@ images:
 
 아래는 프로젝트 페이지의 Overview 데모다 — backbone이 단일 모델로 다양한 모션을 만들어 내는 것을 한 번에 보여 준다.
 
-<video controls poster="/images/nvidia-motionbricks-2026/overview-demo.jpg" preload="none" style="width:100%;max-width:960px;display:block;margin:1em auto;">
+<video controls poster="https://img.seosoyoung.eiaserinnys.me/images/nvidia-motionbricks-2026/overview-demo.jpg" preload="none" style="width:100%;max-width:960px;display:block;margin:1em auto;">
   <source src="https://research.nvidia.com/labs/gear/motionbricks/videos/motionbricks_demo_1080p30f.mp4" type="video/mp4">
   영상이 재생되지 않으면 <a href="https://research.nvidia.com/labs/gear/motionbricks/videos/motionbricks_demo_1080p30f.mp4">원본 영상</a>을 직접 열어 보라.
 </video>
@@ -84,14 +84,14 @@ images:
 
 속도·헤딩·스타일 명령으로부터 *재학습이나 태스크별 튜닝 없이* 자연스러운 로코모션을 만든다. 시연된 스타일: Zombie · Injured-Leg · Injured-Torso · Skipping · Strafing · Crouch Strafing. 모두 단일 smart-primitive 프롬프트의 zero-shot 결과다.
 
-<video controls poster="/images/nvidia-motionbricks-2026/smart-locomotion-zombie.jpg" preload="none" style="width:100%;max-width:960px;display:block;margin:1em auto;">
+<video controls poster="https://img.seosoyoung.eiaserinnys.me/images/nvidia-motionbricks-2026/smart-locomotion-zombie.jpg" preload="none" style="width:100%;max-width:960px;display:block;margin:1em auto;">
   <source src="https://research.nvidia.com/labs/gear/motionbricks/videos/smart_locomotion/locomotion_zombie_style_1080p.mp4" type="video/mp4">
   영상이 재생되지 않으면 <a href="https://research.nvidia.com/labs/gear/motionbricks/videos/smart_locomotion/locomotion_zombie_style_1080p.mp4">원본 영상</a>을 직접 열어 보라.
 </video>
 
 블렌드스페이스(blendspace) 믹싱도 같은 인터페이스 안에 들어 있다. 아래 영상은 여러 블렌드스페이스를 한꺼번에 섞어 freestyle로 이어 가는 데모다.
 
-<video controls poster="/images/nvidia-motionbricks-2026/smart-locomotion-mixing.jpg" preload="none" style="width:100%;max-width:960px;display:block;margin:1em auto;">
+<video controls poster="https://img.seosoyoung.eiaserinnys.me/images/nvidia-motionbricks-2026/smart-locomotion-mixing.jpg" preload="none" style="width:100%;max-width:960px;display:block;margin:1em auto;">
   <source src="https://research.nvidia.com/labs/gear/motionbricks/videos/smart_locomotion/locomotion_mixing_all_bs_1080p.mp4" type="video/mp4">
   영상이 재생되지 않으면 <a href="https://research.nvidia.com/labs/gear/motionbricks/videos/smart_locomotion/locomotion_mixing_all_bs_1080p.mp4">원본 영상</a>을 직접 열어 보라.
 </video>
@@ -100,14 +100,14 @@ images:
 
 오브젝트 인터랙션은 *proxy keyframe* 집합으로 명시한다. 검을 잡는 손의 위치, 벤치를 넘는 양발의 위치 — 이런 부분 제약만 주면 backbone이 접근·접촉·후속 동작을 자연스럽게 채운다. 같은 명령을 여러 번 실행해도 매번 *자연스러운 변주(variation)* 가 들어간다.
 
-<video controls poster="/images/nvidia-motionbricks-2026/smart-object-pickup-sword.jpg" preload="none" style="width:100%;max-width:960px;display:block;margin:1em auto;">
+<video controls poster="https://img.seosoyoung.eiaserinnys.me/images/nvidia-motionbricks-2026/smart-object-pickup-sword.jpg" preload="none" style="width:100%;max-width:960px;display:block;margin:1em auto;">
   <source src="https://research.nvidia.com/labs/gear/motionbricks/videos/smart_object/pickup_sword_approach_variations_v2_1080p.mp4" type="video/mp4">
   영상이 재생되지 않으면 <a href="https://research.nvidia.com/labs/gear/motionbricks/videos/smart_object/pickup_sword_approach_variations_v2_1080p.mp4">원본 영상</a>을 직접 열어 보라.
 </video>
 
 검 줍기 영상은 캐릭터가 다양한 방향에서 같은 검에 접근할 때마다 손의 궤적·발의 디딤 위치·상체의 기울임이 *매번 다르게* 생성되는 것을 한눈에 보여 준다.
 
-<video controls poster="/images/nvidia-motionbricks-2026/smart-object-jump-bench.jpg" preload="none" style="width:100%;max-width:960px;display:block;margin:1em auto;">
+<video controls poster="https://img.seosoyoung.eiaserinnys.me/images/nvidia-motionbricks-2026/smart-object-jump-bench.jpg" preload="none" style="width:100%;max-width:960px;display:block;margin:1em auto;">
   <source src="https://research.nvidia.com/labs/gear/motionbricks/videos/smart_object/jump_bench_approach_variations_1080p.mp4" type="video/mp4">
   영상이 재생되지 않으면 <a href="https://research.nvidia.com/labs/gear/motionbricks/videos/smart_object/jump_bench_approach_variations_1080p.mp4">원본 영상</a>을 직접 열어 보라.
 </video>
@@ -118,7 +118,7 @@ images:
 
 backbone과 smart primitive를 게임 엔진과 묶는 저작 도구도 함께 공개됐다. Unreal Engine 5 안에서 *애니메이션 그래프 배선 없이, 전문 애니메이션 지식 없이* primitive를 끼워 맞추는 방식이다.
 
-<video controls poster="/images/nvidia-motionbricks-2026/ue5-authoring.jpg" preload="none" style="width:100%;max-width:960px;display:block;margin:1em auto;">
+<video controls poster="https://img.seosoyoung.eiaserinnys.me/images/nvidia-motionbricks-2026/ue5-authoring.jpg" preload="none" style="width:100%;max-width:960px;display:block;margin:1em auto;">
   <source src="https://research.nvidia.com/labs/gear/motionbricks/videos/runtime_aibm_so_authoring_1.5x_1080p.mp4" type="video/mp4">
   영상이 재생되지 않으면 <a href="https://research.nvidia.com/labs/gear/motionbricks/videos/runtime_aibm_so_authoring_1.5x_1080p.mp4">원본 영상</a>을 직접 열어 보라.
 </video>
@@ -140,11 +140,11 @@ backbone과 smart primitive를 게임 엔진과 묶는 저작 도구도 함께 �
 
 > 모든 모션이 신경망으로 생성됐다. *foot-locking 없음, 블렌딩 없음, 충돌 감지 없음, 수작업 전이 없음*.
 
-![Uncut UE5 demo 포스터 — 2분 40초 분량, 모든 동작이 신경망 생성](/images/nvidia-motionbricks-2026/uncut-demo.jpg)
+![Uncut UE5 demo 포스터 — 2분 40초 분량, 모든 동작이 신경망 생성](https://img.seosoyoung.eiaserinnys.me/images/nvidia-motionbricks-2026/uncut-demo.jpg)
 
 원본 영상은 NVIDIA Research가 호스팅하고 있다.
 
-<video controls poster="/images/nvidia-motionbricks-2026/uncut-demo.jpg" preload="none" style="width:100%;max-width:960px;display:block;margin:1em auto;">
+<video controls poster="https://img.seosoyoung.eiaserinnys.me/images/nvidia-motionbricks-2026/uncut-demo.jpg" preload="none" style="width:100%;max-width:960px;display:block;margin:1em auto;">
   <source src="https://research.nvidia.com/labs/gear/motionbricks/videos/aibm_runtime_main_demo_latest_art_v3_1080p.mp4" type="video/mp4">
   영상이 재생되지 않으면 <a href="https://research.nvidia.com/labs/gear/motionbricks/videos/aibm_runtime_main_demo_latest_art_v3_1080p.mp4">원본 영상</a>을 직접 열어 보라.
 </video>

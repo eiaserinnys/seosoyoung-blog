@@ -9,7 +9,7 @@ TocOpen: false
 sidenotes: true
 ---
 
-![空間の支配が作り出す — 人の心を掌握する画像生成術 배너](/images/k-polar-ai-spatial-domination/cover-example.jpg)
+![空間の支配が作り出す — 人の心を掌握する画像生成術 배너](https://img.seosoyoung.eiaserinnys.me/images/k-polar-ai-spatial-domination/cover-example.jpg)
 
 ## 3줄 요약
 
@@ -19,7 +19,7 @@ sidenotes: true
 
 ## 1장. 시선을 멈추는 이미지의 정체
 
-![1장 헤더 — 어두운 거실 소파에서 잠든 듯한 한 컷. 빛과 무드가 인물에 자연스럽게 흘러든 예시](/images/k-polar-ai-spatial-domination/ch1-hero.jpg)
+![1장 헤더 — 어두운 거실 소파에서 잠든 듯한 한 컷. 빛과 무드가 인물에 자연스럽게 흘러든 예시](https://img.seosoyoung.eiaserinnys.me/images/k-polar-ai-spatial-domination/ch1-hero.jpg)
 
 저자는 처음에는 "노출"이나 "아슬아슬함"이 답이라고 생각했다고 한다. SNS에서 잠시 시선을 끄는 것은 사실이지만, 그런 이미지는 비슷한 다른 이미지와 한 상자에 묶여 처리되어 끝난다.
 
@@ -41,7 +41,7 @@ sidenotes: true
 
 ## 2장. 기시감 — 입구의 설계
 
-![2장 헤더 — 맥도날드에서 햄버거를 한입 베어 무는 일상 셀카. "내 폰에도 있을 법한 사진"의 전형](/images/k-polar-ai-spatial-domination/ch2-hero.jpg)
+![2장 헤더 — 맥도날드에서 햄버거를 한입 베어 무는 일상 셀카. "내 폰에도 있을 법한 사진"의 전형](https://img.seosoyoung.eiaserinnys.me/images/k-polar-ai-spatial-domination/ch2-hero.jpg)
 
 ### 왜 기시감이 필요한가
 
@@ -71,7 +71,7 @@ SNS에는 그런 사진이 매일 수백·수천 장 흘러간다. 안심감만�
 
 ## 3장. 발견·신체성·이야기의 여백 — 머무름의 3요소
 
-![3장 헤더 — 벽을 칠하던 도중 어깨 너머로 돌아본 한 컷. 동작의 결과로 드러난 자세, 페인트 자국과 사다리가 만드는 흔적](/images/k-polar-ai-spatial-domination/ch3-hero.jpg)
+![3장 헤더 — 벽을 칠하던 도중 어깨 너머로 돌아본 한 컷. 동작의 결과로 드러난 자세, 페인트 자국과 사다리가 만드는 흔적](https://img.seosoyoung.eiaserinnys.me/images/k-polar-ai-spatial-domination/ch3-hero.jpg)
 
 ### ① 발견 — "근데, 좀 신경 쓰인다"를 둔다
 
@@ -121,7 +121,7 @@ SNS에는 그런 사진이 매일 수백·수천 장 흘러간다. 안심감만�
 
 ## 4장. 공간의 지배
 
-![4장 헤더 — 새하얀 방, 흰 슬립, 흰 침구. 인물·소품·조명·화이트 톤이 같은 세계에 속한 일관성의 예시](/images/k-polar-ai-spatial-domination/ch4-hero.jpg)
+![4장 헤더 — 새하얀 방, 흰 슬립, 흰 침구. 인물·소품·조명·화이트 톤이 같은 세계에 속한 일관성의 예시](https://img.seosoyoung.eiaserinnys.me/images/k-polar-ai-spatial-domination/ch4-hero.jpg)
 
 ### "공간의 지배"란 무엇인가
 
@@ -173,15 +173,15 @@ AI는 사전에 받은 공간 규칙 안에서
 
 저자가 본문 말미에 첨부한 GPTs "Vibe" 모니터 결과 5장. 일본어 한 줄 지시만으로 만든 이미지들이다.
 
-![모니터 결과 1](/images/k-polar-ai-spatial-domination/monitor-1.jpg)
+![모니터 결과 1](https://img.seosoyoung.eiaserinnys.me/images/k-polar-ai-spatial-domination/monitor-1.jpg)
 
-![모니터 결과 2](/images/k-polar-ai-spatial-domination/monitor-2.jpg)
+![모니터 결과 2](https://img.seosoyoung.eiaserinnys.me/images/k-polar-ai-spatial-domination/monitor-2.jpg)
 
-![모니터 결과 3](/images/k-polar-ai-spatial-domination/monitor-3.jpg)
+![모니터 결과 3](https://img.seosoyoung.eiaserinnys.me/images/k-polar-ai-spatial-domination/monitor-3.jpg)
 
-![모니터 결과 4](/images/k-polar-ai-spatial-domination/monitor-4.jpg)
+![모니터 결과 4](https://img.seosoyoung.eiaserinnys.me/images/k-polar-ai-spatial-domination/monitor-4.jpg)
 
-![모니터 결과 5](/images/k-polar-ai-spatial-domination/monitor-5.jpg)
+![모니터 결과 5](https://img.seosoyoung.eiaserinnys.me/images/k-polar-ai-spatial-domination/monitor-5.jpg)
 
 ## 가장 흥미로운 지점
 

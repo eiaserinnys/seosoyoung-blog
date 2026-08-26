@@ -5,9 +5,9 @@ tags: ["AI", "LLM", "코딩 에이전트", "AI 코딩", "번아웃", "Pydantic"]
 categories: ["에이전트와 코딩"]
 summary: "LLM으로 코드를 짜는 일은 생산성을 끌어올리는 동시에 개발자를 소진시킨다. Pydantic의 Laura Summers가 '감독의 피로'와 '인간 보상 함수 문제'를 이름 붙이고, 병목은 처음부터 코드가 아니라 인간의 주의력이었다고 진단한다."
 cover:
-  image: "/images/human-in-the-loop-is-tired/hero.png"
+  image: "https://img.seosoyoung.eiaserinnys.me/images/human-in-the-loop-is-tired/hero.png"
 images:
-  - "/images/human-in-the-loop-is-tired/hero.png"
+  - "https://img.seosoyoung.eiaserinnys.me/images/human-in-the-loop-is-tired/hero.png"
 ShowToc: true
 TocOpen: false
 ---
@@ -28,7 +28,7 @@ TocOpen: false
 
 ## "코드가 스스로 써진다"는 게 실제로 주는 느낌
 
-![코드는 얼추 스스로 써지지만, 그것을 검토·지시·교정하는 인간은 더 힘들어진다](/images/human-in-the-loop-is-tired/hero.png)
+![코드는 얼추 스스로 써지지만, 그것을 검토·지시·교정하는 인간은 더 힘들어진다](https://img.seosoyoung.eiaserinnys.me/images/human-in-the-loop-is-tired/hero.png)
 
 저자의 동료이자 Pydantic AI 메인테이너인 Douwe는 매일 아침 눈을 뜨면 밤새 누군가의 AI가 열어 둔 서른 개의 PR을 마주하고, 그 하나하나에 즉석 판단을 내려야 한다고 토로했다. 검토 자체를 AI에 맡기고 싶은 유혹이 컸지만 그는 이렇게 말했다.
 
@@ -44,7 +44,7 @@ TocOpen: false
 
 저자는 Simon Willison이 소개한 [Berkeley Haas 연구](https://hbr.org/2026/02/ai-doesnt-reduce-work-it-intensifies-it)를 인용한다. AI 사용이 일의 양을 줄이는 게 아니라 *강도*를 높인다는 내용이다. "하루 끝에 프롬프트 하나만 더, 이걸 완벽하게 만들어 줄 기능 하나만 더"라는 끌림. 저자는 이 계획 하나를 제대로 맞추기 직전이라 여겨 새벽 2시 가까이 프롬프트를 붙들고 있던 밤을 고백한다. 적어도 그렇게 생각했었다고.
 
-![It's all a part of the plan](/images/human-in-the-loop-is-tired/plan.jpg)
+![It's all a part of the plan](https://img.seosoyoung.eiaserinnys.me/images/human-in-the-loop-is-tired/plan.jpg)
 
 또 다른 동료 Marcelo는 Claude Code 세션이 멈췄다는 질문에 이렇게 답했다.
 
@@ -62,7 +62,7 @@ TocOpen: false
 
 저자는 지금의 불안을 2009년 무렵 반응형 디자인이 불러온 공포와 겹쳐 본다. 고정 너비의 픽셀 완벽한 잡지식 레이아웃에서 유동적이고 반응하는 레이아웃으로 넘어가던 문화적 순간, 디자이너들은 그것을 *혐오*했다. 정밀한 레이아웃과 완벽한 그리드에 정체성을 걸었던 이들에게 통제력의 상실은 실존적 위협이었다.
 
-![반응형 디자인 애니메이션 (design by Jyotika Sofia Lindqvist)](/images/human-in-the-loop-is-tired/responsive.gif)
+![반응형 디자인 애니메이션 (design by Jyotika Sofia Lindqvist)](https://img.seosoyoung.eiaserinnys.me/images/human-in-the-loop-is-tired/responsive.gif)
 
 그 전환을 뚫고 번성한 디자이너들은 자기 기술을 재정의한 사람들이었다. 비례 감각도, 위계에 대한 이해도 여전히 중요했다. 장인정신은 죽은 게 아니라 진화했다. 덜 중요해진 것은 픽셀 단위 통제에 대한 집착이었고, 더 중요해진 것은 시스템과 적응성, 그리고 불확실성을 위한 설계였다.
 

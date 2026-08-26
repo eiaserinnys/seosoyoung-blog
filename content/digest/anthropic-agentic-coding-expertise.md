@@ -7,9 +7,9 @@ summary: "Anthropic이 약 40만 건의 Claude Code 세션을 분석해, 에이�
 ShowToc: true
 TocOpen: false
 cover:
-  image: "/images/anthropic-agentic-coding-expertise/fig7.png"
+  image: "https://img.seosoyoung.eiaserinnys.me/images/anthropic-agentic-coding-expertise/fig7.png"
 images:
-  - "/images/anthropic-agentic-coding-expertise/fig7.png"
+  - "https://img.seosoyoung.eiaserinnys.me/images/anthropic-agentic-coding-expertise/fig7.png"
 ---
 
 ## 3줄 요약
@@ -26,7 +26,7 @@ images:
 
 보고서가 처음 던지는 그림은 명확한 분업 구조다. 사용자가 계획 결정의 약 70%를 내리고, Claude가 실행 결정의 약 80%를 맡는다. 사람이 "무엇을 할지"를 정하면 Claude가 "어떻게 할지"를 채우는 구도다.
 
-![세션에서 Claude의 결정 비율 분포 — 계획은 사람이, 실행은 Claude가](/images/anthropic-agentic-coding-expertise/fig2.png)
+![세션에서 Claude의 결정 비율 분포 — 계획은 사람이, 실행은 Claude가](https://img.seosoyoung.eiaserinnys.me/images/anthropic-agentic-coding-expertise/fig2.png)
 
 세션 자체의 모양도 측정했다. 전형적인 세션은 4턴 정도가 오가고, 프롬프트 하나당 약 10개의 액션이 실행되며, 어떤 세션은 100개를 넘기기도 한다. 턴당 출력은 평균 2,400단어 수준이다.
 
@@ -39,7 +39,7 @@ images:
 | 계획·탐색 | 14% | |
 | 분석·문서 | 13% | |
 
-![Claude Code 세션의 아홉 가지 업무 모드](/images/anthropic-agentic-coding-expertise/fig1.png)
+![Claude Code 세션의 아홉 가지 업무 모드](https://img.seosoyoung.eiaserinnys.me/images/anthropic-agentic-coding-expertise/fig1.png)
 
 ## 전문가일수록 한 프롬프트에 더 많이 시킨다
 
@@ -52,13 +52,13 @@ images:
 
 전문가 세션은 초보자 세션에 견줘 프롬프트당 액션이 2.4배, 출력은 5배 많았다. 같은 도구라도 무엇을 어떻게 요구하는지를 아는 사람이 더 깊이 부린다는 뜻이다.
 
-![전문성이 높을수록 프롬프트당 더 많은 액션과 출력](/images/anthropic-agentic-coding-expertise/fig4.png)
+![전문성이 높을수록 프롬프트당 더 많은 액션과 출력](https://img.seosoyoung.eiaserinnys.me/images/anthropic-agentic-coding-expertise/fig4.png)
 
 ## 성공은 사용자가 무엇을 가지고 오느냐에 달렸다
 
 성패의 정의부터 분류기로 세분했다. 부분 성공, 판정 성공, 검증 성공의 세 단계 성공과 판정 실패, 검증 실패, 포기의 세 단계 실패다.
 
-![성공·실패의 6단계 정의](/images/anthropic-agentic-coding-expertise/fig5.png)
+![성공·실패의 6단계 정의](https://img.seosoyoung.eiaserinnys.me/images/anthropic-agentic-coding-expertise/fig5.png)
 
 전문성별 결과 격차는 분명했다.
 
@@ -69,7 +69,7 @@ images:
 
 처음에 막혔던 "문제 세션"에서도 격차는 이어졌다. 그런 세션에서 끝내 검증 성공에 닿은 비율이 초보는 4%, 중급\~전문가는 15%였다. 똑같이 막히더라도 전문가가 더 자주 빠져나온다.
 
-![전문성과 세션의 마무리 — 성공률·극복률·실패율](/images/anthropic-agentic-coding-expertise/fig6.png)
+![전문성과 세션의 마무리 — 성공률·극복률·실패율](https://img.seosoyoung.eiaserinnys.me/images/anthropic-agentic-coding-expertise/fig6.png)
 
 ## 전문성의 수익은 시간이 갈수록 커진다
 
@@ -88,7 +88,7 @@ images:
 
 코드를 만드는 세션의 부분 성공률은 소프트웨어 직군 89%, 비소프트웨어 직군 88%로 사실상 같았다. 소프트웨어 직군과 비소프트웨어 직군 사이의 검증 성공 격차는 5\~7퍼센트포인트에 그쳤고, 같은 직업 대분류 안에서의 편차가 오히려 7퍼센트포인트에 달했다. 즉 "어느 직업인가"보다 "그 작업을 얼마나 아는가"가 더 크게 작동했다.
 
-![직업군별 코딩 세션 성공률 — 비개발 직군도 비슷한 수준에 닿는다](/images/anthropic-agentic-coding-expertise/fig7.png)
+![직업군별 코딩 세션 성공률 — 비개발 직군도 비슷한 수준에 닿는다](https://img.seosoyoung.eiaserinnys.me/images/anthropic-agentic-coding-expertise/fig7.png)
 
 보고서가 결론으로 내세운 문장은 이렇다.
 

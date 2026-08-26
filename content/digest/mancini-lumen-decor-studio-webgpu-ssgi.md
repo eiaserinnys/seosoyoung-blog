@@ -7,9 +7,9 @@ summary: "Anderson Mancini가 만든 브라우저 인테리어 configurator. Thr
 ShowToc: true
 TocOpen: false
 cover:
-  image: "/images/mancini-lumen-decor-studio-webgpu-ssgi/hero-loft.jpg"
+  image: "https://img.seosoyoung.eiaserinnys.me/images/mancini-lumen-decor-studio-webgpu-ssgi/hero-loft.jpg"
 images:
-  - "/images/mancini-lumen-decor-studio-webgpu-ssgi/hero-loft.jpg"
+  - "https://img.seosoyoung.eiaserinnys.me/images/mancini-lumen-decor-studio-webgpu-ssgi/hero-loft.jpg"
 ---
 
 ## 3줄 요약
@@ -26,7 +26,7 @@ Unreal Engine 5의 Lumen을 브라우저에서 그대로 되풀이하겠다는 �
 
 지금까지 부동산 프리뷰의 표준 흐름은 오프라인 렌더 사진 또는 Unity/UE 빌드로 만든 데스크톱 앱이다. 전자는 인터랙션이 없고, 후자는 다운로드 장벽이 있다. Mancini는 브라우저 URL 한 줄로 열리는 실시간 configurator를 목표에 두고, 그 안에서 인테리어의 톤을 결정짓는 두 가지, 즉 태양광과 재질 색을 실시간으로 조작할 수 있게 만들었다. 표면에 색을 칠하면 그 색이 벽과 바닥으로 튕겨 씬 전체의 색조를 바꾼다. 오후 5시의 골든 아워에서 아침 7시의 창가로 시간대 슬라이더를 밀면 명암과 반사가 즉시 재계산된다.
 
-![Lumen Studio 2의 로프트 뷰. 오전 07:16, 유리 난간과 대리석 벽, 이층의 침실과 아래층의 소파와 계단. 창으로 들어온 아침 햇살이 대리석과 천장을 타고 굴절하며 각 면에서 색을 실어 나른다. 출처: Anderson Mancini, [Threejs Architecture Visualization - Lumen Decor Studio - WebGPU SSGI + PROBER](https://www.youtube.com/watch?v=cDYIdId3XSY)](/images/mancini-lumen-decor-studio-webgpu-ssgi/hero-loft.jpg)
+![Lumen Studio 2의 로프트 뷰. 오전 07:16, 유리 난간과 대리석 벽, 이층의 침실과 아래층의 소파와 계단. 창으로 들어온 아침 햇살이 대리석과 천장을 타고 굴절하며 각 면에서 색을 실어 나른다. 출처: Anderson Mancini, [Threejs Architecture Visualization - Lumen Decor Studio - WebGPU SSGI + PROBER](https://www.youtube.com/watch?v=cDYIdId3XSY)](https://img.seosoyoung.eiaserinnys.me/images/mancini-lumen-decor-studio-webgpu-ssgi/hero-loft.jpg)
 
 ## 스택: WebGPU, TSL, R3F
 
@@ -71,7 +71,7 @@ TSL은 Three.js가 도입한 노드 그래프식 셰이더 정의 계층이다. 
 
 이 반구 적분이 씬을 한 번 훑고 나오면 두 가지 출력이 남는다. 하나는 **SSGI AO** 채널이고, 하나는 **SSGI GI** 채널이다. AO는 얼마나 가려져 있는가, GI는 어떤 색이 들어왔는가를 담는다. 디버그 뷰에서 두 채널을 따로 확인할 수 있는 이유가 여기 있다.
 
-![SSGI 데모(자매 프로젝트 `ssgi-webgpu-demo`)의 창고 씬. 창으로 들어온 태양광이 바닥에 격자 그림자를 만들고, 그 반사가 황금 링 안쪽에 얹혀 있다. UI 하단에는 Time of Day와 Sun Rotation 슬라이더가 노출된다. 출처: Anderson Mancini, [Threejs SSGI TSL WebGPU - R3F Demo by Anderson Mancini](https://www.youtube.com/watch?v=hIRe9If5yxg)](/images/mancini-lumen-decor-studio-webgpu-ssgi/ssgi-warehouse.jpg)
+![SSGI 데모(자매 프로젝트 `ssgi-webgpu-demo`)의 창고 씬. 창으로 들어온 태양광이 바닥에 격자 그림자를 만들고, 그 반사가 황금 링 안쪽에 얹혀 있다. UI 하단에는 Time of Day와 Sun Rotation 슬라이더가 노출된다. 출처: Anderson Mancini, [Threejs SSGI TSL WebGPU - R3F Demo by Anderson Mancini](https://www.youtube.com/watch?v=hIRe9If5yxg)](https://img.seosoyoung.eiaserinnys.me/images/mancini-lumen-decor-studio-webgpu-ssgi/ssgi-warehouse.jpg)
 
 ## SSR: 거울 표면의 반사
 
@@ -110,7 +110,7 @@ configurator UI는 렌더 파이프라인의 여러 knob을 그대로 사용자�
 
 프로젝트 전체 상태(색 팔레트, 카메라, 시간)는 `lumen-studio-project`라는 localStorage 키에 저장된다. 스크린샷은 클라이언트 캔버스에서 `lumen-studio-{ISO타임스탬프}.png`로 다운로드된다. 서버 왕복 없이 브라우저 안에서 완결된다.
 
-![Lumen Studio 초판의 침실 뷰. 오후 07:15, 원형 액자와 디지털 시계, 침대 헤드보드에 얹힌 창밖 노을. 하단 UI에는 카메라 뷰 프리셋(OVERVIEW / BED VIEW / BEDSIDE VIEW / WINDOW VIEW)이 노출된다. 출처: Anderson Mancini, [Lumen Decor Studio - New 3D Configurator by Anderson Mancini](https://www.youtube.com/watch?v=vpfQOoAX0G0)](/images/mancini-lumen-decor-studio-webgpu-ssgi/configurator-bedroom.jpg)
+![Lumen Studio 초판의 침실 뷰. 오후 07:15, 원형 액자와 디지털 시계, 침대 헤드보드에 얹힌 창밖 노을. 하단 UI에는 카메라 뷰 프리셋(OVERVIEW / BED VIEW / BEDSIDE VIEW / WINDOW VIEW)이 노출된다. 출처: Anderson Mancini, [Lumen Decor Studio - New 3D Configurator by Anderson Mancini](https://www.youtube.com/watch?v=vpfQOoAX0G0)](https://img.seosoyoung.eiaserinnys.me/images/mancini-lumen-decor-studio-webgpu-ssgi/configurator-bedroom.jpg)
 
 ## 한계: 화면 밖에서 오는 빛은 없다
 

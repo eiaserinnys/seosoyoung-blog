@@ -7,9 +7,9 @@ summary: "코딩 에이전트를 덜 감독하면서도 믿으려면, 결과에 
 ShowToc: true
 TocOpen: false
 cover:
-  image: "/images/loop-engineering-fowler/harness-overview.png"
+  image: "https://img.seosoyoung.eiaserinnys.me/images/loop-engineering-fowler/harness-overview.png"
 images:
-  - "/images/loop-engineering-fowler/harness-overview.png"
+  - "https://img.seosoyoung.eiaserinnys.me/images/loop-engineering-fowler/harness-overview.png"
 ---
 
 ## 3줄 요약
@@ -26,13 +26,13 @@ images:
 
 코딩 에이전트에서 하네스의 일부는 이미 만들어져 들어와 있다 — 시스템 프롬프트, 코드 검색 메커니즘, 때로는 정교한 오케스트레이션까지. 하지만 코딩 에이전트는 *사용자인 우리* 에게도 자기 사례와 시스템에 맞춰 **바깥 하네스(outer harness)** 를 두를 많은 기능을 함께 준다. 그래서 같은 "하네스"라는 단어가 경계에 따라 다른 것을 뜻한다.
 
-![모델을 핵으로, 그 바깥에 코딩 에이전트 제작자의 하네스, 다시 그 바깥에 사용자의 하네스가 동심원으로 겹친 그림.](/images/loop-engineering-fowler/harness-bounded-contexts.png)
+![모델을 핵으로, 그 바깥에 코딩 에이전트 제작자의 하네스, 다시 그 바깥에 사용자의 하네스가 동심원으로 겹친 그림.](https://img.seosoyoung.eiaserinnys.me/images/loop-engineering-fowler/harness-bounded-contexts.png)
 
 저자도 인정하듯 이 비유는 어느 정도 늘어난다 — 누군가는 "하네스 위에 하네스를 두르는 게 말이 되느냐, 개 안쪽에 하네스를 채워 봤느냐"고 꼬집었다. 그래도 단어가 사용 국면을 항해하는 데 쓸모 있다면 받아들이겠다는 것이 저자의 입장이다.
 
 잘 만든 바깥 하네스는 두 가지를 동시에 노린다. 에이전트가 *처음부터* 제대로 해낼 확률을 높이고, 문제가 사람 눈에 닿기 전에 최대한 많이 스스로 교정하는 피드백 루프를 제공한다. 결과적으로 리뷰 부담을 줄이고 시스템 품질을 높이며, 덤으로 낭비되는 토큰까지 줄인다.
 
-![제목 "Harness engineering for coding agent users". 코딩 에이전트로 피드포워드되는 가이드(추론형: 원칙·규칙·참조 문서·하우투, 연산형: 언어 서버·CLI·스크립트·코드모드)와, 에이전트를 향하고 자기 교정 루프로 입력되는 피드백 센서(추론형: 리뷰 에이전트, 연산형: 정적 분석·로그·브라우저), 그리고 왼쪽에서 가이드와 센서를 모두 조종하는 사람.](/images/loop-engineering-fowler/harness-overview.png)
+![제목 "Harness engineering for coding agent users". 코딩 에이전트로 피드포워드되는 가이드(추론형: 원칙·규칙·참조 문서·하우투, 연산형: 언어 서버·CLI·스크립트·코드모드)와, 에이전트를 향하고 자기 교정 루프로 입력되는 피드백 센서(추론형: 리뷰 에이전트, 연산형: 정적 분석·로그·브라우저), 그리고 왼쪽에서 가이드와 센서를 모두 조종하는 사람.](https://img.seosoyoung.eiaserinnys.me/images/loop-engineering-fowler/harness-overview.png)
 
 ## 피드포워드와 피드백 — 가이드와 센서
 
@@ -72,13 +72,13 @@ images:
 
 [지속적 통합](https://martinfowler.com/articles/continuousIntegration.html)을 해 온 팀은 늘 같은 도전을 마주해 왔다. 테스트·점검·사람 리뷰를, 비용·속도·중요도에 따라 개발 타임라인 위에 어떻게 흩뿌릴 것인가. 더 일찍 찾을수록 고치는 값이 싸므로, 점검은 가능한 한 *프로덕션으로 가는 길의 왼쪽* 에 두고 싶다. 새로 등장한 추론형 센서를 포함해, 피드백 센서도 생애주기 위에 그에 맞게 분산되어야 한다.
 
-![변경의 생애주기에 흩어진 피드포워드와 피드백의 예. 피드포워드(LSP·architecture.md·테스트 방법 스킬·AGENTS.md·지식 도구 MCP·API 문서 스킬)가 에이전트의 첫 생성으로 들어가고, 첫 자기 교정 루프의 피드백 센서(코드 리뷰·eslint·semgrep·커버리지·dep-cruiser) 다음에 사람 리뷰가 더해지며, 통합 이후 파이프라인에서 앞선 센서를 모두 다시 돌리고 더 비싼 센서(아키텍처 리뷰·상세 리뷰·뮤테이션 테스트)를 추가한다.](/images/loop-engineering-fowler/harness-change-lifecycle-examples.png)
+![변경의 생애주기에 흩어진 피드포워드와 피드백의 예. 피드포워드(LSP·architecture.md·테스트 방법 스킬·AGENTS.md·지식 도구 MCP·API 문서 스킬)가 에이전트의 첫 생성으로 들어가고, 첫 자기 교정 루프의 피드백 센서(코드 리뷰·eslint·semgrep·커버리지·dep-cruiser) 다음에 사람 리뷰가 더해지며, 통합 이후 파이프라인에서 앞선 센서를 모두 다시 돌리고 더 비싼 센서(아키텍처 리뷰·상세 리뷰·뮤테이션 테스트)를 추가한다.](https://img.seosoyoung.eiaserinnys.me/images/loop-engineering-fowler/harness-change-lifecycle-examples.png)
 
 생애주기 분산은 두 갈래 질문으로 가른다. *무엇이 충분히 빨라서 통합 전, 심지어 커밋 전에도 돌릴 만한가* — 린터, 빠른 테스트 묶음, 기본 코드 리뷰 에이전트. *무엇이 더 비싸서 파이프라인에서 통합 후에만, 빠른 점검을 다시 돌리는 김에 함께 돌려야 하는가* — 뮤테이션 테스트, 큰 그림을 보는 폭넓은 코드 리뷰.
 
 여기에 더해 변경 생애주기 *바깥에서* 상시 도는 센서도 있다. 천천히 쌓이는 드리프트 — 죽은 코드, 테스트 커버리지의 질적 저하, 의존성 위험 — 를 코드베이스에 대고 계속 감시하는 것이다. 런타임 피드백도 마찬가지다. 저하되는 SLO를 에이전트가 지켜보며 개선을 제안하거나, AI 심판이 응답 품질을 상시 표집하고 로그 이상을 표시한다.
 
-![변경 통합 이후의 상시 피드백 센서 예. 코드베이스의 상시 드리프트 탐지(죽은 코드·커버리지 품질·dependabot)와 상시 런타임 피드백(지연·오류율·가용성 SLO가 에이전트 제안으로, 응답 품질 표집·로그 이상 AI 심판).](/images/loop-engineering-fowler/harness-continuous-feedback-examples.png)
+![변경 통합 이후의 상시 피드백 센서 예. 코드베이스의 상시 드리프트 탐지(죽은 코드·커버리지 품질·dependabot)와 상시 런타임 피드백(지연·오류율·가용성 SLO가 에이전트 제안으로, 응답 품질 표집·로그 이상 AI 심판).](https://img.seosoyoung.eiaserinnys.me/images/loop-engineering-fowler/harness-continuous-feedback-examples.png)
 
 ## 무엇을 다스리는가 — 규제의 세 범주
 
@@ -102,7 +102,7 @@ images:
 
 문제는 이 방식이 *AI가 생성한 테스트* 에 너무 많은 믿음을 건다는 데 있다 — 아직 충분히 좋지 않다. 일부 동료는 [approved fixtures](https://lexler.github.io/augmented-coding-patterns/patterns/approved-fixtures/) 패턴으로 좋은 결과를 보지만, 잘 맞는 영역과 아닌 영역이 갈려 선택적으로만 쓴다. 테스트 품질 문제의 전면적 답은 아니다. 그래서 행동의 하네스는 *감독과 수동 테스트를 줄일 만큼 신뢰를 끌어올릴* 방법을 아직 한참 더 찾아야 하는 영역으로 남는다.
 
-![가이드와 센서를 가로축에, 유지보수성·아키텍처 적합성·행동의 규제 차원을 세로축에 둔 하네스 개관. 행동 하네스의 예로 피드포워드 가이드인 명세, 추론형·연산형이 섞인 피드백 센서인 테스트 묶음, 그리고 주된 추가 센서로서 사람 리뷰와 수동 테스트가 표시된다.](/images/loop-engineering-fowler/harness-types.png)
+![가이드와 센서를 가로축에, 유지보수성·아키텍처 적합성·행동의 규제 차원을 세로축에 둔 하네스 개관. 행동 하네스의 예로 피드포워드 가이드인 명세, 추론형·연산형이 섞인 피드백 센서인 테스트 묶음, 그리고 주된 추가 센서로서 사람 리뷰와 수동 테스트가 표시된다.](https://img.seosoyoung.eiaserinnys.me/images/loop-engineering-fowler/harness-types.png)
 
 ## 하네스 가능성과 주변 행동유도성
 
@@ -114,7 +114,7 @@ images:
 
 대부분의 기업은 필요의 80%를 덮는 몇 가지 공통 서비스 위상(topology)을 가진다 — API로 데이터를 노출하는 비즈니스 서비스, 이벤트 처리 서비스, 데이터 대시보드. 성숙한 조직에서 이 위상들은 이미 서비스 템플릿으로 굳어 있다. 이것이 장차 *하네스 템플릿* 으로 진화할 수 있다. 어떤 위상의 구조·컨벤션·기술 스택에 에이전트를 묶는 가이드·센서 묶음 말이다. 팀은 *이미 어떤 하네스가 준비돼 있는가* 를 보고 기술 스택과 구조를 고르기 시작할지도 모른다.
 
-![위상(Node 데이터 대시보드, JVM CRUD 비즈니스 서비스, Golang 이벤트 처리기)의 더미. 맨 위 데이터 대시보드가 구조 정의와 기술 스택의 결합으로 상세히 펼쳐지며, 각 위상마다 인스턴스화할 수 있는 가이드·센서의 "하네스 템플릿"을 나타낸다.](/images/loop-engineering-fowler/harness-templates.png)
+![위상(Node 데이터 대시보드, JVM CRUD 비즈니스 서비스, Golang 이벤트 처리기)의 더미. 맨 위 데이터 대시보드가 구조 정의와 기술 스택의 결합으로 상세히 펼쳐지며, 각 위상마다 인스턴스화할 수 있는 가이드·센서의 "하네스 템플릿"을 나타낸다.](https://img.seosoyoung.eiaserinnys.me/images/loop-engineering-fowler/harness-templates.png)
 
 [애시비의 필요 다양성 법칙(Ashby's Law of Requisite Variety)](https://en.wikipedia.org/wiki/Variety_%28cybernetics%29#Law_of_requisite_variety)은 이 위상화를 뒷받침하는 또 하나의 논거다. 법칙은 말한다 — *조절기는 자기가 다스리는 시스템만큼의 다양성을 가져야 하며, 자기가 모델을 가진 것만 규제할 수 있다.* LLM 코딩 에이전트는 거의 무엇이든 만들어 낼 수 있지만, 하나의 위상에 헌신하면 그 공간이 좁혀져 포괄적 하네스를 짜는 일이 더 해볼 만해진다. *위상을 정한다는 것은 다양성을 줄이는 수* 다. 물론 서비스 템플릿이 겪던 문제 — 인스턴스화하는 순간부터 상류 개선과 어긋나기 시작하는 동기화·기여 문제 — 를 하네스 템플릿도 똑같이, 어쩌면 더 심하게 겪을 것이다. 비결정적 가이드·센서는 테스트하기 더 어렵기 때문이다.
 

@@ -7,9 +7,9 @@ summary: "dead reckoning·snapshot interpolation 계열의 오래된 네트워�
 ShowToc: true
 TocOpen: false
 cover:
-  image: "/images/khanin-npc-movement-segments-ue/segment-diagram.png"
+  image: "https://img.seosoyoung.eiaserinnys.me/images/khanin-npc-movement-segments-ue/segment-diagram.png"
 images:
-  - "/images/khanin-npc-movement-segments-ue/segment-diagram.png"
+  - "https://img.seosoyoung.eiaserinnys.me/images/khanin-npc-movement-segments-ue/segment-diagram.png"
 ---
 
 ## 3줄 요약
@@ -35,7 +35,7 @@ Khanin의 실험은 이 전제 자체를 뒤집는다. <em>서버가 NPC의 위�
 
 클라이언트는 segment를 받으면 목적지를 재구성하고, 정해진 프레임 수 동안 이동을 재생한다. 새 segment가 도착하면 식별자를 기준으로 이전 segment를 교체한다. 서버의 지속적 업데이트에 의존하지 않고도 연속성이 유지되는 이유다.
 
-![언리얼 엔진의 Network Profiler로 본 replication 트래픽. BubbleSerializer, ChangedElement, MotionFragment 단위로 packet이 나뉘어 분산된다.](/images/khanin-npc-movement-segments-ue/segment-diagram.png)
+![언리얼 엔진의 Network Profiler로 본 replication 트래픽. BubbleSerializer, ChangedElement, MotionFragment 단위로 packet이 나뉘어 분산된다.](https://img.seosoyoung.eiaserinnys.me/images/khanin-npc-movement-segments-ue/segment-diagram.png)
 
 ## 데이터 분배 — 매 tick 전체를 보내지 않는다
 

@@ -9,7 +9,7 @@ TocOpen: false
 sidenotes: true
 ---
 
-![image-blaster 데모](/images/image-blaster-skillset/cover.gif)
+![image-blaster 데모](https://img.seosoyoung.eiaserinnys.me/images/image-blaster-skillset/cover.gif)
 
 ## 3줄 요약
 

@@ -7,9 +7,9 @@ summary: "Cliprise 운영자가 2026년 2월 시점의 AI 이미지 생성 모�
 ShowToc: true
 TocOpen: false
 cover:
-  image: "/images/ai-image-generation-2026-cliprise/cover.jpeg"
+  image: "https://img.seosoyoung.eiaserinnys.me/images/ai-image-generation-2026-cliprise/cover.jpeg"
 images:
-  - "/images/ai-image-generation-2026-cliprise/cover.jpeg"
+  - "https://img.seosoyoung.eiaserinnys.me/images/ai-image-generation-2026-cliprise/cover.jpeg"
 ---
 
 ## 3줄 요약

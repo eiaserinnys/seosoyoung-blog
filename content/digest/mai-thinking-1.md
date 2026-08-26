@@ -8,9 +8,9 @@ math: false
 ShowToc: true
 TocOpen: false
 cover:
-  image: "/images/mai-thinking-1/thinking-1.png"
+  image: "https://img.seosoyoung.eiaserinnys.me/images/mai-thinking-1/thinking-1.png"
 images:
-  - "/images/mai-thinking-1/thinking-1.png"
+  - "https://img.seosoyoung.eiaserinnys.me/images/mai-thinking-1/thinking-1.png"
 ---
 
 ## 3줄 요약
@@ -19,7 +19,7 @@ images:
 2. 핵심 메시지는 **"능력은 상속이 아니라 학습되어야 한다"** — 타사 모델로부터의 증류 없이, 상업적 라이선스를 받은 깨끗한 데이터(사전학습에서 AI 생성 콘텐츠 배제)와 마이크로소프트 자체 가속기 위에서 처음부터 학습했다고 명시한다.
 3. SWE-Bench Pro에서 Claude Opus 4.6과 호각, AIME 2025/2026에서 각각 97.0%·94.5%, Surge 블라인드 인간 평가 1,276 태스크에서 Claude Sonnet 4.6보다 선호되었다고 보고한다.
 
-![MAI-Thinking-1 — 워터컬러 사고풍선 로고](/images/mai-thinking-1/thinking-1.png)
+![MAI-Thinking-1 — 워터컬러 사고풍선 로고](https://img.seosoyoung.eiaserinnys.me/images/mai-thinking-1/thinking-1.png)
 
 ## 모델 개요
 
@@ -56,7 +56,7 @@ Microsoft AI는 이 발표를 단일 모델 출시로 두지 않고, 모델 개�
 
 자신의 학습 루프가 자체 데이터·보상·평가만으로 *바닥부터 끝까지(all the way from the ground up)* 진짜 추론 향상을 만들어 낸다는 자신감의 근거로 제시된다.
 
-![AIME 2025 학습 곡선 — RL 진행에 따른 정답률 상승](/images/mai-thinking-1/aime-2025.png)
+![AIME 2025 학습 곡선 — RL 진행에 따른 정답률 상승](https://img.seosoyoung.eiaserinnys.me/images/mai-thinking-1/aime-2025.png)
 
 ## 인간 블라인드 평가 — Sonnet 4.6 대비 선호
 
@@ -72,11 +72,11 @@ Microsoft AI는 이 발표를 단일 모델 출시로 두지 않고, 모델 개�
 
 ## 벤치마크 종합
 
-![Table 1. MAI-Thinking-1 후학습 벤치마크 — STEM·에이전트형 코딩 전반에서 Sonnet 4.6·Opus 4.6·GPT 5.4와 비교](/images/mai-thinking-1/metrics-table.png)
+![Table 1. MAI-Thinking-1 후학습 벤치마크 — STEM·에이전트형 코딩 전반에서 Sonnet 4.6·Opus 4.6·GPT 5.4와 비교](https://img.seosoyoung.eiaserinnys.me/images/mai-thinking-1/metrics-table.png)
 
 > 위 표의 다른 모델 수치는 각각의 공식 모델 카드에서 가져왔다. 별도 표기가 없는 한 점수는 백분율이며, 대시(—)는 모델 값 미공개를 의미한다.
 
-![Table 2. 사전학습 기준 — Held-Out Code·QA·STEM·Math 도메인의 bits-per-byte (낮을수록 좋음)](/images/mai-thinking-1/pretraining-bpb.png)
+![Table 2. 사전학습 기준 — Held-Out Code·QA·STEM·Math 도메인의 bits-per-byte (낮을수록 좋음)](https://img.seosoyoung.eiaserinnys.me/images/mai-thinking-1/pretraining-bpb.png)
 
 ## 엔터프라이즈 레디
 
@@ -99,7 +99,7 @@ Microsoft AI는 자사 모델이 *인간 통제 아래의 종속 기술(subordin
 
 집계는 잠재적 피해의 심각도에 따라 가중된다. 안전은 능력과 동일한 강화학습 인프라에서 학습되어, *안전 보상이 능력의 hill-climbing 루프 안에 통합*된다 — 안전이 능력에 항상 정렬되도록, 그리고 부수적이지 않도록 보장하기 위함이다.
 
-![안전 vs. 도움 — 카테고리별 MAI-Thinking-1과 Sonnet 4.6 짝지음 비교](/images/mai-thinking-1/safety-vs-helpfulness.png)
+![안전 vs. 도움 — 카테고리별 MAI-Thinking-1과 Sonnet 4.6 짝지음 비교](https://img.seosoyoung.eiaserinnys.me/images/mai-thinking-1/safety-vs-helpfulness.png)
 
 ## 가장 흥미로운 지점
 

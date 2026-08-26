@@ -7,9 +7,9 @@ summary: "SignalFire CTO Ilya Kirnos가 소프트웨어 종말론의 4가지 논
 ShowToc: true
 TocOpen: false
 cover:
-  image: "/images/signalfire-software-evolving-not-dead/cover.webp"
+  image: "https://img.seosoyoung.eiaserinnys.me/images/signalfire-software-evolving-not-dead/cover.webp"
 images:
-  - "/images/signalfire-software-evolving-not-dead/cover.webp"
+  - "https://img.seosoyoung.eiaserinnys.me/images/signalfire-software-evolving-not-dead/cover.webp"
 ---
 
 ## 3줄 요약

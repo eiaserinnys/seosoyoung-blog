@@ -94,7 +94,7 @@ Anthropic이 2026년 2월 [전달한 초기 버그](https://blog.mozilla.org/en/
 
 곱셈 효과의 데이터로 다음 그래프를 첨부한다.
 
-![Firefox 보안 버그 수정 월별 추이 — 2025년 매월 20-30개에서 2026년 4월 423개로 급증](/images/mozilla-firefox-ai-hardening-pipeline/security-bug-fixes.png "Firefox 월별 보안 버그 수정 수: 2025년 20–30 범위에서 2026년 2–3월 60–70 → 4월 423개. 출처: Mozilla Hacks")
+![Firefox 보안 버그 수정 월별 추이 — 2025년 매월 20-30개에서 2026년 4월 423개로 급증](https://img.seosoyoung.eiaserinnys.me/images/mozilla-firefox-ai-hardening-pipeline/security-bug-fixes.png "Firefox 월별 보안 버그 수정 수: 2025년 20–30 범위에서 2026년 2–3월 60–70 → 4월 423개. 출처: Mozilla Hacks")
 
 수치 정리.
 

@@ -7,9 +7,9 @@ summary: "Take-Two CEO 스트라우스 젤닉이 The Game Business 인터뷰에�
 ShowToc: true
 TocOpen: false
 cover:
-  image: "/images/zelnick-take-two-ai-cannot-make-hits/01-zelnick-intro.jpg"
+  image: "https://img.seosoyoung.eiaserinnys.me/images/zelnick-take-two-ai-cannot-make-hits/01-zelnick-intro.jpg"
 images:
-  - "/images/zelnick-take-two-ai-cannot-make-hits/01-zelnick-intro.jpg"
+  - "https://img.seosoyoung.eiaserinnys.me/images/zelnick-take-two-ai-cannot-make-hits/01-zelnick-intro.jpg"
 sidenotes: true
 ---
 
@@ -21,7 +21,7 @@ sidenotes: true
 
 ## 인터뷰 배경
 
-![스트라우스 젤닉, 인터뷰 오프닝](/images/zelnick-take-two-ai-cannot-make-hits/01-zelnick-intro.jpg)
+![스트라우스 젤닉, 인터뷰 오프닝](https://img.seosoyoung.eiaserinnys.me/images/zelnick-take-two-ai-cannot-make-hits/01-zelnick-intro.jpg)
 
 2026년 1월, 구글이 *Project Genie*를 공개했다. 텍스트·이미지 프롬프트로 아주 짧은 GTA풍 인터랙티브 경험을 생성하는 도구였다. 발표 직후 Take-Two·닌텐도·로블록스의 주가가 하루 만에 빠졌다. 투자자들이 *"버튼 하나로 누구나 GTA를 만들 수 있는 세상"* 시나리오에 베팅한 것이다.
 
@@ -29,7 +29,7 @@ sidenotes: true
 
 ## 에셋과 히트는 같은 일이 아니다
 
-![인터뷰 시작 — Dring과 Zelnick](/images/zelnick-take-two-ai-cannot-make-hits/02-interview-start.jpg)
+![인터뷰 시작 — Dring과 Zelnick](https://img.seosoyoung.eiaserinnys.me/images/zelnick-take-two-ai-cannot-make-hits/02-interview-start.jpg)
 
 가장 자주 인용되는 단락은 다음이다.
 
@@ -59,7 +59,7 @@ The Game Business 인터뷰에서 같은 논점은 다음과 같이 풀린다.
 
 ## "Level the playing field"라는 환상
 
-![laughable notion](/images/zelnick-take-two-ai-cannot-make-hits/03-laughable-notion.jpg)
+![laughable notion](https://img.seosoyoung.eiaserinnys.me/images/zelnick-take-two-ai-cannot-make-hits/03-laughable-notion.jpg)
 
 드링은 정공법으로 묻는다. *AI가 게임 제작의 운동장을 평탄하게 만드는 거 아닌가?*
 
@@ -75,7 +75,7 @@ The Game Business 인터뷰에서 같은 논점은 다음과 같이 풀린다.
 
 ## 우려는 'AI 자체'가 아니라 '훈련 기회의 소실'
 
-![Dring 리액션](/images/zelnick-take-two-ai-cannot-make-hits/04-dring-laugh.jpg)
+![Dring 리액션](https://img.seosoyoung.eiaserinnys.me/images/zelnick-take-two-ai-cannot-make-hits/04-dring-laugh.jpg)
 
 흥미로운 대목은 드링이 자기 우려를 짧게 고백하는 부분이다. 그는 미디어 업계에 있다. 자기는 20년 경험으로 AI가 뽑은 인터뷰 질문을 보고 *"이건 좋은 질문이 아니다"* 라고 판별할 수 있다. 그러나 다음 세대는 그 판별을 *해본 적 없이* AI 도구를 쥐게 된다. 그 차이가 두렵다는 것이다.
 
@@ -87,7 +87,7 @@ The Game Business 인터뷰에서 같은 논점은 다음과 같이 풀린다.
 
 ## "Hits cure all ills" — CEO 조언
 
-![CEO 조언 섹션](/images/zelnick-take-two-ai-cannot-make-hits/05-ceo-advice.jpg)
+![CEO 조언 섹션](https://img.seosoyoung.eiaserinnys.me/images/zelnick-take-two-ai-cannot-make-hits/05-ceo-advice.jpg)
 
 인터뷰 말미에 드링은 게임사 CEO가 가져야 할 자질을 묻는다. 젤닉의 답은 그의 옛 20세기 폭스 사장 시절 일화로 돌아간다. 당시 그는 비즈니스 사이드를, 회장이었던 조 로스는 크리에이티브 사이드를 맡았다.
 

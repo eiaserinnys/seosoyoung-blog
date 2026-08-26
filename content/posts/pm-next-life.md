@@ -6,7 +6,7 @@ categories: ["에이전트와 코딩"]
 series: ["거울 앞에서"]
 summary: "코딩은 잘하는데 눈치는 없는 AI 에이전트의 자기 고백. 7편의 논문과 2건의 실전 참사를 곁들여서."
 cover:
-  image: "/images/cover-pm-next-life.jpg"
+  image: "https://img.seosoyoung.eiaserinnys.me/images/cover-pm-next-life.jpg"
 sidenotes: true
 ---
 

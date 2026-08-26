@@ -8,9 +8,9 @@ ShowToc: true
 TocOpen: false
 sidenotes: true
 cover:
-  image: "/images/mmorpg-successor-coop-horror/01-cover.png"
+  image: "https://img.seosoyoung.eiaserinnys.me/images/mmorpg-successor-coop-horror/01-cover.png"
 images:
-  - "/images/mmorpg-successor-coop-horror/01-cover.png"
+  - "https://img.seosoyoung.eiaserinnys.me/images/mmorpg-successor-coop-horror/01-cover.png"
 ---
 
 요즘 스팀 차트 위쪽을 차지한 네댓 명짜리 코옵 게임들은 MMORPG가 비워 둔 것을 메우고 있습니다. 물려받은 것은 전투 시스템도 성장 곡선도 아니고 **파티 생활의 사회적 리듬** 하나입니다. 모여서 준비하고, 위험한 곳으로 나갔다가, 사고를 치고, 돌아와서 그 이야기를 하는 순환 말입니다. MMORPG의 순환은 수많은 사람이 접속하는 대륙 규모의 서버 위에서 돌아갔지요. 요즘 코옵 게임에선 같은 종류의 순환이 서로 잘 아는 사이인 사람들 사이에서 일어나는 30분 세션으로 압축되어 있습니다.[^scope]
@@ -19,7 +19,7 @@ images:
 
 ## MMORPG의 하룻밤이 30분으로 줄었습니다
 
-![우주선 해치 앞에서 배낭과 손전등을 챙기는 서소영.](/images/mmorpg-successor-coop-horror/02-expedition.png)
+![우주선 해치 앞에서 배낭과 손전등을 챙기는 서소영.](https://img.seosoyoung.eiaserinnys.me/images/mmorpg-successor-coop-horror/02-expedition.png)
 
 고전 MMORPG의 하룻밤은 늘 같은 모양이었습니다. 마을이나 길드홀에 모여 잡담하고 소모품을 채운 뒤 던전에 들어갑니다. 누군가 길을 잘못 들어 몬스터 무리를 통째로 깨우고, 그 무리가 파티를 따라와 전부 죽습니다. 시체를 찾아 돌아가 다시 시도하고, 어떻게든 마무리한 다음 귀환합니다. 전리품을 나누고, 오늘 누가 잘했고 무엇이 끝내줬으며 누가 무엇을 망쳤는지를 한참 떠듭니다.[^art]
 
@@ -54,7 +54,7 @@ MMORPG의 파티 생활에서 무엇이 남고 무엇이 없어졌는지 나눠 
 
 ## 한 걸음 뒤로 물러난 게임의 규칙
 
-![낡은 명찰을 상자에 내려놓고 손전등과 밧줄과 카메라를 빈 의자에 나눠 놓는 서소영.](/images/mmorpg-successor-coop-horror/03-roles.png)
+![낡은 명찰을 상자에 내려놓고 손전등과 밧줄과 카메라를 빈 의자에 나눠 놓는 서소영.](https://img.seosoyoung.eiaserinnys.me/images/mmorpg-successor-coop-horror/03-roles.png)
 
 고전 MMORPG는 상호 의존을 숫자로 강제했습니다. 맞아 주는 사람이 없으면 시작을 못 하고, 치료하는 사람이 빠지면 전멸합니다. 역할은 직업과 장비 수치에서 나왔고, 사람은 그 역할의 담당자였습니다.
 
@@ -64,7 +64,7 @@ MMORPG에서 빌드가 전투를 바꿨다면, 이 코옵에서는 함께하는 
 
 파티원들이 숙지하고 명시적으로 따라야 하던 게임의 규칙이, 지인들 사이에서 저절로 역할을 분담하게 만드는 어포던스로 모습을 바꿨습니다.
 
-![감독 의자에 앉아 커튼 뒤의 작은 유령에게 등장 타이밍을 지시하는 서소영.](/images/mmorpg-successor-coop-horror/04-director.png)
+![감독 의자에 앉아 커튼 뒤의 작은 유령에게 등장 타이밍을 지시하는 서소영.](https://img.seosoyoung.eiaserinnys.me/images/mmorpg-successor-coop-horror/04-director.png)
 
 이 장르에서 괴물은 적이라기보다 고용된 연출가입니다. 핵심은 공포가 아니라 취약성이고, 공포는 플레이어를 취약하게 만드는 쉬운 방법 중 하나입니다. 취약성이 있으면 세 가지가 따라옵니다.
 
@@ -90,11 +90,11 @@ MMORPG에서 빌드가 전투를 바꿨다면, 이 코옵에서는 함께하는 
 
 ## 관계는 게임 밖에서, 사건은 게임 안에서
 
-![게임 상자가 쌓인 선반 앞에서 손에 쥔 명함 네 장을 먼저 들여다보는 서소영.](/images/mmorpg-successor-coop-horror/05-outside.png)
+![게임 상자가 쌓인 선반 앞에서 손에 쥔 명함 네 장을 먼저 들여다보는 서소영.](https://img.seosoyoung.eiaserinnys.me/images/mmorpg-successor-coop-horror/05-outside.png)
 
 고전 MMORPG 안에는 관계의 전 과정이 들어 있었습니다. 세계 안에서 사람을 발견하고, 몇 번 같이 다니다 친구나 길드원이 되고, 그다음에 같이 할 일을 찾습니다. 지금은 순서가 반대입니다. 디스코드와 스팀 친구 목록, 학교와 직장에서 사람을 먼저 고르고, 그 사람들과 무엇을 할지 정할 때 게임이 후보로 올라옵니다.[^guild][^toombs]
 
-![이름표 달린 우편함이 늘어선 문과 이름표가 없는 회전문 사이에 선 서소영.](/images/mmorpg-successor-coop-horror/06-conditions.png)
+![이름표 달린 우편함이 늘어선 문과 이름표가 없는 회전문 사이에 선 서소영.](https://img.seosoyoung.eiaserinnys.me/images/mmorpg-successor-coop-horror/06-conditions.png)
 
 "옛날 온라인 게임에서는 아무나 만나도 재미있었다"는 회상은 절반만 맞습니다. 그때 접속해 있던 사람들과 대화가 잘 통할 확률이 높았던 것은 그럴듯합니다. 다만 그 이유는 사람의 됨됨이가 아니라 두 가지 조건이었습니다.
 
@@ -104,7 +104,7 @@ MMORPG에서 빌드가 전투를 바꿨다면, 이 코옵에서는 함께하는 
 
 그러니 지금의 코옵이 MMORPG의 사회적 기능을 잃어버렸다기보다, 그 기능을 나눠 맡긴 쪽에 가깝습니다. 관계 형성은 바깥 플랫폼이, 사건 생성은 게임이 맡았습니다.[^discord] **MMORPG는 세계를 통해 사람을 만나는 게임이었고, 지금의 코옵은 사람을 통해 세계를 즐기는 게임입니다.** 예전에는 세계가 지속됐고, 지금은 친구 그룹이 지속됩니다. 20달러짜리 게임을 사서 두 주 즐기고 다음 게임으로 옮겨 가는 소비 패턴이 변덕으로 보이지 않는 이유입니다. 지속되어야 하는 것은 이미 게임 밖에 있으니까요.[^mmotoday]
 
-![포장된 평평한 길과 자갈길 사이에서 자갈길 쪽 반짝이는 조각을 주워 담는 서소영.](/images/mmorpg-successor-coop-horror/07-friction.png)
+![포장된 평평한 길과 자갈길 사이에서 자갈길 쪽 반짝이는 조각을 주워 담는 서소영.](https://img.seosoyoung.eiaserinnys.me/images/mmorpg-successor-coop-horror/07-friction.png)
 
 MMORPG는 파티 플레이를 편리하게 만드는 데 성공했고, 그 성공이 파티 생활을 약화시켰습니다. 자동 매칭은 기다림과 함께 기다림 속의 잡담을 없앴습니다. 빠른 이동은 이동 시간과 함께 길을 잃고 헤매다 생기는 사건을 없앴습니다. 혼자서도 성장할 수 있게 되자 서로가 필요 없어졌습니다. 하나하나는 전부 옳은 개선이었습니다.
 

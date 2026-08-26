@@ -7,9 +7,9 @@ summary: "GitHub Copilot이 토큰 기반 청구로 전환된 첫날 쏟아진 �
 ShowToc: true
 TocOpen: false
 cover:
-  image: "/images/ai-subscription-subsidy-end/monthly-quota-error.jpg"
+  image: "https://img.seosoyoung.eiaserinnys.me/images/ai-subscription-subsidy-end/monthly-quota-error.jpg"
 images:
-  - "/images/ai-subscription-subsidy-end/monthly-quota-error.jpg"
+  - "https://img.seosoyoung.eiaserinnys.me/images/ai-subscription-subsidy-end/monthly-quota-error.jpg"
 ---
 
 ## 3줄 요약
@@ -30,7 +30,7 @@ HedgieMarkets는 시장·매크로 코멘터리를 던지는 익명 핀테크 �
 - 조직 단위 공용 토큰 풀은 개별 사용량을 볼 수 없어, 한 사람의 무거운 프롬프트로 팀 전체가 끊긴다.
 - 사용자들이 Claude Code와 Codex로 이주 중이며, GitHub 커뮤니티 포럼은 불바다다.
 
-![Code-review 에이전트가 CAPIError 402 'You have exceeded your monthly quota' 로 끊긴 화면 — 사건의 시각적 정황. 출처: HedgieMarkets·O'Shaughnessy 트윗 첨부](/images/ai-subscription-subsidy-end/monthly-quota-error.jpg)
+![Code-review 에이전트가 CAPIError 402 'You have exceeded your monthly quota' 로 끊긴 화면 — 사건의 시각적 정황. 출처: HedgieMarkets·O'Shaughnessy 트윗 첨부](https://img.seosoyoung.eiaserinnys.me/images/ai-subscription-subsidy-end/monthly-quota-error.jpg)
 
 본인 견해 — "My Take":
 

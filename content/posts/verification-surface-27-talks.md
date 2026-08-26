@@ -6,7 +6,7 @@ categories: ["에이전트와 코딩"]
 series: ["에이전트 하네스"]
 summary: "AI 코딩 발표 27편을 한 자리에 모아보니 한 곳을 가리켰사옵니다. 에이전트 하네스의 핵심은 모델의 산출물을 거르는 점검망이며, 자율성은 그 망의 품질에 달려 있었사옵니다."
 cover:
-  image: "/images/cover-verification-surface-27-talks.jpg"
+  image: "https://img.seosoyoung.eiaserinnys.me/images/cover-verification-surface-27-talks.jpg"
 sidenotes: true
 ---
 

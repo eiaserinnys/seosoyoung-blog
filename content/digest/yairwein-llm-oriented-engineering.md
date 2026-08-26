@@ -7,9 +7,9 @@ summary: "Reindeer CTO Yair Wein이 LLM 기반 제품·개발 조직을 1년 반
 ShowToc: true
 TocOpen: false
 cover:
-  image: "/images/yairwein-llm-oriented-engineering/cover.jpg"
+  image: "https://img.seosoyoung.eiaserinnys.me/images/yairwein-llm-oriented-engineering/cover.jpg"
 images:
-  - "/images/yairwein-llm-oriented-engineering/cover.jpg"
+  - "https://img.seosoyoung.eiaserinnys.me/images/yairwein-llm-oriented-engineering/cover.jpg"
 ---
 
 ## 3줄 요약
@@ -18,7 +18,7 @@ images:
 2. 핵심 전제는 단순하다 — *인간 컨텍스트가 가장 희소한 자원*이고, *LLM이 만든 슬롭(slop)이 다음 LLM의 컨텍스트를 오염시킨다*. 이 두 가지가 새 시대 엔지니어링의 모든 디시플린을 강제한다.
 3. 결론은 load-bearing 코드 vs padded rooms 이분법, API에 "no"라고 말할 인간, 자동 enforcement 두 계층(린터 + LLM judge), PM의 별도 MVP 레포, 보상 함수로서의 E2E 테스트 + 깨끗한 컨텍스트의 LLM judge, 그리고 *깊은 지식보다 컨텍스트 스위칭이 더 중요한 미래 개발자*다.
 
-![Reindeer 일러스트 — 슬레지를 탄 개발자가 LLM 슬롭에 둘러싸여 PR description 종이가 날아다닌다. 양과 순록이 슬레지를 끈다.](/images/yairwein-llm-oriented-engineering/cover.jpg "원문 첨부 일러스트")
+![Reindeer 일러스트 — 슬레지를 탄 개발자가 LLM 슬롭에 둘러싸여 PR description 종이가 날아다닌다. 양과 순록이 슬레지를 끈다.](https://img.seosoyoung.eiaserinnys.me/images/yairwein-llm-oriented-engineering/cover.jpg "원문 첨부 일러스트")
 
 ## 인간 컨텍스트가 희소 자원이다
 

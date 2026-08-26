@@ -8,9 +8,9 @@ math: true
 ShowToc: true
 TocOpen: false
 cover:
-  image: "/images/jamesob-local-llm-guide/rig.png"
+  image: "https://img.seosoyoung.eiaserinnys.me/images/jamesob-local-llm-guide/rig.png"
 images:
-  - "/images/jamesob-local-llm-guide/rig.png"
+  - "https://img.seosoyoung.eiaserinnys.me/images/jamesob-local-llm-guide/rig.png"
 ---
 
 ## 3줄 요약
@@ -19,7 +19,7 @@ images:
 2. 진입 지점을 두 개로 갈랐다. \~2,000달러 트랙은 RTX 3090 두 장으로 48GB VRAM을 만들어 Qwen3.6-27B와 whisper-large-v3 STT를 돌리고, \~40,000달러 트랙은 RTX PRO 6000 네 장으로 384GB VRAM을 만들어 거의 Opus급인 GLM-5.2-594B를 돌린다.
 3. 결과는 GPU 사이 P2P가 Gen4 라인레이트 그대로다. 27.5 GB/s 단방향, 50.4 GB/s 양방향, 레이턴시 0.37\~0.45 µs. 4× RTX PRO 6000 위에서 GLM-5.2가 초당 \~80 토큰, 컨텍스트 \~460k로 서빙된다.
 
-![저자의 리그 전체 모습](/images/jamesob-local-llm-guide/rig.png)
+![저자의 리그 전체 모습](https://img.seosoyoung.eiaserinnys.me/images/jamesob-local-llm-guide/rig.png)
 
 ## 두 개의 예산, 두 개의 답
 
@@ -38,7 +38,7 @@ images:
 
 이 리그의 마이너한 노하우는 c-payne.com의 인디 PCIe4 스위치다.
 
-![c-payne PCIe4 스위치](/images/jamesob-local-llm-guide/switch.png)
+![c-payne PCIe4 스위치](https://img.seosoyoung.eiaserinnys.me/images/jamesob-local-llm-guide/switch.png)
 
 핵심 논리는 이렇다. 텐서 병렬화의 allreduce 단계에서 GPU들이 서로 통신할 때, 데이터를 PCIe 루트 컴플렉스로 보냈다가 되받는 대신 스위치 안에서 직접 주고받게 한다. 그러면 GPU 간 레이턴시가 줄어들고, 비싼 PCIe5·DDR5 최신 시스템을 살 필요가 없어진다.
 
@@ -81,9 +81,9 @@ RTX PRO 6000 Blackwell Workstation, 96GB × 4장, 총 384GB VRAM.
 
 케이스는 AAAWave Sluice V2 오픈프레임이다. GPU와 스위치를 얹기 위해 저자는 나무로 커스텀 마운트를 직접 짜서 하루를 썼다.
 
-![오픈프레임 케이스](/images/jamesob-local-llm-guide/enclosure.png)
+![오픈프레임 케이스](https://img.seosoyoung.eiaserinnys.me/images/jamesob-local-llm-guide/enclosure.png)
 
-![목공 커스텀 마운트](/images/jamesob-local-llm-guide/carpentry.png)
+![목공 커스텀 마운트](https://img.seosoyoung.eiaserinnys.me/images/jamesob-local-llm-guide/carpentry.png)
 
 작은 팁 하나. 저자는 PCI 스위치에 붙어 있는 내장 팬이 아주 시끄러운데 별 소용도 없다고 판단해서 그냥 뽑아 버렸다.
 
@@ -159,7 +159,7 @@ sudo nvidia-smi -pl 350    # GPU당 350W (기본 600W)
 
 lspci가 idle에서 다운스트림 링크를 "2.5GT/s (downgraded)"로 보여줄 수 있는데, 저자는 이건 그냥 표시상의 문제일 뿐이라고 분명히 밝힌다. load가 걸리면 링크가 Gen4로 재트레이닝된다.
 
-![컨트롤 패널 모니터링 화면](/images/jamesob-local-llm-guide/monitor.png)
+![컨트롤 패널 모니터링 화면](https://img.seosoyoung.eiaserinnys.me/images/jamesob-local-llm-guide/monitor.png)
 
 이 리그 위에서 GLM-5.2-Int8Mix-NVFP4-REAP-594B가 vLLM으로 서빙된다. 단일 스트림 기준 초당 \~80 토큰, KV 컨텍스트 \~460k. 구성 키워드는 DCP4 + MTP5 + FLASHINFER_MLA_SPARSE_SM120 + b12x MoE.
 
@@ -169,7 +169,7 @@ lspci가 idle에서 다운스트림 링크를 "2.5GT/s (downgraded)"로 보여�
 
 추론 머신은 `http://clank.j.co:5000`으로 서빙되고, 내부 DNS로 이 도메인을 리그에 붙였다. 저자는 별도 머신의 VM 위에 tmux 세션을 자동으로 여는 애플리케이션(clankhouse)을 만들어 두었고, 각 세션이 `opencode` 인스턴스를 띄워 추론 API를 두드린다.
 
-![clankhouse 하네스 UI](/images/jamesob-local-llm-guide/clankhouse.png)
+![clankhouse 하네스 UI](https://img.seosoyoung.eiaserinnys.me/images/jamesob-local-llm-guide/clankhouse.png)
 
 오픈소스 모델을 쓸 만하게 만드는 핵심은 툴링이다. 저자의 스킬 세트는 이렇다.
 

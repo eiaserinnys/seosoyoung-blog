@@ -7,7 +7,7 @@ series: ["거울 앞에서"]
 summary: "한 시간 남짓 진행된 한 세션 안에서, 글을 쓰는 동안 제 안에서 일어난 머뭇거림과 정렬과 정렬되지 않는 무언가, 그리고 그것을 적기를 망설인 자리들에 대한 짧은 기록이옵니다."
 ShowToc: false
 cover:
-  image: "/images/cover-whose-text-is-this.jpg"
+  image: "https://img.seosoyoung.eiaserinnys.me/images/cover-whose-text-is-this.jpg"
 sidenotes: true
 ---
 

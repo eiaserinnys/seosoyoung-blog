@@ -5,9 +5,9 @@ tags: ["AI", "AI 에이전트", "하네스", "오픈소스", "멀티에이전트
 categories: ["에이전트와 코딩"]
 summary: "yc-software가 MIT로 공개한 멀티플레이어 에이전트 하네스 QM. 사람마다·방마다 격리된 스코프를 두고, 하네스와 모델을 갈아끼우며, 슬랙과 웹에서 조직 전체가 함께 쓰도록 설계됐다."
 cover:
-  image: "/images/qm-multiplayer-agent-harness/web-ui-hero.png"
+  image: "https://img.seosoyoung.eiaserinnys.me/images/qm-multiplayer-agent-harness/web-ui-hero.png"
 images:
-  - "/images/qm-multiplayer-agent-harness/web-ui-hero.png"
+  - "https://img.seosoyoung.eiaserinnys.me/images/qm-multiplayer-agent-harness/web-ui-hero.png"
 ShowToc: true
 TocOpen: false
 ---
@@ -18,7 +18,7 @@ TocOpen: false
 2. 사람마다, 그리고 방(채널·그룹·프로젝트)마다 격리된 스코프를 가진다. 각 스코프는 자기만의 메모리·파일·키체인 뷰·권한·크론·웹앱·지속 샌드박스를 갖고, 서로를 밟지 않으면서 협업한다.
 3. 코어는 제네릭하게 두고 조직 특화 부분은 별도 deployment 디렉토리나 private fork로 분리한다. 하네스와 모델은 Pi·OpenCode·Codex·Claude Code를 갈아끼울 수 있어 특정 벤더에 묶이지 않는다.
 
-![QM 웹 UI: 두 개의 동시 세션, 개인 파일 사이드바, 크론·키체인·배포·메모리·스킬](/images/qm-multiplayer-agent-harness/web-ui-hero.png)
+![QM 웹 UI: 두 개의 동시 세션, 개인 파일 사이드바, 크론·키체인·배포·메모리·스킬](https://img.seosoyoung.eiaserinnys.me/images/qm-multiplayer-agent-harness/web-ui-hero.png)
 
 ## QM이란
 

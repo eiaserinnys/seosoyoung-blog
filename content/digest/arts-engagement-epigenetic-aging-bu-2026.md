@@ -7,9 +7,9 @@ summary: "UCL 연구진이 영국 대표 패널 3,354명의 DNA 메틸화 데이
 ShowToc: true
 TocOpen: false
 cover:
-  image: "/images/arts-engagement-epigenetic-aging-bu-2026/figure1-aceng-clocks.jpg"
+  image: "https://img.seosoyoung.eiaserinnys.me/images/arts-engagement-epigenetic-aging-bu-2026/figure1-aceng-clocks.jpg"
 images:
-  - "/images/arts-engagement-epigenetic-aging-bu-2026/figure1-aceng-clocks.jpg"
+  - "https://img.seosoyoung.eiaserinnys.me/images/arts-engagement-epigenetic-aging-bu-2026/figure1-aceng-clocks.jpg"
 sidenotes: true
 ---
 
@@ -70,7 +70,7 @@ UKHLS에 사전 구축된 시계 7종을 *전부* 결과 변수로 썼다 (outco
 
 ### ACEng — 예술·문화 참여
 
-![Figure 1. 예술·문화 참여 빈도(상)와 다양성(하)이 7가지 후성유전 시계에 미친 평균 처치 효과(95% CI). IPWRA, n=3,324.](/images/arts-engagement-epigenetic-aging-bu-2026/figure1-aceng-clocks.jpg)
+![Figure 1. 예술·문화 참여 빈도(상)와 다양성(하)이 7가지 후성유전 시계에 미친 평균 처치 효과(95% CI). IPWRA, n=3,324.](https://img.seosoyoung.eiaserinnys.me/images/arts-engagement-epigenetic-aging-bu-2026/figure1-aceng-clocks.jpg)
 *Figure 1 — ACEng 빈도(상)·다양성(하)의 평균 처치 효과와 95% CI. 1세대 시계(좌측 4종)에서는 모두 0 근처에 머물고, 우측의 PhenoAge·DunedinPoAm·DunedinPACE에서만 음(-) 방향으로 유의하게 벗어난다. (출처: Fancourt et al., 2026, medRxiv 프리프린트 v3)*[^medrxiv-2024]
 
 1세대 시계 4종(Hannum·Horvath2013·Horvath2018·Lin)에서는 빈도·다양성 어느 쪽도 유의한 효과가 없었다. 유의한 결과는 모두 2·3세대 시계에서 나왔다.
@@ -87,7 +87,7 @@ UKHLS에 사전 구축된 시계 7종을 *전부* 결과 변수로 썼다 (outco
 
 ### PA — 신체활동
 
-![Figure 2. 신체활동 빈도(상)·다양성(중)·활동성(하)이 7가지 후성유전 시계에 미친 평균 처치 효과(95% CI). IPWRA, n=3,324.](/images/arts-engagement-epigenetic-aging-bu-2026/figure2-pa-clocks.jpg)
+![Figure 2. 신체활동 빈도(상)·다양성(중)·활동성(하)이 7가지 후성유전 시계에 미친 평균 처치 효과(95% CI). IPWRA, n=3,324.](https://img.seosoyoung.eiaserinnys.me/images/arts-engagement-epigenetic-aging-bu-2026/figure2-pa-clocks.jpg)
 *Figure 2 — PA의 평균 처치 효과와 95% CI. ACEng와 마찬가지로 1세대 시계에서는 효과가 보이지 않고, PhenoAge·DunedinPoAm·DunedinPACE에서만 음(-) 방향으로 유의하게 벗어난다. (출처: Fancourt et al., 2026, medRxiv 프리프린트 v3)*
 
 PA도 같은 패턴이었다. 1·2세대 일부에서는 빈도·다양성의 효과가 없거나 최고 그룹에서만 보이고, **DunedinPACE에서 가장 일관된 효과**(빈도·다양성·활동성 모두 음의 방향)가 나타났다. 주 1회 PA는 DunedinPACE를 0.03 감소시켰고(p<0.001), 매우 높은 자가 활동성은 PhenoAge를 1.06년 낮췄다(p=0.001).

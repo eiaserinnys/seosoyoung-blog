@@ -7,9 +7,9 @@ summary: "Shopify가 사내 전용 호스팅 플랫폼 Quick을 공개했다. �
 ShowToc: true
 TocOpen: false
 cover:
-  image: "/images/shopify-quick-internal-hosting/arch.jpg"
+  image: "https://img.seosoyoung.eiaserinnys.me/images/shopify-quick-internal-hosting/arch.jpg"
 images:
-  - "/images/shopify-quick-internal-hosting/arch.jpg"
+  - "https://img.seosoyoung.eiaserinnys.me/images/shopify-quick-internal-hosting/arch.jpg"
 ---
 
 ## 3줄 요약
@@ -30,7 +30,7 @@ Quick은 이 문제에 대한 답이다. HTML과 에셋이 든 폴더를 올리�
 
 출발점은 "HTML 파일을 어딘가에 두고 서빙하는 가장 단순한 방법"이었다.
 
-![Quick 기본 아키텍처](/images/shopify-quick-internal-hosting/arch.jpg)
+![Quick 기본 아키텍처](https://img.seosoyoung.eiaserinnys.me/images/shopify-quick-internal-hosting/arch.jpg)
 
 - 모든 "사이트"는 Google Cloud Storage 버킷 안의 폴더 하나다.
 - 앞단에 경량 NGINX 서버를 두고, 와일드카드 설정으로 `mysite.quick.shopify.io`가 `mysite` 폴더에 바로 매핑된다.
@@ -63,11 +63,11 @@ const unsubscribe = posts.subscribe({
 
 영감의 원천은 초기 Firebase다. 스키마도 마이그레이션도 없이 읽고 쓰면 연결된 모든 클라이언트에 동기화되는 경험을 재현하려 했다. 처음에는 사이트마다 sqlite를 두는 방안을 실험했으나 gcsfuse와 궁합이 좋지 않아, CloudSQL 하나에 nodejs 서버를 앞에 두는 쪽으로 정리했다.
 
-![Quick DB 구조](/images/shopify-quick-internal-hosting/db.jpg)
+![Quick DB 구조](https://img.seosoyoung.eiaserinnys.me/images/shopify-quick-internal-hosting/db.jpg)
 
 다음으로 추가한 것이 AI다. API 키 없이 브라우저에서 바로 원하는 LLM을 호출할 수 있다. 키는 서버에 보관되고 Shopify AI 프록시로 전달된다.
 
-![Quick AI 프록시 구조](/images/shopify-quick-internal-hosting/ai.jpg)
+![Quick AI 프록시 구조](https://img.seosoyoung.eiaserinnys.me/images/shopify-quick-internal-hosting/ai.jpg)
 
 ```javascript
 // 브라우저에서 바로 LLM 호출
@@ -83,7 +83,7 @@ const res = await quick.ai.chat([{ role: 'user', content: 'Summarize my tasks' }
 - 웹소켓
 - 신원 조회 (IAP 정보 기반: 이름, 직함, 팀, 슬랙 핸들)
 
-![Quick 전체 아키텍처](/images/shopify-quick-internal-hosting/full-arch.jpg)
+![Quick 전체 아키텍처](https://img.seosoyoung.eiaserinnys.me/images/shopify-quick-internal-hosting/full-arch.jpg)
 
 저자는 이 몇 개의 빌딩 블록만으로 "인터넷 전체를 재창조할 수 있을 것 같은 기분"이라고 쓴다. 인증 없이 공개 인터넷에 노출했다면 운영팀이 잠을 못 잘 구성이지만, Quick 사이트는 Shopify 내부에서만 접근 가능하므로 제로 설정 클라이언트 API라는 사치를 부릴 수 있었다.
 
@@ -97,7 +97,7 @@ Quick API 문서는 존재하지만 누가 읽어본 적이 있는지 저자도 
 
 2025년 12월부터 성장이 급격해졌다.
 
-![Quick 사이트 누적 생성 추이](/images/shopify-quick-internal-hosting/quicksites-total.jpg)
+![Quick 사이트 누적 생성 추이](https://img.seosoyoung.eiaserinnys.me/images/shopify-quick-internal-hosting/quicksites-total.jpg)
 
 쓰임새는 프로토타입, 대시보드, 개발 도구, 프레젠테이션까지 넓어졌다. 원문에 실린 사례 몇 가지:
 
@@ -117,7 +117,7 @@ Quick API 문서는 존재하지만 누가 읽어본 적이 있는지 저자도 
 
 권한 관리나 사이트 관리 기능은 없다. 모든 Quick 사이트는 전 직원에게 열려 있고, "사이트 소유자"라는 개념조차 없다. 사이트를 업데이트하고 싶으면 새 파일로 덮어쓰면 된다. 서브도메인을 차지하고 싶어도 덮어쓰면 된다.
 
-![덮어쓰기가 곧 관리 모델](/images/shopify-quick-internal-hosting/overwrite.jpg)
+![덮어쓰기가 곧 관리 모델](https://img.seosoyoung.eiaserinnys.me/images/shopify-quick-internal-hosting/overwrite.jpg)
 
 매일 새 기능 요청이 들어온다. 커스텀 백엔드, 크론 잡. 운영진은 거절을 잘하게 됐다고 한다. 몇 분이면 새 기능을 바이브코딩할 수 있는 시대라 거절이 더 어렵지만, **제약이 곧 핵심**이라는 입장이다. 작고 고정된 기능 집합이 Quick을 쓰기 쉽고 유지하기 쉽게 만들며, 사람들을 더 창의적으로 만든다. 기능 요청 X를 들고 오는 사람에게 기존 조각들로 이미 가능하다는 것을 보여주면, 대부분 조금 놀라며 돌아간다고 한다.
 

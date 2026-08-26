@@ -65,7 +65,7 @@ GitClear는 2020년부터 자체 분류 엔진으로 약 10억 라인의 코드 
 
 저자는 *2024년 1월에 자기들이 예측한 11.6% Copy/Paste보다 실측이 6% 더 빠르게 자랐다*는 점을 본문 첫머리에서 짚는다. 방향은 맞췄으되 속도는 과소평가하였다는 자각이다.
 
-![연도별 코드 연산 분포 (2020\~2025 예측 포함). Added는 꾸준히 상승, Moved는 가파르게 하락, Churn은 2022년 이후 가속.](/images/gitclear-ai-code-quality-2025/fig03-code-operations-by-year.png)
+![연도별 코드 연산 분포 (2020\~2025 예측 포함). Added는 꾸준히 상승, Moved는 가파르게 하락, Churn은 2022년 이후 가속.](https://img.seosoyoung.eiaserinnys.me/images/gitclear-ai-code-quality-2025/fig03-code-operations-by-year.png)
 *연도별 코드 연산 분포. 노란 영역은 2025 예측 구간.*
 
 ## "Moved" 코드의 멸종 위기
@@ -78,14 +78,14 @@ GitClear는 *Moved* 연산의 급락을 본 보고서의 가장 심각한 신호
 
 또한 저자는 자기 가설을 반증할 수 있는 가장 자연스러운 대안 가설을 미리 처리한다 — *재택근무로 협업이 줄어 코드 재사용이 줄었다*는 식의 설명이다. 그러나 2024년에는 재택 의무 해제(back-to-office)가 광범위하게 진행되었고, 그 해에 Moved는 16.9%에서 9.5%로 *44%* 더 떨어졌다. "같은 방에 있어도 reuse는 줄어드는" 추세가 확인된 셈이다.
 
-![연도별 Moved 라인 비율 (좌)과 같은 시기 Copy/Paste 비율 (우, 빨간색).](/images/gitclear-ai-code-quality-2025/fig02-moved-vs-copypaste-percent-yearly.png)
+![연도별 Moved 라인 비율 (좌)과 같은 시기 Copy/Paste 비율 (우, 빨간색).](https://img.seosoyoung.eiaserinnys.me/images/gitclear-ai-code-quality-2025/fig02-moved-vs-copypaste-percent-yearly.png)
 *Moved(파랑)는 25%대에서 9.5%대로 하강. Copy/Paste(빨강)는 8.3%대에서 12.3%대로 상승.*
 
 ## 2024 — Copy/Paste가 처음으로 Moved를 추월하다
 
 본 보고서가 강조하는 단일 사건이다. 2024년은 GitClear가 측정해 온 5년 가운데 *Copy/Pasted 라인이 Moved 라인을 추월한 첫 해*다.
 
-![2023→2024년 Moved와 Copy/Pasted의 교차. 2023년 Moved 15.88% → 2024년 9.47%, 2023년 Copy/Pasted 10.64% → 2024년 12.32%.](/images/gitclear-ai-code-quality-2025/fig04-moved-vs-copypasted-crossover-2024.png)
+![2023→2024년 Moved와 Copy/Pasted의 교차. 2023년 Moved 15.88% → 2024년 9.47%, 2023년 Copy/Pasted 10.64% → 2024년 12.32%.](https://img.seosoyoung.eiaserinnys.me/images/gitclear-ai-code-quality-2025/fig04-moved-vs-copypasted-crossover-2024.png)
 *추월의 한 장면. 2024년에 두 곡선이 교차한다.*
 
 저자의 진단은 단호하다.
@@ -120,7 +120,7 @@ GitClear는 *중복이 곧 버그를 부른다*는 직관에 학술적 근거를
 - 3,113쌍의 *공동 변경된 클론*을 분석한 결과, *57.1%가 버그에 관여*
 - 34개 DL 프로젝트 중 *28개(82.4%)*에서 공동 변경된 클론이 버그에 관여
 
-![Mo·Zhang(2023) Figure 14: Type 1·2·3 클론이 같은 파일/같은 폴더/다른 폴더에 어떻게 분포하는지.](/images/gitclear-ai-code-quality-2025/fig10-mo-zhang-clone-types.png)
+![Mo·Zhang(2023) Figure 14: Type 1·2·3 클론이 같은 파일/같은 폴더/다른 폴더에 어떻게 분포하는지.](https://img.seosoyoung.eiaserinnys.me/images/gitclear-ai-code-quality-2025/fig10-mo-zhang-clone-types.png)
 *Type 1(완전 동일)은 다른 폴더에 압도적으로 많고(83.9%), Type 2·3(이름·일부 변형)은 같은 파일/폴더/다른 폴더에 비교적 고르게 분포한다.*
 
 GitClear의 인용 의도는 분명하다. 코드 중복은 단순한 스타일 위반이 아니라 *결함률 베이스라인을 끌어올리는 메커니즘*이며, 2022년 이후 관측된 결함률 상승의 일부를 직접 설명한다.
@@ -132,7 +132,7 @@ GitClear의 인용 의도는 분명하다. 코드 중복은 단순한 스타일 
 - AI 채택률 *25% 증가* → Delivery Stability *7.2% 감소*
 - 같은 자극 → Delivery Throughput *1.5% 감소*
 
-![Google DORA 2024 Figure 10: AI 채택 25% 증가 시 Delivery Throughput과 Stability의 추정 변화.](/images/gitclear-ai-code-quality-2025/fig05-dora-ai-adoption-25pct.png)
+![Google DORA 2024 Figure 10: AI 채택 25% 증가 시 Delivery Throughput과 Stability의 추정 변화.](https://img.seosoyoung.eiaserinnys.me/images/gitclear-ai-code-quality-2025/fig05-dora-ai-adoption-25pct.png)
 *89% 신뢰 구간 막대. 두 지표 모두 감소 방향으로만 분포한다.*
 
 Google 측의 표현은 다음과 같다.
@@ -141,14 +141,14 @@ Google 측의 표현은 다음과 같다.
 
 흥미로운 부분은 *인지와 측정의 어긋남*이다. 같은 설문에서 개발자들은 AI 덕에 생산성이 "약간"·"보통"·"매우" 올랐다고 응답하였다(긍정 응답이 압도적). 그러나 *AI 생성 코드를 신뢰하는가* 항목에서는 중앙값이 "Somewhat"에 머물렀다.
 
-![Google DORA 2024 Figure 5: AI 생성 코드에 대한 신뢰 분포. "Somewhat"이 가장 많고 "A great deal"은 가장 적다.](/images/gitclear-ai-code-quality-2025/fig09-dora-trust-in-ai-code.png)
+![Google DORA 2024 Figure 5: AI 생성 코드에 대한 신뢰 분포. "Somewhat"이 가장 많고 "A great deal"은 가장 적다.](https://img.seosoyoung.eiaserinnys.me/images/gitclear-ai-code-quality-2025/fig09-dora-trust-in-ai-code.png)
 *"매우 신뢰" 응답이 가장 적고, "그럭저럭"이 정점.*
 
 GitClear는 이 인지·측정 어긋남을 다음과 같이 화해시킨다.
 
 > 개발자들이 *리팩토링*을 *클로닝*으로 바꾸는 비율이 우리가 관측한 정도라면, 그 결과는 "더 많은 코드(가난한 자의 생산성)"가 "증가하는 유지보수 부담"과 묶여서 나오는 것이다 — 이 부담이 일부는 결함률 상승으로 표현된다.
 
-![DORA 2024 Figure 4: AI에 의한 생산성 변화 인식. "약간 증가" 응답이 가장 많고, 부정 응답은 합쳐도 적다.](/images/gitclear-ai-code-quality-2025/fig06-dora-productivity-perceptions.png)
+![DORA 2024 Figure 4: AI에 의한 생산성 변화 인식. "약간 증가" 응답이 가장 많고, 부정 응답은 합쳐도 적다.](https://img.seosoyoung.eiaserinnys.me/images/gitclear-ai-code-quality-2025/fig06-dora-productivity-perceptions.png)
 *개발자 본인의 인식 측에서는 AI가 "도움이 된다"가 압도적이다.*
 
 ## 코드의 *나이*도 변하였다
@@ -165,12 +165,12 @@ GitClear는 이 인지·측정 어긋남을 다음과 같이 화해시킨다.
 
 2024년에 수정된 라인 중 *80%가 작성된 지 1개월 이내*이고, 1\~2년 된 라인을 손보는 비율은 6.2%에서 2.6%로 *반 이상* 줄었다.
 
-![연도별로 *작성된 지 1개월 미만*의 코드를 수정하는 비율. 2024년에 가파른 상승.](/images/gitclear-ai-code-quality-2025/fig07-age-of-revised-code.png)
+![연도별로 *작성된 지 1개월 미만*의 코드를 수정하는 비율. 2024년에 가파른 상승.](https://img.seosoyoung.eiaserinnys.me/images/gitclear-ai-code-quality-2025/fig07-age-of-revised-code.png)
 *4년간 67\~71% 사이에서 안정적이던 비율이 2024년에 79.2%로 도약한다.*
 
 이어서 *새로 작성된 라인이 2주 또는 4주 안에 다시 수정되는 비율*(churn)도 2021년 베이스라인 대비 2024년에 *20\~25%* 증가하였다.
 
-![새로 작성된 코드 중 2주·4주 안에 churn된 비율. 2024년 두 지표 모두 5년래 최고치.](/images/gitclear-ai-code-quality-2025/fig08-churn-percent-of-new-code.png)
+![새로 작성된 코드 중 2주·4주 안에 churn된 비율. 2024년 두 지표 모두 5년래 최고치.](https://img.seosoyoung.eiaserinnys.me/images/gitclear-ai-code-quality-2025/fig08-churn-percent-of-new-code.png)
 *다듬는 코드의 손길이 *최근 코드*에 몰리는 동시에, *새로 쓴 코드*가 더 자주 다시 수정된다.*
 
 이는 *기존 시스템을 다듬는 일*에서 *새로 만든 것을 다듬는 일*로 노력의 무게중심이 이동했음을 시사한다. 저자의 표현으로는 *모든 새 기능을 add 연산으로만 구현하면, 어떤 함수가 호출의 정본인지 판단하기가 점점 어려워지고, 신입을 받기가 점점 비싸진다.*

@@ -7,9 +7,9 @@ summary: "에이전트에게 직접 프롬프트하는 대신 에이전트를 �
 ShowToc: true
 TocOpen: false
 cover:
-  image: "/images/loop-engineering-firecrawl/loop-engineering.webp"
+  image: "https://img.seosoyoung.eiaserinnys.me/images/loop-engineering-firecrawl/loop-engineering.webp"
 images:
-  - "/images/loop-engineering-firecrawl/loop-engineering.webp"
+  - "https://img.seosoyoung.eiaserinnys.me/images/loop-engineering-firecrawl/loop-engineering.webp"
 ---
 
 ## 3줄 요약
@@ -20,7 +20,7 @@ images:
 
 이 글은 ["루프 엔지니어링" 연재](/tags/루프-엔지니어링/)의 두 번째 편이다. [첫 편(Addy Osmani의 원형 정의)](/digest/loop-engineering-osmani/)이 개념을 세운 글이라면, 이번 Firecrawl 글은 같은 개념을 실무 부품과 비용 문제, 그리고 웹 데이터 피드백이라는 각도에서 다시 본다. 흥미롭게도 이 글은 Osmani의 층위 비유를 직접 빌려 쓴다.
 
-![Loop Engineering 히어로 이미지](/images/loop-engineering-firecrawl/loop-engineering.webp)
+![Loop Engineering 히어로 이미지](https://img.seosoyoung.eiaserinnys.me/images/loop-engineering-firecrawl/loop-engineering.webp)
 
 ## 발단 — 여섯 단어의 트윗
 
@@ -30,7 +30,7 @@ Peter Steinberger가 2026년 6월 7일에 올린 문장 하나가 그달 내내 
 
 이 트윗은 220만 조회를 넘겼고, 답글은 그게 무슨 뜻이냐를 두고 난투극이 됐다. 트위터 밖 반응도 똑같이 갈렸다. "루프 엔지니어링이 다음 AI 개발 유행어냐"를 묻는 레딧 스레드에서 개발자들은 "이건 진짜 다음 추상화 계층이다"와 "모자만 쓴 cron job이다" 사이를 오갔다.
 
-![루프 엔지니어링이 진짜 새 계층인지 이름만 바꾼 cron job인지를 두고 갈린 레딧 토론](/images/loop-engineering-firecrawl/loops-reddit.webp)
+![루프 엔지니어링이 진짜 새 계층인지 이름만 바꾼 cron job인지를 두고 갈린 레딧 토론](https://img.seosoyoung.eiaserinnys.me/images/loop-engineering-firecrawl/loops-reddit.webp)
 *루프 엔지니어링이 다음 추상화 계층인지, 이름만 바꾼 cron job인지를 두고 개발자들의 의견이 갈렸다. (출처: Firecrawl 블로그)*
 
 Claude Code를 만든 Boris Cherny는 이틀 앞서 무대에서 같은 생각을 가장 깔끔하게 정리했다.
@@ -97,7 +97,7 @@ Holmberg는 루프 모양을 고르는 가장 쓸모 있는 축으로 열림/닫
 
 이 주제의 어느 스레드든 들어가 보면 개발자들이 가장 먼저 꺼내는 걱정은 아키텍처가 아니라 토큰이다. 같은 레딧 스레드에서 가장 큰 목소리는 폭주하는 지출이다. 하룻밤에 조용히 수백 달러를 먹어 치운 루프의 영수증을 공유하며, 회사 경비 계정 없이 이걸 어떻게 감당하느냐고 묻는다.
 
-![루프 엔지니어링에서 개발자들이 가장 먼저 알고 싶어 하는 것은 토큰 비용 폭주를 어떻게 막느냐다](/images/loop-engineering-firecrawl/loops-token-reddit.webp)
+![루프 엔지니어링에서 개발자들이 가장 먼저 알고 싶어 하는 것은 토큰 비용 폭주를 어떻게 막느냐다](https://img.seosoyoung.eiaserinnys.me/images/loop-engineering-firecrawl/loops-token-reddit.webp)
 *루프에 관해 대부분의 개발자가 가장 먼저 알고 싶어 하는 것은 어떻게 짓느냐가 아니라 어떻게 계정을 비우지 않게 하느냐다. (출처: Firecrawl 블로그)*
 
 그 걱정은 옳고, 해법은 멋이 없다. 모든 루프는 단단한 가드와 함께 출하되거나 출하되지 않는다. Uber는 연간 AI 예산을 넉 달 만에 태운 뒤 Claude Code와 Cursor에 대해 1인당·도구당·월 1,500달러로 엔지니어를 제한했다. 비용이 코드를 쓰는 데서 코드를 쓰는 것을 돌리는 데로 옮겨 간 것이다. 올해의 실무 기록들은 같은 가드 셋으로 수렴한다.

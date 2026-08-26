@@ -7,9 +7,9 @@ summary: "Anthropic Institute가 외부 벤치마크와 자사 내부 데이터�
 ShowToc: true
 TocOpen: false
 cover:
-  image: "/images/anthropic-rsi-when-ai-builds-itself/fig1-code-merged.png"
+  image: "https://img.seosoyoung.eiaserinnys.me/images/anthropic-rsi-when-ai-builds-itself/fig1-code-merged.png"
 images:
-  - "/images/anthropic-rsi-when-ai-builds-itself/fig1-code-merged.png"
+  - "https://img.seosoyoung.eiaserinnys.me/images/anthropic-rsi-when-ai-builds-itself/fig1-code-merged.png"
 ---
 
 ## 3줄 요약
@@ -61,7 +61,7 @@ METR의 doubling 주기는 **기존 7개월에서 4개월로 좁혀졌다.** 추
 
 > 2026년 5월 기준, Anthropic 코드베이스에 머지된 코드의 80% 이상이 Claude 작성. (Anthropic CFO의 공개 발언으로는 90% 이상 추정.) Claude Code가 2025년 2월 리서치 프리뷰로 출시되기 전 이 비율은 한 자리 수에 머물렀다.
 
-![엔지니어 1인당 분기 머지 코드량 추이 — 2021 Q2부터 2026 Q2까지. 8개 모델 출시 시점이 표시되어 있다. 2025년과 2026년에 두 번의 변곡점이 보인다.](/images/anthropic-rsi-when-ai-builds-itself/fig1-code-merged.png)
+![엔지니어 1인당 분기 머지 코드량 추이 — 2021 Q2부터 2026 Q2까지. 8개 모델 출시 시점이 표시되어 있다. 2025년과 2026년에 두 번의 변곡점이 보인다.](https://img.seosoyoung.eiaserinnys.me/images/anthropic-rsi-when-ai-builds-itself/fig1-code-merged.png)
 
 엔지니어 1인당 일일 머지 코드량은 2021\~2024년 4년간 정체에 가까웠다. 2025년 Claude가 코드 *제안*을 넘어 *실행*까지 맡으면서 첫 변곡점, 2026년 장시간 자율 작업이 가능해지면서 두 번째 변곡점이 찍혔다. **2026년 2분기 평균 엔지니어는 2024년 대비 일일 8배 코드를 머지한다.**
 
@@ -75,7 +75,7 @@ METR의 doubling 주기는 **기존 7개월에서 4개월로 좁혀졌다.** 추
 
 "좋은 코드"의 두 가지 기준 — *작동하는가* + *다른 엔지니어가 이해·확장할 수 있는가* — 중 첫 번째는 명확해졌다. Anthropic 직원이 Claude의 작업을 도중에 *수정 / 재지시 / 인계*받는 빈도는 1년간 꾸준히 떨어졌고, 가장 복잡한 오픈엔디드 과제에서도 같은 추세다.
 
-![Claude Code 세션 성공률 — 난이도 4단계(trivial / routine / substantial / open-ended) × 모델 6종(Sonnet 4.5, Opus 4.5/4.6/4.7, Mythos Preview internal, Mythos Preview).](/images/anthropic-rsi-when-ai-builds-itself/fig2-task-completion.png)
+![Claude Code 세션 성공률 — 난이도 4단계(trivial / routine / substantial / open-ended) × 모델 6종(Sonnet 4.5, Opus 4.5/4.6/4.7, Mythos Preview internal, Mythos Preview).](https://img.seosoyoung.eiaserinnys.me/images/anthropic-rsi-when-ai-builds-itself/fig2-task-completion.png)
 
 > *읽는 법:* 세션 성공 여부는 Claude 심사자가 판정 — 사용자 과제에 *수정 요청 없이* 명확히 성공한 경우만 성공으로 친다. 워크로드 변화로 단기 변동이 있을 수 있다.
 
@@ -116,7 +116,7 @@ Anthropic은 모델을 출시할 때마다 같은 테스트를 한다 — 작은
 
 가장 미묘한 영역이 다음-스텝 판단(next-step judgement)이다. 자료는 2026년 1\~3월 Anthropic 연구자들이 Claude와 함께 오픈엔디드 조사 과제(트레이닝 크래시 원인, 모델의 벤치마크 부진 원인 등)를 다룬 *실제* Claude Code 세션을 골랐다. 각 세션에서 *연구자가 우회로를 탔던 순간* — 결국 다시 본 궤도로 돌아오긴 했지만 일단 옆길로 샌 그 지점 — 을 골라, 그 *직전까지*의 작업만 다양한 Claude 모델에게 보여주고 "다음 무엇을 할 것인가"를 물었다. 그러고는 *세션의 최종 결말까지 본* 별도의 Claude가 인간과 모델의 제안 중 어느 쪽이 나았는지 판정했다.
 
-![다음 스텝 판단 대인간 승률 — 9개 모델(Claude 3 Haiku, Sonnet 4, Sonnet 4.5, Haiku 4.5, Opus 4.5, Sonnet 4.6, Opus 4.6, Opus 4.7, Mythos Preview)과 실용 천장선.](/images/anthropic-rsi-when-ai-builds-itself/fig3-next-step.png)
+![다음 스텝 판단 대인간 승률 — 9개 모델(Claude 3 Haiku, Sonnet 4, Sonnet 4.5, Haiku 4.5, Opus 4.5, Sonnet 4.6, Opus 4.6, Opus 4.7, Mythos Preview)과 실용 천장선.](https://img.seosoyoung.eiaserinnys.me/images/anthropic-rsi-when-ai-builds-itself/fig3-next-step.png)
 
 > *읽는 법:* 실용 천장선은 *세션 결말까지 볼 수 있는* 모델이 만든 "이상적" 답안을 측정한 것.
 

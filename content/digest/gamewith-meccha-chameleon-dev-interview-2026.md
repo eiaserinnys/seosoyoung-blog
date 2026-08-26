@@ -7,9 +7,9 @@ summary: "2명·2개월·광고비 0엔·서버비 0엔으로 누계 700만 본�
 ShowToc: true
 TocOpen: false
 cover:
-  image: "/images/gamewith-meccha-chameleon-dev-interview-2026/cover.jpg"
+  image: "https://img.seosoyoung.eiaserinnys.me/images/gamewith-meccha-chameleon-dev-interview-2026/cover.jpg"
 images:
-  - "/images/gamewith-meccha-chameleon-dev-interview-2026/cover.jpg"
+  - "https://img.seosoyoung.eiaserinnys.me/images/gamewith-meccha-chameleon-dev-interview-2026/cover.jpg"
 ---
 
 ## 3줄 요약
@@ -18,7 +18,7 @@ images:
 2. 처음 잡았던 목표는 10만 본이었다. 트레일러 첫 공개에서 해외 인용이 5만 5천 좋아요를 받으며 글로벌 바즈가 시작됐다.
 3. 핵심 기술은 Unreal Engine과 무료 백엔드 EOS(Epic Online Services). 핵심 방법론은 MVP — "최소한의 시스템과 그래픽으로 전체를 먼저 만들고, 거기서 요소를 더해간다."
 
-![『메차 카멜레온』 키 비주얼](/images/gamewith-meccha-chameleon-dev-interview-2026/cover.jpg)
+![『메차 카멜레온』 키 비주얼](https://img.seosoyoung.eiaserinnys.me/images/gamewith-meccha-chameleon-dev-interview-2026/cover.jpg)
 
 ## 10만 본 목표가 700만 본이 되기까지
 
@@ -30,13 +30,13 @@ images:
 
 레모리온: 트레일러를 처음 공개했을 때다. 그 시점에 이미 해외 계정의 인용이 쭉쭉 올라가고 있었다.
 
-![트레일러 첫 공개 직후 해외 인용이 폭증했다](/images/gamewith-meccha-chameleon-dev-interview-2026/trailer-reaction.png)
+![트레일러 첫 공개 직후 해외 인용이 폭증했다](https://img.seosoyoung.eiaserinnys.me/images/gamewith-meccha-chameleon-dev-interview-2026/trailer-reaction.png)
 
 질문: Steam 리뷰를 봐도 해외 유저 비율이 매우 높은 인상이다. 이 글로벌한 확산을 어떻게 받아들이고 있나.
 
 레모리온: 국내에서만 화제가 될 거라고 생각했기 때문에, 솔직히 매우 놀랐다.
 
-![해외 리뷰가 압도적인 비중을 차지하고 있다](/images/gamewith-meccha-chameleon-dev-interview-2026/overseas-reviews.jpg)
+![해외 리뷰가 압도적인 비중을 차지하고 있다](https://img.seosoyoung.eiaserinnys.me/images/gamewith-meccha-chameleon-dev-interview-2026/overseas-reviews.jpg)
 
 ## "몸에 색을 칠해 숨바꼭질" — 발상의 출처
 
@@ -44,7 +44,7 @@ images:
 
 레모리온: 옛날 TV에서 자기 몸에 보디페인트를 해 배경과 동화되는 아티스트가 소개되는 걸 본 적이 있다. 그게 문득 떠올라서 영감을 받았다.
 
-![보디페인트 아티스트 영상에서 영감을 받았다](/images/gamewith-meccha-chameleon-dev-interview-2026/bodypaint-inspiration.jpg)
+![보디페인트 아티스트 영상에서 영감을 받았다](https://img.seosoyoung.eiaserinnys.me/images/gamewith-meccha-chameleon-dev-interview-2026/bodypaint-inspiration.jpg)
 
 질문: 레모리온의 작품은 유행을 끌어들이면서도 반드시 독자적인 비틀기가 들어가 있다는 느낌이다. 그런 아이디어는 어떤 순간에 떠오르는가.
 
@@ -54,7 +54,7 @@ images:
 
 『메차 카멜레온』의 개발 기간은 2개월이다. 전작에서 가져다 쓴 기능까지 포함하면 합쳐서 4\~5개월 정도다.
 
-![하가네이로의 개발 기간 관련 X 포스트](/images/gamewith-meccha-chameleon-dev-interview-2026/dev-period-post.jpg)
+![하가네이로의 개발 기간 관련 X 포스트](https://img.seosoyoung.eiaserinnys.me/images/gamewith-meccha-chameleon-dev-interview-2026/dev-period-post.jpg)
 
 질문: 꽤 짧은 주기로 업데이트를 거듭하고 있다. 그 비결은.
 
@@ -66,7 +66,7 @@ images:
 
 레모리온: 초기 맵 「숨바꼭질 저택(かくれんぼの館)」 제작이다. 숨바꼭질이 재미있어지도록 많은 모델을 1개월 만에 만든 것이 힘들었다.
 
-![세밀한 오브젝트가 많은 「숨바꼭질 저택」](/images/gamewith-meccha-chameleon-dev-interview-2026/kakurenbo-no-yakata.png)
+![세밀한 오브젝트가 많은 「숨바꼭질 저택」](https://img.seosoyoung.eiaserinnys.me/images/gamewith-meccha-chameleon-dev-interview-2026/kakurenbo-no-yakata.png)
 
 그 후 테스트 플레이에서 "맵을 더 늘리는 게 좋겠다"는 의견이 나와서, 발매 2주 전에 맵 세 개를 추가로 만든 것도 꽤 고됐다.
 
@@ -92,7 +92,7 @@ images:
 
 레모리온: UEFN에서 처음 히트한 작품 「氷鬼(빙귀)」에서 오니 캐릭터로 펭귄을 만들어 넣은 게 시작이다. 모델링 초보 시절에 만든 거라, 부리도 몸도 전부 구체로 되어 있다.
 
-![「氷鬼」에 사용된 초창기 펭귄 캐릭터 (출처: 레모리온의 note)](/images/gamewith-meccha-chameleon-dev-interview-2026/koorionii-penguin.png)
+![「氷鬼」에 사용된 초창기 펭귄 캐릭터 (출처: 레모리온의 note)](https://img.seosoyoung.eiaserinnys.me/images/gamewith-meccha-chameleon-dev-interview-2026/koorionii-penguin.png)
 
 질문: 앞으로의 업데이트나 차기작 구상이 있다면.
 

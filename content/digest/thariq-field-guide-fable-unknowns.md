@@ -7,9 +7,9 @@ summary: "Anthropic Claude Code 팀 Thariq이 Fable 5로 일하며 재발견한 
 ShowToc: true
 TocOpen: false
 cover:
-  image: "/images/thariq-field-guide-fable-unknowns/cover.jpg"
+  image: "https://img.seosoyoung.eiaserinnys.me/images/thariq-field-guide-fable-unknowns/cover.jpg"
 images:
-  - "/images/thariq-field-guide-fable-unknowns/cover.jpg"
+  - "https://img.seosoyoung.eiaserinnys.me/images/thariq-field-guide-fable-unknowns/cover.jpg"
 ---
 
 ## 3줄 요약
@@ -18,7 +18,7 @@ images:
 2. Fable은 작업 품질의 병목이 모델이 아니라 "내가 unknown을 얼마나 명확하게 만드느냐"로 옮겨간 최초의 모델이다. Rumsfeld 4분면(Known Knowns, Known Unknowns, Unknown Knowns, Unknown Unknowns)을 에이전트 코딩에 적용해, 구현 전, 중, 후로 unknown을 발견하는 반복 프로세스로 재정의한다.
 3. Blind Spot Pass, HTML 목업 브레인스토밍, 튀어보이는 결정을 위로 올린 실행 계획, 실행 노트, 인수인계 문서까지 5가지 레시피를 각각의 프롬프트 예시와 함께 제시하고, 총 11개의 인터랙티브 HTML 데모로 시각화했다.
 
-![A Field Guide to Fable — Finding Your Unknowns](/images/thariq-field-guide-fable-unknowns/cover.jpg)
+![A Field Guide to Fable — Finding Your Unknowns](https://img.seosoyoung.eiaserinnys.me/images/thariq-field-guide-fable-unknowns/cover.jpg)
 
 ## 지도는 영토가 아니다
 

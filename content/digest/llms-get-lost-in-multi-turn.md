@@ -15,7 +15,7 @@ sidenotes: true
 2. 모든 모델·모든 태스크에서 다중턴(underspecified) 성능이 평균 39% 저하된다. 분해해 보면 능력은 16% 정도만 떨어지지만, 신뢰성은 112% 폭증한다 — 즉 같은 문제를 10번 풀면 best와 worst 사이 50점 차이가 난다.
 3. <strong>한 번 잘못 가면 LLM은 회복하지 못한다.</strong> 저자들은 이 현상을 "Lost in Conversation"이라 부르고, 에이전트 프레임워크의 우회(RECAP·SNOWBALL)나 temperature=0 트릭으로는 메워지지 않는 구조적 한계임을 보인다.
 
-![Figure 1. 단일턴과 다중턴에서의 LLM 성능 차이](/images/llms-get-lost-in-multi-turn/fig1-overview.png)
+![Figure 1. 단일턴과 다중턴에서의 LLM 성능 차이](https://img.seosoyoung.eiaserinnys.me/images/llms-get-lost-in-multi-turn/fig1-overview.png)
 *Figure 1. 좌측은 단일턴 fully-specified 조건(높은 Aptitude·낮은 Unreliability), 우측은 다중턴 underspecified 조건(Aptitude -15%, Unreliability +112%). Laban et al., 2025.*
 
 ## 자료 개요
@@ -32,17 +32,17 @@ sidenotes: true
 
 핵심 장치는 <strong>sharded instruction</strong>이다. GSM8K·HumanEval·Spider 등 기존 단일턴 벤치마크의 instruction을 의미 단위 "shard"로 쪼개, 사용자 시뮬레이터가 매 턴마다 최대 한 shard씩 흘리도록 만든다. 최종적으로 전달되는 정보량은 원본과 동일하되, 전달 속도만 달라진다.
 
-![Figure 2. GSM8K instruction을 5개 shard로 분해한 예](/images/llms-get-lost-in-multi-turn/fig2-shard-example.png)
+![Figure 2. GSM8K instruction을 5개 shard로 분해한 예](https://img.seosoyoung.eiaserinnys.me/images/llms-get-lost-in-multi-turn/fig2-shard-example.png)
 *Figure 2. 좌측은 원본 instruction("Jay is making snowballs..."), 우측은 같은 정보를 다섯 조각으로 나눈 sharded instruction.*
 
 대화 시뮬레이션 구조는 다음과 같다.
 
-![Figure 3. Sharded Conversation Simulation Diagram](/images/llms-get-lost-in-multi-turn/fig3-simulation.png)
+![Figure 3. Sharded Conversation Simulation Diagram](https://img.seosoyoung.eiaserinnys.me/images/llms-get-lost-in-multi-turn/fig3-simulation.png)
 *Figure 3. 매 턴 user simulator가 shard를 흘리고, 평가 대상 LLM이 응답한 뒤, strategy classifier가 응답을 7개 카테고리(clarification·refusal·hedging·interrogation·discussion·missing·answer attempt)로 분류한다. answer attempt가 나오면 task evaluator가 채점한다.*
 
 시뮬레이션 유형은 다섯 가지를 비교한다.
 
-![Figure 4. 다섯 가지 시뮬레이션 유형](/images/llms-get-lost-in-multi-turn/fig4-types.png)
+![Figure 4. 다섯 가지 시뮬레이션 유형](https://img.seosoyoung.eiaserinnys.me/images/llms-get-lost-in-multi-turn/fig4-types.png)
 
 | 유형 | 설명 | 역할 |
 |---|---|---|
@@ -62,7 +62,7 @@ sidenotes: true
 
 이 결과는 GPT-4.1·Claude 3.7 Sonnet·Gemini 2.5 Pro 같은 최첨단 모델부터 Llama 3.1-8B·OLMo-2-13B 같은 소형 모델까지 예외 없이 관찰된다. 모델별로 30–40% 폭의 일관된 저하다.
 
-![Figure 6. 15개 LLM의 단일턴/다중턴 성능 분포](/images/llms-get-lost-in-multi-turn/fig6-results.png)
+![Figure 6. 15개 LLM의 단일턴/다중턴 성능 분포](https://img.seosoyoung.eiaserinnys.me/images/llms-get-lost-in-multi-turn/fig6-results.png)
 *Figure 6. (a) Aptitude와 Unreliability의 박스플롯 정의. (b) 15개 LLM 결과 — FULL 조건(상단)과 비교해 SHARDED 조건(하단)에서 모든 모델이 큰 폭으로 떨어지고 변동성이 폭증한다. (c) Gradual sharding 실험에서 shard 수가 1에서 2로만 늘어도 즉시 성능 저하가 발생한다.*
 
 성능 저하를 두 축으로 분해하면 그림이 더 명확해진다.

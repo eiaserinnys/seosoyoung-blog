@@ -5,9 +5,9 @@ tags: ["아키텍처", "분산 시스템", "캐시", "S3", "세션 관리"]
 categories: ["다이제스트"]
 summary: "Canva가 수억 사용자의 세션 폐기 조회를 초당 수십만 건 처리하는 게이트웨이 인메모리 캐시를 어떻게 다시 설계했는지 정리한 엔지니어링 블로그. 배포 때 MySQL로 몰리던 캐시 시딩 부하를, 12시간 윈도를 30분 청크로 자른 16바이트 이진 배열을 S3에 두는 방식으로 풀었다."
 cover:
-  image: "/images/canva-session-revocations-at-scale/download-process.png"
+  image: "https://img.seosoyoung.eiaserinnys.me/images/canva-session-revocations-at-scale/download-process.png"
 images:
-  - "/images/canva-session-revocations-at-scale/download-process.png"
+  - "https://img.seosoyoung.eiaserinnys.me/images/canva-session-revocations-at-scale/download-process.png"
 ShowToc: true
 TocOpen: false
 ---
@@ -26,7 +26,7 @@ Canva는 사용자 세션에 필요한 정보를 브라우저 쿠키에 담는�
 
 읽기 자체는 값쌌지만, 그 캐시를 채우는 일이 골칫거리가 됐다. 수백 개의 게이트웨이 파드가 시작할 때마다 저마다 100만 건이 넘는 폐기를 MySQL에서 당겨오니, 배포가 곧 데이터베이스로 몰리는 쇄도가 됐다. 읽기 리플리카를 잔뜩 붙여 임시로 눌러 둘 수는 있었지만, 더 나은 해법이 필요했다. 이왕이면 인메모리 캐시 크기까지 줄여 주는 쪽으로.
 
-![Canva의 기존 세션 폐기 아키텍처](/images/canva-session-revocations-at-scale/pre-existing-architecture.png)
+![Canva의 기존 세션 폐기 아키텍처](https://img.seosoyoung.eiaserinnys.me/images/canva-session-revocations-at-scale/pre-existing-architecture.png)
 
 ## 인메모리 캐시를 다시 설계하다
 
@@ -40,7 +40,7 @@ S3로 데이터를 캐싱하려면 폐기 레코드의 슬라이딩 윈도를 �
 
 ## 폐기 하나를 16바이트에 담다
 
-![폐기 하나의 이진 데이터 형식](/images/canva-session-revocations-at-scale/binary-format.png)
+![폐기 하나의 이진 데이터 형식](https://img.seosoyoung.eiaserinnys.me/images/canva-session-revocations-at-scale/binary-format.png)
 
 각 폐기에는 두 가지 결정적인 정보가 들어간다. 누구에게 적용되는가(프린시펄, principal이라 부른다), 그리고 어느 로그인 시각까지 적용되는가다(보통 특정 시각 이전에 시작된 모든 세션을 폐기한다). 약간의 비트 조작으로 이 둘을 16바이트에 담았고, 폐기 청크는 이 16바이트 원소들의 평평한 배열이 된다. 이 배열을 정렬해 두면 각 청크를 이진 탐색해 특정 프린시펄에 해당하는 폐기를 효율적으로 찾을 수 있다.
 
@@ -48,7 +48,7 @@ S3로 데이터를 캐싱하려면 폐기 레코드의 슬라이딩 윈도를 �
 
 실제로는 조금 더 복잡하다. 여러 종류의 폐기를 지원해야 하기 때문이다. 이를테면 사용자를 로그아웃시키지 않으면서 쿠키에 캐시된 일부 정보만 무효화하고 싶을 수도 있고, 한 사용자가 아니라 브랜드 전체를 겨냥하고 싶을 수도 있다. 이를 위해 몇 비트를 플래그로 남겨 두었다. 그래도 각 폐기를 프린시펄 기준으로 정렬하는 한, 한 평평한 배열에 여러 종류의 폐기를 함께 담을 수 있다.
 
-![폐기 S3 버킷의 데이터 구조](/images/canva-session-revocations-at-scale/bucket-format.png)
+![폐기 S3 버킷의 데이터 구조](https://img.seosoyoung.eiaserinnys.me/images/canva-session-revocations-at-scale/bucket-format.png)
 
 ## 청크를 최신으로 유지하기
 
@@ -58,7 +58,7 @@ S3로 데이터를 캐싱하려면 폐기 레코드의 슬라이딩 윈도를 �
 
 여기에 더해 ZooKeeper 리더 선출을 최적화로 썼다. 계속되는 충돌이 시스템에 부하를 더하는 것을 막기 위해서다. 리더 선출 덕에 워커 작업들이 서로 경쟁하는 일은 드물지만, 정확성을 여기에 의존할 수는 없다. 예컨대 한 노드가 쓰기 직전에 임의의 시간 동안 멈출 수 있다. 다시 깨어났을 때는 다른 노드가 새 리더가 되어 자기 변경을 이미 써 넣었을 수 있는데, PUT 조건이 없었다면 원래 노드가 깨어나며 그것을 덮어썼을 것이다.
 
-![워커 작업이 데이터베이스의 폐기를 S3로 옮기는 과정](/images/canva-session-revocations-at-scale/worker-sequence.png)
+![워커 작업이 데이터베이스의 폐기를 S3로 옮기는 과정](https://img.seosoyoung.eiaserinnys.me/images/canva-session-revocations-at-scale/worker-sequence.png)
 
 언뜻 이 방식은 확장되지 않을 것처럼 보인다. N개의 폐기로 청크를 만드는 데 O(N²) 시간이 드는데, 고정 크기 배치를 더할 때마다 청크 전체를 처리해야 하기 때문이다. 게다가 앞서 말한 갱신 유실 탓에 수평 확장도 쉽지 않다. 그런데 실제로는 배치마다 수백 건씩 처리하면, 최적화하지 않은 구현으로도 초당 2,000건이 넘는 쓰기 처리량이 나온다. 당분간 필요하리라 예상되는 양보다 많다.
 
@@ -70,7 +70,7 @@ S3로 데이터를 캐싱하려면 폐기 레코드의 슬라이딩 윈도를 �
 
 각 게이트웨이 파드가 시작할 때 당겨야 하는 무효화 건수 자체는 그대로다. 하지만 조밀한 이진 판을 S3에서 스트리밍하는 편이, 10억 행이 넘는 데이터를 MySQL에 요청하는 것보다 훨씬 빠르고 확장성이 좋다. 게이트웨이 하나로 보면 수십 메가바이트지만, 전체 플릿으로 보면 수십 기가바이트가 된다.
 
-![새 시스템에서 폐기가 흐르는 경로](/images/canva-session-revocations-at-scale/download-process.png)
+![새 시스템에서 폐기가 흐르는 경로](https://img.seosoyoung.eiaserinnys.me/images/canva-session-revocations-at-scale/download-process.png)
 
 ## 성과와 교훈
 

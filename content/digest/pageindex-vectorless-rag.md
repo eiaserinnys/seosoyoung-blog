@@ -21,7 +21,7 @@ sidenotes: true
 
 PageIndex는 이 간극을 LLM의 추론 능력으로 메운다. AlphaGo의 트리 탐색에서 영감을 받아, 문서를 계층적 인덱스로 변환하고 LLM이 그 인덱스를 **추론하며 내려가는** 방식으로 검색한다.
 
-![PageIndex의 Vectorless RAG 아키텍처. 문서를 트리 구조로 인덱싱한 뒤, LLM이 트리를 추론하며 관련 페이지를 찾는다.](/images/pageindex-vectorless-rag/vectorless-rag.png)
+![PageIndex의 Vectorless RAG 아키텍처. 문서를 트리 구조로 인덱싱한 뒤, LLM이 트리를 추론하며 관련 페이지를 찾는다.](https://img.seosoyoung.eiaserinnys.me/images/pageindex-vectorless-rag/vectorless-rag.png)
 
 ## 두 단계로 작동한다
 
@@ -53,7 +53,7 @@ PDF를 입력받으면 목차(Table of Contents)와 유사한 계층적 트리 �
 
 PageIndex 기반 시스템 Mafin 2.5가 금융 문서 QA 벤치마크 <strong>FinanceBench</strong>에서 98.7% 정확도를 달성했다. SEC 공시, 실적 보고서 등 복잡한 금융 문서에서 계층적 인덱싱과 추론 기반 검색이 벡터 RAG 대비 현저한 우위를 보였다.
 
-![FinanceBench 벤치마크 결과. PageIndex 기반 Mafin 2.5가 98.7%로 SOTA를 달성했다.](/images/pageindex-vectorless-rag/benchmark.png)
+![FinanceBench 벤치마크 결과. PageIndex 기반 Mafin 2.5가 98.7%로 SOTA를 달성했다.](https://img.seosoyoung.eiaserinnys.me/images/pageindex-vectorless-rag/benchmark.png)
 
 ## 코드 구조
 

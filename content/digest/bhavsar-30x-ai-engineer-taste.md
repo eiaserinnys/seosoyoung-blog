@@ -7,9 +7,9 @@ summary: "코드 생성이 범용재가 된 시대에 엔지니어의 가치를 
 ShowToc: true
 TocOpen: false
 cover:
-  image: "/images/bhavsar-30x-ai-engineer-taste/cover.jpg"
+  image: "https://img.seosoyoung.eiaserinnys.me/images/bhavsar-30x-ai-engineer-taste/cover.jpg"
 images:
-  - "/images/bhavsar-30x-ai-engineer-taste/cover.jpg"
+  - "https://img.seosoyoung.eiaserinnys.me/images/bhavsar-30x-ai-engineer-taste/cover.jpg"
 ---
 
 ## 3줄 요약
@@ -18,7 +18,7 @@ images:
 2. 테이스트를 "내부 평가 함수의 품질"로 정의하고, 인식(recognition), 나침반(compass), 비전(vision) 세 형태와 가치가 생성되는 다섯 구역으로 구조화한다.
 3. 막연한 "경험을 쌓아라"를 넘어, 90일 훈련 계획과 다섯 가지 실전 프로젝트, 커리어 포지셔닝 전략까지 제시한다.
 
-![글 커버 이미지](/images/bhavsar-30x-ai-engineer-taste/cover.jpg)
+![글 커버 이미지](https://img.seosoyoung.eiaserinnys.me/images/bhavsar-30x-ai-engineer-taste/cover.jpg)
 
 ## 세계는 바뀌었는데 엔지니어 대부분은 눈치채지 못했다
 

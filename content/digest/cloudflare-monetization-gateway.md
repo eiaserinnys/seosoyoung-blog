@@ -7,12 +7,12 @@ summary: "Cloudflare가 자사 뒤에 있는 모든 리소스(웹 페이지·데
 ShowToc: true
 TocOpen: false
 cover:
-  image: "/images/cloudflare-monetization-gateway/hero.png"
+  image: "https://img.seosoyoung.eiaserinnys.me/images/cloudflare-monetization-gateway/hero.png"
 images:
-  - "/images/cloudflare-monetization-gateway/hero.png"
+  - "https://img.seosoyoung.eiaserinnys.me/images/cloudflare-monetization-gateway/hero.png"
 ---
 
-![Cloudflare Monetization Gateway](/images/cloudflare-monetization-gateway/hero.png)
+![Cloudflare Monetization Gateway](https://img.seosoyoung.eiaserinnys.me/images/cloudflare-monetization-gateway/hero.png)
 
 ## 3줄 요약
 

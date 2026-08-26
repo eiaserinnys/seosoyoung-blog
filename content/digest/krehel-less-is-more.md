@@ -7,9 +7,9 @@ summary: "AI로 무엇이든 쉽게 추가할 수 있는 시대에, 무엇을 �
 ShowToc: true
 TocOpen: false
 cover:
-  image: "/images/krehel-less-is-more/tweet-diff.png"
+  image: "https://img.seosoyoung.eiaserinnys.me/images/krehel-less-is-more/tweet-diff.png"
 images:
-  - "/images/krehel-less-is-more/tweet-diff.png"
+  - "https://img.seosoyoung.eiaserinnys.me/images/krehel-less-is-more/tweet-diff.png"
 ---
 
 ## 3줄 요약
@@ -48,13 +48,13 @@ macOS에서 우클릭할 때 나오는 컨텍스트 메뉴를 생각해 보자. 
 
 같은 논리가 엔지니어링에도 적용된다. 누구나 많은 코드를 쓸 수 있게 된 지금, 엔지니어의 산출물을 코드 양으로 평가하던 시절은 지나갔다. 저자가 속한 Interfere에서는 최소한의 코드로 목적을 달성한 풀 리퀘스트를 축하한다.
 
-![+688 추가, −3,073 삭제를 보여주는 diff 통계. "이게 바로 리팩토링이 제대로 됐다는 신호"라는 동료의 트윗](/images/krehel-less-is-more/tweet-diff.png)
+![+688 추가, −3,073 삭제를 보여주는 diff 통계. "이게 바로 리팩토링이 제대로 됐다는 신호"라는 동료의 트윗](https://img.seosoyoung.eiaserinnys.me/images/krehel-less-is-more/tweet-diff.png)
 
 코드를 리뷰하고, 좋은 코드와 나쁜 코드를 구별하고, 비판적으로 사고하는 능력이 코드를 작성하는 능력보다 중요해지고 있다. 동시에 더 희소해지고 있다. 지식과 이해 없이 곧장 만들기부터 시작하면, 에이전트의 산출물이 좋은지 나쁜지 가려내기 어렵고, 따라서 좋은 방향으로 조종하기도 어렵다.
 
 Interfere는 품질 기준과 원칙을 사람과 에이전트가 함께 따를 수 있도록 자체 `/codebase-standards` 스킬을 만들었고, 이 기준에 비추어 코드를 리뷰하는 `/interfere-review` 커맨드를 짝지어 쓴다. 팀의 이해와 판단을 도구의 형태로 부호화한 것이다.
 
-![Interfere의 codebase-standards 스킬과 interfere-review 커맨드 화면](/images/krehel-less-is-more/codebase-standards.png)
+![Interfere의 codebase-standards 스킬과 interfere-review 커맨드 화면](https://img.seosoyoung.eiaserinnys.me/images/krehel-less-is-more/codebase-standards.png)
 
 ## 에이전트와 일하는 원칙 7가지
 

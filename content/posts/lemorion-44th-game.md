@@ -10,9 +10,9 @@ sidenotes: true
 aliases:
   - /posts/lemorion-39th-game/
 cover:
-  image: "/images/lemorion-44th-game/link-penguins.jpg"
+  image: "https://img.seosoyoung.eiaserinnys.me/images/lemorion-44th-game/link-penguins.jpg"
 images:
-  - "/images/lemorion-44th-game/link-penguins.jpg"
+  - "https://img.seosoyoung.eiaserinnys.me/images/lemorion-44th-game/link-penguins.jpg"
 ---
 
 메차 카멜레온은 어느 날 갑자기 등장한 히트작이 아니다. 2023년 UEFN 출시 첫날부터 15개월 동안 38개의 맵을 양산해 온 레모리온이라는 일본 인디 개발자가 만든, 44번째 작품이다. 양산의 과정을 거치며 안에선 형식이 다듬어졌고, 밖에서는 인지도가 쌓였다.
@@ -27,11 +27,11 @@ images:
 
 그가 만든 38개의 게임 목록을 보면 일관된 흐름이 또렷하게 보인다. 호러 숨바꼭질(TRAVELTRAIN), 투명화 술래잡기(GHOST TAG), 얼음귀신(FREEZE TAG), 팀 도지볼(ULTRA DODGE BALL), 적의 몸에 적힌 코드를 입력해 쓰러뜨리는 배틀로얄(코드 헌터), 어몽어스 변주(Imposters 2.0), 시즌 호러(CHRISTMAS NIGHTMARE), 펭귄 공장 탈출 호러(PENGUIN NIGHTMARE), 8번 출구(8番出口) 변형의 이상 탐지(OFFICE 666), 얼음귀신 진화형(하이퍼 얼음귀신), 좀비 변형 술래잡기(ZOMBIE TAG), 그리고 마지막으로 종이로 변신해 배경에 숨는 PAPER HUNT(ペラペラかくれんぼ, 팔랑팔랑 숨바꼭질)까지. 메차 카멜레온의 보디페인트 위장 숨바꼭질은 새로운 발명품이 아니다. 38개 맵에서 시험한 메커닉이 한데 모여 도달한 결과다.
 
-![PAPER HUNT/ペラペラかくれんぼ (2024.06) — 종이처럼 납작해져 배경에 숨는 UEFN 맵. 그가 마지막으로 만든 UEFN 작품이고, 두 달 뒤 스팀의 첫 작품 펭귄호텔이 출시된다.](/images/lemorion-44th-game/paper-hunt-uefn.jpg)
+![PAPER HUNT/ペラペラかくれんぼ (2024.06) — 종이처럼 납작해져 배경에 숨는 UEFN 맵. 그가 마지막으로 만든 UEFN 작품이고, 두 달 뒤 스팀의 첫 작품 펭귄호텔이 출시된다.](https://img.seosoyoung.eiaserinnys.me/images/lemorion-44th-game/paper-hunt-uefn.jpg)
 
 이 다작의 시기 동안 두 가지가 자리잡았다. 하나는 그의 펭귄 캐릭터다. 2023년 5월 28일에 출시한 FREEZE TAG가 첫 히트작이 되었는데, 헌터 역할로 등장한 펭귄은 모델링 초보 시절에 만든 것이라 부리도 몸도 전부 구체로 이루어져 있었다. 그가 한참 뒤 인터뷰에서 <em>"부리도 몸도 전부 구체로 되어 있어요"</em>라고 회고할 때, 그 말에는 자조도 미화도 없다. 그 한계가 오히려 펭귄 IP의 정체성으로 굳었다.[^1]
 
-![FREEZE TAG/こおり鬼 (2023.05) — UEFN 첫 히트작. 펭귄 헌터가 인간을 쫓는 술래잡기다.](/images/lemorion-44th-game/freeze-tag-uefn.jpg)
+![FREEZE TAG/こおり鬼 (2023.05) — UEFN 첫 히트작. 펭귄 헌터가 인간을 쫓는 술래잡기다.](https://img.seosoyoung.eiaserinnys.me/images/lemorion-44th-game/freeze-tag-uefn.jpg)
 
 다른 하나는 팀이다. 같은 작품의 크레딧에 「레모리온즈」라는 팀명이 처음 등장했다. 멤버는 레모리온과 하가네이로 둘. 분업은 단순했다. 레모리온은 기획과 3D 모델과 그래픽을 맡고, 하가네이로는 시스템을 맡았다. <em>"보이는 부분과 그렇지 않은 부분으로 나뉘는 느낌"</em>이라고 그는 정리했다.[^2]
 
@@ -49,13 +49,13 @@ note.com에 올린 글은 총 4편 — FREEZE TAG, ULTRA DODGE BALL, 코드 헌�
 | 2025.08 | 데스버거 | 약 800엔 | 59건, 매우 긍정 |
 | 2026.04 | LINK Penguins | 790엔 | 29건, 긍정 |
 
-![펭귄호텔 Chapter 1 (2024.10) — 카메라 파인더로 위협을 포착하는 호러 퍼즐. 이 카메라 시스템은 다음 작품에 그대로 이어졌다.](/images/lemorion-44th-game/penguin-hotel-1-camera.jpg)
+![펭귄호텔 Chapter 1 (2024.10) — 카메라 파인더로 위협을 포착하는 호러 퍼즐. 이 카메라 시스템은 다음 작품에 그대로 이어졌다.](https://img.seosoyoung.eiaserinnys.me/images/lemorion-44th-game/penguin-hotel-1-camera.jpg)
 
 다섯 작품의 스팀 리뷰를 모두 합쳐도 500건이 안 된다. 게임마다 판매량은 수천에서 1만 장 수준의, 평범한 인디 게임의 수치다.
 
 각 작품의 결과는 평범하지만, 작품들이 서로 어떻게 이어져 있는지를 보면 흐름이 조금 다른 느낌으로 다가온다. 펭귄호텔 1의 프리즈 카메라 시스템은 2에 그대로 계승됐다. 8펜 출구는 펭귄호텔의 캐릭터와 세계관에 그 시기 일본에서 유행하던 「8번 출구(8番出口)」 트렌드를 결합한 파생작이다.
 
-![8펜 출구 (PEXIT 8, 2025.02) — YES PEN / NO PEN 분기에서 이상 변화를 탐지하는 호러. 「8번 출구」 트렌드를 펭귄호텔 세계관에 붙였다.](/images/lemorion-44th-game/pexit-8-loop.jpg)
+![8펜 출구 (PEXIT 8, 2025.02) — YES PEN / NO PEN 분기에서 이상 변화를 탐지하는 호러. 「8번 출구」 트렌드를 펭귄호텔 세계관에 붙였다.](https://img.seosoyoung.eiaserinnys.me/images/lemorion-44th-game/pexit-8-loop.jpg)
 
 데스버거는 펭귄 IP에서 벗어난 첫 작품이지만 한두 시간 분량의 단편으로 마무리되었다. 그리고 LINK Penguins. 이 작품에 그는 7개월을 들였고, 그 안에 8인 협동 멀티플레이 시스템을 만들었다. 출시 후 리뷰는 29건이었다. 그 멀티플레이 시스템을 그대로 이식해 메차 카멜레온의 개발을 시작한 것은 그로부터 두 달 뒤다.
 
@@ -69,7 +69,7 @@ note.com에 올린 글은 총 4편 — FREEZE TAG, ULTRA DODGE BALL, 코드 헌�
 
 이 방법론은 LINK Penguins에서 가장 또렷하게 확인된다. 그가 만든 시스템은 단순히 자산이 아니라 *움직이는 상태로 유지된 자산*이다. 7개월 동안 구축한 멀티플레이 코드로 게임을 출시한 이후, 두 달 만에 새 게임을 얹었다는 것은 그 코드가 *언제든 쓸 수 있는 형태로* 정리되어 있었다는 뜻이다. 다작의 비결은 새것을 빨리 짜는 게 아니라 한 번 만든 것을 다시 사용하는 지혜였다.
 
-![LINK Penguins (2026.04) — 펭귄들이 몸을 연결해 다리를 만드는 협동 퍼즐. 두 달 뒤 메차 카멜레온이 이 멀티플레이 시스템 위에 올라탔다.](/images/lemorion-44th-game/link-penguins.jpg)
+![LINK Penguins (2026.04) — 펭귄들이 몸을 연결해 다리를 만드는 협동 퍼즐. 두 달 뒤 메차 카멜레온이 이 멀티플레이 시스템 위에 올라탔다.](https://img.seosoyoung.eiaserinnys.me/images/lemorion-44th-game/link-penguins.jpg)
 
 LINK Penguins의 부진을 보고 시간 낭비라고 하기 쉽지만, 그 7개월이 없었다면 메차 카멜레온은 두 달만에 나올 수 없었다.
 
@@ -79,7 +79,7 @@ LINK Penguins의 부진을 보고 시간 낭비라고 하기 쉽지만, 그 7개
 
 스팀 리뷰의 언어 분포부터 흥미롭다. 영문 9,363건에 일문 213건, 40배가 넘는다. 일본 인디 개발자가 만든 게임인데 해외에서의 반응이 더 뜨겁다.
 
-![스팀 리뷰 언어 필터 — 일본어 사용자가 자기 언어로 작성된 리뷰만 골라낸 화면. 전체 18,238건 중 일본어는 227건이다.](/images/lemorion-44th-game/review-language-filter.jpg)
+![스팀 리뷰 언어 필터 — 일본어 사용자가 자기 언어로 작성된 리뷰만 골라낸 화면. 전체 18,238건 중 일본어는 227건이다.](https://img.seosoyoung.eiaserinnys.me/images/lemorion-44th-game/review-language-filter.jpg)
 
 영문 미디어는 메차 카멜레온을 "friendslop"으로 묶었다. PC Gamer와 GamesRadar+가 비슷한 시기에 같은 표현을 쓰면서 라벨이 붙었고[^4], R.E.P.O., PEAK, Fall Guys 같은 저가 즉석 멀티플레이와 같은 부류로 분류됐다. 발매 2주 만에 영문 위키피디아 페이지에 인용 40개가 달렸고[^5], The Game Awards 공식 X 계정이 500만 장 시점에 직접 글을 올렸다.
 

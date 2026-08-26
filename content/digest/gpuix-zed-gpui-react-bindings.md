@@ -7,9 +7,9 @@ summary: "Zed의 GPU 가속 UI 프레임워크 GPUI를 React로 감싼 바인딩
 ShowToc: true
 TocOpen: false
 cover:
-  image: "/images/gpuix-zed-gpui-react-bindings/chat-app.png"
+  image: "https://img.seosoyoung.eiaserinnys.me/images/gpuix-zed-gpui-react-bindings/chat-app.png"
 images:
-  - "/images/gpuix-zed-gpui-react-bindings/chat-app.png"
+  - "https://img.seosoyoung.eiaserinnys.me/images/gpuix-zed-gpui-react-bindings/chat-app.png"
 ---
 
 ## 3줄 요약
@@ -18,7 +18,7 @@ images:
 2. React 리컨사일러가 만든 DOM 형태의 뮤테이션(`createElement`, `appendChild`, `setStyle`…)을 JSON 트리 직렬화 없이 Rust로 직접 넘기고, Rust가 유지하는 보존 트리를 GPUI가 매 프레임 읽어 Metal·DirectX·Vulkan으로 그린다. Electron도 웹뷰도 없다.
 3. 문법 강조 코드 블록, 유니파이드 diff, GFM 마크다운이 전부 네이티브 요소로 들어 있고, 가상 리스트·네이티브 텍스트 입력·IME·헤드리스 Select/Combobox/Tooltip·Playwright식 자동화 API까지 갖췄다. 캔버스 요소와 다중 창은 아직 없다.
 
-![GPUIX로 만든 Waku 스타일 채팅 앱](/images/gpuix-zed-gpui-react-bindings/chat-app.png)
+![GPUIX로 만든 Waku 스타일 채팅 앱](https://img.seosoyoung.eiaserinnys.me/images/gpuix-zed-gpui-react-bindings/chat-app.png)
 
 ## 무엇을 만든 프로젝트인가
 
@@ -126,13 +126,13 @@ id=3 요소 클릭
 
 세 요소가 Rust에서 계산한 Syntect 문법 강조로 텍스트를 그린다. 색은 `theme` 프롭에서 오므로, 강조 결과가 늦게 도착해도 레이아웃을 건드리지 않고 색만 다시 입힌다.
 
-![문법 강조 코드 블록](/images/gpuix-zed-gpui-react-bindings/code.png)
+![문법 강조 코드 블록](https://img.seosoyoung.eiaserinnys.me/images/gpuix-zed-gpui-react-bindings/code.png)
 
 - **`<code>`** — 문법 강조 코드 블록. 한 줄이 정확한 행 높이의 한 행이라, 강조가 끝나기 전에 블록 높이가 정해진다.
 - **`<diff>`** — 유니파이드 diff 뷰어. 기본값은 부모를 따라 흐르는 것이라 부모 목록 하나만 스크롤러가 되면 된다. 파일을 접으면 행을 숨기는 대신 없애므로, 접힌 1만 줄짜리 파일이 한 행 값이다. `wordDiff`로 바뀐 토큰만 강조할 수 있다.
 - **`<markdown>`** — GitHub 스타일 마크다운. 제목·목록·표·인용·펜스 코드·취소선·작업 목록·자동 링크를 처리한다.
 
-![단어 단위 강조가 들어간 유니파이드 diff](/images/gpuix-zed-gpui-react-bindings/diff.png)
+![단어 단위 강조가 들어간 유니파이드 diff](https://img.seosoyoung.eiaserinnys.me/images/gpuix-zed-gpui-react-bindings/diff.png)
 
 번들된 언어는 Rust, TypeScript, TSX, JavaScript, JSX, Python, Go, JSON, Bash, TOML, YAML, Markdown, HTML, CSS, C 열다섯 가지다.
 
@@ -153,19 +153,19 @@ id=3 요소 클릭
 />
 ```
 
-![metrics만 키워 다시 튜닝한 같은 컴포넌트들](/images/gpuix-zed-gpui-react-bindings/metrics.png)
+![metrics만 키워 다시 튜닝한 같은 컴포넌트들](https://img.seosoyoung.eiaserinnys.me/images/gpuix-zed-gpui-react-bindings/metrics.png)
 
 ### 선택은 페인트 순서로 복원한다
 
 GPUIX가 그리는 모든 텍스트는 선택하고 복사할 수 있다. `<code>`, `<diff>`, `<markdown>` 내부 텍스트도 포함이고, 제목에서 시작해 펜스 코드 블록 안에서 끝나는 드래그가 그 사이를 전부 잡는다. 빼려면 `userSelect: "none"`을 준다. CSS 속성처럼 상속된다.
 
-![마크다운 블록을 가로질러 선택된 텍스트](/images/gpuix-zed-gpui-react-bindings/selection.png)
+![마크다운 블록을 가로질러 선택된 텍스트](https://img.seosoyoung.eiaserinnys.me/images/gpuix-zed-gpui-react-bindings/selection.png)
 
 Zed의 마크다운이 연속 선택되는 이유는 문서 전체가 하나의 텍스트 모델 위 단일 요소이기 때문이다. GPUIX는 텍스트 요소의 트리를 그리므로, 그 연속성을 페인트 시점에 다시 만든다. 각 텍스트 요소가 페인트 순서(곧 문서 순서)로 프레임별 레지스트리에 자기를 등록하고, 드래그는 그 레지스트리에 대고 요소별 스팬으로 풀린다. 이 방식은 같은 문제를 겪은 [Comet](https://github.com/zeronsh/comet)(MIT)에서 옮겨 왔다.
 
 ## 긴 목록과 스크롤
 
-![채팅 턴 안에 들어간 diff와 마크다운 표](/images/gpuix-zed-gpui-react-bindings/chat-diff.png)
+![채팅 턴 안에 들어간 diff와 마크다운 표](https://img.seosoyoung.eiaserinnys.me/images/gpuix-zed-gpui-react-bindings/chat-diff.png)
 
 `overflow: "scroll"`을 준 컨테이너는 네이티브 스크롤 대상이 된다. 스크롤 물리, 클리핑, 오프셋 유지를 GPUI가 알아서 맡는다.
 
@@ -329,7 +329,7 @@ README의 상태 목록에서 체크가 비어 있는 항목은 넷이다.
 
 여기에 브라우저 이벤트 콜백 미연결, Windows 런타임 검증 진행 중, 모션의 스프링·키프레임·배리언트 부재가 더해진다.
 
-![마크다운, 코드, 가상화된 diff가 한 프레임에](/images/gpuix-zed-gpui-react-bindings/showcase.png)
+![마크다운, 코드, 가상화된 diff가 한 프레임에](https://img.seosoyoung.eiaserinnys.me/images/gpuix-zed-gpui-react-bindings/showcase.png)
 
 ## 가장 눈여겨본 것
 
@@ -347,4 +347,4 @@ README의 상태 목록에서 체크가 비어 있는 항목은 넷이다.
 2026-01-29 첫 공개, 2026-08-25 기준 별 1,133개·포크 32개.
 원문: <https://github.com/remorses/gpuix>
 
-본문 이미지는 모두 저장소 `docs/images/`의 공개 스크린샷이다.
+본문 이미지는 모두 저장소 `docshttps://img.seosoyoung.eiaserinnys.me/images/`의 공개 스크린샷이다.

@@ -9,7 +9,7 @@ TocOpen: false
 sidenotes: true
 ---
 
-![DeepMind AI 마우스 포인터 컨셉 — 3개의 커서가 음성 명령 'Move this', 'Merge those', 'Add that'와 함께 표시된 인터페이스 mockup](/images/deepmind-ai-pointer/cover.png)
+![DeepMind AI 마우스 포인터 컨셉 — 3개의 커서가 음성 명령 'Move this', 'Merge those', 'Add that'와 함께 표시된 인터페이스 mockup](https://img.seosoyoung.eiaserinnys.me/images/deepmind-ai-pointer/cover.png)
 
 ## 3줄 요약
 
@@ -27,7 +27,7 @@ DeepMind는 그 방향을 뒤집겠다고 말한다. AI가 사용자의 *모든 
 
 이 비전을 구현한 실험 시스템이 Google AI Studio의 [이미지 편집](https://aistudio.google.com/apps/bundled/ai-pointer-create?showPreview=true&showAssistant=true&fullscreenApplet=true) 데모와 [지도 위에서 장소 찾기](https://aistudio.google.com/apps/bundled/ai-pointer-find?showPreview=true&showAssistant=true&fullscreenApplet=true) 데모로 공개되어 있다.
 
-![DeepMind의 AI-enabled pointer 실험 환경 — 본문의 비디오 스틸](/images/deepmind-ai-pointer/fig1.png)
+![DeepMind의 AI-enabled pointer 실험 환경 — 본문의 비디오 스틸](https://img.seosoyoung.eiaserinnys.me/images/deepmind-ai-pointer/fig1.png)
 
 ## 네 가지 인터랙션 원칙
 

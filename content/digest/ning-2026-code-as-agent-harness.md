@@ -8,9 +8,9 @@ math: true
 ShowToc: true
 TocOpen: false
 cover:
-  image: "/images/ning-2026-code-as-agent-harness/fig1-taxonomy.png"
+  image: "https://img.seosoyoung.eiaserinnys.me/images/ning-2026-code-as-agent-harness/fig1-taxonomy.png"
 images:
-  - "/images/ning-2026-code-as-agent-harness/fig1-taxonomy.png"
+  - "https://img.seosoyoung.eiaserinnys.me/images/ning-2026-code-as-agent-harness/fig1-taxonomy.png"
 ---
 
 ## 3줄 요약
@@ -52,7 +52,7 @@ images:
 
 서베이는 문헌을 세 층으로 나눈다. 코드가 *에이전트 루프 안에서 운영 매개체가 되는 순서*를 따른다. 먼저 인터페이스로 진입하고, 그 위에서 메커니즘이 장기 실행을 지탱하고, 마지막에 다중 에이전트의 공유 아티팩트로 확장된다.
 
-![Figure 1. Taxonomy of code as agent harness.](/images/ning-2026-code-as-agent-harness/fig1-taxonomy.png)
+![Figure 1. Taxonomy of code as agent harness.](https://img.seosoyoung.eiaserinnys.me/images/ning-2026-code-as-agent-harness/fig1-taxonomy.png)
 
 ### 1층. Harness Interface: 추론·행동·환경 모델링의 매체
 
@@ -60,7 +60,7 @@ images:
 
 저자들은 *code*를 은유가 아니라 좁게 정의한다. 프로그램, 스크립트, 형식 명세, 증명 스크립트, API 스키마, 도구 정의, 테스트, 리포지토리, 시뮬레이터, 설정 파일, 그리고 실행 시스템이 생성·소비하는 *트레이스·로그* 같은 *code-adjacent execution artifacts*까지 포함한다. 반면 원시 지각, 물리 상태, 인간 의도, 모델 내부 잠재 추론은 코드가 아니다. 다만 코드를 통해 *직렬화되고 검증되고 작동될* 수 있는 대상일 뿐이다.
 
-![Figure 2. Overview of code as the harness interface: reasoning, acting, and environment modeling.](/images/ning-2026-code-as-agent-harness/fig2-interface.png)
+![Figure 2. Overview of code as the harness interface: reasoning, acting, and environment modeling.](https://img.seosoyoung.eiaserinnys.me/images/ning-2026-code-as-agent-harness/fig2-interface.png)
 
 세 역할로 정리된다.
 
@@ -82,7 +82,7 @@ images:
 
 ### 3층. Scaling the Harness: 다중 에이전트와 공유 substrate
 
-![Figure 10. Scaling the agent harness through multi-agent orchestration over code.](/images/ning-2026-code-as-agent-harness/fig10-multi-agent.png)
+![Figure 10. Scaling the agent harness through multi-agent orchestration over code.](https://img.seosoyoung.eiaserinnys.me/images/ning-2026-code-as-agent-harness/fig10-multi-agent.png)
 
 단일 에이전트의 한계가 다중 에이전트를 부른다. (1) 컨텍스트 윈도우, (2) 모든 역할을 한 generalist가 맡는 비효율, (3) 독립된 검증 채널의 부재 세 가지다. ChatDev·MetaGPT·AgentCoder가 출발점이고, 최근에는 MAGIS·HyperAgent·SoA·EvoMAC·SEW·BOAD·FlowReasoner·Trae Agent로 이어진다.
 
@@ -95,7 +95,7 @@ images:
 
 ## PEV 루프: 통합된 제어 프로세스
 
-![Figure 8. Harness control through the Plan-Execute-Verify loop.](/images/ning-2026-code-as-agent-harness/fig8-pev-loop.png)
+![Figure 8. Harness control through the Plan-Execute-Verify loop.](https://img.seosoyoung.eiaserinnys.me/images/ning-2026-code-as-agent-harness/fig8-pev-loop.png)
 
 서베이가 가장 또렷이 굳히는 추상화는 *PEV(Plan-Execute-Verify) 루프*다. 기존 문헌에서 *iterative debugging*이라 부르던 것을 *통제된 상태 전이*로 다시 잡는다.
 
@@ -121,7 +121,7 @@ images:
 
 ## 다섯 응용 영역
 
-![Figure 12. Code as an agent harness across five emerging domains.](/images/ning-2026-code-as-agent-harness/fig12-domains.png)
+![Figure 12. Code as an agent harness across five emerging domains.](https://img.seosoyoung.eiaserinnys.me/images/ning-2026-code-as-agent-harness/fig12-domains.png)
 
 서베이는 다섯 영역에서 이 관점이 어떻게 구체화되는지를 본다.
 

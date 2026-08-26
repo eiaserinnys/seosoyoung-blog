@@ -7,9 +7,9 @@ summary: "Claude Code 2.1.126 이후 '박다/박히다' 계열 표현이 기준�
 ShowToc: true
 TocOpen: false
 cover:
-  image: "/images/claude-code-bakda-self-contamination/chart-1.png"
+  image: "https://img.seosoyoung.eiaserinnys.me/images/claude-code-bakda-self-contamination/chart-1.png"
 images:
-  - "/images/claude-code-bakda-self-contamination/chart-1.png"
+  - "https://img.seosoyoung.eiaserinnys.me/images/claude-code-bakda-self-contamination/chart-1.png"
 sidenotes: true
 ---
 
@@ -33,7 +33,7 @@ sidenotes: true
 
 ## 1. 일별 빈도와 주요 사건
 
-![일별 빈도 그래프 — 막대는 해당일 발생 건수의 상대량, 파란 선은 출력 토큰 1만 개당 대상 표현 수.](/images/claude-code-bakda-self-contamination/chart-1.png)
+![일별 빈도 그래프 — 막대는 해당일 발생 건수의 상대량, 파란 선은 출력 토큰 1만 개당 대상 표현 수.](https://img.seosoyoung.eiaserinnys.me/images/claude-code-bakda-self-contamination/chart-1.png)
 
 세션 출력 로그를 형태소 기준(Kiwi `박/VV`, `박히/VV`)으로 집계했다. 1만 출력 토큰당 대상 표현 발생 수가 핵심 지표다.
 
@@ -53,7 +53,7 @@ sidenotes: true
 
 ## 2. Claude Code 버전 구간별 평균
 
-![버전 구간별 평균 빈도 막대 그래프 — 기준선 0.0174 → 2.1.126 이후 0.1147 → 2.1.132 이후 0.3138 → 2.1.143 이후 0.3398.](/images/claude-code-bakda-self-contamination/chart-2.png)
+![버전 구간별 평균 빈도 막대 그래프 — 기준선 0.0174 → 2.1.126 이후 0.1147 → 2.1.132 이후 0.3138 → 2.1.143 이후 0.3398.](https://img.seosoyoung.eiaserinnys.me/images/claude-code-bakda-self-contamination/chart-2.png)
 
 집계 총량은 1,367건 / 115,179,628 출력 토큰이다.
 

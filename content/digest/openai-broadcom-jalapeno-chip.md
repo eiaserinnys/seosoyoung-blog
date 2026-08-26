@@ -5,9 +5,9 @@ tags: ["AI", "OpenAI", "AI 인프라", "추론", "Broadcom"]
 categories: ["AI 산업"]
 summary: "OpenAI가 Broadcom·Celestica와 함께 LLM 추론에 백지부터 설계한 첫 자체 칩 Jalapeño(인텔리전스 프로세서)를 공개했다. 설계에서 tape-out까지 9개월, 와트당 성능에서 현세대 최고 수준을 앞서고, 2026년 말부터 Microsoft 등 파트너와 함께 기가와트 규모 데이터센터에 배포한다."
 cover:
-  image: "/images/openai-broadcom-jalapeno-chip/cover.png"
+  image: "https://img.seosoyoung.eiaserinnys.me/images/openai-broadcom-jalapeno-chip/cover.png"
 images:
-  - "/images/openai-broadcom-jalapeno-chip/cover.png"
+  - "https://img.seosoyoung.eiaserinnys.me/images/openai-broadcom-jalapeno-chip/cover.png"
 ShowToc: true
 TocOpen: false
 ---
@@ -18,7 +18,7 @@ TocOpen: false
 2. 핵심은 두 가지다. 첫째, *범용 가속기를 다시 잘라낸 것이 아니라* LLM 추론을 위해 백지부터 설계한 칩이라는 점. 둘째, 설계에서 tape-out까지 **9개월**로, OpenAI 자신의 모델이 칩 설계·최적화를 가속한 사이클이라는 점. 회사는 이를 *고성능 ASIC 사상 가장 빠른 개발 사이클*로 자평한다.
 3. 함의는 셋이다. (1) OpenAI는 모델·제품에 이어 *실리콘 자체*까지 풀스택으로 내려간다. (2) 와트당 성능이 현세대 SOTA 대비 *상당 수준* 앞서며 토큰당 비용을 끌어내릴 지렛대가 된다. (3) 2026년 말부터 Microsoft 등 파트너와 함께 **기가와트 규모** 데이터센터에 다세대 플랫폼으로 배포되기 시작한다.
 
-![OpenAI와 Broadcom이 공동 발표한 Jalapeño 칩. (출처: OpenAI)](/images/openai-broadcom-jalapeno-chip/cover.png)
+![OpenAI와 Broadcom이 공동 발표한 Jalapeño 칩. (출처: OpenAI)](https://img.seosoyoung.eiaserinnys.me/images/openai-broadcom-jalapeno-chip/cover.png)
 
 ## Jalapeño — OpenAI의 첫 'Intelligence Processor'
 

@@ -7,9 +7,9 @@ summary: "거의 모든 가구가 집을 소유한 나라에서 임대시장이 
 ShowToc: true
 TocOpen: false
 cover:
-  image: "/images/romania-homeownership-trap/bucharest-apartment.jpg"
+  image: "https://img.seosoyoung.eiaserinnys.me/images/romania-homeownership-trap/bucharest-apartment.jpg"
 images:
-  - "/images/romania-homeownership-trap/bucharest-apartment.jpg"
+  - "https://img.seosoyoung.eiaserinnys.me/images/romania-homeownership-trap/bucharest-apartment.jpg"
 sidenotes: true
 ---
 

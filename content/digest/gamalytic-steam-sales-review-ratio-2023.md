@@ -35,21 +35,21 @@ sidenotes: true
 
 가장 잘 알려진 사실부터 정리한다. sales/review 비율은 게임이 출시된 해보다 **리뷰가 작성된 해**에 더 강하게 의존한다. 2019년에 Steam이 플레이어에게 리뷰를 남기도록 프롬프트하기 시작하면서 비율이 절반으로 잘려 나갔다.
 
-![연도별 중간값 sales/review 비율 — 2019년 Steam 리뷰 프롬프트 도입을 기점으로 비율이 절반으로 감소했다](/images/gamalytic-steam-sales-review-ratio-2023/year-cliff.png)
+![연도별 중간값 sales/review 비율 — 2019년 Steam 리뷰 프롬프트 도입을 기점으로 비율이 절반으로 감소했다](https://img.seosoyoung.eiaserinnys.me/images/gamalytic-steam-sales-review-ratio-2023/year-cliff.png)
 
 그 이후로도 비율은 매년 조금씩 떨어지는 추세인데, 이는 부분적으로 게임 수명 주기 효과로 보인다. 게임이 새로울 때 리뷰를 더 많이 남기고, 시간이 흐르면 할인이 잦아지고 충동 구매가 늘면서 리뷰를 남기지 않는 구매자가 누적된다.
 
-![출시 후 경과 시간에 따른 리뷰 multiple — 시간이 지날수록 리뷰 남기는 비율이 감소한다](/images/gamalytic-steam-sales-review-ratio-2023/time-since-release.png)
+![출시 후 경과 시간에 따른 리뷰 multiple — 시간이 지날수록 리뷰 남기는 비율이 감소한다](https://img.seosoyoung.eiaserinnys.me/images/gamalytic-steam-sales-review-ratio-2023/time-since-release.png)
 
 ## 가격과 할인
 
 가격이 낮을수록 리뷰당 판매 수가 많다. <strong>무료 게임은 유료 게임 대비 거의 2배의 sales/review 비율</strong>을 보인다.
 
-![가격대별 평균 sales/review — 저가 구간에서 비율이 크게 올라간다](/images/gamalytic-steam-sales-review-ratio-2023/price.png)
+![가격대별 평균 sales/review — 저가 구간에서 비율이 크게 올라간다](https://img.seosoyoung.eiaserinnys.me/images/gamalytic-steam-sales-review-ratio-2023/price.png)
 
 가격보다 더 강한 변수는 할인이다. **할인폭이 큰 게임일수록 sales/review 비율이 뚜렷하게 높다.** 번들에 포함된 게임에도 같은 패턴이 적용된다. 세일에 산 플레이어는 리뷰를 남길 확률이 낮다.
 
-![할인율과 sales/review 비율 — 할인이 깊어질수록 리뷰 남기지 않는 구매자 비율이 커진다](/images/gamalytic-steam-sales-review-ratio-2023/discount.png)
+![할인율과 sales/review 비율 — 할인이 깊어질수록 리뷰 남기지 않는 구매자 비율이 커진다](https://img.seosoyoung.eiaserinnys.me/images/gamalytic-steam-sales-review-ratio-2023/discount.png)
 
 극단의 사례로 저자는 한 인디 개발자가 트위터에 공개한 사례를 인용한다. 가격·할인 조건의 조합에 따라 어떤 게임은 1,000명당 단 1개의 리뷰(1000:1)밖에 받지 못하기도 한다.
 
@@ -57,7 +57,7 @@ sidenotes: true
 
 이 자료의 핵심 발견이다. 평점과 비율의 관계는 단순한 양의 상관이 아니다.
 
-![긍정 리뷰 비율과 sales/review 비율 — 70% 부근에서 비율이 정점에 달하고 양 끝에서 다시 낮아지는 U자형 패턴](/images/gamalytic-steam-sales-review-ratio-2023/positive-reviews-ushape.png)
+![긍정 리뷰 비율과 sales/review 비율 — 70% 부근에서 비율이 정점에 달하고 양 끝에서 다시 낮아지는 U자형 패턴](https://img.seosoyoung.eiaserinnys.me/images/gamalytic-steam-sales-review-ratio-2023/positive-reviews-ushape.png)
 
 - **90%+ 긍정 평점**: 리뷰당 약 30판
 - **약 70% 긍정 평점**: 리뷰당 약 60판 (정점)
@@ -73,7 +73,7 @@ sidenotes: true
 
 Steam 태그(태그 위치로 가중)와 sales/review 비율 간에는 일정한 상관이 있다.
 
-![Steam 태그별 sales/review multiples — 태그 위치 가중치를 적용한 장르별 비율](/images/gamalytic-steam-sales-review-ratio-2023/tag-multiples.png)
+![Steam 태그별 sales/review multiples — 태그 위치 가중치를 적용한 장르별 비율](https://img.seosoyoung.eiaserinnys.me/images/gamalytic-steam-sales-review-ratio-2023/tag-multiples.png)
 
 장르와 평점 자체의 상관도 존재한다. 다만 **리뷰를 남기는 비율을 결정하는 요인으로서 장르의 비중은 의외로 크지 않다**고 저자는 정리한다.
 
@@ -81,7 +81,7 @@ Steam 태그(태그 위치로 가중)와 sales/review 비율 간에는 일정한
 
 플레이타임이 길수록 리뷰를 남길 확률이 올라간다. 단순하지만 강한 신호다.
 
-![플레이타임과 sales/review 비율 — 플레이타임이 길수록 리뷰 비율이 높아진다](/images/gamalytic-steam-sales-review-ratio-2023/playtime.png)
+![플레이타임과 sales/review 비율 — 플레이타임이 길수록 리뷰 비율이 높아진다](https://img.seosoyoung.eiaserinnys.me/images/gamalytic-steam-sales-review-ratio-2023/playtime.png)
 
 ## 인디 대 AAA, 그리고 인기
 
@@ -93,11 +93,11 @@ Multiple(=리뷰 한 건당 판매 수)이 가장 낮은 그룹은 양극단이�
 
 화제성이나 논쟁이 큰 게임은 관여도가 높은 만큼 리뷰가 더 많이 쌓이고, AAA는 가격이 높고 할인 빈도가 낮은 점도 비율을 끌어내린다.
 
-![퍼블리셔 유형별 sales/review 중간값 — 인디·AA가 가장 높고 AAA·소형 인디가 낮다](/images/gamalytic-steam-sales-review-ratio-2023/publisher-indie-aaa.png)
+![퍼블리셔 유형별 sales/review 중간값 — 인디·AA가 가장 높고 AAA·소형 인디가 낮다](https://img.seosoyoung.eiaserinnys.me/images/gamalytic-steam-sales-review-ratio-2023/publisher-indie-aaa.png)
 
 리뷰 수 자체로 본 인기도와의 관계도 같은 방향이다. 리뷰가 매우 적거나 매우 많은 양극단에서 multiple이 낮다.
 
-![리뷰 수와 평균 multiple — 양극단에서 multiple이 낮은 U자에 가까운 곡선](/images/gamalytic-steam-sales-review-ratio-2023/number-of-reviews.png)
+![리뷰 수와 평균 multiple — 양극단에서 multiple이 낮은 U자에 가까운 곡선](https://img.seosoyoung.eiaserinnys.me/images/gamalytic-steam-sales-review-ratio-2023/number-of-reviews.png)
 
 ## 청중 오버랩
 
@@ -116,7 +116,7 @@ Multiple(=리뷰 한 건당 판매 수)이 가장 낮은 그룹은 양극단이�
 
 전체 분포는 다음과 같다.
 
-![Steam sales/review 비율 분포 — 게임 간 편차가 매우 크다](/images/gamalytic-steam-sales-review-ratio-2023/distribution.png)
+![Steam sales/review 비율 분포 — 게임 간 편차가 매우 크다](https://img.seosoyoung.eiaserinnys.me/images/gamalytic-steam-sales-review-ratio-2023/distribution.png)
 
 저자의 결론은 한 줄이다.
 

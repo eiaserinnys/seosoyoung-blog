@@ -15,13 +15,13 @@ sidenotes: true
 2. ATM이 지점당 텔러를 20명에서 13명으로 줄였지만, 운영비 절감으로 도시 지역 지점이 43% 늘어나 총 고용이 유지되었다. 제본스 역설(Jevons Paradox)의 교과서적 사례다.
 3. 진짜 문제는 실업이 아니라 <strong>기술 격차</strong>다. 새 기술을 익힌 상위 10%만 임금이 오르고, 나머지의 임금은 30년간 정체되었다.
 
-![Toil and Technology — James Bessen, IMF F&D 2015](/images/digest/bessen-toil-2015/bessen.jpg)
+![Toil and Technology — James Bessen, IMF F&D 2015](https://img.seosoyoung.eiaserinnys.me/images/digest/bessen-toil-2015/bessen.jpg)
 
 ## ATM은 왜 텔러를 없애지 못했나
 
 1970년대에 처음 도입된 ATM은 현금 인출과 입금이라는 가장 흔한 텔러 업무를 자동화했다. 1990년대 중반부터 보급이 가속되어 미국에만 40만 대 이상이 설치되었다. 직관적으로 텔러가 격감했을 것 같지만, 실제로는 그렇지 않았다.
 
-![Chart 1 — ATM 보급과 텔러 고용 추이](/images/digest/bessen-toil-2015/bessen_chart1.jpg)
+![Chart 1 — ATM 보급과 텔러 고용 추이](https://img.seosoyoung.eiaserinnys.me/images/digest/bessen-toil-2015/bessen_chart1.jpg)
 
 두 가지 메커니즘이 작동했다.
 
@@ -33,7 +33,7 @@ sidenotes: true
 
 Frey & Osborne(2013)은 미국 고용의 47%가 10\~20년 내 자동화 고위험군이라고 추정했다. 하지만 컴퓨터가 특정 업무를 수행할 수 있다는 것이 곧 해당 직업의 소멸을 뜻하지는 않는다.
 
-![Chart 2 — 직업군별 고용 성장률과 컴퓨터 사용 빈도](/images/digest/bessen-toil-2015/bessen_chart2.jpg)
+![Chart 2 — 직업군별 고용 성장률과 컴퓨터 사용 빈도](https://img.seosoyoung.eiaserinnys.me/images/digest/bessen-toil-2015/bessen_chart2.jpg)
 
 Bessen은 5개 주요 직업군의 고용 성장률을 비교한다. 컴퓨터를 가장 많이 쓰는 상위 3개 직업군(사무직, 전문직, 관리직)이 전체 노동력보다 빠르게 성장했다. 30년간 순감소를 기록한 것은 제조업뿐이며, 그 500만 개 일자리 감소도 나머지 경제의 성장으로 상쇄되었다.
 
@@ -45,7 +45,7 @@ Bessen은 5개 주요 직업군의 고용 성장률을 비교한다. 컴퓨터�
 
 일부 경제학자(Gary Burtless)는 "기술 부족이 실재하면 중위 임금이 올라야 한다"고 반박한다. 하지만 Bessen은 이 논리의 전제를 뒤집는다. 중위 노동자가 아직 필요한 기술을 갖추지 못했다면, 기술을 익힌 소수의 임금만 오르고 중위 임금은 정체되는 것이 당연하다.
 
-![Chart 3 — 컴퓨터 집약 직업 내 임금 격차 확대](/images/digest/bessen-toil-2015/bessen_chart3.jpg)
+![Chart 3 — 컴퓨터 집약 직업 내 임금 격차 확대](https://img.seosoyoung.eiaserinnys.me/images/digest/bessen-toil-2015/bessen_chart3.jpg)
 
 그래픽 디자이너 사례가 이를 잘 보여준다. 학교는 인쇄 중심 커리큘럼에 머물러 있고, 웹과 모바일 역량은 현장에서 독학해야 한다. 고용주는 이직 위험 때문에 교육 투자를 꺼리고, 직원은 표준화되지 않은 기술에 자비 투자를 꺼린다. 이 교착 상태에서 상위 10% 디자이너만 6자릿수 연봉을 받고, 나머지의 임금은 30년째 정체되었다.
 

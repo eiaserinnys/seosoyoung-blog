@@ -7,9 +7,9 @@ summary: "Every의 Dan Shipper가 쓴 매니페스토. 사내에서 가능한 �
 ShowToc: true
 TocOpen: false
 cover:
-  image: "/images/after-automation-shipper-2026/ai-sandwich.png"
+  image: "https://img.seosoyoung.eiaserinnys.me/images/after-automation-shipper-2026/ai-sandwich.png"
 images:
-  - "/images/after-automation-shipper-2026/ai-sandwich.png"
+  - "https://img.seosoyoung.eiaserinnys.me/images/after-automation-shipper-2026/ai-sandwich.png"
 sidenotes: true
 ---
 
@@ -49,7 +49,7 @@ Shipper의 답은 단정적이다. 일자리가 모두 사라지는 티핑포인
 
 ## 에이전트와 일하는 두 가지 방식
 
-![두 가지 작업 모드 — agent employees(비동기 위임)와 human-agent collaboration(공유 OS).](/images/after-automation-shipper-2026/agents-human-collaboration.png)
+![두 가지 작업 모드 — agent employees(비동기 위임)와 human-agent collaboration(공유 OS).](https://img.seosoyoung.eiaserinnys.me/images/after-automation-shipper-2026/agents-human-collaboration.png)
 
 AI 작업은 두 가지 모드로 정착하고 있다.
 
@@ -73,7 +73,7 @@ AI 작업은 두 가지 모드로 정착하고 있다.
 
 Codex, Claude Code, Claude Cowork 같은 도구. 단순 위임처가 아니라 **일 자체의 운영 체제(operating system)** 가 된다. 여러 에이전트와 사람이 같은 컴퓨터, 같은 시간에, 비동기 에이전트가 할 수 없는 복잡한 원본 작업을 한다.
 
-![Human sandwich — 사람이 프레임을 세우고, AI가 작업을 압축하고, 사람이 결과를 판단·확장한다.](/images/after-automation-shipper-2026/ai-sandwich.png)
+![Human sandwich — 사람이 프레임을 세우고, AI가 작업을 압축하고, 사람이 결과를 판단·확장한다.](https://img.seosoyoung.eiaserinnys.me/images/after-automation-shipper-2026/ai-sandwich.png)
 
 Every의 GM Kieran Klaassen은 이 패턴을 **"human sandwich"** 라 부른다. 사람이 양쪽 빵, AI가 가운데 속재료다. 사람이 프레임을 잡고 시작하고, AI가 작업을 압축하고, 사람이 결과를 판단·확장한다.
 
@@ -82,9 +82,9 @@ Shipper 본인의 하루:
 - **작문**: Codex의 인앱 브라우저에서 Proof 에디터를 열고, 글을 쓴다. Codex가 작성 중인 내용을 보고 서브에이전트를 띄워 문단 초안·예시 리서치·카피 에디팅을 한다.
 - **이메일**: Cora를 인앱 브라우저로 띄우고, Monologue로 받은편지함을 읽어주며 한 건씩 음성으로 처리.
 
-![Codex 안의 Proof 에디터에서 글을 쓰는 화면.](/images/after-automation-shipper-2026/screenshot-writing.png)
+![Codex 안의 Proof 에디터에서 글을 쓰는 화면.](https://img.seosoyoung.eiaserinnys.me/images/after-automation-shipper-2026/screenshot-writing.png)
 
-![Cora inbox sweep — Codex 인앱 브라우저로 처리.](/images/after-automation-shipper-2026/screenshot-email.png)
+![Cora inbox sweep — Codex 인앱 브라우저로 처리.](https://img.seosoyoung.eiaserinnys.me/images/after-automation-shipper-2026/screenshot-email.png)
 
 두 모드 모두 *사람*이 필요하다는 점은 같다.
 
@@ -109,7 +109,7 @@ PowerPoint 자동 생성 한 건이 24개 스킬·18개 스크립트·$62 토큰
 
 여기서부터가 글의 본 논점이다. AI 아키텍처의 구조와 보급 방식 자체가 사람의 일을 더 만든다.
 
-![경쟁력은 헐값이 되고, 상황 감각(situated taste)의 가치가 오른다.](/images/after-automation-shipper-2026/competence-situated-taste.svg)
+![경쟁력은 헐값이 되고, 상황 감각(situated taste)의 가치가 오른다.](https://img.seosoyoung.eiaserinnys.me/images/after-automation-shipper-2026/competence-situated-taste.svg)
 
 논증은 다섯 단계의 피드백 루프다.
 
@@ -139,7 +139,7 @@ PowerPoint 자동 생성 한 건이 24개 스킬·18개 스크립트·$62 토큰
 
 ### 4) 동질성은 차이(difference)에 대한 수요를 만든다
 
-![수요는 "차이"로 이동한다 — 인터넷이 작품을 즉시 모두에게 노출하므로 동질성이 빠르게 들통난다.](/images/after-automation-shipper-2026/demand-for-difference.png)
+![수요는 "차이"로 이동한다 — 인터넷이 작품을 즉시 모두에게 노출하므로 동질성이 빠르게 들통난다.](https://img.seosoyoung.eiaserinnys.me/images/after-automation-shipper-2026/demand-for-difference.png)
 
 인터넷은 모든 작품을 즉시 모두에게 보여준다. 너무 비슷한 것이 너무 많이 보이면 사람들은 즉시 알아챈다. 처음 보는 모델 출력엔 압도되지만, 몇 개월이 지나면 표준이 올라간다.
 
@@ -208,7 +208,7 @@ OpenAI의 GDPval은 회계사·변호사·소프트웨어 개발자 등 전문�
 
 ### 벤치마크 사이클
 
-![모델 출시 사이클 — 각 모델은 현재 벤치마크를 포화하고, 프레임이 이동하고, 사이클이 반복된다.](/images/after-automation-shipper-2026/model-release-cycle.png)
+![모델 출시 사이클 — 각 모델은 현재 벤치마크를 포화하고, 프레임이 이동하고, 사이클이 반복된다.](https://img.seosoyoung.eiaserinnys.me/images/after-automation-shipper-2026/model-release-cycle.png)
 
 벤치마크 한 프레임이 포화되면 사이클이 다음 단계로 넘어간다.
 
@@ -222,9 +222,9 @@ OpenAI의 GDPval은 회계사·변호사·소프트웨어 개발자 등 전문�
 
 ## AI의 제논의 역설
 
-![Anthropic의 노동시장 영향 — 직군별 LLM이 이론상 수행 가능한 비율(파랑) vs 실제 Claude 사용 비율(빨강).](/images/after-automation-shipper-2026/labor-market-impact.png)
+![Anthropic의 노동시장 영향 — 직군별 LLM이 이론상 수행 가능한 비율(파랑) vs 실제 Claude 사용 비율(빨강).](https://img.seosoyoung.eiaserinnys.me/images/after-automation-shipper-2026/labor-market-impact.png)
 
-![Every의 거북이 — Zeno의 역설 비유의 시각화.](/images/after-automation-shipper-2026/cta-tortoise.png)
+![Every의 거북이 — Zeno의 역설 비유의 시각화.](https://img.seosoyoung.eiaserinnys.me/images/after-automation-shipper-2026/cta-tortoise.png)
 
 Zeno의 역설에서 거북이는 빠른 아킬레스를 이긴다. 아킬레스가 거북이의 출발점에 도착하면 거북이는 조금 더 앞에 가 있다. 아킬레스가 그 새 지점에 도착하면 거북이는 또 조금 앞에 가 있다.
 

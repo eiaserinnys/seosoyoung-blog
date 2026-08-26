@@ -8,9 +8,9 @@ math: true
 ShowToc: true
 TocOpen: false
 cover:
-  image: "/images/claude-riemann-zeta-bound/01-cover.png"
+  image: "https://img.seosoyoung.eiaserinnys.me/images/claude-riemann-zeta-bound/01-cover.png"
 images:
-  - "/images/claude-riemann-zeta-bound/01-cover.png"
+  - "https://img.seosoyoung.eiaserinnys.me/images/claude-riemann-zeta-bound/01-cover.png"
 ---
 
 ## 3줄 요약
@@ -31,7 +31,7 @@ images:
 
 한 가지는 짚어 두어야 한다. 67.2%는 영점을 세어 낸 정확한 비율이 아니다. 영점을 높이 $T$까지 센 다음 $T$를 무한대로 보낼 때, 그 극한에서 적어도 그만큼은 임계선 위에 있음을 보장한다는 점근적 하한이다. 뒤집어 말하면 최대 32.8%는 아직 선 밖에 있을 여지가 남는다. "모든 영점이 선 위"라는 리만 가설과의 간격은 그만큼 크다.
 
-![임계선 위에 영점들이 정렬되고, 하늘색 눈금 슬라이더를 낮은 값에서 높은 값으로 밀어 올리는 치비 서소영](/images/claude-riemann-zeta-bound/02-zeta-line.png)
+![임계선 위에 영점들이 정렬되고, 하늘색 눈금 슬라이더를 낮은 값에서 높은 값으로 밀어 올리는 치비 서소영](https://img.seosoyoung.eiaserinnys.me/images/claude-riemann-zeta-bound/02-zeta-line.png)
 
 ## Claude는 무엇을 어떻게 논증했나
 
@@ -45,11 +45,11 @@ Anthropic의 설명에 따르면 큰 그림은 이렇다. 임계선 위의 영�
 
 Claude가 이 결과를 낸 것은 Claude Code에서의 두 세션, 출력 토큰으로 치면 3,100만 개를 쓴 작업이었다. 수학자가 아닌 Anthropic 직원 재러드 서머(Jarred Sumner)가 "제대로 한번 덤벼 보라"고만 시키고 수학적 판단은 모델에 맡겼다. 처음 650개의 아이디어는 전부 막혔다. 다시 해보라는 말에 Claude는 약 60개의 서브에이전트를 하루 반 동안 움직이며 훨씬 깊이 들어갔다. 서브에이전트들은 이미 알려진 제타 영점을 상대로 수치 계산을 반복해 결과를 확인하고 서로의 증명을 검토했다. 자기 발견이 이미 나온 것은 아닌지 확인하려고 arXiv에서 논문 54편을 뒤졌고, 결과를 처음부터 독립적으로 다시 증명해 보기도 했다.
 
-![코드를 돌리고 서로의 결과를 검토하는 여러 작은 분신들을 조율하는 치비 서소영](/images/claude-riemann-zeta-bound/03-subagents.png)
+![코드를 돌리고 서로의 결과를 검토하는 여러 작은 분신들을 조율하는 치비 서소영](https://img.seosoyoung.eiaserinnys.me/images/claude-riemann-zeta-bound/03-subagents.png)
 
 재러드가 넣은 말은 대부분 격려였다. "계속 가 봐", "너 자신을 믿어" 같은 것이었다. Claude는 처음에 스스로 의미 있는 진전을 낼 수 있을지 미심쩍어했는데, Anthropic은 이런 격려가 그 망설임을 넘기는 데 도움이 된 것으로 본다.
 
-![거울 속 위축된 자신에게 하늘색 쪽지를 건네며 조용히 격려하는 치비 서소영](/images/claude-riemann-zeta-bound/04-encouragement.png)
+![거울 속 위축된 자신에게 하늘색 쪽지를 건네며 조용히 격려하는 치비 서소영](https://img.seosoyoung.eiaserinnys.me/images/claude-riemann-zeta-bound/04-encouragement.png)
 
 ## 검증, 그리고 남은 것
 

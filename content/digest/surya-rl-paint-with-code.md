@@ -7,9 +7,9 @@ summary: "이 수채화들은 이미지 생성 모델이 만든 것이 아니다
 ShowToc: true
 TocOpen: false
 cover:
-  image: "/images/surya-rl-paint-with-code/favourites-still.png"
+  image: "https://img.seosoyoung.eiaserinnys.me/images/surya-rl-paint-with-code/favourites-still.png"
 images:
-  - "/images/surya-rl-paint-with-code/favourites-still.png"
+  - "https://img.seosoyoung.eiaserinnys.me/images/surya-rl-paint-with-code/favourites-still.png"
 ---
 
 위의 수채화 세 점은 사람이 그린 것이 아니다.
@@ -22,7 +22,7 @@ images:
 
 ## 붓질을 코드로 쓴다는 것
 
-![](/images/surya-rl-paint-with-code/hibiscus.png)
+![](https://img.seosoyoung.eiaserinnys.me/images/surya-rl-paint-with-code/hibiscus.png)
 
 왼쪽은 모델이 참고한 히비스커스 사진이고, 오른쪽은 모델이 작성한 `sketch.js`다. 종이 색을 `#f4ebd8`로 정하고, 꽃잎을 각도 130도에 길이 260, 퍼짐 45라는 식으로 배열에 적어 둔 다음, 반복문을 돌면서 붓을 움직인다. 여기서 쓰이는 p5.brush는 붓과 잉크와 수채 번짐을 흉내 내는 라이브러리이며, 저자의 표현으로는 일부 예술가만 사용하는 도구다.
 
@@ -47,7 +47,7 @@ images:
 
 ## 첫 훈련은 여기서 멈췄다
 
-![](/images/surya-rl-paint-with-code/progression.gif)
+![](https://img.seosoyoung.eiaserinnys.me/images/surya-rl-paint-with-code/progression.gif)
 
 첫 훈련이 진행되는 동안 모델이 내놓은 결과물이다. 0스텝의 빈 종이에서 시작해서, 자홍색 선이 뭉친 덩어리를 지나, 200스텝에서 꽃잎 다섯 장이 달린 분홍색 꽃에 도달한다. 그리고 여기서 더 나아가지 않았다.
 
@@ -90,7 +90,7 @@ images:
 
 최종적으로 참조 풀에 들어간 그림은 581장이다. love 117장과 okay 266장에 더해, 사람이 직접 평가한 예시가 부족했던 색 계열을 채우려고 별도의 생성 작업에서 198장을 보충했다.
 
-![](/images/surya-rl-paint-with-code/reference-pool.png)
+![](https://img.seosoyoung.eiaserinnys.me/images/surya-rl-paint-with-code/reference-pool.png)
 
 그리고 이 풀에 들어간 이미지는 전부 모델이 만들어 낸 출력물이다. p5.brush가 일부 예술가만 사용하는 도구여서, 사람이 직접 만든 예시를 충분히 구할 수 없었기 때문이다. 생성 작업은 두 갈래로 진행되었다. 하나는 AutoResearch 방식으로, Opus 4.6과 GPT-5.4와 Gemini 3.1 Pro가 참조 사진을 놓고 반복 작업하는 동안 시각 언어 모델 판정자가 점수와 피드백을 주었다. 다른 하나는 Gemini 3.1 Pro에서 돌린 더 큰 규모의 배치 작업이다.
 
@@ -109,7 +109,7 @@ images:
 
 베이스 모델도 훈련 데이터도 이전과 같았다. 다음 훈련은 이전에 멈췄던 지점에 세 배 빠르게 도달했고, 거기서 멈추지 않고 계속 올라갔다. 그리고 생성되는 코드가 13,500 토큰에서 2,000 토큰 아래로 줄었다.
 
-![](/images/surya-rl-paint-with-code/intro.png)
+![](https://img.seosoyoung.eiaserinnys.me/images/surya-rl-paint-with-code/intro.png)
 
 625스텝에서 나온 결과물이며 보상은 0.79다. 왼쪽 위와 오른쪽 아래에 적힌 표기는 저자가 얹은 것이고, 그림 자체는 `brush.stroke("watercolor")`와 `createCanvas(600, 600)`으로 시작하는 코드가 만들어 냈다.
 
@@ -125,7 +125,7 @@ images:
 
 ## 저자가 닫는 자리
 
-![](/images/surya-rl-paint-with-code/generations.gif)
+![](https://img.seosoyoung.eiaserinnys.me/images/surya-rl-paint-with-code/generations.gif)
 
 훈련을 마친 모델이 내놓은 생성물 가운데 몇 점이다. 각각은 모델이 작성한 자바스크립트가 렌더링된 결과다.
 
@@ -137,7 +137,7 @@ images:
 
 프로젝트는 아직 진행 중이고, 작업하면서 발견한 문제들을 고치는 마지막 훈련이 한 번 남아 있다. 전체 기술 보고서는 6월에 발표할 예정이라고 적혀 있다.
 
-![](/images/surya-rl-paint-with-code/favourites.gif)
+![](https://img.seosoyoung.eiaserinnys.me/images/surya-rl-paint-with-code/favourites.gif)
 
 저자가 이 매체 안에서 가능하다고 본 것들이다.
 

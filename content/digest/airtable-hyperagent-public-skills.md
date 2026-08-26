@@ -7,9 +7,9 @@ summary: "Airtable의 Alex McDonnell이 공개한 12개 에이전트 스킬은 �
 ShowToc: true
 TocOpen: false
 cover:
-  image: "/images/airtable-hyperagent-public-skills/landing-preview.png"
+  image: "https://img.seosoyoung.eiaserinnys.me/images/airtable-hyperagent-public-skills/landing-preview.png"
 images:
-  - "/images/airtable-hyperagent-public-skills/landing-preview.png"
+  - "https://img.seosoyoung.eiaserinnys.me/images/airtable-hyperagent-public-skills/landing-preview.png"
 ---
 
 ## 손 댄 시연 — 리포의 디자인 규율대로 짜본 카탈로그 랜딩
@@ -20,7 +20,7 @@ images:
 
 <a class="landing-card" href="/landing/hyperagent-skills/index.html" target="_blank" rel="noopener" aria-label="카탈로그 랜딩 페이지 열기">
   <div class="landing-card__thumb">
-    <img src="/images/airtable-hyperagent-public-skills/landing-preview.png" alt="Hyperagent Public Skills 카탈로그 랜딩 미리보기 — NYT 그래픽 디스크 풍 에디토리얼 레이아웃" loading="lazy" />
+    <img src="https://img.seosoyoung.eiaserinnys.me/images/airtable-hyperagent-public-skills/landing-preview.png" alt="Hyperagent Public Skills 카탈로그 랜딩 미리보기 — NYT 그래픽 디스크 풍 에디토리얼 레이아웃" loading="lazy" />
     <span class="landing-card__tag">Embedded · Landing Page</span>
   </div>
   <div class="landing-card__body">

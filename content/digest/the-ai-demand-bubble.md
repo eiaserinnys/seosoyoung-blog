@@ -5,9 +5,9 @@ tags: ["AI", "경제·금융", "Anthropic", "OpenAI", "데이터센터"]
 categories: ["다이제스트"]
 summary: "Ed Zitron이 애널리스트 추정치를 근거로, Amazon·Microsoft·Google의 AI 매출과 성장의 대부분이 OpenAI·Anthropic 두 곳의 컴퓨트 지출에서 나온다고 주장한 글. 그 둘을 빼면 AI 수요는 사실상 없고, 세 회사는 이 집중을 공시하지 않아 투자자를 오도하고 있다는 진단이다."
 cover:
-  image: "/images/the-ai-demand-bubble/fig1.png"
+  image: "https://img.seosoyoung.eiaserinnys.me/images/the-ai-demand-bubble/fig1.png"
 images:
-  - "/images/the-ai-demand-bubble/fig1.png"
+  - "https://img.seosoyoung.eiaserinnys.me/images/the-ai-demand-bubble/fig1.png"
 ShowToc: true
 TocOpen: false
 ---
@@ -38,7 +38,7 @@ Barclays의 Ross Sandler는 두 랩의 컴퓨트 지출 자체를 연도별로 �
 | 2027 | 253억 달러 | 150억 달러 |
 | 2028 | 358억 달러 | 200억 달러 |
 
-![Amazon AI 매출에서 Anthropic·OpenAI가 차지하는 비중 (Barclays, Ross Sandler 추정)](/images/the-ai-demand-bubble/fig1.png)
+![Amazon AI 매출에서 Anthropic·OpenAI가 차지하는 비중 (Barclays, Ross Sandler 추정)](https://img.seosoyoung.eiaserinnys.me/images/the-ai-demand-bubble/fig1.png)
 
 Amazon은 2026년 자본지출로 2,200억 달러를 쓸 계획이고, Zitron이 보기에 그 지출은 거의 전적으로 반년 만에 950억 달러를 조달해야 했던 한 회사(Anthropic)에 컴퓨트를 공급하기 위한 것이다. 그 조달액 중 50억 달러는 Amazon 자신이 넣었다.
 
@@ -46,17 +46,17 @@ Amazon은 2026년 자본지출로 2,200억 달러를 쓸 계획이고, Zitron이
 
 Google도 같은 처지다. UBS의 Stephen Ju는 2026년 Google Cloud 매출에서 Anthropic·OpenAI·Meta가 각각 21%, 7%, 1%를, 2027년에는 44%, 5%, 1%를 차지한다고 봤다. 두 AI랩만 합치면 2026년 28%, 2027년 48% 이상이다. Ju가 그 외의 큰 고객을 하나도 언급하지 않았다는 점을, Zitron은 다른 대형 고객이 사실상 없다는 신호로 읽는다.
 
-![Google Cloud 매출에서 Anthropic·OpenAI·Meta가 차지하는 비중 (UBS, Stephen Ju 추정)](/images/the-ai-demand-bubble/fig2.png)
+![Google Cloud 매출에서 Anthropic·OpenAI·Meta가 차지하는 비중 (UBS, Stephen Ju 추정)](https://img.seosoyoung.eiaserinnys.me/images/the-ai-demand-bubble/fig2.png)
 
 Bloomberg Intelligence 컨센서스로 잡은 Google Cloud 매출(2026년 1,059억 달러, 2027년 1,738억 달러)에 이 비중을 대입하면, OpenAI·Anthropic 몫은 2026년 294억 달러(74억+220억), 2027년 약 847억 달러(86.9억+760억)가 된다. Zitron은 이것이 Google AI 매출의 최소 75%, 어쩌면 그 이상이라고 본다. Google의 비-AI 클라우드 사업은 2026년부터 2028년까지 사실상 정체로 추정된다.
 
-![Google Cloud의 비-AI 사업은 2026년부터 2028년까지 사실상 정체로 추정된다](/images/the-ai-demand-bubble/fig3.png)
+![Google Cloud의 비-AI 사업은 2026년부터 2028년까지 사실상 정체로 추정된다](https://img.seosoyoung.eiaserinnys.me/images/the-ai-demand-bubble/fig3.png)
 
 Microsoft도 다르지 않다. Wells Fargo의 Michael Turrin(2026년 5월 31일 노트)은 Microsoft AI 매출의 70% 이상이 두 랩에서 나오며, FY2027 말에는 그 비중이 74%에 이른다고 봤다. Azure 매출에서 두 랩이 차지하는 몫은 FY2026 23%에서 FY2027 35%로 커진다. Azure가 전년 대비 41% 성장했는데, 그 성장의 40% 이상이 두 랩에서 왔다는 계산이다. Azure가 AI 말고도 훨씬 많은 것을 판다는 점을 감안하면 무거운 수치다.
 
-![Microsoft 365의 AI 매출과 OpenAI 매출 배분 비교 (Wells Fargo 추정)](/images/the-ai-demand-bubble/fig4.png)
+![Microsoft 365의 AI 매출과 OpenAI 매출 배분 비교 (Wells Fargo 추정)](https://img.seosoyoung.eiaserinnys.me/images/the-ai-demand-bubble/fig4.png)
 
-![Azure 매출에서 두 AI랩이 차지하는 비중, FY2026 23%에서 FY2027 35%로 (Wells Fargo 추정)](/images/the-ai-demand-bubble/fig5.png)
+![Azure 매출에서 두 AI랩이 차지하는 비중, FY2026 23%에서 FY2027 35%로 (Wells Fargo 추정)](https://img.seosoyoung.eiaserinnys.me/images/the-ai-demand-bubble/fig5.png)
 
 Zitron은 이 대목을 이렇게 정리한다.
 
@@ -68,7 +68,7 @@ Microsoft·Google·Amazon의 AI 매출과 그 성장의 대부분이 Anthropic·
 
 Zitron의 논증은 단순하다. 두 랩을 빼고 나면 세 회사의 AI 매출이 얼마나 초라한지를 보라는 것이다.
 
-![Barclays 노트에서 비-Anthropic/OpenAI 매출만 떼어낸 것. 각 열은 2025·2026·2027·2028년(뒤 셋은 추정치)](/images/the-ai-demand-bubble/fig6.png)
+![Barclays 노트에서 비-Anthropic/OpenAI 매출만 떼어낸 것. 각 열은 2025·2026·2027·2028년(뒤 셋은 추정치)](https://img.seosoyoung.eiaserinnys.me/images/the-ai-demand-bubble/fig6.png)
 
 - **Amazon**: 2025년 자본지출은 1,318억 달러였는데, Barclays가 추정한 비-두랩 AI 매출의 약 32배다. 전체 AI 매출(96억 달러)을 넣어도 14배다. 2026년 계획대로 2,200억 달러를 쓰면, 비-두랩 매출 85억 달러의 26배, 전체 AI 매출 316억 달러의 7배가 된다. Barclays의 2028년 추정으로도 Amazon의 AI 매출은 약 750억 달러(그중 75%가 두 랩)에 그친다. AI 버블이 시작된 지 4년째의 숫자다.
 - **Google**: UBS 추정대로여도 Google은 2026년 말까지 약 4,085억 달러(연말까지 남은 컨센서스 1,205억 달러 포함)를 자본지출로 써서 연 약 800억 달러 규모의 AI 사업을 만든다. 그 대부분이 Anthropic 컴퓨트를 팔거나 Vertex로 그 모델 접근을 파는 데서 나온다.

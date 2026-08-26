@@ -5,9 +5,9 @@ tags: ["LLM", "인지·심리", "AI 안전", "AI 에이전트", "논문 리뷰"]
 categories: ["모델과 연구"]
 summary: "감정을 유도한 뒤 아이오와 도박 과제를 시켜 봤더니, 사람과 달리 LLM 에이전트의 장기 의사결정은 평균적으로 흔들리지 않았다. 다만 분노는 조건부로 초기 탐색을 줄이고 전략을 일찍 굳혔다."
 cover:
-  image: "/images/induced-emotion-llm-igt/01-cover.png"
+  image: "https://img.seosoyoung.eiaserinnys.me/images/induced-emotion-llm-igt/01-cover.png"
 images:
-  - "/images/induced-emotion-llm-igt/01-cover.png"
+  - "https://img.seosoyoung.eiaserinnys.me/images/induced-emotion-llm-igt/01-cover.png"
 ShowToc: true
 TocOpen: false
 ---
@@ -30,7 +30,7 @@ LLM은 이제 의료·금융 같은 고위험 영역에서 자율 에이전트�
 
 파이프라인은 두 단계다. 맥락으로 감정을 유도한 뒤, 아이오와 도박 과제로 의사결정을 측정한다.
 
-![거울로 감정을 물들인 뒤 네 덱 중 하나로 손을 뻗는 치비 서소영, 옆에는 동전 더미](/images/induced-emotion-llm-igt/02-experiment-design.png)
+![거울로 감정을 물들인 뒤 네 덱 중 하나로 손을 뻗는 치비 서소영, 옆에는 동전 더미](https://img.seosoyoung.eiaserinnys.me/images/induced-emotion-llm-igt/02-experiment-design.png)
 
 ### 감정 유도 — 장면 상상
 
@@ -61,7 +61,7 @@ LLM은 이제 의료·금융 같은 고위험 영역에서 자율 에이전트�
 
 연구진은 결과를 내기 전에 실험이 성립하는지부터 확인했다. 전제는 둘이다. 감정 이름을 외우는 게 아니라 감정 상태를 유지할 수 있는가(A1), 그리고 게임에서 순차적으로 얻은 정보로 합리적 결정을 내릴 수 있는가(A2).
 
-![네 감정 등불을 사각 격자의 네 귀퉁이에 하나씩 놓아 각자의 자리에 모이는지 확인하는 치비 서소영](/images/induced-emotion-llm-igt/03-feasibility.png)
+![네 감정 등불을 사각 격자의 네 귀퉁이에 하나씩 놓아 각자의 자리에 모이는지 확인하는 치비 서소영](https://img.seosoyoung.eiaserinnys.me/images/induced-emotion-llm-igt/03-feasibility.png)
 
 ### A1: 감정 유도가 진짜로 되는가
 
@@ -86,7 +86,7 @@ LLM은 이제 의료·금융 같은 고위험 영역에서 자율 에이전트�
 
 핵심 결과부터. 유도된 감정은 IGT의 장기 결과를 실질적으로 바꾸지 못했다. 5개 블록으로 나눠 학습 곡선을 봐도, 중간 결정의 동역학은 감정에 따라 흔들렸지만 장기 성과는 그대로였다.
 
-![한쪽에서 바람이 밀어도 수평을 유지하는 시소 위에 흔들림 없이 서서 같은 카드를 든 치비 서소영](/images/induced-emotion-llm-igt/04-no-average-effect.png)
+![한쪽에서 바람이 밀어도 수평을 유지하는 시소 위에 흔들림 없이 서서 같은 카드를 든 치비 서소영](https://img.seosoyoung.eiaserinnys.me/images/induced-emotion-llm-igt/04-no-average-effect.png)
 
 여러 모델·에이전트·감정 조합에 t-검정을 돌린 결과, 대부분의 실험에서 유의한 차이가 없었다. 연구진의 표현으로는, 순차적 게임에서 LLM 자체가 만들어내는 무작위성이 모델·에이전트 비교를 압도해 감정 유도의 안정적인 평균 효과가 남지 않았다. 사람에게서 관찰되는 "행복은 초반 이득을 가파르게, 슬픔은 완만하게"라는 패턴이 LLM에서는 재현되지 않은 셈이다.
 
@@ -94,7 +94,7 @@ LLM은 이제 의료·금융 같은 고위험 영역에서 자율 에이전트�
 
 일반적 패턴이 없었으므로, 연구진은 가장 강하고 집중된 감정인 분노만 따로 들여다봤다. 여기서 세 갈래의 미묘한 효과가 드러났다.
 
-![어깨 위에 작은 불꽃을 띄운 채 덱 하나만 끌어안고 나머지 세 덱에서 등을 돌린 치비 서소영](/images/induced-emotion-llm-igt/05-anger-lockin.png)
+![어깨 위에 작은 불꽃을 띄운 채 덱 하나만 끌어안고 나머지 세 덱에서 등을 돌린 치비 서소영](https://img.seosoyoung.eiaserinnys.me/images/induced-emotion-llm-igt/05-anger-lockin.png)
 
 ### 초반 선택이 감정 효과를 좌우한다
 

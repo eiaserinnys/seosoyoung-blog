@@ -5,9 +5,9 @@ tags: ["food-ai", "embedding", "computational-gastronomy", "graph-embedding", "�
 categories: ["모델과 연구"]
 summary: "FlavorGraph 후속작. 414만 다국어 레시피로 학습한 세 자매 식재료 임베딩(Cooc·Core·Chem)을 통해 '화학 vs 레시피-맥락'을 조정 가능한 설계 축으로 만들고, 페어링과 SLERP 회전이라는 두 연산자로 임베딩 공간을 항해한다."
 cover:
-  image: "/images/epicure-emergent-geometry-2026/figure1-cuisine-umap.png"
+  image: "https://img.seosoyoung.eiaserinnys.me/images/epicure-emergent-geometry-2026/figure1-cuisine-umap.png"
 images:
-  - "/images/epicure-emergent-geometry-2026/figure1-cuisine-umap.png"
+  - "https://img.seosoyoung.eiaserinnys.me/images/epicure-emergent-geometry-2026/figure1-cuisine-umap.png"
 ShowToc: true
 TocOpen: false
 sidenotes: true
@@ -74,7 +74,7 @@ Epicure는 이 세 제약을 동시에 들어내기 위해 임베딩을 **처음
 
 Core만 유독 공간이 집중되어 있는데, 이는 입력 데이터가 무너진 게 아니라 10배 I–I 워크 주입이 만든 **의도된 결과**다(강한 레시피-맥락 인력). 라벨 없이도 세 모델 모두 USDA 식품군(NMI 0.20\~0.25)과 8개 요리 거대권역(soft NMI 0.43\~0.46) 주위로 스스로 조직되며, 문화권이 식품군보다 약 2배 더 깨끗하게 분리된다. 문화 전통이 영양 범주보다 식재료 동시출현을 더 선명하게 빚는다는 뜻이다.
 
-![세 모델의 1,790개 식재료를 2-D UMAP으로 투영하고 요리 거대권역별로 색칠한 산점도. 동아시아·남아시아·라틴아메리카·지중해 클러스터가 세 모델 모두에서 뚜렷이 분리된다.](/images/epicure-emergent-geometry-2026/figure1-cuisine-umap.png)
+![세 모델의 1,790개 식재료를 2-D UMAP으로 투영하고 요리 거대권역별로 색칠한 산점도. 동아시아·남아시아·라틴아메리카·지중해 클러스터가 세 모델 모두에서 뚜렷이 분리된다.](https://img.seosoyoung.eiaserinnys.me/images/epicure-emergent-geometry-2026/figure1-cuisine-umap.png)
 
 ## 방향 품질: Cooc < Core < Chem
 
@@ -89,9 +89,9 @@ Core만 유독 공간이 집중되어 있는데, 이는 입력 데이터가 무�
 
 Chem은 27개 연속 프로브 중 26개에서 Core를, 27개 전부에서 Cooc를 이기고, 8개 요리권 전부를 리드한다. 주목할 점은 화학 walk 스키마가 **직접 인코딩하지 않는** 기본맛·USDA 영양소·요리권 프로브에서도 이 순서가 유지된다는 것이다. 즉 화학 매개 워크는 자기가 직접 보는 라벨 너머까지 미치는 구조적 prior로 작동한다.
 
-![27개 연속 프로브의 방향 품질을 Spearman ρ로 나타낸 막대 차트. Chem(녹색)이 거의 모든 프로브에서 선두.](/images/epicure-emergent-geometry-2026/figure2-direction-quality.png)
+![27개 연속 프로브의 방향 품질을 Spearman ρ로 나타낸 막대 차트. Chem(녹색)이 거의 모든 프로브에서 선두.](https://img.seosoyoung.eiaserinnys.me/images/epicure-emergent-geometry-2026/figure2-direction-quality.png)
 
-![8개 요리 거대권역별 Cohen's d. n이 작은 권역에서 신뢰구간이 넓어지지만 권역 간 순위는 일관된다.](/images/epicure-emergent-geometry-2026/figure3-cuisine-cohend.png)
+![8개 요리 거대권역별 Cohen's d. n이 작은 권역에서 신뢰구간이 넓어지지만 권역 간 순위는 일관된다.](https://img.seosoyoung.eiaserinnys.me/images/epicure-emergent-geometry-2026/figure3-cuisine-cohend.png)
 
 ## 창발적 인자와 모드
 
@@ -107,7 +107,7 @@ Chem은 27개 연속 프로브 중 26개에서 Core를, 27개 전부에서 Cooc�
 
 응집도와 기준선의 차이(tightness margin)는 세 모델 모두 약 0.5로 비슷하다. 절대 응집도는 각 모델의 집중도를 따라가서, Core의 집중된 기하학이 모드 응집과 기준선을 함께 끌어올린다.
 
-![ICA 인자 1개를 GMM 모드로 분해하여 UMAP에 색칠한 그림. 각 모드 중심에 Claude가 생성한 짧은 라벨이 붙는다.](/images/epicure-emergent-geometry-2026/figure4-ica-modes.png)
+![ICA 인자 1개를 GMM 모드로 분해하여 UMAP에 색칠한 그림. 각 모드 중심에 Claude가 생성한 짧은 라벨이 붙는다.](https://img.seosoyoung.eiaserinnys.me/images/epicure-emergent-geometry-2026/figure4-ica-modes.png)
 
 ## 변환: 페어링과 SLERP 항해
 

@@ -8,9 +8,9 @@ ShowToc: true
 TocOpen: false
 sidenotes: true
 cover:
-  image: "/images/genbio-aido-cell/fig1-virtual-cell-loop.png"
+  image: "https://img.seosoyoung.eiaserinnys.me/images/genbio-aido-cell/fig1-virtual-cell-loop.png"
 images:
-  - "/images/genbio-aido-cell/fig1-virtual-cell-loop.png"
+  - "https://img.seosoyoung.eiaserinnys.me/images/genbio-aido-cell/fig1-virtual-cell-loop.png"
 ---
 
 ## 3줄 요약
@@ -35,7 +35,7 @@ images:
 
 이 월드 모델이 시뮬레이션 엔진이고, 그 바깥에 <strong>월드 모델 하네스</strong>가 붙는다. 하네스는 개입이 이어지는 동안 분자에서 세포 전체까지 모든 규모에서 세포 상태를 추적하고, 사용자 명령을 엔진이 실행할 단계로 옮긴다. 엔진과 하네스가 함께 있어야 실험을 프로그래밍하고, 관측하고, 다시 돌려 보고, 디버깅하는 인터페이스가 된다.
 
-![가상 세포의 다중 턴 실험 개념도](/images/genbio-aido-cell/fig1-virtual-cell-loop.png)
+![가상 세포의 다중 턴 실험 개념도](https://img.seosoyoung.eiaserinnys.me/images/genbio-aido-cell/fig1-virtual-cell-loop.png)
 *Figure 1. 가상 세포를 만들고, 변화를 가하고, 복제하고, 상태를 측정하는 과정을 여러 번 이어서 진행한다. 어느 시점에 무엇을 조회해도 세포 상태 자체는 바뀌지 않는다. (출처: GenBio AI)*
 
 이 설계에는 세 가지 이점이 있다.
@@ -50,7 +50,7 @@ images:
 
 범용 시스템을 재려면 벤치마크[^term-benchmark]도 범용이어야 한다. GenBio AI는 공개된 생물학 아틀라스, 즉 대규모 측정 데이터 모음을 모아 다섯 과제군 31개 지표로 된 벤치마크를 만들었다. 다섯 과제군은 소분자 섭동, 유전자 녹아웃, 단백질 다량체·단량체 구조, RNA 스플라이싱, 게놈 조절이다. 여기서 섭동은 세포에 변화를 준 다음 반응을 보는 실험을 가리킨다.
 
-![다섯 과제군 커버리지 비교](/images/genbio-aido-cell/fig2-benchmark-coverage.jpg)
+![다섯 과제군 커버리지 비교](https://img.seosoyoung.eiaserinnys.me/images/genbio-aido-cell/fig2-benchmark-coverage.jpg)
 *Figure 2. 다섯 과제군 전체를 다루는 시스템은 AIDO Cell 1.0뿐이며 31개 지표 중 24개에서 최고 성능을 낸다. 비교한 다른 모델은 많아야 두 과제군을 다룬다. (출처: GenBio AI)*
 
 함께 비교한 모델은 구조 예측의 AlphaFold 3와 Boltz-1, 조절 유전체의 AlphaGenome, 단일세포 파운데이션 모델[^term-scrnaseq]인 scGPT와 Geneformer다. 이들은 세포의 개별 요소만 다루므로 다섯 과제군 중 한둘만 담당한다.
@@ -63,7 +63,7 @@ AIDO Cell이 뒤진 항목도 있다. 단백질과 DNA의 상호작용에서는 
 
 두 세포주에서는 대규모 가상 실험도 진행했다. 세포주마다 유전자 녹아웃·녹다운·과발현과 소분자 투여를 무작위로 다섯 개씩 조합한 변화 100만 건을 시뮬레이션해 아틀라스를 만들었다. 아틀라스에서 점 하나는 시뮬레이션된 세포 상태이고 화살표 하나는 세포에 가한 변화다. 그래서 여러 단계로 이어지는 실제 실험은 흩어진 예측들의 산점도가 아니라 점과 점을 잇는 선으로 나타난다.
 
-![K-562와 Hep-G2 섭동 아틀라스](/images/genbio-aido-cell/fig3-perturbation-atlas.jpg)
+![K-562와 Hep-G2 섭동 아틀라스](https://img.seosoyoung.eiaserinnys.me/images/genbio-aido-cell/fig3-perturbation-atlas.jpg)
 *Figure 3. 두 세포주의 섭동 아틀라스. 각각 무작위로 다섯 개씩 조합한 변화 100만 건으로 만들었고, 여러 번 이어서 가한 실험이 선으로 겹쳐 표시돼 있다. Hep-G2는 생성된 세포 형태 이미지로, K-562는 생물학적 경로 활성화 점수로 표시했다. K-562는 Cell Painting에 적합하지 않기 때문이다. (출처: GenBio AI)*
 
 ## 시뮬레이션을 거꾸로 돌리기
@@ -95,10 +95,10 @@ for _ in range(N):
 
 발현 수준에서 이매티닙과 같아 보이는 설계라도 단백질 결합에서는 다르게 나오거나 표적 외 효과를 낼 수 있다. 따라서 후보 순위는 발현 반응만이 아니라 결합 방식과 표적 외 효과까지 함께 따져 매길 수 있다.
 
-![ABL1 바인더 설계 캠페인](/images/genbio-aido-cell/fig4-abl1-campaign.jpg)
+![ABL1 바인더 설계 캠페인](https://img.seosoyoung.eiaserinnys.me/images/genbio-aido-cell/fig4-abl1-campaign.jpg)
 *Figure 4. K-562 상태 공간에 투영한 ABL1 바인더 설계 캠페인. 생성된 후보 몇 개가 기준 상태에서 뻗어 나가는 선으로 표시되고, 이매티닙과 포나티닙을 적용한 상태가 비교용으로 함께 놓였다. (출처: GenBio AI)*
 
-![이매티닙과 설계된 ABL1 바인더 3종](/images/genbio-aido-cell/fig5-imatinib-analogs.jpg)
+![이매티닙과 설계된 ABL1 바인더 3종](https://img.seosoyoung.eiaserinnys.me/images/genbio-aido-cell/fig5-imatinib-analogs.jpg)
 *Figure 5. 이매티닙과 설계된 ABL1 바인더 3종(GBIO-392, GBIO-103, GBIO-157)을 같은 상태에서 읽어 낸 네 가지 값으로 비교한다. 2D 구조, 예측한 ABL1 결합 구조, ABL1 유전자 녹다운과 이매티닙의 발현 비교 기준, 생물학적 스트레스를 대신 보여 주는 예측 공여자 나이 변화. (출처: GenBio AI)*
 
 이 설계 과정은 기술 보고서에 실린 여러 사례 연구 중 하나다. 보고서에는 약물 반응 예측, 여러 변화를 조합한 스크리닝, 구조적 기전, 질병 내성 분석도 함께 실려 있다.
@@ -117,7 +117,7 @@ K-562와 Hep-G2는 사람 세포주 중에서 가장 잘 규명된 편이다. �
 
 GenBio AI는 이것이 생물학 모델에서 나타나는 새로운 종류의 스케일링 법칙일 수 있다고 본다. 한 세포주 안에서 데이터를 깊이 쌓는 대신 여러 생물학적 맥락에 걸쳐 넓게 쌓는 방식이다. 다만 아직 확인된 법칙은 아니고 지금은 그 성질을 조사하는 중이라고 덧붙인다.
 
-![AIDO Foundry의 맥락 적응 구조](/images/genbio-aido-cell/fig6-aido-foundry.png)
+![AIDO Foundry의 맥락 적응 구조](https://img.seosoyoung.eiaserinnys.me/images/genbio-aido-cell/fig6-aido-foundry.png)
 *Figure 6. AIDO Foundry는 사용자 데이터나 공개 데이터로 엔진을 새로운 생물학적 맥락에 맞춘다. 이렇게 만든 맞춤 엔진은 같은 인터페이스 뒤의 가상 세포 뱅크에 합류한다. (출처: GenBio AI)*
 
 ## 검증 기준이 아직 없다는 자인

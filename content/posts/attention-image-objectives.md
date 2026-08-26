@@ -7,9 +7,9 @@ summary: "눈길을 끄는 이미지를 예측하고 만드는 연구는 한 덩
 ShowToc: true
 TocOpen: false
 cover:
-  image: "/images/attention-image-objectives/01-cover.png"
+  image: "https://img.seosoyoung.eiaserinnys.me/images/attention-image-objectives/01-cover.png"
 images:
-  - "/images/attention-image-objectives/01-cover.png"
+  - "https://img.seosoyoung.eiaserinnys.me/images/attention-image-objectives/01-cover.png"
 ---
 
 눈길을 끄는 이미지를 예측하고 만드는 연구는 한 덩어리처럼 보이지만, 실은 네 갈래로 갈라져 있다. 사람의 어떤 반응을 목표로 두느냐, 시선인가 기억인가 미감인가 클릭인가에 따라 서로 다른 학문이 대응된다. 그리고 그중 예쁨과 클릭은 산업 데이터가 이미 갈라놓은 서로 다른 목적함수다.
@@ -23,10 +23,10 @@ images:
 <figure>
 <div style="display:flex;flex-wrap:wrap;gap:12px;justify-content:center;">
   <video autoplay loop muted playsinline style="width:47%;min-width:220px;max-width:300px;border-radius:8px;">
-    <source src="/images/attention-image-objectives/nevo_FFA_vid01.mp4" type="video/mp4">
+    <source src="https://img.seosoyoung.eiaserinnys.me/images/attention-image-objectives/nevo_FFA_vid01.mp4" type="video/mp4">
   </video>
   <video autoplay loop muted playsinline style="width:47%;min-width:220px;max-width:300px;border-radius:8px;">
-    <source src="/images/attention-image-objectives/nevo_pSTS_vid01.mp4" type="video/mp4">
+    <source src="https://img.seosoyoung.eiaserinnys.me/images/attention-image-objectives/nevo_pSTS_vid01.mp4" type="video/mp4">
   </video>
 </div>
 <figcaption>NEvo가 뇌 영역별로 최적화해 생성한 2초짜리 자극. 왼쪽은 얼굴 영역(FFA)을 겨냥한 결과로 얼굴과 눈이 두드러지고, 오른쪽은 사회적 상호작용을 읽는 영역(pSTS)을 겨냥한 결과로 형체들이 서로 얽히는 장면이 나온다. 출처: <a href="https://nevo-project.epfl.ch/">NEvo</a> (EPFL, 2026).</figcaption>
@@ -82,14 +82,14 @@ images:
 가장 오래되고 가장 산업화된 갈래다. Itti, Koch, Niebur(1998)가 색과 명도, 방향 같은 저수준 특징을 다중 스케일로 합쳐 위상적 시선 지도를 만든 골격이 20년간 기준이었다. SALICON(2015)이 마우스 트래킹 1만 장으로 딥러닝 시대를 열었고, 튀빙겐의 DeepGaze 계열이 정착했다. 최신 SOTA인 <strong>DeepGaze MSDB</strong>(2025)는 CLIP과 DINOv2 피처를 결합해 MIT300 벤치마크에서 AUC 0.894까지 올라, 인간 상한(약 0.92)에 바짝 다가섰다.{{< sn >}}자유 응시 조건의 MIT300/MIT1003 벤치마크 기준. 인간 사이 일치도 상한이 약 0.92로 알려져 있다. 다중 데이터셋 시선 예측 모델, [arXiv:2505.10169](https://arxiv.org/abs/2505.10169) (2025).{{< /sn >}} 구글이 주도한 <strong>UniAR</strong>(2024)은 시선과 스캔패스, 미감, 좋아요를 하나의 모델로 통합 예측하며 지금의 최전선을 보여준다.{{< sn >}}UniAR: Unifying Human Attention and Response. [arXiv:2312.10175](https://arxiv.org/abs/2312.10175), NeurIPS 2024.{{< /sn >}}
 
 <figure>
-<img src="/images/attention-image-objectives/saliency-uniar-overlay.png" alt="이미지 위에 시선 히트맵을 겹쳐 예측 결과를 실측과 대비한 예시" style="width:100%;border-radius:8px;">
+<img src="https://img.seosoyoung.eiaserinnys.me/images/attention-image-objectives/saliency-uniar-overlay.png" alt="이미지 위에 시선 히트맵을 겹쳐 예측 결과를 실측과 대비한 예시" style="width:100%;border-radius:8px;">
 <figcaption>한 장의 이미지에서 사람의 시선이 어디로 쏠리는지 예측한 결과. 초록 테두리가 실제 시선, 주황 테두리가 모델 예측이다. 거리 사진부터 웹페이지, 영화 포스터까지 도메인을 가리지 않고 예측한다. 출처: UniAR (NeurIPS 2024), Fig. 2.</figcaption>
 </figure>
 
 산업 응용도 이 갈래에 몰려 있다. Neurons Inc, Attention Insight, 3M VAS가 내세우는 시선 히트맵 서비스와 "95% 정확도" 주장은 대부분 MIT와 튀빙겐 벤치마크에 뿌리를 둔다. 정작 성숙한 것은 자유 응시 조건이고, 무언가를 찾거나 읽는 태스크 응시와 시선 이동 순서(스캔패스)는 아직 덜 여물었다.
 
 <figure>
-<img src="/images/attention-image-objectives/saliency-msdb-architecture.png" alt="현대 시선 예측 파이프라인의 구조도" style="width:100%;border-radius:8px;">
+<img src="https://img.seosoyoung.eiaserinnys.me/images/attention-image-objectives/saliency-msdb-architecture.png" alt="현대 시선 예측 파이프라인의 구조도" style="width:100%;border-radius:8px;">
 <figcaption>현대 시선 예측 파이프라인의 구조. 입력 이미지에서 CLIP과 DINOv2의 다중 스케일 특징을 뽑아 읽어낸 뒤, centerbias와 blur를 거쳐 시선 밀도 지도를 낸다. 출처: 다중 데이터셋 시선 예측 모델 (arXiv:2505.10169, 2025).</figcaption>
 </figure>
 
@@ -98,14 +98,14 @@ images:
 이 갈래를 지탱하는 발견 하나가 있다. Isola 외(2011)의 "What Makes an Image Memorable?"는 <strong>기억성이 개인차가 아니라 이미지에 내재한 고유 속성</strong>임을 보였다. 서로 다른 관찰자 집단이 어떤 이미지를 기억하는지가 Spearman 0.68에서 0.83으로 일치한다.{{< sn >}}관찰자 집단을 둘로 나눠 각각의 기억성 순위를 비교했을 때의 일치도. 색이나 밝기처럼 이미지에 내재해 계산 가능한 성질이라는 근거가 됐다. Isola 외, What Makes an Image Memorable? (CVPR 2011).{{< /sn >}} 색이나 밝기처럼 계산 가능한 이미지의 성질이라는 뜻이다. Khosla 외(2015)가 LaMem 6만 장으로 확장했고, ResMem(2021)이 Spearman 0.679로 인간 상한에 도달하며 예측 자체는 포화됐다.
 
 <figure>
-<img src="/images/attention-image-objectives/mem-isola-memorability-map.png" alt="이미지 안에서 기억을 끌어올리는 영역과 잊히게 하는 영역을 표시한 기억성 지도" style="width:100%;border-radius:8px;">
+<img src="https://img.seosoyoung.eiaserinnys.me/images/attention-image-objectives/mem-isola-memorability-map.png" alt="이미지 안에서 기억을 끌어올리는 영역과 잊히게 하는 영역을 표시한 기억성 지도" style="width:100%;border-radius:8px;">
 <figcaption>이미지 안에서 어느 영역이 기억을 끌어올리고(빨강) 어느 영역이 잊히게 하는지(파랑) 나타낸 기억성 지도. 기억은 관찰자 개인이 아니라 이미지의 어느 부분에 담겨 있는지를 보여준다. 출처: Isola 외, What Makes an Image Memorable? (CVPR 2011), Fig. 7.</figcaption>
 </figure>
 
 2024년부터 연구 에너지는 "왜 기억되는가"로 넘어갔다. Nature Human Behaviour(2024)는 재구성이 어려운 시각 표상을 가진 이미지일수록 기억 흔적이 강하다는 계산 이론을 제시했다.{{< sn >}}Images with harder-to-reconstruct visual representations leave stronger memory traces. Nature Human Behaviour (2024), [PubMed 38740989](https://pubmed.ncbi.nlm.nih.gov/38740989/).{{< /sn >}} 기억성은 뇌 신호와도 연결된다. 하측두피질 집단 반응이 기억성을 예측하고, 고기억성 이미지에서 ERP의 N300, N400 진폭이 낮아진다(더 효율적인 처리).
 
 <figure>
-<img src="/images/attention-image-objectives/mem-ganalyze-sequence.png" alt="생성 이미지를 기억성과 미감, 감정가가 높아지도록 변형한 시퀀스" style="width:100%;border-radius:8px;">
+<img src="https://img.seosoyoung.eiaserinnys.me/images/attention-image-objectives/mem-ganalyze-sequence.png" alt="생성 이미지를 기억성과 미감, 감정가가 높아지도록 변형한 시퀀스" style="width:100%;border-radius:8px;">
 <figcaption>생성 이미지를 왼쪽에서 오른쪽으로 갈수록 기억성(또는 미감, 감정가)이 높아지도록 변형한 시퀀스. 강아지는 0.58에서 0.77로, 피망은 0.58에서 0.92로 기억성 점수가 오른다. 뒤에서 볼 "점수를 fitness로 둔 최적화" 골격의 원형이다. 출처: Goetschalckx 외, GANalyze (ICCV 2019), Fig. 1.</figcaption>
 </figure>
 
@@ -114,14 +114,14 @@ images:
 Datta와 Ke(2006)가 열고 AVA 데이터셋(2012, 25만 장에 5,500만 평점)이 표준을 세웠다. NIMA(2018)가 평점 분포를 예측하는 아이디어로 IQA 표준을 만들었지만, 실질적 영향력이 가장 큰 물건은 <strong>LAION-Aesthetics Predictor V2</strong>(2022)다. CLIP 임베딩에 선형 레이어 하나를 얹은 소박한 구조인데, 이것이 LAION-5B 필터링을 거치며 <strong>Stable Diffusion의 "예쁨 편향"의 근원</strong>이 됐다.{{< sn >}}CLIP 임베딩을 선형 레이어로 1점에서 10점에 매핑하는 단순 예측기. LAION-5B의 미적 필터링에 쓰여 생성 모델의 톤 편향으로 이어졌다. [improved-aesthetic-predictor](https://github.com/christophschuhmann/improved-aesthetic-predictor) (Schuhmann, 2022).{{< /sn >}} 지금 SD 생성물이 특정 톤에 쏠리는 이유가 이 예측기의 라벨 분포에 있다.
 
 <figure>
-<img src="/images/attention-image-objectives/aes-nima-ava-ranking.png" alt="풍경 사진을 NIMA 예측 미감 점수 순으로 늘어놓은 결과" style="width:100%;border-radius:8px;">
+<img src="https://img.seosoyoung.eiaserinnys.me/images/attention-image-objectives/aes-nima-ava-ranking.png" alt="풍경 사진을 NIMA 예측 미감 점수 순으로 늘어놓은 결과" style="width:100%;border-radius:8px;">
 <figcaption>같은 소재의 풍경 사진 15장을 NIMA가 매긴 예측 미감 점수 순으로 늘어놓은 결과. 사진마다 예측 점수가 붙어 6.38에서 3.55까지 내려간다. 미감을 숫자로 매기는 일이 실제로 가능함을 보여준다. 출처: Talebi &amp; Milanfar, NIMA (2018), Fig. 10.</figcaption>
 </figure>
 
 최근 몇 해(2023년 이후)는 언어와 비전 결합 쪽으로 넘어갔다. CLIP-IQA(2023)는 "고품질 대 저품질" 반의어 프롬프트의 softmax를 점수로 쓰고, Q-Align(2024)은 연속 점수 회귀 대신 Bad에서 Excellent까지의 이산 레벨로 파인튜닝하는 편이 인간 평가와 더 맞는다는 걸 보였다.{{< sn >}}Q-Align: Teaching LMMs for Visual Scoring via Discrete Text-Defined Levels. [arXiv:2312.17090](https://arxiv.org/abs/2312.17090), ICML 2024.{{< /sn >}} 한편 FAccT 2026 감사 연구는 LAION 예측기의 서구권 스톡사진 편향과 특정 집단 이미지 필터링을 실증하며, 규범적 미적 척도 대신 다원적 평가를 요구했다.
 
 <figure>
-<img src="/images/attention-image-objectives/aes-qalign-levels.png" alt="텍스트 레벨 기반으로 미감을 학습시키는 Q-Align 도식" style="width:100%;border-radius:8px;">
+<img src="https://img.seosoyoung.eiaserinnys.me/images/attention-image-objectives/aes-qalign-levels.png" alt="텍스트 레벨 기반으로 미감을 학습시키는 Q-Align 도식" style="width:100%;border-radius:8px;">
 <figcaption>연속 점수를 회귀하는 대신 bad, poor, fair, good, excellent 같은 텍스트 레벨로 학습시키는 Q-Align의 도식. 사람이 실제로 품질을 매기는 방식에 더 가깝고, 그 편이 인간 평가와 잘 맞았다. 출처: Wu 외, Q-Align (ICML 2024), Fig. 3.</figcaption>
 </figure>
 
@@ -175,7 +175,7 @@ Datta와 Ke(2006)가 열고 AVA 데이터셋(2012, 25만 장에 5,500만 평점)
 그래서 논문의 저자 목록에 알리바바, 텐센트, JD, Shopee, 메르카리 같은 이름이 붙는다. 그들이 던지는 질문은 하나로 모인다. 사람이 무엇을 예쁘다고 느끼는가와, 사람이 무엇을 누르는가는 같은 문제인가.
 
 <figure>
-<img src="/images/attention-image-objectives/jd-ctr-fig1-motivation.png" alt="같은 상품이라도 배경 연출에 따라 CTR이 달라지는 사례와 CTR 최적화 전후 비교" style="width:100%;border-radius:8px;">
+<img src="https://img.seosoyoung.eiaserinnys.me/images/attention-image-objectives/jd-ctr-fig1-motivation.png" alt="같은 상품이라도 배경 연출에 따라 CTR이 달라지는 사례와 CTR 최적화 전후 비교" style="width:100%;border-radius:8px;">
 <figcaption>같은 물병, 같은 의자인데 배경 연출만 바꾸면 예측 CTR이 0.013에서 0.023으로, 0.009에서 0.017로 벌어진다(왼쪽). 오른쪽은 CTR 기반 최적화 전후의 생성 이미지 비교다. 상품은 그대로인데 무엇이 클릭을 가르는지 한 장으로 보여준다. 출처: Xingye Chen 외, CAIG (WWW 2025), Fig. 1.</figcaption>
 </figure>
 
@@ -192,7 +192,7 @@ JD의 <strong>CAIG</strong>(WWW 2025)가 이 갈래의 선언문이다. 논문�
 </div>
 
 <figure>
-<img src="/images/attention-image-objectives/jd-ctr-fig2-pipeline.png" alt="CTR 신호로 광고 이미지 생성을 최적화하는 CAIG 파이프라인 개요" style="width:100%;border-radius:8px;">
+<img src="https://img.seosoyoung.eiaserinnys.me/images/attention-image-objectives/jd-ctr-fig2-pipeline.png" alt="CTR 신호로 광고 이미지 생성을 최적화하는 CAIG 파이프라인 개요" style="width:100%;border-radius:8px;">
 <figcaption>CTR 신호로 광고 이미지 생성을 최적화하는 CAIG 파이프라인. 이커머스 지식 사전학습 MLLM이 CTR 보상 모델의 신호를 받아 프롬프트와 배경 생성을 함께 밀어 올린다. 앞에서 본 NEvo의 골격(타겟, 점수 인코더, 탐색)이 커머스 언어로 그대로 반복된다. 출처: Xingye Chen 외, CAIG (WWW 2025), Fig. 2.</figcaption>
 </figure>
 
@@ -201,7 +201,7 @@ JD의 <strong>CAIG</strong>(WWW 2025)가 이 갈래의 선언문이다. 논문�
 클릭을 움직이는 구체적 요소로 학술이 반복해서 지목하는 것은 얼굴이다. Bakhshi 외의 "Faces Engage Us"(CHI 2014)는 인스타그램 사진 110만 장에서 얼굴이 담긴 사진이 좋아요를 38%, 댓글을 32% 더 받는다는 것을 보였다(얼굴의 수나 나이, 성별과는 무관했다).{{< sn >}}Bakhshi, Shamma, Gilbert, Faces Engage Us: Photos with Faces Attract More Likes and Comments on Instagram. CHI 2014.{{< /sn >}} 앨버타대와 텐센트가 함께 낸 <strong>AdSEE</strong>(KDD 2023)는 여기서 한 걸음 더 나가, StyleGAN2로 광고 속 얼굴의 잠재 코드를 편집하며 어떤 방향이 예측 클릭률을 올리는지 측정했다. 상위 방향은 미소, 얼굴을 살짝 아래로 향한 각도(시선이 아니라 머리 각도다), 여성적 특징이었다.{{< sn >}}QQ-AD 데이터셋에서 얼굴을 포함한 광고 2만여 건을 분석. QQ 브라우저에서 편집본 250개와 대조군 250개를 5일간 A/B로 비교해 유의미한 차이를 확인(p=3.68×10⁻⁵). 다만 헤드라인 리프트 수치는 논문에 명시되지 않았다. AdSEE, [arXiv:2309.08159](https://arxiv.org/abs/2309.08159), KDD 2023.{{< /sn >}}
 
 <figure>
-<img src="/images/attention-image-objectives/adsee-fig7-before-after.png" alt="AdSEE가 얼굴 속성을 편집해 광고 매력도를 높인 전후 예시" style="width:100%;border-radius:8px;">
+<img src="https://img.seosoyoung.eiaserinnys.me/images/attention-image-objectives/adsee-fig7-before-after.png" alt="AdSEE가 얼굴 속성을 편집해 광고 매력도를 높인 전후 예시" style="width:100%;border-radius:8px;">
 <figcaption>AdSEE가 얼굴 속성을 편집한 전(왼쪽)과 후(오른쪽). 표정과 각도를 미세하게 옮기는 것만으로 광고 이미지의 예측 클릭률이 달라진다. 출처: Liyao Jiang 외, AdSEE (KDD 2023), Fig. 7.</figcaption>
 </figure>
 
@@ -212,7 +212,7 @@ JD의 <strong>CAIG</strong>(WWW 2025)가 이 갈래의 선언문이다. 논문�
 메르카리(2024)의 결과가 이 갈래의 온도를 잘 보여준다. 이 팀은 GPT-4 비전으로 미감 라벨을 만들고 CLIP에 얹어 상품 이미지 점수를 매긴 뒤, 클릭된 상품과 클릭되지 않은 상품의 점수 분포가 다른지 검정했다. 차이는 통계적으로 분명했지만(Kolmogorov-Smirnov 검정, p=8.37×10⁻⁹), 중앙값 차이는 0.6 대 0.5로 작았다.{{< sn >}}Oinar 외, Image Score: Learning and Evaluating Human Preferences for Mercari Search. [arXiv:2408.11349](https://arxiv.org/abs/2408.11349), 2024. 검색 정렬에 반영했을 때 웹에서는 ATPU가 6.99% 올랐으나 모바일에서는 지표가 오히려 악화됐다.{{< /sn >}} 미감은 클릭과 상관이 있으되 약한 신호라는 뜻이다. 결정적으로, 이 점수를 검색 결과 정렬에 반영했을 때 웹에서는 지표가 올랐지만 <strong>모바일에서는 오히려 나빠졌다</strong>. 예쁨을 밀어 올리는 것이 언제나 이롭지는 않다는 반례를, 산업 데이터가 직접 내놓은 셈이다.
 
 <figure>
-<img src="/images/attention-image-objectives/mercari-fig4-score-dist.png" alt="클릭된 상품과 클릭되지 않은 상품의 이미지 미감 점수 분포 비교" style="width:100%;max-width:560px;border-radius:8px;">
+<img src="https://img.seosoyoung.eiaserinnys.me/images/attention-image-objectives/mercari-fig4-score-dist.png" alt="클릭된 상품과 클릭되지 않은 상품의 이미지 미감 점수 분포 비교" style="width:100%;max-width:560px;border-radius:8px;">
 <figcaption>클릭된 상품(위)과 클릭되지 않은 상품(아래)의 이미지 점수 분포. 통계적으로는 갈리지만 겹치는 영역이 넓다. 미감이 클릭을 설명하는 힘은 작다. 출처: Chingis Oinar 외, Image Score (Mercari, arXiv 2024), Fig. 4.</figcaption>
 </figure>
 

@@ -7,9 +7,9 @@ summary: "Suno 단독으로는 일본어 포에트리 리딩 곡을 만들 수 �
 ShowToc: true
 TocOpen: false
 cover:
-  image: "/images/suno-poetry-reading-mashup/suno-mashup-setting.png"
+  image: "https://img.seosoyoung.eiaserinnys.me/images/suno-poetry-reading-mashup/suno-mashup-setting.png"
 images:
-  - "/images/suno-poetry-reading-mashup/suno-mashup-setting.png"
+  - "https://img.seosoyoung.eiaserinnys.me/images/suno-poetry-reading-mashup/suno-mashup-setting.png"
 ---
 
 ## 3줄 요약
@@ -52,7 +52,7 @@ images:
 
 **1단계 — 낭독 트랙 생성 (ElevenLabs).** 텍스트 원고를 넘기면 다양한 캐릭터 음성 중에서 골라 내레이션 보이스를 생성할 수 있다. 저자는 출력이 매우 자연스러웠다고 평가한다.
 
-![ElevenLabs UI](/images/suno-poetry-reading-mashup/elevenlabs-ui.png)
+![ElevenLabs UI](https://img.seosoyoung.eiaserinnys.me/images/suno-poetry-reading-mashup/elevenlabs-ui.png)
 
 <iframe width="100%" height="275" src="https://note.com/embed/sounds/e2a5028f41856a58c7da6badef421ccd" frameborder="0" scrolling="no" style="border:none;" title="ElevenLabs로 생성한 낭독 트랙"></iframe>
 
@@ -62,7 +62,7 @@ images:
 
 **3단계 — 두 트랙을 Mashup으로 융합.** ElevenLabs에서 만든 낭독 파일은 Upload Audio로 Suno에 올려서 지정한다. 이때 낭독의 가사를 Lyrics 칸에도 넣어 두면 출력이 안정된다.
 
-![Suno Mashup 지정 화면](/images/suno-poetry-reading-mashup/suno-mashup-setting.png)
+![Suno Mashup 지정 화면](https://img.seosoyoung.eiaserinnys.me/images/suno-poetry-reading-mashup/suno-mashup-setting.png)
 
 두 트랙을 Mashup한 결과가 아래다.
 
@@ -76,7 +76,7 @@ Mashup 자체는 v5.5로 수행했다. v5.5는 "출력이 안정적이라 재미
 
 이번 곡도 4개의 출력과 STEM(분리 트랙)을 Premiere에서 편집해 조합했다.
 
-![4곡과 STEM을 Premiere에서 편집](/images/suno-poetry-reading-mashup/premiere-editing.png)
+![4곡과 STEM을 Premiere에서 편집](https://img.seosoyoung.eiaserinnys.me/images/suno-poetry-reading-mashup/premiere-editing.png)
 
 저자는 포에트리 리딩에 국한되지 않고 Mashup에 다양한 활용법이 있을 것이라는 전망으로 글을 맺는다.
 

@@ -8,9 +8,9 @@ math: true
 ShowToc: true
 TocOpen: false
 cover:
-  image: "/images/nguyen-deductive-circuits-2026/x1.png"
+  image: "https://img.seosoyoung.eiaserinnys.me/images/nguyen-deductive-circuits-2026/x1.png"
 images:
-  - "/images/nguyen-deductive-circuits-2026/x1.png"
+  - "https://img.seosoyoung.eiaserinnys.me/images/nguyen-deductive-circuits-2026/x1.png"
 ---
 
 ## 3줄 요약
@@ -40,7 +40,7 @@ images:
 
 이를 위해 연역 추론 문제를 **추론 그래프 위의 그래프 순회**로 형식화한다. 사실(facts)과 규칙(rules)이 주어졌을 때, 초기 사실들로부터 질의 노드까지의 유효한 경로를 BFS로 탐색하는 흐름이다. CoT는 이 순회 단계를 자연어로 풀어쓰는 행위가 된다.
 
-![프레임워크 개요. 연역 추론 문제, 추론 그래프, 그리고 인과 매개 분석 흐름](/images/nguyen-deductive-circuits-2026/x1.png)
+![프레임워크 개요. 연역 추론 문제, 추론 그래프, 그리고 인과 매개 분석 흐름](https://img.seosoyoung.eiaserinnys.me/images/nguyen-deductive-circuits-2026/x1.png)
 
 ## 발견 1. 불확실한 토큰이 추론을 조정한다
 
@@ -89,7 +89,7 @@ head 단위 기여도를 찾았다면, 이번에는 *head 쌍 사이*의 정보 
 
 Reading head는 *아래쪽 층*에, decision head는 *위쪽 층*에 분포한다. 이 위계 구조는 평가한 네 모델 모두에서 일관되게 관찰된다.
 
-![Llama-3.1-8B-Instruct의 AIE 점수 분포. 위층으로 갈수록 결정 head가 활성화된다](/images/nguyen-deductive-circuits-2026/x3.png)
+![Llama-3.1-8B-Instruct의 AIE 점수 분포. 위층으로 갈수록 결정 head가 활성화된다](https://img.seosoyoung.eiaserinnys.me/images/nguyen-deductive-circuits-2026/x3.png)
 
 특히 흥미로운 점은 *규칙 선택*에 관한 sparsity다. Llama-3.1-8B-Instruct에서는 단 *하나의 head*가 30% 이상의 AIE 점수를 차지한다. Qwen 모델들에서도 한두 개 head가 12% 이상을 점한다. 규칙 선택은 premise selection 이후에 오는 *결정적 단계*이기 때문에, 한정된 전문 head 몇 개로 충분히 처리되는 듯하다.
 
@@ -105,7 +105,7 @@ Reading head는 *아래쪽 층*에, decision head는 *위쪽 층*에 분포한�
 
 세 결정 지점의 회로를 모아 한 폭의 *회로 네트워크*로 그리면, 같은 head가 여러 역할을 겸하는 polysemantic 현상이 드러난다.
 
-![회로 네트워크. 추론 컴포넌트별 top-5 attention head](/images/nguyen-deductive-circuits-2026/x5.png)
+![회로 네트워크. 추론 컴포넌트별 top-5 attention head](https://img.seosoyoung.eiaserinnys.me/images/nguyen-deductive-circuits-2026/x5.png)
 
 예를 들어 Llama의 L10H1, L10H2, L11H12는 *세 종류의 reading 역할*(read rule condition, read rule, read fact)을 동시에 수행한다. L17H24 같은 위층 head는 여러 결정 역할을 통합한다. 모델 가족별 차이도 있다. Llama는 reading 역할에서 head를 공유하고, Qwen은 decision 역할에서 head를 공유하는 경향이 있다.
 
@@ -122,11 +122,11 @@ Reading head는 *아래쪽 층*에, decision head는 *위쪽 층*에 분포한�
 | /PST | 전제 선택 종료 관련 ≈1% | 상당한 하락 |
 | /3Roles | 위 세 묶음 합쳐 ≈3% | **거의 0으로 붕괴** |
 
-![합성 데이터에서 top-k LR head 제거 시 inference step 정확도](/images/nguyen-deductive-circuits-2026/x6.png)
+![합성 데이터에서 top-k LR head 제거 시 inference step 정확도](https://img.seosoyoung.eiaserinnys.me/images/nguyen-deductive-circuits-2026/x6.png)
 
 흥미로운 점은 ProofWriter와 ProntoQA에서 남는 잔여 정확도(예: phi-4의 ProntoQA 44.6%, ProofWriter 29.2%)가 *추론 능력의 잔재가 아니라* 단순한 임의 추측이라는 분석이다. ProntoQA는 True/False 둘 중 하나, ProofWriter는 True/False/Uncertain 셋 중 하나라서 무작위 추측만으로도 그 수준이 나온다. 즉 추론 자체는 완전히 깨졌지만 *추론처럼 보이는 형식*은 유지된다.
 
-![MMLU와 ProntoQA에서 LR head 제거 효과](/images/nguyen-deductive-circuits-2026/x7.png)
+![MMLU와 ProntoQA에서 LR head 제거 효과](https://img.seosoyoung.eiaserinnys.me/images/nguyen-deductive-circuits-2026/x7.png)
 
 MMLU의 경우 한 종류의 추론 head만 빼면 무작위 절제와 비슷한 영향이지만, 세 종류를 한꺼번에 빼면(/3Roles) 큰 폭으로 떨어진다. 일반 지식 과제도 *부분적으로는 연역 회로를 동원한다*는 신호다.
 

@@ -70,7 +70,7 @@ EAG 동정 기준은 보수적이다.
 
 분석 시점 기준 Steam 게임의 <strong>15%(1,182/8,025)</strong>가 EA 모델을 사용했다. 이는 단순 누적이 아니라 SEARP(Steam Early Access Release Program, 2013-03-20 도입) 시작 후 약 3년이 지난 시점의 누적치다.
 
-![Fig. 2 — SEARP 시작 이후 월별 EAG 출시 수. 어두운 부분은 데이터 수집 시점에 여전히 EA 단계인 게임, 밝은 부분은 EA를 졸업한 게임](/images/springer-empirical-study-eag-2017/fig2-eag-releases-over-time.png)
+![Fig. 2 — SEARP 시작 이후 월별 EAG 출시 수. 어두운 부분은 데이터 수집 시점에 여전히 EA 단계인 게임, 밝은 부분은 EA를 졸업한 게임](https://img.seosoyoung.eiaserinnys.me/images/springer-empirical-study-eag-2017/fig2-eag-releases-over-time.png)
 
 EAG 절대 수는 2013년 64개에서 2015년 485개로 <strong>660% 증가</strong>했다. 같은 기간 월별 Steam 출시작 대비 EAG 비율도 5%에서 20%로 올랐다.
 
@@ -105,7 +105,7 @@ EAG의 owner 수 중간값은 11,270명이다. 25% 이상이 47,950명이 넘는
 
 EA 진입과 졸업 시점이 모두 식별된 227개 former EAG의 EA 기간 분포는 다음과 같다.
 
-![Fig. 6 — former EAG의 EA 단계 일수 분포. 70%가 1년 이내에 졸업한다](/images/springer-empirical-study-eag-2017/fig6-ea-duration-distribution.png)
+![Fig. 6 — former EAG의 EA 단계 일수 분포. 70%가 1년 이내에 졸업한다](https://img.seosoyoung.eiaserinnys.me/images/springer-empirical-study-eag-2017/fig6-ea-duration-distribution.png)
 
 - <strong>중간값 225일</strong>, 70%가 1년(365일) 이내 졸업.
 - 최장 EA: *Prison Architect* 929일.
@@ -116,7 +116,7 @@ EA 진입과 졸업 시점이 모두 식별된 227개 former EAG의 EA 기간 �
 
 ### 업데이트 빈도 — EA에서 더 자주 (11일 vs 15일)
 
-![Fig. 7 — 업데이트 빈도 분포. EA 단계 중간값 11일, 졸업 후 15일. Cliff's δ=-0.207 (small)](/images/springer-empirical-study-eag-2017/fig7-update-frequency.png)
+![Fig. 7 — 업데이트 빈도 분포. EA 단계 중간값 11일, 졸업 후 15일. Cliff's δ=-0.207 (small)](https://img.seosoyoung.eiaserinnys.me/images/springer-empirical-study-eag-2017/fig7-update-frequency.png)
 
 - EA 단계 업데이트 간격 중간값 <strong>11일</strong>, 졸업 후 <strong>15일</strong>.
 - Wilcoxon signed-rank p=5.833e-10, Cliff's δ=-0.207 (small effect).
@@ -131,7 +131,7 @@ owner 대비 리뷰 비율을 보면 65%의 EAG가 EA 단계에서 동일하거�
 
 ### 토론 — EA에서 *훨씬* 더 활발 (Cliff's δ=0.304)
 
-![Fig. 11 — 토론 참여율 분포. EA 단계 중간값 0.04, 졸업 후 0.02. Cliff's δ=0.304 (small)](/images/springer-empirical-study-eag-2017/fig11-discussion-participation.png)
+![Fig. 11 — 토론 참여율 분포. EA 단계 중간값 0.04, 졸업 후 0.02. Cliff's δ=0.304 (small)](https://img.seosoyoung.eiaserinnys.me/images/springer-empirical-study-eag-2017/fig11-discussion-participation.png)
 
 owner 1인당 토론 게시물 수의 중간값은 EA 단계 <strong>0.04</strong>, 졸업 후 <strong>0.02</strong>. 즉 EA 단계에서 두 배다. Wilcoxon p=4.918e-16, Cliff's δ=0.304.
 
@@ -145,7 +145,7 @@ owner 1인당 토론 게시물 수의 중간값은 EA 단계 <strong>0.04</stron
 
 이 논문에서 가장 강한 발견이다.
 
-![Fig. 12 — 긍정 평점률 분포. EA 단계 중간값 88%, 졸업 후 69%. Cliff's δ=0.454 (medium)](/images/springer-empirical-study-eag-2017/fig12-positive-review-rate.png)
+![Fig. 12 — 긍정 평점률 분포. EA 단계 중간값 88%, 졸업 후 69%. Cliff's δ=0.454 (medium)](https://img.seosoyoung.eiaserinnys.me/images/springer-empirical-study-eag-2017/fig12-positive-review-rate.png)
 
 - 긍정 평점률 중간값: EA 단계 <strong>88%</strong>, 졸업 후 <strong>69%</strong>.
 - Wilcoxon p<2.2e-16, Cliff's δ=0.454 (medium effect — 본 논문에서 가장 큰 효과 크기).

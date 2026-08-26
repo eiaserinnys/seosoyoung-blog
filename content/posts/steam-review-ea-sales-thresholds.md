@@ -5,7 +5,7 @@ tags: ["스팀", "인디 게임", "마케팅 & 노출", "데이터 분석", "에
 categories: ["게임"]
 summary: "Steam의 리뷰 점수는 매출에 직접 작용하지 않는다. 점수는 알고리즘 노출을 거쳐, 두 단계의 경계를 통과하며 매출에 닿는다 — 9편의 자료가 같은 결론으로 수렴한다."
 cover:
-  image: "/images/cover-steam-review-ea-sales-thresholds.jpg"
+  image: "https://img.seosoyoung.eiaserinnys.me/images/cover-steam-review-ea-sales-thresholds.jpg"
 ShowToc: true
 TocOpen: false
 sidenotes: true
@@ -56,7 +56,7 @@ sidenotes: true
 
 ### 1. 리뷰 개수 경계 — 게임이 노출되는가
 
-![10리뷰 통과 직후 탐색 대기열 트래픽이 비선형으로 점프하는 사례 — 5월 12일 임계값 통과 후 녹색선 폭증](/images/zukowski-first-10-reviews-2022/dq-may12-greenline.jpg)
+![10리뷰 통과 직후 탐색 대기열 트래픽이 비선형으로 점프하는 사례 — 5월 12일 임계값 통과 후 녹색선 폭증](https://img.seosoyoung.eiaserinnys.me/images/zukowski-first-10-reviews-2022/dq-may12-greenline.jpg)
 
 *— Zukowski 2022, How To Market A Game*
 
@@ -66,7 +66,7 @@ Zukowski(2022)가 정리한 Steam의 노출 경계는 "유료 구매자의 평�
 
 ### 2. 점수 등급 경계 — 매출이 어디까지 증폭되는가
 
-![Steam 평점 등급별 위시리스트 → 1개월 매출 전환률 — *압도적으로 긍정적*에서 0.51배까지 도약](/images/gdc-month1-reviews-2024/review-score.png)
+![Steam 평점 등급별 위시리스트 → 1개월 매출 전환률 — *압도적으로 긍정적*에서 0.51배까지 도약](https://img.seosoyoung.eiaserinnys.me/images/gdc-month1-reviews-2024/review-score.png)
 
 *— Carless 2024, GameDiscoverCo*
 
@@ -80,7 +80,7 @@ Aubry(2025)도 같은 결을 다른 시간 단위에서 짚습니다 — *매우
 
 ### 1. 어중간한 게임의 침묵, 그리고 비대칭 선순환
 
-![긍정 평점률과 리뷰 1개당 판매량의 U자형 — 70% 부근에서 정점, 양 끝에서 다시 하락](/images/gamalytic-steam-sales-review-ratio-2023/positive-reviews-ushape.png)
+![긍정 평점률과 리뷰 1개당 판매량의 U자형 — 70% 부근에서 정점, 양 끝에서 다시 하락](https://img.seosoyoung.eiaserinnys.me/images/gamalytic-steam-sales-review-ratio-2023/positive-reviews-ushape.png)
 
 *— Gamalytic 2023*
 
@@ -112,7 +112,7 @@ GAMES.GG(2025)의 225개 졸업작 추적은 시계열 변화를 못 박습니�
 
 물론 이 추세가 모든 게임에 일률적으로 적용되지는 않습니다. GameDiscoverCo의 1,500여 종 얼리액세스 졸업작 분석(2023)에서 얼리액세스 → 1.0 첫 3개월 매출 비율의 중간값은 약 0.7배지만, 분포가 광폭이라 상위 5%는 5.53배에 달합니다[^4]. 즉 일부 매우 성공적인 게임은 여전히 1.0에서 추가로 큰 점프를 만듭니다 — 다만 자기 게임이 그 5%에 들어갈 거라 가정하기엔 위쪽 꼬리가 너무 가늘다는 점이 데이터의 메시지이지요.
 
-![얼리액세스 → 1.0 첫 3개월 매출 배수 분포 — 중간값은 0.7배지만 상위 5%는 5배 이상으로 광폭](/images/gamediscoverco-ea-to-10-launch-2023/distribution-by-sales-band.jpeg)
+![얼리액세스 → 1.0 첫 3개월 매출 배수 분포 — 중간값은 0.7배지만 상위 5%는 5배 이상으로 광폭](https://img.seosoyoung.eiaserinnys.me/images/gamediscoverco-ea-to-10-launch-2023/distribution-by-sales-band.jpeg)
 
 *— Carless 2023, GameDiscoverCo + Gamalytic*
 

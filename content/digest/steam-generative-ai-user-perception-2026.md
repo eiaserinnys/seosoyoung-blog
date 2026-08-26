@@ -7,9 +7,9 @@ summary: "GameDiscoverCo가 Steam 유저 약 3,800명을 대상으로 진행한 
 ShowToc: true
 TocOpen: false
 cover:
-  image: "/images/steam-generative-ai-user-perception-2026/fig1.jpg"
+  image: "https://img.seosoyoung.eiaserinnys.me/images/steam-generative-ai-user-perception-2026/fig1.jpg"
 images:
-  - "/images/steam-generative-ai-user-perception-2026/fig1.jpg"
+  - "https://img.seosoyoung.eiaserinnys.me/images/steam-generative-ai-user-perception-2026/fig1.jpg"
 ---
 
 ## 3줄 요약
@@ -26,7 +26,7 @@ GameDiscoverCo는 7월 8일, Steam 유저를 대상으로 생성 AI가 쓰인 �
 
 ## 구매 의향: 43% 우호적, 31% 부정적
 
-![설문 결과 그래프 — 생성 AI 사용 게임의 구매 의향](/images/steam-generative-ai-user-perception-2026/fig1.jpg)
+![설문 결과 그래프 — 생성 AI 사용 게임의 구매 의향](https://img.seosoyoung.eiaserinnys.me/images/steam-generative-ai-user-perception-2026/fig1.jpg)
 
 생성 AI가 사용된 게임의 구매 의향을 물은 결과는 다음과 같다.
 
@@ -58,7 +58,7 @@ GameDiscoverCo는 7월 8일, Steam 유저를 대상으로 생성 AI가 쓰인 �
 
 ## 시장 동향: 개시 비율은 증가 중
 
-![2026년 Steam의 AI 생성 콘텐츠 개시 통계](/images/steam-generative-ai-user-perception-2026/fig2.jpg)
+![2026년 Steam의 AI 생성 콘텐츠 개시 통계](https://img.seosoyoung.eiaserinnys.me/images/steam-generative-ai-user-perception-2026/fig2.jpg)
 
 생성 AI를 활용한 게임의 절대 수와 비율은 해마다 늘고 있다. 2026년 발매작 중 Steam에서 'AI 생성 콘텐츠 개시'가 붙은 게임은 30%를 넘겼다.
 

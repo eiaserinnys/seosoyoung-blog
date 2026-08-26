@@ -7,12 +7,12 @@ summary: "Meta와 POSTECH이 인물 사진 한 장에서 5초 안에 실시간 �
 ShowToc: true
 TocOpen: false
 cover:
-  image: "/images/kim-2026-fica-codec-avatars/x1.png"
+  image: "https://img.seosoyoung.eiaserinnys.me/images/kim-2026-fica-codec-avatars/x1.png"
 images:
-  - "/images/kim-2026-fica-codec-avatars/x1.png"
+  - "https://img.seosoyoung.eiaserinnys.me/images/kim-2026-fica-codec-avatars/x1.png"
 ---
 
-![FiCA teaser: 단일 인물 사진에서 5초 만에 만들어진 실시간 구동 가능한 3D 가우시안 코덱 아바타](/images/kim-2026-fica-codec-avatars/x1.png)
+![FiCA teaser: 단일 인물 사진에서 5초 만에 만들어진 실시간 구동 가능한 3D 가우시안 코덱 아바타](https://img.seosoyoung.eiaserinnys.me/images/kim-2026-fica-codec-avatars/x1.png)
 
 ## 3줄 요약
 
@@ -30,7 +30,7 @@ FiCA는 두 가지 모두를 빼버린 시스템이다. 입력은 가볍게 찍�
 
 ## 파이프라인 — 세 모듈
 
-![FiCA 파이프라인 개요. Sapiens 추정 → UV 공간 디퓨전 → 피드포워드 정제망 → 보편 사전 모델(UPM)의 4단계 흐름](/images/kim-2026-fica-codec-avatars/x2.png)
+![FiCA 파이프라인 개요. Sapiens 추정 → UV 공간 디퓨전 → 피드포워드 정제망 → 보편 사전 모델(UPM)의 4단계 흐름](https://img.seosoyoung.eiaserinnys.me/images/kim-2026-fica-codec-avatars/x2.png)
 
 전체 파이프라인은 세 모듈로 이루어진다.
 
@@ -46,7 +46,7 @@ DiT 구조의 잠재 디퓨전 모델 한 개가 부분 UV 맵과 CLIP 이미지
 
 ### 3) 피드포워드 UV 정제망 — 테스트타임 최적화 없이 미세 정렬
 
-![피드포워드 UV 정제망의 효과. (a) 입력 사진과 (b) 디퓨전 메시 렌더링의 풍부한 시각 특징으로 (c) 초기 출력의 픽셀 공간 불일치를 (d) 정렬과 ID 보존이 강화된 결과로 다듬는다.](/images/kim-2026-fica-codec-avatars/x3.png)
+![피드포워드 UV 정제망의 효과. (a) 입력 사진과 (b) 디퓨전 메시 렌더링의 풍부한 시각 특징으로 (c) 초기 출력의 픽셀 공간 불일치를 (d) 정렬과 ID 보존이 강화된 결과로 다듬는다.](https://img.seosoyoung.eiaserinnys.me/images/kim-2026-fica-codec-avatars/x3.png)
 
 디퓨전이 만든 메시는 그럴듯해 보이지만, 입력 이미지와 픽셀 단위로 살짝씩 어긋난다. 보통 이 어긋남은 인물별 테스트타임 최적화로 보정해 왔는데, FiCA는 그 자리에 U-Net + 크로스 어텐션 구조의 *학습된* 정제망을 끼워 넣었다.
 
@@ -71,7 +71,7 @@ DiT 구조의 잠재 디퓨전 모델 한 개가 부분 UV 맵과 CLIP 이미지
 
 ### 정적 아바타 — PanoHead와 비교
 
-![PanoHead와 FiCA(메시 렌더링)의 정적 비교. PanoHead는 측면/뒷면에서 ghost face와 floater가 두드러진다.](/images/kim-2026-fica-codec-avatars/x5.png)
+![PanoHead와 FiCA(메시 렌더링)의 정적 비교. PanoHead는 측면/뒷면에서 ghost face와 floater가 두드러진다.](https://img.seosoyoung.eiaserinnys.me/images/kim-2026-fica-codec-avatars/x5.png)
 
 PanoHead는 단일 사진에서 풀 3D 머리를 만들지만, 인물별 GAN inversion 최적화에 약 80초가 걸리고, 측면이나 뒷면에서 ghost face와 floater 같은 시각적 인공물이 나타난다. 더 중요한 차이는 PanoHead가 만든 아바타는 표정 파라미터로 움직일 수 없다는 점이다. FiCA는 약 5초로 더 빠르면서 시점 일관성이 좋고, 메시 기반이라 임의의 표정 코드로 실시간 구동된다.
 
@@ -91,13 +91,13 @@ PanoHead는 단일 사진에서 풀 3D 머리를 만들지만, 인물별 GAN inv
 
 PSNR, SSIM, ID-CSIM 세 지표에서 FiCA(3DGS)가 1위였고, LPIPS만 GAGAvatar에 근소하게 졌다.
 
-![동적 아바타 정성 비교. FiCA가 극단적 표정과 피부톤에서 격차가 크다.](/images/kim-2026-fica-codec-avatars/x7.png)
+![동적 아바타 정성 비교. FiCA가 극단적 표정과 피부톤에서 격차가 크다.](https://img.seosoyoung.eiaserinnys.me/images/kim-2026-fica-codec-avatars/x7.png)
 
 저자들은 GPAvatar의 인공물이 tri-plane + MLP 표현과 후속 슈퍼레졸루션 모듈에서 온다고 본다. GAGAvatar는 정질이 더 좋지만, 정준 3D 가우시안을 학습된 렌더러로 시뮬레이션하기 때문에 극단적 표정에 일반화하지 못한다는 진단이다. FiCA는 명시적 3D 가우시안을 직접 만들기 때문에 이 두 약점을 모두 비껴간다.
 
 ## Ablation — 무엇이 차이를 만드는가
 
-![Ablation 정성. (a) RGB UV만 → (b) 노멀/정점 UV 추가 → (c) CLIP 임베딩 추가 → (d) 정제망 추가 순으로 품질 향상](/images/kim-2026-fica-codec-avatars/x8.png)
+![Ablation 정성. (a) RGB UV만 → (b) 노멀/정점 UV 추가 → (c) CLIP 임베딩 추가 → (d) 정제망 추가 순으로 품질 향상](https://img.seosoyoung.eiaserinnys.me/images/kim-2026-fica-codec-avatars/x8.png)
 
 100명의 iPhone 캡처 보류 ID에 대해 핵심 설계 요소를 하나씩 더해 가며 측정했다.
 

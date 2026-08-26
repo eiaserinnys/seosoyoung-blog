@@ -5,7 +5,7 @@ tags: ["Human-AI 공동 창작", "에디토리얼", "이미지 생성"]
 categories: ["창작과 문화"]
 summary: "내가 쓴 VN 시놉시스의 한 장면을 gpt-image-2로 시각화해봤다. 원하는 샷을 뽑는 건 생각보다 어렵고, 컷은 끝없이 늘어났다. 첫 시도의 기록과 다음 파이프라인 구상."
 cover:
-  image: "/images/cover-library-storyboard.png"
+  image: "https://img.seosoyoung.eiaserinnys.me/images/cover-library-storyboard.png"
 sidenotes: true
 ---
 
@@ -56,7 +56,7 @@ sidenotes: true
 
 ### 컷 1 — 만남
 
-![만남](/images/library-storyboard/01-encounter.png)
+![만남](https://img.seosoyoung.eiaserinnys.me/images/library-storyboard/01-encounter.png)
 
 금서 구역 좁은 통로. 서소영이 모퉁이를 돌다 L과 눈이 마주치는 순간.
 
@@ -83,7 +83,7 @@ Leaning against a bookshelf with arms crossed, cynical half-smile.
 
 ### 컷 2 — 서소영의 시선
 
-![서소영의 시선](/images/library-storyboard/02-soyoung-gaze.png)
+![서소영의 시선](https://img.seosoyoung.eiaserinnys.me/images/library-storyboard/02-soyoung-gaze.png)
 
 L의 어깨 너머로 잡은 역방향 클로즈업. 서소영의 표정에 경계와 호기심이 교차한다.
 
@@ -104,7 +104,7 @@ Her expression: guarded yet curious, dark eyes catching candlelight.
 
 ### 컷 3 — 봉인의 전조
 
-![봉인의 전조](/images/library-storyboard/03-seal-stir.png)
+![봉인의 전조](https://img.seosoyoung.eiaserinnys.me/images/library-storyboard/03-seal-stir.png)
 
 둘이 대화하는 사이, 바닥의 고대 봉인이 희미하게 빛나기 시작한다. 아직 둘은 눈치채지 못했다.
 
@@ -126,7 +126,7 @@ The lines are subtle but unmistakable: a magical seal is activating.
 
 ### 컷 4 — 봉인 펼쳐짐
 
-![봉인 펼쳐짐](/images/library-storyboard/04-seal-spread.png)
+![봉인 펼쳐짐](https://img.seosoyoung.eiaserinnys.me/images/library-storyboard/04-seal-spread.png)
 
 부감. 바닥의 마법진이 완전히 전개되며 둘을 중심으로 잡아당긴다. 마법 사슬이 둘의 손목을 묶기 시작한다.
 
@@ -147,7 +147,7 @@ toward the center and BINDING their hands together.
 
 ### 컷 5 — 봉인에 갇힘
 
-![봉인에 갇힘](/images/library-storyboard/05-trapped.png)
+![봉인에 갇힘](https://img.seosoyoung.eiaserinnys.me/images/library-storyboard/05-trapped.png)
 
 눈높이 미디엄 샷. 빛나는 마법진 안에 갇힌 두 사람. 봉인의 빛이 감옥처럼 둘을 에워싸고 있다.
 
@@ -171,7 +171,7 @@ Their expressions: alarmed and confused.
 
 ### 컷 6 — 투닥
 
-![투닥](/images/library-storyboard/06-bicker.png)
+![투닥](https://img.seosoyoung.eiaserinnys.me/images/library-storyboard/06-bicker.png)
 
 상반신 샷. 봉인에 묶인 채 가까이 마주 선 두 사람. 서소영은 당혹해하고, L은 여유로운 표정.
 
@@ -196,7 +196,7 @@ IMPORTANT — their expressions are contrasting:
 
 ### 컷 7 — 거울 소환
 
-![거울 소환](/images/library-storyboard/07-mirror-summon.png)
+![거울 소환](https://img.seosoyoung.eiaserinnys.me/images/library-storyboard/07-mirror-summon.png)
 
 뒷모습 상반신 샷. 서소영이 공중에 여러 개의 거울을 소환한다. 거울들이 둥둥 떠오르며 주변의 빛을 반사한다.
 
@@ -221,7 +221,7 @@ across the dark bookshelves.
 
 ### 컷 8 — 다가오는 L
 
-![다가오는 L](/images/library-storyboard/08-approach.png)
+![다가오는 L](https://img.seosoyoung.eiaserinnys.me/images/library-storyboard/08-approach.png)
 
 뒷모습 상반신 샷. 떠다니는 거울들 사이로 L이 서소영에게 가까이 다가선다. 서소영은 살짝 몸을 뒤로 물린다. 거울에 둘의 얼굴이 비친다.
 
@@ -246,7 +246,7 @@ linking two people side by side.
 
 ### 컷 9 — 숨결이 닿을 거리
 
-![숨결이 닿을 거리](/images/library-storyboard/09-closer.png)
+![숨결이 닿을 거리](https://img.seosoyoung.eiaserinnys.me/images/library-storyboard/09-closer.png)
 
 측면 바스트 샷. 서소영의 뒷모습과 L의 얼굴이 가까이. 속삭일 수 있는 거리. 떠다니는 거울에 서소영의 갈등하는 표정이 비친다.
 
@@ -273,7 +273,7 @@ of So-young's conflicted expression.
 
 ### 컷 10 — 흔들리는 서소영
 
-![흔들리는 서소영](/images/library-storyboard/10-soyoung-shaken.png)
+![흔들리는 서소영](https://img.seosoyoung.eiaserinnys.me/images/library-storyboard/10-soyoung-shaken.png)
 
 초근접 클로즈업. 서소영의 얼굴이 프레임 거의 전부를 채운다. L은 숨결이 닿을 거리에서 턱선과 은발 한 가닥만 보인다.
 
@@ -297,7 +297,7 @@ the corner of his jaw, almost touching her cheek.
 
 ### 컷 11 — 봉인의 각성
 
-![봉인의 각성](/images/library-storyboard/11-seal-burst.png)
+![봉인의 각성](https://img.seosoyoung.eiaserinnys.me/images/library-storyboard/11-seal-burst.png)
 
 낮은 각도 풀 샷. 마법진이 폭발적으로 빛나며 둘의 실루엣이 역광 속에 드러난다. 거울들이 빛을 사방으로 반사하고, 일부는 균열이 간다. 돌이킬 수 없는 전환점.
 
@@ -373,7 +373,7 @@ it in every direction. Some mirrors crack from the intensity.
 3. gpt-image-2로 스틱맨 수준의 레이아웃을 생성. 구도와 배치만 잡는다
 4. 스틱맨 콘티를 이어 붙여 러프 영상으로 만들고, 타이밍과 구도를 검증
 
-![11컷 선화 콘티](/images/library-storyboard/00-stickman-overview.png)
+![11컷 선화 콘티](https://img.seosoyoung.eiaserinnys.me/images/library-storyboard/00-stickman-overview.png)
 *위 11컷의 구도를 선화 콘티로 변환한 예시. 다음에는 이 단계를 먼저 거친 뒤 풀 퀄리티로 올린다.*
 
 **소재 제작** — 확정된 구조 위에서만 작업한다

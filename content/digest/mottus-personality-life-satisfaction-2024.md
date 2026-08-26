@@ -8,9 +8,9 @@ math: true
 ShowToc: true
 TocOpen: false
 cover:
-  image: "/images/mottus-personality-life-satisfaction-2024/figure1-item-correlations.jpg"
+  image: "https://img.seosoyoung.eiaserinnys.me/images/mottus-personality-life-satisfaction-2024/figure1-item-correlations.jpg"
 images:
-  - "/images/mottus-personality-life-satisfaction-2024/figure1-item-correlations.jpg"
+  - "https://img.seosoyoung.eiaserinnys.me/images/mottus-personality-life-satisfaction-2024/figure1-item-correlations.jpg"
 sidenotes: true
 ---
 
@@ -82,7 +82,7 @@ $$r_{\text{true}}(x,y) = \sqrt{\frac{r_{x_{\text{self}},\,y_{\text{inf}}} \cdot 
 
 도메인은 평균을 내는 단계에서 정보를 잃는다. 저자들은 136개 항목 각각의 LS 상관을 그렸다.
 
-![Figure 1. Big Five 도메인 외부에 있는 항목들의 LS 진짜 상관 — 굵은 글자는 다른 어떤 성격 항목과도 진짜 상관이 .50을 넘지 않는 "상대적으로 고유한" 19개 항목. Mõttus et al. (2024).](/images/mottus-personality-life-satisfaction-2024/figure1-item-correlations.jpg)
+![Figure 1. Big Five 도메인 외부에 있는 항목들의 LS 진짜 상관 — 굵은 글자는 다른 어떤 성격 항목과도 진짜 상관이 .50을 넘지 않는 "상대적으로 고유한" 19개 항목. Mõttus et al. (2024).](https://img.seosoyoung.eiaserinnys.me/images/mottus-personality-life-satisfaction-2024/figure1-item-correlations.jpg)
 
 낮은 LS와 강하게 묶이는 항목 ($r_{\text{true}}$):
 
@@ -133,7 +133,7 @@ $$r_{\text{true}}(x,y) = \sqrt{\frac{r_{x_{\text{self}},\,y_{\text{inf}}} \cdot 
 
 ## 핵심 발견 5 — 그래도 26%는 예측을 빗나간다
 
-![Figure 2. 성격으로 예측한 LS vs. 실제 LS의 산점도. 74%가 같은 삼분위에 들어왔지만, 26%(빨간 ×)는 예측을 벗어났다. Mõttus et al. (2024).](/images/mottus-personality-life-satisfaction-2024/figure2-predicted-vs-actual.jpg)
+![Figure 2. 성격으로 예측한 LS vs. 실제 LS의 산점도. 74%가 같은 삼분위에 들어왔지만, 26%(빨간 ×)는 예측을 벗어났다. Mõttus et al. (2024).](https://img.seosoyoung.eiaserinnys.me/images/mottus-personality-life-satisfaction-2024/figure2-predicted-vs-actual.jpg)
 
 저자들은 r = .90이라는 인구 수준의 강한 정렬을 *개인 수준의 결정론*으로 오독하지 말 것을 경고한다. 산점도 위에서 보듯, 예측-실제 LS를 *삼분위*(저/중/고)로 나누어도 26%는 다른 분위에 떨어진다.
 

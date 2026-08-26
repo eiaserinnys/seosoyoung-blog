@@ -5,9 +5,9 @@ tags: ["AI", "OpenAI", "ChatGPT", "메모리 시스템", "개인화"]
 categories: ["AI 산업"]
 summary: "OpenAI가 ChatGPT의 메모리 시스템을 백그라운드 합성 방식 'dreaming V3'으로 전환했다. 저장 메모리 보조에서 독립 시스템으로 격상되었으며, 컴퓨트를 5배 줄여 무료 사용자에게도 곧 풀린다."
 cover:
-  image: "/images/openai-chatgpt-memory-dreaming-2026/memory-summary.png"
+  image: "https://img.seosoyoung.eiaserinnys.me/images/openai-chatgpt-memory-dreaming-2026/memory-summary.png"
 images:
-  - "/images/openai-chatgpt-memory-dreaming-2026/memory-summary.png"
+  - "https://img.seosoyoung.eiaserinnys.me/images/openai-chatgpt-memory-dreaming-2026/memory-summary.png"
 ShowToc: true
 TocOpen: false
 ---
@@ -30,17 +30,17 @@ OpenAI는 ChatGPT 메모리의 진화를 세 단계로 정리한다.
 
 저장 메모리 모델은 "메모를 적긴 적었는데, 적어 두지 않은 건 전부 잊는 사람"과 비슷했다고 OpenAI는 표현한다. 시간이 지나면 노트 자체가 낡거나 부정확해진다.
 
-![저장 메모리 모달 — 작업·관심사·여행·응답 선호를 검색 가능한 리스트로 보여주는 모습](/images/openai-chatgpt-memory-dreaming-2026/saved-memories.png)
+![저장 메모리 모달 — 작업·관심사·여행·응답 선호를 검색 가능한 리스트로 보여주는 모습](https://img.seosoyoung.eiaserinnys.me/images/openai-chatgpt-memory-dreaming-2026/saved-memories.png)
 
 2025년 4월에 도입된 *dreaming*은 백그라운드 프로세스다. 다수의 과거 대화를 참조하여 메모리 상태를 합성한다. 명시적 "기억해" 요청 없이도 대화에 자연스럽게 등장한 맥락을 메모리에 포함시킬 수 있다.
 
-![메모리 설정 페이지 — 채팅 기록 참조, 저장 메모리, Pulse 제안 등의 토글](/images/openai-chatgpt-memory-dreaming-2026/memory-settings.png)
+![메모리 설정 페이지 — 채팅 기록 참조, 저장 메모리, Pulse 제안 등의 토글](https://img.seosoyoung.eiaserinnys.me/images/openai-chatgpt-memory-dreaming-2026/memory-settings.png)
 
 지난 1년간 dreaming은 저장 메모리를 *보충*하는 위치에서 응답 개인화를 한 단계 끌어올렸지만, 독립 시스템으로 쓰기에는 부족했다고 OpenAI는 인정한다. 이번 V3에서는 그 한계를 넘는 아키텍처로 재설계되었다고 말한다.
 
 dreaming이 합성한 메모리는 *메모리 요약(summary)* 페이지에서 검토할 수 있다. 사용자는 ChatGPT가 자신에 대해 알고 있는 핵심을 한눈에 보고, 항목을 수정·삭제하거나, 어떤 주제를 언제 꺼내야 할지에 대한 지시를 남길 수 있다.
 
-![메모리 요약 모달 — 작업·취미·여행 관심사·커뮤니티 참여를 한눈에 보여주는 개인화 개요](/images/openai-chatgpt-memory-dreaming-2026/memory-summary.png)
+![메모리 요약 모달 — 작업·취미·여행 관심사·커뮤니티 참여를 한눈에 보여주는 개인화 개요](https://img.seosoyoung.eiaserinnys.me/images/openai-chatgpt-memory-dreaming-2026/memory-summary.png)
 
 ## 좋은 메모리란 무엇인가 — 평가 축 3가지
 
@@ -70,11 +70,11 @@ Mini Flash 3용으로는 `BS-TR-SN2` 트리거, Inon Z-330용으로는 `UW Techn
 
 두 번째 예시는 출장 끝에 며칠 자유 시간이 생긴 사용자의 싱가포르 일정 짜기다. 가정된 사용자의 선호는 세 가지다 — 야생 사진을 즐기고, 에어컨이 강한 호텔을 선호하며, 붐비는 바보다 조용한 저녁 식사를 좋아한다.
 
-![메모리 없는 응답에서 ChatGPT가 보여준 싱가포르 가이드 — 일반 관광객 동선](/images/openai-chatgpt-memory-dreaming-2026/singapore-without-memory.png)
+![메모리 없는 응답에서 ChatGPT가 보여준 싱가포르 가이드 — 일반 관광객 동선](https://img.seosoyoung.eiaserinnys.me/images/openai-chatgpt-memory-dreaming-2026/singapore-without-memory.png)
 
 메모리 없는 응답은 전형적 관광 일정을 내놓는다. 머라이언, 가든스 바이 더 베이, 차이나타운, 카통, 센토사 등 "싱가포르 베스트" 묶음이다. 호텔 추천도 분위기·접근성 위주의 일반론이다.
 
-![메모리가 작동한 응답 — 만다이 야생동물 보호구역, 새벽 식물원, 에어컨 통제 일정](/images/openai-chatgpt-memory-dreaming-2026/singapore-with-memory.png)
+![메모리가 작동한 응답 — 만다이 야생동물 보호구역, 새벽 식물원, 에어컨 통제 일정](https://img.seosoyoung.eiaserinnys.me/images/openai-chatgpt-memory-dreaming-2026/singapore-with-memory.png)
 
 메모리가 작동한 응답은 다르다. 글머리에 사용자의 알려진 제약을 정렬한 뒤, 더위 관리형 동선을 짠다.
 

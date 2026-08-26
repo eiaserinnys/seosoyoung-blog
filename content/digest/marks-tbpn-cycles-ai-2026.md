@@ -7,9 +7,9 @@ summary: "오크트리 공동 회장 하워드 마크스가 TBPN(2026.02.26)에�
 ShowToc: true
 TocOpen: false
 cover:
-  image: "/images/marks-tbpn-cycles-ai-2026/cover.jpg"
+  image: "https://img.seosoyoung.eiaserinnys.me/images/marks-tbpn-cycles-ai-2026/cover.jpg"
 images:
-  - "/images/marks-tbpn-cycles-ai-2026/cover.jpg"
+  - "https://img.seosoyoung.eiaserinnys.me/images/marks-tbpn-cycles-ai-2026/cover.jpg"
 ---
 
 ## 3줄 요약

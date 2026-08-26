@@ -8,9 +8,9 @@ math: true
 ShowToc: true
 TocOpen: false
 cover:
-  image: "/images/lotus-looped-transformers-latent-cot/fig1-scaling.png"
+  image: "https://img.seosoyoung.eiaserinnys.me/images/lotus-looped-transformers-latent-cot/fig1-scaling.png"
 images:
-  - "/images/lotus-looped-transformers-latent-cot/fig1-scaling.png"
+  - "https://img.seosoyoung.eiaserinnys.me/images/lotus-looped-transformers-latent-cot/fig1-scaling.png"
 ---
 
 앞으로 에이전트는 생각을 굳이 말로 하지 않아도 될 수 있다.
@@ -27,7 +27,7 @@ Claude Code나 Codex, Gemini CLI, OpenAI Agent를 써본 사람이라면 "생각
 
 이 논문 LOTUS는 그 격차를 3B에서 처음으로 좁혔다.
 
-![Figure 1 — LOTUS는 백본이 커져도 명시적 CoT의 정확도 상한을 따라간다](/images/lotus-looped-transformers-latent-cot/fig1-scaling.png)
+![Figure 1 — LOTUS는 백본이 커져도 명시적 CoT의 정확도 상한을 따라간다](https://img.seosoyoung.eiaserinnys.me/images/lotus-looped-transformers-latent-cot/fig1-scaling.png)
 
 *Figure 1. 기존 latent 방법(Coconut·CODI·SIM-CoT·KaVa)은 모델이 커질수록 명시적 CoT와의 격차가 벌어진다. LOTUS(빨강)만 상한선을 따라간다. 동시에 생각 단계 지연은 $2.5\times$~$6.9\times$ 줄인다.*
 
@@ -50,7 +50,7 @@ Claude Code나 Codex, Gemini CLI, OpenAI Agent를 써본 사람이라면 "생각
 
 이 논문의 아름다움은 한 겹이 더 있다. **훈련이 끝나면 그 혼잣말은 실제로 뽑지 않는다.** 훈련 때만 "각 자리에서 CoT 한 단어씩 출력해 봐"라는 정답 신호를 주고, 실전 추론에서는 그 자리들을 LM head로 뽑지 *않고* 답을 만들 때 참조하는 조건으로만 넘긴다. 즉 훈련 때는 혼잣말을 시키고, 실전에서는 혼잣말을 굳이 안 하도록 만든 셈이다. 그러면서도 latent가 어휘 공간에 남아 있어, 필요하면 언제든 텍스트로 뽑아 볼 수 있다. **훈련 채널이 곧 관측 채널이 된다.**
 
-![Figure 2 — R번 순회한 뒤 내부 상태를 LM head로 gold CoT에 병렬 매칭한다](/images/lotus-looped-transformers-latent-cot/fig2-architecture.png)
+![Figure 2 — R번 순회한 뒤 내부 상태를 LM head로 gold CoT에 병렬 매칭한다](https://img.seosoyoung.eiaserinnys.me/images/lotus-looped-transformers-latent-cot/fig2-architecture.png)
 
 *Figure 2. 위: 백본을 R번 반복하고 마지막 상태를 CoT 토큰과 매칭. 아래: 그 내부 상태를 조건으로 답을 예측.*
 
@@ -95,7 +95,7 @@ CoT가 자연어로 길어질수록 격차가 더 벌어진다. 수식 단계에
 
 이건 latent CoT의 매력이 **효율만이 아니라는 신호다.** 하나의 내부 상태가 여러 정답 경로를 동시에 담을 수 있고, 최종 답을 뽑는 순간에만 그중 하나로 붕괴한다. 어쩌면 이게 앞으로 **에이전트의 "생각"이라는 개념 자체가 다시 그려질지도 모른다.**
 
-![Figure 3 — LOTUS-aux 변종 (auxiliary decoder를 통한 지도)](/images/lotus-looped-transformers-latent-cot/fig3-aux.png)
+![Figure 3 — LOTUS-aux 변종 (auxiliary decoder를 통한 지도)](https://img.seosoyoung.eiaserinnys.me/images/lotus-looped-transformers-latent-cot/fig3-aux.png)
 
 *Figure 3. 논문은 auxiliary decoder를 통한 지도 라우팅(LOTUS-aux)도 함께 실험한다. 3B에서는 LOTUS와 동등하지만 작은 모델에서 무너져, 결국 LM head 직접 지도가 규모 전반에 강건하다는 결론에 이른다.*
 

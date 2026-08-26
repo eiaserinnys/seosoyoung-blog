@@ -7,9 +7,9 @@ summary: "프로그래밍 경험이 전혀 없는 아이돌 미야모토 카린�
 ShowToc: true
 TocOpen: false
 cover:
-  image: "/images/miyamoto-karin-ai-livestream-system/title.jpg"
+  image: "https://img.seosoyoung.eiaserinnys.me/images/miyamoto-karin-ai-livestream-system/title.jpg"
 images:
-  - "/images/miyamoto-karin-ai-livestream-system/title.jpg"
+  - "https://img.seosoyoung.eiaserinnys.me/images/miyamoto-karin-ai-livestream-system/title.jpg"
 ---
 
 ## 3줄 요약
@@ -35,13 +35,13 @@ images:
 
 관리 화면은 이렇게 생겼다.
 
-![방송 중 숫자와 자막을 조정하는 관리 화면](/images/miyamoto-karin-ai-livestream-system/admin1.jpg)
+![방송 중 숫자와 자막을 조정하는 관리 화면](https://img.seosoyoung.eiaserinnys.me/images/miyamoto-karin-ai-livestream-system/admin1.jpg)
 
-![해금 아이템과 게이지를 손보는 관리 화면](/images/miyamoto-karin-ai-livestream-system/admin2.jpg)
+![해금 아이템과 게이지를 손보는 관리 화면](https://img.seosoyoung.eiaserinnys.me/images/miyamoto-karin-ai-livestream-system/admin2.jpg)
 
 AI가 재현 영상을 항목별로 채점한 화면이다.
 
-![원곡 MV 대비 재현도를 항목별로 채점하는 AI 화면](/images/miyamoto-karin-ai-livestream-system/ai-scoring.jpg)
+![원곡 MV 대비 재현도를 항목별로 채점하는 AI 화면](https://img.seosoyoung.eiaserinnys.me/images/miyamoto-karin-ai-livestream-system/ai-scoring.jpg)
 
 ## 어떻게 만들었나
 

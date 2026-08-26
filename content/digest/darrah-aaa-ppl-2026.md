@@ -7,9 +7,9 @@ summary: "전 바이오웨어 PD 마크 다라가 폭증하는 AAA 개발비가 
 ShowToc: true
 TocOpen: false
 cover:
-  image: "/images/darrah-aaa-ppl-2026/fig1-mark-darrah.jpg"
+  image: "https://img.seosoyoung.eiaserinnys.me/images/darrah-aaa-ppl-2026/fig1-mark-darrah.jpg"
 images:
-  - "/images/darrah-aaa-ppl-2026/fig1-mark-darrah.jpg"
+  - "https://img.seosoyoung.eiaserinnys.me/images/darrah-aaa-ppl-2026/fig1-mark-darrah.jpg"
 ---
 
 ## 3줄 요약
@@ -18,7 +18,7 @@ images:
 2. 전 바이오웨어 PD 마크 다라(Mark Darrah)는 라이브 서비스가 특정 장르에만 적합하고 구독형 서비스도 정산금이 부족해 근본 해법이 못 된다고 진단하며, 영화 산업의 PPL(간접광고) 모델 도입을 대안으로 제시했다.
 3. 다라는 "AAA 게임이 라이브 서비스뿐인 세상에 살고 싶지 않다"며, 외부 자본 유치로 수익 파이프라인을 다각화해 창작 다양성을 지켜야 한다고 촉구했다.
 
-![마크 다라 전 바이오웨어 드래곤 에이지 시리즈 총괄 프로듀서](/images/darrah-aaa-ppl-2026/fig1-mark-darrah.jpg)
+![마크 다라 전 바이오웨어 드래곤 에이지 시리즈 총괄 프로듀서](https://img.seosoyoung.eiaserinnys.me/images/darrah-aaa-ppl-2026/fig1-mark-darrah.jpg)
 ▶ 마크 다라 전 바이오웨어 <드래곤 에이지> 시리즈 총괄 프로듀서 (이미지 출처: 유튜브 채널 'Mark Darrah on Games')
 
 ## 폭증하는 개발비와 라이브 서비스 의존
@@ -33,14 +33,14 @@ images:
 
 여기에 라이브 서비스 시장은 유저의 시간과 지갑을 두고 벌이는 '제로섬 게임'으로 흐른다. 라이브 서비스 게임은 매일 접속과 반복 지출을 유도하는데, 게이머의 가용 시간은 한정되어 있으므로 시장에 라이브 서비스 게임이 범람할수록 극소수 흥행작만 살아남는다. 다라는 최근 1\~2년 사이 잇따른 대형 라이브 게임의 조기 종료와 스튜디오 폐쇄가 이러한 한계를 명확히 보여준다고 덧붙였다.
 
-![2025년 더 게임 어워드에서 화제를 모았지만 출시 45일만에 서비스 종료한 하이가드](/images/darrah-aaa-ppl-2026/fig2-highguard.jpg)
+![2025년 더 게임 어워드에서 화제를 모았지만 출시 45일만에 서비스 종료한 하이가드](https://img.seosoyoung.eiaserinnys.me/images/darrah-aaa-ppl-2026/fig2-highguard.jpg)
 ▶ 2025년 더 게임 어워드의 대미를 장식해 많은 관심을 받았지만, 출시 이후 단 45일만에 서비스를 종료한 <하이가드>
 
 일각에서는 Xbox 게임 패스나 PlayStation 플러스 같은 구독형 서비스가 대안이라고 주장하지만, 다라는 이 역시 근본 해결책이 아니라고 선을 그었다. 화제성을 띠며 구독 서비스에 합류해도 플랫폼이 지급하는 정산금이 천문학적 개발비를 충당하기에 턱없이 부족한 경우가 많다.
 
 특히 그는 일부 구독 플랫폼이 유저의 접속일 수 같은 *참여도 지표*로 수익을 배분하는 점을 비판했다. 이런 분배 구조는 개발사가 재미와 완결성 있는 경험에 집중하지 못하게 만들고, 접속 보상이나 형식적인 일일 퀘스트로 유저를 매일 끌어들이는 '퇴행적 게임 디자인(Degenerative design)'을 조장한다. 결과적으로 게임의 질은 떨어지고 유저 피로도만 쌓인다.
 
-![어느 게임에서나 흔히 볼 수 있게 된 라이브 서비스의 일일 퀘스트](/images/darrah-aaa-ppl-2026/fig3-daily-quest.jpg)
+![어느 게임에서나 흔히 볼 수 있게 된 라이브 서비스의 일일 퀘스트](https://img.seosoyoung.eiaserinnys.me/images/darrah-aaa-ppl-2026/fig3-daily-quest.jpg)
 ▶ 매일 게임 접속과 플레이를 유도하는 라이브 서비스의 일일 퀘스트는 이제 어느 게임에서든 쉽게 찾아볼 수 있게 됐다.
 
 ## 외부 자본 유치 — 영화식 PPL이라는 타개책
@@ -59,14 +59,14 @@ images:
 
 게임의 세계관과 몰입을 해치지 않는 선에서 자연스럽게 실존 브랜드를 녹여낼 수 있다면, 과도한 소액 결제나 무리한 라이브 서비스 전환 없이도 전통적 패키지 AAA 생태계를 유지할 훌륭한 대안이 된다는 것이 다라의 설명이다.
 
-![바이오하자드 레퀴엠에 PPL 방식으로 등장한 포르쉐 차량](/images/darrah-aaa-ppl-2026/fig4-porsche-bio.jpg)
+![바이오하자드 레퀴엠에 PPL 방식으로 등장한 포르쉐 차량](https://img.seosoyoung.eiaserinnys.me/images/darrah-aaa-ppl-2026/fig4-porsche-bio.jpg)
 ▶ 세계적인 스포츠카 브랜드 포르쉐는 다양한 게임과 적극적으로 컬래버레이션을 진행하고 있다. 특정 상품을 제작해 판매하는 경우도 있지만, <바이오하자드 레퀴엠>처럼 은근하게 게임 내 차량으로 등장하는 PPL 방식의 마케팅도 진행한 바 있다.
 
 ## "라이브 서비스만 남은 세상을 원치 않는다"
 
 거대 자본이 투입되는 AAA 시장은 중대한 기로에 서 있다. 소니는 <콩코드>의 흥행 실패 이후 <더 라스트 오브 어스 온라인>을 포함한 복수의 라이브 서비스 프로젝트를 취소했고, Xbox 역시 제니맥스 온라인 스튜디오의 미공개 MMO 프로젝트 개발을 중단했다. 다라는 이러한 글로벌 플랫폼 홀더들의 노선 변경이 단일화된 비즈니스 모델의 한계를 대변한다고 지적했다.
 
-![소니의 라이브 서비스 계획 변경으로 개발이 중단된 더 라스트 오브 어스 온라인 컨셉 이미지](/images/darrah-aaa-ppl-2026/fig5-tlou-online.jpg)
+![소니의 라이브 서비스 계획 변경으로 개발이 중단된 더 라스트 오브 어스 온라인 컨셉 이미지](https://img.seosoyoung.eiaserinnys.me/images/darrah-aaa-ppl-2026/fig5-tlou-online.jpg)
 ▶ 소니의 라이브 서비스 개발 계획의 변경으로 개발이 중단된 <더 라스트 오브 어스 온라인>의 컨셉 이미지
 
 그는 게임 산업이 창작의 다양성을 잃지 않고 지속 가능한 생태계를 유지하려면 비즈니스 모델의 과감한 체질 개선이 필수라고 역설했다. 막대한 예산의 압박 속에서 이용자 직접 결제에만 의존하는 기존 구조를 탈피하고, 타 매체의 성공적 비즈니스 모델을 유연하게 차용해 수익 파이프라인을 다각화해야 한다는 것이 핵심 주장이다.

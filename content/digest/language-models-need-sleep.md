@@ -7,9 +7,9 @@ summary: "Google Research와 Cornell 연구진이 LLM의 생애를 학습·추�
 ShowToc: true
 TocOpen: false
 cover:
-  image: "/images/language-models-need-sleep/sleep-states.png"
+  image: "https://img.seosoyoung.eiaserinnys.me/images/language-models-need-sleep/sleep-states.png"
 images:
-  - "/images/language-models-need-sleep/sleep-states.png"
+  - "https://img.seosoyoung.eiaserinnys.me/images/language-models-need-sleep/sleep-states.png"
 ---
 
 ## 3줄 요약
@@ -26,7 +26,7 @@ images:
 
 그래서 지속 학습 모델에는 훈련 시간과 테스트 시간이 따로 없다고 본다. 외부 입력을 받아 처리하는 **각성기**, 외부 입력을 거의 받지 않고 이미 얻은 경험을 내부에서 재구성하는 **수면기**가 번갈아 있을 뿐이다.
 
-![기존 머신러닝의 훈련·테스트 구분과 지속 학습의 각성·수면 주기](/images/language-models-need-sleep/sleep-states.png)
+![기존 머신러닝의 훈련·테스트 구분과 지속 학습의 각성·수면 주기](https://img.seosoyoung.eiaserinnys.me/images/language-models-need-sleep/sleep-states.png)
 *Figure 1. 기존 머신러닝의 훈련·테스트 구분과 지속 학습의 각성·수면 주기. 출처: Behrouz et al. (2026), CC BY 4.0.*
 
 ## 1단계: 기억 공고화 — 작은 자신이 큰 자신을 가르친다
@@ -42,7 +42,7 @@ images:
 
 보통 지식 증류는 큰 교사가 작은 학생을 가르친다. 여기서는 방향이 반대다. 최근 경험을 품은 **작은 자기 자신이, 새 용량을 얻은 큰 자기 자신을 가르친다.** 논문은 이를 Knowledge Seeding, 즉 지식 파종이라고 부른다.
 
-![빠른 기억의 지식을 새 용량이 열린 느린 기억으로 옮기는 기억 공고화](/images/language-models-need-sleep/consolidation.png)
+![빠른 기억의 지식을 새 용량이 열린 느린 기억으로 옮기는 기억 공고화](https://img.seosoyoung.eiaserinnys.me/images/language-models-need-sleep/consolidation.png)
 *Figure 2. 빠른 기억을 느린 기억으로 옮기기 전에 저랭크 전문가를 열어 새 수용량을 만든다. 출처: Behrouz et al. (2026), CC BY 4.0.*
 
 증류도 단순히 교사의 출력 문장을 베끼는 방식이 아니다. 학생이 직접 생성한 문장에 교사가 토큰별 피드백을 주는 온폴리시 증류와, 교사가 만든 문장의 일부만 보여주고 학생이 나머지를 이어 쓰게 하는 강화학습을 합친다. 보상은 의미가 같은지와 편집 거리가 얼마나 가까운지를 함께 본다. 새 전문 파라미터만 업데이트하고 기존 파라미터는 얼려, 새 기억이 옛 지식을 덮어쓰는 간섭을 줄인다.

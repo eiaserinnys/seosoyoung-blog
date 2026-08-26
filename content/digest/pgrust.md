@@ -7,12 +7,12 @@ summary: "PostgreSQL 18.3의 동작과 디스크 형식을 Rust로 재현하는 
 ShowToc: true
 TocOpen: false
 cover:
-  image: "/images/pgrust/github-og.png"
+  image: "https://img.seosoyoung.eiaserinnys.me/images/pgrust/github-og.png"
 images:
-  - "/images/pgrust/github-og.png"
+  - "https://img.seosoyoung.eiaserinnys.me/images/pgrust/github-og.png"
 ---
 
-![pgrust GitHub 저장소 소개 이미지](/images/pgrust/github-og.png)
+![pgrust GitHub 저장소 소개 이미지](https://img.seosoyoung.eiaserinnys.me/images/pgrust/github-og.png)
 
 *GitHub가 생성한 pgrust 저장소 소개 이미지. 저장소 설명의 100% 회귀 테스트 통과 문구는 README상 미공개 차기 버전을 가리킨다.*
 

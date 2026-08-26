@@ -8,9 +8,9 @@ math: true
 ShowToc: true
 TocOpen: false
 cover:
-  image: "/images/shen-2024-gvhmr-gravity-view/teaser.png"
+  image: "https://img.seosoyoung.eiaserinnys.me/images/shen-2024-gvhmr-gravity-view/teaser.png"
 images:
-  - "/images/shen-2024-gvhmr-gravity-view/teaser.png"
+  - "https://img.seosoyoung.eiaserinnys.me/images/shen-2024-gvhmr-gravity-view/teaser.png"
 ---
 
 ## 3줄 요약
@@ -30,7 +30,7 @@ images:
 - **라이선스:** CC-BY-NC-SA 4.0 (비상업적 사용 조건부)
 - **분야:** 컴퓨터 비전, 인간 동작 복원(HMR). 단안 비디오 입력에서 SMPL 파라미터와 세계 좌표계 위치를 동시 추정.
 
-![Teaser: GVHMR의 세계 좌표계 인간 동작 복원 결과](/images/shen-2024-gvhmr-gravity-view/teaser.png)
+![Teaser: GVHMR의 세계 좌표계 인간 동작 복원 결과](https://img.seosoyoung.eiaserinnys.me/images/shen-2024-gvhmr-gravity-view/teaser.png)
 
 ## 세계 좌표계 기반 복원의 모호성 문제
 
@@ -42,7 +42,7 @@ Human Motion Recovery는 두 가지 결로 나뉜다. <em>Camera-Space HMR</em>�
 
 ## Gravity-View 좌표계
 
-![Gravity-View 좌표계 정의 다이어그램](/images/shen-2024-gvhmr-gravity-view/method-gv-coordinate.png)
+![Gravity-View 좌표계 정의 다이어그램](https://img.seosoyoung.eiaserinnys.me/images/shen-2024-gvhmr-gravity-view/method-gv-coordinate.png)
 
 Gravity-View 좌표계는 세 축으로 정의된다.
 
@@ -60,7 +60,7 @@ $$
 
 ## 파이프라인
 
-![파이프라인 구조도: 특징 인코딩부터 세계 좌표 변환까지](/images/shen-2024-gvhmr-gravity-view/pipeline.png)
+![파이프라인 구조도: 특징 인코딩부터 세계 좌표 변환까지](https://img.seosoyoung.eiaserinnys.me/images/shen-2024-gvhmr-gravity-view/pipeline.png)
 
 전체 파이프라인은 다섯 단계로 이어진다.
 
@@ -109,7 +109,7 @@ $$
 
 ### 세계 좌표 메트릭 (RICH, EMDB-2)
 
-![세계 좌표계 정확도 표: WHAM 대비 대폭 개선](/images/shen-2024-gvhmr-gravity-view/table1-world-metric.png)
+![세계 좌표계 정확도 표: WHAM 대비 대폭 개선](https://img.seosoyoung.eiaserinnys.me/images/shen-2024-gvhmr-gravity-view/table1-world-metric.png)
 
 | 모델 | RICH WA-MPJPE | RICH W-MPJPE | RICH RTE | EMDB-2 W-MPJPE | 발 미끄럼 |
 |---|---|---|---|---|---|
@@ -121,7 +121,7 @@ $$
 
 ### 카메라 공간 메트릭 (3DPW, RICH, EMDB-1)
 
-![카메라 공간 정확도 표: HMR2.0, WHAM 대비](/images/shen-2024-gvhmr-gravity-view/table2-camera-metric.png)
+![카메라 공간 정확도 표: HMR2.0, WHAM 대비](https://img.seosoyoung.eiaserinnys.me/images/shen-2024-gvhmr-gravity-view/table2-camera-metric.png)
 
 | 모델 | 3DPW PA-MPJPE | 3DPW MPJPE | RICH MPJPE | EMDB PA-MPJPE |
 |---|---|---|---|---|

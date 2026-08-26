@@ -7,9 +7,9 @@ summary: "데이코쿠데이터뱅크의 원조사 리포트. 2026년 1월부터
 ShowToc: true
 TocOpen: false
 cover:
-  image: "/images/tdb-consulting-shakeout-survey-2026/chart.jpg"
+  image: "https://img.seosoyoung.eiaserinnys.me/images/tdb-consulting-shakeout-survey-2026/chart.jpg"
 images:
-  - "/images/tdb-consulting-shakeout-survey-2026/chart.jpg"
+  - "https://img.seosoyoung.eiaserinnys.me/images/tdb-consulting-shakeout-survey-2026/chart.jpg"
 ---
 
 ## 3줄 요약
@@ -34,7 +34,7 @@ images:
 - **휴폐업, 해산**: 법적 정리를 제외하고, 특별한 절차 없이 기업 활동이 정지된 상태가 확인되거나(휴폐업), 상업등기 등으로 해산이 확인된 기업(간주해산 제외).
 - **집계 기간**: 2000년 1월 1일부터 2026년 5월 31일까지.
 
-![경영컨설팅업 도산, 휴폐업 추이 (출처: 帝国データバンク)](/images/tdb-consulting-shakeout-survey-2026/chart.jpg)
+![경영컨설팅업 도산, 휴폐업 추이 (출처: 帝国データバンク)](https://img.seosoyoung.eiaserinnys.me/images/tdb-consulting-shakeout-survey-2026/chart.jpg)
 
 ## 무너지는 유형 — "보조금 의존"의 한계
 

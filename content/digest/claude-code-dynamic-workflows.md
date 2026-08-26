@@ -7,12 +7,12 @@ summary: "Anthropic이 Claude Code에 출시한 동적 워크플로우 해설. C
 ShowToc: true
 TocOpen: false
 cover:
-  image: "/images/claude-code-dynamic-workflows/cover.jpg"
+  image: "https://img.seosoyoung.eiaserinnys.me/images/claude-code-dynamic-workflows/cover.jpg"
 images:
-  - "/images/claude-code-dynamic-workflows/cover.jpg"
+  - "https://img.seosoyoung.eiaserinnys.me/images/claude-code-dynamic-workflows/cover.jpg"
 ---
 
-![A harness for every task — Dynamic workflows in Claude Code](/images/claude-code-dynamic-workflows/cover.jpg)
+![A harness for every task — Dynamic workflows in Claude Code](https://img.seosoyoung.eiaserinnys.me/images/claude-code-dynamic-workflows/cover.jpg)
 
 ## 3줄 요약
 

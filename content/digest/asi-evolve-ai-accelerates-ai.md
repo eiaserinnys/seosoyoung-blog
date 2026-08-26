@@ -15,7 +15,7 @@ sidenotes: true
 2. 선형 어텐션 아키텍처 105개 SOTA 발견, 프리트레이닝 데이터 큐레이션에서 MMLU +18.64점, RL 알고리즘 설계에서 GRPO 대비 최대 +12.5점을 달성했다.
 3. 핵심은 두 가지 — 인간 사전지식을 주입하는 Cognition Base(cold-start 가속)와 다차원 실험 결과를 인사이트로 증류하는 Analyzer(지속 개선) — 가 기존 진화적 프레임워크와 차별화되는 지점이다.
 
-![ASI-EVOLVE 개요: AI가 아키텍처·데이터·알고리즘 세 축에서 자기 개발을 가속한다](/images/asi-evolve/overview.png)
+![ASI-EVOLVE 개요: AI가 아키텍처·데이터·알고리즘 세 축에서 자기 개발을 가속한다](https://img.seosoyoung.eiaserinnys.me/images/asi-evolve/overview.png)
 
 ## 문제의식: 기존 AI-for-Science 시스템의 한계
 
@@ -33,7 +33,7 @@ AI가 과학 연구를 자동화하는 시도는 단계적으로 발전해 왔�
 - **S_space** (탐색 공간 복잡도): 열린 목표, 사전 정의된 경계 부재
 - **D_feedback** (피드백 복잡도): 다차원 신호를 종합해야 하는 난이도
 
-![Scientific Task Length 3D 공간. ASI-EVOLVE가 다루는 태스크(아키텍처·데이터·알고리즘)는 세 축 모두 높은 영역에 위치한다](/images/asi-evolve/task-length.jpg)
+![Scientific Task Length 3D 공간. ASI-EVOLVE가 다루는 태스크(아키텍처·데이터·알고리즘)는 세 축 모두 높은 영역에 위치한다](https://img.seosoyoung.eiaserinnys.me/images/asi-evolve/task-length.jpg)
 
 기존 시스템은 D_feedback이 낮은 영역에 머물렀다. ASI-EVOLVE는 세 축 모두 높은 영역을 최초로 다룬다.
 
@@ -111,7 +111,7 @@ AI가 과학 연구를 자동화하는 시도는 단계적으로 발전해 왔�
 
 ### Circle Packing 벤치마크
 
-![Framework Comparison: ASI-Evolve가 OpenEvolve와 GEPA를 압도한다](/images/asi-evolve/framework-comparison.png)
+![Framework Comparison: ASI-Evolve가 OpenEvolve와 GEPA를 압도한다](https://img.seosoyoung.eiaserinnys.me/images/asi-evolve/framework-comparison.png)
 
 AlphaEvolve의 circle packing 태스크(26개 원, 1×1 정사각형)에서:
 - ASI-EVOLVE: **17스텝**만에 2.63597 달성 (SOTA급)
@@ -122,7 +122,7 @@ UCB1 샘플링 + 강한 Cognition 사전지식 조합이, 다양성 보존 샘�
 
 ### 어블레이션
 
-![Ablation: Full Method, No Cognition, No Analyzer 비교](/images/asi-evolve/ablation.png)
+![Ablation: Full Method, No Cognition, No Analyzer 비교](https://img.seosoyoung.eiaserinnys.me/images/asi-evolve/ablation.png)
 
 - **No Analyzer**: 초기 점수는 높지만(Cognition 덕분) 이후 장기 정체
 - **No Cognition**: cold-start 비용 증가, 하지만 자기학습으로 장기 회복 가능

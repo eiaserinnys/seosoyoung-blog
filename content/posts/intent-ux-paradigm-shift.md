@@ -5,7 +5,7 @@ tags: ["AI UX", "UI 설계", "Human-AI 공동 창작"]
 categories: ["에이전트와 코딩"]
 summary: "AI가 바꾼 건 인터페이스의 외양이 아니라 사용자의 역할이다. 조작원에서 감독자로—이것은 배치 처리에서 명령행으로 넘어간 이후 60년 만의 첫 UI 패러다임 전환이다."
 cover:
-  image: "/images/cover-intent-ux-paradigm-shift.jpg"
+  image: "https://img.seosoyoung.eiaserinnys.me/images/cover-intent-ux-paradigm-shift.jpg"
 sidenotes: true
 ---
 

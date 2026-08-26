@@ -7,9 +7,9 @@ summary: "8달러짜리 ESP32-S3 마이크로컨트롤러에 28.9M 파라미터 
 ShowToc: true
 TocOpen: false
 cover:
-  image: "/images/esp32-8-dollar-llm/board.jpg"
+  image: "https://img.seosoyoung.eiaserinnys.me/images/esp32-8-dollar-llm/board.jpg"
 images:
-  - "/images/esp32-8-dollar-llm/board.jpg"
+  - "https://img.seosoyoung.eiaserinnys.me/images/esp32-8-dollar-llm/board.jpg"
 ---
 
 ## 3줄 요약
@@ -18,7 +18,7 @@ images:
 2. 비결은 파라미터의 대부분(25M)을 느린 플래시 메모리의 임베딩 조회표로 내보내고, 토큰마다 그중 여섯 줄(약 450바이트)만 읽어오는 것이다. 진짜 계산을 하는 작은 코어(약 559K)만 빠른 SRAM에 남긴다. 구글 젬마(Gemma)의 Per-Layer Embeddings 설계를 마이크로컨트롤러 메모리 구조에 옮겨 온 결과다.
 3. 다만 이 모델은 TinyStories 데이터로 학습한 이야기 전용이라 질문 답변도, 지시 수행도, 코딩도, 사실 지식도 못 한다. 저자는 "28.9M은 메모리 계층에 나눠 담은 저장 파라미터 수일 뿐 능력의 배수가 아니다"라고 분명히 밝힌다. 흥미로운 지점은 성능이 아니라 아키텍처다.
 
-![저자 slvDev가 공개한 데모. ESP32-S3가 화면에 TinyStories 텍스트를 생성하는 장면과 핵심 수치.](/images/esp32-8-dollar-llm/demo.gif)
+![저자 slvDev가 공개한 데모. ESP32-S3가 화면에 TinyStories 텍스트를 생성하는 장면과 핵심 수치.](https://img.seosoyoung.eiaserinnys.me/images/esp32-8-dollar-llm/demo.gif)
 
 ## 8달러 AI 기계라는 주장
 

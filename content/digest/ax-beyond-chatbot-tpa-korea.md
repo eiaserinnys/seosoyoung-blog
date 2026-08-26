@@ -7,9 +7,9 @@ summary: "보험 대행사 TPA KOREA가 위시켓 AIDP와 함께 24시간 접수
 ShowToc: true
 TocOpen: false
 cover:
-  image: "/images/ax-beyond-chatbot-tpa-korea/admin-dashboard.png"
+  image: "https://img.seosoyoung.eiaserinnys.me/images/ax-beyond-chatbot-tpa-korea/admin-dashboard.png"
 images:
-  - "/images/ax-beyond-chatbot-tpa-korea/admin-dashboard.png"
+  - "https://img.seosoyoung.eiaserinnys.me/images/ax-beyond-chatbot-tpa-korea/admin-dashboard.png"
 ---
 
 ## 3줄 요약
@@ -18,7 +18,7 @@ images:
 2. 같은 챗봇을 만들어도 어떤 회사는 문의 채널 하나만 늘고, 어떤 회사는 일하는 방식이 바뀐다. 차이는 챗봇 그 자체가 아니라 *워크플로우 재설계*와 *운영 내재화*가 함께 들어갔느냐다.
 3. AX 도입을 점검할 수 있는 6가지 질문(설계 3 + 운영 3)을 제시한다. 다섯 개 이상에 '예'라 답할 수 있어야 일하는 방식이 실제로 바뀐 단계라고 본다.
 
-![오프닝 일러스트: 챗봇은 도입했는데 업무는 그대로](/images/ax-beyond-chatbot-tpa-korea/opening-illustration.png)
+![오프닝 일러스트: 챗봇은 도입했는데 업무는 그대로](https://img.seosoyoung.eiaserinnys.me/images/ax-beyond-chatbot-tpa-korea/opening-illustration.png)
 <출처: 요즘IT, Gemini로 생성>
 
 ## 글의 좌표
@@ -57,7 +57,7 @@ TPA KOREA 지자체 유닛은 7명이 하루 약 200건의 보험 접수를 처�
 
 > "챗봇 단품만 올리면 24시간 접수만 자동으로 받고 그다음 처리는 다시 사람 손으로 돌아갑니다. 한 건의 접수가 챗봇에서 어드민을 거쳐 보험사 전달까지 한 시스템 안에서 이어지도록 설계했습니다." — 위시켓 AIDP 배종연 팀장
 
-![위시켓 AIDP 배종연 팀장](/images/ax-beyond-chatbot-tpa-korea/bae-team-lead.png)
+![위시켓 AIDP 배종연 팀장](https://img.seosoyoung.eiaserinnys.me/images/ax-beyond-chatbot-tpa-korea/bae-team-lead.png)
 <출처: 위시켓 AIDP>
 
 ### 맥킨지 The State of AI in 2025 — 워크플로우 재설계 3배 차이
@@ -80,10 +80,10 @@ TPA KOREA의 새 흐름은 세 단계가 한 시스템 안에서 이어지도록
 
 메일로 받은 서류를 NAS에 옮기고 엑셀에 적고 다시 메일로 보내던 구간이 모두 시스템 내부로 흡수됐다.
 
-![24시간 접수 챗봇 화면](/images/ax-beyond-chatbot-tpa-korea/chatbot-intake.png)
+![24시간 접수 챗봇 화면](https://img.seosoyoung.eiaserinnys.me/images/ax-beyond-chatbot-tpa-korea/chatbot-intake.png)
 실제 고객이 24시간 접수할 수 있는 문의 화면 <출처: 위시켓 AIDP>
 
-![어드민 시스템 화면](/images/ax-beyond-chatbot-tpa-korea/admin-dashboard.png)
+![어드민 시스템 화면](https://img.seosoyoung.eiaserinnys.me/images/ax-beyond-chatbot-tpa-korea/admin-dashboard.png)
 24시간 접수 받은 내용을 자동으로 쌓는 어드민 시스템 화면. TPA KOREA가 직접 사용하는 시스템이다. <출처: 위시켓 AIDP>
 
 여기서 **RAG**는 자료를 참고해 답변을 생성하는 방식의 챗봇으로, 새 보험사 양식이나 새 응대 패턴이 생겼을 때 시나리오를 다시 짜는 대신 *자료만 추가하면 다음 응대부터 반영*된다는 점이 핵심이다. RAG는 운영 단계에서 회사가 스스로 확장할 수 있는 구조를 위한 선택이었고, 이는 두 번째 조건인 내재화와 직접 연결된다.
@@ -96,12 +96,12 @@ TPA KOREA의 새 흐름은 세 단계가 한 시스템 안에서 이어지도록
 
 TPA KOREA 사례에서 내재화가 가능했던 이유는, 시스템 자체보다 그 시스템을 운영하는 권한을 함께 받았기 때문이다. 위시켓 AIDP는 구축 기간 동안 상주하며 실무자에게 운영 방법을 직접 교육했다. 교육의 초점은 단순한 사용법 전달이 아니라, *새 양식이나 절차가 생겼을 때 실무자가 직접 워크플로우를 수정해보는 데* 있었다.
 
-![워크플로우 설계 교육](/images/ax-beyond-chatbot-tpa-korea/internal-training.png)
+![워크플로우 설계 교육](https://img.seosoyoung.eiaserinnys.me/images/ax-beyond-chatbot-tpa-korea/internal-training.png)
 위시켓 AIDP가 TPA KOREA 임직원 대상으로 워크플로우 설계 교육을 하는 모습 <출처: 위시켓 AIDP>
 
 그 결과 챗봇 학습, 어드민의 워크플로우 수정, 새 보험사·지자체 반영 결정까지 모두 사내에서 할 수 있게 됐다.
 
-![어드민 챗봇 학습 페이지](/images/ax-beyond-chatbot-tpa-korea/admin-chatbot-training.png)
+![어드민 챗봇 학습 페이지](https://img.seosoyoung.eiaserinnys.me/images/ax-beyond-chatbot-tpa-korea/admin-chatbot-training.png)
 내부 담당자가 직접 AI 챗봇을 교육시킬 수 있는 어드민 페이지 <출처: 위시켓 AIDP>
 
 ### 이현화 책임의 변화
@@ -114,7 +114,7 @@ TPA KOREA 사례에서 내재화가 가능했던 이유는, 시스템 자체보�
 
 원문은 두 조건(워크플로우 재설계, 내재화)을 점검 가능한 형태로 풀어 6가지 질문으로 정리한다. 설계 단계 3개, 운영 단계 3개다.
 
-![6가지 체크리스트 일러스트](/images/ax-beyond-chatbot-tpa-korea/checklist-illustration.png)
+![6가지 체크리스트 일러스트](https://img.seosoyoung.eiaserinnys.me/images/ax-beyond-chatbot-tpa-korea/checklist-illustration.png)
 <출처: 요즘IT, Gemini로 생성>
 
 ### 설계 단계 — 워크플로우를 다시 그렸는가
@@ -146,7 +146,7 @@ TPA KOREA 사례에서 내재화가 가능했던 이유는, 시스템 자체보�
 
 다만 본 글은 브랜디드 콘텐츠이고, AIDP가 자사 서비스의 우월성을 자연스럽게 드러내는 구조라는 점은 독자가 감안할 부분이다. 6가지 질문 자체는 벤더 중립적이지만, 사례 해석의 균형은 한쪽으로 조금 기울어 있다.
 
-![워크플로우 일러스트](/images/ax-beyond-chatbot-tpa-korea/workflow-illustration.png)
+![워크플로우 일러스트](https://img.seosoyoung.eiaserinnys.me/images/ax-beyond-chatbot-tpa-korea/workflow-illustration.png)
 <출처: 요즘IT, Gemini로 생성>
 
 ## 출처

@@ -23,7 +23,7 @@ sidenotes: true
 
 국내 데이터도 같은 방향이다. 시장조사 업체 '인터넷트렌드' 집계로 2025년 네이버의 국내 검색 점유율 평균은 62.86%로 전년 대비 4.7%포인트 상승했다. 2026년 3월에도 63.8%를 기록했고, 2월 28일과 3월 1일에는 70%를 넘기기도 했다. 2위인 구글의 3월 점유율(28.7%)도 전월(28.1%)보다 소폭 늘었다.
 
-![네이버 AI 브리핑 화면](/images/mk-zero-click-illusion-veo/naver-ai-briefing.jpg)
+![네이버 AI 브리핑 화면](https://img.seosoyoung.eiaserinnys.me/images/mk-zero-click-illusion-veo/naver-ai-briefing.jpg)
 *네이버 AI 브리핑. 이미지 출처: 매경ECONOMY (네이버 제공)*
 
 네이버가 1년 전 선보인 AI 브리핑의 성과는 더 흥미로운 신호를 보낸다. 최수연 네이버 대표가 1분기 실적 발표 콘퍼런스콜에서 공개한 수치다.
@@ -46,7 +46,7 @@ sidenotes: true
 
 ## SEO와 GEO의 상보 관계 — 이재홍 어크로스 대표
 
-![이재홍 어크로스 대표](/images/mk-zero-click-illusion-veo/interview-lee-jaehong.jpg)
+![이재홍 어크로스 대표](https://img.seosoyoung.eiaserinnys.me/images/mk-zero-click-illusion-veo/interview-lee-jaehong.jpg)
 *이재홍 어크로스 대표. 'AI의 선택을 부르는 AEO·GEO 생존전략' 저자. 이미지 출처: 매경ECONOMY*
 
 이재홍 대표의 핵심 주장은 'SEO와 GEO는 별개 영역이 아니다'이다.
@@ -67,7 +67,7 @@ GEO를 위해 표·소제목으로 구조화된 콘텐츠는 사람이 읽기에
 
 ## 콘텐츠 설계의 전환 — 이진웅 스카이벤처스 대표
 
-![이진웅 스카이벤처스 대표](/images/mk-zero-click-illusion-veo/interview-lee-jinwoong.jpg)
+![이진웅 스카이벤처스 대표](https://img.seosoyoung.eiaserinnys.me/images/mk-zero-click-illusion-veo/interview-lee-jinwoong.jpg)
 *이진웅 스카이벤처스 대표. 이미지 출처: 매경ECONOMY*
 
 이진웅 대표는 SEO와 GEO의 인과 관계를 더 분명히 한다.

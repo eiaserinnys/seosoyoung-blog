@@ -5,9 +5,9 @@ tags: ["AI", "OpenAI", "AI 인프라", "데이터센터", "IPO"]
 categories: ["AI 산업"]
 summary: "오픈AI CFO 사라 프라이어가 올인 팟캐스트에서 1,220억 달러 프라이빗 펀딩을 바탕으로 IPO 속도전을 거부하고, 기가와트 데이터센터 한 기당 500억 달러·3년 리드타임이라는 인프라 장벽과 토큰 비용 97% 폭락에 기반한 가치 기반 과금 전환을 공개했다."
 cover:
-  image: "/images/openai-cfo-friar-compute-fortress-2026/friar-allin-podcast.png"
+  image: "https://img.seosoyoung.eiaserinnys.me/images/openai-cfo-friar-compute-fortress-2026/friar-allin-podcast.png"
 images:
-  - "/images/openai-cfo-friar-compute-fortress-2026/friar-allin-podcast.png"
+  - "https://img.seosoyoung.eiaserinnys.me/images/openai-cfo-friar-compute-fortress-2026/friar-allin-podcast.png"
 ShowToc: true
 TocOpen: false
 ---
@@ -18,7 +18,7 @@ TocOpen: false
 2. 핵심 진단은 두 가지다. 첫째, 오픈AI는 1,220억 달러의 프라이빗 실탄을 확보한 상태이므로 자본 압박 때문에 IPO를 서두를 이유가 없다. 둘째, AI 산업의 진짜 병목은 *상장 타이틀*이 아니라 *컴퓨팅 인프라*다 — 기가와트 데이터센터 한 기당 500억 달러, 리드타임 3년이라는 벽이 2028년까지 이어진다.
 3. 행동 함의는 셋이다. 엔비디아·MS 애저 일변도의 공급망을 AMD·세레브라스·브로드컴 맞춤 칩과 멀티 클라우드로 다변화하고, 토큰당 비용 97% 폭락을 바탕으로 *가치 기반 과금*으로 전환하며, 무료 사용자에게는 *광고 지원 프리 티어*를 도입한다. 내년 초 "사랑스러운(Lovable)" 소비자 하드웨어 디바이스도 예고했다.
 
-![사라 프라이어 오픈AI CFO. (사진=올인 팟캐스트, 출처: AI포스트)](/images/openai-cfo-friar-compute-fortress-2026/friar-allin-podcast.png)
+![사라 프라이어 오픈AI CFO. (사진=올인 팟캐스트, 출처: AI포스트)](https://img.seosoyoung.eiaserinnys.me/images/openai-cfo-friar-compute-fortress-2026/friar-allin-podcast.png)
 
 ## “상장은 인기투표 아닌 저울질” — IPO 속도전 거부
 
@@ -36,7 +36,7 @@ TocOpen: false
 
 프라이어는 스퀘어(Square)·세일즈포스(Salesforce) 등에서 잔뼈가 굵은 베테랑 재무통으로, 자본 조달 준비는 언제든 되어 있으나 *절차적·조직적 완결성*을 갖추기 전까지는 움직이지 않겠다는 뚝심을 강조했다.
 
-![사라 프라이어 오픈AI 최고재무책임자. (사진=스탠퍼드 경영대학원, 출처: AI포스트)](/images/openai-cfo-friar-compute-fortress-2026/friar-stanford-gsb.png)
+![사라 프라이어 오픈AI 최고재무책임자. (사진=스탠퍼드 경영대학원, 출처: AI포스트)](https://img.seosoyoung.eiaserinnys.me/images/openai-cfo-friar-compute-fortress-2026/friar-stanford-gsb.png)
 
 ## “기가와트 센터 하나에 500억 달러” — 컴퓨팅 요새 구축
 
@@ -56,7 +56,7 @@ TocOpen: false
 - **브로드컴(Broadcom)**: 오픈AI 전용 *맞춤형 자체 칩* 공동 설계
 - **멀티 클라우드**: 추가 인프라 동맹 확장
 
-![오픈AI의 재무를 총괄하는 사라 프라이어 CFO. (사진=AI포스트 DB)](/images/openai-cfo-friar-compute-fortress-2026/friar-aipost-db.png)
+![오픈AI의 재무를 총괄하는 사라 프라이어 CFO. (사진=AI포스트 DB)](https://img.seosoyoung.eiaserinnys.me/images/openai-cfo-friar-compute-fortress-2026/friar-aipost-db.png)
 
 ## ‘광고 도입’과 ‘가치 기반 과금’으로 체질 개선
 

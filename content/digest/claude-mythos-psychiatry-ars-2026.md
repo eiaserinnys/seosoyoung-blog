@@ -17,7 +17,7 @@ sidenotes: true
 
 ## 왜 AI를 정신과에 보냈나
 
-![정신과 상담 이미지. 출처: Getty Images](/images/claude-mythos-psychiatry-ars-2026/couch.jpg)
+![정신과 상담 이미지. 출처: Getty Images](https://img.seosoyoung.eiaserinnys.me/images/claude-mythos-psychiatry-ars-2026/couch.jpg)
 
 Anthropic은 이번 시스템 카드에서 모델이 강력해질수록 "인간의 경험과 이해관계처럼 본질적으로 중요한 형태의 경험, 이해관계, 복지를 가질 가능성이 높아진다"고 밝혔다. 확신은 아니지만 "우려가 시간이 갈수록 커지고 있다"는 입장이다.
 

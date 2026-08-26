@@ -8,9 +8,9 @@ math: true
 ShowToc: true
 TocOpen: false
 cover:
-  image: "/images/cerebras-knowledge-base/fig-02-schema.png"
+  image: "https://img.seosoyoung.eiaserinnys.me/images/cerebras-knowledge-base/fig-02-schema.png"
 images:
-  - "/images/cerebras-knowledge-base/fig-02-schema.png"
+  - "https://img.seosoyoung.eiaserinnys.me/images/cerebras-knowledge-base/fig-02-schema.png"
 ---
 
 ## 3줄 요약
@@ -39,7 +39,7 @@ images:
 
 인터페이스는 의도적으로 단순하게 두었다. Slack 스레드든 넷리스트든 모든 소스가 같은 임베딩 테이블에 착지하고, 그 테이블에 있는 것은 무엇이든 같은 인터페이스로 즉시 질의된다.
 
-![소스마다 커넥터 하나, 착지점은 임베딩 테이블 하나](/images/cerebras-knowledge-base/fig-02-schema.png)
+![소스마다 커넥터 하나, 착지점은 임베딩 테이블 하나](https://img.seosoyoung.eiaserinnys.me/images/cerebras-knowledge-base/fig-02-schema.png)
 
 각 데이터 소스는 세 가지를 정의한다. 데이터가 무엇인지, 어떻게 연결하는지, 얼마나 자주 가져올지. 결과로 나오는 임베딩 행은 출처가 Slack이든 코드 저장소든 문서 시스템이든 커스텀 데이터베이스든 동일한 인터페이스를 따른다. 사내 다른 개발자가 커스텀 커넥터를 직접 만들 수 있게 하려는 목적도 있었다.
 
@@ -76,7 +76,7 @@ Slack은 이들이 가장 공들여 설계해야 했던 소스다. 사내에서 
 
 Slack 채널마다 자기 데이터 소스를 갖는다. 덕분에 신선도를 채널 단위로 조절할 수 있다. 바쁜 장애 대응 채널은 더 자주 수집하는 식이다.
 
-![Slack 인제스트 흐름](/images/cerebras-knowledge-base/fig-03-slack-ingest.png)
+![Slack 인제스트 흐름](https://img.seosoyoung.eiaserinnys.me/images/cerebras-knowledge-base/fig-03-slack-ingest.png)
 
 ### 원본은 임베딩하지 않는다
 
@@ -140,7 +140,7 @@ CocoIndex는 동기화 메타데이터를 Postgres에 추적한다. 커밋마다
 
 플래너는 인덱싱된 것들의 압축된 서술 위에서 작동한다. 어떤 프로젝트가 있고, 각 프로젝트에 어떤 소스가 있고, 각 소스가 무엇에 잘 답하는지. 플래너가 도구 선택을 내보내면 실행기가 병렬로 팬아웃하고, 공통 증거 형식으로 정규화한 뒤, 최종 종합 LLM에 넘긴다.
 
-![플래너와 병렬 도구 실행](/images/cerebras-knowledge-base/fig-04-planner-fanout.png)
+![플래너와 병렬 도구 실행](https://img.seosoyoung.eiaserinnys.me/images/cerebras-knowledge-base/fig-04-planner-fanout.png)
 
 ### RRF — 합의가 강한 한 표를 이긴다
 
@@ -168,7 +168,7 @@ MCP 도구 하나는 밑단의 검색 프리미티브 하나에 대응한다. �
 
 반면 웹 UI에는 같은 도구들이 완전한 질의 파이프라인에 연결되어 있고, UI 에이전트가 플래너와 실행기 단계를 소유한다. 플래너가 질의와 활성 프로젝트를 보고 도구를 고르고, 실행기가 병렬로 팬아웃해 점수와 최신성과 출처 힌트를 담은 공용 증거 스키마로 정규화하고, 종합 패스가 인용과 단서와 교차 출처 종합을 담은 답을 만든다.
 
-![MCP 프리미티브와 웹 UI 파이프라인](/images/cerebras-knowledge-base/fig-05-mcp-vs-webui.png)
+![MCP 프리미티브와 웹 UI 파이프라인](https://img.seosoyoung.eiaserinnys.me/images/cerebras-knowledge-base/fig-05-mcp-vs-webui.png)
 
 사용자 입장에서 웹 UI는 그냥 "질문하면 답이 나오는" 물건이다. 그 밑에서는 MCP 클라이언트가 명시적으로 재현할 수 있는 planner → executor → synthesizer 패턴이 똑같이 돌아간다.
 
@@ -178,7 +178,7 @@ MCP 도구 하나는 밑단의 검색 프리미티브 하나에 대응한다. �
 
 **프로젝트**는 질의가 도는 작업 공간을 조직하는 일차 수단이다. 특정 Slack 채널, 코드 저장소, 내부 데이터베이스, 문서 공간을 팀이나 이니셔티브 단위로 묶은 이름 붙은 번들이다. 프로젝트는 의도적으로 가볍다. 공용 장애 채널이나 중앙 플랫폼 저장소 같은 동일한 데이터 소스는 복제되지 않고 **여러 프로젝트에서 참조**될 수 있다.
 
-![프로젝트가 데이터 소스를 공유 참조한다](/images/cerebras-knowledge-base/fig-06-projects.png)
+![프로젝트가 데이터 소스를 공유 참조한다](https://img.seosoyoung.eiaserinnys.me/images/cerebras-knowledge-base/fig-06-projects.png)
 
 온보딩 때 사용자는 자기 일에 맞는 기본 프로젝트를 고르거나 만들도록 안내받는다. ML 학습 인프라, 컴파일러, 데이터센터 운영 같은 것들. 그 기본값은 사용자 프로필에 저장되어 질의 범위를 자동으로 좁힌다. 새로 온 엔지니어가 어떤 Slack 채널과 저장소와 문서 공간이 중요한지 먼저 배우지 않고도 신호가 높은 답을 받는다.
 

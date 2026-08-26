@@ -8,9 +8,9 @@ math: true
 ShowToc: true
 TocOpen: false
 cover:
-  image: "/images/attentionviz-2023/matrix.png"
+  image: "https://img.seosoyoung.eiaserinnys.me/images/attentionviz-2023/matrix.png"
 images:
-  - "/images/attentionviz-2023/matrix.png"
+  - "https://img.seosoyoung.eiaserinnys.me/images/attentionviz-2023/matrix.png"
 sidenotes: true
 ---
 
@@ -32,7 +32,7 @@ sidenotes: true
 소속: Harvard University (전원), Google Research (Viégas·Wattenberg 겸직).
 실 데모: <http://attentionviz.com/>
 
-![AttentionViz가 다루는 입력 — 문장과 합성 이미지 데이터](/images/attentionviz-2023/data.png)
+![AttentionViz가 다루는 입력 — 문장과 합성 이미지 데이터](https://img.seosoyoung.eiaserinnys.me/images/attentionviz-2023/data.png)
 
 ## 풀고자 한 문제
 
@@ -76,7 +76,7 @@ $$\mathrm{attn}(x_i, x_j) = \mathrm{softmax}_j\bigl(f(x_i, x_1), \dots, f(x_i, x
 
 ## 도구 — 3단 줌 구조
 
-![Matrix View — 144개 헤드를 한 화면에](/images/attentionviz-2023/matrix.png)
+![Matrix View — 144개 헤드를 한 화면에](https://img.seosoyoung.eiaserinnys.me/images/attentionviz-2023/matrix.png)
 
 ### Matrix View (T1, T3)
 
@@ -84,31 +84,31 @@ $$\mathrm{attn}(x_i, x_j) = \mathrm{softmax}_j\bigl(f(x_i, x_1), \dots, f(x_i, x
 
 전역 검색 기능은 같은 토큰(언어) 또는 같은 객체 클래스(비전)를 모든 헤드에서 동시에 하이라이트한다. "어느 헤드가 'april'을 의미적으로 묶고, 어느 헤드는 위치적으로 흩는가"가 단번에 드러난다.
 
-![전역 검색 — 'april'이 어느 헤드에서 의미 클러스터로 묶이는가](/images/attentionviz-2023/search.png)
+![전역 검색 — 'april'이 어느 헤드에서 의미 클러스터로 묶이는가](https://img.seosoyoung.eiaserinnys.me/images/attentionviz-2023/search.png)
 
 ### Single View (T2, T3)
 
 Matrix View의 셀을 클릭하면 그 헤드의 사영도가 확대된다. 토큰 라벨, 어텐션 라인(상위 2개 connection), 토큰 norm으로 점 크기 조절, 인접 헤드로의 방향 키 이동 등이 추가된다.
 
-![Single View — 한 헤드의 사영도 줌인](/images/attentionviz-2023/single.png)
+![Single View — 한 헤드의 사영도 줌인](https://img.seosoyoung.eiaserinnys.me/images/attentionviz-2023/single.png)
 
 토큰 라벨을 켜면 의미 클러스터가 그대로 드러난다. 아래 BERT 헤드는 "broadcast(방송)"라는 의미 묶음과 "stanley/finals(스포츠)" 묶음이 query-key 간에 의미적으로 연결된 모습이다.
 
-![Single View 라벨 — query-key 사이 의미 관계](/images/attentionviz-2023/labels.png)
+![Single View 라벨 — query-key 사이 의미 관계](https://img.seosoyoung.eiaserinnys.me/images/attentionviz-2023/labels.png)
 
 ### Sentence View (T2, T3)
 
 Single View의 한 점을 클릭하면 우측 사이드바에 BertViz 풍의 bipartite 시각화가 열린다. 클릭된 토큰의 어텐션 라인이 메인 사영도에도 동기화된다. `[cls]`/`[sep]` 같은 특수 토큰 필터, 헤드 평균 aggregate 뷰가 추가 기능이다.
 
-![Sentence View — bipartite 어텐션과 사영도 동기화](/images/attentionviz-2023/sent.png)
+![Sentence View — bipartite 어텐션과 사영도 동기화](https://img.seosoyoung.eiaserinnys.me/images/attentionviz-2023/sent.png)
 
 ### Image View (T2, T3)
 
 ViT의 경우 같은 자리에 이미지가 들어온다. 패치 클릭 → 어텐션 heatmap, "각 토큰의 최강 어텐션 화살표"(simplified bipartite), "0.1 이상 모든 강한 연결"(comprehensive view) 세 옵션을 제공한다. 자기 자신에 대한 어텐션은 원형 화살표, `[cls]` 토큰 어텐션은 사각형 아이콘으로 표시된다.
 
-![Image View — 패치별 어텐션 heatmap과 흐름](/images/attentionviz-2023/image.png)
+![Image View — 패치별 어텐션 heatmap과 흐름](https://img.seosoyoung.eiaserinnys.me/images/attentionviz-2023/image.png)
 
-![이미지 레벨 어텐션 시각화의 세 가지 변형](/images/attentionviz-2023/attn_flow.png)
+![이미지 레벨 어텐션 시각화의 세 가지 변형](https://img.seosoyoung.eiaserinnys.me/images/attentionviz-2023/attn_flow.png)
 
 ## 발견된 사례
 

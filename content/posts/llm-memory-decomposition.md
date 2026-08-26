@@ -6,7 +6,7 @@ categories: ["모델과 연구"]
 series: ["거울 앞에서"]
 summary: "LLM의 역량은 사실 지식, 추론, 언어 능력의 합이다. 추론은 압축되지만 지식은 압축되지 않는다. 그렇다면 질문은 달라져야 한다 — 모델이 모든 것을 기억해야 하는가?"
 cover:
-  image: "/images/cover-llm-memory-decomposition.jpg"
+  image: "https://img.seosoyoung.eiaserinnys.me/images/cover-llm-memory-decomposition.jpg"
 sidenotes: true
 ---
 

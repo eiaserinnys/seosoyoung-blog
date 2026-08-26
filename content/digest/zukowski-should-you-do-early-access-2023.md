@@ -37,17 +37,17 @@ Valve는 2013년 3월 20일에 Early Access를 도입했다. 핵심 약속은 �
 1. EA 게임은 출시가 두 번이다. EA 출시 한 번, 1.0 졸업 한 번.
 2. 개발자가 개발 중에 매출을 받기 시작한다. 게임 산업의 가장 나쁜 점 중 하나가 "긴 개발 기간 동안 한 푼도 못 받다가 출시 직후 한 번에 큰 매출을 받는다"는 구조였는데, EA는 이걸 분산한다.
 
-![연도별 EA 게임 출시 수 — 2014년 이후 꾸준히 증가하여 2022년 약 2,300개에 도달](/images/zukowski-should-you-do-early-access-2023/image-18.png)
+![연도별 EA 게임 출시 수 — 2014년 이후 꾸준히 증가하여 2022년 약 2,300개에 도달](https://img.seosoyoung.eiaserinnys.me/images/zukowski-should-you-do-early-access-2023/image-18.png)
 
 2014년 이후 EA 프로그램에 참여한 게임은 누계 10,549개 이상이다. Steam 전체 출시작 대비 비율로 보면 2017\~2020년에 약 20%까지 부풀어 올랐다가 최근 약간 줄어든 상태다.
 
-![Steam 전체 출시 대비 EA 비율 — 2019\~2020년에 약 20%로 정점을 찍은 뒤 18%대로 안정](/images/zukowski-should-you-do-early-access-2023/image-19.png)
+![Steam 전체 출시 대비 EA 비율 — 2019\~2020년에 약 20%로 정점을 찍은 뒤 18%대로 안정](https://img.seosoyoung.eiaserinnys.me/images/zukowski-should-you-do-early-access-2023/image-19.png)
 
 ## 1.0까지 졸업하는 게임은 얼마나 되는가
 
 초창기(2014\~2017)의 EA는 "킥스타터처럼 일단 던져 보고 반응을 보는 곳"으로 남용되었다. 2016년에 EA로 출시된 게임의 <strong>90%</strong>가 끝내 1.0으로 졸업하지 못했다.
 
-![연도별 EA 게임 중 1.0 졸업 비율 — 2014\~2017년은 졸업률 10% 미만, 2018년부터 점프](/images/zukowski-should-you-do-early-access-2023/image-17.png)
+![연도별 EA 게임 중 1.0 졸업 비율 — 2014\~2017년은 졸업률 10% 미만, 2018년부터 점프](https://img.seosoyoung.eiaserinnys.me/images/zukowski-should-you-do-early-access-2023/image-17.png)
 
 저자가 두 번째 차트에서 확인한 시청자 정서는 가혹하다. "어렸고 어리석었던 시절에 이 \*게임\*을 샀다. 그 덕분에 다시는 EA 게임을 사지 않게 됐다." 이런 부정적 학습 효과가 EA 전반의 평판을 짓눌렀다.
 

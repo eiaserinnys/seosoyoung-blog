@@ -7,9 +7,9 @@ summary: "Game Oracle의 Ross Burton이 2025년 1~10월 Steam에 출시된 유�
 ShowToc: true
 TocOpen: false
 cover:
-  image: "/images/steam-ai-disclosed-review-impact-2025/review-rating-distribution.jpg"
+  image: "https://img.seosoyoung.eiaserinnys.me/images/steam-ai-disclosed-review-impact-2025/review-rating-distribution.jpg"
 images:
-  - "/images/steam-ai-disclosed-review-impact-2025/review-rating-distribution.jpg"
+  - "https://img.seosoyoung.eiaserinnys.me/images/steam-ai-disclosed-review-impact-2025/review-rating-distribution.jpg"
 ---
 
 ## 3줄 요약
@@ -22,7 +22,7 @@ images:
 
 Steam은 개발이나 실행에 생성 AI를 사용한 타이틀에 대해 스토어 페이지 안에 'AI 생성 컨텐츠 공개' 섹션을 두고 유저가 사용 방식을 확인할 수 있게 했다.
 
-![Steam의 AI 생성 컨텐츠 공개 UI](/images/steam-ai-disclosed-review-impact-2025/steam-ai-disclosure.jpg)
+![Steam의 AI 생성 컨텐츠 공개 UI](https://img.seosoyoung.eiaserinnys.me/images/steam-ai-disclosed-review-impact-2025/steam-ai-disclosure.jpg)
 
 Valve는 2023년에는 타사 저작권 침해 우려와 학습 데이터 관련 소송을 이유로 생성 AI 활용에 신중한 입장을 보였다. 그러다 2024년 1월 10일 방침을 바꿔, 개발(사전 생성)과 실행(라이브 생성) 단계에서 AI가 어떻게 쓰이는지 개발자가 설명하고 그 공개 정보를 토대로 심사를 진행하는 형태를 도입했다. 그 결과 스토어 페이지에는 AI 활용 방식이 명시되기 시작했다. 로컬라이제이션이나 홍보 소재에 생성 AI가 쓰여도 공개 대상이 된다.
 
@@ -50,13 +50,13 @@ Valve는 2023년에는 타사 저작권 침해 우려와 학습 데이터 관련
 
 100건 이상 리뷰를 모은 게임의 호평률 중앙값도 AI 사용 84.6% / AI 비사용 88.3%로 차이가 나타났다.
 
-![100건 이상 리뷰 게임의 호평률 분포](/images/steam-ai-disclosed-review-impact-2025/review-rating-distribution.jpg)
+![100건 이상 리뷰 게임의 호평률 분포](https://img.seosoyoung.eiaserinnys.me/images/steam-ai-disclosed-review-impact-2025/review-rating-distribution.jpg)
 
 ### 인과 모델 적용
 
 리뷰 수 차이를 만든 변수가 AI 공개 하나만은 아니므로, Burton은 다음 그림과 같이 각 요소의 인과 관계를 정리한 통계 모델을 세웠다.
 
-![리뷰 건수의 인과관계 모델](/images/steam-ai-disclosed-review-impact-2025/causal-model.jpg)
+![리뷰 건수의 인과관계 모델](https://img.seosoyoung.eiaserinnys.me/images/steam-ai-disclosed-review-impact-2025/causal-model.jpg)
 
 같은 타입의 게임이고 발매 시기도 같으며 개발 경험과 퍼블리셔 지원 상황도 동일하다고 둘 때, 생성 AI 사용이 발매 후 1개월 리뷰 수에 어떤 영향을 주는지를 추정했다. 결과는 **'AI 생성 컨텐츠 공개'가 있는 경우 리뷰 수가 약 53% 감소**한다는 추정값이었다.
 
@@ -74,7 +74,7 @@ Valve는 2023년에는 타사 저작권 침해 우려와 학습 데이터 관련
 
 GDC가 매년 진행하는 산업 조사 「STATE OF THE GAME INDUSTRY」 2026년판에서는, 52%가 "생성 AI가 게임 업계에 부정적 영향을 끼친다"라고 응답했다.
 
-![GDC STATE OF THE GAME INDUSTRY 2026 — 생성 AI 인식](/images/steam-ai-disclosed-review-impact-2025/gdc-2026-state-of-industry.jpg)
+![GDC STATE OF THE GAME INDUSTRY 2026 — 생성 AI 인식](https://img.seosoyoung.eiaserinnys.me/images/steam-ai-disclosed-review-impact-2025/gdc-2026-state-of-industry.jpg)
 
 한편 기업이 생성 AI 사용 정책을 정하는 흐름은 업계 전반에서 강해지고 있다. 메일 작성·일정 관리 같은 일상 업무, 코드 어시스턴트, 프로토타이핑에는 일정한 활용이 자리잡고 있다. 부정적 의견의 근저에는 학습 데이터를 둘러싼 권리 우려와 고용·제작 체계에 대한 불안이 있는 것으로 보인다. 그래서 비판이 비교적 약한 영역부터 먼저 활용이 진행되는 흐름이라고 매체는 본다.
 

@@ -61,12 +61,12 @@ PP가 적용 가능한지를 결정하는 두 번째 축은 분포의 꼬리(tai
 
 얇은 꼬리(thin tail) 영역에서는 어떤 한 사건도 전체 합을 흔들지 못한다. bottom-up으로 진화한 시스템 — 자연 생태계의 일상 변동, 인간 체중 분포 — 이 여기에 속한다. 자연의 경계(대륙·산맥·해양)와 종간 격리가 cascading 전파를 차단하기 때문이다.
 
-![Fig 3 — Thin Tails from Tinkering, Bottom-Up, Evolution](/images/taleb-precautionary-principle-2014/fig3-thin-tails.png)
+![Fig 3 — Thin Tails from Tinkering, Bottom-Up, Evolution](https://img.seosoyoung.eiaserinnys.me/images/taleb-precautionary-principle-2014/fig3-thin-tails.png)
 *Fig 3. 자연의 bottom-up 변동: 어떤 단일 변이도 전체 합의 큰 부분을 차지하지 못한다.*
 
 굵은 꼬리(fat tail) 영역에서는 단 한 번의 큰 사건이 전체 합을 dominate한다. top-down으로 설계된 시스템 — 글로벌 금융 네트워크, monoculture 농업, 인공 invasive species, 팬데믹 — 이 여기에 속한다. 강한 상호의존성이 cascading 전파의 통로가 되기 때문이다.
 
-![Fig 4 — Fat Tails from a Top-Down, Engineered Design](/images/taleb-precautionary-principle-2014/fig4-fat-tails.png)
+![Fig 4 — Fat Tails from a Top-Down, Engineered Design](https://img.seosoyoung.eiaserinnys.me/images/taleb-precautionary-principle-2014/fig4-fat-tails.png)
 *Fig 4. 인공 시스템의 굵은 꼬리: 단 한 번의 거대한 일탈이 전체 합을 거의 완전히 결정한다.*
 
 PP가 발동되는 사분면은 *fat tail × systemic exposure*의 네 번째 사분면 하나뿐이다. 같은 위험이라도 thin tail 영역이면 표준 risk management로 충분하고, 굵은 꼬리이지만 국소적이면 정교한 risk management로 다룬다. 굵은 꼬리이면서 시스템적일 때만 PP의 영역이다.
@@ -78,7 +78,7 @@ PP가 발동되는 사분면은 *fat tail × systemic exposure*의 네 번째 �
 
 Fragility는 이 영역에서 핵심 개념이 된다. 논문은 fragility를 "uncertainty에 의해 해를 입는 것"으로 정의하며, 그 수학적 표지는 *비선형 응답*이다. 10미터 낙하의 피해는 1미터 낙하 피해의 10배가 아니라 그 이상으로 가파르게 커지고, 같은 무게의 돌멩이를 한 번에 맞을 때가 여러 번 나누어 맞을 때보다 훨씬 치명적이다. 큰 충격 한 번이 작은 충격 1000번보다 더 큰 손해를 만들기 때문에 노출의 *집중*이 위험하다.
 
-![Fig 5 — Nonlinear vs Linear Response](/images/taleb-precautionary-principle-2014/fig5-nonlinear.png)
+![Fig 5 — Nonlinear vs Linear Response](https://img.seosoyoung.eiaserinnys.me/images/taleb-precautionary-principle-2014/fig5-nonlinear.png)
 *Fig 5. 비선형 응답과 선형 응답의 비교. 사건 크기가 임계를 넘는 순간 손해가 가파르게 발산한다.*
 
 이 비선형성에서 1/n rule이 도출된다. 노출을 *상관 없는* n개의 출처로 분산시키는 것이 한 점에 집중하는 것보다 안전하다. 단 출처들이 서로 상관되어 있으면 분산 효과가 사라지므로, *상관 구조*가 분산 전략의 전제가 된다.
@@ -89,7 +89,7 @@ Fragility는 이 영역에서 핵심 개념이 된다. 논문은 fragility를 "u
 
 수학적 이유는 단순하다. fat tail 분포에서 모델 불확실성이 커지면 분포의 꼬리가 *양쪽 모두* 두꺼워지지만, ruin은 한쪽 꼬리(왼쪽)에 자리 잡고 있고 그 꼬리가 *비대칭적으로* 빠르게 커진다. 즉 불확실성이 같은 비율로 늘어나도 ruin 확률 증가율이 이익 증가율보다 훨씬 가파르다.
 
-![Fig 7 — Information Ratio와 Ruin Probability의 비대칭 (α=1, α=2, thin-tail equivalent)](/images/taleb-precautionary-principle-2014/fig7-uncertainty-ruin.png)
+![Fig 7 — Information Ratio와 Ruin Probability의 비대칭 (α=1, α=2, thin-tail equivalent)](https://img.seosoyoung.eiaserinnys.me/images/taleb-precautionary-principle-2014/fig7-uncertainty-ruin.png)
 *Fig 7. 정보 비율(기대 이익/불확실성)이 변할 때 ruin 확률의 변화. fat tail (α=1, α=2) 분포는 thin tail에 비해 같은 정보 비율에서도 ruin 확률이 비대칭적으로 크다.*
 
 논문은 이 결과를 기후 모델 회의론에 직접 적용한다. "기후 모델은 불확실하다"는 주장은 ruin 영역에서 *덜* 보수적이 아니라 *더* 보수적인 행동의 근거가 된다. skepticism은 모델 신뢰도를 낮추므로 분포의 꼬리를 두껍게 만들고, 이는 ruin 확률을 더 비대칭적으로 끌어올린다.
@@ -117,7 +117,7 @@ Fragility는 이 영역에서 핵심 개념이 된다. 논문은 fragility를 "u
 
 **GMO**: 두 가지 점에서 시스템적이다. 첫째, 변형 유기체는 환경에 풀리면 통제 불가로 확산되며 야생종과의 교배로 disentangle이 불가능하다. 둘째, monoculture와 결합되어 cascading 실패의 통로를 만든다. 19세기 아일랜드 감자 기근은 이 메커니즘의 단순한 도식이다.
 
-![Fig 8 — Monoculture와 감자 기근의 메커니즘 (Berkeley Understanding Evolution 자료에서 발췌)](/images/taleb-precautionary-principle-2014/fig8-monoculture.png)
+![Fig 8 — Monoculture와 감자 기근의 메커니즘 (Berkeley Understanding Evolution 자료에서 발췌)](https://img.seosoyoung.eiaserinnys.me/images/taleb-precautionary-principle-2014/fig8-monoculture.png)
 *Fig 8. 다양한 작물 vs 클론 작물에 blight가 닥쳤을 때의 결과. 다양성은 부분 손실로 끝나지만 단일 클론은 전멸한다.*
 
 논문은 GMO 옹호 논리 중 두 가지를 따로 반박한다.

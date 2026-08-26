@@ -7,12 +7,12 @@ summary: "Qwen 팀이 일곱 가지 에이전트 환경(MCP·Search·Terminal·S
 ShowToc: true
 TocOpen: false
 cover:
-  image: "/images/qwen-agentworld-2026/teaser.png"
+  image: "https://img.seosoyoung.eiaserinnys.me/images/qwen-agentworld-2026/teaser.png"
 images:
-  - "/images/qwen-agentworld-2026/teaser.png"
+  - "https://img.seosoyoung.eiaserinnys.me/images/qwen-agentworld-2026/teaser.png"
 ---
 
-![Qwen-AgentWorld 마스코트](/images/qwen-agentworld-2026/group_capybaras_flat.png)
+![Qwen-AgentWorld 마스코트](https://img.seosoyoung.eiaserinnys.me/images/qwen-agentworld-2026/group_capybaras_flat.png)
 
 ## 3줄 요약
 
@@ -36,7 +36,7 @@ Qwen-AgentWorld는 일곱 가지 상호작용 환경을 한 모델로 다룬다.
 
 ## 3단계 훈련: CPT 주입, SFT 활성화, RL 연마
 
-![훈련 파이프라인](/images/qwen-agentworld-2026/pipeline_overview.png)
+![훈련 파이프라인](https://img.seosoyoung.eiaserinnys.me/images/qwen-agentworld-2026/pipeline_overview.png)
 
 세 단계의 역할은 한 줄로 요약된다 — **CPT injects, SFT activates, RL sharpens.**
 
@@ -48,13 +48,13 @@ Qwen-AgentWorld는 일곱 가지 상호작용 환경을 한 모델로 다룬다.
 
 ## AgentWorldBench
 
-![AgentWorldBench 개요](/images/qwen-agentworld-2026/bench_overview.png)
+![AgentWorldBench 개요](https://img.seosoyoung.eiaserinnys.me/images/qwen-agentworld-2026/bench_overview.png)
 
 언어 월드 모델을 평가하기 위해 만든 새 벤치마크다. Tool Decathlon, Terminal-Bench 1.0·2.0, OSWorld-Verified 등 9개 기성 벤치마크에서 다섯 프런티어 모델의 궤적으로부터 구축했다. **모든 평가 샘플은 실제 환경 실행으로 얻은 ground-truth observation과 짝지어져 있어** 참조 기반 채점이 가능하다. 평가 차원은 다섯 가지 — format, factuality, consistency, realism, quality.
 
 ### 성능
 
-![AgentWorldBench 결과](/images/qwen-agentworld-2026/bench_results_bar.png)
+![AgentWorldBench 결과](https://img.seosoyoung.eiaserinnys.me/images/qwen-agentworld-2026/bench_results_bar.png)
 
 Qwen-AgentWorld-397B-A17B가 평균 58.71로 가장 높은 점수를 기록하며 GPT-5.4(58.25)와 다른 프런티어 모델을 모두 앞섰다. 격차가 가장 뚜렷한 도메인은 **Terminal과 SWE** — 코드 실행 상태와 도구 API 동작을 정확히 모델링해야 하는 두 영역이다.
 
@@ -62,7 +62,7 @@ Qwen-AgentWorld-397B-A17B가 평균 58.71로 가장 높은 점수를 기록하�
 
 ## 월드 모델의 사고 패턴
 
-![추론 패턴](/images/qwen-agentworld-2026/lwm_reasoning_patterns.png)
+![추론 패턴](https://img.seosoyoung.eiaserinnys.me/images/qwen-agentworld-2026/lwm_reasoning_patterns.png)
 
 129개 사고 궤적을 분석해 네 텍스트 도메인에서 세 가지 *emergent reasoning pattern*을 발견했다.
 
@@ -121,11 +121,11 @@ Qwen-AgentWorld-397B-A17B가 평균 58.71로 가장 높은 점수를 기록하�
 
 ### Sim RL vs Real RL
 
-![Sim RL vs Real RL 학습 곡선](/images/qwen-agentworld-2026/widesearch_rl_comparison.png)
+![Sim RL vs Real RL 학습 곡선](https://img.seosoyoung.eiaserinnys.me/images/qwen-agentworld-2026/widesearch_rl_comparison.png)
 
 WideSearch에서 controllable Sim RL을 라이브 검색엔진으로 훈련한 Real RL과 직접 비교했다. **Sim RL이 Real RL을 따라가거나 살짝 앞선다** — step 60에서 F1 by Item이 50.3% 대 45.6%.
 
-![툴 사용 비교](/images/qwen-agentworld-2026/widesearch_tool_use_comparison.png)
+![툴 사용 비교](https://img.seosoyoung.eiaserinnys.me/images/qwen-agentworld-2026/widesearch_tool_use_comparison.png)
 
 더 흥미로운 신호는 *에이전트 행동*에서 나온다. 두 학습 방식 모두 `web_search` 호출을 궤적당 \~5회에서 \~3.5회로 줄였다. 그런데 `web_extractor` 호출은 정반대로 갈라졌다 — Sim RL은 2.5회에서 4.0회로 늘리고, Real RL은 2.5회에서 1.5회로 줄였다. 시뮬레이션된 스니펫이 의도적으로 본문 디테일을 감추므로, Sim RL 에이전트는 *완전한 답을 조립하려면 페이지를 통째로 추출해야 한다*는 것을 학습한다. 제어 가능한 시뮬레이션은 실제 환경이 만들 수 없는 방식으로 에이전트 행동을 표적화해 빚는다.
 

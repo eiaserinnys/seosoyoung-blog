@@ -7,9 +7,9 @@ summary: "위스콘신 대학 Tononi·Cirelli 팀의 Nature Neuroscience 논문(
 ShowToc: true
 TocOpen: false
 cover:
-  image: "/images/driessen-awake-on-off-periods-2026/fig1.png"
+  image: "https://img.seosoyoung.eiaserinnys.me/images/driessen-awake-on-off-periods-2026/fig1.png"
 images:
-  - "/images/driessen-awake-on-off-periods-2026/fig1.png"
+  - "https://img.seosoyoung.eiaserinnys.me/images/driessen-awake-on-off-periods-2026/fig1.png"
 ---
 
 ## 3줄 요약
@@ -37,7 +37,7 @@ NREM 수면의 정의 자체가 *대규모 동기 활동*과 *on/off 교차*다.
 
 ## 실험 설계
 
-![Fig. 1: Chronic recording and optogenetic manipulation of local cortical networks.](/images/driessen-awake-on-off-periods-2026/fig1.png)
+![Fig. 1: Chronic recording and optogenetic manipulation of local cortical networks.](https://img.seosoyoung.eiaserinnys.me/images/driessen-awake-on-off-periods-2026/fig1.png)
 <small>Fig. 1. 양반구 대뇌 피질에 16채널 실리콘 프로브 + 광섬유(optrode)를 이식한다. 한쪽은 자극·기록, 반대쪽은 동형(homotopic) 대조군으로 작동한다. (출처: Driessen et al., 2026, Nature Neuroscience, CC BY 4.0)</small>
 
 쥐의 양쪽 피질 동일 부위에 실리콘 프로브를 이식하고, 한쪽에만 광섬유를 붙여 *광유전학으로 같은 동물 안에서 자극측·대조측을 동시에 비교*하는 구조다. 세 가지 광유전학 모델을 비교해 효과의 *원인 변수*를 분리한다.
@@ -52,7 +52,7 @@ NREM 수면의 정의 자체가 *대규모 동기 활동*과 *on/off 교차*다.
 
 ## 발견 1 — 깨어 있을 때 만든 off period가 *그 반구의* 수면 압력을 미리 푼다
 
-![Fig. 2: Off-period induction during wake reduces SWA and synchrony in subsequent sleep.](/images/driessen-awake-on-off-periods-2026/fig2.png)
+![Fig. 2: Off-period induction during wake reduces SWA and synchrony in subsequent sleep.](https://img.seosoyoung.eiaserinnys.me/images/driessen-awake-on-off-periods-2026/fig2.png)
 <small>Fig. 2. 자극측(파랑) vs 대조측(주황)의 회복 NREM 1시간 동안 SWA와 동기성 지표 비교. (출처: 같은 논문)</small>
 
 SD 마지막 30분 동안 한쪽 반구에만 NREM 같은 off period를 유도한 결과:
@@ -67,7 +67,7 @@ SD 마지막 30분 동안 한쪽 반구에만 NREM 같은 off period를 유도�
 
 ## 발견 2 — *발화 감소*만으로는 효과가 없다 (가장 중요한 분리 실험)
 
-![Fig. 3: Tonic inhibition using halorhodopsin does not reduce SWA or synchrony in subsequent sleep.](/images/driessen-awake-on-off-periods-2026/fig3.png)
+![Fig. 3: Tonic inhibition using halorhodopsin does not reduce SWA or synchrony in subsequent sleep.](https://img.seosoyoung.eiaserinnys.me/images/driessen-awake-on-off-periods-2026/fig3.png)
 <small>Fig. 3. halorhodopsin으로 같은 정도의 발화율 감소를 만들었을 때는 회복 NREM의 SWA·동기성·발화 모두 좌우 차이가 없다. (출처: 같은 논문)</small>
 
 halorhodopsin 모델은 같은 30분 동안 자극측 발화율을 SOM+/ACR과 *같은 폭으로* 눌렀다. 차이는 단 하나, on/off 교차가 일어나지 않고 발화가 지속적으로 가라앉아 있다는 것이다.
@@ -78,7 +78,7 @@ halorhodopsin 모델은 같은 30분 동안 자극측 발화율을 SOM+/ACR과 *
 
 ## 발견 3 — 시냅스 강도 분자 마커가 자연 수면 후만큼 감소한다
 
-![Fig. 4: Off-period induction during wake reduces molecular markers of cortical excitatory synaptic strength.](/images/driessen-awake-on-off-periods-2026/fig4.png)
+![Fig. 4: Off-period induction during wake reduces molecular markers of cortical excitatory synaptic strength.](https://img.seosoyoung.eiaserinnys.me/images/driessen-awake-on-off-periods-2026/fig4.png)
 <small>Fig. 4. 자극 직후 바로 안락사한 쥐의 양반구 두정엽 피질 시냅토뉴로솜에서 GluA1·pGluA1(845) 수준 비교. (출처: 같은 논문)</small>
 
 전기생리 외에 *분자* 증거도 확보했다. 두정엽 위에 4개 광섬유를 1mm 간격으로 이식한 쥐들로 동일 SD + 30분 off 유도 프로토콜을 돌리고, *잠을 자지 않은 상태에서* 즉시 양반구 피질을 채취해 시냅토뉴로솜을 분리한 다음 흥분성 시냅스 강도의 두 표준 마커를 측정했다.
@@ -90,7 +90,7 @@ halorhodopsin 모델은 같은 30분 동안 자극측 발화율을 SOM+/ACR과 *
 
 ## 발견 4 — 양측 off 유도로 SD 후 기억 통합을 *회복*시킨다
 
-![Fig. 5: Bilateral off induction during SD recovers memory performance in a novel FTR task.](/images/driessen-awake-on-off-periods-2026/fig5.png)
+![Fig. 5: Bilateral off induction during SD recovers memory performance in a novel FTR task.](https://img.seosoyoung.eiaserinnys.me/images/driessen-awake-on-off-periods-2026/fig5.png)
 <small>Fig. 5. 새 바닥 질감 인식(FTR) 과제 결과. SD + 양측 off 유도 그룹(보라)이 정상 수면 그룹(파랑) 수준으로 회복. (출처: 같은 논문)</small>
 
 마지막 실험은 *기능* 수준이다. 새 바닥 질감 인식(novel floor texture recognition, FTR) 과제는 학습 후 잠을 자면 24시간 후 새 질감 쪽에 더 오래 머무는 행동이 강화되고, 학습 직후 1시간 잠을 박탈하면 그 효과가 사라지는 것으로 알려져 있다.

@@ -8,9 +8,9 @@ math: true
 ShowToc: true
 TocOpen: false
 cover:
-  image: "/images/physics-intern-critpt/quantum_error_detection.webp"
+  image: "https://img.seosoyoung.eiaserinnys.me/images/physics-intern-critpt/quantum_error_detection.webp"
 images:
-  - "/images/physics-intern-critpt/quantum_error_detection.webp"
+  - "https://img.seosoyoung.eiaserinnys.me/images/physics-intern-critpt/quantum_error_detection.webp"
 sidenotes: true
 ---
 
@@ -34,7 +34,7 @@ sidenotes: true
 
 CritPt에는 공개 해답이 있는 단 하나의 예제 문제가 있다 — 양자 오류 검출 문제다.
 
-![CritPt 예제 챌린지 — 양자 오류 검출 문제](/images/physics-intern-critpt/quantum_error_detection.webp)
+![CritPt 예제 챌린지 — 양자 오류 검출 문제](https://img.seosoyoung.eiaserinnys.me/images/physics-intern-critpt/quantum_error_detection.webp)
 
 **문제 요지.** 4개의 물리 큐비트가 2개의 논리 큐비트를 인코딩하는 회로에서, 노이즈 확률 $p$에 대해 fidelity $F(p)$를 구하라. 풀이는 노이즈 게이트 전반의 모든 오류 조합(약 100만 시나리오)을 추적하고, 검출되는 것·통과하는 것·해롭지 않은 것·해로운 것을 분류하는 거대한 부기 작업이다.
 
@@ -82,7 +82,7 @@ Research Question (RQ)
 
 언제든 시니어 비평가가 ER에 도전할 수 있고, 중재자가 ER을 강등시킬 수 있고, 기획자가 전략을 수정할 수 있다. **청구권은 앞으로만 가는 게 아니라 뒤로도 갈 수 있다.**
 
-![physics-intern 실행 콘솔 로그 — 에이전트 간 상호작용](/images/physics-intern-critpt/console_log.webp)
+![physics-intern 실행 콘솔 로그 — 에이전트 간 상호작용](https://img.seosoyoung.eiaserinnys.me/images/physics-intern-critpt/console_log.webp)
 
 ## 4. 예제 퍼즐 풀이 — 5%에서 100%로
 

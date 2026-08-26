@@ -7,9 +7,9 @@ summary: "Google DeepMind CEO Demis Hassabis가 X에 발표한 매니페스토. 
 ShowToc: true
 TocOpen: false
 cover:
-  image: "/images/hassabis-frontier-ai-framework-2026/cover.jpg"
+  image: "https://img.seosoyoung.eiaserinnys.me/images/hassabis-frontier-ai-framework-2026/cover.jpg"
 images:
-  - "/images/hassabis-frontier-ai-framework-2026/cover.jpg"
+  - "https://img.seosoyoung.eiaserinnys.me/images/hassabis-frontier-ai-framework-2026/cover.jpg"
 ---
 
 ## 3줄 요약

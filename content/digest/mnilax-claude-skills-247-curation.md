@@ -15,7 +15,7 @@ sidenotes: true
 2. 같은 카테고리에 강자가 있으면 후보는 모두 떨어졌다. 80개는 SKILL.md 스키마 없는 프롬프트 모음, 50개는 기능 중복, 40개는 v2.1 hook 스펙 미대응, 25개는 악성·탈취 의심이었다.
 3. 결론은 목록 자체가 아니라 두 가지 운영 원칙이다. 첫째, 활성 스킬은 5\~7개를 넘기지 않는다. 둘째, 능력을 더하는 capability skill보다 출력 스타일을 강제하는 discipline skill에서 품질이 나온다.
 
-![247 tested · 224 deleted · 23 kept](/images/mnilax-claude-skills-247-curation/cover.jpg)
+![247 tested · 224 deleted · 23 kept](https://img.seosoyoung.eiaserinnys.me/images/mnilax-claude-skills-247-curation/cover.jpg)
 
 ## 측정 방법론
 

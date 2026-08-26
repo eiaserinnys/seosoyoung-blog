@@ -7,9 +7,9 @@ summary: "코번트리의 의료기기 실험실에서 회색 형체를 본 엔�
 ShowToc: true
 TocOpen: false
 cover:
-  image: "/images/haunted-frequency-19hz/cover.png"
+  image: "https://img.seosoyoung.eiaserinnys.me/images/haunted-frequency-19hz/cover.png"
 images:
-  - "/images/haunted-frequency-19hz/cover.png"
+  - "https://img.seosoyoung.eiaserinnys.me/images/haunted-frequency-19hz/cover.png"
 sidenotes: true
 ---
 
@@ -19,7 +19,7 @@ sidenotes: true
 2. 19 Hz는 인체 안구의 공명 주파수(NASA 보고서 기준 18 Hz)와 가깝다. 안구가 미세하게 떨리면 시야 가장자리에 형체가 보이고, 흉부 진동은 호흡 곤란과 막연한 공포를 만든다.
 3. 후속 연구들은 인프라사운드가 "유령 체험"의 일부를 설명한다는 점은 재확인했지만, 결정적 변수는 음향보다 *암시 감수성*임을 함께 짚었다. 유령은 공기에도 있고 사람의 마음에도 있다.
 
-![Higgs Halloween 2021 — The Haunted Frequency](/images/haunted-frequency-19hz/cover.png "Higgs Centre for Theoretical Physics, Halloween 2021 outreach 일러스트")
+![Higgs Halloween 2021 — The Haunted Frequency](https://img.seosoyoung.eiaserinnys.me/images/haunted-frequency-19hz/cover.png "Higgs Centre for Theoretical Physics, Halloween 2021 outreach 일러스트")
 
 ## 사건 — 코번트리 실험실의 회색 형체
 

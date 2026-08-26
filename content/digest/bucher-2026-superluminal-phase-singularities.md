@@ -7,9 +7,9 @@ summary: "빛보다 빠른 어둠이 측정되었다. 1974년 Nye와 Berry가 �
 ShowToc: true
 TocOpen: false
 cover:
-  image: "/images/bucher-2026-superluminal-phase-singularities/novel-measurement-conf.jpg"
+  image: "https://img.seosoyoung.eiaserinnys.me/images/bucher-2026-superluminal-phase-singularities/novel-measurement-conf.jpg"
 images:
-  - "/images/bucher-2026-superluminal-phase-singularities/novel-measurement-conf.jpg"
+  - "https://img.seosoyoung.eiaserinnys.me/images/bucher-2026-superluminal-phase-singularities/novel-measurement-conf.jpg"
 ---
 
 ## 3줄 요약
@@ -18,7 +18,7 @@ images:
 2. 육방정 질화붕소(hBN) 막 위에서 phonon polariton의 위상장을 초고속 전자현미경으로 찍어 추적한 결과, 어두운 점의 29퍼센트가 광속을 넘었고 평균 1.04c, 소멸 직전에는 속도가 발산했다.
 3. 어두운 점은 질량과 에너지와 정보를 모두 운반하지 않는 순수한 위상 풍경의 운동성이므로 인과율은 깨지지 않는다. 이 연구는 1974년 Nye와 Berry가 무작위 파동 간섭 이론에서 예측했던 현상을 50년 만에 실험적으로 확정한 것이다.
 
-![phys.org / Technion 보도 개념도 — 빛의 위상 풍경 위에서 서로를 향해 가속하는 두 어두운 점이 만나 소멸하는 순간을 그렸다](/images/bucher-2026-superluminal-phase-singularities/novel-measurement-conf.jpg)
+![phys.org / Technion 보도 개념도 — 빛의 위상 풍경 위에서 서로를 향해 가속하는 두 어두운 점이 만나 소멸하는 순간을 그렸다](https://img.seosoyoung.eiaserinnys.me/images/bucher-2026-superluminal-phase-singularities/novel-measurement-conf.jpg)
 
 ## 무엇을 다루는 논문인가
 
@@ -50,7 +50,7 @@ images:
 **2. 자유전자 라메이 이미징(free-electron Ramsey imaging).**
 장비는 개조된 초고속 투과 전자현미경(UTEM)에 레이저와 광학-기계 시스템을 결합한 것이다. 전자 펄스를 폴라리톤 장과 두 번 간섭시키는 라메이 방식으로 위상장의 전체 분포를 시간 분해해서 찍는다. 도달한 분해능은 공간 20나노미터, 시간 3펨토초. 둘 다 폴라리톤의 파장과 주기보다 한 자리 작다.
 
-![Physics World 게재 — Tomer Bucher의 위상장 측정 도식](/images/bucher-2026-superluminal-phase-singularities/bucher.jpg)
+![Physics World 게재 — Tomer Bucher의 위상장 측정 도식](https://img.seosoyoung.eiaserinnys.me/images/bucher-2026-superluminal-phase-singularities/bucher.jpg)
 
 ## 무엇이 관측되었는가
 
@@ -64,7 +64,7 @@ images:
 
 반대 부호의 위상 특이점 두 개가 서로 접근해 소멸하는 순간, 두 점의 시공간 궤적은 연속곡선을 이루며 그 미분이 무한대로 치솟는다. 진폭 0이라는 조건이 만나는 자리가 가속해 사라지는 것이지, 어떤 *물체*가 거기서 광속을 넘어 달리는 것이 아니다.
 
-![ScienceAlert 도식 — 빛의 장 안에 위치한 어두운 구멍과 그 운동](/images/bucher-2026-superluminal-phase-singularities/light-hole-642x361.jpg)
+![ScienceAlert 도식 — 빛의 장 안에 위치한 어두운 구멍과 그 운동](https://img.seosoyoung.eiaserinnys.me/images/bucher-2026-superluminal-phase-singularities/light-hole-642x361.jpg)
 
 ## 왜 상대성이론은 깨지지 않는가
 
@@ -85,7 +85,7 @@ images:
 - **전자현미경의 벌떼 효과 완화.** UTEM의 위상 측정 정밀도를 끌어올리는 부수 효과로, 전자 다발이 만들어내는 잡음 패턴("swarm effect")을 줄이는 데 응용할 수 있다.
 - **폴라리톤 매질의 초고속 동역학 탐구.** 논문 초록의 마지막 문장은 이렇다 — "폴라리톤 매질에서의 초고속 정보 흐름 현상을 시사한다." 위상 풍경의 운동이 정보 자체는 아니지만, 정보를 실어 나르는 매질의 구조를 빠르게 재배치하는 새로운 메커니즘이 될 수 있다.
 
-![ScienceAlert — 실험 장치(개조된 UTEM)](/images/bucher-2026-superluminal-phase-singularities/vortex-apparatus.jpg)
+![ScienceAlert — 실험 장치(개조된 UTEM)](https://img.seosoyoung.eiaserinnys.me/images/bucher-2026-superluminal-phase-singularities/vortex-apparatus.jpg)
 
 ## 가장 흥미로운 지점
 

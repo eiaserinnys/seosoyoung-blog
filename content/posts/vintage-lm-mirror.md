@@ -5,7 +5,7 @@ tags: ["LLM", "훈련 데이터", "벤치마크", "논문 리뷰"]
 categories: ["모델과 연구"]
 summary: "현대 웹 데이터를 모두 빼고 1930년 이전 텍스트만으로 훈련한 13B 모델 talkie가 던지는 질문 — AI의 능력은 언어에서 오는가, 데이터에서 오는가."
 cover:
-  image: "/images/cover-vintage-lm-mirror.jpg"
+  image: "https://img.seosoyoung.eiaserinnys.me/images/cover-vintage-lm-mirror.jpg"
 sidenotes: true
 ---
 

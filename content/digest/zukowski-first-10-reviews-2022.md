@@ -51,13 +51,13 @@ Valve는 shovelware/asset-flip 비판에 대응하기 위해, 출시 시점의 �
 
 Steam이 게임에 가시성을 주는 주된 통로는 <strong>Discovery Queue</strong>다. 사용자가 Steam에서 새 게임을 찾는 작은 위젯으로, 신작 발견의 핵심 채널이다.
 
-![Steam Discovery Queue 위젯](/images/zukowski-first-10-reviews-2022/discovery-queue-widget.jpg)
+![Steam Discovery Queue 위젯](https://img.seosoyoung.eiaserinnys.me/images/zukowski-first-10-reviews-2022/discovery-queue-widget.jpg)
 
 ### DQ 트래픽의 비선형 점프
 
 다음은 한 게임이 5월 12일에 10리뷰를 달성한 직후의 트래픽 데이터다. 녹색 선이 Discovery Queue 트래픽이다.
 
-![5월 12일 10리뷰 달성 후 DQ 트래픽 폭증](/images/zukowski-first-10-reviews-2022/dq-may12-greenline.jpg)
+![5월 12일 10리뷰 달성 후 DQ 트래픽 폭증](https://img.seosoyoung.eiaserinnys.me/images/zukowski-first-10-reviews-2022/dq-may12-greenline.jpg)
 
 10개를 넘긴 시점부터 Steam이 사용자의 Discovery Queue에 게임을 끼워 넣기 시작하면서 녹색 선이 비선형적으로 솟구친다.
 
@@ -65,13 +65,13 @@ Steam이 게임에 가시성을 주는 주된 통로는 <strong>Discovery Queue<
 
 DQ 트래픽은 양도 많지만 질도 좋다. 다음은 10리뷰 도달 후, 같은 시기에 트윗이 약 1만 뷰로 반쯤 바이럴된 사례다. <strong>바이럴 트윗보다 DQ 트래픽이 훨씬 더 큰 유입을 가져왔다.</strong>
 
-![바이럴 트윗 vs DQ 트래픽 비교](/images/zukowski-first-10-reviews-2022/viral-tweet-vs-dq.jpg)
+![바이럴 트윗 vs DQ 트래픽 비교](https://img.seosoyoung.eiaserinnys.me/images/zukowski-first-10-reviews-2022/viral-tweet-vs-dq.jpg)
 
 ### 게임 출시 페이지 트래픽 증가 사례
 
 다음은 10리뷰 임계값 직후의 Steam 페이지 Google Analytics다. 임계값 통과 시점이 트래픽의 명확한 변곡점이 된다.
 
-![10리뷰 통과 후 GA 트래픽 — 며칠 뒤 감쇠](/images/zukowski-first-10-reviews-2022/traffic-after-10reviews.jpg)
+![10리뷰 통과 후 GA 트래픽 — 며칠 뒤 감쇠](https://img.seosoyoung.eiaserinnys.me/images/zukowski-first-10-reviews-2022/traffic-after-10reviews.jpg)
 
 ### 초기 부스트는 며칠 만에 감쇠한다
 
@@ -112,7 +112,7 @@ DQ 부스트는 며칠 뒤 다시 내려간다. Steam은 모든 게임에게 "�
 
 리뷰 점수 구간별 노출 영향을 정리한 Rune Johansen의 레퍼런스 도식:
 
-![Rune Johansen의 Steam 리뷰 점수 구간별 영향 레퍼런스](/images/zukowski-first-10-reviews-2022/review-quality-reference.jpg)
+![Rune Johansen의 Steam 리뷰 점수 구간별 영향 레퍼런스](https://img.seosoyoung.eiaserinnys.me/images/zukowski-first-10-reviews-2022/review-quality-reference.jpg)
 
 이 사실에서 짚어둘 것은, Steam에는 <strong>두 개의 별개 비선형성 축</strong>이 있다는 점이다.
 

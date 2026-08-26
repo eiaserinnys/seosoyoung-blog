@@ -8,12 +8,12 @@ math: false
 ShowToc: true
 TocOpen: false
 cover:
-  image: "/images/airllm-layered-inference/star-history.png"
+  image: "https://img.seosoyoung.eiaserinnys.me/images/airllm-layered-inference/star-history.png"
 images:
-  - "/images/airllm-layered-inference/star-history.png"
+  - "https://img.seosoyoung.eiaserinnys.me/images/airllm-layered-inference/star-history.png"
 ---
 
-![AirLLM 로고](/images/airllm-layered-inference/airllm-logo.png)
+![AirLLM 로고](https://img.seosoyoung.eiaserinnys.me/images/airllm-layered-inference/airllm-logo.png)
 
 ## 3줄 요약
 
@@ -70,7 +70,7 @@ module.register_forward_hook(self._post_hook)
 
 `compression='4bit'` 또는 `'8bit'`을 넘기면 3배 빨라진다고 한다.
 
-![압축에 따른 속도 개선](/images/airllm-layered-inference/time-improvement.png)
+![압축에 따른 속도 개선](https://img.seosoyoung.eiaserinnys.me/images/airllm-layered-inference/time-improvement.png)
 
 구현은 `compress_layer_state_dict()`가 레이어의 각 텐서에 bitsandbytes의 `quantize_nf4(blocksize=64)`나 `quantize_blockwise(blocksize=2048)`를 개별 호출하는 방식이다. 로드할 때 다시 dequantize한다.
 
@@ -104,7 +104,7 @@ README에 절대 속도 수치가 없다. 있는 것은 "3x run time speed up"(�
 
 ## 리포 상태
 
-![스타 히스토리](/images/airllm-layered-inference/star-history.png)
+![스타 히스토리](https://img.seosoyoung.eiaserinnys.me/images/airllm-layered-inference/star-history.png)
 
 - 별 22,927개, 포크 2,621개, 열린 이슈 106개, 라이선스 Apache-2.0 (2026년 7월 17일 기준)
 - 최근 push는 2026년 7월 16일이지만 내용은 스폰서 링크 문서 수정이다. FP8과 MoE 관련 실질 코드 커밋은 6월에 몰려 있다.

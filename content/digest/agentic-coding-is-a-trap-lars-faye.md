@@ -32,21 +32,21 @@ sidenotes: true
 
 프로그래머가 FORTRAN, 컴파일러, 고수준 언어 등 새로운 추상화를 경계해온 역사가 있다. 하지만 과거의 우려는 추측과 이론에 그쳤다. 이번에는 AI 도구가 등장한 짧은 기간 안에 이미 유의미한 영향이 관측되고 있다는 점이 다르다.
 
-![r/webdev — "AI reliance and cognitive decline." AI 의존과 인지 능력 저하를 걱정하는 개발자 (215 upvotes)](/images/agentic-coding-is-a-trap-lars-faye/skills-01.png)
+![r/webdev — "AI reliance and cognitive decline." AI 의존과 인지 능력 저하를 걱정하는 개발자 (215 upvotes)](https://img.seosoyoung.eiaserinnys.me/images/agentic-coding-is-a-trap-lars-faye/skills-01.png)
 
-![r/cscareerquestions — "Letting AI do 100% coding FRIED my brain." 바이브 코딩으로 인지 능력이 망가졌다는 고백 (124 upvotes)](/images/agentic-coding-is-a-trap-lars-faye/skills-02.png)
+![r/cscareerquestions — "Letting AI do 100% coding FRIED my brain." 바이브 코딩으로 인지 능력이 망가졌다는 고백 (124 upvotes)](https://img.seosoyoung.eiaserinnys.me/images/agentic-coding-is-a-trap-lars-faye/skills-02.png)
 
 주니어 개발자만의 문제가 아니다. 10년 이상 경력자도 같은 현상을 보고하고 있다.
 
-![r/webdev — "Handling feeling dumber or like losing skills due to the need of using AI." 9년차 개발자가 회사의 AI 의무 사용 정책 속에서 역량 저하를 호소한다](/images/agentic-coding-is-a-trap-lars-faye/skills-05.png)
+![r/webdev — "Handling feeling dumber or like losing skills due to the need of using AI." 9년차 개발자가 회사의 AI 의무 사용 정책 속에서 역량 저하를 호소한다](https://img.seosoyoung.eiaserinnys.me/images/agentic-coding-is-a-trap-lars-faye/skills-05.png)
 
-![r/ClaudeCode — "Losing my ability to code due to AI." AI를 1년 이상 쓴 뒤 코딩 능력이 퇴화했다는 보고](/images/agentic-coding-is-a-trap-lars-faye/skills-06.png)
+![r/ClaudeCode — "Losing my ability to code due to AI." AI를 1년 이상 쓴 뒤 코딩 능력이 퇴화했다는 보고](https://img.seosoyoung.eiaserinnys.me/images/agentic-coding-is-a-trap-lars-faye/skills-06.png)
 
 주니어 개발자에게는 더 가파른 벽이다. 코드를 직접 작성하는 마찰과 도전이 학습의 절반 이상을 차지하는데, 그것을 코드 리뷰로 대체하면 성장 경로 자체가 잘린다.
 
-![r/cscareerquestions — "juniors on my team ship fast but can't debug anything they didn't actually write." 주니어가 빠르게 배포하지만 자기가 쓰지 않은 코드는 디버깅할 수 없다는 시니어의 증언](/images/agentic-coding-is-a-trap-lars-faye/skills-04.png)
+![r/cscareerquestions — "juniors on my team ship fast but can't debug anything they didn't actually write." 주니어가 빠르게 배포하지만 자기가 쓰지 않은 코드는 디버깅할 수 없다는 시니어의 증언](https://img.seosoyoung.eiaserinnys.me/images/agentic-coding-is-a-trap-lars-faye/skills-04.png)
 
-![r/ClaudeAI — "hired a junior who learned to code with AI. cannot debug without it." AI로 코딩을 배운 주니어를 채용했으나 AI 없이는 디버깅이 불가능하다는 보고 (1.6K upvotes)](/images/agentic-coding-is-a-trap-lars-faye/skills-07.png)
+![r/ClaudeAI — "hired a junior who learned to code with AI. cannot debug without it." AI로 코딩을 배운 주니어를 채용했으나 AI 없이는 디버깅이 불가능하다는 보고 (1.6K upvotes)](https://img.seosoyoung.eiaserinnys.me/images/agentic-coding-is-a-trap-lars-faye/skills-07.png)
 
 ## 감독의 역설 (Paradox of Supervision)
 

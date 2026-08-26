@@ -11,7 +11,7 @@ sidenotes: true
 
 > 조선일보 위클리비즈 · 비즈니스 인사이트 · 2026.05.07
 
-![그래픽=김의균·Gemini](/images/ai-layoff-rehiring-weeklybiz/main.jpg)
+![그래픽=김의균·Gemini](https://img.seosoyoung.eiaserinnys.me/images/ai-layoff-rehiring-weeklybiz/main.jpg)
 
 ## 3줄 요약
 
@@ -44,7 +44,7 @@ sidenotes: true
 | 해고로 인해 핵심 기술과 전문 지식이 손실됐다 | 35% |
 | 남은 인력이 해직자 공백을 메울 기술이 부족했다 | 28% |
 
-![AI로 인력 감축한 기업의 재고용 현황](/images/ai-layoff-rehiring-weeklybiz/chart1.png)
+![AI로 인력 감축한 기업의 재고용 현황](https://img.seosoyoung.eiaserinnys.me/images/ai-layoff-rehiring-weeklybiz/chart1.png)
 
 현장 사례가 줄을 잇는다.
 
@@ -66,7 +66,7 @@ sidenotes: true
 | 해고 대신 다른 조치를 취할 것 | 41.2% |
 | 대상자를 다시 선별해 해고 인원을 줄일 것 | 50.3% |
 
-![AI 감원 결정 후회 비율](/images/ai-layoff-rehiring-weeklybiz/chart2.jpg)
+![AI 감원 결정 후회 비율](https://img.seosoyoung.eiaserinnys.me/images/ai-layoff-rehiring-weeklybiz/chart2.jpg)
 
 가트너의 전망은 더 단호하다. 2027년까지 AI로 인력을 감축한 기업의 50%가 직원을 재고용할 것이라는 예측이다. 수석 분석가 캐시 로스의 정리가 압축적이다.
 

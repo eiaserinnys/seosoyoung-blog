@@ -8,9 +8,9 @@ math: true
 ShowToc: true
 TocOpen: false
 cover:
-  image: "/images/perin-deny-2024-neural-kernel-symmetry/fig1-problem-setup.png"
+  image: "https://img.seosoyoung.eiaserinnys.me/images/perin-deny-2024-neural-kernel-symmetry/fig1-problem-setup.png"
 images:
-  - "/images/perin-deny-2024-neural-kernel-symmetry/fig1-problem-setup.png"
+  - "https://img.seosoyoung.eiaserinnys.me/images/perin-deny-2024-neural-kernel-symmetry/fig1-problem-setup.png"
 ---
 
 ## 3줄 요약
@@ -33,7 +33,7 @@ images:
 
 논문이 다루는 시나리오는 단순하다. 아이가 발달기에 *손에 잡히는 장난감*은 모든 3D 자세에서 보지만, *무거운 가구*는 몇 자세에서만 본다. 신경망도 마찬가지로 학습 데이터에서 어떤 클래스는 대칭 변환의 모든 인스턴스를 보고, 어떤 클래스는 일부만 본다. 그렇다면 신경망은 부분 관측 클래스에 대해 *대칭 불변성을 외삽*할 수 있는가?
 
-![Figure 1: 학습 과제 설정과 표준 아키텍처의 실패](/images/perin-deny-2024-neural-kernel-symmetry/fig1-problem-setup.png)
+![Figure 1: 학습 과제 설정과 표준 아키텍처의 실패](https://img.seosoyoung.eiaserinnys.me/images/perin-deny-2024-neural-kernel-symmetry/fig1-problem-setup.png)
 
 A 패널이 과제를 보여준다. 한 클래스(예: 숫자 '5')를 *leave-out 클래스*로 정하고, 그 클래스의 정립(upright) 자세만 학습에서 빼고 다른 회전은 모두 포함시킨다. 나머지 클래스는 모든 회전을 포함한다. 일반화가 가능한 모델이라면, 학습에서 본 적 없는 정립 자세의 '5'를 옳게 분류해야 한다.
 
@@ -60,13 +60,13 @@ $$
 
 이 비율이 작아질수록 일반화 오차가 작다. 분자가 작아지려면 $\lambda_N$이 커야 하고, 분모가 커지려면 저주파 성분의 역수가 발산해야 한다.
 
-![Figure 2: 원형 데이터셋에서 가우시안 커널의 spectral error 기하 해석](/images/perin-deny-2024-neural-kernel-symmetry/fig2-circular-dataset.png)
+![Figure 2: 원형 데이터셋에서 가우시안 커널의 spectral error 기하 해석](https://img.seosoyoung.eiaserinnys.me/images/perin-deny-2024-neural-kernel-symmetry/fig2-circular-dataset.png)
 
 A 패널의 데이터셋은 $\mathbb{R}^3$에서 두 클래스가 인터리브된 원형 점들이다. B는 그램 행렬이 순환 구조임을 시각화한다. C에서 한 행을 뽑으면 같은 라벨·반대 라벨 값이 교대로 나타나는데, 이것이 *암묵적 고주파 성분*에 해당한다. D는 spectral error를 두 영역의 비율로 본 기하 해석이다. 회색 영역(분자)이 작고 빨간 영역(분모)이 클수록 일반화 오차가 낮다.
 
 ### 두 축의 기하학적 해석
 
-![Figure 3: 클래스 분리도 Δ와 궤도 점 개수 N의 영향](/images/perin-deny-2024-neural-kernel-symmetry/fig3-delta-N.png)
+![Figure 3: 클래스 분리도 Δ와 궤도 점 개수 N의 영향](https://img.seosoyoung.eiaserinnys.me/images/perin-deny-2024-neural-kernel-symmetry/fig3-delta-N.png)
 
 A-C는 두 원형 클래스 사이의 거리 $\Delta$를 늘리는 경우다. $\Delta$가 커질수록 최고 주파수 $\lambda_N$의 파워가 커져 분자가 작아지고, 오차가 감소한다. *클래스가 서로 멀어지면 국소 커널로도 빠진 점을 추측하기 쉬워진다*는 직관과 정확히 맞물린다.
 
@@ -74,7 +74,7 @@ D-F는 같은 클래스의 점 개수 $N$을 늘리는 경우다. $N$이 커지�
 
 ## Rotated-MNIST에서의 검증
 
-![Figure 4: MLP의 NTK와 spectral error의 대응](/images/perin-deny-2024-neural-kernel-symmetry/fig4-mlp-rotated-mnist.png)
+![Figure 4: MLP의 NTK와 spectral error의 대응](https://img.seosoyoung.eiaserinnys.me/images/perin-deny-2024-neural-kernel-symmetry/fig4-mlp-rotated-mnist.png)
 
 이론은 단일 시드(seed) 짝의 단순한 설정에서 출발하지만, 실험은 곧장 회전된 MNIST 위에서 확장된다. 두 디지트 클래스에서 한 시드씩 뽑아 8개 회전 궤도를 만들고, MLP의 NTK 커널을 적용한다. NTK 커널은 원형으로 인터리브된 경우가 아니어서 <em>ex-post 순환화(circularization)</em>가 필요하다. 대각선 평균으로 그램 행렬을 순환 행렬로 근사한다. 이 근사 후에 적용된 spectral error는 *정확한 NTK 오차와 매우 잘 일치*한다 (B).
 
@@ -84,7 +84,7 @@ D·E 패널이 기하 해석을 입증한다. $\lambda_N$은 *입력 공간에�
 
 ## 다중 클래스로의 확장
 
-![Figure 6: 다중 시드·다중 클래스에서의 일반화 정확도](/images/perin-deny-2024-neural-kernel-symmetry/fig6-multiclass.png)
+![Figure 6: 다중 시드·다중 클래스에서의 일반화 정확도](https://img.seosoyoung.eiaserinnys.me/images/perin-deny-2024-neural-kernel-symmetry/fig6-multiclass.png)
 
 논문은 단일 시드·이항 분류 설정을 (1) 시드 여러 개·이항, (2) 시드 여러 개·10-클래스로 확장한다. 확장 트릭은 단순하다. 두 클래스의 *모든 시드 쌍*에 대해 spectral error를 계산하고 평균한다 (선형 상호작용 근사). 10-클래스의 경우는 *one-vs-many* 전략으로 클래스마다 별도 평균을 낸다.
 

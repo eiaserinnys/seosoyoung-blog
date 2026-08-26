@@ -5,7 +5,7 @@ tags: ["가우시안 스플랫", "게임 개발", "월드 모델", "에디토리
 categories: ["게임"]
 summary: "3D 가우시안 스플랫에서 출발해 브라우저에서 돌아가는 FPS를 만드는 오픈소스 파이프라인이 등장했다. 2년 반 전에 예감한 미래가 도착했지만, 경로가 달랐다."
 cover:
-  image: "/images/cover-gaussian-splat-game-future.jpg"
+  image: "https://img.seosoyoung.eiaserinnys.me/images/cover-gaussian-splat-game-future.jpg"
 sidenotes: true
 ---
 
@@ -66,7 +66,7 @@ splat-transform scene.ply \
 이 명령 하나의 출력물 두 개: 압축된 스플랫 파일(`scene.sog`)과 충돌 메시(`scene.collision.glb`). 후자를 정적 강체로 붙이면 — 플레이어에게 바닥이 생기고, 총알이 벽에 부딪히고, NPC가 밟고 걸을 수 있는 세계가 됩니다. 모델링도, 정리 작업도 없이.
 
 <figure>
-<img src="https://blog.playcanvas.com/assets/images/gs-fps-demo-collision-a78a39fc9aa9b05f565e0bdab013f7a1.jpg" alt="스플랫 위에 덧씌운 복셀 기반 충돌 메시" style="width:100%; border-radius:8px;">
+<img src="https://blog.playcanvas.com/assetshttps://img.seosoyoung.eiaserinnys.me/images/gs-fps-demo-collision-a78a39fc9aa9b05f565e0bdab013f7a1.jpg" alt="스플랫 위에 덧씌운 복셀 기반 충돌 메시" style="width:100%; border-radius:8px;">
 <figcaption>스플랫 위에 덧씌운 복셀 기반 충돌 메시. CLI 명령 하나로 생성된다. 출처: <a href="https://blog.playcanvas.com/turning-a-gaussian-splat-into-a-videogame/">PlayCanvas Blog</a> (CC BY-NC 4.0)</figcaption>
 </figure>
 
@@ -90,7 +90,7 @@ splat-transform scene.ply \
 NPC 경로탐색에는 내비메시가 필요합니다. 앞 단계의 충돌 메시를 Recast Navigation[^4] 라이브러리에 넘기면, 이동 가능한 영역을 래스터화하고 걷기 가능한 다각형 메시를 자동 생성합니다. 브라우저에서 `esm.sh` 경유 동적 임포트로 바로 불러올 수 있습니다.
 
 <figure>
-<img src="https://blog.playcanvas.com/assets/images/gs-fps-nav-mesh-8556f03f3ab49c06e740de2ef287129d.jpg" alt="Recast 내비메시 디버그 오버레이" style="width:100%; border-radius:8px;">
+<img src="https://blog.playcanvas.com/assetshttps://img.seosoyoung.eiaserinnys.me/images/gs-fps-nav-mesh-8556f03f3ab49c06e740de2ef287129d.jpg" alt="Recast 내비메시 디버그 오버레이" style="width:100%; border-radius:8px;">
 <figcaption>N키로 토글 가능한 내비메시 디버그 오버레이. 이동 가능한 다각형과 에이전트 경로가 스플랫 위에 표시된다. 출처: <a href="https://blog.playcanvas.com/turning-a-gaussian-splat-into-a-videogame/">PlayCanvas Blog</a> (CC BY-NC 4.0)</figcaption>
 </figure>
 
@@ -129,7 +129,7 @@ NPC 경로탐색에는 내비메시가 필요합니다. 앞 단계의 충돌 메
 Seen2Scene은 텍스트에서 LLM을 경유해 3D 레이아웃을 생성하고, 플로우 매칭으로 완전한 3D 장면을 복원합니다.[^7]
 
 <figure>
-<img src="https://quan-meng.github.io/assets/seen2scene/static/images/pipeline.png" alt="Seen2Scene 파이프라인 — 텍스트에서 3D 장면까지" style="width:100%; border-radius:8px;">
+<img src="https://quan-meng.github.io/assets/seen2scene/statichttps://img.seosoyoung.eiaserinnys.me/images/pipeline.png" alt="Seen2Scene 파이프라인 — 텍스트에서 3D 장면까지" style="width:100%; border-radius:8px;">
 <figcaption>Seen2Scene 파이프라인. 텍스트 → LLM 레이아웃 → 플로우 매칭으로 완전한 3D 장면을 복원한다. 출처: <a href="https://quan-meng.github.io/projects/seen2scene/">Seen2Scene Project Page</a></figcaption>
 </figure>
 

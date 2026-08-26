@@ -7,9 +7,9 @@ summary: "Joe Rogan Experience #1788에서 MrBeast가 멘토링한 유튜버 한
 ShowToc: true
 TocOpen: false
 cover:
-  image: "/images/mrbeast-10-percent-four-times-views/frame-02-mentee-analytics.jpg"
+  image: "https://img.seosoyoung.eiaserinnys.me/images/mrbeast-10-percent-four-times-views/frame-02-mentee-analytics.jpg"
 images:
-  - "/images/mrbeast-10-percent-four-times-views/frame-02-mentee-analytics.jpg"
+  - "https://img.seosoyoung.eiaserinnys.me/images/mrbeast-10-percent-four-times-views/frame-02-mentee-analytics.jpg"
 ---
 
 ## 3줄 요약
@@ -22,7 +22,7 @@ images:
 
 X의 [@voidedintern](https://x.com/voidedintern/status/2066177621616988316)이 클립한 트윗에 임베드된 85초짜리 영상은, 배경의 붉은 벨벳 커튼·셔어 SM7B 듀얼 마이크 셋업·로고 노출로 미루어 **Joe Rogan Experience #1788 — Mr. Beast** (2022년 3월 7일 공개) 회차의 한 구간으로 확인된다. 같은 회차의 podcastnotes 요약은 트윗의 핵심 인용구 — "5백만 뷰 한 편이 5만 뷰 50편보다 쉽다" — 를 그대로 옮겨 두고 있다.
 
-![MrBeast가 Joe Rogan 스튜디오에서 유튜브 채널 성장 법칙을 설명하는 장면 (JRE #1788)](/images/mrbeast-10-percent-four-times-views/frame-01-mrbeast-jre.jpg)
+![MrBeast가 Joe Rogan 스튜디오에서 유튜브 채널 성장 법칙을 설명하는 장면 (JRE #1788)](https://img.seosoyoung.eiaserinnys.me/images/mrbeast-10-percent-four-times-views/frame-01-mrbeast-jre.jpg)
 
 트윗 본문은 다음 다섯 갈래의 진술을 담는다.
 
@@ -38,7 +38,7 @@ X의 [@voidedintern](https://x.com/voidedintern/status/2066177621616988316)이 �
 
 JRE 클립의 가장 결정적인 장면은 MrBeast가 자신의 노트북을 카메라 쪽으로 돌려 멘티 채널의 애널리틱스 대시보드를 직접 보여주는 구간이다.
 
-![MrBeast가 멘티 채널의 실제 애널리틱스를 화면에 띄워 가리키는 장면 — 45.7M 뷰, $403,154.48 추정 수익이 표시된다](/images/mrbeast-10-percent-four-times-views/frame-02-mentee-analytics.jpg)
+![MrBeast가 멘티 채널의 실제 애널리틱스를 화면에 띄워 가리키는 장면 — 45.7M 뷰, $403,154.48 추정 수익이 표시된다](https://img.seosoyoung.eiaserinnys.me/images/mrbeast-10-percent-four-times-views/frame-02-mentee-analytics.jpg)
 
 화면 상단에 떠 있는 것은 MrBeast 본인이 2022년 2월 22일에 올린 트윗(*"I started counseling a small YouTuber for fun and here is monthly before and after of their channel lol"*)이고, 아래쪽 패널에는 같은 채널의 대시보드가 떠 있다. 거기서 읽을 수 있는 수치는 다음과 같다.
 
@@ -63,7 +63,7 @@ MrBeast는 이 멘티가 같은 양의 콘텐츠를 더 좋은 품질로 만들�
 
 ## 비선형 보상 — "10% 더 좋은 영상 = 4배 뷰"
 
-![화면 옆에서 손짓을 더해 알고리즘의 비선형 보상을 설명하는 MrBeast](/images/mrbeast-10-percent-four-times-views/frame-03-mrbeast-explaining.jpg)
+![화면 옆에서 손짓을 더해 알고리즘의 비선형 보상을 설명하는 MrBeast](https://img.seosoyoung.eiaserinnys.me/images/mrbeast-10-percent-four-times-views/frame-03-mrbeast-explaining.jpg)
 
 이어지는 구간에서 MrBeast는 그 격차가 어디서 나오는지를 한 줄로 압축해 정리한다. 클릭률과 시청 지속을 각각 10%씩 끌어올리면, 뷰는 10% 늘어나는 게 아니라 *약 4배*로 늘어난다는 진술이다.
 
@@ -76,7 +76,7 @@ MrBeast는 이 멘티가 같은 양의 콘텐츠를 더 좋은 품질로 만들�
 
 ## 빈도 vs 품질 — "1년에 한 편이라도 충분히 좋으면"
 
-![두 손으로 비교 동작을 만들며 빈도-품질 트레이드오프를 설명하는 MrBeast](/images/mrbeast-10-percent-four-times-views/frame-04-mrbeast-gesture.jpg)
+![두 손으로 비교 동작을 만들며 빈도-품질 트레이드오프를 설명하는 MrBeast](https://img.seosoyoung.eiaserinnys.me/images/mrbeast-10-percent-four-times-views/frame-04-mrbeast-gesture.jpg)
 
 같은 법칙의 역대우가 빈도-품질 트레이드오프다. MrBeast의 주장은 단순하다.
 

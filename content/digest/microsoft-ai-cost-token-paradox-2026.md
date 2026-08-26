@@ -7,9 +7,9 @@ summary: "Fortune이 마이크로소프트의 Claude Code 라이선스 회수와
 ShowToc: true
 TocOpen: false
 cover:
-  image: "/images/microsoft-ai-cost-token-paradox-2026/cover-nadella.webp"
+  image: "https://img.seosoyoung.eiaserinnys.me/images/microsoft-ai-cost-token-paradox-2026/cover-nadella.webp"
 images:
-  - "/images/microsoft-ai-cost-token-paradox-2026/cover-nadella.webp"
+  - "https://img.seosoyoung.eiaserinnys.me/images/microsoft-ai-cost-token-paradox-2026/cover-nadella.webp"
 sidenotes: true
 ---
 
@@ -19,7 +19,7 @@ sidenotes: true
 2. 엔비디아 Bryan Catanzaro는 "내 팀에서 컴퓨트 비용이 직원 비용을 한참 넘어선다"고 말했다. Gartner는 2030년이면 1조 파라미터 LLM의 추론 단가가 2025년 대비 약 90% 떨어지겠지만, 에이전트 모델이 더 많은 토큰을 쓰기 때문에 기업의 총 추론 비용은 오히려 상승한다고 예측한다.[^gartner-2030]
 3. HedgieMarkets는 이 모든 가격 인상이 "IPO 타이밍 이슈"라고 진단했다. OpenAI·Anthropic·xAI는 18\~24개월 안에 상장해야 하고, S-1을 제출하기 전에 손실 곡선이 꺾이는 모습을 보여야 하기 때문에 비용 전가가 지금 가속된다는 것이다.
 
-![Satya Nadella, Microsoft CEO. Sven Hoppe/picture alliance via Getty Images](/images/microsoft-ai-cost-token-paradox-2026/cover-nadella.webp)
+![Satya Nadella, Microsoft CEO. Sven Hoppe/picture alliance via Getty Images](https://img.seosoyoung.eiaserinnys.me/images/microsoft-ai-cost-token-paradox-2026/cover-nadella.webp)
 
 ## 마이크로소프트의 Claude Code 후퇴
 
@@ -56,7 +56,7 @@ Gartner가 짚는 세 가지 이유가 있다.
 
 같은 Fortune 기사를 인용하면서 HedgieMarkets가 X에 올린 분석은 한 단계 더 들어간다. 그의 진단은 토큰 가격 인상이 *기술적 한계*나 *공급 부족*이 아니라 *상장 일정*에 의해 강요된다는 것이다.
 
-![HedgieMarkets의 분석 캡션 이미지](/images/microsoft-ai-cost-token-paradox-2026/hedgie-summary.jpg)
+![HedgieMarkets의 분석 캡션 이미지](https://img.seosoyoung.eiaserinnys.me/images/microsoft-ai-cost-token-paradox-2026/hedgie-summary.jpg)
 
 핵심 수치를 정리하면 다음과 같다.
 

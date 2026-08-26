@@ -8,9 +8,9 @@ math: true
 ShowToc: true
 TocOpen: false
 cover:
-  image: "/images/automatic-textbook-formalization/fig1-lines-declarations.png"
+  image: "https://img.seosoyoung.eiaserinnys.me/images/automatic-textbook-formalization/fig1-lines-declarations.png"
 images:
-  - "/images/automatic-textbook-formalization/fig1-lines-declarations.png"
+  - "https://img.seosoyoung.eiaserinnys.me/images/automatic-textbook-formalization/fig1-lines-declarations.png"
 ---
 
 ## 3줄 요약
@@ -19,7 +19,7 @@ images:
 2. 3만 개(정확히는 30,046개)의 Claude 4.5 Opus 에이전트가 git 버전 관리로 공유 코드베이스에서 병렬 협업해 1주 만에 끝냈다. 사람의 협업 소프트웨어 공학에서 검증된 관행(트렁크 기반 개발, PR 리뷰, 머지 큐, 파일 기반 이슈 트래커)을 그대로 가져와 조정 문제를 풀었다.
 3. 추론 비용은 약 10만 달러로, 같은 작업을 할 인간 전문가 팀의 인건비와 대등하거나 그 이하였다. 연구진은 더 나은 모델 없이도 3\~10배 비용 절감이 가능하다고 본다. 코드와 Lean 코드베이스, 대조용 blueprint 웹사이트를 오픈소스로 공개했다.
 
-![형식화 진행에 따라 추가·삭제된 줄 수와 Lean 선언 수가 거의 일정한 속도로 늘어난다](/images/automatic-textbook-formalization/fig1-lines-declarations.png)
+![형식화 진행에 따라 추가·삭제된 줄 수와 Lean 선언 수가 거의 일정한 속도로 늘어난다](https://img.seosoyoung.eiaserinnys.me/images/automatic-textbook-formalization/fig1-lines-declarations.png)
 
 ## 무엇을 풀려는 문제인가
 
@@ -82,7 +82,7 @@ images:
 
 작업을 쉽게 리뷰할 수 있는 작은 조각으로 쪼갠 전략이 잘 통했다. 에이전트가 제출한 가장 큰 PR도 수백 줄을 넘지 않았다.
 
-![에이전트가 제출한 PR의 줄 수 분포. 가장 큰 것도 수백 줄을 넘지 않는다](/images/automatic-textbook-formalization/fig4-pr-line-histogram.png)
+![에이전트가 제출한 PR의 줄 수 분포. 가장 큰 것도 수백 줄을 넘지 않는다](https://img.seosoyoung.eiaserinnys.me/images/automatic-textbook-formalization/fig4-pr-line-histogram.png)
 
 실험은 Lean에 능한 에이전틱 코딩 모델 Claude 4.5 Opus를 썼고, 연구진은 현행 프런티어 모델 대부분이 이 작업에서 대체로 비슷하게 동작하리라 본다. 리뷰 에이전트가 높은 명제 형식화 품질 기준을 세웠고 핵심 명제·정의는 수작업으로 표본 점검했다. 다만 개별 정리·정의가 의미상 충실히 번역되지 못했을 가능성은 남는다고 밝혔다.
 
@@ -104,7 +104,7 @@ images:
 
 전체 형식화는 입력 830억 토큰(멀티턴 대화의 중복 계산 포함)과 출력 5억 6,100만 토큰을 썼다. 토큰 캐싱이 없었다면 총비용은 43만 달러에 해당한다. 로그에 캐싱 통계가 없어 대략 계산하면 전체 약 10만 달러, 그중 1만 4천 달러가 출력 토큰 몫이다. 페이지당 약 200달러, 목표 정리·정의당 약 300달러다.
 
-![시간에 따른 에이전트 결과 추이. 초기에는 NFS 병목·머지 큐 정체로 중단(aborted)에 토큰이 많이 쏠렸다](/images/automatic-textbook-formalization/fig5-agent-outcomes.png)
+![시간에 따른 에이전트 결과 추이. 초기에는 NFS 병목·머지 큐 정체로 중단(aborted)에 토큰이 많이 쏠렸다](https://img.seosoyoung.eiaserinnys.me/images/automatic-textbook-formalization/fig5-agent-outcomes.png)
 
 연구진은 이 초기 탐색이 실제 비용을 크게 과대평가한다고 본다. 세 가지 이유다. (1) 실행 중에 오케스트레이션 코드를 고쳐 가며 진행해, 입력 토큰의 절반가량이 재시작 때 이어지지 못한 *중단(aborted)* 에이전트에 쓰였다. (2) 지시와 달리 연습문제나 인용된 정리를 붙잡은 불필요한 작업이 있었다. (3) 의존성 추적이 없어, 막힌 에이전트를 그냥 다시 큐에 넣었다. 이 세 가지를 개선하면 더 나은 모델 없이도 추론 비용을 3\~10배 줄일 수 있다고 본다.
 
@@ -130,7 +130,7 @@ images:
 
 또 하나는 prover와 maintainer 역할이 결국 합쳐질 수 있는가라는 열린 질문이다. prover는 설계상 단일 Lean 파일만 다루지만, maintainer는 최대 14개 파일에 걸친 무거운 리팩터링을 수행한다. 대신 maintainer는 조정 파일만 건드리는 "장부 정리 PR"에 더 자주 관여한다. 연구진은 답을 내리지 않되, 후속 반복에서 prover 역할이 maintainer에 흡수될 여지를 열어 둔다.
 
-![prover 대 maintainer의 순 라인 변화. prover는 단일 파일에, maintainer는 여러 파일 리팩터링에 관여한다](/images/automatic-textbook-formalization/fig6-prover-vs-maintainer.png)
+![prover 대 maintainer의 순 라인 변화. prover는 단일 파일에, maintainer는 여러 파일 리팩터링에 관여한다](https://img.seosoyoung.eiaserinnys.me/images/automatic-textbook-formalization/fig6-prover-vs-maintainer.png)
 
 ## 확장 전망
 

@@ -9,7 +9,7 @@ TocOpen: false
 sidenotes: true
 ---
 
-![퍼즐을 함께 맞추는 사람들 — Getty Images via Unsplash](/images/werd-one-size-fits-none/cover-puzzle.jpg)
+![퍼즐을 함께 맞추는 사람들 — Getty Images via Unsplash](https://img.seosoyoung.eiaserinnys.me/images/werd-one-size-fits-none/cover-puzzle.jpg)
 
 ## 3줄 요약
 

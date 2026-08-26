@@ -7,9 +7,9 @@ summary: "선형으로 줄 세운 에이전트를 그래프로 다시 그리는 
 ShowToc: true
 TocOpen: false
 cover:
-  image: "/images/graph-engineering-with-claude/cover.jpg"
+  image: "https://img.seosoyoung.eiaserinnys.me/images/graph-engineering-with-claude/cover.jpg"
 images:
-  - "/images/graph-engineering-with-claude/cover.jpg"
+  - "https://img.seosoyoung.eiaserinnys.me/images/graph-engineering-with-claude/cover.jpg"
 ---
 
 ## 3줄 요약
@@ -18,7 +18,7 @@ images:
 2. 일의 모양 자체가 그래프라는 관점으로 다시 그린다. 노드가 생각하고 엣지가 결과를 나른다. Claude Code의 dynamic workflows는 Claude가 평범한 자바스크립트 오케스트레이션 스크립트를 짜고, 그 스크립트가 서브에이전트 함대를 부린다. 조율 자체는 코드라서 모델 토큰이 들지 않는다.
 3. 노드와 엣지 정의부터 팬아웃·팬인, 라우터, 검증자, 격리, 수렴하는 순환, 모델 티어링, 토폴로지 선택, 그리고 Claude가 그래프를 스스로 그리는 self-routing까지 14단계로 쌓아 올린다.
 
-![14단계 로드맵의 표지 도식](/images/graph-engineering-with-claude/cover.jpg)
+![14단계 로드맵의 표지 도식](https://img.seosoyoung.eiaserinnys.me/images/graph-engineering-with-claude/cover.jpg)
 
 ## 왜 그래프인가
 
@@ -32,7 +32,7 @@ Claude Code는 이 그래프를 직접 짓는 도구를 내놓았다. dynamic wo
 
 **01. 노드는 일이고, 엣지는 흐르는 것이다.** 그래프에는 딱 두 가지만 있고, 이 둘을 헷갈리지 않는 것이 혼란의 대부분을 없앤다. 노드는 작업 단위다. 에이전트 하나, 경계가 분명한 일 하나, 입력 하나가 들어가 출력 하나가 나온다. 엣지는 의존이다. 이 노드의 출력이 저 노드의 입력으로 들어간다는 뜻, 그 이상은 아니다.
 
-![노드와 엣지, 상류·하류 의존을 보여주는 리니지 그래프](/images/graph-engineering-with-claude/nodes-edges.png)
+![노드와 엣지, 상류·하류 의존을 보여주는 리니지 그래프](https://img.seosoyoung.eiaserinnys.me/images/graph-engineering-with-claude/nodes-edges.png)
 
 흔한 실수는 "그리고 나서"를 엣지로 착각하는 것이다. "파일을 요약하고 나서 날씨를 알려줘"에는 둘 사이에 엣지가 없다. 날씨는 요약을 소비하지 않는다. 데이터가 실제로 건너갈 때만 엣지가 존재한다. 에이전트 안의 모든 "그리고 나서"에 물어야 한다. 다음 단계가 앞 단계의 출력을 읽는가. 읽지 않는다면 엣지는 없고, 그 기다림은 낭비다.
 
@@ -67,7 +67,7 @@ const result = await agent(source.prompt, {
 
 **05. `parallel()`로 펼친다.** 모든 값을 치르게 하는 수가 이것이다. 독립된 노드가 N개 있을 때, 즉 확인할 소스 N개, 리뷰할 파일 N개, 감사할 경로 N개가 있을 때는 사슬로 잇지 않는다. 한꺼번에 펼쳐 동시에 돌린다. 워크플로우에서는 `parallel()`이다. Claude가 thunk 배열을 받아 thunk마다 서브에이전트 하나를 띄우고, 모두 동시에 실행한 뒤 결과 배열을 돌려준다.
 
-![스플릿에서 부채꼴로 펼쳐 리듀스·합성으로 모이는 다이아몬드](/images/graph-engineering-with-claude/diamond.png)
+![스플릿에서 부채꼴로 펼쳐 리듀스·합성으로 모이는 다이아몬드](https://img.seosoyoung.eiaserinnys.me/images/graph-engineering-with-claude/diamond.png)
 
 견고함을 만드는 세부가 둘 있다. 첫째, `parallel()`은 배리어라서 모든 thunk가 끝날 때까지 기다린 뒤 반환한다. 다음 단계가 완전한 집합을 본다. 둘째, 예외를 던지는 thunk는 배치 전체를 무너뜨리는 대신 `null`로 귀결한다. 그래서 불안정한 에이전트 하나가 실행 전체를 가라앉히지 못한다. 결과는 언제나 `.filter(Boolean)`으로 거른다. 동시성은 코어 수 언저리로 제한되고 초과분은 대기열에 들어가므로, thunk 백 개를 넘겨도 한 줌씩 차례로 다 끝난다.
 
@@ -101,7 +101,7 @@ const collected = raw.filter(Boolean);  // 실패한 에이전트의 null 제거
 
 **09. 엣지에 검증자를 세운다.** 그래프의 진짜 지렛대는 에이전트를 더 늘리는 것이 아니라, 그것들을 감싸 확신을 만들어내는 구조다. 검증자 노드는 결과가 하류로 내려가기 전 엣지에 앉아, 그 발견을 죽이려 애쓰는 것만이 임무다. 살아남으면 통과하고, 아니면 답에 닿지 못한다.
 
-![세 회의론자를 통과해야 답이 되는 다양한 렌즈 검증](/images/graph-engineering-with-claude/verifier.png)
+![세 회의론자를 통과해야 답이 되는 다양한 렌즈 검증](https://img.seosoyoung.eiaserinnys.me/images/graph-engineering-with-claude/verifier.png)
 
 손에 쥘 만한 패턴이 셋이다.
 
@@ -145,7 +145,7 @@ while (dry < 2) {                       // 빈 라운드 2번이면 멈춘다
 
 **13. 토폴로지가 곧 비용이자 지연이다.** 그래프의 모양은 장식이 아니라 벽시계 시간을 좌우하는 가장 큰 단일 지렛대다. 모두가 걸려 넘어지는 선택은 `parallel()`이냐 `pipeline()`이냐다. `parallel()` 배리어는 다음 단계가 시작되기 전에 가장 느린 노드를 모두가 기다리게 한다. `pipeline()`은 배리어 없이 항목마다 모든 단계를 독립으로 흘려보낸다. 항목 A가 3단계에 있는 동안 항목 B는 아직 1단계에 있어도 된다. 빠른 항목은 느린 항목 뒤에서 놀지 않고 일찍 끝난다.
 
-![parallel의 배리어 대기와 pipeline의 무배리어 스트리밍 비교](/images/graph-engineering-with-claude/topology.png)
+![parallel의 배리어 대기와 pipeline의 무배리어 스트리밍 비교](https://img.seosoyoung.eiaserinnys.me/images/graph-engineering-with-claude/topology.png)
 
 기본은 `pipeline()`으로 둔다. 배리어는 어떤 단계가 앞선 결과 전부를 정말로 한꺼번에 필요로 할 때만 꺼낸다. 집합 전체를 가로지르는 중복 제거, 총량에 따른 조기 종료, "다른 발견들"과 비교하는 프롬프트 같은 경우다. "코드가 더 깔끔해서", "단계들이 분리돼 보여서"는 이유가 못 된다. 배리어 지연은 실재하고 측정되는 낭비 시간이다. 분리된 것과 동기화된 것은 같지 않다.
 

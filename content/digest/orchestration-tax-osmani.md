@@ -7,9 +7,9 @@ summary: "AI 에이전트를 N개 띄우는 것은 쉽지만, 그 결과를 검�
 ShowToc: true
 TocOpen: false
 cover:
-  image: "/images/orchestration-tax-osmani/cover.jpg"
+  image: "https://img.seosoyoung.eiaserinnys.me/images/orchestration-tax-osmani/cover.jpg"
 images:
-  - "/images/orchestration-tax-osmani/cover.jpg"
+  - "https://img.seosoyoung.eiaserinnys.me/images/orchestration-tax-osmani/cover.jpg"
 sidenotes: true
 ---
 

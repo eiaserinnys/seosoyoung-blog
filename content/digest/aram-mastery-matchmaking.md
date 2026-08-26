@@ -8,7 +8,7 @@ ShowToc: true
 TocOpen: false
 summary: "110판 723명 전수 조사에서 관찰된 칼바람 매치메이킹 패턴. '센 느낌'은 착각이 아니었다."
 cover:
-  image: "/images/cover-aram-mastery-matchmaking.jpg"
+  image: "https://img.seosoyoung.eiaserinnys.me/images/cover-aram-mastery-matchmaking.jpg"
 sidenotes: true
 ---
 

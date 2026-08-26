@@ -7,12 +7,12 @@ summary: "Demis Hassabis가 2026년 6월 3일 Stanford GSB에서 Jonathan Levin 
 ShowToc: true
 TocOpen: false
 cover:
-  image: "/images/hassabis-stanford-foothills-singularity/cover.jpg"
+  image: "https://img.seosoyoung.eiaserinnys.me/images/hassabis-stanford-foothills-singularity/cover.jpg"
 images:
-  - "/images/hassabis-stanford-foothills-singularity/cover.jpg"
+  - "https://img.seosoyoung.eiaserinnys.me/images/hassabis-stanford-foothills-singularity/cover.jpg"
 ---
 
-![A Conversation with Demis Hassabis — Stanford GSB AI@GSB, 2026.06.03. 좌측 Jonathan Levin Stanford 총장, 우측 Demis Hassabis. (출처: Stanford Graduate School of Business YouTube)](/images/hassabis-stanford-foothills-singularity/cover.jpg)
+![A Conversation with Demis Hassabis — Stanford GSB AI@GSB, 2026.06.03. 좌측 Jonathan Levin Stanford 총장, 우측 Demis Hassabis. (출처: Stanford Graduate School of Business YouTube)](https://img.seosoyoung.eiaserinnys.me/images/hassabis-stanford-foothills-singularity/cover.jpg)
 
 ## 3줄 요약
 

@@ -15,7 +15,7 @@ sidenotes: true
 2. 핵심 발견은 두 가지다. 4규칙으로 실수율이 41%에서 11%로, 12규칙으로 3%까지 떨어지지만, 규칙 수가 14개를 넘으면 컴플라이언스가 76%에서 52%로 무너진다.
 3. 결론은 분명하다. CLAUDE.md는 위시리스트가 아니라 *관찰된 실수의 닫힌 목록*이며, 자신의 실패 모드에 맞춘 6규칙이 일반 12규칙보다 낫다.
 
-![CLAUDE.md Forensics — Vanilla 41%, Karpathy 4 11%, 12 Rules 3% (30 codebases · 6 weeks)](/images/karpathy-claude-md-12-rules/cover-chart.jpg)
+![CLAUDE.md Forensics — Vanilla 41%, Karpathy 4 11%, 12 Rules 3% (30 codebases · 6 weeks)](https://img.seosoyoung.eiaserinnys.me/images/karpathy-claude-md-12-rules/cover-chart.jpg)
 
 ## 자료의 출발점
 

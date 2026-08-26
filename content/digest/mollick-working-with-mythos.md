@@ -7,9 +7,9 @@ summary: "와튼 스쿨의 Ethan Mollick이 Mythos급 신모델(Claude 5 Fable) 
 ShowToc: true
 TocOpen: false
 cover:
-  image: "/images/mollick-working-with-mythos/fig4-isochronic-final.png"
+  image: "https://img.seosoyoung.eiaserinnys.me/images/mollick-working-with-mythos/fig4-isochronic-final.png"
 images:
-  - "/images/mollick-working-with-mythos/fig4-isochronic-final.png"
+  - "https://img.seosoyoung.eiaserinnys.me/images/mollick-working-with-mythos/fig4-isochronic-final.png"
 ---
 
 ## 3줄 요약
@@ -41,7 +41,7 @@ Fable이 Claude Code 환경에서 모호한 프롬프트 하나 + 약간의 피�
 
 Mollick이 여러 모델로 반복 시도해 온 테스트 케이스. <strong>Isochronic map</strong>은 주어진 시간 안에 도달할 수 있는 거리를 보여주는 지도로, 첫 사례는 1881년 런던 출발 시간을 시각화한 것이다.
 
-![1881년 런던 isochronic 지도 원본](/images/mollick-working-with-mythos/fig1-original-1881-map.jpeg)
+![1881년 런던 isochronic 지도 원본](https://img.seosoyoung.eiaserinnys.me/images/mollick-working-with-mythos/fig1-original-1881-map.jpeg)
 
 이전 어떤 모델도 절반조차 쓸 만하게 만들지 못했다. 수천 개의 잠재 여행 거리에 대한 리서치, 그리고 수많은 작은 판단과 결정이 필요한 문제이기 때문이다.
 
@@ -57,15 +57,15 @@ Fable이 한 일:
 - 추가로 더 많은 에이전트와 테스트를 띄워 자신의 코드를 검증했다
 - 진행 상황을 별도로 기록했다
 
-![Fable의 멀티에이전트 작업 트랜스크립트](/images/mollick-working-with-mythos/fig2-agent-transcript.png)
+![Fable의 멀티에이전트 작업 트랜스크립트](https://img.seosoyoung.eiaserinnys.me/images/mollick-working-with-mythos/fig2-agent-transcript.png)
 
 결과물은 1881년 원본과 흡사한 형태의 정교한 인터랙티브 지도였다. 그러나 완벽하진 않았다. Mollick은 그린란드 같은 원격지의 여행 시간이 추정치로 채워진 것을 발견하고 *"원격 공항과 위치까지의 여행 시간을 실제로 가져와라"* 라고 지시했다.
 
 이번에 Fable은 <strong>적대적 에이전트 그룹들의 워크플로우</strong>를 띄웠다. 그룹들이 리서치를 수행하고 서로의 결과를 검증하는 구조였다. 태평양 핏케언 섬으로 가는 배편의 운항 빈도, 오타와에서 그리스 피요르드(Grise Fjord)로 가는 경로까지 찾아냈다. 짧은 시간 동안 어마어마한 양의 토큰을 소진했다.
 
-![작은 버전의 결과 지도](/images/mollick-working-with-mythos/fig3-isochronic-result-small.png)
+![작은 버전의 결과 지도](https://img.seosoyoung.eiaserinnys.me/images/mollick-working-with-mythos/fig3-isochronic-result-small.png)
 
-![AI가 만들어 낸 인터랙티브 isochronic 지도. 클릭하면 인터랙티브 버전으로 이동한다](/images/mollick-working-with-mythos/fig4-isochronic-final.png)
+![AI가 만들어 낸 인터랙티브 isochronic 지도. 클릭하면 인터랙티브 버전으로 이동한다](https://img.seosoyoung.eiaserinnys.me/images/mollick-working-with-mythos/fig4-isochronic-final.png)
 
 Mollick이 정리한 함의:
 
@@ -83,7 +83,7 @@ Mollick은 Fable에 이 문제를 풀어 보라고 지시했다. Fable은 먼저
 
 > 9시간 30분 동안 작동했다.
 
-![Concord 작업 화면](/images/mollick-working-with-mythos/fig5-concord.png)
+![Concord 작업 화면](https://img.seosoyoung.eiaserinnys.me/images/mollick-working-with-mythos/fig5-concord.png)
 
 결과는 Fable이 <em>Concord</em>라고 이름 붙인 매우 정교한 소프트웨어였다. 다중 데이터셋을 받아 인간과 AI 응답을 보정하고, 그 결과에 복잡한 데이터 분석을 수행한다. 코드는 GitHub의 [emollick/concord](https://github.com/emollick/concord)에 공개됐다.
 

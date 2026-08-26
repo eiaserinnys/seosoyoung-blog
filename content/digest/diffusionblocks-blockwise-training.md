@@ -8,9 +8,9 @@ math: true
 ShowToc: true
 TocOpen: false
 cover:
-  image: "/images/diffusionblocks-blockwise-training/overview.jpg"
+  image: "https://img.seosoyoung.eiaserinnys.me/images/diffusionblocks-blockwise-training/overview.jpg"
 images:
-  - "/images/diffusionblocks-blockwise-training/overview.jpg"
+  - "https://img.seosoyoung.eiaserinnys.me/images/diffusionblocks-blockwise-training/overview.jpg"
 sidenotes: true
 ---
 
@@ -20,7 +20,7 @@ sidenotes: true
 2. 핵심 통찰은 하나다 — 트랜스포머의 잔차 연결 $z_\ell = z_{\ell-1} + f(z_{\ell-1})$이 확산 모델의 ODE를 한 스텝 이산화한 식과 같은 형태라는 것. 그래서 각 블록을 특정 노이즈 구간을 맡는 denoiser로 바꾸면 블록마다 독립으로 학습할 수 있다.
 3. 비전·이미지 생성·언어 등 5개 아키텍처에서 엔드투엔드에 필적하면서 학습 메모리를 블록 수만큼(3\~4배) 줄였다. 의외로 적당히 쪼갠 경우(B=2, 3)는 엔드투엔드를 *능가*하기도 했다.
 
-![DiffusionBlocks 개요 — (좌) 표준망은 전 계층 역전파가 필요하다, (중) DiffusionBlocks는 네트워크를 블록으로 나눠 각자 맡은 노이즈 구간을 독립 학습한다, (우) 확산 모델은 스텝당 블록 하나만, recurrent-depth 모델은 반복 학습을 단일 패스로 대체한다](/images/diffusionblocks-blockwise-training/overview.jpg)
+![DiffusionBlocks 개요 — (좌) 표준망은 전 계층 역전파가 필요하다, (중) DiffusionBlocks는 네트워크를 블록으로 나눠 각자 맡은 노이즈 구간을 독립 학습한다, (우) 확산 모델은 스텝당 블록 하나만, recurrent-depth 모델은 반복 학습을 단일 패스로 대체한다](https://img.seosoyoung.eiaserinnys.me/images/diffusionblocks-blockwise-training/overview.jpg)
 *DiffusionBlocks 개요. 출처: github.com/SakanaAI/DiffusionBlocks*
 
 ## 무엇이 문제였나 — 역전파의 메모리 병목

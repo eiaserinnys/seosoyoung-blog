@@ -7,9 +7,9 @@ summary: "일본에서 한국 인디게임의 현지 PR을 담당해 온 Masa Ke
 ShowToc: true
 TocOpen: false
 cover:
-  image: "/images/game-community-management-2026/cover.jpeg"
+  image: "https://img.seosoyoung.eiaserinnys.me/images/game-community-management-2026/cover.jpeg"
 images:
-  - "/images/game-community-management-2026/cover.jpeg"
+  - "https://img.seosoyoung.eiaserinnys.me/images/game-community-management-2026/cover.jpeg"
 ---
 
 ## 3줄 요약
@@ -18,7 +18,7 @@ images:
 2. 이 책은 디스코드 서버 관리에 국한되지 않고 마케팅·홍보·SNS와 얽힌 커뮤니티 관리 전반을 다루며, 후반부(챕터 5\~8)는 프로젝트 초기·개발 중·발매 전후·발매 후의 개발 단계별 실전 가이드로 구성되어 있다.
 3. Masa Kei는 자신이 한국 인디게임의 일본향 PR을 하면서도 "실제 플레이어의 반응을 살려 개선하는 노력이 아직 부족하다"고 반성하며, 바즈만 노리는 담론에 지친 개발자에게 이 책을 권한다.
 
-![『게임 커뮤니티 운영의 교과서』 헤더](/images/game-community-management-2026/cover.jpeg "출처: Masa Kei note (2026-07-01)")
+![『게임 커뮤니티 운영의 교과서』 헤더](https://img.seosoyoung.eiaserinnys.me/images/game-community-management-2026/cover.jpeg "출처: Masa Kei note (2026-07-01)")
 
 ## 어떤 책인가
 

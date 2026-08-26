@@ -7,9 +7,9 @@ summary: "리니지의 아버지 송재경이 혼자서, AI 코딩 에이전트�
 ShowToc: true
 TocOpen: false
 cover:
-  image: "/images/openmmo-jake-song/night.png"
+  image: "https://img.seosoyoung.eiaserinnys.me/images/openmmo-jake-song/night.png"
 images:
-  - "/images/openmmo-jake-song/night.png"
+  - "https://img.seosoyoung.eiaserinnys.me/images/openmmo-jake-song/night.png"
 ---
 
 ## 3줄 요약
@@ -53,23 +53,23 @@ images:
 - 바다는 Gerstner 파도로, 강은 흐르는 잔물결로 애니메이션하고, 바람에 따라 풀과 나뭇잎이 흔들린다.
 - 낮과 밤의 길이가 행성의 공전 위치에 따라 달라지고(계절), **두 개의 달**이 각자의 궤도와 위상으로 도는 천체 시뮬레이션이 들어 있다.
 
-![절차적으로 생성된 월드 맵](/images/openmmo-jake-song/worldmap.png)
+![절차적으로 생성된 월드 맵](https://img.seosoyoung.eiaserinnys.me/images/openmmo-jake-song/worldmap.png)
 
-![강이 여러 갈래로 갈라져 바다와 만나는 삼각주](/images/openmmo-jake-song/delta.png)
+![강이 여러 갈래로 갈라져 바다와 만나는 삼각주](https://img.seosoyoung.eiaserinnys.me/images/openmmo-jake-song/delta.png)
 
 게임 안에는 월드를 직접 매만지는 맵 에디터가 내장돼 있다. 지형 브러시(도로·평탄화·높이 페인트), 오브젝트 배치 프리뷰, 마을(스폰 금지)과 몬스터 스폰 구역을 사각형으로 그리는 도구까지 게임 내에서 라이브로 편집한다.
 
-![게임 내 맵 에디터 — 높이 브러시 활성화](/images/openmmo-jake-song/map-editor.png)
+![게임 내 맵 에디터 — 높이 브러시 활성화](https://img.seosoyoung.eiaserinnys.me/images/openmmo-jake-song/map-editor.png)
 
 ## 하우징과 던전
 
 집은 목골 구조(timber-framed)를 모듈로 조립하며, 2·3·4층까지 지어진다. 방마다 오클루전을 처리해 실내에 들어가면 앞을 가리는 벽과 지붕이 사라지고, 문과 창은 열고 닫힌다. 침대 같은 가구를 놓고 눕거나 쓸 수 있다.
 
-![플레이어가 지은 목골 주택 내부](/images/openmmo-jake-song/housing.png)
+![플레이어가 지은 목골 주택 내부](https://img.seosoyoung.eiaserinnys.me/images/openmmo-jake-song/housing.png)
 
 던전은 NetHack 스타일의 시드 결정적 미로다. 지상에 흩어진 입구로 들어가면 최대 20층까지 내려가고, 입구마다 시드가 고정돼 클라이언트에서 만들든 서버에서 만들든 똑같은 미로가 나온다. 지상 입구는 별도 모델을 만들지 않고 하우징의 절차적 지오메트리를 재사용해 돌 건물로 세운다. 마지막 층에는 전용 전리품을 든 보스가 있다. 통 상자를 부수면 아이템이 나오고, 상자를 열면 코인 더미가 실제 바닥 아이템으로 떨어진다.
 
-![돌벽과 계단으로 이어지는 던전 내부](/images/openmmo-jake-song/dungeon-interior.png)
+![돌벽과 계단으로 이어지는 던전 내부](https://img.seosoyoung.eiaserinnys.me/images/openmmo-jake-song/dungeon-interior.png)
 
 ## 전투와 인벤토리
 
@@ -81,7 +81,7 @@ images:
 
 인벤토리는 무게 제한이 있고, 머리·주무기·보조무기·가슴·귀·목·벨트·바지·부츠·반지 둘까지 11개 장비 슬롯의 페이퍼돌 시스템을 갖췄다. 아이템은 무게가 있어 무거운 세팅은 실제로 선택을 강요한다. 바닥에 떨어뜨린 아이템은 그 자리에 남고 누구나 주울 수 있으며, 2층에서 떨어뜨린 물건은 2층에서만 주울 수 있다. 줍기 판정은 서버에서 원자적으로 처리해 복제를 막는다.
 
-![능력치·페이퍼돌 장비·인벤토리를 갖춘 캐릭터 시트](/images/openmmo-jake-song/character-sheet.png)
+![능력치·페이퍼돌 장비·인벤토리를 갖춘 캐릭터 시트](https://img.seosoyoung.eiaserinnys.me/images/openmmo-jake-song/character-sheet.png)
 
 BGM은 Suno와 Google Flow Music으로 만든 약 50곡을 쓴다. 울티마풍 중세 판타지 음색(류트·리코더·하프·현악·타악·금관)으로, 평시 음악과 전투 음악 풀을 나눠 전투가 시작되면 크로스페이드로 전투 곡이 들어왔다가 다시 평시 곡으로 돌아간다.
 
@@ -97,13 +97,13 @@ BGM은 Suno와 Google Flow Music으로 만든 약 50곡을 쓴다. 울티마풍 
 
 NPC는 LLM이 조종한다. 상인 Rica, 경비병 Karl 같은 NPC가 대화 맥락에 따라 반응한다. 상인은 흥정이 가능해서, 좋은 이야기나 아부에 값을 깎아주고 무례하게 굴면 값을 올린다. 위시리스트를 가진 비상인 NPC는 대화 중에 "치유 물약을 구해다 주면 값을 잘 쳐주지" 같은 의뢰를 즉석에서 만들어, 별도의 퀘스트 시스템 없이 LLM 롤플레잉만으로 fetch 퀘스트가 생긴다.
 
-![LLM이 조종하는 상인 NPC 'Rica' 컨셉 아트](/images/openmmo-jake-song/rica-concept.png)
+![LLM이 조종하는 상인 NPC 'Rica' 컨셉 아트](https://img.seosoyoung.eiaserinnys.me/images/openmmo-jake-song/rica-concept.png)
 
 ## 두 개의 달이 뜨는 하늘
 
 밤이 되면 횃불이 감쇠하는 점광원으로 실시간 그림자를 드리우고, 하늘에는 두 개의 달이 각자의 위상으로 뜬다. 게임의 시각적 정체성을 요약하는 장면이다.
 
-![두 개의 달과 행성·태양의 궤도를 보여주는 천체 패널](/images/openmmo-jake-song/orbits.png)
+![두 개의 달과 행성·태양의 궤도를 보여주는 천체 패널](https://img.seosoyoung.eiaserinnys.me/images/openmmo-jake-song/orbits.png)
 
 ## 가장 눈여겨본 대목 — 코드에 남은 30년의 상흔
 

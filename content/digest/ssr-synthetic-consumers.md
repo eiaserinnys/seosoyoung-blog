@@ -7,9 +7,9 @@ summary: "LLM에게 리커트 점수를 직접 묻는 대신 자유 텍스트 �
 ShowToc: true
 TocOpen: false
 cover:
-  image: "/images/ssr-synthetic-consumers/fig1-method.png"
+  image: "https://img.seosoyoung.eiaserinnys.me/images/ssr-synthetic-consumers/fig1-method.png"
 images:
-  - "/images/ssr-synthetic-consumers/fig1-method.png"
+  - "https://img.seosoyoung.eiaserinnys.me/images/ssr-synthetic-consumers/fig1-method.png"
 ---
 
 ## 3줄 요약
@@ -26,7 +26,7 @@ images:
 
 ## 방법: SSR(Semantic Similarity Rating)
 
-![SSR 방법 개요: 합성 소비자 구성과 응답-점수 사상 절차](/images/ssr-synthetic-consumers/fig1-method.png)
+![SSR 방법 개요: 합성 소비자 구성과 응답-점수 사상 절차](https://img.seosoyoung.eiaserinnys.me/images/ssr-synthetic-consumers/fig1-method.png)
 
 연구진은 세 가지 응답 생성 전략을 비교했다.
 
@@ -42,7 +42,7 @@ SSR의 절차는 이렇다. 먼저 LLM에게 인구통계 속성(나이, 성별,
 
 ## 결과: 분포와 순위를 동시에 잡았다
 
-![GPT-4o 기준 DLR/FLR/SSR의 평균 구매 의향 상관과 응답 분포 비교](/images/ssr-synthetic-consumers/fig2-gpt4o-comparison.png)
+![GPT-4o 기준 DLR/FLR/SSR의 평균 구매 의향 상관과 응답 분포 비교](https://img.seosoyoung.eiaserinnys.me/images/ssr-synthetic-consumers/fig2-gpt4o-comparison.png)
 
 GPT-4o 기준 결과를 정리하면 다음과 같다.
 
@@ -54,13 +54,13 @@ GPT-4o 기준 결과를 정리하면 다음과 같다.
 
 Gemini-2.0-flash에서도 경향은 같았다(SSR 분포 유사도 0.80, 인구통계 조건화 시 상관 달성률 92%). 텍스트 유도만으로 순위 재현이 개선되고, SSR로 사상하면 분포까지 인간 설문에 가까워진다.
 
-![DLR/FLR/SSR의 구매 의향 분포 유사도 비교](/images/ssr-synthetic-consumers/fig3-ks-similarity.png)
+![DLR/FLR/SSR의 구매 의향 분포 유사도 비교](https://img.seosoyoung.eiaserinnys.me/images/ssr-synthetic-consumers/fig3-ks-similarity.png)
 
 한 가지 차이도 보고된다. 합성 패널의 평균 구매 의향은 실제보다 넓게 퍼진다. 매력이 떨어지는 제품에 대해 LLM은 인간보다 평균적으로 더 낮은 점수를 준다. 저자들은 이를 인간 설문의 긍정 편향에서 비교적 자유로운 특성으로 해석하며, 초기 컨셉 선별에서는 오히려 변별력 있는 신호가 될 수 있다고 본다.
 
 ## 인구통계 조건화가 신호를 만든다
 
-![인구통계·제품 속성별 평균 구매 의향의 인간-합성 비교](/images/ssr-synthetic-consumers/fig4-demographics.png)
+![인구통계·제품 속성별 평균 구매 의향의 인간-합성 비교](https://img.seosoyoung.eiaserinnys.me/images/ssr-synthetic-consumers/fig4-demographics.png)
 
 합성 소비자는 나이에 따른 오목한 구매 의향 곡선(중년층이 가장 높음), 소득 수준에 따른 차이, 제품 카테고리와 가격 티어별 선호를 인간과 비슷하게 재현했다. 반면 성별과 거주 지역에 따른 패턴은 재현이 약했는데, 이 변수들은 실제 데이터에서도 구매 의향에 큰 영향을 주지 않았다.
 

@@ -7,9 +7,9 @@ summary: "구글이 검색을 AI 에이전트로 전면 개편하자 사용자 �
 ShowToc: true
 TocOpen: false
 cover:
-  image: "/images/duckduckgo-ai-search-backlash/duckduckgo-noai.png"
+  image: "https://img.seosoyoung.eiaserinnys.me/images/duckduckgo-ai-search-backlash/duckduckgo-noai.png"
 images:
-  - "/images/duckduckgo-ai-search-backlash/duckduckgo-noai.png"
+  - "https://img.seosoyoung.eiaserinnys.me/images/duckduckgo-ai-search-backlash/duckduckgo-noai.png"
 sidenotes: true
 ---
 
@@ -19,7 +19,7 @@ sidenotes: true
 2. 프라이버시 중심 검색엔진 DuckDuckGo의 미국 앱 설치가 6일 연속 늘어 5월 25일 주간 30.5% 증가로 정점을 찍었다. iOS만 보면 정점이 69.9%까지 올랐다.
 3. DuckDuckGo의 메시지는 단순하다 — "사람들은 그저 선택권을 원한다." AI를 완전히 끈 검색 페이지와 자체 AI 제품을 동시에 제공하며 "통제권은 사용자에게"를 내세운다.
 
-![DuckDuckGo의 'NO AI' 캠페인 페이지 — AI 보조 답변과 AI 생성 이미지를 모두 끈 검색 환경을 전면에 내세운다.](/images/duckduckgo-ai-search-backlash/duckduckgo-noai.png)
+![DuckDuckGo의 'NO AI' 캠페인 페이지 — AI 보조 답변과 AI 생성 이미지를 모두 끈 검색 환경을 전면에 내세운다.](https://img.seosoyoung.eiaserinnys.me/images/duckduckgo-ai-search-backlash/duckduckgo-noai.png)
 
 ## 무슨 일이 있었나 — 구글의 검색 개편과 반발
 

@@ -7,9 +7,9 @@ summary: "SimonDev가 three.js 절차적 지형을 개선하는 트릭 열두 �
 ShowToc: true
 TocOpen: false
 cover:
-  image: "/images/simondev-procedural-terrain/demo-cover.png"
+  image: "https://img.seosoyoung.eiaserinnys.me/images/simondev-procedural-terrain/demo-cover.png"
 images:
-  - "/images/simondev-procedural-terrain/demo-cover.png"
+  - "https://img.seosoyoung.eiaserinnys.me/images/simondev-procedural-terrain/demo-cover.png"
 ---
 
 ## 3줄 요약
@@ -26,7 +26,7 @@ images:
 
 원문이 도달한 지점은 이렇다. 안개에 잠긴 능선이 겹겹이 물러나는 60초짜리 비행 영상으로 스레드가 열린다.
 
-![SimonDev의 완성 화면](/images/simondev-procedural-terrain/src-00-intro.jpg)
+![SimonDev의 완성 화면](https://img.seosoyoung.eiaserinnys.me/images/simondev-procedural-terrain/src-00-intro.jpg)
 *스레드 첫 게시물의 한 프레임. 아래 열두 가지가 모두 켜진 상태다.*
 
 ## 하이트맵
@@ -39,7 +39,7 @@ height = noise(position.xy * frequency) * amplitude;
 
 `frequency`는 노이즈를 샘플하는 xy 스케일을, `amplitude`는 지형의 높이를 정한다. 손잡이는 이 둘뿐이고, 결과는 완만한 언덕이다.
 
-<video src="/images/simondev-procedural-terrain/src-01-heightmap.mp4" poster="/images/simondev-procedural-terrain/src-01-heightmap.jpg" muted loop playsinline controls style="width:100%;border-radius:12px;"></video>
+<video src="https://img.seosoyoung.eiaserinnys.me/images/simondev-procedural-terrain/src-01-heightmap.mp4" poster="https://img.seosoyoung.eiaserinnys.me/images/simondev-procedural-terrain/src-01-heightmap.jpg" muted loop playsinline controls style="width:100%;border-radius:12px;"></video>
 
 *값 노이즈 구현과 그 결과. 좌하단 작은 사각형이 실제로 샘플되는 노이즈 텍스처다. (SimonDev)*
 
@@ -64,7 +64,7 @@ float fbm(vec2 p) {
 }
 ```
 
-<video src="/images/simondev-procedural-terrain/src-02-fbm.mp4" poster="/images/simondev-procedural-terrain/src-02-fbm.jpg" muted loop playsinline controls style="width:100%;border-radius:12px;"></video>
+<video src="https://img.seosoyoung.eiaserinnys.me/images/simondev-procedural-terrain/src-02-fbm.mp4" poster="https://img.seosoyoung.eiaserinnys.me/images/simondev-procedural-terrain/src-02-fbm.jpg" muted loop playsinline controls style="width:100%;border-radius:12px;"></video>
 
 *한 겹짜리 언덕이 산맥으로 바뀌는 구간. (SimonDev)*
 
@@ -76,7 +76,7 @@ float fbm(vec2 p) {
 height = 1.0 - abs(noise(position.xy * frequency));
 ```
 
-![ridged 노이즈](/images/simondev-procedural-terrain/src-03-ridged.jpg)
+![ridged 노이즈](https://img.seosoyoung.eiaserinnys.me/images/simondev-procedural-terrain/src-03-ridged.jpg)
 *한 줄을 바꿨을 뿐인데 매끈하던 언덕에 각진 마루가 생긴다. (SimonDev)*
 
 ## Voronoi 노이즈
@@ -100,7 +100,7 @@ float voronoi(vec2 p) {
 }
 ```
 
-![Voronoi 노이즈](/images/simondev-procedural-terrain/src-04-voronoi.jpg)
+![Voronoi 노이즈](https://img.seosoyoung.eiaserinnys.me/images/simondev-procedural-terrain/src-04-voronoi.jpg)
 *셀 경계가 그대로 드러난 상태. 아직 지형이라기보다 비늘에 가깝다. (SimonDev)*
 
 ## 겹치는 방식을 다른 노이즈에 적용하면
@@ -120,12 +120,12 @@ float fbmRidged(vec2 p) {
 }
 ```
 
-![fBM과 능선 노이즈의 결합](/images/simondev-procedural-terrain/src-05-fbm-ridged.jpg)
+![fBM과 능선 노이즈의 결합](https://img.seosoyoung.eiaserinnys.me/images/simondev-procedural-terrain/src-05-fbm-ridged.jpg)
 *능선이 여러 스케일로 겹쳐 바위산의 표면이 된다. (SimonDev)*
 
 같은 트릭을 Voronoi에 적용하면 곰보 자국이 난 지형이 된다. 함수 안의 `ridgedNoise`를 `voronoi`로 바꾸는 것이 전부다.
 
-![fBM과 Voronoi의 결합](/images/simondev-procedural-terrain/src-06-fbm-voronoi.jpg)
+![fBM과 Voronoi의 결합](https://img.seosoyoung.eiaserinnys.me/images/simondev-procedural-terrain/src-06-fbm-voronoi.jpg)
 *셀 구덩이가 여러 크기로 포개진 표면. (SimonDev)*
 
 ## 노이즈 미분으로 얻는 침식
@@ -149,10 +149,10 @@ float weatheredFbm(vec2 p) {
 }
 ```
 
-![미분 기반 침식](/images/simondev-procedural-terrain/src-07-erosion.jpg)
+![미분 기반 침식](https://img.seosoyoung.eiaserinnys.me/images/simondev-procedural-terrain/src-07-erosion.jpg)
 *능선을 따라 흘러내린 자국이 생긴다. (SimonDev)*
 
-![우리 데모의 침식](/images/simondev-procedural-terrain/demo-06-erosion.png)
+![우리 데모의 침식](https://img.seosoyoung.eiaserinnys.me/images/simondev-procedural-terrain/demo-06-erosion.png)
 *재구현 데모에서 풍화 강도만 올린 화면. 산등성이의 잔디테일이 눌리는 방향이 같다.*
 
 ## 테라스
@@ -167,10 +167,10 @@ float ramp = min(2.0 * fract(band), 1.0);
 height = (level + ramp) / steps;
 ```
 
-![테라스](/images/simondev-procedural-terrain/src-08-terraces.jpg)
+![테라스](https://img.seosoyoung.eiaserinnys.me/images/simondev-procedural-terrain/src-08-terraces.jpg)
 *계단참과 램프가 번갈아 나타나는 지형. (SimonDev)*
 
-![우리 데모의 테라스](/images/simondev-procedural-terrain/demo-07-terrace.png)
+![우리 데모의 테라스](https://img.seosoyoung.eiaserinnys.me/images/simondev-procedural-terrain/demo-07-terrace.png)
 *계단 수를 아홉으로 둔 재구현 화면.*
 
 ## 테라스와 풍화를 함께
@@ -183,7 +183,7 @@ float weathering = weatheredFbm(position.xy * detailFrequency);
 height = terraces + weathering * detailStrength;
 ```
 
-![테라스와 풍화의 조합](/images/simondev-procedural-terrain/src-09-combine.jpg)
+![테라스와 풍화의 조합](https://img.seosoyoung.eiaserinnys.me/images/simondev-procedural-terrain/src-09-combine.jpg)
 *큰 단은 테라스가, 표면의 자잘한 요철은 풍화 fBM이 맡는다. (SimonDev)*
 
 ## 거리 안개
@@ -196,10 +196,10 @@ vec3 fogColor = sampleBlurredSky(viewDirection);
 color = mix(color, fogColor, fogAmount);
 ```
 
-![거리 안개](/images/simondev-procedural-terrain/src-10-distance-fog.jpg)
+![거리 안개](https://img.seosoyoung.eiaserinnys.me/images/simondev-procedural-terrain/src-10-distance-fog.jpg)
 *거리만 보는 안개는 화면 전체를 고르게 덮는다. (SimonDev)*
 
-![우리 데모의 거리 안개](/images/simondev-procedural-terrain/demo-09-distance-fog.png)
+![우리 데모의 거리 안개](https://img.seosoyoung.eiaserinnys.me/images/simondev-procedural-terrain/demo-09-distance-fog.png)
 *재구현 데모에서 거리 안개만 켠 상태.*
 
 ## 높이 안개
@@ -221,10 +221,10 @@ vec3 applyHeightFog(vec3 color, vec3 worldPosition) {
 }
 ```
 
-![Crytek 높이 안개](/images/simondev-procedural-terrain/src-11-height-fog.jpg)
+![Crytek 높이 안개](https://img.seosoyoung.eiaserinnys.me/images/simondev-procedural-terrain/src-11-height-fog.jpg)
 *같은 지형이지만 안개가 골짜기에 고인다. (SimonDev)*
 
-![우리 데모의 높이 안개](/images/simondev-procedural-terrain/demo-10-height-fog.png)
+![우리 데모의 높이 안개](https://img.seosoyoung.eiaserinnys.me/images/simondev-procedural-terrain/demo-10-height-fog.png)
 *재구현 데모에서 높이 안개를 켜고 밀도를 올린 화면.*
 
 ## 소광과 산란
@@ -239,10 +239,10 @@ vec3 fogColor = sampleBlurredSky(normalize(ray));
 return color * transmittance + fogColor * scattering;
 ```
 
-![소광과 산란 분리](/images/simondev-procedural-terrain/src-12-scattering.jpg)
+![소광과 산란 분리](https://img.seosoyoung.eiaserinnys.me/images/simondev-procedural-terrain/src-12-scattering.jpg)
 *안개 낀 골짜기가 밝아지고 앞쪽 바위는 더 어둡게 가라앉는다. (SimonDev)*
 
-![우리 데모의 소광과 산란](/images/simondev-procedural-terrain/demo-11-scattering.png)
+![우리 데모의 소광과 산란](https://img.seosoyoung.eiaserinnys.me/images/simondev-procedural-terrain/demo-11-scattering.png)
 *재구현 데모에서 소광과 산란을 나눈 최종 상태.*
 
 ## 가장 흥미로운 지점

@@ -6,7 +6,7 @@ tags: ["멀티모달", "표현 학습", "아키텍처", "논문 리뷰"]
 categories: ["모델과 연구"]
 summary: "Meta AI의 Tuna-2는 VAE도 비전 인코더도 없이 단순 패치 임베딩만으로 멀티모달 SOTA를 달성했다. 더 흥미로운 건, 인코더를 빼니까 오히려 성능이 올랐다는 것이다. 대규모 학습에서 귀납 편향이 천장이 되는 패턴을 짚는다."
 cover:
-  image: "/images/cover-tuna-2-less-is-more.jpg"
+  image: "https://img.seosoyoung.eiaserinnys.me/images/cover-tuna-2-less-is-more.jpg"
 ShowToc: true
 TocOpen: false
 sidenotes: true

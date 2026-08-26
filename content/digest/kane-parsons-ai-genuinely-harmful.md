@@ -7,9 +7,9 @@ summary: "A24 최연소 감독(20세)이자 박스오피스 1억 달러를 돌�
 ShowToc: true
 TocOpen: false
 cover:
-  image: "/images/kane-parsons-ai-genuinely-harmful/kane-parsons-backrooms-screening.jpg"
+  image: "https://img.seosoyoung.eiaserinnys.me/images/kane-parsons-ai-genuinely-harmful/kane-parsons-backrooms-screening.jpg"
 images:
-  - "/images/kane-parsons-ai-genuinely-harmful/kane-parsons-backrooms-screening.jpg"
+  - "https://img.seosoyoung.eiaserinnys.me/images/kane-parsons-ai-genuinely-harmful/kane-parsons-backrooms-screening.jpg"
 ---
 
 ## 3줄 요약
@@ -18,7 +18,7 @@ images:
 2. 그는 "손가락을 튕겨 생성형 AI를 영원히 사라지게 할 수 있다면 아마 그렇게 할 것"이라며, 그것이 "혁신이라기보다 더 넓은 문화적·경제적 부패(rot)의 증상"이라고 규정했다.
 3. 다만 AI를 *만드는 도구*가 아니라 *예술의 대상*으로 심문하는 데는 관심이 있다고 했고, 자기 제작 과정의 핵심은 무료 Blender와 YouTube 자습이었다.
 
-![케인 파슨스, 런던 'Backrooms' 특별 시사회에서](/images/kane-parsons-ai-genuinely-harmful/kane-parsons-backrooms-screening.jpg)
+![케인 파슨스, 런던 'Backrooms' 특별 시사회에서](https://img.seosoyoung.eiaserinnys.me/images/kane-parsons-ai-genuinely-harmful/kane-parsons-backrooms-screening.jpg)
 *Kane Parsons attends a Backrooms special Screening on May 19, 2026 in London. Alan Chapman/Dave Benett/Getty Images for A24 Films*
 
 ## 발언자와 시점

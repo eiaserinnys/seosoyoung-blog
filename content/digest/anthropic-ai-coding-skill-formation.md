@@ -25,7 +25,7 @@ AI가 점점 더 많은 코드를 쓰게 되더라도, 사람은 오류를 잡�
 
 ## 연구 설계
 
-![실험 설계 다이어그램](/images/anthropic-ai-coding-skill-formation/study-design.png)
+![실험 설계 다이어그램](https://img.seosoyoung.eiaserinnys.me/images/anthropic-ai-coding-skill-formation/study-design.png)
 
 참가자 모집 조건은 다음과 같다.
 
@@ -53,7 +53,7 @@ AI가 점점 더 많은 코드를 쓰게 되더라도, 사람은 오류를 잡�
 
 ## 결과
 
-![결과 그래프](/images/anthropic-ai-coding-skill-formation/results.png)
+![결과 그래프](https://img.seosoyoung.eiaserinnys.me/images/anthropic-ai-coding-skill-formation/results.png)
 
 핵심 수치는 다음과 같다.
 

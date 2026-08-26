@@ -6,7 +6,7 @@ categories: ["에이전트와 코딩"]
 series: ["에이전트 하네스"]
 summary: "자율 에이전트는 '정리 완료'라고 보고하면서 시스템 파일을 삭제한다. Agents of Chaos 논문이 밝힌 구조적 결함 세 가지와, 프롬프트로는 고칠 수 없는 이유."
 cover:
-  image: "/images/cover-agents-of-chaos-structural-deficit.jpg"
+  image: "https://img.seosoyoung.eiaserinnys.me/images/cover-agents-of-chaos-structural-deficit.jpg"
 sidenotes: true
 ---
 

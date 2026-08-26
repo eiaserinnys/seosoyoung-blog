@@ -7,9 +7,9 @@ summary: "게임메카가 소규모·개인 인디 개발자들을 취재해 모
 ShowToc: true
 TocOpen: false
 cover:
-  image: "/images/gamemeca-indie-realistic-promotion/bic-devs.jpg"
+  image: "https://img.seosoyoung.eiaserinnys.me/images/gamemeca-indie-realistic-promotion/bic-devs.jpg"
 images:
-  - "/images/gamemeca-indie-realistic-promotion/bic-devs.jpg"
+  - "https://img.seosoyoung.eiaserinnys.me/images/gamemeca-indie-realistic-promotion/bic-devs.jpg"
 ---
 
 ## 3줄 요약
@@ -22,7 +22,7 @@ images:
 
 인디게임 시장이 포화 상태에 이르면서, 참신한 기획력만큼이나 작품을 알리는 홍보 전략이 개발사의 생존을 가르는 요소가 되었다. 매체와 대형 퍼블리셔들이 스팀 '찜목록'의 중요성과 마케팅 방법을 소개하지만, 소규모·개인 개발자가 온전히 따라 하기엔 벅찬 내용이 많다. 기사는 실제 소규모 개발사들이 발로 뛰며 체득한 전략을 전한다.
 
-![게임 개발에 도전하는 수많은 개발자들 (사진제공: BIC조직위원회, 출처: 게임메카)](/images/gamemeca-indie-realistic-promotion/bic-devs.jpg)
+![게임 개발에 도전하는 수많은 개발자들 (사진제공: BIC조직위원회, 출처: 게임메카)](https://img.seosoyoung.eiaserinnys.me/images/gamemeca-indie-realistic-promotion/bic-devs.jpg)
 
 ## 온라인 홍보: 알고리즘 파악과 정밀한 타겟팅
 
@@ -35,7 +35,7 @@ images:
 
 최근에는 인스타그램에 '일상툰' 형식으로 개발기를 풀어내고 숏폼으로 플레이 영상을 홍보하는 식으로, 게임과 개발사에 대한 관심을 함께 유도하는 개발사가 늘고 있다. 분량이 길거나 장기적인 콘텐츠라면 블로그나 서브컬처·창작 중심의 연재형 플랫폼도 좋은 선택지로 언급된다.
 
-![개발일기는 잠재적 소비자들이 꾸준히 읽을 수 있는 가벼운 내용이 선호된다 (사진출처: 이게게개임 공식 인스타그램, 게임메카)](/images/gamemeca-indie-realistic-promotion/devlog-instagram.jpg)
+![개발일기는 잠재적 소비자들이 꾸준히 읽을 수 있는 가벼운 내용이 선호된다 (사진출처: 이게게개임 공식 인스타그램, 게임메카)](https://img.seosoyoung.eiaserinnys.me/images/gamemeca-indie-realistic-promotion/devlog-instagram.jpg)
 
 게임 커뮤니티 접근은 시선을 완전히 바꿔야 한다. 익명을 요구한 한 인디게임 개발자의 말이다.
 
@@ -45,7 +45,7 @@ images:
 
 캐주얼 퍼즐이니 모두가 좋아할 것이라는 생각도, 소울라이크니 고난도 게임 유저에게 무조건 통할 것이라는 생각도 지우는 게 좋다는 조언이 덧붙는다.
 
-![같은 미소녀 중심의 서브컬처 게임이라도 플레이 스타일과 세계관에 따라 호불호가 갈린다 (사진출처: 각 게임 공식 홈페이지, 게임메카)](/images/gamemeca-indie-realistic-promotion/subculture-compare.jpg)
+![같은 미소녀 중심의 서브컬처 게임이라도 플레이 스타일과 세계관에 따라 호불호가 갈린다 (사진출처: 각 게임 공식 홈페이지, 게임메카)](https://img.seosoyoung.eiaserinnys.me/images/gamemeca-indie-realistic-promotion/subculture-compare.jpg)
 
 ## 홍보를 '맡기는' 기술: 스트리머와 지원 프로그램
 
@@ -59,7 +59,7 @@ BIC나 스팀 넥스트 페스트 같은 온라인 쇼케이스에 참가할 때
 
 이를 통해 개발 과정에서 발견하지 못한 오류나 불편을 수정하며 더 친절하고 이해하기 쉬운 게임으로 만들어갈 수 있다는 설명이다.
 
-![BIC 등 대형 행사에는 참여가 어려운 개발자를 위한 콘텐츠가 준비되어 있어 행사 설명 페이지를 꼼꼼히 읽어야 한다 (사진출처: BIC 공식 홈페이지, 게임메카)](/images/gamemeca-indie-realistic-promotion/bic-online.jpg)
+![BIC 등 대형 행사에는 참여가 어려운 개발자를 위한 콘텐츠가 준비되어 있어 행사 설명 페이지를 꼼꼼히 읽어야 한다 (사진출처: BIC 공식 홈페이지, 게임메카)](https://img.seosoyoung.eiaserinnys.me/images/gamemeca-indie-realistic-promotion/bic-online.jpg)
 
 대형 게임사들이 사회공헌·상생 협력의 일환으로 운영하는 인디게임 지원 프로그램도 영리하게 활용할 대상이다. 직장을 다니며 게임을 개발 중인 한 개발자의 경험담이다.
 
@@ -67,7 +67,7 @@ BIC나 스팀 넥스트 페스트 같은 온라인 쇼케이스에 참가할 때
 
 공모전과 행사를 통해 개발비를 충당하고, 프로토타입 개발 과정에서 합이 맞아 개발팀에 합류하는 사례도 소개된다.
 
-![공모전을 통해 개발비 충당, 팀 합류 등 다양한 경험을 했다는 이야기가 많았다 (사진제공: 크래프톤, 컴투스홀딩스, 출처: 게임메카)](/images/gamemeca-indie-realistic-promotion/contest.jpg)
+![공모전을 통해 개발비 충당, 팀 합류 등 다양한 경험을 했다는 이야기가 많았다 (사진제공: 크래프톤, 컴투스홀딩스, 출처: 게임메카)](https://img.seosoyoung.eiaserinnys.me/images/gamemeca-indie-realistic-promotion/contest.jpg)
 
 ## 오프라인 홍보: '찜'을 유도하되 가성비를 따져라
 
@@ -75,7 +75,7 @@ BIC나 스팀 넥스트 페스트 같은 온라인 쇼케이스에 참가할 때
 
 개인 개발자일수록 오프라인 행사는 정부 지원 사업이나 대형 개발사의 사회공헌 사업과 연계해 참여하라는 조언이 모인다. '찜'이 반드시 '구매'로 직결되지는 않으므로, 비용 대비 효과를 따져 합리적으로 결정해야 한다는 것이다. 부스 운영 시에도 이벤트 참여 유도에만 매몰되지 말고, 시연 유저가 빠르게 회전할 수 있는 효율적인 환경 구성에 신경 써야 한다.
 
-![해외 게임쇼 출전은 명과 암이 뚜렷한 선택지로 언급됐다 (사진제공: BIC조직위원회, 출처: 게임메카)](/images/gamemeca-indie-realistic-promotion/overseas-show.jpg)
+![해외 게임쇼 출전은 명과 암이 뚜렷한 선택지로 언급됐다 (사진제공: BIC조직위원회, 출처: 게임메카)](https://img.seosoyoung.eiaserinnys.me/images/gamemeca-indie-realistic-promotion/overseas-show.jpg)
 
 소규모 개발사의 가성비 최고 생존 전략으로는 '명함'이 꼽혔다. 명함 앞면에는 이름과 연락처를, 뒷면에는 스팀 상점 페이지나 개발 블로그로 연결되는 QR 코드를 넣어, 작은 종이를 최대한 많은 정보를 담은 자기소개서로 활용한다. 개발자 컨퍼런스나 네트워킹 행사에서 명함 한 장을 들고 발로 뛰다 보면 언론·타 개발자와 인연이 닿는다는 것이다.
 

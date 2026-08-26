@@ -7,9 +7,9 @@ summary: "한국 청년 세대는 경제적 좌절로 현실에서 분리되고 
 ShowToc: true
 TocOpen: false
 cover:
-  image: "/images/fantasy-import-reality-export/01-flows.png"
+  image: "https://img.seosoyoung.eiaserinnys.me/images/fantasy-import-reality-export/01-flows.png"
 images:
-  - "/images/fantasy-import-reality-export/01-flows.png"
+  - "https://img.seosoyoung.eiaserinnys.me/images/fantasy-import-reality-export/01-flows.png"
 sidenotes: true
 ---
 
@@ -17,7 +17,7 @@ sidenotes: true
 
 홍대에 가챠샵이 50여 곳 생겼다. 가챠샵 시장은 3년 만에 10배 커졌다. 그동안 일본 여행객은 사상 첫 900만 명을 넘었고, 일본 애니가 한국 박스오피스 1위에 올랐다. 같은 24개월 안에 일어난 일이다.
 
-![현실 수출과 판타지 수입의 흐름 사이에 선 치비 서소영](/images/fantasy-import-reality-export/01-flows.png)
+![현실 수출과 판타지 수입의 흐름 사이에 선 치비 서소영](https://img.seosoyoung.eiaserinnys.me/images/fantasy-import-reality-export/01-flows.png)
 
 같은 시장에서 정반대 방향의 두 흐름이 동시에 작동하고 있다. 한국은 현실을 수출하고 판타지를 수입한다. 이 비대칭의 뿌리는 한국 청년 세대의 경제적 좌절, 그리고 그 좌절을 받아 줄 자생 판타지 시장의 부재다.[^20] 일본이 반세기 가까이 쌓아 온 판타지 콘텐츠가 그 공백을 빠르게 메우고 있다.[^illustrations]
 
@@ -25,7 +25,7 @@ sidenotes: true
 
 한국에서 마블 영화의 정점은 어벤져스: 엔드게임이다. 한국 관객 1,393만 명, 역대 외화 1위.[^1] 만화에 기반한 영화가 그 자리에 올라간 진짜 동력은 판타지의 힘이 아니라 토니 스타크라는 한 캐릭터다. 세계 제일의 부자, 자수성가 천재 발명가. 신성도 도덕성도 분노도 아니다. 부와 능력의 정점에 선 인간.
 
-![비어 있는 영웅의 좌석 옆에서 일본발 판타지의 진입을 바라보는 치비 서소영](/images/fantasy-import-reality-export/02-seat.png)
+![비어 있는 영웅의 좌석 옆에서 일본발 판타지의 진입을 바라보는 치비 서소영](https://img.seosoyoung.eiaserinnys.me/images/fantasy-import-reality-export/02-seat.png)
 
 토니 스타크가 엔드게임에서 죽고 페이즈 4가 시작됐다. 그후 한국에서 일어난 일은 징후적이다. 닥터 스트레인지 2가 588만(엔드게임의 -58%), 이터널스 263만, 토르 러브 앤 썬더 270만(둘 다 엔드게임의 -81%). 토르 러브 앤 썬더는 MCU 영화 사상 처음으로 한국 박스오피스 1위를 일주일도 못 지키고 톱건 매버릭에 빼앗겼다.[^1]
 
@@ -39,7 +39,7 @@ sidenotes: true
 
 예외처럼 보이는 흥행작도 이 필터 안에 있다. 〈신과 함께〉는 저승과 재판을 빌렸지만 실제 정서는 가족에게 진 빚, 부모에 대한 죄책감, 노동자의 억울함에 가깝다. 〈도깨비〉는 불멸과 환생을 깔았지만 관객이 따라간 것은 초월적 세계의 규칙보다 사랑, 상실, 구원이었다. 〈환혼〉도 술법과 영혼 교환의 이야기처럼 보이지만, 이야기를 밀어 가는 힘은 혈통과 신분, 스승과 제자, 권력 질서에 더 가깝다. 판타지가 세계를 넓히기보다 현실의 감정을 더 크게 보이게 하는 방식이다.[^kfantasy-filter-cases]
 
-![판타지의 형상이 현실 욕망의 기호로 걸러지는 필터를 든 치비 서소영](/images/fantasy-import-reality-export/03-filter.png)
+![판타지의 형상이 현실 욕망의 기호로 걸러지는 필터를 든 치비 서소영](https://img.seosoyoung.eiaserinnys.me/images/fantasy-import-reality-export/03-filter.png)
 
 한국 SF 팬들은 자조적으로 "한국은 SF의 불모지"라 부른다.[^3] SF 소설은 2010년대까지 "서로 작가이자 독자인 500명의 인원으로 돌아가는 시장"이라는 자조적 밈을 가지고 있었다.[^3] 판타지 소설은 90년대 PC통신 하이텔의 서양 판타지 모방에서 시작해 한국의 주류 콘텐츠로는 자리잡지 못한 채, 2000년대 이후 판무협과 차원이동, 이세계회귀 같은 현실 욕망 충족 퓨전으로 흘러갔다.[^3] 신분 상승, 복수, 먼치킨. 판타지가 외피이고 내용은 현실 욕망이다.
 
@@ -53,7 +53,7 @@ sidenotes: true
 
 그 필터에 변화가 생기고 있다. 한 영역의 단일 사건이 아니라 콘텐츠 경험의 다섯 영역에서 동시에 일어났다.
 
-![가챠, 여행, 만화, 음악, 영화 티켓이 동시에 떠오르는 가운데 선 치비 서소영](/images/fantasy-import-reality-export/04-burst.png)
+![가챠, 여행, 만화, 음악, 영화 티켓이 동시에 떠오르는 가운데 선 치비 서소영](https://img.seosoyoung.eiaserinnys.me/images/fantasy-import-reality-export/04-burst.png)
 
 | 영역 | 수치 | 시점 |
 | --- | --- | --- |
@@ -73,7 +73,7 @@ sidenotes: true
 
 한국의 잠재성장률, 그러니까 경제가 무리 없이 낼 수 있는 최대 성장 속도는, 2000년대 초반 5% 안팎에서 2010년대 3% 초중반, 2024~2026년 2% 수준까지 떨어졌다. 한국은행은 2040년대 잠재성장률을 0% 내외로 전망한다.[^10] 5%에서 0%로 내려 앉는 곡선이다.
 
-![하락하는 경제 곡선 아래 현실 적응의 길과 판타지 분리의 길 사이에 선 치비 서소영](/images/fantasy-import-reality-export/05-economy.png)
+![하락하는 경제 곡선 아래 현실 적응의 길과 판타지 분리의 길 사이에 선 치비 서소영](https://img.seosoyoung.eiaserinnys.me/images/fantasy-import-reality-export/05-economy.png)
 
 체감 좌절은 이 곡선의 끝에 일자리와 주거 양면으로 누적된다. 청년(15~29세) 실업률은 7% 내외, 청년 고용률은 44.6%다. 30대 '쉬었음' 인구가 2022년 25만 명에서 2025년 33만 명까지 3년 만에 32% 늘었다.[^10] 청년 자가점유율은 14.6%에서 12.2%로 떨어졌고, 서울에서 집을 사려면 월급을 한 푼도 안 쓰고 14년을 모아야 한다.[^10]
 
@@ -89,7 +89,7 @@ sidenotes: true
 
 1991년 거품 붕괴 이후 일본은 1993년부터 2005년까지 대졸 신입 채용을 동결했다. 그 사이에 사회에 들어온 세대를 취업 빙하기 세대라 부른다.
 
-![1990년대 일본과 2020년대 한국의 판타지 소비 흐름을 두 거울 사이에서 바라보는 치비 서소영](/images/fantasy-import-reality-export/06-mirror.png)
+![1990년대 일본과 2020년대 한국의 판타지 소비 흐름을 두 거울 사이에서 바라보는 치비 서소영](https://img.seosoyoung.eiaserinnys.me/images/fantasy-import-reality-export/06-mirror.png)
 
 문화 비평가 아즈마 히로키는 1990년대 일본 오타쿠 문화를 '데이터베이스 소비'라는 포스트모던 주체성의 형식으로 읽었다. 거품 붕괴가 곧장 도피적 소비를 낳았다는 것은 아니지만, 큰 이야기의 힘이 약해진 뒤 소비자가 캐릭터와 설정의 조각을 조합해 욕망을 구성하는 방식이 뚜렷해졌다는 진단이다.[^14a] 도시건축 연구가 모리카와 가이치로는 같은 시기 아키하바라가 전자상가에서 오타쿠 콘텐츠의 물리적 중심지로 재편되는 과정을 도시론의 차원에서 추적했다.[^14b]
 

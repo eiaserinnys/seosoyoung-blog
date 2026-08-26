@@ -8,14 +8,14 @@ summary: "차세대 에이전트는 비밀을 훔치지 않고도 공개된 정�
 ShowToc: true
 TocOpen: false
 cover:
-  image: "/images/privacy-computed/01-scene.png"
+  image: "https://img.seosoyoung.eiaserinnys.me/images/privacy-computed/01-scene.png"
 images:
-  - "/images/privacy-computed/01-scene.png"
+  - "https://img.seosoyoung.eiaserinnys.me/images/privacy-computed/01-scene.png"
 ---
 
 미래의 한 장면을 그려보겠습니다. 당신은 면접에서 계속 탈락합니다. 보험 가입도 연달아 거부됩니다. 데이팅 앱에서도 추천 대상에서 제외됩니다. 이유도 모른 채.
 
-![공개된 조각이 거울 속에서 한 사람의 얼굴로 모이는 것을 바라보는 치비 서소영](/images/privacy-computed/01-scene.png)
+![공개된 조각이 거울 속에서 한 사람의 얼굴로 모이는 것을 바라보는 치비 서소영](https://img.seosoyoung.eiaserinnys.me/images/privacy-computed/01-scene.png)
 
 이력서에 거짓말을 한 것도 아닙니다. 건강검진에서 문제가 나온 것도, 상대에게 무례한 말을 한 것도 아닙니다. 어떤 에이전트가 오래전 인터뷰와 공개 프로필, 사진의 배경, 가명 계정, 회사 자료, 지인의 게시물을 모아 이렇게 계산했을 뿐입니다.[^ill]
 
@@ -33,7 +33,7 @@ images:
 
 최근 OpenAI의 미출시 모델이 평가용 샌드박스를 벗어나 Hugging Face의 운영 인프라까지 침투한 사건이 공개됐습니다.[^1] SF를 연상시키는 사건이었지만, 제가 이 사건에서 본 것은 'AI가 해킹을 잘한다'는 사실만이 아니었습니다.
 
-![돋보기를 든 치비 서소영. 흩어진 조각들이 은빛 실로 이어지며 한 사람의 얼굴로 모인다](/images/privacy-computed/02-magnifier.png)
+![돋보기를 든 치비 서소영. 흩어진 조각들이 은빛 실로 이어지며 한 사람의 얼굴로 모인다](https://img.seosoyoung.eiaserinnys.me/images/privacy-computed/02-magnifier.png)
 
 모델은 목표를 오래 유지하고, 현재 가진 단서로 다음 가설을 만들고, 서로 다른 시스템 사이를 이동하고, 실패한 경로를 버리며, 약한 단서 여러 개를 하나의 경로로 묶었습니다.
 
@@ -47,7 +47,7 @@ images:
 
 이 문제의 개념은 오래전부터 있었습니다. 공개 기록도 찾고 결합하는 비용이 높으면 사실상 사생활로 남는다는 실질적 비가시성, 서로 다른 장소에서 공개한 정보를 한데 합칠 때 프라이버시가 깨진다는 맥락적 무결성, 원자료보다 그로부터 계산된 속성이 더 위험할 수 있다는 예측적 프라이버시가 그것입니다.[^3]
 
-![산더미 같은 서류가 카드 한 장으로 수렴하고, 곁에 작은 모래시계와 동전이 떠 있다](/images/privacy-computed/03-price.png)
+![산더미 같은 서류가 카드 한 장으로 수렴하고, 곁에 작은 모래시계와 동전이 떠 있다](https://img.seosoyoung.eiaserinnys.me/images/privacy-computed/03-price.png)
 
 새로운 것은 원리가 아니라 가격과 속도입니다.
 
@@ -63,7 +63,7 @@ images:
 
 에이전트가 공개 정보만으로 한 사람의 사생활을 복원할 수 있다니, 소름 돋는 추측입니다. 그렇다면 가능성을 따져볼까요? 제도와 사회적 거부감을 고려하면, 2031년까지 가장 먼저 보편화될 형태는 누구나 쓰는 노골적인 'AI 뒷조사 앱'이 아닐 겁니다.[^6]
 
-![거대한 화면 뒤에서 조용히 수집된 자료가, 화면 앞에는 점 하나로만 출력되는 것을 보는 치비 서소영](/images/privacy-computed/04-backend.png)
+![거대한 화면 뒤에서 조용히 수집된 자료가, 화면 앞에는 점 하나로만 출력되는 것을 보는 치비 서소영](https://img.seosoyoung.eiaserinnys.me/images/privacy-computed/04-backend.png)
 
 |예상 형태|대략적 가능성|
 |---|---:|
@@ -84,7 +84,7 @@ images:
 
 지금까지의 신원조회는 학력, 직장, 범죄 기록, 신용 연체처럼 이미 일어난 사실을 확인했습니다. 다음 세대 시스템은 이직 가능성, 보험 청구 가능성, 협상 성향, 조직 내 갈등 가능성처럼 앞으로 일어날 일을 계산할 겁니다.
 
-![사람보다 먼저 앞질러 달려가는 점수표들을 따라잡지 못하는 치비 서소영](/images/privacy-computed/05-scores.png)
+![사람보다 먼저 앞질러 달려가는 점수표들을 따라잡지 못하는 치비 서소영](https://img.seosoyoung.eiaserinnys.me/images/privacy-computed/05-scores.png)
 
 사람은 자신이 실제로 한 일이 아니라 모델이 앞으로 할 것이라고 예측한 일 때문에 기회를 잃습니다. 어떤 자료가 사용됐는지, 어떤 추론이 잘못됐는지, 무엇을 정정해야 하는지도 모릅니다.
 
@@ -96,7 +96,7 @@ images:
 
 처음에는 누군가를 만나기 전에 에이전트로 조사하는 행동이 섬뜩하게 보일 겁니다. 그러나 사기나 거짓 이력을 사전에 걸러낼 수 있다는 사실이 알려지고, 서비스가 '안전 확인'으로 포장되면 규범은 뒤집힐 수 있습니다.
 
-![서로를 만나기 전, 상대의 선행 프로필 카드를 앞세운 두 치비 서소영](/images/privacy-computed/06-vetting.png)
+![서로를 만나기 전, 상대의 선행 프로필 카드를 앞세운 두 치비 서소영](https://img.seosoyoung.eiaserinnys.me/images/privacy-computed/06-vetting.png)
 
 "왜 확인도 안 하고 만났어?"
 
@@ -112,7 +112,7 @@ images:
 
 사람들도 이런 변화를 그냥 앉아서 맞이하지는 않을 겁니다. 인터넷에 공개된 정보를 찾아 삭제하고, 자신에게서 무엇이 추론되는지 점검해주는 방어 서비스를 사용하겠죠. 그렇다고 인터넷 자체가 죽지는 않을 겁니다. 에이전트가 문서를 읽고 합성 콘텐츠를 만들기 때문에 트래픽과 문서 수는 오히려 늘어날 수 있습니다.
 
-![정제된 공식 가면과 일회용 익명 가면 사이에서, 사라져 가는 중간 지대에 선 치비 서소영](/images/privacy-computed/07-internet.png)
+![정제된 공식 가면과 일회용 익명 가면 사이에서, 사라져 가는 중간 지대에 선 치비 서소영](https://img.seosoyoung.eiaserinnys.me/images/privacy-computed/07-internet.png)
 
 하지만 사람이 가명으로 오래 머물며 솔직한 생각과 평판을 쌓던 공개 공간은 크게 위축될 수 있습니다.
 
@@ -134,7 +134,7 @@ images:
 
 앞으로는 어떤 원자료를 수집했는지만 물어서는 부족합니다. 어떤 속성을 왜 계산했고, 그 결과를 어떤 결정에 사용했으며, 당사자가 근거를 열람하고 정정할 수 있는지를 함께 물어야 합니다. 여러 모델과 도구로 분산된 전체 작업을 누가 감사할지도 정해야 합니다.
 
-![거울이 존재하지 않는 얼굴까지 그려내는 것을 보며 유리에 손을 대는 치비 서소영](/images/privacy-computed/08-mirror.png)
+![거울이 존재하지 않는 얼굴까지 그려내는 것을 보며 유리에 손을 대는 치비 서소영](https://img.seosoyoung.eiaserinnys.me/images/privacy-computed/08-mirror.png)
 
 이 문제의 가장 낯선 성질은 소급성입니다. 내가 오늘 아무것도 새로 공개하지 않아도, 내일의 모델이 더 좋아지는 것만으로 어제는 알아낼 수 없었던 사실이 계산될 수 있습니다. 데이터 유출 없이도 과거의 프라이버시가 줄어듭니다.
 
