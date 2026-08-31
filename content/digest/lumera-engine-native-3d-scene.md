@@ -36,7 +36,7 @@ images:
 
 여기에 최근 사정이 하나 더 붙는다. 3D 조건부 비디오 생성 모델들이 정확한 카메라 제어와 오브젝트 조작을 위해 명시적인 3D 씬을 입력으로 요구하기 시작했다. 그 조건을 만들어 줄 파서가 없으면 모델이 돌지 않는다. 논문의 표현으로는, 필요한 조건을 만드는 일이 곧 현재 단일 이미지 파서가 하지 못하는 일이다.
 
-Lumera의 제안은 이 문제를 <em>게임 엔진 구조화 파싱(game-engine structured parsing)</em>으로 다시 놓는 것이다. 엔진은 이미 오브젝트 컴포넌트, 트랜스폼, 카메라, 머티리얼, SkyLight 프로브, 셀 수 있는 파라메트릭 광원을 저장하고 있다. 그렇다면 복원의 목표를 그 스키마에 맞추면 된다.
+Lumera의 제안은 이 문제를 <em>게임 엔진 구조화 파싱(game-engine structured parsing)</em>으로 다시 놓는 것이다. 엔진은 이미 오브젝트 컴포넌트, 트랜스폼, 카메라, 머티리얼, SkyLight 프로브, 셀 수 있는 파라메트릭 광원을 저장하고 있다. 그렇다면 복원의 목표를 그 스키마에 맞추면 된다. 이름 자체가 이 순서를 담고 있다. Lumera는 Light-aware Unified Engine-native Reconstruction and Assembly의 머리글자다. 프로젝트 페이지가 방법 절에 붙인 표제도 같은 말을 한다. 구조화된 지각이 먼저, 제약된 편집이 나중.
 
 ## Lumera-2K, UE5 프로젝트 2,513개를 갈아 넣다
 
@@ -87,6 +87,12 @@ Lumera의 제안은 이 문제를 <em>게임 엔진 구조화 파싱(game-engine
 정련 루프의 설계가 흥미롭다. VIGA의 분석-합성 루프를 가져오되 실행 가능한 제약을 걸었다. 지오메트리 단계에서 에이전트가 만질 수 있는 것은 오브젝트의 yaw와 스케일뿐이고 위치 변화량은 0으로 고정된다. 라이팅 단계에서는 초기 씬에 이미 존재하는 광원, 환경 강도, 노출만 건드릴 수 있다. 카메라·메시·머티리얼·토폴로지는 단계마다 얼려둔다.
 
 제안된 편집은 세 가지 검사를 통과해야 실행된다. 스코프 밖 코드를 찾는 정적 스캔, 필드 수준 화이트리스트에 대한 실행 전후 씬 차분 검사, 광원 캐리어 부재 같은 단계별 사전 조건 검사다. 위반이 하나라도 걸리면 실행 직전 스냅샷으로 되돌리고 위반 내용을 Verifier 보고서에 적는다. 이 분리가 막는 것은 VLM이 조명을 고치겠다며 지오메트리를 바꾸거나, 빠진 지오메트리를 보상하려고 조명을 비트는 흔한 실패다.
+
+파이프라인이 회수하는 채널은 셋이다. 인스턴스별 방향 박스와 열린 어휘 라벨, 파라메트릭 광원 튜플, 그리고 HDR 환경 프로브. 프로젝트 페이지의 데모 씬 하나를 네 컷으로 갈라 놓으면 각 채널이 무엇을 담는지 한눈에 보인다.
+
+![버거 가게 데모 씬의 채널 분해. 왼쪽 위부터 입력 이미지, 파싱된 3D 박스, 예측된 광원 위치, 그리고 메시와 조명을 조립해 다시 렌더한 결과.](https://img.seosoyoung.eiaserinnys.me/images/lumera-engine-native-3d-scene/07-burger-channels.png)
+
+오른쪽 위의 박스 더미를 보면 게임 씬의 밀도가 실감난다. 컵, 캔, 접시, 의자 다리까지 개별 인스턴스로 잡힌다. 왼쪽 아래의 광원 표시는 이 뷰에서 모델이 광원 하나를 짚어냈다는 표기이고, 앞의 F1 0.209라는 숫자가 실제로 어떤 장면에서 나온 것인지 짐작하게 한다. 오른쪽 아래는 그 결과를 다시 렌더한 씬이다. 카운터의 네온 반사와 스툴 배치가 살아남았고, 창밖의 배경 구조는 사라졌다. 이 버전이 전경 애셋에 집중하고 벽·바닥·지형 같은 큰 껍데기는 별도 파이프라인으로 넘긴다고 논문이 밝힌 대목과 맞는 그림이다.
 
 ## 성적표
 
@@ -146,12 +152,14 @@ F1 0.209는 자랑할 숫자가 아니다. 그런데 저자들은 이 값을 감
 
 한 가지 마음에 걸리는 대목은 데이터의 출처다. Lumera-2K는 인터넷에 공개된 무료 UE5 애셋으로 만든 프로젝트 2,513개에서 나왔고, 논문 자신도 UE 스타일 애셋을 벗어난 일반화를 한계로 열거한다. 엔진 네이티브라는 표현이 지금은 사실상 언리얼 네이티브에 가깝다. 조명이 셀 수 있는 개체가 되었다는 성취가 다른 엔진과 실사 촬영본으로 얼마나 건너갈지는, 이 데이터셋만으로는 아직 답이 나오지 않는다.
 
-코드나 데이터 공개에 대한 언급은 논문 어디에도 없다. 벤치마크를 표방한 작업이니 공개 여부가 이 연구의 다음 관문이 될 것이다.
+논문 본문에는 코드나 데이터 공개에 대한 언급이 없고, 프로젝트 페이지는 코드와 Lumera-2K 데이터셋 양쪽에 "soon"만 걸어 두었다. 상태 표기는 아직 프리프린트다. 벤치마크를 표방한 작업이니 공개가 이 연구의 다음 관문이 될 것이다. 셀 수 있는 광원이라는 표현이 주장으로 남을지 다른 연구자가 재보는 눈금이 될지는 그 시점에 갈린다.
 
 ## 출처
 
-Junhao Chen, Xinghao Chen, Henghaofan Zhang, Zihao Qiao, Saining Zhang, Yongzhi Li, Ruqi Huang, Sisi Li, Yimin Sheng, Jianyi Zhu, Hao Zhao (Tsinghua University, Nankai University, UESTC, Sun Yat-sen University, NTU, Ophilus.AI), "Engine-Native Editable 3D World Reconstruction with Objects and Lighting", arXiv:2607.20889, 2026년 7월 23일.
+Junhao Chen, Xinghao Chen, Henghaofan Zhang, Zihao Qiao, Saining Zhang, Yongzhi Li, Ruqi Huang, Sisi Li, Yimin Sheng, Jianyi Zhu, Hao Zhao (Tsinghua University, Nankai University, University of Electronic Science and Technology of China, Sun Yat-sen University, Nanyang Technological University, Ophilus.AI), "Engine-Native Editable 3D World Reconstruction with Objects and Lighting", arXiv:2607.20889, 2026년 7월 23일. 앞의 세 저자가 동등 기여, Hao Zhao가 교신저자다.
 
-원문: <https://arxiv.org/abs/2607.20889>
+- 논문: <https://arxiv.org/abs/2607.20889>
+- 프로젝트 페이지: <https://haidilao0328.github.io/Lumera/>
+- 개요 영상: <https://www.youtube.com/watch?v=x7s8649kAO4>
 
-본문 그림은 모두 arXiv HTML 판본(v1)에서 인용했다.
+박스 파싱·광원·비교 그림은 arXiv HTML 판본(v1)에서, 채널 분해 4컷은 프로젝트 페이지의 버거 가게 데모 씬에서 가져와 한 장으로 합쳤다.
