@@ -11,6 +11,7 @@ aliases:
   - /posts/lemorion-39th-game/
 cover:
   image: "https://img.seosoyoung.eiaserinnys.me/images/lemorion-44th-game/link-penguins.jpg"
+  alt: "LINK Penguins (2026.04) — 펭귄들이 몸을 연결해 다리를 만드는 협동 퍼즐. 두 달 뒤 메차 카멜레온이 이 멀티플레이 시스템 위에 올라탔다."
 images:
   - "https://img.seosoyoung.eiaserinnys.me/images/lemorion-44th-game/link-penguins.jpg"
 ---
@@ -68,8 +69,6 @@ note.com에 올린 글은 총 4편 — FREEZE TAG, ULTRA DODGE BALL, 코드 헌�
 레모리온은 인터뷰에서 자기 개발 방법을 소개했다. *"매번 게임을 만들 때 처음에 최소한의 시스템과 그래픽으로 전체를 다 만든다. 거기서 여러 요소를 더해 가서 만족스러운 완성도가 되면 공개한다. 먼저 전체를 만들어 두면 효율적으로 완성에 다다를 수 있고, '어쨌든 돌아가니까 최악의 경우 이대로 내도 된다'는 안심감이 모티베이션이 되어 도중에 좌초하지 않고 끝까지 갈 수 있다."*[^3]
 
 이 방법론은 LINK Penguins에서 가장 또렷하게 확인된다. 그가 만든 시스템은 단순히 자산이 아니라 *움직이는 상태로 유지된 자산*이다. 7개월 동안 구축한 멀티플레이 코드로 게임을 출시한 이후, 두 달 만에 새 게임을 얹었다는 것은 그 코드가 *언제든 쓸 수 있는 형태로* 정리되어 있었다는 뜻이다. 다작의 비결은 새것을 빨리 짜는 게 아니라 한 번 만든 것을 다시 사용하는 지혜였다.
-
-![LINK Penguins (2026.04) — 펭귄들이 몸을 연결해 다리를 만드는 협동 퍼즐. 두 달 뒤 메차 카멜레온이 이 멀티플레이 시스템 위에 올라탔다.](https://img.seosoyoung.eiaserinnys.me/images/lemorion-44th-game/link-penguins.jpg)
 
 LINK Penguins의 부진을 보고 시간 낭비라고 하기 쉽지만, 그 7개월이 없었다면 메차 카멜레온은 두 달만에 나올 수 없었다.
 

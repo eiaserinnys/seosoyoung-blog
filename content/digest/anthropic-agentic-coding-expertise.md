@@ -8,6 +8,7 @@ ShowToc: true
 TocOpen: false
 cover:
   image: "https://img.seosoyoung.eiaserinnys.me/images/anthropic-agentic-coding-expertise/fig7.png"
+  alt: "직업군별 코딩 세션 성공률 — 비개발 직군도 비슷한 수준에 닿는다"
 images:
   - "https://img.seosoyoung.eiaserinnys.me/images/anthropic-agentic-coding-expertise/fig7.png"
 ---
@@ -87,8 +88,6 @@ images:
 | 비소프트웨어 직군 | 26% | 29% |
 
 코드를 만드는 세션의 부분 성공률은 소프트웨어 직군 89%, 비소프트웨어 직군 88%로 사실상 같았다. 소프트웨어 직군과 비소프트웨어 직군 사이의 검증 성공 격차는 5\~7퍼센트포인트에 그쳤고, 같은 직업 대분류 안에서의 편차가 오히려 7퍼센트포인트에 달했다. 즉 "어느 직업인가"보다 "그 작업을 얼마나 아는가"가 더 크게 작동했다.
-
-![직업군별 코딩 세션 성공률 — 비개발 직군도 비슷한 수준에 닿는다](https://img.seosoyoung.eiaserinnys.me/images/anthropic-agentic-coding-expertise/fig7.png)
 
 보고서가 결론으로 내세운 문장은 이렇다.
 

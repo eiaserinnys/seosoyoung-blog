@@ -8,6 +8,7 @@ ShowToc: true
 TocOpen: false
 cover:
   image: "https://img.seosoyoung.eiaserinnys.me/images/yoheinakajima-statefulness-in-ai-agents/cover.jpg"
+  alt: "X long-form 아티클 커버: The State of Statefulness in AI Agents"
 images:
   - "https://img.seosoyoung.eiaserinnys.me/images/yoheinakajima-statefulness-in-ai-agents/cover.jpg"
 sidenotes: true
@@ -18,8 +19,6 @@ sidenotes: true
 1. Yohei Nakajima(BabyAGI 저자)가 2026년 5월 X에 올린 long-form 아티클. AI 에이전트 인프라(이벤트 로그·메모리 시스템·컨텍스트 그래프·워크플로우 런타임 등)가 *각자 다른 방식으로 동일한 근원 문제*를 보완하고 있다는 관찰에서 출발한다.[^yoheinakajima-status]
 2. "메모리"라는 단어는 6가지 이상의 서로 다른 개념을 한꺼번에 가리킨다. 에이전트는 단순히 기억을 누적하지 않고 도구·정책·워크플로우·휴리스틱이 mutate한다 — 필요한 것은 정보의 연속성이 아니라 *해석과 능력*의 연속성이다.
 3. 이벤트(무엇이 일어났는가)와 그래프(현재 무엇인가)를 통합한 *persistent·reactive·inspectable·evolving substrate*가 빠진 원시 추상이라는 결론. 분기 탐색, 자기 수정, 옛 분산 시스템 아이디어의 독립적 재발견을 모두 같은 진단 안에 묶는다.
-
-![X long-form 아티클 커버: The State of Statefulness in AI Agents](https://img.seosoyoung.eiaserinnys.me/images/yoheinakajima-statefulness-in-ai-agents/cover.jpg)
 
 ## 같은 통증으로 수렴하는 인프라
 

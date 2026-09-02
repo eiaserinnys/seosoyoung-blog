@@ -8,6 +8,7 @@ ShowToc: true
 TocOpen: false
 cover:
   image: "https://img.seosoyoung.eiaserinnys.me/images/creator-act-2026/illustration-axios.webp"
+  alt: "Illustration: Aida Amer/Axios"
 images:
   - "https://img.seosoyoung.eiaserinnys.me/images/creator-act-2026/illustration-axios.webp"
 ---
@@ -18,7 +19,6 @@ images:
 2. 핵심 장치는 네 가지다 — 화풍 보호 연방 표준, 플랫폼·개인 상대 민사 소송권, 플랫폼 safe harbor + notice·take-down 요건, 등록 데이터베이스 의무 면제(ordinary observer test).
 3. Adobe가 후원하고 빅테크 플랫폼도 대체로 우호적이라 한다. 이유는 단순하다 — 50개 주의 패치워크 규제보다 단일 연방 프레임이 따르기 쉽다.
 
-![Illustration: Aida Amer/Axios](https://img.seosoyoung.eiaserinnys.me/images/creator-act-2026/illustration-axios.webp)
 *Illustration: Aida Amer/Axios — 원문에서 인용.*
 
 ## State of play — 법안 개요

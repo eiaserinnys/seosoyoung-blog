@@ -8,6 +8,7 @@ ShowToc: true
 TocOpen: false
 cover:
   image: "https://img.seosoyoung.eiaserinnys.me/images/zitron-ai-is-slowing-down-2026/agentic-ai-app-shovelware.png"
+  alt: "Agentic AI가 모바일 앱 출시를 폭증시켰지만, 이 앱들이 실제 사용으로 이어진다는 신호는 없다. (FT, John Burn-Murdoch, Demirer et al. 2026 인용)"
 images:
   - "https://img.seosoyoung.eiaserinnys.me/images/zitron-ai-is-slowing-down-2026/agentic-ai-app-shovelware.png"
 ---
@@ -89,8 +90,6 @@ Zitron은 자기 글에서 이미 한 차례 정리해 둔 비유를 다시 꺼�
 > 보조금이 있는 정액제 구독에서는 모델의 실수(루프에 갇히거나 엉뚱한 일을 하는 것)가 "초기 기술의 자연스러운 잡음"으로 미뤄진다. 비용이 월 \$20, \$100, \$200이기 때문이다. AI 회사들은 이 비용 구조를 의도적으로 흐려 두었다. 사용자가 실수의 실제 비용을 보는 순간, 벌에 쏘인 듯이 비명을 지른다는 걸 알기 때문이다.
 
 ## 본문에 인용된 차트: 출시 폭증과 사용량 정체의 갈림
-
-![Agentic AI가 모바일 앱 출시를 폭증시켰지만, 이 앱들이 실제 사용으로 이어진다는 신호는 없다. (FT, John Burn-Murdoch, Demirer et al. 2026 인용)](https://img.seosoyoung.eiaserinnys.me/images/zitron-ai-is-slowing-down-2026/agentic-ai-app-shovelware.png)
 
 iOS 앱의 월간 출시 건수는 2025년 초 *Agentic AI* 도입 시점부터 가파르게 상승해 2026년 초 2024년 평균의 180% 수준에 도달한다. 같은 기간 *유의미한 사용량을 가진 앱*과 *앱 리뷰*는 정체하거나 하락한다. Zitron은 이를 "AI가 우리에게 준 건 *더 많은 앱*뿐, 대부분 쓸모없거나 안전하지 않은 슬롭웨어"라는 자기 주장의 시각적 근거로 인용한다.
 

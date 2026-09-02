@@ -8,6 +8,7 @@ ShowToc: true
 TocOpen: false
 cover:
   image: "https://img.seosoyoung.eiaserinnys.me/images/uber-tokenmaxxing-roi-2026/macdonald-collision-2022.jpg"
+  alt: "Andrew Macdonald, Uber COO, on Centre Stage during day one of Collision 2022 at Enercare Centre in Toronto, Canada."
 images:
   - "https://img.seosoyoung.eiaserinnys.me/images/uber-tokenmaxxing-roi-2026/macdonald-collision-2022.jpg"
 sidenotes: true
@@ -19,7 +20,6 @@ sidenotes: true
 2. 토큰 사용량이 늘었지만 "25% 더 유용한 소비자 기능이 만들어졌다"는 식의 비례 산출은 보이지 않는다 — 그 인과의 연결선이 아직 없다는 진단이다.
 3. CEO Khosrowshahi는 채용 둔화로 AI 비용을 상쇄하고 있으며, Big Tech의 *tokenmaxxing* 흐름과 달리 Duolingo는 'AI를 위한 AI 사용'을 평가에서 빼는 방향으로 후퇴했다.
 
-![Andrew Macdonald, Uber COO, on Centre Stage during day one of Collision 2022 at Enercare Centre in Toronto, Canada.](https://img.seosoyoung.eiaserinnys.me/images/uber-tokenmaxxing-roi-2026/macdonald-collision-2022.jpg)
 *Andrew Macdonald, Uber COO. (Sam Barnes/Sportsfile for Collision via Getty Images)*
 
 ## 발언의 배경 — Claude Code 예산 초과 사건

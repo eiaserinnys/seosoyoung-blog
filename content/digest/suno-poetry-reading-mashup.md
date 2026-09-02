@@ -8,6 +8,7 @@ ShowToc: true
 TocOpen: false
 cover:
   image: "https://img.seosoyoung.eiaserinnys.me/images/suno-poetry-reading-mashup/suno-mashup-setting.png"
+  alt: "Suno Mashup 지정 화면"
 images:
   - "https://img.seosoyoung.eiaserinnys.me/images/suno-poetry-reading-mashup/suno-mashup-setting.png"
 ---
@@ -61,8 +62,6 @@ images:
 <iframe width="100%" height="275" src="https://note.com/embed/sounds/d229b57936c29176b55f8ff42b7bc378" frameborder="0" scrolling="no" style="border:none;" title="Suno로 생성한 음악 트랙"></iframe>
 
 **3단계 — 두 트랙을 Mashup으로 융합.** ElevenLabs에서 만든 낭독 파일은 Upload Audio로 Suno에 올려서 지정한다. 이때 낭독의 가사를 Lyrics 칸에도 넣어 두면 출력이 안정된다.
-
-![Suno Mashup 지정 화면](https://img.seosoyoung.eiaserinnys.me/images/suno-poetry-reading-mashup/suno-mashup-setting.png)
 
 두 트랙을 Mashup한 결과가 아래다.
 

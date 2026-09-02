@@ -8,6 +8,7 @@ ShowToc: true
 TocOpen: false
 cover:
   image: "https://img.seosoyoung.eiaserinnys.me/images/thisisgame-broxtermann-game-influencer/broxtermann.jpg"
+  alt: "Georg Broxtermann — GameInfluencer 창립자"
 images:
   - "https://img.seosoyoung.eiaserinnys.me/images/thisisgame-broxtermann-game-influencer/broxtermann.jpg"
 ---
@@ -24,8 +25,6 @@ images:
 - **발신:** 디스이즈게임 (임상훈 기자, 2026-06-16 발행)
 - **인터뷰이:** Georg Broxtermann — GameInfluencer 창립자
 - **GameInfluencer:** 9,500명 이상의 검증된 크리에이터 네트워크와 2억 개 이상의 채널 데이터베이스를 가진 게임 특화 인플루언서 마케팅 에이전시. 첫 고객은 컴투스였다.
-
-![Georg Broxtermann — GameInfluencer 창립자](https://img.seosoyoung.eiaserinnys.me/images/thisisgame-broxtermann-game-influencer/broxtermann.jpg)
 
 ## 1편: 한국 게임은 서구에서 왜 자꾸 막히나
 

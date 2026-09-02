@@ -8,6 +8,7 @@ ShowToc: true
 TocOpen: false
 cover:
   image: "https://img.seosoyoung.eiaserinnys.me/images/ev-ai-three-stages-2026/stages-diagram.png"
+  alt: "AI 도입의 3단계 — 전구, 그룹 드라이브, 유닛 드라이브로 매핑"
 images:
   - "https://img.seosoyoung.eiaserinnys.me/images/ev-ai-three-stages-2026/stages-diagram.png"
 sidenotes: true
@@ -38,8 +39,6 @@ Uber COO Andrew Macdonald도 비슷한 결을 공개적으로 인정했다. "암
 1987년 Robert Solow는 "컴퓨터 시대는 도처에서 보이는데, 생산성 통계에서만 안 보인다"고 했다.[^solow-1987] 몇 년 뒤에는 통계에서도 보이기 시작했다. Paul David는 이것이 *일반목적기술(general-purpose technologies, GPT)* 의 일반적인 양상임을 정리했다.[^david-1990] GPT는 초기 단계에 측정된 생산성을 *오히려 끌어내린다* — 회사가 하드·소프트 노하우 양쪽에 보완 투자를 끝내야 비로소 효과가 나타나기 때문이다. Erik Brynjolfsson은 이를 *생산성 J-커브*라고 부른다.[^brynjolfsson-jcurve]
 
 이 글은 Paul David의 1990년 전기화 논문을 길게 끌어와 AI 단계를 매핑한다. 3단계 구조를 한 장으로 정리하면 다음과 같다.
-
-![AI 도입의 3단계 — 전구, 그룹 드라이브, 유닛 드라이브로 매핑](https://img.seosoyoung.eiaserinnys.me/images/ev-ai-three-stages-2026/stages-diagram.png)
 
 ### Stage 1 — The lightbulb (전구)
 

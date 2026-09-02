@@ -6,6 +6,7 @@ categories: ["모델과 연구"]
 summary: "Perceptron이 로봇과 에고센트릭 비디오를 정책 학습용 감독 데이터로 자동 변환하는 API를 공개했다. 사람 라벨링보다 10~15배 싸고, 지시문을 줄 때 기존 SOTA 대비 end-to-end F1을 77% 끌어올렸다고 밝혔다."
 cover:
   image: "https://img.seosoyoung.eiaserinnys.me/images/perceptron-egocentric-api/fig1-cost-quality-with-instruction.png"
+  alt: "WGO-Bench에서의 비용 대 품질 — 지시문 제공(왼쪽) / 무지시문(오른쪽). 점선이 파레토 프런티어."
 images:
   - "https://img.seosoyoung.eiaserinnys.me/images/perceptron-egocentric-api/fig1-cost-quality-with-instruction.png"
 ShowToc: true
@@ -44,8 +45,6 @@ Perceptron Egocentric은 날것의 로봇과 에고센트릭 비디오를 세 �
 
 1. **지시문을 함께 주는 프로필이 사람 어노테이션보다 10\~15배 싸다.** Macrodata는 사람 어노테이션 비용을 비디오 1시간당 약 $50으로 잡는다.
 2. **지시문을 함께 줄 때, Perceptron Egocentric은 Macrodata의 풀 파이프라인보다 싸면서 end-to-end F1을 77% 높인다.**
-
-![WGO-Bench에서의 비용 대 품질 — 지시문 제공(왼쪽) / 무지시문(오른쪽). 점선이 파레토 프런티어.](https://img.seosoyoung.eiaserinnys.me/images/perceptron-egocentric-api/fig1-cost-quality-with-instruction.png)
 
 *지시문을 줄 때(왼쪽) 파레토 프런티어는 저비용 끝의 WGO one-pass부터 고품질 끝의 Perceptron Egocentric까지 이어지고, WGO의 seeded-relabeling 파이프라인은 그 안쪽에 놓인다. 무지시문일 때(오른쪽) WGO seeded 변이가 저비용 끝을 잡지만, Perceptron의 두 프로필 모두 엄격히 더 높은 품질을 낸다.*
 

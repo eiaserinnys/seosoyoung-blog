@@ -9,6 +9,7 @@ ShowToc: true
 TocOpen: false
 cover:
   image: "https://img.seosoyoung.eiaserinnys.me/images/light-society-billion-agents/fig1-framework.png"
+  alt: "Light Society의 개념 구조. 에이전트, 환경, 이벤트 큐, 그리고 상태를 갱신하는 LLM 기반 시뮬레이션 연산으로 구성된다."
 images:
   - "https://img.seosoyoung.eiaserinnys.me/images/light-society-billion-agents/fig1-framework.png"
 ---
@@ -32,8 +33,6 @@ Light Society는 사회 시뮬레이션을 몇 개의 LLM 기반 연산자로 �
 ## 하나의 추상화: 연산자와 이벤트 큐
 
 프레임워크는 단일 추상화 위에 선다. 두 에이전트의 경제 게임이든 10억 노드 네트워크의 상호작용이든, 모든 사회적 상호작용을 "에이전트나 환경 상태를 갱신하고 이벤트 큐로 배차되는 LLM 연산"으로 표현한다.
-
-![Light Society의 개념 구조. 에이전트, 환경, 이벤트 큐, 그리고 상태를 갱신하는 LLM 기반 시뮬레이션 연산으로 구성된다.](https://img.seosoyoung.eiaserinnys.me/images/light-society-billion-agents/fig1-framework.png)
 
 구성 요소는 셋이다. 에이전트 집단, 환경, 그리고 시간 순으로 상호작용을 예약하는 이벤트 큐다. 각 에이전트는 변하지 않는 정적 프로필(인구통계, 성격), 시간에 따라 진화하는 내부 상태(기억, 신념, 목표), 관찰 가능한 외부 상태(위치, 사회적 연결)를 지닌다.
 

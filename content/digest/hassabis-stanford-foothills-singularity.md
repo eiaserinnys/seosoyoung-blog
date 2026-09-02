@@ -8,11 +8,10 @@ ShowToc: true
 TocOpen: false
 cover:
   image: "https://img.seosoyoung.eiaserinnys.me/images/hassabis-stanford-foothills-singularity/cover.jpg"
+  alt: "A Conversation with Demis Hassabis — Stanford GSB AI@GSB, 2026.06.03. 좌측 Jonathan Levin Stanford 총장, 우측 Demis Hassabis. (출처: Stanford Graduate School of Business YouTube)"
 images:
   - "https://img.seosoyoung.eiaserinnys.me/images/hassabis-stanford-foothills-singularity/cover.jpg"
 ---
-
-![A Conversation with Demis Hassabis — Stanford GSB AI@GSB, 2026.06.03. 좌측 Jonathan Levin Stanford 총장, 우측 Demis Hassabis. (출처: Stanford Graduate School of Business YouTube)](https://img.seosoyoung.eiaserinnys.me/images/hassabis-stanford-foothills-singularity/cover.jpg)
 
 ## 3줄 요약
 

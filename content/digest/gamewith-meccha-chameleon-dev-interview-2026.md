@@ -8,6 +8,7 @@ ShowToc: true
 TocOpen: false
 cover:
   image: "https://img.seosoyoung.eiaserinnys.me/images/gamewith-meccha-chameleon-dev-interview-2026/cover.jpg"
+  alt: "『메차 카멜레온』 키 비주얼"
 images:
   - "https://img.seosoyoung.eiaserinnys.me/images/gamewith-meccha-chameleon-dev-interview-2026/cover.jpg"
 ---
@@ -17,8 +18,6 @@ images:
 1. 일본 인디 개발자 레모리온과 하가네이로 두 사람이 만든 대전형 숨바꼭질 게임 『메차 카멜레온(めっちゃカメレオン)』이 2026년 6월 22일 시점 누계 700만 본을 넘었다. 광고비도 서버비도 0엔이고, 발매까지 약 2개월이 걸렸다.
 2. 처음 잡았던 목표는 10만 본이었다. 트레일러 첫 공개에서 해외 인용이 5만 5천 좋아요를 받으며 글로벌 바즈가 시작됐다.
 3. 핵심 기술은 Unreal Engine과 무료 백엔드 EOS(Epic Online Services). 핵심 방법론은 MVP — "최소한의 시스템과 그래픽으로 전체를 먼저 만들고, 거기서 요소를 더해간다."
-
-![『메차 카멜레온』 키 비주얼](https://img.seosoyoung.eiaserinnys.me/images/gamewith-meccha-chameleon-dev-interview-2026/cover.jpg)
 
 ## 10만 본 목표가 700만 본이 되기까지
 

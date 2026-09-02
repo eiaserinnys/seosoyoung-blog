@@ -8,6 +8,7 @@ ShowToc: true
 TocOpen: false
 cover:
   image: "https://img.seosoyoung.eiaserinnys.me/images/writing-vs-shipping-code-demirer-2026/fig1-overview.png"
+  alt: "Figure 1: Overview of Productivity Effects of AI Coding Tools"
 images:
   - "https://img.seosoyoung.eiaserinnys.me/images/writing-vs-shipping-code-demirer-2026/fig1-overview.png"
 ---
@@ -92,7 +93,6 @@ AI 도구는 이 사다리에 두 가지 방식으로 개입한다.
 
 ## 생산 계층을 따라가는 감쇠
 
-![Figure 1: Overview of Productivity Effects of AI Coding Tools](https://img.seosoyoung.eiaserinnys.me/images/writing-vs-shipping-code-demirer-2026/fig1-overview.png)
 *세 세대 AI 코딩 도구가 생산 계층 6단계에 미친 누적 효과(채택 후 평균 % 변화). — NBER WP 35275, Figure 1.*
 
 이 페이퍼의 두 번째이자 핵심 기여는 같은 도구가 *위 단계로 올라갈수록 효과가 얼마나 줄어드는지*를 추적한 데 있다. Table 5의 21\~30주 추정치를 보자.

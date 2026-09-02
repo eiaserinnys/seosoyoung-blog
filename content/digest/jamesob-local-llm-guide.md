@@ -9,6 +9,7 @@ ShowToc: true
 TocOpen: false
 cover:
   image: "https://img.seosoyoung.eiaserinnys.me/images/jamesob-local-llm-guide/rig.png"
+  alt: "저자의 리그 전체 모습"
 images:
   - "https://img.seosoyoung.eiaserinnys.me/images/jamesob-local-llm-guide/rig.png"
 ---
@@ -18,8 +19,6 @@ images:
 1. Bitcoin Core 컨트리뷰터 James O'Beirne이 SOTA LLM을 로컬에서 돌리기 위한 하드웨어·서빙 가이드를 GitHub 리포로 공개했다. 리포는 하루 만에 1,213 스타를 모았고, 저자는 서두에 "표를 제외한 이 README의 어떤 것도 AI가 쓰지 않았다"라고 밝혔다.
 2. 진입 지점을 두 개로 갈랐다. \~2,000달러 트랙은 RTX 3090 두 장으로 48GB VRAM을 만들어 Qwen3.6-27B와 whisper-large-v3 STT를 돌리고, \~40,000달러 트랙은 RTX PRO 6000 네 장으로 384GB VRAM을 만들어 거의 Opus급인 GLM-5.2-594B를 돌린다.
 3. 결과는 GPU 사이 P2P가 Gen4 라인레이트 그대로다. 27.5 GB/s 단방향, 50.4 GB/s 양방향, 레이턴시 0.37\~0.45 µs. 4× RTX PRO 6000 위에서 GLM-5.2가 초당 \~80 토큰, 컨텍스트 \~460k로 서빙된다.
-
-![저자의 리그 전체 모습](https://img.seosoyoung.eiaserinnys.me/images/jamesob-local-llm-guide/rig.png)
 
 ## 두 개의 예산, 두 개의 답
 

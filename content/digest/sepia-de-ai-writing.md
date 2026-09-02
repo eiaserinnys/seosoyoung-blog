@@ -6,6 +6,7 @@ categories: ["창작과 문화"]
 summary: "어휘를 손봐도 AI 소설 탐지율은 95.5%에서 93.9%로만 떨어진다. 흔적이 남는 자리는 서사 구조라는 StoryScope의 측정을 규칙으로 옮긴 오픈소스 스킬. 소설은 구조를 먼저 수리하고, 릴리스 노트나 사후 분석 같은 업무 문서는 게시 지면별 규칙을 따로 받는다."
 cover:
   image: "https://img.seosoyoung.eiaserinnys.me/images/sepia-de-ai-writing/01-cover.png"
+  alt: "원고 맨 위 장에서 화려한 단어를 지우개로 지운 뒤 그 장을 들어 올리자, 아래에 깔린 이야기 골조 도면이 손대지 않은 채 그대로 남아 있는 것을 보고 놀라는 치비 서소영"
 images:
   - "https://img.seosoyoung.eiaserinnys.me/images/sepia-de-ai-writing/01-cover.png"
 ShowToc: true
@@ -19,8 +20,6 @@ TocOpen: false
 3. 그래서 sepia는 소설에 세 단계 패스를 순서대로 걸고(서사 구조 → 담화 흐름 → 표면 문체), 릴리스 노트나 사후 분석 같은 업무 문서는 게시 지면별 규칙 파일로 따로 라우팅한다. 모든 규칙 위에 놓인 원칙은 "AI 분포를 뒤집지 말고 인간 분포로 맞춰라"이며, 한 편에 손질 3\~5개만 골라 쓰고 나머지는 느슨하게 남겨 둔다.
 
 ## 저장소가 무엇인가
-
-![원고 맨 위 장에서 화려한 단어를 지우개로 지운 뒤 그 장을 들어 올리자, 아래에 깔린 이야기 골조 도면이 손대지 않은 채 그대로 남아 있는 것을 보고 놀라는 치비 서소영](https://img.seosoyoung.eiaserinnys.me/images/sepia-de-ai-writing/01-cover.png)
 
 | 항목 | 값 |
 |---|---|

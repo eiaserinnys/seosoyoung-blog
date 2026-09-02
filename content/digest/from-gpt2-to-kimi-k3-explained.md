@@ -9,6 +9,7 @@ ShowToc: true
 TocOpen: false
 cover:
   image: "https://img.seosoyoung.eiaserinnys.me/images/from-gpt2-to-kimi-k3-explained/kimi-linear-k3-architecture.jpg"
+  alt: "Kimi Linear(왼쪽)와 Kimi K3(가운데·오른쪽)의 전체 아키텍처. K3는 KDA 세 레이어 + MLA 한 레이어로 된 매크로사이클을 23번 쌓고, Gated MLA·잠재 MoE·AttnRes를 더한다."
 images:
   - "https://img.seosoyoung.eiaserinnys.me/images/from-gpt2-to-kimi-k3-explained/kimi-linear-k3-architecture.jpg"
 ---
@@ -112,8 +113,6 @@ DeltaNet 트랜스포머와 나란히 놓으면 Kimi Linear는 세 가지를 바
 ## Kimi K3 — 하이브리드의 완성
 
 최종적으로 Kimi K3의 언어 백본은 위 Kimi Linear와 닮았다. 4개 레이어짜리 매크로사이클 23개로 이루어진다. 각 매크로사이클에서 세 레이어는 Kimi Delta Attention(KDA)을, 네 번째는 MLA를 쓴다. 첫 레이어는 조밀(dense) 피드포워드 네트워크를, 나머지 모든 레이어는 잠재 공간 MoE를 쓴다.
-
-![Kimi Linear(왼쪽)와 Kimi K3(가운데·오른쪽)의 전체 아키텍처. K3는 KDA 세 레이어 + MLA 한 레이어로 된 매크로사이클을 23번 쌓고, Gated MLA·잠재 MoE·AttnRes를 더한다.](https://img.seosoyoung.eiaserinnys.me/images/from-gpt2-to-kimi-k3-explained/kimi-linear-k3-architecture.jpg)
 
 Kimi Linear에서 달라진 점은 언뜻 소소해 보인다.
 

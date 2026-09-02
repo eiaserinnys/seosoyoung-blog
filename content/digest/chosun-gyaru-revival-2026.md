@@ -8,6 +8,7 @@ ShowToc: true
 TocOpen: false
 cover:
   image: "https://img.seosoyoung.eiaserinnys.me/images/chosun-gyaru-revival-2026/03-recienne-portrait.jpg"
+  alt: "리센느 미나미의 갸루 부캐 클로즈업. 본 다이제스트 커버 이미지로도 채택했다. /조선일보·X"
 images:
   - "https://img.seosoyoung.eiaserinnys.me/images/chosun-gyaru-revival-2026/03-recienne-portrait.jpg"
 sidenotes: true
@@ -22,8 +23,6 @@ sidenotes: true
 ## 한국에서 일어난 일
 
 지난 18일 엠넷 '엠카운트다운'에 출연한 걸그룹 리센느는 멤버 전원이 짙은 눈 화장과 화려한 머리 장식, 과장된 분장으로 무대를 채웠다.[^1] 2년 전 발매곡 '러브 어택'(LOVE ATTACK)을 다시 부른 자리였다. 한국인 원이와 일본인 미나미가 갸루식 분장과 말투를 선보인 유튜브 영상이 화제가 되면서 노래도 역주행했다. 차트 진입은 지난 3월 말, 6월 22일 기준 멜론 톱100 5위. 원이의 고향 거제에서 미나미가 나른한 비음으로 외친 "거제 야\~호!"가 젊은 층의 필수 밈이 됐다.
-
-![리센느 미나미의 갸루 부캐 클로즈업. 본 다이제스트 커버 이미지로도 채택했다. /조선일보·X](https://img.seosoyoung.eiaserinnys.me/images/chosun-gyaru-revival-2026/03-recienne-portrait.jpg)
 
 ![갸루 부캐로 인기를 끈 리센느 미나미의 전신 컷. /조선일보·X](https://img.seosoyoung.eiaserinnys.me/images/chosun-gyaru-revival-2026/01-minami-cover.jpg)
 

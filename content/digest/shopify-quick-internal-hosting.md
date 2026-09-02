@@ -8,6 +8,7 @@ ShowToc: true
 TocOpen: false
 cover:
   image: "https://img.seosoyoung.eiaserinnys.me/images/shopify-quick-internal-hosting/arch.jpg"
+  alt: "Quick 기본 아키텍처"
 images:
   - "https://img.seosoyoung.eiaserinnys.me/images/shopify-quick-internal-hosting/arch.jpg"
 ---
@@ -29,8 +30,6 @@ Quick은 이 문제에 대한 답이다. HTML과 에셋이 든 폴더를 올리�
 ## 아키텍처: FTP 시절의 단순함
 
 출발점은 "HTML 파일을 어딘가에 두고 서빙하는 가장 단순한 방법"이었다.
-
-![Quick 기본 아키텍처](https://img.seosoyoung.eiaserinnys.me/images/shopify-quick-internal-hosting/arch.jpg)
 
 - 모든 "사이트"는 Google Cloud Storage 버킷 안의 폴더 하나다.
 - 앞단에 경량 NGINX 서버를 두고, 와일드카드 설정으로 `mysite.quick.shopify.io`가 `mysite` 폴더에 바로 매핑된다.

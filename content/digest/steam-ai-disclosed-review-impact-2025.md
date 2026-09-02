@@ -8,6 +8,7 @@ ShowToc: true
 TocOpen: false
 cover:
   image: "https://img.seosoyoung.eiaserinnys.me/images/steam-ai-disclosed-review-impact-2025/review-rating-distribution.jpg"
+  alt: "100건 이상 리뷰 게임의 호평률 분포"
 images:
   - "https://img.seosoyoung.eiaserinnys.me/images/steam-ai-disclosed-review-impact-2025/review-rating-distribution.jpg"
 ---
@@ -49,8 +50,6 @@ Valve는 2023년에는 타사 저작권 침해 우려와 학습 데이터 관련
 | 리뷰 100건 미만 비율 | 91.7% | 94.9% |
 
 100건 이상 리뷰를 모은 게임의 호평률 중앙값도 AI 사용 84.6% / AI 비사용 88.3%로 차이가 나타났다.
-
-![100건 이상 리뷰 게임의 호평률 분포](https://img.seosoyoung.eiaserinnys.me/images/steam-ai-disclosed-review-impact-2025/review-rating-distribution.jpg)
 
 ### 인과 모델 적용
 

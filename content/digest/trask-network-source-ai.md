@@ -8,6 +8,7 @@ ShowToc: true
 TocOpen: false
 cover:
   image: "https://img.seosoyoung.eiaserinnys.me/images/trask-network-source-ai/cover.jpeg"
+  alt: "OpenRouter 앙상블이 Fable/Mythos를 절반 가격에 능가"
 images:
   - "https://img.seosoyoung.eiaserinnys.me/images/trask-network-source-ai/cover.jpeg"
 ---
@@ -23,8 +24,6 @@ images:
 저자는 모두가 가정해 온 한 가지 통념을 정면으로 반박한다. AI의 미래가 더 적은 플레이어가 들고 있는 더 큰 모델로 갈 것이라는 가정이다.
 
 > Everyone I've talked to in AI has always assumed that the future of AI is bigger models held by a smaller number of players. (...) But they couldn't be more wrong, and now the numbers are showing it. Networks of smaller AI models are outperforming every frontier AI system (Fable/Mythos included) on speed, accuracy, and cost.
-
-![OpenRouter 앙상블이 Fable/Mythos를 절반 가격에 능가](https://img.seosoyoung.eiaserinnys.me/images/trask-network-source-ai/cover.jpeg)
 
 저자는 1960년대 IBM, 미국 정부, Bell Telephone, Bell Labs 모두가 *메인프레임* 컴퓨터에 대해 틀렸던 것처럼, 오늘날 모두가 *중앙집중형 AI*에 대해 틀리고 있다고 본다. 미래는 오픈소스 AI도 클로즈드소스 AI도 아니다. <em>네트워크 소스 AI(network-source AI)</em>다.
 

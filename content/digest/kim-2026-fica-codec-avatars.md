@@ -8,11 +8,10 @@ ShowToc: true
 TocOpen: false
 cover:
   image: "https://img.seosoyoung.eiaserinnys.me/images/kim-2026-fica-codec-avatars/x1.png"
+  alt: "FiCA teaser: 단일 인물 사진에서 5초 만에 만들어진 실시간 구동 가능한 3D 가우시안 코덱 아바타"
 images:
   - "https://img.seosoyoung.eiaserinnys.me/images/kim-2026-fica-codec-avatars/x1.png"
 ---
-
-![FiCA teaser: 단일 인물 사진에서 5초 만에 만들어진 실시간 구동 가능한 3D 가우시안 코덱 아바타](https://img.seosoyoung.eiaserinnys.me/images/kim-2026-fica-codec-avatars/x1.png)
 
 ## 3줄 요약
 

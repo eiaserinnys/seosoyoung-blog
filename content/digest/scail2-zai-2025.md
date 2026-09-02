@@ -8,6 +8,7 @@ ShowToc: true
 TocOpen: false
 cover:
   image: "https://img.seosoyoung.eiaserinnys.me/images/scail2-zai-2025/teaser.png"
+  alt: "SCAIL-2 teaser"
 images:
   - "https://img.seosoyoung.eiaserinnys.me/images/scail2-zai-2025/teaser.png"
 ---
@@ -17,8 +18,6 @@ images:
 1. Z.ai(zai-org)가 SCAIL-2를 공개했다. 14B 비디오 디퓨전 모델 기반의 캐릭터 애니메이션 프레임워크로, 추론 코드·체크포인트·기술 보고서·프로젝트 페이지가 모두 공개돼 있다.
 2. 핵심 주장은 *중간 표현 의존을 끊는다* 한 가지다. 포즈 스켈레톤, 인페인팅 마스크 같은 intermediate 대신 driving 비디오의 latent를 시퀀스에 직접 결합하여 motion을 옮긴다. 다중 캐릭터 상호작용에서 깊이가 모호한 스켈레톤 겹침이 사라지고, body shape 제약도 풀린다.
 3. End-to-end 데이터가 부족한 문제는 *합성 파이프라인*으로 푼다. SCAIL-Preview, Wan-Animate, MoCha를 데이터 제너레이터로 묶어 MotionPair-60K를 만들고, 손가락처럼 미세 영역의 합성 편향은 Bias-Aware DPO로 보정했다. 동물 driving과 egocentric driving 같은 제로샷 일반화가 emergent하게 따라온다.
-
-![SCAIL-2 teaser](https://img.seosoyoung.eiaserinnys.me/images/scail2-zai-2025/teaser.png)
 
 ## 무엇을 푸는 모델인가
 

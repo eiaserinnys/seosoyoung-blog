@@ -9,6 +9,7 @@ ShowToc: true
 TocOpen: false
 cover:
   image: "https://img.seosoyoung.eiaserinnys.me/images/nguyen-deductive-circuits-2026/x1.png"
+  alt: "프레임워크 개요. 연역 추론 문제, 추론 그래프, 그리고 인과 매개 분석 흐름"
 images:
   - "https://img.seosoyoung.eiaserinnys.me/images/nguyen-deductive-circuits-2026/x1.png"
 ---
@@ -39,8 +40,6 @@ images:
 기존 회로 분석 연구들은 *단일 입출력 과제*(예: 산술 추론, 삼단논법, 명제 논리)의 회로만 찾아왔다. 이 논문은 한 걸음 더 나아가 **다단계 추론 과정 전체**의 회로를 분해하려 한다. 그 위에 Chain-of-Thought(CoT) 출력을 얹어, 단순한 정답 토큰 하나가 아니라 *추론 경로를 따라가는 행위* 자체의 구조를 본다.
 
 이를 위해 연역 추론 문제를 **추론 그래프 위의 그래프 순회**로 형식화한다. 사실(facts)과 규칙(rules)이 주어졌을 때, 초기 사실들로부터 질의 노드까지의 유효한 경로를 BFS로 탐색하는 흐름이다. CoT는 이 순회 단계를 자연어로 풀어쓰는 행위가 된다.
-
-![프레임워크 개요. 연역 추론 문제, 추론 그래프, 그리고 인과 매개 분석 흐름](https://img.seosoyoung.eiaserinnys.me/images/nguyen-deductive-circuits-2026/x1.png)
 
 ## 발견 1. 불확실한 토큰이 추론을 조정한다
 

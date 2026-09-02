@@ -8,6 +8,7 @@ ShowToc: true
 TocOpen: false
 cover:
   image: "https://img.seosoyoung.eiaserinnys.me/images/tang-nevo-neural-video-synthesis/fig1.png"
+  alt: "Figure 1. NEvo 프레임워크 개요와 결과 요약"
 images:
   - "https://img.seosoyoung.eiaserinnys.me/images/tang-nevo-neural-video-synthesis/fig1.png"
 ---
@@ -17,8 +18,6 @@ images:
 1. EPFL NeuroAI 랩과 존스홉킨스가 2026년 7월 공개한 **NEvo**는 뇌 시각 피질의 특정 영역(FFA·PPA·MT·EBA·pSTS 등)을 가장 강하게 자극할 2초짜리 동영상을 진화 검색으로 만들어내는 프레임워크다. fMRI 인코딩 모델이 fitness 함수 역할을 한다.
 2. 프롬프트 유전자 → 이미지 → 영상의 2단계 검색으로, 자연 영상 상위 **99.8%**, 손수 설계한 로컬라이저 영상의 **95.8%** 수준까지 예측 활성을 끌어올렸다. 그래디언트 기반 이전 방법(BrainDiVE)은 동적 세팅에서 자연 영상 평균의 24%까지밖에 도달하지 못했다.
 3. 이 방법으로 측면 시각 경로(V1 → MT → EBA → pSTS → aSTS)를 훑으면 저수준 텍스처 → 신체 움직임 → 조율된 조인트 액션 → 얼굴 대 얼굴 사회적 접촉의 매끄러운 그라디언트가 자동으로 드러난다.
-
-![Figure 1. NEvo 프레임워크 개요와 결과 요약](https://img.seosoyoung.eiaserinnys.me/images/tang-nevo-neural-video-synthesis/fig1.png)
 
 ## NEvo가 하는 일
 

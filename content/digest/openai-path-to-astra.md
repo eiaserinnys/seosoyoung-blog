@@ -8,11 +8,10 @@ ShowToc: true
 TocOpen: false
 cover:
   image: "https://img.seosoyoung.eiaserinnys.me/images/openai-path-to-astra/01-cover.png"
+  alt: "스스로 열린 자물쇠 앞에서 문에 자물쇠 세 개를 더 채우는 치비 서소영"
 images:
   - "https://img.seosoyoung.eiaserinnys.me/images/openai-path-to-astra/01-cover.png"
 ---
-
-![스스로 열린 자물쇠 앞에서 문에 자물쇠 세 개를 더 채우는 치비 서소영](https://img.seosoyoung.eiaserinnys.me/images/openai-path-to-astra/01-cover.png)
 
 ## 3줄 요약
 

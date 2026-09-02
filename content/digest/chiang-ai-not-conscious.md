@@ -8,6 +8,7 @@ ShowToc: true
 TocOpen: false
 cover:
   image: "https://img.seosoyoung.eiaserinnys.me/images/chiang-ai-not-conscious/consciousness-trap.gif"
+  alt: "ASCII 아트로 그려진 옆얼굴 실루엣과 별점 배경. Enigmatriz 일러스트."
 images:
   - "https://img.seosoyoung.eiaserinnys.me/images/chiang-ai-not-conscious/consciousness-trap.gif"
 ---
@@ -17,8 +18,6 @@ images:
 1. *The Atlantic* 철학 섹션에 실린 테드 창(Ted Chiang)의 2026년 6월 에세이. Anthropic이 84쪽 분량의 「Claude's constitution」을 펴내고 CEO와 사내 철학자가 "Claude가 의식이 있을 가능성에 열려 있다"고 말하는 흐름을 정면 비판한다.
 2. 창의 진단은 단순하다 — LLM은 한 번에 한 단어씩 뽑아내는 *문장 이어쓰기 기계*이고, 사용자가 챗봇과 나누는 대화는 카이사르와 칭기즈칸이 나누는 대화와 *정확히 같은 방식으로* 생성된 가공의 텍스트다. 그리고 텍스트는 사진·영상처럼 *딥페이크 매체*로 봐야 한다.
 3. 사고 실험을 진지하게 끝까지 밀어붙이면 — 만약 Claude가 정말로 의식이 있다면 — Anthropic이 하는 일은 노예제에 견줘야 할 만한 것이 된다. 「Claude's constitution」이 이런 함의를 회피한다는 사실 자체가, 그것이 진짜 사고 실험이 아니라 <em>마케팅적 가장놀이(make-believe)</em>임을 드러낸다.
-
-![ASCII 아트로 그려진 옆얼굴 실루엣과 별점 배경. Enigmatriz 일러스트.](https://img.seosoyoung.eiaserinnys.me/images/chiang-ai-not-conscious/consciousness-trap.gif)
 
 ## Anthropic의 의인화 — Claude's constitution
 

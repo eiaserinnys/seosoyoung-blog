@@ -8,6 +8,7 @@ ShowToc: true
 TocOpen: false
 cover:
   image: "https://img.seosoyoung.eiaserinnys.me/images/graph-engineering-with-claude/cover.jpg"
+  alt: "14단계 로드맵의 표지 도식"
 images:
   - "https://img.seosoyoung.eiaserinnys.me/images/graph-engineering-with-claude/cover.jpg"
 ---
@@ -17,8 +18,6 @@ images:
 1. 0xCodez가 X에 올린 전체 강의 "Graph Engineering with Claude"의 정리다. 다단계 에이전트를 만들면 대부분 한 줄로 줄을 세우는데, 그 단계 중 절반은 앞 단계를 기다릴 이유가 없다는 관찰에서 출발한다.
 2. 일의 모양 자체가 그래프라는 관점으로 다시 그린다. 노드가 생각하고 엣지가 결과를 나른다. Claude Code의 dynamic workflows는 Claude가 평범한 자바스크립트 오케스트레이션 스크립트를 짜고, 그 스크립트가 서브에이전트 함대를 부린다. 조율 자체는 코드라서 모델 토큰이 들지 않는다.
 3. 노드와 엣지 정의부터 팬아웃·팬인, 라우터, 검증자, 격리, 수렴하는 순환, 모델 티어링, 토폴로지 선택, 그리고 Claude가 그래프를 스스로 그리는 self-routing까지 14단계로 쌓아 올린다.
-
-![14단계 로드맵의 표지 도식](https://img.seosoyoung.eiaserinnys.me/images/graph-engineering-with-claude/cover.jpg)
 
 ## 왜 그래프인가
 

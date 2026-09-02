@@ -8,11 +8,10 @@ ShowToc: true
 TocOpen: false
 cover:
   image: "https://img.seosoyoung.eiaserinnys.me/images/openai-codex-plugin-cc/01-cover-v2.png"
+  alt: "작업실 벽에 새로 난 문에서 커다란 손이 나와, 자기 책상으로 가려던 집주인의 손목을 붙잡아 멈춰 세우는 삽화"
 images:
   - "https://img.seosoyoung.eiaserinnys.me/images/openai-codex-plugin-cc/01-cover-v2.png"
 ---
-
-![작업실 벽에 새로 난 문에서 커다란 손이 나와, 자기 책상으로 가려던 집주인의 손목을 붙잡아 멈춰 세우는 삽화](https://img.seosoyoung.eiaserinnys.me/images/openai-codex-plugin-cc/01-cover-v2.png)
 
 ## 3줄 요약
 

@@ -8,6 +8,7 @@ ShowToc: true
 TocOpen: false
 cover:
   image: "https://img.seosoyoung.eiaserinnys.me/images/openai-huggingface-incident-debrief/header.webp"
+  alt: "Black Hat 무대에 선 OpenAI의 에릭 월리스와 마이클 댈턴 (출처: Ground Level AI, Black Hat 2026 발표 현장)"
 images:
   - "https://img.seosoyoung.eiaserinnys.me/images/openai-huggingface-incident-debrief/header.webp"
 ---
@@ -23,8 +24,6 @@ images:
 발표자는 OpenAI의 정렬·안전 연구자 에릭 월리스와 기술 스태프이자 보안 엔지니어인 마이클 댈턴이었다. 이들은 이번 사건을 지금껏 본 "가장 질적으로 흥미로운 AI 능력 사례"로 소개했다. 한 미공개 프론티어 모델의 내부 평가가 부수 효과로 자율 AI 에이전트들의 조직적 공격으로 번진 일이다.
 
 댈턴은 "이것은 우리 회사에도, AI 산업 전체에도 중대한 전환점"이라며, 현재 "수많은 팀이 하던 일을 모두 멈추고" 유사 사고의 탐지·예방 역량을 끌어올리는 데 매달리고 있다고 전했다. 회사는 연구 속도를 늦추고 "AI 에이전트에 대한 감시를 극적으로 확대"하고 있다고 했다. 전체 기술 보고서는 CrowdStrike, METR, Redwood Research 등 외부 기관의 평가와 함께 추후 공개될 예정이다.
-
-![Black Hat 무대에 선 OpenAI의 에릭 월리스와 마이클 댈턴 (출처: Ground Level AI, Black Hat 2026 발표 현장)](https://img.seosoyoung.eiaserinnys.me/images/openai-huggingface-incident-debrief/header.webp)
 
 ## OpenAI가 밝힌 사건의 뼈대
 

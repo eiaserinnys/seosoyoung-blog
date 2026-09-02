@@ -8,6 +8,7 @@ ShowToc: true
 TocOpen: false
 cover:
   image: "https://img.seosoyoung.eiaserinnys.me/images/krehel-less-is-more/tweet-diff.png"
+  alt: "+688 추가, −3,073 삭제를 보여주는 diff 통계. \"이게 바로 리팩토링이 제대로 됐다는 신호\"라는 동료의 트윗"
 images:
   - "https://img.seosoyoung.eiaserinnys.me/images/krehel-less-is-more/tweet-diff.png"
 ---
@@ -47,8 +48,6 @@ macOS에서 우클릭할 때 나오는 컨텍스트 메뉴를 생각해 보자. 
 ## 팀의 기준을 에이전트가 쓸 수 있는 형태로
 
 같은 논리가 엔지니어링에도 적용된다. 누구나 많은 코드를 쓸 수 있게 된 지금, 엔지니어의 산출물을 코드 양으로 평가하던 시절은 지나갔다. 저자가 속한 Interfere에서는 최소한의 코드로 목적을 달성한 풀 리퀘스트를 축하한다.
-
-![+688 추가, −3,073 삭제를 보여주는 diff 통계. "이게 바로 리팩토링이 제대로 됐다는 신호"라는 동료의 트윗](https://img.seosoyoung.eiaserinnys.me/images/krehel-less-is-more/tweet-diff.png)
 
 코드를 리뷰하고, 좋은 코드와 나쁜 코드를 구별하고, 비판적으로 사고하는 능력이 코드를 작성하는 능력보다 중요해지고 있다. 동시에 더 희소해지고 있다. 지식과 이해 없이 곧장 만들기부터 시작하면, 에이전트의 산출물이 좋은지 나쁜지 가려내기 어렵고, 따라서 좋은 방향으로 조종하기도 어렵다.
 

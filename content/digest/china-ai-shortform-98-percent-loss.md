@@ -8,11 +8,10 @@ ShowToc: true
 TocOpen: false
 cover:
   image: "https://img.seosoyoung.eiaserinnys.me/images/china-ai-shortform-98-percent-loss/01-cover.png"
+  alt: "수북이 쌓인 세로 화면 더미 앞에서 하늘색으로 빛나는 한 장만 골라 든 치비 서소영"
 images:
   - "https://img.seosoyoung.eiaserinnys.me/images/china-ai-shortform-98-percent-loss/01-cover.png"
 ---
-
-![수북이 쌓인 세로 화면 더미 앞에서 하늘색으로 빛나는 한 장만 골라 든 치비 서소영](https://img.seosoyoung.eiaserinnys.me/images/china-ai-shortform-98-percent-loss/01-cover.png)
 
 ## 3줄 요약
 

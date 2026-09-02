@@ -8,6 +8,7 @@ ShowToc: true
 TocOpen: false
 cover:
   image: "https://img.seosoyoung.eiaserinnys.me/images/yozm-ai-adoption-unsexy-success/ai-maturity-ladder.png"
+  alt: "AI 성숙도 사다리. L1 개인 노하우에서 L5 조직 근간 변화까지 5개 층의 의존성 적층 구조. 출처: Turing Post / 요즘IT 재가공"
 images:
   - "https://img.seosoyoung.eiaserinnys.me/images/yozm-ai-adoption-unsexy-success/ai-maturity-ladder.png"
 sidenotes: true
@@ -28,8 +29,6 @@ sidenotes: true
 진짜 드라마는 사다리의 *아래 칸*(개인 노하우·파편적 실험)이나 *위 칸*(자율 에이전트·적응형 워크플로우)이 아니라 그 사이의 **'허리' 구간**에서 일어난다. 업무를 기계가 이해할 수 있게 명문화하고, 데이터를 믿을 수 있을 만큼 정제하고, 의사결정 구조를 체계화하는 단계 — 이 허리가 AI 도입을 현실로 만드느냐 고사시키느냐를 가른다.
 
 부서별로 성숙도가 어긋나는 *불균형은 정상*이다. 엔지니어링은 앞서가는데 재무는 제자리, 마케팅은 폭주하는데 법무는 제동을 거는 그림이다. 시스템 구축은 언제나 제도보다 빠르기 때문이라는 진단이다. 따라서 의미 있는 질문은 "우리는 몇 단계인가"가 아니라 "어느 부분이 발목을 잡고 있는가"가 된다.
-
-![AI 성숙도 사다리. L1 개인 노하우에서 L5 조직 근간 변화까지 5개 층의 의존성 적층 구조. 출처: Turing Post / 요즘IT 재가공](https://img.seosoyoung.eiaserinnys.me/images/yozm-ai-adoption-unsexy-success/ai-maturity-ladder.png)
 
 ## L1 → L2: 가장 고통스러운 구간 — 조직이 '데이터로 읽히게' 만들기
 

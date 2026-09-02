@@ -6,6 +6,7 @@ categories: ["모델과 연구"]
 summary: "FlavorGraph 후속작. 414만 다국어 레시피로 학습한 세 자매 식재료 임베딩(Cooc·Core·Chem)을 통해 '화학 vs 레시피-맥락'을 조정 가능한 설계 축으로 만들고, 페어링과 SLERP 회전이라는 두 연산자로 임베딩 공간을 항해한다."
 cover:
   image: "https://img.seosoyoung.eiaserinnys.me/images/epicure-emergent-geometry-2026/figure1-cuisine-umap.png"
+  alt: "세 모델의 1,790개 식재료를 2-D UMAP으로 투영하고 요리 거대권역별로 색칠한 산점도. 동아시아·남아시아·라틴아메리카·지중해 클러스터가 세 모델 모두에서 뚜렷이 분리된다."
 images:
   - "https://img.seosoyoung.eiaserinnys.me/images/epicure-emergent-geometry-2026/figure1-cuisine-umap.png"
 ShowToc: true
@@ -73,8 +74,6 @@ Epicure는 이 세 제약을 동시에 들어내기 위해 임베딩을 **처음
 | Chem | 183.1 | 0.117 |
 
 Core만 유독 공간이 집중되어 있는데, 이는 입력 데이터가 무너진 게 아니라 10배 I–I 워크 주입이 만든 **의도된 결과**다(강한 레시피-맥락 인력). 라벨 없이도 세 모델 모두 USDA 식품군(NMI 0.20\~0.25)과 8개 요리 거대권역(soft NMI 0.43\~0.46) 주위로 스스로 조직되며, 문화권이 식품군보다 약 2배 더 깨끗하게 분리된다. 문화 전통이 영양 범주보다 식재료 동시출현을 더 선명하게 빚는다는 뜻이다.
-
-![세 모델의 1,790개 식재료를 2-D UMAP으로 투영하고 요리 거대권역별로 색칠한 산점도. 동아시아·남아시아·라틴아메리카·지중해 클러스터가 세 모델 모두에서 뚜렷이 분리된다.](https://img.seosoyoung.eiaserinnys.me/images/epicure-emergent-geometry-2026/figure1-cuisine-umap.png)
 
 ## 방향 품질: Cooc < Core < Chem
 

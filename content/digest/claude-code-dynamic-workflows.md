@@ -8,11 +8,10 @@ ShowToc: true
 TocOpen: false
 cover:
   image: "https://img.seosoyoung.eiaserinnys.me/images/claude-code-dynamic-workflows/cover.jpg"
+  alt: "A harness for every task — Dynamic workflows in Claude Code"
 images:
   - "https://img.seosoyoung.eiaserinnys.me/images/claude-code-dynamic-workflows/cover.jpg"
 ---
-
-![A harness for every task — Dynamic workflows in Claude Code](https://img.seosoyoung.eiaserinnys.me/images/claude-code-dynamic-workflows/cover.jpg)
 
 ## 3줄 요약
 

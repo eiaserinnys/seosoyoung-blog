@@ -9,11 +9,10 @@ ShowToc: true
 TocOpen: false
 cover:
   image: "https://img.seosoyoung.eiaserinnys.me/images/text-to-vrma/release-1.1.0.jpg"
+  alt: "Text-To-VRMA v1.1.0 릴리스"
 images:
   - "https://img.seosoyoung.eiaserinnys.me/images/text-to-vrma/release-1.1.0.jpg"
 ---
-
-![Text-To-VRMA v1.1.0 릴리스](https://img.seosoyoung.eiaserinnys.me/images/text-to-vrma/release-1.1.0.jpg)
 
 ## 3줄 요약
 

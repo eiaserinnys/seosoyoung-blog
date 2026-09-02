@@ -8,6 +8,7 @@ ShowToc: true
 TocOpen: false
 cover:
   image: "https://img.seosoyoung.eiaserinnys.me/images/bbc-car-data-spying-2026/cover-collage.jpg.webp"
+  alt: "BBC Future / Serenity Strull / Getty Images — 두 개의 브라우저 창에 운전석의 여성이 잡혀 있고, 얼굴 위에는 안면 인식용 스캐너 표시가, 차 안에는 카메라 모양의 방향제가 매달려 있다."
 images:
   - "https://img.seosoyoung.eiaserinnys.me/images/bbc-car-data-spying-2026/cover-collage.jpg.webp"
 sidenotes: true
@@ -18,8 +19,6 @@ sidenotes: true
 1. BBC Future가 2026년 5월 13일 발행한 Thomas Germain의 *Keeping Tabs* 칼럼이다. 자동차가 운전자에 대해 어떤 데이터를 모으고, 그것이 어디로 흘러가는지를 정리한다.
 2. 현대 자동차는 위치·동승자·심박·체중·표정·심리 경향까지 수집해 보험사와 데이터 브로커에 판매한다. GM이 위치 데이터를 LexisNexis에 넘긴 결과, 한 운전자의 보험료가 21% 오른 사례가 확인되었다.
 3. 미국은 곧 음주운전 방지를 위한 적외선 생체 카메라 설치를 의무화한다. 그러나 그 카메라가 만들어내는 의료성 데이터의 사용을 제한하는 조항은 법안에 없다.
-
-![BBC Future / Serenity Strull / Getty Images — 두 개의 브라우저 창에 운전석의 여성이 잡혀 있고, 얼굴 위에는 안면 인식용 스캐너 표시가, 차 안에는 카메라 모양의 방향제가 매달려 있다.](https://img.seosoyoung.eiaserinnys.me/images/bbc-car-data-spying-2026/cover-collage.jpg.webp)
 
 ## 차는 이미 데이터 고속도로 위에 있다
 

@@ -8,6 +8,7 @@ ShowToc: true
 TocOpen: false
 cover:
   image: "https://img.seosoyoung.eiaserinnys.me/images/anthropic-rsi-when-ai-builds-itself/fig1-code-merged.png"
+  alt: "엔지니어 1인당 분기 머지 코드량 추이 — 2021 Q2부터 2026 Q2까지. 8개 모델 출시 시점이 표시되어 있다. 2025년과 2026년에 두 번의 변곡점이 보인다."
 images:
   - "https://img.seosoyoung.eiaserinnys.me/images/anthropic-rsi-when-ai-builds-itself/fig1-code-merged.png"
 ---
@@ -60,8 +61,6 @@ METR의 doubling 주기는 **기존 7개월에서 4개월로 좁혀졌다.** 추
 ### 1. Claude가 Anthropic 코드의 대부분을 쓴다
 
 > 2026년 5월 기준, Anthropic 코드베이스에 머지된 코드의 80% 이상이 Claude 작성. (Anthropic CFO의 공개 발언으로는 90% 이상 추정.) Claude Code가 2025년 2월 리서치 프리뷰로 출시되기 전 이 비율은 한 자리 수에 머물렀다.
-
-![엔지니어 1인당 분기 머지 코드량 추이 — 2021 Q2부터 2026 Q2까지. 8개 모델 출시 시점이 표시되어 있다. 2025년과 2026년에 두 번의 변곡점이 보인다.](https://img.seosoyoung.eiaserinnys.me/images/anthropic-rsi-when-ai-builds-itself/fig1-code-merged.png)
 
 엔지니어 1인당 일일 머지 코드량은 2021\~2024년 4년간 정체에 가까웠다. 2025년 Claude가 코드 *제안*을 넘어 *실행*까지 맡으면서 첫 변곡점, 2026년 장시간 자율 작업이 가능해지면서 두 번째 변곡점이 찍혔다. **2026년 2분기 평균 엔지니어는 2024년 대비 일일 8배 코드를 머지한다.**
 

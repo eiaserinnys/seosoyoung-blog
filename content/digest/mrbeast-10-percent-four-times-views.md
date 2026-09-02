@@ -8,6 +8,7 @@ ShowToc: true
 TocOpen: false
 cover:
   image: "https://img.seosoyoung.eiaserinnys.me/images/mrbeast-10-percent-four-times-views/frame-02-mentee-analytics.jpg"
+  alt: "MrBeast가 멘티 채널의 실제 애널리틱스를 화면에 띄워 가리키는 장면 — 45.7M 뷰, $403,154.48 추정 수익이 표시된다"
 images:
   - "https://img.seosoyoung.eiaserinnys.me/images/mrbeast-10-percent-four-times-views/frame-02-mentee-analytics.jpg"
 ---
@@ -37,8 +38,6 @@ X의 [@voidedintern](https://x.com/voidedintern/status/2066177621616988316)이 �
 ## 멘티 사례 — 화면에 띄운 애널리틱스
 
 JRE 클립의 가장 결정적인 장면은 MrBeast가 자신의 노트북을 카메라 쪽으로 돌려 멘티 채널의 애널리틱스 대시보드를 직접 보여주는 구간이다.
-
-![MrBeast가 멘티 채널의 실제 애널리틱스를 화면에 띄워 가리키는 장면 — 45.7M 뷰, $403,154.48 추정 수익이 표시된다](https://img.seosoyoung.eiaserinnys.me/images/mrbeast-10-percent-four-times-views/frame-02-mentee-analytics.jpg)
 
 화면 상단에 떠 있는 것은 MrBeast 본인이 2022년 2월 22일에 올린 트윗(*"I started counseling a small YouTuber for fun and here is monthly before and after of their channel lol"*)이고, 아래쪽 패널에는 같은 채널의 대시보드가 떠 있다. 거기서 읽을 수 있는 수치는 다음과 같다.
 

@@ -8,6 +8,7 @@ ShowToc: true
 TocOpen: false
 cover:
   image: "https://img.seosoyoung.eiaserinnys.me/images/automata-from-agent-traces/fig-overview.png"
+  alt: "상태 압축(왼쪽)과 데이터셋 사이 교차 재현 적합도(오른쪽). 대각선은 자기 데이터라 1.0에 가깝고, 스키마를 공유하는 tau2 항공과 리테일 쌍만 예외적으로 서로 잘 재현한다."
 images:
   - "https://img.seosoyoung.eiaserinnys.me/images/automata-from-agent-traces/fig-overview.png"
 ---
@@ -58,8 +59,6 @@ LLM 에이전트는 여러 단계를 밟아 일을 처리하지만, 그 행동�
 | OSWorld | 27 | 0.997 | 38,232 | 0.706 | 31 | 1,416배 |
 
 RPNI는 여덟 중 일곱에서 120초 예산을 넘겼다. 라벨 없는 데이터셋까지 포함하면 압축비는 GUI-Odyssey에서 3,036배까지 올라간다.
-
-![상태 압축(왼쪽)과 데이터셋 사이 교차 재현 적합도(오른쪽). 대각선은 자기 데이터라 1.0에 가깝고, 스키마를 공유하는 tau2 항공과 리테일 쌍만 예외적으로 서로 잘 재현한다.](https://img.seosoyoung.eiaserinnys.me/images/automata-from-agent-traces/fig-overview.png)
 
 작다고 헐거운 것은 아니다. 무작위로 만든 로그는 100% 거부하고, 실제 로그의 순서만 섞은 로그도 99.9% 이상 거부한다. 기호 하나만 바꾼 변형도 77%에서 100% 사이로 거부한다. 반면 RPNI는 WebArena에서 순서를 섞은 로그의 75%를 받아들인다. 프로세스 마이닝 계열 기법의 정밀도는 0.00에서 0.80 사이에 흩어졌다.
 

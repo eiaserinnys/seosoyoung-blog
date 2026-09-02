@@ -8,6 +8,7 @@ ShowToc: true
 TocOpen: false
 cover:
   image: "https://img.seosoyoung.eiaserinnys.me/images/arts-engagement-epigenetic-aging-bu-2026/figure1-aceng-clocks.jpg"
+  alt: "Figure 1. 예술·문화 참여 빈도(상)와 다양성(하)이 7가지 후성유전 시계에 미친 평균 처치 효과(95% CI). IPWRA, n=3,324."
 images:
   - "https://img.seosoyoung.eiaserinnys.me/images/arts-engagement-epigenetic-aging-bu-2026/figure1-aceng-clocks.jpg"
 sidenotes: true
@@ -70,7 +71,6 @@ UKHLS에 사전 구축된 시계 7종을 *전부* 결과 변수로 썼다 (outco
 
 ### ACEng — 예술·문화 참여
 
-![Figure 1. 예술·문화 참여 빈도(상)와 다양성(하)이 7가지 후성유전 시계에 미친 평균 처치 효과(95% CI). IPWRA, n=3,324.](https://img.seosoyoung.eiaserinnys.me/images/arts-engagement-epigenetic-aging-bu-2026/figure1-aceng-clocks.jpg)
 *Figure 1 — ACEng 빈도(상)·다양성(하)의 평균 처치 효과와 95% CI. 1세대 시계(좌측 4종)에서는 모두 0 근처에 머물고, 우측의 PhenoAge·DunedinPoAm·DunedinPACE에서만 음(-) 방향으로 유의하게 벗어난다. (출처: Fancourt et al., 2026, medRxiv 프리프린트 v3)*[^medrxiv-2024]
 
 1세대 시계 4종(Hannum·Horvath2013·Horvath2018·Lin)에서는 빈도·다양성 어느 쪽도 유의한 효과가 없었다. 유의한 결과는 모두 2·3세대 시계에서 나왔다.

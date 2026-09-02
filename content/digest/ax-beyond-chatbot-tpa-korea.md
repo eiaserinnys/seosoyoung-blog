@@ -8,6 +8,7 @@ ShowToc: true
 TocOpen: false
 cover:
   image: "https://img.seosoyoung.eiaserinnys.me/images/ax-beyond-chatbot-tpa-korea/admin-dashboard.png"
+  alt: "어드민 시스템 화면"
 images:
   - "https://img.seosoyoung.eiaserinnys.me/images/ax-beyond-chatbot-tpa-korea/admin-dashboard.png"
 ---
@@ -83,7 +84,6 @@ TPA KOREA의 새 흐름은 세 단계가 한 시스템 안에서 이어지도록
 ![24시간 접수 챗봇 화면](https://img.seosoyoung.eiaserinnys.me/images/ax-beyond-chatbot-tpa-korea/chatbot-intake.png)
 실제 고객이 24시간 접수할 수 있는 문의 화면 <출처: 위시켓 AIDP>
 
-![어드민 시스템 화면](https://img.seosoyoung.eiaserinnys.me/images/ax-beyond-chatbot-tpa-korea/admin-dashboard.png)
 24시간 접수 받은 내용을 자동으로 쌓는 어드민 시스템 화면. TPA KOREA가 직접 사용하는 시스템이다. <출처: 위시켓 AIDP>
 
 여기서 **RAG**는 자료를 참고해 답변을 생성하는 방식의 챗봇으로, 새 보험사 양식이나 새 응대 패턴이 생겼을 때 시나리오를 다시 짜는 대신 *자료만 추가하면 다음 응대부터 반영*된다는 점이 핵심이다. RAG는 운영 단계에서 회사가 스스로 확장할 수 있는 구조를 위한 선택이었고, 이는 두 번째 조건인 내재화와 직접 연결된다.

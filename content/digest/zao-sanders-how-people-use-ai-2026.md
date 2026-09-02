@@ -8,6 +8,7 @@ ShowToc: true
 TocOpen: false
 cover:
   image: "https://img.seosoyoung.eiaserinnys.me/images/zao-sanders-how-people-use-ai-2026/cover-illustration.jpg"
+  alt: "Illustration by Clara San Millán"
 images:
   - "https://img.seosoyoung.eiaserinnys.me/images/zao-sanders-how-people-use-ai-2026/cover-illustration.jpg"
 ---
@@ -18,7 +19,6 @@ images:
 2. 치료·동반이 2년 연속 1위를 지켰고 데이터셋 비중은 5%에서 11%로 커졌다. 자율 에이전트 운용(6위)과 바이브 코딩(21위)이 새로 상위권에 진입했다.
 3. 저자는 사고를 AI에 넘기는 습관이 낳는 "씽크슬롭(thinkslop)"을 경고한다. 직장에서는 승인받지 않은 그림자 사용이 흔하고, 기업이 얻는 이득은 아직 근본적 재설계보다 점진적 효율에 머문다고 진단한다.
 
-![Illustration by Clara San Millán](https://img.seosoyoung.eiaserinnys.me/images/zao-sanders-how-people-use-ai-2026/cover-illustration.jpg)
 *Illustration by Clara San Millán (출처: HBR 원문)*
 
 ## 연구 개요

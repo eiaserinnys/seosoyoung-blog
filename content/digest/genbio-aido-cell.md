@@ -9,6 +9,7 @@ TocOpen: false
 sidenotes: true
 cover:
   image: "https://img.seosoyoung.eiaserinnys.me/images/genbio-aido-cell/fig1-virtual-cell-loop.png"
+  alt: "가상 세포의 다중 턴 실험 개념도"
 images:
   - "https://img.seosoyoung.eiaserinnys.me/images/genbio-aido-cell/fig1-virtual-cell-loop.png"
 ---
@@ -35,7 +36,6 @@ images:
 
 이 월드 모델이 시뮬레이션 엔진이고, 그 바깥에 <strong>월드 모델 하네스</strong>가 붙는다. 하네스는 개입이 이어지는 동안 분자에서 세포 전체까지 모든 규모에서 세포 상태를 추적하고, 사용자 명령을 엔진이 실행할 단계로 옮긴다. 엔진과 하네스가 함께 있어야 실험을 프로그래밍하고, 관측하고, 다시 돌려 보고, 디버깅하는 인터페이스가 된다.
 
-![가상 세포의 다중 턴 실험 개념도](https://img.seosoyoung.eiaserinnys.me/images/genbio-aido-cell/fig1-virtual-cell-loop.png)
 *Figure 1. 가상 세포를 만들고, 변화를 가하고, 복제하고, 상태를 측정하는 과정을 여러 번 이어서 진행한다. 어느 시점에 무엇을 조회해도 세포 상태 자체는 바뀌지 않는다. (출처: GenBio AI)*
 
 이 설계에는 세 가지 이점이 있다.

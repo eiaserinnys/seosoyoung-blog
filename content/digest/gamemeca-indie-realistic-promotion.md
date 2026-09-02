@@ -8,6 +8,7 @@ ShowToc: true
 TocOpen: false
 cover:
   image: "https://img.seosoyoung.eiaserinnys.me/images/gamemeca-indie-realistic-promotion/bic-devs.jpg"
+  alt: "게임 개발에 도전하는 수많은 개발자들 (사진제공: BIC조직위원회, 출처: 게임메카)"
 images:
   - "https://img.seosoyoung.eiaserinnys.me/images/gamemeca-indie-realistic-promotion/bic-devs.jpg"
 ---
@@ -21,8 +22,6 @@ images:
 ## 기사의 문제의식
 
 인디게임 시장이 포화 상태에 이르면서, 참신한 기획력만큼이나 작품을 알리는 홍보 전략이 개발사의 생존을 가르는 요소가 되었다. 매체와 대형 퍼블리셔들이 스팀 '찜목록'의 중요성과 마케팅 방법을 소개하지만, 소규모·개인 개발자가 온전히 따라 하기엔 벅찬 내용이 많다. 기사는 실제 소규모 개발사들이 발로 뛰며 체득한 전략을 전한다.
-
-![게임 개발에 도전하는 수많은 개발자들 (사진제공: BIC조직위원회, 출처: 게임메카)](https://img.seosoyoung.eiaserinnys.me/images/gamemeca-indie-realistic-promotion/bic-devs.jpg)
 
 ## 온라인 홍보: 알고리즘 파악과 정밀한 타겟팅
 

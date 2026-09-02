@@ -6,6 +6,7 @@ categories: ["게임"]
 summary: "게임 캐릭터의 콧구멍은 왜 30년 동안 어색했는가. 西川善司는 라스터라이즈의 구조적 한계로부터 path tracing이 콧구멍 내부의 투과광까지 재현하는 시점까지를 추적하고, 이 칼럼을 가상 밴드 Nostrils의 노래로 만들었다."
 cover:
   image: "https://img.seosoyoung.eiaserinnys.me/images/pathtracing-nostrils-nishikawa/32412.png"
+  alt: "콧구멍 표현의 30년 진화 — 좌에서 우로"
 images:
   - "https://img.seosoyoung.eiaserinnys.me/images/pathtracing-nostrils-nishikawa/32412.png"
 ShowToc: true
@@ -19,8 +20,6 @@ TocOpen: false
 3. 작가는 이 칼럼의 내용을 그대로 가사로 옮겨 Suno로 작곡했고, 가상 밴드 "Nostrils"를 설정해 남성·여성 보컬 두 버전을 공개했다.
 
 ## 콧구멍은 왜 밝았는가 — 라스터라이즈의 구조적 한계
-
-![콧구멍 표현의 30년 진화 — 좌에서 우로](https://img.seosoyoung.eiaserinnys.me/images/pathtracing-nostrils-nishikawa/32412.png)
 
 리얼 계열 표현에 도전한 게임 타이틀에서도 PS2·PS3 세대에는 캐릭터의 콧구멍 내부가 밝게 보이는 경우가 많았다. 3D 형상으로서의 콧구멍은 존재했지만, 그 내부가 라이팅되어 환했기 때문이다.
 

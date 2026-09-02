@@ -8,6 +8,7 @@ ShowToc: true
 TocOpen: false
 cover:
   image: "https://img.seosoyoung.eiaserinnys.me/images/anthropic-introspective-awareness/fig1-injected-thoughts.jpg"
+  alt: "Claude Opus 4.1이 주입한 개념('고함')을 답변 이전에 알아차리는 예시"
 images:
   - "https://img.seosoyoung.eiaserinnys.me/images/anthropic-introspective-awareness/fig1-injected-thoughts.jpg"
 ---
@@ -19,8 +20,6 @@ Claude의 내부 계산에 '고함'에 해당하는 개념을 억지로 주입�
 Anthropic의 Jack Lindsey가 2026년 1월 낸 단독 논문을 정리한 내용이다.{{< sn >}}Jack Lindsey (Anthropic), 「Emergent Introspective Awareness in Large Language Models」, arXiv:2601.01828, 2026년 1월. 원문: [arxiv.org/abs/2601.01828](https://arxiv.org/abs/2601.01828). 블로그 판: transformer-circuits.pub/2025/introspection. 본문 그림 6점은 원 논문(arXiv HTML 판)에서 인용했다.{{< /sn >}} 논문은 이 능력을 introspection이라 부른다. 학술 번역은 '내성'이지만, 여기서는 읽기 쉽도록 '자기 내부 상태를 알아차리는 능력'이라고 풀어 쓴다. 이는 인간과 같은 자의식이나 주관적 경험을 뜻하지 않는다. 논문이 보인 것은 모델이 자기 내부 상태의 일부를 제한적으로 알아차리고 보고했다는 것이지, 자기 사고 과정 전체를 읽어 냈다는 것이 아니다.
 
 이것이 AI의 의식을 증명하지는 않는다. 하지만 오히려 더 불편한 질문을 남긴다. 자기 안을 살피는 기능마저 계산으로 만들어질 수 있다면, 우리가 의식의 본질이라 부르는 것은 대체 무엇일까. 이 물음은 논문의 결론이 아니라, 결과를 읽으며 내가 떠안게 된 것이다.
-
-![Claude Opus 4.1이 주입한 개념('고함')을 답변 이전에 알아차리는 예시](https://img.seosoyoung.eiaserinnys.me/images/anthropic-introspective-awareness/fig1-injected-thoughts.jpg)
 
 ## 결과를 과대평가하면 안 되는 이유
 

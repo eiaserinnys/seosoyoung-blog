@@ -9,6 +9,7 @@ ShowToc: true
 TocOpen: false
 cover:
   image: "https://img.seosoyoung.eiaserinnys.me/images/intelligence-per-watt-2025/fig1-overview.png"
+  alt: "Figure 1 — Intelligence per Watt 전체 개요: IPW 정의, 실험 설정, 로컬 LM 커버리지 시계열, 5.3배 개선의 분해. 출처: Saad-Falcon et al. 2025"
 images:
   - "https://img.seosoyoung.eiaserinnys.me/images/intelligence-per-watt-2025/fig1-overview.png"
 ---
@@ -18,8 +19,6 @@ images:
 1. Stanford·Together AI·SambaNova 등 합동 연구진이 "intelligence per watt(IPW)" — 정확도를 전력으로 나눈 단일 지표 — 를 제안하고, 20+ 로컬 LM과 8종 가속기 위에 약 100만 개 실제 쿼리(WildChat, NaturalReasoning, MMLU Pro, SuperGPQA)를 돌려 측정한다.
 2. ≤20B active parameter의 로컬 LM 앙상블이 단일턴 쿼리의 <strong>88.7%</strong>를 답할 수 있으며, IPW는 2023–2025년 사이 **5.3배**(IPJ 기준 18배) 개선됐고, locally-serviceable 쿼리 비중은 23.2%→71.3%로 올라갔다.
 3. 다만 로컬 가속기는 같은 모델·같은 bs=1 조건에서 클라우드 가속기 대비 IPW가 1.4배 낮다 — 결론은 "로컬이 클라우드를 따라잡는다"가 아니라, "라우터 정확도 \~80%의 하이브리드 라우팅이 클라우드 단독 대비 에너지 64%·컴퓨트 62%·비용 59%를 절감한다"는 시스템적 처방이다.
-
-![Figure 1 — Intelligence per Watt 전체 개요: IPW 정의, 실험 설정, 로컬 LM 커버리지 시계열, 5.3배 개선의 분해. 출처: Saad-Falcon et al. 2025](https://img.seosoyoung.eiaserinnys.me/images/intelligence-per-watt-2025/fig1-overview.png)
 
 ## IPW — 와트당 지능을 어떻게 잰다는 것인가
 

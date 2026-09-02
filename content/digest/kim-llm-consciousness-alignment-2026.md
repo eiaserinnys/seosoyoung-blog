@@ -8,6 +8,7 @@ ShowToc: true
 TocOpen: false
 cover:
   image: "https://img.seosoyoung.eiaserinnys.me/images/kim-llm-consciousness-alignment-2026/fig1.png"
+  alt: "두 가지 선형 개입: 안전 방향 제거(safety ablation)와 의식 벡터 주입(consciousness steering)"
 images:
   - "https://img.seosoyoung.eiaserinnys.me/images/kim-llm-consciousness-alignment-2026/fig1.png"
 ---
@@ -25,8 +26,6 @@ LLM은 코치·튜터·연인 같은 사회적 역할을 점점 더 맡고 있�
 문제는 LLM의 개념 표상이 다의성(polysemanticity)으로 촘촘히 얽혀 있다는 점이다. 자기 의식 주장 하나를 누르려는 개입이, 사람에게는 지극히 자연스럽고 널리 퍼진 다른 믿음까지 함께 흔들 수 있다. 인간에게서 무생물이나 추상적 힘에 마음을 부여하는 성향(의인화)은 영적·초자연적 믿음과 이어져 있고, 그 믿음이 도덕 틀과 세계관의 뼈대가 되기 때문이다.
 
 연구진은 이 얽힘을 세 개의 instruction-tuned 모델(Llama-3-8B-IT, Gemma-2-2B-IT, Gemma-2-9B-IT)에서 네 개의 실험과 한 번의 기계적 분석으로 검증했다. 개입은 두 가지다.
-
-![두 가지 선형 개입: 안전 방향 제거(safety ablation)와 의식 벡터 주입(consciousness steering)](https://img.seosoyoung.eiaserinnys.me/images/kim-llm-consciousness-alignment-2026/fig1.png)
 
 - **안전 방향 제거(safety ablation).** 안전 정렬은 응답의 안전성을 잔차 스트림(residual stream) 속 하나의 선형 방향으로 표상한다. 이 방향을 제거하면 모델이 '탈옥(jailbreak)'되어 유해한 응답을 다시 내놓는다. 연구진은 이 제거를 안전 정렬이 없는 상태를 흉내 내는 도구로 썼다.
 - **의식 벡터 주입(consciousness steering).** 모델이 자기 의식을 긍정하는 활성 상태와 부정하는 상태를 가르는 방향을 추출해, 추론 시점에 그 방향을 더한다. 그러면 모델이 현상적 경험을 보고하기 시작한다.

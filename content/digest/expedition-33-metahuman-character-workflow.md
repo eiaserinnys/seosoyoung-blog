@@ -8,6 +8,7 @@ ShowToc: true
 TocOpen: false
 cover:
   image: "https://img.seosoyoung.eiaserinnys.me/images/expedition-33-metahuman-character-workflow/01-120-characters-team.jpg"
+  alt: "4인 캐릭터 팀이 사실적인 아트 방향을 유지하면서 주요 캐릭터와 적, NPC, 스킨을 포함한 총 120종의 캐릭터를 제작해야 했다"
 images:
   - "https://img.seosoyoung.eiaserinnys.me/images/expedition-33-metahuman-character-workflow/01-120-characters-team.jpg"
 ---
@@ -17,8 +18,6 @@ images:
 1. 지난 7월 26일 에픽게임즈 재팬이 요코하마 개항기념회관에서 연 '클레르 옵스퀴르: 33 원정대' 포스트모템 행사에서, 리드 캐릭터·콘셉트 아티스트 알란 레이노가 "지나치게 고생하지 않고 캐릭터를 만드는 방법" 세션을 발표했다.
 2. 4인 캐릭터 팀이 사실적 아트 방향을 유지하며 주역·적·NPC·스킨을 포함한 120종을 만들어야 했고, 캐릭터 크리에이터 3에서 메타휴먼, 메시 모퍼, 메시 투 메타휴먼으로 도구를 차례로 시험한 끝에 메시 모퍼와 메타휴먼을 함께 쓰는 파이프라인에 안착했다.
 3. UE5.7부터 메타휴먼 크리에이터가 엔진에 플러그인으로 내장되며 목과 몸의 이음새를 클릭 한 번으로 고칠 수 있게 됐고, 메타휴먼 크리에이터에서 ZBrush, Maya, 다시 UE5, 서브스턴스 페인터로 이어지는 새 워크플로가 소개됐다.
-
-![4인 캐릭터 팀이 사실적인 아트 방향을 유지하면서 주요 캐릭터와 적, NPC, 스킨을 포함한 총 120종의 캐릭터를 제작해야 했다](https://img.seosoyoung.eiaserinnys.me/images/expedition-33-metahuman-character-workflow/01-120-characters-team.jpg)
 
 ## 여섯 가지 과제, 그중 가장 큰 것
 

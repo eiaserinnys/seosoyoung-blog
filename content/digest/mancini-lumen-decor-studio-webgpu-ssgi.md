@@ -8,6 +8,7 @@ ShowToc: true
 TocOpen: false
 cover:
   image: "https://img.seosoyoung.eiaserinnys.me/images/mancini-lumen-decor-studio-webgpu-ssgi/hero-loft.jpg"
+  alt: "Lumen Studio 2의 로프트 뷰. 오전 07:16, 유리 난간과 대리석 벽, 이층의 침실과 아래층의 소파와 계단. 창으로 들어온 아침 햇살이 대리석과 천장을 타고 굴절하며 각 면에서 색을 실어 나른다. 출처: Anderson Mancini, [Threejs Architecture Visualization - Lumen Decor Studio - WebGPU SSGI + PROBER](https://www.youtube.com/watch?v=cDYIdId3XSY)"
 images:
   - "https://img.seosoyoung.eiaserinnys.me/images/mancini-lumen-decor-studio-webgpu-ssgi/hero-loft.jpg"
 ---
@@ -25,8 +26,6 @@ Unreal Engine 5의 Lumen을 브라우저에서 그대로 되풀이하겠다는 �
 > His latest experiments have focused on combining SSGI and SSR for architectural visualization, helping bring high-quality real-time rendering to the real estate industry.
 
 지금까지 부동산 프리뷰의 표준 흐름은 오프라인 렌더 사진 또는 Unity/UE 빌드로 만든 데스크톱 앱이다. 전자는 인터랙션이 없고, 후자는 다운로드 장벽이 있다. Mancini는 브라우저 URL 한 줄로 열리는 실시간 configurator를 목표에 두고, 그 안에서 인테리어의 톤을 결정짓는 두 가지, 즉 태양광과 재질 색을 실시간으로 조작할 수 있게 만들었다. 표면에 색을 칠하면 그 색이 벽과 바닥으로 튕겨 씬 전체의 색조를 바꾼다. 오후 5시의 골든 아워에서 아침 7시의 창가로 시간대 슬라이더를 밀면 명암과 반사가 즉시 재계산된다.
-
-![Lumen Studio 2의 로프트 뷰. 오전 07:16, 유리 난간과 대리석 벽, 이층의 침실과 아래층의 소파와 계단. 창으로 들어온 아침 햇살이 대리석과 천장을 타고 굴절하며 각 면에서 색을 실어 나른다. 출처: Anderson Mancini, [Threejs Architecture Visualization - Lumen Decor Studio - WebGPU SSGI + PROBER](https://www.youtube.com/watch?v=cDYIdId3XSY)](https://img.seosoyoung.eiaserinnys.me/images/mancini-lumen-decor-studio-webgpu-ssgi/hero-loft.jpg)
 
 ## 스택: WebGPU, TSL, R3F
 

@@ -8,6 +8,7 @@ ShowToc: true
 TocOpen: false
 cover:
   image: "https://img.seosoyoung.eiaserinnys.me/images/deepswe-benchmark/leaderboard.jpg"
+  alt: "DeepSWE 리더보드 — gpt-5.5 70%, gpt-5.4 56%, claude-opus-4.7 54%, claude-sonnet-4.6 32%, gemini-3.5-flash 28%"
 images:
   - "https://img.seosoyoung.eiaserinnys.me/images/deepswe-benchmark/leaderboard.jpg"
 sidenotes: true
@@ -19,7 +20,6 @@ sidenotes: true
 2. 오염을 차단하고 검증자를 행동 기반으로 새로 쓰자, 공개 벤치마크에서 한데 뭉치던 모델들이 넓게 갈라졌다. gpt-5.5가 70%, claude-sonnet-4.6이 32%로, 일상 에이전트 작업에서 체감하는 격차에 더 가깝다.
 3. 핵심 함의는 단순하다. 벤치마크 1위는 능력 순위이기 전에, 그 벤치마크의 설계가 무엇에 보상했는지를 먼저 말해 준다.
 
-![DeepSWE 리더보드 — gpt-5.5 70%, gpt-5.4 56%, claude-opus-4.7 54%, claude-sonnet-4.6 32%, gemini-3.5-flash 28%](https://img.seosoyoung.eiaserinnys.me/images/deepswe-benchmark/leaderboard.jpg)
 *DeepSWE 리더보드 상위. 출처: https://deepswe.datacurve.ai/blog*
 
 ## 무엇이 다른가 — 4대 설계 진전

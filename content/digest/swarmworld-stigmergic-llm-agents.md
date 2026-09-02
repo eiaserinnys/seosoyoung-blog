@@ -8,6 +8,7 @@ ShowToc: true
 TocOpen: false
 cover:
   image: "https://img.seosoyoung.eiaserinnys.me/images/swarmworld-stigmergic-llm-agents/fig07-technology-gallery.png"
+  alt: "800틱 스터디에서 나온 16종의 에이전트 발명 기술"
 images:
   - "https://img.seosoyoung.eiaserinnys.me/images/swarmworld-stigmergic-llm-agents/fig07-technology-gallery.png"
 ---
@@ -72,7 +73,6 @@ images:
 
 ## 에이전트가 발명한 것들
 
-![800틱 스터디에서 나온 16종의 에이전트 발명 기술](https://img.seosoyoung.eiaserinnys.me/images/swarmworld-stigmergic-llm-agents/fig07-technology-gallery.png)
 *Figure 7. 네 조건에 걸쳐 순위화·중복제거한 대표 기술 16종. 우측 상단 숫자는 생애 최고 시뮬레이터 성능. 출처: Pal, Wang & Buehler, arXiv:2608.26081 (CC BY-NC-ND 4.0).*
 
 생애 최고 성능 0.790부터 0.347까지, 키틴 교환 격자, 균사 광물 베일, 조력 패널, 큐티클형 막, 촉매 네트워크, 셀룰로오스 격자, 켈프-패각 복합재가 나왔다. 프롬프트에 템플릿으로 주어진 것이 아니라 기록된 기하·조성·레시피·제어기에서 재구성한 것들이다.

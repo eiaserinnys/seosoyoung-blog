@@ -9,6 +9,7 @@ ShowToc: true
 TocOpen: false
 cover:
   image: "https://img.seosoyoung.eiaserinnys.me/images/physics-intern-critpt/quantum_error_detection.webp"
+  alt: "CritPt 예제 챌린지 — 양자 오류 검출 문제"
 images:
   - "https://img.seosoyoung.eiaserinnys.me/images/physics-intern-critpt/quantum_error_detection.webp"
 sidenotes: true
@@ -33,8 +34,6 @@ sidenotes: true
 ## 2. 양자 오류 검출 퍼즐 — 원샷 추론이 무너지는 지점
 
 CritPt에는 공개 해답이 있는 단 하나의 예제 문제가 있다 — 양자 오류 검출 문제다.
-
-![CritPt 예제 챌린지 — 양자 오류 검출 문제](https://img.seosoyoung.eiaserinnys.me/images/physics-intern-critpt/quantum_error_detection.webp)
 
 **문제 요지.** 4개의 물리 큐비트가 2개의 논리 큐비트를 인코딩하는 회로에서, 노이즈 확률 $p$에 대해 fidelity $F(p)$를 구하라. 풀이는 노이즈 게이트 전반의 모든 오류 조합(약 100만 시나리오)을 추적하고, 검출되는 것·통과하는 것·해롭지 않은 것·해로운 것을 분류하는 거대한 부기 작업이다.
 

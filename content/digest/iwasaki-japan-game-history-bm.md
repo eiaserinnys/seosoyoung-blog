@@ -8,6 +8,7 @@ ShowToc: true
 TocOpen: false
 cover:
   image: "https://img.seosoyoung.eiaserinnys.me/images/iwasaki-japan-game-history-bm/01-book-cover.jpg"
+  alt: "원어판 <일본 게임의 역사> 표지"
 images:
   - "https://img.seosoyoung.eiaserinnys.me/images/iwasaki-japan-game-history-bm/01-book-cover.jpg"
 ---
@@ -18,7 +19,6 @@ images:
 2. 저자는 그 관점을 2008\~2011년 한국에서 얻었다. 정액제 게임을 F2P로 바꿔달라는 퍼블리셔 요청을 받고, 패키지 사고방식에서 서비스 사고방식으로 넘어오는 과정에서 생겼다고 밝혔다.
 3. 구독형 게임 패스에는 회의적이고, 얼리 액세스는 한국식 CBT 마케팅의 응용으로 본다. 앞으로 10년은 '배틀패스의 시대'로 부를 만하다고 답했다. 한국 초기 온라인 게임 기록이 빠르게 사라지고 있다는 당부도 남겼다.
 
-![원어판 <일본 게임의 역사> 표지](https://img.seosoyoung.eiaserinnys.me/images/iwasaki-japan-game-history-bm/01-book-cover.jpg)
 *원어판 <일본 게임의 역사> 표지. (출처: 디스이즈게임)*
 
 ## 저자는 누구인가

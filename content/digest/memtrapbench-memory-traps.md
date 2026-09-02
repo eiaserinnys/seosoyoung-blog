@@ -8,6 +8,7 @@ ShowToc: true
 TocOpen: false
 cover:
   image: "https://img.seosoyoung.eiaserinnys.me/images/memtrapbench-memory-traps/memory_main.png"
+  alt: "24 게임에서 기억이 오히려 정답을 가린다. 무기억일 때는 계승을 찾아내지만, 사칙연산으로 풀린 과거 사례를 기억으로 받으면 그 연산 범위 안에서만 맴돈다. 아래 막대는 네 시나리오 전부에서 기억이 성능을 떨어뜨린 결과다. (arXiv:2608.20202, Figure 1)"
 images:
   - "https://img.seosoyoung.eiaserinnys.me/images/memtrapbench-memory-traps/memory_main.png"
 ---
@@ -19,8 +20,6 @@ images:
 3. 저자들은 프롬프트 하나로 완화한다. 검색된 기억을 쓰기 전에 네 가지 위험을 자체 점검시키는 AdaptiveMem이 Gemini에서 LightMem을 14.9퍼센트포인트 끌어올리면서 기존 메모리 벤치마크 성능은 유지했다.
 
 ## 정확한 기억이 답을 막는다
-
-![24 게임에서 기억이 오히려 정답을 가린다. 무기억일 때는 계승을 찾아내지만, 사칙연산으로 풀린 과거 사례를 기억으로 받으면 그 연산 범위 안에서만 맴돈다. 아래 막대는 네 시나리오 전부에서 기억이 성능을 떨어뜨린 결과다. (arXiv:2608.20202, Figure 1)](https://img.seosoyoung.eiaserinnys.me/images/memtrapbench-memory-traps/memory_main.png)
 
 논문이 여는 예시는 24 게임이다. 주어진 네 숫자로 24를 만드는 과제인데, 이 변형에서는 사칙연산 말고 계승 같은 고차 연산도 허용한다.
 

@@ -8,6 +8,7 @@ ShowToc: true
 TocOpen: false
 cover:
   image: "https://img.seosoyoung.eiaserinnys.me/images/hao-evans-ai-science-paradox-2026/fig3-knowledge.png"
+  alt: "Fig 3. AI 도입은 학문 내·학문 간 지식 범위의 수축과 연관된다"
 images:
   - "https://img.seosoyoung.eiaserinnys.me/images/hao-evans-ai-science-paradox-2026/fig3-knowledge.png"
 sidenotes: true
@@ -66,8 +67,6 @@ AI 논문 식별은 BERT 기반 두 단계 분류기를 썼다. 제목과 초록
 - <strong>지식 엔트로피</strong> — 주제 분포의 균등도. 낮을수록 특정 문제에 쏠려 있다는 뜻.
 
 결과는 일관적이다. AI 연구는 비-AI 연구보다 지식 범위가 4.63% 좁고, 모든 6개 분야에서 (p<0.001) 동일한 방향이다. 200개 이상의 하위 분야로 쪼개 봐도 70% 이상에서 같은 수축이 관찰된다. 엔트로피도 모든 분야에서 낮다 — AI 연구는 분야 전반보다 *특정 인기 문제*에 쏠려 있다.
-
-![Fig 3. AI 도입은 학문 내·학문 간 지식 범위의 수축과 연관된다](https://img.seosoyoung.eiaserinnys.me/images/hao-evans-ai-science-paradox-2026/fig3-knowledge.png)
 
 > Fig 3. (b) 768차원 임베딩의 t-SNE 투영. AI 논문(파랑)은 비-AI 논문(주황)보다 좁은 영역에 군집한다. (c) 6개 분야 모두에서 AI의 지식 범위가 더 좁다. (d) 엔트로피도 일관되게 낮다. 출처: Hao et al. (2026), Nature.
 

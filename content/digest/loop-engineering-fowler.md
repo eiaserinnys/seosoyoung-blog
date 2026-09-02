@@ -8,6 +8,7 @@ ShowToc: true
 TocOpen: false
 cover:
   image: "https://img.seosoyoung.eiaserinnys.me/images/loop-engineering-fowler/harness-overview.png"
+  alt: "제목 \"Harness engineering for coding agent users\". 코딩 에이전트로 피드포워드되는 가이드(추론형: 원칙·규칙·참조 문서·하우투, 연산형: 언어 서버·CLI·스크립트·코드모드)와, 에이전트를 향하고 자기 교정 루프로 입력되는 피드백 센서(추론형: 리뷰 에이전트, 연산형: 정적 분석·로그·브라우저), 그리고 왼쪽에서 가이드와 센서를 모두 조종하는 사람."
 images:
   - "https://img.seosoyoung.eiaserinnys.me/images/loop-engineering-fowler/harness-overview.png"
 ---
@@ -31,8 +32,6 @@ images:
 저자도 인정하듯 이 비유는 어느 정도 늘어난다 — 누군가는 "하네스 위에 하네스를 두르는 게 말이 되느냐, 개 안쪽에 하네스를 채워 봤느냐"고 꼬집었다. 그래도 단어가 사용 국면을 항해하는 데 쓸모 있다면 받아들이겠다는 것이 저자의 입장이다.
 
 잘 만든 바깥 하네스는 두 가지를 동시에 노린다. 에이전트가 *처음부터* 제대로 해낼 확률을 높이고, 문제가 사람 눈에 닿기 전에 최대한 많이 스스로 교정하는 피드백 루프를 제공한다. 결과적으로 리뷰 부담을 줄이고 시스템 품질을 높이며, 덤으로 낭비되는 토큰까지 줄인다.
-
-![제목 "Harness engineering for coding agent users". 코딩 에이전트로 피드포워드되는 가이드(추론형: 원칙·규칙·참조 문서·하우투, 연산형: 언어 서버·CLI·스크립트·코드모드)와, 에이전트를 향하고 자기 교정 루프로 입력되는 피드백 센서(추론형: 리뷰 에이전트, 연산형: 정적 분석·로그·브라우저), 그리고 왼쪽에서 가이드와 센서를 모두 조종하는 사람.](https://img.seosoyoung.eiaserinnys.me/images/loop-engineering-fowler/harness-overview.png)
 
 ## 피드포워드와 피드백 — 가이드와 센서
 

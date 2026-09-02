@@ -8,6 +8,7 @@ ShowToc: true
 TocOpen: false
 cover:
   image: "https://img.seosoyoung.eiaserinnys.me/images/steam-generative-ai-user-perception-2026/fig1.jpg"
+  alt: "설문 결과 그래프 — 생성 AI 사용 게임의 구매 의향"
 images:
   - "https://img.seosoyoung.eiaserinnys.me/images/steam-generative-ai-user-perception-2026/fig1.jpg"
 ---
@@ -25,8 +26,6 @@ GameDiscoverCo는 7월 8일, Steam 유저를 대상으로 생성 AI가 쓰인 �
 배경 지표는 이렇다. Valve는 개발자에게 생성 AI를 아트·사운드·스토리·번역 등 유저의 눈에 직접 닿는 곳에 활용한 경우 스토어 페이지에서 그 사실을 개시하도록 요구한다. 2025년 Steam에는 약 2만 1,000개의 게임이 발매되었고, 그중 'AI 생성 콘텐츠 개시'가 붙은 것은 약 4,700개(약 22%)였다. 개시는 개발자의 자기 신고에 의존하고 스토어 페이지 설명문 번역 정도의 사용례도 포함하기 때문에 절대적 지표로 볼 수는 없지만, 게임 제작에 생성 AI가 스며들기 시작했다는 흐름은 읽어낼 수 있다.
 
 ## 구매 의향: 43% 우호적, 31% 부정적
-
-![설문 결과 그래프 — 생성 AI 사용 게임의 구매 의향](https://img.seosoyoung.eiaserinnys.me/images/steam-generative-ai-user-perception-2026/fig1.jpg)
 
 생성 AI가 사용된 게임의 구매 의향을 물은 결과는 다음과 같다.
 

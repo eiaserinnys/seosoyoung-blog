@@ -9,6 +9,7 @@ ShowToc: true
 TocOpen: false
 cover:
   image: "https://img.seosoyoung.eiaserinnys.me/images/4danyone-monocular-4d-human/teaser.png"
+  alt: "4DAnyone 티저. 왼쪽 아래 스마트폰이 베이스를 연주하는 인물을 찍고, 그 주위를 24개의 생성 카메라가 둘러싸며, 가운데 복원된 인물이 자유 시점으로 렌더링된다."
 images:
   - "https://img.seosoyoung.eiaserinnys.me/images/4danyone-monocular-4d-human/teaser.png"
 ---
@@ -19,7 +20,6 @@ images:
 2. 기존 카메라 제어 비디오 확산 모델이 시점을 수십 개로 늘릴 때 무너지는 원인을, 저자들은 DiT 한 번의 순전파가 담을 수 있는 어텐션 컨텍스트가 유한하다는 구조 제약으로 규명한다. 참조 쪽은 생성 뷰가 쌓이며 컨텍스트가 $O(N)$으로 늘고, 타깃 쪽은 그룹이 분리되어 서로를 볼 수 없다.
 3. 해법은 두 가지다. Reference Context Packing은 늘어나는 참조 뷰를 혼합 해상도 고정 길이 슬롯에 압축해 $O(1)$로 만들고, Target Context Routing은 디노이징 고노이즈 구간에서 타깃 그룹을 순환 재편성해 전역 구조를 퍼뜨린다. 코드가 GitHub에 공개돼 있다.
 
-![4DAnyone 티저. 왼쪽 아래 스마트폰이 베이스를 연주하는 인물을 찍고, 그 주위를 24개의 생성 카메라가 둘러싸며, 가운데 복원된 인물이 자유 시점으로 렌더링된다.](https://img.seosoyoung.eiaserinnys.me/images/4danyone-monocular-4d-human/teaser.png)
 *Fig. 1. 대충 찍은 단안 영상 하나로 다중뷰 일관 영상을 만들고, 그것을 4DGS로 올려 자유 시점 렌더링을 얻는다. (출처: arXiv:2608.20335)*
 
 ## 문제 설정

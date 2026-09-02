@@ -8,6 +8,7 @@ ShowToc: true
 TocOpen: false
 cover:
   image: "https://img.seosoyoung.eiaserinnys.me/images/ai-subscription-subsidy-end/monthly-quota-error.jpg"
+  alt: "Code-review 에이전트가 CAPIError 402 'You have exceeded your monthly quota' 로 끊긴 화면 — 사건의 시각적 정황. 출처: HedgieMarkets·O'Shaughnessy 트윗 첨부"
 images:
   - "https://img.seosoyoung.eiaserinnys.me/images/ai-subscription-subsidy-end/monthly-quota-error.jpg"
 ---
@@ -29,8 +30,6 @@ HedgieMarkets는 시장·매크로 코멘터리를 던지는 익명 핀테크 �
 - 또 다른 사용자는 달이 6월로 넘어가기도 전에 월 캡에 도달했다.
 - 조직 단위 공용 토큰 풀은 개별 사용량을 볼 수 없어, 한 사람의 무거운 프롬프트로 팀 전체가 끊긴다.
 - 사용자들이 Claude Code와 Codex로 이주 중이며, GitHub 커뮤니티 포럼은 불바다다.
-
-![Code-review 에이전트가 CAPIError 402 'You have exceeded your monthly quota' 로 끊긴 화면 — 사건의 시각적 정황. 출처: HedgieMarkets·O'Shaughnessy 트윗 첨부](https://img.seosoyoung.eiaserinnys.me/images/ai-subscription-subsidy-end/monthly-quota-error.jpg)
 
 본인 견해 — "My Take":
 

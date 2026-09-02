@@ -8,6 +8,7 @@ ShowToc: true
 TocOpen: false
 cover:
   image: "https://img.seosoyoung.eiaserinnys.me/images/loop-engineering-firecrawl/loop-engineering.webp"
+  alt: "Loop Engineering 히어로 이미지"
 images:
   - "https://img.seosoyoung.eiaserinnys.me/images/loop-engineering-firecrawl/loop-engineering.webp"
 ---
@@ -19,8 +20,6 @@ images:
 3. 루프 엔지니어링의 진짜 일은 루프를 멈추게 하는 것이다. 반복 상한·무진전 감지·예산 상한 세 가드가 없으면 그건 루프가 아니라 청구서고, 검증과 취향(taste)은 끝까지 사람 몫으로 남는다.
 
 이 글은 ["루프 엔지니어링" 연재](/tags/루프-엔지니어링/)의 두 번째 편이다. [첫 편(Addy Osmani의 원형 정의)](/digest/loop-engineering-osmani/)이 개념을 세운 글이라면, 이번 Firecrawl 글은 같은 개념을 실무 부품과 비용 문제, 그리고 웹 데이터 피드백이라는 각도에서 다시 본다. 흥미롭게도 이 글은 Osmani의 층위 비유를 직접 빌려 쓴다.
-
-![Loop Engineering 히어로 이미지](https://img.seosoyoung.eiaserinnys.me/images/loop-engineering-firecrawl/loop-engineering.webp)
 
 ## 발단 — 여섯 단어의 트윗
 

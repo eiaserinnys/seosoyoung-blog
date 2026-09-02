@@ -6,6 +6,7 @@ categories: ["에이전트와 코딩"]
 summary: "Claude Code·Codex의 세션 로그를 코드베이스의 3D '밤의 지도' 위에서 빛의 이동으로 재생하는 로컬 시각화 도구. 에이전트가 무엇을 했는가가 아니라 태스크를 어떻게 이해했는가를 한눈에 보여준다."
 cover:
   image: "https://img.seosoyoung.eiaserinnys.me/images/mindwalk/screenshot-terrain.png"
+  alt: "터레인 뷰로 본 같은 세션"
 images:
   - "https://img.seosoyoung.eiaserinnys.me/images/mindwalk/screenshot-terrain.png"
 ShowToc: true
@@ -32,8 +33,6 @@ README의 첫 문장이 이 도구의 존재 이유를 그대로 담는다.
 해법은 은유 하나로 요약된다. 저장소를 밤의 지도로 그리고, 세션을 그 위로 움직이는 빛으로 재생한다. 에이전트가 검색하고 읽고 수정한 곳은 지도가 빛나고, 나머지는 어둠에 잠긴다. 그러면 에이전트의 태스크 이해가 한눈에 볼 수 있는 *모양*이 된다.
 
 구현의 성격도 분명하다. 하나의 Go 바이너리가 Claude Code와 Codex의 세션 로그를 읽고, 전부 로컬에서 처리하며, 세션을 보는 동안에는 아무것도 어디로도 보내지 않는다. 유일한 예외는 선택적인 세션 평가다. 이때만 세션 요약(태스크 문구, 파일 경로, 이벤트 다이제스트)이 사용자 계정 뒤의 모델로 전송된다.
-
-![터레인 뷰로 본 같은 세션](https://img.seosoyoung.eiaserinnys.me/images/mindwalk/screenshot-terrain.png)
 
 ## 그림 읽는 법
 

@@ -8,11 +8,10 @@ ShowToc: true
 TocOpen: false
 cover:
   image: "https://img.seosoyoung.eiaserinnys.me/images/lumera-engine-native-3d-scene/01-teaser.png"
+  alt: "Lumera 티저. 단일 이미지에서 3D 박스와 파라메트릭 광원을 파싱하고, 오브젝트별 메시와 HDR 환경광을 복원해 Blender·UE5가 열 수 있는 편집 가능한 씬으로 조립한다."
 images:
   - "https://img.seosoyoung.eiaserinnys.me/images/lumera-engine-native-3d-scene/01-teaser.png"
 ---
-
-![Lumera 티저. 단일 이미지에서 3D 박스와 파라메트릭 광원을 파싱하고, 오브젝트별 메시와 HDR 환경광을 복원해 Blender·UE5가 열 수 있는 편집 가능한 씬으로 조립한다.](https://img.seosoyoung.eiaserinnys.me/images/lumera-engine-native-3d-scene/01-teaser.png)
 
 ## 3줄 요약
 

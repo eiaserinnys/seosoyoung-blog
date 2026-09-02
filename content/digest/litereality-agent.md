@@ -8,6 +8,7 @@ ShowToc: true
 TocOpen: false
 cover:
   image: "https://img.seosoyoung.eiaserinnys.me/images/litereality-agent/teaser.jpg"
+  alt: "LiteReality-Agent 티저. 실내 스캔이 편집 가능한 3D 씬으로 재구성된다."
 images:
   - "https://img.seosoyoung.eiaserinnys.me/images/litereality-agent/teaser.jpg"
 ---
@@ -17,8 +18,6 @@ images:
 1. 케임브리지·임페리얼 칼리지 연구진이 공개한 **LiteReality-Agent**는 아이폰·아이패드 LiDAR 스캔 한 번을 상호작용 가능한 실내 3D 씬으로 재구성하는 오픈소스 엔드투엔드 에이전트 시스템이다.
 2. 핵심은 씬 전체를 하나의 파이썬 프로그램(`Room.py`)으로 표현한다는 점이다. 에이전트는 메시를 직접 주무르지 않고 코드를 편집하며, 렌더링 결과를 실제 촬영본과 대조해 품질 검증(QC)을 통과할 때까지 고쳐 나간다.
 3. 씬이 곧 프로그램이라 평문 요청이 그대로 코드 편집이 된다. 리텍스처링, 가구 재배치, 데코, 세그멘테이션·깊이·노멀·알베도 같은 intrinsics 무료 렌더까지 같은 파이프라인에서 나온다.
-
-![LiteReality-Agent 티저. 실내 스캔이 편집 가능한 3D 씬으로 재구성된다.](https://img.seosoyoung.eiaserinnys.me/images/litereality-agent/teaser.jpg)
 
 ## 무엇을 만들었나
 

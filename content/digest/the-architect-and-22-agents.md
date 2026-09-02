@@ -7,6 +7,7 @@ sidenotes: true
 summary: "한 사람이 자기 자신을 위해 22개의 AI 코딩 에이전트 구독을 운영하며 14개의 도구와 6종의 Rust 클린룸 재구현을 짓고 있다. 그는 2025년 1월 NVIDIA 시총 6,000억 달러를 떨어뜨린 12,000단어 글의 저자이기도 하다."
 cover:
   image: "https://img.seosoyoung.eiaserinnys.me/images/the-architect-and-22-agents/tweet-cover.jpg"
+  alt: "알리스볼라프로프(@alisvolatprop12)가 한국어로 옮긴 X Article 「설계자와 22인의 군대」. 원문은 Andrei Yeliseyeu 작성"
 ---
 
 한 사람이 자기 자신을 위해 22명의 동료를 고용하고 있습니다. 그 동료들은 모두 AI입니다. 매월 4,600달러를 들여 22개의 Claude Max 구독을 굴리고, 본인 표현으로는 1년에 10만 건이 넘는 GitHub 기여를 만들어 냅니다.[^1] 그는 *에이전트가 에이전트를 관리하기 위한 14개의 도구*를 짓고, 그 도구를 짓기 위해 Rust 언어로 데이터베이스(SQLite)와 터미널과 자바스크립트 런타임(Node.js)을 처음부터 다시 짜고 있습니다.
@@ -14,8 +15,6 @@ cover:
 ## 한국 트위터로 옮겨진 한 장의 글
 
 이 이야기는 알리스볼라프로프(@alisvolatprop12)라는 한국 트위터 사용자가 옮긴 X Article에서 시작됩니다. 원문은 시스코의 시니어 SRE인 안드레이 옐리세예우(Andrei Yeliseyeu)가 링크드인에 쓴 글, 「설계자와 22인의 군대」.[^2]
-
-![알리스볼라프로프(@alisvolatprop12)가 한국어로 옮긴 X Article 「설계자와 22인의 군대」. 원문은 Andrei Yeliseyeu 작성](https://img.seosoyoung.eiaserinnys.me/images/the-architect-and-22-agents/tweet-cover.jpg)
 
 본문의 핵심 묘사 한 단락만 옮기면 이렇습니다.
 

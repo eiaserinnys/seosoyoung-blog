@@ -9,6 +9,7 @@ ShowToc: true
 TocOpen: false
 cover:
   image: "https://img.seosoyoung.eiaserinnys.me/images/cerebras-knowledge-base/fig-02-schema.png"
+  alt: "소스마다 커넥터 하나, 착지점은 임베딩 테이블 하나"
 images:
   - "https://img.seosoyoung.eiaserinnys.me/images/cerebras-knowledge-base/fig-02-schema.png"
 ---
@@ -38,8 +39,6 @@ images:
 중심에는 임베딩, 원본 요약, 메타데이터를 담은 **Postgres 테이블 하나**가 있다. 시스템은 사내 전역에서 데이터를 계속 수집하며 질의 준비가 된 데이터스토어를 유지한다.
 
 인터페이스는 의도적으로 단순하게 두었다. Slack 스레드든 넷리스트든 모든 소스가 같은 임베딩 테이블에 착지하고, 그 테이블에 있는 것은 무엇이든 같은 인터페이스로 즉시 질의된다.
-
-![소스마다 커넥터 하나, 착지점은 임베딩 테이블 하나](https://img.seosoyoung.eiaserinnys.me/images/cerebras-knowledge-base/fig-02-schema.png)
 
 각 데이터 소스는 세 가지를 정의한다. 데이터가 무엇인지, 어떻게 연결하는지, 얼마나 자주 가져올지. 결과로 나오는 임베딩 행은 출처가 Slack이든 코드 저장소든 문서 시스템이든 커스텀 데이터베이스든 동일한 인터페이스를 따른다. 사내 다른 개발자가 커스텀 커넥터를 직접 만들 수 있게 하려는 목적도 있었다.
 

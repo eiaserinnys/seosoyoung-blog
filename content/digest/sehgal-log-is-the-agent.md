@@ -8,6 +8,7 @@ ShowToc: true
 TocOpen: false
 cover:
   image: "https://img.seosoyoung.eiaserinnys.me/images/sehgal-log-is-the-agent/cover.jpg"
+  alt: "모델과 도구 사이에서 로그가 중심에 놓인 다이어그램"
 images:
   - "https://img.seosoyoung.eiaserinnys.me/images/sehgal-log-is-the-agent/cover.jpg"
 ---
@@ -17,8 +18,6 @@ images:
 1. Omnara 공동창업자 Ishaan Sehgal이 X 아티클로 발표한 글. 에이전트의 정체를 "실행 중인 프로세스"가 아닌 "이벤트 로그"로 정의하자는 제안이다.
 2. 로그가 올바르게 구성되어 있으면 로그만으로 에이전트를 복원하고 재개할 수 있다. 이 단일 속성에서 신뢰성, 확장성, 포크, 멀티플레이어, 마이그레이션이 모두 파생된다.
 3. 가장 깊은 종속은 모델 종속이 아닌 로그 종속이다. 로그를 소유한 자가 에이전트를 소유하므로, 자기 로그가 어디 살고 누가 들여다볼 수 있는지 알아야 한다.
-
-![모델과 도구 사이에서 로그가 중심에 놓인 다이어그램](https://img.seosoyoung.eiaserinnys.me/images/sehgal-log-is-the-agent/cover.jpg)
 
 ## 세이브 파일 비유
 

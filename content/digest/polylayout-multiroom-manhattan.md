@@ -9,6 +9,7 @@ ShowToc: true
 TocOpen: false
 cover:
   image: "https://img.seosoyoung.eiaserinnys.me/images/polylayout-multiroom-manhattan/teaser.png"
+  alt: "PolyLayout이 여러 장의 실내 사진에서 여러 방의 구조를 한꺼번에 복원한 결과. 방마다 색이 다르고, 각 방 안의 작은 사각뿔이 입력 이미지를 찍은 카메라다. 점구름은 시각화용이며 입력이 아니다."
 images:
   - "https://img.seosoyoung.eiaserinnys.me/images/polylayout-multiroom-manhattan/teaser.png"
 ---
@@ -18,8 +19,6 @@ images:
 1. 룬드 대학·ETH 취리히·마이크로소프트 공간 AI 랩 공동 연구진이 ECCV 2026에 낸 실내 방 구조 추정 방법 PolyLayout. 카메라 위치를 아는 여러 장의 사진에서 벽·바닥·천장의 3D 위치를 복원한다.
 2. 방을 직육면체로 가정하는 대신 벽이 직각으로만 꺾이는 맨해튼 다각형으로 표현하고, 벽의 개수를 최적화 도중에 늘리거나 줄인다. 한 건물 안 여러 방의 방향과 바닥·천장 높이는 하나로 묶어 함께 푼다.
 3. 합성 데이터 ASE에서 3D IoU 94.3, 실촬영 ScanNet++ v2에서 87.4를 기록해 직전 최고 방법인 PixCuboid(각각 68.1, 78.8)를 앞섰다. 성능의 출처를 갈라 본 실험에서, 새 백본보다 다각형 표현 자체의 기여가 더 컸다.
-
-![PolyLayout이 여러 장의 실내 사진에서 여러 방의 구조를 한꺼번에 복원한 결과. 방마다 색이 다르고, 각 방 안의 작은 사각뿔이 입력 이미지를 찍은 카메라다. 점구름은 시각화용이며 입력이 아니다.](https://img.seosoyoung.eiaserinnys.me/images/polylayout-multiroom-manhattan/teaser.png)
 
 ## 어떤 문제를 다루는가
 

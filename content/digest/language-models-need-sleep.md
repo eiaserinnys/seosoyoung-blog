@@ -8,6 +8,7 @@ ShowToc: true
 TocOpen: false
 cover:
   image: "https://img.seosoyoung.eiaserinnys.me/images/language-models-need-sleep/sleep-states.png"
+  alt: "기존 머신러닝의 훈련·테스트 구분과 지속 학습의 각성·수면 주기"
 images:
   - "https://img.seosoyoung.eiaserinnys.me/images/language-models-need-sleep/sleep-states.png"
 ---
@@ -26,7 +27,6 @@ images:
 
 그래서 지속 학습 모델에는 훈련 시간과 테스트 시간이 따로 없다고 본다. 외부 입력을 받아 처리하는 **각성기**, 외부 입력을 거의 받지 않고 이미 얻은 경험을 내부에서 재구성하는 **수면기**가 번갈아 있을 뿐이다.
 
-![기존 머신러닝의 훈련·테스트 구분과 지속 학습의 각성·수면 주기](https://img.seosoyoung.eiaserinnys.me/images/language-models-need-sleep/sleep-states.png)
 *Figure 1. 기존 머신러닝의 훈련·테스트 구분과 지속 학습의 각성·수면 주기. 출처: Behrouz et al. (2026), CC BY 4.0.*
 
 ## 1단계: 기억 공고화 — 작은 자신이 큰 자신을 가르친다

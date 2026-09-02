@@ -9,6 +9,7 @@ ShowToc: true
 TocOpen: false
 cover:
   image: "https://img.seosoyoung.eiaserinnys.me/images/guzman-gategpt-microgpt-rtl/board-demo.jpg"
+  alt: "gateGPT 보드 데모 — Virtex-5 FPGA가 LCD에 이름을 출력"
 images:
   - "https://img.seosoyoung.eiaserinnys.me/images/guzman-gategpt-microgpt-rtl/board-demo.jpg"
 ---
@@ -18,8 +19,6 @@ images:
 1. Fabio Guzman이 [Andrej Karpathy의 microGPT](https://karpathy.github.io/2026/02/12/microgpt/)를 Xilinx Virtex-5 FPGA (XC5VLX110T) 위에 Verilog RTL로 직접 합성했다. CPU도 GPU도 없이, 게이트와 메모리만으로 1-block 트랜스포머가 동작한다.
 2. 80 MHz 클럭에서 평균 \~60k 토큰/초로 이름을 보드 LCD에 출력한다. 첫 워킹 버전 대비 28× 빠르다. 9단계 최적화 가운데 단일 최대 기여는 **KV 캐시(3.2×)**.
 3. 전체 디자인은 약 **0.45M NAND2 등가 게이트** + 74 Kbit 온칩 SRAM. DSP48E 곱셈기 64개 중 62개를 쓴다(96% 활용). 트랜스포머 1블록의 실리콘 비용이 어느 정도인지 직관을 잡아주는 자료.
-
-![gateGPT 보드 데모 — Virtex-5 FPGA가 LCD에 이름을 출력](https://img.seosoyoung.eiaserinnys.me/images/guzman-gategpt-microgpt-rtl/board-demo.jpg)
 
 ## 자료 개요
 

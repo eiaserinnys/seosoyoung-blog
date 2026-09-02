@@ -8,6 +8,7 @@ ShowToc: true
 TocOpen: false
 cover:
   image: "https://img.seosoyoung.eiaserinnys.me/images/darrah-aaa-ppl-2026/fig1-mark-darrah.jpg"
+  alt: "마크 다라 전 바이오웨어 드래곤 에이지 시리즈 총괄 프로듀서"
 images:
   - "https://img.seosoyoung.eiaserinnys.me/images/darrah-aaa-ppl-2026/fig1-mark-darrah.jpg"
 ---
@@ -18,7 +19,6 @@ images:
 2. 전 바이오웨어 PD 마크 다라(Mark Darrah)는 라이브 서비스가 특정 장르에만 적합하고 구독형 서비스도 정산금이 부족해 근본 해법이 못 된다고 진단하며, 영화 산업의 PPL(간접광고) 모델 도입을 대안으로 제시했다.
 3. 다라는 "AAA 게임이 라이브 서비스뿐인 세상에 살고 싶지 않다"며, 외부 자본 유치로 수익 파이프라인을 다각화해 창작 다양성을 지켜야 한다고 촉구했다.
 
-![마크 다라 전 바이오웨어 드래곤 에이지 시리즈 총괄 프로듀서](https://img.seosoyoung.eiaserinnys.me/images/darrah-aaa-ppl-2026/fig1-mark-darrah.jpg)
 ▶ 마크 다라 전 바이오웨어 <드래곤 에이지> 시리즈 총괄 프로듀서 (이미지 출처: 유튜브 채널 'Mark Darrah on Games')
 
 ## 폭증하는 개발비와 라이브 서비스 의존

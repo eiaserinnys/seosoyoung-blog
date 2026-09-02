@@ -8,6 +8,7 @@ ShowToc: true
 TocOpen: false
 cover:
   image: "https://img.seosoyoung.eiaserinnys.me/images/bucher-2026-superluminal-phase-singularities/novel-measurement-conf.jpg"
+  alt: "phys.org / Technion 보도 개념도 — 빛의 위상 풍경 위에서 서로를 향해 가속하는 두 어두운 점이 만나 소멸하는 순간을 그렸다"
 images:
   - "https://img.seosoyoung.eiaserinnys.me/images/bucher-2026-superluminal-phase-singularities/novel-measurement-conf.jpg"
 ---
@@ -17,8 +18,6 @@ images:
 1. Tomer Bucher와 Ido Kaminer(Technion)가 이끄는 19인 국제 공동연구가 2026년 3월 25일 Nature에 발표한 결과로, 빛의 파동 안에 갇혀 있는 "광학 위상 특이점(optical phase singularities)" 즉 어두운 점들의 초광속 운동을 처음으로 직접 측정했다.
 2. 육방정 질화붕소(hBN) 막 위에서 phonon polariton의 위상장을 초고속 전자현미경으로 찍어 추적한 결과, 어두운 점의 29퍼센트가 광속을 넘었고 평균 1.04c, 소멸 직전에는 속도가 발산했다.
 3. 어두운 점은 질량과 에너지와 정보를 모두 운반하지 않는 순수한 위상 풍경의 운동성이므로 인과율은 깨지지 않는다. 이 연구는 1974년 Nye와 Berry가 무작위 파동 간섭 이론에서 예측했던 현상을 50년 만에 실험적으로 확정한 것이다.
-
-![phys.org / Technion 보도 개념도 — 빛의 위상 풍경 위에서 서로를 향해 가속하는 두 어두운 점이 만나 소멸하는 순간을 그렸다](https://img.seosoyoung.eiaserinnys.me/images/bucher-2026-superluminal-phase-singularities/novel-measurement-conf.jpg)
 
 ## 무엇을 다루는 논문인가
 

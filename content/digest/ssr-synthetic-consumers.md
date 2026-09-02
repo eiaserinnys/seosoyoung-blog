@@ -8,6 +8,7 @@ ShowToc: true
 TocOpen: false
 cover:
   image: "https://img.seosoyoung.eiaserinnys.me/images/ssr-synthetic-consumers/fig1-method.png"
+  alt: "SSR 방법 개요: 합성 소비자 구성과 응답-점수 사상 절차"
 images:
   - "https://img.seosoyoung.eiaserinnys.me/images/ssr-synthetic-consumers/fig1-method.png"
 ---
@@ -25,8 +26,6 @@ images:
 저자들은 이것이 LLM 자체의 근본 한계가 아닌 유도(elicitation) 방식의 문제라고 주장한다. 실제로 베이스라인 실험에서 GPT-4o와 Gemini-2.0-flash에게 점수를 직접 묻자(DLR, Direct Likert Rating) 모델은 대부분 '3'이라는 안전한 중앙값으로 회귀했고, '1'이나 '5'는 거의 내놓지 않았다. 반면 실제 인간 응답은 '4'와 '5'에 몰려 있었다. 분포 유사도는 GPT-4o 기준 0.26에 그쳤다. 시스템 프롬프트로 상단 점수를 유도하면 분포는 다소 나아지지만 이번에는 제품 순위 신호가 손상되는 과보정이 일어났다.
 
 ## 방법: SSR(Semantic Similarity Rating)
-
-![SSR 방법 개요: 합성 소비자 구성과 응답-점수 사상 절차](https://img.seosoyoung.eiaserinnys.me/images/ssr-synthetic-consumers/fig1-method.png)
 
 연구진은 세 가지 응답 생성 전략을 비교했다.
 

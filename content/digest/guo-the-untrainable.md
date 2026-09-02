@@ -8,11 +8,10 @@ ShowToc: true
 TocOpen: false
 cover:
   image: "https://img.seosoyoung.eiaserinnys.me/images/guo-the-untrainable/banner.jpg"
+  alt: "The Untrainable 배너"
 images:
   - "https://img.seosoyoung.eiaserinnys.me/images/guo-the-untrainable/banner.jpg"
 ---
-
-![The Untrainable 배너](https://img.seosoyoung.eiaserinnys.me/images/guo-the-untrainable/banner.jpg)
 
 ## 3줄 요약
 

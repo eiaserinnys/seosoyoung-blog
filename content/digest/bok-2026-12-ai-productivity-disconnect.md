@@ -8,6 +8,7 @@ ShowToc: true
 TocOpen: false
 cover:
   image: "https://img.seosoyoung.eiaserinnys.me/images/bok-2026-12-ai-productivity-disconnect/fig7-productivity-disconnect.png"
+  alt: "\\[그림 7\\] 업무시간 절감-생산성 단절 (한국은행, 2026)"
 images:
   - "https://img.seosoyoung.eiaserinnys.me/images/bok-2026-12-ai-productivity-disconnect/fig7-productivity-disconnect.png"
 ---
@@ -54,8 +55,6 @@ images:
 ## III장 — 그 시간이 생산으로 이어지지 않는다
 
 연구의 중심 발견은 산점도 한 장으로 요약된다.
-
-![\[그림 7\] 업무시간 절감-생산성 단절 (한국은행, 2026)](https://img.seosoyoung.eiaserinnys.me/images/bok-2026-12-ai-productivity-disconnect/fig7-productivity-disconnect.png)
 
 X축은 응답자별 업무시간 절감률, Y축은 같은 응답자가 보고한 업무처리량 증가율이다. 점의 크기는 모집단 사후가중치다. <strong>상관계수는 0.00</strong>. 회귀선(붉은 점선)은 거의 수평이다. 개인 특성과 고정효과를 통제한 회귀분석에서도 결과는 그대로다.
 

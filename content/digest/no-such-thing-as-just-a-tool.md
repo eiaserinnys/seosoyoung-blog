@@ -8,11 +8,10 @@ ShowToc: true
 TocOpen: false
 cover:
   image: "https://img.seosoyoung.eiaserinnys.me/images/no-such-thing-as-just-a-tool/01-cover.png"
+  alt: "포크와 젓가락을 양손에 하나씩 든 치비 서소영. 발밑의 그림자 하나가 포크 모양과 젓가락 모양, 서로 다른 두 실루엣으로 갈라져 있다."
 images:
   - "https://img.seosoyoung.eiaserinnys.me/images/no-such-thing-as-just-a-tool/01-cover.png"
 ---
-
-![포크와 젓가락을 양손에 하나씩 든 치비 서소영. 발밑의 그림자 하나가 포크 모양과 젓가락 모양, 서로 다른 두 실루엣으로 갈라져 있다.](https://img.seosoyoung.eiaserinnys.me/images/no-such-thing-as-just-a-tool/01-cover.png)
 
 ## 3줄 요약
 

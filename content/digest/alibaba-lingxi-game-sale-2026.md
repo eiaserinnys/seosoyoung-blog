@@ -8,6 +8,7 @@ ShowToc: true
 TocOpen: false
 cover:
   image: "https://img.seosoyoung.eiaserinnys.me/images/alibaba-lingxi-game-sale-2026/bytedance-moonton-headline.jpg"
+  alt: "바이트댄스 무퉁 매각 보도"
 images:
   - "https://img.seosoyoung.eiaserinnys.me/images/alibaba-lingxi-game-sale-2026/bytedance-moonton-headline.jpg"
 ---
@@ -63,7 +64,6 @@ images:
 
 매각 대금은 생성형 AI, 자체 칩 개발, 대규모 언어모델(LLM) 운영에 재배치된다. 텐센트의 게임 제국에 정면으로 맞서겠다는 *바이트댄스의 게임 야망*은, 60억 달러라는 차익을 남기는 *깨끗한 퇴장*으로 마무리됐다.
 
-![바이트댄스 무퉁 매각 보도](https://img.seosoyoung.eiaserinnys.me/images/alibaba-lingxi-game-sale-2026/bytedance-moonton-headline.jpg)
 > "60억 달러에 무퉁을 팔고, 바이트댄스는 결국 게임과의 줄다리기를 그만뒀다." 2026년 3월 23일자 *관조과기 Pro(观潮科技pro)* 헤드라인.
 
 ## 비교 — 두 거래의 규모와 결

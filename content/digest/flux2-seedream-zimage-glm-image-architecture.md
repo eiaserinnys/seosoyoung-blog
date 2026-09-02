@@ -201,8 +201,6 @@ Z-Image-Turbo는 8 NFE로 빠른 추론을 제공하는 라인업이다. 6B 모�
 
 ## 5. GLM-Image — AR로 구조, Diffusion으로 픽셀
 
-![](https://img.seosoyoung.eiaserinnys.me/images/flux2-seedream-zimage-glm-image-architecture/fig9-glm-ar-diffusion.jpg)
-
 智谱AI(ZhipuAI)와 칭화대의 GLM-Image는 네 모델 중 가장 급진적인 아키텍처 선택을 한다. *이미지 생성을 LLM의 자기회귀 작업과 Diffusion의 픽셀 작업으로 분리한다*. PyTorch가 아니라 **MindSpore + Huawei Atlas 800T A2(Ascend NPU)** 위에서 학습됐다는 인프라 결정도 특이하다.
 
 ### 5.1 5대 컴포넌트

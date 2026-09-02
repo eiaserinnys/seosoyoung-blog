@@ -6,6 +6,7 @@ categories: ["게임"]
 summary: "스팀 상반기 매출이 반기 사상 최대인데 신작이 가져간 몫은 21%로 떨어졌다. 한국경제 안정훈 기자의 관찰을 축으로 알리니아·SteamDB·Gamalytic·Valve GDC 발표·넥슨 어닝레터를 대조해 본다."
 cover:
   image: "https://img.seosoyoung.eiaserinnys.me/images/hankyung-old-games-outperform-2026/hero.jpg"
+  alt: "스팀 상반기 매출과 신작 비중을 정리한 한국경제 기사 대표 이미지"
 images:
   - "https://img.seosoyoung.eiaserinnys.me/images/hankyung-old-games-outperform-2026/hero.jpg"
 ShowToc: true
@@ -17,8 +18,6 @@ TocOpen: false
 1. 한국경제 안정훈 기자의 2026-07-19 산업면 기사. 스팀 상반기 매출은 111억 달러로 반기 사상 최대인데, 해당 연도 신작이 가져간 몫은 21%로 2년째 내려앉았다. 매출의 79%가 기존 카탈로그에서 나온다.
 2. 알리니아애널리틱스의 원 리포트는 이 흐름을 "카탈로그가 사업이 되고, 신작은 그 사업의 마케팅이 된다"고 표현한다. 스팀 신작이 두 배로 늘어난 사이 이용자의 눈은 오히려 더 좁아졌고, 스팀 등록비 100달러를 회수하지 못한 신작이 40%다.
 3. 게임사는 프로젝트를 선별해 접고 검증된 IP에 자원을 몰아준다. 넥슨은 세 개를 접고 두 개(낙원·우치)를 키웠고, 엔씨는 자회사의 신작 RTS '택탄'을 접으며 인력의 75%를 정리했다.
-
-![스팀 상반기 매출과 신작 비중을 정리한 한국경제 기사 대표 이미지](https://img.seosoyoung.eiaserinnys.me/images/hankyung-old-games-outperform-2026/hero.jpg)
 
 ## 카탈로그가 사업이고, 신작은 그 마케팅이다
 

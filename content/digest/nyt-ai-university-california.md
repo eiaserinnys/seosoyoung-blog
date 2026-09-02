@@ -8,6 +8,7 @@ ShowToc: true
 TocOpen: false
 cover:
   image: "https://img.seosoyoung.eiaserinnys.me/images/nyt-ai-university-california/lead.jpg"
+  alt: "Maxime Mouysset 일러스트 — CSU의 AI Initiative를 다룬 NYT Magazine 표제 이미지"
 images:
   - "https://img.seosoyoung.eiaserinnys.me/images/nyt-ai-university-california/lead.jpg"
 ---
@@ -25,8 +26,6 @@ images:
 - **저자**: Linda Kinstler (Harvard Society of Fellows 주니어 펠로우, NYT Magazine 기고)
 - **발행**: NYT Magazine, 2026-06-01
 - **취재 규모**: 1년에 걸쳐 학생·교수·관리자 60명 이상 + AI Initiative 관여 기술 임원 다수와 인터뷰
-
-![Maxime Mouysset 일러스트 — CSU의 AI Initiative를 다룬 NYT Magazine 표제 이미지](https://img.seosoyoung.eiaserinnys.me/images/nyt-ai-university-california/lead.jpg)
 
 ## 거래 구조 — CSU × OpenAI
 

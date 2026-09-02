@@ -9,6 +9,7 @@ ShowToc: true
 TocOpen: false
 cover:
   image: "https://img.seosoyoung.eiaserinnys.me/images/mottus-personality-life-satisfaction-2024/figure1-item-correlations.jpg"
+  alt: "Figure 1. Big Five 도메인 외부에 있는 항목들의 LS 진짜 상관 — 굵은 글자는 다른 어떤 성격 항목과도 진짜 상관이 .50을 넘지 않는 \"상대적으로 고유한\" 19개 항목. Mõttus et al. (2024)."
 images:
   - "https://img.seosoyoung.eiaserinnys.me/images/mottus-personality-life-satisfaction-2024/figure1-item-correlations.jpg"
 sidenotes: true
@@ -81,8 +82,6 @@ $$r_{\text{true}}(x,y) = \sqrt{\frac{r_{x_{\text{self}},\,y_{\text{inf}}} \cdot 
 ## 핵심 발견 2 — 항목 수준에서 패턴이 더 선명해진다
 
 도메인은 평균을 내는 단계에서 정보를 잃는다. 저자들은 136개 항목 각각의 LS 상관을 그렸다.
-
-![Figure 1. Big Five 도메인 외부에 있는 항목들의 LS 진짜 상관 — 굵은 글자는 다른 어떤 성격 항목과도 진짜 상관이 .50을 넘지 않는 "상대적으로 고유한" 19개 항목. Mõttus et al. (2024).](https://img.seosoyoung.eiaserinnys.me/images/mottus-personality-life-satisfaction-2024/figure1-item-correlations.jpg)
 
 낮은 LS와 강하게 묶이는 항목 ($r_{\text{true}}$):
 

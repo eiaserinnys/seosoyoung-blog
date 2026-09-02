@@ -8,6 +8,7 @@ ShowToc: true
 TocOpen: false
 cover:
   image: "https://img.seosoyoung.eiaserinnys.me/images/economist-giga-ipos-2026/cover.jpg"
+  alt: "SpaceX 로켓에서 샴페인이 잔으로 쏟아지는 일러스트 (Illustration: Fortunate Joaquin)"
 images:
   - "https://img.seosoyoung.eiaserinnys.me/images/economist-giga-ipos-2026/cover.jpg"
 ---
@@ -17,8 +18,6 @@ images:
 1. SpaceX·Anthropic·OpenAI 세 회사가 합쳐 약 2,000억 달러($200bn)를 조달하며, 미국 상장 시가총액에 최대 4조 달러($4trn)까지 더할 *기가 IPO*[^giga-ipo] 3건이 몇 달 안에 줄지어 도착한다.
 2. *거래 광란*(trading frenzy)[^trading-frenzy] 우려에도 불구하고, Russell 3000 79조 달러·S&P 500 69조 달러라는 시장의 깊이와 락업[^lock-up] 구조 덕에 단기 흡수는 어렵지 않다 — SpaceX의 S&P 500 초기 비중은 약 0.1%에 불과하다.
 3. 다만 IPO[^ipo] 종목의 3년 평균 언더퍼폼[^underperform](-20%p), AI 상관 리스크, 빅테크의 자사주 매입[^buyback] 축소가 겹치면서 시장은 향후 *자본 다이어트*에 들어갈 수 있다 — *소화 불량을 조심하라*.
-
-![SpaceX 로켓에서 샴페인이 잔으로 쏟아지는 일러스트 (Illustration: Fortunate Joaquin)](https://img.seosoyoung.eiaserinnys.me/images/economist-giga-ipos-2026/cover.jpg)
 
 ## 거대 IPO 3건의 규모
 

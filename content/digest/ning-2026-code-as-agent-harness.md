@@ -9,6 +9,7 @@ ShowToc: true
 TocOpen: false
 cover:
   image: "https://img.seosoyoung.eiaserinnys.me/images/ning-2026-code-as-agent-harness/fig1-taxonomy.png"
+  alt: "Figure 1. Taxonomy of code as agent harness."
 images:
   - "https://img.seosoyoung.eiaserinnys.me/images/ning-2026-code-as-agent-harness/fig1-taxonomy.png"
 ---
@@ -51,8 +52,6 @@ images:
 ## 세 층의 분류
 
 서베이는 문헌을 세 층으로 나눈다. 코드가 *에이전트 루프 안에서 운영 매개체가 되는 순서*를 따른다. 먼저 인터페이스로 진입하고, 그 위에서 메커니즘이 장기 실행을 지탱하고, 마지막에 다중 에이전트의 공유 아티팩트로 확장된다.
-
-![Figure 1. Taxonomy of code as agent harness.](https://img.seosoyoung.eiaserinnys.me/images/ning-2026-code-as-agent-harness/fig1-taxonomy.png)
 
 ### 1층. Harness Interface: 추론·행동·환경 모델링의 매체
 
