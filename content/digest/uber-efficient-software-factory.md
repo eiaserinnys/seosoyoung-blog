@@ -8,6 +8,7 @@ ShowToc: true
 TocOpen: false
 cover:
   image: "https://img.seosoyoung.eiaserinnys.me/images/uber-efficient-software-factory/fig1-users-requests-cost.png"
+  alt: "주간 활성 사용자와 에이전트 요청은 2월부터 8월까지 급격히 늘었고, 총비용은 4월 이후 평평하다"
 images:
   - "https://img.seosoyoung.eiaserinnys.me/images/uber-efficient-software-factory/fig1-users-requests-cost.png"
 ---
@@ -31,8 +32,6 @@ AI 도구가 소프트웨어 개발 전 단계에 들어가 있다. 숫자로는
 | 주간 에이전트 요청 증가 (2월 → 8월) | 9.4배 |
 
 주목할 대목은 세션을 여는 주체가 바뀌고 있다는 것이다. 사람이 시작하지 않은 세션의 비중이 계속 커지고 있고, 그 자리를 관리형 에이전트(managed agent)가 채운다. 코드 리뷰, CI 실패 자가 복구, 시각 검증까지 포함한 종단 간 풀 리퀘스트 작성, 온콜 알림 분류, 들어온 버그 디버깅, 각종 코드 유지보수를 에이전트가 맡고 사람은 리뷰와 에스컬레이션에서만 개입한다.
-
-![주간 활성 사용자와 에이전트 요청은 2월부터 8월까지 급격히 늘었고, 총비용은 4월 이후 평평하다](https://img.seosoyoung.eiaserinnys.me/images/uber-efficient-software-factory/fig1-users-requests-cost.png)
 
 사용량이 7배로 뛰는 동안 총지출은 4월 이후 안정됐다. 그러나 이 그래프만으로는 최적화 성과를 읽을 수 없다. 채택률, 작업 구성, 모델 업그레이드가 동시에 움직이기 때문이다. 그래서 우버는 모델 하나를 고정한 채 2월부터 7월까지를 다시 쟀다.
 

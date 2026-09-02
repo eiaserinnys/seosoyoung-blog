@@ -8,6 +8,7 @@ ShowToc: true
 TocOpen: false
 cover:
   image: "https://img.seosoyoung.eiaserinnys.me/images/frontier-lab-economics-anthropic-unravel/2026-07-19-wiltw-model-cost.png"
+  alt: "Figure 1. 완료 태스크당 모델 비용 — Fable 5는 OpenAI 및 오픈 모델 대비 약 3배 비싸다. (출처: Artificial Analysis, 원문 재인용)"
 images:
   - "https://img.seosoyoung.eiaserinnys.me/images/frontier-lab-economics-anthropic-unravel/2026-07-19-wiltw-model-cost.png"
 ---
@@ -59,8 +60,6 @@ Gryc는 파운데이션 모델 사업의 비용 구조를 세 축(연구 인력,
 Gryc는 프론티어 랩 중에서도 Anthropic이 규제 전략과 재귀적 자기 개선 노선에 가장 크게 기댄 곳이라고 본다. Fable·Mythos에서 드러난 자기 검열적 태도, 미 정부가 추가 릴리즈를 사실상 막기 이전까지의 윤리 강조가 이 규제 전략과 맞물려 있다는 관찰이다.
 
 성능 리더십은 여전히 Anthropic이 쥐고 있지만, 가격은 심각하게 불리하다.
-
-![Figure 1. 완료 태스크당 모델 비용 — Fable 5는 OpenAI 및 오픈 모델 대비 약 3배 비싸다. (출처: Artificial Analysis, 원문 재인용)](https://img.seosoyoung.eiaserinnys.me/images/frontier-lab-economics-anthropic-unravel/2026-07-19-wiltw-model-cost.png)
 
 Figure 1은 Fable 5가 완료 태스크당 거의 3배 가까이 비싸다는 것을 보여준다. Gryc는 사용자가 더 나은 모델에 그만한 프리미엄을 계속 지불할지가 불확실하다고 짚는다. 경쟁으로든, 가격을 반영하지 않는 벤치마크의 포화(François Chollet의 비판을 인용)로든, 가격 전쟁이 임박했다는 관측을 함께 든다.
 

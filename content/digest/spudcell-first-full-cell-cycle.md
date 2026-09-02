@@ -8,6 +8,7 @@ ShowToc: true
 TocOpen: false
 cover:
   image: "https://img.seosoyoung.eiaserinnys.me/images/spudcell-first-full-cell-cycle/spudcell-6frame-biotic.jpg"
+  alt: "SpudCell이 6프레임에 걸쳐 자라고 분열하는 형광 현미경 시퀀스"
 images:
   - "https://img.seosoyoung.eiaserinnys.me/images/spudcell-first-full-cell-cycle/spudcell-6frame-biotic.jpg"
 ---
@@ -18,7 +19,6 @@ images:
 2. 이 시스템은 90kbp 게놈을 7개의 플라스미드에 나눠 담고, 지질막 안에서 섭식, 성장, 게놈 복제, 분열, 선택까지 세포의 다섯 가지 핵심 행위를 하나의 사이클로 이어냈다. 상향식으로 조립한 시스템이 완전한 세포주기를 돌린 것은 처음이다.
 3. 그러나 이 세포는 살아있지 않다. 리보솜을 스스로 만들지 못해 5세대에서 멈추고, 분열을 여러 번 반복하려면 사람이 기계적으로 눌러 짜야 하며, 자연 발생 돌연변이가 없어 다윈적 진화도 관찰되지 않았다. 저자들은 이를 "라이트 형제의 첫 비행기"에 비유한다.
 
-![SpudCell이 6프레임에 걸쳐 자라고 분열하는 형광 현미경 시퀀스](https://img.seosoyoung.eiaserinnys.me/images/spudcell-first-full-cell-cycle/spudcell-6frame-biotic.jpg)
 *SpudCell의 성장과 분열을 담은 형광 현미경 시퀀스 6프레임. Credit: Kate Adamala, Adamala Lab / Biotic*
 
 ## SpudCell이란 무엇인가

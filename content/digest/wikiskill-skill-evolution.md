@@ -8,6 +8,7 @@ ShowToc: true
 TocOpen: false
 cover:
   image: "https://img.seosoyoung.eiaserinnys.me/images/wikiskill-skill-evolution/fig1-architecture.png"
+  alt: "WikiSkill 프레임워크 개요. Raw Layer, Wiki Layer, Skills Layer의 3계층 구조와 진화 루프"
 images:
   - "https://img.seosoyoung.eiaserinnys.me/images/wikiskill-skill-evolution/fig1-architecture.png"
 ---
@@ -33,8 +34,6 @@ images:
 세 기법에는 공통으로 빠진 것이 하나 있다. 셋 모두 **학습한 것을 별도의 진화하는 지식 표현으로 유지하지 않는다.** 통찰이 최적화 이력 여기저기에 흩어진 채로 남아, 다음 반복이 그것을 체계적으로 다시 쓰지 못한다.
 
 ## 작업 공간을 세 층으로 나눈다
-
-![WikiSkill 프레임워크 개요. Raw Layer, Wiki Layer, Skills Layer의 3계층 구조와 진화 루프](https://img.seosoyoung.eiaserinnys.me/images/wikiskill-skill-evolution/fig1-architecture.png)
 
 WikiSkill의 작업 공간은 세 개의 디렉토리로 나뉜다.
 

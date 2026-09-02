@@ -8,6 +8,7 @@ ShowToc: true
 TocOpen: false
 cover:
   image: "https://img.seosoyoung.eiaserinnys.me/images/netflix-service-topology-real-time-map/fig2-three-layers.png"
+  alt: "세 개의 토폴로지 레이어 — eBPF 흐름 로그가 네트워크 그래프를, IPC 메트릭이 애플리케이션 그래프를, 분산 트레이스가 요청 그래프를 만들어 통합 뷰로 합쳐지는 도식."
 images:
   - "https://img.seosoyoung.eiaserinnys.me/images/netflix-service-topology-real-time-map/fig2-three-layers.png"
 sidenotes: true
@@ -58,8 +59,6 @@ Netflix는 수천 개의 마이크로서비스로 돌아간다. 시청자가 *�
 | 다중 관점 | 단일 소스로는 전체 그림이 안 나온다. 네트워크 연결성은 앱 컨텍스트가 없고, 앱 메트릭은 계측된 서비스만 보인다 |
 
 ## 핵심 통찰: 세 개의 진실 소스
-
-![세 개의 토폴로지 레이어 — eBPF 흐름 로그가 네트워크 그래프를, IPC 메트릭이 애플리케이션 그래프를, 분산 트레이스가 요청 그래프를 만들어 통합 뷰로 합쳐지는 도식.](https://img.seosoyoung.eiaserinnys.me/images/netflix-service-topology-real-time-map/fig2-three-layers.png)
 
 이 글의 가장 핵심적인 설계 선택은 *단일 통합 그래프를 만들지 않은 것*이다. 대신 세 가지 소스마다 *독립된 그래프*를 만들고, 사용자가 통합 뷰를 요청할 때만 병렬 쿼리로 합친다.
 

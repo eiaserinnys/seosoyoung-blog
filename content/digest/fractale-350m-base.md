@@ -9,11 +9,10 @@ ShowToc: true
 TocOpen: false
 cover:
   image: "https://img.seosoyoung.eiaserinnys.me/images/fractale-350m-base/fractale-banner.png"
+  alt: "Fractale banner: 페이지를 한 장씩 읽고 8장의 자기 메모를 쓴 뒤 그 메모를 통과해 생각한다"
 images:
   - "https://img.seosoyoung.eiaserinnys.me/images/fractale-350m-base/fractale-banner.png"
 ---
-
-![Fractale banner: 페이지를 한 장씩 읽고 8장의 자기 메모를 쓴 뒤 그 메모를 통과해 생각한다](https://img.seosoyoung.eiaserinnys.me/images/fractale-350m-base/fractale-banner.png)
 
 ## 3줄 요약
 

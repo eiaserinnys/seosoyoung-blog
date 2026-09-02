@@ -8,6 +8,7 @@ ShowToc: true
 TocOpen: false
 cover:
   image: "https://img.seosoyoung.eiaserinnys.me/images/ai-model-fingerprint/overview.png"
+  alt: "24개 모델 지문 종합 개요"
 images:
   - "https://img.seosoyoung.eiaserinnys.me/images/ai-model-fingerprint/overview.png"
 ---
@@ -17,8 +18,6 @@ images:
 1. GitHub 사용자 `qqqqqf-q`가 2026년 6월 말부터 7월 초 사이에 공개한 오픈소스 리포. OpenRouter로 상용·오픈 모델 24개에 「1부터 355 사이의 수를 하나 무작위로 골라라」라는 프롬프트를 각각 300회씩 던져, 응답 분포를 지문 벡터로 뽑아 두었다. 원안은 [hlwy-ai-checker](https://github.com/hanlinwenyuan/hlwy-ai-checker)에서 착안했다.
 2. 대형 언어모델은 진짜 난수 생성기가 아니다. 학습 데이터·아키텍처·RLHF·토크나이저 차이가 응답 분포에 남는다. 지문은 시스템 프롬프트로 잘 덮이지 않고, 같은 세대 내에서는 놀랄 만큼 안정적이며, 세대·후훈련 경계에서는 극적으로 갈린다.
 3. 지문은 상용 모델의 세대 관계를 되짚는 도구가 되기도 하고, 제3자 API 중계상이 광고와 다른 모델을 서빙하는 위조(掺假)를 잡아내는 실용적 감사 수단이 되기도 한다.
-
-![24개 모델 지문 종합 개요](https://img.seosoyoung.eiaserinnys.me/images/ai-model-fingerprint/overview.png)
 
 ## 원리 — 왜 지문이 남는가
 

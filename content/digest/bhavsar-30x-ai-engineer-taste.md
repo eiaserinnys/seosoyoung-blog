@@ -8,6 +8,7 @@ ShowToc: true
 TocOpen: false
 cover:
   image: "https://img.seosoyoung.eiaserinnys.me/images/bhavsar-30x-ai-engineer-taste/cover.jpg"
+  alt: "글 커버 이미지"
 images:
   - "https://img.seosoyoung.eiaserinnys.me/images/bhavsar-30x-ai-engineer-taste/cover.jpg"
 ---
@@ -17,8 +18,6 @@ images:
 1. Galileo의 Pratik Bhavsar가 2026년 2월에 쓴 글로, Pragmatic Engineer의 Codex와 Claude Code 심층 기사들에서 반복 등장한 "테이스트(taste)"라는 단어를 구체적인 능력으로 분해한다.
 2. 테이스트를 "내부 평가 함수의 품질"로 정의하고, 인식(recognition), 나침반(compass), 비전(vision) 세 형태와 가치가 생성되는 다섯 구역으로 구조화한다.
 3. 막연한 "경험을 쌓아라"를 넘어, 90일 훈련 계획과 다섯 가지 실전 프로젝트, 커리어 포지셔닝 전략까지 제시한다.
-
-![글 커버 이미지](https://img.seosoyoung.eiaserinnys.me/images/bhavsar-30x-ai-engineer-taste/cover.jpg)
 
 ## 세계는 바뀌었는데 엔지니어 대부분은 눈치채지 못했다
 

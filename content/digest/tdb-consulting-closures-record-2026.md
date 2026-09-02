@@ -8,6 +8,7 @@ ShowToc: true
 TocOpen: false
 cover:
   image: "https://img.seosoyoung.eiaserinnys.me/images/tdb-consulting-closures-record-2026/chart.jpg"
+  alt: "경영컨설팅업 도산, 휴폐업 추이 (출처: 日本経済新聞)"
 images:
   - "https://img.seosoyoung.eiaserinnys.me/images/tdb-consulting-closures-record-2026/chart.jpg"
 ---
@@ -29,8 +30,6 @@ images:
 | **합계** | **242건** | **+11%** |
 
 242건은 집계를 시작한 2000년 이후 최다 기록이다.
-
-![경영컨설팅업 도산, 휴폐업 추이 (출처: 日本経済新聞)](https://img.seosoyoung.eiaserinnys.me/images/tdb-consulting-closures-record-2026/chart.jpg)
 
 ## 시장 배경
 

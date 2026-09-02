@@ -6,6 +6,7 @@ categories: ["다이제스트"]
 summary: "Canva가 수억 사용자의 세션 폐기 조회를 초당 수십만 건 처리하는 게이트웨이 인메모리 캐시를 어떻게 다시 설계했는지 정리한 엔지니어링 블로그. 배포 때 MySQL로 몰리던 캐시 시딩 부하를, 12시간 윈도를 30분 청크로 자른 16바이트 이진 배열을 S3에 두는 방식으로 풀었다."
 cover:
   image: "https://img.seosoyoung.eiaserinnys.me/images/canva-session-revocations-at-scale/download-process.png"
+  alt: "새 시스템에서 폐기가 흐르는 경로"
 images:
   - "https://img.seosoyoung.eiaserinnys.me/images/canva-session-revocations-at-scale/download-process.png"
 ShowToc: true
@@ -69,8 +70,6 @@ S3로 데이터를 캐싱하려면 폐기 레코드의 슬라이딩 윈도를 �
 인메모리 캐시는 새 폐기가 생기는 대로 계속 최신으로 유지해야 한다. 그러지 않으면 배포 때만 반영될 테니까. 이를 위해 S3 조건부 GET 요청을 써서, 최신 청크가 실제로 바뀌었을 때만 다시 내려받았다. 설령 30분 창에 폐기가 100만 건 있어도 이는 몇 분에 한 번 16메가바이트에 지나지 않는다. 게이트웨이가 프록시하는 요청·응답 데이터 양에 비하면 바다에 물 한 방울이다. 청크 창의 끝이 12시간보다 오래되면 캐시에서 그냥 버리면 된다.
 
 각 게이트웨이 파드가 시작할 때 당겨야 하는 무효화 건수 자체는 그대로다. 하지만 조밀한 이진 판을 S3에서 스트리밍하는 편이, 10억 행이 넘는 데이터를 MySQL에 요청하는 것보다 훨씬 빠르고 확장성이 좋다. 게이트웨이 하나로 보면 수십 메가바이트지만, 전체 플릿으로 보면 수십 기가바이트가 된다.
-
-![새 시스템에서 폐기가 흐르는 경로](https://img.seosoyoung.eiaserinnys.me/images/canva-session-revocations-at-scale/download-process.png)
 
 ## 성과와 교훈
 

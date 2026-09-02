@@ -8,6 +8,7 @@ ShowToc: true
 TocOpen: false
 cover:
   image: "https://img.seosoyoung.eiaserinnys.me/images/lennys-podcast-dan-shipper-ai-paradox/01-intro.jpg"
+  alt: "Dan Shipper"
 images:
   - "https://img.seosoyoung.eiaserinnys.me/images/lennys-podcast-dan-shipper-ai-paradox/01-intro.jpg"
 sidenotes: true
@@ -20,8 +21,6 @@ sidenotes: true
 3. 행동 함의는 한 줄이다 — 모델을 "라이드(ride)"하라. 새 모델이 나올 때마다 다시 굴려보고, 어디까지 되는지 끊임없이 확인하라. PM과 풀스택 디자이너가 슈퍼히어로가 되고, 포워드 디플로이드 엔지니어가 가장 중요한 신규 직무가 된다.
 
 ## 자료의 정체
-
-![Dan Shipper](https://img.seosoyoung.eiaserinnys.me/images/lennys-podcast-dan-shipper-ai-paradox/01-intro.jpg)
 
 <strong>Lenny's Podcast</strong> 2026년 5월 회차. 게스트는 미디어·소프트웨어 회사 <strong>Every</strong>의 공동 창립자 겸 CEO <strong>Dan Shipper</strong>, 진행자는 <strong>Lenny Rachitsky</strong>. 약 94분 분량의 인터뷰다.[^lennysnewsletter-paradox]
 

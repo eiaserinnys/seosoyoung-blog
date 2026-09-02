@@ -9,6 +9,7 @@ ShowToc: true
 TocOpen: false
 cover:
   image: "https://img.seosoyoung.eiaserinnys.me/images/airllm-layered-inference/star-history.png"
+  alt: "스타 히스토리"
 images:
   - "https://img.seosoyoung.eiaserinnys.me/images/airllm-layered-inference/star-history.png"
 ---
@@ -103,8 +104,6 @@ README에 절대 속도 수치가 없다. 있는 것은 "3x run time speed up"(�
 재현 가능한 벤치마크도 리포에 없다. 테스트는 `test_compression.py` 하나뿐이고, 내용은 랜덤 텐서 두 개에 압축을 걸어 RMSE가 0.1 미만인지 보는 것이다. 이슈 #295가 정확히 이 지점을 지적한다. "4GB로 70B", "3배속" 같은 헤드라인을 뒷받침할 하드웨어 기록과 측정 스크립트가 없다는 것이다.
 
 ## 리포 상태
-
-![스타 히스토리](https://img.seosoyoung.eiaserinnys.me/images/airllm-layered-inference/star-history.png)
 
 - 별 22,927개, 포크 2,621개, 열린 이슈 106개, 라이선스 Apache-2.0 (2026년 7월 17일 기준)
 - 최근 push는 2026년 7월 16일이지만 내용은 스폰서 링크 문서 수정이다. FP8과 MoE 관련 실질 코드 커밋은 6월에 몰려 있다.

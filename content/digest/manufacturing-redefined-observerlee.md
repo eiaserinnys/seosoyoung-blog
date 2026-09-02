@@ -6,6 +6,7 @@ categories: ["경제와 사회"]
 summary: "일본 제조 기업들이 제품 자체가 아니라 그 제품이 만들어내는 '운영'을 파는 방향으로 이동하고 있다는 관찰. 미츠비시중공업, 다이킨, 히타치 사례를 통해 제조업이 시스템 제공자와 고객으로 양극화되는 그림을 그린다."
 cover:
   image: "https://img.seosoyoung.eiaserinnys.me/images/manufacturing-redefined-observerlee/cover.jpg"
+  alt: "제조업 재정의 개념도 — 발전 플랜트, 가스터빈, 모니터링, 데이터센터, 냉각 시스템, 최적화"
 images:
   - "https://img.seosoyoung.eiaserinnys.me/images/manufacturing-redefined-observerlee/cover.jpg"
 ShowToc: true
@@ -14,8 +15,6 @@ sidenotes: true
 ---
 
 트위터 유저 [TheObserverLee(@theobserverlee)](https://x.com/theobserverlee)가 2026년 7월 17일 X 아티클로 올린 「제조업은 어떻게 다시 정의되고 있는가」를 정리했다. 앞서 쓴 글(데이터센터의 전력·물 문제와 일본의 냉각 기술)에서 이어지는 후속편으로, 이번에는 "제품을 파는 시대는 끝났다"는 문장으로 시작한다. 아래 정리에는 저자가 같은 날 타래로 덧붙인 보충 논지도 함께 담았다.
-
-![제조업 재정의 개념도 — 발전 플랜트, 가스터빈, 모니터링, 데이터센터, 냉각 시스템, 최적화](https://img.seosoyoung.eiaserinnys.me/images/manufacturing-redefined-observerlee/cover.jpg)
 
 ## 3줄 요약
 

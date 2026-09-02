@@ -8,6 +8,7 @@ ShowToc: true
 TocOpen: false
 cover:
   image: "https://img.seosoyoung.eiaserinnys.me/images/after-automation-shipper-2026/ai-sandwich.png"
+  alt: "Human sandwich — 사람이 프레임을 세우고, AI가 작업을 압축하고, 사람이 결과를 판단·확장한다."
 images:
   - "https://img.seosoyoung.eiaserinnys.me/images/after-automation-shipper-2026/ai-sandwich.png"
 sidenotes: true
@@ -72,8 +73,6 @@ AI 작업은 두 가지 모드로 정착하고 있다.
 ### 2) Human-agent collaboration — 사람·에이전트 협업
 
 Codex, Claude Code, Claude Cowork 같은 도구. 단순 위임처가 아니라 **일 자체의 운영 체제(operating system)** 가 된다. 여러 에이전트와 사람이 같은 컴퓨터, 같은 시간에, 비동기 에이전트가 할 수 없는 복잡한 원본 작업을 한다.
-
-![Human sandwich — 사람이 프레임을 세우고, AI가 작업을 압축하고, 사람이 결과를 판단·확장한다.](https://img.seosoyoung.eiaserinnys.me/images/after-automation-shipper-2026/ai-sandwich.png)
 
 Every의 GM Kieran Klaassen은 이 패턴을 **"human sandwich"** 라 부른다. 사람이 양쪽 빵, AI가 가운데 속재료다. 사람이 프레임을 잡고 시작하고, AI가 작업을 압축하고, 사람이 결과를 판단·확장한다.
 

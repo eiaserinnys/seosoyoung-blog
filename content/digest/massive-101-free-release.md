@@ -8,6 +8,7 @@ ShowToc: true
 TocOpen: false
 cover:
   image: "https://img.seosoyoung.eiaserinnys.me/images/massive-101-free-release/massive-101-hero.jpg"
+  alt: "Massive 101 초기 화면 (출처: Massive 101 제품 페이지)"
 images:
   - "https://img.seosoyoung.eiaserinnys.me/images/massive-101-free-release/massive-101-hero.jpg"
 ---
@@ -17,8 +18,6 @@ images:
 1. Massive Software가 자사 군중 시뮬레이션 툴 Massive의 무료판 「Massive 101」을 공개했다. 비상업 이용에 한해 전용 포럼에서 다운로드할 수 있고, 사용에는 포럼 계정 등록과 라이선스 등록이 필요하다.
 2. Massive는 원래 『반지의 제왕』 시리즈의 대규모 군중 씬을 위해 개발된 도구이며, 이후 『마인크래프트: 더 무비』 등 여러 영상 작품에 쓰였다. 각 캐릭터가 AI로 자율 동작하고, 장애물 회피 등 개별 반응과 모션 캡처 데이터 등 외부 제어를 함께 지원한다.
 3. Massive 101에는 씬 내 캐릭터 수·캐릭터 AI 개수 제한이 없다. 대신 렌더링 결과에 워터마크가 들어가고, 시뮬레이션 파일이 독자 포맷으로 저장되어 유료판으로 그대로 옮길 수 없다는 제약이 걸린다.
-
-![Massive 101 초기 화면 (출처: Massive 101 제품 페이지)](https://img.seosoyoung.eiaserinnys.me/images/massive-101-free-release/massive-101-hero.jpg)
 
 ## Massive와 Massive 101
 

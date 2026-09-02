@@ -8,6 +8,7 @@ ShowToc: true
 TocOpen: false
 cover:
   image: "https://img.seosoyoung.eiaserinnys.me/images/archify-agent-diagram-skill/01-hero.png"
+  alt: "Archify 제품 프리뷰"
 images:
   - "https://img.seosoyoung.eiaserinnys.me/images/archify-agent-diagram-skill/01-hero.png"
 ---
@@ -17,8 +18,6 @@ images:
 1. Archify는 코드베이스나 시스템 설명을 채팅 안에서 인터랙티브한 시스템 맵으로 바꾸는 에이전트 스킬이다. Cursor, Claude Code, Codex CLI, OpenCode에 설치해 쓴다.
 2. 에이전트가 그림을 직접 그리지 않는다. 타입이 정해진 JSON 중간 표현을 쓰면 Archify가 스키마와 레이아웃과 경로를 검사한 뒤 결정론적으로 HTML 한 파일로 컴파일한다. 검사를 모두 통과하기 전까지는 직전의 정상 산출물이 그대로 남는다.
 3. 2026년 4월 15일에 만들어진 리포가 넉 달 반 만에 별 28,182개를 모았다. MIT 라이선스이고 최신 릴리스는 8월 17일의 v2.15.0이다.
-
-![Archify 제품 프리뷰](https://img.seosoyoung.eiaserinnys.me/images/archify-agent-diagram-skill/01-hero.png)
 
 ## 그림 대신 사실을 쓰게 한다
 

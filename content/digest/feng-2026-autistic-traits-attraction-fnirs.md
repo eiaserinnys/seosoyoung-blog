@@ -8,6 +8,7 @@ ShowToc: true
 TocOpen: false
 cover:
   image: "https://img.seosoyoung.eiaserinnys.me/images/feng-2026-autistic-traits-attraction-fnirs/brain-connection.jpg"
+  alt: "뇌의 손가락 끝 신경 연결을 시각화한 PsyPost 대표 이미지"
 images:
   - "https://img.seosoyoung.eiaserinnys.me/images/feng-2026-autistic-traits-attraction-fnirs/brain-connection.jpg"
 sidenotes: true
@@ -18,8 +19,6 @@ sidenotes: true
 1. Tianjin Normal University Feng 외 연구진이 사회관계모형(Social Relations Model)과 fNIRS 하이퍼스캐닝을 결합해 4인 집단 토론을 측정했다. 비슷한 자폐 특성을 가진 사람끼리 서로 더 강하게 끌렸으며, 이 효과는 의견이 일치할 때만 나타났다.
 2. 적극적 대화 중 뇌 동기화의 위치가 자폐 특성에 따라 달랐다 — 낮은 군은 우측 측두두정 접합부(rTPJ, 자동적 사회 지각 영역), 높은 군은 우측 배외측 전전두엽(rDLPFC, 의식적 인지 제어 영역)에서 동기화가 일어났다.
 3. 자폐의 사회적 어려움은 일방향의 결함이 아니라 *서로 다른 신경 전략의 비대칭*이며, 같은 양식을 쓰는 사람끼리는 다른 경로로도 충분히 사회적 연결을 만든다는 *이중 공감 문제(Double Empathy Problem)* 가설을 직접 지지한다.
-
-![뇌의 손가락 끝 신경 연결을 시각화한 PsyPost 대표 이미지](https://img.seosoyoung.eiaserinnys.me/images/feng-2026-autistic-traits-attraction-fnirs/brain-connection.jpg)
 
 ## 자료 정체
 

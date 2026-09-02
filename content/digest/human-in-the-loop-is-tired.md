@@ -6,6 +6,7 @@ categories: ["에이전트와 코딩"]
 summary: "LLM으로 코드를 짜는 일은 생산성을 끌어올리는 동시에 개발자를 소진시킨다. Pydantic의 Laura Summers가 '감독의 피로'와 '인간 보상 함수 문제'를 이름 붙이고, 병목은 처음부터 코드가 아니라 인간의 주의력이었다고 진단한다."
 cover:
   image: "https://img.seosoyoung.eiaserinnys.me/images/human-in-the-loop-is-tired/hero.png"
+  alt: "코드는 얼추 스스로 써지지만, 그것을 검토·지시·교정하는 인간은 더 힘들어진다"
 images:
   - "https://img.seosoyoung.eiaserinnys.me/images/human-in-the-loop-is-tired/hero.png"
 ShowToc: true
@@ -27,8 +28,6 @@ TocOpen: false
 > LLM으로 프로그래밍하는 일은 진짜로 유용하고 진짜로 불안정하다. 이 둘은 공존한다. 두 번째가 벌어지고 있지 않은 척하면, 우리는 다 같이 번아웃에 빠질 것이다.
 
 ## "코드가 스스로 써진다"는 게 실제로 주는 느낌
-
-![코드는 얼추 스스로 써지지만, 그것을 검토·지시·교정하는 인간은 더 힘들어진다](https://img.seosoyoung.eiaserinnys.me/images/human-in-the-loop-is-tired/hero.png)
 
 저자의 동료이자 Pydantic AI 메인테이너인 Douwe는 매일 아침 눈을 뜨면 밤새 누군가의 AI가 열어 둔 서른 개의 PR을 마주하고, 그 하나하나에 즉석 판단을 내려야 한다고 토로했다. 검토 자체를 AI에 맡기고 싶은 유혹이 컸지만 그는 이렇게 말했다.
 

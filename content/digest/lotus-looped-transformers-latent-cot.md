@@ -9,6 +9,7 @@ ShowToc: true
 TocOpen: false
 cover:
   image: "https://img.seosoyoung.eiaserinnys.me/images/lotus-looped-transformers-latent-cot/fig1-scaling.png"
+  alt: "Figure 1 — LOTUS는 백본이 커져도 명시적 CoT의 정확도 상한을 따라간다"
 images:
   - "https://img.seosoyoung.eiaserinnys.me/images/lotus-looped-transformers-latent-cot/fig1-scaling.png"
 ---
@@ -26,8 +27,6 @@ Claude Code나 Codex, Gemini CLI, OpenAI Agent를 써본 사람이라면 "생각
 그래서 "생각을 언어로 뽑지 말고, 모델의 내부 상태에서 그냥 계산하자"는 아이디어가 나왔다. 이걸 *latent reasoning*이라 부른다. 문제는, 이 방법이 GPT-2 정도의 작은 모델에서는 CoT와 비등한데, 1B를 넘어가는 순간 오히려 밀리고 그 격차가 모델이 커질수록 더 벌어졌다는 것이다. **큰 모델일수록 오히려 내부 사고가 통하지 않았다.** 그래서 그동안은 실제 프론티어 에이전트에 이 아이디어가 들어가지 못했다.
 
 이 논문 LOTUS는 그 격차를 3B에서 처음으로 좁혔다.
-
-![Figure 1 — LOTUS는 백본이 커져도 명시적 CoT의 정확도 상한을 따라간다](https://img.seosoyoung.eiaserinnys.me/images/lotus-looped-transformers-latent-cot/fig1-scaling.png)
 
 *Figure 1. 기존 latent 방법(Coconut·CODI·SIM-CoT·KaVa)은 모델이 커질수록 명시적 CoT와의 격차가 벌어진다. LOTUS(빨강)만 상한선을 따라간다. 동시에 생각 단계 지연은 $2.5\times$~$6.9\times$ 줄인다.*
 

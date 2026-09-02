@@ -8,6 +8,7 @@ ShowToc: true
 TocOpen: false
 cover:
   image: "https://img.seosoyoung.eiaserinnys.me/images/firefield-ai-solo-dev/keyart.jpg"
+  alt: "파이어필드 키 아트"
 images:
   - "https://img.seosoyoung.eiaserinnys.me/images/firefield-ai-solo-dev/keyart.jpg"
 sidenotes: true
@@ -18,8 +19,6 @@ sidenotes: true
 1. 게임 개발 무경험자인 45세 퍼스널 트레이너 후지나가 나오키가 Claude Code만으로 3개월·약 400달러에 디아블로 스타일 아이소메트릭 ARPG `<파이어필드>`를 얼리 액세스로 출시했다 — 12만 줄 코드, 95개 언어 자막, 70개 언어 더빙, 100개 도전 과제가 1인 작업이다.
 2. 첫 달은 무계획한 vibe coding으로 컨텍스트가 폭발했고, 중반부터 *시스템별 파일 분리·CLAUDE.md를 인덱스 디렉토리로 운영·1\~2주 주기 정기 리팩토링* 세 가지를 도입해 '문맥과의 싸움'을 통제했다.
 3. 인터뷰의 마지막 메시지는 "AI가 게임 창작을 민주화하는 이 순간에도, 베테랑 개발자들이 수십 년간 피와 땀으로 쌓아 올린 토대 위에 우리가 서 있다는 사실을 잊어선 안 된다"는 당부다.
-
-![파이어필드 키 아트](https://img.seosoyoung.eiaserinnys.me/images/firefield-ai-solo-dev/keyart.jpg)
 
 ## 어떤 게임인가
 

@@ -8,6 +8,7 @@ ShowToc: true
 TocOpen: false
 cover:
   image: "https://img.seosoyoung.eiaserinnys.me/images/zelnick-take-two-ai-cannot-make-hits/01-zelnick-intro.jpg"
+  alt: "스트라우스 젤닉, 인터뷰 오프닝"
 images:
   - "https://img.seosoyoung.eiaserinnys.me/images/zelnick-take-two-ai-cannot-make-hits/01-zelnick-intro.jpg"
 sidenotes: true
@@ -20,8 +21,6 @@ sidenotes: true
 3. 젤닉은 반(反)AI론자가 아니다. Take-Two는 사내에서 수백 개의 AI 파일럿을 돌리고 있다. 그의 결론은 단순하다 — "히트는 모든 병을 고친다(hits cure all ills)." 그리고 히트는 도구가 아니라 사람이 만든다.
 
 ## 인터뷰 배경
-
-![스트라우스 젤닉, 인터뷰 오프닝](https://img.seosoyoung.eiaserinnys.me/images/zelnick-take-two-ai-cannot-make-hits/01-zelnick-intro.jpg)
 
 2026년 1월, 구글이 *Project Genie*를 공개했다. 텍스트·이미지 프롬프트로 아주 짧은 GTA풍 인터랙티브 경험을 생성하는 도구였다. 발표 직후 Take-Two·닌텐도·로블록스의 주가가 하루 만에 빠졌다. 투자자들이 *"버튼 하나로 누구나 GTA를 만들 수 있는 세상"* 시나리오에 베팅한 것이다.
 

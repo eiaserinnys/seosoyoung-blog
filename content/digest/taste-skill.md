@@ -8,6 +8,7 @@ ShowToc: true
 TocOpen: false
 cover:
   image: "https://img.seosoyoung.eiaserinnys.me/images/taste-skill/readme-banner.webp"
+  alt: "taste-skill 리포지토리 배너"
 images:
   - "https://img.seosoyoung.eiaserinnys.me/images/taste-skill/readme-banner.webp"
 ---
@@ -17,8 +18,6 @@ images:
 1. Leonxlnx가 2026년 2월에 공개하고 6월까지 활발히 갱신하고 있는 오픈소스 Agent Skills 컬렉션이다. "AI가 만드는 지루하고 일반적인 슬롭을 멈춘다"를 슬로건으로 걸고, 5만 5천 개의 별을 받았다. Claude Code, Cursor, Codex, ChatGPT 등 어디에나 설치할 수 있는 포터블 스킬로 배포된다.
 2. 핵심 개념은 세 개의 다이얼과 브리프 인퍼런스다. DESIGN_VARIANCE 8 / MOTION_INTENSITY 6 / VISUAL_DENSITY 4가 기본값이고, 코드를 쓰기 전에 "이 요청을 나는 이렇게 읽었다"를 한 줄로 선언하도록 강제한다. AI 에이전트가 자기 판단을 내리기 전에 브리프를 다시 읽는 훅을 심는 방식이다.
 3. 11개의 스킬 배리언트가 함께 배포된다. 기본 taste-skill 외에 프리미엄용 soft, 미니멀리스트, 브루탈리스트, 기존 프로젝트 진단과 수정용 redesign, 출력 절단 방지용 output, 이미지 우선 파이프라인, Google Stitch용 등이 각각의 미학과 금지 목록을 들고 있다.
-
-![taste-skill 리포지토리 배너](https://img.seosoyoung.eiaserinnys.me/images/taste-skill/readme-banner.webp)
 
 ## 무엇을 해결하는가
 

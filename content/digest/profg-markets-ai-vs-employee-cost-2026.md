@@ -8,6 +8,7 @@ ShowToc: true
 TocOpen: false
 cover:
   image: "https://img.seosoyoung.eiaserinnys.me/images/profg-markets-ai-vs-employee-cost-2026/chart-china-vs-us-tokens.png"
+  alt: "OpenRouter API 콜에서 본 미국·중국·기타 모델의 주간 토큰 소비"
 images:
   - "https://img.seosoyoung.eiaserinnys.me/images/profg-markets-ai-vs-employee-cost-2026/chart-china-vs-us-tokens.png"
 ---
@@ -18,7 +19,6 @@ images:
 2. 우버는 2026년 AI 예산을 4개월 만에 소진했고, 마이크로소프트는 여러 부서의 Claude Code 라이선스를 끊었고, Nvidia 임원은 "컴퓨트 비용이 인건비보다 훨씬 비싸다"고 말했다. ROI를 확신할 수 있다고 답한 조직은 절반뿐이다.
 3. 그 결과 미국 AI 스타트업의 80%가 10\~30배 싼 중국 오픈소스 LLM으로 갈아탔다 — 개발자 사용 점유율은 2024년 1%에서 2026년 5월 60%대로 올라섰다.
 
-![OpenRouter API 콜에서 본 미국·중국·기타 모델의 주간 토큰 소비](https://img.seosoyoung.eiaserinnys.me/images/profg-markets-ai-vs-employee-cost-2026/chart-china-vs-us-tokens.png)
 *OpenRouter LLM 랭킹 리더보드. 2026년 2분기부터 황색(중국 모델) 영역이 폭발적으로 늘어나 미국 모델 사용량을 추월한다. 출처: Prof G Media*
 
 ## AI는 대체하려는 인건비보다 비싸지고 있다

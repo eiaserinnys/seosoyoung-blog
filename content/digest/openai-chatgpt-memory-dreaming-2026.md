@@ -6,6 +6,7 @@ categories: ["AI 산업"]
 summary: "OpenAI가 ChatGPT의 메모리 시스템을 백그라운드 합성 방식 'dreaming V3'으로 전환했다. 저장 메모리 보조에서 독립 시스템으로 격상되었으며, 컴퓨트를 5배 줄여 무료 사용자에게도 곧 풀린다."
 cover:
   image: "https://img.seosoyoung.eiaserinnys.me/images/openai-chatgpt-memory-dreaming-2026/memory-summary.png"
+  alt: "메모리 요약 모달 — 작업·취미·여행 관심사·커뮤니티 참여를 한눈에 보여주는 개인화 개요"
 images:
   - "https://img.seosoyoung.eiaserinnys.me/images/openai-chatgpt-memory-dreaming-2026/memory-summary.png"
 ShowToc: true
@@ -39,8 +40,6 @@ OpenAI는 ChatGPT 메모리의 진화를 세 단계로 정리한다.
 지난 1년간 dreaming은 저장 메모리를 *보충*하는 위치에서 응답 개인화를 한 단계 끌어올렸지만, 독립 시스템으로 쓰기에는 부족했다고 OpenAI는 인정한다. 이번 V3에서는 그 한계를 넘는 아키텍처로 재설계되었다고 말한다.
 
 dreaming이 합성한 메모리는 *메모리 요약(summary)* 페이지에서 검토할 수 있다. 사용자는 ChatGPT가 자신에 대해 알고 있는 핵심을 한눈에 보고, 항목을 수정·삭제하거나, 어떤 주제를 언제 꺼내야 할지에 대한 지시를 남길 수 있다.
-
-![메모리 요약 모달 — 작업·취미·여행 관심사·커뮤니티 참여를 한눈에 보여주는 개인화 개요](https://img.seosoyoung.eiaserinnys.me/images/openai-chatgpt-memory-dreaming-2026/memory-summary.png)
 
 ## 좋은 메모리란 무엇인가 — 평가 축 3가지
 

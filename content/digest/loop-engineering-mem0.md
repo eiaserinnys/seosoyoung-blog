@@ -8,6 +8,7 @@ ShowToc: true
 TocOpen: false
 cover:
   image: "https://img.seosoyoung.eiaserinnys.me/images/loop-engineering-mem0/cover.jpeg"
+  alt: "Loop Engineering for AI Agents: Memory-First Design — Mem0 블로그의 표제 이미지."
 images:
   - "https://img.seosoyoung.eiaserinnys.me/images/loop-engineering-mem0/cover.jpeg"
 ---
@@ -19,8 +20,6 @@ images:
 3. 그 균형을 가능하게 하는 것이 *명시적 메모리 계층*이다. 메모리를 긴 프롬프트의 부산물이 아니라 일급 구성 요소로 다루면, 무엇을 저장하고 무엇을 불러올지를 정책으로 통제할 수 있다. 다만 메모리 계층도 프롬프트 품질·잘못된 정책·낡은 기억·디버깅 복잡성을 없애 주지는 않는다 — 메모리는 루프 엔지니어링의 한 층이지 전부가 아니다. (글 자체가 Mem0 제품 소개를 겸한 벤더 자료라는 점은 감안해 읽는다.)
 
 이 글은 ["루프 엔지니어링" 연재](/tags/루프-엔지니어링/)의 일곱 번째, 마지막 편이다. 앞선 여섯 편이 루프의 *제어 흐름*을 주로 들여다봤다면 — [1편(Addy Osmani)](/digest/loop-engineering-osmani/)이 "루프를 설계하라"는 선언을, [2편(Firecrawl)](/digest/loop-engineering-firecrawl/)이 그 실천 노트를, [3편(Oracle)](/digest/loop-engineering-oracle/)이 ReAct에서 출발한 계보를, [4편(OpenAI)](/digest/loop-engineering-harness/)이 하네스를 직접 짠 생산자의 사례를, [5편(Böckeler/Fowler)](/digest/loop-engineering-fowler/)이 그 하네스를 사용자의 멘탈 모델로 정리했고, [6편(Data Science Dojo)](/digest/loop-engineering-overview/)이 그 모두를 4세대 계보의 지도 위에 올렸다면 — 이 7편은 시선을 *루프의 기억*으로 돌린다. 앞선 편들도 메모리를 스치긴 했지만(6편의 메모리 4종, Ralph 루프의 파일 기반 상태), 메모리를 루프 설계의 *출발점*으로 삼아 본 글은 이 편이 처음이다. 연재를 닫는 자리에 두기 알맞은 각도다.
-
-![Loop Engineering for AI Agents: Memory-First Design — Mem0 블로그의 표제 이미지.](https://img.seosoyoung.eiaserinnys.me/images/loop-engineering-mem0/cover.jpeg)
 
 ## 루프 엔지니어링이란, 다시
 

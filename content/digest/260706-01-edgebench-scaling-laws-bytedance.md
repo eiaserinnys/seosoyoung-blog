@@ -9,6 +9,7 @@ ShowToc: true
 TocOpen: false
 cover:
   image: "https://img.seosoyoung.eiaserinnys.me/images/260706-01-edgebench-scaling-laws-bytedance/scaling-curve.png"
+  alt: "134개 태스크 평균 학습 곡선 — 로그-시그모이드 정합"
 images:
   - "https://img.seosoyoung.eiaserinnys.me/images/260706-01-edgebench-scaling-laws-bytedance/scaling-curve.png"
 ---
@@ -18,8 +19,6 @@ images:
 1. ByteDance Seed가 2026년 7월 공개한 **EdgeBench**는 과학·소프트웨어·최적화·전문 지식·형식 수학·인터랙티브 게임 6개 능력군에 걸친 **134개 실세계 태스크**(그중 **51개 공개**) 벤치마크로, 프론티어 에이전트가 태스크당 12시간 이상 환경과 상호작용하며 개선되는 궤적을 측정한다.
 2. 5개 프론티어 모델의 총 **약 38,000시간** 상호작용 데이터를 분석한 결과, 환경 학습 성능은 상호작용 시간의 **로그-시그모이드 함수**를 따르며 $R^2 = 0.998$의 정밀도로 맞춰진다. 사전학습 스케일링 법칙과 같은 수학적 형태다.
 3. **프론티어 모델의 환경 학습 속도는 대략 3개월마다 두 배가 된다.** 12시간 리더보드에서 Claude Opus 4.8이 51.3점으로 선두, GPT-5.5가 48.4점으로 뒤를 잇는다.
-
-![134개 태스크 평균 학습 곡선 — 로그-시그모이드 정합](https://img.seosoyoung.eiaserinnys.me/images/260706-01-edgebench-scaling-laws-bytedance/scaling-curve.png)
 
 ## 왜 EdgeBench가 필요한가
 

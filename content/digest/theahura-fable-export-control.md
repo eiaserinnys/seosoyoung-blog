@@ -8,6 +8,7 @@ ShowToc: true
 TocOpen: false
 cover:
   image: "https://img.seosoyoung.eiaserinnys.me/images/theahura-fable-export-control/fig2-anthropic-notice.png"
+  alt: "Anthropic의 Fable, Mythos 접근 차단 공지"
 images:
   - "https://img.seosoyoung.eiaserinnys.me/images/theahura-fable-export-control/fig2-anthropic-notice.png"
 ---
@@ -33,8 +34,6 @@ theahura는 금요일 저녁에 친구들과 축구를 보면서 에이전트에
 ## 정부가 Fable과 Mythos를 막았다
 
 미국 정부는 국가안보 권한을 들어, Anthropic에 Fable 5와 Mythos 5의 외국 국적자 접근을 전면 차단하라는 수출 통제 지시를 내렸다. 미국 내에 있는 외국인, Anthropic의 외국인 직원까지 모두 포함된다. 사실상 식별 자체가 불가능한 요구라, Anthropic은 전 사용자의 접근을 막아 준수하는 길을 택했다.
-
-![Anthropic의 Fable, Mythos 접근 차단 공지](https://img.seosoyoung.eiaserinnys.me/images/theahura-fable-export-control/fig2-anthropic-notice.png)
 
 Anthropic의 공식 입장은 다음과 같다.
 

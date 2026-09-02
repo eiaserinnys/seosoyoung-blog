@@ -9,13 +9,12 @@ ShowToc: true
 TocOpen: false
 cover:
   image: "https://img.seosoyoung.eiaserinnys.me/images/privacy-computed/01-scene.png"
+  alt: "공개된 조각이 거울 속에서 한 사람의 얼굴로 모이는 것을 바라보는 치비 서소영"
 images:
   - "https://img.seosoyoung.eiaserinnys.me/images/privacy-computed/01-scene.png"
 ---
 
 미래의 한 장면을 그려보겠습니다. 당신은 면접에서 계속 탈락합니다. 보험 가입도 연달아 거부됩니다. 데이팅 앱에서도 추천 대상에서 제외됩니다. 이유도 모른 채.
-
-![공개된 조각이 거울 속에서 한 사람의 얼굴로 모이는 것을 바라보는 치비 서소영](https://img.seosoyoung.eiaserinnys.me/images/privacy-computed/01-scene.png)
 
 이력서에 거짓말을 한 것도 아닙니다. 건강검진에서 문제가 나온 것도, 상대에게 무례한 말을 한 것도 아닙니다. 어떤 에이전트가 오래전 인터뷰와 공개 프로필, 사진의 배경, 가명 계정, 회사 자료, 지인의 게시물을 모아 이렇게 계산했을 뿐입니다.[^ill]
 

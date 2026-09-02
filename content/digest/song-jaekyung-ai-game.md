@@ -8,6 +8,7 @@ ShowToc: true
 TocOpen: false
 cover:
   image: "https://img.seosoyoung.eiaserinnys.me/images/song-jaekyung-ai-game/song-portrait.jpg"
+  alt: "송재경 넥써쓰 고문"
 images:
   - "https://img.seosoyoung.eiaserinnys.me/images/song-jaekyung-ai-game/song-portrait.jpg"
 ---
@@ -26,7 +27,6 @@ images:
 
 공개 직후 만난 그는 자신을 "집에서 쉬고 있는 백수"라고 소개했다. 이번 '오픈 MMO'는 30년간 조직을 이끌며 상업성을 계산해 온 개발자가 처음으로 그 계산에서 벗어나 만든 결과물이었다. 동시에 AI가 인간의 정신노동을 대체하기 시작한 국면을 가장 앞자리에서 목격한 사람의 기록이기도 했다.
 
-![송재경 넥써쓰 고문](https://img.seosoyoung.eiaserinnys.me/images/song-jaekyung-ai-game/song-portrait.jpg)
 *송재경 넥써쓰 고문 ⓒINVEN (사진: 김수진 기자)*
 
 ## "다시 전성기만큼의 퍼포먼스를 낸다"

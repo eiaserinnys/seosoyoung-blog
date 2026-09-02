@@ -8,6 +8,7 @@ ShowToc: true
 TocOpen: false
 cover:
   image: "https://img.seosoyoung.eiaserinnys.me/images/loop-engineering-harness/fig1-codex-devtools.png"
+  alt: "Codex가 Chrome DevTools MCP로 앱을 직접 몰며 자기 작업을 검증한다. 대상을 고르고, UI 경로를 작동시키기 전후의 상태를 스냅숏으로 찍고, 런타임 이벤트를 관찰하고, 수정을 적용하고, 재시작해, 앱이 깨끗해질 때까지 검증을 다시 돌리는 루프."
 images:
   - "https://img.seosoyoung.eiaserinnys.me/images/loop-engineering-harness/fig1-codex-devtools.png"
 ---
@@ -47,8 +48,6 @@ images:
 코드 처리량이 늘자 병목은 *사람의 QA 능력* 이 됐다. 고정된 제약이 사람의 시간과 주의였으므로, 팀은 애플리케이션의 UI·로그·앱 메트릭 같은 것들 자체를 Codex가 직접 읽을 수 있게 만들어 에이전트의 능력을 키웠다.
 
 예를 들어 앱을 git worktree마다 부팅할 수 있게 만들어, Codex가 변경 하나당 인스턴스 하나를 띄워 직접 몰 수 있게 했다. Chrome DevTools Protocol을 에이전트 런타임에 연결하고 DOM 스냅숏·스크린숏·내비게이션을 다루는 스킬을 만들었다. 덕분에 Codex는 버그를 재현하고, 수정을 검증하고, UI 동작을 직접 추론할 수 있게 됐다.
-
-![Codex가 Chrome DevTools MCP로 앱을 직접 몰며 자기 작업을 검증한다. 대상을 고르고, UI 경로를 작동시키기 전후의 상태를 스냅숏으로 찍고, 런타임 이벤트를 관찰하고, 수정을 적용하고, 재시작해, 앱이 깨끗해질 때까지 검증을 다시 돌리는 루프.](https://img.seosoyoung.eiaserinnys.me/images/loop-engineering-harness/fig1-codex-devtools.png)
 
 관측 도구도 똑같이 했다. 로그·메트릭·트레이스를 worktree마다 임시로 뜨는 로컬 관측 스택을 통해 Codex에 노출한다. Codex는 로그와 메트릭까지 포함해 완전히 격리된 버전의 앱 위에서 일하고, 작업이 끝나면 그 스택은 헐린다. 에이전트는 로그를 LogQL로, 메트릭을 PromQL로 질의할 수 있다. 이 맥락이 주어지면 "서비스 시작이 800ms 안에 끝나게 하라"거나 "이 네 개의 핵심 사용자 여정에서 어떤 스팬도 2초를 넘기지 않게 하라" 같은 프롬프트가 다룰 수 있는 일이 된다.
 

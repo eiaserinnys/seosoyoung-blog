@@ -6,6 +6,7 @@ categories: ["에이전트와 코딩"]
 summary: "\"배포해줘~\" 한마디로 보안 점검 후 사내망에 배포되는 시스템을 완성한 subicura(조성일)가 회고한, 퍼플아이오의 1년간 전사 AX 여정. 세 번의 실험이 공통으로 가리킨 결론은 AI 성능이 아니라 요구사항 정의와 조직의 맥락(Context)이었다."
 cover:
   image: "https://img.seosoyoung.eiaserinnys.me/images/subicura-ax-journey/koco-main.png"
+  alt: "KOCO 메인 화면"
 images:
   - "https://img.seosoyoung.eiaserinnys.me/images/subicura-ax-journey/koco-main.png"
 ShowToc: true
@@ -133,8 +134,6 @@ AI에게 전체 소스코드 접근 권한을 주고 브라우저로 페이지�
 - 그리고 배포의 어려움
 
 개발자가 한 땀 한 땀 도와주는 데는 한계가 있고, 결국 스스로 자생할 수 있어야 했다. 그래서 Quick Win 때 만든 DocSync를 전면 개조해 사내 AI 플랫폼 <strong>코코(KOCO)</strong>를 만들었다. Claude/Claude Cowork와 유사하되, 사용자가 최대한 쉽게 쓰도록 설계했다.
-
-![KOCO 메인 화면](https://img.seosoyoung.eiaserinnys.me/images/subicura-ax-journey/koco-main.png)
 
 주요 특징은 다음과 같다.
 

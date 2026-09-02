@@ -8,6 +8,7 @@ ShowToc: true
 TocOpen: false
 cover:
   image: "https://img.seosoyoung.eiaserinnys.me/images/weinberg-ai-like-meat/fig1-usage-distribution.png"
+  alt: "AI 사용 빈도 분포 — 다섯 개 조사 데이터의 교차 검증"
 images:
   - "https://img.seosoyoung.eiaserinnys.me/images/weinberg-ai-like-meat/fig1-usage-distribution.png"
 ---
@@ -52,8 +53,6 @@ Microsoft의 새 [United States AI Diffusion 사이트](https://www.microsoft.co
 ### Searchlight·The Argument 서베이도 일치
 
 [Searchlight Institute](https://www.searchlightinstitute.org/research/americans-have-mixed-views-of-ai-and-an-appetite-for-regulation/)는 *"58%가 AI를 사용하거나 시도해봤다고 답했고, 이 중 절반은 정기 사용자(30%, 월 몇 회 이상)이고 나머지 절반은 비정기 사용자(29%, 월 1회 이하)"* 라고 보고한다. [The Argument 매거진의 새 서베이](https://www.theargumentmag.com/p/the-biggest-issue-in-american-politics)는 *"대부분의 미국인은 AI를 일주일에 한 번 이하로 사용한다"* 고 결론짓는다.
-
-![AI 사용 빈도 분포 — 다섯 개 조사 데이터의 교차 검증](https://img.seosoyoung.eiaserinnys.me/images/weinberg-ai-like-meat/fig1-usage-distribution.png)
 
 다섯 개 데이터가 모두 같은 그림으로 수렴한다: **약 1/3은 적극 사용, 약 1/3은 가끔 사용, 약 1/3은 전혀 사용 안 함.** 이 분포는 "모두가 모든 일에 AI를 쓴다"와 한참 거리가 멀다. 훨씬 더 정확한 표현은 "일부 사람이 일부의 일에 AI를 쓴다"이다.
 

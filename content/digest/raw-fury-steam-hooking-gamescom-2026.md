@@ -8,6 +8,7 @@ ShowToc: true
 TocOpen: false
 cover:
   image: "https://img.seosoyoung.eiaserinnys.me/images/raw-fury-steam-hooking-gamescom-2026/01-pontus.jpg"
+  alt: "로우 퓨리의 시니어 브랜드 매니저 폰투스"
 images:
   - "https://img.seosoyoung.eiaserinnys.me/images/raw-fury-steam-hooking-gamescom-2026/01-pontus.jpg"
 ---
@@ -17,8 +18,6 @@ images:
 1. 게임스컴 2026 데브 강연에서 인디 퍼블리셔 로우 퓨리(Raw Fury)의 시니어 브랜드 매니저 폰투스가 '스팀에서의 후킹 방법'을 주제로 발표했다. <블루 프린스>, <카세트 비스트> 등을 퍼블리싱하며 쌓은 경험이 바탕이다.
 2. 결론은 "스팀 페이지를 잘 꾸미십시오" 한 줄로 수렴하지만, 강연의 내용은 타이틀명·키 아트·태그·가격·트레일러·스크린샷·소개문·리뷰를 각각 별개의 전환 지점으로 다루는 데 있었다.
 3. 키 아트를 교체하자 노출 대비 방문수가 1\~2% 올랐다는 실측처럼, 개별 요소의 개선이 지표로 돌아온다는 것이 이들의 주장이다.
-
-![로우 퓨리의 시니어 브랜드 매니저 폰투스](https://img.seosoyoung.eiaserinnys.me/images/raw-fury-steam-hooking-gamescom-2026/01-pontus.jpg)
 
 ## 1년에 2만 개
 

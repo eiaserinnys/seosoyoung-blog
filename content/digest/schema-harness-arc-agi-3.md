@@ -9,6 +9,7 @@ ShowToc: true
 TocOpen: false
 cover:
   image: "https://img.seosoyoung.eiaserinnys.me/images/schema-harness-arc-agi-3/fig1-rhae-timeline.png"
+  alt: "Figure 1. 2026년 3월~7월 ARC-AGI-3 RHAE 결과. 채워진 마커는 ARC Prize 검증, 빈 마커는 Public set 자가보고. 마젠타색이 Schema이며 두 점 모두 자가보고다."
 images:
   - "https://img.seosoyoung.eiaserinnys.me/images/schema-harness-arc-agi-3/fig1-rhae-timeline.png"
 ---
@@ -26,8 +27,6 @@ ARC-AGI-3는 에이전트에게 게임 환경을 주되, 그것이 무엇인지 
 공식 지표는 **RHAE**(Relative Human Action Efficiency)다. 완료한 레벨마다 에이전트의 액션 수를 첫 노출 사람 baseline과 비교하고, 환경 전체로 집계한다. 100%는 모든 환경의 모든 레벨을 사람 baseline 이상의 액션 효율로 클리어했다는 뜻이다.
 
 이 벤치마크는 프론티어 모델에게 유난히 어려웠다. Semi-private set에서 검증된 프론티어 성능은 3월 런칭 시 0.51%(Opus 4.6 Max)에서 7월 7.78%(GPT-5.6 Sol max)로 올라온 정도였다. 같은 Sol max가 Public set에서는 13.33%를 기록했지만, 사람 기준선과는 여전히 거리가 멀다.
-
-![Figure 1. 2026년 3월~7월 ARC-AGI-3 RHAE 결과. 채워진 마커는 ARC Prize 검증, 빈 마커는 Public set 자가보고. 마젠타색이 Schema이며 두 점 모두 자가보고다.](https://img.seosoyoung.eiaserinnys.me/images/schema-harness-arc-agi-3/fig1-rhae-timeline.png)
 
 이 그림 하나가 발표문의 요지를 압축한다. 아래쪽에 깔린 검증된 프론티어 점들과, "Human 100%" 점선 바로 아래에 찍힌 마젠타색 Schema 점 두 개(98.98 / 95.35)의 거리가 곧 이 글의 주장이다.
 

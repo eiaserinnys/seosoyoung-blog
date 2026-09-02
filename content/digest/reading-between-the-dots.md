@@ -6,6 +6,7 @@ categories: ["모델과 연구"]
 summary: "질문 뒤에 점(.....)을 수백 개 찍어주면 최첨단 LLM이 더 똑똑해진다. 출력에는 아무 단서도 없는 이 '숨은 계산'을, 저자들은 residual stream을 열어 라벨도 학습도 없이 80~95% 정확도로 읽어냈다. 불투명하다고 감사 불가능한 것은 아니다."
 cover:
   image: "https://img.seosoyoung.eiaserinnys.me/images/reading-between-the-dots/fig1-overview.png"
+  alt: "filler 토큰 위의 숨은 다단계 추론과 그 무감독 디코딩 개요. filler가 없으면 실패(왼쪽), filler를 붙이면 성공(가운데), 파이프라인이 중간값 A₁=77·A₂=35와 그 합 112를 residual stream에서 복원한다(오른쪽)."
 images:
   - "https://img.seosoyoung.eiaserinnys.me/images/reading-between-the-dots/fig1-overview.png"
 ShowToc: true
@@ -27,8 +28,6 @@ Kaley Brauer, Claudio Mayrink Verdun, Samuel Marks가 2026년 7월 arXiv에 올�
 저자들의 반론은 한 문장으로 압축된다. **"출력에서 숨겨졌다(hidden from the output)"가 "우리에게서 숨겨졌다(hidden from us)"를 뜻하지는 않는다.** 독자에게 의미가 비어 있는 토큰이라도 residual stream에는 해독 가능한 구조를 풍부하게 담고 있을 수 있다.
 
 논문은 현상 확립 → 메커니즘 국소화 → 내용 복원의 세 걸음으로 나아간다.
-
-![filler 토큰 위의 숨은 다단계 추론과 그 무감독 디코딩 개요. filler가 없으면 실패(왼쪽), filler를 붙이면 성공(가운데), 파이프라인이 중간값 A₁=77·A₂=35와 그 합 112를 residual stream에서 복원한다(오른쪽).](https://img.seosoyoung.eiaserinnys.me/images/reading-between-the-dots/fig1-overview.png)
 
 ## 대상과 과제 설계
 

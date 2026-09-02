@@ -8,6 +8,7 @@ ShowToc: true
 TocOpen: false
 cover:
   image: "https://img.seosoyoung.eiaserinnys.me/images/seedance2-liveaction-anime-mv/00-cover.jpeg"
+  alt: "「free will」 MV 헤더"
 images:
   - "https://img.seosoyoung.eiaserinnys.me/images/seedance2-liveaction-anime-mv/00-cover.jpeg"
 sidenotes: true
@@ -18,8 +19,6 @@ sidenotes: true
 1. tapehead.lab이 신곡 「free will」 MV에 쓴 *실사×애니메이션 합성* 워크플로우를 note.com에 공개했다. 같은 저자가 지난주 공개한 [콜라주 애니메이션 워크플로우](/digest/seedance2-collage-animation-workflow/)의 후속편이고, 도구도 Seedance2.0·Runway로 같다.
 2. 1년간 합성 기법은 ① "합성된 정지화면을 만들어 동영상으로 움직인다" ② "그린백 애니 소재만 움직여 나중에 합성한다"는 두 갈래뿐이었다. Seedance2.0은 이 둘을 하나로 묶어 *합성하면서 동영상을 생성*한다.
 3. 결론은 단순하다 — 배경도 합성 레퍼런스도 필요 없다. *캐릭터 시트 한 장과 프롬프트만*으로 드론 샷 같은 큰 카메라워크에서도 캐릭터가 붕괴되지 않고 액션을 유지한다. 프롬프트는 ①합성 룰 ②물리 룰 ③숏별 사건 ④마감 지정의 4단 구조다.
-
-![「free will」 MV 헤더](https://img.seosoyoung.eiaserinnys.me/images/seedance2-liveaction-anime-mv/00-cover.jpeg)
 
 지난주 정리한 [콜라주 애니메이션 다이제스트](/digest/seedance2-collage-animation-workflow/)의 결론은 두 가지였다. *Start Frame이 아니라 Reference로 넣어라*, 그리고 *Seedance2.0은 프롬프트가 전부다*. 이번 글은 그 두 명제를 실사 합성이라는 더 어려운 무대에서 한 번 더 확인한다. 레퍼런스로 주는 건 캐릭터 시트 한 장뿐이고, 나머지는 전부 프롬프트가 통제한다. 같은 저자가 같은 도구로 *다른 표현*에 도달한 사례라, 두 글을 나란히 읽으면 도구 하나가 표현을 어디까지 밀어내는지가 선명해진다.
 

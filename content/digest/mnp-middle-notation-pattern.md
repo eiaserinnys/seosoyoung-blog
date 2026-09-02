@@ -8,6 +8,7 @@ ShowToc: true
 TocOpen: false
 cover:
   image: "https://img.seosoyoung.eiaserinnys.me/images/mnp-middle-notation-pattern/cover.png"
+  alt: "중간 표기 패턴(MNP) 표지"
 images:
   - "https://img.seosoyoung.eiaserinnys.me/images/mnp-middle-notation-pattern/cover.png"
 sidenotes: true
@@ -18,8 +19,6 @@ sidenotes: true
 1. 일본의 디자이너·리서처 なつ(@Dia_Nexus)가 자기 업무용 인하우스 웹 앱을 AI화하는 새 패턴으로 정리한 *중간 표기 패턴(Middle Notation Pattern, MNP)*의 소개·구현·고찰 글이다.
 2. 핵심 발상은 단순하다 — AI에게 GUI를 직접 조작시키는 대신, GUI 상태와 동등한 텍스트 DSL을 두고 AI가 그 DSL을 양방향으로 읽고 쓰게 한다. Mermaid가 텍스트로 도형을 그리던 것과 같은 결의 응용이다.
 3. 결과적으로 출력이 안정되고, 처리가 빨라지고, API 비용은 4\~8배 떨어지고, HTML 한 장으로 배포된다. 다만 상태가 비대화되면 컨텍스트 한계에 부딪힌다.
-
-![중간 표기 패턴(MNP) 표지](https://img.seosoyoung.eiaserinnys.me/images/mnp-middle-notation-pattern/cover.png)
 
 ## 글의 청중 — 자기 업무 도구를 굴리는 사람
 

@@ -9,6 +9,7 @@ ShowToc: true
 TocOpen: false
 cover:
   image: "https://img.seosoyoung.eiaserinnys.me/images/mai-thinking-1/thinking-1.png"
+  alt: "MAI-Thinking-1 — 워터컬러 사고풍선 로고"
 images:
   - "https://img.seosoyoung.eiaserinnys.me/images/mai-thinking-1/thinking-1.png"
 ---
@@ -18,8 +19,6 @@ images:
 1. Microsoft AI 슈퍼인텔리전스 팀이 2026년 6월 2일, 자사 첫 추론 모델 **MAI-Thinking-1**을 발표했다. 35B-active·약 1T-total 파라미터 sparse MoE 구조에 256k 컨텍스트 윈도우를 갖춘 중간체급 모델이다.
 2. 핵심 메시지는 **"능력은 상속이 아니라 학습되어야 한다"** — 타사 모델로부터의 증류 없이, 상업적 라이선스를 받은 깨끗한 데이터(사전학습에서 AI 생성 콘텐츠 배제)와 마이크로소프트 자체 가속기 위에서 처음부터 학습했다고 명시한다.
 3. SWE-Bench Pro에서 Claude Opus 4.6과 호각, AIME 2025/2026에서 각각 97.0%·94.5%, Surge 블라인드 인간 평가 1,276 태스크에서 Claude Sonnet 4.6보다 선호되었다고 보고한다.
-
-![MAI-Thinking-1 — 워터컬러 사고풍선 로고](https://img.seosoyoung.eiaserinnys.me/images/mai-thinking-1/thinking-1.png)
 
 ## 모델 개요
 

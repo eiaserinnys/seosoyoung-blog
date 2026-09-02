@@ -8,6 +8,7 @@ ShowToc: true
 TocOpen: false
 cover:
   image: "https://img.seosoyoung.eiaserinnys.me/images/motion-blur-past-present-future/teaser.png"
+  alt: "입력 모션 블러 이미지에서 생성한 영상 프레임, 추적 결과, 역사 사진 복원, 3D 구조 복원"
 images:
   - "https://img.seosoyoung.eiaserinnys.me/images/motion-blur-past-present-future/teaser.png"
 ---
@@ -18,7 +19,6 @@ images:
 2. 흔들린 사진 한 장을 사전학습 비디오 확산 모델(CogVideoX-2B)에 조건으로 넣어, 노출이 열려 있던 동안의 영상뿐 아니라 촬영 직전과 직후까지 생성한다. 각 출력 프레임의 노출 시작 시각과 길이를 따로 지정하는 인코딩이 핵심 장치다.
 3. GoPro와 B-AIST++ 벤치마크의 모든 지표에서 기존 기법을 앞섰고(GoPro PSNR 30.01 대 26.54, FVD 21.46 대 94.90), 1944년 노르망디 상륙 사진 같은 역사 사진에도 일반화된다. 출력 영상은 카메라 궤적 복원, 4D 장면 재구성, 3D 얼굴 자세 추정 같은 후속 작업의 입력이 된다.
 
-![입력 모션 블러 이미지에서 생성한 영상 프레임, 추적 결과, 역사 사진 복원, 3D 구조 복원](https://img.seosoyoung.eiaserinnys.me/images/motion-blur-past-present-future/teaser.png)
 *Figure 1. 흔들린 사진 한 장(a)에서 노출 중의 장면 움직임을 복원하고(b, c), 역사 사진을 되살리며(d), 동적 3D 구조와 카메라 자세까지 얻는다(e). Tedla et al., CC BY-SA 4.0*
 
 ## 흔들림은 손실인가 기록인가

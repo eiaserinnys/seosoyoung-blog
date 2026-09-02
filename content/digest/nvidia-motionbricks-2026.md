@@ -8,6 +8,7 @@ ShowToc: true
 TocOpen: false
 cover:
   image: "https://img.seosoyoung.eiaserinnys.me/images/nvidia-motionbricks-2026/teaser.jpg"
+  alt: "MotionBricks 티저 — 단일 backbone이 애니메이션과 로보틱스 양쪽을 통제한다"
 images:
   - "https://img.seosoyoung.eiaserinnys.me/images/nvidia-motionbricks-2026/teaser.jpg"
 ---
@@ -17,8 +18,6 @@ images:
 1. NVIDIA가 SIGGRAPH 2026 / ACM Transactions on Graphics에 발표한 실시간 모션 생성 프레임워크. 35만+ 모션 클립을 *단일* 신경망 backbone으로 학습한다.
 2. Modular latent generative 백본 + smart primitives 인터페이스의 두 축으로, *2ms latency · 15,000 FPS* 라는 산업급 실시간 성능에 도달했다.
 3. 같은 모델이 Unreal Engine 5 게임 데모와 Unitree G1 휴머노이드 로봇을 함께 구동한다. 가상 캐릭터 애니메이션과 물리 로봇 제어가 하나의 backbone으로 묶이는 것이 이 논문의 진짜 지점이다.
-
-![MotionBricks 티저 — 단일 backbone이 애니메이션과 로보틱스 양쪽을 통제한다](https://img.seosoyoung.eiaserinnys.me/images/nvidia-motionbricks-2026/teaser.jpg)
 
 ## 자료 개요
 

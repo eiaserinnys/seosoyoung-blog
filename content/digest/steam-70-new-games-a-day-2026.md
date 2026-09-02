@@ -8,6 +8,7 @@ ShowToc: true
 TocOpen: false
 cover:
   image: "https://img.seosoyoung.eiaserinnys.me/images/steam-70-new-games-a-day-2026/steamdb-annual-releases.png"
+  alt: "SteamDB의 연도별 스팀 게임 출시 수 막대 그래프. 2006년 70종에서 시작해 2025년 21,344종까지 오르고, 2026년은 8월 20일까지 16,115종으로 점선 막대로 표시되어 있다"
 images:
   - "https://img.seosoyoung.eiaserinnys.me/images/steam-70-new-games-a-day-2026/steamdb-annual-releases.png"
 ---
@@ -31,7 +32,6 @@ SteamDB가 기록한 연도별 스팀 출시 수는 다음과 같다.
 
 2026년의 232일로 나누면 하루 약 69.5종이 된다. 10년 전인 2016년 한 해 전체가 4,648종이었으니, 지금은 열흘이 채 안 되는 기간에 그만큼이 쌓인다.
 
-![SteamDB의 연도별 스팀 게임 출시 수 막대 그래프. 2006년 70종에서 시작해 2025년 21,344종까지 오르고, 2026년은 8월 20일까지 16,115종으로 점선 막대로 표시되어 있다](https://img.seosoyoung.eiaserinnys.me/images/steam-70-new-games-a-day-2026/steamdb-annual-releases.png)
 *출처: SteamDB, Steam Game Releases by Year (Notebookcheck 기사에 실린 갈무리)*
 
 ## 차트에 함께 그려진 두 번째 띠

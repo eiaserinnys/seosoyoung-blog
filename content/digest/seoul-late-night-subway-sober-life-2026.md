@@ -8,6 +8,7 @@ ShowToc: true
 TocOpen: false
 cover:
   image: "https://img.seosoyoung.eiaserinnys.me/images/seoul-late-night-subway-sober-life-2026/ridership-comparison.jpg"
+  alt: "승차인원 비교. 서울교통공사 제공."
 images:
   - "https://img.seosoyoung.eiaserinnys.me/images/seoul-late-night-subway-sober-life-2026/ridership-comparison.jpg"
 ---
@@ -33,7 +34,6 @@ images:
 
 같은 기간 전체 시간대 승차 인원 감소율은 7.5%였다. 심야 시간대 감소폭이 전체 평균의 약 3배에 달한다는 의미다.
 
-![승차인원 비교. 서울교통공사 제공.](https://img.seosoyoung.eiaserinnys.me/images/seoul-late-night-subway-sober-life-2026/ridership-comparison.jpg)
 <small>승차인원 비교. 서울교통공사 제공.</small>
 
 ## 상권 밀집 역 — 강남역 사실상 반토막

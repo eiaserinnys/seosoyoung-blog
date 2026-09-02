@@ -8,6 +8,7 @@ ShowToc: true
 TocOpen: false
 cover:
   image: "https://img.seosoyoung.eiaserinnys.me/images/longblack-yamato-transport/logo-black-cat.png"
+  alt: "야마토 운수의 검은 어미 고양이 로고"
 images:
   - "https://img.seosoyoung.eiaserinnys.me/images/longblack-yamato-transport/logo-black-cat.png"
 sidenotes: true
@@ -20,8 +21,6 @@ sidenotes: true
 3. 다만 100년 동안 고객의 불편을 발견해 온 이 회사가 2024년 결국 자기 직원의 불편을 놓쳤다는 점, 그리고 사쿠라이 도시유키 신임 사장이 "현장력이 수익의 원천"이라며 방향을 다시 잡고 있는 점도 함께 짚어둘 만하다.
 
 ## 검은 고양이 로고는 디자이너의 딸이 그렸다
-
-![야마토 운수의 검은 어미 고양이 로고](https://img.seosoyoung.eiaserinnys.me/images/longblack-yamato-transport/logo-black-cat.png)
 
 1919년 11월 도쿄 긴자(당시 교바시구)에서 오구라 야스오미(小倉康臣)가 직원 15명·트럭 2대로 화물 운송 회사를 차렸다. '크게 화합한다'는 뜻의 야마토(大和)라는 이름과 '짐을 정성스럽게 다루자'는 원칙은 이때부터 이미 자리 잡혀 있었다.
 

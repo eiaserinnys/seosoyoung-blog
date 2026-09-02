@@ -6,6 +6,7 @@ categories: ["경제와 사회"]
 summary: "스태프 엔지니어는 캘린더에 사고 시간을 비워 문제를 찾지 않는다. 일상의 대화를 흡수해 문제를 쌓아 두고, 서로 달라 보이는 요청들이 같은 형태로 겹칠 때까지 기다린 뒤에 만들기 시작한다는 실무 기록."
 cover:
   image: "https://img.seosoyoung.eiaserinnys.me/images/find-problems-staff-engineer/01-cover.png"
+  alt: "흩어진 말풍선이 사방에서 흘러오는 가운데 서소영이 가슴에 안은 둥근 스펀지로 그것들을 조용히 흡수하는 모습"
 images:
   - "https://img.seosoyoung.eiaserinnys.me/images/find-problems-staff-engineer/01-cover.png"
 ShowToc: true
@@ -17,8 +18,6 @@ TocOpen: false
 1. Perfetto를 만드는 구글 엔지니어 Lalit Maganti가, 스태프 엔지니어로 승진하려는 멘티의 "무엇을 풀 문제로 고를 것인가"라는 질문에 답하며 자기 방식을 정리한 글이다. 2026년 7월 25일 개인 블로그 발행, 독자 피드백을 받아 이후 개정했다.
 2. 그는 캘린더에 사고 시간을 비워 두는 방식으로는 좋은 문제를 찾지 못했다고 한다. 대신 스펀지처럼 일상의 대화를 흡수해 문제를 머릿속에 남겨 두고, 같은 문제가 다른 팀에서 독립적으로 다시 올라오거나 겉모습이 다른 요청들이 같은 형태로 겹칠 때까지 기다린다.
 3. 겹침을 발견해도 곧바로 만들지 않는다. 우아함은 근거가 아니라는 이유로 RFC와 버리는 프로토타입으로 먼저 압력을 걸고, 그 시험을 통과한 아이디어만 몇 주에서 몇 달의 작업으로 옮긴다.
-
-![흩어진 말풍선이 사방에서 흘러오는 가운데 서소영이 가슴에 안은 둥근 스펀지로 그것들을 조용히 흡수하는 모습](https://img.seosoyoung.eiaserinnys.me/images/find-problems-staff-engineer/01-cover.png)
 
 ## 질문은 멘티에게서 나왔다
 

@@ -8,11 +8,10 @@ ShowToc: true
 TocOpen: false
 cover:
   image: "https://img.seosoyoung.eiaserinnys.me/images/spotify-coding-no-longer-constraint/cwc01-header.png"
+  alt: "Feature Image"
 images:
   - "https://img.seosoyoung.eiaserinnys.me/images/spotify-coding-no-longer-constraint/cwc01-header.png"
 ---
-
-![Feature Image](https://img.seosoyoung.eiaserinnys.me/images/spotify-coding-no-longer-constraint/cwc01-header.png)
 
 ## 3줄 요약
 

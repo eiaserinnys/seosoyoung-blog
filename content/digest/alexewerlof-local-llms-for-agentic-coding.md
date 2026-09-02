@@ -9,6 +9,7 @@ ShowToc: true
 TocOpen: false
 cover:
   image: "https://img.seosoyoung.eiaserinnys.me/images/alexewerlof-local-llms-for-agentic-coding/lm-studio-interface.png"
+  alt: "LM Studio가 저자의 Linux 노트북에서 동작하는 모습"
 images:
   - "https://img.seosoyoung.eiaserinnys.me/images/alexewerlof-local-llms-for-agentic-coding/lm-studio-interface.png"
 ---
@@ -78,8 +79,6 @@ QAT(Quantization-Aware Training) 변형(E4B QAT 등)은 메모리는 덜 쓰면�
 - **모델 매니저(선택)** — 하드웨어와 런타임을 추상화해 GUI로 모델을 찾고 받고 돌린다. OpenAI 호환 API를 제공하는지가 중요하다.
 
 모델 매니저로는 *Ollama, LM Studio, Jan* 세 가지가 흔히 거론된다. Ollama는 CLI 출신의 오픈소스, LM Studio는 무료지만 *오픈소스 아님*에 더 풍부한 기능, Jan은 LM Studio와 비슷하지만 오픈소스 대안이다.
-
-![LM Studio가 저자의 Linux 노트북에서 동작하는 모습](https://img.seosoyoung.eiaserinnys.me/images/alexewerlof-local-llms-for-agentic-coding/lm-studio-interface.png)
 
 ## LM Studio 서버 설정의 함정
 

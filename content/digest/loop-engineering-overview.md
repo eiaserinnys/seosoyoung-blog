@@ -8,6 +8,7 @@ ShowToc: true
 TocOpen: false
 cover:
   image: "https://img.seosoyoung.eiaserinnys.me/images/loop-engineering-overview/cover.jpeg"
+  alt: "ReAct에서 루프 엔지니어링까지 — 에이전트 루프를 설명하는 2026 가이드의 표제 이미지."
 images:
   - "https://img.seosoyoung.eiaserinnys.me/images/loop-engineering-overview/cover.jpeg"
 ---
@@ -19,8 +20,6 @@ images:
 3. 글은 ReAct(2022)부터 Ralph 루프·`/goal`(2026)까지 루프 열 가지를 4세대로 나눠 계보를 그리고, 실패 양상(무한 루프·목표 드리프트·토큰 폭발)과 그것을 막는 가드레일을 정리한다. 결론은 하나다 — *지금 앞서가는 개발자는 더 나은 프롬프트를 쓰는 사람이 아니라 루프 엔지니어링을 익히는 사람이다.*
 
 이 글은 ["루프 엔지니어링" 연재](/tags/루프-엔지니어링/)의 여섯 번째 편이다. 앞선 다섯 편이 각각 한 저자·한 조직의 1차 사료였다면 — [1편(Addy Osmani)](/digest/loop-engineering-osmani/)이 "루프를 설계하라"는 선언을, [2편(Firecrawl)](/digest/loop-engineering-firecrawl/)이 그 실천 노트를, [3편(Oracle)](/digest/loop-engineering-oracle/)이 ReAct에서 출발한 에이전트 루프의 계보를, [4편(OpenAI)](/digest/loop-engineering-harness/)이 하네스를 직접 짠 생산자의 사례를, [5편(Böckeler/Fowler)](/digest/loop-engineering-fowler/)이 그 하네스를 사용자 관점의 멘탈 모델로 정리했다면 — 이 6편은 그 모두를 *한 장의 지도 위에* 올리는 개관이다. 특히 3편이 짚은 ReAct 계보를 더 넓게 펼쳐, 학술 프레임워크부터 실무자의 루프 엔지니어링까지 4세대를 한눈에 비교한다. 연재 전체를 묶어 읽는 좌표계로 삼기 좋은 편이다.
-
-![ReAct에서 루프 엔지니어링까지 — 에이전트 루프를 설명하는 2026 가이드의 표제 이미지.](https://img.seosoyoung.eiaserinnys.me/images/loop-engineering-overview/cover.jpeg)
 
 ## 에이전트 루프란 무엇인가
 

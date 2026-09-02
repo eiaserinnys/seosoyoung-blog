@@ -8,6 +8,7 @@ ShowToc: true
 TocOpen: false
 cover:
   image: "https://img.seosoyoung.eiaserinnys.me/images/mollick-working-with-mythos/fig4-isochronic-final.png"
+  alt: "AI가 만들어 낸 인터랙티브 isochronic 지도. 클릭하면 인터랙티브 버전으로 이동한다"
 images:
   - "https://img.seosoyoung.eiaserinnys.me/images/mollick-working-with-mythos/fig4-isochronic-final.png"
 ---
@@ -64,8 +65,6 @@ Fable이 한 일:
 이번에 Fable은 <strong>적대적 에이전트 그룹들의 워크플로우</strong>를 띄웠다. 그룹들이 리서치를 수행하고 서로의 결과를 검증하는 구조였다. 태평양 핏케언 섬으로 가는 배편의 운항 빈도, 오타와에서 그리스 피요르드(Grise Fjord)로 가는 경로까지 찾아냈다. 짧은 시간 동안 어마어마한 양의 토큰을 소진했다.
 
 ![작은 버전의 결과 지도](https://img.seosoyoung.eiaserinnys.me/images/mollick-working-with-mythos/fig3-isochronic-result-small.png)
-
-![AI가 만들어 낸 인터랙티브 isochronic 지도. 클릭하면 인터랙티브 버전으로 이동한다](https://img.seosoyoung.eiaserinnys.me/images/mollick-working-with-mythos/fig4-isochronic-final.png)
 
 Mollick이 정리한 함의:
 

@@ -9,6 +9,7 @@ ShowToc: true
 TocOpen: false
 cover:
   image: "https://img.seosoyoung.eiaserinnys.me/images/combining-llms-cofailure-ceiling/fig3.png"
+  alt: "Refer to caption"
 images:
   - "https://img.seosoyoung.eiaserinnys.me/images/combining-llms-cofailure-ceiling/fig3.png"
 ---
@@ -81,7 +82,6 @@ MATH-Hard(n=298)에서도 $\beta = 0.044$, 실행 채점 코드(n=63)에서도 $
 
 Chen이 개인적으로 가장 강조하는 실험은 content-controlled test다. 같은 79개 GPQA-Diamond 문항을 두 형식으로 출제했다.
 
-![Refer to caption](https://img.seosoyoung.eiaserinnys.me/images/combining-llms-cofailure-ceiling/fig3.png)
 *Figure 3: 형식이, 내용이 아니라, 국면을 결정한다. 동일한 79개 GPQA-Diamond 문항을 객관식(위)과 자유서술(아래, 옵션 제거 후 5-judge LLM panel 채점, $\kappa$ 0.73–0.92)로 각각 출제. 형식만 바꿔도 객관식에서 $\beta \approx 0$이던 co-failure 블록이 자유서술에서 10/79($\beta = 0.127$, CP [0.062, 0.220])로 열리고, 평균 정확도는 $0.66 \to 0.51$로 떨어진다. 오렌지 셀은 모든 모델이 함께 틀린 문항.*
 
 - 객관식(원본): $\beta \approx 0$.

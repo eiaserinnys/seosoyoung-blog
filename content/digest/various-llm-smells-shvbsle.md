@@ -8,6 +8,7 @@ ShowToc: true
 TocOpen: false
 cover:
   image: "https://img.seosoyoung.eiaserinnys.me/images/various-llm-smells-shvbsle/jetbrains-mono.webp"
+  alt: "JetBrains Mono 폰트를 본문에 그대로 사용한 AI 생성 페이지 예시"
 images:
   - "https://img.seosoyoung.eiaserinnys.me/images/various-llm-smells-shvbsle/jetbrains-mono.webp"
 sidenotes: true
@@ -70,8 +71,6 @@ sidenotes: true
 ### "JetBrains Mono" 폰트
 
 본문 타이포에 코드 모노스페이스 폰트를 깔아 "기술 친화적"인 인상을 주는 패턴. 같은 폰트가 다른 톤과 결합 없이 그대로 반복된다.
-
-![JetBrains Mono 폰트를 본문에 그대로 사용한 AI 생성 페이지 예시](https://img.seosoyoung.eiaserinnys.me/images/various-llm-smells-shvbsle/jetbrains-mono.webp)
 
 ### "step"과 그 정확한 불릿 양식
 

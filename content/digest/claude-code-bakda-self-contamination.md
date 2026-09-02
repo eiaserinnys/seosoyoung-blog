@@ -8,6 +8,7 @@ ShowToc: true
 TocOpen: false
 cover:
   image: "https://img.seosoyoung.eiaserinnys.me/images/claude-code-bakda-self-contamination/chart-1.png"
+  alt: "일별 빈도 그래프 — 막대는 해당일 발생 건수의 상대량, 파란 선은 출력 토큰 1만 개당 대상 표현 수."
 images:
   - "https://img.seosoyoung.eiaserinnys.me/images/claude-code-bakda-self-contamination/chart-1.png"
 sidenotes: true
@@ -32,8 +33,6 @@ sidenotes: true
 본 조사는 그 위화감의 출처를 정량으로 추적한 기록이다.
 
 ## 1. 일별 빈도와 주요 사건
-
-![일별 빈도 그래프 — 막대는 해당일 발생 건수의 상대량, 파란 선은 출력 토큰 1만 개당 대상 표현 수.](https://img.seosoyoung.eiaserinnys.me/images/claude-code-bakda-self-contamination/chart-1.png)
 
 세션 출력 로그를 형태소 기준(Kiwi `박/VV`, `박히/VV`)으로 집계했다. 1만 출력 토큰당 대상 표현 발생 수가 핵심 지표다.
 

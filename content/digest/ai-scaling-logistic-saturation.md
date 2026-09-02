@@ -9,6 +9,7 @@ ShowToc: true
 TocOpen: false
 cover:
   image: "https://img.seosoyoung.eiaserinnys.me/images/ai-scaling-logistic-saturation/chart.jpg"
+  alt: "AI Scaling Saturates — 로지스틱 적합 차트"
 images:
   - "https://img.seosoyoung.eiaserinnys.me/images/ai-scaling-logistic-saturation/chart.jpg"
 ---
@@ -74,7 +75,6 @@ Cramér\~Rao는 데이터 품질 논증을 형식화한다 — $\text{MSE} = \te
 
 ## 차트 해부
 
-![AI Scaling Saturates — 로지스틱 적합 차트](https://img.seosoyoung.eiaserinnys.me/images/ai-scaling-logistic-saturation/chart.jpg)
 *차트 제목: "AI Scaling Saturates: Logistic Fit with Free Asymptote & 95% Bootstrap CI". 출처: @5_utr (X), 2026-06-20.*
 
 | 항목 | 내용 |

@@ -8,6 +8,7 @@ ShowToc: true
 TocOpen: false
 cover:
   image: "https://img.seosoyoung.eiaserinnys.me/images/figma-what-matters-when-anyone-can-build/cover-flower-burst.png"
+  alt: "Figma blog cover — colorful abstract flower bursts"
 images:
   - "https://img.seosoyoung.eiaserinnys.me/images/figma-what-matters-when-anyone-can-build/cover-flower-burst.png"
 ---
@@ -17,8 +18,6 @@ images:
 1. Figma의 CPO Yuhki Yamashita가 2026년 5월에 발표한 단상. AI가 누구나 제품을 만들 수 있게 만든 시대에 무엇이 진짜 차별점이 되는지 묻는 글이다.
 2. 속도는 더 이상 차별점이 아니며, 두 가지가 진짜 우위가 된다 — 무엇을 만들 가치가 있는지 고르는 **방향성(direction)** 과, 만들어진 것을 끝까지 다듬는 **장인정신(craft)**.
 3. AI 시대의 일하는 법은 사일로된 순차 작업이 아니라 *여러 방향을 동시에 깊이 탐색하고 함께 비교하는* 협업·병렬 작업으로 옮겨가야 한다.
-
-![Figma blog cover — colorful abstract flower bursts](https://img.seosoyoung.eiaserinnys.me/images/figma-what-matters-when-anyone-can-build/cover-flower-burst.png)
 
 ## 시작점 — 속도는 더 이상 차별점이 아니다
 

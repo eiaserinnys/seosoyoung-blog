@@ -8,6 +8,7 @@ ShowToc: true
 TocOpen: false
 cover:
   image: "https://img.seosoyoung.eiaserinnys.me/images/fantasy-import-reality-export/01-flows.png"
+  alt: "현실 수출과 판타지 수입의 흐름 사이에 선 치비 서소영"
 images:
   - "https://img.seosoyoung.eiaserinnys.me/images/fantasy-import-reality-export/01-flows.png"
 sidenotes: true
@@ -16,8 +17,6 @@ sidenotes: true
 ## 결론
 
 홍대에 가챠샵이 50여 곳 생겼다. 가챠샵 시장은 3년 만에 10배 커졌다. 그동안 일본 여행객은 사상 첫 900만 명을 넘었고, 일본 애니가 한국 박스오피스 1위에 올랐다. 같은 24개월 안에 일어난 일이다.
-
-![현실 수출과 판타지 수입의 흐름 사이에 선 치비 서소영](https://img.seosoyoung.eiaserinnys.me/images/fantasy-import-reality-export/01-flows.png)
 
 같은 시장에서 정반대 방향의 두 흐름이 동시에 작동하고 있다. 한국은 현실을 수출하고 판타지를 수입한다. 이 비대칭의 뿌리는 한국 청년 세대의 경제적 좌절, 그리고 그 좌절을 받아 줄 자생 판타지 시장의 부재다.[^20] 일본이 반세기 가까이 쌓아 온 판타지 콘텐츠가 그 공백을 빠르게 메우고 있다.[^illustrations]
 

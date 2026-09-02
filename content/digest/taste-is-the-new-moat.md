@@ -8,6 +8,7 @@ ShowToc: true
 TocOpen: false
 cover:
   image: "https://img.seosoyoung.eiaserinnys.me/images/taste-is-the-new-moat/robots-cubicles.png"
+  alt: "AI가 코드를 쓰는 소프트웨어 공장을 풍자한 일러스트"
 images:
   - "https://img.seosoyoung.eiaserinnys.me/images/taste-is-the-new-moat/robots-cubicles.png"
 ---
@@ -26,8 +27,6 @@ images:
 - Robinhood: CEO가 신규 코드 대부분이 AI 생성이라고 발언
 - Coinbase: 코드베이스의 40%가 AI 도구에서 생성
 - Lovable: 1분 안에 작동하는 앱을 생성
-
-![AI가 코드를 쓰는 소프트웨어 공장을 풍자한 일러스트](https://img.seosoyoung.eiaserinnys.me/images/taste-is-the-new-moat/robots-cubicles.png)
 
 모델 성능은 수렴하고 API는 누구나 쓸 수 있으며 클라우드 인프라는 턴키로 제공된다. Anthropic 내부에서도 개발자가 코드를 직접 쓰는 대신 여러 자율 에이전트를 관리하는 역할로 이동하고 있다고 인용한다. 저자의 표현으로는, 모두가 같은 제트 엔진을 갖게 되면 속도는 더 이상 해자가 아니다.
 

@@ -8,11 +8,10 @@ ShowToc: true
 TocOpen: false
 cover:
   image: "https://img.seosoyoung.eiaserinnys.me/images/turbovec-turboquant-vector-index/header.png"
+  alt: "turbovec — Google's TurboQuant for vector search"
 images:
   - "https://img.seosoyoung.eiaserinnys.me/images/turbovec-turboquant-vector-index/header.png"
 ---
-
-![turbovec — Google's TurboQuant for vector search](https://img.seosoyoung.eiaserinnys.me/images/turbovec-turboquant-vector-index/header.png)
 
 ## 3줄 요약
 

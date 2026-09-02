@@ -9,6 +9,7 @@ ShowToc: true
 TocOpen: false
 cover:
   image: "https://img.seosoyoung.eiaserinnys.me/images/perin-deny-2024-neural-kernel-symmetry/fig1-problem-setup.png"
+  alt: "Figure 1: 학습 과제 설정과 표준 아키텍처의 실패"
 images:
   - "https://img.seosoyoung.eiaserinnys.me/images/perin-deny-2024-neural-kernel-symmetry/fig1-problem-setup.png"
 ---
@@ -32,8 +33,6 @@ images:
 대칭은 데이터의 정체성을 바꾸지 않는 군 작용(group action)으로 정의된다. 의자는 정립 자세든 거꾸로든 의자다 ($SO(3)$ 작용). 회전된 MNIST에서 숫자 '4'는 어떤 각도로 돌려도 '4'다.
 
 논문이 다루는 시나리오는 단순하다. 아이가 발달기에 *손에 잡히는 장난감*은 모든 3D 자세에서 보지만, *무거운 가구*는 몇 자세에서만 본다. 신경망도 마찬가지로 학습 데이터에서 어떤 클래스는 대칭 변환의 모든 인스턴스를 보고, 어떤 클래스는 일부만 본다. 그렇다면 신경망은 부분 관측 클래스에 대해 *대칭 불변성을 외삽*할 수 있는가?
-
-![Figure 1: 학습 과제 설정과 표준 아키텍처의 실패](https://img.seosoyoung.eiaserinnys.me/images/perin-deny-2024-neural-kernel-symmetry/fig1-problem-setup.png)
 
 A 패널이 과제를 보여준다. 한 클래스(예: 숫자 '5')를 *leave-out 클래스*로 정하고, 그 클래스의 정립(upright) 자세만 학습에서 빼고 다른 회전은 모두 포함시킨다. 나머지 클래스는 모든 회전을 포함한다. 일반화가 가능한 모델이라면, 학습에서 본 적 없는 정립 자세의 '5'를 옳게 분류해야 한다.
 

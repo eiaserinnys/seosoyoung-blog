@@ -6,6 +6,7 @@ categories: ["게임"]
 summary: "터키 인디 개발자 MrAente가 2026년 6월 Next Fest를 보고 '스팀 넥스트 페스트는 끝났다'고 선언했다. 같은 진단을 데이터로 뒷받침하는 Chris Zukowski, GameDiscoverCo, 그리고 개별 개발자들의 회고를 함께 모았다."
 cover:
   image: "https://img.seosoyoung.eiaserinnys.me/images/steam-next-fest-is-over-2026/top25-demos-budget-tier.jpg"
+  alt: "Top 25 Demos · Budget Tier, Steam Next Fest June 2026"
 images:
   - "https://img.seosoyoung.eiaserinnys.me/images/steam-next-fest-is-over-2026/top25-demos-budget-tier.jpg"
 ShowToc: true
@@ -22,7 +23,6 @@ TocOpen: false
 
 발단은 [MrAente의 트윗 타래](https://x.com/mraente/status/2069845235534827826)다. 그는 2026년 6월 SNF 기간 동안 동시접속(CCU) 상위 25개 데모를 추려 퍼블리셔, 스튜디오 규모, 제작 기간, 예산 티어별로 태그를 달았다.
 
-![Top 25 Demos · Budget Tier, Steam Next Fest June 2026](https://img.seosoyoung.eiaserinnys.me/images/steam-next-fest-is-over-2026/top25-demos-budget-tier.jpg)
 *상위 25개 데모를 예산 티어별로 색칠한 차트. 1위 BOMBANANA!(31,660 CCU)를 빼면 대부분 III\~AA 이상 규모이며, 순수 인디(연두색)는 상위권에서 빠르게 줄어든다. 출처: MrAente*
 
 그의 핵심 주장은 이렇다. 이 목록에는 바이럴 히트를 친 게임이나 이미 좋은 흐름을 타고 들어온 게임, 혹은 행사 중 좋은 영상 콘텐츠를 뽑아낼 수 있는 게임만 남는다. 그저 데모를 올려둔 인디는 한 자리도 없다.

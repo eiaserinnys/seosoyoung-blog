@@ -8,6 +8,7 @@ ShowToc: true
 TocOpen: false
 cover:
   image: "https://img.seosoyoung.eiaserinnys.me/images/gpuix-zed-gpui-react-bindings/chat-app.png"
+  alt: "GPUIX로 만든 Waku 스타일 채팅 앱"
 images:
   - "https://img.seosoyoung.eiaserinnys.me/images/gpuix-zed-gpui-react-bindings/chat-app.png"
 ---
@@ -17,8 +18,6 @@ images:
 1. GPUIX는 Zed 에디터의 GPU 가속 UI 프레임워크 **GPUI**를 Node.js와 React에서 쓰도록 감싼 바인딩이다. `remorses`가 2026년 1월 말 공개했고 Apache-2.0, 별 1,100개를 넘겼다.
 2. React 리컨사일러가 만든 DOM 형태의 뮤테이션(`createElement`, `appendChild`, `setStyle`…)을 JSON 트리 직렬화 없이 Rust로 직접 넘기고, Rust가 유지하는 보존 트리를 GPUI가 매 프레임 읽어 Metal·DirectX·Vulkan으로 그린다. Electron도 웹뷰도 없다.
 3. 문법 강조 코드 블록, 유니파이드 diff, GFM 마크다운이 전부 네이티브 요소로 들어 있고, 가상 리스트·네이티브 텍스트 입력·IME·헤드리스 Select/Combobox/Tooltip·Playwright식 자동화 API까지 갖췄다. 캔버스 요소와 다중 창은 아직 없다.
-
-![GPUIX로 만든 Waku 스타일 채팅 앱](https://img.seosoyoung.eiaserinnys.me/images/gpuix-zed-gpui-react-bindings/chat-app.png)
 
 ## 무엇을 만든 프로젝트인가
 

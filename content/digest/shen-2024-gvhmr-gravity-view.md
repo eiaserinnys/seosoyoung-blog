@@ -9,6 +9,7 @@ ShowToc: true
 TocOpen: false
 cover:
   image: "https://img.seosoyoung.eiaserinnys.me/images/shen-2024-gvhmr-gravity-view/teaser.png"
+  alt: "Teaser: GVHMR의 세계 좌표계 인간 동작 복원 결과"
 images:
   - "https://img.seosoyoung.eiaserinnys.me/images/shen-2024-gvhmr-gravity-view/teaser.png"
 ---
@@ -29,8 +30,6 @@ images:
 - **프로젝트 페이지:** <https://zju3dv.github.io/gvhmr/>
 - **라이선스:** CC-BY-NC-SA 4.0 (비상업적 사용 조건부)
 - **분야:** 컴퓨터 비전, 인간 동작 복원(HMR). 단안 비디오 입력에서 SMPL 파라미터와 세계 좌표계 위치를 동시 추정.
-
-![Teaser: GVHMR의 세계 좌표계 인간 동작 복원 결과](https://img.seosoyoung.eiaserinnys.me/images/shen-2024-gvhmr-gravity-view/teaser.png)
 
 ## 세계 좌표계 기반 복원의 모호성 문제
 

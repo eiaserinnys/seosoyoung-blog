@@ -8,6 +8,7 @@ ShowToc: true
 TocOpen: false
 cover:
   image: "https://img.seosoyoung.eiaserinnys.me/images/vivek-how-to-be-good-at-research/cover.jpg"
+  alt: "커버 일러스트 — vivek, \"how to be good at research\" (X Article, 2026-06-10)"
 images:
   - "https://img.seosoyoung.eiaserinnys.me/images/vivek-how-to-be-good-at-research/cover.jpg"
 ---
@@ -17,8 +18,6 @@ images:
 1. Anthropic 리서치 펠로우 Vivek이 2026년 6월 10일 X에 올린 롱폼 아티클이다. 6,200 좋아요·14,900 북마크·156만 뷰. 제목은 "how to be good at research".
 2. 리서치는 아무도 가르쳐 주지 않는다. 대부분 *리서처처럼 보이는 법*을 역공학할 뿐, *리서처가 되는 법*은 배우지 않는다. 그러나 리서치는 8개의 작은 스킬 스택이며, 거의 모든 항목이 의도적으로 훈련 가능하다.
 3. Hamming·Schulman·Karpathy·Sutton·Feynman·Shannon·Darwin·Olah·Ng·Pasteur의 일화로 각 스킬을 묶고, 매일의 작은 우위들이 복리로 쌓여 *밖에서 보면 운처럼 보이는 커리어*가 된다고 맺는다.
-
-![커버 일러스트 — vivek, "how to be good at research" (X Article, 2026-06-10)](https://img.seosoyoung.eiaserinnys.me/images/vivek-how-to-be-good-at-research/cover.jpg)
 
 ## 흉내와 실력의 분리
 

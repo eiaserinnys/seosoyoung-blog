@@ -8,6 +8,7 @@ ShowToc: true
 TocOpen: false
 cover:
   image: "https://img.seosoyoung.eiaserinnys.me/images/driessen-awake-on-off-periods-2026/fig1.png"
+  alt: "Fig. 1: Chronic recording and optogenetic manipulation of local cortical networks."
 images:
   - "https://img.seosoyoung.eiaserinnys.me/images/driessen-awake-on-off-periods-2026/fig1.png"
 ---
@@ -37,7 +38,6 @@ NREM 수면의 정의 자체가 *대규모 동기 활동*과 *on/off 교차*다.
 
 ## 실험 설계
 
-![Fig. 1: Chronic recording and optogenetic manipulation of local cortical networks.](https://img.seosoyoung.eiaserinnys.me/images/driessen-awake-on-off-periods-2026/fig1.png)
 <small>Fig. 1. 양반구 대뇌 피질에 16채널 실리콘 프로브 + 광섬유(optrode)를 이식한다. 한쪽은 자극·기록, 반대쪽은 동형(homotopic) 대조군으로 작동한다. (출처: Driessen et al., 2026, Nature Neuroscience, CC BY 4.0)</small>
 
 쥐의 양쪽 피질 동일 부위에 실리콘 프로브를 이식하고, 한쪽에만 광섬유를 붙여 *광유전학으로 같은 동물 안에서 자극측·대조측을 동시에 비교*하는 구조다. 세 가지 광유전학 모델을 비교해 효과의 *원인 변수*를 분리한다.

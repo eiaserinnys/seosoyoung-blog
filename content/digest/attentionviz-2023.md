@@ -9,6 +9,7 @@ ShowToc: true
 TocOpen: false
 cover:
   image: "https://img.seosoyoung.eiaserinnys.me/images/attentionviz-2023/matrix.png"
+  alt: "Matrix View — 144개 헤드를 한 화면에"
 images:
   - "https://img.seosoyoung.eiaserinnys.me/images/attentionviz-2023/matrix.png"
 sidenotes: true
@@ -75,8 +76,6 @@ $$\mathrm{attn}(x_i, x_j) = \mathrm{softmax}_j\bigl(f(x_i, x_1), \dots, f(x_i, x
 거리가 어텐션의 *충분히 정확한* 대리 지표라는 뜻이다. BERT layer 4 head 11의 예시는 단일 헤드 안에서 거리-내적 상관이 -0.983까지 올라간다.
 
 ## 도구 — 3단 줌 구조
-
-![Matrix View — 144개 헤드를 한 화면에](https://img.seosoyoung.eiaserinnys.me/images/attentionviz-2023/matrix.png)
 
 ### Matrix View (T1, T3)
 

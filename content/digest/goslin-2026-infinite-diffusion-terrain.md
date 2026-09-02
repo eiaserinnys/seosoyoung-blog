@@ -8,11 +8,11 @@ ShowToc: true
 TocOpen: false
 cover:
   image: "https://img.seosoyoung.eiaserinnys.me/images/goslin-2026-infinite-diffusion-terrain/world-combined.jpeg"
+  alt: "Terrain Diffusion으로 생성한 지구 규모 월드의 합성 시각화"
 images:
   - "https://img.seosoyoung.eiaserinnys.me/images/goslin-2026-infinite-diffusion-terrain/world-combined.jpeg"
 ---
 
-![Terrain Diffusion으로 생성한 지구 규모 월드의 합성 시각화](https://img.seosoyoung.eiaserinnys.me/images/goslin-2026-infinite-diffusion-terrain/world-combined.jpeg)
 *Terrain Diffusion 월드 시각화. 출처: xandergos.github.io/terrain-diffusion*
 
 ## 3줄 요약

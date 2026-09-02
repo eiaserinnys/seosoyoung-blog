@@ -9,6 +9,7 @@ ShowToc: true
 TocOpen: false
 cover:
   image: "https://img.seosoyoung.eiaserinnys.me/images/automatic-textbook-formalization/fig1-lines-declarations.png"
+  alt: "형식화 진행에 따라 추가·삭제된 줄 수와 Lean 선언 수가 거의 일정한 속도로 늘어난다"
 images:
   - "https://img.seosoyoung.eiaserinnys.me/images/automatic-textbook-formalization/fig1-lines-declarations.png"
 ---
@@ -18,8 +19,6 @@ images:
 1. Meta FAIR·ENPC·KIAS 공동 연구진이 500쪽이 넘는 대학원 수준 대수적 조합론 교과서 전체를 자동 AI 시스템으로 Lean에 형식화했다. 결과물은 13만 줄 코드와 5,900개 Lean 선언이다.
 2. 3만 개(정확히는 30,046개)의 Claude 4.5 Opus 에이전트가 git 버전 관리로 공유 코드베이스에서 병렬 협업해 1주 만에 끝냈다. 사람의 협업 소프트웨어 공학에서 검증된 관행(트렁크 기반 개발, PR 리뷰, 머지 큐, 파일 기반 이슈 트래커)을 그대로 가져와 조정 문제를 풀었다.
 3. 추론 비용은 약 10만 달러로, 같은 작업을 할 인간 전문가 팀의 인건비와 대등하거나 그 이하였다. 연구진은 더 나은 모델 없이도 3\~10배 비용 절감이 가능하다고 본다. 코드와 Lean 코드베이스, 대조용 blueprint 웹사이트를 오픈소스로 공개했다.
-
-![형식화 진행에 따라 추가·삭제된 줄 수와 Lean 선언 수가 거의 일정한 속도로 늘어난다](https://img.seosoyoung.eiaserinnys.me/images/automatic-textbook-formalization/fig1-lines-declarations.png)
 
 ## 무엇을 풀려는 문제인가
 

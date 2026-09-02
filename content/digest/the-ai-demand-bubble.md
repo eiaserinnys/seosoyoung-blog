@@ -6,6 +6,7 @@ categories: ["다이제스트"]
 summary: "Ed Zitron이 애널리스트 추정치를 근거로, Amazon·Microsoft·Google의 AI 매출과 성장의 대부분이 OpenAI·Anthropic 두 곳의 컴퓨트 지출에서 나온다고 주장한 글. 그 둘을 빼면 AI 수요는 사실상 없고, 세 회사는 이 집중을 공시하지 않아 투자자를 오도하고 있다는 진단이다."
 cover:
   image: "https://img.seosoyoung.eiaserinnys.me/images/the-ai-demand-bubble/fig1.png"
+  alt: "Amazon AI 매출에서 Anthropic·OpenAI가 차지하는 비중 (Barclays, Ross Sandler 추정)"
 images:
   - "https://img.seosoyoung.eiaserinnys.me/images/the-ai-demand-bubble/fig1.png"
 ShowToc: true
@@ -37,8 +38,6 @@ Barclays의 Ross Sandler는 두 랩의 컴퓨트 지출 자체를 연도별로 �
 | 2026 | 141억 달러 | 90억 달러 |
 | 2027 | 253억 달러 | 150억 달러 |
 | 2028 | 358억 달러 | 200억 달러 |
-
-![Amazon AI 매출에서 Anthropic·OpenAI가 차지하는 비중 (Barclays, Ross Sandler 추정)](https://img.seosoyoung.eiaserinnys.me/images/the-ai-demand-bubble/fig1.png)
 
 Amazon은 2026년 자본지출로 2,200억 달러를 쓸 계획이고, Zitron이 보기에 그 지출은 거의 전적으로 반년 만에 950억 달러를 조달해야 했던 한 회사(Anthropic)에 컴퓨트를 공급하기 위한 것이다. 그 조달액 중 50억 달러는 Amazon 자신이 넣었다.
 
