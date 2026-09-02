@@ -8,6 +8,7 @@ ShowToc: true
 TocOpen: false
 cover:
   image: "https://img.seosoyoung.eiaserinnys.me/images/linegames-ember-blade-playx4-2026/01-cover-cosplay.jpg"
+  hiddenInSingle: true   # 본문 figure(코스플레이어 크레딧 캡션)를 유지하고 테마 커버 중복만 숨김
 images:
   - "https://img.seosoyoung.eiaserinnys.me/images/linegames-ember-blade-playx4-2026/01-cover-cosplay.jpg"
 sidenotes: true
