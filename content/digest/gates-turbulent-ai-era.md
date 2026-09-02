@@ -13,8 +13,6 @@ images:
   - "https://img.seosoyoung.eiaserinnys.me/images/gates-turbulent-ai-era/01-cover.png"
 ---
 
-![갈림길에 서서 등불을 든 치비 서소영. 한쪽 길은 여러 사람이 같은 빛을 나누는 들판으로, 다른 길은 높은 벽 그늘 아래 작은 무리가 선 곳으로 이어진다](https://img.seosoyoung.eiaserinnys.me/images/gates-turbulent-ai-era/01-cover.png)
-
 ## 3줄 요약
 
 1. 빌 게이츠가 2026년 8월 26일 게이츠노트에 올린 글이다. 길이는 6000단어쯤 되고, 「AI를 모두에게 쓸모 있게」 연재의 첫머리를 여는 글이다. 글 전체를 한 문장으로 줄이면 이렇게 된다. "AI는 역사상 가장 위대한 평등 장치가 되거나, 가장 나쁜 불의의 원천이 될 것이다."
