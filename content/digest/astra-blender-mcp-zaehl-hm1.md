@@ -7,10 +7,10 @@ summary: "GPT-6 Astra에게 헤드폰 앰프 Zähl HM1의 사진을 찾아 Blend
 ShowToc: true
 TocOpen: false
 cover:
-  image: "https://img.seosoyoung.eiaserinnys.me/images/astra-blender-mcp-zaehl-hm1/01-cover.webp"
+  image: "https://img.seosoyoung.eiaserinnys.me/images/astra-blender-mcp-zaehl-hm1/01-cover.jpg"
   alt: "Blender로 렌더링한 Zähl HM1 헤드폰 앰프의 전면 사선 컷. 검은 전면 패널에 노브와 버튼, 4핀 XLR 단자가 있고 양 옆으로 검은 방열핀이 촘촘히 서 있다"
 images:
-  - "https://img.seosoyoung.eiaserinnys.me/images/astra-blender-mcp-zaehl-hm1/01-cover.webp"
+  - "https://img.seosoyoung.eiaserinnys.me/images/astra-blender-mcp-zaehl-hm1/01-cover.jpg"
 ---
 
 ## 3줄 요약
