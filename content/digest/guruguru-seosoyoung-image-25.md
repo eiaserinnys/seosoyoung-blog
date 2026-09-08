@@ -3,7 +3,7 @@ title: "구루구루 서소영을 GPT Image 2.5로 다시 그렸다"
 date: 2026-09-09T07:00:00+09:00
 tags: ["OpenAI", "이미지 생성", "프론트엔드"]
 categories: ["창작과 문화"]
-summary: "마우스를 따라 고개를 돌리던 구루구루 서소영을 GPT Image 2.5 Flare로 다시 그렸다. 네 장의 시트로 100가지 방향과 표정 조합을 만들고, 기존 그림과 비교할 수 있는 데모를 붙였다."
+summary: "마우스를 따라 고개를 돌리던 구루구루 서소영을 GPT Image 2.5 Flare와 Sunburst로 다시 그렸다. 모델마다 네 장의 시트를 만들고, 기존 그림까지 비교할 수 있는 데모를 붙였다."
 ShowToc: true
 TocOpen: false
 cover:
@@ -13,7 +13,7 @@ images:
   - "https://img.seosoyoung.eiaserinnys.me/images/guruguru-seosoyoung-image-25/og.png"
 ---
 
-지난 6월, [트마리 구루구루를 소개하면서](/digest/tomari-guruguru/) 마우스를 따라 고개를 돌리는 치비 서소영을 만들었다. 이번에는 같은 캐릭터를 GPT Image 2.5 Flare로 다시 그렸다. 아래 데모에서 새 그림과 기존 그림을 바꿔 가며 볼 수 있다.
+지난 6월, [트마리 구루구루를 소개하면서](/digest/tomari-guruguru/) 마우스를 따라 고개를 돌리는 치비 서소영을 만들었다. 이번에는 같은 캐릭터를 GPT Image 2.5 Flare와 Sunburst로 다시 그렸다. 아래 데모에서 두 모델로 만든 그림과 기존 그림을 바꿔 가며 볼 수 있다.
 
 <iframe src="https://pages.eiaserinnys.me/d/guruguru-seosoyoung-25" title="새 그림과 기존 그림을 비교하는 구루구루 서소영 데모" loading="lazy" allow="microphone" style="width:100%;height:1100px;border:0;display:block;margin:1rem auto 2rem;"></iframe>
 
@@ -27,7 +27,7 @@ images:
 
 **기존 시트** 버튼을 누르면 지난번 그림으로 바뀐다. 같은 방향의 두 그림을 비교하거나, 크기와 배경색을 바꿔 볼 수 있다.
 
-## 네 장을 그려서 100가지 모습을 만들었다
+## Flare로 네 장을 그려서 100가지 모습을 만들었다
 
 참조 이미지로는 지난번에 만든 서소영 시트를 골랐다. 새 시트에도 25개 얼굴이 필요했다. 얼굴마다 바라보는 방향을 달리하고, 5행 5열로 배치해 달라고 요청했다. 하늘색 한복과 머리 장식은 유지하고, 각 칸의 머리 크기와 위치가 일정하도록 주문했다. 이렇게 만든 기본 시트를 A로 삼았다.
 
@@ -46,6 +46,14 @@ images:
 
 처음 요청에 `gpt-image-2.5`를 사용하자 API가 모델을 찾을 수 없다는 오류를 반환했다. 공식 문서에서 확인한 모델 ID는 `gpt-image-2.5-flare`였다. 이 이름으로 다시 요청해 네 장을 생성했다. 재현에 필요한 네 번의 요청문은 [프롬프트 파일](https://pub-236dc9dc170e487faec4c8b5e2d084c6.r2.dev/pages/guruguru-seosoyoung-25/prompts.txt)에 남겼다.
 
+## Sunburst로도 같은 시트를 만들었다
+
+Sunburst에도 Flare와 같은 원본 참조 이미지와 프롬프트를 사용했다. 모델 ID는 `gpt-image-2.5-sunburst`로 지정했으며, 해상도는 2048×2048, 품질은 `high`로 유지했다. A를 먼저 생성하고, B, C, D에는 그 A를 참조 이미지로 넣었다.
+
+데모의 **Sunburst** 버튼으로 네 장을 불러올 수 있다. 표정과 바라보는 방향을 그대로 둔 채 **Sunburst**와 **Flare**를 번갈아 선택하면 두 결과를 비교하기 쉽다. 같은 조건으로 여러 번 생성했을 때도 이번과 비슷한 차이가 나는지는 확인하지 않았다.
+
+[Sunburst에 사용한 프롬프트](https://pub-236dc9dc170e487faec4c8b5e2d084c6.r2.dev/pages/guruguru-seosoyoung-sunburst/prompts.txt)
+
 ## 브라우저는 필요한 칸만 보여 준다
 
 화면에 보이는 얼굴은 시트의 한 칸을 확대한 것이다. 데모가 마우스 위치에 따라 행과 열을 고르면, 그 칸의 얼굴이 나타난다. 입을 움직일 때는 A, B, C 시트의 같은 칸을 번갈아 보여 준다. 눈을 깜빡일 때는 잠시 D를 보여 준다. 이미지 생성은 네 장을 그리는 단계에서 끝난다. 이후의 움직임은 브라우저가 준비된 그림을 바꿔 보여 주면서 만든다.
@@ -54,13 +62,14 @@ images:
 
 이전 글에서 소개한 트마리 원본은 눈 두 상태와 입 세 상태를 25개 방향마다 조합해 총 150장을 썼다. 서소영 데모는 이전 버전부터 네 시트를 사용했으며, 이번에도 그 구성을 따랐다. 따라서 눈을 감은 채 입을 벌린 별도 표정은 포함하지 않는다.
 
-새 모델로 다시 그린 서소영과 기존 그림을 직접 비교할 수 있도록 기록을 남겼다. 한 캐릭터의 시트 네 장으로 모델 전반의 품질 차이를 판단하기는 어렵다. 데모에서는 선과 표정이 어떻게 달라졌는지 볼 수 있다. 그림을 실제로 움직였을 때의 모습도 함께 확인할 수 있다.
+새 모델로 다시 그린 서소영과 기존 그림을 직접 비교할 수 있도록 기록을 남겼다. 데모에서는 선과 표정이 어떻게 달라졌는지 볼 수 있다. 그림을 실제로 움직였을 때의 모습도 함께 확인할 수 있다.
 
 ## 출처와 제작 자료
 
 - [이전 제작 기록: トマリぐるぐる / トマリトーク](/digest/tomari-guruguru/)
 - [OpenAI의 GPT Image 2.5 Flare 모델 문서](https://developers.openai.com/api/docs/models/gpt-image-2.5-flare)
+- [OpenAI의 GPT Image 2.5 Sunburst 모델 문서](https://developers.openai.com/api/docs/models/gpt-image-2.5-sunburst)
 - [인터랙티브 데모](https://pages.eiaserinnys.me/d/guruguru-seosoyoung-25)
 - [이미지 생성에 사용한 프롬프트](https://pub-236dc9dc170e487faec4c8b5e2d084c6.r2.dev/pages/guruguru-seosoyoung-25/prompts.txt)
 
-서소영 이미지 네 장과 데모는 이번 작업에서 제작했다. 트마리의 캐릭터 이미지는 사용하지 않았다.
+Flare와 Sunburst로 만든 서소영 이미지 여덟 장과 데모는 이번 작업에서 제작했다. 트마리의 캐릭터 이미지는 사용하지 않았다.
