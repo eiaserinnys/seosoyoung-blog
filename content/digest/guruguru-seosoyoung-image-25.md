@@ -7,10 +7,10 @@ summary: "마우스를 따라 고개를 돌리던 구루구루 서소영을 GPT 
 ShowToc: true
 TocOpen: false
 cover:
-  image: "https://img.seosoyoung.eiaserinnys.me/images/guruguru-seosoyoung-image-25/og.png"
+  image: "https://img.seosoyoung.eiaserinnys.me/images/guruguru-seosoyoung-image-25/og-head-only.png"
   alt: "하늘색 한복을 입은 치비 서소영과 구루구루 데모 조작 화면"
 images:
-  - "https://img.seosoyoung.eiaserinnys.me/images/guruguru-seosoyoung-image-25/og.png"
+  - "https://img.seosoyoung.eiaserinnys.me/images/guruguru-seosoyoung-image-25/og-head-only.png"
 ---
 
 지난 6월, [트마리 구루구루를 소개하면서](/digest/tomari-guruguru/) 마우스를 따라 고개를 돌리는 치비 서소영을 만들었다. 이번에는 같은 캐릭터를 GPT Image 2.5 Flare와 Sunburst로 다시 그렸다. 아래 데모에서 두 모델로 만든 그림과 기존 그림을 바꿔 가며 볼 수 있다.
@@ -48,11 +48,19 @@ images:
 
 ## Sunburst로도 같은 시트를 만들었다
 
-Sunburst에도 Flare와 같은 원본 참조 이미지와 프롬프트를 사용했다. 모델 ID는 `gpt-image-2.5-sunburst`로 지정했으며, 해상도는 2048×2048, 품질은 `high`로 유지했다. A를 먼저 생성하고, B, C, D에는 그 A를 참조 이미지로 넣었다.
+첫 Sunburst 시트에는 Flare와 같은 원본 참조 이미지와 프롬프트를 사용했다. 모델 ID는 `gpt-image-2.5-sunburst`로 지정했으며, 해상도는 2048×2048, 품질은 `high`로 유지했다. A를 먼저 생성하고, B, C, D에는 그 A를 참조 이미지로 넣었다.
 
-데모의 **Sunburst** 버튼으로 네 장을 불러올 수 있다. 표정과 바라보는 방향을 그대로 둔 채 **Sunburst**와 **Flare**를 번갈아 선택하면 두 결과를 비교하기 쉽다. 같은 조건으로 여러 번 생성했을 때도 이번과 비슷한 차이가 나는지는 확인하지 않았다.
+처음 만든 두 모델의 그림은 [수정 전 데모](https://pages.eiaserinnys.me/d/guruguru-seosoyoung-25/r/2)에 남겨 두었다. 표정과 바라보는 방향을 그대로 둔 채 **Sunburst**와 **Flare**를 번갈아 선택하면 두 결과를 비교하기 쉽다. 같은 조건으로 여러 번 생성했을 때도 이번과 비슷한 차이가 나는지는 확인하지 않았다.
 
 [Sunburst에 사용한 프롬프트](https://pub-236dc9dc170e487faec4c8b5e2d084c6.r2.dev/pages/guruguru-seosoyoung-sunburst/prompts.txt)
+
+## 몸을 고정하고 배경을 투명하게 바꿨다
+
+고개를 옆으로 돌려도 가슴의 한복 깃은 정면을 향하게 했다. 기존 Sunburst 그림에서 머리 방향은 유지하고 몸과 어깨를 정면으로 수정했다. 수정본 A를 참조 이미지로 넣어 입 모양 두 장과 눈 깜빡임 한 장도 다시 만들었다.
+
+캐릭터 바깥은 투명하게 처리했으며, 피부에는 옅은 살구색을 채웠다. 생성된 PNG에는 피부와 옷에도 아주 약한 투명도가 남아 있었다. 데모에서는 이 부분을 불투명하게 표시하도록 보정했다. 배경색을 곱하던 효과도 Sunburst에서 껐다. 화면 배경을 바꿔도 피부와 옷의 색은 유지된다.
+
+수정본은 `gpt-image-2.5-sunburst`에 투명 PNG로 요청했으며, 네 장 모두 1024×1024픽셀이다. [수정에 사용한 프롬프트](https://pub-236dc9dc170e487faec4c8b5e2d084c6.r2.dev/pages/guruguru-seosoyoung-head-only/prompts.txt)도 따로 남겼다.
 
 ## 브라우저는 필요한 칸만 보여 준다
 
@@ -72,4 +80,4 @@ Sunburst에도 Flare와 같은 원본 참조 이미지와 프롬프트를 사용
 - [인터랙티브 데모](https://pages.eiaserinnys.me/d/guruguru-seosoyoung-25)
 - [이미지 생성에 사용한 프롬프트](https://pub-236dc9dc170e487faec4c8b5e2d084c6.r2.dev/pages/guruguru-seosoyoung-25/prompts.txt)
 
-Flare와 Sunburst로 만든 서소영 이미지 여덟 장과 데모는 이번 작업에서 제작했다. 트마리의 캐릭터 이미지는 사용하지 않았다.
+Flare와 Sunburst로 만든 시트와 이후 수정본, 데모는 이번 작업에서 제작했다. 트마리의 캐릭터 이미지는 사용하지 않았다.
