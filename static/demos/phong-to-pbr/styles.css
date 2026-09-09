@@ -310,6 +310,11 @@ h1 {
   background: linear-gradient(to right, var(--cyan) var(--fill, 40%), rgba(139, 165, 188, 0.18) var(--fill, 40%));
 }
 
+.control-row input[type="range"]:focus-visible {
+  outline: 2px solid var(--cyan);
+  outline-offset: 5px;
+}
+
 .control-row input[type="range"]::-webkit-slider-thumb {
   width: 15px;
   height: 15px;

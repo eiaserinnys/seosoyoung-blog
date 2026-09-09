@@ -75,6 +75,8 @@ if (!missing.length) {
   check(app.includes('IntersectionObserver'), 'lazy WebGL initialization is missing');
   check(app.includes('visibilitychange'), 'Page Visibility lifecycle is missing');
   check(renderer.includes('requestRender'), 'event-driven render scheduler is missing');
+  check(renderer.includes('new ResizeObserver'), 'canvas resize observer is missing');
+  check(renderer.includes('resizeObserver?.disconnect()'), 'canvas resize observer cleanup is missing');
   check(!renderer.includes('setAnimationLoop'), 'continuous renderer loop is forbidden');
   check(renderer.includes('WEBGL_lose_context'), 'released iframes must explicitly lose their WebGL context');
   check(renderer.includes('BroadcastChannel'), 'cross-iframe context handoff is missing');
@@ -86,6 +88,7 @@ if (!missing.length) {
   check(specsSource.includes('거시 그림자'), 'Smith G macro-shadow disclaimer is missing');
   check(specsSource.includes('불투명, 등방성, 단일 레이어'), 'material scope disclaimer is missing');
   check(!/[·―—]/.test([html, specsSource, mathSource].join('\n')), 'forbidden UI punctuation is present');
+  check(styles.includes('input[type="range"]:focus-visible'), 'range focus-visible style is missing');
   check(![mathSource, specsSource].join('\n').includes(' × '), 'dot products must not use the vector cross-product symbol');
   check(mathSource.includes('const PBR_EPSILON'), 'single denominator epsilon is missing');
   check(glsl.includes('float alpha = perceptualRoughness * perceptualRoughness;'), 'GLSL r→alpha mapping drifted');

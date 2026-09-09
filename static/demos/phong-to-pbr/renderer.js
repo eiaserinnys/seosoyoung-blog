@@ -204,6 +204,10 @@ export class LabRenderer {
       if (this.mode === 'smith-g') this.arrangeSmithSpecimens();
       this.requestRender();
     });
+    this.resizeObserver = 'ResizeObserver' in window
+      ? new ResizeObserver(() => this.requestRender())
+      : null;
+    this.resizeObserver?.observe(this.canvas);
     this.channel = 'BroadcastChannel' in window ? new BroadcastChannel('phong-to-pbr-contexts') : null;
     if (this.channel) {
       this.channel.onmessage = (event) => {
@@ -268,6 +272,7 @@ export class LabRenderer {
     if (this.disposed) return;
     this.disposed = true;
     if (this.pendingFrame) cancelAnimationFrame(this.pendingFrame);
+    this.resizeObserver?.disconnect();
     this.controls?.dispose();
     this.materials.forEach((material) => material.dispose());
     this.resources.forEach((resource) => resource.dispose?.());

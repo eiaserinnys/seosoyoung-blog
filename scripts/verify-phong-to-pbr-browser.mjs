@@ -162,6 +162,72 @@ async function verifyLifecycle(browser, baseUrl) {
   }
 }
 
+async function canvasDimensions(page) {
+  return page.evaluate(() => {
+    const canvas = document.querySelector('#render-canvas');
+    return {
+      cssWidth: canvas.clientWidth,
+      cssHeight: canvas.clientHeight,
+      bufferWidth: canvas.width,
+      bufferHeight: canvas.height,
+      count: window.__PBR_LAB__.renderCount,
+    };
+  });
+}
+
+async function waitForSynchronizedCanvas(page, previousCount, label) {
+  await page.waitForFunction((count) => {
+    const canvas = document.querySelector('#render-canvas');
+    return window.__PBR_LAB__.renderCount > count
+      && Math.abs(canvas.width - canvas.clientWidth) <= 1
+      && Math.abs(canvas.height - canvas.clientHeight) <= 1;
+  }, previousCount, { timeout: 25000 }).catch((error) => {
+    throw new Error(`${label}: ${error.message}`);
+  });
+  return canvasDimensions(page);
+}
+
+function assertCanvasDimensionsMatch(dimensions, label) {
+  const widthDelta = Math.abs(dimensions.bufferWidth - dimensions.cssWidth);
+  const heightDelta = Math.abs(dimensions.bufferHeight - dimensions.cssHeight);
+  if (widthDelta > 1 || heightDelta > 1) {
+    throw new Error(`${label}: stale drawing buffer ${JSON.stringify(dimensions)}`);
+  }
+}
+
+async function verifyResizeAndFullscreen(browser, baseUrl) {
+  const page = await browser.newPage({ viewport: { width: 900, height: 700 }, deviceScaleFactor: 1 });
+  try {
+    await page.goto(`${baseUrl}/demos/phong-to-pbr/?mode=studio`, { waitUntil: 'networkidle' });
+    await page.waitForFunction(() => window.__PBR_LAB__?.contextState === 'active');
+    const initial = await canvasDimensions(page);
+    assertCanvasDimensionsMatch(initial, 'initial canvas');
+
+    await page.setViewportSize({ width: 720, height: 780 });
+    const breakpoint = await waitForSynchronizedCanvas(page, initial.count, 'breakpoint resize frame');
+    assertCanvasDimensionsMatch(breakpoint, 'breakpoint canvas');
+    if (breakpoint.cssWidth === initial.cssWidth && breakpoint.cssHeight === initial.cssHeight) {
+      throw new Error('breakpoint did not change the canvas CSS dimensions');
+    }
+
+    const beforeFullscreen = breakpoint;
+    await page.locator('#fullscreen').click();
+    await page.waitForFunction(() => document.fullscreenElement?.id === 'lab');
+    const fullscreen = await waitForSynchronizedCanvas(page, beforeFullscreen.count, 'fullscreen enter frame');
+    assertCanvasDimensionsMatch(fullscreen, 'fullscreen canvas');
+    if (fullscreen.cssWidth === beforeFullscreen.cssWidth && fullscreen.cssHeight === beforeFullscreen.cssHeight) {
+      throw new Error('fullscreen did not change the canvas CSS dimensions');
+    }
+
+    await page.locator('#fullscreen').click();
+    await page.waitForFunction(() => document.fullscreenElement === null);
+    const restored = await waitForSynchronizedCanvas(page, fullscreen.count, 'fullscreen exit frame');
+    assertCanvasDimensionsMatch(restored, 'restored canvas');
+  } finally {
+    await page.close();
+  }
+}
+
 const server = createServer(serveStatic);
 let browser;
 
@@ -187,7 +253,8 @@ try {
     }
   }
   await verifyLifecycle(browser, baseUrl);
-  console.log(`phong-to-pbr browser: ${checks}/${viewports.length * modes.length} pixel probes and screenshots, reset, idle and lifecycle checks passed`);
+  await verifyResizeAndFullscreen(browser, baseUrl);
+  console.log(`phong-to-pbr browser: ${checks}/${viewports.length * modes.length} pixel probes and screenshots, reset, idle, lifecycle, resize and fullscreen checks passed`);
   console.log(`screenshots: ${screenshotRoot}`);
 } finally {
   await browser?.close();
