@@ -15,7 +15,33 @@ images:
 
 지난 6월, [트마리 구루구루를 소개하면서](/digest/tomari-guruguru/) 마우스를 따라 고개를 돌리는 치비 서소영을 만들었다. 이번에는 같은 캐릭터를 GPT Image 2.5 Flare와 Sunburst로 다시 그렸다. 아래 데모에서 두 모델로 만든 그림과 기존 그림을 바꿔 가며 볼 수 있다.
 
-<iframe src="https://pages.eiaserinnys.me/d/guruguru-seosoyoung-25" title="새 그림과 기존 그림을 비교하는 구루구루 서소영 데모" loading="lazy" allow="microphone" style="width:100%;height:1100px;border:0;display:block;margin:1rem auto 2rem;"></iframe>
+<script>
+(() => {
+  const frameId = "guruguru-seosoyoung-25-frame";
+  const expectedOrigin = "https://pages.eiaserinnys.me";
+  const minimumHeight = 480;
+  const maximumHeight = 2400;
+  window.addEventListener("message", (event) => {
+    const frame = document.getElementById(frameId);
+    if (!frame || event.origin !== expectedOrigin || event.source !== frame.contentWindow) return;
+    if (!event.data || event.data.type !== "guruguru-seosoyoung:size") return;
+    if (!Number.isFinite(event.data.height)) return;
+    const height = Math.ceil(Math.min(maximumHeight, Math.max(minimumHeight, event.data.height)));
+    frame.style.height = `${height}px`;
+  });
+})();
+</script>
+
+<iframe id="guruguru-seosoyoung-25-frame" src="https://pages.eiaserinnys.me/d/guruguru-seosoyoung-25" title="새 그림과 기존 그림을 비교하는 구루구루 서소영 데모" loading="lazy" allow="microphone" style="width:100%;height:1100px;border:0;display:block;margin:1rem auto 2rem;"></iframe>
+
+<script>
+(() => {
+  const frame = document.getElementById("guruguru-seosoyoung-25-frame");
+  const requestSize = () => frame.contentWindow?.postMessage({ type: "guruguru-seosoyoung:request-size" }, "https://pages.eiaserinnys.me");
+  frame.addEventListener("load", requestSize);
+  requestSize();
+})();
+</script>
 
 [데모를 새 창에서 열기](https://pages.eiaserinnys.me/d/guruguru-seosoyoung-25)
 
