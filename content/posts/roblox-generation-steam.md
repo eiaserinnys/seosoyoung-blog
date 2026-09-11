@@ -43,59 +43,59 @@ images:
 .tl-key { grid-column: 1 / -1; font-size: 13px; color: var(--secondary); margin-top: 10px; }
 .tl-key .sw { display: inline-block; width: 14px; height: 14px; border-radius: 3px; vertical-align: -2px; margin: 0 4px 0 8px; }
 </style>
-<div class="tl" role="table" aria-label="로블록스 성장기의 놀이, 세 출생연도의 나이와 학교 구간, 스팀 소셜 코옵 출시를 한 시간축에 겹친 연표">
-  <div class="tl-head">연도</div><div class="tl-head c">04년생</div><div class="tl-head c">08년생</div><div class="tl-head c">12년생</div><div class="tl-head" style="padding-left:10px">무슨 게임이 나왔고, 무엇을 하며 놀았나</div>
+<div class="tl" role="table" aria-label="로블록스 성장기의 놀이, 2006년생과 2010년생과 2014년생의 나이와 학교 구간, 스팀 소셜 코옵 출시를 한 시간축에 겹친 연표">
+  <div class="tl-head">연도</div><div class="tl-head c">06년생</div><div class="tl-head c">10년생</div><div class="tl-head c">14년생</div><div class="tl-head" style="padding-left:10px">무슨 게임이 나왔고, 무엇을 하며 놀았나</div>
   <div class="tl-year">2008</div>
-  <div class="tl-cell st-p">4</div>
-  <div class="tl-cell st-p">0</div>
+  <div class="tl-cell st-p">2</div>
+  <div class="tl-cell st-x"></div>
   <div class="tl-cell st-x"></div>
   <div class="tl-cards"><div class="tl-card rb"><span class="tag">로블록스</span>피자 가게에서 일하기 등장<span class="how">요리사, 배달원, 계산원으로 역할을 나눠 가게를 굴린다</span></div></div>
   <div class="tl-year">2014</div>
+  <div class="tl-cell st-e">8</div>
+  <div class="tl-cell st-p">4</div>
+  <div class="tl-cell st-p">0</div>
+  <div class="tl-cards"><div class="tl-card rb"><span class="tag">로블록스</span>머더 미스터리 2 등장<span class="how">살인자, 보안관, 시민으로 나뉘어 정체를 추리하며 쫓고 쫓긴다</span></div></div>
+  <div class="tl-year">2016</div>
   <div class="tl-cell st-e">10</div>
   <div class="tl-cell st-p">6</div>
   <div class="tl-cell st-p">2</div>
-  <div class="tl-cards"><div class="tl-card rb"><span class="tag">로블록스</span>머더 미스터리 2 등장<span class="how">살인자, 보안관, 시민으로 나뉘어 정체를 추리하며 쫓고 쫓긴다</span></div></div>
-  <div class="tl-year">2016</div>
-  <div class="tl-cell st-e">12</div>
-  <div class="tl-cell st-e">8</div>
-  <div class="tl-cell st-p">4</div>
   <div class="tl-cards"><div class="tl-card pf"><span class="tag">규모</span>12월 월간 이용자 3,000만 명</div></div>
   <div class="tl-year">2017</div>
+  <div class="tl-cell st-e">11</div>
+  <div class="tl-cell st-e">7</div>
+  <div class="tl-cell st-p">3</div>
+  <div class="tl-cards"><div class="tl-card rb"><span class="tag">로블록스</span>제일브레이크 등장<span class="how">죄수와 경찰로 나뉘어 탈옥하고 추격한다</span></div><div class="tl-card rb"><span class="tag">로블록스</span>플리 더 퍼실리티 등장<span class="how">추격자 하나를 피해 나머지가 협동으로 탈출한다</span></div></div>
+  <div class="tl-year">2019</div>
   <div class="tl-cell st-mh">13</div>
   <div class="tl-cell st-e">9</div>
   <div class="tl-cell st-p">5</div>
-  <div class="tl-cards"><div class="tl-card rb"><span class="tag">로블록스</span>제일브레이크 등장<span class="how">죄수와 경찰로 나뉘어 탈옥하고 추격한다</span></div><div class="tl-card rb"><span class="tag">로블록스</span>플리 더 퍼실리티 등장<span class="how">추격자 하나를 피해 나머지가 협동으로 탈출한다</span></div></div>
-  <div class="tl-year">2019</div>
-  <div class="tl-cell st-mh">15</div>
-  <div class="tl-cell st-e">11</div>
-  <div class="tl-cell st-e">7</div>
   <div class="tl-cards"><div class="tl-card pf"><span class="tag">규모</span>4월 월간 이용자 9,000만 명. 12월 기준 위 네 게임 모두 누적 방문 10억 회 초과</div></div>
   <div class="tl-year">2020</div>
-  <div class="tl-cell st-mh">16</div>
-  <div class="tl-cell st-e">12</div>
-  <div class="tl-cell st-e">8</div>
+  <div class="tl-cell st-mh">14</div>
+  <div class="tl-cell st-e">10</div>
+  <div class="tl-cell st-p">6</div>
   <div class="tl-cards"><div class="tl-card pf"><span class="tag">코로나 붐</span>하루 이용자 3,110만 명(전년 대비 +82%), 13세 미만 54%. 한 달에 20개 넘는 경험을 오간다</div><div class="tl-card st"><span class="tag">스팀</span>9월 파스모포비아<span class="how">넷이서 귀신 나오는 집을 조사한다. 장르는 이 세대보다 먼저 있었다</span></div></div>
   <div class="tl-year">2023</div>
+  <div class="tl-cell st-mh">17</div>
+  <div class="tl-cell st-mh">13</div>
+  <div class="tl-cell st-e">9</div>
+  <div class="tl-cards"><div class="tl-card st"><span class="tag">스팀</span>10월 리썰 컴퍼니<span class="how">괴물에게 쫓기며 버려진 시설에서 고철을 모아 온다</span></div></div>
+  <div class="tl-year">2024</div>
+  <div class="tl-cell st-mh">18</div>
+  <div class="tl-cell st-mh">14</div>
+  <div class="tl-cell st-e">10</div>
+  <div class="tl-cards"><div class="tl-card st"><span class="tag">스팀</span>4월 콘텐츠 워닝<span class="how">괴물이 있는 곳에 들어가 영상을 찍어 온다</span></div></div>
+  <div class="tl-year">2025</div>
   <div class="tl-cell st-a">19</div>
   <div class="tl-cell st-mh">15</div>
   <div class="tl-cell st-e">11</div>
-  <div class="tl-cards"><div class="tl-card st"><span class="tag">스팀</span>10월 리썰 컴퍼니<span class="how">괴물에게 쫓기며 버려진 시설에서 고철을 모아 온다</span></div></div>
-  <div class="tl-year">2024</div>
+  <div class="tl-cards"><div class="tl-card st"><span class="tag">스팀</span>2월 R.E.P.O.<span class="how">괴물이 도사린 저택에서 값나가는 물건을 함께 옮긴다</span></div><div class="tl-card st"><span class="tag">스팀</span>6월 PEAK<span class="how">넷이서 산을 오른다. 한 명이 떨어지면 구하려다 같이 떨어진다</span></div></div>
+  <div class="tl-year">2026</div>
   <div class="tl-cell st-a">20</div>
   <div class="tl-cell st-mh">16</div>
   <div class="tl-cell st-e">12</div>
-  <div class="tl-cards"><div class="tl-card st"><span class="tag">스팀</span>4월 콘텐츠 워닝<span class="how">괴물이 있는 곳에 들어가 영상을 찍어 온다</span></div></div>
-  <div class="tl-year">2025</div>
-  <div class="tl-cell st-a">21</div>
-  <div class="tl-cell st-mh">17</div>
-  <div class="tl-cell st-mh">13</div>
-  <div class="tl-cards"><div class="tl-card st"><span class="tag">스팀</span>2월 R.E.P.O.<span class="how">괴물이 도사린 저택에서 값나가는 물건을 함께 옮긴다</span></div><div class="tl-card st"><span class="tag">스팀</span>6월 PEAK<span class="how">넷이서 산을 오른다. 한 명이 떨어지면 구하려다 같이 떨어진다</span></div></div>
-  <div class="tl-year">2026</div>
-  <div class="tl-cell st-a">22</div>
-  <div class="tl-cell st-mh">18</div>
-  <div class="tl-cell st-mh">14</div>
   <div class="tl-cards"><div class="tl-card pf"><span class="tag">지금</span>2020년에 9세에서 16세였던 아이들은 올해 15세에서 22세</div></div>
-  <div class="tl-key">숫자는 만 나이. <span class="sw" style="background: rgba(181,121,58,.30)"></span>초등학교 구간 <span class="sw" style="background: rgba(58,111,181,.30)"></span>중고등학교 구간. 색은 오른쪽 카드의 로블록스(황토)와 스팀(파랑)에 맞췄습니다. 한국 학제 기준이며 출생연도는 2020년에 9세에서 16세였던 구간의 대표값입니다.[^3]</div>
+  <div class="tl-key">숫자는 만 나이. <span class="sw" style="background: rgba(181,121,58,.30)"></span>초등학교 구간 <span class="sw" style="background: rgba(58,111,181,.30)"></span>중고등학교 구간. 색은 오른쪽 카드의 로블록스(황토)와 스팀(파랑)에 맞췄습니다. 한국 학제 기준이며, 세 출생연도는 2020년 상장 서류의 세 연령 구간(13세에서 16세, 9세에서 12세, 9세 미만)의 가운데 값입니다.[^3]</div>
 </div>
 </figure>
 
@@ -131,7 +131,7 @@ images:
 
 [^2]: 로블록스 게임의 등장 연도와 누적 방문: GamesBeat, ["Roblox's 10 biggest games of all time"](https://gamesbeat.com/robloxs-10-biggest-games-of-all-time-each-with-more-than-a-billion-plays/), 2019-12-09(2025-06-18 갱신). 방문은 접속 횟수이지 이용자 수가 아니고, 10억 회를 넘긴 열 개 가운데 나머지 여섯은 아바타 생활과 반려동물 기르기 같은 사교 놀이였습니다. 월간 이용자: TechCrunch, ["How Roblox avoided the gaming graveyard..."](https://techcrunch.com/2019/07/11/how-roblox-avoided-the-gaming-graveyard-and-grew-into-a-2-5b-company/), 2019-07-11. 하루 이용자와 연령: Roblox [Form S-1](https://www.sec.gov/Archives/edgar/data/1315098/000119312520298230/d87104ds1.htm), 2020년 9월 30일까지 9개월 기준. 연령 분포는 9세 미만 25%, 9세에서 12세 29%, 13세에서 16세 13%, 17세에서 24세 16%, 25세 이상 14%이며 이용자가 스스로 신고한 생년월일 기준입니다. 월간과 하루 이용자는 분모가 달라 직접 비교하지 않았습니다. 스팀 개발자들이 이 로블록스 게임들에서 직접 영향을 받았다는 주장은 아닙니다.
 
-[^3]: 연표의 로블록스 게임 등장 연도와 스팀 게임 출시일은 원문과 상점 페이지 기준이며(파스모포비아 2020-09-18, 리썰 컴퍼니 2023-10-23, 콘텐츠 워닝 2024-04-01, R.E.P.O. 2025-02-26, PEAK 2025-06-16), 놀이 방식 요약은 글쓴이의 것입니다. 나이 열은 2020년 상장 서류의 두 연령 구간(9세에서 12세 29%, 13세에서 16세 13%)을 대표하는 출생연도 셋에 해를 더하고 뺀 산술이며, 학년은 한국 학제(만 6세가 되는 해 초등 입학)로 계산했습니다. 개인별 플랫폼 이동이나 게임 사이의 직접 영향 관계를 관측한 자료가 아니라 이 글이 가장 중요하게 보는 정황 증거이고, 같은 출생연도를 앞뒤로 계산한 것이라 별개의 인구를 더한 것도 아닙니다. 로블록스는 2026년 연령 검증 뒤 실제 연령이 자기 신고보다 어렸다고 밝혔으므로([Q4 2025 Shareholder Letter](https://www.sec.gov/Archives/edgar/data/1315098/000131509826000009/ex991-q42025shareholder.htm)), 산술은 표보다 한두 해 늦어질 수 있습니다. 이 점은 가설의 시점을 앞당기기보다 늦추는 쪽으로 작용합니다. 특정 게임을 실제로 즐긴 사람들이 이후 스팀에서 구매했다는 관측은 없습니다.
+[^3]: 연표의 로블록스 게임 등장 연도와 스팀 게임 출시일은 원문과 상점 페이지 기준이며(파스모포비아 2020-09-18, 리썰 컴퍼니 2023-10-23, 콘텐츠 워닝 2024-04-01, R.E.P.O. 2025-02-26, PEAK 2025-06-16), 놀이 방식 요약은 글쓴이의 것입니다. 나이 열은 2020년 상장 서류의 세 연령 구간(13세에서 16세 13%, 9세에서 12세 29%, 9세 미만 25%)의 가운데 값에 해당하는 출생연도 셋(2006년, 2010년, 2014년)에 해를 더하고 뺀 산술이며, 학년은 한국 학제(만 6세가 되는 해 초등 입학)로 계산했습니다. 개인별 플랫폼 이동이나 게임 사이의 직접 영향 관계를 관측한 자료가 아니라 이 글이 가장 중요하게 보는 정황 증거이고, 같은 출생연도를 앞뒤로 계산한 것이라 별개의 인구를 더한 것도 아닙니다. 로블록스는 2026년 연령 검증 뒤 실제 연령이 자기 신고보다 어렸다고 밝혔으므로([Q4 2025 Shareholder Letter](https://www.sec.gov/Archives/edgar/data/1315098/000131509826000009/ex991-q42025shareholder.htm)), 산술은 표보다 한두 해 늦어질 수 있습니다. 이 점은 가설의 시점을 앞당기기보다 늦추는 쪽으로 작용합니다. 특정 게임을 실제로 즐긴 사람들이 이후 스팀에서 구매했다는 관측은 없습니다.
 
 [^4]: 여기서 합류는 로블록스를 그만두고 스팀으로 갈아탔다는 뜻이 아닙니다. 로블록스를 계속 하면서 스팀에서 처음으로 유료 게임을 사는 것도, 무료 게임만 하던 스팀 계정으로 만 원짜리 코옵을 결제하기 시작하는 것도 같은 이동입니다. 로블록스의 하루 이용자는 2025년 4분기 1억 4,400만 명으로 계속 늘었습니다(앞의 Q4 2025 Shareholder Letter). 이 성장과 가설은 충돌하지 않습니다. 이주를 로블록스 이탈로 좁게 정의하면 자료가 없지만, 병행과 유료 구매 시작까지 포함하면 스팀 쪽의 구매 행동 자료(각주 8, 7)가 간접 증거가 됩니다.
 
