@@ -25,8 +25,6 @@ OpenAI는 Codex와 ChatGPT for Work를 전 세계 수백만 명 규모로 운영
 
 Agents API는 그 하네스와 그 환경을 한꺼번에 빌려주겠다고 말한다. 애플리케이션이 하는 일은 세션을 열고 이벤트와 출력을 받는 것까지이고, 그 사이에서 하네스를 돌리고 샌드박스를 띄우고 관리하는 일은 OpenAI가 맡는다.
 
-![애플리케이션이 세션을 열면 OpenAI가 관리하는 Codex 하네스가 샌드박스에 도구 호출을 보내고 결과를 돌려받는다. 출처: OpenAI 개발자 문서](https://img.seosoyoung.eiaserinnys.me/images/openai-agents-api/overview-1.png)
-
 문서는 이 API가 네 가지 개념으로 이루어져 있다고 정리한다.
 
 | 개념 | 내용 |
