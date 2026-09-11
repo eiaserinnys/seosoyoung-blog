@@ -23,22 +23,15 @@ images:
 
 <figure class="tl-figure" style="margin: 1.5rem 0;">
 <style>
-.tl { display: grid; grid-template-columns: 40px 112px 1fr; column-gap: 8px; row-gap: 10px; align-items: start; font-size: 14px; line-height: 1.45; }
-.tl-head { font-size: 13px; color: var(--secondary); font-weight: 600; padding-bottom: 4px; border-bottom: 1px solid var(--border); }
-.tl-year { font-size: 14px; font-weight: 700; color: var(--primary); padding-top: 8px; }
-.tl-age { font-size: 13px; color: var(--secondary); padding-top: 6px; display: flex; flex-direction: column; gap: 3px; align-items: flex-start; }
-.tl-age .ag { display: inline-block; padding: 1px 6px; border-radius: 4px; white-space: nowrap; color: var(--primary); }
-.tl-age .st-p { color: var(--secondary); }
-.tl-age .st-e { background: rgba(46,139,87,.16); }
-.tl-age .st-m { background: rgba(58,111,181,.16); }
-.tl-age .st-h { background: rgba(142,68,173,.16); }
-.tl-age .st-a { background: rgba(128,128,128,.14); color: var(--secondary); }
-.tl-key { grid-column: 1 / -1; font-size: 13px; color: var(--secondary); margin-top: 4px; }
-.tl-key .ag { display: inline-block; padding: 1px 6px; border-radius: 4px; margin-right: 4px; color: var(--primary); }
-.tl-key .st-e { background: rgba(46,139,87,.16); }
-.tl-key .st-m { background: rgba(58,111,181,.16); }
-.tl-key .st-h { background: rgba(142,68,173,.16); }
-.tl-cards { display: flex; flex-direction: column; gap: 6px; }
+.tl { display: grid; grid-template-columns: 38px 42px 42px 42px 1fr; column-gap: 0; row-gap: 0; align-items: stretch; font-size: 14px; line-height: 1.45; }
+.tl-head { font-size: 13px; color: var(--secondary); font-weight: 600; padding: 0 4px 6px; border-bottom: 1px solid var(--border); }
+.tl-head.c { text-align: center; }
+.tl-year { font-size: 14px; font-weight: 700; color: var(--primary); padding: 10px 4px 0 0; }
+.tl-cell { display: flex; align-items: center; justify-content: center; font-size: 14px; color: var(--secondary); border-left: 2px solid var(--theme, transparent); }
+.tl-cell.st-e { background: rgba(181,121,58,.30); color: var(--primary); font-weight: 700; }
+.tl-cell.st-mh { background: rgba(58,111,181,.30); color: var(--primary); font-weight: 700; }
+.tl-cell.st-a { background: rgba(128,128,128,.12); }
+.tl-cards { display: flex; flex-direction: column; gap: 6px; padding: 5px 0 5px 10px; }
 .tl-card { padding: 7px 10px; border-radius: 6px; background: var(--code-bg); border-left: 4px solid var(--border); color: var(--primary); }
 .tl-card.rb { border-left-color: #b5793a; }
 .tl-card.st { border-left-color: #3a6fb5; }
@@ -47,35 +40,62 @@ images:
 .tl-card.rb .tag { color: #b5793a; }
 .tl-card.st .tag { color: #3a6fb5; }
 .tl-card .how { display: block; font-size: 13px; color: var(--secondary); margin-top: 2px; }
-.tl-gap { grid-column: 1 / -1; border-top: 1px dashed var(--border); height: 0; margin: 2px 0; }
-.tl-legend { grid-column: 1 / -1; font-size: 13px; color: var(--secondary); margin-top: 4px; }
+.tl-key { grid-column: 1 / -1; font-size: 13px; color: var(--secondary); margin-top: 10px; }
+.tl-key .sw { display: inline-block; width: 14px; height: 14px; border-radius: 3px; vertical-align: -2px; margin: 0 4px 0 8px; }
 </style>
-<div class="tl" role="table" aria-label="로블록스 성장기의 놀이, 그 아이들의 나이, 스팀 소셜 코옵 출시를 한 시간축에 겹친 연표">
-  <div class="tl-head">연도</div>
-  <div class="tl-head">그 아이들의 나이와 학년</div>
-  <div class="tl-head">무슨 게임이 나왔고, 무엇을 하며 놀았나</div>
-  <div class="tl-year">2008</div><div class="tl-age"><span class="ag st-p">04년생 4세</span><span class="ag st-p">08년생 0세</span></div>
+<div class="tl" role="table" aria-label="로블록스 성장기의 놀이, 세 출생연도의 나이와 학교 구간, 스팀 소셜 코옵 출시를 한 시간축에 겹친 연표">
+  <div class="tl-head">연도</div><div class="tl-head c">04년생</div><div class="tl-head c">08년생</div><div class="tl-head c">12년생</div><div class="tl-head" style="padding-left:10px">무슨 게임이 나왔고, 무엇을 하며 놀았나</div>
+  <div class="tl-year">2008</div>
+  <div class="tl-cell st-p">4</div>
+  <div class="tl-cell st-p">0</div>
+  <div class="tl-cell st-x"></div>
   <div class="tl-cards"><div class="tl-card rb"><span class="tag">로블록스</span>피자 가게에서 일하기 등장<span class="how">요리사, 배달원, 계산원으로 역할을 나눠 가게를 굴린다</span></div></div>
-  <div class="tl-year">2014</div><div class="tl-age"><span class="ag st-e">04년생 10세 초4</span><span class="ag st-p">08년생 6세</span><span class="ag st-p">12년생 2세</span></div>
+  <div class="tl-year">2014</div>
+  <div class="tl-cell st-e">10</div>
+  <div class="tl-cell st-p">6</div>
+  <div class="tl-cell st-p">2</div>
   <div class="tl-cards"><div class="tl-card rb"><span class="tag">로블록스</span>머더 미스터리 2 등장<span class="how">살인자, 보안관, 시민으로 나뉘어 정체를 추리하며 쫓고 쫓긴다</span></div></div>
-  <div class="tl-year">2016</div><div class="tl-age"><span class="ag st-e">04년생 12세 초6</span><span class="ag st-e">08년생 8세 초2</span><span class="ag st-p">12년생 4세</span></div>
+  <div class="tl-year">2016</div>
+  <div class="tl-cell st-e">12</div>
+  <div class="tl-cell st-e">8</div>
+  <div class="tl-cell st-p">4</div>
   <div class="tl-cards"><div class="tl-card pf"><span class="tag">규모</span>12월 월간 이용자 3,000만 명</div></div>
-  <div class="tl-year">2017</div><div class="tl-age"><span class="ag st-m">04년생 13세 중1</span><span class="ag st-e">08년생 9세 초3</span><span class="ag st-p">12년생 5세</span></div>
+  <div class="tl-year">2017</div>
+  <div class="tl-cell st-mh">13</div>
+  <div class="tl-cell st-e">9</div>
+  <div class="tl-cell st-p">5</div>
   <div class="tl-cards"><div class="tl-card rb"><span class="tag">로블록스</span>제일브레이크 등장<span class="how">죄수와 경찰로 나뉘어 탈옥하고 추격한다</span></div><div class="tl-card rb"><span class="tag">로블록스</span>플리 더 퍼실리티 등장<span class="how">추격자 하나를 피해 나머지가 협동으로 탈출한다</span></div></div>
-  <div class="tl-year">2019</div><div class="tl-age"><span class="ag st-m">04년생 15세 중3</span><span class="ag st-e">08년생 11세 초5</span><span class="ag st-e">12년생 7세 초1</span></div>
+  <div class="tl-year">2019</div>
+  <div class="tl-cell st-mh">15</div>
+  <div class="tl-cell st-e">11</div>
+  <div class="tl-cell st-e">7</div>
   <div class="tl-cards"><div class="tl-card pf"><span class="tag">규모</span>4월 월간 이용자 9,000만 명. 12월 기준 위 네 게임 모두 누적 방문 10억 회 초과</div></div>
-  <div class="tl-year">2020</div><div class="tl-age"><span class="ag st-h">04년생 16세 고1</span><span class="ag st-e">08년생 12세 초6</span><span class="ag st-e">12년생 8세 초2</span></div>
+  <div class="tl-year">2020</div>
+  <div class="tl-cell st-mh">16</div>
+  <div class="tl-cell st-e">12</div>
+  <div class="tl-cell st-e">8</div>
   <div class="tl-cards"><div class="tl-card pf"><span class="tag">코로나 붐</span>하루 이용자 3,110만 명(전년 대비 +82%), 13세 미만 54%. 한 달에 20개 넘는 경험을 오간다</div><div class="tl-card st"><span class="tag">스팀</span>9월 파스모포비아<span class="how">넷이서 귀신 나오는 집을 조사한다. 장르는 이 세대보다 먼저 있었다</span></div></div>
-  <div class="tl-gap"></div>
-  <div class="tl-year">2023</div><div class="tl-age"><span class="ag st-a">04년생 19세 졸업 후</span><span class="ag st-m">08년생 15세 중3</span><span class="ag st-e">12년생 11세 초5</span></div>
+  <div class="tl-year">2023</div>
+  <div class="tl-cell st-a">19</div>
+  <div class="tl-cell st-mh">15</div>
+  <div class="tl-cell st-e">11</div>
   <div class="tl-cards"><div class="tl-card st"><span class="tag">스팀</span>10월 리썰 컴퍼니<span class="how">괴물에게 쫓기며 버려진 시설에서 고철을 모아 온다</span></div></div>
-  <div class="tl-year">2024</div><div class="tl-age"><span class="ag st-a">04년생 20세 졸업 후</span><span class="ag st-h">08년생 16세 고1</span><span class="ag st-e">12년생 12세 초6</span></div>
+  <div class="tl-year">2024</div>
+  <div class="tl-cell st-a">20</div>
+  <div class="tl-cell st-mh">16</div>
+  <div class="tl-cell st-e">12</div>
   <div class="tl-cards"><div class="tl-card st"><span class="tag">스팀</span>4월 콘텐츠 워닝<span class="how">괴물이 있는 곳에 들어가 영상을 찍어 온다</span></div></div>
-  <div class="tl-year">2025</div><div class="tl-age"><span class="ag st-a">04년생 21세 졸업 후</span><span class="ag st-h">08년생 17세 고2</span><span class="ag st-m">12년생 13세 중1</span></div>
+  <div class="tl-year">2025</div>
+  <div class="tl-cell st-a">21</div>
+  <div class="tl-cell st-mh">17</div>
+  <div class="tl-cell st-mh">13</div>
   <div class="tl-cards"><div class="tl-card st"><span class="tag">스팀</span>2월 R.E.P.O.<span class="how">괴물이 도사린 저택에서 값나가는 물건을 함께 옮긴다</span></div><div class="tl-card st"><span class="tag">스팀</span>6월 PEAK<span class="how">넷이서 산을 오른다. 한 명이 떨어지면 구하려다 같이 떨어진다</span></div></div>
-  <div class="tl-year">2026</div><div class="tl-age"><span class="ag st-a">04년생 22세 졸업 후</span><span class="ag st-h">08년생 18세 고3</span><span class="ag st-m">12년생 14세 중2</span></div>
+  <div class="tl-year">2026</div>
+  <div class="tl-cell st-a">22</div>
+  <div class="tl-cell st-mh">18</div>
+  <div class="tl-cell st-mh">14</div>
   <div class="tl-cards"><div class="tl-card pf"><span class="tag">지금</span>2020년에 9세에서 16세였던 아이들은 올해 15세에서 22세</div></div>
-  <div class="tl-key"><span class="ag st-e">초등</span><span class="ag st-m">중등</span><span class="ag st-h">고등</span> 한국 학제와 만 나이 기준. 출생연도는 2020년에 9세에서 16세였던 구간의 대표값입니다.[^3]</div>
+  <div class="tl-key">숫자는 만 나이. <span class="sw" style="background: rgba(181,121,58,.30)"></span>초등학교 구간 <span class="sw" style="background: rgba(58,111,181,.30)"></span>중고등학교 구간. 색은 오른쪽 카드의 로블록스(황토)와 스팀(파랑)에 맞췄습니다. 한국 학제 기준이며 출생연도는 2020년에 9세에서 16세였던 구간의 대표값입니다.[^3]</div>
 </div>
 </figure>
 
