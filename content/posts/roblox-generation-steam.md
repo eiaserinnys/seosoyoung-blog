@@ -13,7 +13,7 @@ sidenotes: true
 
 네 사람이 산을 오릅니다. 한 사람이 발을 헛디뎌 절벽 아래로 미끄러지자 나머지 셋이 밧줄을 던지고, 밧줄을 잡은 사람까지 딸려 내려갑니다. 정상에는 아무도 오르지 못했습니다. 음성 채팅에는 삼십 초 동안 웃음소리만 남습니다. 이 판은 끝났는데, 이 팀은 내일 또 모입니다.
 
-이 글은 이 장면을 산 사람이 누구인가에 관한 글입니다. 저는 두 가지를 주장하려고 합니다. 첫째, 새 게임을 고르는 이유가 바뀌고 있습니다. 규칙과 세계관을 먼저 이해하고 오래 숙련할 시스템이라는 가치보다, 일상에서 겪지 못할 상황에 친구들과 함께 들어가 특별한 사건을 겪는 가치가 더 앞에 놓입니다. 둘째, 이 변화는 기존 게이머의 취향이 바뀐 것만이 아니라 게임을 사는 사람의 구성이 바뀐 결과일 수 있습니다. 로블록스와 포트나이트 크리에이티브에서 자란 큰 세대가 나이를 먹으며 스팀의 유료 구매층에 합류했고, 몸에 밴 소비 습관을 새 상점에서 그대로 이어가고 있다는 가설입니다.[^1]
+이 글은 이 장면을 산 사람이 누구인가에 관한 글입니다. 저는 두 가지를 주장하려고 합니다. 첫째, 새 게임을 고르는 이유가 바뀌고 있습니다. 규칙과 세계관을 먼저 이해하고 오래 숙련할 시스템이라는 가치보다, 일상에서 겪지 못할 상황에 친구들과 함께 들어가 특별한 사건을 겪는 가치가 더 앞에 놓입니다. 둘째, 이 변화는 기존 게이머의 취향 변화에 더해, 게임을 사는 사람의 구성이 바뀐 결과일 수 있습니다. 로블록스와 포트나이트 크리에이티브에서 자란 큰 세대가 나이를 먹으며 스팀의 유료 구매층에 합류했고, 몸에 밴 소비 습관을 새 상점에서 그대로 이어가고 있다는 가설입니다.[^1]
 
 두 번째 주장은 증명된 결론이라기보다 시장을 해석하기 위한 가설입니다. 개인이 로블록스에서 스팀으로 옮겨간 경로를 추적한 공개 자료는 없습니다. 그래서 이 글은 당시 그 세대의 규모와 나이, 그들이 놀던 방식, 지금까지의 시차를 맞춰 보며 간접 증거를 쌓고, 이 전제를 두고 시장을 판단해도 크게 틀리지 않을지를 따집니다.[^2] 결론을 먼저 말하면, 저는 이 전제를 실무의 작업 가설로 채택할 이유가 상당하다고 봅니다.
 
@@ -197,7 +197,7 @@ sidenotes: true
 
 [^7]: 출처: Roblox Corporation, [Q4 2025 Shareholder Letter](https://www.sec.gov/Archives/edgar/data/1315098/000131509826000009/ex991-q42025shareholder.htm), 2026년 2월. "2025년에 이용자는 한 달에 24개가 넘는 서로 다른 경험을 이용했고, 이는 2024년보다 두 자릿수 비율로 늘어난 수치"라고 적혀 있습니다.
 
-[^8]: 출처: GamesBeat, ["Roblox's 10 biggest games of all time, each with more than a billion plays"](https://gamesbeat.com/robloxs-10-biggest-games-of-all-time-each-with-more-than-a-billion-plays/), 2019-12-09(2025-06-18 갱신). 로블록스가 '방문(visit)'이라 부르는 이 수치는 이용자 수가 아니라 접속 횟수입니다. 한 사람이 여러 번 방문하면 여러 번으로 셉니다. 스팀 소셜 코옵 개발자들이 이 게임들에서 직접 영향을 받았다는 확인은 없으며, 이 글은 놀이 구조가 대규모로 먼저 경험되어 있었다는 연속성만 말합니다.
+[^8]: 출처: GamesBeat, ["Roblox's 10 biggest games of all time, each with more than a billion plays"](https://gamesbeat.com/robloxs-10-biggest-games-of-all-time-each-with-more-than-a-billion-plays/), 2019-12-09(2025-06-18 갱신). 로블록스가 '방문(visit)'이라 부르는 이 수치는 접속 횟수이지 이용자 수가 아닙니다. 한 사람이 여러 번 방문하면 여러 번으로 셉니다. 스팀 소셜 코옵 개발자들이 이 게임들에서 직접 영향을 받았다는 확인은 없으며, 이 글은 놀이 구조가 대규모로 먼저 경험되어 있었다는 연속성만 말합니다.
 
 [^9]: 개인의 이동이나 인과관계를 실측한 것은 아닙니다. 한 달에 스무 개를 오가는 소비가 여러 차례 신규 코옵을 구매하는 행동과 이어질 수 있는 문화적 기반이라는 뜻입니다. 뒤에 나오는 스팀 히트작 사이의 이용자 중복(각주 14)과 구매 교대 패턴(각주 20)이 이 연결을 간접적으로 받쳐 줍니다.
 
@@ -205,11 +205,11 @@ sidenotes: true
 
 [^11]: 출시일은 스팀 상점 페이지 기준입니다. 파스모포비아 2020-09-18, 리썰 컴퍼니 2023-10-23, 콘텐츠 워닝 2024-04-01, R.E.P.O. 2025-02-26, PEAK 2025-06-16. 도표의 2017년 집단은 그해에 그 나이였다고 가정한 예시이지 2017년 연령 분포를 실측한 값이 아닙니다.
 
-[^12]: 아이들이 몇 살에 로블록스에서 멀어지는지에 관한 참고 자료로 영국 Ofcom의 아동 기기 측정 조사가 있습니다. 2024년 11월부터 2025년 3월까지 8세에서 14세 692명의 스마트폰과 태블릿과 컴퓨터 이용을 수동 측정한 결과, 온라인 아동 전체 기준 로블록스 하루 평균 이용 시간은 8세에서 9세 9분, 10세에서 12세 12분, 13세에서 14세 5분이었습니다(로블록스 이용자만의 평균은 16분, 18분, 9분). 13세를 넘기며 줄어드는 것은 맞지만, 이 조사는 동일인을 추적한 것이 아니고 게임 콘솔이 빠져 있으며 줄어든 시간이 스팀으로 갔다는 자료도 아닙니다. 그래서 이 글은 이탈 연령을 자료로 확정하지 않고 산술의 참고로만 둡니다. 출처: Ofcom, ["Children's Passive Online Measurement"](https://www.ofcom.org.uk/siteassets/resources/documents/online-safety/research-statistics-and-data/protecting-children/ofcom-childrens-passive-online-measurement.pdf?v=408844), 2025-06-27.
+[^12]: 아이들이 몇 살에 로블록스에서 멀어지는지에 관한 참고 자료로 영국 Ofcom의 아동 기기 측정 조사가 있습니다. 2024년 11월부터 2025년 3월까지 8세에서 14세 692명의 스마트폰과 태블릿과 컴퓨터 이용을 수동 측정한 결과, 온라인 아동 전체 기준 로블록스 하루 평균 이용 시간은 8세에서 9세 9분, 10세에서 12세 12분, 13세에서 14세 5분이었습니다(로블록스 이용자만의 평균은 16분, 18분, 9분). 13세를 넘기며 줄어드는 것은 맞지만, 이 조사는 동일인을 추적한 것이 아니고 게임 콘솔이 빠져 있으며 줄어든 시간이 스팀으로 갔다는 자료도 아닙니다. 이 때문에 이 글은 이탈 연령을 자료로 확정하지 않고 산술의 참고로만 둡니다. 출처: Ofcom, ["Children's Passive Online Measurement"](https://www.ofcom.org.uk/siteassets/resources/documents/online-safety/research-statistics-and-data/protecting-children/ofcom-childrens-passive-online-measurement.pdf?v=408844), 2025-06-27.
 
 [^13]: 출처: 앞의 Q4 2025 Shareholder Letter. 2025년 4분기 하루 이용자는 전년 대비 69% 늘어난 1억 4,400만 명, 이용 시간은 88% 늘어난 350억 시간입니다. 같은 서한에서 연령 검증을 도입한 뒤 실제 연령 분포가 자기 신고보다 어렸다고 밝혔고, 2026년 1월 31일 기준 하루 이용자의 45%가 검증을 마쳤으며 그 검증 집단의 27%가 18세 이상이었습니다. 이 27%는 검증을 마친 45% 안에서의 비율이라 전체 이용자의 성인 비중으로 읽으면 안 됩니다.
 
-[^14]: 출처: Alinea Analytics, ["Steam June 2025"](https://alineaanalytics.com/blog/steam_june_2025/), 2025-07-02. PEAK는 2025년 6월 한 달에 약 310만 장, R.E.P.O.는 같은 달 말 누적 약 1,540만 장으로 집계됐고, PEAK 이용자의 61%가 R.E.P.O.를, 약 40%가 콘텐츠 워닝을, 30%가 리썰 컴퍼니를 플레이했습니다. 모두 Alinea의 자체 분석 플랫폼에 기반한 외부 추정치입니다. 중복이 이렇게 크므로 히트작마다 새로운 독립 인구가 추가된 것처럼 더해서는 안 되고, 반대로 영상만 인기였던 것이 아니라 실제 구매 수요가 있었다는 보조 근거로는 쓸 수 있습니다.
+[^14]: 출처: Alinea Analytics, ["Steam June 2025"](https://alineaanalytics.com/blog/steam_june_2025/), 2025-07-02. PEAK는 2025년 6월 한 달에 약 310만 장, R.E.P.O.는 같은 달 말 누적 약 1,540만 장으로 집계됐고, PEAK 이용자의 61%가 R.E.P.O.를, 약 40%가 콘텐츠 워닝을, 30%가 리썰 컴퍼니를 플레이했습니다. 모두 Alinea의 자체 분석 플랫폼에 기반한 외부 추정치입니다. 중복이 이렇게 크므로 히트작마다 새로운 독립 인구가 추가된 것처럼 더해서는 안 되고, 반대로 영상 인기에 그치지 않고 실제 구매 수요가 있었다는 보조 근거로는 쓸 수 있습니다.
 
 [^15]: 출처: Joe Ferencz, ["5 mistakes creators make building new games on Roblox"](https://techcrunch.com/2021/03/26/5-mistakes-creators-make-building-new-games-on-roblox/), TechCrunch, 2021-03-26. 페렌츠는 로블록스 전문 개발사 게임팸의 창업자이자 대표라 이 전망에는 생태계 종사자의 이해관계가 있습니다. 그래도 히트작 이후의 사후 설명이 아니라는 점은 그대로 남습니다.
 
@@ -219,7 +219,7 @@ sidenotes: true
 
 [^18]: 출처: Christopher Dring, ["GTA 6 reveal causes Xbox and PlayStation..."](https://www.thegamebusiness.com/p/gta-6-reveal-causes-xbox-and-playstation), The Game Business, 2026-09-03. 원문은 "Friendslop is basically Roblox coming to Steam. It's the existing play pattern of highly casual, low graphical fidelity, and an overwhelming emphasis on doing absurd, funny, gimmicky things with your friends, and then that's just being captured by Steam." 로넌 패트릭의 직함은 뉴주의 경영 컨설턴트입니다. 인터뷰에는 조사의 표본과 방법과 전환 규모가 제시되지 않았고, 모든 게임이 이런 형태로 간다는 주장도 아닙니다.
 
-[^19]: 네 사람 모두 어떤 형태로든 이 시장에 이해관계가 있습니다. 개발사 대표와 투자자는 특히 그렇습니다. 그래서 이 글은 이들의 발언을 관측 자료로 세지 않고, 서로 다른 자리에서 같은 해석에 도달했다는 정황으로만 씁니다. 네 사람의 의견을 독립 표본처럼 곱해 확신을 올리지도 않았습니다(각주 2).
+[^19]: 네 사람 모두 어떤 형태로든 이 시장에 이해관계가 있습니다. 개발사 대표와 투자자는 특히 그렇습니다. 그런 까닭에 이 글은 이들의 발언을 관측 자료로 세지 않고, 서로 다른 자리에서 같은 해석에 도달했다는 정황으로만 씁니다. 네 사람의 의견을 독립 표본처럼 곱해 확신을 올리지도 않았습니다(각주 2).
 
 [^20]: 출처: Chris Zukowski, ["Is friendslop saturated?"](https://howtomarketagame.com/2026/07/30/is-friendslop-saturated/), How To Market A Game, 2026-07-30. 저자가 고른 소셜 코옵 16종의 주간 동시 접속자 시계열이라 동일 사용자의 이동을 추적한 자료는 아닙니다. 인용은 "Friendslop fans buy a new game every couple months."
 
