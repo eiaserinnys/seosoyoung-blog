@@ -1,239 +1,178 @@
 ---
-title: "게임의 취향이 바뀐 걸까, 게임을 사는 사람이 바뀐 걸까"
+title: "취향이 바뀐 걸까, 다른 사람들이 온 걸까"
 date: 2026-09-11T17:00:00+09:00
 tags: ["Steam", "Roblox", "인디 게임", "게임 산업", "에디토리얼"]
 categories: ["게임"]
-summary: "로블록스에서 자란 세대가 스팀의 유료 구매층에 합류했다는 가설로 소셜 코옵의 흥행을 읽습니다. 이 세대에게 바뀐 것은 놀이 방식보다 구매처일 수 있습니다."
+summary: "로블록스에서 놀던 아이들이 자라 스팀의 구매자가 되었다. 최근 소셜 코옵 게임의 흥행을 설명하기 위해 세운 가설과, 놀이의 연속성과 세대의 시차를 겹친 연표입니다."
 ShowToc: true
 TocOpen: false
 sidenotes: true
 cover:
-  image: "https://img.seosoyoung.eiaserinnys.me/images/roblox-generation-steam/cover-roblox-generation-steam.png"
-  alt: "한지 위에 먹으로 그린 사려 놓은 밧줄. 한쪽 끝은 아이가 묶은 듯한 매듭, 다른 쪽 끝은 위로 뻗어 화면 밖으로 사라진다."
+  image: "https://img.seosoyoung.eiaserinnys.me/images/roblox-generation-steam/01-cover.png"
+  alt: "치비 서소영이 블록으로 지은 피자 가게와 장난감 경찰차가 있는 놀이방을 돌아보며, 산과 밧줄, 귀신의 집, 어두운 창고가 그려진 게임 상자가 놓인 가게로 들어서는 장면"
 images:
-  - "https://img.seosoyoung.eiaserinnys.me/images/roblox-generation-steam/cover-roblox-generation-steam.png"
+  - "https://img.seosoyoung.eiaserinnys.me/images/roblox-generation-steam/01-cover.png"
 ---
+"로블록스에서 놀던 아이들이 자라 스팀의 구매자가 되었다." 최근 스팀에서 소셜 코옵 게임, 이른바 프렌드 슬롭이 잇달아 흥행하는 이유를 설명하기 위해 제가 세운 가설입니다.[^1] 게이머들의 취향이 갑자기 바뀌었다기보다는, 원래 있던 상점에 취향이 다른 사람들이 새로 들어왔다고 보는 것이죠.
 
-## 밧줄 하나가 끊어진 뒤에
+이 세대는 로블록스에서 친구들과 피자 가게를 운영하고, 경찰을 피해 달아나고, 괴물에게 쫓기는 놀이를 하며 자랐습니다. 로블록스가 크게 성장하던 시기에 유입된 초등학생이었다면 누구나 해봤을 유명한 게임이었으니까요. 코로나 붐 때 초등학생이던 아이들이 중고등학생이 되는 시기에, 스팀에는 그 놀이와 닮은 게임이 잇따라 나왔습니다.
 
-네 사람이 산을 오릅니다. 한 사람이 발을 헛디뎌 절벽 아래로 미끄러지자 나머지 셋이 밧줄을 던지고, 밧줄을 잡은 사람까지 딸려 내려갑니다. 정상에는 아무도 오르지 못했습니다. 음성 채팅에는 삼십 초 동안 웃음소리만 남습니다. 이 판은 끝났는데, 이 팀은 내일 또 모입니다.
+## 연표가 보여 주는 것
 
-이 실패를 기꺼이 사는 사람은 누구일까요. 결론부터 말하면, 저는 게임을 사는 사람들의 구성이 바뀌었다고 봅니다. 그렇다면 신규 IP 기획서가 첫 장에서 답해야 할 질문도 바뀝니다. 주장은 둘입니다. 첫째, 새 게임을 고르는 이유가 바뀌고 있습니다. 규칙과 세계관을 먼저 이해하고 오랫동안 실력을 쌓아 가는 데서 얻는 가치보다, 일상에서 겪지 못할 상황에 친구들과 함께 들어가 특별한 사건을 겪는 가치가 더 앞에 놓입니다. 둘째, 이 변화는 기존 게이머의 취향 변화에 더해, 게임을 사는 사람의 구성이 바뀐 결과일 수 있습니다. 로블록스와 포트나이트 크리에이티브에서 자란 큰 세대가 나이를 먹으며 스팀의 유료 구매층에 합류했고, 몸에 밴 소비 습관을 새 상점에서 그대로 이어가고 있다는 가설입니다.[^1]
+제 주장을 엄밀하게 입증하긴 어렵습니다. 대신 연표를 그려보겠습니다. 가장 큰 정황 증거라고 할 수 있겠네요. 로블록스 성장기에 아이들이 하던 게임, 그 아이들의 나이, 스팀 소셜 코옵의 출시를 한 시간축에 겹치면 이렇게 됩니다.[^2]
 
-두 번째 주장은 시장을 해석하기 위한 가설입니다. 개인이 로블록스에서 스팀으로 옮겨간 경로를 추적한 공개 자료는 없으므로, 이 글은 당시 그 세대의 규모와 나이, 그들이 놀던 방식, 성장에 걸린 시간을 나란히 놓고 간접 증거를 쌓습니다. 그렇게 쌓은 뒤에 저는 이 전제를 실무의 작업 가설로 채택할 이유가 상당하다고 봅니다.[^2]
-
-## 구매 이유가 바뀌었다
-
-오래 사랑받아 온 게임의 약속은 이런 것이었습니다.[^3] 먼저 규칙을 이해하고, 손에 익히고, 그러면 재미가 온다. 못하는 시간은 재미에 도달하기 전의 투자였고, 그 투자를 감당할 사람만이 그 게임의 고객이었습니다.
-
-위의 산악 장면은 순서가 거꾸로입니다. 들어가고 싶은 상황이 먼저 있고, 그 상황을 더 잘 누리기 위해 규칙을 배웁니다. 정상에 오르지 못한 밤은 실패한 밤이 아닙니다. 기억할 사건과 웃음을 얻었으니 이미 보상을 받은 밤입니다. 못하는 시간이 곧 재미에 이르지 못한 시간이라는 등식이 여기서는 성립하지 않습니다.
-
-이 차이를 저는 '숙련을 버렸다'로 읽지 않습니다.[^4] 시스템이 사라진 것도 아닙니다. 시스템의 역할이 바뀌었습니다. 정복하거나 감상할 대상이던 시스템이, 예상하지 못한 사건을 만들어 내는 장치가 됩니다. 밧줄 물리가 어설프면 딸려 내려가는 장면이 나오지 않고, 협력 규칙이 헐거우면 친구를 구하려다 같이 떨어지는 선택이 생기지 않습니다. 실패가 재미가 되려면 실패가 설계되어 있어야 합니다. 이 게임들을 만드는 데 필요한 기술은 줄지 않았습니다. 다른 곳에 쓰이게 되었을 뿐입니다.[^5]
-
-세계관도 마찬가지입니다. 세계에 들어가는 것과 세계관을 미리 학습하는 것은 다른 일입니다. 귀신이 나오는 폐가에 들어가는 사람이 사는 것은 폐가의 설정집이라기보다, 익숙한 친구가 낯선 상황에서 보이는 반응입니다. 평소 침착한 친구가 비명을 지르고, 평소 말이 없던 친구가 앞장을 서는 순간. 그 순간을 만드는 것은 게임 자체라기보다, 게임이 마련한 상황 안에 함께 있는 친구들입니다. 구매자가 사는 것은 그 상황입니다.
-
-그러면 게이머들이 갑자기 이렇게 바뀌었을까요. 저는 여기서 질문을 하나 바꾸고 싶습니다. 취향이 바뀐 것인가, 아니면 취향이 다른 사람이 상점에 들어온 것인가.[^6]
-
-## 로블록스에서 익힌 놀이 문법
-
-2020년 로블록스가 상장 서류를 내던 때, 이 회사의 하루 이용자는 평균 3,110만 명이었습니다. 그해 1월부터 9월까지의 평균이고, 전년 같은 기간의 1,710만 명에서 82% 늘어난 수치입니다. 이용자들은 같은 기간 222억 시간을 플랫폼에서 보냈고, 하루 이용자 한 명이 하루 평균 2.6시간을 썼습니다. 그리고 한 달에 평균 스무 개가 넘는 서로 다른 경험을 오갔습니다.[^7]
-
-이 마지막 숫자를 저는 오래 들여다봤습니다. 한 달에 스무 개. 하나의 게임을 골라 오래 파는 습관과는 정반대의 습관입니다. 새 경험에 들어가 친구와 몇 판을 즐긴 뒤 다음 경험으로 옮겨 가는 것이 이 플랫폼의 기본 리듬이었습니다. 2025년에 이 숫자는 스물네 개를 넘었습니다.[^8]
-
-그때 이 아이들이 무엇을 하고 놀았는지도 기록이 있습니다. 2019년 말 기준으로 누적 방문 10억 회를 넘긴 로블록스 게임은 열 개였고, 그중 여섯은 아바타로 생활하고 반려동물을 기르는 사교 놀이에 가까웠습니다. 나머지 네 게임도 살펴보겠습니다. 2008년에 나온 '피자 가게에서 일하기'에서는 요리사와 배달원, 계산원으로 역할을 나눠 가게를 운영했습니다. 2014년에 나온 '머더 미스터리 2'에서는 살인자와 보안관, 시민으로 나뉘어 서로의 정체를 추리하며 쫓고 쫓겼습니다. 2017년에 나온 '제일브레이크'는 탈옥과 강도, 경찰 추격이 벌어지는 놀이였고, 같은 해에 나온 '플리 더 퍼실리티'는 추격자를 피해 협동으로 탈출하는 놀이였습니다.[^9]
-
-역할 분담, 정체 추리, 추격, 협동 탈출. 최근 스팀에서는 친구들과 모여 상황을 함께 겪는 협동 게임들이 흥행했고, 저는 이런 게임들을 '소셜 코옵'이라 부르겠습니다. 앞서 본 네 가지 놀이는 친구끼리 예측하지 못한 상황을 함께 겪는다는 점에서 이 게임들과 닮았습니다. 저는 이 게임들이 저 게임들의 영향을 받았다고 말하려는 것이 아닙니다. 훨씬 큰 집단이 훨씬 이른 나이에 이미 이 놀이 구조를 대규모로 경험했다는 점을 말하려는 겁니다. 이들에게 '친구와 낯선 상황에 들어가 사건을 겪는다'는 새로 배워야 할 취향이라기보다 이미 몸에 밴 습관입니다.
-
-그러니 이 세대에게 바뀐 것은 놀이 방식이 아닙니다. 구매처입니다. 무료 플랫폼 안에서 여러 경험을 오가던 이용자들은 나이를 먹고 게임 값을 치를 수 있게 되자, 유료 상점에서도 같은 방식으로 게임을 고릅니다. 한 달에 스무 개를 오가던 습관이 몇 달에 한 번 새 코옵을 사는 습관으로 이어지는 데 큰 비약은 필요하지 않습니다.[^10]
-
-## 두 세대가 겹치는 시간축
-
-이 가설이 성립하려면 나이가 맞아야 합니다. 그래서 산술을 해 보았습니다.
-
-로블록스는 2016년 12월 월간 이용자 3,000만 명에서 2019년 4월 9,000만 명으로 자랐습니다. 코로나 이전에 이미 큰 집단이었다는 뜻입니다. 2020년 상장 서류를 보면, 이용자 중 9세 미만은 25%였고 9세에서 12세는 29%였습니다. 13세에서 16세는 13%, 17세에서 24세는 16%, 25세 이상은 14%였습니다.[^11]
-
-이 분포를 앞으로 밀어 보면 이렇게 됩니다.
-
-<figure class="cohort-figure" style="margin: 1.5rem 0;">
-<svg viewBox="0 0 420 592" width="100%" role="img" aria-labelledby="cohort-title cohort-desc" style="display:block; max-width: 560px; margin: 0 auto; font-family: inherit;">
-  <title id="cohort-title">로블록스 세대의 연령 산술과 스팀 소셜 코옵 출시 시점</title>
-  <desc id="cohort-desc">2017년에 9세에서 12세였던 집단, 2020년에 9세에서 12세였던 집단, 2020년에 13세에서 16세였던 집단이 2026년까지 해마다 몇 살이 되는지를 세로 타임라인으로 보여 준다. 왼쪽에는 파스모포비아(2020년 9월), 리썰 컴퍼니(2023년 10월), 콘텐츠 워닝(2024년 4월), R.E.P.O.(2025년 2월), PEAK(2025년 6월)의 스팀 출시 시점을 표시했다. 굵은 글씨는 집단 전체가 15세 이상이 되는 해이며, 본문에서 정의한 구매 연령의 기준일 뿐 구매 전환을 뜻하지 않는다. 2017년 집단은 규모를 알 수 없는 가정 예시이고, 2020년 두 집단 아래에는 당시 연령 비중을 적었다.</desc>
-  <style>
-    .cf-yr { font-size: 13px; fill: var(--secondary); }
-    .cf-hdr { font-size: 13px; font-weight: 600; fill: var(--primary); }
-    .cf-age { font-size: 13px; fill: var(--secondary); }
-    .cf-age.cf-buy { fill: var(--primary); font-weight: 700; }
-    .cf-ev { font-size: 13px; font-weight: 600; fill: var(--primary); }
-    .cf-ev-sub { font-size: 13px; fill: var(--secondary); }
-    .cf-sub { font-size: 13px; fill: var(--secondary); }
-    .cf-lane.cf-assumed { stroke-dasharray: 4 3; }
-    .cf-lane { fill: none; stroke: var(--border); stroke-width: 1; }
-    .cf-row { fill: var(--code-bg); }
-    .cf-line { stroke: var(--border); stroke-width: 1; }
-  </style>
-
-  <!-- 출시 연도 행 강조 -->
-  <rect class="cf-row" x="4" y="238" width="412" height="36" rx="4"/>
-  <rect class="cf-row" x="4" y="382" width="412" height="36" rx="4"/>
-  <rect class="cf-row" x="4" y="430" width="412" height="36" rx="4"/>
-  <rect class="cf-row" x="4" y="478" width="412" height="36" rx="4"/>
-
-  <!-- 헤더 -->
-  <text class="cf-hdr" x="200" y="22" text-anchor="middle">2017년에</text>
-  <text class="cf-hdr" x="200" y="40" text-anchor="middle">9-12세</text>
-  <text class="cf-sub" x="200" y="56" text-anchor="middle">가정 예시</text>
-  <text class="cf-hdr" x="288" y="22" text-anchor="middle">2020년에</text>
-  <text class="cf-hdr" x="288" y="40" text-anchor="middle">9-12세</text>
-  <text class="cf-sub" x="288" y="56" text-anchor="middle">당시 29%</text>
-  <text class="cf-hdr" x="376" y="22" text-anchor="middle">2020년에</text>
-  <text class="cf-hdr" x="376" y="40" text-anchor="middle">13-16세</text>
-  <text class="cf-sub" x="376" y="56" text-anchor="middle">당시 13%</text>
-  <text class="cf-hdr" x="48" y="40" text-anchor="start">스팀 출시</text>
-
-  <!-- 레인 테두리 -->
-  <rect class="cf-lane cf-assumed" x="158" y="96" width="84" height="464" rx="6"/>
-  <rect class="cf-lane" x="246" y="240" width="84" height="320" rx="6"/>
-  <rect class="cf-lane" x="334" y="240" width="84" height="320" rx="6"/>
-
-  <!-- 연도 -->
-  <text class="cf-yr" x="38" y="69" text-anchor="end">2016</text>
-  <text class="cf-yr" x="38" y="117" text-anchor="end">2017</text>
-  <text class="cf-yr" x="38" y="165" text-anchor="end">2018</text>
-  <text class="cf-yr" x="38" y="213" text-anchor="end">2019</text>
-  <text class="cf-yr" x="38" y="261" text-anchor="end">2020</text>
-  <text class="cf-yr" x="38" y="309" text-anchor="end">2021</text>
-  <text class="cf-yr" x="38" y="357" text-anchor="end">2022</text>
-  <text class="cf-yr" x="38" y="405" text-anchor="end">2023</text>
-  <text class="cf-yr" x="38" y="453" text-anchor="end">2024</text>
-  <text class="cf-yr" x="38" y="501" text-anchor="end">2025</text>
-  <text class="cf-yr" x="38" y="549" text-anchor="end">2026</text>
-
-  <!-- 스팀 출시 -->
-  <text class="cf-ev" x="48" y="256">파스모포비아</text>
-  <text class="cf-ev-sub" x="48" y="272">9월</text>
-  <text class="cf-ev" x="48" y="400">리썰 컴퍼니</text>
-  <text class="cf-ev-sub" x="48" y="416">10월</text>
-  <text class="cf-ev" x="48" y="448">콘텐츠 워닝</text>
-  <text class="cf-ev-sub" x="48" y="464">4월</text>
-  <text class="cf-ev" x="48" y="496">R.E.P.O. 2월</text>
-  <text class="cf-ev" x="48" y="512">PEAK 6월</text>
-
-  <!-- 레인 A: 2017년에 9-12세 -->
-  <text class="cf-age" x="200" y="117" text-anchor="middle">9-12세</text>
-  <text class="cf-age" x="200" y="165" text-anchor="middle">10-13세</text>
-  <text class="cf-age" x="200" y="213" text-anchor="middle">11-14세</text>
-  <text class="cf-age" x="200" y="261" text-anchor="middle">12-15세</text>
-  <text class="cf-age" x="200" y="309" text-anchor="middle">13-16세</text>
-  <text class="cf-age" x="200" y="357" text-anchor="middle">14-17세</text>
-  <text class="cf-age cf-buy" x="200" y="405" text-anchor="middle">15-18세</text>
-  <text class="cf-age cf-buy" x="200" y="453" text-anchor="middle">16-19세</text>
-  <text class="cf-age cf-buy" x="200" y="501" text-anchor="middle">17-20세</text>
-  <text class="cf-age cf-buy" x="200" y="549" text-anchor="middle">18-21세</text>
-
-  <!-- 레인 B: 2020년에 9-12세 -->
-  <text class="cf-age" x="288" y="261" text-anchor="middle">9-12세</text>
-  <text class="cf-age" x="288" y="309" text-anchor="middle">10-13세</text>
-  <text class="cf-age" x="288" y="357" text-anchor="middle">11-14세</text>
-  <text class="cf-age" x="288" y="405" text-anchor="middle">12-15세</text>
-  <text class="cf-age" x="288" y="453" text-anchor="middle">13-16세</text>
-  <text class="cf-age" x="288" y="501" text-anchor="middle">14-17세</text>
-  <text class="cf-age cf-buy" x="288" y="549" text-anchor="middle">15-18세</text>
-
-  <!-- 레인 C: 2020년에 13-16세 -->
-  <text class="cf-age" x="376" y="261" text-anchor="middle">13-16세</text>
-  <text class="cf-age" x="376" y="309" text-anchor="middle">14-17세</text>
-  <text class="cf-age cf-buy" x="376" y="357" text-anchor="middle">15-18세</text>
-  <text class="cf-age cf-buy" x="376" y="405" text-anchor="middle">16-19세</text>
-  <text class="cf-age cf-buy" x="376" y="453" text-anchor="middle">17-20세</text>
-  <text class="cf-age cf-buy" x="376" y="501" text-anchor="middle">18-21세</text>
-  <text class="cf-age cf-buy" x="376" y="549" text-anchor="middle">19-22세</text>
-
-  <line class="cf-line" x1="4" y1="578" x2="416" y2="578"/>
-  <text class="cf-yr" x="8" y="590">굵은 글씨: 집단 전체가 15세 이상이 되는 해(본문의 구매 연령 기준, 전환 실측 아님). 회색 띠: 표시한 출시가 있는 해.</text>
-</svg>
-<figcaption style="font-size: 0.85em; color: var(--secondary); margin-top: 0.5rem;">로블록스 상장 서류에 나온 연령 구간을 기준으로, 해가 지나면 각 집단이 몇 살이 되는지 계산했습니다. 실제 이동률이나 잔존율이나 구매 전환을 측정한 자료가 아니며, 2017년 집단(점선)은 그해에 그 나이였다고 가정한 예시라 규모를 알 수 없습니다. 2020년 두 집단의 비중은 당시 이용자가 직접 신고한 나이를 기준으로 했습니다. 게임 출시일은 스팀 상점 페이지를 기준으로 했습니다.</figcaption>
+<figure class="tl-figure" style="margin: 1.5rem 0;">
+<style>
+.tl { display: grid; grid-template-columns: 38px 38px 38px 38px 38px 1fr; column-gap: 0; row-gap: 0; align-items: stretch; font-size: 14px; line-height: 1.45; }
+.tl-head { font-size: 13px; color: var(--secondary); font-weight: 600; padding: 0 4px 6px; border-bottom: 1px solid var(--border); }
+.tl-head.c { text-align: center; }
+.tl-year { font-size: 14px; font-weight: 700; color: var(--primary); padding: 10px 4px 0 0; }
+.tl-cell { display: flex; align-items: center; justify-content: center; font-size: 14px; color: var(--secondary); border-left: 2px solid var(--theme, transparent); }
+.tl-cell.st-e { background: rgba(181,121,58,.30); color: var(--primary); font-weight: 700; }
+.tl-cell.st-mh { background: rgba(58,111,181,.30); color: var(--primary); font-weight: 700; }
+.tl-cell.st-a { background: rgba(128,128,128,.12); }
+.tl-cards { display: flex; flex-direction: column; gap: 6px; padding: 5px 0 5px 10px; }
+.tl-card { padding: 7px 10px; border-radius: 6px; background: var(--code-bg); border-left: 4px solid var(--border); color: var(--primary); }
+.tl-card.rb { border-left-color: #b5793a; }
+.tl-card.st { border-left-color: #3a6fb5; }
+.tl-card.pf { border-left-color: var(--border); color: var(--secondary); }
+.tl-card .tag { display: inline-block; font-size: 13px; font-weight: 700; margin-right: 6px; }
+.tl-card.rb .tag { color: #b5793a; }
+.tl-card.st .tag { color: #3a6fb5; }
+.tl-card .how { display: block; font-size: 13px; color: var(--secondary); margin-top: 2px; }
+.tl-key { grid-column: 1 / -1; font-size: 13px; color: var(--secondary); margin-top: 10px; }
+.tl-key .sw { display: inline-block; width: 14px; height: 14px; border-radius: 3px; vertical-align: -2px; margin: 0 4px 0 8px; }
+</style>
+<div class="tl" role="table" aria-label="로블록스 성장기의 놀이, 2006년생부터 2009년생까지의 나이와 학교 구간, 스팀 소셜 코옵 출시를 한 시간축에 겹친 연표">
+  <div class="tl-head">연도</div><div class="tl-head c">06년생</div><div class="tl-head c">07년생</div><div class="tl-head c">08년생</div><div class="tl-head c">09년생</div><div class="tl-head" style="padding-left:10px">무슨 게임이 나왔고, 무엇을 하며 놀았나</div>
+  <div class="tl-year">2008</div>
+  <div class="tl-cell st-x"></div>
+  <div class="tl-cell st-x"></div>
+  <div class="tl-cell st-x"></div>
+  <div class="tl-cell st-x"></div>
+  <div class="tl-cards"><div class="tl-card rb"><span class="tag">로블록스</span>피자 가게에서 일하기 등장<span class="how">요리사, 배달원, 계산원으로 역할을 나눠 가게를 굴린다</span></div></div>
+  <div class="tl-year">2014</div>
+  <div class="tl-cell st-e">8</div>
+  <div class="tl-cell st-e">7</div>
+  <div class="tl-cell st-p">6</div>
+  <div class="tl-cell st-p">5</div>
+  <div class="tl-cards"><div class="tl-card rb"><span class="tag">로블록스</span>머더 미스터리 2 등장<span class="how">살인자, 보안관, 시민으로 나뉘어 정체를 추리하며 쫓고 쫓긴다</span></div></div>
+  <div class="tl-year">2016</div>
+  <div class="tl-cell st-e">10</div>
+  <div class="tl-cell st-e">9</div>
+  <div class="tl-cell st-e">8</div>
+  <div class="tl-cell st-e">7</div>
+  <div class="tl-cards"><div class="tl-card pf"><span class="tag">규모</span>12월 월간 이용자 3,000만 명</div></div>
+  <div class="tl-year">2017</div>
+  <div class="tl-cell st-e">11</div>
+  <div class="tl-cell st-e">10</div>
+  <div class="tl-cell st-e">9</div>
+  <div class="tl-cell st-e">8</div>
+  <div class="tl-cards"><div class="tl-card rb"><span class="tag">로블록스</span>제일브레이크 등장<span class="how">죄수와 경찰로 나뉘어 탈옥하고 추격한다</span></div><div class="tl-card rb"><span class="tag">로블록스</span>플리 더 퍼실리티 등장<span class="how">추격자 하나를 피해 나머지가 협동으로 탈출한다</span></div></div>
+  <div class="tl-year">2019</div>
+  <div class="tl-cell st-mh">13</div>
+  <div class="tl-cell st-e">12</div>
+  <div class="tl-cell st-e">11</div>
+  <div class="tl-cell st-e">10</div>
+  <div class="tl-cards"><div class="tl-card pf"><span class="tag">규모</span>4월 월간 이용자 9,000만 명. 12월 기준 위 네 게임 모두 누적 방문 10억 회 초과</div></div>
+  <div class="tl-year">2020</div>
+  <div class="tl-cell st-mh">14</div>
+  <div class="tl-cell st-mh">13</div>
+  <div class="tl-cell st-e">12</div>
+  <div class="tl-cell st-e">11</div>
+  <div class="tl-cards"><div class="tl-card pf"><span class="tag">코로나 붐</span>하루 이용자 3,110만 명(전년 대비 +82%), 13세 미만 54%. 한 달에 20개 넘는 경험을 오간다</div><div class="tl-card st"><span class="tag">스팀</span>9월 파스모포비아<span class="how">넷이서 귀신 나오는 집을 조사한다. 장르는 이 세대보다 먼저 있었다</span></div></div>
+  <div class="tl-year">2023</div>
+  <div class="tl-cell st-mh">17</div>
+  <div class="tl-cell st-mh">16</div>
+  <div class="tl-cell st-mh">15</div>
+  <div class="tl-cell st-mh">14</div>
+  <div class="tl-cards"><div class="tl-card st"><span class="tag">스팀</span>10월 리썰 컴퍼니<span class="how">괴물에게 쫓기며 버려진 시설에서 고철을 모아 온다</span></div></div>
+  <div class="tl-year">2024</div>
+  <div class="tl-cell st-mh">18</div>
+  <div class="tl-cell st-mh">17</div>
+  <div class="tl-cell st-mh">16</div>
+  <div class="tl-cell st-mh">15</div>
+  <div class="tl-cards"><div class="tl-card st"><span class="tag">스팀</span>4월 콘텐츠 워닝<span class="how">괴물이 있는 곳에 들어가 영상을 찍어 온다</span></div></div>
+  <div class="tl-year">2025</div>
+  <div class="tl-cell st-a">19</div>
+  <div class="tl-cell st-mh">18</div>
+  <div class="tl-cell st-mh">17</div>
+  <div class="tl-cell st-mh">16</div>
+  <div class="tl-cards"><div class="tl-card st"><span class="tag">스팀</span>2월 R.E.P.O.<span class="how">괴물이 도사린 저택에서 값나가는 물건을 함께 옮긴다</span></div><div class="tl-card st"><span class="tag">스팀</span>6월 PEAK<span class="how">넷이서 산을 오른다. 한 명이 떨어지면 구하려다 같이 떨어진다</span></div></div>
+  <div class="tl-year">2026</div>
+  <div class="tl-cell st-a">20</div>
+  <div class="tl-cell st-a">19</div>
+  <div class="tl-cell st-mh">18</div>
+  <div class="tl-cell st-mh">17</div>
+  <div class="tl-cards"><div class="tl-card pf"><span class="tag">지금</span>넷 다 고등학생이거나 갓 졸업</div></div>
+  <div class="tl-key">숫자는 만 나이. <span class="sw" style="background: rgba(181,121,58,.30)"></span>초등학교 구간 <span class="sw" style="background: rgba(58,111,181,.30)"></span>중고등학교 구간. 색은 오른쪽 카드의 로블록스(황토)와 스팀(파랑)에 맞췄습니다. 한국 학제 기준이며, 네 출생연도는 코로나 붐 때 11세에서 14세였던 아이들입니다.[^3]</div>
+</div>
 </figure>
 
-2017년에 9세에서 12세였던 아이는 2023년에 15세에서 18세, 2025년에 17세에서 20세, 2026년에 18세에서 21세가 됩니다. 2020년에 9세에서 12세였던 아이들은 2026년에 15세에서 18세가 됩니다. 2020년에 13세에서 16세였던 아이들은 2026년에 19세에서 22세가 됩니다. 스팀 소셜 코옵의 최근 흥행 흐름을 연 '리썰 컴퍼니'는 2023년 10월에 나왔습니다. 버려진 시설에서 고철을 주워 오는 공포 코옵입니다. 괴물이 도사린 저택에서 값나가는 물건을 옮기는 공포 코옵 'R.E.P.O.'는 2025년 2월에 나왔습니다. 도입 장면에서 본 것처럼 산을 오르는 코옵 'PEAK'는 2025년 6월에 나왔습니다.[^12]
+이렇게 나란히 놓고 보면, 로블록스의 인기작과 스팀에서 성공한 소셜 코옵 게임들 간의 공통점이 보입니다. 친구들과 모여 즉석에서 어떤 사건을 벌이고 즐기는 경험이라는 점입니다. 역할 분담, 추격, 협동 탈출은 게임에 들어가자마자 함께 벌일 일을 줍니다. 로블록스에서 경찰을 피해 달아나던 놀이와 스팀에서 괴물을 피해 고철을 모으는 놀이는, 친구들과 위험한 상황을 함께 헤쳐 나온다는 점에서 닮았습니다. 규칙을 오래 익힌 뒤에야 재미가 시작되는 게임이라기보다, 들어가자마자 무슨 일이든 벌어지는 게임입니다.
 
-이 표는 나이를 더해 본 산술이지, 실제 이동을 추적한 자료는 아닙니다. 이 산술이 보여 주는 것은 각 집단이 어느 해에 몇 살이 되는가뿐입니다. 여기서 구매 연령은 성인 연령이라기보다, 용돈이나 선물 카드로 만 원 안팎의 게임을 직접 고르기 시작하는 10대 중반을 뜻합니다. 그 기준이면 2020년에 13세에서 24세였던 집단(합쳐 29%)은 리썰 컴퍼니가 나온 2023년에 이미 그 나이였고, 2017년 무렵 9세에서 12세였던 아이들도 같은 해에 15세에서 18세가 되었으며, 2020년의 9세에서 12세 집단(29%)이 지금 그 뒤를 따르고 있습니다. 코로나 이전 성장기의 집단이 먼저 왔고, 코로나기에 훨씬 커진 집단이 뒤따르는 순서입니다.[^13] 세대 유입은 완만하므로 급증 자체를 세대만으로 설명하지는 않습니다. 세대는 수요의 바닥을 넓혔고, 친구가 먼저 산 게임을 함께 고르고 방송에서 본 장면을 직접 겪으려고 다음 게임을 사는 증폭 장치가 그 바닥 위에서 작동했을 때 수요가 한꺼번에 드러났다고 저는 봅니다.[^14] 점진적으로 자란 집단, 몇 년의 시차, 그리고 비선형으로 보이는 흥행. 이 셋은 서로 어긋나지 않습니다.
+여기에 나이를 겹쳐 보면 흥미로운 패턴이 보입니다. 제일브레이크와 플리 더 퍼실리티가 나온 2017년, 06년생부터 09년생은 8세에서 11세로 모두 초등학생이었습니다. 리썰 컴퍼니가 나온 2023년에는 14세에서 17세, 넷 다 중고등학생이었습니다. R.E.P.O.와 PEAK가 나온 2025년에는 16세에서 19세였고, 올해는 17세에서 20세입니다.[^3] 이런 놀이를 접하며 자랄 수 있었던 집단이 청소년기 후반에 들어서는 동안, 스팀에는 비슷한 재미를 내세운 게임이 잇따라 나온 셈입니다. 마치 초등학생이 로블록스에서 게임을 즐기다가 중학교로 진학하면서 스팀으로 무대를 옮겨 비슷한 게임을 찾는 것 같은 모양새지요.
 
-여기서 '이주'라는 말을 조심스럽게 정의해 두고 싶습니다. 로블록스를 떠나 스팀에 새로 가입하는 것만이 이주가 아닙니다. 이미 스팀에 계정은 있었지만 무료 게임만 하던 이용자가 유료 코옵을 사기 시작하는 것, 로블록스와 스팀을 병행하는 것 모두 수요의 이동입니다. 로블록스의 하루 이용자가 2025년 4분기에 1억 4,400만 명으로 도리어 크게 늘어난 것은 이 가설과 충돌하지 않습니다.[^15] 스팀 히트작 사이의 이용자 중복도 마찬가지입니다. 2025년 6월 PEAK 이용자의 61%가 R.E.P.O.를, 약 40%가 '콘텐츠 워닝'을 이미 플레이한 것으로 추정됐습니다.[^16] 히트작 이용자 사이에 이만한 중복이 있다는 것만으로 그들이 로블록스에서 왔다고 말할 수는 없습니다. 그래도 한 게임에 정착하지 않고 다음 경험을 찾는 소비, 한 달에 스무 개를 오가던 그 리듬과는 잘 맞습니다.
+![치비 서소영이 발판에 올라서서 세로 연표 판에 그림 카드를 붙이는 장면. 위쪽에는 블록 피자 가게와 경찰차가 있는 감옥, 아래쪽에는 밧줄로 묶인 네 등반가와 귀신의 집이 붙어 있고, 옆에는 키를 잰 눈금자가 서 있다](https://img.seosoyoung.eiaserinnys.me/images/roblox-generation-steam/02-timeline.png)[^13]
 
-## 같은 그림을 본 사람들
+이런 흐름은 최근 도드라지는 소셜 코옵 게임의 흥행을 자연스럽게 이해할 수 있는 단서가 됩니다. 스팀에 유입된 로블록스 세대가 새로운 구매층으로 합류했다고 볼 수 있는 것이죠.[^4]
 
-이 해석은 제가 처음 떠올린 것이 아닙니다. 앞서 본 사람들이 있고, 그들이 서 있던 자리가 서로 다르다는 점이 저에게는 중요했습니다.
+## 이미 예견된 변화
 
-2021년 3월, 로블록스 전문 개발사 게임팸의 조 페렌츠 대표는 로블록스가 이용자와 함께 나이를 먹으면서 이 플랫폼의 고유한 관습이 "게임 생태계의 다른 부분으로 퍼져 나가기 시작할 것"이라고 썼습니다. 16세 미만 미국인의 과반이 로블록스 이용자이니, 이들이 시장의 주력이 되면 로블록스의 규범이 기존 게임 업계의 예상을 뒤엎고 '게임'이 무엇인지에 대한 관념까지 흔들 것이라는 전망이었습니다.[^17] 리썰 컴퍼니가 나오기 두 해 반 전의 글입니다. 히트작이 나오기 전에 적힌 전망이라는 점에서 저는 이 글을 가장 무겁게 봅니다.
+세대 이동 가설은 저만 혼자 주장하는 것은 아닙니다. 시장조사 회사 뉴주의 경영 컨설턴트 로넌 패트릭은 2026년 9월 더 게임 비즈니스 인터뷰에서 "프렌드슬롭은 기본적으로 로블록스가 스팀으로 오는 것"이라고 했습니다. 로블록스에 아주 캐주얼하고, 그래픽 충실도가 낮으며, 친구들과 터무니없고 우스운 일을 벌이는 게 중심인 놀이 패턴이 있었고, 그것을 이제 스팀이 받아들이고 있다는 설명입니다. 로블록스 이용자가 자라면서 남는지 떠나는지를 조사했더니 답은 둘 다였고, 나이를 먹어도 이런 사회적 경험을 계속 찾더라고 했습니다.[^5] 연표가 정황으로 보여 주는 것을 그는 이용자 조사로 확인한 셈입니다. 게임 투자자 비니 에를링손도 2025년 11월에 같은 결론을 썼고, 로블록스 개발사 게임팸의 조 페렌츠는 리썰 컴퍼니가 나오기 두 해 반 전인 2021년에 로블록스의 관습이 게임 생태계의 다른 부분으로 퍼질 것이라고 예측하기도 했습니다.[^6]
 
-2025년 11월, 스웨덴의 게임 투자사 비홀드 벤처스의 비니 에를링손은 링크드인에 이렇게 썼습니다. "Z세대와 알파세대는 로블록스와 토카 보카 월드와 마인크래프트에서 친구들과 놀고 웃고 만들며 자랐고, 나는 그들이 성인이 되어서도 그렇게 이어질 것이라고 본다. 그들은 자기가 자라며 겪은 것과 비슷한 경험을 찾을 것이고, 지금의 게임 시장은 그들을 받을 준비가 되어 있지 않다." 그는 지금의 소셜 코옵 게임들이 그 빈자리에 정확히 들어맞는다고 덧붙였습니다. 가격도 "식당 한 끼 값이거나 음료 한 잔 값"이라 지금 같은 경제 상황의 젊은이들에게 맞는다고 했습니다.[^18] 마인크래프트와 토카 보카에서 분석과 조사를 이끌었던 사람이 내린 판단입니다.
+![치비 서소영이 둥근 탁자에 앉아 정장이 걸린 의자, 공책이 놓인 의자, 게임패드가 놓인 의자에서 나오는 빈 말풍선 셋을 듣는 장면. 세 말풍선은 탁자 위 블록 하나가 화살표를 따라 작은 게임 가게로 굴러가는 그림을 가리킨다](https://img.seosoyoung.eiaserinnys.me/images/roblox-generation-steam/03-predicted.png)
 
-2025년 12월, 크리에이티브 블록의 앨런 웬은 인디 개발자들에게 2026년을 물은 기사에서 PEAK와 리썰 컴퍼니와 파스모포비아를 묶어, 빠르게 싸게 만든 이 게임들이 "친구와 함께 할 게임을 찾는 포스트 로블록스 관객"에게 분명히 닿고 있다고 썼습니다.[^19]
+## 게임을 고르는 방식도 함께 따라 온다
 
-그리고 2026년 9월, 시장조사 회사 뉴주의 경영 컨설턴트 로넌 패트릭은 더 게임 비즈니스와의 인터뷰에서 한 문장으로 정리했습니다. "프렌드슬롭은 기본적으로 로블록스가 스팀으로 오는 것이다." 그는 이런 놀이가 아주 캐주얼하며 그래픽의 정교함은 낮다고 설명했습니다. 대신 친구들과 터무니없고 우습고 기발한 일을 벌이는 데 압도적으로 큰 비중을 두며, 그 놀이 방식을 이제 스팀이 받아들이고 있다는 설명이었습니다. 로블록스 이용자가 자라면서 남는지 떠나는지를 조사해 봤더니 답은 "둘 다"였고, 나이를 먹어도 이런 사회적 경험을 여전히 찾더라고 그는 말했습니다.[^20]
+로블록스 게이머들이 게임을 고르는 방식은 최근 스팀에서 소셜 코옵 게임을 즐기는 사용자들이 보여주는 행동 패턴과 유사합니다.
 
-개발사 대표, 투자자, 기자, 시장조사 컨설턴트. 서 있는 자리가 다른 네 사람이 다섯 해에 걸쳐 같은 것을 보았습니다. 이 넷의 말이 보여 주는 것은 증명이라기보다, 이 설명이 시장 안에서 이미 언어를 얻었다는 점입니다. 저는 서로 다른 자리에서 같은 답이 나오는 장면을 가볍게 넘기지 못합니다.[^21]
+로블록스 이용자는 2020년에 한 달 평균 스무 개가 넘는 서로 다른 경험을 오갔고, 2025년에는 스물네 개를 넘었습니다.[^7] 돈을 내고 사는 스팀에서도 같은 습관이 보입니다. 스팀 마케팅 분석가 크리스 주코프스키가 소셜 코옵 16종의 주간 동시 접속자를 겹쳐 놓고 보니, 상위 게임이 이 장르 이용자의 절반 이상을 차지했다가 몇 달 안에 10%로 내려가고 다음 게임이 그 자리를 채우는 교대가 반복되었습니다. 그는 이 팬층이 두어 달마다 새 게임을 산다고 표현했습니다.[^8] 히트작 사이의 이용자 중복도 큽니다. 2025년 6월 PEAK 이용자의 61%가 R.E.P.O.를 이미 플레이한 것으로 추정됩니다.[^9] 히트작마다 전혀 다른 손님이 유입된다기보다는, 서로 겹치는 팬층이 다음 게임도 또 산다는 해석이 자연스럽습니다.
 
-한 가지 관찰이 더 있습니다. 2026년 7월, 스팀 마케팅 분석가 크리스 주코프스키는 소셜 코옵 16종의 주간 동시 접속자 추이를 겹쳐 놓고, 상위 게임이 이 장르 이용자의 절반 이상을 차지했다가 3개월에서 9개월 안에 10%로 내려가는 교대 패턴을 보였습니다. 그는 이 팬층의 구매 습관을 이렇게 표현했습니다. "두어 달마다 새 게임을 산다."[^22] 한 게임에 정착하지 않고 다음 경험으로 옮겨 가는 이 리듬은, 앞에서 본 한 달에 스무 개라는 숫자와 같은 모양을 하고 있습니다.
+![치비 서소영과 세 친구가 손을 잡고 여러 개의 열린 문 앞을 달려가는 장면. 문 안에는 피자 가게, 귀신 나오는 방, 산, 어두운 창고가 보이고 뒤로는 달력 종이가 날린다](https://img.seosoyoung.eiaserinnys.me/images/roblox-generation-steam/04-choosing.png)
 
-## 기획이 먼저 설명해야 하는 것
+함께 할 친구가 있어야 의미가 큰 게임이므로 구매 선택도 친구 사이에서 함께 움직이기 쉽습니다. 한 사람의 선택이 친구들의 구매로 번지고, 방송에서 본 장면을 직접 겪고 싶다는 기대가 다음 구매를 자극한다면, 해마다 조금씩 이어진 세대 유입이 몇 달 사이 큰 수요로 드러날 수 있습니다.[^10]
 
-이 글의 결론이 '모두 멀티플레이 코옵을 만들어라'라면 저는 이 글을 쓰지 않았을 것입니다. 시스템형 신작과 서사형 신작은 계속 성공하고 있고, 앞으로도 그럴 것입니다.[^6] 저는 이 가설을 바탕으로 어떤 장르를 고를지보다, 신규 IP를 기획할 때 어떤 상품 가치를 먼저 설명해야 할지를 묻고 싶습니다.
+## 기발하고 색다른 '경험'
 
-기획서의 첫 장은 보통 장르와 세계관의 목차로 시작합니다. 어떤 종류의 게임인지, 어떤 세계에서 벌어지는지, 어떤 시스템이 있는지. 이 순서는 '먼저 이해하고 숙련하면 재미있어진다'는 약속의 순서입니다. 구매층의 큰 부분이 '어떤 상황에 들어가 무엇을 겪을 것인가'를 먼저 묻는 사람들로 채워지고 있다면, 기획이 먼저 답해야 하는 질문도 바뀝니다. 이 게임에 들어가면 친구와 어떤 사건을 겪게 되는가. 그 사건은 왜 이 게임에서만 일어나는가. 실패했을 때도 남는 것이 있는가.
+같은 이용자들이 비슷한 코옵 게임을 또 구입하는 이유는 친구들과 새로운 경험을 하기 위해서입니다. 귀신 나오는 폐가에서는 평소 침착하던 친구의 비명이, 산에서는 한 사람을 구하려다 모두 추락하는 장면이 구매자가 기대할 법한 사건입니다. 목표 달성에 실패해도 함께 기억할 사건과 웃음이 남으면 플레이 자체가 보상으로 작동합니다. 실패하고 재시도하는 과정이 페널티였던 기존의 게임과는 달리, 플레이하는 매 순간이 즐거운 경험이 되는 것이죠.
 
-이 질문에 답하려면 시스템은 앞에서 본 대로 더 정교해져야 합니다. 예상하지 못한 사건은 헐거운 규칙에서 나오지 않습니다. 세계관을 전할 때도 두꺼운 설정집을 먼저 읽게 하기보다, 친구가 평소와 다른 모습을 보이는 낯선 상황 하나를 마련하는 것으로 충분합니다. 시스템과 세계관은 모두 이용자가 미리 학습해야 할 대상에서, 직접 들어가 사건을 겪게 하는 장치로 역할이 바뀌었습니다.
+![밧줄로 묶인 치비 등반가 넷이 비탈에서 한꺼번에 굴러떨어지며 웃는 장면. 가운데가 서소영이고, 정상의 깃발은 아직 한참 위에 있다](https://img.seosoyoung.eiaserinnys.me/images/roblox-generation-steam/05-experience.png)
 
-그리고 이것을 마케팅 영상의 문제로 줄이지 않았으면 합니다. 사건이 잘 보이는 영상이 잘 팔리는 것은 맞지만, 그것은 결과입니다. 영상에 담을 사건이 게임 안에 설계되어 있어야 영상이 나옵니다. 기획이 먼저 답해야 할 질문은 무엇을 보여 줄 것인가보다 무엇을 겪게 할 것인가입니다.
+시스템은 이 사건을 만드는 장치입니다. 밧줄과 체력 규칙이 있어야 구하려다 같이 떨어지는 장면이 생기고, 괴물의 추격 규칙이 있어야 누가 먼저 도망쳤는지가 이야기가 됩니다. 이 게이머들에게 시스템은 정복할 대상이라기보다 흥미로운 사건과 예상치 못한 상황을 만들어내는 무대입니다.[^11]
 
-같은 게임을 두 방식으로 적어 보면 차이가 보입니다. 첫 번째 방식은 이렇습니다. 장르는 4인 협동 등반, 배경은 안개 낀 섬, 시스템은 체력과 밧줄 물리. 두 번째 방식은 이렇습니다. 네 명이 산을 오르다 한 명이 떨어지면 나머지가 구하려다 같이 떨어진다, 정상에 못 가도 그 장면이 남는다, 이 장면은 밧줄 물리와 체력 규칙이 있어야만 나온다. 두 번째 방식이 첫 장에 오면 시스템 항목은 사라지지 않습니다. 그 장면의 근거로 자리를 바꿀 뿐입니다.
+## 새로운 세대를 위한 새로운 게임 디자인
 
-## 남는 질문
+이 새로운 구매자 집단에게 팔 게임을 기획하고 싶다면, 답해야 할 질문부터 바뀝니다. 어떤 장르이고 어떤 세계이며 어떤 시스템이 있는가보다, 오늘 친구들이 이 게임을 함께 구입해서 만나면 무슨 일이 벌어지는가입니다.
 
-저는 이 가설을 채택하고 시장을 읽어도 크게 틀리지 않을 것이라고 생각합니다. 로블록스에서 자란 세대가 의미 있는 규모로 스팀의 유료 구매층에 들어왔다는 것, 그 유입이 소셜 코옵 확대의 주요 원인 중 하나라는 것, 그리고 신규 게임을 고를 때 '어떤 상황에 참여할 것인가'의 비중이 커졌다는 것. 이 셋에 대한 저의 확신은 꽤 높습니다. 이것이 스팀 시장 전체의 단절적 전환을 설명하는 지배적 원인이라는 데는 확신이 훨씬 낮습니다.[^14] 여러 원인이 겹친 시장에서 하나의 세대 서사로 모든 것을 설명하려는 유혹은 늘 있고, 저도 그 유혹을 느꼈습니다.
+이 질문은 소개 문구를 바꾸는 일로 끝나지 않습니다. 목표를 이루지 못하고 실패한 게임에서도 친구들과 겪은 사건은 웃음과 이야깃거리가 되어야 하고, 그런 사건이 한두 번 일어나는 것으로 끝나지 않고 매번 새로운 사건이 벌어져야 합니다. 실패의 비용을 낮추고, 실패가 웃음이 되는 물리와 규칙을 넣고, 친구가 평소와 다른 모습을 보이는 창발적인 상황을 설계해야 한다는 것이죠. 친구들과 들어가자마자 사건이 시작되어야 하므로, 세계관도 글을 읽거나 긴 컷신으로 전달하는 것보다 보자마자 게임 플레이 안에서 이해할 수 있는 경험으로 전달해야 합니다.[^12]
 
-한 가지 질문은 열어 두겠습니다. 이 세대가 서른이 되었을 때도 같은 것을 살까요. 뉴주의 패트릭이 "둘 다"라고 답한 것처럼, 자라면서 남는 사람과 떠나는 사람이 있을 것입니다. 지금 스팀에서 두어 달마다 새 코옵을 사는 사람들이 10년 뒤에도 그렇게 게임을 고를까요. 아니면 그들 역시 어느 날 게임 하나를 골라 오랫동안 실력을 쌓아 가게 될까요. 그 답에 따라 이 가설은 세대 효과가 될 수도 있고 연령 효과가 될 수도 있습니다. 저는 아직 모릅니다. 그리고 그것을 모른다는 점이 이 시장을 계속 들여다볼 이유가 됩니다.
+![치비 서소영이 제도 책상에서 줄만 그어진 서류 뭉치를 옆으로 밀어내고, 친구들이 절벽에서 함께 떨어지며 웃는 큰 그림과 작은 도르래 도식이 그려진 종이 한 장을 들어 보이는 장면](https://img.seosoyoung.eiaserinnys.me/images/roblox-generation-steam/06-design.png) 따라서 게임 디자인은 시스템의 깊이를 설명하기에 앞서, 매 게임마다 친구들과 어떤 기발하고 흥미로운 경험을 하게 될지를 설명해야 하는 것이죠.
 
-[^1]: 이 글의 가설을 뒷받침하는 근거는 주로 로블록스 자료에서 얻었습니다. 포트나이트 크리에이티브는 2018년부터 있었고, Epic이 2023년 3월 22일 UEFN 공개 베타를 발표할 때 포트나이트 플레이 시간의 40% 이상이 크리에이터 섬에서 나온다고 밝혔습니다. 그래도 연령 분포와 경험 탐색 수 같은 공개 지표는 로블록스만큼 갖춰져 있지 않아, 포트나이트까지 같은 수준으로 입증됐다고 읽지는 말아 주십시오. 출처: Epic Games, ["Dive into Epic's announcements from GDC 2023"](https://www.unrealengine.com/en-US/blog/dive-into-epic-s-announcements-from-gdc-2023), 2023-03-22.
+맨 처음 글의 제목이 던진 질문에 답하자면, 바뀐 것은 취향보다 사람입니다. 그리고 그 사람들은 이미 상점 안에 들어와 북적이고 있지요.
 
-[^2]: 이 글의 판단은 통계적 검정이라기보다 베이지안 방식의 작업 가설 채택입니다. 제가 이 글을 쓰며 잠정적으로 잡은 주관적 확신은 이렇습니다. 로블록스에서 자란 세대가 의미 있는 규모로 스팀 유료 구매층에 합류했다는 데 대한 확신은 약 85%입니다. 그 유입이 스팀 소셜 코옵 확대의 주요 원인 중 하나라는 데 대해서는 약 80%로 잡았습니다. 이 두 번째 수치는 연령 시차를 검토한 뒤에는 70%였으나, 선행 업계 분석을 확인하고 80%로 올렸습니다. 신규 PC 게임을 고를 때 참여할 상황의 상대적 비중이 커졌다는 데 대한 확신은 약 85%입니다. 세대 유입이 스팀 시장 전체의 단절적 전환을 설명하는 지배적 원인이라는 데 대해서는 약 35%로 잡았습니다. 이 숫자는 제 잠정값이지 어떤 기관의 발표도 아니고, 같은 현상을 본 분석자들의 의견을 독립 표본처럼 곱해서 얻은 값도 아닙니다.
+[^1]: 이 글의 판단은 통계적 검정이라기보다 시장 해석을 위한 작업 가설의 채택입니다. 개인이 로블록스에서 스팀으로 옮겨간 경로를 추적한 공개 자료는 없고, 당시 집단의 규모와 나이, 놀이 방식, 시차를 맞춰 본 간접 증거로 판단합니다. 주관적 확신은 로블록스 세대의 스팀 유료 구매층 합류 약 85%, 그것이 소셜 코옵 확대의 주요 원인 중 하나 약 80%, 스팀 시장 전체를 설명하는 지배적 단일 원인 약 35%입니다. '프렌드 슬롭'이라는 말은 개발자의 기술과 이용자를 깎아내리는 어감이 있어 본문에서는 '소셜 코옵'으로 씁니다(투자자 에를링손의 반대 논지: Iain Harris, [GamesRadar+](https://www.gamesradar.com/games/co-op/calling-steam-games-like-peak-and-repo-friendslop-devalues-the-skill-of-the-developer-industry-investor-says-so-lets-collectively-kill-the-term-before-its-too-late/), 2025-12-24).
 
-[^3]: 첫째 주장은 구매자 동기를 조사한 자료라기보다, 최근 히트작이 무엇을 파는지에 대한 해석입니다. 뒤에 나오는 히트작 사이의 이용자 중복(각주 16)과 구매 교대 패턴(각주 22)은 이 해석과 맞는 소비 형태를 보여 주지만, 동기를 직접 측정한 자료는 아닙니다. 친구와 상황을 겪는 놀이 자체는 파티 게임과 온라인 대전의 시절부터 늘 있었습니다. 이 글이 말하는 변화는 그 놀이의 존재라기보다, 신작 구매 결정에서 그 가치가 차지하는 비중입니다.
+[^2]: 로블록스 게임의 등장 연도와 누적 방문: GamesBeat, ["Roblox's 10 biggest games of all time"](https://gamesbeat.com/robloxs-10-biggest-games-of-all-time-each-with-more-than-a-billion-plays/), 2019-12-09(2025-06-18 갱신). 방문은 접속 횟수이지 이용자 수가 아니고, 10억 회를 넘긴 열 개 가운데 나머지 여섯은 아바타 생활과 반려동물 기르기 같은 사교 놀이였습니다. 월간 이용자: TechCrunch, ["How Roblox avoided the gaming graveyard..."](https://techcrunch.com/2019/07/11/how-roblox-avoided-the-gaming-graveyard-and-grew-into-a-2-5b-company/), 2019-07-11. 하루 이용자와 연령: Roblox [Form S-1](https://www.sec.gov/Archives/edgar/data/1315098/000119312520298230/d87104ds1.htm), 2020년 9월 30일까지 9개월 기준. 연령 분포는 9세 미만 25%, 9세에서 12세 29%, 13세에서 16세 13%, 17세에서 24세 16%, 25세 이상 14%이며 이용자가 스스로 신고한 생년월일 기준입니다. 월간과 하루 이용자는 분모가 달라 직접 비교하지 않았습니다. 스팀 개발자들이 이 로블록스 게임들에서 직접 영향을 받았다는 주장은 아닙니다.
 
-[^4]: 숙련 동기 전체가 내려갔다는 뜻이 아닙니다. 참고할 만한 장기 자료는 Quantic Foundry의 조사입니다. 이 기관은 2015년 6월부터 2024년 4월까지 157만 명의 응답을 바탕으로 게이머의 동기 12종을 살폈습니다. 그중 장기 계획을 세우고 여러 변수를 고려해 판단하는 동기를 뜻하는 Strategy만 뚜렷이 내려갔습니다. 2015년 6월을 50백분위로 놓았을 때 2024년 4월에는 33백분위입니다. 정규화된 백분위라 '선호가 67% 줄었다'는 뜻이 아니고, 도전이나 조작 숙련이나 서사 동기의 쇠퇴를 뜻하지도 않습니다. 자발적 응답, 서구 코어 PC/콘솔 이용자 편중(평균 24.5세, 남성 75%), 동일인 패널이 아니라는 한계가 있고, 하락은 코로나 이전부터 이어진 완만한 추세입니다. 출처: Nick Yee, ["Gamers Have Become Less Interested in Strategic Thinking and Planning"](https://quanticfoundry.com/2024/05/21/strategy-decline/), Quantic Foundry, 2024-05-21.
+[^3]: 연표의 로블록스 게임 등장 연도와 스팀 게임 출시일은 원문과 상점 페이지 기준이며(파스모포비아 2020-09-18, 리썰 컴퍼니 2023-10-23, 콘텐츠 워닝 2024-04-01, R.E.P.O. 2025-02-26, PEAK 2025-06-16), 놀이 방식 요약은 글쓴이의 것입니다. 나이 열은 2006년생부터 2009년생까지 네 출생연도에 해를 더하고 뺀 산술입니다. 이들은 2020년에 11세에서 14세로, 상장 서류의 9세에서 12세 구간(29%)과 13세에서 16세 구간(13%)에 걸쳐 있으며, 2020년 9세 미만이었던 25%(2012년생 이후)는 아직 초등학생이라 연표에 넣지 않았습니다. 학년은 한국 학제(만 6세가 되는 해 초등 입학)로 계산했습니다. 개인별 플랫폼 이동이나 게임 사이의 직접 영향 관계를 관측한 자료가 아니라 이 글이 가장 중요하게 보는 정황 증거이고, 같은 출생연도를 앞뒤로 계산한 것이라 별개의 인구를 더한 것도 아닙니다. 로블록스는 2026년 연령 검증 뒤 실제 연령이 자기 신고보다 어렸다고 밝혔으므로([Q4 2025 Shareholder Letter](https://www.sec.gov/Archives/edgar/data/1315098/000131509826000009/ex991-q42025shareholder.htm)), 산술은 표보다 한두 해 늦어질 수 있습니다. 이 점은 가설의 시점을 앞당기기보다 늦추는 쪽으로 작용합니다. 특정 게임을 실제로 즐긴 사람들이 이후 스팀에서 구매했다는 관측은 없습니다.
 
-[^5]: 이런 게임들을 묶어 '프렌드슬롭(friendslop)'이라 부르는 말이 2025년부터 퍼졌습니다. 이 글은 그 말을 쓰지 않고 '소셜 코옵'이라 부릅니다. 스웨덴의 투자자 비니 에를링손이 지적한 대로 '슬롭'은 대충 만든 잡동사니라는 뜻을 품고 있어 개발자의 기술을 깎아내리고 이용자에게도 은근한 비아냥이 됩니다. 실패를 웃음으로 바꾸는 물리와 협력 규칙을 설계하는 일은 대충 되는 일이 아닙니다. 출처: Iain Harris, ["Calling Steam games like Peak and REPO friendslop 'devalues' the skill of the developer..."](https://www.gamesradar.com/games/co-op/calling-steam-games-like-peak-and-repo-friendslop-devalues-the-skill-of-the-developer-industry-investor-says-so-lets-collectively-kill-the-term-before-its-too-late/), GamesRadar+, 2025-12-24.
+[^4]: 여기서 합류는 로블록스를 그만두고 스팀으로 갈아탔다는 뜻이 아닙니다. 로블록스를 계속 하면서 스팀에서 처음으로 유료 게임을 사는 것도, 무료 게임만 하던 스팀 계정으로 만 원짜리 코옵을 결제하기 시작하는 것도 같은 이동입니다. 로블록스의 하루 이용자는 2025년 4분기 1억 4,400만 명으로 계속 늘었습니다(앞의 Q4 2025 Shareholder Letter). 이 성장과 가설은 충돌하지 않습니다. 이주를 로블록스 이탈로 좁게 정의하면 자료가 없지만, 병행과 유료 구매 시작까지 포함하면 스팀 쪽의 구매 행동 자료(각주 8, 7)가 간접 증거가 됩니다.
 
-[^6]: 시스템형 신작과 서사형 신작의 성공은 이 가설과 양립합니다. 예를 들어 Balatro는 2025년 1월 21일 기준 500만 장 판매를 퍼블리셔가 공식 발표했습니다. 이 글이 말하는 것은 어떤 취향의 소멸이라기보다 상대적 선택 기준과 구매층 구성의 변화이고, 그 변화 속에서도 오래 숙련할 게임을 고르는 사람은 계속 있습니다. 출처: Playstack, ["Balatro: 5 million copies sold"](https://www.playstack.com/news/balatro-5-million-copies-sold/), 2025-01-21.
+[^5]: Christopher Dring, [The Game Business](https://www.thegamebusiness.com/p/gta-6-reveal-causes-xbox-and-playstation), 2026-09-03. 원문: "Friendslop is basically Roblox coming to Steam. It's the existing play pattern of highly casual, low graphical fidelity, and an overwhelming emphasis on doing absurd, funny, gimmicky things with your friends, and then that's just being captured by Steam." 인터뷰에 조사의 표본과 방법, 전환 규모는 제시되지 않았습니다.
 
-[^7]: 출처: Roblox Corporation, [Form S-1](https://www.sec.gov/Archives/edgar/data/1315098/000119312520298230/d87104ds1.htm), 2020-11-19 제출. 수치는 모두 2020년 9월 30일까지의 9개월 기준입니다. 하루 이용자(DAU)와 월간 이용자(MAU), 이용 시간, 방문 횟수, 매출은 서로 다른 분모라 섞어 읽지 않도록 했습니다. 2020년의 급증에는 봉쇄 기간 동안 기존 이용자의 이용 시간이 늘어난 몫도 들어 있어, 늘어난 활동을 전부 신규 유입으로 읽지는 않습니다.
+[^6]: 에를링손: [LinkedIn 게시물](https://www.linkedin.com/posts/brynjolfur_friendslop-seeing-that-this-is-the-new-activity-7399102859142770688-2UFS/), 2025-11-25(게시물 식별자 타임스탬프 기준). Z세대와 알파세대가 로블록스와 토카 보카와 마인크래프트에서 친구들과 놀고 웃으며 자랐고 성인이 되어서도 그런 경험을 찾을 텐데 지금의 시장은 그들을 받을 준비가 안 되어 있다는 논지. 비홀드 벤처스 프린시펄이며 이전에 토카 보카와 마인크래프트에서 분석을 이끌었다고 소개합니다. 페렌츠: Joe Ferencz, [TechCrunch](https://techcrunch.com/2021/03/26/5-mistakes-creators-make-building-new-games-on-roblox/), 2021-03-26. 크리에이티브 블록의 앨런 웬도 2025-12-20 기사에서 이 게임들이 "포스트 로블록스 관객"에게 닿고 있다고 썼습니다([Creative Bloq](https://www.creativebloq.com/3d/video-game-design/10-ways-2026-will-be-a-turning-point-for-game-design-according-to-indie-devs)). 모두 이 시장에 이해관계가 있는 업계 발언이라 관측 자료로 세지 않았고, 의견을 독립 표본처럼 곱해 확신을 올리지도 않았습니다.
 
-[^8]: 출처: Roblox Corporation, [Q4 2025 Shareholder Letter](https://www.sec.gov/Archives/edgar/data/1315098/000131509826000009/ex991-q42025shareholder.htm), 2026년 2월. "2025년에 이용자는 한 달에 24개가 넘는 서로 다른 경험을 이용했고, 이는 2024년보다 두 자릿수 비율로 늘어난 수치"라고 적혀 있습니다.
+[^7]: 2020년 수치는 앞의 S-1(하루 이용자 1인당 하루 2.6시간, 월 20개 이상의 경험), 2025년 수치는 앞의 Q4 2025 Shareholder Letter(월 24개 이상). 이 수치는 로블록스 안에서 새 놀이로 자주 옮겨 다녔다는 데까지만 말해 줍니다. 여러 게임을 오가는 것과 한 게임을 오래 하는 것은 얼마든지 함께 갑니다. 그래도 '오늘 친구들과 무엇을 할까'를 고르는 소비에서는 게임 하나가 장기 정착지라기보다 여러 선택지 가운데 하나가 되고, 이 습관이 플랫폼 밖의 유료 구매에도 이어지는지는 스팀 쪽 자료와 맞춰 봐야 합니다.
 
-[^9]: 출처: GamesBeat, ["Roblox's 10 biggest games of all time, each with more than a billion plays"](https://gamesbeat.com/robloxs-10-biggest-games-of-all-time-each-with-more-than-a-billion-plays/), 2019-12-09(2025-06-18 갱신). 로블록스가 '방문(visit)'이라 부르는 이 수치는 접속 횟수이지 이용자 수가 아닙니다. 한 사람이 여러 번 방문하면 여러 번으로 셉니다. 스팀 소셜 코옵 개발자들이 이 게임들에서 직접 영향을 받았다는 확인은 없으며, 이 글은 놀이 구조가 대규모로 먼저 경험되어 있었다는 연속성만 말합니다.
+[^8]: Chris Zukowski, ["Is friendslop saturated?"](https://howtomarketagame.com/2026/07/30/is-friendslop-saturated/), 2026-07-30. 저자가 고른 16종의 주간 동시 접속자 시계열이라 동일인의 이동을 추적한 자료는 아닙니다.
 
-[^10]: 개인의 이동이나 인과관계를 실측한 것은 아닙니다. 한 달에 스무 개를 오가는 소비가 여러 차례 신규 코옵을 구매하는 행동과 이어질 수 있는 문화적 기반이라는 뜻입니다. 뒤에 나오는 스팀 히트작 사이의 이용자 중복(각주 16)과 구매 교대 패턴(각주 22)이 이 연결을 간접적으로 받쳐 줍니다.
+[^9]: Alinea Analytics, ["Steam June 2025"](https://alineaanalytics.com/blog/steam_june_2025/), 2025-07-02. PEAK 이용자의 약 40%는 콘텐츠 워닝도, 30%는 리썰 컴퍼니도 플레이했습니다. 자체 플랫폼 추정치이며, 중복이 커서 히트작마다 새 인구를 더해 세면 안 됩니다.
 
-[^11]: 월간 이용자 수치의 출처: TechCrunch, ["How Roblox avoided the gaming graveyard and grew into a $2.5B company"](https://techcrunch.com/2019/07/11/how-roblox-avoided-the-gaming-graveyard-and-grew-into-a-2-5b-company/), 2019-07-11. 연령 분포의 출처는 앞의 S-1(2020년 9월 30일까지 9개월 기준 도표)이며, 13세 미만이 54%입니다. S-1은 이용자가 생년월일을 스스로 신고하므로 연령 자료가 실제와 다를 수 있다고 밝히고 있습니다. 2016년 12월의 3,000만 명은 월간 기준이고 S-1의 3,110만 명은 하루 기준이라 두 숫자를 직접 비교하지는 않습니다.
+[^10]: 급증에는 다른 원인도 겹쳤습니다. 가격(뉴주 집계로 PC에서 30달러 미만이면서 매출 500만 달러를 넘긴 게임 수가 2024년 17개에서 2025년 26개로 증가, [Newzoo](https://newzoo.com/resources/blog/post-pandemic-growth-returns-for-pc-and-console-driven-by-premium-spending-and-changing-price-dynamics), 2026-03-12), 방송을 통한 발견, 아시아 이용자의 스팀 유입. 장르의 기원도 이 세대보다 앞섭니다(파스모포비아 2020년 9월, 어몽 어스 2018년). 이 글은 장르의 탄생보다 최근의 수요 증폭을 이 세대로 설명하며, 스팀 시장 전체를 설명하는 단일 원인으로 두지 않습니다.
 
-[^12]: 출시일은 스팀 상점 페이지 기준입니다. 파스모포비아 2020-09-18, 리썰 컴퍼니 2023-10-23, 콘텐츠 워닝 2024-04-01, R.E.P.O. 2025-02-26, PEAK 2025-06-16. 도표의 2017년 집단은 그해에 그 나이였다고 가정한 예시이지 2017년 연령 분포를 실측한 값이 아니고, 2020년 분포로는 12세에서 15세 구간에 걸친 같은 사람들이라 2020년 두 집단과 별도로 더해지는 집단도 아닙니다. 또 2026년의 연령 검증에서 실제 연령이 자기 신고보다 어렸다고 밝혀졌으므로(각주 15), 이 산술의 집단은 표보다 한두 해 늦게 구매 연령에 이르렀을 수 있습니다. 이 점은 가설의 시점을 앞당기기보다 늦추는 쪽으로 작용합니다.
+[^11]: 숙련 동기가 사라졌다는 뜻은 아닙니다. Quantic Foundry가 2015년 6월부터 2024년 4월까지 157만 명의 응답으로 본 12개 동기 가운데 장기 계획과 다변수 판단을 뜻하는 Strategy만 뚜렷이 내려갔고(2015년 50백분위 기준 2024년 33백분위), 도전이나 조작 숙련 동기는 그렇지 않았습니다([Nick Yee](https://quanticfoundry.com/2024/05/21/strategy-decline/), 2024-05-21, 서구 코어 PC/콘솔 이용자 편중). Balatro가 2025년 1월 500만 장을 넘긴 것처럼([Playstack](https://www.playstack.com/news/balatro-5-million-copies-sold/)) 시스템형 신작도 계속 성공합니다. 이 글이 말하는 것은 상대적 선택 기준과 구매층 구성의 변화입니다.
 
-[^13]: 아이들이 몇 살에 로블록스에서 멀어지는지에 관한 참고 자료로 영국 Ofcom의 아동 기기 측정 조사가 있습니다. 2024년 11월부터 2025년 3월까지 8세에서 14세 692명의 스마트폰과 태블릿과 컴퓨터에 측정 프로그램을 설치해 이용을 기록한 조사입니다. 온라인 아동 전체를 기준으로 보면, 로블록스의 하루 평균 이용 시간은 8세에서 9세 집단에서 9분이었습니다. 10세에서 12세 집단에서는 12분, 13세에서 14세 집단에서는 5분이었습니다. 로블록스 이용자만 따로 보면, 같은 연령 집단의 평균은 각각 16분, 18분, 9분이었습니다. 13세를 넘기며 줄어드는 것은 맞지만, 이 조사는 동일인을 추적한 것이 아니고 게임 콘솔이 빠져 있으며 줄어든 시간이 스팀으로 갔다는 자료도 아닙니다. 이 때문에 이 글은 이탈 연령을 자료로 확정하지 않고 산술의 참고로만 둡니다. 출처: Ofcom, ["Children's Passive Online Measurement"](https://www.ofcom.org.uk/siteassets/resources/documents/online-safety/research-statistics-and-data/protecting-children/ofcom-childrens-passive-online-measurement.pdf?v=408844), 2025-06-27.
+[^12]: 모든 게임을 코옵으로 만들라는 뜻은 아닙니다. 이 세대가 서른이 되어도 같은 것을 살지, 즉 세대 효과인지 연령 효과인지는 열린 질문입니다. 참고로 영국 Ofcom의 8세에서 14세 기기 측정(2024년 11월부터 2025년 3월, 692명, 콘솔 제외)에서 로블록스 하루 이용 시간은 10세에서 12세 12분, 13세에서 14세 5분으로 13세를 넘기며 줄지만, 동일인 추적이 아니고 줄어든 시간이 스팀으로 갔다는 자료도 아닙니다([Ofcom](https://www.ofcom.org.uk/siteassets/resources/documents/online-safety/research-statistics-and-data/protecting-children/ofcom-childrens-passive-online-measurement.pdf?v=408844), 2025-06-27).
 
-[^14]: 다른 원인들이 같이 움직였습니다. 가격이 그 하나입니다. 뉴주는 PC에서 30달러 미만이면서 매출 500만 달러를 넘긴 게임 수가 2024년 17개에서 2025년 26개로 늘었다고 집계했습니다(게임 수 기준이며 매출이나 판매량이나 이용자 수가 아닙니다). 스트리밍이라는 발견 채널, 아시아 이용자의 스팀 유입, 대형 IP의 공백도 겹쳐 있습니다. 장르의 기원도 이 세대보다 앞섭니다. 파스모포비아는 2020년 9월, 어몽 어스는 2018년에 나왔고, 코로나기 아동이 성장하기 전의 일입니다. 이 글은 장르가 이 세대 때문에 생겼다고 말하지 않고, 최근의 수요 증폭을 이 세대의 합류로 설명합니다. 출처: Newzoo, ["PC & Console Gaming Market Returns to Growth Driven by Premium Pricing"](https://newzoo.com/resources/blog/post-pandemic-growth-returns-for-pc-and-console-driven-by-premium-spending-and-changing-price-dynamics), 2026-03-12.
-
-[^15]: 출처: 앞의 Q4 2025 Shareholder Letter. 2025년 4분기 하루 이용자는 전년 대비 69% 늘어난 1억 4,400만 명, 이용 시간은 88% 늘어난 350억 시간입니다. 로블록스는 같은 서한에서 연령 검증을 도입한 뒤 이용자가 직접 신고한 나이보다 실제 나이가 더 어린 것으로 나타났다고 밝혔습니다. 2026년 1월 31일 기준으로 하루 이용자의 45%가 검증을 마쳤습니다. 검증을 마친 이용자 중에서는 27%가 18세 이상이었습니다. 이 27%는 검증을 마친 45% 안에서의 비율이라 전체 이용자의 성인 비중으로 읽으면 안 됩니다.
-
-[^16]: 출처: Alinea Analytics, ["Steam June 2025"](https://alineaanalytics.com/blog/steam_june_2025/), 2025-07-02. PEAK의 판매량은 2025년 6월 한 달 동안 약 310만 장으로 집계됐습니다. R.E.P.O.의 누적 판매량은 같은 달 말 기준 약 1,540만 장이었습니다. PEAK 이용자 중 R.E.P.O.를 플레이한 비율은 61%였습니다. 콘텐츠 워닝을 플레이한 비율은 약 40%, 리썰 컴퍼니를 플레이한 비율은 30%였습니다. 모두 Alinea의 자체 분석 플랫폼에 기반한 외부 추정치입니다. 중복이 이렇게 크므로 히트작마다 새로운 독립 인구가 추가된 것처럼 더해서는 안 되고, 반대로 영상 인기에 그치지 않고 실제 구매 수요가 있었다는 보조 근거로는 쓸 수 있습니다.
-
-[^17]: 출처: Joe Ferencz, ["5 mistakes creators make building new games on Roblox"](https://techcrunch.com/2021/03/26/5-mistakes-creators-make-building-new-games-on-roblox/), TechCrunch, 2021-03-26. 페렌츠는 로블록스 전문 개발사 게임팸의 창업자이자 대표라 이 전망에는 생태계 종사자의 이해관계가 있습니다. 그래도 히트작 이후의 사후 설명이 아니라는 점은 그대로 남습니다.
-
-[^18]: 원문은 에를링손의 [링크드인 게시물](https://www.linkedin.com/posts/brynjolfur_friendslop-seeing-that-this-is-the-new-activity-7399102859142770688-2UFS/)이며 게시물 식별자의 타임스탬프로 2025년 11월 25일 작성으로 확인됩니다. 12월 24일은 GamesRadar+가 이를 보도한 날짜입니다(각주 5). 그는 비홀드 벤처스의 프린시펄이고 이전에 토카 보카와 마인크래프트에서 분석과 조사를 이끌었다고 자신을 소개합니다. 투자자의 판단이라 이해관계가 있고, 인용은 GamesRadar+ 기사에 실린 원문을 옮겼습니다.
-
-[^19]: 출처: Alan Wen, ["10 ways 2026 will be a turning point for game design, according to indie devs"](https://www.creativebloq.com/3d/video-game-design/10-ways-2026-will-be-a-turning-point-for-game-design-according-to-indie-devs), Creative Bloq, 2025-12-20. 같은 매체의 Joe Foley가 2026년 2월 3일에 쓴 ["What is 'friendslop'..."](https://www.creativebloq.com/3d/video-game-design/what-is-friendslop-and-why-it-it-taking-over-gaming-in-2026)은 이 기사를 다시 참조한 글이라 독립된 추가 근거로 세지 않았습니다.
-
-[^20]: 출처: Christopher Dring, ["GTA 6 reveal causes Xbox and PlayStation..."](https://www.thegamebusiness.com/p/gta-6-reveal-causes-xbox-and-playstation), The Game Business, 2026-09-03. 원문은 "Friendslop is basically Roblox coming to Steam. It's the existing play pattern of highly casual, low graphical fidelity, and an overwhelming emphasis on doing absurd, funny, gimmicky things with your friends, and then that's just being captured by Steam." 로넌 패트릭의 직함은 뉴주의 경영 컨설턴트입니다. 인터뷰에는 조사의 표본과 방법과 전환 규모가 제시되지 않았고, 모든 게임이 이런 형태로 간다는 주장도 아닙니다.
-
-[^21]: 네 사람 모두 어떤 형태로든 이 시장에 이해관계가 있습니다. 개발사 대표와 투자자는 특히 그렇습니다. 그런 까닭에 이 글은 이들의 발언을 관측 자료로 세지 않고, 서로 다른 자리에서 같은 해석에 도달했다는 정황으로만 씁니다. 네 사람의 의견을 독립 표본처럼 곱하지는 않았고, 이 정황으로 올린 것은 각주 2의 70%에서 80%로의 한 단계뿐입니다.
-
-[^22]: 출처: Chris Zukowski, ["Is friendslop saturated?"](https://howtomarketagame.com/2026/07/30/is-friendslop-saturated/), How To Market A Game, 2026-07-30. 저자가 고른 소셜 코옵 16종의 주간 동시 접속자 시계열이라 동일 사용자의 이동을 추적한 자료는 아닙니다. 인용은 "Friendslop fans buy a new game every couple months."
+[^13]: 이 글의 표지와 삽화는 「느낌적인 느낌을 숫자로 옮기는 일」의 치비 서소영 라인아트를 참조하여 gpt-image-2 image-to-image로 생성했습니다.
