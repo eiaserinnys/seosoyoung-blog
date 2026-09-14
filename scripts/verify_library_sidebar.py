@@ -25,6 +25,8 @@ class PageParser(HTMLParser):
         super().__init__()
         self.navigation_count = 0
         self.disclosure_count = 0
+        self.layout_count = 0
+        self.layout_regions: list[str] = []
         self.current_links: list[str] = []
         self.taxonomy_links: dict[str, list[tuple[str, str, int]]] = {
             "categories": [],
@@ -41,8 +43,15 @@ class PageParser(HTMLParser):
         attributes = {key: value or "" for key, value in attrs}
         classes = class_names(attributes)
 
+        if "library-layout" in classes:
+            self.layout_count += 1
+        if "library-intro" in classes:
+            self.layout_regions.append("intro")
         if attributes.get("data-library-navigation") == "true":
             self.navigation_count += 1
+            self.layout_regions.append("navigation")
+        if "library-results" in classes:
+            self.layout_regions.append("results")
         if tag == "details" and "library-tree-disclosure" in classes:
             self.disclosure_count += 1
         if tag == "a" and attributes.get("aria-current") == "page":
@@ -155,6 +164,13 @@ def assert_navigation(path: Path, current_path: str | None = None) -> PageParser
     )
     assert parsed.disclosure_count == 1, (
         f"{path}: expected one responsive disclosure, got {parsed.disclosure_count}"
+    )
+    assert parsed.layout_count == 1, (
+        f"{path}: expected one library layout, got {parsed.layout_count}"
+    )
+    assert parsed.layout_regions == ["intro", "navigation", "results"], (
+        f"{path}: expected intro/navigation/results DOM order, "
+        f"got {parsed.layout_regions}"
     )
     if current_path:
         assert parsed.current_links == [current_path], (

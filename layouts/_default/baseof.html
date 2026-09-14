@@ -33,16 +33,7 @@
 {{- end }}
     {{ partialCached "header.html" . .Page -}}
     <main class="main{{ if $showLibraryNavigation }} library-main{{ end }}">
-        {{- if $showLibraryNavigation }}
-        <div class="library-layout">
-            {{- partial "library_sidebar.html" . }}
-            <div class="library-results">
-                {{- block "main" . }}{{ end }}
-            </div>
-        </div>
-        {{- else }}
         {{- block "main" . }}{{ end }}
-        {{- end }}
     </main>
     {{ partialCached "footer.html" . .Layout .Kind (.Param "hideFooter") (.Param "ShowCodeCopyButtons") -}}
 </body>
