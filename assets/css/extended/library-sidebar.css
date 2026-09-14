@@ -1,4 +1,5 @@
 .library-layout,
+.library-intro,
 .library-results {
   min-width: 0;
 }
@@ -40,7 +41,7 @@
 }
 
 .library-tree-group h2 {
-  margin: 0 8px 7px;
+  margin: 0 9px 7px;
   color: var(--secondary);
   font-size: 0.72rem;
   font-weight: 600;
@@ -90,6 +91,7 @@
 
 .library-tree-count {
   flex: 0 0 auto;
+  margin-inline-start: auto;
   min-width: 2em;
   padding: 2px 6px;
   border-radius: 999px;
@@ -116,20 +118,32 @@
 
 @media screen and (min-width: 1200px) {
   .library-main {
-    max-width: calc(var(--main-width) + 240px + var(--gap) * 3.5);
+    max-width: calc(var(--nav-width) + var(--gap) * 2);
   }
 
   .library-layout {
     display: grid;
     grid-template-columns: 240px minmax(0, var(--main-width));
-    gap: calc(var(--gap) * 1.5);
+    grid-template-areas:
+      ". intro"
+      "navigation results";
+    column-gap: calc(var(--gap) * 2);
     align-items: start;
   }
 
+  .library-intro {
+    grid-area: intro;
+  }
+
+  .library-results {
+    grid-area: results;
+  }
+
   .library-navigation {
+    grid-area: navigation;
     position: sticky;
-    top: calc(var(--header-height) + var(--gap));
-    max-height: calc(100vh - var(--header-height) - var(--gap) * 2);
+    top: var(--gap);
+    max-height: calc(100vh - var(--gap) * 2);
     overflow-y: auto;
     scrollbar-width: thin;
   }
