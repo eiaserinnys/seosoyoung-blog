@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>Phong에서 PBR까지 | 인터랙티브 실험실</title>
+  <link rel="stylesheet" href="./styles.css">
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "https://cdn.jsdelivr.net/npm/three@0.168.0/build/three.module.js",
+        "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.168.0/examples/jsm/"
+      }
+    }
+  </script>
+</head>
+<body>
+  <main class="lab" id="lab">
+    <header class="lab__header">
+      <div>
+        <p class="eyebrow" id="eyebrow">PBR LAB</p>
+        <h1 id="title">빛을 준비하는 중</h1>
+      </div>
+      <div class="formula-badge" aria-label="핵심 roughness 변환">
+        <span id="badge-label">PBR LAB</span>
+        <strong id="badge-value">빛 계산</strong>
+      </div>
+    </header>
+
+    <p class="question" id="question">인터랙티브 렌더러를 불러오고 있습니다.</p>
+
+    <section class="workspace" aria-label="PBR 실험 영역">
+      <div class="viewport" id="viewport">
+        <canvas id="render-canvas" aria-label="실시간 WebGL 재질 렌더링"></canvas>
+        <div class="viewport__veil" id="veil" role="status">
+          <span class="loader" aria-hidden="true"></span>
+          <span id="status-text">화면에 들어오면 WebGL을 시작합니다</span>
+        </div>
+        <div class="stage-labels" id="stage-labels" aria-hidden="true"></div>
+        <div class="graph-axes" id="graph-axes" aria-hidden="true" hidden>
+          <span class="graph-axis graph-axis--y" id="axis-y"></span>
+          <span class="graph-axis graph-axis--x" id="axis-x"></span>
+        </div>
+        <button class="icon-button" id="fullscreen" type="button" aria-label="실험실 전체 화면으로 보기" title="전체 화면">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 3H3v5M16 3h5v5M8 21H3v-5m13 5h5v-5"/></svg>
+        </button>
+        <div class="drag-hint" id="drag-hint" aria-hidden="true">드래그해서 시점 변경</div>
+      </div>
+
+      <aside class="controls" aria-label="실험 변수">
+        <div class="controls__head">
+          <div>
+            <span class="controls__kicker">LIVE PARAMETERS</span>
+            <h2>변수를 움직여 보세요</h2>
+          </div>
+          <span class="live-dot"><i></i> EVENT RENDER</span>
+        </div>
+        <div class="control-list" id="control-list"></div>
+        <button class="reset-button" id="reset" type="button">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12a8 8 0 1 0 2.34-5.66L4 8.68M4 4v4.68h4.68"/></svg>
+          처음 값으로
+        </button>
+      </aside>
+    </section>
+
+    <section class="readout" aria-label="현재 계산값과 구현 범위">
+      <div class="metrics" id="metrics"></div>
+      <div class="scope-copy">
+        <p class="notice" id="notice" hidden></p>
+        <details class="limits">
+          <summary>계산 범위</summary>
+          <p id="limits"></p>
+        </details>
+      </div>
+    </section>
+  </main>
+
+  <script type="module" src="./app.js"></script>
+</body>
+</html>
