@@ -12,6 +12,7 @@ cover:
   alt: "천공 카드와 기계 도면을 조합한 TypeSafe의 Jev 발표 이미지"
 images:
   - "https://img.seosoyoung.eiaserinnys.me/images/typesafe-jev-system-one/cover.png"
+sidenotes: true
 ---
 
 ## 3줄 요약

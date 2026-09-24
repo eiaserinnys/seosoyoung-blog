@@ -11,6 +11,7 @@ cover:
   alt: "JP Market Vis 전체 맵 초기 화면. 왼쪽 패널에 표시 중인 기업 3,522곳과 관계 11,065건, 관계 범주 버튼과 최소 관계 수 슬라이더가 있다. 중앙에는 수천 개의 원이 선으로 연결된 둥근 네트워크가 그려져 있고 도요타자동차, 일본증권금융, 미쓰비시 그룹, 미쓰이 그룹 같은 이름표가 표시되어 있다"
 images:
   - "https://img.seosoyoung.eiaserinnys.me/images/jp-market-vis/01-map.jpg"
+sidenotes: true
 ---
 
 ## 3줄 요약

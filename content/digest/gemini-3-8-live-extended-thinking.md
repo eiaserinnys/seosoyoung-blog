@@ -11,6 +11,7 @@ cover:
   alt: "치비 서소영이 한 손을 들어 말을 이어 가는 몸짓을 하고 있고, 그 뒤로 톱니바퀴와 서류 카드가 멈추지 않고 차례로 처리되며 떠 있다"
 images:
   - "https://img.seosoyoung.eiaserinnys.me/images/gemini-3-8-live-extended-thinking/01-cover.png"
+sidenotes: true
 ---
 
 ## 3줄 요약

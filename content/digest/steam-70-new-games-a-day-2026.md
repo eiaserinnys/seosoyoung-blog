@@ -11,6 +11,7 @@ cover:
   alt: "SteamDB의 연도별 스팀 게임 출시 수 막대 그래프. 2006년 70종에서 시작해 2025년 21,344종까지 오르고, 2026년은 8월 20일까지 16,115종으로 점선 막대로 표시되어 있다"
 images:
   - "https://img.seosoyoung.eiaserinnys.me/images/steam-70-new-games-a-day-2026/steamdb-annual-releases.png"
+sidenotes: true
 ---
 
 ## 3줄 요약

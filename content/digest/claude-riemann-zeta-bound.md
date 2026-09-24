@@ -11,6 +11,7 @@ cover:
   image: "https://img.seosoyoung.eiaserinnys.me/images/claude-riemann-zeta-bound/01-cover.png"
 images:
   - "https://img.seosoyoung.eiaserinnys.me/images/claude-riemann-zeta-bound/01-cover.png"
+sidenotes: true
 ---
 
 ## 3줄 요약

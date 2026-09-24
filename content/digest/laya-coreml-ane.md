@@ -11,6 +11,7 @@ cover:
   alt: "터미널 화면 왼쪽에 스네이크 게임 격자가, 오른쪽에 모델이 내놓은 네 방향 확률과 추론 시간, 초당 결정 수, 출력 토큰 0이 함께 표시된 데모 화면"
 images:
   - "https://img.seosoyoung.eiaserinnys.me/images/laya-coreml-ane/01-cover.png"
+sidenotes: true
 ---
 
 ## 3줄 요약

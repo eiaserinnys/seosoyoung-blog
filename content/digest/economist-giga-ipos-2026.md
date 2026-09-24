@@ -11,6 +11,7 @@ cover:
   alt: "SpaceX 로켓에서 샴페인이 잔으로 쏟아지는 일러스트 (Illustration: Fortunate Joaquin)"
 images:
   - "https://img.seosoyoung.eiaserinnys.me/images/economist-giga-ipos-2026/cover.jpg"
+sidenotes: true
 ---
 
 ## 3줄 요약

@@ -11,6 +11,7 @@ cover:
   alt: "Artificial Analysis Intelligence Index v4.3 막대 그래프. Claude Fable 5.1과 GPT-6 Astra가 53점으로 가장 높고 Claude Opus 5가 51점으로 뒤를 잇는다. MiMo-V2.6-Pro는 46점으로 여섯 번째이며 붉은 화살표가 가리키고 있다"
 images:
   - "https://img.seosoyoung.eiaserinnys.me/images/xiaomi-mimo-v2-6/aa-intelligence-index.png"
+sidenotes: true
 ---
 
 ## 3줄 요약

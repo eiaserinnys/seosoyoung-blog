@@ -12,6 +12,7 @@ cover:
   alt: "원고의 종합 도판이다. 윗줄 왼쪽에는 꽃잎 모양의 빨간 그리보프 지평선과 그 안쪽의 파란 점선 영역이 있다. 노란 원은 특이점, X 표시는 그리보프 복제를 뜻한다. 가운데에는 양수인 파란 스펙트럼 밀도와 음수 구간이 있는 빨간 곡선이 있다. 오른쪽에는 복소 평면의 윅 회전 경로와 별 모양의 극 네 개가 있다. 아랫줄 왼쪽에는 ℝ⁴에서 공리 체계가 무너지는 여덟 단계가 적혀 있고, 오른쪽에는 콤팩트 진공 다양체를 설명하는 초록 상자가 있다."
 images:
   - "https://img.seosoyoung.eiaserinnys.me/images/logvinovich-yang-mills-mass-gap-ill-posed/fig13-nogo-synthesis.jpg"
+sidenotes: true
 ---
 
 ## 3줄 요약

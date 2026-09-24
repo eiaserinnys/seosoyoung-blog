@@ -11,6 +11,7 @@ cover:
   alt: "검은 배경에 흰 글씨로 'Character World Model-1'이라고 적힌 발표 이미지. 글자 둘레의 원형 창에는 분홍 머리 애니메이션 캐릭터, 금발 여성, 붉은 머리 애니메이션 캐릭터 등 CWM-1로 만든 캐릭터들의 얼굴이 보인다"
 images:
   - "https://img.seosoyoung.eiaserinnys.me/images/lemonslice-cwm-1/01-cover.png"
+sidenotes: true
 ---
 
 ## 3줄 요약

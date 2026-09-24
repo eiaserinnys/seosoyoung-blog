@@ -11,6 +11,7 @@ cover:
   alt: "Generative UI Benchmark 산점도. 가로축은 활성 파라미터, 세로축은 점수이며 활성 4B 지점의 OUI-1이 71.7%로 표시되어 있다."
 images:
   - "https://img.seosoyoung.eiaserinnys.me/images/openui-oui-1/01-benchmark-scatter.png"
+sidenotes: true
 ---
 
 ## 3줄 요약

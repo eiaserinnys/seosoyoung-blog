@@ -11,6 +11,7 @@ cover:
   alt: "mini-AGI 학습 대시보드. 2억 4,010만 글자를 읽은 시점의 3행 3열 그래프로, 학습 손실과 검증 손실, 과목별 검증 손실, 학습률 제어기, 전문가별 라우팅 점유율, 삭제 직전 전문가 분포, 신규 전문가의 라우팅 점유율, 전문가 수 추이, 컨텍스트 창과 읽기 속도, 라우팅 집중도 곡선을 담았다"
 images:
   - "https://img.seosoyoung.eiaserinnys.me/images/volotat-mini-agi/dashboard.png"
+sidenotes: true
 ---
 
 ## 3줄 요약

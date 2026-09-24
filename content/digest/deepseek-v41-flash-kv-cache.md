@@ -11,6 +11,7 @@ cover:
   alt: "DeepSeek 세대별 토큰당 전역 KV 캐시 크기를 비교한 가로 막대 그래프. V1이 389,120바이트, V3.2가 48,068바이트, V4-Flash가 3,514바이트, V4.1-Flash가 890바이트이며 각 단계 사이에 8.1배, 13.7배, 3.9배 감소라는 화살표가 붙어 있다"
 images:
   - "https://img.seosoyoung.eiaserinnys.me/images/deepseek-v41-flash-kv-cache/readme-dsv41_kv_cache.png"
+sidenotes: true
 ---
 
 ## 3줄 요약

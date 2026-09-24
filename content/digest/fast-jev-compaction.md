@@ -12,6 +12,7 @@ cover:
   alt: "치비 서소영이 길게 이어진 두루마리 앞에 서서, 붓 대신 가위로 문단 몇 개만 오려 내고 나머지 글자는 그대로 두는 그림"
 images:
   - "https://img.seosoyoung.eiaserinnys.me/images/fast-jev-compaction/01-cover.png"
+sidenotes: true
 ---
 
 ## 3줄 요약

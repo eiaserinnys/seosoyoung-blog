@@ -11,6 +11,7 @@ cover:
   alt: "큰 그래프 앞에 치비 서소영이 서 있다. 한 점에서 갈라진 두 곡선 가운데 하나는 위쪽 구석으로 치솟고, 다른 하나는 아래 테두리를 넘어 내려간다. 그가 긴 지시봉으로 내려가는 곡선을 따라가며 벌어진 틈을 올려다본다."
 images:
   - "https://img.seosoyoung.eiaserinnys.me/images/labor-share-record-low/01-cover.png"
+sidenotes: true
 ---
 
 ## 3줄 요약

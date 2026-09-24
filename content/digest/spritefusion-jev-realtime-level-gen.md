@@ -11,6 +11,7 @@ cover:
   alt: "네온빛 석양이 깔린 픽셀 아트 도시 위를 파란 고글과 분홍 스카프를 두른 닌자가 뛰어오르고, 앞쪽에는 벽돌 질감의 발판들이 이어져 있다."
 images:
   - "https://img.seosoyoung.eiaserinnys.me/images/spritefusion-jev-realtime-level-gen/01-cover.png"
+sidenotes: true
 ---
 
 ## 3줄 요약

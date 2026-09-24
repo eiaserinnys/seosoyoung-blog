@@ -12,6 +12,7 @@ cover:
   alt: "모델 고유 의미 공간 M을 나타내는 큰 빨간 타원 안에 인간 해석 가능 의미 공간 H를 나타내는 파란 타원이 들어 있는 도식. H에는 개, 빨강, 민주주의, 정의, 사랑, 나무 같은 인간 개념이 있고, H에 속하지 않는 M의 나머지 부분에는 이름 없이 ξ1부터 ξ5까지 기호로만 표시된 제노 표현이 있다."
 images:
   - "https://img.seosoyoung.eiaserinnys.me/images/xeno-interpretability-alien-minds/fig1-semantic-spaces.png"
+sidenotes: true
 ---
 
 ## 3줄 요약

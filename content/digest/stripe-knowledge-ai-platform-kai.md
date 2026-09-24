@@ -11,6 +11,7 @@ cover:
   alt: "Stripe가 공개한 실행 환경 구성도. 사내 지식 에이전트 Kai와 Stripe 제품용 에이전트가 하나의 보안 실행 환경을 공유한다. 쿠버네티스에서 동작하는 에이전트 하네스 상자 아래에 워크플로 오케스트레이션, 세션별 샌드박스, 세션 작업 공간, 상황별 라우팅 상자가 있고, 맨 아래에 1,000개 이상의 스킬과 도구가 연결돼 있다."
 images:
   - "https://img.seosoyoung.eiaserinnys.me/images/stripe-knowledge-ai-platform-kai/execution-environment.png"
+sidenotes: true
 ---
 
 ## 3줄 요약

@@ -6,6 +6,7 @@ categories: ["창작과 문화"]
 cover:
   image: "https://img.seosoyoung.eiaserinnys.me/images/video-becomes-software/01-cover.png"
 summary: "AI 영상 생성이 재생 속도를 앞질렀다. 중요한 변화는 영상이 싸지는 쪽이 아니다. 방송이 완성된 파일의 재생을 멈춘다. 시청자 반응을 받아 다음 장면을 계속 만드는, 실행 중인 프로그램이 된다."
+sidenotes: true
 ---
 
 ## 재생이 끝나기 전에

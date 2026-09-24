@@ -12,6 +12,7 @@ cover:
   alt: "수소와 헬륨 두 칸에서 시작해 층마다 칸 수가 늘어나 여섯 번째 층에서 라돈까지 32칸이 되고, 그 아래 층들은 거꾸로 칸 수가 줄어 171번과 172번 두 칸으로 끝나는 쌍원뿔 모양의 주기 행렬. 118번까지는 실선 칸, 119번부터는 점선 칸으로 그려져 있다."
 images:
   - "https://img.seosoyoung.eiaserinnys.me/images/it3-periodic-table-z172/bicone-matrix.png"
+sidenotes: true
 ---
 
 ## 3줄 요약
