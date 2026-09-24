@@ -6,6 +6,7 @@ categories: ["모델과 연구"]
 summary: "Curran·Pose·Hill이 1989~2024년 미·캐·영 대학생 82,939명(307표본) 데이터를 합성한 결과, 대학생 완벽주의는 단순히 증가한 것이 아니라 2000년경부터 가속하고 있다. GDP 둔화는 노력 차원을, 불평등 확대는 걱정 차원을 끌어올린다."
 ShowToc: true
 TocOpen: false
+sidenotes: true
 ---
 
 ## 3줄 요약

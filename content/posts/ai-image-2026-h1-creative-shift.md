@@ -10,6 +10,7 @@ cover:
   image: "https://img.seosoyoung.eiaserinnys.me/images/cover-ai-image-2026-h1-creative-shift.jpg"
 images:
   - "https://img.seosoyoung.eiaserinnys.me/images/cover-ai-image-2026-h1-creative-shift.jpg"
+sidenotes: true
 ---
 
 ## 용도별 모델표

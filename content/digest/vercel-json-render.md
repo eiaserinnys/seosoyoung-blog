@@ -11,6 +11,7 @@ cover:
   alt: "옆에 놓인 부품 상자에서 꺼낸 판과 블록으로 접이식 화면을 세우면서 다른 손에는 두루마리 한 장을 쥔 치비 서소영"
 images:
   - "https://img.seosoyoung.eiaserinnys.me/images/vercel-json-render/01-cover.png"
+sidenotes: true
 ---
 
 ## 3줄 요약

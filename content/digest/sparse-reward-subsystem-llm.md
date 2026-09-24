@@ -12,6 +12,7 @@ cover:
   alt: "도파민 뉴런 하나의 활성 곡선을 두 사례로 나란히 보여주는 그림. 왼쪽은 모델이 결정적인 논리 단계를 찾아낸 순간 활성이 치솟는 장면이고, 오른쪽은 모델이 논리적 오류를 저지른 순간 활성이 뚜렷하게 낮아지는 장면이다."
 images:
   - "https://img.seosoyoung.eiaserinnys.me/images/sparse-reward-subsystem-llm/dopamine_neurons.png"
+sidenotes: true
 ---
 
 ## 3줄 요약

@@ -11,6 +11,7 @@ cover:
   alt: "Piano Sheet Converter 앱 화면. 왼쪽에 자동 생성된 「Butterfly」 피아노 악보가 코드 기호와 구간 표시를 달고 펼쳐져 있고, 위쪽에 재작성과 내보내기 버튼이 있다."
 images:
   - "https://img.seosoyoung.eiaserinnys.me/images/yamaha-piano-sheet-converter/01-cover.png"
+sidenotes: true
 ---
 
 ## 3줄 요약

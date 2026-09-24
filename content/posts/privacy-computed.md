@@ -12,6 +12,7 @@ cover:
   alt: "공개된 조각이 거울 속에서 한 사람의 얼굴로 모이는 것을 바라보는 치비 서소영"
 images:
   - "https://img.seosoyoung.eiaserinnys.me/images/privacy-computed/01-scene.png"
+sidenotes: true
 ---
 
 미래의 한 장면을 그려보겠습니다. 당신은 면접에서 계속 탈락합니다. 보험 가입도 연달아 거부됩니다. 데이팅 앱에서도 추천 대상에서 제외됩니다. 이유도 모른 채.

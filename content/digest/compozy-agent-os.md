@@ -11,6 +11,7 @@ cover:
   alt: "CompozyOS 웹 셸 화면. 브라우저 안에서 세션 목록과 실행 중인 에이전트 작업을 함께 보여준다"
 images:
   - "https://img.seosoyoung.eiaserinnys.me/images/compozy-agent-os/01-web-shell.png"
+sidenotes: true
 ---
 
 ## 3줄 요약

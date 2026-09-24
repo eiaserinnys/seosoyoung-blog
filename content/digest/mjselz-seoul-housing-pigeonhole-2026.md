@@ -6,6 +6,7 @@ categories: ["경제와 사회"]
 summary: "MJ Blog의 짧은 부동산 에세이를 도시경제학·주택경제학 표준 문헌과 대조하여, 지지되는 부분과 반박 가능한 부분, 그리고 본문 내 자기모순을 짚는다."
 ShowToc: true
 TocOpen: false
+sidenotes: true
 ---
 
 ## 3줄 요약

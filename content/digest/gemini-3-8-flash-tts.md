@@ -11,6 +11,7 @@ cover:
   alt: "하늘색 그라데이션 배경 가운데에 'Introducing Gemini 3.8 Flash TTS and 3.8 Flash-Lite TTS'라는 문구가 적혀 있고, 그 아래에 Gemini의 네 꼭짓점 별 로고가 있는 구글 공식 발표 이미지"
 images:
   - "https://img.seosoyoung.eiaserinnys.me/images/gemini-3-8-flash-tts/01-cover.jpg"
+sidenotes: true
 ---
 
 ## 3줄 요약

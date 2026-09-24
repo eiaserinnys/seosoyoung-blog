@@ -11,6 +11,7 @@ cover:
   alt: "피진트(PHYSINT) 데뷔 포스터. 어두운 실내에서 총을 든 남자가 등을 보이고 서 있고, 하단에 플레이스테이션 로고와 코지마 프로덕션 로고가 나란히 놓여 있다."
 images:
   - "https://img.seosoyoung.eiaserinnys.me/images/kojima-pigint-sony-xbox/01-pigint-poster.jpg"
+sidenotes: true
 ---
 
 ## 3줄 요약

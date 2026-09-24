@@ -11,6 +11,7 @@ cover:
   alt: "헤드폰을 쓴 치비 서소영이 나란히 늘어선 작은 마이크 가운데 하나에 손을 뻗고, 다른 손에는 초침이 도는 회중시계를 들고 있다"
 images:
   - "https://img.seosoyoung.eiaserinnys.me/images/gpt-live-1-voice-guide/01-cover.png"
+sidenotes: true
 ---
 
 ## 3줄 요약

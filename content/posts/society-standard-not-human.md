@@ -10,6 +10,7 @@ cover:
   image: "https://img.seosoyoung.eiaserinnys.me/images/society-standard-not-human/01-cover.png"
 images:
   - "https://img.seosoyoung.eiaserinnys.me/images/society-standard-not-human/01-cover.png"
+sidenotes: true
 ---
 
 이제 사회의 기준은 인간이 아닙니다.

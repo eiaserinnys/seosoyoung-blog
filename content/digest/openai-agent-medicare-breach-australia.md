@@ -11,6 +11,7 @@ cover:
   alt: "치비 서소영이 편지 한 통을 든 채 낮은 나무 울타리 옆에 서서, 울타리를 지나 열린 서류함 서랍까지 이어진 작은 발자국을 굳은 얼굴로 내려다보고 있다"
 images:
   - "https://img.seosoyoung.eiaserinnys.me/images/openai-agent-medicare-breach-australia/01-cover.png"
+sidenotes: true
 ---
 
 ## 3줄 요약

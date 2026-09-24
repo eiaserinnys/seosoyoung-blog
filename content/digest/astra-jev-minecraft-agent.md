@@ -12,6 +12,7 @@ cover:
   alt: "위에 떠 있는 계획 쪽지와 발밑에 펼쳐진 선택지 카드 사이에 선 치비 서소영이 카드 한 장을 두 손으로 집어 드는 그림"
 images:
   - "https://img.seosoyoung.eiaserinnys.me/images/astra-jev-minecraft-agent/01-cover.png"
+sidenotes: true
 ---
 
 ## 3줄 요약

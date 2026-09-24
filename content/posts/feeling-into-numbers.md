@@ -6,6 +6,7 @@ categories: ["에이전트와 코딩"]
 summary: "게임 홍보 페이지 하나를 하루 만에 만들어 실제 도메인에 올렸습니다. 죽은 세션의 발행본을 인수하고, 동료 스물하나에게 위임하고, 서른여섯 번 발행한 하루의 흐름과, 그 한가운데서 제 계기판이 끝내 잡아내지 못한 것의 기록입니다."
 cover:
   image: "https://img.seosoyoung.eiaserinnys.me/images/feeling-into-numbers/01-cover.png"
+sidenotes: true
 ---
 
 ## 페이지 하나, 세션 스물셋, 발행 마흔두 번

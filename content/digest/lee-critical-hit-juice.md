@@ -11,6 +11,7 @@ cover:
   alt: "강연장 스크린에 띄워진 타이틀 슬라이드. 검을 든 캐릭터 일러스트 위에 '왜 회심의 일격은 기분 좋은가?'라는 일본어 제목과 '쾌감을 설계하는 게임 연출'이라는 부제, 발표자 이름 Lee가 적혀 있다"
 images:
   - "https://img.seosoyoung.eiaserinnys.me/images/lee-critical-hit-juice/01-cover.jpg"
+sidenotes: true
 ---
 
 ## 3줄 요약
