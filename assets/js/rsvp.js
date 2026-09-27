@@ -265,7 +265,7 @@
       setWpm(Number(wpmSlider.value));
     });
     dialog.addEventListener("close", function () {
-      launchButton.focus();
+      launchButton.focus({ preventScroll: true });
     });
     setWpm(wpm);
   }
@@ -417,11 +417,15 @@
     stopPlayback();
     var currentStart = tokens[currentIndex].sentenceStart;
     var target;
-    for (var index = 0; index < sentenceStarts.length; index += 1) {
-      if (direction < 0 && sentenceStarts[index] < currentStart) target = sentenceStarts[index];
-      if (direction > 0 && sentenceStarts[index] > currentStart) {
-        target = sentenceStarts[index];
-        break;
+    if (direction < 0 && currentIndex !== currentStart) {
+      target = currentStart;
+    } else {
+      for (var index = 0; index < sentenceStarts.length; index += 1) {
+        if (direction < 0 && sentenceStarts[index] < currentStart) target = sentenceStarts[index];
+        if (direction > 0 && sentenceStarts[index] > currentStart) {
+          target = sentenceStarts[index];
+          break;
+        }
       }
     }
     if (target !== undefined) {
@@ -456,7 +460,6 @@
     if (!dialog || !dialog.open || event.altKey || event.ctrlKey || event.metaKey) return;
     var target = event.target;
     if (event.code === "Space") {
-      if (target.closest && target.closest("button")) return;
       event.preventDefault();
       togglePlayback();
       return;
