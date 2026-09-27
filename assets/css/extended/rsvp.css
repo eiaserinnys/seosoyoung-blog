@@ -119,10 +119,8 @@
 
 .rsvp-word-focus {
   position: relative;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0.05em 0.12em;
+  display: inline-block;
+  padding: 0.05em 0;
   color: #1e78d4;
 }
 
