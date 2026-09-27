@@ -35,18 +35,29 @@
     return range;
   }
 
+  function createFragmentRanges(fragments) {
+    return fragments.map(function (fragment) {
+      var range = document.createRange();
+      range.setStart(fragment.node, fragment.start);
+      range.setEnd(fragment.node, fragment.end);
+      return range;
+    });
+  }
+
   function collectTokens() {
     var collected = [];
     var walker = document.createTreeWalker(content, NodeFilter.SHOW_TEXT);
     var pending = null;
     var activeBlock = null;
     var previousMath = null;
+    var parentheticalEnd = null;
 
     function flush() {
       if (!pending) return;
       collected.push({
         text: pending.text,
         range: createRange(pending.fragments),
+        highlightRanges: createFragmentRanges(pending.fragments),
         block: pending.block,
         isMath: false
       });
@@ -71,6 +82,11 @@
 
       if (mathElement && !mathExcluded) {
         var mathBlock = blockFor(mathElement);
+        if (parentheticalEnd) {
+          previousMath = mathElement;
+          activeBlock = mathBlock;
+          continue;
+        }
         flush();
         if (mathElement !== previousMath) {
           var mathRange = document.createRange();
@@ -78,6 +94,7 @@
           collected.push({
             text: "",
             range: mathRange,
+            highlightRanges: [mathRange],
             block: mathBlock,
             isMath: true,
             mathElement: mathElement
@@ -103,7 +120,11 @@
       for (var offset = 0; offset < text.length;) {
         var character = String.fromCodePoint(text.codePointAt(offset));
         var nextOffset = offset + character.length;
-        if (/\s/u.test(character)) {
+        if (parentheticalEnd) {
+          if (character === parentheticalEnd) parentheticalEnd = null;
+        } else if (character === "(" || character === "（") {
+          parentheticalEnd = character === "(" ? ")" : "）";
+        } else if (/\s/u.test(character)) {
           flush();
         } else {
           appendCharacter(node, block, character, offset, nextOffset);
@@ -295,7 +316,9 @@
   function updateHighlights(token) {
     if (!wordHighlight || !sentenceHighlight) return;
     wordHighlight.clear();
-    wordHighlight.add(token.range);
+    token.highlightRanges.forEach(function (range) {
+      wordHighlight.add(range);
+    });
     sentenceHighlight.clear();
     sentenceHighlight.add(token.sentenceRange);
   }
