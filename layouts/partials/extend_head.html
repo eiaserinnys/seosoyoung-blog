@@ -308,3 +308,7 @@
   })();
 </script>
 {{- end }}
+{{- if and .IsPage (in (slice "posts" "digest") .Section) }}
+{{- $rsvpScript := resources.Get "js/rsvp.js" | js.Build (dict "minify" true) | fingerprint }}
+<script defer src="{{ $rsvpScript.RelPermalink }}" integrity="{{ $rsvpScript.Data.Integrity }}" crossorigin="anonymous"></script>
+{{- end }}
