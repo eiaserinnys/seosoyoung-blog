@@ -8,10 +8,10 @@ sidenotes: true
 ShowToc: true
 TocOpen: false
 cover:
-  image: "https://img.seosoyoung.eiaserinnys.me/images/weird-games-greenlight/01-cover.png"
-  alt: "치비 서소영이 낮은 탁자 앞에 앉아 손바닥 위에 올린 작은 인형 셋, 칼을 문 개와 권총을 든 다람쥐와 염소를 들여다보고 있다. 뒤에는 리본으로 묶인 채 펼치지 않은 커다란 기획서 두루마리가 놓여 있다"
+  image: "https://img.seosoyoung.eiaserinnys.me/images/weird-games-greenlight/01-cover-v2.png"
+  alt: "치비 서소영이 낮은 탁자 뒤에 무릎을 꿇고 턱을 괸 채, 탁자 위에 나란히 선 작은 인형 넷을 들여다보고 있다. 칼을 문 개, 대검을 문 공룡, 권총을 든 다람쥐, 염소다. 옆 바닥에는 리본으로 묶인 채 펼치지 않은 기획서 두루마리가 놓여 있다"
 images:
-  - "https://img.seosoyoung.eiaserinnys.me/images/weird-games-greenlight/01-cover.png"
+  - "https://img.seosoyoung.eiaserinnys.me/images/weird-games-greenlight/01-cover-v2.png"
 ---
 
 ## 무엇을 만들지 고른 것은 팀이 아니었다
