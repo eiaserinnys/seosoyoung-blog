@@ -20,13 +20,11 @@ TocOpen: false
 .post-content .esp-note{font-size:.93em;padding:.8em 1em;border-left:3px solid rgba(127,127,127,.45);background:rgba(127,127,127,.08);border-radius:4px}
 </style>
 
-ESP32는 Espressif가 만든 Wi-Fi 겸 블루투스 마이크로컨트롤러다. 저장소와 제작 기록이 공개된 ESP32 프로젝트 가운데 28개를 골라, 실제로 작동하는 모습을 사진과 영상으로 모았다. 표정을 짓는 탁상 로봇, 말을 알아듣는 음성 단말기, 휴대용 게임기, 방탈출 소품, 손맛을 바꾸는 다이얼, 신시사이저, 걷는 로봇, 드론, 위성 신호를 받는 지상국까지 있다.
+ESP32는 Espressif가 만든 Wi-Fi 겸 블루투스 마이크로컨트롤러다. 저장소와 제작 기록이 공개된 ESP32 프로젝트 가운데, 작동하는 모습을 사진이나 영상으로 확인할 수 있는 28개를 골랐다. 탁상 로봇부터 위성 신호 수신국까지 있다.
 
-28개에서 ESP32가 하는 일은 대체로 같다. 센서와 버튼을 읽고, 모터와 화면과 스피커를 구동하고, 무선으로 다른 기기와 데이터를 주고받는다. 음성 인식과 언어모델처럼 계산량이 큰 일은 서버나 PC가 맡는다. 같은 ESP32라도 세대마다 블루투스 Classic 지원과 PSRAM 탑재 여부가 달라서, 프로젝트가 요구하는 보드가 서로 다르다.
+28개에서 ESP32가 하는 일은 대체로 같다. 센서와 버튼을 읽고, 모터와 화면과 스피커를 구동하고, 무선으로 다른 기기와 데이터를 주고받는다. 음성 인식처럼 계산량이 큰 일은 서버나 PC가 맡는다.
 
 <div class="esp-note">
-
-**영상.** 재배포가 허용된 영상(오픈 라이선스 저장소 안의 파일, CC BY 영상)은 핵심 장면만 짧게 잘라 이 페이지에 올렸다. 일반 라이선스 영상은 원본 플레이어에 시작과 끝 시각을 지정해 그 구간만 재생되게 했다. 소리가 있는 영상도 자동으로 재생되지 않는다.
 
 **난도.** 공개된 코드와 지정 부품으로 따라 만든다고 할 때를 기준으로 이 글에서 붙인 분류다. 낮음은 완제품 기기에 펌웨어를 올리는 수준, 중간은 부품 배선과 개발환경 설정이 필요한 수준, 높음은 PCB 주문, 기구 조립, 보정이 필요한 수준이다.
 
@@ -55,9 +53,9 @@ ESP32는 Espressif가 만든 Wi-Fi 겸 블루투스 마이크로컨트롤러다.
 
 M5Stack 보드의 화면에 눈과 입을 그리고, 서보모터로 몸체를 좌우로 돌리거나 위아래로 기울인다. 저장소에는 펌웨어와 MOD라고 부르는 사용자 앱, 브라우저 개발 도구, 케이스 설계와 회로도가 함께 들어 있다. 현재 README는 조립된 완제품 M5StackChan CoreS3를 표준 구성으로 안내하며, 다른 M5Stack 보드와 자작 케이스도 지원한다.
 
-- **ESP32의 역할**: 보드의 ESP32 계열 칩(CoreS3는 ESP32-S3)이 화면, 소리, 서보를 제어하고 MOD를 실행한다. 브라우저는 펌웨어 설치와 BLE 설정에 쓰인다. 얼굴 추적 MOD 일부는 브라우저가 카메라로 인식한 결과를 BLE로 받아 움직인다.
+- **ESP32의 역할**: 보드의 ESP32 계열 칩(CoreS3는 ESP32-S3)이 화면, 소리, 서보를 제어하고 MOD를 실행한다. 브라우저는 펌웨어 설치와 저전력 블루투스(BLE) 설정에 쓰인다. 얼굴 추적 MOD 일부는 브라우저가 카메라로 인식한 결과를 BLE로 받아 움직인다.
 - **부품**: M5Stack 보드(CoreS3 등), 서보모터와 브래킷, 케이스.
-- **재현**: 중간. 완제품은 웹 설치기로 펌웨어만 올리면 된다. 사진 같은 자작형은 3D 프린팅 케이스와 서보 조립이 필요하다.
+- **재현**: 완제품은 낮음. 웹 설치기로 펌웨어만 올리면 된다. 사진 같은 자작형은 중간. 3D 프린팅 케이스와 서보 조립이 필요하다.
 - **제작**: Shinya Ishikawa(meganetaaan)와 Stack-chan 커뮤니티. [GitHub](https://github.com/stack-chan/stack-chan), Apache-2.0.
 
 ### 02. Xiaozhi(小智)
@@ -74,28 +72,28 @@ M5Stack 보드의 화면에 눈과 입을 그리고, 서보모터로 몸체를 �
 <figcaption>ESP32-S3-BOX-3에서 실행한 화면. 이모지와 대답 문장이 함께 표시된다. 출처: <a href="https://github.com/78/xiaozhi-esp32#hardware">Xiaozhi 저장소</a>, MIT</figcaption>
 </figure>
 
-마이크로 들은 말을 AI 서비스에 보내고, 돌아온 음성을 스피커로 들려준다. 화면이 달린 보드는 대화하는 동안 이모지와 문장을 함께 띄운다. 기기의 GPIO와 화면을 AI가 조작할 수 있도록 MCP 인터페이스도 제공한다. README가 안내하는 지원 보드는 100종이 넘는다.
+마이크로 들은 말을 AI 서비스에 보내고, 돌아온 음성을 스피커로 들려준다. 화면이 달린 보드는 대화하는 동안 이모지와 문장을 함께 띄운다. 기기의 입출력 핀과 화면을 AI가 조작할 수 있도록 MCP 인터페이스도 제공한다. README가 안내하는 지원 보드는 100종이 넘는다.
 
 - **ESP32의 역할**: 오프라인 호출어 감지(ESP-SR), 마이크 입력의 잡음 처리, Opus 압축과 전송, 받은 음성의 재생, 화면 표시를 기기가 처리한다. 음성 인식, 언어모델, 음성 합성은 서버가 맡는다. 기본 펌웨어는 xiaozhi.me 서버에 접속하고, 호환되는 자체 서버를 쓸 수도 있다.
 - **부품**: 지원 보드(ESP32, C3, C5, C6, S3, P4 계열), 마이크, 스피커와 오디오 코덱, 선택 사항으로 OLED나 LCD.
 - **재현**: 중간. 지원 보드에는 미리 빌드한 펌웨어를 올리면 된다. 소스 빌드에는 ESP-IDF 6.0.1 이상이 필요하고 5.x는 지원하지 않는다.
 - **제작**: 78(虾哥)과 프로젝트 참여자. [GitHub](https://github.com/78/xiaozhi-esp32), MIT.
 
-### 03. ArduinoGotchi의 M5StickC Plus2 포트
+### 03. ArduinoGotchi의 ESP32 이식판
 
 1996년 다마고치 P1의 프로그램을 에뮬레이터로 실행하는 전자펫이다.
 
 <figure class="esp-fig">
 <img src="https://img.seosoyoung.eiaserinnys.me/images/esp32-28-devices/03-arduinogotchi-upstream-photo.jpg" alt="초록색 3D 프린팅 케이스를 열자 ESP32 보드, 배터리, 배선, 버튼이 보인다." loading="lazy">
-<figcaption>이 포트의 직전 단계인 RBEGamer의 TamagotchiESP32 제작 사진. 3D 프린팅 케이스에 ESP32 보드와 배터리가 들어 있다. M5StickC Plus2 포트의 사진과 영상은 공개된 것이 없다. 출처: <a href="https://github.com/RBEGamer/TamagotchiESP32#example-build">RBEGamer/TamagotchiESP32</a>, GPL-2.0</figcaption>
+<figcaption>RBEGamer의 TamagotchiESP32 제작 예. 3D 프린팅 케이스 안에 ESP32 개발 보드, 배터리, 버튼 배선이 들어 있다. M5StickC Plus2 포트는 공개된 사진과 영상이 없다. 출처: <a href="https://github.com/RBEGamer/TamagotchiESP32#example-build">RBEGamer/TamagotchiESP32</a>, GPL-2.0</figcaption>
 </figure>
 
-TamaLib 에뮬레이터로 다마고치 P1을 재현한다. M5StickC Plus2 포트는 기기에 내장된 화면과 버튼, 스피커를 그대로 쓰고, 상태를 EEPROM에 주기적으로 저장해 딥슬립에서 깨어나면 이어서 실행한다. 원작은 아두이노 우노용 ArduinoGotchi이고, anabolyc와 RBEGamer의 이식을 거쳐 이 포트가 나왔다.
+TamaLib 에뮬레이터로 다마고치 P1을 재현한다. 원작은 아두이노 우노용 ArduinoGotchi이고, anabolyc의 포크를 거쳐 RBEGamer가 ESP32 지원과 딥슬립 기능을 더했다. RBEGamer의 제작 예는 ESP32 개발 보드에 0.96인치 128×64 OLED, 버튼 세 개, 부저, 리튬 배터리를 연결했다. Coreymillia는 이 코드를 M5StickC Plus2에 이식해 기기에 내장된 화면과 버튼, 스피커를 그대로 쓰게 했다. 상태를 주기적으로 저장해 두고, 딥슬립에서 깨어나면 이어서 실행한다.
 
 - **ESP32의 역할**: 에뮬레이션, 화면, 버튼, 소리, 저장, 절전을 기기 혼자 처리한다.
-- **부품**: M5StickC Plus2 한 대.
-- **재현**: 낮음. PlatformIO로 빌드해 USB로 올린다. 납땜이 필요 없다. 포트 저장소에 ROM 데이터와 빌드된 펌웨어가 들어 있지만, 포트 저장소에는 라이선스 표기가 없고 ROM의 배포 권리도 확인되지 않는다.
-- **제작**: Coreymillia(포트), 원작 GaryZ88. [GitHub](https://github.com/Coreymillia/ArduinoGotchi-M5Stick-esp32-Tamagotchi), 선행 저장소 [TamagotchiESP32](https://github.com/RBEGamer/TamagotchiESP32)는 GPL-2.0.
+- **부품**: RBEGamer판은 ESP32 개발 보드, SSD1306 OLED, 버튼 3개, 부저, LiPo 배터리와 충전 보드. M5StickC Plus2 포트는 기기 한 대.
+- **재현**: M5StickC Plus2 포트는 낮음. PlatformIO로 빌드해 USB로 올리면 되고 납땜이 필요 없다. RBEGamer판은 배선과 케이스 조립이 필요해 중간이다. 포트 저장소에는 ROM 데이터와 빌드된 펌웨어가 들어 있지만 라이선스 표기가 없고, ROM의 배포 권리도 확인되지 않는다.
+- **제작**: GaryZ88(원작), RBEGamer(ESP32 이식), Coreymillia(M5StickC Plus2 포트). [TamagotchiESP32](https://github.com/RBEGamer/TamagotchiESP32)는 GPL-2.0, [M5StickC Plus2 포트](https://github.com/Coreymillia/ArduinoGotchi-M5Stick-esp32-Tamagotchi)는 라이선스 표기 없음.
 
 ### 04. ESPuino
 
@@ -103,7 +101,7 @@ RFID 카드를 대면 지정한 음악이나 오디오북을 재생하는 플레
 
 <figure class="esp-fig">
 <img src="https://img.seosoyoung.eiaserinnys.me/images/esp32-28-devices/04-espuino-photo.jpg" alt="파란 몸체에 흰 덮개를 씌운 정육면체 상자. 윗면에 버튼 세 개와 손잡이가 있다." loading="lazy">
-<figcaption>ESPuino 포럼에 공유된 제작물. 윗면에 버튼 세 개와 회전 다이얼, 앞면에 스피커가 있다. 출처: <a href="https://github.com/biologist79/ESPuino#espuino---whats-that">ESPuino 포럼 사용자 제작물</a></figcaption>
+<figcaption>ESPuino 공식 문서에 실린 제작 예(Biobox 3d). 윗면에 버튼 세 개와 회전 다이얼, 앞면에 스피커가 있다. 출처: <a href="https://github.com/biologist79/ESPuino-Docs/blob/main/docs/assets/Biobox3d.jpg">ESPuino 공식 문서</a></figcaption>
 </figure>
 
 <figure class="esp-fig">
@@ -113,15 +111,15 @@ RFID 카드를 대면 지정한 음악이나 오디오북을 재생하는 플레
 
 웹 설정 화면에서 RFID 태그 번호와 microSD의 파일이나 폴더, 또는 인터넷 방송 주소를 짝지어 둔다. 태그를 리더에 대면 지정한 오디오가 재생된다. 버튼과 회전 다이얼로 음량과 곡을 조작한다.
 
-- **ESP32의 역할**: RFID 판독, SD 카드 재생, I2S 오디오 출력, 설정용 웹 서버를 기기가 직접 처리한다. 인터넷 방송이나 MQTT 연동을 쓸 때만 외부 서비스가 필요하다.
-- **부품**: PSRAM이 있는 ESP32-WROVER 계열 보드, RC522 또는 PN5180 RFID 리더, microSD 카드, I2S DAC와 앰프, 스피커.
-- **조건**: README는 PSRAM이 없는 ESP32에서는 안정적으로 동작하지 않고, 작동하는 microSD가 없으면 부팅하지 않는다고 적었다. 블루투스 스피커 출력(A2DP)은 블루투스 Classic이 필요해서 원형 ESP32에서만 쓸 수 있다.
+- **ESP32의 역할**: RFID 판독, SD 카드 재생, 디지털 오디오(I2S) 출력, 설정용 웹 서버를 기기가 직접 처리한다. 인터넷 방송이나 MQTT(기기 사이의 메시지 전달 규약) 연동을 쓸 때만 외부 서비스가 필요하다.
+- **부품**: 추가 메모리(PSRAM)가 있는 ESP32-WROVER 계열 보드, RC522 또는 PN5180 RFID 리더, microSD 카드, I2S 오디오 변환 칩(DAC)과 앰프, 스피커.
+- **조건**: README는 PSRAM이 없는 ESP32에서는 안정적으로 동작하지 않고, 작동하는 microSD가 없으면 부팅하지 않는다고 적었다. 블루투스 스피커 출력(A2DP)은 기존 방식의 블루투스 Classic이 필요해서 원형 ESP32에서만 쓸 수 있다.
 - **재현**: 중간. 전용 PCB(ESPuino Complete)를 쓰면 배선이 줄어든다.
 - **제작**: biologist79와 ESPuino 커뮤니티. [GitHub](https://github.com/biologist79/ESPuino), GPL-3.0.
 
 ## 디스플레이와 시각 오브제
 
-작은 화면과 LED로 정보를 보여 주거나, 화면 대신 모래 위의 무늬를 결과물로 내놓는 장치다.
+작은 화면과 LED로 정보를 보여 주는 장치와, 모래에 무늬를 그리는 장치다.
 
 ### 05. HoloCubic
 
@@ -186,7 +184,7 @@ ESP32에 설치하면 WS2812B 같은 주소 지정 LED 스트립과 2D 매트릭
 <figcaption>SD 카드에 넣은 영상을 작은 LCD로 재생한다. 소리가 함께 나온다. 원본 영상의 5:03–5:13 구간만 재생된다. 영상: atomic14(제작자), <a href="https://www.youtube.com/watch?v=dWgjsJtlbpA&amp;t=303s">YouTube 원본</a></figcaption>
 </figure>
 
-ESP32가 TFT 화면에 JPEG 프레임을 차례로 그리고 스피커로 소리를 낸다. 재생 방식은 두 가지다. Wi-Fi 방식에서는 PC에서 도는 Python 서버가 MP4를 프레임과 8비트 16kHz PCM 소리로 나눠 보내고, ESP32는 소리 재생 시각에 맞춰 다음 프레임을 요청한다. SD 카드 방식에서는 미리 MJPEG 영상과 PCM 소리를 담은 AVI로 변환한 파일을 읽는다. 두 방식 모두 MP4 디코딩은 ESP32가 하지 않는다.
+ESP32가 TFT 화면에 JPEG 프레임을 차례로 그리고 스피커로 소리를 낸다. 재생 방식은 두 가지다. Wi-Fi 방식은 PC에서 도는 Python 서버가 영상을 프레임과 소리로 나눠 보내고, ESP32는 소리 재생 시각에 맞춰 다음 프레임을 요청한다. SD 카드 방식은 PC에서 미리 변환해 둔 AVI 파일을 읽는다. 두 방식 모두 ESP32가 MP4를 직접 해독하지는 않는다.
 
 - **ESP32의 역할**: JPEG 프레임 표시와 PCM 소리 재생. Wi-Fi 방식의 영상 전처리는 PC 서버가 하고, SD 방식의 변환은 미리 PC에서 ffmpeg로 해 둔다.
 - **부품**: 지원 ESP32 보드(ESP32-S3 자작 PCB, TinyS3, Cheap Yellow Display 등), TFT 화면, MAX98357A 같은 오디오 앰프와 스피커, SD 카드.
@@ -357,9 +355,9 @@ ESP32 개발 보드가 TTL UART로 PNP-500 감열 프린터에 ESC/POS 명령을
 - **재현**: 중간. 프린터에는 ESP32와 별개로 충분한 전원을 공급해야 한다. 인쇄할 이미지는 폭 384픽셀 이하의 1비트 비트맵으로 변환해 코드에 넣는다.
 - **제작**: Rithik Krisna, CircuitDigest. [기사](https://circuitdigest.com/microcontroller-projects/how-to-interface-thermal-printer-with-esp32), [GitHub](https://github.com/Circuit-Digest/Interfacing-Thermal-Printer-POS-ESC-with-the-ESP32)(MIT).
 
-## 소리와 글
+## 소리와 전자종이
 
-소리를 합성하거나 방송을 재생하는 장치, 전자종이에 글과 정보를 표시하는 장치다.
+소리를 합성하거나 방송을 재생하는 장치, 전자종이에 날씨와 책을 표시하는 장치다.
 
 ### 17. ML SynthTools 기본 신시사이저
 
@@ -443,7 +441,7 @@ EPUB 파일의 압축을 풀어 XHTML 본문을 읽고 전자종이에 한 페�
 - **ESP32의 역할**: 압축 해제, 본문 해석, 페이지 배치, 화면 렌더링을 모두 처리한다. 책은 SD 카드에서 읽는다.
 - **부품**: PSRAM이 있는 ESP32 전자종이 보드(M5Paper, LilyGo T5-4.7, EPDIY), SD 카드.
 - **조건**: PSRAM이 필수다. 기본 폰트에는 라틴 문자와 문장부호만 들어 있어서, 한글 책을 읽으려면 폰트 데이터를 새로 만들고 렌더링을 확인해야 한다. 저장소는 2022년 11월 이후 갱신되지 않았다.
-- **재현**: 높음.
+- **재현**: 높음. 저장소를 하위 모듈까지 받아 보드에 맞는 PlatformIO 환경으로 빌드하고, 일부 보드는 SD 카드와 버튼 배선이 따로 필요하다.
 - **제작**: atomic14. [GitHub](https://github.com/atomic14/diy-esp32-epub-reader), MIT.
 
 ## 로봇, 카메라, 센서
@@ -489,7 +487,7 @@ Espressif가 공개한 소형 드론 프로젝트다. ESP32-S2 보드가 자세 
 
 - **ESP32의 역할**: 비행 제어 전부. 스마트폰은 조종 명령만 보낸다. PC용 cfclient는 설정과 디버깅에 쓴다.
 - **부품**: ESP32-S2-Drone V1.2 보드(ESP32-S2-WROVER, MPU6050), 716 브러시드 모터 4개, 46mm 프로펠러 4개, 300mAh 1셀 LiPo.
-- **조건**: ESP32-S2에는 블루투스가 없어서 조종은 Wi-Fi로만 한다. 현재 문서의 지원 칩은 ESP32-S2와 S3이고, 최신 master 브랜치는 제한적으로 지원한다.
+- **조건**: ESP32-S2에는 블루투스가 없어서 조종은 Wi-Fi로만 한다. 현재 문서의 지원 칩은 ESP32-S2와 S3다. Espressif는 2022년 12월부터 이 프로젝트를 제한적으로만 지원한다고 밝혔다.
 - **재현**: 높음. 공개된 회로와 PCB 자료로 보드를 주문하고 모터, 프로펠러, 배터리를 조립한 뒤 ESP-IDF로 빌드한다.
 - **제작**: Espressif Systems. [GitHub](https://github.com/espressif/esp-drone), [문서](https://docs.espressif.com/projects/espressif-esp-drone/en/latest/), GPL-3.0.
 
@@ -533,15 +531,15 @@ M5StickC에 MLX90640 열화상 HAT을 끼우면 물체 표면 온도를 가로 3
 
 ## 전파와 무선 네트워크
 
-ESP32의 Wi-Fi와 블루투스, 또는 보드에 따로 단 LoRa 무선칩으로 통신 자체를 기능으로 삼는 장치다.
+무선으로 메시지나 관측 데이터를 주고받는 장치다.
 
 ### 25. Meshtastic
 
 휴대전화망 없이 LoRa 무선으로 짧은 메시지를 주고받는 메시 네트워크다.
 
 <figure class="esp-fig">
-<div class="esp-embed"><iframe src="https://www.youtube-nocookie.com/embed/2Ry-ck0fhfw?start=268&amp;end=280&amp;rel=0" title="This device makes Meshtastic the BEST off-grid tech" loading="lazy" allow="encrypted-media; picture-in-picture; fullscreen" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe></div>
-<figcaption>Meshtastic을 올린 LilyGO T-Deck(ESP32-S3와 SX1262)과 다른 노드, 휴대전화 앱의 메시지 화면이 이어진다. 원본 영상의 4:28–4:40 구간만 재생된다. 영상: Level 2 Jeff(제3자), <a href="https://www.youtube.com/watch?v=2Ry-ck0fhfw&amp;t=268s">YouTube 원본</a></figcaption>
+<div class="esp-embed"><iframe src="https://www.youtube-nocookie.com/embed/2Ry-ck0fhfw?start=272&amp;end=282&amp;rel=0" title="This device makes Meshtastic the BEST off-grid tech" loading="lazy" allow="encrypted-media; picture-in-picture; fullscreen" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe></div>
+<figcaption>책상 위 T-Deck(ESP32-S3와 SX1262)의 Meshtastic 화면에 이어, 휴대전화 앱의 대화 화면과 다른 노드가 나온다. 원본 영상의 4:32–4:42 구간만 재생된다. 영상: Level 2 Jeff(제3자), <a href="https://www.youtube.com/watch?v=2Ry-ck0fhfw&amp;t=272s">YouTube 원본</a></figcaption>
 </figure>
 
 <figure class="esp-fig">
@@ -549,7 +547,7 @@ ESP32의 Wi-Fi와 블루투스, 또는 보드에 따로 단 LoRa 무선칩으로
 <figcaption>ESP32 기반 LILYGO T-Beam에 Meshtastic을 올린 모습. OLED에 노드 이름이 떠 있다. 출처: <a href="https://commons.wikimedia.org/wiki/File:Meshtastic_T-Beam.jpg">Chiffre01, Wikimedia Commons</a>, CC0 1.0</figcaption>
 </figure>
 
-각 노드가 LoRa 무선으로 짧은 메시지를 보내고 받으며, 다른 노드의 메시지를 중계한다. 휴대전화 앱은 블루투스나 Wi-Fi로 노드에 연결해 메시지를 쓰고 읽는다. 셀룰러망이나 인터넷 없이 가까운 노드끼리 통신할 수 있고, 도달 거리는 안테나, 지형, 출력, 지역 전파 규정에 따라 달라진다.
+각 노드가 LoRa(적은 양의 데이터를 먼 거리까지 보내는 저전력 무선 방식)로 짧은 메시지를 보내고 받으며, 다른 노드의 메시지를 중계한다. 휴대전화 앱은 블루투스나 Wi-Fi로 노드에 연결해 메시지를 쓰고 읽는다. 셀룰러망이나 인터넷 없이 가까운 노드끼리 통신할 수 있고, 도달 거리는 안테나, 지형, 출력, 지역 전파 규정에 따라 달라진다.
 
 - **ESP32의 역할**: ESP32 보드의 펌웨어가 LoRa 무선칩, 화면, 휴대전화와의 BLE 연결을 제어한다. LoRa 송수신은 보드에 따로 달린 SX1262나 SX127x 칩이 담당한다.
 - **조건**: 지원 기기에는 RAK4631, T-Echo처럼 nRF52840을 쓰는 기기도 섞여 있다. ESP32 계열로는 구형 T-Beam(ESP32), T-Beam S3와 Heltec LoRa32 V3(ESP32-S3) 등이 있다.
@@ -590,7 +588,7 @@ Wi-Fi 신호의 채널 상태 변화로 사람의 움직임을 감지하는 Espr
 <figcaption>console_test의 PC 화면. CSI 진폭 곡선과 움직임 판정 상태가 표시된다. 캡처 시점의 판정은 움직임 없음이다. 출처: <a href="https://github.com/espressif/esp-csi/blob/master/examples/esp-radar/console_test/README.md">esp-csi 저장소</a>, Apache-2.0</figcaption>
 </figure>
 
-Wi-Fi 패킷을 주고받을 때 측정되는 채널 상태 정보(CSI)의 진폭과 위상 변화를 분석한다. 사람이 움직이면 전파가 반사되는 경로가 달라져 CSI도 바뀐다. console_test 예제는 방 안의 움직임과 재실 상태를 PC 화면에 표시하며, 설치 환경마다 보정이 필요하다. esp-crab 예제는 손을 기기에 가까이 댈 때 CSI 진폭 곡선이 바뀌는 모습을 기기 화면에 그린다.
+Wi-Fi 신호가 전달되는 동안 세기와 위상이 어떻게 변했는지 나타내는 채널 상태 정보(CSI)를 분석한다. 사람이 움직이면 전파가 반사되는 경로가 달라져 CSI도 바뀐다. console_test 예제는 방 안의 움직임과 재실 상태를 PC 화면에 표시하며, 설치 환경마다 보정이 필요하다. esp-crab 예제는 손을 기기에 가까이 댈 때 CSI 진폭 곡선이 바뀌는 모습을 기기 화면에 그린다.
 
 - **ESP32의 역할**: Wi-Fi 패킷을 보내거나 받으며 CSI를 추출한다. console_test에서는 ESP32 한 대나 공유기가 신호를 보내고 다른 ESP32가 받으며, 시각화는 PC의 Python GUI가 한다.
 - **조건**: 저장소의 지원 칩은 ESP32, S2, C3, S3, C5, C6, C61이다. 예제마다 요구하는 보드가 다르고, esp-crab은 ESP32-C5 기반 전용 PCB를 쓴다. console_test는 ESP-IDF 5.0 이상을 권한다.
@@ -615,15 +613,11 @@ Wi-Fi 패킷을 주고받을 때 측정되는 채널 상태 정보(CSI)의 진�
 
 ## 공통된 설계 패턴
 
-**물리적인 입출력은 ESP32가 직접 처리한다.** 28개 가운데 대부분이 센서와 버튼을 읽고 모터, LED, 화면, 스피커를 구동하는 일을 ESP32에 맡긴다. 칩 하나로 기능이 완결되는 사례도 많다. 다마고치 에뮬레이터, SmartKnob, BlueRetro, 신시사이저, 전자책, 드론, 열화상 카메라는 작동하는 동안 PC나 서버가 필요 없다.
+**입출력은 ESP32가, 큰 계산은 다른 컴퓨터가 맡는다.** 대부분의 사례에서 ESP32는 센서와 버튼을 읽고 모터, LED, 화면, 스피커를 직접 구동한다. 음성 인식과 언어모델(Xiaozhi), 영상 변환(ESP32 TV)처럼 계산량이 큰 일은 서버나 PC가 처리한다. 신시사이저, 드론, SmartKnob처럼 칩 하나로 기능이 끝나는 장치도 많다.
 
-**계산량이 큰 일은 다른 컴퓨터가 맡는다.** Xiaozhi는 호출어 감지와 오디오 압축까지만 기기에서 하고, 음성 인식과 언어모델과 음성 합성은 서버가 처리한다. ESP32 TV는 영상 변환을 PC에 맡기고 JPEG 표시와 소리 재생만 한다. FreeTouchDeck은 키 입력만 보내고, 앱 실행은 컴퓨터의 도우미 프로그램이 한다. 반대 방향의 변화도 있다. Dune Weaver는 라즈베리 파이가 하던 패턴 처리를 현행 펌웨어에서 ESP32가 직접 한다.
+**무선 연결을 입출력 장치처럼 쓴다.** 방탈출 소품은 ESP-NOW로 서로 상태를 주고받고, FreeTouchDeck은 BLE 키보드로 컴퓨터에 입력하고, AWTRIX NG와 ESPuino는 MQTT로 다른 시스템과 연결된다. LoRa 통신에는 별도 무선칩이 필요하다(Meshtastic, TinyGS).
 
-**무선 연결이 입출력의 한 종류로 쓰인다.** 방탈출 장치 여섯 대는 ESP-NOW로 서버 없이 퍼즐 상태를 주고받는다. FreeTouchDeck은 BLE 키보드로 컴퓨터에 입력하고, AWTRIX NG와 ESPuino는 MQTT로 다른 시스템과 연결된다. Meshtastic과 TinyGS는 LoRa 무선칩을 따로 달아 Wi-Fi가 없는 환경의 신호를 다룬다.
-
-**같은 ESP32라도 보드를 먼저 확인해야 한다.** 블루투스 Classic은 원형 ESP32에만 있어서, BlueRetro와 ESPuino의 블루투스 스피커 기능은 ESP32-S3에서 쓸 수 없다. ESP32-S2에는 블루투스가 없다. ESPuino, ESP32-CAM_MJPEG2SD, ePub Reader는 PSRAM이 필수다. 개발환경 버전도 프로젝트마다 다르다. FabGL은 Arduino ESP32 코어 2.0.17 이하, FreeTouchDeck은 2.0.14를 권장하고, ESP32-CAM_MJPEG2SD는 3.1.1 이상, Xiaozhi는 ESP-IDF 6.0.1 이상을 요구한다.
-
-**완제품에서 시작하면 난도가 낮아진다.** Stack-chan은 조립된 CoreS3, AWTRIX NG는 Ulanzi TC001, 열화상 카메라는 M5StickC와 HAT 조합으로 시작할 수 있다. 같은 프로젝트라도 자작 케이스나 자체 PCB로 만들면 난도가 높아진다. 라이선스도 확인할 대상이다. AWTRIX NG, OpenEPaperLink, 신시사이저의 합성 라이브러리는 비상업 용도만 허용한다.
+**보드와 라이선스를 먼저 확인해야 한다.** 블루투스 Classic은 원형 ESP32에만 있어서 BlueRetro의 Classic 패드 연결과 ESPuino의 블루투스 스피커 출력은 ESP32-S3에서 쓸 수 없고, ESP32-S2에는 블루투스가 없다. PSRAM이 필수인 프로젝트(ESPuino, 카메라, 전자책)와 개발환경 버전을 고정한 프로젝트(FabGL, FreeTouchDeck, Xiaozhi)도 있다. 완제품(Stack-chan CoreS3, Ulanzi TC001, M5StickC와 열화상 HAT)으로 시작하면 난도가 낮아진다. AWTRIX NG, OpenEPaperLink, 신시사이저의 합성 라이브러리는 비상업 용도만 허용한다.
 
 [^bt-classic]: Espressif, "Bluetooth Architecture Overview", ESP-IDF Programming Guide. ESP32는 Classic(BR/EDR)과 LE를 모두 지원하고, ESP32-S3와 C3 계열은 LE만 지원한다. https://docs.espressif.com/projects/esp-idf/en/latest/esp32/api-guides/bt-architecture/overview.html
 [^kspace]: Sabine Melanie Räuber, Marta Brigid Maggioni, Francesco Santini, "Lost in k-Space: An Open-Source MR-Physics Escape Room", arXiv:2608.09616, CC BY 4.0. https://arxiv.org/abs/2608.09616
