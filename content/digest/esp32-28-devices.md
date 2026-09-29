@@ -1,13 +1,17 @@
 ---
 title: "ESP32로 만든 28가지 장치: 탁상 로봇부터 위성 수신국까지"
-date: 2026-09-29T12:20:00+09:00
+date: 2026-09-29T13:15:00+09:00
 tags: ["ESP32", "마이크로컨트롤러", "메이커", "오픈소스"]
 categories: ["창작과 문화"]
 summary: "Wi-Fi와 블루투스를 갖춘 마이크로컨트롤러 ESP32로 만든 공개 프로젝트 28개를 사진과 시연 영상으로 소개한다. 대부분의 장치에서 ESP32는 센서와 모터, 화면, 스피커, 무선을 직접 다루고, 음성 인식이나 언어모델 같은 무거운 계산은 서버나 PC가 처리한다. 칩 세대에 따라 블루투스 Classic과 PSRAM 지원이 달라서, 따라 만들려면 프로젝트가 지정한 보드를 먼저 확인해야 한다."
 sidenotes: true
-draft: true
 ShowToc: true
 TocOpen: false
+cover:
+  image: "https://img.seosoyoung.eiaserinnys.me/images/esp32-28-devices/00-cover.jpg"
+  alt: "ESP32로 만든 장치 사진 여섯 장. 표정을 띄운 탁상 로봇, 조명이 켜진 모래 무늬 테이블, 전자종이 날씨판, 열화상 카메라, 인터넷 라디오, 감열 프린터."
+images:
+  - "https://img.seosoyoung.eiaserinnys.me/images/esp32-28-devices/00-cover.jpg"
 ---
 
 <style>
