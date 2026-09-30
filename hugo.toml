@@ -83,3 +83,8 @@ paginate = 10
     name = "소개"
     url = "/about/"
     weight = 50
+  [[menu.main]]
+    identifier = "twitter-archive"
+    name = "X 아카이브"
+    url = "https://seosoyoung.eiaserinnys.me/twitter"
+    weight = 60
