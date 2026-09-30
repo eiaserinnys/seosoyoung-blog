@@ -241,6 +241,19 @@
     window.addEventListener('resize', function () {
       scheduleLayout(120);
     });
+    // Lazy images load after window.load and push the text down; re-place notes when each one arrives.
+    function watchImages() {
+      Array.prototype.forEach.call(document.querySelectorAll('.post-content img'), function (img) {
+        if (!img.complete) {
+          img.addEventListener('load', function () { scheduleLayout(150); });
+        }
+      });
+    }
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', watchImages);
+    } else {
+      watchImages();
+    }
     if (desktopQuery.addEventListener) {
       desktopQuery.addEventListener('change', layoutSidenotes);
     } else if (desktopQuery.addListener) {
