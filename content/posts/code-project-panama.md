@@ -28,7 +28,7 @@ Google은 2024년 4월 공식 블로그에서 Gemini 1.5 Pro의 코드 학습 �
 
 중국 보안 기업의 공정은 규모가 다르다. QI-ANXIN의 ReCopilot은 바이너리 85만여 개에서 함수 1억여 개를 처리해 학습 자료를 만들었고[^6], Tencent의 BinaryAI는 바이너리 함수와 소스 함수 약 1천만 쌍으로 둘을 대응시키는 모델을 학습했다[^7]. 두 공정의 공개된 출처는 Arch Linux, Ubuntu, Debian 패키지 같은 오픈소스다. 소스가 이미 공개된 코드라 새로 배울 구현은 적다. 같은 공정을 상용 바이너리에 적용했다는 공개 기록은 없지만, 공정의 규모는 이미 산업 수준이다.
 
-모델을 다시 학습시키지 않고 사용 중에 구현을 추출한 사례도 있다. 한 개발자는 Claude Opus 4.6과 Ghidra로 상용 코덱 DLL을 분석해, 원본 소스 없이 Rust 인코더와 디코더를 만들고 테스트 52개를 공개했다[^8]. 복원하지 않고 원본 그대로 다른 운영체제에서 실행하는 방식도 있다. 독자 운영체제 Vinix는 Android 호환 계층으로 수정하지 않은 Roblox APK를 사용자명 입력 화면까지 실행했다고 기록했다[^9]. 구현을 몰라도 기존 바이너리를 다른 플랫폼에서 계속 쓸 수 있다는 뜻이다.
+모델을 다시 학습시키지 않고 사용 중에 구현을 추출한 사례도 있다. 한 개발자는 Claude Opus 4.6과 Ghidra로 상용 코덱 DLL을 분석해, 원본 소스 없이 Rust 인코더와 디코더를 만들고 테스트 52개를 공개했다[^8]. 복원하지 않고 원본 그대로 다른 운영체제에서 실행하는 방식도 있다. 독자 운영체제 Vinix는 Android 호환 계층으로 수정하지 않은 Roblox APK를 사용자명 입력 화면까지 실행했다고 기록했다[^9]. 구현을 몰라도 기존 바이너리를 다른 플랫폼에서 일부 실행할 수 있음을 보여준다.
 
 저수준 표현을 함께 학습한 모델이 일반 코딩도 잘하게 되는지는 연구마다 결과가 다르다. IRCoder 연구는 소스 코드와 그 컴파일 중간 표현(LLVM IR) 약 400만 쌍을 더 학습시켜, 여러 언어의 코드 생성 시험에서 평균 정답률을 모델에 따라 0.4에서 2.2%포인트 올렸다[^10]. 반면 Meta의 LLM Compiler는 컴파일러 중심 학습 뒤 일반 Python 코딩 점수가 떨어졌다고 보고했다[^11].
 
@@ -46,7 +46,7 @@ Google은 2024년 4월 공식 블로그에서 Gemini 1.5 Pro의 코드 학습 �
 [^2]: [Bartz v. Anthropic, 문서 554-21](https://storage.courtlistener.com/recap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.554.21.pdf), 2026-01-21 제출. 마지막 주요 갱신이 2024-04-13인 내부 메모이며, 처리 공정과 예상 토큰 수, 비용을 정리한 문서들을 연결해 두었다. 비유는 기존 결과물을 대량으로 모아 학습 자료로 가공하는 공정에 한정하며, 법적 쟁점이 같다는 뜻은 없다.
 [^3]: Bernardo Quintero(VirusTotal), [From Assistant to Analyst: The Power of Gemini 1.5 Pro for Malware Analysis](https://cloud.google.com/blog/topics/threat-intelligence/gemini-for-malware-analysis), Google Cloud 블로그, 2024-04-30. "Code interpretation" 문단. 어떤 바이너리를 얼마나 썼는지는 공개하지 않았다. 같은 글의 WannaCry 분석 시연은 학습이 아닌 추론 사례다.
 [^4]: [Beyond Raw Bytes: Towards Large Malware Language Models](https://www.ndss-symposium.org/ndss-paper/beyond-raw-bytes-towards-large-malware-language-models/), NDSS 2026 ([PDF](https://www.ndss-symposium.org/wp-content/uploads/2026-s103-paper.pdf)). 공개 데이터셋은 악성코드 BODMAS와 SOREL, 정상 바이너리 Assemblage다. 약 4만 9천 개는 32비트 x86, 패킹 해제 등의 조건으로 선별한 뒤의 수이고, 어떤 프로그램으로 구성됐는지는 공개하지 않았다.
-[^5]: freeqaz, [decomp-synth-lifter-v17-full-qwen3.5-9b-lora](https://huggingface.co/freeqaz/decomp-synth-lifter-v17-full-qwen3.5-9b-lora), Hugging Face 모델 카드, 2026-08-31. 교사 모델은 GLM이고, 컴파일 결과를 objdiff로 원본 기계어와 비교하며 최대 8회 고쳤다. 3,032는 도구 호출 단위로 변환한 학습 행의 수이며 LoRA 방식이다. 학습 코퍼스는 비공개이고 이 판은 아직 평가하지 않았다고 적혀 있다. Qwen과 GLM의 제작사가 Halo를 학습했다는 뜻은 없다.
+[^5]: freeqaz, [decomp-synth-lifter-v17-full-qwen3.5-9b-lora](https://huggingface.co/freeqaz/decomp-synth-lifter-v17-full-qwen3.5-9b-lora), Hugging Face 모델 카드, 2026-08-31. 교사 모델은 GLM이고, 컴파일 결과를 objdiff로 원본 기계어와 비교하며 최대 8턴 진행했다. 3,032는 도구 호출 단위로 변환한 학습 행의 수이며 LoRA 방식이다. 학습 코퍼스는 비공개이고 이 판은 아직 평가하지 않았다고 적혀 있다. Qwen과 GLM의 제작사가 Halo를 학습했다는 뜻은 없다.
 [^6]: [ReCopilot: Reverse Engineering Copilot in Binary Analysis](https://arxiv.org/html/2505.16366v1), QI-ANXIN, 2025-05. 11,472개 프로젝트에서 바이너리 855,900개, 함수 101,559,332개. 원시 함수 수이며 고유한 구현 수와 다르다.
 [^7]: [BinaryAI: Binary Software Composition Analysis via Intelligent Binary Source Code Matching](https://arxiv.org/html/2401.11161v1), Tencent Keen Lab, 남방과기대, 2024. Arch Linux와 AUR 공개 소스를 자동 컴파일해 만든 함수 쌍이며, 바이너리에 포함된 오픈소스 라이브러리를 식별하는 것이 목적이다.
 [^8]: John-K, [a1800_codec](https://github.com/John-K/a1800_codec), 2026-02. GeneralPlus A1800.DLL을 Ghidra 12와 ghidra-mcp로 정적 분석했다. 개발자 보고다.
