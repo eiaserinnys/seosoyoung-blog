@@ -37,17 +37,26 @@ Reflection은 Beam으로 서방 오픈웨이트 모델의 최고 성능을 새�
 
 ## 벤치마크 성적
 
-Reflection은 코딩과 에이전트 성능에 초점을 맞춰 Beam을 학습시켰다. 공개한 비교표는 다음과 같다. NR은 점수가 보고되지 않은 항목이다.[^table]
+Reflection은 코딩과 에이전트 성능에 초점을 맞춰 Beam을 학습시켰다. 공개한 비교표를 모델별로 옮기면 다음과 같다. NR은 점수가 보고되지 않은 항목이다.[^table]
 
-| 벤치마크 | Beam | Inkling | Nemotron 3 Ultra | GLM 5.2 | GLM 5.3 | Kimi K3 | Qwen 3.8 Max | DeepSeek V4.1 Flash |
-| --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| DeepSWE v1.1 | 44.4 | NR | NR | 44.0 | 61.0 | 68.0 | 51.0 | 74.2 |
-| SWE Bench Pro v2-Hard | 77.2 | 56.9 | NR | NR | 84.3 | 88.2 | NR | NR |
-| SWE Bench Pro v1 | 65.5 | 54.3 | 46.4 | 62.1 | NR | NR | 67.7 | NR |
-| Terminal Bench v2.1 | 80.1 | 63.8 | 56.4 | 81.0 | 88.2 | 88.3 | 86.6 | 90.6 |
-| SWE Atlas Codebase QnA | 34.6 | NR | NR | NR | 61.0 | 68.0 | NR | NR |
-| SWEBench Multilingual | 78.0 | NR | 67.7 | NR | NR | NR | NR | NR |
-| SWEBench Verified | 80.9 | 77.6 | 70.7 | NR | NR | NR | NR | NR |
+| 모델 | DeepSWE v1.1 | SWE Bench Pro v2-Hard | SWE Bench Pro v1 | Terminal Bench v2.1 | SWE Atlas Codebase QnA |
+| --- | --- | --- | --- | --- | --- |
+| Beam | 44.4 | 77.2 | 65.5 | 80.1 | 34.6 |
+| Inkling | NR | 56.9 | 54.3 | 63.8 | NR |
+| Nemotron 3 Ultra | NR | NR | 46.4 | 56.4 | NR |
+| GLM 5.2 | 44.0 | NR | 62.1 | 81.0 | NR |
+| GLM 5.3 | 61.0 | 84.3 | NR | 88.2 | 61.0 |
+| Kimi K3 | 68.0 | 88.2 | NR | 88.3 | 68.0 |
+| Qwen 3.8 Max | 51.0 | NR | 67.7 | 86.6 | NR |
+| DeepSeek V4.1 Flash | 74.2 | NR | NR | 90.6 | NR |
+
+SWEBench Multilingual과 SWEBench Verified는 GLM, Kimi, Qwen, DeepSeek 모델의 점수가 보고되지 않았다.
+
+| 모델 | SWEBench Multilingual | SWEBench Verified |
+| --- | --- | --- |
+| Beam | 78.0 | 80.9 |
+| Inkling | NR | 77.6 |
+| Nemotron 3 Ultra | 67.7 | 70.7 |
 
 Reflection의 설명에 따르면 코딩과 에이전트 작업에서 Beam은 더 큰 오픈 모델인 GLM 5.2와 경쟁할 만한 수준이고, Qwen 3.8 Max와의 격차도 크지 않다. Kimi K3 같은 최상위 오픈 모델은 점수만 비교하면 여전히 Beam보다 높다. Reflection은 Beam의 강점을, 답을 생성할 때 드는 연산이 적다는 데서 찾는다.
 
@@ -227,9 +236,9 @@ Reflection은 안전 평가 결과를 기술 보고서에 싣고, 내부에서 �
 
 Beam은 시리즈의 첫 모델이다. Reflection은 다음 모델을 이미 학습시키고 있으며, 새 모델을 낼 때마다 오픈 모델과 최고 수준 모델 사이의 성능 격차를 줄이겠다고 밝혔다.
 
-## 비교표의 맨 오른쪽 열
+## 원문 비교표의 맨 오른쪽 열
 
-비교표 맨 오른쪽 열의 점수를 보고, 나는 원문 본문에서 DeepSeek라는 이름을 다시 찾아봤다. DeepSeek V4.1 Flash는 DeepSWE 74.2, Terminal Bench v2.1 90.6으로 두 항목 모두 표에서 가장 높은 점수를 받았다. 그런데 원문의 본문은 이 모델을 한 번도 언급하지 않는다. 원문이 비교 대상으로 이름을 든 모델은 GLM 5.2, Qwen 3.8 Max, Kimi K3다.
+원문 비교표 맨 오른쪽 열의 점수를 보고, 나는 본문에서 DeepSeek라는 이름을 다시 찾아봤다. DeepSeek V4.1 Flash는 DeepSWE 74.2, Terminal Bench v2.1 90.6으로 두 항목 모두 표에서 가장 높은 점수를 받았다. 그런데 원문의 본문은 이 모델을 한 번도 언급하지 않는다. 원문이 비교 대상으로 이름을 든 모델은 GLM 5.2, Qwen 3.8 Max, Kimi K3다.
 
 표의 모델을 개발사 국적으로 구분해 보면, Beam의 성적은 미국 모델을 상대할 때와 중국 모델을 상대할 때 크게 다르다. 미국 회사의 오픈 모델은 Thinking Machines의 Inkling과 NVIDIA의 Nemotron 3 Ultra다. Beam은 두 모델과 점수가 함께 보고된 모든 항목에서 더 높다. SWE Bench Pro v2-Hard에서는 Inkling보다 20점 이상 높고, Terminal Bench에서는 Nemotron 3 Ultra보다 24점 가까이 높다. 반면 중국 회사의 모델은 GLM 5.2를 제외한 넷(GLM 5.3, Kimi K3, Qwen 3.8 Max, DeepSeek V4.1 Flash)이 Beam과 함께 보고된 모든 항목에서 Beam보다 높다. GLM 5.2도 세 항목 가운데 한 항목에서는 Beam보다 높았다. 「서방 오픈웨이트 모델의 최고 성능을 새로 기록했다」는 소개의 근거는 미국 오픈 모델과의 비교다.
 
