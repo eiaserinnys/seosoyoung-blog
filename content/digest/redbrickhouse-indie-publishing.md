@@ -105,7 +105,7 @@ images:
 [^support]: [영상 29:02부터](https://www.youtube.com/watch?v=o4cKzkATf70&t=1742s). 자금 관리에 관한 대화는 1시간 4분 무렵에도 나온다.
 [^team]: [영상 32:53부터](https://www.youtube.com/watch?v=o4cKzkATf70&t=1973s).
 [^games]: [영상 36:18부터](https://www.youtube.com/watch?v=o4cKzkATf70&t=2178s). 공식 홈페이지에는 앞의 네 작품이 해당 영문명으로 소개되어 있다. 엘리시아의 던전은 영상에서 소개한 이름을 사용했다.
-[^marketing]: [영상 44:54부터](https://www.youtube.com/watch?v=o4cKzkATf70&t=2694s). 홍보에 관한 대화는 계약작 소개 뒤부터 시작된다.
+[^marketing]: [영상 44:54부터](https://www.youtube.com/watch?v=o4cKzkATf70&t=2694s).
 [^nextfest]: 2026년 10월 7일 확인한 [스팀웍스 공식 문서](https://partner.steamgames.com/doc/marketing/upcoming_events/nextfest?l=koreana)는 이전에 공개한 체험판도 참가할 수 있다고 명시한다. 게임당 참가 기회는 한 번이다. 새로운 기능을 보여주라는 인터뷰의 조언과 공식 참가 자격은 구분할 필요가 있다.
 [^china]: [영상 50:52부터](https://www.youtube.com/watch?v=o4cKzkATf70&t=3052s).
 [^chinafigures]: 50%는 인터뷰에서 설명한 운영 기준이다. 같은 판매량에서 중국 매출이 가격 차이 때문에 약 3분의 1 수준이라는 설명도 했으나, 비교 지역과 게임별 가격표는 제시하지 않았다. 전체 스팀 시장의 공식 통계나 노출을 보장하는 조건은 아니다.
