@@ -70,7 +70,7 @@ images:
 
 바이킹이 샷건을 개조하며 강해지는 액션 슈팅 게임이다. 사격의 손맛을 구현하는 능력을 보고, 이 팀이 게임을 완성할 수 있다고 믿었다고 했다.
 
-{{< figure src="https://img.seosoyoung.eiaserinnys.me/images/redbrickhouse-indie-publishing/05-badassgard.jpg" alt="BADASSGARD의 1인칭 사격 화면. 보라색 조명의 공간에서 총을 발사한다." caption="[영상 37:40](https://www.youtube.com/watch?v=o4cKzkATf70&t=2260s)." >}}
+{{< figure src="https://img.seosoyoung.eiaserinnys.me/images/redbrickhouse-indie-publishing/05-badassgard.jpg" alt="BADASSGARD에서 캐릭터가 보라색 조명의 공간에서 총을 발사하는 장면." caption="[영상 37:40](https://www.youtube.com/watch?v=o4cKzkATf70&t=2260s)." >}}
 
 ### The Ashen OZ
 
