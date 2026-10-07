@@ -24,6 +24,8 @@ images:
 
 2026년 10월 2일 공개된 중년게이머 김실장 초대석에는 레드브릭하우스의 김혁진 공동대표, 홍지철 공동대표, 이민정 사업 이사가 출연했다. 세 사람은 네오위즈에서 게임 발굴과 투자, 해외 사업을 담당하다가 인디 게임에 집중하는 회사를 설립했다. 인터뷰 당시 계약한 작품은 다섯 개였다.[^intro]
 
+{{< figure src="https://img.seosoyoung.eiaserinnys.me/images/redbrickhouse-indie-publishing/02-interview.jpg" alt="김혁진 공동대표가 마이크 앞에서 인디 게임 글로벌 퍼블리싱 경력을 소개한다." caption="김혁진 공동대표. [영상 01:40](https://www.youtube.com/watch?v=o4cKzkATf70&t=100s)." >}}
+
 김혁진이 가장 먼저 설명한 퍼블리셔의 가치는 여러 프로젝트를 경험하며 얻은 판단 능력이다. 인디 개발자는 한 게임에 3년이나 4년을 쓰는 동안 그 프로젝트 하나를 경험한다. 퍼블리셔는 같은 기간 여러 게임의 성공과 실패를 관찰하므로, 개발팀이 필요한 시점에 결정을 내리도록 도울 수 있다. 스팀, 플레이스테이션, 닌텐도에서 각각 무엇을 준비해야 하는지도 그 경험에 포함된다.
 
 개발자가 디스코드 운영과 레딧 홍보의 필요성을 알아도 개발과 함께 꾸준히 수행하기는 어렵다. 담당자를 채용한 뒤에도 콘텐츠 품질이나 업무의 우선순위를 조율해야 한다. 레드브릭하우스는 이런 일을 함께 맡고, 회사 형태를 갖추지 못한 학생 팀에는 창업을 돕는 역할까지 한다.
@@ -42,6 +44,8 @@ images:
 
 자취방을 구할 때 임대차 계약서를 확인하고 수도, 전등, 보일러를 점검하는 일도 지원했다. 법인 설립을 도울 때는 정관을 작성하고 계약 조항의 뜻을 설명한다. 건강이 나쁘면 먼저 병원에 가도록 돕는다. 최근 계약한 1인 개발자가 군 복무를 시작하자, 김혁진은 면회도 가겠다고 했다.[^support]
 
+{{< figure src="https://img.seosoyoung.eiaserinnys.me/images/redbrickhouse-indie-publishing/03-developer-support.jpg" alt="김실장과 김혁진이 개발자 지원을 이야기한다. 자막에는 보일러까지 확인한다는 발언이 표시되어 있다." caption="[영상 29:30](https://www.youtube.com/watch?v=o4cKzkATf70&t=1770s)." >}}
+
 개발 자금이라고 생각하는 돈의 규모도 사람마다 달랐다. 사무실에서 잠을 자던 개발자는 어릴 때부터 모아 둔 세뱃돈을 개발비로 쓰려고 했다. 홍지철은 그 사례를 보고 자신과 개발자가 생각하는 돈의 규모가 크게 다르다는 것을 느꼈다고 했다.
 
 개발 도중 자금이 부족해지면 직접 투자하거나 다른 투자자를 소개하고, 정부 지원사업을 안내한다. 해외 사업 계약으로 자금을 확보하는 방법도 활용한다. 투자금을 받은 팀에는 매월 얼마를 어떻게 사용할지 설명한다. 대표에게만 설명하는 대신 개발자들도 함께 만나 그 돈의 성격을 알려 준다. 팀 전체가 그 돈을 어떻게 써야 하는지 이해해야 하기 때문이다.
@@ -56,11 +60,35 @@ images:
 
 영상에서 소개한 계약작은 다음 다섯 작품이다.[^games]
 
-- **VOID DIVER: Escape from the Abyss**: 크툴루 신화를 바탕으로 도심의 심연을 탐험하고 유물을 수거하는 협동 탈출 게임이다. 김혁진은 초기부터 개발진과 이야기를 나눴으며, 실제 빌드의 완성도와 세부 표현을 높이 평가했다.
-- **BADASSGARD**: 바이킹이 샷건을 개조하며 강해지는 액션 슈팅 게임이다. 사격의 손맛을 구현하는 능력을 보고, 이 팀이 게임을 완성할 수 있다고 믿었다고 했다.
-- **The Ashen OZ**: 크리티카를 만들었던 개발자들이 참여한 작품이다. 영상에서 김혁진은 미술과 액션을 칭찬했고, 직장을 그만두고 오랫동안 개발을 계속하는 팀의 의지를 높이 평가했다.
-- **Pilot 6174: Orbital Survival**: 우주선 조종석에서 혼자 임무를 수행하는 게임이다. 영상에서는 오비탈 서바이벌로 소개했다. 우주에 깊은 관심을 가진 대학생의 1인 개발 작품이라는 점이 인상적이었다고 했다.
-- **엘리시아의 던전**: 문자로 상황을 제시하고 선택에 따라 결과가 달라지는 던전 탐험 게임이다. 개발자는 2019년부터 외주와 자체 개발을 병행했고, 최근에는 엔진을 변경해 작업을 다시 진행하고 있다고 소개했다.
+### VOID DIVER: Escape from the Abyss
+
+크툴루 신화를 바탕으로 도심의 심연을 탐험하고 유물을 수거하는 협동 탈출 게임이다. 김혁진은 초기부터 개발진과 이야기를 나눴으며, 실제 빌드의 완성도와 세부 표현을 높이 평가했다.
+
+{{< figure src="https://img.seosoyoung.eiaserinnys.me/images/redbrickhouse-indie-publishing/04-void-diver.jpg" alt="VOID DIVER에서 도심의 도로를 배경으로 여러 캐릭터가 적과 싸우는 장면." caption="[영상 36:40](https://www.youtube.com/watch?v=o4cKzkATf70&t=2200s)." >}}
+
+### BADASSGARD
+
+바이킹이 샷건을 개조하며 강해지는 액션 슈팅 게임이다. 사격의 손맛을 구현하는 능력을 보고, 이 팀이 게임을 완성할 수 있다고 믿었다고 했다.
+
+{{< figure src="https://img.seosoyoung.eiaserinnys.me/images/redbrickhouse-indie-publishing/05-badassgard.jpg" alt="BADASSGARD에서 캐릭터가 보라색 조명의 공간에서 총을 발사하는 장면." caption="[영상 37:40](https://www.youtube.com/watch?v=o4cKzkATf70&t=2260s)." >}}
+
+### The Ashen OZ
+
+크리티카를 만들었던 개발자들이 참여한 작품이다. 영상에서 김혁진은 미술과 액션을 칭찬했고, 직장을 그만두고 오랫동안 개발을 계속하는 팀의 의지를 높이 평가했다.
+
+{{< figure src="https://img.seosoyoung.eiaserinnys.me/images/redbrickhouse-indie-publishing/06-the-ashen-oz.jpg" alt="The Ashen OZ에서 캐릭터가 녹색 조명의 공간에서 뛰어오르는 횡스크롤 액션 장면." caption="[영상 38:20](https://www.youtube.com/watch?v=o4cKzkATf70&t=2300s)." >}}
+
+### Pilot 6174: Orbital Survival
+
+우주선 조종석에서 혼자 임무를 수행하는 게임이다. 영상에서는 오비탈 서바이벌로 소개했다. 우주에 깊은 관심을 가진 대학생의 1인 개발 작품이라는 점이 인상적이었다고 했다.
+
+{{< figure src="https://img.seosoyoung.eiaserinnys.me/images/redbrickhouse-indie-publishing/07-pilot-6174.jpg" alt="Pilot 6174의 우주선 조종석. 레이더, 스위치와 계기판이 보인다." caption="[영상 39:20](https://www.youtube.com/watch?v=o4cKzkATf70&t=2360s)." >}}
+
+### 엘리시아의 던전
+
+문자로 상황을 제시하고 선택에 따라 결과가 달라지는 던전 탐험 게임이다. 개발자는 2019년부터 외주와 자체 개발을 병행했고, 최근에는 엔진을 변경해 작업을 다시 진행하고 있다고 소개했다.
+
+{{< figure src="https://img.seosoyoung.eiaserinnys.me/images/redbrickhouse-indie-publishing/08-dungeon-of-elysia.jpg" alt="엘리시아의 던전의 세로형 화면. 탐험할 던전과 목표, 귀환 조건을 글자로 선택한다." caption="[영상 40:40](https://www.youtube.com/watch?v=o4cKzkATf70&t=2440s)." >}}
 
 ## 홍보가 스팀 방문으로 이어지려면
 
@@ -77,6 +105,8 @@ images:
 이민정은 중국에서 이용자를 만나는 서비스와 홍보 방법이 글로벌 시장과 다르므로 현지 파트너가 중요하다고 설명했다. 디스코드와 레딧 등에서 하던 활동을 그대로 적용하기 어렵고, 인디 게임에 특화된 현지 퍼블리셔들이 이미 활동하고 있다는 것이다.[^china]
 
 김혁진은 중국에서 특정 시기에 많은 이용자의 관심을 확보하면 스팀 노출이 늘고, 이후 서구권 이용자도 관심을 갖는 경우가 있다고 했다. 레드브릭하우스가 초기 중국 위시리스트 비중을 약 50%로 생각하는 이유도 여기에 있다. 지역별 가격 차이로 매출은 달라지지만, 중국 이용자의 참여가 초기 이용 지표를 개선하는 데 도움이 된다고 설명했다.[^chinafigures]
+
+{{< figure src="https://img.seosoyoung.eiaserinnys.me/images/redbrickhouse-indie-publishing/09-china-strategy.jpg" alt="영상 제작진의 화살표 그래픽. 김혁진이 원하는 시기에 게임 노출을 늘리는 전략을 설명하는 자막이 있다." caption="[영상 51:10](https://www.youtube.com/watch?v=o4cKzkATf70&t=3070s)." >}}
 
 서구권에서 먼저 관심을 받은 뒤 중국으로 알려지는 반대 사례도 있다고 했다. 이 전략에서는 중국 매출과 함께, 출시 초기에 받은 관심이 다른 지역의 판매에도 도움이 되는지 살펴야 한다.
 
@@ -97,7 +127,7 @@ images:
 - 중년게이머 김실장, 2026년 10월 2일, 75분 10초. [원본 영상](https://www.youtube.com/watch?v=o4cKzkATf70).
 - 게임명과 공개 사업 내용: [레드브릭하우스 공식 홈페이지](https://redbrickhouse.gg/).
 - 체험판 참가 조건: [Steam Next Fest 공식 문서](https://partner.steamgames.com/doc/marketing/upcoming_events/nextfest?l=koreana).
-- 커버는 원본 영상의 공식 썸네일을 인용했다.
+- 커버는 원본 영상의 공식 썸네일을, 본문 이미지는 원본 영상의 해당 장면을 인용했다.
 
 [^intro]: [영상 02:33부터](https://www.youtube.com/watch?v=o4cKzkATf70&t=153s). 계약작 수는 인터뷰 당시의 설명이다.
 [^next]: [영상 08:43부터](https://www.youtube.com/watch?v=o4cKzkATf70&t=523s).
