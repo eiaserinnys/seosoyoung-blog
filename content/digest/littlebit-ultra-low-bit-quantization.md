@@ -62,7 +62,7 @@ $$\mathbf{W} \approx \mathbf{U}\mathbf{V}^{\top}$$
 
 다음으로 $\mathbf{U}$와 $\mathbf{V}$의 원소를 부호만 남긴 $\mathbf{U}_{sign}$과 $\mathbf{V}_{sign}$으로 바꾼다. 원소 하나를 저장하는 데 1비트가 든다. 이진화로 잃은 크기 정보는 16비트 스케일 벡터 세 개가 보완한다. 이 벡터 세 개는 행 스케일 $\mathbf{h}$, 열 스케일 $\mathbf{g}$, 잠재 스케일 $\boldsymbol{\ell}$이다. $\mathbf{h}$에는 출력 차원마다, $\mathbf{g}$에는 입력 차원마다 값이 하나씩 있다. 잠재 스케일은 LittleBit이 새로 추가한 것으로, $r$개의 잠재 차원이 각각 얼마나 중요한지를 학습한다. 세 스케일을 반영한 근사 가중치는 다음과 같다.
 
-$$\small \widehat{\mathbf{W}}_{pri} = \mathrm{diag}(\mathbf{h})\,\mathbf{U}_{sign}\,\mathrm{diag}(\boldsymbol{\ell})\,\mathbf{V}_{sign}^{\top}\,\mathrm{diag}(\mathbf{g})$$
+$$\begin{aligned}\widehat{\mathbf{W}}_{pri} &= \mathrm{diag}(\mathbf{h})\,\mathbf{U}_{sign}\,\mathrm{diag}(\boldsymbol{\ell}) \\ &\qquad \mathbf{V}_{sign}^{\top}\,\mathrm{diag}(\mathbf{g})\end{aligned}$$
 
 추론할 때 이 행렬을 실제로 만들 필요는 없다. 입력 $\mathbf{X}$에 스케일을 원소별로 곱하는 연산과 이진 행렬을 곱하는 연산을 번갈아 수행하면 같은 출력을 얻는다. 중간 결과를 편의상 $\mathbf{Z}$로 적으면 계산은 두 단계다.
 
