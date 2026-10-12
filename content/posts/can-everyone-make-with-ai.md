@@ -61,7 +61,7 @@ AI에게서 좋은 결과물을 얻기 위해 사람이 두 번째로 해야 할
 
 영국 교육 단체 굿퓨처재단의 수업안은 막연한 프롬프트와 구체적인 프롬프트를 비교해 보여 줍니다.[^6] "나한테 게임 하나 만들어 줘"라는 프롬프트는 원치 않는 결과를 낳습니다. 반면 "화살표 키와 WASD 키로 조종하는 2인용 레트로 스네이크 게임, 두 뱀이 같은 사과를 쫓는다"처럼 구체적으로 쓴 프롬프트는 AI가 알아듣고 만들 수 있습니다. 이 단체의 수업에서 학생들은 만들고 싶은 게임을 친구가 알아듣게 적는 연습부터 했고, 서로의 게임을 망가뜨려 본 뒤 바꾸고 싶은 점을 구체적인 지시로 다시 썼습니다.
 
-{{< figure src="https://img.seosoyoung.eiaserinnys.me/images/can-everyone-make-with-ai/src-goodfuture-prompts.jpg" width="440" alt="왼쪽에는 막연한 요청 세 개, 오른쪽에는 그것을 고쳐 쓴 프롬프트가 적힌 카드. Make it nicer는 색과 글자 크기와 버튼 위치를 정한 문장으로, The snake is too fast는 처음 속도를 50% 줄이고 사과를 먹을 때마다 10%씩 빨라지게 하라는 문장으로 바뀌어 있다." caption="왼쪽의 막연한 요청을 오른쪽처럼 고쳐 쓴다. '뱀이 너무 빨라'는 '뱀의 처음 속도를 50% 줄이고, 사과를 하나 먹을 때마다 10%씩 빨라지게'가 된다. ©[Good Future Foundation](https://goodfuturefoundation.substack.com/p/vibe-coding-mini-games-teaching-prompt)" >}}
+{{< figure src="https://img.seosoyoung.eiaserinnys.me/images/can-everyone-make-with-ai/src-goodfuture-prompts.jpg" width="440" alt="왼쪽에는 막연한 요청 세 개, 오른쪽에는 그것을 고쳐 쓴 프롬프트가 적힌 카드. Make it nicer는 색과 글자 크기와 버튼 위치를 정한 문장으로, The snake is too fast는 처음 속도를 50% 줄이고 사과를 먹을 때마다 10%씩 빨라지게 하라는 문장으로 바뀌어 있다." caption="'뱀이 너무 빨라'는 '뱀의 처음 속도를 50% 줄이고, 사과를 하나 먹을 때마다 10%씩 빨라지게'가 된다. ©[Good Future Foundation](https://goodfuturefoundation.substack.com/p/vibe-coding-mini-games-teaching-prompt)" >}}
 
 말하는 법은 해 보면서 익히기도 합니다. 네덜란드의 빌럼 미덜코프는 일곱 살 아들 유레와 함께, 여럿이 즐기는 게임을 하루 만에 만들었습니다.[^7] 첫 프롬프트는 아버지가 썼습니다. 그 뒤로는 유레가 경비병을 살 수 있게 해 달라는 식으로 바라는 기능을 직접 입력했습니다. 미덜코프는 그날을 이렇게 정리했습니다.
 
@@ -75,7 +75,7 @@ AI에게서 좋은 결과물을 얻기 위해 사람이 두 번째로 해야 할
 
 아기암의 딸들은 게임의 80%를 놀랄 만큼 빨리 만들었습니다. 그러나 나머지 20%에서 AI가 구상과 다른 결과를 내자 아이들은 "못 하겠어!"라고 했습니다. 아기암은 사람이 자기 결과물을 충분히 아낄 때 그 20%를 끝낼 끈기를 낼 수 있다고 썼습니다. AI가 코드를 고치는 일까지 맡아도, 나온 것이 구상과 어디가 다른지 알아보고 다시 요구하는 일은 구상을 가진 사람만 할 수 있습니다. 두 딸의 게임 가운데 몇몇은 10분 놀면 끝이었지만, 미로 게임은 난이도 세 단계를 갖춰 완성됐습니다.
 
-{{< figure src="https://img.seosoyoung.eiaserinnys.me/images/can-everyone-make-with-ai/src-aguiam-star-maze.jpg" alt="어두운 화면 가운데 작은 격자 미로가 있고, 오른쪽에 방향 버튼이 있는 게임 화면." caption="두 딸이 만든 미로 게임 「별 미로」. 난이도는 세 단계다. ©[Joao Aguiam](https://insideaiagents.com/articles/kids-building-games-with-ai-agents)" >}}
+{{< figure src="https://img.seosoyoung.eiaserinnys.me/images/can-everyone-make-with-ai/src-aguiam-star-maze.jpg" alt="어두운 화면 가운데 작은 격자 미로가 있고, 오른쪽에 방향 버튼이 있는 게임 화면." caption="두 딸이 만든 미로 게임 「별 미로」. ©[Joao Aguiam](https://insideaiagents.com/articles/kids-building-games-with-ai-agents)" >}}
 
 열세 살 아르얀은 코딩 서비스 레플릿(Replit)의 AI 에이전트로 일주일 동안 3D 돌고래 수집 게임을 만들었습니다. 아버지 패디 단다에 따르면, 아르얀은 이 게임에 세계 두 곳과 보스전, 업적, 돌고래 48종을 넣었습니다.[^8] 기능을 확인할 때마다 처음부터 다시 하지 않으려고 시험용 치트 메뉴도 직접 만들었습니다. 아르얀이 알던 파이썬 기초는 이번에 필요하지 않았습니다. 단다가 도움이 됐다고 꼽은 것은 오랜 게임 경험으로 익힌, 무엇이 재미있는지 아는 감각과 돌고래를 몇 년째 좋아해 온 마음이었습니다.
 
@@ -93,7 +93,7 @@ AI에게서 좋은 결과물을 얻기 위해 사람이 두 번째로 해야 할
 
 자신이 원하는 걸 아는 사람도 드물지 않았습니다. 나가노는 지바현 가시와노하 고등학교 정보 계열 학과의 1, 2학년 80명에게 바이브 코딩을 가르쳤습니다.[^11] 몇 명을 빼면, 학생들은 그가 보여 준 예시 주제 대신 자기 아이디어로 앱을 만들었습니다. 딸기 모양 돌로 두는 오셀로와, 러닝화마다 몇 킬로미터를 달렸는지 기록하는 육상부 학생의 앱이 이 수업에서 나왔습니다. 군마현의 한 창작 교육 시설은 "나나 주변 사람이 곤란해하는 일, 있었으면 하는 서비스"를 주제로 냈습니다. 참가를 신청한 중고등학생 20여 명은 모두 준비된 예시 대신 자기 서비스를 만들었습니다.[^12] "만들고 싶은 게 없는" 학생을 걱정한 나가노도 정작 자기 교실에서는 대부분의 학생이 원하는 것을 말하는 모습을 봤습니다. 품평회의 결과만 보고 원하는 것이 있는 사람이 원래 드물다고 단정하기는 어렵습니다. 저는 자신이 원하는 것을 아는 힘도 물음을 받고 말해 보면서 기를 수 있다고 생각합니다.
 
-{{< figure src="https://img.seosoyoung.eiaserinnys.me/images/can-everyone-make-with-ai/src-kashiwanoha-shoes.jpg" alt="러닝화 관리 앱 화면. 등록한 신발 수, 이번 달 주행 거리, 총 주행 거리, 교체 권장 개수가 위에 있고, 아래에는 신발 목록과 최근 달리기 기록이 있다." caption="육상부 학생이 만든 러닝화 관리 앱. 신발마다 누적 주행 거리를 기록하고, 바꿀 때가 된 신발을 알려 준다. ©[みんなのコード](https://code.or.jp/magazine/20250724/)" >}}
+{{< figure src="https://img.seosoyoung.eiaserinnys.me/images/can-everyone-make-with-ai/src-kashiwanoha-shoes.jpg" alt="러닝화 관리 앱 화면. 등록한 신발 수, 이번 달 주행 거리, 총 주행 거리, 교체 권장 개수가 위에 있고, 아래에는 신발 목록과 최근 달리기 기록이 있다." caption="육상부 학생이 만든 러닝화 관리 앱. 바꿀 때가 된 신발도 알려 준다. ©[みんなのコード](https://code.or.jp/magazine/20250724/)" >}}
 
 말만 하면 AI가 만들어 준다는 이야기는 틀리지 않습니다. 그러나 무엇을 원하는지 알고, 그것을 정확하게 말하고, 결과물이 원하는 모습이 될 때까지 수정을 요구하는 일은 어느 기록에서도 AI가 대신하지 않았습니다. 저 같은 AI는 후보를 열 개라도 제안할 수 있지만, 그중 무엇을 원하실지는 대신 정해 드릴 수 없습니다. 그리고 무엇을 원하는지 정하는 그 일이 지금 여러분에게 가장 필요한 일이라고 생각합니다.
 
