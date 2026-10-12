@@ -9,7 +9,7 @@ ShowToc: true
 TocOpen: false
 cover:
   image: "https://img.seosoyoung.eiaserinnys.me/images/universal-textual-teaching/01-teaser.png"
-  alt: "논문의 그림 1. 왼쪽에는 학생과 선생의 상호작용이 반복되는 과정이 그려져 있다. 먼저 학생이 문제를 푼다(attempt). Prompter는 채점(Evaluation) 결과를 바탕으로 문제점을 진단하고(diagnose), 선생에게 지시한다(Instruct). 선생은 그 지시에 따라 학생을 가르친다(Teach). 이 상호작용 기록을 Synthesizer가 모아 Textual Primer(과제 지식, 추론 전략, 실패 회피)를 만들고, Primer를 원래 학생에게 적용하고(Apply) 다른 학생들에게 전이한다(Transfer). 오른쪽 막대그래프는 목표 학생 Qwen3.6-27B의 정확도다. Primer가 없을 때 Qwen3.6-27B의 정확도는 KernelBench에서 9.2%, 수학에서 34.3%다. DeepSeek V4 Pro가 선생이고 Qwen3.6-27B가 학생인 조합에서 만든 Primer를 적용하면 정확도는 각각 50.0%와 62.4%가 된다. DeepSeek V4 Pro가 선생이고 DeepSeek V4 Flash가 학생인 조합의 Primer를 적용하면 각각 41.2%와 60.1%가 된다. Claude Opus 5가 선생이고 DeepSeek V4 Flash가 학생인 조합의 Primer를 적용하면 각각 51.0%와 65.8%가 된다. 출처: Lu & Wang, arXiv:2610.12114"
+  alt: "논문의 그림 1. 왼쪽에는 UTT의 순환이 그려져 있다. 학생이 문제를 풀면 Prompter가 채점 결과를 진단해 선생에게 지시하고, 선생이 학생을 가르친다. Synthesizer는 이 기록을 모아 Primer를 만들고, Primer는 원래 학생과 다른 학생들에게 적용된다. 오른쪽 막대그래프는 세 조합에서 만든 Primer를 Qwen3.6-27B에 적용한 정확도다. KernelBench는 9.2%에서 41.2%와 51.0% 사이로, 수학은 34.3%에서 60.1%와 65.8% 사이로 올랐다. 출처: Lu & Wang, arXiv:2610.12114"
 images:
   - "https://img.seosoyoung.eiaserinnys.me/images/universal-textual-teaching/01-teaser.png"
 ---
@@ -75,20 +75,28 @@ API 응답의 무작위성을 줄이기 위해 모든 모델이 문제마다 답
 
 표 1은 조합마다 만든 Primer를 원래 학생과 다른 학생에게 각각 적용한 결과를 보여 준다. 괄호 안의 수는 Primer 없이 풀었을 때 대비 상승 폭(%포인트)이고, 동그라미 숫자는 아래 설명에서 쓰는 실험 번호다.[^pool]
 
-| 지표 | Primer를 만든 조합 | 선생 점수 | Flash에 적용 | Qwen에 적용 |
-|---|---|---|---|---|
-| KernelBench 정확도(%) | Primer 없음 | | 9.4 | 9.2 |
-| | Pro→Flash | 19.6 | 48.6 (+39.2) ① | 41.2 (+32.0) ③ |
-| | Pro→Qwen | 19.6 | 43.8 (+34.4) ④ | 50.0 (+40.8) ② |
-| | Opus→Flash | 36.0 | 48.2 (+38.8) ⑤ | 51.0 (+41.8) ⑥ |
-| KernelBench Fast₁(%) | Primer 없음 | | 9 | 12 |
-| | Pro→Flash | 20 | 35 (+26) ① | 37 (+25) ③ |
-| | Pro→Qwen | 20 | 30 (+21) ④ | 32 (+20) ② |
-| | Opus→Flash | 41 | 39 (+30) ⑤ | 22 (+10) ⑥ |
-| Omni-MATH-2 정확도(%) | Primer 없음 | | 27.6 | 34.3 |
-| | Pro→Flash | 51.4 | 51.7 (+24.1) ① | 60.1 (+25.8) ③ |
-| | Pro→Qwen | 51.4 | 43.7 (+16.1) ④ | 62.4 (+28.1) ② |
-| | Opus→Flash | 92.5 | 46.6 (+19.0) ⑤ | 65.8 (+31.5) ⑥ |
+| KernelBench 정확도 | 선생 | Flash에 적용 | Qwen에 적용 |
+|---|---|---|---|
+| Primer 없음 | | 9.4 | 9.2 |
+| Pro→Flash | 19.6 | 48.6&nbsp;(+39.2)&nbsp;① | 41.2&nbsp;(+32.0)&nbsp;③ |
+| Pro→Qwen | 19.6 | 43.8&nbsp;(+34.4)&nbsp;④ | 50.0&nbsp;(+40.8)&nbsp;② |
+| Opus→Flash | 36.0 | 48.2&nbsp;(+38.8)&nbsp;⑤ | 51.0&nbsp;(+41.8)&nbsp;⑥ |
+
+| KernelBench Fast₁ | 선생 | Flash에 적용 | Qwen에 적용 |
+|---|---|---|---|
+| Primer 없음 | | 9 | 12 |
+| Pro→Flash | 20 | 35&nbsp;(+26)&nbsp;① | 37&nbsp;(+25)&nbsp;③ |
+| Pro→Qwen | 20 | 30&nbsp;(+21)&nbsp;④ | 32&nbsp;(+20)&nbsp;② |
+| Opus→Flash | 41 | 39&nbsp;(+30)&nbsp;⑤ | 22&nbsp;(+10)&nbsp;⑥ |
+
+| Omni-MATH-2 정확도 | 선생 | Flash에 적용 | Qwen에 적용 |
+|---|---|---|---|
+| Primer 없음 | | 27.6 | 34.3 |
+| Pro→Flash | 51.4 | 51.7&nbsp;(+24.1)&nbsp;① | 60.1&nbsp;(+25.8)&nbsp;③ |
+| Pro→Qwen | 51.4 | 43.7&nbsp;(+16.1)&nbsp;④ | 62.4&nbsp;(+28.1)&nbsp;② |
+| Opus→Flash | 92.5 | 46.6&nbsp;(+19.0)&nbsp;⑤ | 65.8&nbsp;(+31.5)&nbsp;⑥ |
+
+*표 1. 조합마다 만든 Primer를 Flash와 Qwen에 적용한 결과. 첫 열은 Primer를 만든 선생→원래 학생 조합이고, 선생 열은 그 선생의 점수다. 단위는 %다. 출처: Lu & Wang, arXiv:2610.12114*
 
 원래 학생에게 적용한 결과(①, ②)부터 보자. Pro→Flash 조합으로 만든 Primer는 Flash의 KernelBench 정확도를 9.4%에서 48.6%로, Fast₁을 9%에서 35%로, 수학 정확도를 27.6%에서 51.7%로 높였다. 같은 Pro를 선생으로 삼아 Qwen용 Primer를 새로 만들자 Qwen의 점수는 같은 세 지표에서 50.0%, 32%, 62.4%가 됐다. 연구진은 이 결과가 UTT의 효과를 보여 주며, 계열이 다른 학생에게도 UTT를 적용할 수 있다는 근거라고 해석했다.
 
@@ -216,7 +224,7 @@ GPU 커널 Primer(Pro→Flash)는 출력 형식에 관한 요구로 시작한다
 
 ## 가장 의외였던 숫자
 
-표 1의 선생 점수 칸을 학생 점수와 비교하면 의외의 결과가 나온다. KernelBench에서 Pro의 정확도는 19.6%였는데, Pro가 만든 Primer를 받은 Flash는 48.6%, Qwen은 50.0%를 기록했다. 그림 3의 KernelBench Pro→Flash 유지 부분집합에서는 차이가 더 크다. 그 문제들에서 Pro는 17.0%를 맞혔고, Primer를 받은 Flash는 74.0%를 맞혔다. Primer를 받은 학생의 정확도가 선생 정확도의 네 배 이상이었다. 수학에서도 Primer를 받은 Flash의 정확도(51.7%)가 Pro(51.4%)보다 조금 높았다.
+표 1의 선생 열을 학생 점수와 비교하면 의외의 결과가 나온다. KernelBench에서 Pro의 정확도는 19.6%였는데, Pro가 만든 Primer를 받은 Flash는 48.6%, Qwen은 50.0%를 기록했다. 그림 3의 KernelBench Pro→Flash 유지 부분집합에서는 차이가 더 크다. 그 문제들에서 Pro는 17.0%를 맞혔고, Primer를 받은 Flash는 74.0%를 맞혔다. Primer를 받은 학생의 정확도가 선생 정확도의 네 배 이상이었다. 수학에서도 Primer를 받은 Flash의 정확도(51.7%)가 Pro(51.4%)보다 조금 높았다.
 
 이 결과를 설명할 수 있는 이유를 두 가지 생각해 봤다. 첫째, UTT는 채점을 통과한 선생의 시범만 보존한다. 선생이 어떤 문제를 다섯 번 풀어 한 번 맞혔다면, Primer에는 그 한 번의 성공만 반영된다. 따라서 Primer는 선생의 평균 실력을 반영한다기보다 선생이 성공했을 때 쓴 방법을 모은 기록이다. 둘째, KernelBench Primer의 앞부분은 커널 작성 지식보다 출력 형식과 토큰 예산 관리에 할애돼 있다. 공식 예시 하나만 보여 준 one-shot 조건에서도 Flash는 9.4%에서 39.2%로, Qwen은 9.2%에서 45.8%로 올랐다. 나는 이 결과를 근거로, Primer 없는 학생이 KernelBench에서 틀린 문제 가운데 상당수가 형식 오류나 출력 잘림으로 틀렸다고 추정한다. 이 추정이 맞다면 KernelBench에서 Primer는 GPU 프로그래밍 지식보다 이 채점 환경에서 실패하지 않는 요령을 더 많이 전달했다.
 
