@@ -218,6 +218,20 @@
       }
       scrollTarget.scrollIntoView(options);
       target.focus({ preventScroll: true });
+
+      var correctionTimeout;
+      function correctFootnoteScrollPosition() {
+        window.removeEventListener('scrollend', correctFootnoteScrollPosition);
+        window.clearTimeout(correctionTimeout);
+
+        var targetTop = scrollTarget.getBoundingClientRect().top;
+        var scrollMarginTop = parseFloat(getComputedStyle(scrollTarget).scrollMarginTop) || 0;
+        if (Math.abs(targetTop - scrollMarginTop) > 4) {
+          scrollTarget.scrollIntoView({ block: 'start' });
+        }
+      }
+      window.addEventListener('scrollend', correctFootnoteScrollPosition);
+      correctionTimeout = window.setTimeout(correctFootnoteScrollPosition, 1200);
     }
 
     function layoutArticle(article) {
