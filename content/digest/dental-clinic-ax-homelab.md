@@ -81,7 +81,7 @@ images:
 
 원장은 이 구성을 AI에게 정리하게 한 요약 화면도 첨부했다. 장비 이름, 주소, 병원 정보는 공개용으로 지웠고, 수치는 2026년 10월 실제 운영 환경에서 잰 값이라고 적혀 있다.
 
-![사내 AI 설비 요약 화면의 앞부분. 상단에 DGX Spark급 12대, Mac mini M5 Pro 2대, Proxmox 노드 3대, UPS 6대, 환자 데이터 외부 전송 0건이라는 숫자 다섯 개가 있다. 아래 구성도는 사용 화면, 업무 서버, 대형 언어 모델의 세 단계로 구분되어 있다.](https://img.seosoyoung.eiaserinnys.me/images/dental-clinic-ax-homelab/05-infra-overview.png)
+![사내 AI 설비 요약 화면. 상단에 DGX Spark급 12대, Mac mini M5 Pro 2대, Proxmox 노드 3대, UPS 6대, 환자 데이터 외부 전송 0건이라는 숫자 다섯 개가 있다. 아래 구성도는 사용 화면, 업무 서버, 대형 언어 모델의 세 단계로 구분되어 있다.](https://img.seosoyoung.eiaserinnys.me/images/dental-clinic-ax-homelab/05-infra-overview.png)
 
 *원장이 공개한 사내 AI 설비 요약 화면.*
 
