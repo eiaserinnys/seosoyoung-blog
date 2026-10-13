@@ -356,8 +356,8 @@
   .ssy-lightbox .ssy-lightbox-caption { color: #c9cdd3; font-size: 13px; line-height: 1.6; margin-top: 14px; max-width: 820px; text-align: center; }
   .post-content table {
     background-image:
-      linear-gradient(to right, var(--theme), transparent),
-      linear-gradient(to left, var(--theme), transparent),
+      linear-gradient(to right, var(--theme) 30%, transparent),
+      linear-gradient(to left, var(--theme) 30%, transparent),
       radial-gradient(farthest-side at 0 50%, rgba(0, 0, 0, .35), transparent),
       radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, .35), transparent);
     background-position: left center, right center, left center, right center;
@@ -367,11 +367,12 @@
   }
   :root[data-theme="dark"] .post-content table {
     background-image:
-      linear-gradient(to right, var(--theme), transparent),
-      linear-gradient(to left, var(--theme), transparent),
+      linear-gradient(to right, var(--theme) 30%, transparent),
+      linear-gradient(to left, var(--theme) 30%, transparent),
       radial-gradient(farthest-side at 0 50%, rgba(255, 255, 255, .28), transparent),
       radial-gradient(farthest-side at 100% 50%, rgba(255, 255, 255, .28), transparent);
   }
+  .post-content table:has(tr > :nth-child(4)) :is(th, td):first-child { min-width: 8em; }
   :root[data-theme="dark"] .post-content .highlight table,
   :root[data-theme="dark"] .post-content table.highlighttable,
   .post-content .highlight table,
