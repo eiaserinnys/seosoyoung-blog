@@ -218,6 +218,27 @@
       }
       scrollTarget.scrollIntoView(options);
       target.focus({ preventScroll: true });
+
+      var correctionTimeout;
+      var cleanupTimeout;
+      function correctFootnoteScrollPosition() {
+        var targetTop = scrollTarget.getBoundingClientRect().top;
+        var scrollMarginTop = parseFloat(getComputedStyle(scrollTarget).scrollMarginTop) || 0;
+        if (Math.abs(targetTop - scrollMarginTop) > 4) {
+          scrollTarget.scrollIntoView({ block: 'start' });
+        }
+      }
+      function finishFootnoteScrollCorrection() {
+        correctFootnoteScrollPosition();
+        window.removeEventListener('scrollend', finishFootnoteScrollCorrection);
+        window.clearTimeout(correctionTimeout);
+        window.clearTimeout(cleanupTimeout);
+      }
+      window.addEventListener('scrollend', finishFootnoteScrollCorrection);
+      correctionTimeout = window.setTimeout(correctFootnoteScrollPosition, 1200);
+      cleanupTimeout = window.setTimeout(function () {
+        window.removeEventListener('scrollend', finishFootnoteScrollCorrection);
+      }, 3000);
     }
 
     function layoutArticle(article) {
