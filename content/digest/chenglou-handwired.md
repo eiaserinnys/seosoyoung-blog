@@ -29,7 +29,7 @@ images:
 
 단순한 예로 삼항 연산자 `const result = a > 4 ? 10 : 12`를 보자. 정수 입력 `a`에 ReLU 함수(`relu(x) = Math.max(0, x)`) 두 개를 조합하면, 비교와 분기가 산술식 두 줄로 바뀐다.
 
-![삼항 연산자 a > 4 ? 10 : 12를 두 개의 ReLU와 가중치 합으로 변환한 Handwired 코드와 회로 도식](https://img.seosoyoung.eiaserinnys.me/images/chenglou-handwired/02-ternary-circuit.png)
+![삼항 연산자 a > 4 ? 10 : 12를 두 개의 ReLU와 가중치 합으로 변환한 Handwired 코드와 회로 도식](https://img.seosoyoung.eiaserinnys.me/images/chenglou-handwired/02-ternary-circuit-v2.png)
 *출처: Handwired 데모 사이트*
 
 첫째 식 `above4 = relu(a - 4) - relu(a - 5)`는 비교 조건을 0 또는 1로 바꾼다. 정수 `a`가 4 이하일 때는 `relu(a - 4)`와 `relu(a - 5)`가 모두 0이므로 `above4`는 0이 된다. `a`가 5 이상일 때는 두 값의 차이가 항상 1이므로 `above4`는 1이 된다. 둘째 식 `above4 * 10 + (1 - above4) * 12`는 두 분기의 값(10과 12)을 모두 계산한 뒤 `above4`를 가중치로 삼아 곱해 하나만 선택한다.
@@ -43,7 +43,7 @@ Handwired가 생성하는 모든 회로는 1차원 32비트 부동소수점 배�
 | `boolean` | $f(f(f(s) + 8388609) - 8388609)$ | 0\~1 사이 값을 FP32 가수부 반올림으로 0과 1로 확정 |
 | `index` | $\text{values}[\text{cand}[\lfloor\text{form}\rfloor]]$ | 후보 테이블에서 정수 인덱스로 값 1개 즉시 조회 |
 
-네 명령 중 부동소수점 규격을 직접 이용한 명령이 `boolean`이다. 이 명령은 IEEE 754 단정밀도 부동소수점(FP32)의 가수부(mantissa)가 정확히 23비트라는 성질을 이용하며, 수식의 상수 $8,388,609$도 $2^{23} + 1$에서 나왔다. 0과 1 사이의 값에 $2^{23} + 1$을 더하면 마지막 유효 비트에서 짝수 반올림(round-to-nearest-even)이 일어나, 0.5 미만은 0으로, 0.5 이상은 1로 확정된다. 여기서 다시 $2^{23} + 1$을 빼면 정확히 0 또는 1만 남는다.[^fp32-round]
+네 명령 중 부동소수점 규격을 직접 이용한 명령이 `boolean`이다. 이 명령은 IEEE 754 단정밀도 부동소수점(FP32)의 가수부(mantissa)가 정확히 23비트라는 성질을 이용하며, 수식의 상수 8,388,609도 $2^{23} + 1$에서 나왔다. 0과 1 사이의 값에 $2^{23} + 1$을 더하면 마지막 유효 비트에서 짝수 반올림(round-to-nearest-even)이 일어나, 0.5 미만은 0으로, 0.5 이상은 1로 확정된다. 여기서 다시 $2^{23} + 1$을 빼면 정확히 0 또는 1만 남는다.[^fp32-round]
 
 [^fp32-round]: CPU와 GPU, WebAssembly가 모두 IEEE 754 단정밀도 반올림 규칙을 따르므로 `Math.fround`를 매 단계에 적용하면 실행 환경이 달라져도 연산 결과가 비트 단위로 일치한다.
 
@@ -91,7 +91,7 @@ $$\text{bit} = \text{relu}(1 - \text{relu}(-D))$$
 
 저장소의 `src/` 디렉터리에는 데모 세 개가 있다. 같은 회로 표현(`Circuit`)을 서로 다른 세 실행 환경에서 검증한 결과물이다.
 
-### 1. HandwiredOS: 연산 4,646개로 돌아가는 학습 없는 데스크톱
+### 1. HandwiredOS
 
 표지 그림의 HandwiredOS(`src/handwiredos/`)는 `Monitor`, `Notes`, `Photos` 창 세 개와 화면 아래쪽 아이콘 독(dock)으로 이루어진 데스크톱 환경이다. 창 드래그, 크기 조절과 조절 테두리 감지, 창 순서(z-order) 변경, 최소화와 최대화 스프링 애니메이션, 사진 그리드 배치와 라이트박스 줌까지 모두 학습 없이 컴파일한 단일 수치 회로가 계산한다.
 
@@ -103,12 +103,12 @@ $$\text{bit} = \text{relu}(1 - \text{relu}(-D))$$
 
 10월 13일 실험에서는 `Notes` 창의 텍스트 줄바꿈과 커서 이동까지 회로로 구현해 보았다. 그러자 연산 15,600개와 가중치 34,221개가 추가되었는데, 데스크톱의 나머지 전체를 합친 것의 세 배가 넘는 규모였다. 이에 따라 텍스트 편집은 브라우저에 맡기고, 회로는 창의 위치와 크기만 계산하도록 역할을 분리했다.
 
-### 2. Learned Gallery: 실시간 역전파로 사진 정렬 배우기
+### 2. Learned Gallery
 
 두 번째 데모인 Learned Gallery(`src/learned-gallery/`)는 코드를 산술 회로로 바꿨을 때 얻는 이점, 곧 **미분 가능성**을 활용한다. 화면 구성과 조작 로직은 일반 코드처럼 작성한다. 사진 최대 12장의 목표 위치와 크기를 결정하는 부분만 2층 ReGLU 신경망에 맡기고, 이 신경망을 브라우저에서 실시간으로 학습시킨다. 신경망의 규모는 학습 가능한 소스 셀 244개, 전체 연산 6,320개, 층 8개다.
 
 ![Learned Gallery 데모 화면. 왼쪽 SKETCH 캔버스에 사각형 10개가 배치되어 있고 오른쪽 LEARNED 캔버스에 정렬된 사진 10장과 하단 손실 곡선이 표시된다.](https://img.seosoyoung.eiaserinnys.me/images/chenglou-handwired/03-demo-learned-gallery.png)
-*출처: Handwired 데모 사이트 (`chenglou.me/handwired/learned-gallery/`)*
+*출처: Handwired 데모 사이트*
 
 사용자가 왼쪽 `SKETCH` 캔버스에서 상자들을 마우스로 끌어다 놓으면, 학습 루프가 애니메이션 프레임마다 10스텝씩(초당 600스텝) `circuit.backpropagateReference`와 Adam 옵티마이저를 실행해 가중치 244개를 갱신한다. 1스텝 역전파와 가중치 갱신에 걸리는 시간은 Bun에서 약 0.2ms, Chrome에서 0.34\~0.41ms다.
 
@@ -116,21 +116,21 @@ $$\text{bit} = \text{relu}(1 - \text{relu}(-D))$$
 
 [^train-or-undo]: 학습 도중 손실이 발산하는 현상을 막으려고 `trainOrUndo`라는 역추적(backtracking) 기법도 함께 적용한다. 매 스텝 가중치를 갱신한 뒤 손실이 이전 스텝보다 커지면 가중치와 Adam 모멘트를 직전 상태로 되돌리고 학습률을 절반으로 줄여 다시 시도한다.
 
-### 3. JSON Search: 범위와 비트 선언을 WebGPU 비트 연산으로 컴파일하기
+### 3. JSON Search
 
 세 번째 데모인 JSON Search(`src/json-search/`)는 Handwired 회로를 <strong>WebGPU 컴퓨트 셰이더(WGSL)</strong>로 컴파일한다. 512자 이하의 <strong>JSON 문서 10만 개(GPU 메모리 205.2MB)</strong>를 키를 누를 때마다 실시간으로 구문 강조하고 정규식으로 검색한다.
 
 ![JSON Search 데모 화면. 10만 개의 JSON 문서 맵에서 error 패턴을 검색해 오른쪽 DOCUMENT 8 창에 구문 강조된 JSON과 매치 밑줄을 표시한다.](https://img.seosoyoung.eiaserinnys.me/images/chenglou-handwired/04-demo-json-search.png)
-*출처: Handwired 데모 사이트 (`chenglou.me/handwired/json-search/`)*
+*출처: Handwired 데모 사이트*
 
 정규식 검색기는 톰슨(Thompson)과 글루시코프(Glushkov) 방식의 비결정적 유한 오토마타(NFA)를 역방향으로 한 번, 정방향으로 한 번 실행해 최장 일치 구간을 찾는다. 이 오토마타 회로를 단순한 부동소수점 셰이더(`loop-emit.ts`)로 그대로 옮기면, 상태가 32개일 때 문자 하나를 처리할 때마다 WGSL 문장 **4,655개**를 실행해야 한다. 문서 10만 개를 검색하는 데는 **945ms**가 걸린다.
 
 반면 `bit-emit.ts` 컴파일러는 회로의 선언을 분석해 0과 1만 가지는 불리언 연산을 찾아낸다. 그리고 상태 32개의 전이를 부호 없는 32비트 정수(`u32`) 하나를 다루는 **비트 `AND` 연산과 바이트 룩업 테이블 조회**로 묶는다. 이 방식을 비트 패킹(bit-packing)이라 한다.
 
-| 실행 경로 | 32상태 루프 크기 | 10만 문서 검색 (연속 / 대기 후) | 역추적 패턴 `([a-z]+)+x` |
+| 실행 경로 | 32상태 루프 크기 | 10만 문서 검색 (연속 / 대기 후) | 역추적 패턴 |
 |---|---|---|---|
-| 기본 WGSL (`loop-emit.ts`) | 문장 4,655개 | 945ms | 역추적 없음 |
-| 비트 패킹 WGSL (`bit-emit.ts`) | **문장 219개** | **5.2ms / 13.2ms** | **5\~12ms** (선형 시간) |
+| 기본 WGSL | 문장 4,655개 | 945ms | 역추적 없음 |
+| 비트 패킹 WGSL | **문장 219개** | **5.2ms / 13.2ms** | **5\~12ms** (선형 시간) |
 | 단일 스레드 JS `RegExp` | 해당 없음 | 복합 패턴 9\~56ms | **2.1초** 멈춤 |
 | CPU 워커 8개 JS `RegExp` | 해당 없음 | 2\~7ms | 워커 스레드 멈춤 |
 
