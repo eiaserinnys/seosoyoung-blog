@@ -45,6 +45,9 @@
 {{- end }}
 {{ if .Params.math }}
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.21/dist/katex.min.css">
+<style>
+  .post-content .katex-display { overflow-x: auto; overflow-y: hidden; padding-block: 0.25em; }
+</style>
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.21/dist/katex.min.js"></script>
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.21/dist/contrib/auto-render.min.js"
   onload="renderMathInElement(document.body, {
