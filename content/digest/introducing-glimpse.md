@@ -22,6 +22,9 @@ images:
 
 ## 시각적 사고를 추론 과정에 통합한 모델
 
+<p><video controls playsinline preload="metadata" poster="https://img.seosoyoung.eiaserinnys.me/images/introducing-glimpse/glimpse-launch-video-poster.jpg" src="https://img.seosoyoung.eiaserinnys.me/images/introducing-glimpse/glimpse-launch-video.mp4" style="display:block;width:100%;margin:1rem auto;"></video>
+<em>출처: <a href="https://x.com/ElorianAI/status/2111142036208501070">Elorian</a></em></p>
+
 Glimpse는 눈에 보이는 장면을 단서 삼아 물리 세계의 인과와 상태를 추론하도록 설계된 시각적 사고(visual thinking) 모델이다. 움직이는 물체나 바뀌는 시점에서도 대상을 일관되게 추적하고, 부품들이 맞물리는 구조를 파악하며, 현재 관찰한 장면이 다음 순간 어떤 물리적 결과로 이어질지 연결한다. 이러한 능력은 로보틱스, 과학 연구, 미디어 제작처럼 물리적 공간과 시간의 변화를 다루는 분야에서 핵심적인 역할을 한다.
 
 기존 프론티어 대형 언어 모델들이 첫인상으로 얻은 텍스트 요약에 의존해 답을 내린다면, Glimpse는 추론 과정에서 시각 표현을 직접 다룬다. 생각이 전개되는 동안 내부 시각 표현을 반복해서 다시 확인하고 정밀하게 고치는 식이다. 에이전트로서도 코드를 작성하고 이미지를 변환하며 비디오를 탐색하는 멀티모달 도구를 종단간(end-to-end) 학습으로 익혔다. 나아가 하나의 문제를 풀기 위해 텍스트, 시각 산출물, 내부 표현을 서로 주고받는 서브에이전트들을 생성하고 조율할 수도 있다. Elorian 플랫폼의 채팅 화면은 이러한 시각적 작업 공간(visual scratch space)을 실시간으로 표시한다. 사용자는 모델이 특정 영역을 확대하거나 짧은 시간 구간을 더 촘촘한 프레임 빈도로 다시 재생하는 과정을 직접 확인할 수 있다.
