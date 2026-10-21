@@ -400,6 +400,7 @@
       radial-gradient(farthest-side at 100% 50%, rgba(255, 255, 255, .28), transparent);
   }
   .post-content table:has(tr > :nth-child(4)) :is(th, td):first-child { min-width: 8em; }
+  .post-content table:not(:has(tr > :nth-child(4))) :is(th, td) { overflow-wrap: anywhere; }
   :root[data-theme="dark"] .post-content .highlight table,
   :root[data-theme="dark"] .post-content table.highlighttable,
   .post-content .highlight table,
