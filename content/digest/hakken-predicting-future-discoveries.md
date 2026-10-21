@@ -72,7 +72,11 @@ AI가 확률 높은 가설을 제시하더라도, 그 예측이 왜 도출되었
 
 학습 목적 함수는 미관측 관계($y_{so,c}=0$)를 미확인(unlabeled) 상태로 다루는 Positive-Unlabeled(PU) 학습으로 설계했다. 학습에는 **DWF**(Dynamically Weighted Balanced Focal) 손실 함수를 쓴다. 이진 교차 엔트로피에 소프트 타깃 어닐링을 적용하고 음성 항 가중치($\lambda_u$)를 줄인 다음, 초점 계수와 동적 클래스 균형 계수, 베르누이 분산 정규화 항을 결합한 식이다:
 
-$$\mathcal{L}_{\mathrm{DWF}}(z,y)=\mathrm{Dyn}(p_{t};c_{w})\cdot\mathrm{Focal}(p_{t})\cdot\widetilde{\mathrm{BCE}}(z,y)-\lambda_{\mathrm{reg}}\,p(1-p)$$
+$$\begin{aligned}
+\mathcal{L}_{\mathrm{DWF}}(z,y) &= \mathrm{Dyn}(p_{t};c_{w}) \\
+&\quad \cdot \mathrm{Focal}(p_{t}) \cdot \widetilde{\mathrm{BCE}}(z,y) \\
+&\quad - \lambda_{\mathrm{reg}}\,p(1-p)
+\end{aligned}$$
 
 | 손실 함수 구성 항 | 수식 표현 | 설계 목적 |
 | --- | --- | --- |
@@ -117,9 +121,9 @@ Figure 2는 PHELInE이 설명 경로를 추출하는 세 과정을 보여준다.
 | `(A, INCREASES_EXPRESSION_OF, B, t2)` 및 `(A, DECREASES_EXPRESSION_OF, B, t5)` | 발현 증감 충돌 시 더 이른 시점($t_2$)의 발현 영향 관계로 통합 | `(A, AFFECTS_EXPRESSION_OF, B, t2)` |
 | `(A, PREVENTS, B, t3)` 및 `(A, CAUSES, B, t6)` | 인과 및 예방 충돌 시 더 이른 시점($t_3$)의 연관 관계로 통합 | `(A, ASSOCIATED_WITH, B, t3)` |
 
-연구진은 먼저 **2020년 시점 분할**(temporal cut-off) 벤치마크로 단기 예측 성능을 시험했다. 2020년 이전에 처음 관측된 삼중항만으로 모델을 학습하고, 2020년 이후(2021\~2023년)에 최초로 문헌에 등장한 관계를 예측하게 했다. 비교 대상은 무작위 예측(Random), 복소수 지식 그래프 임베딩(ComplEx), 최근접 이웃(KNN), 다층 퍼셉트론(MLP), 공통 이웃 및 선호적 연결 기반 규칙 분류기(RuleBased), LSTM 기반 시간 그래프 임베딩(TNodeEmbed), 텍스트 없이 시간 그래프만 사용하는 선행 모델(THiGER)까지 일곱 모델이다.
+연구진은 먼저 **2020년 시점 분할**(temporal cut-off) 벤치마크로 단기 예측 성능을 시험했다. 2020년 이전에 처음 관측된 삼중항만으로 모델을 학습하고, 2020년 이후(2021\~2023년)에 최초로 문헌에 등장한 관계를 예측하게 했다. 비교 대상은 무작위 예측(Random), 복소수 지식 그래프 임베딩(ComplEx), 최근접 이웃(KNN), 다층 퍼셉트론(MLP), 공통 이웃 및 선호적 연결 기반 규칙 분류기(RuleBased), LSTM 기반 시간 그래프 임베딩(TNodeEmbed), 텍스트 없이 시간 그래프만 사용하는 선행 모델(THiGER)까지 일곱 모델이다(아래 표의 모든 지표 단위는 %다).
 
-| 모델 | $\mathrm{Prec}_{\mathrm{macro}}$ (%) | $\mathrm{Rec}_{\mathrm{macro}}$ (%) | $F_{1,\mathrm{macro}}$ (%) | $\mathrm{Prec}_{\mathrm{w}}$ (%) | $\mathrm{Rec}_{\mathrm{w}}$ (%) | $F_{1,\mathrm{w}}$ (%) | $\mathrm{nDCG}_{\mathrm{mean}}$ (%) |
+| 모델 | Macro P | Macro R | Macro F1 | W P | W R | W F1 | nDCG |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
 | Random | 6.08 | 6.86 | 3.78 | 18.21 | 6.07 | 8.36 | 35.20 |
 | ComplEx | 5.34 | 8.29 | 5.80 | 17.15 | 19.68 | 18.15 | 47.21 |
@@ -166,13 +170,13 @@ Figure 3과 요약 표에서는 세 가지 결과가 확인된다. 첫째, 예�
 
 [^5]: 최종 후보군 2,804건에서 두 개체 사이의 최단 경로 길이(shortest path length)를 기존 지식 그래프로 세어 보면, 3홉이 104건, 4홉이 2,068건, 5홉이 631건, 6홉이 1건이었다. 유망 가설 대부분은 최단 경로가 4~5홉인 관계라, 연구자가 문헌 검색만으로 직관적으로 유추하기 어렵다.
 
-생물학 전문가들은 후보 2,804건과 PHELInE이 생성한 설명 경로, 각 개체의 연구 활성도(논문 출판 연도 중앙값), 그리고 신뢰도 점수(0.8 이상)를 종합 검토해 실험실 검증을 진행할 최종 가설 세 건을 선정했다.
+생물학 전문가들은 후보 2,804건과 PHELInE이 생성한 설명 경로, 각 개체의 연구 활성도(논문 출판 연도 중앙값 2011\~2021년), 그리고 신뢰도 점수(0.8 이상)를 종합 검토해 실험실 검증을 진행할 최종 가설 세 건을 선정했다.
 
-| 주체 (E1) | 객체 (E2) | 예측된 관계 유형 | E1 출판 중앙 연도 | E2 출판 중앙 연도 | 모델 신뢰도 | 실험 검증 세포주 | Wet-lab 검증 결과 |
-| --- | --- | --- | :---: | :---: | ---: | --- | :---: |
-| **TP53** | **BAMBI** | `affects_expression_of` (발현에 영향) | 2021 | 2018 | **0.85391** | HepG2 (인간 간암) | **지지됨 (Supported)** |
-| **RAF1** | **TNF** | `decreases_expression_of` (발현 감소/조절) | 2021 | 2011 | **0.83114** | THP-1 (급성 단핵구 백혈병) | **지지됨 (Supported)** |
-| **SOAT1** | **STAT3** | `affects_transcriptional_activity_of` (전사 활성에 영향) | 2021 | 2021 | **0.84183** | HepG2 (인간 간암) | **기각됨 (Denied)** |
+| 대상 쌍 | 예측된 관계 유형 | 신뢰도 | 검증 세포주 | 실험 결과 |
+| --- | --- | ---: | --- | :---: |
+| **TP53 → BAMBI** | 발현에 영향 | **0.85391** | HepG2 (인간 간암) | **지지됨** |
+| **RAF1 → TNF** | 발현 감소 및 조절 | **0.83114** | THP-1 (급성 단핵구 백혈병) | **지지됨** |
+| **SOAT1 → STAT3** | 전사 활성에 영향 | **0.84183** | HepG2 (인간 간암) | **기각됨** |
 
 첫 번째로 검증된 가설은 **TP53**이 **BAMBI**의 발현에 영향을 미친다는 예측이다(신뢰도 0.85391). TP53은 인간 암에서 변이가 가장 흔한 종양 억제 유전자이고, BAMBI는 TGF-$\beta$ 신호전달의 비신호성 유사수용체(pseudoreceptor)다. 연구진은 인간 간세포암종 세포주 HepG2에 MDM2 억제제인 저분자 화합물 **Nutlin-3**를 0.01\~10 $\mu$M 농도로 처리해 P53 단백질 수준을 인위적으로 높이고, RT-qPCR로 BAMBI mRNA 발현량을 측정했다. 양성 대조군에는 TGF-$\beta$1 10 ng/mL를 썼다.
 
