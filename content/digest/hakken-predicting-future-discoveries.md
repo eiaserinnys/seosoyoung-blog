@@ -74,8 +74,8 @@ AI가 확률 높은 가설을 제시하더라도, 그 예측이 왜 도출되었
 
 $$\begin{aligned}
 \mathcal{L}_{\mathrm{DWF}}(z,y) &= \mathrm{Dyn}(p_{t};c_{w}) \\
-&\quad \cdot \mathrm{Focal}(p_{t}) \cdot \widetilde{\mathrm{BCE}}(z,y) \\
-&\quad - \lambda_{\mathrm{reg}}\,p(1-p)
+&\cdot \mathrm{Focal}(p_{t}) \cdot \widetilde{\mathrm{BCE}}(z,y) \\
+&- \lambda_{\mathrm{reg}}\,p(1-p)
 \end{aligned}$$
 
 | 손실 함수 구성 항 | 수식 표현 | 설계 목적 |
