@@ -15,9 +15,9 @@ images:
 ---
 
 <style>
-.post-content .iw-frame{position:relative;width:100%;height:620px;margin:1.1em 0 .6em;background:#f7f7f7;border:1px solid rgba(127,127,127,.3);border-radius:6px;overflow:hidden}
+.post-content .iw-frame{position:relative;width:100%;height:620px;margin:1rem 0;background:#f7f7f7;border:1px solid rgba(127,127,127,.3);border-radius:6px;overflow:hidden}
 .post-content .iw-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
-.post-content .iw-cover{position:absolute;inset:0;width:100%;height:100%;margin:0;padding:0 0 14px;border:0;background:transparent;cursor:pointer;display:flex;align-items:flex-end;justify-content:center;font:inherit;font-size:.86em;color:#333}
+.post-content .iw-cover{position:absolute;inset:0;width:100%;height:100%;margin:0;padding:0;border:0;background:transparent;cursor:pointer}
 .post-content .iw-cover:hover{background:rgba(0,0,0,.04)}
 .post-content .iw-cover:focus-visible{outline:2px solid var(--primary);outline-offset:-4px}
 @media (max-width: 640px){.post-content .iw-frame{height:500px}}
@@ -64,9 +64,9 @@ Ryan(@wheresryan22)의 [Anatomy](https://github.com/wheresryan22/anatomy)는 개
 
 컬렉션에는 해시맵 충돌, 이진 탐색, LRU 캐시, 메시지 큐, 뮤텍스, 경사 하강법, 디바운스와 스로틀, 토큰 버킷 등 33점이 있다. 터보팬 엔진과 Raptor 2 엔진처럼 큰 기계에서는 SVG 레이어 사이에서 WebGL 셰이더로 화염과 배기를 그린다.
 
-<div class="iw-frame"><iframe src="https://skills.wheresryan.sh/anatomy/collection/mutex" title="Anatomy: Mutex" loading="lazy"></iframe><button type="button" class="iw-cover" onclick="this.remove()">누르면 직접 조작할 수 있다</button></div>
+<div class="iw-frame"><iframe src="https://skills.wheresryan.sh/anatomy/collection/mutex" title="Anatomy: Mutex" loading="lazy" tabindex="-1"></iframe><button type="button" class="iw-cover" aria-label="도해를 눌러 직접 조작하기" onclick="this.previousElementSibling.removeAttribute('tabindex');this.remove()"></button></div>
 
-*뮤텍스 도해를 그대로 끼워 넣었다. 펌프 두 대가 탱크 하나를 채우려 하고, 열쇠 하나가 접근을 결정한다. 화면이 비어 보이면 [원본 페이지](https://skills.wheresryan.sh/anatomy/collection/mutex)에서 열어 볼 수 있다.*
+*뮤텍스 도해를 그대로 끼워 넣었다. 한 번 누르면 직접 조작할 수 있다. 펌프 두 대가 탱크 하나를 채우려 하고, 열쇠 하나가 접근을 결정한다. 화면이 비어 보이면 [원본 페이지](https://skills.wheresryan.sh/anatomy/collection/mutex)에서 열어 볼 수 있다.*
 
 결과물은 세 가지 형태로 받을 수 있다. 프레임워크 없는 TypeScript 기반의 SVG와 HTML, React와 Next.js용 컴포넌트 `anatomy-figures`(테마 다섯 종, 색 토큰 26개), A4나 레터 크기 PDF다. 설치는 `npx skills add wheresryan22/anatomy`이고 스킬과 그림 모두 MIT 라이선스다. 그리는 대상은 기계, 악기, 도구, 가구다. README는 차트 라이브러리 대용, 사람, 지도를 제외한다고 적어 두었다.
 
