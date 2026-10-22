@@ -14,7 +14,7 @@ draft: false
 
 ## 컨셉 변주
 
-원글의 네 가지 테마를 각각 다른 배색과 조명으로 옮겼다.
+원글의 네 가지 테마에 맞춰 얼굴 각도와 표정, 배색, 조명을 각각 달리했다.
 
 <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:20px 0;">
   <figure style="margin:0;">
@@ -63,25 +63,32 @@ draft: false
 대표 커버인 v4(`MIRROR ATLAS`)의 프롬프트 전문과 v1~v3의 `[Customize]` 설정이다.
 
 ```text
+Reference Image Instructions:
+- Image 1 is the facial identity and photorealistic style reference of the young Korean woman Seo Soyoung (keeping her center-parted wavy black hair tied in low twin-tails at ear level with large dark faceted spherical hair ties and dark beaded drop earrings). DO NOT copy the 0-degree front angle, blank neutral expression, or chest-level medium shot framing of Image 1.
+- Image 2 is her 12-angle head reference sheet; strictly follow ONLY the '3/4 High Tilt' cell (Row 3, Column 1): her head is turned 40 degrees to the viewer's left with her chin tilted slightly upward, exposing the broad sculptural plane of her left cheek and jawline toward the center of the poster while her gaze turns back to lock eyes with the viewer.
+- Image 3 is her FACS expression sheet; combine the bright, widened, curious eyes of 'AU1+2 Brow Raiser' (Row 2, Column 1) with the subtle asymmetric knowing lip curve of 'R12+14 Smirk' (Row 1, Column 4) and softly parted lips.
+- Image 4 is her lighting reference sheet; follow the '13 Short Lighting' cell (Row 2, Column 2), where warm light illuminates the far narrow side of her three-quarter turned face while the broad camera-facing cheek stays in sculpted tonal shadow.
+- Image 5 is a line-art camera framing guide ('02 Close-up (CU)'); copy ONLY its tight close-up scale where the giant head fills the vertical frame from crown to chin/upper neck, with NO chest, shoulders, or garment torso visible. Ignore Image 5's line-art style and background, and ignore all grid lines and captions in Images 2, 3, and 4.
+
 [Customize]
 Brand: MIRROR ATLAS
 Theme: Travel / Architectural Cartography & Grand Tour
-Portrait: A young East Asian woman in her early 20s preserving the exact facial identity, eye shape, nose, lips, and serene intellectual expression of the reference image, keeping the reference subject's hair and dark spherical hair ornaments as in the seed
+Portrait: Giant Close-Up (CU) three-quarter high-tilt portrait (head turned 40 degrees left, chin slightly up, expressive eyes looking back at the viewer, softly parted lips with a subtle asymmetric smirk) of Seo Soyoung, cropped below the chin and neck so the colossal collage face dominates the poster without showing shoulders or torso
 Collage Elements: vintage city street maps of 'CLOISTERMONT' with red transit lines, sepia architectural engravings of Gothic cathedral spires and stone bridges, blue-and-white ceramic tile fragments, archival lake ferry photographs, vintage rail tickets ('LAKE LINE 28'), compass rose illustrations, and handwritten travel journal notes ('LOOK CLOSER')
-Visual Twist: a torn vintage city map with red transit routes and river contour lines forming the sculptural planes of her left cheek, jawline, and lower collar, while Gothic spires and archways rise organically through the dark hair fragments
-Colors: Color palette 'Ink and Copper' (085): warm paper #F1EBE0 and aged sandstone #C8B6A1 shaping the face under short lighting, oxidized copper #B77C5C in architectural cutouts and transit lines, deep slate teal #52717A and dark prussian ink #203D4A framing the portrait and forming the solid bottom branding panel
+Visual Twist: a torn vintage city map of 'CLOISTERMONT' with red transit routes and river contour lines forming the broad sculptural plane of her camera-facing left cheek, nose bridge, and jawline, while Gothic spires and archways rise organically through her dark hair fragments
+Colors: Color palette 'Ink and Copper' (085): warm paper #F1EBE0 and aged sandstone #C8B6A1 shaping the face under short lighting (13), oxidized copper #B77C5C in architectural cutouts and transit lines, deep slate teal #52717A and dark prussian ink #203D4A framing the portrait and forming the solid bottom branding panel
 Tagline: EVERY CITY TELLS A STORY.
 Details: ARCHITECTURAL & CARTOGRAPHIC QUARTERLY / ISSUE NO. 14 / CLOISTERMONT & BEYOND
 
 Style & Composition
 
-Create a stunning 9:16 vintage editorial collage poster featuring a giant human portrait made entirely from torn magazines, archival photographs, printed text, illustrations, and layered paper fragments.
+Create a stunning 9:16 vintage editorial collage poster featuring a giant human close-up portrait made entirely from torn magazines, archival photographs, printed text, illustrations, and layered paper fragments.
 
-The face should remain clearly recognizable, with expressive eyes and natural proportions. Build facial features through overlapping paper shapes and tonal contrast, rather than simply overlaying textures on a photograph.
+The face must fill 70% of the poster in a dramatic tight Close-Up (CU) turned in a 40-degree three-quarter high-tilt angle, with expressive eyes and natural proportions. Build facial features entirely through overlapping torn paper shapes and tonal contrast, rather than simply overlaying textures on a photograph, and transition directly from her chin and neck into surrounding architectural and map cutouts without showing any clothing torso.
 
 Creative Integration
 
-Seamlessly blend a torn vintage city map with red transit routes and river contour lines forming the sculptural planes of her left cheek, jawline, and lower collar, while Gothic spires and archways rise organically through the dark hair fragments into the face, hair, or surrounding collage. The interaction should feel surprising yet physically believable, creating a strong visual focal point.
+Seamlessly blend a torn vintage city map with red transit routes and river contour lines forming the broad sculptural planes of her left cheek and jawline, while Gothic spires and archways rise organically through the dark hair fragments. The interaction should feel surprising yet physically believable, creating a strong visual focal point.
 
 Collage & Texture
 
@@ -91,9 +98,9 @@ Emphasize authentic handmade textures: torn edges, paper fibers, print halftones
 
 Color & Layout
 
-Use Color palette 'Ink and Copper' (085): warm paper #F1EBE0 and aged sandstone #C8B6A1 shaping the face under short lighting, oxidized copper #B77C5C in architectural cutouts and transit lines, deep slate teal #52717A and dark prussian ink #203D4A framing the portrait and forming the solid bottom branding panel to create contrast: lighter tones shaping the face, darker fragments framing it, and selective vibrant accents drawing attention.
+Use Color palette 'Ink and Copper' (085): warm paper #F1EBE0 and aged sandstone #C8B6A1 shaping the face under short lighting, oxidized copper #B77C5C in architectural cutouts and transit lines, deep slate teal #52717A and dark prussian ink #203D4A framing the portrait and forming the solid bottom branding panel.
 
-Maintain high visual density while keeping the portrait dominant and recognizable.
+Maintain high visual density while keeping the close-up portrait dominant and recognizable.
 
 Branding
 
@@ -113,9 +120,10 @@ A sophisticated, gallery-quality analog collage with intricate editorial details
 [Customize]
 Brand: PAPERROOM
 Theme: Books / Independent Bookshop & Print Culture
+Portrait: Giant Close-Up (CU) portrait of Seo Soyoung with her head turned 35-45 degrees to the right and tilted gracefully ('45° 3/4 Right' + 'Head Roll'), wearing a warm 'AU12 Lip Corner Puller' smile, cropped below the chin and neck so the colossal collage face and the open book above her crown fill the frame without showing any torso
 Collage Elements: torn antique book pages, woodblock botanical engravings, library due-date cards stamped with 'A QUIETER BRIGHTER WORLD', archival reading room photographs, gilt-lettered vintage book spines ('THE READING ROOM', 'FIRST EDITION', 'PAPER ARCHIVE'), fountain pen nib illustrations, and handwritten margin notes
 Visual Twist: an open vintage hardcover book with fanning cream pages blooming seamlessly out of the upper crown of her dark hair, opening into a warm miniature candlelit library reading room nestled inside the spread
-Colors: Color palette 'Forest Library' (087): warm parchment cream #EDE6D4 and aged book-page tan #C4B38E shaping the sculptural planes of the face under 45-degree key light, muted botanical sage #8D9470 and bookshop green #526C58 in surrounding cutouts, deep forest green #293F38 framing the portrait and forming the solid bottom branding panel, with selective vintage crimson stamp accents #B4594F
+Colors: Color palette 'Forest Library' (087): warm parchment cream #EDE6D4 and aged book-page tan #C4B38E shaping the sculptural planes of the face under warm wall bounce light (23), muted botanical sage #8D9470 and bookshop green #526C58 in surrounding cutouts, deep forest green #293F38 framing the portrait and forming the solid bottom branding panel, with selective vintage crimson stamp accents #B4594F
 Tagline: MADE OF STORIES.
 Details: INDEPENDENT BOOKSHOP & PRINT CULTURE / CLOISTERMONT / BOOKS / PRINT / IDEAS
 
@@ -123,9 +131,10 @@ Details: INDEPENDENT BOOKSHOP & PRINT CULTURE / CLOISTERMONT / BOOKS / PRINT / I
 [Customize]
 Brand: MIDNIGHT FM
 Theme: Music / Late-Night Vinyl & Jazz Radio
-Collage Elements: vintage jazz magazine covers ('JAZZ', 'AFTER HOURS', 'SIDE A'), torn sheet music, archival reel-to-reel tape and turntable photographs, soundwave diagrams, rainy night street cutouts, and handwritten tracklist notes ('LISTEN CLOSELY', 'THE NIGHT IS STILL YOUNG')
-Visual Twist: a torn 12-inch black vinyl record with concentric grooves and a vintage red '33 1/3 RPM' center label seamlessly integrated around her right eye like a surreal editorial monocle
-Colors: Color palette 'Classic Tricolore' (081): warm ivory paper #F3EBDD and soft stone #CFC2AC shaping the face under loop lighting, deep navy #263A54 and slate blue #526A82 framing the portrait and forming the solid bottom branding panel, with selective crimson red #B4594F accents
+Portrait: Giant Big Close-Up (tight CU bordering on ECU, forehead to chin filling the frame) of Seo Soyoung in a 'High Tilt (Chin Up)' angle looking down at the viewer with a bold asymmetric 'R12+14 Smirk', framed tightly at the chin with no neck or torso visible
+Collage Elements: vintage jazz magazine covers ('JAZZ', 'AFTER HOURS', 'SIDE A'), torn sheet music, archival reel-to-reel tape and turntable photographs, soundwave diagrams, rainy neon night street cutouts, and handwritten tracklist notes ('LISTEN CLOSELY', 'THE NIGHT IS STILL YOUNG')
+Visual Twist: a torn 12-inch black vinyl record with concentric grooves and a vintage red '33 1/3 RPM' center label seamlessly integrated around her right eye like a surreal oversized editorial monocle, with her sharp gaze looking out through the center hole of the record
+Colors: Color palette 'Classic Tricolore' (081): warm ivory paper #F3EBDD and soft stone #CFC2AC shaping the face under dramatic Rembrandt lighting (09), deep midnight navy #263A54 and slate blue #526A82 framing the portrait, with vibrant crimson red #B4594F in the vinyl label, lips, and solid bottom branding panel
 Tagline: EVERY SOUND LEAVES A MARK.
 Details: LATE-NIGHT VINYL & RADIO ARCHIVE / CLOISTERMONT / 98.4 FM / STEREO
 
@@ -133,9 +142,10 @@ Details: LATE-NIGHT VINYL & RADIO ARCHIVE / CLOISTERMONT / 98.4 FM / STEREO
 [Customize]
 Brand: VELORA
 Theme: Perfume / Botanical Atelier & Memory
+Portrait: Giant Close-Up (CU) portrait of Seo Soyoung in a '60° Steep 3/4' contemplative profile angle with 'AU43 Eyes Closed' and a serene dreamy half-smile savoring a fragrance, cropped below the neck with a faceted crystal perfume bottle in the lower-left foreground and no garment torso shown
 Collage Elements: antique botanical rose plates ('ROSA DAMASCENA'), vintage French and English perfumery labels ('BLACK TEA', 'CEDARWOOD', 'AMBER', 'ROSE', 'PATCHOULI'), classical marble bust cutouts, arched stone bridge postcards, and handwritten apothecary formula notes ('REMEMBER ME')
-Visual Twist: an oversized crimson-and-blush Damask rose made of layered torn magazine cutouts blooming seamlessly out of the right side of her temple and dark hair, with a faceted glass perfume flacon integrated into the lower-left collar collage
-Colors: Color palette 'Bordeaux Salon' (080): warm cream #F1E6D7 and champagne sand #C9AD8A shaping the face under butterfly lighting, antique rose #A87063 and deep bordeaux #713C4A in the floral cutouts and solid bottom branding panel, grounded by dark plum-charcoal #352C3A fragments
+Visual Twist: an oversized crimson-and-blush Damask rose made of layered torn magazine cutouts blooming seamlessly out of the right side of her temple and dark wavy hair, while a faceted glass perfume flacon ('VELORA NOCTURNE') is nestled into the lower-left collage
+Colors: Color palette 'Bordeaux Salon' (080): warm cream #F1E6D7 and champagne sand #C9AD8A shaping the face under butterfly and spotlight illumination (10, 22), antique rose #A87063 and deep bordeaux #713C4A in the floral cutouts and solid bottom branding panel, grounded by dark plum-charcoal #352C3A fragments
 Tagline: MEMORIES HAVE A SCENT.
 Details: EAU DE PARFUM / ATELIER DE CLOISTERMONT / 50 ML / NATURAL SPRAY
 ```
@@ -146,5 +156,5 @@ Details: EAU DE PARFUM / ATELIER DE CLOISTERMONT / 50 ML / NATURAL SPRAY
 
 ## 메모
 
-- 시드: `서소영 (실사, 포트레이트).png` (헤어스타일 지정 제거 / 시드 기준 일반화)
-- 원본에 없던 배색(087, 081, 080, 085)과 조명 지시를 더했다.
+- 참조: `서소영 (실사, 포트레이트).png`, 실사 각도/표정/조명 12칸 시트, 클로즈업 구도 선화 (헤어스타일 지정 제거 / 시드 기준 일반화)
+- 원본에 없던 클로즈업 구도와 얼굴 각도, 표정, 조명, 배색(087, 081, 080, 085) 지시를 더했다.
