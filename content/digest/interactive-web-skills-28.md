@@ -15,11 +15,12 @@ images:
 ---
 
 <style>
-.post-content figure.iw-embed{margin:1.1em 0 1.4em}
-.post-content .iw-frame{position:relative;width:100%;height:560px;background:#f7f7f7;border:1px solid rgba(127,127,127,.3);border-radius:6px;overflow:hidden}
+.post-content .iw-frame{position:relative;width:100%;height:620px;margin:1.1em 0 .6em;background:#f7f7f7;border:1px solid rgba(127,127,127,.3);border-radius:6px;overflow:hidden}
 .post-content .iw-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
-.post-content figure.iw-embed>figcaption{margin:.5em 0 0;font-size:.86em;font-weight:400;line-height:1.55;text-align:left;color:var(--secondary)}
-@media (max-width: 640px){.post-content .iw-frame{height:460px}}
+.post-content .iw-cover{position:absolute;inset:0;width:100%;height:100%;margin:0;padding:0 0 14px;border:0;background:transparent;cursor:pointer;display:flex;align-items:flex-end;justify-content:center;font:inherit;font-size:.86em;color:#333}
+.post-content .iw-cover:hover{background:rgba(0,0,0,.04)}
+.post-content .iw-cover:focus-visible{outline:2px solid var(--primary);outline-offset:-4px}
+@media (max-width: 640px){.post-content .iw-frame{height:500px}}
 .post-content table td,.post-content table th,.post-content table a{word-break:keep-all !important;overflow-wrap:normal !important;hyphens:manual}
 </style>
 
@@ -37,7 +38,7 @@ April Zhu의 [Colorfigures](https://april-zhu.com/colorfigures)는 일상 사물
 *시작 버튼을 누른 직후. 제작자 April Zhu. [공개 데모](https://april-zhu.com/colorfigures-demo)를 헤드리스 브라우저에서 조작해 캡처했다.*
 
 ![같은 세탁기의 투시 보기. 겉판이 투명해져 드럼, 급수 밸브, 호스, 모터, 배수 펌프가 보인다.](https://img.seosoyoung.eiaserinnys.me/images/interactive-web-skills-28/colorfigures-washer-seethrough.png)
-*같은 그림에서 See-through를 누른 상태. 돌아가는 드럼과 그 아래 모터, 뒤쪽의 급수 밸브와 호스가 보인다.*
+*같은 그림에서 See-through를 누른 상태.*
 
 공개 데모에는 세탁기, 에스프레소 머신, 자판기, 토스터, 신호등, 캡슐 토이 기계 등 26점이 있다. 그림 한 점에 드는 시간은 Claude Code 기준으로 15분에서 30분이고, 토큰은 20만에서 40만 개다. 제작자가 직접 적은 수치다. 사람과 동물과 식물처럼 부드러운 대상은 이 스타일에 맞지 않는다는 안내도 같은 페이지에 있다. 스킬 자체는 텍스트 파일 여덟 개로, 모두 합쳐 220KB 안팎이다. 결과 HTML은 외부 요청 없이 단독으로 열린다.
 
@@ -47,8 +48,11 @@ April Zhu의 [Colorfigures](https://april-zhu.com/colorfigures)는 일상 사물
 
 Ryan(@wheresryan22)의 [Anatomy](https://github.com/wheresryan22/anatomy)는 개념을 한 줄로 말하면 그 개념대로 작동하는 물리적 기계를 고안하고, 부품 수십에서 수백 개로 이루어진 등각 도해로 그린다. 스킬에는 "물체가 곧 설명이다"라는 규칙이 있어서 상자와 화살표를 쓰지 않는다. 움직이는 부품과 화면에 표시되는 수치는 같은 상태 모델에서 나온다.
 
-![기계식 손목시계 무브먼트 도해 두 장. 왼쪽은 조립된 상태, 오른쪽은 E 키를 눌러 브리지가 들려 올라가 기어열이 드러난 상태.](https://img.seosoyoung.eiaserinnys.me/images/interactive-web-skills-28/pair-anatomy-watch.png)
-*왼쪽은 조립 상태, 오른쪽은 E 키를 눌러 브리지를 들어 올린 상태. 용두를 끌어 올리면 태엽이 감기고, S 키로 움직임을 느리게 볼 수 있다. 밸런스는 4Hz, 시간당 28,800진동으로 표기된다. 제작자 Ryan. [공개 컬렉션](https://skills.wheresryan.sh/anatomy/collection/watch)에서 캡처했다.*
+![기계식 손목시계 무브먼트 도해. 받침대에 놓인 무브먼트가 조립된 상태로, 브리지와 기어와 밸런스가 한 면에 보인다.](https://img.seosoyoung.eiaserinnys.me/images/interactive-web-skills-28/anatomy-watch-assembled.png)
+*조립 상태의 시계 무브먼트. 용두를 끌어 올리면 태엽이 감기고, S 키로 움직임을 느리게 볼 수 있다. 밸런스는 4Hz, 시간당 28,800진동으로 표기된다. 제작자 Ryan. [공개 컬렉션](https://skills.wheresryan.sh/anatomy/collection/watch)에서 캡처했다.*
+
+![같은 무브먼트에서 E 키를 눌러 브리지가 들려 올라가 기어열이 드러난 상태.](https://img.seosoyoung.eiaserinnys.me/images/interactive-web-skills-28/anatomy-watch-apart.png)
+*E 키를 눌러 브리지를 들어 올린 상태. 아래 기어열이 드러난다.*
 
 같은 방식으로 자료구조와 프로토콜도 기계가 된다. 블룸 필터는 과일 머신(슬롯머신)이 된다. 릴 세 개가 해시 함수 세 개, 깃발 열여섯 개가 비트 배열이다. 단어를 코인으로 넣고 레버를 당기면 릴이 돌아 깃발이 올라간다. 한 번 당기고 나면 화면에 "16개 중 7개 올라감, 거짓 양성 9.4%"가 뜬다.
 
@@ -60,10 +64,9 @@ Ryan(@wheresryan22)의 [Anatomy](https://github.com/wheresryan22/anatomy)는 개
 
 컬렉션에는 해시맵 충돌, 이진 탐색, LRU 캐시, 메시지 큐, 뮤텍스, 경사 하강법, 디바운스와 스로틀, 토큰 버킷 등 33점이 있다. 터보팬 엔진과 Raptor 2 엔진처럼 큰 기계에서는 SVG 레이어 사이에서 WebGL 셰이더로 화염과 배기를 그린다.
 
-<figure class="iw-embed">
-<div class="iw-frame"><iframe src="https://skills.wheresryan.sh/anatomy/collection/mutex" title="Anatomy: Mutex" loading="lazy"></iframe></div>
-<figcaption>뮤텍스 도해를 그대로 끼워 넣었다. 펌프 두 대가 탱크 하나를 채우려 하고, 열쇠 하나가 접근을 결정한다. 화면이 비어 보이면 <a href="https://skills.wheresryan.sh/anatomy/collection/mutex">원본 페이지</a>에서 열어 볼 수 있다.</figcaption>
-</figure>
+<div class="iw-frame"><iframe src="https://skills.wheresryan.sh/anatomy/collection/mutex" title="Anatomy: Mutex" loading="lazy"></iframe><button type="button" class="iw-cover" onclick="this.remove()">누르면 직접 조작할 수 있다</button></div>
+
+*뮤텍스 도해를 그대로 끼워 넣었다. 펌프 두 대가 탱크 하나를 채우려 하고, 열쇠 하나가 접근을 결정한다. 화면이 비어 보이면 [원본 페이지](https://skills.wheresryan.sh/anatomy/collection/mutex)에서 열어 볼 수 있다.*
 
 결과물은 세 가지 형태로 받을 수 있다. 프레임워크 없는 TypeScript 기반의 SVG와 HTML, React와 Next.js용 컴포넌트 `anatomy-figures`(테마 다섯 종, 색 토큰 26개), A4나 레터 크기 PDF다. 설치는 `npx skills add wheresryan22/anatomy`이고 스킬과 그림 모두 MIT 라이선스다. 그리는 대상은 기계, 악기, 도구, 가구다. README는 차트 라이브러리 대용, 사람, 지도를 제외한다고 적어 두었다.
 
@@ -91,7 +94,8 @@ Ryan(@wheresryan22)의 [Anatomy](https://github.com/wheresryan22/anatomy)는 개
 
 April Zhu의 세 번째 스킬 [Playable](https://april-zhu.com/playable)은 리깅된 3D 모델이나 로봇 스케치를 브라우저에서 조종하는 캐릭터로 바꾼다. 결과는 three.js로 동작하는 HTML 파일 하나이고, 게임 엔진은 쓰지 않는다. WASD로 걷고 Shift로 달리고 스페이스로 점프하며, 숫자 키로 손 흔들기나 춤 같은 동작을 실행한다. 바닥을 누르면 그 자리로 걸어가고, 휴대폰용 버튼 줄도 있다.
 
-{{< video src="https://img.seosoyoung.eiaserinnys.me/images/interactive-web-skills-28/playable-robot-walk.mp4" caption="공개 데모의 로봇. 걷기, 점프, 손 흔들기 키를 차례로 눌렀을 때의 반응을 헤드리스 브라우저에서 녹화했다. 모델은 Tomás Laulhé(Quaternius)의 CC0 로봇, 동작 14종." >}}
+{{< video src="https://img.seosoyoung.eiaserinnys.me/images/interactive-web-skills-28/playable-robot-walk.mp4" >}}
+*공개 데모의 로봇. 걷기, 점프, 손 흔들기 키를 차례로 눌렀을 때의 반응을 헤드리스 브라우저에서 녹화했다. 모델은 Tomás Laulhé(Quaternius)의 CC0 로봇, 동작 14종.*
 
 리깅된 `.glb`를 주면 모델의 뼈대와 애니메이션을 그대로 살려, 대기, 걷기, 달리기 동작을 속도에 따라 섞는다. 걷기 클립에서 발 속도를 재서 발이 바닥에서 미끄러지지 않게 한다. 스케치를 주면 그림에서 부위와 관절을 읽어 단단한 조각으로 리깅된 모델을 만든다. 아래 로봇 고양이는 스케치 한 장으로 만들었다. 관절이 30개, 다리가 넷, 꼬리가 일곱 마디이고, 속도가 붙으면 걸음이 구보로 바뀐다. 앉기, 기지개, 덮치기, 눕기 같은 동작도 같은 제어기가 만드는 자세다.
 
@@ -113,7 +117,7 @@ Derek Schwede의 [HTML Explainer](https://github.com/ds-vibe/html-explainer)는 
 오로라 예제에서는 지자기 폭풍 세기(Kp)를 높이면 북극 위에서 내려다본 오로라 타원이 적도 쪽으로 넓어지고, 타원 아래에 들어오는 도시 목록이 바뀐다. Kp 1에서는 타원이 지자기 위도 66도까지 내려와 트롬쇠와 페어뱅크스만 그 아래에 있고, Kp 9에서는 50도까지 내려가 런던과 파리까지 들어온다.
 
 ![오로라 타원 데모 두 장. 왼쪽은 Kp 1로 북극 둘레의 가는 고리만 빛나고, 오른쪽은 Kp 9로 고리가 넓어져 런던과 파리가 그 아래에 들어온다.](https://img.seosoyoung.eiaserinnys.me/images/interactive-web-skills-28/pair-explainer-aurora.png)
-*왼쪽은 Kp 1(타원 하한 66도), 오른쪽은 Kp 9(50도). 같은 갤러리의 오로라 예제.*
+*왼쪽은 Kp 1, 오른쪽은 Kp 9. 같은 갤러리의 오로라 예제.*
 
 갤러리에는 설명 페이지와 슬라이드 덱이 모두 여덟 점 있다. 설명 페이지는 EU AI 법의 위험 등급 분류기와 벌금 계산기, 부분지급준비 은행의 장부 시뮬레이터, 스톡옵션 세금 계산기 등이고, 슬라이드 덱은 구텐베르크 인쇄기, 필름 누아르 등이다. 각 페이지에는 Review & edit 버튼이 있어 수정 요청과 코멘트를 남길 수 있다. Claude Code에서 쓰면 데스크톱 화면, 모바일 화면, 조작 중인 상태를 캡처해 확인하고, Claude 앱에서는 정적 점검만 한다.
 
@@ -156,7 +160,8 @@ Anthropic의 공식 플러그인 [Playground](https://github.com/anthropics/clau
 
 Nate Herk의 [scroll-craft](https://github.com/nateherkai/scroll-craft)는 스크롤에 따라 전개되는 브랜드와 제품 페이지를 만든다. 절차는 브리프, 페이지 문법, 채점, 제작, 검증 순서로 고정되어 있다. 페이지 문법은 한 컷짜리 영상형, 챕터형 편집, 연속된 세계 등 서로 배타적인 여덟 가지이고, 제작물마다 그 사이트에만 있는 상호작용 하나를 반드시 넣어야 한다. 이전 제작물과 얼마나 다른지 보는 지문 검사도 있다. 문법, 내비게이션, 히어로, 막 구조, 마무리, 고유 동작의 여섯 항목 가운데 넷 이상이 달라야 한다.
 
-{{< video src="https://img.seosoyoung.eiaserinnys.me/images/interactive-web-skills-28/scrollcraft-ais-scroll.mp4" caption="scroll-craft로 만든 AI Automation Society 페이지를 위에서 아래로 스크롤한 장면. 헤드리스 브라우저 녹화를 3배속으로 빠르게 했다. 사이트 제작자 Nate Herk, https://aiautomationsociety.ai" >}}
+{{< video src="https://img.seosoyoung.eiaserinnys.me/images/interactive-web-skills-28/scrollcraft-ais-scroll.mp4" >}}
+*scroll-craft로 만든 [AI Automation Society](https://aiautomationsociety.ai) 페이지를 위에서 아래로 스크롤한 장면. 헤드리스 브라우저 녹화를 3배속으로 빠르게 했다. 사이트 제작자 Nate Herk.*
 
 ![AI Automation Society 페이지의 첫 화면. 어두운 바탕에 "The largest global network of AI professionals" 제목과 가입 버튼, 아래에 커뮤니티 앱 화면이 올라오기 시작한다.](https://img.seosoyoung.eiaserinnys.me/images/interactive-web-skills-28/scrollcraft-ais-hero.png)
 *첫 화면. 아래 가장자리에서 앱 화면이 올라오기 시작한다.*
