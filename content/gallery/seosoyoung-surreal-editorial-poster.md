@@ -3,7 +3,7 @@ title: ""
 date: 2026-10-22T18:50:00+09:00
 slug: "seosoyoung-surreal-editorial-poster"
 cover:
-  image: "https://pub-236dc9dc170e487faec4c8b5e2d084c6.r2.dev/gallery/seosoyoung-surreal-editorial-poster/cover.png"
+  image: "https://pub-236dc9dc170e487faec4c8b5e2d084c6.r2.dev/gallery/seosoyoung-surreal-editorial-poster/poster-2-silent-observer.png"
   hiddenInList: false
   focus: "50% 0%"
 source: "https://x.com/mrlarus/status/2112559995703427148"
@@ -14,23 +14,23 @@ draft: false
 
 ## 시리즈 변주
 
-유화와 템페라 질감의 인물화에 빅토리아 시대 과학 동판화와 수제 콜라주를 결합한 에디토리얼 포스터 연작이다. 서소영 실사 포트레이트 시드에 거울 학당 건축, 천체 관측 거미줄, 필사본 두루마리, 나방 날개 변태라는 네 가지 초현실적 메타포와 배색 팔레트를 입혔다.
+유화와 템페라 질감의 인물화에 빅토리아 시대 과학 동판화와 수제 콜라주를 결합한 에디토리얼 포스터 연작이다. 서소영 실사 포트레이트 시드에 거울 학당 건축, 천체 관측 거미줄, 필사본 두루마리, 나방 날개 변태라는 네 가지 초현실적 메타포와 배색 팔레트를 입혔다. 대표 커버는 두 번째 `THE SILENT OBSERVER` 컷이다.
 
 <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin:20px 0;">
   <figure style="margin:0;">
-    <img src="https://pub-236dc9dc170e487faec4c8b5e2d084c6.r2.dev/gallery/seosoyoung-surreal-editorial-poster/poster-1-mirror-archive.png" alt="THE MIRROR ARCHIVE 에디토리얼 포스터" style="width:100%;height:auto;display:block;border-radius:6px;">
+    <img src="https://pub-236dc9dc170e487faec4c8b5e2d084c6.r2.dev/gallery/seosoyoung-surreal-editorial-poster/poster-1-mirror-archive.png" alt="THE MIRROR ARCHIVE 에디토리얼 포스터" style="width:100%;height:auto;display:block;border-radius:6px;border:2px solid transparent;">
     <figcaption style="font-size:13px;color:#86868b;margin-top:6px;">1. THE MIRROR ARCHIVE</figcaption>
   </figure>
   <figure style="margin:0;">
-    <img src="https://pub-236dc9dc170e487faec4c8b5e2d084c6.r2.dev/gallery/seosoyoung-surreal-editorial-poster/poster-2-silent-observer.png" alt="THE SILENT OBSERVER 에디토리얼 포스터" style="width:100%;height:auto;display:block;border-radius:6px;">
-    <figcaption style="font-size:13px;color:#86868b;margin-top:6px;">2. THE SILENT OBSERVER</figcaption>
+    <img src="https://pub-236dc9dc170e487faec4c8b5e2d084c6.r2.dev/gallery/seosoyoung-surreal-editorial-poster/poster-2-silent-observer.png" alt="THE SILENT OBSERVER 에디토리얼 포스터" style="width:100%;height:auto;display:block;border-radius:6px;border:2px solid #c97a4e;">
+    <figcaption style="font-size:13px;color:#c97a4e;margin-top:6px;font-weight:600;">2. THE SILENT OBSERVER (커버)</figcaption>
   </figure>
   <figure style="margin:0;">
-    <img src="https://pub-236dc9dc170e487faec4c8b5e2d084c6.r2.dev/gallery/seosoyoung-surreal-editorial-poster/poster-3-borrowed-voice.png" alt="THE BORROWED VOICE 에디토리얼 포스터" style="width:100%;height:auto;display:block;border-radius:6px;">
+    <img src="https://pub-236dc9dc170e487faec4c8b5e2d084c6.r2.dev/gallery/seosoyoung-surreal-editorial-poster/poster-3-borrowed-voice.png" alt="THE BORROWED VOICE 에디토리얼 포스터" style="width:100%;height:auto;display:block;border-radius:6px;border:2px solid transparent;">
     <figcaption style="font-size:13px;color:#86868b;margin-top:6px;">3. THE BORROWED VOICE</figcaption>
   </figure>
   <figure style="margin:0;">
-    <img src="https://pub-236dc9dc170e487faec4c8b5e2d084c6.r2.dev/gallery/seosoyoung-surreal-editorial-poster/poster-4-second-skin.png" alt="A SECOND SKIN 에디토리얼 포스터" style="width:100%;height:auto;display:block;border-radius:6px;">
+    <img src="https://pub-236dc9dc170e487faec4c8b5e2d084c6.r2.dev/gallery/seosoyoung-surreal-editorial-poster/poster-4-second-skin.png" alt="A SECOND SKIN 에디토리얼 포스터" style="width:100%;height:auto;display:block;border-radius:6px;border:2px solid transparent;">
     <figcaption style="font-size:13px;color:#86868b;margin-top:6px;">4. A SECOND SKIN</figcaption>
   </figure>
 </div>
@@ -61,12 +61,12 @@ draft: false
 ## 프롬프트
 
 ```text
-# 1. THE MIRROR ARCHIVE
-[TITLE]: THE MIRROR ARCHIVE
-[SUBJECT]: A young East Asian woman in her twenties preserving the exact facial features, calm observant gaze, and hairstyle of the reference seed image (center-parted dark hair tied into low twin tails with large dark spherical hair ornaments and delicate drop earrings), posed in a composed three-quarter portrait under subtle Rembrandt lighting (09).
-[SURREAL CONCEPT]: Her layered organic hanbok collar unfolds like sculpted botanical leaves and silk membranes, while the flowing tips of her dark hair transform into impossible Victorian stone archways, spiral staircases, and a misty lakeside academy tower.
-[GROTESQUE ELEMENTS]: Biologically convincing creatures in Victorian scientific copperplate engraving style emerging from the transformation: a hybrid glass-winged moth with an ornate porcelain mirror-mask thorax perched near her shoulder, and a small anatomical songbird with translucent parchment wings carrying engraved silver mirror shards.
-[COLOR PALETTE]: Color palette "Forest Library" (087): clean ivory paper background #EDE6D4, aged parchment highlights #C4B38E, muted sage-olive organic garment folds #8D9470, deep botanical green shadows #526C58, and dark pine-charcoal ink linework and typography #293F38.
+# 2. THE SILENT OBSERVER (커버)
+[TITLE]: THE SILENT OBSERVER
+[SUBJECT]: A young East Asian woman in her twenties preserving the exact facial features, calm unflinching gaze, and hairstyle of the reference seed image (center-parted dark hair tied into low twin tails with large dark spherical hair ornaments and delicate drop earrings), posed in a poised side-angle portrait under soft short lighting (13).
+[SURREAL CONCEPT]: Fine luminous silk threads and delicate botanical nerve-fibers are spun across her hair, temples, and collar like a living geometric astrolabe web, binding cut-paper collage fragments of celestial diagrams to her portrait.
+[GROTESQUE ELEMENTS]: Three bizarre yet biologically convincing creatures in Victorian copperplate engraving style perched around her hair, weaving and pulling the pale silk threads: a long-beaked hummingbird with an antique brass lens for an eye, a winged hare with feathery moth antennae, and an armored scarab beetle whose carapace opens like an engraved pocket watch.
+[COLOR PALETTE]: Color palette "Ink and Copper" (085): clean ivory paper background #F1EBE0, warm stone collage layers #C8B6A1, oxidized copper garment accents #B77C5C, muted slate-teal organic ruffled hanbok collar #52717A, and deep Prussian-ink linework and diagonal cut-paper banner serif typography #203D4A.
 
 Create a 9:16 surrealist editorial art poster blending painterly realism, grotesque naturalism, Victorian scientific engravings, and handmade collage.
 
@@ -84,12 +84,12 @@ Avoid glossy CGI, generic fantasy art, random decorations, excessive grunge, wat
 ```
 
 ```text
-# 2. THE SILENT OBSERVER
-[TITLE]: THE SILENT OBSERVER
-[SUBJECT]: A young East Asian woman in her twenties preserving the exact facial features, calm unflinching gaze, and hairstyle of the reference seed image (center-parted dark hair tied into low twin tails with large dark spherical hair ornaments and delicate drop earrings), posed in a poised side-angle portrait under soft short lighting (13).
-[SURREAL CONCEPT]: Fine luminous silk threads and delicate botanical nerve-fibers are spun across her hair, temples, and collar like a living geometric astrolabe web, binding cut-paper collage fragments of celestial diagrams to her portrait.
-[GROTESQUE ELEMENTS]: Three bizarre yet biologically convincing creatures in Victorian copperplate engraving style perched around her hair, weaving and pulling the pale silk threads: a long-beaked hummingbird with an antique brass lens for an eye, a winged hare with feathery moth antennae, and an armored scarab beetle whose carapace opens like an engraved pocket watch.
-[COLOR PALETTE]: Color palette "Ink and Copper" (085): clean ivory paper background #F1EBE0, warm stone collage layers #C8B6A1, oxidized copper garment accents #B77C5C, muted slate-teal organic ruffled hanbok collar #52717A, and deep Prussian-ink linework and diagonal cut-paper banner serif typography #203D4A.
+# 1. THE MIRROR ARCHIVE
+[TITLE]: THE MIRROR ARCHIVE
+[SUBJECT]: A young East Asian woman in her twenties preserving the exact facial features, calm observant gaze, and hairstyle of the reference seed image (center-parted dark hair tied into low twin tails with large dark spherical hair ornaments and delicate drop earrings), posed in a composed three-quarter portrait under subtle Rembrandt lighting (09).
+[SURREAL CONCEPT]: Her layered organic hanbok collar unfolds like sculpted botanical leaves and silk membranes, while the flowing tips of her dark hair transform into impossible Victorian stone archways, spiral staircases, and a misty lakeside academy tower.
+[GROTESQUE ELEMENTS]: Biologically convincing creatures in Victorian scientific copperplate engraving style emerging from the transformation: a hybrid glass-winged moth with an ornate porcelain mirror-mask thorax perched near her shoulder, and a small anatomical songbird with translucent parchment wings carrying engraved silver mirror shards.
+[COLOR PALETTE]: Color palette "Forest Library" (087): clean ivory paper background #EDE6D4, aged parchment highlights #C4B38E, muted sage-olive organic garment folds #8D9470, deep botanical green shadows #526C58, and dark pine-charcoal ink linework and typography #293F38.
 
 # 3. THE BORROWED VOICE
 [TITLE]: THE BORROWED VOICE
