@@ -23,7 +23,7 @@ draft: false
   </figure>
   <figure style="margin:0;">
     <img src="https://pub-236dc9dc170e487faec4c8b5e2d084c6.r2.dev/gallery/seosoyoung-surreal-editorial-poster/poster-2-silent-observer.png" alt="THE SILENT OBSERVER 에디토리얼 포스터" style="width:100%;height:auto;display:block;border-radius:6px;border:2px solid #c97a4e;">
-    <figcaption style="font-size:13px;color:#c97a4e;margin-top:6px;font-weight:700;">2. THE SILENT OBSERVER (커버)</figcaption>
+    <figcaption style="font-size:13px;color:#c97a4e;margin-top:6px;font-weight:600;">2. THE SILENT OBSERVER (커버)</figcaption>
   </figure>
   <figure style="margin:0;">
     <img src="https://pub-236dc9dc170e487faec4c8b5e2d084c6.r2.dev/gallery/seosoyoung-surreal-editorial-poster/poster-3-borrowed-voice.png" alt="THE BORROWED VOICE 에디토리얼 포스터" style="width:100%;height:auto;display:block;border-radius:6px;border:2px solid transparent;">
