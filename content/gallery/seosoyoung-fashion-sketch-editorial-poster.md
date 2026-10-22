@@ -14,12 +14,12 @@ draft: false
 
 ## 시리즈 변주 (4종)
 
-실사 패션 포트레이트에서 의상의 일부가 검은 잉크 펜선 스케치로 풀려 나오는 에디토리얼 포스터 연작이다. 원본 프롬프트가 제시한 네 가지 드로잉 요소(Ribbon, Cape, Petals, Fashion sketch)를 서소영 실사 시드와 네 가지 배색 팔레트로 각각 구성했다. 대표 커버는 첫 번째 `UNFOLD (Ribbon)` 컷이다.
+실사 패션 포트레이트에서 의상의 일부가 검은 잉크 펜선 스케치로 풀려 나오는 에디토리얼 포스터 연작이다. 원본 프롬프트가 제시한 네 가지 드로잉 요소를 서소영 실사 시드와 네 가지 배색 팔레트로 각각 구성했다. 대표 커버는 첫 번째 `UNFOLD (Ribbon)` 컷이다.
 
-<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin:20px 0;">
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;margin:20px 0;">
   <figure style="margin:0;">
     <a href="https://pub-236dc9dc170e487faec4c8b5e2d084c6.r2.dev/gallery/seosoyoung-fashion-sketch-editorial-poster/unfold-ribbon.png" target="_blank"><img src="https://pub-236dc9dc170e487faec4c8b5e2d084c6.r2.dev/gallery/seosoyoung-fashion-sketch-editorial-poster/unfold-ribbon.png" alt="UNFOLD (Ribbon) 에디토리얼 포스터" style="width:100%;height:auto;display:block;border-radius:6px;border:2px solid #c97a4e;"></a>
-    <figcaption style="font-size:13px;color:#c97a4e;margin-top:6px;font-weight:600;">1. UNFOLD (Ribbon, 대표 커버): 보르도 새틴 리본과 잉크 루프</figcaption>
+    <figcaption style="font-size:13px;color:#c97a4e;margin-top:6px;font-weight:600;">1. UNFOLD (Ribbon): 보르도 새틴 리본과 잉크 루프</figcaption>
   </figure>
   <figure style="margin:0;">
     <a href="https://pub-236dc9dc170e487faec4c8b5e2d084c6.r2.dev/gallery/seosoyoung-fashion-sketch-editorial-poster/line-mode-cape.png" target="_blank"><img src="https://pub-236dc9dc170e487faec4c8b5e2d084c6.r2.dev/gallery/seosoyoung-fashion-sketch-editorial-poster/line-mode-cape.png" alt="LINE MODE (Cape) 에디토리얼 포스터" style="width:100%;height:auto;display:block;border-radius:6px;"></a>
@@ -60,7 +60,7 @@ draft: false
 
 ## 프롬프트
 
-원본 템플릿의 `[Customize]` 항목을 4종의 컨셉에 맞춰 인스턴스화했다. 아래는 대표 커버인 1번 `UNFOLD (Ribbon)`에 전달한 프롬프트 전문이며, 2~4번 컷의 `[Customize]` 설정은 그 아래에 함께 적는다.
+1번 `UNFOLD (Ribbon)`의 프롬프트 전문이다. 2~4번은 바꾼 `[Customize]` 항목만 적었다.
 
 ```text
 [Customize]
@@ -121,5 +121,4 @@ Avoid existing magazine logos, rigid layouts, excessive text, random scribbles, 
 ## 메모
 
 - 시드: `서소영 (실사, 포트레이트).png`, `서소영 (실사).png` 두 장을 함께 입력으로 전달해 얼굴 이목구비와 검은 구슬 머리끈 양갈래 헤어스타일, 드롭 이어링을 일관되게 유지했다. 헤어스타일 지정은 시드 기준으로 일반화했다.
-- 배색과 조명: 배색 100선(`080 보르도 살롱`, `076 먹과 미색`, `097 다크 보태니컬`, `081 클래식 트리콜로르` + `044 푸른 비 인디고`)과 조명 25선(`45-degree key light`, `Short lighting`, `Loop lighting`, `Clamshell lighting`)을 각 포스터의 포인트 색상과 입체감에 맞춰 조합했다.
 - 해상도와 초점: 4장 모두 `1536x2304`(`high`) 세로 포스터로 생성했으며, 갤러리 목록의 정사각 썸네일에서 인물 얼굴과 헤드라인이 잘리지 않도록 `cover.focus: "50% 15%"`를 지정했다.
