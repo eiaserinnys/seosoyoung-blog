@@ -5,7 +5,7 @@ slug: "seosoyoung-surreal-editorial-poster"
 cover:
   image: "https://pub-236dc9dc170e487faec4c8b5e2d084c6.r2.dev/gallery/seosoyoung-surreal-editorial-poster/poster-2-silent-observer.png"
   hiddenInList: false
-  focus: "50% 0%"
+  focus: "50% 80%"
 source: "https://x.com/mrlarus/status/2112559995703427148"
 model: "gpt-image-2.5-flare"
 mode: "edit"
@@ -14,7 +14,7 @@ draft: false
 
 ## 시리즈 변주
 
-유화와 템페라 질감의 인물화에 빅토리아 시대 과학 동판화와 수제 콜라주를 결합한 에디토리얼 포스터 연작이다. 서소영 실사 포트레이트 시드에 거울 학당 건축, 천체 관측 거미줄, 필사본 두루마리, 나방 날개 변태라는 네 가지 초현실적 메타포와 배색 팔레트를 입혔다. 대표 커버는 두 번째 `THE SILENT OBSERVER` 컷이다.
+유화와 템페라 질감의 인물화에 빅토리아 시대 과학 동판화와 수제 콜라주를 결합한 에디토리얼 포스터 연작이다. 타이트한 클로즈업과 미디엄 클로즈업 구도 안에서 고개 각도와 시선, 표정을 네 장마다 달리해 정면 응시 없는 초현실적 긴장감을 살렸다. 대표 커버는 두 번째 `THE SILENT OBSERVER` 컷이다.
 
 <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin:20px 0;">
   <figure style="margin:0;">
@@ -62,48 +62,82 @@ draft: false
 
 ```text
 # 2. THE SILENT OBSERVER (커버)
-[TITLE]: THE SILENT OBSERVER
-[SUBJECT]: A young East Asian woman in her twenties preserving the exact facial features, calm unflinching gaze, and hairstyle of the reference seed image (center-parted dark hair tied into low twin tails with large dark spherical hair ornaments and delicate drop earrings), posed in a poised side-angle portrait under soft short lighting (13).
-[SURREAL CONCEPT]: Fine luminous silk threads and delicate botanical nerve-fibers are spun across her hair, temples, and collar like a living geometric astrolabe web, binding cut-paper collage fragments of celestial diagrams to her portrait.
-[GROTESQUE ELEMENTS]: Three bizarre yet biologically convincing creatures in Victorian copperplate engraving style perched around her hair, weaving and pulling the pale silk threads: a long-beaked hummingbird with an antique brass lens for an eye, a winged hare with feathery moth antennae, and an armored scarab beetle whose carapace opens like an engraved pocket watch.
-[COLOR PALETTE]: Color palette "Ink and Copper" (085): clean ivory paper background #F1EBE0, warm stone collage layers #C8B6A1, oxidized copper garment accents #B77C5C, muted slate-teal organic ruffled hanbok collar #52717A, and deep Prussian-ink linework and diagonal cut-paper banner serif typography #203D4A.
+[INPUT IMAGES]
+- Image 1: seosoyoung-canon/references/canonical/realistic/hanbok-profile.png (canonical identity, dark silk hanbok jeogori, silver filigree hairpins and red/blue silk ribbons)
+- Image 2: seosoyoung-canon/references/angles/realistic-angles-12.png -> cell "90° Profile" (Row 1, Column 4)
+- Image 3: seosoyoung-canon/references/facs/realistic-facs-12.png -> cell "AU1+2 Brow Raiser" (Row 2, Column 1)
+- Image 4: camera-shot-reference/references/shots/20-profile-shot.png (tight Profile Shot Close-Up)
 
-Create a 9:16 surrealist editorial art poster blending painterly realism, grotesque naturalism, Victorian scientific engravings, and handmade collage.
+[CAMERA SHOT & ANGLE]
+Tight Close-Up (CU) 90-degree Side Profile Shot (02-close-up + 20-profile-shot) framed from the upper chest and ruffled architectural collar up, with her head in strict 90-degree side profile facing to the right.
 
-Feature a large, anatomically believable portrait with subtle oil-and-tempera brushwork, matte skin, sculptural hair, and exaggerated organic garments.
+[FACS EXPRESSION]
+AU1+2 Brow Raiser + AU5 Upper Lid Raiser: brow arch subtly lifted, eye wide and luminous in profile, gazing intently off-camera to the right, lips closed in quiet tension.
 
-Integrate strange yet biologically convincing creatures or impossible structures into the subject through a meaningful visual transformation. Use delicate hand-drawn linework, rich but restrained colors, and a clean ivory paper background.
+[SURREAL TRANSFORMATION]
+Perched atop the crown of her dark hair and silver hairpins are three miniature surreal Victorian engraving creatures: a clockwork hummingbird with a brass lens eye, a small winged hare with moth antennae, and a scarab beetle with a miniature pocket-watch dial on its shell. With their beaks and claws, these creatures pull taut a complex geometric web of glowing copper-gold silk threads and silver astrolabe lines across her cheek, ear, and temples like a living constellation chart.
 
-Design experimental typography with elegant high-contrast serif lettering. Let the title interact with the portrait through cut-paper layers, unusual negative space, or overlapping forms.
-
-Add subtle screen-print textures and imperfect handmade details while preserving realistic depth and refined composition.
-
-The result should feel like a haunting, handcrafted fine-art poster, beautiful, unsettling, and visually unexpected.
-
-Avoid glossy CGI, generic fantasy art, random decorations, excessive grunge, watermarks, and numbered labels.
+[EDITORIAL TYPOGRAPHY & PALETTE]
+Ink & Copper palette (085): background of aged warm ivory parchment (#F0E7D8) with ink-wash clouds, subtle charcoal smudges, and a thin editorial ruled border frame. Top-left micro-serif header: "OBSERVATION LOG NO. 02". Top-right micro-serif header: "EVERY THREAD RECORDED". Crossing diagonally across her lower neck and upper collar is a bold torn-edge cream parchment banner strip bearing large high-contrast editorial serif typography reading "THE SILENT OBSERVER" in deep ink black (#16181D) and oxidized copper (#C86D51).
 ```
 
 ```text
 # 1. THE MIRROR ARCHIVE
-[TITLE]: THE MIRROR ARCHIVE
-[SUBJECT]: A young East Asian woman in her twenties preserving the exact facial features, calm observant gaze, and hairstyle of the reference seed image (center-parted dark hair tied into low twin tails with large dark spherical hair ornaments and delicate drop earrings), posed in a composed three-quarter portrait under subtle Rembrandt lighting (09).
-[SURREAL CONCEPT]: Her layered organic hanbok collar unfolds like sculpted botanical leaves and silk membranes, while the flowing tips of her dark hair transform into impossible Victorian stone archways, spiral staircases, and a misty lakeside academy tower.
-[GROTESQUE ELEMENTS]: Biologically convincing creatures in Victorian scientific copperplate engraving style emerging from the transformation: a hybrid glass-winged moth with an ornate porcelain mirror-mask thorax perched near her shoulder, and a small anatomical songbird with translucent parchment wings carrying engraved silver mirror shards.
-[COLOR PALETTE]: Color palette "Forest Library" (087): clean ivory paper background #EDE6D4, aged parchment highlights #C4B38E, muted sage-olive organic garment folds #8D9470, deep botanical green shadows #526C58, and dark pine-charcoal ink linework and typography #293F38.
+[INPUT IMAGES]
+- Image 1: seosoyoung-canon/references/canonical/realistic/hanbok-profile.png
+- Image 2: seosoyoung-canon/references/facs/realistic-facs-12.png -> cell "AU43 Eyes Closed" (Row 3, Column 3)
+- Image 3: seosoyoung-canon/references/angles/realistic-angles-12.png -> cells "3/4 High Tilt" & "60° Steep 3/4"
+- Image 4: seosoyoung-canon/references/lighting/realistic-lighting-12.png -> cell "09 Rembrandt"
+
+[CAMERA SHOT & ANGLE]
+Tight Close-Up (CU) to Medium Close-Up (MCU) portrait framed from the upper collarbone and ruffled hanbok collar up. Her head is turned 50 degrees to the left in a steep three-quarter view with her chin slightly raised (3/4 High Tilt).
+
+[FACS EXPRESSION]
+AU43 Eyes Closed: both eyelids softly and completely closed in serene, dreaming contemplation, lips relaxed and closed, never looking at the camera.
+
+[SURREAL TRANSFORMATION]
+Her glossy black hair and crimson/cobalt silk ribbons sweep upward and seamlessly morph into impossible Victorian stone archways, a spiral stone staircase ascending into a misty lakeside academy tower, and weathered gothic columns. Perched along the stone archways are two surreal Victorian engraving creatures: a glass-winged moth with a miniature porcelain mask on its thorax, and a small songbird whose tail feathers dissolve into silver mirror shards.
+
+[EDITORIAL TYPOGRAPHY & PALETTE]
+Forest Library palette (087): background of aged parchment cream (#EFE6D5) with distressed paper grain, charcoal smudges, and a thin editorial ruled border frame. Top-left micro-serif header: "ARCHIVE STUDY NO. 01". Top-right: "BETWEEN MEMORY AND STONE". In the middle-right negative space beside her neck below the archways, large high-contrast distressed editorial serif typography stacked on three lines reading "THE MIRROR ARCHIVE" in deep forest charcoal (#1C241E).
 
 # 3. THE BORROWED VOICE
-[TITLE]: THE BORROWED VOICE
-[SUBJECT]: A young East Asian woman in her twenties preserving the exact facial features, contemplative downward-angled gaze, and hairstyle of the reference seed image (center-parted dark hair tied into low twin tails with large dark spherical hair ornaments and delicate drop earrings), posed in a quiet three-quarter portrait under subtle loop lighting (08).
-[SURREAL CONCEPT]: The outer strands of her sculptural dark hair and exaggerated petal-like hanbok folds peel away into curling ribbons of antique ivory manuscript paper printed with sepia engravings of misty lakes, cloister towers, and handwritten script.
-[GROTESQUE ELEMENTS]: Strange natural-history creatures in Victorian copperplate engraving style carrying the unspooling manuscript ribbons into the air: a swallow with open book-page feathers, a moth whose wings bear intricate botanical woodcuts, and a floating nautilus creature with a coiled scroll shell.
-[COLOR PALETTE]: Color palette "Bordeaux Salon" (080): clean ivory paper background #F1E6D7, aged gold-beige parchment ribbons #C9AD8A, muted terracotta-rose inner folds #A87063, deep bordeaux-crimson organic outer garment #713C4A, and dark charcoal-plum ink engravings and negative-space cutout serif typography #352C3A.
+[INPUT IMAGES]
+- Image 1: seosoyoung-canon/references/canonical/realistic/hanbok-profile.png
+- Image 2: seosoyoung-canon/references/angles/realistic-angles-12.png -> cells "3/4 Low Tilt" & "60° Steep 3/4"
+- Image 3: seosoyoung-canon/references/facs/realistic-facs-12.png -> cell "AU15 Lip Corner Depressor" (Row 3, Column 1)
+- Image 4: seosoyoung-canon/references/lighting/realistic-lighting-12.png -> cell "08 Loop Lighting"
+
+[CAMERA SHOT & ANGLE]
+Tight Medium Close-Up (MCU) portrait framed from the upper chest and sculptural ruffled collar up. Her head is turned 60 degrees to the viewer's left in a steep three-quarter view with her chin bowed downward (3/4 Low Tilt).
+
+[FACS EXPRESSION]
+AU15 Lip Corner Depressor + AU1+4: eyes cast downward toward the lower-left floor (never looking at the camera), heavy lowered eyelids, inner brows gently drawn together in quiet sorrow, lip corners subtly pulled down.
+
+[SURREAL TRANSFORMATION]
+The crown and back of her dark hair unravel and peel away into long curling parchment manuscript ribbons, musical staves, and handwritten letters floating upward into the air. Three surreal Victorian engraving creatures pull the peeling paper ribbons aloft: a swallow whose wings are open antique book pages, a horned scarab beetle carrying an ink quill, and a moth with woodcut typography printed across its wings. Her hanbok collar below blooms into sculptural layered burgundy (#4A1C24) and terracotta (#B85A4B) paper-like pleated ruffles.
+
+[EDITORIAL TYPOGRAPHY & PALETTE]
+Bordeaux Salon palette (080): background of aged warm parchment (#EFE6D5) with charcoal smudges, distressed paper grain, and a thin editorial ruled border frame. Top-left micro-serif header: "CATALOGUE OF ECHOES". Top-right: "WORDS THAT WERE NEVER MINE". Crossing diagonally across the lower burgundy ruffled collar is a torn-edge parchment banner strip bearing large high-contrast editorial serif typography reading "THE BORROWED VOICE" in charcoal black (#1E1918) and deep burgundy (#4A1C24).
 
 # 4. A SECOND SKIN
-[TITLE]: A SECOND SKIN
-[SUBJECT]: A young East Asian woman in her twenties preserving the exact facial features, serene side-glancing expression, and hairstyle of the reference seed image (center-parted dark hair tied into low twin tails with large dark spherical hair ornaments and delicate drop earrings), posed in an elevated three-quarter portrait under 45-degree key light (02) and subtle rear side light (04).
-[SURREAL CONCEPT]: Her sculptural dark green hanbok collar of layered organic leaf-like silk folds unravels along the right edge into delicate coral-pink fibrous cellular webbing that seamlessly metamorphoses into giant translucent veined moth wings.
-[GROTESQUE ELEMENTS]: Biologically convincing Victorian scientific engraving insects emerging from the unraveling fabric: a large emperor moth with feathery antennae and a miniature porcelain human mask on its thorax unfurling from the fibrous collar web, accompanied by a smaller botanical leaf-shelled beetle hovering above.
-[COLOR PALETTE]: Color palette "Dark Botanical" (097) accented with muted coral rose: clean ivory paper background #E9E6D6, pale sage highlights #B8BC9A, muted leaf green #788D6D, deep botanical green organic folds #426755, darkest pine-ink linework and negative-space serif typography #203F3B, and warm coral-rose fibrous webbing #D99B85.
+[INPUT IMAGES]
+- Image 1: seosoyoung-canon/references/canonical/realistic/hanbok-profile.png
+- Image 2: seosoyoung-canon/references/angles/realistic-angles-12.png -> cells "High Tilt (Chin Up)" & "30° 3/4 Right"
+- Image 3: seosoyoung-canon/references/facs/realistic-facs-12.png -> cell "R12+14 Smirk" (Row 3, Column 4)
+- Image 4: camera-shot-reference/references/shots/15-low-angle.png (Low Angle Medium Close-Up)
+
+[CAMERA SHOT & ANGLE]
+Tight Medium Close-Up (MCU) Low Angle Shot (03-medium-close-up + 15-low-angle) framed from the chest and oversized sculptural collar up. Her head is turned 35 degrees to the viewer's right with her chin tilted 25 degrees upward (High Tilt Chin Up), viewed from a subtle low angle.
+
+[FACS EXPRESSION]
+R12+14 Smirk + half-lowered eyelids: upper eyelids halfway lowered as she glances downward over her cheekbone off-camera to the right (never looking straight at the camera), one corner of her lips subtly tightened in a cool, detached smirk of quiet metamorphosis.
+
+[SURREAL TRANSFORMATION]
+Her dark forest-green hanbok jeogori collar (#1E2D24) is exaggerated into sculptural, pleated botanical leaf-like folds on the left that peel open and dissolve across the right side into organic coral-rose (#D99B85) cellular silk latticework and giant translucent moth wings. Emerging from the shedding collar and hair ribbons are surreal Victorian engraving creatures: a giant emperor moth with a human-like porcelain face pattern on its wings, and a botanical beetle whose shell is made of folded dried leaves.
+
+[EDITORIAL TYPOGRAPHY & PALETTE]
+Dark Botanical palette (097): background of aged warm parchment (#F2ECE1) with charcoal smudges, distressed paper grain, and a thin editorial ruled border frame. Top-left micro-serif header: "AN ANATOMY OF CHANGE". Top-right: "NOTHING FITS FOREVER". Embedded inside the negative-space cutout of the unraveling coral-rose cellular webbing on the lower right, large high-contrast distressed editorial serif typography stacked on three lines reading "A SECOND SKIN" in deep forest charcoal (#161B18).
 ```
 
 ## 출처
@@ -112,6 +146,6 @@ Avoid glossy CGI, generic fantasy art, random decorations, excessive grunge, wat
 
 ## 메모
 
-- 시드 및 헤어스타일 일반화: `서소영 (실사, 포트레이트).png`를 입력 시드로 사용했으며, 헤어스타일 지정은 시드의 5:5 가르마와 검은 구슬 장식 낮은 양갈래 머리, 드롭 이어링을 그대로 유지하도록 일반화했다.
-- 배색과 조명 설계: 배색 100선의 시크한 레트로 갈래(`087 숲속 도서관`, `085 잉크와 구리`, `080 보르도 살롱`, `097 다크 보태니컬`)와 조명 25선(`09 Rembrandt lighting`, `13 Short lighting`, `08 Loop lighting`, `02 45-degree key light` + `04 Rear side light`)을 네 가지 초현실적 변형 주제에 맞춰 조합했다.
-- 해상도와 썸네일 초점: 4장 모두 `1536x2304`(`high`) 세로 포스터로 생성했고, 갤러리 정사각 썸네일에서 상단 세리프 타이틀과 인물 얼굴이 함께 보이도록 `cover.focus: "50% 0%"`를 지정했다.
+- 정본 레퍼런스 조합: `seosoyoung-canon`의 실사 정본 시드(`hanbok-profile.png`)를 기본 인물로 삼고, 12각도 시트(`realistic-angles-12.png`), FACS 12표정 시트(`realistic-facs-12.png`), 12조명 시트(`realistic-lighting-12.png`)와 `camera-shot-reference` 구도 가이드를 `--input-image`로 함께 넣었다.
+- 샷과 각도, 표정 변주: 네 장 모두 정면 카메라 응시를 배제하고 타이트한 클로즈업(CU)과 미디엄 클로즈업(MCU)으로 밀도를 높였다. 1번은 눈을 감은 반측면 앙각(`3/4 High Tilt` + `AU43 Eyes Closed`), 2번 커버는 눈을 크게 뜬 완전 측면(`90° Profile` + `AU1+2 Brow Raiser`), 3번은 시선을 아래로 떨군 깊은 반측면 부감(`3/4 Low Tilt` + `AU15 Lip Corner Depressor`), 4번은 턱을 치켜들고 비스듬히 내려다보는 로우앵글(`High Tilt Chin Up` + `R12+14 Smirk`)이다.
+- 배색과 썸네일 초점: 배색 100선의 시크한 레트로 갈래(`087 숲속 도서관`, `085 잉크와 구리`, `080 보르도 살롱`, `097 다크 보태니컬`)를 각 주제에 맞췄고, 갤러리 정사각 썸네일에서 측면 얼굴과 하단 사선 타이틀 배너가 함께 보이도록 `cover.focus: "50% 80%"`를 지정했다.
