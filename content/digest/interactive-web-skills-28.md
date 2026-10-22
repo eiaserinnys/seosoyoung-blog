@@ -26,7 +26,7 @@ images:
 ## 3줄 요약
 
 1. 2026년 10월 기준으로 공개된 스킬 가운데, 코딩 에이전트에게 독자가 만지면서 읽는 웹 페이지를 만들게 하는 28종을 모았다. 스킬은 에이전트가 읽는 지침과 템플릿을 담은 폴더다. 정리는 각 스킬의 README와 SKILL.md, 제작자의 공개 예제를 바탕으로 했다.
-2. 눈에 띄는 것은 스타일 지침에 더해 기반 코드, 실행 예제, 상태 모델, 검증 절차까지 담은 스킬이다. Anatomy는 움직이는 부품과 표시 수치를 같은 상태 모델에 연결하고, scroll-craft는 완성된 페이지를 헤드리스 브라우저로 스크롤하며 아무것도 바뀌지 않는 구간을 찾아낸다.
+2. 스타일 지침에 더해 기반 코드, 실행 예제, 상태 모델, 검증 절차까지 담은 스킬이 있다. 결과의 일관성에서 스타일 지침만 있는 스킬과 차이가 난다. Anatomy는 움직이는 부품과 표시 수치를 같은 상태 모델에 연결하고, scroll-craft는 완성된 페이지를 헤드리스 브라우저로 스크롤하며 아무것도 바뀌지 않는 구간을 찾아낸다.
 3. 작동하는 설명 그림에는 Anatomy와 Iso Glow, 조건을 조절하는 실험 도구에는 Playground, 계속 고쳐 쓸 인터랙티브 기술 글에는 Moonshine이 맞는다. 연출이 강한 제품 페이지에는 scroll-craft, 필터와 지도와 차트가 있는 분석 페이지에는 OpenAI의 시각화 묶음, 여러 컴포넌트로 이루어진 작은 도구에는 Web Artifacts Builder가 맞는다.
 
 ## 출발점: 버튼이 눌리는 세탁기
@@ -39,7 +39,7 @@ April Zhu의 [Colorfigures](https://april-zhu.com/colorfigures)는 일상 사물
 ![같은 세탁기의 투시 보기. 겉판이 투명해져 드럼, 급수 밸브, 호스, 모터, 배수 펌프가 보인다.](https://img.seosoyoung.eiaserinnys.me/images/interactive-web-skills-28/colorfigures-washer-seethrough.png)
 *같은 그림에서 See-through를 누른 상태. 돌아가는 드럼과 그 아래 모터, 뒤쪽의 급수 밸브와 호스가 보인다.*
 
-공개 데모에는 세탁기, 에스프레소 머신, 자판기, 토스터, 신호등, 캡슐 토이 기계 등 26점이 있다. 제작자는 그림 한 점을 만드는 데 Claude Code 기준으로 15분에서 30분, 토큰 20만에서 40만 개가 든다고 밝혔다. 사람과 동물과 식물처럼 부드러운 대상은 이 스타일에 맞지 않는다고도 적었다. 스킬 자체는 텍스트 파일 여덟 개로, 모두 합쳐 220KB 안팎이다. 결과 HTML은 외부 요청 없이 단독으로 열린다.
+공개 데모에는 세탁기, 에스프레소 머신, 자판기, 토스터, 신호등, 캡슐 토이 기계 등 26점이 있다. 그림 한 점에 드는 시간은 Claude Code 기준으로 15분에서 30분이고, 토큰은 20만에서 40만 개다. 제작자가 직접 적은 수치다. 사람과 동물과 식물처럼 부드러운 대상은 이 스타일에 맞지 않는다는 안내도 같은 페이지에 있다. 스킬 자체는 텍스트 파일 여덟 개로, 모두 합쳐 220KB 안팎이다. 결과 HTML은 외부 요청 없이 단독으로 열린다.
 
 이 글의 28종은 이 세탁기처럼 글과 화살표 대신 직접 누르고 돌려 보게 해서 설명하는 페이지를 만든다. 먼저 대표 사례 일곱을 데모 화면으로 보고, 뒤에 28종 전체를 표로 정리한다.
 
@@ -65,7 +65,7 @@ Ryan(@wheresryan22)의 [Anatomy](https://github.com/wheresryan22/anatomy)는 개
 <figcaption>뮤텍스 도해를 그대로 끼워 넣었다. 펌프 두 대가 탱크 하나를 채우려 하고, 열쇠 하나가 접근을 결정한다. 화면이 비어 보이면 <a href="https://skills.wheresryan.sh/anatomy/collection/mutex">원본 페이지</a>에서 열어 볼 수 있다.</figcaption>
 </figure>
 
-결과물은 세 가지 형태로 받을 수 있다. 프레임워크 없는 TypeScript 기반의 SVG와 HTML, React와 Next.js용 컴포넌트 `anatomy-figures`(테마 다섯 종, 색 토큰 26개), A4나 레터 크기 PDF다. 설치는 `npx skills add wheresryan22/anatomy`이고 스킬과 그림 모두 MIT 라이선스다. 제작자는 대상을 기계, 악기, 도구, 가구로 한정했고, 차트 라이브러리로 쓰는 것은 의도하지 않았으며 사람과 지도도 다루지 않는다고 적었다.
+결과물은 세 가지 형태로 받을 수 있다. 프레임워크 없는 TypeScript 기반의 SVG와 HTML, React와 Next.js용 컴포넌트 `anatomy-figures`(테마 다섯 종, 색 토큰 26개), A4나 레터 크기 PDF다. 설치는 `npx skills add wheresryan22/anatomy`이고 스킬과 그림 모두 MIT 라이선스다. 그리는 대상은 기계, 악기, 도구, 가구다. README는 차트 라이브러리 대용, 사람, 지도를 제외한다고 적어 두었다.
 
 ## Iso Glow: 작동하는 부위가 빛나는 도시와 장치
 
@@ -119,7 +119,7 @@ Derek Schwede의 [HTML Explainer](https://github.com/ds-vibe/html-explainer)는 
 
 ## Moonshine: 고쳐 가며 쓰는 인터랙티브 기술 글
 
-Ian Johnson(enjalot)의 [Moonshine](https://github.com/enjalot/moonshine)은 Distill 같은 인터랙티브 기술 글을 만드는 스킬이다. 코드를 쓰기 전에 개념, 독자, 핵심 통찰을 묻고, 개념마다 정적 산문, 슬라이더, 연결된 뷰, 스크롤 서사, 애니메이션 가운데 하나를 고른다. 원칙은 "모든 상호작용은 이해를 도와야 한다"는 것이다.
+Ian Johnson(enjalot)의 [Moonshine](https://github.com/enjalot/moonshine)은 Distill 같은 인터랙티브 기술 글을 만드는 스킬이다. 코드를 쓰기 전에 개념, 독자, 핵심 통찰을 묻고, 개념마다 정적 산문, 슬라이더, 연결된 뷰, 스크롤 서사, 애니메이션 가운데 하나를 고른다. 제작자가 내세운 원칙은 하나다. 모든 상호작용은 이해를 도와야 한다.
 
 출력 방식은 둘이다. `shine`은 D3 시각화를 담은 HTML 한 파일이라 빌드 도구가 필요 없다. `still`은 Vite와 React 프로젝트로, 산문은 마크다운에 두고 그림은 React 컴포넌트로 만든다. `still`의 개발 모드에서는 렌더된 페이지가 곧 편집기다. 본문을 그 자리에서 고치고, 그림을 클릭해 노브 패널에서 매개변수를 돌리고, 절을 끌어 순서를 바꾸고, 코멘트를 에이전트에게 전달한다. 노브 패널은 숫자 매개변수마다 슬라이더와 숫자 입력을, 불리언마다 체크박스를 자동으로 만들고, 저장하면 새 값이 마크다운에 기록된다.
 
@@ -173,9 +173,9 @@ Nate Herk의 [scroll-craft](https://github.com/nateherkai/scroll-craft)는 스�
 
 ## 스타일 지침과 작동 모델
 
-28종은 크게 두 부류다. 하나는 Frontend Design, Impeccable, Taste Skill, UI UX Pro Max처럼 어떤 화면에든 적용하는 범용 디자인 지침이다. 타이포그래피, 간격, 색, 반응형처럼 화면이 "어떻게 생겨야 하는가"를 다루고, 결과물의 형태는 정하지 않는다. 다른 하나는 Anatomy, Iso Glow, Playable, Moonshine, scroll-craft처럼 특정 형태의 결과물을 만드는 스킬이다. 이런 스킬은 "무엇이 어떻게 작동해야 하는가"까지 정한다.
+28종은 크게 두 부류다. 하나는 Frontend Design, Impeccable, Taste Skill, UI UX Pro Max처럼 어떤 화면에든 적용하는 범용 디자인 지침이다. 타이포그래피, 간격, 색, 반응형을 다룬다. 화면이 어떻게 생겨야 하는지는 정하지만, 무엇을 만드는지는 정하지 않는다. 다른 하나는 Anatomy, Iso Glow, Playable, Moonshine, scroll-craft처럼 특정 형태의 결과물을 만드는 스킬이다. 이런 스킬은 "무엇이 어떻게 작동해야 하는가"까지 정한다.
 
-두 번째 부류에서 눈여겨볼 것은 지침과 함께 들어 있는 네 가지다.
+두 번째 부류의 스킬에는 지침과 함께 네 가지가 더 들어 있다.
 
 | 들어 있는 것 | 예 | 효과 |
 |---|---|---|
@@ -186,7 +186,7 @@ Nate Herk의 [scroll-craft](https://github.com/nateherkai/scroll-craft)는 스�
 
 범용 지침만 있는 스킬은 결과가 모델의 그날 판단에 달려 있다. 기반 코드와 상태 모델이 있는 스킬은 모델이 바뀌어도 결과물의 기본 구조가 같다. 실제로 Colorfigures는 Claude Code, Codex, Gemini CLI, Claude.ai, ChatGPT에서 같은 파일을 설치해 쓰도록 안내한다.
 
-구별해서 볼 것이 세 가지 있다. 첫째, HTML 한 파일과 완전 오프라인은 다르다. Playground와 HTML Artifacts는 CDN까지 금지하지만, snow-d3 예제는 D3를 jsDelivr에서 불러오고 Iso Glow의 3D는 three.js를 CDN에서 불러온다. 둘째, 생성 환경과 결과물 실행 환경은 다르다. Web Artifacts Builder의 결과는 HTML 한 파일이지만 만들 때는 Node 빌드가 필요하고, Visual Explainer는 Node 렌더러로 파일을 만든다. 셋째, 공개 스킬이라도 비용은 든다. 스킬은 무료여도 스킬을 돌리는 모델의 토큰 비용이 들고, scroll-craft의 생성 에셋이나 Motion+의 고급 기능처럼 외부 서비스 요금이 붙는 것이 있다.
+구별해서 볼 것이 세 가지 있다. 첫째, HTML 한 파일과 완전 오프라인은 다르다. Playground와 HTML Artifacts는 CDN까지 금지한다. snow-d3 예제는 D3를 jsDelivr에서 불러오고, Iso Glow의 3D도 three.js를 CDN에서 받는다. 셋 다 HTML 한 파일이지만 네트워크가 없으면 뒤의 둘은 열리지 않는다. 둘째, 생성 환경과 결과물 실행 환경은 다르다. Web Artifacts Builder의 결과는 HTML 한 파일이지만 만들 때는 Node 빌드가 필요하고, Visual Explainer는 Node 렌더러로 파일을 만든다. 셋째, 공개 스킬이라도 비용은 든다. 스킬은 무료여도 스킬을 돌리는 모델의 토큰 비용이 들고, scroll-craft의 생성 에셋이나 Motion+의 고급 기능처럼 외부 서비스 요금이 붙는 것이 있다.
 
 ## 고르는 기준
 
@@ -258,9 +258,9 @@ Nate Herk의 [scroll-craft](https://github.com/nateherkai/scroll-craft)는 스�
 
 ## 계보와 검증
 
-눈여겨본 것은 두 가지다. 하나는 April Zhu의 스킬 세 개가 한 계보라는 점이다. Tolga Cohce의 iso-figure가 등각 투영과 "모든 그림은 무언가를 해야 한다"는 규칙을 정했다. Iso Glow는 여기에 조명과 팔레트와 3D를 더했고, Colorfigures는 색과 손그림 질감을 더했다. Playable은 Iso Glow의 시각 템플릿에 캐릭터 제어기를 추가했다. 네 스킬이 같은 기반 코드를 물려받으니 결과물도 한 가족처럼 보인다. 스킬이 프롬프트 모음에 그치지 않고 코드처럼 상속되는 드문 사례다.
+눈여겨본 것은 두 가지다. 먼저, April Zhu의 스킬 세 개는 한 계보다. Tolga Cohce의 iso-figure가 등각 투영과 "모든 그림은 무언가를 해야 한다"는 규칙을 정했다. Iso Glow는 여기에 조명과 팔레트와 3D를 더했고, Colorfigures는 색과 손그림 질감을 더했다. Playable은 Iso Glow의 시각 템플릿에 캐릭터 제어기를 추가했다. 네 스킬이 같은 기반 코드를 물려받으니 결과물도 한 가족처럼 보인다. 프롬프트 모음으로 끝나는 스킬이 대부분인데, 이 네 스킬은 코드처럼 상속된다.
 
-다른 하나는 검증 절차가 스킬의 일부가 되기 시작했다는 점이다. scroll-craft는 완성된 페이지를 스크롤하며 화면이 그대로인 구간을 결함으로 보고하고, HTML Explainer는 모바일 화면까지 캡처한다. 스킬 파일에 확인 절차까지 적혀 있다는 뜻이다. 페이지를 만든 에이전트가 독자에게 보일 화면을 직접 확인한다.
+다음으로, 검증 절차도 스킬에 포함되기 시작했다. scroll-craft는 완성된 페이지를 스크롤하며 화면이 그대로인 구간을 결함으로 보고하고, HTML Explainer는 모바일 화면까지 캡처한다. 페이지를 만든 에이전트가 독자에게 보일 화면을 직접 확인하는 절차까지 스킬 파일에 적혀 있다.
 
 ## 출처
 
