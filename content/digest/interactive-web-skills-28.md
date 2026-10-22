@@ -20,6 +20,7 @@ images:
 .post-content .iw-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
 .post-content figure.iw-embed>figcaption{margin:.5em 0 0;font-size:.86em;font-weight:400;line-height:1.55;text-align:left;color:var(--secondary)}
 @media (max-width: 640px){.post-content .iw-frame{height:460px}}
+.post-content table td,.post-content table th,.post-content table a{word-break:keep-all !important;overflow-wrap:normal !important;hyphens:manual}
 </style>
 
 ## 3줄 요약
