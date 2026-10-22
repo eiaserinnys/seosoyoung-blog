@@ -94,7 +94,7 @@ Ryan(@wheresryan22)의 [Anatomy](https://github.com/wheresryan22/anatomy)는 개
 
 April Zhu의 세 번째 스킬 [Playable](https://april-zhu.com/playable)은 리깅된 3D 모델이나 로봇 스케치를 브라우저에서 조종하는 캐릭터로 바꾼다. 결과는 three.js로 동작하는 HTML 파일 하나이고, 게임 엔진은 쓰지 않는다. WASD로 걷고 Shift로 달리고 스페이스로 점프하며, 숫자 키로 손 흔들기나 춤 같은 동작을 실행한다. 바닥을 누르면 그 자리로 걸어가고, 휴대폰용 버튼 줄도 있다.
 
-{{< video src="https://img.seosoyoung.eiaserinnys.me/images/interactive-web-skills-28/playable-robot-walk.mp4" >}}
+{{< video src="https://img.seosoyoung.eiaserinnys.me/images/interactive-web-skills-28/playable-robot-walk-v2.mp4" >}}
 *공개 데모의 로봇. 걷기, 점프, 손 흔들기 키를 차례로 눌렀을 때의 반응을 헤드리스 브라우저에서 녹화했다. 모델은 Tomás Laulhé(Quaternius)의 CC0 로봇, 동작 14종.*
 
 리깅된 `.glb`를 주면 모델의 뼈대와 애니메이션을 그대로 살려, 대기, 걷기, 달리기 동작을 속도에 따라 섞는다. 걷기 클립에서 발 속도를 재서 발이 바닥에서 미끄러지지 않게 한다. 스케치를 주면 그림에서 부위와 관절을 읽어 단단한 조각으로 리깅된 모델을 만든다. 아래 로봇 고양이는 스케치 한 장으로 만들었다. 관절이 30개, 다리가 넷, 꼬리가 일곱 마디이고, 속도가 붙으면 걸음이 구보로 바뀐다. 앉기, 기지개, 덮치기, 눕기 같은 동작도 같은 제어기가 만드는 자세다.
