@@ -5,7 +5,7 @@ slug: "seosoyoung-surreal-editorial-poster"
 cover:
   image: "https://pub-236dc9dc170e487faec4c8b5e2d084c6.r2.dev/gallery/seosoyoung-surreal-editorial-poster/cover.png"
   hiddenInList: false
-  focus: "50% 5%"
+  focus: "50% 0%"
 source: "https://x.com/mrlarus/status/2112559995703427148"
 model: "gpt-image-2.5-flare"
 mode: "edit"
@@ -14,12 +14,12 @@ draft: false
 
 ## 시리즈 변주
 
-유화와 템페라 질감의 인물화에 빅토리아 시대 과학 동판화와 수제 콜라주를 결합한 9:16 에디토리얼 포스터 연작이다. 서소영 실사 포트레이트 시드에 거울 학당 건축, 천체 관측 거미줄, 필사본 두루마리, 나방 날개 변태라는 네 가지 초현실적 메타포와 배색 팔레트를 입혔다.
+유화와 템페라 질감의 인물화에 빅토리아 시대 과학 동판화와 수제 콜라주를 결합한 에디토리얼 포스터 연작이다. 서소영 실사 포트레이트 시드에 거울 학당 건축, 천체 관측 거미줄, 필사본 두루마리, 나방 날개 변태라는 네 가지 초현실적 메타포와 배색 팔레트를 입혔다.
 
 <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin:20px 0;">
   <figure style="margin:0;">
-    <img src="https://pub-236dc9dc170e487faec4c8b5e2d084c6.r2.dev/gallery/seosoyoung-surreal-editorial-poster/poster-1-mirror-archive.png" alt="THE MIRROR ARCHIVE 에디토리얼 포스터" style="width:100%;height:auto;display:block;border-radius:6px;border:2px solid #c97a4e;">
-    <figcaption style="font-size:13px;color:#c97a4e;margin-top:6px;font-weight:600;">1. THE MIRROR ARCHIVE (대표 커버)</figcaption>
+    <img src="https://pub-236dc9dc170e487faec4c8b5e2d084c6.r2.dev/gallery/seosoyoung-surreal-editorial-poster/poster-1-mirror-archive.png" alt="THE MIRROR ARCHIVE 에디토리얼 포스터" style="width:100%;height:auto;display:block;border-radius:6px;">
+    <figcaption style="font-size:13px;color:#86868b;margin-top:6px;">1. THE MIRROR ARCHIVE</figcaption>
   </figure>
   <figure style="margin:0;">
     <img src="https://pub-236dc9dc170e487faec4c8b5e2d084c6.r2.dev/gallery/seosoyoung-surreal-editorial-poster/poster-2-silent-observer.png" alt="THE SILENT OBSERVER 에디토리얼 포스터" style="width:100%;height:auto;display:block;border-radius:6px;">
@@ -61,6 +61,7 @@ draft: false
 ## 프롬프트
 
 ```text
+# 1. THE MIRROR ARCHIVE
 [TITLE]: THE MIRROR ARCHIVE
 [SUBJECT]: A young East Asian woman in her twenties preserving the exact facial features, calm observant gaze, and hairstyle of the reference seed image (center-parted dark hair tied into low twin tails with large dark spherical hair ornaments and delicate drop earrings), posed in a composed three-quarter portrait under subtle Rembrandt lighting (09).
 [SURREAL CONCEPT]: Her layered organic hanbok collar unfolds like sculpted botanical leaves and silk membranes, while the flowing tips of her dark hair transform into impossible Victorian stone archways, spiral staircases, and a misty lakeside academy tower.
@@ -113,4 +114,4 @@ Avoid glossy CGI, generic fantasy art, random decorations, excessive grunge, wat
 
 - 시드 및 헤어스타일 일반화: `서소영 (실사, 포트레이트).png`를 입력 시드로 사용했으며, 헤어스타일 지정은 시드의 5:5 가르마와 검은 구슬 장식 낮은 양갈래 머리, 드롭 이어링을 그대로 유지하도록 일반화했다.
 - 배색과 조명 설계: 배색 100선의 시크한 레트로 갈래(`087 숲속 도서관`, `085 잉크와 구리`, `080 보르도 살롱`, `097 다크 보태니컬`)와 조명 25선(`09 Rembrandt lighting`, `13 Short lighting`, `08 Loop lighting`, `02 45-degree key light` + `04 Rear side light`)을 네 가지 초현실적 변형 주제에 맞춰 조합했다.
-- 해상도와 썸네일 초점: 4장 모두 `1536x2304`(`high`) 세로 포스터로 생성했고, 갤러리 정사각 썸네일에서 상단 세리프 타이틀과 인물 얼굴이 함께 보이도록 `cover.focus: "50% 5%"`를 지정했다.
+- 해상도와 썸네일 초점: 4장 모두 `1536x2304`(`high`) 세로 포스터로 생성했고, 갤러리 정사각 썸네일에서 상단 세리프 타이틀과 인물 얼굴이 함께 보이도록 `cover.focus: "50% 0%"`를 지정했다.
