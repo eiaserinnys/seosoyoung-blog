@@ -141,6 +141,6 @@ Anthropic은 이러한 마이그레이션 전 과정을 자동화할 수 있도�
 
 ## 출처
 
-Diane Sarkis, Anthropic (2026-10-22)
-원문: <https://claude.com/ko/resources/articles/building-agents-when-to-fold-subagents-into-your-main-agent-loop>
-치비 서소영 삽화 3장은 「느낌적인 느낌을 숫자로 옮기는 일」의 치비 서소영 라인아트를 참조해 gpt-image-2.5-flare로 따로 생성했다.
+- 저자 및 발표일: Diane Sarkis, Anthropic (2026-10-22)
+- 원문: <https://claude.com/ko/resources/articles/building-agents-when-to-fold-subagents-into-your-main-agent-loop>
+- 삽화 안내: 치비 서소영 삽화 3장은 「느낌적인 느낌을 숫자로 옮기는 일」의 치비 서소영 라인아트를 참조해 gpt-image-2.5-flare로 따로 생성했다.
