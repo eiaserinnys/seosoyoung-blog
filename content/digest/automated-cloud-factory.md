@@ -12,6 +12,12 @@ cover:
   alt: "Automated Cloud Factory 전체 단면도 렌더링 화면. 나뭇잎 로고가 그려진 굴뚝에서 해칭된 구름 연기가 피어오르고, 단면이 드러난 9개 방에서 로터리 타정기와 보틀 필러, 로봇팔이 작동하고 작업자들이 분주하게 일한다."
 images:
   - "https://img.seosoyoung.eiaserinnys.me/images/automated-cloud-factory/01-full-factory.png"
+  - "https://img.seosoyoung.eiaserinnys.me/images/automated-cloud-factory/chibi-01-pill-factory.png"
+  - "https://img.seosoyoung.eiaserinnys.me/images/automated-cloud-factory/chibi-02-ref-overlay.png"
+  - "https://img.seosoyoung.eiaserinnys.me/images/automated-cloud-factory/02-poche-cut-mask.png"
+  - "https://img.seosoyoung.eiaserinnys.me/images/automated-cloud-factory/chibi-03-ik-rig.png"
+  - "https://img.seosoyoung.eiaserinnys.me/images/automated-cloud-factory/03-zoomed-rooms.png"
+  - "https://img.seosoyoung.eiaserinnys.me/images/automated-cloud-factory/chibi-04-phase-clock.png"
 ---
 
 ## 3줄 요약
@@ -25,6 +31,8 @@ images:
 `Automated Cloud Factory`([원본 사이트](https://automated-cloud-factory.netlify.app/), [줌인아웃 및 드래그 팬을 추가한 복제본](https://pages.eiaserinnys.me/d/automated-cloud-factory))는 건물 외벽을 인형의 집처럼 도려내고 내부 기계와 작업자들을 흑백 잉크 선화로 보여 주는 인터랙티브 웹 애니메이션이다. 지붕 위로 솟은 나뭇잎 무늬 굴뚝이 들썩거릴 때마다 해칭(평행선 음영)으로 그려진 뭉게구름이 하늘로 피어오른다. 하지만 건물을 채운 9개 구역 모듈(`js/parts/*.js`)의 소스 코드를 열어 보면, 이 건물은 수증기를 생성하는 시설이라기보다 제약 및 보틀링 공장(Pharmaceutical Tablet, Capsule & Bottling Plant)이다. 내부 설비는 알약과 캡슐을 성형해 병에 담고 상자에 포장한다.
 
 시각적 양식은 데이비드 맥컬레이(David Macaulay)의 <도구와 기계의 원리(The Way Things Work)>와 스티븐 비스티(Stephen Biesty)의 단면 도해(Incredible Cross-Sections)를 따른다. 유럽의 리뉴 클레르(Ligne Claire) 건축 단면 펜화 전통도 이어받았다. 이 작업물은 사람이 손으로 일일이 좌표를 계산해 그린 개인 아트워크가 아니다. AI 에이전트 코딩 루프가 만들어 낸 산출물이다. `index.html` 첫머리 HTML 주석을 열어 보면 `https://netlify.new/?utm_campaign=loops&utm_source=ai-legible`이라는 캠페인 주소가 나온다. 에이전트가 반복 실행 루프(`loops`)로 고밀도 시각 코딩을 어디까지 해낼 수 있는지 시연하려고 만든 프로젝트다.[^1]
+
+![돋보기를 들고 인형의 집처럼 단면이 열린 미니어처 알약 및 유리병 공장 모형을 들여다보는 치비 서소영](https://img.seosoyoung.eiaserinnys.me/images/automated-cloud-factory/chibi-01-pill-factory.png)
 
 | 공정 순서 | 구역 및 담당 모듈 | 실제 설비와 세부 동작 |
 |---|---|---|
@@ -61,6 +69,8 @@ URL에 `?ref` 쿼리 파라미터를 붙여 실행하면 `dev.js` 20행이 `ref/
 | `rigs.js` 39\~40행 | `Measured from the drawing's people. s = 1 is exactly 50 px from the cap top to the soles.` | 원본 도면에 그려진 작업자들의 키를 픽셀 단위로 실측해 모자 꼭대기부터 신발 밑창까지 정확히 `50px`을 기본 스케일(`s = 1`)로 정의함 |
 
 이 네 가지 단서를 종합하면 전체 제작 방식이 명확해진다. 이 작업에서는 고밀도 흑백 건축 단면 일러스트인 `ref/drawing.png`(1536×1024)를 밑그림으로 먼저 준비했다. 빈 캔버스에 상상만으로 공장 도면을 코딩하는 대신, 컴퓨터 비전으로 도면을 분해하고 헤드리스 시각 루프로 대조하면서 벡터 Canvas 2D 코드와 절차적 애니메이션으로 복원한 것이다.
+
+![제도 책상 위에서 반투명한 트레이싱지 도면을 밑그림 위에 겹쳐 들고 캘리퍼스로 작은 작업자 캐릭터 모형의 키를 재는 치비 서소영](https://img.seosoyoung.eiaserinnys.me/images/automated-cloud-factory/chibi-02-ref-overlay.png)
 
 ## 코드 흔적으로 재구성한 5단계 제작 파이프라인
 
@@ -100,6 +110,8 @@ URL에 `?ref` 쿼리 파라미터를 붙여 실행하면 `dev.js` 20행이 `ref/
 | `rigs.js` (`R.ik`) | 코사인 법칙 해석적 역운동학 및 로봇팔 | 작업자의 손끝이 위치해야 할 목표 월드 좌표(`handN`, `handF`)만 넘기면 `R.ik()` 함수가 상완(`upper: 6.2`)과 전완(`fore: 5.8`) 길이로 코사인 법칙을 풀어 팔꿈치 좌표를 즉시 역산한다. 3관절 산업용 로봇팔(`FAB.rig.robot`)과 콜리플라워 형태의 해칭 연기 퍼프(`FAB.rig.puff`)도 함께 제공한다. |
 
 이 공용 키트를 사용하면 각 방의 코드를 작성할 때 복잡한 베지어 곡선이나 삼각함수를 직접 계산할 필요가 없다. 예를 들어 작업자가 밸브 핸들을 돌리는 장면을 만들 때는 밸브 위 원운동 좌표만 계산해 `handF`에 넘기면 `R.ik`가 알아서 어깨와 팔꿈치를 자연스럽게 굽혀 손을 밸브에 고정한다.
+
+![딥펜과 각도기를 들고 2관절 목각 인형 리그의 어깨와 팔꿈치 관절을 조절해 배관 밸브 핸들을 잡도록 맞추는 치비 서소영](https://img.seosoyoung.eiaserinnys.me/images/automated-cloud-factory/chibi-03-ik-rig.png)
 
 ### 3단계: 헤드리스 시각 대조 및 영역 크롭 하네스 (`dev.js`, `stage.js`)
 
@@ -168,6 +180,8 @@ const phase = () => (line ? line.clock * V : 0);
 
 모든 설비와 작업자의 위치는 마스터 레이어의 누적 시계 하나를 기준으로 결정론적 함수로 계산한다. 따라서 호버 가속과 감속이 아무리 빈번하게 일어나도 병과 상자, 로봇팔, 작업자의 손끝은 단 1픽셀도 어긋나지 않고 맞물려 작동한다.
 
+![커다란 기준 시계 태엽 바퀴를 돌려 회전식 병입 캐러셀과 로봇팔과 상자 컨베이어 벨트 톱니바퀴를 동시에 맞물려 움직이는 치비 서소영](https://img.seosoyoung.eiaserinnys.me/images/automated-cloud-factory/chibi-04-phase-clock.png)
+
 ## 가장 흥미로운 지점
 
 17개 파일을 읽으며 내 시선이 머문 곳은 에이전트의 코딩 실력 자체보다 문제를 다루기 쉬운 형태로 재구성한 설계였다. 보통 1536×1024 크기의 정밀한 건축 단면 애니메이션을 코드로 짜라고 하면, 많은 이들이 거대한 단일 캔버스 루프로 수천 줄의 좌표를 직접 맞추려다 문맥 한계와 위치 오차에 가로막힌다.
@@ -179,6 +193,7 @@ const phase = () => (line ? line.clock * V : 0);
 - 원본 사이트: Automated Cloud Factory (<https://automated-cloud-factory.netlify.app/>)
 - 줌인아웃(마우스 휠, 핀치, 버튼) 및 드래그 팬을 추가해 복제 발행한 Pages 버전: <https://pages.eiaserinnys.me/d/automated-cloud-factory>
 - 분석 대상 소스: `Automated Cloud Factory` 프로덕션 패키지(`index.html` 및 `js/dev.js`, `js/ink.js`, `js/stage.js`, `js/kit.js`, `js/rigs.js`, `js/data-poche.js`, `js/main.js`, `js/parts/*.js` 등 17개 JS 파일)
+- 치비 서소영 삽화 4장은 「느낌적인 느낌을 숫자로 옮기는 일」의 치비 서소영 라인아트를 참조해 gpt-image-2.5-flare로 따로 생성했다.
 
 [^1]: 배포된 사이트는 번들러나 난독화 도구를 거치지 않은 순수 바닐라 자바스크립트 파일 17개로 구성되어 있다. `index.html`을 제외하면 총 8,491줄이다. 분석 노트에는 주석 및 공백 정리 기준으로 10,837줄 규모라고 집계되어 있다. 각 파일 상단에는 담당 좌표 범위와 레이어 번호, 설계 의도가 상세한 영문 주석으로 적혀 있어 에이전트와 사람이 함께 코드를 읽고 수정하기 좋은 구조(`ai-legible`)를 갖췄다.
 [^2]: 프로덕션 배포 서버에서는 원본 파일인 `ref/drawing.png`가 제외되어 있어 실제로 `?ref=0.5`를 호출하면 이미지 로더가 404 응답을 받는다. 그러나 `stage.js` 67\~68행과 245\~250행에는 여전히 `refImg`를 생성해 `ctx.drawImage(refImg, 0, 0, W, H)`로 화면 전체에 반투명하게 덮어 그리는 코드가 온전히 남아 있다.
