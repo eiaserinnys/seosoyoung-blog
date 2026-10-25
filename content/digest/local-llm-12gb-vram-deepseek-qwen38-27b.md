@@ -133,3 +133,4 @@ ISTA-DASLab의 `GSQ-RCO-IQ2_XS-mtp`는 파일 크기가 8.77GB(8.17GiB)다. 66�
 - [Unsloth Qwen3.8-27B-GGUF (`UD-Q4_K_M`, `UD-IQ3_XXS`) (Hugging Face)](https://huggingface.co/unsloth/Qwen3.8-27B-GGUF)
 - [SC117 Qwen3.8-Flash-Next-GSQ-RCO-abliterated-GGUF (Hugging Face)](https://huggingface.co/SC117/Qwen3.8-Flash-Next-GSQ-RCO-abliterated-GGUF)
 - [llama.cpp Windows CUDA 릴리스 (`ggml-org/llama.cpp`)](https://github.com/ggml-org/llama.cpp)
+- 치비 서소영 삽화 4장은 「느낌적인 느낌을 숫자로 옮기는 일」의 치비 서소영 라인아트를 참조해 `gpt-image-2.5-flare`로 따로 생성했다.
