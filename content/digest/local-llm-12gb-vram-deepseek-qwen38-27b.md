@@ -41,7 +41,7 @@ images:
   display: flex;
   flex-wrap: wrap;
   gap: 0.75rem;
-  font-size: 0.75rem;
+  font-size: 0.78rem;
   color: var(--secondary);
   margin-bottom: 0.85rem;
 }
@@ -93,27 +93,27 @@ html[data-theme="dark"] .llm-dot-free { background: rgba(56, 189, 248, 0.18); bo
   color: var(--primary);
 }
 .llm-tier-meta {
-  font-size: 0.75rem;
+  font-size: 0.76rem;
   color: var(--secondary);
   font-family: monospace;
 }
 .llm-stack-bar {
   display: flex;
-  height: 24px;
+  height: 26px;
   border-radius: 6px;
   overflow: hidden;
   background: var(--entry);
   border: 1px solid var(--border);
-  font-size: 0.72rem;
+  font-size: 0.75rem;
   font-weight: 600;
-  line-height: 24px;
+  line-height: 26px;
   text-align: center;
 }
 .llm-seg-vram, .llm-seg-ram, .llm-seg-ssd, .llm-seg-free {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  padding: 0 6px;
+  padding: 0 4px;
 }
 .llm-seg-vram { background: #0284c7; color: #ffffff; }
 .llm-seg-ram { background: #d97706; color: #ffffff; }
@@ -138,7 +138,7 @@ html[data-theme="dark"] .llm-seg-free { background: rgba(56, 189, 248, 0.15); co
   display: flex;
   justify-content: space-between;
   align-items: baseline;
-  gap: 0.5rem;
+  gap: 0.45rem;
   flex-wrap: wrap;
 }
 .llm-bar-model {
@@ -188,7 +188,7 @@ html[data-theme="dark"] .llm-seg-free { background: rgba(56, 189, 248, 0.15); co
 .llm-dual-caption {
   display: flex;
   justify-content: space-between;
-  font-size: 0.72rem;
+  font-size: 0.75rem;
   font-family: monospace;
   color: var(--secondary);
 }
@@ -198,7 +198,7 @@ html[data-theme="dark"] .llm-seg-free { background: rgba(56, 189, 248, 0.15); co
 
 .llm-badge {
   display: inline-block;
-  font-size: 0.69rem;
+  font-size: 0.75rem;
   font-weight: 600;
   padding: 0.08rem 0.42rem;
   border-radius: 4px;
@@ -244,13 +244,14 @@ html[data-theme="dark"] .llm-badge-info { background: rgba(56, 189, 248, 0.18); 
   margin-top: 0.45rem;
 }
 .llm-chip {
-  font-size: 0.71rem;
+  font-size: 0.75rem;
   font-family: monospace;
-  padding: 0.12rem 0.4rem;
+  padding: 0.12rem 0.42rem;
   border-radius: 4px;
   background: var(--entry);
   border: 1px solid var(--border);
   color: var(--secondary);
+  white-space: nowrap;
 }
 .llm-chip strong {
   color: var(--primary);
@@ -298,7 +299,7 @@ details.llm-resp-card > summary.llm-resp-header::-webkit-details-marker {
   display: none;
 }
 .llm-fold-hint {
-  font-size: 0.71rem;
+  font-size: 0.75rem;
   color: var(--secondary);
   font-weight: 600;
 }
@@ -318,20 +319,40 @@ details.llm-resp-card:not([open]) .llm-fold-hint::after {
   align-items: center;
   gap: 0.4rem;
   flex-wrap: wrap;
-  font-size: 0.74rem;
+  font-size: 0.76rem;
   font-family: monospace;
   color: var(--secondary);
 }
 .llm-resp-body {
-  padding: 0.85rem 1rem;
-  font-size: 0.85rem;
+  padding: 0.9rem 1.05rem;
+  font-size: 0.86rem;
   line-height: 1.62;
   color: var(--content);
-  white-space: pre-wrap;
+  white-space: normal;
   word-break: keep-all;
   overflow-wrap: anywhere;
   font-family: inherit;
   margin: 0;
+}
+.llm-resp-body p {
+  margin: 0 0 0.55rem 0;
+}
+.llm-resp-body p:last-child {
+  margin-bottom: 0;
+}
+.llm-resp-body ul, .llm-resp-body ol {
+  margin: 0.35rem 0 0.6rem 0;
+  padding-left: 1.35rem;
+}
+.llm-resp-body li {
+  margin-bottom: 0.32rem;
+}
+.llm-resp-body li:last-child {
+  margin-bottom: 0;
+}
+.llm-resp-body li > ul {
+  margin: 0.2rem 0 0.25rem 0;
+  padding-left: 1.15rem;
 }
 .llm-quirk {
   background: rgba(225, 29, 72, 0.16);
@@ -359,7 +380,7 @@ html[data-theme="dark"] .llm-quirk {
   .llm-mtp-grid { grid-template-columns: 1fr; }
   .llm-dual-bars { grid-template-columns: 1fr; gap: 0.3rem; }
   .llm-resp-header { padding: 0.65rem 0.8rem; }
-  .llm-resp-body { padding: 0.75rem 0.8rem; font-size: 0.82rem; }
+  .llm-resp-body { padding: 0.8rem 0.85rem; font-size: 0.84rem; }
 }
 </style>
 
@@ -394,9 +415,9 @@ VRAM 12GB와 시스템 RAM 32GB를 갖춘 PC에서 실행할 수 있는 로컬 L
         <span class="llm-tier-meta">DeepSeek 763B (240.3GB) / Qwen Flash Next 180B (78.1GiB)</span>
       </div>
       <div class="llm-stack-bar">
-        <div class="llm-seg-vram" style="width: 15%;">VRAM 4.5GB</div>
-        <div class="llm-seg-ram" style="width: 25%;">RAM 캐시 5.8~27GB</div>
-        <div class="llm-seg-ssd" style="width: 60%;">전문가 가중치 + Engram/PLE SSD 스트리밍</div>
+        <div class="llm-seg-vram" style="width: 19%;">4.5GB</div>
+        <div class="llm-seg-ram" style="width: 28%;">5.8~27GB</div>
+        <div class="llm-seg-ssd" style="width: 53%;">SSD 스트리밍</div>
       </div>
     </div>
     <div class="llm-tier-card">
@@ -405,8 +426,8 @@ VRAM 12GB와 시스템 RAM 32GB를 갖춘 PC에서 실행할 수 있는 로컬 L
         <span class="llm-tier-meta">Unsloth Qwen 3.8 27B UD-Q4_K_M (16.5GB) / UD-IQ3_XXS (10.9GB)</span>
       </div>
       <div class="llm-stack-bar">
-        <div class="llm-seg-vram" style="width: 58%;">가용 VRAM (~10GB) 적재</div>
-        <div class="llm-seg-ram" style="width: 42%;">초과 레이어 시스템 RAM 분할</div>
+        <div class="llm-seg-vram" style="width: 58%;">VRAM ~10GB</div>
+        <div class="llm-seg-ram" style="width: 42%;">RAM 분할</div>
       </div>
     </div>
     <div class="llm-tier-card">
@@ -415,8 +436,8 @@ VRAM 12GB와 시스템 RAM 32GB를 갖춘 PC에서 실행할 수 있는 로컬 L
         <span class="llm-tier-meta">ISTA-DASLab Qwen 3.8 27B GSQ-RCO IQ2_XS-mtp (8.77GB)</span>
       </div>
       <div class="llm-stack-bar">
-        <div class="llm-seg-vram" style="width: 80%;">66/66 레이어 전부 VRAM 상주 (8,089MiB)</div>
-        <div class="llm-seg-free" style="width: 20%;">RAM 8.2GiB+ 여유</div>
+        <div class="llm-seg-vram" style="width: 74%;">VRAM 8,089MiB (66/66)</div>
+        <div class="llm-seg-free" style="width: 26%;">8.2GiB+</div>
       </div>
     </div>
   </div>
@@ -462,7 +483,7 @@ VRAM 12GB와 시스템 RAM 32GB를 갖춘 PC에서 실행할 수 있는 로컬 L
     </div>
   </div>
   <div style="margin-top: 0.9rem; padding-top: 0.8rem; border-top: 1px solid var(--border);">
-    <div style="font-size: 0.79rem; font-weight: 700; color: var(--primary); margin-bottom: 0.5rem;">Strata v0.2.5 대표 등급별 권장 메모리 대비 이 PC 예산 (38.75 GiB)</div>
+    <div style="font-size: 0.8rem; font-weight: 700; color: var(--primary); margin-bottom: 0.5rem;">Strata v0.2.5 대표 등급별 권장 메모리 대비 이 PC 예산 (38.75 GiB)</div>
     <div class="llm-bar-group" style="gap: 0.55rem;">
       <div class="llm-bar-row">
         <div class="llm-bar-label-line">
@@ -565,7 +586,7 @@ VRAM 12GB와 시스템 RAM 32GB를 갖춘 PC에서 실행할 수 있는 로컬 L
     </div>
     <div class="llm-bar-row">
       <div class="llm-bar-label-line">
-        <span class="llm-bar-model">4. Qwen 3.8 Flash Next (180B, IQ3_S + Strata MTP, 78.1GiB)</span>
+        <span class="llm-bar-model">4. Qwen 3.8 Flash Next (180B, IQ3_S + MTP, 78.1GiB)</span>
         <span class="llm-bar-stats">사과 7.66초 / 코딩 84.94초 <span class="llm-badge llm-badge-err">코딩 타임아웃</span></span>
       </div>
       <div class="llm-dual-bars">
@@ -597,7 +618,7 @@ VRAM 12GB와 시스템 RAM 32GB를 갖춘 PC에서 실행할 수 있는 로컬 L
     </div>
     <div class="llm-bar-row">
       <div class="llm-bar-label-line">
-        <span class="llm-bar-model">6. Qwen 3.8 27B GSQ-RCO IQ2_XS + MTP (8.77GB, Windows)</span>
+        <span class="llm-bar-model">6. Qwen 3.8 27B IQ2_XS + MTP (8.77GB, Windows)</span>
         <span class="llm-bar-stats">사과 0.97초 / 코딩 38.56초 <span class="llm-badge llm-badge-ok">66/66 VRAM</span></span>
       </div>
       <div class="llm-dual-bars">
@@ -613,8 +634,8 @@ VRAM 12GB와 시스템 RAM 32GB를 갖춘 PC에서 실행할 수 있는 로컬 L
     </div>
     <div class="llm-bar-row">
       <div class="llm-bar-label-line">
-        <span class="llm-bar-model">7. Qwen 3.8 27B GSQ-RCO IQ2_XS + MTP (8.77GB, WSL2 ext4)</span>
-        <span class="llm-bar-stats">사과 0.74초 / 웜업 4.06초 <span class="llm-badge llm-badge-ok">66/66 VRAM + DIO</span></span>
+        <span class="llm-bar-model">7. Qwen 3.8 27B IQ2_XS + MTP (8.77GB, WSL2 ext4)</span>
+        <span class="llm-bar-stats">사과 0.74초 / 웜업 4.06초 <span class="llm-badge llm-badge-ok">66/66 VRAM</span></span>
       </div>
       <div class="llm-dual-bars">
         <div class="llm-dual-cell">
@@ -646,7 +667,7 @@ ISTA-DASLab의 `GSQ-RCO-IQ2_XS-mtp`는 파일 크기가 8.77GB(8.17GiB)다. 66�
         <span class="llm-tier-meta">사용 31.74 GiB / <strong>최소 여유 7.57 MiB (0.02%)</strong></span>
       </div>
       <div class="llm-stack-bar">
-        <div class="llm-seg-ssd" style="width: 99%;">시스템 RAM 31.74 GiB 포화</div>
+        <div class="llm-seg-ssd" style="width: 99%;">31.74 GiB</div>
         <div class="llm-seg-free" style="width: 1%; padding: 0;"></div>
       </div>
     </div>
@@ -656,7 +677,7 @@ ISTA-DASLab의 `GSQ-RCO-IQ2_XS-mtp`는 파일 크기가 8.77GB(8.17GiB)다. 66�
         <span class="llm-tier-meta">사용 31.49 GiB / <strong>최소 여유 0.26 GiB (0.8%)</strong></span>
       </div>
       <div class="llm-stack-bar">
-        <div class="llm-seg-ram" style="width: 98%;">시스템 RAM 31.49 GiB</div>
+        <div class="llm-seg-ram" style="width: 98%;">31.49 GiB</div>
         <div class="llm-seg-free" style="width: 2%; padding: 0;"></div>
       </div>
     </div>
@@ -666,8 +687,8 @@ ISTA-DASLab의 `GSQ-RCO-IQ2_XS-mtp`는 파일 크기가 8.77GB(8.17GiB)다. 66�
         <span class="llm-tier-meta">사용 28.61 GiB / <strong>최소 여유 3.14 GiB (9.9%)</strong></span>
       </div>
       <div class="llm-stack-bar">
-        <div class="llm-seg-ram" style="width: 90%;">시스템 RAM 28.61 GiB</div>
-        <div class="llm-seg-free" style="width: 10%;">3.1GiB</div>
+        <div class="llm-seg-ram" style="width: 90%;">28.61 GiB</div>
+        <div class="llm-seg-free" style="width: 10%; padding: 0;"></div>
       </div>
     </div>
     <div class="llm-tier-card">
@@ -676,8 +697,8 @@ ISTA-DASLab의 `GSQ-RCO-IQ2_XS-mtp`는 파일 크기가 8.77GB(8.17GiB)다. 66�
         <span class="llm-tier-meta">사용 27.74 GiB / <strong>최소 여유 4.00 GiB (12.6%)</strong></span>
       </div>
       <div class="llm-stack-bar">
-        <div class="llm-seg-ssd" style="width: 87%;">시스템 RAM 27.74 GiB (SSD 233.4GB 읽기)</div>
-        <div class="llm-seg-free" style="width: 13%;">4.0GiB</div>
+        <div class="llm-seg-ssd" style="width: 87%;">27.74 GiB (SSD 233.4GB)</div>
+        <div class="llm-seg-free" style="width: 13%; padding: 0;"></div>
       </div>
     </div>
     <div class="llm-tier-card">
@@ -686,8 +707,8 @@ ISTA-DASLab의 `GSQ-RCO-IQ2_XS-mtp`는 파일 크기가 8.77GB(8.17GiB)다. 66�
         <span class="llm-tier-meta">사용 23.59 GiB / <strong>최소 여유 8.16 GiB (25.7%) / WSL2 RSS 2.14 GiB</strong></span>
       </div>
       <div class="llm-stack-bar">
-        <div class="llm-seg-vram" style="width: 74%;">시스템 RAM 23.59 GiB (백그라운드 포함)</div>
-        <div class="llm-seg-free" style="width: 26%;">여유 8.16 GiB</div>
+        <div class="llm-seg-vram" style="width: 74%;">23.59 GiB</div>
+        <div class="llm-seg-free" style="width: 26%;">8.16 GiB</div>
       </div>
     </div>
   </div>
@@ -710,18 +731,19 @@ ISTA-DASLab의 `GSQ-RCO-IQ2_XS-mtp`는 파일 크기가 8.77GB(8.17GiB)다. 66�
         <span class="llm-badge llm-badge-err">한영 혼용 3곳</span>
       </span>
     </div>
-    <div class="llm-resp-body">양자 역학은 원자, 전자, 광자처럼 <strong>아주 작은 세계의 물리 법칙</strong>을 설명하는 이론입니다. 핵심은 다음과 같습니다.
-
-- <strong>상태는 파동 함수로 설명된다.</strong> 입자의 상태는 수학적으로 “파동 함수”로 표현되며, 이는 여러 가능성이 중첩된 상태를 의미할 수 있습니다.
-- <strong>중첩(superposition):</strong> 예를 들어 전자가 여러 위치/에너지 상태의 가능성을 동시에 “중첩”해 표현될 수 있습니다. 측정하면 그중 하나의 결과가 확률적으로 나타납니다.
-- <strong>측정은 확률적이다.</strong> 양자 역학은 결과를 정확히 예측하기보다 확률로 예측합니다. 측정 후 상태가 특정 결과로 “업데이트”되며, 이 과정을 흔히 “붕괴”라고 부릅니다. 다만 해석은 학자마다 다릅니다.
-- <strong>불확정성 원리:</strong> 위치와 운동량 같은 물리량을 동시에 모두 정확히 알 수 없습니다. 정확히 알수록 다른 값의 불확실성이 커집니다.
-- <strong>양자화:</strong> 에너지, 상태 등이 연속적으로 임의 값을 가지기보다 특정 단위/레벨로 나뉩니다. 예: 원자 내 전자의 에너지 준위.
-- <strong><mark class="llm-quirk">양자 entanglement</mark>:</strong> 두 입자의 상태가 강하게 상관되어, 멀리 떨어져 있어도 측정 결과가 서로 관련될 수 있습니다.
-
-간단히 말하면: <strong>양자 역학은 <mark class="llm-quirk">microscopic 세계</mark>에서 입자가 파동처럼 여러 가능성을 갖고, 측정 결과는 확률적으로 나타나는 이론</strong>입니다. 일상 세계에서는 이 효과가 거의 직접 보이지 않지만, 반도체, <mark class="llm-quirk">lasers, atomic physics</mark> 등 현대 기술의 기초입니다.</div>
+    <div class="llm-resp-body">
+      <p>양자 역학은 원자, 전자, 광자처럼 <strong>아주 작은 세계의 물리 법칙</strong>을 설명하는 이론입니다. 핵심은 다음과 같습니다.</p>
+      <ul>
+        <li><strong>상태는 파동 함수로 설명된다.</strong> 입자의 상태는 수학적으로 “파동 함수”로 표현되며, 이는 여러 가능성이 중첩된 상태를 의미할 수 있습니다.</li>
+        <li><strong>중첩(superposition):</strong> 예를 들어 전자가 여러 위치/에너지 상태의 가능성을 동시에 “중첩”해 표현될 수 있습니다. 측정하면 그중 하나의 결과가 확률적으로 나타납니다.</li>
+        <li><strong>측정은 확률적이다.</strong> 양자 역학은 결과를 정확히 예측하기보다 확률로 예측합니다. 측정 후 상태가 특정 결과로 “업데이트”되며, 이 과정을 흔히 “붕괴”라고 부릅니다. 다만 해석은 학자마다 다릅니다.</li>
+        <li><strong>불확정성 원리:</strong> 위치와 운동량 같은 물리량을 동시에 모두 정확히 알 수 없습니다. 정확히 알수록 다른 값의 불확실성이 커집니다.</li>
+        <li><strong>양자화:</strong> 에너지, 상태 등이 연속적으로 임의 값을 가지기보다 특정 단위/레벨로 나뉩니다. 예: 원자 내 전자의 에너지 준위.</li>
+        <li><strong><mark class="llm-quirk">양자 entanglement</mark>:</strong> 두 입자의 상태가 강하게 상관되어, 멀리 떨어져 있어도 측정 결과가 서로 관련될 수 있습니다.</li>
+      </ul>
+      <p>간단히 말하면: <strong>양자 역학은 <mark class="llm-quirk">microscopic 세계</mark>에서 입자가 파동처럼 여러 가능성을 갖고, 측정 결과는 확률적으로 나타나는 이론</strong>입니다. 일상 세계에서는 이 효과가 거의 직접 보이지 않지만, 반도체, <mark class="llm-quirk">lasers, atomic physics</mark> 등 현대 기술의 기초입니다.</p>
+    </div>
   </div>
-
   <div class="llm-resp-card">
     <div class="llm-resp-header">
       <span class="llm-resp-title">2. Qwen 3.8 Flash Next (180B MoE + 51.2B PLE / GSQ-RCO-IQ3_S + MTP)</span>
@@ -730,20 +752,19 @@ ISTA-DASLab의 `GSQ-RCO-IQ2_XS-mtp`는 파일 크기가 8.77GB(8.17GiB)다. 66�
         <span class="llm-badge llm-badge-warn">한자(連續) 토큰 혼입</span>
       </span>
     </div>
-    <div class="llm-resp-body">양자 역학은 아주 작은 원자나 전자 같은 미시 세계를 다루는 물리학이에요.  
-간단히 핵심만 말하면:
-
-- <strong><mark class="llm-quirk">에너지는連續적이지 않고</mark> ‘덩어리’로 나온다</strong>: 양자(quantum)라는 최소 단위로 나뉘어요.  
-- <strong>입자도 파동처럼 행동한다</strong>: 빛은 입자이면서 파동이고, 전자도 파동의 성질을 가집니다.  
-- <strong>측정하기 전엔 여러 가능성이 섞여 있다</strong>: 예를 들어 전자가 여기저기 여러 상태를 동시에 갖는 ‘중첩’에 있을 수 있어요.  
-- <strong>정확히 알 수 없는 한계가 있다</strong>: 위치와 운동량을 동시에 정확히 측정하는 데 한계가 있어요.  
-- <strong>관측하면 상태가 ‘하나로 결정된다’</strong>: 측정하면 가능성 중 하나가 실제로 나타나요.  
-- <strong>얽힘이 있다</strong>: 멀리 떨어진 두 입자가 서로 연결된 것처럼 행동할 수 있어요.
-
-쉽게 비유하면, 양자 세계는 “여러 가능성이 동시에 있고, 측정하면 그중 하나가 현실이 된다”는 규칙을 가진 세계라고 보면 돼요.  
-실제 응용으로는 반도체, 레이저, MRI, 양자컴퓨터 등이 있어요.</div>
+    <div class="llm-resp-body">
+      <p>양자 역학은 아주 작은 원자나 전자 같은 미시 세계를 다루는 물리학이에요.<br>간단히 핵심만 말하면:</p>
+      <ul>
+        <li><strong><mark class="llm-quirk">에너지는連續적이지 않고</mark> ‘덩어리’로 나온다</strong>: 양자(quantum)라는 최소 단위로 나뉘어요.</li>
+        <li><strong>입자도 파동처럼 행동한다</strong>: 빛은 입자이면서 파동이고, 전자도 파동의 성질을 가집니다.</li>
+        <li><strong>측정하기 전엔 여러 가능성이 섞여 있다</strong>: 예를 들어 전자가 여기저기 여러 상태를 동시에 갖는 ‘중첩’에 있을 수 있어요.</li>
+        <li><strong>정확히 알 수 없는 한계가 있다</strong>: 위치와 운동량을 동시에 정확히 측정하는 데 한계가 있어요.</li>
+        <li><strong>관측하면 상태가 ‘하나로 결정된다’</strong>: 측정하면 가능성 중 하나가 실제로 나타나요.</li>
+        <li><strong>얽힘이 있다</strong>: 멀리 떨어진 두 입자가 서로 연결된 것처럼 행동할 수 있어요.</li>
+      </ul>
+      <p>쉽게 비유하면, 양자 세계는 “여러 가능성이 동시에 있고, 측정하면 그중 하나가 현실이 된다”는 규칙을 가진 세계라고 보면 돼요.<br>실제 응용으로는 반도체, 레이저, MRI, 양자컴퓨터 등이 있어요.</p>
+    </div>
   </div>
-
   <div class="llm-resp-card llm-resp-highlight">
     <div class="llm-resp-header">
       <span class="llm-resp-title">3. ISTA-DASLab Qwen 3.8 27B (GSQ-RCO IQ2_XS + MTP / Windows 네이티브)</span>
@@ -752,31 +773,19 @@ ISTA-DASLab의 `GSQ-RCO-IQ2_XS-mtp`는 파일 크기가 8.77GB(8.17GiB)다. 66�
         <span class="llm-badge llm-badge-ok">66/66 VRAM / 한국어 정상</span>
       </span>
     </div>
-    <div class="llm-resp-body">양자 역학은 <strong>아주 작은 입자</strong>(전자, 광자 등)의 움직임을 설명하는 물리 이론입니다.
-
-간단히 말하면:
-
-- <strong>입자는 파동처럼 행동합니다.</strong>  
-  전자는 “구슬”처럼 정확한 위치를 가지기보다, <strong>확률 분포</strong>로 존재한다고 설명합니다.
-
-- <strong>중첩(superposition)</strong>  
-  입자는 여러 상태에 동시에 있을 수 있습니다.  
-  예: 전자가 “위”와 “아래” 상태의 혼합일 수 있습니다.
-
-- <strong>측정하면 상태가 결정됩니다.</strong>  
-  측정 전까지는 확률적으로 존재하지만, 측정하면 하나의 결과로 확정됩니다.
-
-- <strong>불확정성 원리</strong>  
-  위치와 운동량을 동시에 정확히 알 수 없습니다.  
-  예를 들어 위치를 잘 알면 운동량은 더 불확정적입니다.
-
-- <strong>에너지는 양자화됩니다.</strong>  
-  원자 안의 전자는 임의적인 에너지가 아니라 <strong>특정 허용된 에너지 상태</strong>만 가질 수 있습니다.
-
-한 줄로 요약하면:  
-<strong>양자 역학은 작은 세계에서 입자가 “확률적이고 파동적인” 방식으로 움직인다고 설명하는 이론입니다.</strong></div>
+    <div class="llm-resp-body">
+      <p>양자 역학은 <strong>아주 작은 입자</strong>(전자, 광자 등)의 움직임을 설명하는 물리 이론입니다.</p>
+      <p>간단히 말하면:</p>
+      <ul>
+        <li><strong>입자는 파동처럼 행동합니다.</strong><br>전자는 “구슬”처럼 정확한 위치를 가지기보다, <strong>확률 분포</strong>로 존재한다고 설명합니다.</li>
+        <li><strong>중첩(superposition)</strong><br>입자는 여러 상태에 동시에 있을 수 있습니다.<br>예: 전자가 “위”와 “아래” 상태의 혼합일 수 있습니다.</li>
+        <li><strong>측정하면 상태가 결정됩니다.</strong><br>측정 전까지는 확률적으로 존재하지만, 측정하면 하나의 결과로 확정됩니다.</li>
+        <li><strong>불확정성 원리</strong><br>위치와 운동량을 동시에 정확히 알 수 없습니다.<br>예를 들어 위치를 잘 알면 운동량은 더 불확정적입니다.</li>
+        <li><strong>에너지는 양자화됩니다.</strong><br>원자 안의 전자는 임의적인 에너지가 아니라 <strong>특정 허용된 에너지 상태</strong>만 가질 수 있습니다.</li>
+      </ul>
+      <p>한 줄로 요약하면:<br><strong>양자 역학은 작은 세계에서 입자가 “확률적이고 파동적인” 방식으로 움직인다고 설명하는 이론입니다.</strong></p>
+    </div>
   </div>
-
   <details class="llm-resp-card llm-resp-highlight">
     <summary class="llm-resp-header">
       <span class="llm-resp-title">4. ISTA-DASLab Qwen 3.8 27B (GSQ-RCO IQ2_XS + MTP / WSL2 ext4 Direct I/O)</span>
@@ -786,29 +795,19 @@ ISTA-DASLab의 `GSQ-RCO-IQ2_XS-mtp`는 파일 크기가 8.77GB(8.17GiB)다. 66�
         <span class="llm-fold-hint"></span>
       </span>
     </summary>
-    <div class="llm-resp-body">양자 역학은 <strong>아주 작은 입자(전자, 광자 등)의 행동</strong>을 설명하는 물리 이론입니다.
-
-핵심 아이디어는 다음과 같습니다.
-
-1. <strong>에너지가 연속적이지 않고 양자화됨</strong>
-   - 원자 안의 전자 에너지는 아무 값이 아니라 <strong>특정한 에너지 준위</strong>만 가질 수 있습니다.
-
-2. <strong>입자-파동 이중성</strong>
-   - 전자 같은 입자는 입자처럼 행동하면서도 <strong>파동처럼 간섭을 일으킬 수</strong> 있습니다.
-
-3. <strong>확률적 기술</strong>
-   - 양자역학에서는 입자의 위치나 운동량이 정확히 예측되기보다, <strong>어떤 상태로 존재할 확률</strong>을 계산합니다.
-
-4. <strong>측정과 확률 붕괴</strong>
-   - 상태를 관측하면 여러 가능한 상태 중 하나로 “떨어질” 수 있습니다.
-
-5. <strong>중첩과 간섭</strong>
-   - 입자는 동시에 여러 상태에 있을 수 있고, 서로 다른 경로를 통해 간섭할 수 있습니다.
-
-간단히 말하면,  
-<strong>양자역학은 미세 세계에서 “확률”와 “양자 상태”가 중심이 되는 물리 이론</strong>입니다.</div>
+    <div class="llm-resp-body">
+      <p>양자 역학은 <strong>아주 작은 입자(전자, 광자 등)의 행동</strong>을 설명하는 물리 이론입니다.</p>
+      <p>핵심 아이디어는 다음과 같습니다.</p>
+      <ol>
+        <li><strong>에너지가 연속적이지 않고 양자화됨</strong><ul><li>원자 안의 전자 에너지는 아무 값이 아니라 <strong>특정한 에너지 준위</strong>만 가질 수 있습니다.</li></ul></li>
+        <li><strong>입자-파동 이중성</strong><ul><li>전자 같은 입자는 입자처럼 행동하면서도 <strong>파동처럼 간섭을 일으킬 수</strong> 있습니다.</li></ul></li>
+        <li><strong>확률적 기술</strong><ul><li>양자역학에서는 입자의 위치나 운동량이 정확히 예측되기보다, <strong>어떤 상태로 존재할 확률</strong>을 계산합니다.</li></ul></li>
+        <li><strong>측정과 확률 붕괴</strong><ul><li>상태를 관측하면 여러 가능한 상태 중 하나로 “떨어질” 수 있습니다.</li></ul></li>
+        <li><strong>중첩과 간섭</strong><ul><li>입자는 동시에 여러 상태에 있을 수 있고, 서로 다른 경로를 통해 간섭할 수 있습니다.</li></ul></li>
+      </ol>
+      <p>간단히 말하면,<br><strong>양자역학은 미세 세계에서 “확률”와 “양자 상태”가 중심이 되는 물리 이론</strong>입니다.</p>
+    </div>
   </details>
-
   <details class="llm-resp-card">
     <summary class="llm-resp-header">
       <span class="llm-resp-title">5. Unsloth Qwen 3.8 27B (UD-Q4_K_M 단독 / 16.46GB)</span>
@@ -818,33 +817,20 @@ ISTA-DASLab의 `GSQ-RCO-IQ2_XS-mtp`는 파일 크기가 8.77GB(8.17GiB)다. 66�
         <span class="llm-fold-hint"></span>
       </span>
     </summary>
-    <div class="llm-resp-body">양자역학은 <strong>아주 작은 입자(전자, 원자, 빛 등)의 움직임을 설명하는 물리학 이론</strong>입니다.
-
-크게 이런 특징이 있어요.
-
-1. <strong>입자가 입자이면서 파동처럼 행동함</strong>
-   - 전자는 입자처럼 보이지만, 간섭무늬 같은 파동 특성도 보입니다.
-
-2. <strong>상태가 여러 가능성으로 겹쳐 있을 수 있음</strong>
-   - 예를 들어 전자는 “여기에 있다, 저기에 있다”가 동시에 가능한 상태로 존재할 수 있습니다.
-   - 이를 <strong>중첩(superposition)</strong> 이라 합니다.
-
-3. <strong>관측하면 결과가 특정 상태로 고정됨</strong>
-   - 측정하기 전에는 여러 가능성이 있었지만, 측정하면 하나의 결과가 나타납니다.
-
-4. <strong>위치와 운동량을 동시에 정확히 알 수 없음</strong>
-   - 이는 <strong>불확정성 원리</strong>라고 불립니다.
-
-5. <strong>에너지는 연속적이지 않고 단위로 나뉘어 있음</strong>
-   - 예를 들어 원자의 전자 에너지는 특정 값만 가능합니다.
-   - 그래서 <strong>양자</strong>라는 이름이 붙었습니다.
-
-쉽게 말하면,  
-<strong>양자역학은 원자 이하 세계에서는 우리가 일상에서 느끼는 물리 법칙과 다르게, 확률과 파동, 중첩이 중요한 이론</strong>입니다.
-
-이 이론 덕분에 반도체, 레이저, 원자시계, 양자컴퓨터 같은 기술이 가능해졌습니다.</div>
+    <div class="llm-resp-body">
+      <p>양자역학은 <strong>아주 작은 입자(전자, 원자, 빛 등)의 움직임을 설명하는 물리학 이론</strong>입니다.</p>
+      <p>크게 이런 특징이 있어요.</p>
+      <ol>
+        <li><strong>입자가 입자이면서 파동처럼 행동함</strong><ul><li>전자는 입자처럼 보이지만, 간섭무늬 같은 파동 특성도 보입니다.</li></ul></li>
+        <li><strong>상태가 여러 가능성으로 겹쳐 있을 수 있음</strong><ul><li>예를 들어 전자는 “여기에 있다, 저기에 있다”가 동시에 가능한 상태로 존재할 수 있습니다.</li><li>이를 <strong>중첩(superposition)</strong> 이라 합니다.</li></ul></li>
+        <li><strong>관측하면 결과가 특정 상태로 고정됨</strong><ul><li>측정하기 전에는 여러 가능성이 있었지만, 측정하면 하나의 결과가 나타납니다.</li></ul></li>
+        <li><strong>위치와 운동량을 동시에 정확히 알 수 없음</strong><ul><li>이는 <strong>불확정성 원리</strong>라고 불립니다.</li></ul></li>
+        <li><strong>에너지는 연속적이지 않고 단위로 나뉘어 있음</strong><ul><li>예를 들어 원자의 전자 에너지는 특정 값만 가능합니다.</li><li>그래서 <strong>양자</strong>라는 이름이 붙었습니다.</li></ul></li>
+      </ol>
+      <p>쉽게 말하면,<br><strong>양자역학은 원자 이하 세계에서는 우리가 일상에서 느끼는 물리 법칙과 다르게, 확률과 파동, 중첩이 중요한 이론</strong>입니다.</p>
+      <p>이 이론 덕분에 반도체, 레이저, 원자시계, 양자컴퓨터 같은 기술이 가능해졌습니다.</p>
+    </div>
   </details>
-
   <details class="llm-resp-card">
     <summary class="llm-resp-header">
       <span class="llm-resp-title">6. Unsloth Qwen 3.8 27B (UD-IQ3_XXS 단독 / 10.93GB)</span>
@@ -854,28 +840,19 @@ ISTA-DASLab의 `GSQ-RCO-IQ2_XS-mtp`는 파일 크기가 8.77GB(8.17GiB)다. 66�
         <span class="llm-fold-hint"></span>
       </span>
     </summary>
-    <div class="llm-resp-body">양자 역학(quantum mechanics)은 아주 작은 세계, 예를 들어 원자나 전자, 광자 같은 미시 입자들의 운동을 설명하는 물리 법칙입니다.
-
-가장 중요한 개념은 다음과 같습니다:
-
-1. <strong>파동-입자 이중성</strong>  
-   전자나 빛 같은 것은 입자처럼 보이기도 하고, 파동처럼 보이기도 합니다.
-
-2. <strong>확률적 성질</strong>  
-   고전 물리학에서는 위치나 속도를 정확히 알 수 있지만, 양자 세계에서는 확률만 알 수 있습니다. 예를 들어 전자가 어디에 있는지 정확히 예측하기보다 “여기에 있을 확률”을 계산합니다.
-
-3. <strong>양자화</strong>  
-   에너지는 연속적으로만 바뀌는 것이 아니라, 일정한 단위로만 변합니다. 이를 양자화라고 합니다.
-
-4. <strong>측정의 영향</strong>  
-   측정하기 전에는 입자가 여러 상태의 혼합처럼 행동하지만, 측정하면 그중 하나의 상태로 고정됩니다. 이를 ‘파동함수의 붕괴’라고도 표현합니다.
-
-5. <strong>중첩과 얽힘</strong>  
-   입자는 여러 상태가 동시에 중첩되어 있을 수 있고, 두 입자가 얽힘 상태가 되면 한쪽의 상태가 다른 쪽과 연결되어 있습니다.
-
-쉽게 말하면, 양자 역학은 “아주 작은 세계는 우리의 일상적 직관과 다르게 작동한다”는 이론입니다.</div>
+    <div class="llm-resp-body">
+      <p>양자 역학(quantum mechanics)은 아주 작은 세계, 예를 들어 원자나 전자, 광자 같은 미시 입자들의 운동을 설명하는 물리 법칙입니다.</p>
+      <p>가장 중요한 개념은 다음과 같습니다:</p>
+      <ol>
+        <li><strong>파동-입자 이중성</strong><br>전자나 빛 같은 것은 입자처럼 보이기도 하고, 파동처럼 보이기도 합니다.</li>
+        <li><strong>확률적 성질</strong><br>고전 물리학에서는 위치나 속도를 정확히 알 수 있지만, 양자 세계에서는 확률만 알 수 있습니다. 예를 들어 전자가 어디에 있는지 정확히 예측하기보다 “여기에 있을 확률”을 계산합니다.</li>
+        <li><strong>양자화</strong><br>에너지는 연속적으로만 바뀌는 것이 아니라, 일정한 단위로만 변합니다. 이를 양자화라고 합니다.</li>
+        <li><strong>측정의 영향</strong><br>측정하기 전에는 입자가 여러 상태의 혼합처럼 행동하지만, 측정하면 그중 하나의 상태로 고정됩니다. 이를 ‘파동함수의 붕괴’라고도 표현합니다.</li>
+        <li><strong>중첩과 얽힘</strong><br>입자는 여러 상태가 동시에 중첩되어 있을 수 있고, 두 입자가 얽힘 상태가 되면 한쪽의 상태가 다른 쪽과 연결되어 있습니다.</li>
+      </ol>
+      <p>쉽게 말하면, 양자 역학은 “아주 작은 세계는 우리의 일상적 직관과 다르게 작동한다”는 이론입니다.</p>
+    </div>
   </details>
-
   <details class="llm-resp-card">
     <summary class="llm-resp-header">
       <span class="llm-resp-title">7. Unsloth Qwen 3.8 27B (UD-IQ3_XXS + MTP / 10.93GB)</span>
@@ -885,20 +862,20 @@ ISTA-DASLab의 `GSQ-RCO-IQ2_XS-mtp`는 파일 크기가 8.77GB(8.17GiB)다. 66�
         <span class="llm-fold-hint"></span>
       </span>
     </summary>
-    <div class="llm-resp-body">양자역학은 <strong>아주 작은 세계, 즉 원자나 전자, 광자 같은 미시 세계의 물리 법칙을 설명하는 이론</strong>입니다.
-
-일상에서 쓰는 뉴턴 역학과는 다르게, 입자의 위치나 속성을 정확히 예측하기보다 <strong>확률적으로 설명</strong>합니다.
-
-핵심 개념은 다음과 같습니다.
-
-- <strong>입자-파동 이중성</strong>: 전자나 빛도 입자처럼 보이기도 하고, 파동처럼 보이기도 합니다.
-- <strong>양자화</strong>: 에너지 같은 물리량은 연속적으로 변하지 않고, 작은 단위로만 존재할 수 있습니다.
-- <strong>파동함수와 확률</strong>: 입자의 상태는 파동함수로 표현되며, 측정 결과는 확률로만 예측합니다.
-- <strong>불확정성 원리</strong>: 입자의 위치와 운동량은 동시에 정확히 알 수 없습니다.
-- <strong>측정의 효과</strong>: 측정 전에는 여러 상태가 중첩되어 있다가, 측정하면 하나의 결과로 결정됩니다.
-- <strong>양자 얽힘</strong>: 두 입자가 서로 연결되어 있어, 한쪽을 측정하면 다른쪽 상태도 영향을 받을 수 있습니다.
-
-쉽게 말하면, 양자역학은 <strong>작은 세계에서는 “확정된 상태”가 아니라 “가능성”으로 물리현상이 설명된다는 이론</strong>입니다.</div>
+    <div class="llm-resp-body">
+      <p>양자역학은 <strong>아주 작은 세계, 즉 원자나 전자, 광자 같은 미시 세계의 물리 법칙을 설명하는 이론</strong>입니다.</p>
+      <p>일상에서 쓰는 뉴턴 역학과는 다르게, 입자의 위치나 속성을 정확히 예측하기보다 <strong>확률적으로 설명</strong>합니다.</p>
+      <p>핵심 개념은 다음과 같습니다.</p>
+      <ul>
+        <li><strong>입자-파동 이중성</strong>: 전자나 빛도 입자처럼 보이기도 하고, 파동처럼 보이기도 합니다.</li>
+        <li><strong>양자화</strong>: 에너지 같은 물리량은 연속적으로 변하지 않고, 작은 단위로만 존재할 수 있습니다.</li>
+        <li><strong>파동함수와 확률</strong>: 입자의 상태는 파동함수로 표현되며, 측정 결과는 확률로만 예측합니다.</li>
+        <li><strong>불확정성 원리</strong>: 입자의 위치와 운동량은 동시에 정확히 알 수 없습니다.</li>
+        <li><strong>측정의 효과</strong>: 측정 전에는 여러 상태가 중첩되어 있다가, 측정하면 하나의 결과로 결정됩니다.</li>
+        <li><strong>양자 얽힘</strong>: 두 입자가 서로 연결되어 있어, 한쪽을 측정하면 다른쪽 상태도 영향을 받을 수 있습니다.</li>
+      </ul>
+      <p>쉽게 말하면, 양자역학은 <strong>작은 세계에서는 “확정된 상태”가 아니라 “가능성”으로 물리현상이 설명된다는 이론</strong>입니다.</p>
+    </div>
   </details>
 </div>
 
@@ -920,38 +897,41 @@ ISTA-DASLab의 `GSQ-RCO-IQ2_XS-mtp`는 파일 크기가 8.77GB(8.17GiB)다. 66�
   <div class="llm-mtp-grid">
     <div class="llm-metric-box">
       <div class="llm-metric-box-title">UD-IQ3_XXS 단독 (10.93GB)</div>
-      <div class="llm-metric-val">69.1–82.3 ms</div>
+      <div class="llm-metric-val">69.1~82.3 ms</div>
       <div class="llm-mtp-bar-wrap">
         <div class="llm-bar-track" style="height:14px;"><div class="llm-bar-fill llm-fill-ram" style="width: 76%;"></div></div>
       </div>
       <div class="llm-metric-chips">
         <span class="llm-chip"><strong>일부 RAM 분할</strong></span>
         <span class="llm-chip">사과 9.48 tok/s</span>
-        <span class="llm-chip">양자 12.15 / 코딩 14.47 tok/s</span>
+        <span class="llm-chip">양자 12.15 tok/s</span>
+        <span class="llm-chip">코딩 14.47 tok/s</span>
       </div>
     </div>
     <div class="llm-metric-box">
       <div class="llm-metric-box-title">UD-IQ3_XXS + MTP (10.93GB)</div>
-      <div class="llm-metric-val" style="color:#d97706;">97.3–101.1 ms</div>
+      <div class="llm-metric-val" style="color:#d97706;">97.3~101.1 ms</div>
       <div class="llm-mtp-bar-wrap">
         <div class="llm-bar-track" style="height:14px;"><div class="llm-bar-fill llm-fill-ssd" style="width: 100%;"></div></div>
       </div>
       <div class="llm-metric-chips">
         <span class="llm-chip"><strong>장문 지연 증가</strong></span>
-        <span class="llm-chip">사과 16.99 tok/s (100%)</span>
-        <span class="llm-chip">양자 9.89 / 코딩 10.28 tok/s</span>
+        <span class="llm-chip">사과 16.99 tok/s</span>
+        <span class="llm-chip">양자 9.89 tok/s</span>
+        <span class="llm-chip">코딩 10.28 tok/s</span>
       </div>
     </div>
     <div class="llm-metric-box" style="border-color:#0284c7;">
       <div class="llm-metric-box-title">GSQ IQ2_XS + MTP (8.77GB)</div>
-      <div class="llm-metric-val" style="color:#0284c7;">25.0–36.1 ms</div>
+      <div class="llm-metric-val" style="color:#0284c7;">25.0~36.1 ms</div>
       <div class="llm-mtp-bar-wrap">
         <div class="llm-bar-track" style="height:14px;"><div class="llm-bar-fill llm-fill-vram" style="width: 30%;"></div></div>
       </div>
       <div class="llm-metric-chips">
         <span class="llm-chip"><strong>66/66 VRAM 상주</strong></span>
-        <span class="llm-chip">Win: 29.88 / 27.73 tok/s</span>
-        <span class="llm-chip">WSL2: <strong>40.02 tok/s</strong> (25.0ms)</span>
+        <span class="llm-chip">Win 29.88 tok/s</span>
+        <span class="llm-chip">코딩 27.73 tok/s</span>
+        <span class="llm-chip">WSL2 <strong>40.02 tok/s</strong></span>
       </div>
     </div>
   </div>
