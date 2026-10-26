@@ -280,6 +280,19 @@ button.chip:disabled {
   font-weight: 700;
 }
 
+.sh a.k::after {
+  margin-left: 4px;
+  color: var(--ink-3);
+  content: "→";
+}
+
+.sh a.k:hover,
+.sh a.k:focus-visible,
+.sh a.k:hover::after,
+.sh a.k:focus-visible::after {
+  color: var(--accent);
+}
+
 .row,
 .lrow {
   position: relative;
