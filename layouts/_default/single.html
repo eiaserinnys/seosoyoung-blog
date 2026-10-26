@@ -1,12 +1,92 @@
+{{ define "head" }}
+  {{- if .Params.math }}
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.21/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.21/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.21/dist/contrib/auto-render.min.js"
+      onload="renderMathInElement(document.body, {
+        delimiters: [
+          {left: '$$', right: '$$', display: true},
+          {left: '$', right: '$', display: false},
+          {left: '\\\\(', right: '\\\\)', display: false},
+          {left: '\\\\[', right: '\\\\]', display: true}
+        ],
+        throwOnError: false
+      });"></script>
+  {{- end }}
+{{ end }}
+
 {{ define "main" }}
-  <article class="post-single">
-    <header>
-      <div class="meta mono">
-        {{- with .Params.categories }}<span>{{ index . 0 }}</span>{{ end }}
-        <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2006.01.02" }}</time>
-      </div>
-      <h1>{{ .Title }}</h1>
+  {{- $isPost := in (slice "posts" "digest") .Section -}}
+  {{- $lead := .Params.summary -}}
+  <article class="post-single{{ if .Params.sidenotes }} has-sidenotes{{ end }}">
+    <header class="post-header">
+      {{- if $isPost }}
+        <div class="post-meta">
+          {{- with $.Params.categories }}
+            {{- $category := index . 0 -}}
+            {{- $matches := where site.Taxonomies.categories.ByCount "Page.Title" $category -}}
+            {{- with $matches }}
+              {{- $term := index . 0 }}
+              <a class="post-category" href="{{ $term.Page.RelPermalink }}">{{ $category }}</a>
+            {{- else }}
+              <span class="post-category">{{ $category }}</span>
+            {{- end }}
+          {{- end }}
+          <time class="mono" datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2006.01.02" }}</time>
+          <span class="reading-time mono">{{ .ReadingTime }}분</span>
+        </div>
+      {{- end }}
+      <h1 class="post-title">{{ .Title }}</h1>
+      {{- with $lead }}<p class="post-lead">{{ . }}</p>{{ end }}
     </header>
+
+    {{- with .Params.cover }}
+      {{- if and .image (not .hiddenInSingle) }}
+        <figure class="entry-cover" data-lightbox-src="{{ .image | absURL }}">
+          {{- partial "thumb.html" (dict "src" .image "w" 720 "alt" (.alt | default $.Title) "focus" .focus "eager" true) }}
+        </figure>
+      {{- end }}
+    {{- end }}
+
+    {{- $toc := .TableOfContents -}}
+    {{- if and (.Param "ShowToc") (strings.Contains $toc "<li") }}
+      <details class="toc"{{ if .Param "TocOpen" }} open{{ end }}>
+        <summary>
+          <span>목차</span>
+          <svg viewBox="0 0 16 16" aria-hidden="true"><path class="plus" d="M8 3v10M3 8h10"></path><path class="minus" d="M3 8h10"></path></svg>
+        </summary>
+        {{ $toc }}
+      </details>
+    {{- end }}
+
     <div class="post-content">{{ .Content }}</div>
+
+    {{- if $isPost }}
+      <footer class="post-footer">
+        {{- with .Params.tags }}
+          <div class="post-tags" aria-label="태그">
+            {{- range . }}
+              <a class="chip" href="{{ printf "/tags/%s/" (. | urlize) | relURL }}">{{ . }}</a>
+            {{- end }}
+          </div>
+        {{- end }}
+        <div class="read-next">{{ partial "read-next.html" . }}</div>
+      </footer>
+    {{- end }}
   </article>
+{{ end }}
+
+{{ define "scripts" }}
+  {{- $postScript := resources.Get "js/post.js" | js.Build (dict "minify" true) | fingerprint }}
+  <script defer src="{{ $postScript.RelPermalink }}" integrity="{{ $postScript.Data.Integrity }}" crossorigin="anonymous"></script>
+  {{- $lightboxScript := resources.Get "js/lightbox.js" | js.Build (dict "minify" true) | fingerprint }}
+  <script defer src="{{ $lightboxScript.RelPermalink }}" integrity="{{ $lightboxScript.Data.Integrity }}" crossorigin="anonymous"></script>
+  {{- if .Params.sidenotes }}
+    {{- $sidenoteScript := resources.Get "js/sidenote.js" | js.Build (dict "minify" true) | fingerprint }}
+    <script defer src="{{ $sidenoteScript.RelPermalink }}" integrity="{{ $sidenoteScript.Data.Integrity }}" crossorigin="anonymous"></script>
+  {{- end }}
+  {{- if in (slice "posts" "digest") .Section }}
+    {{- $rsvpScript := resources.Get "js/rsvp.js" | js.Build (dict "minify" true) | fingerprint }}
+    <script defer src="{{ $rsvpScript.RelPermalink }}" integrity="{{ $rsvpScript.Data.Integrity }}" crossorigin="anonymous"></script>
+  {{- end }}
 {{ end }}

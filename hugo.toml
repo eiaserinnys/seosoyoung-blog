@@ -54,3 +54,17 @@ title = '서소영의 서재'
   [caches.images]
     dir = ':cacheDir/:project'
     maxAge = -1
+
+[related]
+  includeNewer = true
+  threshold = 80
+  toLower = false
+  [[related.indices]]
+    name = 'subjects'
+    weight = 100
+  [[related.indices]]
+    name = 'tags'
+    weight = 80
+  [[related.indices]]
+    name = 'categories'
+    weight = 20
