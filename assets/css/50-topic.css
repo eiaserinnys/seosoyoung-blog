@@ -117,6 +117,19 @@
   grid-column: 5;
 }
 
+/* 768~1023: 다른 장부와 같이 요약을 오른쪽 끝까지 펼치고 커버는 요약 아래 제목 시작선에 둔다. */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .series-list > li > .peek .peek-summary {
+    grid-column: 4 / 6;
+  }
+
+  .series-list > li > .peek .cv {
+    grid-column: 4;
+    width: 240px;
+    margin-top: 12px;
+  }
+}
+
 @media (max-width: 767px) {
   .shelf {
     grid-template-columns: 1fr;

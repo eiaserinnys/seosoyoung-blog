@@ -1,7 +1,9 @@
+{{ define "head" }}{{ partial "pager-redirect.html" (dict "page" . "pager" (.Paginate .Pages) "part" "head") }}{{ end }}
+
 {{ define "main" }}
   {{- $pager := .Paginate .Pages -}}
   {{- if gt $pager.PageNumber 1 -}}
-    {{- partial "pager-redirect.html" . -}}
+    {{- partial "pager-redirect.html" (dict "page" . "pager" $pager "part" "body") -}}
   {{- else -}}
   {{- $topic := .Title -}}
   {{- $pages := where .Pages "Section" "in" (slice "posts" "digest") -}}
@@ -103,6 +105,8 @@
 {{ end }}
 
 {{ define "scripts" }}
+  {{- if eq (.Paginate .Pages).PageNumber 1 }}
   {{- $script := resources.Get "js/topic.js" | js.Build (dict "minify" true) | fingerprint -}}
   <script defer src="{{ $script.RelPermalink }}" integrity="{{ $script.Data.Integrity }}" crossorigin="anonymous"></script>
+  {{- end }}
 {{ end }}

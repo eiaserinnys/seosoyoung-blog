@@ -356,7 +356,7 @@ button.chip:not(:disabled):hover {
 .row .t a:focus-visible::after,
 .lrow .t a:focus-visible::after {
   outline: var(--line-strong) solid var(--focus);
-  outline-offset: calc(0px - var(--line-strong));
+  outline-offset: var(--focus-outline-offset);
 }
 
 .row .pk,

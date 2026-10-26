@@ -1,7 +1,9 @@
+{{ define "head" }}{{ partial "pager-redirect.html" (dict "page" . "pager" (.Paginate .Pages) "part" "head") }}{{ end }}
+
 {{ define "main" }}
   {{- $pager := .Paginate .Pages -}}
   {{- if gt $pager.PageNumber 1 -}}
-    {{- partial "pager-redirect.html" . -}}
+    {{- partial "pager-redirect.html" (dict "page" . "pager" $pager "part" "body") -}}
   {{- else -}}
   {{- $pages := .Pages.ByDate -}}
   {{- partial "page-head.html" (dict "eyebrow" "시리즈" "title" .Title "stats" (slice (dict "label" "편수" "value" (len $pages)))) -}}

@@ -1,7 +1,9 @@
+{{ define "head" }}{{ partial "pager-redirect.html" (dict "page" . "pager" (.Paginate (where site.RegularPages "Section" "posts")) "part" "head") }}{{ end }}
+
 {{ define "main" }}
   {{- $pager := .Paginate (where site.RegularPages "Section" "posts") -}}
   {{- if gt $pager.PageNumber 1 -}}
-    {{- partial "pager-redirect.html" . -}}
+    {{- partial "pager-redirect.html" (dict "page" . "pager" $pager "part" "body") -}}
   {{- else -}}
   {{- $posts := where site.RegularPages "Section" "posts" -}}
   {{- $digest := where site.RegularPages "Section" "digest" -}}
@@ -253,6 +255,8 @@
 {{ end }}
 
 {{ define "scripts" }}
+  {{- if eq (.Paginate (where site.RegularPages "Section" "posts")).PageNumber 1 }}
   {{- $script := resources.Get "js/home.js" | js.Build (dict "minify" true) | fingerprint -}}
   <script defer src="{{ $script.RelPermalink }}" integrity="{{ $script.Data.Integrity }}" crossorigin="anonymous"></script>
+  {{- end }}
 {{ end }}
