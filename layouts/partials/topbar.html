@@ -11,7 +11,7 @@
   {{- if eq $kind "section" -}}{{- $digestCurrent = "page" -}}{{- end -}}
 {{- else if in (slice "lab" "gallery") $section -}}
   {{- $labCurrent = "true" -}}
-  {{- if eq $kind "section" -}}{{- $labCurrent = "page" -}}{{- end -}}
+  {{- if and (eq $kind "section") (eq $section "lab") -}}{{- $labCurrent = "page" -}}{{- end -}}
 {{- end -}}
 <div class="top">
   <a class="word" href="{{ site.Home.RelPermalink }}">서소영의 서재</a>

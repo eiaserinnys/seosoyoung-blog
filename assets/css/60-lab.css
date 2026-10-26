@@ -8,10 +8,6 @@
   margin-top: var(--space-3);
 }
 
-#main > .head:has(+ .lab-tabs) {
-  padding-top: var(--space-4);
-}
-
 .lab-tabs .seg {
   display: inline-flex;
   margin-right: 0;
