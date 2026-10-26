@@ -494,20 +494,20 @@
 
   .tbar::-webkit-scrollbar-track {
     background: var(--bg);
-    box-shadow: inset var(--line) 0 0 var(--rule);
   }
 
+  /* 가로 막대: 두께 쪽(위아래)만 안쪽 여백을 주고 양 끝은 주제 줄 양 끝선에 붙인다. */
   .tbar::-webkit-scrollbar-thumb {
-    min-height: var(--scrollbar-thumb-min);
+    min-width: var(--scrollbar-thumb-min);
     border: solid transparent;
-    border-width: var(--scrollbar-inset-block) var(--scrollbar-inset-end) var(--scrollbar-inset-block) var(--scrollbar-inset-start);
+    border-width: var(--scrollbar-inset-block) 0;
     background-color: var(--scrollbar-thumb);
     background-clip: padding-box;
   }
 
   .tbar::-webkit-scrollbar-thumb:hover,
   .tbar::-webkit-scrollbar-thumb:active {
-    border-width: var(--scrollbar-inset-block) var(--scrollbar-inset-end-hover) var(--scrollbar-inset-block) var(--scrollbar-inset-start-hover);
+    border-width: calc(var(--scrollbar-inset-block) - 1px) 0;
     background-color: var(--scrollbar-thumb-hover);
   }
 
