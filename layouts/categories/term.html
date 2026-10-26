@@ -1,0 +1,103 @@
+{{ define "main" }}
+  {{- $topic := .Title -}}
+  {{- $pages := where .Pages "Section" "in" (slice "posts" "digest") -}}
+  {{- $pages = $pages.ByDate.Reverse -}}
+  {{- $posts := where $pages "Section" "posts" -}}
+  {{- $written := len $posts -}}
+  {{- $read := len (where $pages "Section" "digest") -}}
+  {{- $thisMonth := now.Format "2006.01" -}}
+  {{- $monthCount := 0 -}}
+  {{- range $pages -}}
+    {{- if eq (.Date.Format "2006.01") $thisMonth -}}
+      {{- $monthCount = add $monthCount 1 -}}
+    {{- end -}}
+  {{- end -}}
+  {{- partial "topic-bar.html" (dict "current" $topic) -}}
+  {{- partial "page-head.html" (dict "title" $topic "stats" (slice
+    (dict "label" "쓴 글" "value" $written)
+    (dict "label" "읽은 글" "value" $read)
+    (dict "label" "이번 달" "value" $monthCount))) -}}
+
+  {{- with first 3 $posts -}}
+    <div class="shelf">
+      {{- range $index, $page := . -}}
+        <a href="{{ $page.RelPermalink }}">
+          <div class="cv">
+            {{- with $page.Params.cover.image -}}
+              {{- partial "thumb.html" (dict "src" . "w" 400 "alt" "" "focus" $page.Params.cover.focus "eager" (eq $index 0)) -}}
+            {{- end -}}
+          </div>
+          <div class="meta"><time class="mono" datetime="{{ $page.Date.Format "2006-01-02" }}">{{ $page.Date.Format "2006.01.02" }}</time></div>
+          <div class="t clamp2">{{ $page.Title }}</div>
+        </a>
+      {{- end -}}
+    </div>
+  {{- end -}}
+
+  {{- $subjectNames := slice -}}
+  {{- $hasSubjectBlock := false -}}
+  {{- range hugo.Data.subjects -}}
+    {{- if eq .category $topic -}}
+      {{- $subjectNames = .subjects -}}
+      {{- $hasSubjectBlock = true -}}
+    {{- end -}}
+  {{- end -}}
+
+  <div class="filt-origin" aria-hidden="true"></div>
+  <div class="filt" role="group" aria-label="글 거르기">
+    <div class="seg" role="group" aria-label="형식">
+      <button type="button" data-filter-section="all" aria-pressed="true">전체 <span class="mono" style="min-width: {{ len (printf "%d" (len $pages)) }}ch">{{ len $pages }}</span></button>
+      <button type="button" data-filter-section="posts" aria-pressed="false">쓴 글 <span class="mono" style="min-width: {{ len (printf "%d" $written) }}ch">{{ $written }}</span></button>
+      <button type="button" data-filter-section="digest" aria-pressed="false">읽은 글 <span class="mono" style="min-width: {{ len (printf "%d" $read) }}ch">{{ $read }}</span></button>
+    </div>
+    <div class="chip-set">
+      {{- if $hasSubjectBlock -}}
+        {{- range $subjectNames -}}
+          {{- $subject := . -}}
+          {{- $count := 0 -}}
+          {{- range $pages -}}
+            {{- if in (.Params.subjects | default (slice)) $subject -}}
+              {{- $count = add $count 1 -}}
+            {{- end -}}
+          {{- end -}}
+          {{- if gt $count 0 -}}
+            <button class="chip" type="button" data-chip-kind="subject" data-chip="{{ $subject }}" aria-pressed="false">{{ $subject }}<span class="mono" style="min-width: {{ len (printf "%d" $count) }}ch">{{ $count }}</span></button>
+          {{- end -}}
+        {{- end -}}
+      {{- else -}}
+        {{- $tagNames := slice -}}
+        {{- range $pages -}}
+          {{- range .Params.tags -}}
+            {{- if not (in $tagNames .) -}}
+              {{- $tagNames = $tagNames | append . -}}
+            {{- end -}}
+          {{- end -}}
+        {{- end -}}
+        {{- $tagItems := slice -}}
+        {{- range $tagNames -}}
+          {{- $tag := . -}}
+          {{- $count := 0 -}}
+          {{- range $pages -}}
+            {{- if in (.Params.tags | default (slice)) $tag -}}
+              {{- $count = add $count 1 -}}
+            {{- end -}}
+          {{- end -}}
+          {{- if ge $count 5 -}}
+            {{- $tagItems = $tagItems | append (dict "name" $tag "count" $count) -}}
+          {{- end -}}
+        {{- end -}}
+        {{- $tagItems = sort $tagItems "count" "desc" -}}
+        {{- range first 8 $tagItems -}}
+          <button class="chip" type="button" data-chip-kind="tag" data-chip="{{ .name }}" aria-pressed="false">{{ .name }}<span class="mono" style="min-width: {{ len (printf "%d" .count) }}ch">{{ .count }}</span></button>
+        {{- end -}}
+      {{- end -}}
+    </div>
+  </div>
+
+  {{- partial "month-ledger.html" (dict "pages" $pages "second" "type") -}}
+{{ end }}
+
+{{ define "scripts" }}
+  {{- $script := resources.Get "js/topic.js" | js.Build (dict "minify" true) | fingerprint -}}
+  <script defer src="{{ $script.RelPermalink }}" integrity="{{ $script.Data.Integrity }}" crossorigin="anonymous"></script>
+{{ end }}
