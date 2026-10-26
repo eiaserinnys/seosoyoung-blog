@@ -370,6 +370,16 @@
   display: none;
 }
 
+.row + .peek:not([hidden]) {
+  display: block;
+  padding-left: calc(48px + 12px);
+}
+
+.row + .peek .cv {
+  width: 100%;
+  margin-top: 12px;
+}
+
 .peek-summary {
   grid-column: 3;
   min-width: 0;
