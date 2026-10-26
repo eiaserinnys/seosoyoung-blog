@@ -4,6 +4,7 @@
   font-weight: 500;
   color: var(--ink-2);
   font-variant-numeric: tabular-nums;
+  white-space: nowrap;
 }
 
 .lbl {
@@ -149,6 +150,7 @@
   font-weight: 300;
   line-height: 1;
   font-variant-numeric: tabular-nums;
+  white-space: nowrap;
 }
 
 .stat:hover .n {
@@ -373,6 +375,7 @@
 .row + .peek:not([hidden]) {
   display: block;
   padding-left: calc(48px + 12px);
+  padding-right: 36px;
 }
 
 .row + .peek .cv {
@@ -447,6 +450,33 @@
   margin-top: 40px;
   padding: 32px 0 48px;
   border-top: 1px solid var(--rule);
+}
+
+@media (max-width: 1023px) {
+  .head {
+    grid-template-columns: minmax(0, 1fr);
+    row-gap: 12px;
+  }
+
+  .head .date,
+  .stats {
+    grid-column: 1;
+  }
+
+  .stats {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-auto-flow: row;
+  }
+
+  .tbar {
+    display: flex;
+    overflow-x: auto;
+  }
+
+  .tbar a {
+    flex: 0 0 auto;
+    white-space: nowrap;
+  }
 }
 
 @media (max-width: 767px) {

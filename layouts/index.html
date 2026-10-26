@@ -39,7 +39,7 @@
     {{- $month := $monthStart.AddDate 0 (sub . 6) 0 -}}
     {{- $monthKey := $month.Format "2006-01" -}}
     {{- $count := 0 -}}
-    {{- range $all -}}
+    {{- range $digest -}}
       {{- $pageMonth := time.In "Asia/Seoul" .Date | time.Format "2006-01" -}}
       {{- if eq $pageMonth $monthKey -}}
         {{- $count = add $count 1 -}}
@@ -70,6 +70,7 @@
   {{- $series = sort $series "latest" "desc" -}}
 
   {{- $labCount := add (len $lab) (len $gallery) -}}
+  <div class="home">
   {{- partial "page-head.html" (dict "eyebrow" $year "title" $latestDate "stats" (slice
     (dict "label" "쓴 글" "value" (len $posts) "url" ("posts/" | relURL))
     (dict "label" "읽은 글" "value" (len $digest) "url" ("digest/" | relURL))
@@ -81,17 +82,21 @@
     {{- with $postsByDate -}}
       {{- $lead := index . 0 -}}
       <article class="lead">
-        <div class="cv">
-          {{- with $lead.Params.cover.image -}}
-            {{- partial "thumb.html" (dict "src" . "w" 480 "alt" "" "focus" $lead.Params.cover.focus "eager" true) -}}
-          {{- end -}}
-        </div>
-        <div class="meta">
-          {{- with $lead.Params.categories -}}<span class="lbl acc">{{ index . 0 }}</span>{{- end -}}
-          <span class="mono">{{ $lead.Date.Format "2006.01.02" }}</span>
-        </div>
-        <h2>{{ $lead.Title }}</h2>
-        <p class="clamp2">{{ $lead.Summary | plainify }}</p>
+        <a class="lead-main" href="{{ $lead.RelPermalink }}">
+          <div class="cv">
+            {{- with $lead.Params.cover.image -}}
+              {{- partial "thumb.html" (dict "src" . "w" 480 "alt" "" "focus" $lead.Params.cover.focus "eager" true) -}}
+            {{- end -}}
+          </div>
+          <div class="lead-copy">
+            <div class="meta">
+              {{- with $lead.Params.categories -}}<span class="lbl acc">{{ index . 0 }}</span>{{- end -}}
+              <span class="mono">{{ $lead.Date.Format "2006.01.02" }}</span>
+            </div>
+            <h2>{{ $lead.Title }}</h2>
+            <p class="clamp2">{{ $lead.Summary | plainify }}</p>
+          </div>
+        </a>
         <div class="more">
           {{- range first 2 (after 1 $postsByDate) -}}
             <a href="{{ .RelPermalink }}">
@@ -231,7 +236,7 @@
       {{- range $monthCounts -}}
         {{- $height := div (mul .count 109) $maxMonthCount -}}
         {{- $yearMonth := .date.Format "2006-01" -}}
-        <a class="mb" href="{{ printf "/digest/#m-%s" $yearMonth | relURL }}" aria-label="{{ .date.Format "2006년 1월" }} {{ .count }}편">
+        <a class="mb" href="{{ printf "/digest/#m-%s" $yearMonth | relURL }}" aria-label="{{ .date.Format "2006년 1월" }} 읽은 글 {{ .count }}편">
           <span class="v">{{ .count }}</span>
           <span class="bar" style="height:{{ $height }}px"></span>
           <span class="m">{{ .date.Format "06.01" }}</span>
@@ -239,6 +244,7 @@
       {{- end -}}
     </div>
   </section>
+  </div>
 {{ end }}
 
 {{ define "scripts" }}
