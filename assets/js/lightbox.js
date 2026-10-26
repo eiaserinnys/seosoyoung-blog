@@ -8,15 +8,11 @@
       overlay.setAttribute('aria-modal', 'true');
       overlay.tabIndex = -1;
       var big = document.createElement('img');
-      big.src = img.closest('article.post-single .entry-cover') ? img.src : (img.currentSrc || img.src);
+      var cover = img.closest('figure.entry-cover');
+      big.src = cover ? (cover.dataset.lightboxSrc || img.currentSrc || img.src) : (img.currentSrc || img.src);
       big.alt = img.alt || '';
       big.tabIndex = 0;
       overlay.appendChild(big);
-      var nw = img.naturalWidth, nh = img.naturalHeight;
-      if (nw && nh) {
-        var fitW = Math.min(nw, window.innerWidth * 0.96, window.innerHeight * 0.88 * nw / nh);
-        if (fitW < img.getBoundingClientRect().width) overlay.classList.add('ssy-lightbox--scroll');
-      }
       var fig = img.closest('figure');
       var cap = fig && fig.querySelector('figcaption');
       var text = cap && cap.textContent.trim();
@@ -32,7 +28,7 @@
         overlay.setAttribute('aria-label', img.alt || '이미지 확대');
       }
       function fitImageHeight() {
-        if (!capEl || overlay.classList.contains('ssy-lightbox--scroll')) return;
+        if (!capEl) return;
         big.style.maxHeight = 'calc(94vh - ' + (capEl.offsetHeight + 14) + 'px)';
       }
       var previousOverflow = document.documentElement.style.overflow;

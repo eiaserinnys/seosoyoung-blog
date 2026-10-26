@@ -20,8 +20,6 @@
   {{- $lead := .Params.summary -}}
   <article class="post-single{{ if .Params.sidenotes }} has-sidenotes{{ end }}">
     <header class="post-header">
-      <h1 class="post-title">{{ .Title }}</h1>
-      {{- with $lead }}<p class="post-lead">{{ . }}</p>{{ end }}
       {{- if $isPost }}
         <div class="post-meta">
           {{- with $.Params.categories }}
@@ -38,11 +36,13 @@
           <span class="reading-time mono">{{ .ReadingTime }}분</span>
         </div>
       {{- end }}
+      <h1 class="post-title">{{ .Title }}</h1>
+      {{- with $lead }}<p class="post-lead">{{ . }}</p>{{ end }}
     </header>
 
     {{- with .Params.cover }}
       {{- if and .image (not .hiddenInSingle) }}
-        <figure class="entry-cover">
+        <figure class="entry-cover" data-lightbox-src="{{ .image | absURL }}">
           {{- partial "thumb.html" (dict "src" .image "w" 720 "alt" (.alt | default $.Title) "focus" .focus "eager" true) }}
         </figure>
       {{- end }}
