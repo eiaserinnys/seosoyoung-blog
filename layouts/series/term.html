@@ -1,4 +1,8 @@
 {{ define "main" }}
+  {{- $pager := .Paginate .Pages -}}
+  {{- if gt $pager.PageNumber 1 -}}
+    {{- partial "pager-redirect.html" . -}}
+  {{- else -}}
   {{- $pages := .Pages.ByDate -}}
   {{- partial "page-head.html" (dict "eyebrow" "시리즈" "title" .Title "stats" (slice (dict "label" "편수" "value" (len $pages)))) -}}
   <ol class="series-list">
@@ -6,4 +10,5 @@
       <li>{{- partial "ledger-row.html" (dict "page" . "variant" "wide" "second" "category") -}}</li>
     {{- end -}}
   </ol>
+  {{- end }}
 {{ end }}

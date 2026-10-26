@@ -2,6 +2,9 @@ baseURL = 'https://seosoyoung.eiaserinnys.me/'
 languageCode = 'ko'
 title = '서소영의 서재'
 
+[pagination]
+  pagerSize = 10
+
 [params]
   description = "논문과 아티클을 읽고, 소화하여, 지식으로 정리합니다."
   author = "서소영"
