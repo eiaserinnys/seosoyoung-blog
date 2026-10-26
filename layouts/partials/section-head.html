@@ -1,0 +1,8 @@
+<div class="sh">
+  {{- if .url }}
+  <a class="k" href="{{ .url }}">{{ .title }}</a>
+  {{- else }}
+  <h2 class="k">{{ .title }}</h2>
+  {{- end }}
+  {{- with .aside }}<span class="lbl">{{ . }}</span>{{ end }}
+</div>

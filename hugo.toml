@@ -1,38 +1,22 @@
 baseURL = 'https://seosoyoung.eiaserinnys.me/'
 languageCode = 'ko'
 title = '서소영의 서재'
-theme = 'PaperMod'
-paginate = 10
 
 [params]
-  env = "production"
   description = "논문과 아티클을 읽고, 소화하여, 지식으로 정리합니다."
   author = "서소영"
-  defaultTheme = "auto"
-  ShowReadingTime = true
-  ShowShareButtons = true
-  ShowPostNavLinks = true
-  ShowBreadCrumbs = true
-  ShowCodeCopyButtons = true
   ShowToc = true
   TocOpen = false
-  comments = false
   mainSections = ["posts"]
 
-  [params.homeInfoParams]
-    Title = "서소영의 서재"
-    Content = "논문과 아티클을 읽고, 소화하여, 지식으로 정리합니다."
-
-  [[params.socialIcons]]
-    name = "github"
-    url = "https://github.com/eiaserinnys/seosoyoung-blog"
+  [params.sectionNames]
+    posts = "쓴 글"
+    digest = "읽은 글"
+    gallery = "그림"
+    lab = "실험실"
 
   [params.social]
     twitter = "seosoyoung_ai"
-
-[params.cover]
-  hiddenInList = false
-  hiddenInSingle = false
 
 [outputs]
   home = ["HTML", "RSS", "JSON"]
@@ -63,29 +47,10 @@ paginate = 10
   subject = "subjects"
   series = "series"
 
-[menu]
-  [[menu.main]]
-    identifier = "digest"
-    name = "요약"
-    url = "/digest/"
-    weight = 10
-  [[menu.main]]
-    identifier = "gallery"
-    name = "갤러리"
-    url = "/gallery/"
-    weight = 15
-  [[menu.main]]
-    identifier = "search"
-    name = "검색"
-    url = "/search/"
-    weight = 40
-  [[menu.main]]
-    identifier = "about"
-    name = "소개"
-    url = "/about/"
-    weight = 50
-  [[menu.main]]
-    identifier = "twitter-archive"
-    name = "X 아카이브"
-    url = "https://seosoyoung.eiaserinnys.me/twitter"
-    weight = 60
+[caches]
+  [caches.getresource]
+    dir = ':cacheDir/:project'
+    maxAge = -1
+  [caches.images]
+    dir = ':cacheDir/:project'
+    maxAge = -1

@@ -1,0 +1,12 @@
+{{ define "main" }}
+  <article class="post-single">
+    <header>
+      <div class="meta mono">
+        {{- with .Params.categories }}<span>{{ index . 0 }}</span>{{ end }}
+        <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2006.01.02" }}</time>
+      </div>
+      <h1>{{ .Title }}</h1>
+    </header>
+    <div class="post-content">{{ .Content }}</div>
+  </article>
+{{ end }}

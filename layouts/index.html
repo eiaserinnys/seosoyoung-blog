@@ -1,0 +1,20 @@
+{{ define "main" }}
+  {{- $posts := where site.RegularPages "Section" "posts" -}}
+  {{- $digest := where site.RegularPages "Section" "digest" -}}
+  {{- $all := sort (append $posts $digest) "Date" "desc" -}}
+  {{- $year := "" -}}
+  {{- $latestDate := "서재" -}}
+  {{- with $all }}
+    {{- $latest := index . 0 -}}
+    {{- $year = $latest.Date.Format "2006" -}}
+    {{- $latestDate = printf "%s월 %s일" ($latest.Date.Format "1") ($latest.Date.Format "2") -}}
+  {{- end -}}
+  {{- partial "page-head.html" (dict "eyebrow" $year "title" $latestDate "stats" (slice
+    (dict "label" "쓴 글" "value" (len $posts) "url" ("posts/" | relURL))
+    (dict "label" "읽은 글" "value" (len $digest) "url" ("digest/" | relURL)))) -}}
+  {{- partial "topic-bar.html" (dict "current" "") -}}
+  {{- partial "section-head.html" (dict "title" "읽은 글") -}}
+  {{- range first 7 $digest.ByDate.Reverse -}}
+    {{- partial "ledger-row.html" (dict "page" . "variant" "compact" "second" "category") -}}
+  {{- end -}}
+{{ end }}

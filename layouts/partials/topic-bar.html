@@ -1,0 +1,9 @@
+{{- $current := .current | default "" -}}
+{{- $topics := partial "topics.html" . -}}
+<nav class="tbar" aria-label="주제">
+  {{- range $topics }}
+  <a href="{{ .url }}"{{ if eq .name $current }} class="cur" aria-current="page"{{ end }}>
+    <span>{{ .name }}</span><span class="mono">{{ .count }}</span>
+  </a>
+  {{- end }}
+</nav>

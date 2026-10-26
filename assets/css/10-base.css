@@ -1,0 +1,173 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--sans);
+  word-break: keep-all;
+  overflow-wrap: break-word;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  min-width: var(--zero);
+  margin: var(--zero);
+  background: var(--bg);
+  color: var(--ink);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+button {
+  color: inherit;
+  font: inherit;
+}
+
+:focus {
+  outline: none;
+}
+
+:focus-visible {
+  outline: var(--line-strong) solid var(--focus);
+  outline-offset: var(--focus-outline-offset);
+}
+
+.skip-link {
+  position: absolute;
+  z-index: 5;
+  inset-block-start: var(--space-2);
+  inset-inline-start: var(--page-gutter);
+  padding: var(--space-1) var(--space-2);
+  transform: translateY(calc(-100% - var(--space-2)));
+  background: var(--ink);
+  color: var(--bg);
+  font-size: 13px;
+}
+
+.skip-link:not(:focus-visible) {
+  width: var(--line);
+  height: var(--line);
+  padding: var(--zero);
+  overflow: hidden;
+  clip-path: inset(100%);
+  opacity: 0;
+  pointer-events: none;
+  white-space: nowrap;
+}
+
+.skip-link:focus-visible {
+  width: auto;
+  height: auto;
+  padding: var(--space-1) var(--space-2);
+  clip-path: none;
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(var(--zero));
+}
+
+.wrap {
+  width: 100%;
+  max-width: var(--container-max);
+  margin: var(--zero) auto;
+  padding: var(--zero) var(--page-gutter);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  html {
+    scrollbar-gutter: stable;
+  }
+
+  @supports not selector(::-webkit-scrollbar) {
+    html {
+      scrollbar-width: thin;
+      scrollbar-color: var(--scrollbar-thumb) var(--bg);
+    }
+  }
+
+  html::-webkit-scrollbar {
+    width: var(--scrollbar-size);
+    height: var(--scrollbar-size);
+    background: var(--bg);
+  }
+
+  html::-webkit-scrollbar-track {
+    background: var(--bg);
+    box-shadow: inset var(--line) 0 0 var(--rule);
+  }
+
+  html::-webkit-scrollbar-thumb {
+    min-height: var(--scrollbar-thumb-min);
+    border: solid transparent;
+    border-width: var(--scrollbar-inset-block) var(--scrollbar-inset-end) var(--scrollbar-inset-block) var(--scrollbar-inset-start);
+    background-color: var(--scrollbar-thumb);
+    background-clip: padding-box;
+  }
+
+  html::-webkit-scrollbar-thumb:hover,
+  html::-webkit-scrollbar-thumb:active {
+    border-width: var(--scrollbar-inset-block) var(--scrollbar-inset-end-hover) var(--scrollbar-inset-block) var(--scrollbar-inset-start-hover);
+    background-color: var(--scrollbar-thumb-hover);
+  }
+
+  html::-webkit-scrollbar-thumb:active {
+    background-color: var(--scrollbar-thumb-active);
+  }
+
+  html::-webkit-scrollbar-corner {
+    background: var(--bg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+@media (forced-colors: active) {
+  :root {
+    --bg: Canvas;
+    --bg-2: Canvas;
+    --ink: CanvasText;
+    --ink-2: CanvasText;
+    --ink-3: GrayText;
+    --rule: CanvasText;
+    --rule-strong: CanvasText;
+    --accent: LinkText;
+    --accent-soft: Highlight;
+    --accent-press: Highlight;
+    --focus: Highlight;
+    --scrollbar-thumb: CanvasText;
+    --scrollbar-thumb-hover: CanvasText;
+    --scrollbar-thumb-active: Highlight;
+  }
+
+  :focus-visible {
+    outline-color: Highlight;
+  }
+}
+
+@media (max-width: 767px) {
+  .wrap {
+    padding-inline: var(--mobile-gutter);
+  }
+
+  .skip-link {
+    inset-inline-start: var(--mobile-gutter);
+  }
+}
