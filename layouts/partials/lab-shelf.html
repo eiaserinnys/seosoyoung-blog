@@ -1,0 +1,25 @@
+{{- $title := .title -}}
+{{- $id := .id -}}
+{{- $items := .items -}}
+<section id="{{ $id }}" class="lab-shelf">
+  {{ partial "section-head.html" (dict "title" $title "aside" (len $items)) }}
+  <div class="labgrid">
+    {{- range $items.ByDate.Reverse -}}
+      <a class="lab-card" href="{{ .Params.url }}">
+        <span class="cv">
+          {{ partial "thumb.html" (dict
+            "src" .Params.thumb
+            "w" 400
+            "alt" ""
+            "class" "lab-image"
+          ) }}
+        </span>
+        <span class="lab-meta">
+          <span class="lbl acc">{{ .Params.kind }}</span>
+          <time class="mono" datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2006.01.02" }}</time>
+        </span>
+        <span class="lab-title">{{ .Title }}</span>
+      </a>
+    {{- end -}}
+  </div>
+</section>

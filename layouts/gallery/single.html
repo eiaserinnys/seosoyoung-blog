@@ -1,0 +1,72 @@
+{{ define "main" }}
+  {{- $date := .Date.Format "2006.01.02" -}}
+  <article class="post-single gallery-single">
+    <header class="post-header">
+      <div class="post-meta">
+        <time class="mono" datetime="{{ .Date.Format "2006-01-02" }}">{{ $date }}</time>
+        {{- with .Params.model }}<span class="mono">{{ . }}</span>{{ end -}}
+      </div>
+      {{- with .Params.title }}
+        <h1 class="post-title">{{ . }}</h1>
+      {{- else }}
+        <h1 class="post-title visually-hidden">그림 {{ $date }}</h1>
+      {{- end }}
+    </header>
+    <figure class="entry-cover">
+      <img src="{{ .Params.cover.image }}" alt="{{ .Params.cover.alt | default "" }}" loading="eager" decoding="async">
+    </figure>
+    <div class="post-content">{{ .Content }}</div>
+  </article>
+
+  {{- $galleryPages := where site.RegularPages "Section" "gallery" -}}
+  {{- $galleryPages = $galleryPages.ByDate.Reverse -}}
+  {{- $newerPages := slice -}}
+  {{- $olderPages := slice -}}
+  {{- $seenCurrent := false -}}
+  {{- range $galleryPages -}}
+    {{- if eq .RelPermalink $.RelPermalink -}}
+      {{- $seenCurrent = true -}}
+    {{- else if $seenCurrent -}}
+      {{- $olderPages = $olderPages | append . -}}
+    {{- else -}}
+      {{- $newerPages = $newerPages | append . -}}
+    {{- end -}}
+  {{- end -}}
+  {{- $newerCount := len $newerPages -}}
+  {{- if gt $newerCount 3 -}}
+    {{- $newerCount = 3 -}}
+  {{- end -}}
+  {{- $olderCount := len $olderPages -}}
+  {{- if gt $olderCount 3 -}}
+    {{- $olderCount = 3 -}}
+  {{- end -}}
+  {{- if lt $newerCount 3 -}}
+    {{- $olderCount = sub 6 $newerCount -}}
+    {{- if gt $olderCount (len $olderPages) -}}
+      {{- $olderCount = len $olderPages -}}
+    {{- end -}}
+  {{- else if lt $olderCount 3 -}}
+    {{- $newerCount = sub 6 $olderCount -}}
+    {{- if gt $newerCount (len $newerPages) -}}
+      {{- $newerCount = len $newerPages -}}
+    {{- end -}}
+  {{- end -}}
+  {{- $relatedPages := slice -}}
+  {{- range (last $newerCount $newerPages) -}}
+    {{- $relatedPages = $relatedPages | append . -}}
+  {{- end -}}
+  {{- range (first $olderCount $olderPages) -}}
+    {{- $relatedPages = $relatedPages | append . -}}
+  {{- end -}}
+  <section class="gallery-related">
+    {{ partial "section-head.html" (dict "title" "그림" "url" "/lab/#gallery") }}
+    {{ partial "gallery-wall.html" (dict "pages" $relatedPages) }}
+  </section>
+{{ end }}
+
+{{ define "scripts" }}
+  {{- with resources.Get "js/lightbox.js" -}}
+    {{- $script := . | js.Build (dict "minify" true) | fingerprint -}}
+    <script defer src="{{ $script.RelPermalink }}" integrity="{{ $script.Data.Integrity }}" crossorigin="anonymous"></script>
+  {{- end -}}
+{{ end }}
