@@ -2,18 +2,52 @@ const sectionButtons = [...document.querySelectorAll("[data-filter-section]")];
 const chipButtons = [...document.querySelectorAll(".chip[data-chip-kind]")];
 const rows = [...document.querySelectorAll(".lrow")];
 const months = [...document.querySelectorAll(".mon")];
+const filter = document.querySelector(".filt");
+const filterOriginY = filter
+  ? filter.getBoundingClientRect().top + window.scrollY
+  : 0;
 
 let activeSection = "all";
 let activeChip = null;
 
+function matchesSection(row, section) {
+  return section === "all" || row.dataset.type === section;
+}
+
+function matchesChip(row, chip) {
+  if (!chip) return true;
+  if (chip.kind === "subject") return row.dataset.subject === chip.value;
+  return row.dataset.tags.split("|").includes(chip.value);
+}
+
 function matches(row) {
-  if (activeSection !== "all" && row.dataset.type !== activeSection) return false;
-  if (!activeChip) return true;
-  if (activeChip.kind === "subject") return row.dataset.subject === activeChip.value;
-  return row.dataset.tags.split("|").includes(activeChip.value);
+  return matchesSection(row, activeSection) && matchesChip(row, activeChip);
 }
 
 function update() {
+  if (activeChip && !rows.some((row) => matchesSection(row, activeSection) && matchesChip(row, activeChip))) {
+    activeChip = null;
+  }
+
+  for (const button of sectionButtons) {
+    const section = button.dataset.filterSection;
+    const count = rows.filter((row) => matchesSection(row, section) && matchesChip(row, activeChip)).length;
+    button.querySelector(".mono").textContent = String(count);
+    button.setAttribute("aria-pressed", String(section === activeSection));
+  }
+
+  for (const button of chipButtons) {
+    const chip = { kind: button.dataset.chipKind, value: button.dataset.chip };
+    const count = rows.filter((row) => matchesSection(row, activeSection) && matchesChip(row, chip)).length;
+    const disabled = count === 0;
+    button.querySelector(".mono").textContent = String(count);
+    button.disabled = disabled;
+    button.setAttribute("aria-disabled", String(disabled));
+    button.setAttribute("aria-pressed", String(
+      activeChip?.kind === chip.kind && activeChip.value === chip.value
+    ));
+  }
+
   for (const row of rows) {
     const visible = matches(row);
     row.hidden = !visible;
@@ -34,13 +68,18 @@ function update() {
   }
 }
 
+function updateAfterSelection() {
+  const wasStuck = filter
+    && window.scrollY > filterOriginY
+    && filter.getBoundingClientRect().top <= 1;
+  update();
+  if (wasStuck) window.scrollTo({ top: filterOriginY + filter.getBoundingClientRect().height - Math.ceil(filter.getBoundingClientRect().height), behavior: "instant" });
+}
+
 for (const button of sectionButtons) {
   button.addEventListener("click", () => {
     activeSection = button.dataset.filterSection;
-    for (const item of sectionButtons) {
-      item.setAttribute("aria-pressed", String(item === button));
-    }
-    update();
+    updateAfterSelection();
   });
 }
 
@@ -51,10 +90,8 @@ for (const button of chipButtons) {
     activeChip = isActive
       ? null
       : { kind: button.dataset.chipKind, value: button.dataset.chip };
-    for (const item of chipButtons) {
-      const pressed = item === button && !isActive;
-      item.setAttribute("aria-pressed", String(pressed));
-    }
-    update();
+    updateAfterSelection();
   });
 }
+
+update();

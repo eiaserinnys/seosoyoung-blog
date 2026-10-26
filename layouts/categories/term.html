@@ -49,46 +49,48 @@
       <button type="button" data-filter-section="posts" aria-pressed="false">쓴 글 <span class="mono">{{ $written }}</span></button>
       <button type="button" data-filter-section="digest" aria-pressed="false">읽은 글 <span class="mono">{{ $read }}</span></button>
     </div>
-    {{- if $hasSubjectBlock -}}
-      {{- range $subjectNames -}}
-        {{- $subject := . -}}
-        {{- $count := 0 -}}
+    <div class="chip-set">
+      {{- if $hasSubjectBlock -}}
+        {{- range $subjectNames -}}
+          {{- $subject := . -}}
+          {{- $count := 0 -}}
+          {{- range $pages -}}
+            {{- if in (.Params.subjects | default (slice)) $subject -}}
+              {{- $count = add $count 1 -}}
+            {{- end -}}
+          {{- end -}}
+          {{- if gt $count 0 -}}
+            <button class="chip" type="button" data-chip-kind="subject" data-chip="{{ $subject }}" aria-pressed="false">{{ $subject }}<span class="mono">{{ $count }}</span></button>
+          {{- end -}}
+        {{- end -}}
+      {{- else -}}
+        {{- $tagNames := slice -}}
         {{- range $pages -}}
-          {{- if in (.Params.subjects | default (slice)) $subject -}}
-            {{- $count = add $count 1 -}}
+          {{- range .Params.tags -}}
+            {{- if not (in $tagNames .) -}}
+              {{- $tagNames = $tagNames | append . -}}
+            {{- end -}}
           {{- end -}}
         {{- end -}}
-        {{- if gt $count 0 -}}
-          <button class="chip" type="button" data-chip-kind="subject" data-chip="{{ $subject }}" aria-pressed="false">{{ $subject }}<span class="mono">{{ $count }}</span></button>
-        {{- end -}}
-      {{- end -}}
-    {{- else -}}
-      {{- $tagNames := slice -}}
-      {{- range $pages -}}
-        {{- range .Params.tags -}}
-          {{- if not (in $tagNames .) -}}
-            {{- $tagNames = $tagNames | append . -}}
+        {{- $tagItems := slice -}}
+        {{- range $tagNames -}}
+          {{- $tag := . -}}
+          {{- $count := 0 -}}
+          {{- range $pages -}}
+            {{- if in (.Params.tags | default (slice)) $tag -}}
+              {{- $count = add $count 1 -}}
+            {{- end -}}
+          {{- end -}}
+          {{- if ge $count 5 -}}
+            {{- $tagItems = $tagItems | append (dict "name" $tag "count" $count) -}}
           {{- end -}}
         {{- end -}}
-      {{- end -}}
-      {{- $tagItems := slice -}}
-      {{- range $tagNames -}}
-        {{- $tag := . -}}
-        {{- $count := 0 -}}
-        {{- range $pages -}}
-          {{- if in (.Params.tags | default (slice)) $tag -}}
-            {{- $count = add $count 1 -}}
-          {{- end -}}
-        {{- end -}}
-        {{- if ge $count 5 -}}
-          {{- $tagItems = $tagItems | append (dict "name" $tag "count" $count) -}}
+        {{- $tagItems = sort $tagItems "count" "desc" -}}
+        {{- range first 8 $tagItems -}}
+          <button class="chip" type="button" data-chip-kind="tag" data-chip="{{ .name }}" aria-pressed="false">{{ .name }}<span class="mono">{{ .count }}</span></button>
         {{- end -}}
       {{- end -}}
-      {{- $tagItems = sort $tagItems "count" "desc" -}}
-      {{- range first 8 $tagItems -}}
-        <button class="chip" type="button" data-chip-kind="tag" data-chip="{{ .name }}" aria-pressed="false">{{ .name }}<span class="mono">{{ .count }}</span></button>
-      {{- end -}}
-    {{- end -}}
+    </div>
   </div>
 
   {{- partial "month-ledger.html" (dict "pages" $pages "second" "type") -}}
