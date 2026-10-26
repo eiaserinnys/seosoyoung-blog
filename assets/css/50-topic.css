@@ -48,34 +48,6 @@
   background: var(--bg);
 }
 
-.seg {
-  display: flex;
-  flex: 0 0 auto;
-  margin-right: 16px;
-  border: 1px solid var(--rule-strong);
-}
-
-.seg button {
-  padding: 6px 12px;
-  border: 0;
-  border-radius: var(--zero);
-  appearance: none;
-  background: transparent;
-  font-size: 13px;
-  font-weight: 600;
-  white-space: nowrap;
-  cursor: pointer;
-}
-
-.seg button[aria-pressed="true"] {
-  background: var(--ink);
-  color: var(--bg);
-}
-
-.seg button[aria-pressed="true"] .mono {
-  color: inherit;
-}
-
 .seg .mono,
 .chip .mono {
   display: inline-block;
@@ -90,34 +62,6 @@
   flex-wrap: wrap;
   gap: 8px;
   padding-top: 1px;
-}
-
-.chip {
-  flex: 0 0 auto;
-  padding: 5px 10px;
-  border: 1px solid var(--rule);
-  border-radius: var(--zero);
-  appearance: none;
-  background: transparent;
-  font-size: 13px;
-  font-weight: 500;
-  white-space: nowrap;
-  cursor: pointer;
-}
-
-.chip .mono {
-  margin-left: 6px;
-}
-
-.chip[aria-pressed="true"] {
-  border-color: var(--accent);
-  background: var(--accent-soft);
-  color: var(--accent);
-}
-
-.chip:disabled {
-  opacity: 0.45;
-  cursor: not-allowed;
 }
 
 .lrow[hidden],
