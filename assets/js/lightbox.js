@@ -2,6 +2,7 @@
     var lightboxSelector = '.post-content img, article.post-single .entry-cover img';
 
     function openLightbox(img) {
+      var renderedWidth = img.getBoundingClientRect().width;
       var overlay = document.createElement('div');
       overlay.className = 'ssy-lightbox';
       overlay.setAttribute('role', 'dialog');
@@ -27,14 +28,19 @@
       } else {
         overlay.setAttribute('aria-label', img.alt || '이미지 확대');
       }
-      function fitImageHeight() {
-        if (!capEl) return;
-        big.style.maxHeight = 'calc(94vh - ' + (capEl.offsetHeight + 14) + 'px)';
+      function fitImage() {
+        if (!big.naturalWidth) return;
+        var viewportWidth = window.innerWidth * 0.96;
+        var width = Math.min(Math.max(renderedWidth, Math.min(big.naturalWidth, viewportWidth)), viewportWidth);
+        big.style.width = width + 'px';
+        var captionHeight = capEl ? capEl.offsetHeight + parseFloat(getComputedStyle(capEl).marginTop) : 0;
+        var availableHeight = Math.min(window.innerHeight * 0.88, window.innerHeight * 0.94 - captionHeight);
+        overlay.classList.toggle('ssy-lightbox--scroll', width * big.naturalHeight / big.naturalWidth > availableHeight);
       }
       var previousOverflow = document.documentElement.style.overflow;
       function close() {
         overlay.remove();
-        window.removeEventListener('resize', fitImageHeight);
+        window.removeEventListener('resize', fitImage);
         document.removeEventListener('keydown', onKey, true);
         document.documentElement.style.overflow = previousOverflow;
         img.focus({ preventScroll: true });
@@ -50,10 +56,11 @@
       }
       overlay.addEventListener('click', close);
       document.addEventListener('keydown', onKey, true);
-      if (capEl) window.addEventListener('resize', fitImageHeight);
+      window.addEventListener('resize', fitImage);
+      big.addEventListener('load', fitImage);
       document.documentElement.style.overflow = 'hidden';
       document.body.appendChild(overlay);
-      fitImageHeight();
+      fitImage();
       big.focus({ preventScroll: true });
     }
 

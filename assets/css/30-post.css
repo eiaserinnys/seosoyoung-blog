@@ -403,13 +403,12 @@
 .code-frame {
   max-width: 100%;
   margin-bottom: var(--space-4);
-  background: var(--bg-2);
 }
 
 .code-copy-bar {
   display: flex;
   justify-content: flex-end;
-  background: var(--bg-2);
+  margin-bottom: var(--space-1);
 }
 
 .copy-code {
@@ -417,7 +416,7 @@
   padding: var(--space-1) var(--space-2);
   border: var(--line) solid var(--rule);
   border-radius: var(--zero);
-  background: var(--bg-2);
+  background: var(--bg);
   color: var(--ink-2);
   font-size: 13px;
   font-weight: 600;
@@ -613,10 +612,15 @@ aside.sidenote .footnote-backref {
   width: auto;
   height: auto;
   max-width: 96vw;
-  max-height: 88vh;
+  max-height: none;
+  flex-shrink: 0;
   border-radius: var(--zero);
   object-fit: contain;
   cursor: zoom-out;
+}
+
+.ssy-lightbox--scroll {
+  justify-content: flex-start;
 }
 
 .ssy-lightbox .ssy-lightbox-caption {
@@ -948,6 +952,10 @@ html.rsvp-active .post-single .post-content figcaption {
   .post-lead,
   .post-meta {
     grid-column: 1;
+  }
+
+  .post-lead {
+    max-width: 720px;
   }
 
 }

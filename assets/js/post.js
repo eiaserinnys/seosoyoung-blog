@@ -19,11 +19,6 @@
       button.type = "button";
       button.className = "copy-code";
       button.textContent = "복사";
-      var codeStyle = window.getComputedStyle(pre);
-      toolbar.style.backgroundColor = codeStyle.backgroundColor;
-      button.style.backgroundColor = codeStyle.backgroundColor;
-      button.style.color = codeStyle.color;
-      frame.style.backgroundColor = codeStyle.backgroundColor;
 
       function copied() {
         button.textContent = "복사됨";
