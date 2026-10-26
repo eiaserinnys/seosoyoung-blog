@@ -21,15 +21,21 @@ const fuseOptions = {
 
 let fuse;
 let searchTimer;
+// 마지막으로 그린 검색어. 같은 검색어로 다시 그리면 포커스를 가진 행이 지워진다
+// (한글 조합이 ↓나 Tab으로 끝날 때 compositionend와 input이 같은 검색을 한 번 더 예약한다).
+let renderedQuery = null;
 
 function clearResults() {
   resultsList.replaceChildren();
 }
 
 function renderResults() {
-  clearResults();
   const query = input.value.trim();
-  if (!query || !fuse) return;
+  if (fuse && query === renderedQuery) return;
+  clearResults();
+  if (!fuse) return;
+  renderedQuery = query;
+  if (!query) return;
 
   const matches = fuse.search(query, { limit: 30 });
   if (matches.length === 0) {
