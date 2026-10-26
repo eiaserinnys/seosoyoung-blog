@@ -13,7 +13,7 @@
     {{- if and (ge $position 0) (lt (add $position 1) (len $seriesPages)) }}
       {{- $next := index $seriesPages (add $position 1) -}}
       <section class="read-next-group">
-        {{ partial "section-head.html" (dict "title" $seriesName "url" $term.Page.RelPermalink "aside" (printf "%d/%d" (add $position 1) (len $seriesPages))) }}
+        {{ partial "section-head.html" (dict "title" $seriesName "url" $term.Page.RelPermalink) }}
         {{ partial "ledger-row.html" (dict "page" $next "variant" "wide" "second" "type") }}
       </section>
       {{- $used = $used | append $next.RelPermalink -}}

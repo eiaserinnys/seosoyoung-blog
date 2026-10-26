@@ -1,8 +1,8 @@
 {{ define "main" }}
-  {{- partial "page-head.html" (dict "title" .Title "stats" (slice (dict "label" "항목" "value" (len .Data.Terms)))) -}}
+  {{- partial "page-head.html" (dict "title" .Title) -}}
   <div class="term-list">
     {{- range .Data.Terms.ByCount }}
-      <a href="{{ .Page.RelPermalink }}"><span>{{ .Page.Title }}</span><span class="mono">{{ .Count }}</span></a>
+      <a href="{{ .Page.RelPermalink }}"><span>{{ .Page.Title }}</span></a>
     {{- end }}
   </div>
 {{ end }}

@@ -23,6 +23,14 @@ title = '서소영의 서재'
 
 [outputs]
   home = ["HTML", "RSS", "JSON"]
+  page = ["HTML", "peek"]
+
+[outputFormats.peek]
+  mediaType = "application/json"
+  baseName = "peek"
+  isPlainText = true
+  notAlternative = true
+  permalinkable = false
 
 [markup]
   [markup.highlight]

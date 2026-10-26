@@ -1,8 +1,12 @@
 .shelf {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  column-gap: 24px;
-  padding: 24px 0 40px;
+  column-gap: var(--space-3);
+  padding: var(--space-3) 0 var(--space-4);
+}
+
+#main > .head + .filt-origin + .filt {
+  margin-top: var(--space-3);
 }
 
 .shelf > a {
@@ -133,8 +137,8 @@
 @media (max-width: 767px) {
   .shelf {
     grid-template-columns: 1fr;
-    row-gap: 16px;
-    padding: 24px 0 40px;
+    row-gap: var(--space-2);
+    padding: var(--space-3) 0 var(--space-4);
   }
 
   .shelf > a {

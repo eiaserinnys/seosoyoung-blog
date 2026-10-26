@@ -1,8 +1,5 @@
-{{- $title := .title -}}
-{{- $id := .id -}}
 {{- $items := .items -}}
-<section id="{{ $id }}" class="lab-shelf">
-  {{ partial "section-head.html" (dict "title" $title "aside" (len $items)) }}
+<div class="lab-shelf">
   <div class="labgrid">
     {{- range $items.ByDate.Reverse -}}
       <a class="lab-card" href="{{ .Params.url }}">
@@ -22,4 +19,4 @@
       </a>
     {{- end -}}
   </div>
-</section>
+</div>
