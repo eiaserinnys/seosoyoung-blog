@@ -1,0 +1,31 @@
+{{ define "main" }}
+  {{- $labPages := .RegularPages.ByDate.Reverse -}}
+  {{- $galleryPages := where site.RegularPages "Section" "gallery" -}}
+  {{- $galleryPages = $galleryPages.ByDate.Reverse -}}
+  {{- $experiments := where $labPages "Params.shelf" "experiment" -}}
+  {{- $atlases := where $labPages "Params.shelf" "atlas" -}}
+  {{- $reports := where $labPages "Params.shelf" "report" -}}
+  {{ partial "topic-bar.html" (dict "current" "") }}
+  {{ partial "page-head.html" (dict
+    "title" "실험실"
+    "stats" (slice
+      (dict "label" "실험" "value" (len $experiments))
+      (dict "label" "아틀라스" "value" (len $atlases))
+      (dict "label" "리포트" "value" (len $reports))
+      (dict "label" "그림" "value" (len $galleryPages))
+    )
+  ) }}
+  {{- range (slice
+    (dict "id" "experiment" "title" "실험" "items" $experiments)
+    (dict "id" "atlas" "title" "아틀라스" "items" $atlases)
+    (dict "id" "report" "title" "리포트" "items" $reports)
+  ) -}}
+    {{- if .items -}}
+      {{ partial "lab-shelf.html" . }}
+    {{- end -}}
+  {{- end -}}
+  <section id="gallery" class="lab-gallery">
+    {{ partial "section-head.html" (dict "title" "그림" "aside" (len $galleryPages)) }}
+    {{ partial "gallery-wall.html" (dict "pages" $galleryPages) }}
+  </section>
+{{ end }}
