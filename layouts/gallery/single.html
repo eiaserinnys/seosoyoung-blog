@@ -59,7 +59,7 @@
     {{- $relatedPages = $relatedPages | append . -}}
   {{- end -}}
   <section class="gallery-related">
-    {{ partial "section-head.html" (dict "title" "그림" "url" "/lab/#gallery") }}
+    {{ partial "section-head.html" (dict "title" "갤러리" "url" "/lab/#gallery") }}
     {{ partial "gallery-wall.html" (dict "pages" $relatedPages) }}
   </section>
 {{ end }}

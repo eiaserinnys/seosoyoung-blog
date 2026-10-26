@@ -114,18 +114,54 @@ button.chip:not(:disabled):hover {
 
 .top {
   height: var(--topline-height);
-  display: flex;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
   align-items: center;
-  justify-content: space-between;
+  column-gap: var(--space-3);
 }
 
 .word {
+  grid-column: 1;
+  grid-row: 1;
   font-size: 17px;
   font-weight: 700;
   letter-spacing: -0.01em;
 }
 
+.gnb {
+  grid-column: 2;
+  grid-row: 1;
+  min-width: 0;
+}
+
+.gnb ul {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.gnb a {
+  min-height: var(--tap-size);
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+  color: var(--ink-2);
+  font-size: 15px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.gnb a[aria-current] {
+  box-shadow: inset 0 -2px 0 var(--accent);
+  color: var(--accent);
+}
+
 .icons {
+  grid-column: 3;
+  grid-row: 1;
   display: flex;
   gap: 4px;
 }
@@ -601,6 +637,39 @@ button.chip:not(:disabled):hover {
 }
 
 @media (max-width: 767px) {
+  .top {
+    height: auto;
+    grid-template-columns: minmax(0, 1fr) auto;
+    row-gap: var(--space-1);
+    padding-block: var(--space-1);
+  }
+
+  .word {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .gnb {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    width: 100%;
+  }
+
+  .gnb ul {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 0;
+  }
+
+  .gnb a {
+    justify-content: center;
+  }
+
+  .icons {
+    grid-column: 2;
+    grid-row: 1;
+  }
+
   .head {
     grid-template-columns: 1fr;
     row-gap: 12px;

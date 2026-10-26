@@ -46,8 +46,6 @@
   {{- $series = sort $series "latest" "desc" -}}
 
   <div class="home">
-  {{- partial "topic-bar.html" (dict "current" "") -}}
-
   <div class="band">
       <article class="lead">
         <a class="lead-main{{ if not $featured.Params.cover.image }} no-cover{{ end }}" href="{{ $featured.RelPermalink }}">
@@ -88,7 +86,7 @@
       {{- end -}}
     </section>
 
-    <aside class="vis col" aria-label="실험실, 그림, X">
+    <aside class="vis col" aria-label="실험실, 갤러리, X">
       {{- partial "section-head.html" (dict "title" "실험실" "url" ("lab/" | relURL)) -}}
       {{- with $experimentsByDate -}}
         {{- $experiment := index . 0 -}}
