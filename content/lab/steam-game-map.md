@@ -5,7 +5,7 @@ summary: "Steam 게임 13만 편을 비슷한 것끼리 모은 지도에서 빈�
 params:
   kind: "시각화"
   url: "https://pages.eiaserinnys.me/d/steam-game-map/"
-  thumb: "https://img.seosoyoung.eiaserinnys.me/images/lab/steam-game-map/thumb.jpg"
+  thumb: "https://img.seosoyoung.eiaserinnys.me/images/lab/steam-game-map/thumb-ko.jpg"
   shelf: "experiment"
 build:
   render: never
