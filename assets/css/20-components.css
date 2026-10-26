@@ -156,7 +156,7 @@ button.chip:not(:disabled):hover {
 
 .gnb a[aria-current] {
   box-shadow: inset 0 -2px 0 var(--accent);
-  color: var(--accent);
+  color: var(--ink);
 }
 
 .icons {
