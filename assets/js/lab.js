@@ -1,8 +1,10 @@
 const tabs = [...document.querySelectorAll('[role="tab"]')];
 const panels = [...document.querySelectorAll('[role="tabpanel"]')];
+document.querySelector(".lab-tabs").hidden = false;
 
 function selectTab(tab, replaceHash) {
-  const selectedId = tab.getAttribute("aria-controls");
+  const panelId = tab.getAttribute("aria-controls");
+  const hash = tab.id.slice(4);
 
   for (const item of tabs) {
     const selected = item === tab;
@@ -11,16 +13,16 @@ function selectTab(tab, replaceHash) {
   }
 
   for (const panel of panels) {
-    panel.hidden = panel.id !== selectedId;
+    panel.hidden = panel.id !== panelId;
   }
 
   if (replaceHash) {
-    history.replaceState(null, "", `${location.pathname}${location.search}#${selectedId}`);
+    history.replaceState(null, "", `${location.pathname}${location.search}#${hash}`);
   }
 }
 
 const initialId = window.location.hash.slice(1);
-const initialTab = tabs.find((tab) => tab.getAttribute("aria-controls") === initialId) || tabs[0];
+const initialTab = tabs.find((tab) => tab.id === `tab-${initialId}`) || tabs[0];
 selectTab(initialTab, false);
 
 for (const [index, tab] of tabs.entries()) {

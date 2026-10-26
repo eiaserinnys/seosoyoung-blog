@@ -9,11 +9,15 @@
 }
 
 .lab-tabs .seg {
+  display: inline-flex;
   margin-right: 0;
 }
 
 .lab-tabs .seg button {
-  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: var(--tap-size);
 }
 
 .lab-shelf,
@@ -99,6 +103,10 @@
 @media (max-width: 767px) {
   .lab-tabs .seg {
     width: 100%;
+  }
+
+  .lab-tabs .seg button {
+    flex: 1;
   }
 
   .labgrid {

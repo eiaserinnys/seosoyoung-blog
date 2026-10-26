@@ -217,6 +217,7 @@
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   column-gap: var(--space-5);
+  padding-top: var(--space-4);
 }
 
 .home .ser h4 {
@@ -240,6 +241,16 @@
   align-items: baseline;
   border-bottom: var(--line) solid var(--rule);
   font-size: 15px;
+}
+
+@media (min-width: 1024px) and (max-width: 1279px) {
+  .home .band {
+    column-gap: var(--space-3);
+  }
+
+  .home .col {
+    padding-left: var(--space-3);
+  }
 }
 
 @media (min-width: 768px) and (max-width: 1023px) {

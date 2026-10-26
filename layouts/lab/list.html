@@ -16,10 +16,10 @@
   {{- end -}}
   {{ partial "topic-bar.html" (dict "current" "") }}
   {{ partial "page-head.html" (dict "title" "실험실") }}
-  <nav class="lab-tabs" aria-label="실험실">
+  <nav class="lab-tabs" hidden aria-label="실험실">
     <div class="seg" role="tablist" aria-label="갈래">
       {{- range $index, $tab := $tabs -}}
-        <button id="tab-{{ $tab.id }}" type="button" role="tab" aria-selected="{{ if eq $index 0 }}true{{ else }}false{{ end }}" aria-controls="{{ $tab.id }}">
+        <button id="tab-{{ $tab.id }}" type="button" role="tab" aria-selected="{{ if eq $index 0 }}true{{ else }}false{{ end }}" aria-controls="panel-{{ $tab.id }}">
           {{- $tab.title -}}
         </button>
       {{- end -}}
@@ -27,7 +27,7 @@
   </nav>
   <div class="lab-panels">
     {{- range $index, $tab := $tabs -}}
-      <section id="{{ $tab.id }}" class="lab-panel" role="tabpanel" aria-labelledby="tab-{{ $tab.id }}">
+      <section id="panel-{{ $tab.id }}" class="lab-panel" role="tabpanel" aria-labelledby="tab-{{ $tab.id }}">
         {{- if eq $tab.id "gallery" -}}
           {{ partial "gallery-wall.html" (dict "pages" $tab.items) }}
         {{- else -}}

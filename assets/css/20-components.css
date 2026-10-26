@@ -342,14 +342,23 @@ button.chip:not(:disabled):hover {
   padding: 0;
   border: 0;
   background: transparent;
-  background-image:
-    linear-gradient(currentColor, currentColor),
-    linear-gradient(currentColor, currentColor);
-  background-size: 14px 1.5px, 1.5px 14px;
-  background-position: center;
-  background-repeat: no-repeat;
   color: var(--ink-3);
   cursor: pointer;
+}
+
+.pk::before {
+  width: 14px;
+  height: 14px;
+  background-color: currentColor;
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0%200%2016%2016'%3E%3Cpath d='M8%203v10M3%208h10' stroke='black' stroke-width='1.5' fill='none'/%3E%3C/svg%3E");
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0%200%2016%2016'%3E%3Cpath d='M8%203v10M3%208h10' stroke='black' stroke-width='1.5' fill='none'/%3E%3C/svg%3E");
+  -webkit-mask-position: center;
+  mask-position: center;
+  -webkit-mask-size: 100% 100%;
+  mask-size: 100% 100%;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  content: "";
 }
 
 .pk::after {
@@ -361,8 +370,16 @@ button.chip:not(:disabled):hover {
   content: "";
 }
 
-.pk[aria-expanded="true"] {
-  background-size: 14px 1.5px, 0 0;
+.pk[aria-expanded="true"]::before {
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0%200%2016%2016'%3E%3Cpath d='M3%208h10' stroke='black' stroke-width='1.5' fill='none'/%3E%3C/svg%3E");
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0%200%2016%2016'%3E%3Cpath d='M3%208h10' stroke='black' stroke-width='1.5' fill='none'/%3E%3C/svg%3E");
+}
+
+@media (forced-colors: active) {
+  .pk::before {
+    forced-color-adjust: none;
+    background-color: ButtonText;
+  }
 }
 
 .row:hover,
