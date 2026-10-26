@@ -3,9 +3,7 @@ const chipButtons = [...document.querySelectorAll(".chip[data-chip-kind]")];
 const rows = [...document.querySelectorAll(".lrow")];
 const months = [...document.querySelectorAll(".mon")];
 const filter = document.querySelector(".filt");
-const filterOriginY = filter
-  ? filter.getBoundingClientRect().top + window.scrollY
-  : 0;
+const filterOrigin = document.querySelector(".filt-origin");
 
 let activeSection = "all";
 let activeChip = null;
@@ -69,11 +67,12 @@ function update() {
 }
 
 function updateAfterSelection() {
+  const originY = filterOrigin.getBoundingClientRect().top + window.scrollY;
   const wasStuck = filter
-    && window.scrollY > filterOriginY
+    && window.scrollY > originY
     && filter.getBoundingClientRect().top <= 1;
   update();
-  if (wasStuck) window.scrollTo({ top: filterOriginY + filter.getBoundingClientRect().height - Math.ceil(filter.getBoundingClientRect().height), behavior: "instant" });
+  if (wasStuck) window.scrollTo({ top: originY, behavior: "instant" });
 }
 
 for (const button of sectionButtons) {

@@ -41,7 +41,7 @@
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
-  align-items: center;
+  align-items: flex-start;
   padding: 12px 0;
   border-top: 2px solid var(--rule-strong);
   border-bottom: 1px solid var(--rule);
@@ -76,12 +76,20 @@
   color: inherit;
 }
 
+.seg .mono,
+.chip .mono {
+  display: inline-block;
+  text-align: end;
+  font-variant-numeric: tabular-nums;
+}
+
 .chip-set {
   flex: 1;
   min-width: 0;
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
+  padding-top: 1px;
 }
 
 .chip {
