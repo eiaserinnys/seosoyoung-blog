@@ -1,7 +1,7 @@
 {{- $pages := .pages -}}
 {{- $second := .second -}}
 {{- range $pages.GroupByDate "2006.01" }}
-  <div class="mon" id="m-{{ .Key | replace "." "-" }}">
+  <div class="mon" id="m-{{ replace .Key "." "-" }}">
     <span class="mono" style="color:var(--ink)">{{ .Key }}</span>
     <span class="mono">{{ len .Pages }}</span>
   </div>
