@@ -48,7 +48,69 @@
 {{- if gt $runeCount 40 -}}
   {{- $size = 44 -}}
 {{- end -}}
-{{- $titleImage := $titleCanvas | images.Filter (images.Text $title (dict "font" (resources.Get "fonts/Pretendard-Bold.ttf") "size" $size "color" "#0F0F0F" "linespacing" (int (math.Round (mul $size 0.22))) "x" 72 "y" 566 "aligny" "bottom")) -}}
+{{- $wrapWidth := 1056 -}}
+{{- if $hasCover -}}
+  {{- $wrapWidth = 576 -}}
+{{- end -}}
+{{- $wrapCapacity := div (float (sub $wrapWidth $size)) (float $size) -}}
+{{- $words := findRE "\\S+" $title -}}
+{{- $wrappedTitle := "" -}}
+{{- range $wordIndex, $word := $words -}}
+  {{- if gt $wordIndex 0 -}}
+    {{- $wrappedTitle = printf "%s " $wrappedTitle -}}
+  {{- end -}}
+  {{- $wordRunes := findRE "." $word -}}
+  {{- $wordWidth := 0.0 -}}
+  {{- range $wordRunes -}}
+    {{- $runeWidth := 0.65 -}}
+    {{- if gt (len (findRE "[\\p{Han}\\p{Hangul}\\p{Hiragana}\\p{Katakana}\\x{3000}-\\x{303F}\\x{30FB}-\\x{30FC}\\x{FF00}-\\x{FFEF}]" .)) 0 -}}
+      {{- $runeWidth = 1.0 -}}
+    {{- end -}}
+    {{- $wordWidth = add $wordWidth $runeWidth -}}
+  {{- end -}}
+  {{- if gt $wordWidth $wrapCapacity -}}
+    {{- $wrappedLines := "" -}}
+    {{- $line := "" -}}
+    {{- $lineWidth := 0.0 -}}
+    {{- range $wordRunes -}}
+      {{- $rune := . -}}
+      {{- $runeWidth := 0.65 -}}
+      {{- if gt (len (findRE "[\\p{Han}\\p{Hangul}\\p{Hiragana}\\p{Katakana}\\x{3000}-\\x{303F}\\x{30FB}-\\x{30FC}\\x{FF00}-\\x{FFEF}]" $rune)) 0 -}}
+        {{- $runeWidth = 1.0 -}}
+      {{- end -}}
+      {{- if and (gt $lineWidth 0.0) (gt (add $lineWidth $runeWidth) $wrapCapacity) -}}
+        {{- if gt (len (findRE "[、。，．」』）〉》】！？％ー…]" $rune)) 0 -}}
+          {{- $line = printf "%s%s" $line $rune -}}
+          {{- $lineWidth = add $lineWidth $runeWidth -}}
+        {{- else -}}
+          {{- $wrappedLines = printf "%s%s\n" $wrappedLines $line -}}
+          {{- $line = $rune -}}
+          {{- $lineWidth = $runeWidth -}}
+        {{- end -}}
+      {{- else -}}
+        {{- $line = printf "%s%s" $line $rune -}}
+        {{- $lineWidth = add $lineWidth $runeWidth -}}
+      {{- end -}}
+    {{- end -}}
+    {{- if ne $line "" -}}
+      {{- $wrappedLines = printf "%s%s" $wrappedLines $line -}}
+    {{- end -}}
+    {{- $wrappedTitle = printf "%s%s" $wrappedTitle $wrappedLines -}}
+  {{- else -}}
+    {{- $wrappedTitle = printf "%s%s" $wrappedTitle $word -}}
+  {{- end -}}
+{{- end -}}
+{{- $title = $wrappedTitle -}}
+{{- $titleFont := "fonts/PretendardJP-Bold.ttf" -}}
+{{- $hasHan := gt (len (findRE "[\\p{Han}]" $title)) 0 -}}
+{{- $hasHangulOrKana := gt (len (findRE "[\\p{Hangul}\\p{Hiragana}\\p{Katakana}]" $title)) 0 -}}
+{{- $hasLetterlike := gt (len (findRE "[\\x{2100}-\\x{214F}]" $title)) 0 -}}
+{{- if and $hasHan (not $hasHangulOrKana) -}}
+  {{- $titleFont = "fonts/NotoSansSC-Bold.ttf" -}}
+{{- else if and (not $hasHan) (not $hasHangulOrKana) $hasLetterlike -}}
+  {{- $titleFont = "fonts/NotoSans-Bold.ttf" -}}
+{{- end -}}
+{{- $titleImage := $titleCanvas | images.Filter (images.Text $title (dict "font" (resources.Get $titleFont) "size" $size "color" "#0F0F0F" "linespacing" (int (math.Round (mul $size 0.22))) "x" 72 "y" 566 "aligny" "bottom")) -}}
 {{- $panel := $base | images.Filter (images.Overlay $titleImage 0 0) -}}
 
 {{- $metaBottom := 151 -}}
