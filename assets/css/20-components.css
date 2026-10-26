@@ -463,9 +463,8 @@
     grid-column: 1;
   }
 
-  .stats {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-    grid-auto-flow: row;
+  .stat:first-child {
+    padding-left: 0;
   }
 
   .tbar {
@@ -476,6 +475,48 @@
   .tbar a {
     flex: 0 0 auto;
     white-space: nowrap;
+  }
+}
+
+@media (hover: hover) and (pointer: fine) {
+  @supports not selector(::-webkit-scrollbar) {
+    .tbar {
+      scrollbar-width: thin;
+      scrollbar-color: var(--scrollbar-thumb) var(--bg);
+    }
+  }
+
+  .tbar::-webkit-scrollbar {
+    width: var(--scrollbar-size);
+    height: var(--scrollbar-size);
+    background: var(--bg);
+  }
+
+  .tbar::-webkit-scrollbar-track {
+    background: var(--bg);
+    box-shadow: inset var(--line) 0 0 var(--rule);
+  }
+
+  .tbar::-webkit-scrollbar-thumb {
+    min-height: var(--scrollbar-thumb-min);
+    border: solid transparent;
+    border-width: var(--scrollbar-inset-block) var(--scrollbar-inset-end) var(--scrollbar-inset-block) var(--scrollbar-inset-start);
+    background-color: var(--scrollbar-thumb);
+    background-clip: padding-box;
+  }
+
+  .tbar::-webkit-scrollbar-thumb:hover,
+  .tbar::-webkit-scrollbar-thumb:active {
+    border-width: var(--scrollbar-inset-block) var(--scrollbar-inset-end-hover) var(--scrollbar-inset-block) var(--scrollbar-inset-start-hover);
+    background-color: var(--scrollbar-thumb-hover);
+  }
+
+  .tbar::-webkit-scrollbar-thumb:active {
+    background-color: var(--scrollbar-thumb-active);
+  }
+
+  .tbar::-webkit-scrollbar-corner {
+    background: var(--bg);
   }
 }
 
