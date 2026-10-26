@@ -40,7 +40,8 @@
   object-fit: cover;
 }
 
-#main > .tbar + .head {
+#main > .tbar + .head,
+#main > .head:first-child {
   padding-top: var(--space-4);
 }
 
