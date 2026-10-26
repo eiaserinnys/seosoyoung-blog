@@ -4,6 +4,11 @@
   min-width: 0;
 }
 
+.lab-shelf,
+.lab-gallery {
+  scroll-margin-top: var(--space-3);
+}
+
 .labgrid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -61,32 +66,6 @@
 .wall .cv {
   display: block;
   height: 100%;
-}
-
-.gallery-single {
-  width: 100%;
-  max-width: 720px;
-  margin-inline: auto;
-}
-
-.gallery-meta {
-  display: flex;
-  align-items: baseline;
-  gap: var(--space-2);
-}
-
-.gallery-single .entry-cover {
-  max-width: 720px;
-  margin: var(--space-3) 0;
-}
-
-.gallery-single .entry-cover img {
-  display: block;
-  width: auto;
-  max-width: 100%;
-  height: auto;
-  margin-inline: auto;
-  cursor: zoom-in;
 }
 
 .gallery-related {

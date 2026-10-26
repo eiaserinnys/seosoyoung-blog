@@ -1,15 +1,15 @@
 {{ define "main" }}
   {{- $date := .Date.Format "2006.01.02" -}}
   <article class="post-single gallery-single">
-    <header>
-      <div class="gallery-meta mono">
-        <time datetime="{{ .Date.Format "2006-01-02" }}">{{ $date }}</time>
-        {{- with .Params.model }}<span>{{ . }}</span>{{ end -}}
+    <header class="post-header">
+      <div class="post-meta">
+        <time class="mono" datetime="{{ .Date.Format "2006-01-02" }}">{{ $date }}</time>
+        {{- with .Params.model }}<span class="mono">{{ . }}</span>{{ end -}}
       </div>
       {{- with .Params.title }}
-        <h1>{{ . }}</h1>
+        <h1 class="post-title">{{ . }}</h1>
       {{- else }}
-        <h1 class="visually-hidden">그림 {{ $date }}</h1>
+        <h1 class="post-title visually-hidden">그림 {{ $date }}</h1>
       {{- end }}
     </header>
     <figure class="entry-cover">

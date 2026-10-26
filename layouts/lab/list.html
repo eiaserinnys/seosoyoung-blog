@@ -5,15 +5,21 @@
   {{- $experiments := where $labPages "Params.shelf" "experiment" -}}
   {{- $atlases := where $labPages "Params.shelf" "atlas" -}}
   {{- $reports := where $labPages "Params.shelf" "report" -}}
+  {{- $stats := slice -}}
+  {{- if gt (len $experiments) 0 -}}
+    {{- $stats = $stats | append (dict "label" "실험" "value" (len $experiments)) -}}
+  {{- end -}}
+  {{- if gt (len $atlases) 0 -}}
+    {{- $stats = $stats | append (dict "label" "아틀라스" "value" (len $atlases)) -}}
+  {{- end -}}
+  {{- if gt (len $reports) 0 -}}
+    {{- $stats = $stats | append (dict "label" "리포트" "value" (len $reports)) -}}
+  {{- end -}}
+  {{- $stats = $stats | append (dict "label" "그림" "value" (len $galleryPages)) -}}
   {{ partial "topic-bar.html" (dict "current" "") }}
   {{ partial "page-head.html" (dict
     "title" "실험실"
-    "stats" (slice
-      (dict "label" "실험" "value" (len $experiments))
-      (dict "label" "아틀라스" "value" (len $atlases))
-      (dict "label" "리포트" "value" (len $reports))
-      (dict "label" "그림" "value" (len $galleryPages))
-    )
+    "stats" $stats
   ) }}
   {{- range (slice
     (dict "id" "experiment" "title" "실험" "items" $experiments)

@@ -3,7 +3,7 @@
   {{- $galleryPages = $galleryPages.ByDate.Reverse -}}
   {{ partial "page-head.html" (dict
     "title" "그림"
-    "stats" (slice (dict "label" "그림" "value" (len $galleryPages)))
+    "stats" (slice (dict "label" "편수" "value" (len $galleryPages)))
   ) }}
   {{ partial "gallery-wall.html" (dict "pages" $galleryPages) }}
 {{ end }}
