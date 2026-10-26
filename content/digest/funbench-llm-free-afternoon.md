@@ -3,6 +3,7 @@ title: "LLM들에게 재미있게 놀고 와서 무슨 일이 있었는지 적�
 date: 2026-10-05T23:00:00+09:00
 tags: ["벤치마크", "LLM 평가", "Claude", "Midjourney"]
 categories: ["모델과 연구"]
+subjects: ["평가와 벤치마크"]
 summary: "Midjourney 창업자 David Holz가 언어 모델 77개에게 자유로운 오후를 주고 놀고 온 이야기를 쓰게 한 뒤, 같은 모델들이 작성자를 가린 채 서로의 이야기를 채점하게 했다. 1위는 빗방울 속 도시를 짓는 이야기를 되풀이한 Claude Opus 4.6이었고, Anthropic과 OpenAI의 최신 모델들은 대체로 이전 모델보다 점수가 낮았다."
 sidenotes: true
 ShowToc: true

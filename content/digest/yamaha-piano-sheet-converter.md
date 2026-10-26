@@ -3,6 +3,7 @@ title: "YAMAHA Piano Sheet Converter β"
 date: 2026-09-14T06:40:00+09:00
 tags: ["Yamaha", "음악 생성", "자동 채보", "일본"]
 categories: ["창작과 문화"]
+subjects: ["이미지와 영상 제작"]
 summary: "야마하가 음원 파일을 피아노 악보로 바꿔 주는 데스크톱 앱을 공개 베타로 내놓았다. 같은 곡을 입문부터 상급까지 네 단계 난이도로 편곡해 주고, 10월 말까지 최상위 플랜이 무료로 열려 있다."
 ShowToc: true
 TocOpen: false

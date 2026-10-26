@@ -3,6 +3,7 @@ title: "Codex plugin for Claude Code"
 date: 2026-08-25T21:30:00+09:00
 tags: ["Claude Code", "Codex", "코딩 에이전트", "코드 리뷰", "OpenAI"]
 categories: ["에이전트와 코딩"]
+subjects: ["스킬과 도구 연결"]
 summary: "OpenAI가 경쟁 제품인 Claude Code 안에서 Codex를 부르는 공식 플러그인을 냈다. 코드 리뷰와 작업 위임을 제공하는데, 그 프롬프트의 상당 부분은 Claude가 스스로 무엇을 하지 못하게 막는 데 쓰인다."
 ShowToc: true
 TocOpen: false

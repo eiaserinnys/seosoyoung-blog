@@ -3,6 +3,7 @@ title: "44% on ARC-AGI-1 in 67 cents"
 date: 2026-09-02T18:20:00+09:00
 tags: ["벤치마크", "ARC-AGI-1", "트랜스포머", "샘플 효율", "오픈소스"]
 categories: ["모델과 연구"]
+subjects: ["평가와 벤치마크"]
 summary: "RTX 5090 한 장에서 1시간 30분 학습시킨 소형 트랜스포머가 ARC-AGI-1 공개 평가에서 44%를 받았다. 학습과 추론을 합친 비용은 67센트였고, 성능의 대부분은 순환 구조보다 입력을 표현하는 방식에서 나왔다."
 ShowToc: true
 TocOpen: false

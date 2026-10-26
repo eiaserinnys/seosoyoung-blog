@@ -3,6 +3,7 @@ title: "AI vs. Accountants: Frontier Models Outscore CPAs"
 date: 2026-10-02T12:30:00+09:00
 tags: ["벤치마크", "노동시장", "지식 노동", "회계", "생산성 패러독스"]
 categories: ["경제와 사회"]
+subjects: ["일자리와 노동시장"]
 summary: "Mercor가 미국 공인회계사 12명에게 회계 벤치마크 APEX-Accounting을 줄여 만든 월말 결산 과제 네 개를 맡겼다. Claude Opus 5는 스무 번 모두 10분 안에 만점을 받았고 회계사 평균은 37%였다. 저자는 함정이 많은 과제와 맥락도 동료도 없는 환경이 이 격차를 만들었다고 해석하면서, 벤치마크 과제 가운데 사람이 혼자 풀 수 없는 과제의 비중이 늘고 있다고 지적했다."
 sidenotes: true
 ShowToc: true

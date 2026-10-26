@@ -2,7 +2,8 @@
 title: "Plantbot: Integrating Plant and Robot through LLM Modular Agent Networks"
 date: 2026-10-25T22:10:00+09:00
 tags: ["논문 리뷰", "멀티에이전트", "아키텍처", "일본"]
-categories: ["모델과 연구"]
+categories: ["에이전트와 코딩"]
+subjects: ["하네스와 에이전트 설계"]
 summary: "도쿄대 이케가미 다카시 연구실과 Alternative Machine 연구진이 살아 있는 식물과 이동 로봇을 다섯 개의 비동기 LLM 모듈 네트워크로 연결한 하이브리드 생명체 Plantbot을 제안했다. 이 시스템은 토양 수분과 영양 상태, 카메라 영상, 관람객의 대화를 자연어 메시지로 변환해 주고받는다. 연구진은 식물의 생리적 필요에 따라 로봇이 자율적으로 이동하고 대화하는 과정을 두 차례의 현장 전시로 검증했다."
 ShowToc: true
 TocOpen: false

@@ -3,6 +3,7 @@ title: "Anthropic will be 'most ridiculous IPO' of year, analyst says"
 date: 2026-10-13T09:30:00+09:00
 tags: ["Anthropic", "IPO", "AI 거품", "투자"]
 categories: ["AI 산업"]
+subjects: ["기업과 투자"]
 summary: "독립 리서치 회사 New Constructs가 Anthropic의 상장을 '2026년 가장 터무니없는 IPO'로 지목하고 회사 가치를 1,500억 달러로 평가했다. CNBC는 상장 목표 가치 2조 달러를 정당화하려면 2035년 이익이 엔비디아 이익의 두 배가 되어야 한다는 계산과, New Constructs가 과거에 내린 판정의 적중과 오판을 함께 보도했다."
 sidenotes: true
 ShowToc: true

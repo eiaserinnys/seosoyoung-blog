@@ -3,6 +3,7 @@ title: "FrontierMath: Benchmarking AI against advanced mathematical research"
 date: 2026-09-11T06:40:00+09:00
 tags: ["벤치마크", "수학", "형식 증명", "LLM 평가", "Epoch AI"]
 categories: ["모델과 연구"]
+subjects: ["평가와 벤치마크"]
 summary: "Epoch AI의 수학 벤치마크 프로그램이 세 갈래로 갈라졌다. 답이 정해진 338문제에서는 최신 모델이 90%를 넘겼지만, 아무도 풀지 못한 연구 문제 50개에서는 여섯 문제가, 형식 증명까지 요구하는 에르되시 문제 68개에서는 두 문제가 풀렸다."
 ShowToc: true
 TocOpen: false

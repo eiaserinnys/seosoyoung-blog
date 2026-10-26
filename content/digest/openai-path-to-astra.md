@@ -3,6 +3,7 @@ title: "Path to Astra: critical capabilities and frontier safeguards"
 date: 2026-09-02T08:30:00+09:00
 tags: ["OpenAI", "AI 안전", "사이버 보안", "정렬", "벤치마크"]
 categories: ["모델과 연구"]
+subjects: ["안전과 정렬"]
 summary: "OpenAI가 차기 모델 Astra에 사이버보안 Critical 등급을 붙였다. Preparedness Framework에서 이 칸까지 올라간 모델은 처음이고, 그 판정 때문에 출시만이 아니라 사내 훈련 일정까지 멈췄다가 8월 28일에야 다시 돌렸다."
 ShowToc: true
 TocOpen: false

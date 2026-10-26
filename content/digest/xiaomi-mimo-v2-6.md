@@ -2,7 +2,8 @@
 title: "Introducing MiMo-V2.6 series"
 date: 2026-09-22T07:00:00+09:00
 tags: ["Xiaomi", "오픈소스", "강화학습", "벤치마크", "멀티모달"]
-categories: ["모델과 연구"]
+categories: ["AI 산업"]
+subjects: ["새 모델과 제품"]
 summary: "샤오미가 2026년 9월 22일 네이티브 옴니모달 모델 MiMo-V2.6 Pro와 Flash를 공개하고 오픈소스로 풀었다. Pro는 Artificial Analysis Intelligence Index에서 46.32점을 받아 오픈소스 최고 기록을 세웠고 가격은 이전 세대 그대로다. 발표문은 30스텝 RL 학습의 비용과 곡선, 학습 환경과 RL 코드까지 함께 공개했다."
 ShowToc: true
 TocOpen: false

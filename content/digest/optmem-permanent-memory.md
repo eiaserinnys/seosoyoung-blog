@@ -3,6 +3,7 @@ title: "OptMem: Permanent memory for AI agents. A 426-token prompt, a script, pl
 date: 2026-10-05T01:30:00+09:00
 tags: ["메모리", "에이전트", "컨텍스트 관리", "프롬프트 엔지니어링"]
 categories: ["에이전트와 코딩"]
+subjects: ["메모리와 RAG"]
 summary: "OptMem은 원문 기록을 보존하고 오래된 기록을 이진 트리로 요약하는 에이전트 메모리 도구다. Python 스크립트 하나와 짧은 지시문으로 기록, 요약, 검색을 사용할 수 있다."
 sidenotes: true
 ShowToc: true

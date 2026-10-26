@@ -3,6 +3,7 @@ title: "게임프리크 사원과 도쿄대 교수가 '물 표현을 아름다�
 date: 2026-10-22T21:30:00+09:00
 tags: ["게임 개발", "렌더링", "논문 리뷰", "게임프리크"]
 categories: ["게임"]
+subjects: ["그래픽스와 렌더링"]
 summary: "게임프리크 프로그래머 나리타 후미야와 도쿄대 가나이 다카시 교수가 Pacific Graphics 2026에서 액체 시뮬레이션 기법 'Extended Quadtree Tall Cells'를 발표했다. 수평 격자 세분화와 수면 부근에서 세밀하게 계산하는 구간의 두께 조절을 결합해, 넓은 수면에 잔물결이 생기는 장면에서 기존 Quadtree Tall Cells보다 압력 계산은 약 2.5~3.0배, 전체 시뮬레이션은 약 1.5배 빨라졌다."
 sidenotes: true
 ShowToc: true

@@ -3,6 +3,7 @@ title: "WikiSkill: Compiling Agent Experience into Persistent Knowledge for Skil
 date: 2026-09-01T13:00:00+09:00
 tags: ["논문 리뷰", "AI 에이전트", "스킬 표현", "자기 개선"]
 categories: ["에이전트와 코딩"]
+subjects: ["메모리와 RAG"]
 summary: "Google Research가 에이전트 스킬을 자동으로 고쳐 나갈 때, 실행 경험을 영속 위키에 먼저 정리하고 그 위에서 스킬을 손보게 했다. 다섯 모델과 다섯 벤치마크에서 기존 스킬 진화 기법을 모두 앞섰고, 위키를 떼어내면 그 평균이 48.7%에 그친다."
 ShowToc: true
 TocOpen: false

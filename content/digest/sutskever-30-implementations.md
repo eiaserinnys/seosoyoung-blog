@@ -3,6 +3,7 @@ title: "Sutskever 30 - Complete Implementation Suite"
 date: 2026-09-30T06:40:00+09:00
 tags: ["일리야 수츠케버", "논문 구현", "NumPy", "Claude Code"]
 categories: ["모델과 연구"]
+subjects: ["모델 구조와 학습"]
 summary: "Paul Pajo가 2025년 12월 공개한 GitHub 저장소로, 일리야 수츠케버의 추천 읽기 목록에 실린 논문 30편을 NumPy만 쓰는 주피터 노트북으로 구현했다. 노트북 다섯 개를 직접 실행해 보니 문자 RNN은 가중치를 갱신하며 학습했다. 반면 다중 토큰 예측 노트북은 가중치를 한 번도 갱신하지 않았다. 스케일링 법칙과 Lost in the Middle 노트북은 논문이 보고한 결과가 나오도록 수식을 미리 작성하고 그 곡선을 그렸다."
 math: true
 sidenotes: true

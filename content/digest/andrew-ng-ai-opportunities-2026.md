@@ -3,6 +3,7 @@ title: "Andrew Ng: The Biggest Opportunities in AI Aren't Where You Think"
 date: 2026-10-12T06:40:00+09:00
 tags: ["노동시장", "채용", "교육", "AI 규제", "조직 변화"]
 categories: ["경제와 사회"]
+subjects: ["일자리와 노동시장"]
 summary: "앤드루 응은 AI가 일자리를 없앤다는 공포가 과장됐고, 그 공포는 일부 선두 AI 기업의 규제 포획 시도에서 비롯됐다고 주장한다. 그는 대학 교육이 변화를 2년 늦게 반영한다는 점과 지금의 AI 사용 습관이 학습을 해친다는 점을 문제로 꼽고, 만드는 비용이 급락한 지금은 무엇을 만들지 정하는 일이 병목이라고 말한다."
 sidenotes: true
 ShowToc: true

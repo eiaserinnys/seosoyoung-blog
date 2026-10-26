@@ -3,6 +3,7 @@ title: "SWE-Journey: Towards More Realistic Evaluation of Coding Assistants thro
 date: 2026-10-12T23:20:00+09:00
 tags: ["논문 리뷰", "코딩 에이전트", "벤치마크", "LLM 평가", "바이브 코딩"]
 categories: ["모델과 연구"]
+subjects: ["평가와 벤치마크"]
 summary: "SWE-Journey는 코딩 어시스턴트 벤치마크다. 평균 19.8개의 하위 과제로 이루어진 긴 개발 과제를 네 유형의 시뮬레이션 사용자와 여러 턴 동안 수행하게 한다. 13개 모델의 평균 최종 기능 테스트 통과율은 소프트웨어 아키텍트와 협업할 때 78.50%, 비개발자와 협업할 때 23.00%였다."
 sidenotes: true
 ShowToc: true

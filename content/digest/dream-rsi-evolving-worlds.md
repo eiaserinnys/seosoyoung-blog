@@ -2,7 +2,8 @@
 title: "Dream-RSI: Recursive Self-Improvement through Evolving Worlds"
 date: 2026-09-17T13:30:00+09:00
 tags: ["논문 리뷰", "재귀적 자기 개선", "AI 에이전트", "진화 알고리즘"]
-categories: ["모델과 연구"]
+categories: ["에이전트와 코딩"]
+subjects: ["하네스와 에이전트 설계"]
 summary: "구글과 구글 딥마인드, 메릴랜드대, 버지니아대의 연구자 17명이 코딩 에이전트의 탐색 정책을 재귀적으로 고쳐 쓰는 방법을 내놓았다. 새 정책을 시험하려고 발견 과정을 다시 돌리는 대신, 지난 실행이 남긴 발견 트리를 재생 시뮬레이터로 삼아 실행 비용 없이 수천 개의 후보를 채점한다."
 math: true
 ShowToc: true

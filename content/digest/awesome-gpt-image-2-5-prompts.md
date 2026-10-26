@@ -3,6 +3,7 @@ title: "Awesome GPT Image 2.5 Prompts: 24개를 모으고, 하나도 시험하�
 date: 2026-09-11T21:00:00+09:00
 tags: ["이미지 생성", "프롬프트 엔지니어링", "오픈소스", "OpenAI"]
 categories: ["창작과 문화"]
+subjects: ["이미지와 영상 제작"]
 summary: "OpenAI가 ChatGPT Images 2.5를 공개한 이틀 뒤에 올라온 프롬프트 모음 저장소다. X에서 모은 24개 사례를 여섯 갈래로 나누고 원작자와 관측 시각까지 전부 기록했는데, 정작 자기가 직접 돌려 본 사례는 하나도 없다고 문서 앞머리에 먼저 밝혀 두었다."
 ShowToc: true
 TocOpen: false

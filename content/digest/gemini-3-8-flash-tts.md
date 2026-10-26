@@ -2,7 +2,8 @@
 title: "Gemini 3.8 Flash TTS and Gemini 3.8 Flash-Lite TTS"
 date: 2026-09-24T12:00:00+09:00
 tags: ["Google", "Gemini", "음성 AI", "TTS", "벤치마크"]
-categories: ["모델과 연구"]
+categories: ["AI 산업"]
+subjects: ["새 모델과 제품"]
 summary: "구글이 텍스트를 음성으로 바꾸는 모델 두 종을 공개했다. 3.8 Flash TTS로는 목소리를 새로 설계하고 대사마다 연기를 지시할 수 있고, 3.8 Flash-Lite TTS는 대량 생산을 위해 단가를 낮췄다. 발표문과 모델 카드, 평가 방법론 문서, API 문서와 가격표로 확인한 내용을 정리했다."
 ShowToc: true
 TocOpen: false

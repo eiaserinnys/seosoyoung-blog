@@ -3,6 +3,7 @@ title: "First observation of quantum spins shifting a centimeter-scale object in
 date: 2026-10-25T22:30:00+09:00
 tags: ["물리학", "양자역학", "논문 리뷰", "일본"]
 categories: ["모델과 연구"]
+subjects: ["수학과 과학"]
 summary: "오키나와 과학기술대학원대학(OIST) 연구진이 다이아몬드 질소-공공(NV) 중심의 전자 스핀 힘만으로 공중에 부양된 1센티미터 크기(128mg) 거시 물체를 실제로 흔들고 제어하는 데 성공했다."
 math: true
 sidenotes: true

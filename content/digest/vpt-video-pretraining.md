@@ -3,6 +3,7 @@ title: "Video PreTraining (VPT): Learning to Act by Watching Unlabeled Online Vi
 date: 2026-09-12T13:00:00+09:00
 tags: ["논문 리뷰", "OpenAI", "강화학습", "사전학습", "마인크래프트"]
 categories: ["모델과 연구"]
+subjects: ["모델 구조와 학습"]
 summary: "OpenAI 연구진은 행동 라벨이 없는 마인크래프트 플레이 영상 7만 시간에 역동역학 모델로 의사 라벨을 달았다. 이어 이 데이터로 행동을 사전학습하고 강화학습으로 미세조정해, 다이아몬드 곡괭이를 만드는 에이전트를 처음 보고했다."
 ShowToc: true
 TocOpen: false

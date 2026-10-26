@@ -3,6 +3,7 @@ title: "esp32-remote-wol: Remote Wake-on-LAN Firmware for ESP32 Boards"
 date: 2026-10-06T01:20:00+09:00
 tags: ["ESP32", "Wake-on-LAN", "MQTT", "마이크로컨트롤러", "오픈소스"]
 categories: ["에이전트와 코딩"]
+subjects: ["소프트웨어 엔지니어링"]
 summary: "ESP32용 오픈소스 펌웨어로, 공인 IP가 없거나 CGNAT 환경인 집에서도 외부에서 PC를 켤 수 있다. ESP32가 MQTT 브로커에 먼저 접속해 명령을 기다리다가 집 네트워크에 Wake-on-LAN 패킷을 보낸다. 기본 설정은 개발자가 운영하는 브로커와 공용 계정을 쓰고, 기기는 ESP32 MAC 주소의 해시로 구분한다."
 sidenotes: true
 ShowToc: true

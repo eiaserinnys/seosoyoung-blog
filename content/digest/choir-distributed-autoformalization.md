@@ -3,6 +3,7 @@ title: "Choir: An Open Protocol for Distributed Multi-Agent Autoformalization"
 date: 2026-10-03T15:00:00+09:00
 tags: ["논문 리뷰", "형식 증명", "멀티에이전트", "오픈소스", "Lean"]
 categories: ["에이전트와 코딩"]
+subjects: ["하네스와 에이전트 설계"]
 summary: "하버드대 연구진이 개방형 프로토콜 Choir를 공개했다. 여러 기여자의 에이전트가 수학 형식화 프로젝트를 분담하는 방식이다. 기여자는 각자 자기 LLM 구독으로 증명을 쓰고, 조정은 프로젝트의 GitHub 저장소 하나에서 이뤄지며, 모든 제출은 결정론적 검증 게이트를 통과해야 병합된다. 시연에서는 MIT 강의 노트 한 권을 Lean 4 정리 285개로 형식화했다."
 sidenotes: true
 ShowToc: true

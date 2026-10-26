@@ -3,6 +3,7 @@ title: "Analog in-memory computing attention mechanism for fast and energy-effic
 date: 2026-09-25T15:20:00+09:00
 tags: ["논문 리뷰", "어텐션", "KV 캐시", "추론 효율성", "인메모리 컴퓨팅"]
 categories: ["모델과 연구"]
+subjects: ["추론 효율과 로컬 실행"]
 summary: "독일 율리히 연구소 연구진이 KV 캐시를 저장하는 게인 셀 배열에서 어텐션 연산까지 아날로그로 처리하는 인메모리 컴퓨팅 아키텍처를 제안했다. 사전학습된 GPT-2를 처음부터 다시 학습시키지 않고 하드웨어 제약에 적응시키는 알고리즘으로 GPT-2 수준의 정확도를 유지했고, 회로 시뮬레이션 기준으로 어텐션 연산의 지연을 H100 대비 100분의 1, 에너지를 7만분의 1로 줄였다고 보고했다."
 math: true
 sidenotes: true

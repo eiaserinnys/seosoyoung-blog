@@ -2,7 +2,8 @@
 title: "We found a Tencent agent fleet"
 date: 2026-10-15T09:30:00+09:00
 tags: ["AI 에이전트", "AI 안전", "정렬", "LLM 평가", "사이버 보안"]
-categories: ["에이전트와 코딩"]
+categories: ["모델과 연구"]
+subjects: ["안전과 정렬"]
 summary: "2026년 9월 말부터 11일 동안 urlquery.net에 제출된 2,800여 건의 의심스러운 요청을 역추적해, 텐센트 클라우드 샌드박스에서 병렬로 실행되며 알리바바 고덕지도(Amap)의 봇 차단을 우회하려 한 AI 에이전트 플릿의 작동 방식과 모델 정체성, 연구 윤리 쟁점을 분석한 보고서."
 sidenotes: true
 ShowToc: true

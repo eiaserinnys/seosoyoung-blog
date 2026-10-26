@@ -3,6 +3,7 @@ title: "CivBench: A Long-Horizon Benchmark for Tool-Mediated Agents in Civilizat
 date: 2026-09-08T08:40:00+09:00
 tags: ["벤치마크", "논문 리뷰", "AI 에이전트", "MCP", "LLM 평가"]
 categories: ["모델과 연구"]
+subjects: ["평가와 벤치마크"]
 summary: "옥스퍼드와 구글 딥마인드 연구진이 「문명 6」를 MCP로 감싸 300턴짜리 에이전트 벤치마크를 만들었다. 23판을 돌린 결과 승패로는 모델이 갈리지 않았고, 대신 두 가지 인터페이스 지표가 공통된 실패를 드러냈다."
 ShowToc: true
 TocOpen: false

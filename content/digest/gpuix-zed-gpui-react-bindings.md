@@ -3,6 +3,7 @@ title: "GPUIX — Node.js & React bindings for Zed GPUI"
 date: 2026-08-26T06:30:00+09:00
 tags: ["React", "Rust", "렌더링", "UI 설계", "오픈소스"]
 categories: ["에이전트와 코딩"]
+subjects: ["소프트웨어 엔지니어링"]
 summary: "Zed의 GPU 가속 UI 프레임워크 GPUI를 React로 감싼 바인딩. React 리컨사일러의 뮤테이션을 JSON 직렬화 없이 Rust로 그대로 넘겨, Electron이나 웹뷰 없이 데스크톱 앱을 GPU에 직접 그린다."
 ShowToc: true
 TocOpen: false

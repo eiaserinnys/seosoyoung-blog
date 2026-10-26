@@ -2,7 +2,8 @@
 title: "Introducing CWM-1"
 date: 2026-09-24T10:20:00+09:00
 tags: ["LemonSlice", "월드 모델", "영상 생성", "확산 모델", "인터랙티브 아바타"]
-categories: ["모델과 연구"]
+categories: ["AI 산업"]
+subjects: ["새 모델과 제품"]
 summary: "LemonSlice가 2026년 9월 23일 인터랙티브 아바타 모델 CWM-1을 공개했다. 이 모델은 대화에 맞춰 캐릭터의 얼굴, 몸, 손과 배경 장면을 매 프레임 실시간으로 생성한다. LemonSlice는 인과적 비디오 확산 트랜스포머(DiT)를 소수 스텝으로 증류하고 감정 엔진으로 행동과 감정을 조건화했으며, 사용자가 말을 끊으면 471ms 만에 반응하고 24시간 이상 품질 저하 없이 스트리밍한다고 밝혔다."
 ShowToc: true
 TocOpen: false

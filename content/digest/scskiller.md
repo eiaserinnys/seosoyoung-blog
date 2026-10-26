@@ -3,6 +3,7 @@ title: "SCSKiller: Shader Compilation Stutter Killer"
 date: 2026-10-06T06:20:00+09:00
 tags: ["셰이더 컴파일", "GPU", "렌더링", "PC 게임", "오픈소스"]
 categories: ["게임"]
+subjects: ["그래픽스와 렌더링"]
 summary: "SCSKiller는 게임을 실행하기 전에 그 게임의 셰이더를 GPU 드라이버 캐시에 미리 컴파일해 두는 윈도우용 오픈소스 앱이다. NVIDIA와 AMD 드라이버가 셰이더 캐시를 실행 파일 이름으로 구분한다는 점을 이용해, 게임과 같은 이름으로 실행한 별도 프로세스에서 파이프라인을 만들어 둔다. 2026년 10월 1일 1.0.0 공개를 시작으로 나흘 동안 일곱 번 릴리스했다."
 sidenotes: true
 ShowToc: true

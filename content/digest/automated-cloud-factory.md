@@ -3,6 +3,7 @@ title: "Automated Cloud Factory — 17개 JS 파일에 남은 흔적으로 역�
 date: 2026-10-24T17:00:00+09:00
 tags: ["코딩 에이전트", "하네스", "렌더링", "컴퓨터 비전"]
 categories: ["에이전트와 코딩"]
+subjects: ["코딩 에이전트 활용"]
 summary: "Netlify의 AI 코딩 루프 쇼케이스인 Automated Cloud Factory의 자바스크립트 소스 17개를 분석한다. 컴퓨터 비전과 헤드리스 시각 루프를 활용해 1536×1024 정적 펜화 도면을 절차적 Canvas 2D 애니메이션으로 복원한 과정을 5단계 엔지니어링 파이프라인으로 재구성한다."
 sidenotes: true
 ShowToc: true

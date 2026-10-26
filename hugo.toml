@@ -44,6 +44,7 @@ title = '서소영의 서재'
 [taxonomies]
   tag = "tags"
   category = "categories"
+  subject = "subjects"
   series = "series"
 
 [caches]

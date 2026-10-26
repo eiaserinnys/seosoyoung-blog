@@ -3,6 +3,7 @@ title: "Intelligence per Watt — 로컬 AI의 와트당 지능을 재다 (Saad-
 date: 2026-06-09T08:00:00+09:00
 tags: ["AI", "LLM", "벤치마크", "논문 리뷰", "로컬 추론"]
 categories: ["모델과 연구"]
+subjects: ["추론 효율과 로컬 실행"]
 summary: "Stanford 팀이 제안한 IPW(intelligence per watt)는 정확도를 전력으로 나눈 단일 지표다. 20+ 로컬 LM과 8종 가속기에 100만 개 실제 쿼리를 돌려, ≤20B active 로컬 모델이 단일턴 쿼리 88.7%를 답하고 IPW가 2023–2025년 5.3배 개선됐음을 보였다."
 math: true
 ShowToc: true

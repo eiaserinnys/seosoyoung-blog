@@ -3,6 +3,7 @@ title: "vercel-labs/json-render: The Generative UI framework"
 date: 2026-09-22T09:00:00+09:00
 tags: ["Vercel", "UI 설계", "구조화 출력", "오픈소스"]
 categories: ["에이전트와 코딩"]
+subjects: ["AI와 UI 디자인"]
 summary: "Vercel Labs가 공개한 Generative UI 프레임워크. AI는 개발자가 카탈로그에 등록한 컴포넌트와 액션만으로 JSON 스펙을 만들고, 29개 패키지가 그 JSON을 React 화면부터 PDF, 영상, 터미널까지 각자의 형식으로 그린다."
 ShowToc: true
 TocOpen: false

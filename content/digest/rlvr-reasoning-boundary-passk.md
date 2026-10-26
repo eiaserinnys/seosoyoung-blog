@@ -3,6 +3,7 @@ title: "Does Reinforcement Learning Really Incentivize Reasoning Capacity in LLM
 date: 2026-09-18T18:20:00+09:00
 tags: ["논문 리뷰", "강화학습", "추론", "벤치마크", "모델 증류"]
 categories: ["모델과 연구"]
+subjects: ["모델 구조와 학습"]
 summary: "칭화대 LeapLab과 상하이교통대 연구진이 검증 가능한 보상 기반 강화학습(RLVR)의 효과를 pass@k로 다시 측정한 논문. k가 작을 때는 RLVR 모델이 앞서지만 k를 키우면 베이스 모델이 역전하며, RLVR이 쓰는 추론 경로는 이미 베이스 모델의 분포 안에 들어 있었다."
 ShowToc: true
 TocOpen: false

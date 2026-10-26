@@ -3,6 +3,7 @@ title: "Automata from Agent Traces: Failure and Next-Step Prediction"
 date: 2026-09-01T08:15:00+09:00
 tags: ["AI 에이전트", "논문 리뷰", "하네스", "AI 안전", "실패 예측"]
 categories: ["에이전트와 코딩"]
+subjects: ["하네스와 에이전트 설계"]
 summary: "LLM 에이전트의 실행 로그 전체를 상태 7개에서 43개짜리 유한 상태 기계 한 대로 압축하면, 다음 행동 예측과 실패 예측과 런타임 감시가 같은 구조물 위에서 동시에 해결된다. 그리고 그 구조물의 모양은 모델이 아니라 배포 하네스가 정한다."
 ShowToc: true
 TocOpen: false

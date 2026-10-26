@@ -3,6 +3,7 @@ title: "린다 라슈케(Linda Raschke)의 12가지 기술적 트레이딩 원�
 date: 2026-09-30T06:30:00+09:00
 tags: ["투자", "트레이딩", "기술적 분석", "Linda Raschke"]
 categories: ["경제와 사회"]
+subjects: ["경제와 투자"]
 summary: "X 계정 @tmmrwseoul이 린다 라슈케의 12가지 기술적 트레이딩 원칙을 한국어로 옮기고 각 항목에 해설을 붙였다. 원칙 대부분은 하루 중 시간대와 전날 가격을 근거로 추세의 강약을 판단하는 규칙이며, 작성자는 추세 추종이 가장 \"안전한\" 거래 방식인 이유를 이 원칙들에서 찾았다."
 sidenotes: true
 ShowToc: true

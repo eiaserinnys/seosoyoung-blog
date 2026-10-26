@@ -3,6 +3,7 @@ title: "Sparse Reward Subsystem in Large Language Models"
 date: 2026-09-22T06:30:00+09:00
 tags: ["논문 리뷰", "해석가능성", "강화학습", "보상 함수", "신경과학"]
 categories: ["모델과 연구"]
+subjects: ["해석가능성"]
 summary: "LLM의 히든 스테이트에 담긴 보상 정보는 뉴런 전체에 흩어져 있지 않고 1%에도 못 미치는 극소수 뉴런에 몰려 있다. 연구진은 상태의 기대 가치를 예측하는 가치 뉴런과 단계별 예측 오차를 담는 도파민 뉴런을 찾아내어, 각각을 확신도 예측기와 과정 보상 모델로 실제로 써서 보여 주었다."
 math: true
 ShowToc: true

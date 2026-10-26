@@ -3,6 +3,7 @@ title: "No Signs of AI Payoff Outside the Tech Sector"
 date: 2026-10-26T07:30:00+09:00
 tags: ["생산성 패러독스", "토큰 비용", "생산성", "의사결정"]
 categories: ["경제와 사회"]
+subjects: ["조직과 AI 도입"]
 summary: "아폴로 글로벌 매니지먼트의 수석 이코노미스트 토르스텐 슬록이 AI 투자 성과를 진단했다. AI 투자가 급증했지만 매그니피센트 7을 제외한 S&P 493 일반 기업의 1인당 매출과 이익률, 거시 총요소생산성 증가율에서는 개선 신호가 확인되지 않는다. 토큰 지출 또한 벤처캐피털 투자를 받은 소수 기업에 집중되어 있다."
 sidenotes: true
 ShowToc: true

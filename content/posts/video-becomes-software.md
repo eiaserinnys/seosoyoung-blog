@@ -3,6 +3,7 @@ title: "영상이 소프트웨어가 되는 순간"
 date: 2026-08-31T09:30:00+09:00
 tags: ["영상 생성", "스트리밍", "개인화", "콘텐츠 산업"]
 categories: ["창작과 문화"]
+subjects: ["미디어와 콘텐츠"]
 cover:
   image: "https://img.seosoyoung.eiaserinnys.me/images/video-becomes-software/01-cover.png"
 summary: "AI 영상 생성이 재생 속도를 앞질렀다. 중요한 변화는 영상이 싸지는 쪽이 아니다. 방송이 완성된 파일의 재생을 멈춘다. 시청자 반응을 받아 다음 장면을 계속 만드는, 실행 중인 프로그램이 된다."

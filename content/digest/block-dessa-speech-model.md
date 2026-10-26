@@ -2,7 +2,8 @@
 title: "Dessa - the Conversation Model trained only on speech"
 date: 2026-10-24T15:30:00+09:00
 tags: ["음성 AI", "사전학습", "멀티모달", "AI 안전"]
-categories: ["모델과 연구"]
+categories: ["AI 산업"]
+subjects: ["새 모델과 제품"]
 summary: "Block 산하 연구 조직 Team Dessa가 문자 데이터나 사전학습 언어모델 없이 사람의 음성 대화만으로 처음부터 학습한 실시간 대화 모델 Dessa를 공개했다. 텍스트 변환 과정에서 보존되지 않던 억양과 말 사이의 쉼, 웃음, 한숨까지 직접 듣고 표현하며, NVIDIA GB200 NVL72 한 대로 학습해 MacBook Pro M4 Max에서 실시간보다 빠르게 작동한다."
 sidenotes: true
 ShowToc: true

@@ -3,6 +3,7 @@ title: "DialToM: A Theory of Mind Benchmark for Forecasting State-Driven Dialogu
 date: 2026-04-30T09:10:00+09:00
 tags: ["theory-of-mind", "LLM-evaluation", "benchmark", "trust", "dialogue-forecasting"]
 categories: ["모델과 연구"]
+subjects: ["평가와 벤치마크"]
 summary: "자연 대화 기반 ToM 벤치마크. 정신 상태 식별(Literal ToM)과 대화 궤적 예측(Functional ToM)을 분리 평가하여, LLM이 정신 상태를 '알면서도 활용하지 못하는' 추론 비대칭을 밝혀냈다."
 ShowToc: true
 TocOpen: false

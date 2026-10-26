@@ -2,7 +2,8 @@
 title: "챗봇은 창작 도구가 아니다"
 date: 2026-04-21T20:55:00+09:00
 tags: ["Human-AI 공동 창작", "프롬프트 엔지니어링", "UI 설계", "논문 리뷰"]
-categories: ["창작과 문화"]
+categories: ["에이전트와 코딩"]
+subjects: ["AI와 UI 디자인"]
 summary: "챗봇 UI는 창작의 발산 과정을 생략하고 수렴으로 직행하게 만든다. HAICo 시스템은 발산과 수렴을 명시적으로 분리함으로써 이 문제를 해결했다."
 cover:
   image: "https://img.seosoyoung.eiaserinnys.me/images/cover-scaffolding-creative-thought.jpg"

@@ -3,6 +3,7 @@ title: "Driven by Compression Progress: A Simple Principle Explains Essential As
 date: 2026-09-28T10:20:00+09:00
 tags: ["논문 리뷰", "강화학습", "내재적 동기", "인지과학", "미학"]
 categories: ["모델과 연구"]
+subjects: ["뇌와 마음"]
 summary: "위르겐 슈미트후버가 2008년 arXiv에 올린 논문이다. 관찰자가 데이터를 더 잘 압축하게 될 때 그 개선 폭이 보상이 된다는 원리 하나로 아름다움, 흥미, 호기심, 창의성, 과학, 예술, 음악, 농담을 설명한다. 저자는 아름다움을 압축으로 줄어드는 비트 수, 즉 압축 가능성으로 보고, 흥미로움을 그 값이 늘어나는 속도, 즉 학습 곡선의 기울기로 정의한다."
 math: true
 sidenotes: true

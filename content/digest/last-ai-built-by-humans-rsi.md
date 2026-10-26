@@ -3,6 +3,7 @@ title: "The Last AI Built by Humans: Toward Genuine Recursive Self-Improvement"
 date: 2026-09-14T10:00:00+09:00
 tags: ["논문 리뷰", "재귀적 자기 개선", "AI 에이전트", "벤치마크"]
 categories: ["모델과 연구"]
+subjects: ["안전과 정렬"]
 summary: "상하이교통대와 Theseus Labs를 비롯한 아홉 기관이 재귀적 자기 개선을 다섯 단계 자율성 사다리로 정리했다. 기준으로 삼은 것은 점수의 상승폭이 아니다. 개선을 만들어 내는 장치 자체가 다음 세대로 넘어가는지를 묻는다. 그 기준으로 재면 산업계에 입증된 최상위 단계는 아직 한 건도 없다."
 math: true
 ShowToc: true

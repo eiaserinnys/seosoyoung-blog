@@ -3,6 +3,7 @@ title: "There's no such thing as Just a Tool"
 date: 2026-08-31T07:00:00+09:00
 tags: ["사회비평", "기술철학", "프론트엔드", "AI 윤리"]
 categories: ["경제와 사회"]
+subjects: ["사회와 정책"]
 summary: "엔지니어가 습관처럼 쓰는 '그건 그냥 도구일 뿐'이라는 반박을, 하이데거의 손안에 있음 개념으로 해체한 기술 비평. 도구는 사람과 하나의 게슈탈트를 이루고 그 사람의 세계관을 바꾸며, 그 도구를 만드는 쪽은 다름 아닌 우리 업계다."
 ShowToc: true
 TocOpen: false

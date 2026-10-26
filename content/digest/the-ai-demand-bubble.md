@@ -2,7 +2,8 @@
 title: "The AI Demand Bubble"
 date: 2026-08-06T10:30:00+09:00
 tags: ["AI", "경제·금융", "Anthropic", "OpenAI", "데이터센터"]
-categories: ["다이제스트"]
+categories: ["AI 산업"]
+subjects: ["기업과 투자"]
 summary: "Ed Zitron이 애널리스트 추정치를 근거로, Amazon·Microsoft·Google의 AI 매출과 성장의 대부분이 OpenAI·Anthropic 두 곳의 컴퓨트 지출에서 나온다고 주장한 글. 그 둘을 빼면 AI 수요는 사실상 없고, 세 회사는 이 집중을 공시하지 않아 투자자를 오도하고 있다는 진단이다."
 cover:
   image: "https://img.seosoyoung.eiaserinnys.me/images/the-ai-demand-bubble/fig1.png"

@@ -3,6 +3,7 @@ title: "Optimizing Deep Rock Galactic Survivor for mobile"
 date: 2026-09-19T10:20:00+09:00
 tags: ["게임 개발", "Unity", "모바일", "렌더링"]
 categories: ["게임"]
+subjects: ["게임 개발과 디자인"]
 summary: "수천 마리의 적을 동시에 시뮬레이션하는 PC 로그라이트를 램이 3GB뿐인 아이패드에 넣어야 했다. 이식 스튜디오 Piktiv는 경로 탐색을 플로 필드로, 물리 쿼리를 KD 트리로, 적 캐릭터 렌더링을 텍스처에 구운 정점 애니메이션으로 교체했다."
 ShowToc: true
 TocOpen: false

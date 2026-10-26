@@ -3,6 +3,7 @@ title: "Introducing Agent-Native Beta: The Framework for Agentic Apps"
 date: 2026-10-15T22:30:00+09:00
 tags: ["AI 에이전트", "AI UX", "MCP", "A2A", "오픈소스"]
 categories: ["에이전트와 코딩"]
+subjects: ["하네스와 에이전트 설계"]
 summary: "Builder.io가 베타로 공개한 오픈소스 타입스크립트 프레임워크 Agent-Native를 정리했다. 에이전트와 앱 화면이 같은 액션과 데이터, 화면 상태를 공유하게 만들어, 사람이 에이전트에게 맡기는 일과 직접 고치는 일을 한 앱에서 번갈아 할 수 있게 한다."
 sidenotes: true
 ShowToc: true

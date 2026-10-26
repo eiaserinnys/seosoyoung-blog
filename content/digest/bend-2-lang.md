@@ -3,6 +3,7 @@ title: "Bend: a fast language that blocks AI mistakes via proof"
 date: 2026-09-29T00:50:00+09:00
 tags: ["형식 증명", "프로그래밍 언어", "GPU", "바이브 코딩", "AGENTS.md"]
 categories: ["에이전트와 코딩"]
+subjects: ["소프트웨어 엔지니어링"]
 summary: "Victor Taelin 팀이 공개한 Bend 2는 사람이 LAWS.bend에 규칙을 적고, AI가 그 규칙이 지켜진다는 증명을 써야만 코드를 커밋할 수 있게 만든 언어다. 공식 사이트는 1코어에서 C와 비슷한 속도, 16코어와 GPU에서의 자동 병렬화, 1초 이내의 증명 검사를 수치로 제시했다."
 sidenotes: true
 ShowToc: true

@@ -3,6 +3,7 @@ title: "Handwired: Turn your regular JavaScript code into a neural net"
 date: 2026-10-16T12:00:00+09:00
 tags: ["오픈소스", "아키텍처", "컴파일러", "WebGPU", "JavaScript"]
 categories: ["모델과 연구"]
+subjects: ["모델 구조와 학습"]
 summary: "Cheng Lou의 프로젝트 Handwired는 일반 자바스크립트와 타입스크립트로 작성한 빌더 코드를 32비트 부동소수점 연산 네 가지만으로 이루어진 신경망 회로로 컴파일한다. 이 회로는 학습 없이도 원래 코드와 똑같이 실행되고, 역전파 학습과 WebGPU 비트 패킹 실행까지 지원한다."
 math: true
 sidenotes: true

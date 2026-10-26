@@ -3,6 +3,7 @@ title: "Steam의 '묻힌 인디 게임', 스토어 유입이 갑자기 500배 �
 date: 2026-09-20T12:00:00+09:00
 tags: ["Steam", "인디 게임", "게임 디스커버리", "개인화"]
 categories: ["게임"]
+subjects: ["Steam과 인디 마케팅"]
 summary: "AUTOMATON이 업계 관측 하나를 전했다. Steam 스토어 첫 화면의 「할인 & 이벤트」 코너가 로그인한 사용자의 취향을 반영하도록 조용히 바뀐 듯하다는 내용이다. Hooded Horse의 CEO Tim Bender가 공개한 Steamworks 자료에서는 한 인디 게임이 이 코너에서 받은 방문이 다섯 달 동안 14건이었다가 최근 한 달에 7,341건으로 늘었다."
 ShowToc: true
 TocOpen: false

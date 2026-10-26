@@ -3,6 +3,7 @@ title: "TheoPhysEval: Assessing AI agents at autonomous theoretical physics prob
 date: 2026-10-15T21:30:00+09:00
 tags: ["논문 리뷰", "벤치마크", "물리학", "AI 에이전트", "LLM 평가"]
 categories: ["모델과 연구"]
+subjects: ["평가와 벤치마크"]
 summary: "이론물리 전문가 32명이 아직 발표하지 않은 연구 수준 문제 50개를 모아 AI 에이전트 다섯 종을 시험했다. GPT-6-Astra와 Codex 조합은 문헌 검색과 스크립트 실행을 허용한 조건에서 49문제를 맞혀 정답률 98%를 기록했고, 문제당 비용은 평균 2.33달러였다. 저자들은 에이전트가 세계 전문가 수준으로 계산을 해내지만, 좋은 문제를 고르는 일에는 아직 사람이 필요하다고 결론지었다."
 math: true
 sidenotes: true

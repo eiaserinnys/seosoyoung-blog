@@ -3,6 +3,7 @@ title: "PolyLayout: Multi-room Manhattan Layout Estimation"
 date: 2026-08-19T07:00:00+09:00
 tags: ["논문 리뷰", "컴퓨터 비전", "3D 재구성", "DINOv2"]
 categories: ["모델과 연구"]
+subjects: ["비전과 생성 모델"]
 summary: "여러 장의 실내 사진에서 방의 벽·바닥·천장을 3D 다각형으로 복원하는 ECCV 2026 논문. 방을 하나씩 따로 풀지 않고 건물 안의 방들이 같은 방향과 같은 층고를 공유한다는 구조를 최적화에 넣어, 직육면체 가정에 묶여 있던 기존 방법을 큰 폭으로 앞선다."
 math: true
 ShowToc: true

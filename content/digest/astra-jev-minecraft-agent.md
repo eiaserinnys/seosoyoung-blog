@@ -3,6 +3,7 @@ title: "Astra and JEV Minecraft agent"
 date: 2026-09-20T17:30:00+09:00
 tags: ["TypeSafe", "Jev", "Minecraft", "AI 에이전트", "하네스"]
 categories: ["에이전트와 코딩"]
+subjects: ["하네스와 에이전트 설계"]
 summary: "GPT-6 Astra가 목표를 세우고 TypeSafe Jev가 행동을 고르는 마인크래프트 에이전트 저장소. 빈 인벤토리에서 8분 43초 만에 엔더 드래곤을 잡았다. 기록을 줄인 수리 목록과, 성과를 과장하지 않으려고 미리 적어 둔 규칙들을 함께 읽어 본다."
 ShowToc: true
 TocOpen: false

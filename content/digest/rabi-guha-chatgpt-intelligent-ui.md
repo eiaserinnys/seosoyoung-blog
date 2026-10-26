@@ -3,6 +3,7 @@ title: "ChatGPT Intelligent UI를 역공학했다. 실제로 어떻게 작동할
 date: 2026-10-11T09:00:00+09:00
 tags: ["OpenAI", "ChatGPT", "생성형 UI", "디자인 시스템"]
 categories: ["에이전트와 코딩"]
+subjects: ["AI와 UI 디자인"]
 summary: "OpenUI 팀이 ChatGPT 웹의 통신과 공개 코드를 분석했다. 모델이 DIL이라는 형식으로 작성한 응답을 서버가 컴파일하고, 브라우저가 격리된 실행 환경과 기존 컴포넌트로 대화형 화면을 표시한다."
 sidenotes: true
 ShowToc: true

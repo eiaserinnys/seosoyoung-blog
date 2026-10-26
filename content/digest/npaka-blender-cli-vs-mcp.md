@@ -3,6 +3,7 @@ title: "AI로 Blender를 조작하는 방법: CLI와 MCP를 나누어 쓰는 법
 date: 2026-09-08T00:10:00+09:00
 tags: ["Blender", "MCP", "Claude Code", "3D 생성", "일본"]
 categories: ["에이전트와 코딩"]
+subjects: ["스킬과 도구 연결"]
 summary: "Codex나 Claude Code에서 Blender를 다루는 두 경로를 npaka가 정리했다. Blender CLI는 파이썬 스크립트를 만든 뒤 명령줄에서 자동으로 실행하는 방식이다. Blender MCP는 실행 중인 Blender에 접속해서 현재 상태를 확인하고 대화하듯 수정하는 방식이다. 저자는 둘 중 하나를 고르는 대신 생성과 수정과 출력에 역할을 나눠 쓰라고 권한다."
 ShowToc: true
 TocOpen: false

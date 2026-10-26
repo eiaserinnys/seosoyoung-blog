@@ -3,6 +3,7 @@ title: "Building with Anthropic Claude: Prompt Workshop — Zack Witten"
 date: 2026-04-28T20:30:00+09:00
 tags: ["AI", "코딩 에이전트", "Claude", "프롬프팅"]
 categories: ["에이전트와 코딩"]
+subjects: ["코딩 에이전트 활용"]
 summary: "Building with Anthropic Claude: Prompt Workshop — Zack Witten"
 ShowToc: true
 TocOpen: false

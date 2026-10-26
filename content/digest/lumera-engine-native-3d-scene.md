@@ -3,6 +3,7 @@ title: "Engine-Native Editable 3D World Reconstruction with Objects and Lighting
 date: 2026-08-31T08:40:00+09:00
 tags: ["논문 리뷰", "3D 재구성", "컴퓨터 비전", "조명", "게임 개발"]
 categories: ["모델과 연구"]
+subjects: ["비전과 생성 모델"]
 summary: "사진 한 장에서 UE5나 Blender가 그대로 불러올 수 있는 오브젝트와 광원을 뽑아내는 벤치마크 Lumera. 3D 박스 파싱은 기존 방법을 크게 앞섰지만, 개별 광원의 위치 추정은 F1 0.209에 머물러 있다."
 ShowToc: true
 TocOpen: false

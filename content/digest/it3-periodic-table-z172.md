@@ -3,6 +3,7 @@ title: "Algebraic Origin of the 86 ↔ 86 Capacity Symmetry in the Relativistic 
 date: 2026-09-24T08:30:00+09:00
 tags: ["논문 리뷰", "물리학", "수학", "주기율표", "수비학"]
 categories: ["모델과 연구"]
+subjects: ["수학과 과학"]
 summary: "벨라루스와 프랑스의 두 연구자가 Zenodo에 올린 프리프린트다. 주기율표의 원소 수가 86+86=172에서 끝난다는 주장을 대수적 수체와 지표 정리로 유도하고, 같은 틀로 빛의 반사와 질량과 중력까지 설명한다. 저자들은 맞춘 매개변수가 0개이고 수비학 위험이 p=0이라고 밝힌다."
 math: true
 ShowToc: true

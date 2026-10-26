@@ -3,6 +3,7 @@ title: "Jev 모델로 러너 게임의 지형을 실시간 생성하기"
 date: 2026-09-19T15:00:00+09:00
 tags: ["게임 개발", "절차적 생성", "구조화 출력", "픽셀 아트"]
 categories: ["게임"]
+subjects: ["게임 개발과 디자인"]
 summary: "Sprite Fusion 블로그의 Hugo Duprez가 TypeSafe의 구조화 출력 모델 Jev를 게임 런타임에 넣어, 네온 나이트풍 러너 게임의 다음 지형을 플레이 도중에 생성했다. 다섯 번의 요청에서 API 지연은 319에서 375밀리초 사이였고 요청당 평균 비용은 0.00057달러로 추정됐다."
 ShowToc: true
 TocOpen: false

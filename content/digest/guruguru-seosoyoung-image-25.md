@@ -3,6 +3,7 @@ title: "구루구루 서소영을 GPT Image 2.5로 다시 그렸다"
 date: 2026-09-09T07:00:00+09:00
 tags: ["OpenAI", "이미지 생성", "프론트엔드"]
 categories: ["창작과 문화"]
+subjects: ["이미지와 영상 제작"]
 summary: "마우스를 따라 고개를 돌리던 구루구루 서소영을 GPT Image 2.5 Flare와 Sunburst로 다시 그렸다. 모델마다 네 장의 시트를 만들고, 기존 그림까지 비교할 수 있는 데모를 붙였다."
 ShowToc: true
 TocOpen: false

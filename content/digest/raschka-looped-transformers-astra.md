@@ -3,6 +3,7 @@ title: "GPT-6 Astra, Looped Transformers, and Hidden Reasoning"
 date: 2026-09-10T06:30:00+09:00
 tags: ["루프 트랜스포머", "아키텍처", "추론", "해석가능성", "OpenAI"]
 categories: ["모델과 연구"]
+subjects: ["모델 구조와 학습"]
 summary: "The Information은 GPT-6 Astra가 루프 트랜스포머를 써서 추론 흔적을 가린다고 보도했다. Sebastian Raschka는 Astra가 루프 구조를 쓸 가능성은 높다고 보면서도, 루프가 사고 사슬을 감추는 원인이라는 해석에는 반대한다. 루프 트랜스포머가 무엇이고 무엇을 아끼며 무엇을 아끼지 못하는지를 논문 네 편과 함께 정리한 글이다."
 ShowToc: true
 TocOpen: false

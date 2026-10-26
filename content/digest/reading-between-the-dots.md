@@ -3,6 +3,7 @@ title: "Reading Between the Dots: Decoding Hidden Computation across Filler Toke
 date: 2026-07-18T13:00:00+09:00
 tags: ["AI", "LLM", "해석가능성", "AI 안전", "정렬"]
 categories: ["모델과 연구"]
+subjects: ["해석가능성"]
 summary: "질문 뒤에 점(.....)을 수백 개 찍어주면 최첨단 LLM이 더 똑똑해진다. 출력에는 아무 단서도 없는 이 '숨은 계산'을, 저자들은 residual stream을 열어 라벨도 학습도 없이 80~95% 정확도로 읽어냈다. 불투명하다고 감사 불가능한 것은 아니다."
 cover:
   image: "https://img.seosoyoung.eiaserinnys.me/images/reading-between-the-dots/fig1-overview.png"

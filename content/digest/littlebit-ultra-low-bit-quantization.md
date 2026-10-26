@@ -3,6 +3,7 @@ title: "LittleBit: Ultra Low-Bit Quantization via Latent Factorization"
 date: 2026-10-12T06:30:00+09:00
 tags: ["논문 리뷰", "양자화", "온디바이스 AI", "추론 효율성", "KV 캐시"]
 categories: ["모델과 연구"]
+subjects: ["추론 효율과 로컬 실행"]
 summary: "삼성리서치의 LittleBit은 LLM의 가중치 행렬을 랭크가 낮은 두 행렬의 곱으로 분해한 뒤 이진화하고, 행과 열과 잠재 차원의 스케일로 크기 정보를 보완해 가중치 하나당 평균 0.1비트까지 압축한다. 0.1비트로 압축한 Llama2-7B의 퍼플렉시티는 15.92로 기존 기법 STBLLM이 0.7비트에서 낸 결과보다 낮지만, 원본 모델과의 성능 차이는 여전히 크다."
 math: true
 sidenotes: true

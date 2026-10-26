@@ -3,6 +3,7 @@ title: "Memory Caching: RNNs with Growing Memory"
 date: 2026-10-21T09:30:00+09:00
 tags: ["논문 리뷰", "메모리", "어텐션", "아키텍처", "트랜스포머"]
 categories: ["모델과 연구"]
+subjects: ["모델 구조와 학습"]
 summary: "구글 리서치 연구진이 순환 신경망의 유효 메모리 용량을 시퀀스 길이에 맞춰 늘리는 Memory Caching(MC)을 제안했다. 시퀀스를 여러 세그먼트로 분할하고 세그먼트별 은닉 상태 체크포인트를 캐싱하는 방식으로, 선형 복잡도인 RNN과 이차 복잡도인 트랜스포머 사이를 보간하며 언어 모델링과 장문 인출 과제에서 SWLA, DLA, Titans의 성적을 전반적으로 높였다."
 math: true
 sidenotes: true

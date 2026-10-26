@@ -6,6 +6,7 @@ description: "Red Hat의 크리스티안 샬레르가 공개한 하드웨어 역
 summary: "Red Hat의 크리스티안 샬레르는 윈도우 가상머신의 USB 패킷 캡처와 리눅스 드라이버 출력을 자동으로 대조하는 hw-harness를 만들어 며칠 만에 미문서화 필름 스캐너 드라이버를 완성하고, 하루 만에 ThinkPad X1 Carbon의 MIPI 카메라 버그 5개를 수정했다. 해커뉴스에서는 한 오디오 하드웨어 업체 대표가 Claude Opus 5.5와 칩 에뮬레이터 검증 루프로 사흘 만에 경쟁사 주력 이펙터 3종과 Lexicon 224의 DSP 알고리즘을 역컴파일했다고 고백했다. 고비용에 의존하던 하드웨어 업계의 진입 장벽이 빠르게 약화되고 있다."
 tags: ["AI 에이전트", "하네스", "Claude Code", "오픈소스", "사이버 보안"]
 categories: ["에이전트와 코딩"]
+subjects: ["코딩 에이전트 활용"]
 ShowToc: true
 TocOpen: false
 sidenotes: true

@@ -2,7 +2,8 @@
 title: "Session revocations at scale"
 date: 2026-08-06T10:30:00+09:00
 tags: ["아키텍처", "분산 시스템", "캐시", "S3", "세션 관리"]
-categories: ["다이제스트"]
+categories: ["에이전트와 코딩"]
+subjects: ["소프트웨어 엔지니어링"]
 summary: "Canva가 수억 사용자의 세션 폐기 조회를 초당 수십만 건 처리하는 게이트웨이 인메모리 캐시를 어떻게 다시 설계했는지 정리한 엔지니어링 블로그. 배포 때 MySQL로 몰리던 캐시 시딩 부하를, 12시간 윈도를 30분 청크로 자른 16바이트 이진 배열을 S3에 두는 방식으로 풀었다."
 cover:
   image: "https://img.seosoyoung.eiaserinnys.me/images/canva-session-revocations-at-scale/download-process.png"

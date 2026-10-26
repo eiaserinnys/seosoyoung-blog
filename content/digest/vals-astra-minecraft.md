@@ -3,6 +3,7 @@ title: "How far does one agent get in Minecraft in 141 hours?"
 date: 2026-09-16T10:00:00+09:00
 tags: ["벤치마크", "마인크래프트", "OpenAI", "AI 에이전트"]
 categories: ["모델과 연구"]
+subjects: ["평가와 벤치마크"]
 summary: "Vals AI가 GPT-6 Astra에게 141시간을 주고 키보드와 마우스만으로 마인크래프트를 진행시켰다. 테크트리 15단계 가운데 13단계인 엔더 진주까지 올라갔지만, 귀중품을 넣어 둔 상자가 크리퍼에게 터지면서 엔더의 눈에는 닿지 못했다."
 ShowToc: true
 TocOpen: false

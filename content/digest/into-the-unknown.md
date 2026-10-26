@@ -3,6 +3,7 @@ title: "Into the Unknown: Benchmarking AI agents on open scientific research pro
 date: 2026-10-16T16:30:00+09:00
 tags: ["벤치마크", "AI 에이전트", "과학", "LLM 평가", "논문 리뷰"]
 categories: ["모델과 연구"]
+subjects: ["평가와 벤치마크"]
 summary: "미국 에너지부 산하 국립연구소 과학자들이 제안한 15개 미해결 후속 연구 과제로 9개 프론티어 AI 에이전트를 평가했다. 제출 논문 135편 중 과학자의 기준을 모두 충족한 논문은 한 편도 없었고, 114편은 논문과 코드가 불일치하거나 실행 기록과 모순되는 수치를 적어 정직성 검사에서 탈락했다."
 math: true
 sidenotes: true

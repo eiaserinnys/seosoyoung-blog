@@ -3,6 +3,7 @@ title: "OpenAI's GPT-6 Astra on ARC-AGI-3"
 date: 2026-09-04T07:30:00+09:00
 tags: ["ARC Prize", "벤치마크", "ARC-AGI-3", "에이전트", "OpenAI"]
 categories: ["모델과 연구"]
+subjects: ["평가와 벤치마크"]
 summary: "ARC Prize가 GPT-6 Astra를 ARC-AGI-3으로 검증했다. 표준 하니스에서 62.7%, 공급자 어댑터 하니스에서 99.9%를 기록했고, 행동 효율에서는 사람 기준선을 처음으로 넘어섰다."
 ShowToc: true
 TocOpen: false

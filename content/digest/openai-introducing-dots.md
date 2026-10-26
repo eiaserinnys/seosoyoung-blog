@@ -3,6 +3,7 @@ title: "dots를 소개합니다"
 date: 2026-09-30T05:00:00+09:00
 tags: ["OpenAI", "AI 에이전트", "AI 안전", "컴퓨터 사용", "프라이버시"]
 categories: ["AI 산업"]
+subjects: ["새 모델과 제품"]
 summary: "OpenAI가 2026년 9월 29일 GPT-6 Astra 기반의 상시 작동 에이전트 dots를 공개했다. 각 dot은 자체 클라우드 컴퓨터로 사용자를 대신해 24시간 일한다. 사용자가 없을 때 하는 조사는 읽기 전용 도구로 제한되고, 계정에 영향을 주는 작업은 실행 전에 별도의 자동 검토를 거친다."
 sidenotes: true
 ShowToc: true

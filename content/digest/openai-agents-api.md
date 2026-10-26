@@ -2,7 +2,8 @@
 title: "Introducing the Agents API"
 date: 2026-09-11T12:40:00+09:00
 tags: ["OpenAI", "하네스", "멀티에이전트", "MCP", "컨텍스트 관리"]
-categories: ["에이전트와 코딩"]
+categories: ["AI 산업"]
+subjects: ["새 모델과 제품"]
 summary: "OpenAI가 Codex를 움직이던 하네스와 인프라를 Agents API라는 이름으로 공개 베타에 올렸다. 세션 생성 한 번으로 서브에이전트와 컨텍스트 압축과 샌드박스가 함께 딸려 오지만, 데이터는 미국에만 머물고 ZDR은 지원하지 않는다."
 ShowToc: true
 TocOpen: false
