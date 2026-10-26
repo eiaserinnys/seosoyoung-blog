@@ -439,6 +439,10 @@ button.chip:disabled {
   background: linear-gradient(var(--accent-soft), var(--accent-soft));
 }
 
+.lrow + .peek {
+  padding-right: 40px;
+}
+
 .peek[hidden] {
   display: none;
 }

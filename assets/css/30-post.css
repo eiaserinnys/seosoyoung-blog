@@ -543,6 +543,14 @@ aside.sidenote .footnote-backref {
   width: min(720px, 100%);
 }
 
+.post-footer .peek {
+  grid-template-columns: 64px 72px minmax(0, 1fr) 200px;
+}
+
+.post-footer .peek-summary {
+  grid-column: 2 / 4;
+}
+
 .post-tags {
   display: flex;
   flex-wrap: wrap;
