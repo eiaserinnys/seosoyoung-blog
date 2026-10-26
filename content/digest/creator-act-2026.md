@@ -8,10 +8,10 @@ summary: "미 하원 초당파 4인이 시각 예술가의 '화풍'을 AI 모방
 ShowToc: true
 TocOpen: false
 cover:
-  image: "https://img.seosoyoung.eiaserinnys.me/images/creator-act-2026/illustration-axios.webp"
+  image: "https://img.seosoyoung.eiaserinnys.me/images/creator-act-2026/illustration-axios-v2.jpg"
   alt: "Illustration: Aida Amer/Axios"
 images:
-  - "https://img.seosoyoung.eiaserinnys.me/images/creator-act-2026/illustration-axios.webp"
+  - "https://img.seosoyoung.eiaserinnys.me/images/creator-act-2026/illustration-axios-v2.jpg"
 ---
 
 ## 3줄 요약

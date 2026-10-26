@@ -8,9 +8,9 @@ summary: "IBK투자증권 110페이지 ESG In-Depth 보고서. 한국 부동산 
 ShowToc: true
 TocOpen: false
 cover:
-  image: "https://img.seosoyoung.eiaserinnys.me/images/tokyo-seoul-future-ibks-2026/cover.png"
+  image: "https://img.seosoyoung.eiaserinnys.me/images/tokyo-seoul-future-ibks-2026/cover-v2.jpg"
 images:
-  - "https://img.seosoyoung.eiaserinnys.me/images/tokyo-seoul-future-ibks-2026/cover.png"
+  - "https://img.seosoyoung.eiaserinnys.me/images/tokyo-seoul-future-ibks-2026/cover-v2.jpg"
 ---
 
 ## 3줄 요약

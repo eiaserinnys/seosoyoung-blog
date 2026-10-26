@@ -6,7 +6,7 @@ categories: ["모델과 연구"]
 summary: "ElevenLabs STT 팀 리드가 GPT-2 기반 10M 파라미터 모델을 처음부터 훈련하며 보여준 것 — 모델 아키텍처가 아니라 학습 전략이 성능을 결정한다."
 draft: true
 cover:
-  image: "https://img.seosoyoung.eiaserinnys.me/images/cover-llm-from-scratch-workshop.jpg"
+  image: "https://img.seosoyoung.eiaserinnys.me/images/cover-llm-from-scratch-workshop-v2.jpg"
 sidenotes: true
 ---
 

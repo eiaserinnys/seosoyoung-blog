@@ -6,7 +6,7 @@ categories: ["경제와 사회"]
 subjects: ["조직과 AI 도입"]
 summary: "5월 마지막 주, 다섯 통의 토큰 청구서가 같은 분기에 도착했다. 에이전트 FOMO와 토큰 맥싱이 흔들리는 자리에서, 그 다음으로 가는 네 단의 사다리를 그린다."
 cover:
-  image: "https://img.seosoyoung.eiaserinnys.me/images/cover-end-of-token-maxxing.jpg"
+  image: "https://img.seosoyoung.eiaserinnys.me/images/cover-end-of-token-maxxing-v2.jpg"
 sidenotes: true
 ---
 

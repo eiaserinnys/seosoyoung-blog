@@ -9,10 +9,10 @@ sidenotes: true
 ShowToc: true
 TocOpen: false
 cover:
-  image: "https://img.seosoyoung.eiaserinnys.me/images/strokegen-cedec2024/slide-15.jpg"
+  image: "https://img.seosoyoung.eiaserinnys.me/images/strokegen-cedec2024/slide-15-v2.webp"
   alt: "StrokeGen으로 생성한 윤곽선과 벡터 스트로크를 보여 주는 CEDEC 2024 발표 슬라이드. © Silicon Studio Corp."
 images:
-  - "https://img.seosoyoung.eiaserinnys.me/images/strokegen-cedec2024/slide-15.jpg"
+  - "https://img.seosoyoung.eiaserinnys.me/images/strokegen-cedec2024/slide-15-v2.webp"
 source: "https://www.slideshare.net/slideshow/npr-strokegen/271221318"
 ---
 
