@@ -1,0 +1,62 @@
+{{- $page := . -}}
+{{- $used := slice $page.RelPermalink -}}
+{{- with $page.Params.series }}
+  {{- $seriesName := index . 0 -}}
+  {{- $terms := where site.Taxonomies.series.ByCount "Page.Title" $seriesName -}}
+  {{- with $terms }}
+    {{- $term := index . 0 -}}
+    {{- $seriesPages := sort $term.Pages "Date" "asc" -}}
+    {{- $position := -1 -}}
+    {{- range $index, $seriesPage := $seriesPages }}
+      {{- if eq $seriesPage.RelPermalink $page.RelPermalink }}{{ $position = $index }}{{ end -}}
+    {{- end }}
+    {{- if and (ge $position 0) (lt (add $position 1) (len $seriesPages)) }}
+      {{- $next := index $seriesPages (add $position 1) -}}
+      <section class="read-next-group">
+        {{ partial "section-head.html" (dict "title" $seriesName "url" $term.Page.RelPermalink "aside" (printf "%d/%d" (add $position 1) (len $seriesPages))) }}
+        {{ partial "ledger-row.html" (dict "page" $next "variant" "wide" "second" "type") }}
+      </section>
+      {{- $used = $used | append $next.RelPermalink -}}
+    {{- end }}
+  {{- end }}
+{{- end }}
+
+{{- $relatedPages := slice -}}
+{{- $related := where (site.RegularPages.Related $page) "Section" "in" (slice "posts" "digest") -}}
+{{- range $related }}
+  {{- if and (lt (len $relatedPages) 3) (not (in $used .RelPermalink)) }}
+    {{- $relatedPages = $relatedPages | append . -}}
+    {{- $used = $used | append .RelPermalink -}}
+  {{- end }}
+{{- end }}
+{{- with $relatedPages }}
+  <section class="read-next-group">
+    {{ partial "section-head.html" (dict "title" "연관 글") }}
+    {{- range . }}
+      {{ partial "ledger-row.html" (dict "page" . "variant" "wide" "second" "type") }}
+    {{- end }}
+  </section>
+{{- end }}
+
+{{- with $page.Params.categories }}
+  {{- $category := index . 0 -}}
+  {{- $terms := where site.Taxonomies.categories.ByCount "Page.Title" $category -}}
+  {{- $categoryUrl := printf "/categories/%s/" ($category | urlize) | relURL -}}
+  {{- with $terms }}{{ $categoryUrl = (index . 0).Page.RelPermalink }}{{ end -}}
+  {{- $digestPages := sort (where site.RegularPages "Section" "digest") "Date" "desc" -}}
+  {{- $categoryPages := slice -}}
+  {{- range $digestPages }}
+    {{- if and (lt (len $categoryPages) 3) (in .Params.categories $category) (not (in $used .RelPermalink)) }}
+      {{- $categoryPages = $categoryPages | append . -}}
+      {{- $used = $used | append .RelPermalink -}}
+    {{- end }}
+  {{- end }}
+  {{- with $categoryPages }}
+    <section class="read-next-group">
+      {{ partial "section-head.html" (dict "title" $category "url" $categoryUrl) }}
+      {{- range . }}
+        {{ partial "ledger-row.html" (dict "page" . "variant" "wide" "second" "type") }}
+      {{- end }}
+    </section>
+  {{- end }}
+{{- end }}
