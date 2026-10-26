@@ -1,23 +1,6 @@
-{{- if .IsHome -}}
+{{- $ogImage := partialCached "og/resolve.html" . .RelPermalink -}}
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="{{ "og/home.png" | absURL }}">
-{{- else if .Params.cover.image -}}
-<meta name="twitter:card" content="summary_large_image">
-{{- if (ne $.Params.cover.relative true) }}
-<meta name="twitter:image" content="{{ .Params.cover.image | absURL }}">
-{{- else }}
-<meta name="twitter:image" content="{{ (path.Join .RelPermalink .Params.cover.image ) | absURL }}">
-{{- end}}
-{{- else }}
-{{- $images := partial "templates/_funcs/get-page-images" . }}
-{{- with index $images 0 }}
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:image" content="{{ .Permalink }}">
-{{- else }}
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:image" content="https://img.seosoyoung.eiaserinnys.me/images/default-og.jpg">
-{{- end }}
-{{- end }}
+<meta name="twitter:image" content="{{ $ogImage.url }}">
 
 {{- with or .Title site.Title site.Params.title | plainify }}
   <meta name="twitter:title" content="{{ . }}">

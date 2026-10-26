@@ -1,0 +1,17 @@
+{{- $page := . -}}
+{{- $src := $page.Params.cover.image -}}
+{{- $image := false -}}
+{{- if $src -}}
+  {{- $url := urls.Parse $src -}}
+  {{- if not $url.Scheme -}}
+    {{- $image = $page.Resources.Get $src -}}
+  {{- else -}}
+    {{- $result := try (resources.GetRemote $src) -}}
+    {{- if $result.Err -}}
+      {{- warnf "og: cover fetch failed for %q: %s" $src $result.Err -}}
+    {{- else -}}
+      {{- $image = $result.Value -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+{{- return $image -}}

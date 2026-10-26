@@ -1,0 +1,29 @@
+{{- $page := . -}}
+{{- $result := dict -}}
+{{- if and $page.IsPage (in (slice "posts" "digest") $page.Section) -}}
+  {{- $image := partialCached "og/article-image.html" $page $page.RelPermalink -}}
+  {{- $result = dict "url" $image.Permalink "width" 1200 "height" 630 "alt" $page.Title -}}
+{{- else if and $page.IsPage (eq $page.Section "gallery") $page.Params.cover.image -}}
+  {{- $source := partialCached "og/source-image.html" $page $page.RelPermalink -}}
+  {{- $src := $page.Params.cover.image -}}
+  {{- $url := urls.Parse $src -}}
+  {{- if not $url.Scheme -}}
+    {{- if ne $page.Params.cover.relative true -}}
+      {{- $src = $src | absURL -}}
+    {{- else -}}
+      {{- $src = path.Join $page.RelPermalink $src | absURL -}}
+    {{- end -}}
+  {{- end -}}
+  {{- $width := 1200 -}}
+  {{- $height := 630 -}}
+  {{- with $source -}}
+    {{- $width = .Width -}}
+    {{- $height = .Height -}}
+  {{- end -}}
+  {{- $alt := or $page.Params.cover.alt $page.Title site.Title -}}
+  {{- $result = dict "url" $src "width" $width "height" $height "alt" $alt -}}
+{{- else -}}
+  {{- $image := partialCached "og/home-image.html" $page "home" -}}
+  {{- $result = dict "url" $image.Permalink "width" 1200 "height" 630 "alt" site.Title -}}
+{{- end -}}
+{{- return $result -}}

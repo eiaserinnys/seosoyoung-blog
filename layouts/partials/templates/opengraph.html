@@ -35,24 +35,11 @@
   <meta property="og:type" content="website">
 {{- end }}
 
-{{- if .IsHome -}}
-  <meta property="og:image" content="{{ "og/home.png" | absURL }}">
-{{- else if .Params.cover.image -}}
-  {{- if (ne .Params.cover.relative true) }}
-    <meta property="og:image" content="{{ .Params.cover.image | absURL }}">
-  {{- else}}
-    <meta property="og:image" content="{{ (path.Join .RelPermalink .Params.cover.image ) | absURL }}">
-  {{- end}}
-{{- else }}
-  {{- $images := partial "templates/_funcs/get-page-images" . }}
-  {{- with $images }}
-    {{- range . | first 6 }}
-      <meta property="og:image" content="{{ .Permalink }}">
-    {{- end }}
-  {{- else }}
-    <meta property="og:image" content="https://img.seosoyoung.eiaserinnys.me/images/default-og.jpg">
-  {{- end }}
-{{- end }}
+{{- $ogImage := partialCached "og/resolve.html" . .RelPermalink -}}
+<meta property="og:image" content="{{ $ogImage.url }}">
+<meta property="og:image:width" content="{{ $ogImage.width }}">
+<meta property="og:image:height" content="{{ $ogImage.height }}">
+<meta property="og:image:alt" content="{{ $ogImage.alt }}">
 
 {{- with .Params.audio }}
   {{- range . | first 6  }}

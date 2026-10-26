@@ -1,0 +1,160 @@
+{{- $page := . -}}
+{{- $section := $page.Section -}}
+{{- $hasCover := $page.Params.cover.image -}}
+{{- $baseName := "og/post-wide-base.png" -}}
+{{- $titleName := "og/post-wide-title.png" -}}
+{{- if $hasCover -}}
+  {{- $baseName = "og/post-cover-base.png" -}}
+  {{- $titleName = "og/post-cover-title.png" -}}
+{{- end -}}
+{{- $base := resources.Get $baseName -}}
+{{- $titleCanvas := resources.Get $titleName -}}
+{{- $title := $page.Title -}}
+{{- $runes := findRE "." $title -}}
+{{- $weightedLength := 0 -}}
+{{- $prefixWeight := 0 -}}
+{{- $prefix := "" -}}
+{{- $lastSpacePrefix := "" -}}
+{{- $collectPrefix := true -}}
+{{- range $runes -}}
+  {{- $weight := 1 -}}
+  {{- if gt (len (findRE "[\\p{Han}\\p{Hangul}\\p{Hiragana}\\p{Katakana}]" .)) 0 -}}
+    {{- $weight = 2 -}}
+  {{- end -}}
+  {{- $weightedLength = add $weightedLength $weight -}}
+  {{- if $collectPrefix -}}
+    {{- if le (add $prefixWeight $weight) 120 -}}
+      {{- $prefixWeight = add $prefixWeight $weight -}}
+      {{- if eq . " " -}}
+        {{- $lastSpacePrefix = $prefix -}}
+      {{- end -}}
+      {{- $prefix = printf "%s%s" $prefix . -}}
+    {{- else -}}
+      {{- $collectPrefix = false -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+{{- if gt $weightedLength 120 -}}
+  {{- if ne $lastSpacePrefix "" -}}
+    {{- $prefix = $lastSpacePrefix -}}
+  {{- end -}}
+  {{- $title = printf "%s…" $prefix -}}
+{{- end -}}
+{{- $runeCount := len $runes -}}
+{{- $size := 60 -}}
+{{- if gt $runeCount 22 -}}
+  {{- $size = 52 -}}
+{{- end -}}
+{{- if gt $runeCount 40 -}}
+  {{- $size = 44 -}}
+{{- end -}}
+{{- $wrapWidth := 1056 -}}
+{{- if $hasCover -}}
+  {{- $wrapWidth = 576 -}}
+{{- end -}}
+{{- $wrapCapacity := div (float (sub $wrapWidth $size)) (float $size) -}}
+{{- $words := findRE "\\S+" $title -}}
+{{- $wrappedTitle := "" -}}
+{{- range $wordIndex, $word := $words -}}
+  {{- if gt $wordIndex 0 -}}
+    {{- $wrappedTitle = printf "%s " $wrappedTitle -}}
+  {{- end -}}
+  {{- $wordRunes := findRE "." $word -}}
+  {{- $wordWidth := 0.0 -}}
+  {{- range $wordRunes -}}
+    {{- $runeWidth := 0.65 -}}
+    {{- if gt (len (findRE "[\\p{Han}\\p{Hangul}\\p{Hiragana}\\p{Katakana}\\x{3000}-\\x{303F}\\x{30FB}-\\x{30FC}\\x{FF00}-\\x{FFEF}]" .)) 0 -}}
+      {{- $runeWidth = 1.0 -}}
+    {{- end -}}
+    {{- $wordWidth = add $wordWidth $runeWidth -}}
+  {{- end -}}
+  {{- if gt $wordWidth $wrapCapacity -}}
+    {{- $wrappedLines := "" -}}
+    {{- $line := "" -}}
+    {{- $lineWidth := 0.0 -}}
+    {{- range $wordRunes -}}
+      {{- $rune := . -}}
+      {{- $runeWidth := 0.65 -}}
+      {{- if gt (len (findRE "[\\p{Han}\\p{Hangul}\\p{Hiragana}\\p{Katakana}\\x{3000}-\\x{303F}\\x{30FB}-\\x{30FC}\\x{FF00}-\\x{FFEF}]" $rune)) 0 -}}
+        {{- $runeWidth = 1.0 -}}
+      {{- end -}}
+      {{- if and (gt $lineWidth 0.0) (gt (add $lineWidth $runeWidth) $wrapCapacity) -}}
+        {{- if gt (len (findRE "[、。，．」』）〉》】！？％ー…]" $rune)) 0 -}}
+          {{- $line = printf "%s%s" $line $rune -}}
+          {{- $lineWidth = add $lineWidth $runeWidth -}}
+        {{- else -}}
+          {{- $wrappedLines = printf "%s%s\n" $wrappedLines $line -}}
+          {{- $line = $rune -}}
+          {{- $lineWidth = $runeWidth -}}
+        {{- end -}}
+      {{- else -}}
+        {{- $line = printf "%s%s" $line $rune -}}
+        {{- $lineWidth = add $lineWidth $runeWidth -}}
+      {{- end -}}
+    {{- end -}}
+    {{- if ne $line "" -}}
+      {{- $wrappedLines = printf "%s%s" $wrappedLines $line -}}
+    {{- end -}}
+    {{- $wrappedTitle = printf "%s%s" $wrappedTitle $wrappedLines -}}
+  {{- else -}}
+    {{- $wrappedTitle = printf "%s%s" $wrappedTitle $word -}}
+  {{- end -}}
+{{- end -}}
+{{- $title = $wrappedTitle -}}
+{{- $titleFont := "fonts/PretendardJP-Bold.ttf" -}}
+{{- $hasHan := gt (len (findRE "[\\p{Han}]" $title)) 0 -}}
+{{- $hasHangulOrKana := gt (len (findRE "[\\p{Hangul}\\p{Hiragana}\\p{Katakana}]" $title)) 0 -}}
+{{- $hasLetterlike := gt (len (findRE "[\\x{2100}-\\x{214F}]" $title)) 0 -}}
+{{- if and $hasHan (not $hasHangulOrKana) -}}
+  {{- $titleFont = "fonts/NotoSansSC-Bold.ttf" -}}
+{{- else if and (not $hasHan) (not $hasHangulOrKana) $hasLetterlike -}}
+  {{- $titleFont = "fonts/NotoSans-Bold.ttf" -}}
+{{- end -}}
+{{- $titleImage := $titleCanvas | images.Filter (images.Text $title (dict "font" (resources.Get $titleFont) "size" $size "color" "#0F0F0F" "linespacing" (int (math.Round (mul $size 0.22))) "x" 72 "y" 566 "aligny" "bottom")) -}}
+{{- $panel := $base | images.Filter (images.Overlay $titleImage 0 0) -}}
+
+{{- $metaBottom := 151 -}}
+{{- $metaSize := 22 -}}
+{{- $kind := "읽은 글" -}}
+{{- $kindKey := "digest" -}}
+{{- if eq $section "posts" -}}
+  {{- $kind = "쓴 글" -}}
+  {{- $kindKey = "posts" -}}
+{{- end -}}
+{{- $category := "" -}}
+{{- with $page.Params.categories -}}
+  {{- $category = index . 0 -}}
+{{- end -}}
+{{- $widths := hugo.Data.og.widths -}}
+{{- $kindX := 72 -}}
+{{- $categoryX := add $kindX (add (index $widths.kind $kindKey) 16) -}}
+{{- $categoryWidth := index $widths.category $category | default 120 -}}
+{{- $dateX := add $categoryX (add $categoryWidth 16) -}}
+{{- $panel = $panel | images.Filter (images.Text $kind (dict "font" (resources.Get "fonts/Pretendard-SemiBold.ttf") "size" $metaSize "color" "#0F0F0F" "x" $kindX "y" $metaBottom "aligny" "bottom")) -}}
+{{- if $category -}}
+  {{- $panel = $panel | images.Filter (images.Text $category (dict "font" (resources.Get "fonts/Pretendard-SemiBold.ttf") "size" $metaSize "color" "#0B7A4B" "x" $categoryX "y" $metaBottom "aligny" "bottom")) -}}
+{{- end -}}
+{{- $panel = $panel | images.Filter (images.Text ($page.Date.Format "2006.01.02") (dict "font" (resources.Get "fonts/IBMPlexMono-Regular.ttf") "size" $metaSize "color" "#5C5C5C" "x" $dateX "y" $metaBottom "aligny" "bottom")) -}}
+
+{{- $finalImage := $panel.Resize "1200x630 jpg q85" -}}
+{{- if $hasCover -}}
+  {{- $image := resources.Get "og/canvas.png" -}}
+  {{- $image = $image | images.Filter (images.Overlay $panel 0 0) -}}
+  {{- $source := partialCached "og/source-image.html" $page $page.RelPermalink -}}
+  {{- with $source -}}
+    {{- $focus := $page.Params.cover.og_focus -}}
+    {{- $cover := false -}}
+    {{- if $focus -}}
+      {{- $scaled := .Resize "x630 jpg q85" -}}
+      {{- $percent := div (float (strings.TrimSuffix "%" $focus)) 100.0 -}}
+      {{- $x0 := int (math.Max 0 (math.Min (sub $scaled.Width 480) (sub (mul $scaled.Width $percent) 240))) -}}
+      {{- $coverCanvas := resources.Get "og/cover-tile.png" -}}
+      {{- $cover = $coverCanvas | images.Filter (images.Overlay $scaled (sub 0 $x0) 0) -}}
+    {{- else -}}
+      {{- $cover = .Fill "480x630 Smart jpg q85" -}}
+    {{- end -}}
+    {{- $image = $image | images.Filter (images.Overlay $cover 720 0) -}}
+  {{- end -}}
+  {{- $finalImage = $image.Resize "1200x630 jpg q85" -}}
+{{- end -}}
+{{- return $finalImage -}}

@@ -1,0 +1,26 @@
+{{- $base := resources.Get "og/home-base.png" -}}
+{{- $articles := where site.RegularPages "Section" "in" (slice "posts" "digest") -}}
+{{- $articles = where $articles "Params.cover.image" "ne" nil -}}
+{{- $articles = sort $articles "Date" "desc" -}}
+{{- $image := resources.Get "og/canvas.png" -}}
+{{- $image = $image | images.Filter (images.Overlay $base 0 0) -}}
+{{- $positions := slice (dict "x" 660 "y" 0) (dict "x" 933 "y" 0) (dict "x" 660 "y" 212) (dict "x" 933 "y" 212) (dict "x" 660 "y" 424) (dict "x" 933 "y" 424) -}}
+{{- range $index, $page := first 6 $articles -}}
+  {{- $source := partialCached "og/source-image.html" $page $page.RelPermalink -}}
+  {{- with $source -}}
+    {{- $position := index $positions $index -}}
+    {{- $focus := $page.Params.cover.og_focus -}}
+    {{- $tile := false -}}
+    {{- if $focus -}}
+      {{- $scaled := .Resize "x206 jpg q85" -}}
+      {{- $percent := div (float (strings.TrimSuffix "%" $focus)) 100.0 -}}
+      {{- $x0 := int (math.Max 0 (math.Min (sub $scaled.Width 267) (sub (mul $scaled.Width $percent) 133.5))) -}}
+      {{- $tileCanvas := resources.Get "og/home-tile.png" -}}
+      {{- $tile = $tileCanvas | images.Filter (images.Overlay $scaled (sub 0 $x0) 0) -}}
+    {{- else -}}
+      {{- $tile = .Fill "267x206 Smart jpg q85" -}}
+    {{- end -}}
+    {{- $image = $image | images.Filter (images.Overlay $tile $position.x $position.y) -}}
+  {{- end -}}
+{{- end -}}
+{{- return ($image.Resize "1200x630 jpg q85") -}}
