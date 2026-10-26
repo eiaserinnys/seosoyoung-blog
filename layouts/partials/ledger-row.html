@@ -6,7 +6,7 @@
 {{- $subject := "" -}}
 {{- with $page.Params.subjects }}{{ $subject = index . 0 }}{{ end -}}
 {{- $tags := $page.Params.tags | default (slice) -}}
-{{- $panelID := printf "peek-%s" $page.File.UniqueID -}}
+{{- $panelID := printf "peek-%s-%s" $variant $page.File.UniqueID -}}
 {{- if eq $variant "compact" -}}
 <div class="row compact" data-type="{{ $page.Section }}" data-subject="{{ $subject }}" data-tags="{{ delimit $tags "|" }}">
   <span class="date mono">{{ $page.Date.Format "01.02" }}</span>
