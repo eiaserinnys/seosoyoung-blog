@@ -1,0 +1,19 @@
+{{- $pages := .pages -}}
+<div class="wall">
+  {{- range $pages -}}
+    {{- $alt := .Params.cover.alt | default "" -}}
+    {{- $label := .Params.title | default ($alt | default (printf "그림 %s" (.Date.Format "2006.01.02"))) -}}
+    <a href="{{ .RelPermalink }}" aria-label="{{ $label }}">
+      <span class="cv">
+        {{ partial "thumb.html" (dict
+          "src" .Params.cover.image
+          "w" 200
+          "alt" $alt
+          "class" "gallery-image"
+          "focus" .Params.cover.focus
+          "page" .
+        ) }}
+      </span>
+    </a>
+  {{- end -}}
+</div>

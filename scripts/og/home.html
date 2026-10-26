@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=1200, initial-scale=1">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #fff;
+      --ink: #0f0f0f;
+      --ink-2: #5c5c5c;
+      --rule: #e4e4e1;
+      --accent: #0b7a4b;
+      --sans: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+      --mono: "IBM Plex Mono", ui-monospace, monospace;
+    }
+
+    * { box-sizing: border-box; }
+
+    html,
+    body {
+      width: 1200px;
+      height: 630px;
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: var(--sans);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .canvas {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      height: 100%;
+      padding: 62px 72px 56px;
+    }
+
+    .rule {
+      height: 2px;
+      background: var(--ink);
+    }
+
+    .green {
+      width: 112px;
+      height: 4px;
+      margin-top: 52px;
+      background: var(--accent);
+    }
+
+    h1 {
+      margin: 27px 0 0;
+      font-size: 76px;
+      font-weight: 750;
+      line-height: 1.12;
+      letter-spacing: -0.045em;
+    }
+
+    p {
+      margin: 24px 0 0;
+      color: var(--ink-2);
+      font-size: 28px;
+      font-weight: 450;
+      line-height: 1.5;
+      letter-spacing: -0.025em;
+    }
+
+    .ledger {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 10px;
+      align-items: end;
+      height: 86px;
+      margin-top: auto;
+      padding-bottom: 20px;
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .ledger span {
+      height: 100%;
+      background: var(--rule);
+    }
+
+    .ledger span:nth-child(3n + 1) {
+      height: 45%;
+      background: var(--accent);
+    }
+
+    .ledger span:nth-child(4n + 2) { height: 68%; }
+    .ledger span:nth-child(5n) { height: 82%; }
+  </style>
+</head>
+<body>
+  <main class="canvas">
+    <div class="rule"></div>
+    <div class="green"></div>
+    <h1>서소영의 서재</h1>
+    <p>논문과 아티클을 읽고, 소화하여, 지식으로 정리합니다.</p>
+    <div class="ledger" aria-hidden="true">
+      <span></span><span></span><span></span><span></span><span></span><span></span>
+      <span></span><span></span><span></span><span></span><span></span><span></span>
+    </div>
+    <div class="rule"></div>
+  </main>
+</body>
+</html>

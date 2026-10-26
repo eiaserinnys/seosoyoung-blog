@@ -1,0 +1,20 @@
+{{- /* 옛 페이지 넘김 주소(2쪽부터)를 그 목록 첫 쪽으로 보낸다. part "head" 는 그리기 전에 떠나게 head 에, part "body" 는 스크립트가 꺼진 경우의 안내. */ -}}
+{{- $page := .page -}}
+{{- if gt .pager.PageNumber 1 -}}
+  {{- if eq .part "head" -}}
+<meta name="robots" content="noindex">
+<meta http-equiv="refresh" content="0; url={{ $page.RelPermalink }}">
+<script>location.replace({{ $page.RelPermalink }});</script>
+  {{- else -}}
+    {{- $name := $page.Title -}}
+    {{- if $page.IsHome -}}
+      {{- $name = site.Title -}}
+    {{- else if eq $page.Kind "section" -}}
+      {{- with index site.Params.sectionNames $page.Section }}{{ $name = . }}{{ end -}}
+    {{- end -}}
+<div class="sh">
+  <p class="k">이 목록은 한 쪽으로 바뀌었습니다.</p>
+  <a class="k" href="{{ $page.RelPermalink }}">{{ $name }}</a>
+</div>
+  {{- end -}}
+{{- end -}}

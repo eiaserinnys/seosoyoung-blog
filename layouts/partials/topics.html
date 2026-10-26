@@ -1,0 +1,34 @@
+{{- $categories := slice -}}
+{{- if hugo.Data.subjects -}}
+  {{- range hugo.Data.subjects -}}
+    {{- $categories = $categories | append (dict "name" .category) -}}
+  {{- end -}}
+{{- else -}}
+  {{- range site.Taxonomies.categories.ByCount -}}
+    {{- $pages := where .Pages "Section" "in" (slice "posts" "digest") -}}
+    {{- if ge (len $pages) 10 -}}
+      {{- $categories = $categories | append (dict "name" .Page.Title) -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+{{- $topics := slice -}}
+{{- range $categories -}}
+  {{- $name := .name -}}
+  {{- $matches := where site.Taxonomies.categories.ByCount "Page.Title" $name -}}
+  {{- $pages := slice -}}
+  {{- $url := printf "/categories/%s/" ($name | urlize) | relURL -}}
+  {{- with $matches -}}
+    {{- $term := index . 0 -}}
+    {{- $pages = where $term.Pages "Section" "in" (slice "posts" "digest") -}}
+    {{- $url = $term.Page.RelPermalink -}}
+  {{- end -}}
+  {{- $written := where $pages "Section" "posts" -}}
+  {{- $read := where $pages "Section" "digest" -}}
+  {{- $topics = $topics | append (dict
+    "name" $name
+    "url" $url
+    "count" (add (len $written) (len $read))
+    "written" (len $written)
+    "read" (len $read)) -}}
+{{- end -}}
+{{- return $topics -}}

@@ -1,0 +1,191 @@
+.shelf {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  column-gap: 24px;
+  padding: 24px 0 40px;
+}
+
+.shelf > a {
+  display: block;
+  min-width: 0;
+}
+
+.shelf .cv {
+  aspect-ratio: 16 / 9;
+  background: var(--bg-2);
+}
+
+.shelf .meta {
+  display: flex;
+  gap: 12px;
+  align-items: baseline;
+  margin-top: 16px;
+}
+
+.shelf .t {
+  margin-top: 8px;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.35;
+  letter-spacing: -0.01em;
+}
+
+.filt {
+  position: sticky;
+  z-index: 2;
+  top: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: flex-start;
+  padding: 12px 0;
+  border-top: 2px solid var(--rule-strong);
+  border-bottom: 1px solid var(--rule);
+  background: var(--bg);
+}
+
+.seg .mono,
+.chip .mono {
+  display: inline-block;
+  text-align: end;
+  font-variant-numeric: tabular-nums;
+}
+
+.chip-set {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding-top: 1px;
+}
+
+.lrow[hidden],
+.mon[hidden] {
+  display: none;
+}
+
+.series-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  counter-reset: series-row;
+}
+
+.series-list > li {
+  counter-increment: series-row;
+}
+
+.series-list .lrow {
+  grid-template-columns: 32px 64px 96px minmax(0, 1fr) 24px;
+}
+
+.series-list .lrow::before {
+  grid-column: 1;
+  align-self: baseline;
+  color: var(--ink-2);
+  font-family: var(--mono);
+  font-size: 13px;
+  font-weight: 500;
+  font-variant-numeric: tabular-nums;
+  content: counter(series-row, decimal-leading-zero);
+}
+
+.series-list .lrow .date {
+  grid-column: 2;
+}
+
+.series-list .lrow .info {
+  grid-column: 3 / 5;
+}
+
+.series-list .lrow .pk {
+  grid-column: 5;
+}
+
+.series-list > li > .peek {
+  grid-template-columns: 32px 64px 96px minmax(0, 1fr) 240px;
+}
+
+.series-list > li > .peek .peek-summary,
+.series-list > li > .peek ul,
+.series-list > li > .peek ol {
+  grid-column: 4;
+}
+
+.series-list > li > .peek .cv {
+  grid-column: 5;
+}
+
+/* 768~1023: 다른 장부와 같이 요약을 오른쪽 끝까지 펼치고 커버는 요약 아래 제목 시작선에 둔다. */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .series-list > li > .peek .peek-summary {
+    grid-column: 4 / 6;
+  }
+
+  .series-list > li > .peek .cv {
+    grid-column: 4;
+    width: 240px;
+    margin-top: 12px;
+  }
+}
+
+@media (max-width: 767px) {
+  .shelf {
+    grid-template-columns: 1fr;
+    row-gap: 16px;
+    padding: 24px 0 40px;
+  }
+
+  .shelf > a {
+    display: grid;
+    grid-template-columns: 128px minmax(0, 1fr);
+    column-gap: 16px;
+    align-items: start;
+  }
+
+  .shelf .cv {
+    grid-row: 1 / span 2;
+  }
+
+  .shelf .meta {
+    margin-top: 0;
+  }
+
+  .shelf .t {
+    margin-top: 4px;
+    font-size: 18px;
+  }
+
+  .filt {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+
+  .chip-set {
+    flex: 0 0 auto;
+    min-width: max-content;
+    flex-wrap: nowrap;
+  }
+
+  .series-list .lrow {
+    grid-template-columns: 32px 48px minmax(0, 1fr) 24px;
+  }
+
+  .series-list .lrow::before {
+    align-self: start;
+  }
+
+  .series-list .lrow .date {
+    grid-column: 2;
+  }
+
+  .series-list .lrow .info {
+    grid-column: 3;
+  }
+
+  .series-list .lrow .pk {
+    grid-column: 4;
+  }
+}

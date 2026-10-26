@@ -1,0 +1,4 @@
+{{ define "main" }}
+  {{ partial "page-head.html" (dict "eyebrow" "404" "title" "페이지를 찾을 수 없습니다") }}
+  {{ partial "section-head.html" (dict "title" "홈으로" "url" site.Home.RelPermalink) }}
+{{ end }}

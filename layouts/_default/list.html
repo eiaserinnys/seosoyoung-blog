@@ -1,0 +1,27 @@
+{{ define "head" }}{{ partial "pager-redirect.html" (dict "page" . "pager" (.Paginate .Pages) "part" "head") }}{{ end }}
+
+{{ define "main" }}
+  {{- $pager := .Paginate .Pages -}}
+  {{- if gt $pager.PageNumber 1 -}}
+    {{- partial "pager-redirect.html" (dict "page" . "pager" $pager "part" "body") -}}
+  {{- else -}}
+  {{- $pages := slice -}}
+  {{- $eyebrow := "" -}}
+  {{- $title := .Title -}}
+  {{- $second := "type" -}}
+  {{- if eq .Kind "section" -}}
+    {{- with index site.Params.sectionNames .Section }}{{ $title = . }}{{ end -}}
+    {{- $pages = .RegularPages.ByDate.Reverse -}}
+    {{- if in (slice "posts" "digest") .Section }}{{ $second = "category" }}{{ end -}}
+  {{- else -}}
+    {{- $pages = where .Pages "Section" "in" (slice "posts" "digest") -}}
+    {{- if eq .Data.Plural "tags" }}{{ $eyebrow = "태그" }}
+    {{- else if eq .Data.Plural "series" }}{{ $eyebrow = "시리즈" }}
+    {{- else if eq .Data.Plural "categories" }}{{ $eyebrow = "주제" }}
+    {{- else if eq .Data.Plural "subjects" }}{{ $eyebrow = "세부 주제" }}{{ end -}}
+  {{- end -}}
+  {{- $pages = $pages.ByDate.Reverse -}}
+  {{- partial "page-head.html" (dict "eyebrow" $eyebrow "title" $title "stats" (slice (dict "label" "편수" "value" (len $pages)))) -}}
+  {{- partial "month-ledger.html" (dict "pages" $pages "second" $second) -}}
+  {{- end -}}
+{{ end }}

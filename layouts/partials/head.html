@@ -1,0 +1,43 @@
+{{- $title := site.Title -}}
+{{- if not .IsHome -}}
+  {{- $title = printf "%s | %s" .Title site.Title -}}
+{{- end -}}
+{{- $description := or .Description .Summary site.Params.description | plainify | htmlUnescape | strings.TrimSpace -}}
+{{- $styles := resources.Match "css/*.css" -}}
+{{- $styles = sort $styles "Name" -}}
+{{- $style := resources.Concat "css/site.css" $styles | minify | fingerprint -}}
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{ $title }}</title>
+<meta name="description" content="{{ $description }}">
+<link rel="canonical" href="{{ .Permalink }}">
+{{- if hugo.IsProduction }}
+<meta name="robots" content="index, follow">
+{{- else }}
+<meta name="robots" content="noindex, nofollow">
+{{- end }}
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="icon" href="/favicon.ico">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta name="theme-color" content="#FFFFFF" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0C0D0C" media="(prefers-color-scheme: dark)">
+{{- range .AlternativeOutputFormats }}
+<link rel="alternate" type="{{ .MediaType.Type }}" title="{{ $title }}" href="{{ .Permalink }}">
+{{- end }}
+<link rel="preconnect" href="https://cdn.jsdelivr.net">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&display=swap">
+<script>
+  const savedTheme = localStorage.getItem("pref-theme");
+  if (savedTheme === "light" || savedTheme === "dark") {
+    document.documentElement.dataset.theme = savedTheme;
+  }
+</script>
+<link rel="stylesheet" href="{{ $style.RelPermalink }}" integrity="{{ $style.Data.Integrity }}" crossorigin="anonymous">
+{{ partial "templates/opengraph.html" . }}
+{{ partial "templates/twitter_cards.html" . }}
+{{ partial "templates/schema_json.html" . }}
+<script defer src="https://umami.eiaserinnys.me/script.js" data-website-id="f89dd61b-4ab3-43c4-8792-52427d271a87"></script>

@@ -1,0 +1,18 @@
+{{- $summary := "" -}}
+{{- $result := "" -}}
+{{- $raw := .RawContent -}}
+{{- $sections := split $raw "## 3줄 요약" -}}
+{{- if gt (len $sections) 1 -}}
+  {{- $summary = index $sections 1 -}}
+  {{- $nextHeading := findRE `(?m)^## ` $summary 1 -}}
+  {{- with $nextHeading }}{{ $summary = index (split $summary (index . 0)) 0 }}{{ end -}}
+  {{- $summary = strings.TrimSpace $summary -}}
+{{- end -}}
+{{- if $summary -}}
+  {{- $result = $summary | markdownify -}}
+{{- else if .Params.summary -}}
+  {{- $result = .Params.summary | markdownify -}}
+{{- else -}}
+  {{- $result = .Summary | markdownify -}}
+{{- end -}}
+{{- return $result -}}

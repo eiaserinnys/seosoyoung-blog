@@ -1,0 +1,24 @@
+{{ define "main" }}
+  {{ partial "page-head.html" (dict "title" .Title) }}
+  <section class="search-page" aria-label="검색">
+    <div id="searchbox" class="searchbox">
+      <input
+        id="searchInput"
+        class="search-input"
+        type="search"
+        placeholder="{{ .Params.placeholder }}"
+        aria-label="검색"
+        autocomplete="off"
+        autofocus
+      >
+    </div>
+    <ul id="searchResults" class="search-results" aria-live="polite"></ul>
+  </section>
+{{ end }}
+
+{{ define "scripts" }}
+  {{- $fuse := resources.Get "js/fuse.basic.min.js" | fingerprint -}}
+  <script defer src="{{ $fuse.RelPermalink }}" integrity="{{ $fuse.Data.Integrity }}" crossorigin="anonymous"></script>
+  {{- $script := resources.Get "js/search.js" | js.Build (dict "minify" true) | fingerprint -}}
+  <script defer src="{{ $script.RelPermalink }}" integrity="{{ $script.Data.Integrity }}" crossorigin="anonymous"></script>
+{{ end }}

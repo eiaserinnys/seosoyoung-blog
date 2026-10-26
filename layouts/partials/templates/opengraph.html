@@ -35,14 +35,16 @@
   <meta property="og:type" content="website">
 {{- end }}
 
-{{- if .Params.cover.image -}}
+{{- if .IsHome -}}
+  <meta property="og:image" content="{{ "og/home.png" | absURL }}">
+{{- else if .Params.cover.image -}}
   {{- if (ne .Params.cover.relative true) }}
     <meta property="og:image" content="{{ .Params.cover.image | absURL }}">
   {{- else}}
     <meta property="og:image" content="{{ (path.Join .RelPermalink .Params.cover.image ) | absURL }}">
   {{- end}}
 {{- else }}
-  {{- $images := partial "_funcs/get-page-images" . }}
+  {{- $images := partial "templates/_funcs/get-page-images" . }}
   {{- with $images }}
     {{- range . | first 6 }}
       <meta property="og:image" content="{{ .Permalink }}">

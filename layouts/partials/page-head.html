@@ -1,0 +1,21 @@
+{{- $eyebrow := .eyebrow | default "" -}}
+<header class="head">
+  <div class="date">
+    {{- with $eyebrow }}<span class="eyebrow mono">{{ . }}</span>{{ end }}
+    <h1>{{ .title }}</h1>
+  </div>
+  {{- with .stats }}
+  <div class="stats">
+    {{- range . }}
+      {{- if .url }}
+      <a class="stat" href="{{ .url }}"{{ with .id }} id="{{ . }}"{{ end }}>
+      {{- else }}
+      <div class="stat"{{ with .id }} id="{{ . }}"{{ end }}>
+      {{- end }}
+        <span class="lbl">{{ .label }}</span>
+        <span class="n">{{ .value }}</span>
+      {{- if .url }}</a>{{ else }}</div>{{ end }}
+    {{- end }}
+  </div>
+  {{- end }}
+</header>

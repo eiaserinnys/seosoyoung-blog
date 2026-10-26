@@ -32,12 +32,20 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v7
         with:
-          submodules: recursive
           fetch-depth: 0
 
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v6
+
+      # 원격 커버를 받아 줄인 썸네일(partials/thumb.html)을 빌드 사이에 유지한다.
+      # 캐시가 없으면 매 빌드가 원본 커버 전부를 다시 받는다.
+      - name: Restore Hugo cache
+        uses: actions/cache@v6
+        with:
+          path: ${{ runner.temp }}/hugo_cache
+          key: hugo-cache-${{ github.run_id }}
+          restore-keys: hugo-cache-
 
       - name: Build with Hugo
         env:
