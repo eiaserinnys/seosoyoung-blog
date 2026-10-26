@@ -42,7 +42,7 @@
     <meta property="og:image" content="{{ (path.Join .RelPermalink .Params.cover.image ) | absURL }}">
   {{- end}}
 {{- else }}
-  {{- $images := partial "_funcs/get-page-images" . }}
+  {{- $images := partial "templates/_funcs/get-page-images" . }}
   {{- with $images }}
     {{- range . | first 6 }}
       <meta property="og:image" content="{{ .Permalink }}">

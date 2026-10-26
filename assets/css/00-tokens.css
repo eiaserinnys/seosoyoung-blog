@@ -1,0 +1,107 @@
+:root {
+  color-scheme: light;
+  --bg: #FFFFFF;
+  --bg-2: #F5F5F3;
+  --ink: #0F0F0F;
+  --ink-2: #5C5C5C;
+  --ink-3: #9A9A9A;
+  --rule: #E4E4E1;
+  --rule-strong: #0F0F0F;
+  --accent: #0B7A4B;
+  --accent-soft: rgb(11 122 75 / 8%);
+  --accent-press: rgb(11 122 75 / 14%);
+  --focus: #0B7A4B;
+  --scrollbar-size: 12px;
+  --scrollbar-thumb: #8A8A8A;
+  --scrollbar-thumb-hover: var(--ink-2);
+  --scrollbar-thumb-active: var(--accent);
+  --scrollbar-thumb-min: 48px;
+  --scrollbar-inset-block: 3px;
+  --scrollbar-inset-start: 4px;
+  --scrollbar-inset-end: 2px;
+  --scrollbar-inset-start-hover: 3px;
+  --scrollbar-inset-end-hover: 1px;
+  --sans: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, "Apple SD Gothic Neo", "Segoe UI", "Malgun Gothic", sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, monospace;
+  --zero: 0px;
+  --line: 1px;
+  --line-strong: 2px;
+  --icon-size: 20px;
+  --icon-stroke: 1.5px;
+  --topline-height: 64px;
+  --space-1: 8px;
+  --space-2: 16px;
+  --space-3: 24px;
+  --space-4: 32px;
+  --space-5: 48px;
+  --space-6: 64px;
+  --space-7: 96px;
+  --focus-outline-offset: 2px;
+  --container-max: 1280px;
+  --page-gutter: 48px;
+  --mobile-gutter: 20px;
+  --tap-size: 44px;
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --bg: #0C0D0C;
+  --bg-2: #141614;
+  --ink: #ECEDEA;
+  --ink-2: #A0A39E;
+  --ink-3: #666A64;
+  --rule: #242724;
+  --rule-strong: #ECEDEA;
+  --accent: #4FD69C;
+  --accent-soft: rgb(79 214 156 / 10%);
+  --accent-press: rgb(79 214 156 / 18%);
+  --focus: #4FD69C;
+  --scrollbar-thumb: #666A64;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+    --bg: #0C0D0C;
+    --bg-2: #141614;
+    --ink: #ECEDEA;
+    --ink-2: #A0A39E;
+    --ink-3: #666A64;
+    --rule: #242724;
+    --rule-strong: #ECEDEA;
+    --accent: #4FD69C;
+    --accent-soft: rgb(79 214 156 / 10%);
+    --accent-press: rgb(79 214 156 / 18%);
+    --focus: #4FD69C;
+    --scrollbar-thumb: #666A64;
+  }
+}
+
+@media (prefers-reduced-transparency: reduce) {
+  :root {
+    --accent-soft: #E7F2EC;
+    --accent-press: #D5E9DE;
+  }
+
+  :root[data-theme="dark"] {
+    --accent-soft: #19271F;
+    --accent-press: #22392C;
+  }
+}
+
+@media (prefers-reduced-transparency: reduce) and (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --accent-soft: #19271F;
+    --accent-press: #22392C;
+  }
+}
+
+@media (prefers-contrast: more) {
+  :root {
+    --ink-2: var(--ink);
+    --rule: var(--rule-strong);
+    --accent-soft: transparent;
+    --accent-press: var(--bg-2);
+    --scrollbar-thumb: var(--ink);
+  }
+}

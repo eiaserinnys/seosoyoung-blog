@@ -1,0 +1,40 @@
+{{- $data := . -}}
+{{- $src := $data.src -}}
+{{- $width := int $data.w -}}
+{{- $alt := $data.alt | default "" -}}
+{{- $class := $data.class | default "" -}}
+{{- $focus := $data.focus | default "" -}}
+{{- $eager := $data.eager | default false -}}
+{{- $outSrc := $src -}}
+{{- $outSrcset := "" -}}
+{{- $outWidth := 0 -}}
+{{- $outHeight := 0 -}}
+{{- $url := urls.Parse $src -}}
+{{- $hostAllowed := or (strings.HasPrefix $src "https://img.seosoyoung.eiaserinnys.me/") (strings.HasPrefix $src "https://pub-236dc9dc170e487faec4c8b5e2d084c6.r2.dev/") -}}
+{{- $extension := strings.ToLower (path.Ext $url.Path) -}}
+{{- if and $hostAllowed (in (slice ".png" ".jpg" ".jpeg" ".webp") $extension) -}}
+  {{- $remoteResult := try (resources.GetRemote $src) -}}
+  {{- if $remoteResult.Err -}}
+    {{- warnf "thumb: remote image fetch failed for %q: %s" $src $remoteResult.Err -}}
+  {{- else -}}
+    {{- $remote := $remoteResult.Value -}}
+    {{- if gt $remote.Width $width -}}
+      {{- $retinaWidth := int (math.Min (mul $width 2) $remote.Width) -}}
+      {{- $smallResult := try ($remote.Resize (printf "%dx webp q80" $width)) -}}
+      {{- $largeResult := try ($remote.Resize (printf "%dx webp q80" $retinaWidth)) -}}
+      {{- if or $smallResult.Err $largeResult.Err -}}
+        {{- warnf "thumb: image processing failed for %q" $src -}}
+      {{- else -}}
+        {{- $small := $smallResult.Value -}}
+        {{- $large := $largeResult.Value -}}
+        {{- $outSrc = $small.RelPermalink -}}
+        {{- $outSrcset = printf "%s 1x, %s 2x" $small.RelPermalink $large.RelPermalink -}}
+        {{- $outWidth = $small.Width -}}
+        {{- $outHeight = $small.Height -}}
+      {{- end -}}
+    {{- end -}}
+  {{- end -}}
+{{- else -}}
+  {{- warnf "thumb: source is not an allowed remote image: %q" $src -}}
+{{- end -}}
+<img src="{{ $outSrc }}"{{ with $outSrcset }} srcset="{{ . }}"{{ end }}{{ if gt $outWidth 0 }} width="{{ $outWidth }}" height="{{ $outHeight }}"{{ end }}{{ with $class }} class="{{ . }}"{{ end }}{{ with $focus }} style="object-position: {{ . }}"{{ end }} loading="{{ if $eager }}eager{{ else }}lazy{{ end }}" decoding="async" alt="{{ $alt }}">
