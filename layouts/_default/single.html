@@ -43,7 +43,7 @@
     {{- with .Params.cover }}
       {{- if and .image (not .hiddenInSingle) }}
         <figure class="entry-cover" data-lightbox-src="{{ .image | absURL }}">
-          {{- partial "thumb.html" (dict "src" .image "w" 720 "alt" (.alt | default $.Title) "focus" .focus "eager" true) }}
+          {{- partial "thumb.html" (dict "src" .image "w" 720 "alt" (.alt | default $.Title) "focus" .focus "eager" true "page" $) }}
         </figure>
       {{- end }}
     {{- end }}

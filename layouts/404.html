@@ -1,4 +1,4 @@
 {{ define "main" }}
-  <h1>페이지를 찾을 수 없습니다</h1>
-  <a href="{{ site.Home.RelPermalink }}">홈으로</a>
+  {{ partial "page-head.html" (dict "eyebrow" "404" "title" "페이지를 찾을 수 없습니다") }}
+  {{ partial "section-head.html" (dict "title" "홈으로" "url" site.Home.RelPermalink) }}
 {{ end }}

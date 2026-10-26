@@ -58,7 +58,9 @@ function renderResults() {
 
     const badge = document.createElement("span");
     badge.className = `badge${item.section === "posts" ? " w" : ""}`;
-    badge.textContent = item.section === "lab" ? shelfLabels[item.shelf] : sectionLabels[item.section];
+    badge.textContent = item.section === "lab"
+      ? (shelfLabels[item.shelf] ?? "실험실")
+      : sectionLabels[item.section];
 
     const copy = document.createElement("span");
     copy.className = "search-copy";

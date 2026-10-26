@@ -1,4 +1,10 @@
+{{ define "head" }}{{ partial "pager-redirect.html" (dict "page" . "pager" (.Paginate (where site.RegularPages "Section" "posts")) "part" "head") }}{{ end }}
+
 {{ define "main" }}
+  {{- $pager := .Paginate (where site.RegularPages "Section" "posts") -}}
+  {{- if gt $pager.PageNumber 1 -}}
+    {{- partial "pager-redirect.html" (dict "page" . "pager" $pager "part" "body") -}}
+  {{- else -}}
   {{- $posts := where site.RegularPages "Section" "posts" -}}
   {{- $digest := where site.RegularPages "Section" "digest" -}}
   {{- $gallery := where site.RegularPages "Section" "gallery" -}}
@@ -85,7 +91,7 @@
         <a class="lead-main" href="{{ $lead.RelPermalink }}">
           <div class="cv">
             {{- with $lead.Params.cover.image -}}
-              {{- partial "thumb.html" (dict "src" . "w" 480 "alt" "" "focus" $lead.Params.cover.focus "eager" true) -}}
+              {{- partial "thumb.html" (dict "src" . "w" 480 "alt" "" "focus" $lead.Params.cover.focus "eager" true "page" $lead) -}}
             {{- end -}}
           </div>
           <div class="lead-copy">
@@ -148,7 +154,7 @@
             {{- $alt := .Params.title | default .Params.cover.alt -}}
             {{- if not $alt -}}{{- $alt = printf "그림 %s" (.Date.Format "2006.01.02") -}}{{- end -}}
             <a class="gal-item" href="{{ .RelPermalink }}" aria-label="{{ $alt }}">
-              <div class="cv">{{ partial "thumb.html" (dict "src" .Params.cover.image "w" 160 "alt" $alt "class" "" "focus" .Params.cover.focus "eager" true) }}</div>
+              <div class="cv">{{ partial "thumb.html" (dict "src" .Params.cover.image "w" 160 "alt" $alt "class" "" "focus" .Params.cover.focus "eager" true "page" .) }}</div>
             </a>
           {{- end -}}
           {{- if not $experimentsByDate -}}
@@ -156,7 +162,7 @@
               {{- $alt := .Params.title | default .Params.cover.alt -}}
               {{- if not $alt -}}{{- $alt = printf "그림 %s" (.Date.Format "2006.01.02") -}}{{- end -}}
               <a class="gal-item mobile-only" href="{{ .RelPermalink }}" aria-label="{{ $alt }}">
-                <div class="cv">{{ partial "thumb.html" (dict "src" .Params.cover.image "w" 160 "alt" $alt "class" "" "focus" .Params.cover.focus "eager" true) }}</div>
+                <div class="cv">{{ partial "thumb.html" (dict "src" .Params.cover.image "w" 160 "alt" $alt "class" "" "focus" .Params.cover.focus "eager" true "page" .) }}</div>
               </a>
             {{- end -}}
           {{- end -}}
@@ -193,7 +199,7 @@
           {{- with $topicPosts -}}
             {{- $anchor := index . 0 -}}
             <a class="anchor" href="{{ $anchor.RelPermalink }}">
-              <div class="cv">{{ partial "thumb.html" (dict "src" $anchor.Params.cover.image "w" 128 "alt" "" "focus" $anchor.Params.cover.focus) }}</div>
+              <div class="cv">{{ partial "thumb.html" (dict "src" $anchor.Params.cover.image "w" 128 "alt" "" "focus" $anchor.Params.cover.focus "page" $anchor) }}</div>
               <div>
                 <span class="mono">{{ $anchor.Date.Format "2006.01.02" }}</span>
                 <div class="t clamp2">{{ $anchor.Title }}</div>
@@ -245,9 +251,12 @@
     </div>
   </section>
   </div>
+  {{- end }}
 {{ end }}
 
 {{ define "scripts" }}
+  {{- if eq (.Paginate (where site.RegularPages "Section" "posts")).PageNumber 1 }}
   {{- $script := resources.Get "js/home.js" | js.Build (dict "minify" true) | fingerprint -}}
   <script defer src="{{ $script.RelPermalink }}" integrity="{{ $script.Data.Integrity }}" crossorigin="anonymous"></script>
+  {{- end }}
 {{ end }}

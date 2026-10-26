@@ -34,6 +34,82 @@
   background: var(--bg-2);
 }
 
+.cv img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+#main > .tbar + .head {
+  padding-top: 32px;
+}
+
+.chip {
+  display: inline-flex;
+  flex: 0 0 auto;
+  align-items: center;
+  padding: 5px 10px;
+  border: var(--line) solid var(--rule);
+  border-radius: var(--zero);
+  font-size: 13px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+button.chip {
+  appearance: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+.chip .mono {
+  margin-left: 6px;
+}
+
+.chip[aria-pressed="true"] {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+
+button.chip:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+button.chip:not(:disabled):hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.seg {
+  display: flex;
+  flex: 0 0 auto;
+  margin-right: 16px;
+  border: var(--line) solid var(--rule-strong);
+}
+
+.seg button {
+  padding: 6px 12px;
+  border: 0;
+  border-radius: var(--zero);
+  appearance: none;
+  background: transparent;
+  font-size: 13px;
+  font-weight: 600;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.seg button[aria-pressed="true"] {
+  background: var(--ink);
+  color: var(--bg);
+}
+
+.seg button[aria-pressed="true"] .mono {
+  color: inherit;
+}
+
 .top {
   height: var(--topline-height);
   display: flex;
@@ -209,6 +285,19 @@
   font-weight: 700;
 }
 
+.sh a.k::after {
+  margin-left: 4px;
+  color: var(--ink-3);
+  content: "→";
+}
+
+.sh a.k:hover,
+.sh a.k:focus-visible,
+.sh a.k:hover::after,
+.sh a.k:focus-visible::after {
+  color: var(--accent);
+}
+
 .row,
 .lrow {
   position: relative;
@@ -257,6 +346,17 @@
   z-index: 0;
   inset: 0;
   content: "";
+}
+
+.row .t a:focus-visible,
+.lrow .t a:focus-visible {
+  outline: none;
+}
+
+.row .t a:focus-visible::after,
+.lrow .t a:focus-visible::after {
+  outline: var(--line-strong) solid var(--focus);
+  outline-offset: var(--focus-outline-offset);
 }
 
 .row .pk,
@@ -311,7 +411,7 @@
 }
 
 .lrow {
-  grid-template-columns: 64px 72px minmax(0, 1fr) 24px;
+  grid-template-columns: 64px 96px minmax(0, 1fr) 24px;
   column-gap: 16px;
   padding: 14px 0;
 }
@@ -324,7 +424,7 @@
   grid-column: 2 / 4;
   min-width: 0;
   display: grid;
-  grid-template-columns: 72px minmax(0, 1fr);
+  grid-template-columns: 96px minmax(0, 1fr);
   column-gap: 16px;
   align-items: baseline;
 }
@@ -361,7 +461,7 @@
 
 .peek {
   display: grid;
-  grid-template-columns: 64px 72px minmax(0, 1fr) 240px;
+  grid-template-columns: 64px 96px minmax(0, 1fr) 240px;
   column-gap: 16px;
   padding: 4px 0 20px;
   border-bottom: 1px solid var(--rule);
@@ -424,6 +524,12 @@
   font-weight: 600;
 }
 
+@media (min-width: 768px) {
+  .lrow + .peek {
+    padding-right: 40px;
+  }
+}
+
 .mon {
   display: flex;
   justify-content: space-between;
@@ -475,6 +581,16 @@
   .tbar a {
     flex: 0 0 auto;
     white-space: nowrap;
+  }
+
+  .peek-summary {
+    grid-column: 3 / 5;
+  }
+
+  .peek .cv {
+    grid-column: 3;
+    width: 240px;
+    margin-top: 12px;
   }
 }
 
