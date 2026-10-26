@@ -114,7 +114,7 @@
         {{- end -}}
       </div>
       <div class="ledger-rest">
-        {{- range after 5 $digestByDate -}}
+        {{- range first 2 (after 5 $digestByDate) -}}
           {{- partial "ledger-row.html" (dict "page" . "variant" "compact" "second" "category") -}}
         {{- end -}}
       </div>
