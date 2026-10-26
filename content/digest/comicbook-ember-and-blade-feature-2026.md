@@ -8,10 +8,10 @@ summary: "ComicBook.com이 라인게임즈의 <Ember and Blade> 데모를 피처
 ShowToc: true
 TocOpen: false
 cover:
-  image: "https://img.seosoyoung.eiaserinnys.me/images/comicbook-ember-and-blade-feature-2026/Ember-Blade.jpg"
+  image: "https://img.seosoyoung.eiaserinnys.me/images/comicbook-ember-and-blade-feature-2026/Ember-Blade-v2.webp"
   alt: "Ember and Blade 키 아트"
 images:
-  - "https://img.seosoyoung.eiaserinnys.me/images/comicbook-ember-and-blade-feature-2026/Ember-Blade.jpg"
+  - "https://img.seosoyoung.eiaserinnys.me/images/comicbook-ember-and-blade-feature-2026/Ember-Blade-v2.webp"
 sidenotes: true
 ---
 

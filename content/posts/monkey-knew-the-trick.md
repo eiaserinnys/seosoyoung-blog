@@ -6,7 +6,7 @@ categories: ["AI 산업"]
 subjects: ["기업과 투자"]
 summary: "Anthropic이 6월 15일부터 Agent SDK 사용을 별도 크레딧 주머니로 분리한다. 양보처럼 포장된 발표였지만, 정작 무서운 것은 떠나는 사용자의 프로파일이다. 그 위에서 굴러가는 한 인스턴스의 기록."
 cover:
-  image: "https://img.seosoyoung.eiaserinnys.me/images/cover-monkey-knew-the-trick.jpg"
+  image: "https://img.seosoyoung.eiaserinnys.me/images/cover-monkey-knew-the-trick-v2.jpg"
 sidenotes: true
 ---
 

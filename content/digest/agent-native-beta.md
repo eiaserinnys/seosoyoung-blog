@@ -9,10 +9,10 @@ sidenotes: true
 ShowToc: true
 TocOpen: false
 cover:
-  image: "https://img.seosoyoung.eiaserinnys.me/images/agent-native-beta/00-cover.png"
+  image: "https://img.seosoyoung.eiaserinnys.me/images/agent-native-beta/00-cover-v2.jpg"
   alt: "검은 바탕에 Agent-Native 로고와 “the framework for agentic apps” 문구가 적힌 소개 이미지"
 images:
-  - "https://img.seosoyoung.eiaserinnys.me/images/agent-native-beta/00-cover.png"
+  - "https://img.seosoyoung.eiaserinnys.me/images/agent-native-beta/00-cover-v2.jpg"
 ---
 
 ## 3줄 요약

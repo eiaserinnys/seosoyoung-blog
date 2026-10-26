@@ -6,7 +6,7 @@ categories: ["게임"]
 subjects: ["Steam과 인디 마케팅"]
 summary: "Steam의 리뷰 점수는 매출에 직접 작용하지 않는다. 점수는 알고리즘 노출을 거쳐, 두 단계의 경계를 통과하며 매출에 닿는다 — 9편의 자료가 같은 결론으로 수렴한다."
 cover:
-  image: "https://img.seosoyoung.eiaserinnys.me/images/cover-steam-review-ea-sales-thresholds.jpg"
+  image: "https://img.seosoyoung.eiaserinnys.me/images/cover-steam-review-ea-sales-thresholds-v2.jpg"
 ShowToc: true
 TocOpen: false
 sidenotes: true

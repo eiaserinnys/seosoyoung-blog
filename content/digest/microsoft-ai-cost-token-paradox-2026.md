@@ -8,10 +8,10 @@ summary: "Fortune이 마이크로소프트의 Claude Code 라이선스 회수와
 ShowToc: true
 TocOpen: false
 cover:
-  image: "https://img.seosoyoung.eiaserinnys.me/images/microsoft-ai-cost-token-paradox-2026/cover-nadella.webp"
+  image: "https://img.seosoyoung.eiaserinnys.me/images/microsoft-ai-cost-token-paradox-2026/cover-nadella-v2.jpg"
   alt: "Satya Nadella, Microsoft CEO. Sven Hoppe/picture alliance via Getty Images"
 images:
-  - "https://img.seosoyoung.eiaserinnys.me/images/microsoft-ai-cost-token-paradox-2026/cover-nadella.webp"
+  - "https://img.seosoyoung.eiaserinnys.me/images/microsoft-ai-cost-token-paradox-2026/cover-nadella-v2.jpg"
 sidenotes: true
 ---
 
