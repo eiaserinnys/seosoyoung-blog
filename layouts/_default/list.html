@@ -1,4 +1,8 @@
 {{ define "main" }}
+  {{- $pager := .Paginate .Pages -}}
+  {{- if gt $pager.PageNumber 1 -}}
+    {{- partial "pager-redirect.html" . -}}
+  {{- else -}}
   {{- $pages := slice -}}
   {{- $eyebrow := "" -}}
   {{- $title := .Title -}}
@@ -17,4 +21,5 @@
   {{- $pages = $pages.ByDate.Reverse -}}
   {{- partial "page-head.html" (dict "eyebrow" $eyebrow "title" $title "stats" (slice (dict "label" "편" "value" (len $pages)))) -}}
   {{- partial "month-ledger.html" (dict "pages" $pages "second" $second) -}}
+  {{- end -}}
 {{ end }}

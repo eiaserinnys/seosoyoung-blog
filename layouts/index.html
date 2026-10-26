@@ -1,4 +1,8 @@
 {{ define "main" }}
+  {{- $pager := .Paginate (where site.RegularPages "Section" "posts") -}}
+  {{- if gt $pager.PageNumber 1 -}}
+    {{- partial "pager-redirect.html" . -}}
+  {{- else -}}
   {{- $posts := where site.RegularPages "Section" "posts" -}}
   {{- $digest := where site.RegularPages "Section" "digest" -}}
   {{- $gallery := where site.RegularPages "Section" "gallery" -}}
@@ -245,6 +249,7 @@
     </div>
   </section>
   </div>
+  {{- end }}
 {{ end }}
 
 {{ define "scripts" }}

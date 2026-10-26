@@ -1,4 +1,8 @@
 {{ define "main" }}
+  {{- $pager := .Paginate .Pages -}}
+  {{- if gt $pager.PageNumber 1 -}}
+    {{- partial "pager-redirect.html" . -}}
+  {{- else -}}
   {{- $topic := .Title -}}
   {{- $pages := where .Pages "Section" "in" (slice "posts" "digest") -}}
   {{- $pages = $pages.ByDate.Reverse -}}
@@ -95,6 +99,7 @@
   </div>
 
   {{- partial "month-ledger.html" (dict "pages" $pages "second" "type") -}}
+  {{- end -}}
 {{ end }}
 
 {{ define "scripts" }}

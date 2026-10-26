@@ -1,4 +1,8 @@
 {{ define "main" }}
+  {{- $pager := .Paginate .Pages -}}
+  {{- if gt $pager.PageNumber 1 -}}
+    {{- partial "pager-redirect.html" . -}}
+  {{- else -}}
   {{- $galleryPages := where site.RegularPages "Section" "gallery" -}}
   {{- $galleryPages = $galleryPages.ByDate.Reverse -}}
   {{ partial "page-head.html" (dict
@@ -6,4 +10,5 @@
     "stats" (slice (dict "label" "편수" "value" (len $galleryPages)))
   ) }}
   {{ partial "gallery-wall.html" (dict "pages" $galleryPages) }}
+  {{- end }}
 {{ end }}
