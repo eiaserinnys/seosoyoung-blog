@@ -21,7 +21,6 @@ const fuseOptions = {
 
 let fuse;
 let searchTimer;
-let isComposing = false;
 
 function clearResults() {
   resultsList.replaceChildren();
@@ -80,16 +79,10 @@ function scheduleSearch() {
   searchTimer = window.setTimeout(renderResults, 150);
 }
 
-input.addEventListener("compositionstart", () => {
-  isComposing = true;
-  window.clearTimeout(searchTimer);
-});
 input.addEventListener("compositionend", () => {
-  isComposing = false;
   scheduleSearch();
 });
-input.addEventListener("input", (event) => {
-  if (isComposing || event.isComposing) return;
+input.addEventListener("input", () => {
   scheduleSearch();
 });
 input.addEventListener("search", () => {

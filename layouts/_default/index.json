@@ -14,7 +14,7 @@
     {{- $shelf := .Params.shelf | default "" -}}
     {{- if eq .Section "gallery" -}}
       {{- $summary = .Summary | plainify | strings.TrimSpace -}}
-      {{- $summary = replaceRE `^(오리지널|3줄 요약|프롬프트|시리즈 변주|출처|메모)([[:space:]]+|$)` "" $summary -}}
+      {{- $summary = replaceRE `^(?:(?:오리지널|3줄 요약|프롬프트|시리즈 변주|컨셉 변주|출처|메모|\([0-9]+종\))([[:space:]]+|$))+` "" $summary -}}
       {{- $summary = replaceRE `^([0-9]+[.)]|[-*•])[[:space:]]*` "" $summary -}}
       {{- $summary = strings.TrimSpace $summary -}}
       {{- $firstSentence := findRE `(?s)^.*?[.!?]([[:space:]]|$)` $summary 1 -}}
