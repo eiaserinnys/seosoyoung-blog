@@ -5,7 +5,11 @@ const sectionLabels = {
   posts: "쓴 글",
   digest: "읽은 글",
   gallery: "그림",
-  lab: "실험실",
+};
+const shelfLabels = {
+  experiment: "실험",
+  atlas: "아틀라스",
+  report: "리포트",
 };
 
 const fuseOptions = {
@@ -16,6 +20,8 @@ const fuseOptions = {
 };
 
 let fuse;
+let searchTimer;
+let isComposing = false;
 
 function clearResults() {
   resultsList.replaceChildren();
@@ -47,7 +53,7 @@ function renderResults() {
 
     const badge = document.createElement("span");
     badge.className = `badge${item.section === "posts" ? " w" : ""}`;
-    badge.textContent = sectionLabels[item.section];
+    badge.textContent = item.section === "lab" ? shelfLabels[item.shelf] : sectionLabels[item.section];
 
     const copy = document.createElement("span");
     copy.className = "search-copy";
@@ -69,9 +75,28 @@ function renderResults() {
   }
 }
 
-input.addEventListener("input", renderResults);
+function scheduleSearch() {
+  window.clearTimeout(searchTimer);
+  searchTimer = window.setTimeout(renderResults, 150);
+}
+
+input.addEventListener("compositionstart", () => {
+  isComposing = true;
+  window.clearTimeout(searchTimer);
+});
+input.addEventListener("compositionend", () => {
+  isComposing = false;
+  scheduleSearch();
+});
+input.addEventListener("input", (event) => {
+  if (isComposing || event.isComposing) return;
+  scheduleSearch();
+});
 input.addEventListener("search", () => {
-  if (!input.value) renderResults();
+  if (!input.value) {
+    window.clearTimeout(searchTimer);
+    renderResults();
+  }
 });
 
 document.addEventListener("keydown", (event) => {
@@ -80,6 +105,7 @@ document.addEventListener("keydown", (event) => {
 
   if (event.key === "Escape") {
     input.value = "";
+    window.clearTimeout(searchTimer);
     renderResults();
     input.focus();
     return;
