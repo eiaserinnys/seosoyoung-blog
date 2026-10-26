@@ -24,7 +24,7 @@
         <a href="{{ $page.RelPermalink }}">
           <div class="cv">
             {{- with $page.Params.cover.image -}}
-              {{- partial "thumb.html" (dict "src" . "w" 400 "alt" "" "focus" $page.Params.cover.focus "eager" (eq $index 0)) -}}
+              {{- partial "thumb.html" (dict "src" . "w" 400 "alt" "" "focus" $page.Params.cover.focus "eager" (eq $index 0) "page" $page) -}}
             {{- end -}}
           </div>
           <div class="meta"><time class="mono" datetime="{{ $page.Date.Format "2006-01-02" }}">{{ $page.Date.Format "2006.01.02" }}</time></div>
