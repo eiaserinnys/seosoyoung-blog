@@ -2,7 +2,8 @@
 title: "Muse Wonder: A Frontier Model For Personal & Professional AI Agents"
 date: 2026-10-13T07:00:00+09:00
 tags: ["Meta", "AI 에이전트", "벤치마크", "메모리", "AI 안전"]
-categories: ["모델과 연구"]
+categories: ["AI 산업"]
+subjects: ["새 모델과 제품"]
 summary: "메타가 2026년 10월 12일 Muse Wonder와 Muse Wonder Full을 공개했다. 두 모델은 개인 비서와 업무용 에이전트를 위해 개발됐다. 메타가 공개한 14개 평가 중 7개에서 Muse Wonder 계열이 비교 모델 가운데 가장 높은 점수를 받았고, 종합 지수에서는 Full이 Claude Opus 5.5에 이어 두 번째다. 메타는 사용자의 맥락을 기억하는 Active Memory와, 문제가 생겨도 끝까지 일하는 Active Focus를 강점으로 강조했다."
 sidenotes: true
 ShowToc: true

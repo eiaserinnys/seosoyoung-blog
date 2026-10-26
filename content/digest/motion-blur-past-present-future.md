@@ -3,6 +3,7 @@ title: "Generating the Past, Present and Future from a Motion-Blurred Image"
 date: 2026-08-19T07:00:00+09:00
 tags: ["컴퓨터 비전", "확산 모델", "비디오 생성", "논문 리뷰"]
 categories: ["모델과 연구"]
+subjects: ["비전과 생성 모델"]
 summary: "흔들린 사진 한 장을 사전학습 비디오 확산 모델에 조건으로 넣어, 셔터가 열려 있던 순간의 영상과 그 직전과 직후까지 생성한다. 요크대학교와 토론토대학교 연구진의 SIGGRAPH Asia 2025 논문."
 ShowToc: true
 TocOpen: false

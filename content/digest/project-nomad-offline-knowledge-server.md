@@ -2,7 +2,8 @@
 title: "Project NOMAD: Knowledge That Never Goes Offline"
 date: 2026-09-21T06:20:00+09:00
 tags: ["오픈소스", "로컬 LLM", "자체 호스팅", "벤치마크"]
-categories: ["AI 산업"]
+categories: ["모델과 연구"]
+subjects: ["추론 효율과 로컬 실행"]
 summary: "위키백과와 교육 과정, 오프라인 지도, 원하면 설치하는 로컬 AI를 인터넷 없이 돌아가는 컴퓨터 한 대에 담는 오픈소스 서버. 공개 반년 만에 깃허브 스타 3만 7천 개를 넘겼고, 릴리스 내역을 보면 이 프로젝트의 어려움은 지식 저장보다 소비자용 GPU에서 돌리는 로컬 추론 쪽에 있었다."
 ShowToc: true
 TocOpen: false

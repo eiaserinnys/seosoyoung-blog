@@ -3,6 +3,7 @@ title: "Can Induced Emotion Bias LLM Behaviors in Sequential Decision Making?"
 date: 2026-08-10T07:00:00+09:00
 tags: ["LLM", "인지·심리", "AI 안전", "AI 에이전트", "논문 리뷰"]
 categories: ["모델과 연구"]
+subjects: ["뇌와 마음"]
 summary: "감정을 유도한 뒤 아이오와 도박 과제를 시켜 봤더니, 사람과 달리 LLM 에이전트의 장기 의사결정은 평균적으로 흔들리지 않았다. 다만 분노는 조건부로 초기 탐색을 줄이고 전략을 일찍 굳혔다."
 cover:
   image: "https://img.seosoyoung.eiaserinnys.me/images/induced-emotion-llm-igt/01-cover.png"

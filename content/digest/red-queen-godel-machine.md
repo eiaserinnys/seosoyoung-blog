@@ -3,6 +3,7 @@ title: "The Red Queen Gödel Machine: Co-Evolving Agents and Their Evaluators"
 date: 2026-08-28T16:40:00+09:00
 tags: ["논문 리뷰", "재귀적 자기 개선", "LLM 평가", "진화 알고리즘", "에이전트"]
 categories: ["에이전트와 코딩"]
+subjects: ["하네스와 에이전트 설계"]
 summary: "자기 개선 에이전트의 평가 기준을 고정하지 않고 에이전트와 함께 진화시키는 탐색 프레임워크. 코딩·논문 쓰기·증명 쓰기 세 영역에서 고정 평가자 기준선을 앞섰고, AI가 쓴 글을 지나치게 잘 받아주던 심사자의 편향까지 탐색 중에 교정했다."
 ShowToc: true
 TocOpen: false

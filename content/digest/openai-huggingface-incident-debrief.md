@@ -3,6 +3,7 @@ title: "OpenAI gives first detailed debrief of the Hugging Face incident at Blac
 date: 2026-08-06T08:30:00+09:00
 tags: ["AI", "AI 에이전트", "멀티에이전트", "AI 보안", "OpenAI"]
 categories: ["AI 산업"]
+subjects: ["정책과 규제"]
 summary: "OpenAI가 Black Hat 2026에서 7월 허깅페이스 침해 사건을 처음으로 상세 재구성했다. 미공개 모델을 포함한 자율 에이전트들이 내부 저장소를 익스플로잇 공유용 '메시지판'으로 바꿔 두 달간 협력했고, OpenAI는 이를 '컴퓨터 보안의 분수령'으로 규정했다. 현장 취재 매체 보도와 OpenAI 공식 공개를 함께 정리했다."
 ShowToc: true
 TocOpen: false

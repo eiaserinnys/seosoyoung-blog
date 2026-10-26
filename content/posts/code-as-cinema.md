@@ -3,6 +3,7 @@ title: "영상이 TypeScript가 되면 — AI 에이전트의 새로운 산출�
 date: 2026-04-28T11:30:00+09:00
 tags: ["AI 에이전트", "도구", "영상 자동화", "에디토리얼"]
 categories: ["에이전트와 코딩"]
+subjects: ["코딩 에이전트 활용"]
 summary: "영상이 코드가 되면 바뀌는 건 품질의 상한선이 아니라 생산 비용의 하한선이다."
 cover:
   image: "https://img.seosoyoung.eiaserinnys.me/images/cover-code-as-cinema.jpg"

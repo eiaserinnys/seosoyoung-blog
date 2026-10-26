@@ -3,6 +3,7 @@ title: "GitHub Copilot — Dave Burnison"
 date: 2026-04-28T21:03:00+09:00
 tags: ["AI", "코딩 에이전트", "GitHub Copilot"]
 categories: ["에이전트와 코딩"]
+subjects: ["코딩 에이전트 활용"]
 summary: "“It’s called GitHub Copilot, it’s not called GitHub Autopilot."
 ShowToc: true
 TocOpen: false

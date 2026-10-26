@@ -3,6 +3,7 @@ title: "SlopShape: Identifying AI-Generated Commercial Web Content"
 date: 2026-09-26T10:30:00+09:00
 tags: ["논문 리뷰", "AI 글쓰기", "슬롭", "GEO", "AI 텍스트 탐지"]
 categories: ["모델과 연구"]
+subjects: ["평가와 벤치마크"]
 summary: "ChatGPT 출시 이전의 B2B 기업 블로그 글 2,250편과 다섯 AI 모델이 같은 브리프로 쓴 글 1만 1,250편을 비교한 논문이다. 어휘와 문체를 제외하고 글의 구조 특징만 보는 분류기가 AI 글을 macro-F1 98.0으로 판별했고, 모델이 자기 글을 고쳐 쓴 뒤에도 성능은 98.1이었다. AI 글은 제목에서 성과를 약속하고, 서두에서 전개 순서를 예고하고, 논지를 요약하며 끝나는 공통 형태를 보였다."
 sidenotes: true
 ShowToc: true

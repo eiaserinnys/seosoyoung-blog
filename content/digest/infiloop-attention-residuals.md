@@ -3,6 +3,7 @@ title: "Scaling to Tens of Thousands of Test-Time Iterations with Loop-Native At
 date: 2026-10-20T06:50:00+09:00
 tags: ["루프 트랜스포머", "어텐션", "추론", "아키텍처", "논문 리뷰"]
 categories: ["모델과 연구"]
+subjects: ["모델 구조와 학습"]
 summary: "루프 트랜스포머는 직전 반복의 출력만 다음 반복으로 넘기기 때문에, 반복 횟수가 늘면 이후의 갱신이 이미 맞힌 답을 덮어쓰는 잠재 과잉사고가 발생한다. InfiLoop는 반복마다 내용 점수와 지수 감쇠로 과거 상태를 가중 합산한다. 토큰당 벡터 하나와 스칼라 하나만 유지하는 점화식이라 메모리 사용량이 반복 횟수와 상관없이 일정하다. 700만 파라미터 모델로 Sudoku-Extreme 97.9%, ARC-AGI-2 13.6%를 기록했고, 실행 층 수를 2만 4,960층까지 늘려도 성능이 계속 올랐다."
 math: true
 sidenotes: true

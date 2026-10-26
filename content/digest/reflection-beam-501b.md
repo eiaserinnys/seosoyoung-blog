@@ -2,7 +2,8 @@
 title: "Introducing Beam: Reflection’s 501B open-weight model"
 date: 2026-10-06T14:40:00+09:00
 tags: ["오픈소스", "강화학습", "MoE", "추론 효율성", "사전학습"]
-categories: ["모델과 연구"]
+categories: ["AI 산업"]
+subjects: ["새 모델과 제품"]
 summary: "Reflection AI가 첫 오픈웨이트 모델 Beam을 발표했다. 파라미터 5,010억 개 중 230억 개만 활성화하는 MoE 모델이다. 코딩과 에이전트 성능은 GLM 5.2와 비슷하고, 비슷한 점수를 내는 데 드는 연산은 3배에서 4배 적다고 한다. 가중치는 10월 중 Apache 2.0 라이선스로 공개할 예정이다."
 sidenotes: true
 ShowToc: true

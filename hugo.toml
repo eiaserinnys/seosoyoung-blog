@@ -60,6 +60,7 @@ paginate = 10
 [taxonomies]
   tag = "tags"
   category = "categories"
+  subject = "subjects"
   series = "series"
 
 [menu]

@@ -2,7 +2,8 @@
 title: "jev-eval-agent: Who picks the tool, the LLM or Jev?"
 date: 2026-09-18T18:00:00+09:00
 tags: ["AI 에이전트", "함수 호출", "TypeSafe", "벤치마크", "토큰 비용"]
-categories: ["에이전트와 코딩"]
+categories: ["모델과 연구"]
+subjects: ["평가와 벤치마크"]
 summary: "도구 100개를 가진 개인 비서 에이전트에서 다음 도구를 LLM이 직접 고를 때와 분류기 Jev가 대신 고를 때를 같은 과제 위에서 비교한 저장소. 모델 7종을 돌린 결과 입력 토큰은 85% 줄었지만 모델 호출은 32% 늘었고, 이름이 닮은 도구에 LLM이 걸린다는 출발 가설은 확인되지 않았다."
 ShowToc: true
 TocOpen: false

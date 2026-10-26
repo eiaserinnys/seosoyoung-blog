@@ -3,6 +3,7 @@ title: "Training NanoGPT in 39.9 Seconds"
 date: 2026-09-29T21:30:00+09:00
 tags: ["사전학습", "학습 효율", "옵티마이저", "NanoGPT"]
 categories: ["모델과 연구"]
+subjects: ["모델 구조와 학습"]
 summary: "Hyperstition의 Deven Pietrzak가 NanoGPT 스피드런 기록을 73.889초에서 39.914초로 46.0% 줄인 과정을 공개했다. 단축분의 대부분은 어휘 일부만 채점하는 샘플링 소프트맥스, 224배로 확장한 n-gram 표, 새 옵티마이저 ANVIL II에서 나왔다."
 math: true
 sidenotes: true

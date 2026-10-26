@@ -3,6 +3,7 @@ title: "AIDO Cell: A General-Purpose Simulator for Cell Biology"
 date: 2026-08-19T07:20:00+09:00
 tags: ["AI for Science", "월드 모델", "분자생물학", "벤치마크", "세포공학"]
 categories: ["모델과 연구"]
+subjects: ["수학과 과학"]
 summary: "GenBio AI가 세포 하나를 통째로 시뮬레이션하는 AIDO Cell 1.0을 공개했다. 세포 상태를 모델 안에 유지한 채 약물을 넣거나 유전자를 건드리고 그 결과를 여러 방식으로 읽을 수 있다. 자체 제작한 Virtual Cell Benchmark 1.0의 31개 지표 중 24개에서 최고 성능을 냈다고 밝혔다."
 ShowToc: true
 TocOpen: false

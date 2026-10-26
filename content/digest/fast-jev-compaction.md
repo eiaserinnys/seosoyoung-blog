@@ -3,6 +3,7 @@ title: "fast-jev-compaction: 컴팩션 요약을 Jev의 판정으로 갈아 끼�
 date: 2026-09-21T06:30:00+09:00
 tags: ["Claude Code", "컨텍스트 관리", "TypeSafe", "Jev", "하네스"]
 categories: ["에이전트와 코딩"]
+subjects: ["하네스와 에이전트 설계"]
 summary: "Claude Code의 컴팩션 요약을 없애고, 도구 호출과 도구 결과만 Jev의 확률 판정으로 골라 삭제하는 플러그인 저장소. 남기기로 한 것은 요약하지 않고 원문 그대로 둔다."
 ShowToc: true
 TocOpen: false

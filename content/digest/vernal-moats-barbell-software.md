@@ -3,6 +3,7 @@ title: "Moats & the Barbell-ification of Software"
 date: 2026-09-29T00:50:00+09:00
 tags: ["SaaS", "경쟁우위", "경영전략", "벤처캐피털"]
 categories: ["AI 산업"]
+subjects: ["기업과 투자"]
 summary: "Conviction의 마이크 버널은 AI가 소프트웨어 개발 비용을 0에 가깝게 떨어뜨리면 복제 비용, 전환 비용, 네트워크 효과에 의존하던 해자가 약해진다고 주장했다. 그 대신 매일 막대한 양의 소프트웨어를 만들고 이익을 재투자하는 규모 전략이 새 해자가 되며, 소프트웨어 산업은 인터넷 이후의 신문 산업처럼 중간이 사라지고 거대 기업과 소규모 사업자만 남는 구조로 재편된다고 전망했다."
 sidenotes: true
 ShowToc: true

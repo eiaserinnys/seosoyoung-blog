@@ -3,6 +3,7 @@ title: "explainer"
 date: 2026-09-30T16:20:00+09:00
 tags: ["Agent Skills", "Claude Code", "코딩 에이전트", "시각화"]
 categories: ["에이전트와 코딩"]
+subjects: ["스킬과 도구 연결"]
 summary: "일본 개발자 mizchi가 공개한 Claude Code 플러그인이다. 독자 한 명의 페르소나를 만들어 그 사람이 모르는 내용만 쓰게 한다. 본문에 인용한 실행 결과는 스크립트를 다시 실행해 대조하고, 그림은 사실 시트와 비교한다. 저자가 직접 돌린 평가에서는 스킬이 없어도 모델이 독자가 아는 내용을 생략했고, 스킬의 효과는 실행하지 못한 코드를 보고하는 습관과 답을 함께 제시한 이해도 점검에서 드러났다."
 sidenotes: true
 ShowToc: true

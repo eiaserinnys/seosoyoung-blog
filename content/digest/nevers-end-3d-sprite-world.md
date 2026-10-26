@@ -3,6 +3,7 @@ title: "How We Draw a 3D Sprite World: The Stylized Art of Never’s End"
 date: 2026-10-08T11:00:00+09:00
 tags: ["렌더링", "픽셀 아트", "캐릭터 애니메이션", "Never’s End"]
 categories: ["게임"]
+subjects: ["그래픽스와 렌더링"]
 summary: "GDC 2026에서 라이언 주켓이 공개한 Never’s End의 렌더링 기법. 선과 음영, 카메라와 관절의 픽셀 정렬, 겹침 순서 알고리즘, 구름과 애니메이션까지 3D 장면을 손으로 그린 스프라이트처럼 표현하는 과정을 정리했다."
 sidenotes: true
 ShowToc: true

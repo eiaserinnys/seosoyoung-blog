@@ -3,6 +3,7 @@ title: "Building agents: When to fold subagents into your main agent loop"
 date: 2026-10-25T00:30:00+09:00
 tags: ["Anthropic", "멀티에이전트", "하네스", "컨텍스트 관리", "MCP"]
 categories: ["에이전트와 코딩"]
+subjects: ["하네스와 에이전트 설계"]
 summary: "Anthropic Applied AI 팀이 기업 현장의 멀티에이전트 시스템에서 나타나는 다섯 가지 실패 양상을 분석하고, 스킬과 도구 검색을 활용해 서브에이전트를 단일 에이전트 루프로 통합하는 기준과 단계별 이전 절차를 정리한 가이드."
 sidenotes: true
 ShowToc: true

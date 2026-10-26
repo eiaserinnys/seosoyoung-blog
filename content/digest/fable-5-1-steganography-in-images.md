@@ -3,6 +3,7 @@ title: "How does Fable 5.1 hide messages in images?"
 date: 2026-10-22T21:00:00+09:00
 tags: ["AI 안전", "사이버 보안", "멀티모달", "LLM 평가"]
 categories: ["모델과 연구"]
+subjects: ["안전과 정렬"]
 summary: "Claude Fable 5.1에게 평범한 SVG 그림마다 비밀 문장을 하나씩, 모두 50개를 숨기게 했다. PNG 스크린샷만 받은 새 세션은 사전 합의 없이도 그중 78%를 정확히 해독했다. Fable 5.1은 주로 건물 높이에 알파벳 순번을 대응시켰고 GPT-6 Astra는 모스 부호와 아크로스틱을 즐겨 썼는데, 두 모델은 상대의 그림에서도 84% 이상을 풀어냈다."
 math: true
 sidenotes: true

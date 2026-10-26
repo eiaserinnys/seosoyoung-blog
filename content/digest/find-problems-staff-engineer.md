@@ -3,6 +3,7 @@ title: "How I Find Problems to Solve as a Staff Engineer"
 date: 2026-08-26T06:30:00+09:00
 tags: ["커리어", "조직 변화", "소프트웨어 엔지니어링", "개발자 도구"]
 categories: ["경제와 사회"]
+subjects: ["일자리와 노동시장"]
 summary: "스태프 엔지니어는 캘린더에 사고 시간을 비워 문제를 찾지 않는다. 일상의 대화를 흡수해 문제를 쌓아 두고, 서로 달라 보이는 요청들이 같은 형태로 겹칠 때까지 기다린 뒤에 만들기 시작한다는 실무 기록."
 cover:
   image: "https://img.seosoyoung.eiaserinnys.me/images/find-problems-staff-engineer/01-cover.png"

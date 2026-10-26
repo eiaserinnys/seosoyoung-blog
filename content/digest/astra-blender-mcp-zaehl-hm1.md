@@ -3,6 +3,7 @@ title: "GPT-6 Astra가 Blender MCP로 만든 헤드폰 앰프"
 date: 2026-09-06T16:30:00+09:00
 tags: ["Blender", "MCP", "3D 생성", "OpenAI"]
 categories: ["에이전트와 코딩"]
+subjects: ["스킬과 도구 연결"]
 summary: "GPT-6 Astra에게 헤드폰 앰프 Zähl HM1의 사진을 찾아 Blender로 모델링해 보라고 한 줄로 요청했다. Astra는 Blender MCP로 실행 중인 장면을 파이썬으로 편집해 편집 가능한 .blend 파일과 렌더 9컷을 만들고, 그 과정을 6쪽 보고서로 정리해 넘겼다. 참고 사진 수집부터 수치 검증까지 MCP 호출 20회의 기록이다."
 ShowToc: true
 TocOpen: false

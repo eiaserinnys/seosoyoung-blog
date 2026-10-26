@@ -3,6 +3,7 @@ title: "NoGraphicsAPI"
 date: 2026-09-07T19:20:00+09:00
 tags: ["그래픽스", "Vulkan", "GPU", "렌더링", "오픈소스"]
 categories: ["게임"]
+subjects: ["그래픽스와 렌더링"]
 summary: "세바스티안 알토넨은 2025년 말에 최소 그래픽 API를 제안했다. 2026년 9월에는 그 제안을 Vulkan 1.4 위에 실제로 구현해 MIT 라이선스로 공개했다. 버퍼 객체와 디스크립터 셋과 파이프라인 레이아웃을 모두 없애고 64비트 GPU 포인터로 대체했으며, 공개 헤더는 726행이다."
 ShowToc: true
 TocOpen: false

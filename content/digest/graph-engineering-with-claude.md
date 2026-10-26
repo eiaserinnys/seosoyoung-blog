@@ -3,6 +3,7 @@ title: "Graph Engineering with Claude: 14-Step roadmap from 0 to graph architect
 date: 2026-08-11T06:00:00+09:00
 tags: ["Claude Code", "코딩 에이전트", "멀티에이전트", "워크플로우"]
 categories: ["에이전트와 코딩"]
+subjects: ["하네스와 에이전트 설계"]
 summary: "선형으로 줄 세운 에이전트를 그래프로 다시 그리는 14단계 강의. 노드와 엣지에서 시작해 팬아웃·팬인, 검증자, 수렴하는 순환까지 Claude Code의 dynamic workflows로 짓는 법을 정리한다."
 ShowToc: true
 TocOpen: false

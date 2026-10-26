@@ -3,6 +3,7 @@ title: "StandRig: AI-editable 2D modeling and playback via MCP"
 date: 2026-09-16T21:00:00+09:00
 tags: ["Live2D", "VTuber", "리깅", "MCP", "오픈소스"]
 categories: ["창작과 문화"]
+subjects: ["캐릭터와 3D"]
 summary: "파츠가 분리된 PSD를 읽어 2D 캐릭터 리그를 만드는 로컬 엔진. 사람이 마우스로 메시를 만지는 대신 AI가 MCP로 수치 편집을 하도록 설계했고, 모든 편집은 리비전 해시와 QA 명세를 요구하는 트랜잭션 하나를 통과한다."
 ShowToc: true
 TocOpen: false

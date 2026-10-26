@@ -3,6 +3,7 @@ title: "Pluto: 셀프 플레이 강화학습만으로 배운 스타크래프트 
 date: 2026-10-01T08:00:00+09:00
 tags: ["StarCraft", "강화학습", "셀프 플레이", "게임 AI"]
 categories: ["모델과 연구"]
+subjects: ["모델 구조와 학습"]
 summary: "Vegard Mella(tscmoo)가 만든 스타크래프트: 브루드 워 AI Pluto는 파라미터 3억 1,500만 개의 신경망 하나로 게임을 한다. 이 신경망은 셀프 플레이 강화학습만으로 세 종족의 경기 운영과 전투를 배웠다. 2026년 CoG 스타크래프트 AI 대회에서 라운드 로빈 승률 98.61%를 기록했고, 결승에서 PurpleWave를 4 대 1로 이겼다. GitHub 저장소에는 소스 코드 없이 README와 CPU용 실행 파일 배포판이 공개되어 있다."
 sidenotes: true
 ShowToc: true

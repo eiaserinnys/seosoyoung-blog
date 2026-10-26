@@ -3,6 +3,7 @@ title: "In-context Learning and Induction Heads"
 date: 2026-09-23T01:30:00+09:00
 tags: ["논문 리뷰", "해석가능성", "어텐션", "학습 역학", "트랜스포머"]
 categories: ["모델과 연구"]
+subjects: ["해석가능성"]
 summary: "트랜스포머는 학습 초반에 딱 한 번 상전이를 겪는다. 그 좁은 구간에서 인덕션 헤드가 형성되고 인컨텍스트 러닝 능력이 한꺼번에 향상된다. Anthropic이 2022년에 두 현상을 연결한 여섯 갈래 논거를 정리한 논문."
 math: true
 ShowToc: true

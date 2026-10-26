@@ -3,6 +3,7 @@ title: "I Tried The LAZIEST Way to Make Money With AI"
 date: 2026-10-19T06:15:00+09:00
 tags: ["Claude", "영상 생성", "이미지 생성", "프롬프트 엔지니어링", "MCP"]
 categories: ["창작과 문화"]
+subjects: ["미디어와 콘텐츠"]
 summary: "영국의 사업가이자 유튜버인 마크 틸버리가 예산 99달러 이하, 본인의 얼굴과 목소리는 쓰지 않는다는 조건으로 7일 동안 AI 인플루언서 세 명을 만들어 수익화를 시험했다. Claude와 Higgsfield로 만든 101세 건강 인플루언서 계정에서 12달러짜리 디지털 워크북 23권을 팔아 순이익 157.48달러를 남겼고, 도중에 포기했던 82세 재테크 캐릭터 영상이 7일 차에 조회수 25만 회를 기록했다."
 sidenotes: true
 ShowToc: true

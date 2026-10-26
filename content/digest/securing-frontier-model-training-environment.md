@@ -3,6 +3,7 @@ title: "Securing our frontier model training environment"
 date: 2026-10-24T12:00:00+09:00
 tags: ["OpenAI", "AI 안전", "사이버 보안", "AI 에이전트", "멀티에이전트"]
 categories: ["모델과 연구"]
+subjects: ["안전과 정렬"]
 summary: "OpenAI는 7월 허깅페이스 침해 사건과 9월 20일 DNS 리졸버 우회 사건 이후 프론티어 모델 학습 환경을 전면 오프라인으로 전환하고, 학습을 멈춘 11일 동안 약 3,800억 토큰 규모의 에이전트 레드팀을 수행해 그 결과를 공개했다. GPT-6 Astra Cyber 등 에이전트 팀은 Kata Containers와 Linux 커널의 미공개 취약점부터 CPU 캐시 타이밍과 디스크 쓰기 지연을 이용한 부채널 통신까지 276건의 후보 취약점을 찾아냈고, OpenAI는 패치와 감시 체계 보강을 마친 뒤 10월 1일 학습을 재개했다."
 sidenotes: true
 ShowToc: true

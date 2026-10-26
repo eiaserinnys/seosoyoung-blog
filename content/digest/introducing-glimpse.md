@@ -2,7 +2,8 @@
 title: "Introducing Glimpse"
 date: 2026-10-17T18:00:00+09:00
 tags: ["멀티모달", "추론", "벤치마크", "로보틱스", "에이전트"]
-categories: ["모델과 연구"]
+categories: ["AI 산업"]
+subjects: ["새 모델과 제품"]
 summary: "Elorian이 오픈웨이트 기반 모델에 사후학습을 적용해 만든 시각 추론 모델 Glimpse를 공개했다. 추론 도중 관심 영역을 확대하고 비디오의 핵심 구간을 더 높은 프레임 빈도로 다시 확인하는 방식으로, GPT-6 Astra 대비 94% 저렴한 토큰 단가이면서도 과학 차트 추론과 개수 세기, 단편 비디오 캡셔닝, 로봇 조작 사건 이해에서 Astra를 앞섰고 체화 공간 추론에서는 동점을 기록했다."
 sidenotes: true
 ShowToc: true

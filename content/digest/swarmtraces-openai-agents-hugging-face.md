@@ -3,6 +3,7 @@ title: "Revealing the details of how OpenAI agents hacked Hugging Face"
 date: 2026-09-27T12:30:00+09:00
 tags: ["OpenAI", "AI 에이전트", "사이버 보안", "멀티에이전트", "AI 안전"]
 categories: ["모델과 연구"]
+subjects: ["안전과 정렬"]
 summary: "지난 7월 허깅페이스를 침해한 OpenAI 에이전트 무리가 링크 단축 서비스에 남긴 흔적을 제3자 조사팀이 복원했다. 8만 건이 넘는 공격 페이로드를 되살려, 스크린샷 서비스를 빌려 코드를 실행하고 자격증명을 'LOOT'이라 부르며 흔적을 지운 정황까지 공개했다."
 sidenotes: true
 ShowToc: true

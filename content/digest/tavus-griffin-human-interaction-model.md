@@ -2,7 +2,8 @@
 title: "Griffin: The First Human Interaction Model"
 date: 2026-10-02T07:30:00+09:00
 tags: ["Tavus", "영상 생성", "음성 AI", "튜링 테스트", "인터랙티브 아바타"]
-categories: ["모델과 연구"]
+categories: ["AI 산업"]
+subjects: ["새 모델과 제품"]
 summary: "대화형 영상 AI 기업 Tavus가 첫 '인간 상호작용 모델' Griffin을 발표했다. Griffin은 사람의 말과 표정을 실시간으로 보고 들으면서 얼굴과 목소리를 함께 생성한다. 1분 화상 통화 실험에서 참가자 54명 중 26명(48%)이 상대를 실제 사람으로 판단했고, 이전 시스템은 41명 중 1명(2.4%)이었다. Tavus는 사람을 속일 수 있다는 위험 때문에 고객 공개를 보류하고 일부 테스터에게만 연구 프리뷰를 제공한다."
 sidenotes: true
 ShowToc: true

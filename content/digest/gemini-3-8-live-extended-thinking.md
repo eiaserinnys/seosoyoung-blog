@@ -2,7 +2,8 @@
 title: "Gemini 3.8 Live & Gemini 3.8 Live Extended Thinking"
 date: 2026-09-16T10:30:00+09:00
 tags: ["Google", "Gemini", "음성 AI", "AI 에이전트", "벤치마크"]
-categories: ["모델과 연구"]
+categories: ["AI 산업"]
+subjects: ["새 모델과 제품"]
 summary: "구글이 실시간 음성 모델 두 종을 내놓았다. 저렴한 3.8 Live와 복잡한 과제를 수행하는 3.8 Live Extended Thinking이다. 이름은 체급 차이를 암시하지만 모델 카드에는 둘 다 Gemini 3 Pro에 기반한다고 적혀 있고, 가격표의 단가도 같다. 2026년 9월 16일 기준 공식 발표와 모델 카드, 가격표로 확인한 내용을 정리했다."
 ShowToc: true
 TocOpen: false

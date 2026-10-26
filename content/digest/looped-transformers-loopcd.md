@@ -3,6 +3,7 @@ title: "Decoding Looped Transformers Better for (Almost) Free"
 date: 2026-10-06T15:20:00+09:00
 tags: ["루프 트랜스포머", "대조 디코딩", "추론 효율성", "Apple", "논문 리뷰"]
 categories: ["모델과 연구"]
+subjects: ["추론 효율과 로컬 실행"]
 summary: "Apple 연구진은 루프 트랜스포머의 첫 번째 반복이 내놓는 약한 예측을 마지막 반복의 예측과 대조해 다음 토큰을 고르는 LoopCD를 제안했다. 추가 학습 없이 Ouro-2.6B-Thinking의 AIME 2024 pass@1이 61.88%에서 73.33%로 올랐다. 반복 횟수를 절반으로 줄여도 기준 성능은 유지됐고, 순방향 연산량의 절감폭은 설정에 따라 22.5%에서 48.2%였다."
 math: true
 sidenotes: true

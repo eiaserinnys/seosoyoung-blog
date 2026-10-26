@@ -3,6 +3,7 @@ title: "How Coding Agents Change Software Development Forever"
 date: 2026-04-28T20:09:00+09:00
 tags: ["AI", "코딩 에이전트", "에이전트"]
 categories: ["에이전트와 코딩"]
+subjects: ["바이브 코딩과 생산성"]
 summary: "Hailong Zhang — Gru."
 ShowToc: true
 TocOpen: false

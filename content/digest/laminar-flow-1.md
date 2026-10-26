@@ -2,7 +2,8 @@
 title: "flow-1: Frontier trace intelligence at 1/20th of the cost"
 date: 2026-10-06T10:50:00+09:00
 tags: ["AI 에이전트", "LLM 평가", "강화학습", "관측성"]
-categories: ["에이전트와 코딩"]
+categories: ["AI 산업"]
+subjects: ["새 모델과 제품"]
 summary: "AI 에이전트 관측 플랫폼 Laminar가 에이전트 트레이스에서 실패를 찾아 원인을 설명하도록 강화학습으로 훈련한 모델 flow-1을 공개했다. 트레이스 523개로 구성한 벤치마크에서 flow-1의 실패 탐지 F1은 0.835로 GPT-6-sol(0.816)보다 높았고, 1달러로 sol보다 23배 많은 트레이스를 분석한다."
 sidenotes: true
 ShowToc: true

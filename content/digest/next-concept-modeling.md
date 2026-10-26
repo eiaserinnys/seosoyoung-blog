@@ -3,6 +3,7 @@ title: "Next-Concept Modeling: Fast, Parallel Coarse-to-Fine Text Generation"
 date: 2026-10-21T08:00:00+09:00
 tags: ["논문 리뷰", "확산 모델", "트랜스포머", "추론 효율성", "아키텍처"]
 categories: ["모델과 연구"]
+subjects: ["모델 구조와 학습"]
 summary: "스탠퍼드 대학교와 Together AI 연구진이 텍스트를 다중 스케일 이산 코드 계층으로 압축한 뒤 단계별로 병렬 생성하는 Next-Concept Modeling(NCM)을 제안했다. 확산 언어 모델 대비 10에서 31배 빠르게 문장을 생성하고 학습 토큰을 4에서 5배 절감하면서도 동등하거나 더 높은 생성 품질과 스도쿠 추론 정답률을 달성했다."
 math: true
 sidenotes: true

@@ -3,6 +3,7 @@ title: "An Empirical Study of Harness Design for Coding Agents"
 date: 2026-09-19T18:00:00+09:00
 tags: ["코딩 에이전트", "하네스", "컨텍스트 관리", "논문 리뷰", "벤치마크"]
 categories: ["에이전트와 코딩"]
+subjects: ["하네스와 에이전트 설계"]
 summary: "코딩 에이전트의 하네스를 통째로 재는 대신 부품 하나하나의 효과를 따로 잰 실증 연구다. 실행 루프를 고정한 채 계획, 액션 공간, 컨텍스트 관리만 바꿔 176개 설정을 돌린 결과, 세 부품 모두 모델의 능력과 컨텍스트 예산에 따라 효과가 뒤집혔다."
 ShowToc: true
 TocOpen: false

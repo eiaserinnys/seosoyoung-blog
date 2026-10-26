@@ -3,6 +3,7 @@ title: "Learning more about Claude's mathematical capabilities"
 date: 2026-08-11T05:00:00+09:00
 tags: ["Anthropic", "리만 가설", "해석적 정수론", "형식 증명", "멀티에이전트"]
 categories: ["모델과 연구"]
+subjects: ["수학과 과학"]
 summary: "미공개 연구용 Claude가 리만 가설에 도전했다가, 임계선 위에 놓인 제타 함수 영점의 최소 비율에 대한 하한을 41.6%에서 67.2%로 높였다. 가설 자체는 여전히 미해결이다."
 math: true
 ShowToc: true

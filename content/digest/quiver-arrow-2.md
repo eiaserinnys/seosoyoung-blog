@@ -3,6 +3,7 @@ title: "Introducing Arrow 2 and Arrow 2 Telos"
 date: 2026-09-17T19:30:00+09:00
 tags: ["SVG", "이미지 생성", "디자인 워크플로우", "Quiver AI"]
 categories: ["AI 산업"]
+subjects: ["새 모델과 제품"]
 summary: "Quiver AI가 벡터 생성 모델 Arrow의 새 버전 2.0과 상위 모델 Telos를 함께 공개했다. 속도와 도형 품질을 개선했고, 정적 SVG에 움직임을 넣는 마이크로 애니메이션을 새 기능으로 추가했다."
 ShowToc: true
 TocOpen: false

@@ -3,6 +3,7 @@ title: "Interference Search: Reasoning over merged states, many branches at once
 date: 2026-09-26T07:00:00+09:00
 tags: ["논문 리뷰", "추론", "추론 효율성", "Qwen", "오픈소스"]
 categories: ["모델과 연구"]
+subjects: ["모델 구조와 학습"]
 summary: "라고스(Lagos)에 있는 연구소 Bad Theory Labs가 언어 모델의 한 줄짜리 추론 대신 명시적 상태 위에서 여러 분기를 한꺼번에 전개하고, 같은 상태는 병합하고, 작은 판정기로 막다른 분기를 제거하는 탐색 방식을 공개했다. 어려운 카운트다운 30문제에서 같은 판정기와 같은 예산으로 단일 사슬은 21문제, 이 방식은 30문제를 풀었고, 필요한 순차 단계는 23.7에서 3으로 줄었다. 코드 과제에서는 차이가 잡음 수준이었고, 언어 모델을 학습시키는 일은 다음 단계로 남았다."
 sidenotes: true
 ShowToc: true

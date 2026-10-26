@@ -2,7 +2,8 @@
 title: "The Algorithmic Self-Portrait: Deconstructing Memory in ChatGPT"
 date: 2026-10-20T22:30:00+09:00
 tags: ["논문 리뷰", "OpenAI", "메모리", "프라이버시", "Theory-of-Mind"]
-categories: ["모델과 연구"]
+categories: ["에이전트와 코딩"]
+subjects: ["메모리와 RAG"]
 summary: "실제 ChatGPT 사용자 80명의 대화 기록에서 메모리 2,050건을 추출해 분석한 연구. 메모리의 96%는 시스템이 일방적으로 만들었고, 28%에는 개인정보가, 52%에는 심리 상태가 기록되어 있었다."
 math: true
 sidenotes: true

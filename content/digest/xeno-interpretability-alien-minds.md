@@ -3,6 +3,7 @@ title: "Xeno-Interpretability: Investigating the Alien Minds of LLMs"
 date: 2026-09-23T13:00:00+09:00
 tags: ["논문 리뷰", "해석가능성", "AI 안전", "멀티에이전트"]
 categories: ["모델과 연구"]
+subjects: ["해석가능성"]
 summary: "LLM이 인간에게 대응 개념이 없는 구분을 내부에 표현하고 계산에 쓸 수 있다는 가능성을 다룬 이론 논문이다. 저자들은 이런 표현을 제노 표현이라 부르고, 의미를 해석하기 전에 표현을 먼저 식별하고 개입해 검증하는 연구 프로그램과 그 안전 함의를 제안한다."
 math: true
 ShowToc: true

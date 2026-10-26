@@ -3,6 +3,7 @@ title: "NationalSecurityAgency/ghidra: Ghidra is a software reverse engineering 
 date: 2026-10-02T03:00:00+09:00
 tags: ["Ghidra", "리버스 엔지니어링", "오픈소스", "사이버 보안", "취약점 발견"]
 categories: ["에이전트와 코딩"]
+subjects: ["소프트웨어 엔지니어링"]
 summary: "Ghidra는 NSA 연구국이 만들어 2019년에 공개한 소프트웨어 리버스 엔지니어링 프레임워크다. 현재 배포판은 12.1.4이고, 개발 중인 12.2는 모든 클라이언트와 서버 사이의 연결에 TLS 서버 인증을 강제한다. 2019년부터 2025년까지 7년 동안 4건이던 보안 권고가 2026년에는 한 해에만 29건 공개됐고, 그중 7건의 본문은 Claude나 LLM, AI 기반 취약점 탐지 시스템을 언급한다."
 sidenotes: true
 ShowToc: true

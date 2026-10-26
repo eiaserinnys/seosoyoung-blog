@@ -3,6 +3,7 @@ title: "LINE 스탬프를 많이 만들어 보고 알게 된 리젝트 사유와
 date: 2026-09-10T02:07:00+09:00
 tags: ["LINE", "콘텐츠 심사", "이미지 생성", "일본"]
 categories: ["창작과 문화"]
+subjects: ["미디어와 콘텐츠"]
 summary: "AI로 LINE 스탬프를 대량으로 만들어 온 일본 개발자 케이스케가 자기가 받은 리젝트 사례를 공개했다. 돼지와 술, 상표와 로고, 종교, 메이지 이후의 정치 소재, 배경 투명 처리 실수가 되풀이해서 걸렸고, 판매 지역을 「일부 지역」으로 좁히는 것이 그가 쓰는 회피책이다."
 cover:
   image: "https://img.seosoyoung.eiaserinnys.me/images/kei31-line-stamp-rejections/cover.jpg"

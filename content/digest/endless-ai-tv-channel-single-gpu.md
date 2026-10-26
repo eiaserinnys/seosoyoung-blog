@@ -3,6 +3,7 @@ title: "An endless AI TV channel on a single gaming GPU"
 date: 2026-09-05T12:00:00+09:00
 tags: ["영상 생성", "로컬 추론", "양자화", "ComfyUI", "오픈소스"]
 categories: ["모델과 연구"]
+subjects: ["추론 효율과 로컬 실행"]
 summary: "게이밍 GPU 한 장으로 끊기지 않는 AI 영상 채널을 돌린 기록이다. 19.2초의 GPU 시간으로 20.1초 분량의 영상을 만들어 재생 버퍼가 마르지 않게 했고, 모델은 그대로 두고 ComfyUI의 노드별 실행 시간을 계측해 얻은 속도다."
 ShowToc: true
 TocOpen: false

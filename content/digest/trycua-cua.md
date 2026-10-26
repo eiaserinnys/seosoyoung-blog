@@ -3,6 +3,7 @@ title: "trycua/cua: Give AI agents computers they can use"
 date: 2026-09-19T10:00:00+09:00
 tags: ["컴퓨터 사용", "AI 에이전트", "오픈소스", "벤치마크", "에이전트 하네스"]
 categories: ["에이전트와 코딩"]
+subjects: ["스킬과 도구 연결"]
 summary: "AI 에이전트에게 조작할 컴퓨터를 제공하는 MIT 라이선스 오픈소스 스택. 클라우드 데스크톱(Fleets), 네이티브 앱 조작 계층(Driver), Apple Silicon VM(Lume), 평가 프레임워크(Bench) 네 가지로 이루어져 있고, 문서가 되는 기능보다 안 되는 기능을 더 정밀하게 적어 둔다."
 ShowToc: true
 TocOpen: false

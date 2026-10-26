@@ -3,6 +3,7 @@ title: "Steam averages almost 70 new games a day in 2026"
 date: 2026-08-25T22:30:00+09:00
 tags: ["Steam", "게임 산업", "인디 게임", "게임 디스커버리", "게임 미디어"]
 categories: ["게임"]
+subjects: ["Steam과 인디 마케팅"]
 summary: "SteamDB 집계로 2026년 스팀 신작은 8월 20일까지 16,115종, 하루 평균 69.5종이다. 밸브가 마련해 둔 노출 장치와, 그 규모를 사람의 편집 기준으로 통과하려는 독립 매체들의 방식을 나란히 정리한 기사."
 ShowToc: true
 TocOpen: false

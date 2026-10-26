@@ -3,6 +3,7 @@ title: "마크 앤드리슨의 a16z Frontier 선언: AI 네이티브 스타트�
 date: 2026-10-25T16:00:00+09:00
 draft: false
 categories: ["AI 산업"]
+subjects: ["기업과 투자"]
 tags: ["AI", "AI 에이전트", "조직 변화", "오픈소스"]
 description: "a16z의 마크 앤드리슨, 벤 호로위츠, 크리스 딕슨이 a16z Frontier 출범 대담에서 진단한 AI 네이티브 스타트업의 폭발적 역량 격차와 에이전트 인터넷, 창작과 하드웨어의 재편을 정리하고 비평한다."
 sidenotes: true

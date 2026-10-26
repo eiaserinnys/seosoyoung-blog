@@ -3,6 +3,7 @@ title: "three-gtvbao"
 date: 2026-09-07T15:20:00+09:00
 tags: ["three.js", "WebGPU", "TSL", "앰비언트 오클루전", "렌더링"]
 categories: ["게임"]
+subjects: ["그래픽스와 렌더링"]
 summary: "pixiv에서 일하는 개발자 norio가 three.js의 WebGPU와 WebGL2용 GT-VBAO 앰비언트 오클루전을 MIT로 공개했다. 픽셀마다 32비트 마스크에 가려진 방향을 기록하는데, 각도를 비트로 자르기 전에 누적분포로 한 번 밀어 넣어서 켜진 비트를 세는 것만으로 올바르게 가중된 가시성이 나오게 했다."
 ShowToc: true
 TocOpen: false

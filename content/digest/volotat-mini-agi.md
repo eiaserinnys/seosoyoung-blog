@@ -3,6 +3,7 @@ title: "mini-AGI: A Continually Learning Byte-Level Language Model"
 date: 2026-09-23T07:20:00+09:00
 tags: ["지속 학습", "MoE", "파국적 망각", "로컬 LLM", "오픈소스"]
 categories: ["모델과 연구"]
+subjects: ["모델 구조와 학습"]
 summary: "Alexey Borsky가 공개한 mini-AGI는 8GB VRAM GPU 한 장에서 처음부터 학습하고, 배치 1의 데이터 스트림을 읽는 동안 학습을 멈추지 않는 바이트 단위 언어 모델이다. 전문가 가중치를 디스크 파일로 저장해 필요한 것만 GPU에 적재하며, 저자의 실험에서 망각을 억제한 핵심 요인은 전문가 풀보다 트렁크 학습률을 10분의 1로 낮춘 설정이었다."
 ShowToc: true
 TocOpen: false

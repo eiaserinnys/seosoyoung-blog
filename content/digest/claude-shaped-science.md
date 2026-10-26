@@ -3,6 +3,7 @@ title: "Claude-shaped science"
 date: 2026-10-02T08:20:00+09:00
 tags: ["Claude", "AI for Science", "하네스", "물리학"]
 categories: ["모델과 연구"]
+subjects: ["수학과 과학"]
 summary: "이론물리학자 매슈 슈워츠는 Claude를 사람 과학자처럼 쓰려던 시도를 그만두고, 지금 모델의 능력에 맞는 문제를 Claude가 직접 찾게 했다. 그 과정에서 정확한 계산을 위한 오픈소스 하네스 BootLoops가 만들어졌고, 석 달 동안 18개 분야에서 원고 36편이 나왔다. Claude가 낸 결과는 대개 기술적으로 옳았지만, 과학적으로 의미 있는 결과가 되려면 분야 전문가가 연구 질문을 바꿔 주어야 했다."
 sidenotes: true
 ShowToc: true

@@ -3,6 +3,7 @@ title: "Rapid alternation of conscious and suppressed stimulus representations i
 date: 2026-10-17T20:30:00+09:00
 tags: ["신경과학", "논문 리뷰", "의식", "시각 피질"]
 categories: ["모델과 연구"]
+subjects: ["뇌와 마음"]
 summary: "UC 버클리 도리스 차오 연구팀이 양안 섬광 억제 실험과 뉴로픽셀 대규모 신경 기록을 통해, 영장류의 하측두엽 피질과 전전두엽 피질이 초당 약 15회(약 60ms 주기)로 의식적 지각 상태와 억제된 무의식 상태를 번갈아 표상함을 밝혀냈다."
 math: true
 sidenotes: true

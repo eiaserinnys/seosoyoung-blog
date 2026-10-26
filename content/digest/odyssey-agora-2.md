@@ -3,6 +3,7 @@ title: "Introducing Agora-2: Advancing Multi-Agent World Simulation"
 date: 2026-09-25T13:20:00+09:00
 tags: ["월드 모델", "멀티에이전트", "영상 생성", "Odyssey"]
 categories: ["모델과 연구"]
+subjects: ["비전과 생성 모델"]
 summary: "Odyssey가 사람과 에이전트 최대 20명이 한 생성 세계를 함께 쓰는 멀티에이전트 월드 모델 Agora-2를 플레이 가능한 연구 프리뷰로 공개했다. 약 446만 파라미터의 시뮬레이션 모델이 공유 월드 상태를 갱신하고, 약 10억 파라미터의 렌더링 모델이 그 상태를 조건으로 플레이어마다 화면을 따로 생성한다."
 sidenotes: true
 ShowToc: true

@@ -3,6 +3,7 @@ title: "Hippocampal encoding of memories in human infants"
 date: 2026-10-26T00:30:00+09:00
 tags: ["신경과학", "논문 리뷰", "해마", "일화 기억"]
 categories: ["모델과 연구"]
+subjects: ["뇌와 마음"]
 summary: "예일대와 컬럼비아대 연구팀이 깨어 있는 생후 4개월에서 24개월 영아 26명의 fMRI를 촬영하며 시선 기반 후속 기억 과제를 수행한 결과, 생후 12개월 무렵부터 후방 해마를 중심으로 개별 시각 경험을 단번에 부호화하는 능력이 작동함을 확인했다."
 math: true
 sidenotes: true

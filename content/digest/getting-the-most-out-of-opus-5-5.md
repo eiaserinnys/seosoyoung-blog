@@ -3,6 +3,7 @@ title: "Getting the most out of Opus 5.5 in Claude and Claude Code"
 date: 2026-09-23T13:00:00+09:00
 tags: ["Claude Code", "Claude", "프롬프트 엔지니어링", "코딩 에이전트"]
 categories: ["에이전트와 코딩"]
+subjects: ["코딩 에이전트 활용"]
 summary: "Addy Osmani가 claude.dev 블로그에 올린 Opus 5.5 사용 가이드. 완료 조건까지 적은 한 번의 요청, CLAUDE.md에 적는 멈춤 규칙, 서브에이전트 분배, 보고서를 읽는 순서, 안전장치 플래그로 모델이 바뀌었을 때의 대처까지 Claude 앱과 Claude Code의 운용법을 정리했다."
 ShowToc: true
 TocOpen: false

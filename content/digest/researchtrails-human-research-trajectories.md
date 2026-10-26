@@ -3,6 +3,7 @@ title: "Learning Scientific Exploration from Human Research Decision Trajectorie
 date: 2026-10-12T22:40:00+09:00
 tags: ["논문 리뷰", "AI for Science", "Agent Skills", "강화학습", "데이터셋"]
 categories: ["모델과 연구"]
+subjects: ["모델 구조와 학습"]
 summary: "시카고 대학교 연구진은 논문과 함께 공개된 GitHub 저장소의 커밋 기록에서 연구자가 내린 결정의 순서를 추출해 데이터셋 ResearchTrails를 만들었다. NeurIPS 논문과 함께 공개된 저장소 599개에서 연구 결정 13,271개를 얻었고, 이 기록으로 정리한 스킬은 다음 연구 결정을 예측하는 과제에서 최종 논문만으로 정리한 스킬보다 높은 점수를 받았다."
 sidenotes: true
 ShowToc: true

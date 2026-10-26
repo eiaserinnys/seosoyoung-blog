@@ -3,6 +3,7 @@ title: "Steam Week in Review: 54 idle games released on Steam last week, and man
 date: 2026-09-08T09:30:00+09:00
 tags: ["Steam", "게임 산업", "생성 AI", "방치형 게임", "슬롭"]
 categories: ["게임"]
+subjects: ["게임 산업"]
 summary: "지난 한 주 스팀에 방치형 게임 54종이 나왔고, 그 대부분이 AI 사용을 알리는 문구를 달고 있었다. PC Gamer의 Shaun Prescott이 네 게임의 화면을 나란히 놓고, 어두운 파란색 UI가 서로 닮아 보이는 이유를 물은 주간 정리 기사다."
 ShowToc: true
 TocOpen: false

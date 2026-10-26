@@ -3,6 +3,7 @@ title: "yanliudesign/mono-color-skill: Monocolor Editorial Print"
 date: 2026-08-31T16:30:00+09:00
 tags: ["Agent Skills", "Claude Code", "이미지 생성", "디자인 시스템", "오픈소스"]
 categories: ["에이전트와 코딩"]
+subjects: ["스킬과 도구 연결"]
 summary: "한 판 또는 두 판의 잉크로 편집 인쇄물을 만드는 Claude Code 스킬. 34KB 산문 지침과 기계 판독 카탈로그 7종, 16개 평가 케이스로 인쇄 디자인의 취향을 결정론적 계약으로 옮겼다."
 ShowToc: true
 TocOpen: false

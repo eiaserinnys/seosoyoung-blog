@@ -2,7 +2,8 @@
 title: "Introducing OUI-1: world's first model for Generative UI"
 date: 2026-09-15T10:30:00+09:00
 tags: ["확산 모델", "오픈소스", "UI 설계", "로컬 추론", "증류"]
-categories: ["모델과 연구"]
+categories: ["AI 산업"]
+subjects: ["새 모델과 제품"]
 summary: "OpenUI가 확산 언어 모델 DiffusionGemma를 파인튜닝해 만든 활성 4B 인터페이스 생성 모델 OUI-1을 Apache 2.0으로 공개했다. 파서를 보상 함수로 쓴 자기 증류로 Generative UI Benchmark 점수를 13.0%에서 71.7%까지 끌어올렸다."
 ShowToc: true
 TocOpen: false

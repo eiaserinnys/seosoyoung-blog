@@ -2,7 +2,8 @@
 title: "Introducing System One Models & Jev"
 date: 2026-09-16T17:20:00+09:00
 tags: ["TypeSafe", "Jev", "LLM", "벤치마크", "추론"]
-categories: ["모델과 연구"]
+categories: ["AI 산업"]
+subjects: ["새 모델과 제품"]
 summary: "Jev는 글을 쓰는 대신 선택지와 확률을 반환하는 판단용 모델이다. 무엇을 자동화할 수 있는지, API 사용 방법과 입력 100만 토큰당 0.042달러의 비용, ‘환각 0%’의 의미를 살펴본다."
 ShowToc: true
 TocOpen: false

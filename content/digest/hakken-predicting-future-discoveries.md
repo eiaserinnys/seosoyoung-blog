@@ -3,6 +3,7 @@ title: "Hakken: Predicting future discoveries to fill the gaps in today's knowle
 date: 2026-10-21T19:10:00+09:00
 tags: ["논문 리뷰", "LLM", "해석가능성", "지식 그래프", "분자생물학"]
 categories: ["모델과 연구"]
+subjects: ["수학과 과학"]
 summary: "SonyAI와 시스템생물학연구소 연구진이 시계열 지식 그래프와 LLM을 결합해 아직 학계에 보고되지 않은 과학 개념 간 관계를 예측하는 시스템 Hakken을 공개했다. 예측 모델 THiGERLLM과 설명 프레임워크 PHELInE으로 노화 관련 가설 154만 건을 산출하고 인간 세포주 실험을 수행해, TP53과 BAMBI, RAF1과 TNF 사이의 미보고 생물학적 상호작용 두 건을 실험으로 입증했다."
 math: true
 sidenotes: true

@@ -3,6 +3,7 @@ title: "Anti-Patterns in Software Blogging"
 date: 2026-10-08T10:50:00+09:00
 tags: ["글쓰기", "기술 블로그"]
 categories: ["창작과 문화"]
+subjects: ["글쓰기와 인문"]
 summary: "Michael Lynch가 기술 블로그를 처음 쓰는 개발자들이 반복하는 실수를 정리했다. 읽을 이유를 늦게 밝히는 도입부, 독자의 지식을 과대평가하는 설명, 링크와 전편에 대한 의존, 과도한 격식과 읽기 불편한 화면을 사례로 설명한다."
 sidenotes: true
 ShowToc: true

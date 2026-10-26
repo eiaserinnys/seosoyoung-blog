@@ -3,6 +3,7 @@ title: "次世代 NPR の輪郭線表現に迫る！リアルタイムベクト�
 date: 2026-10-07T22:30:00+09:00
 tags: ["NPR", "Unity", "렌더링"]
 categories: ["게임"]
+subjects: ["그래픽스와 렌더링"]
 summary: "StrokeGen은 GPU에서 3D 메쉬의 윤곽선을 연속된 점열로 생성해 선폭, 브러시와 움직임에 따른 표현을 조절한다. CEDEC 2024 발표는 알고리즘과 Unity 확장 구현을 설명하고, 실용화의 핵심 과제로 프레임 사이의 안정성을 제시한다."
 sidenotes: true
 ShowToc: true

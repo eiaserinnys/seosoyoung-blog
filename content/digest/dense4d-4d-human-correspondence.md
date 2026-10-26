@@ -3,6 +3,7 @@ title: "Dense4D: Pixel-Level 4D Human Correspondence"
 date: 2026-10-17T23:00:00+09:00
 tags: ["논문 리뷰", "컴퓨터 비전", "3D 생성", "벤치마크"]
 categories: ["모델과 연구"]
+subjects: ["비전과 생성 모델"]
 summary: "Imperial College London의 Rıza Alp Güler가 사전 정의된 신체 템플릿이나 카메라 포즈 추정 없이 단안 RGB 이미지들에서 신체, 의복, 머리카락의 픽셀 단위 4D 대응 관계와 3D 궤적을 한 번의 순전파로 복원하는 Dense4D를 공개했다. 인물 중심 가상 카메라 크롭에서 기준 시점의 3D 표면 좌표를 예측하는 인간 포인트 맵(HPM)을 도입해 Panoptic Studio 3D 추적과 4D-DRESS 비가시 영역 위치 추정에서 기존 비교 모델들보다 성능이 크게 높았다."
 math: true
 sidenotes: true
