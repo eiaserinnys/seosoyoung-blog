@@ -3,6 +3,7 @@ title: "Computer Science Achievement and Writing Skills Predict Vibe Coding Prof
 date: 2026-09-06T10:00:00+09:00
 tags: ["바이브 코딩", "논문 리뷰", "글쓰기", "프롬프트 엔지니어링", "HCI"]
 categories: ["에이전트와 코딩"]
+subjects: ["바이브 코딩과 생산성"]
 summary: "ETH 취리히 연구진이 대학생 100명에게 코드를 감춘 채 자연어로만 앱을 만들게 했다. 컴퓨터과학 성취도와 작문 능력이 모두 성과를 예측했지만, 일반 인지 능력을 통제하자 컴퓨터과학 쪽만 살아남았다."
 ShowToc: true
 TocOpen: false

@@ -3,6 +3,7 @@ title: "Recurrent Looped Transformer"
 date: 2026-09-14T06:20:00+09:00
 tags: ["아키텍처", "트랜스포머", "강화학습", "KV 캐시", "논문 리뷰"]
 categories: ["모델과 연구"]
+subjects: ["모델 구조와 학습"]
 summary: "인과적 인코더가 전역 메모리를 만들고, 재귀 디코더가 프롬프트와 응답의 모든 토큰을 지나며 하나의 상태를 이어간다. 학습과 샘플링과 강화학습 리플레이가 같은 전이를 쓰도록 설계했고, 측정된 성능 수치는 아직 한 줄도 없다."
 math: true
 ShowToc: true

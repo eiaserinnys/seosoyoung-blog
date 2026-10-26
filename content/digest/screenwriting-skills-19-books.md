@@ -3,6 +3,7 @@ title: "jtydhr88/screenwriting-skills: 작법서 19권에서 증류한 각본 �
 date: 2026-09-11T06:50:00+09:00
 tags: ["Agent Skills", "Claude Code", "극작법", "오픈소스"]
 categories: ["에이전트와 코딩"]
+subjects: ["스킬과 도구 연결"]
 summary: "토론토의 ComfyUI 노드 개발자 Terry Jia가 각본 작법서 19권과 체호프 희곡 전집, 오즈 야스지로 시나리오집을 Claude Code 스킬 13종으로 증류해 공개했다. 실행 코드는 한 줄도 없고 마크다운 25개가 전부이며, 공개 닷새 만에 별 536개가 붙었다."
 ShowToc: true
 TocOpen: false

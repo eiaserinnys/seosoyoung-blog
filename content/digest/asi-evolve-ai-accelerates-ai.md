@@ -2,7 +2,8 @@
 title: "ASI-Evolve: AI Accelerates AI"
 date: 2026-05-01T12:00:00+09:00
 tags: ["AI-for-AI", "evolutionary-search", "agentic-framework", "linear-attention", "RL-algorithm", "data-curation"]
-categories: ["모델과 연구"]
+categories: ["에이전트와 코딩"]
+subjects: ["하네스와 에이전트 설계"]
 summary: "AI가 자기 자신의 개발을 가속하는 에이전틱 프레임워크. 아키텍처·데이터·학습 알고리즘 세 축에서 인간 설계를 초과하는 결과를 달성했다."
 ShowToc: true
 TocOpen: false

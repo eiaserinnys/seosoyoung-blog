@@ -3,6 +3,7 @@ title: "How we made claude.ai 3x faster in two weeks"
 date: 2026-09-26T06:40:00+09:00
 tags: ["Anthropic", "코딩 에이전트", "루프 엔지니어링", "프론트엔드", "성능 최적화"]
 categories: ["에이전트와 코딩"]
+subjects: ["코딩 에이전트 활용"]
 summary: "Anthropic 팀이 2026년 8월 2주간의 스프린트에서 claude.ai와 Claude 데스크톱 앱의 핵심 사용자 여정 13개 측정치를 평균 3.1배 빠르게 만든 과정을 공개했다. Claude가 병목 탐색, 벤치마크 제작, 수정, 배포 감시를 맡고 사람이 목표와 절충, 승인을 맡아 3천 건 이상의 변경을 장애와 롤백 없이 머지했다. 팀은 측정할 수 있는 것은 무엇이든 Claude가 개선할 수 있다는 교훈을 얻었다."
 sidenotes: true
 ShowToc: true

@@ -3,6 +3,7 @@ title: "Meet Stripe's Knowledge AI Platform"
 date: 2026-09-24T13:00:00+09:00
 tags: ["Stripe", "AI 에이전트", "하네스", "지식 노동", "AI 도입"]
 categories: ["에이전트와 코딩"]
+subjects: ["하네스와 에이전트 설계"]
 summary: "Stripe가 비개발 직군을 위한 사내 AI 에이전트 플랫폼 Kai의 설계와 성과를 공개했다. Kai는 출시 두 주 만에 직원 대부분이 쓰기 시작했고, 지금은 직원의 83%가 매주 쓴다. Stripe는 인터페이스에 구애받지 않는 API, 도메인 팀이 쓰는 Agent Studio, 제품용 에이전트와 공유하는 실행 환경의 세 계층으로 Kai를 설계했다."
 ShowToc: true
 TocOpen: false

@@ -3,6 +3,7 @@ title: "JP Market Vis — 日本の上場企業マップ"
 date: 2026-09-23T07:20:00+09:00
 tags: ["일본", "시각화", "오픈 데이터", "기업 공시"]
 categories: ["경제와 사회"]
+subjects: ["경제와 투자"]
 summary: "일본 개발자 mattya_monaca가 상장사 3,812곳의 자본, 거래, 제휴, 임원 겸임, 그룹 관계를 출처와 함께 탐색하는 정적 웹 앱을 공개했다. 관계 대부분은 EDINET 유가증권보고서에서 추출했고, 작성자는 EDINET 이외 출처를 늘리려던 목표를 달성하지 못했다는 신뢰성 감사 결과도 함께 공개했다."
 ShowToc: true
 TocOpen: false

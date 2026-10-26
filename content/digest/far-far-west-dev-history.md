@@ -3,6 +3,7 @@ title: "Far Far West, 세 번의 프로토타입에서 얼리 액세스까지"
 date: 2026-09-12T12:30:00+09:00
 tags: ["Steam", "인디 게임", "게임 개발", "Unreal Engine"]
 categories: ["게임"]
+subjects: ["게임 개발과 디자인"]
 summary: "프랑스 리옹의 8인 스튜디오 Evil Raptor는 3D 플랫포머 두 편을 만든 뒤 처음으로 협동 FPS 「Far Far West」를 만들었다. 개발자 인터뷰, Steam 공지 50건, 공식 Bluesky 게시물, Epic의 Inside Unreal 방송을 바탕으로 그 개발 과정을 다시 이었다. 타워 디펜스와 선형 미션을 거쳐 지금의 반복 플레이 구조에 이른 경위, 로봇과 떠 있는 손을 택한 이유, 세 차례의 공개 테스트, 출시 첫 주의 네트워크 문제, 이후 넉 달의 정비를 날짜순으로 정리했다."
 ShowToc: true
 TocOpen: false

@@ -3,6 +3,7 @@ title: "JEV-as-a-Judge: Accept When Confident, Escalate When Unsure"
 date: 2026-09-25T21:30:00+09:00
 tags: ["논문 리뷰", "LLM 평가", "TypeSafe", "Jev", "토큰 비용"]
 categories: ["모델과 연구"]
+subjects: ["평가와 벤치마크"]
 summary: "카네기멜런대 연구진이 판정과 레이블 확률만 반환하는 TypeSafe의 JEV를 LLM 판정자로 쓰고, 생성형 판정자와 보상 모델 16종과 비교했다. 일반적인 선호 판정과 근거 문서 기반 사실성 판정에서 JEV는 GPT-6 Astra와 3%포인트 이내의 정확도를 GPT-6 비용의 0.36%로 냈다. 확신할 때만 JEV 판정을 채택하는 캐스케이드는 GPT-6 정확도의 99%를 비용 57%로 유지했다."
 sidenotes: true
 ShowToc: true

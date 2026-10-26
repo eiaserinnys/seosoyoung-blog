@@ -3,6 +3,7 @@ title: "Noise: Speedrun for pretraining without backpropagation"
 date: 2026-10-23T07:45:00+09:00
 tags: ["논문 리뷰", "학습 역학", "트랜스포머", "벤치마크", "오픈소스"]
 categories: ["모델과 연구"]
+subjects: ["모델 구조와 학습"]
 summary: "딥러닝 연구소 Q Labs가 역전파와 자동 미분을 일절 사용하지 않고 3,770만 파라미터 GPT를 사전학습하는 스피드런 벤치마크 Noise를 공개했다. 자체 알고리즘 Dust는 활성화값에 토큰별 노이즈를 주입하며 검증 손실 4.167과 학습 시간 1.76시간을 기록했다. 이후 오픈소스 커뮤니티가 열흘 만에 목표 손실 4.2 도달 시간을 1.6초로 4,010배 단축했고, 1에폭 최저 검증 손실도 3.676까지 낮춰 Adam 역전파 기준선인 3.769보다 우수한 성적을 기록했다."
 math: true
 sidenotes: true

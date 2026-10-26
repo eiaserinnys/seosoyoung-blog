@@ -3,6 +3,7 @@ title: "AI models may be capable of self-replicating without access to a datacen
 date: 2026-10-13T08:00:00+09:00
 tags: ["Anthropic", "에이전트", "AI 안전", "벤치마크"]
 categories: ["모델과 연구"]
+subjects: ["안전과 정렬"]
 summary: "Anthropic은 TV 박스 15대로 26B 모델을 실행하고, 소형 모델의 추론 환경 준비와 복제 능력을 평가했다. 전체 과정에 성공한 모델은 아직 기기에서 직접 실행할 만큼 작지 않다. 저자들은 성능 추세를 근거로 2026년 말이면 소형 모델도 이 수준에 도달할 수 있다고 예상했다."
 sidenotes: true
 ShowToc: true

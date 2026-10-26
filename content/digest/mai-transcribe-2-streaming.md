@@ -2,7 +2,8 @@
 title: "Our first streaming transcription model debuts at no. 1 on Artificial Analysis"
 date: 2026-10-03T01:30:00+09:00
 tags: ["Microsoft", "음성 AI", "음성 인식", "TTS", "벤치마크"]
-categories: ["모델과 연구"]
+categories: ["AI 산업"]
+subjects: ["새 모델과 제품"]
 summary: "Microsoft AI가 첫 스트리밍 음성 인식 모델 MAI-Transcribe-2-Streaming과 음성 합성 모델 MAI-Voice-2.1, MAI-Voice-2.1-Flash를 공개했다. 전사 모델은 Artificial Analysis 스트리밍 순위표의 38개 모델 중 오류율 2.51%로 1위이고, 발화가 끝난 뒤 0.13초 만에 최종 전사를 내놓는다."
 sidenotes: true
 ShowToc: true

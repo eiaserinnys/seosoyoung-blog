@@ -3,6 +3,7 @@ title: "Conditional Memory via Scalable Lookup: A New Axis of Sparsity for Large
 date: 2026-09-10T22:30:00+09:00
 tags: ["논문 리뷰", "DeepSeek", "아키텍처", "스케일링 법칙", "메모리"]
 categories: ["모델과 연구"]
+subjects: ["모델 구조와 학습"]
 summary: "트랜스포머에는 지식을 찾아오는 전용 연산이 없어서, 고정된 사전 항목 하나를 꺼낼 때도 여러 층을 써서 계산으로 다시 만들어 낸다. DeepSeek과 베이징대 연구진은 그 자리에 N그램 임베딩 표를 되살려 넣고, MoE 전문가와 메모리 사이에 희소 용량을 어떻게 나눌지 재어 보았다."
 ShowToc: true
 TocOpen: false

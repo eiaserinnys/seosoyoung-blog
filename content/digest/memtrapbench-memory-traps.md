@@ -3,6 +3,7 @@ title: "MemTrapBench: Benchmarking Cognitive Traps in LLM Memory Use"
 date: 2026-08-30T18:40:00+09:00
 tags: ["메모리", "벤치마크", "논문 리뷰", "컨텍스트 관리"]
 categories: ["모델과 연구"]
+subjects: ["평가와 벤치마크"]
 summary: "기억이 정확하게 저장되고 정확하게 검색되어도 모델의 추론을 망가뜨릴 수 있다. 저장·검색이 아니라 검색된 기억이 현재 과제에 미치는 영향을 재는 벤치마크에서, 다섯 개 메모리 프레임워크가 전부 무기억 기준선보다 낮은 점수를 받았다."
 ShowToc: true
 TocOpen: false

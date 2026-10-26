@@ -3,6 +3,7 @@ title: "vectorize-io/hindsight: Hindsight: Agent Memory That Learns"
 date: 2026-09-25T00:20:00+09:00
 tags: ["메모리", "AI 에이전트", "RAG", "오픈소스"]
 categories: ["에이전트와 코딩"]
+subjects: ["메모리와 RAG"]
 summary: "Vectorize.io가 MIT 라이선스로 공개한 에이전트 메모리 시스템 Hindsight의 README와 문서를 정리했다. 저장한 사실을 근거가 딸린 관측과 멘털 모델로 통합해 에이전트가 경험에서 배우도록 설계했고, LongMemEval에서 94.6%를 보고한다."
 sidenotes: true
 ShowToc: true

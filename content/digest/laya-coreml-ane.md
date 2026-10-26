@@ -3,6 +3,7 @@ title: "Laya-CoreML: Open-weight typed decisions on Apple Silicon"
 date: 2026-09-20T12:00:00+09:00
 tags: ["온디바이스 AI", "Apple Silicon", "추론 가속", "벤치마크", "오픈소스"]
 categories: ["모델과 연구"]
+subjects: ["추론 효율과 로컬 실행"]
 summary: "비자기회귀 결정 모델 Laya를 애플 Core ML과 Neural Engine으로 옮긴 독립 포팅 저장소다. M3 Max에서 짧은 결정 하나가 4.98ms, 컴파일한 MLX FP16 대비 속도 1.39배와 결정당 에너지 2.78배를 기록했다. 저자가 목표로 받았던 10배는 나오지 않았고, 문서는 그 미달을 첫 화면에 적은 뒤 왜 어려운지를 연산량과 대역폭으로 따로 계산해 두었다."
 ShowToc: true
 TocOpen: false

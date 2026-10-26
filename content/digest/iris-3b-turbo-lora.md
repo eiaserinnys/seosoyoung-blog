@@ -3,6 +3,7 @@ title: "Iris-3B의 100스텝을 4스텝으로 줄인 Turbo LoRA"
 date: 2026-10-12T13:30:00+09:00
 tags: ["이미지 생성", "확산 모델", "LoRA", "추론 효율성", "오픈소스"]
 categories: ["모델과 연구"]
+subjects: ["비전과 생성 모델"]
 summary: "Speridlabs가 공개한 30억 파라미터 이미지 생성 모델 Iris-3B는 VAE 없이 픽셀을 직접 만든다. 대신 기본 설정에서는 1024×1024 이미지 한 장에 포워드 패스가 약 200번 필요했다. 일본 개발자 pentacoxian은 증류 기법 DMD2로 CFG의 효과까지 학습한 4스텝 LoRA를 만들어 생성 시간을 RTX 5090에서 0.68초, M3 Max에서 약 11초로 줄였다. 공개 하루 동안에는 사용자들이 RTX 5090, 아이폰, 스냅드래곤 NPU에서 실행한 결과를 올렸다."
 sidenotes: true
 ShowToc: true

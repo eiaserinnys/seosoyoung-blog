@@ -3,6 +3,7 @@ title: "Inverse Kinematics and Foot Locking"
 date: 2026-09-13T00:00:00+09:00
 tags: ["캐릭터 애니메이션", "게임 개발", "역운동학", "모션 캡처"]
 categories: ["게임"]
+subjects: ["게임 개발과 디자인"]
 summary: "애니메이션 프로그래머 Daniel Holden이 발 미끄러짐을 없애는 레시피 네 가지를 코드와 함께 공개했다. 저자는 뒤꿈치보다 발끝을 잠그라고 하며, 발 미끄러짐을 속도 오차의 문제로 설명한다."
 ShowToc: true
 TocOpen: false

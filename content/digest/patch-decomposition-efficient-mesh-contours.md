@@ -3,6 +3,7 @@ title: "Patch Decomposition for Efficient Mesh Contours Extraction"
 date: 2026-10-07T22:30:00+09:00
 tags: ["렌더링", "GPU", "메쉬", "논문 리뷰"]
 categories: ["게임"]
+subjects: ["그래픽스와 렌더링"]
 summary: "메쉬 모서리를 윤곽선 추출에 맞춘 패치로 구성하고, 윤곽선이 없는 패치를 먼저 제외한다. 계층 없는 가속 구조로 GPU 추출 속도를 최대 5.3배 높였으며, 전처리 비용과 비강체 애니메이션의 제약도 보고했다."
 math: true
 sidenotes: true

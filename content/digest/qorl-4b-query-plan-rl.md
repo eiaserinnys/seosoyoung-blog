@@ -3,6 +3,7 @@ title: "Training a 4B model to produce 81% faster query plans than Postgres"
 date: 2026-09-17T09:30:00+09:00
 tags: ["강화학습", "모델 증류", "LoRA", "PostgreSQL", "소형 언어 모델"]
 categories: ["모델과 연구"]
+subjects: ["모델 구조와 학습"]
 summary: "4B 오픈웨이트 모델을 오프폴리시 증류와 에이전틱 RL로 후학습시켜 Postgres의 기본 쿼리 플랜보다 빠른 플랜을 만들게 한 개인 실험 기록이다. 조인 순서 벤치마크 113개 질의에서 기하평균 1.81배 speedup을 얻었고, 들어간 돈은 모두 1,200달러였다."
 ShowToc: true
 TocOpen: false

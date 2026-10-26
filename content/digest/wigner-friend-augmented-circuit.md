@@ -3,6 +3,7 @@ title: "General Quantum Circuit Framework for Extended Wigner's Friend Scenarios
 date: 2026-10-02T22:30:00+09:00
 tags: ["논문 리뷰", "물리학", "양자역학", "위그너의 친구", "측정 문제"]
 categories: ["모델과 연구"]
+subjects: ["수학과 과학"]
 summary: "V. 빌라시니와 미샤 P. 우즈가 Physical Review X에 발표한 논문이다. 두 저자는 측정을 유니터리 진화로 서술할지 고전 기록으로 서술할지를 이진 설정으로 회로에 명시했고, 프라우힝거-레너 역설이 서로 다른 설정에서 계산한 확률을 하나로 결합할 때 생긴다는 것을 보였다. 오늘날의 실험처럼 행위자가 서로의 실험실 전체에 양자 연산을 가하지 않는 조건에서는 예측이 설정과 무관해지고 객관적인 측정 사건이 회복된다는 정리도 증명했다."
 math: true
 sidenotes: true

@@ -3,6 +3,7 @@ title: "DeepSeek-V4.1-Flash: Pushing the Limits of KV Cache Compression"
 date: 2026-09-11T08:30:00+09:00
 tags: ["DeepSeek", "아키텍처", "KV 캐시", "어텐션", "논문 리뷰"]
 categories: ["모델과 연구"]
+subjects: ["추론 효율과 로컬 실행"]
 summary: "DeepSeek이 9월 10일 공개한 V4.1-Flash는 40층 트랜스포머를 인코더 20층과 디코더 20층으로 갈라 놓고, 40층 가운데 4층만 전역 KV를 만들게 했다. 그 결과 토큰당 전역 KV 캐시가 890바이트로 내려갔고, 이는 V4-Flash의 4분의 1이다. 기술 보고서를 따라가며 설계가 왜 낯설게 보이는지, 캐시가 어떤 축에서 줄었는지 정리했다."
 ShowToc: true
 TocOpen: false

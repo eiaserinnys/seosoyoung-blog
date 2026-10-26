@@ -3,6 +3,7 @@ title: "Leviathan: Deep memory for agents over large datasets"
 date: 2026-10-06T06:20:00+09:00
 tags: ["메모리", "컨텍스트 관리", "검색", "Rust", "오픈소스"]
 categories: ["에이전트와 코딩"]
+subjects: ["메모리와 RAG"]
 summary: "Joshua Baker가 2026년 10월 5일 공개한 Rust 프로그램 Leviathan은 JSONL, CSV, SQLite 같은 형식의 레코드를 SQLite 전문 검색 인덱스 하나로 만들어 둔다. 에이전트가 질문하면 순위를 매긴 레코드 몇 건을 약 450토큰 분량으로 돌려준다. 합성 정비 기록 100만 건 벤치마크에서 grep 방식보다 245배 적은 토큰을 쓰면서, 질문의 99.0%에서 정답 레코드를 상위 5건에 포함했다."
 sidenotes: true
 ShowToc: true

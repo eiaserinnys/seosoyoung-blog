@@ -3,6 +3,7 @@ title: "4DAnyone: Create Anyone in 4D from a Casual Monocular Video"
 date: 2026-08-31T18:00:00+09:00
 tags: ["3D 재구성", "영상 생성", "확산 모델", "가우시안 스플랫", "논문 리뷰"]
 categories: ["모델과 연구"]
+subjects: ["비전과 생성 모델"]
 summary: "휴대폰으로 대충 찍은 단안 영상 한 편에서 자유 시점 4D 인간을 복원한다. 시점 수를 수십 개로 늘리면 일관성이 무너지던 원인을 어텐션 컨텍스트 용량 한계로 규명하고, 참조 컨텍스트 압축과 타깃 그룹 회전이라는 두 설계로 푼다."
 math: true
 ShowToc: true

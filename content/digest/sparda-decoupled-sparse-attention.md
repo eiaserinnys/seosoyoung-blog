@@ -3,6 +3,7 @@ title: "SparDA: Sparse Decoupled Attention for Efficient Long-Context LLM Infere
 date: 2026-09-07T07:00:00+09:00
 tags: ["어텐션", "KV 캐시", "추론 효율성", "논문 리뷰", "NVIDIA"]
 categories: ["모델과 연구"]
+subjects: ["추론 효율과 로컬 실행"]
 summary: "희소 어텐션은 어떤 블록을 읽을지 고르는 선택 단계를 어텐션 질의에 묶어 두었다. SparDA는 층마다 Forecast라는 네 번째 투영을 하나 더 둔다. Forecast가 다음 층이 읽을 블록을 한 층 앞서 예측하고, 그 사이에 CPU에서 GPU로 KV 캐시를 미리 당겨 온다."
 ShowToc: true
 TocOpen: false

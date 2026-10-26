@@ -2,7 +2,8 @@
 title: "LongCat-Video"
 date: 2026-10-04T15:00:00+09:00
 tags: ["영상 생성", "확산 모델", "강화학습", "오픈소스"]
-categories: ["모델과 연구"]
+categories: ["AI 산업"]
+subjects: ["새 모델과 제품"]
 summary: "메이퇀의 136억 매개변수 영상 생성 모델. 텍스트, 이미지, 영상 이어 만들기를 하나의 모델로 처리하고, 단계별 생성과 희소 어텐션으로 720p 영상의 추론 시간을 줄였다."
 source: "https://meituan-longcat.github.io/LongCat-Video/"
 sidenotes: true

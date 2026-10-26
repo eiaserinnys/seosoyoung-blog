@@ -3,6 +3,7 @@ title: "Can you prove AI ROI in Software Engineering? — Yegor Denisov-Blanch (
 date: 2026-04-28T20:15:00+09:00
 tags: ["AI", "코딩 에이전트"]
 categories: ["에이전트와 코딩"]
+subjects: ["바이브 코딩과 생산성"]
 summary: "Can you prove AI ROI in Software Engineering? — Yegor Denisov-Blanch (Stanford)"
 ShowToc: true
 TocOpen: false

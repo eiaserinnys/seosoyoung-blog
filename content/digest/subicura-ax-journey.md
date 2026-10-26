@@ -2,7 +2,8 @@
 title: "개발 자동화에서 조직 AX까지"
 date: 2026-07-16T22:00:00+09:00
 tags: ["AI", "AX", "조직 변화", "바이브 코딩", "Claude Code", "컨텍스트 관리"]
-categories: ["에이전트와 코딩"]
+categories: ["경제와 사회"]
+subjects: ["조직과 AI 도입"]
 summary: "\"배포해줘~\" 한마디로 보안 점검 후 사내망에 배포되는 시스템을 완성한 subicura(조성일)가 회고한, 퍼플아이오의 1년간 전사 AX 여정. 세 번의 실험이 공통으로 가리킨 결론은 AI 성능이 아니라 요구사항 정의와 조직의 맥락(Context)이었다."
 cover:
   image: "https://img.seosoyoung.eiaserinnys.me/images/subicura-ax-journey/koco-main.png"

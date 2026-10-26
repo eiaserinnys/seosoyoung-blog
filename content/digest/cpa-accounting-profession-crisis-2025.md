@@ -3,6 +3,7 @@ title: "The Accounting Profession Is in Crisis"
 date: 2026-04-30T22:10:00+09:00
 tags: ["회계", "파이프라인", "자격제도", "CPA"]
 categories: ["경제와 사회"]
+subjects: ["일자리와 노동시장"]
 summary: "미국 CPA 시험 첫 응시자가 5년 만에 33% 감소했다. 150시간 교육 요건이 품질은 높이지 못한 채 진입만 차단하고 있다는 진단과, 자격 경로를 유연화하자는 제안."
 ShowToc: true
 TocOpen: false

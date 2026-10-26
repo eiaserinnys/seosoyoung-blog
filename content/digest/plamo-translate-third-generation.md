@@ -3,6 +3,7 @@ title: "PLaMo翻訳 | 世界最高レベルの日本語性能のAI翻訳サー�
 date: 2026-10-07T16:30:00+09:00
 tags: ["번역", "일본", "벤치마크", "음성 AI"]
 categories: ["AI 산업"]
+subjects: ["새 모델과 제품"]
 summary: "Preferred Networks가 PLaMo 번역을 3세대 모델로 갱신했다. 텍스트 번역은 53개 언어, 회의 번역은 15개 언어를 지원하고, 자체 평가에서 주요 번역 모델과 비슷한 품질을 훨씬 적은 계산 비용으로 구현했다고 발표했다."
 source_url: "https://translate.preferredai.jp/"
 sidenotes: true

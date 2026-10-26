@@ -2,7 +2,8 @@
 title: "Modeling Earth-Scale Human-Like Societies with One Billion Agents"
 date: 2026-08-09T14:30:00+09:00
 tags: ["LLM", "멀티에이전트", "사회 시뮬레이션", "지식 증류", "논문 리뷰"]
-categories: ["모델과 연구"]
+categories: ["에이전트와 코딩"]
+subjects: ["하네스와 에이전트 설계"]
 summary: "LLM 기반 사회 시뮬레이션을 10억 에이전트 규모로 끌어올린 Light Society 프레임워크. 완전 LLM과 증류된 대체 모델을 섞는 mixture-of-models 엔진으로 추론 비용을 낮추고, 신뢰 게임과 의견 확산 실험으로 인구 규모가 커질수록 인구통계 효과가 선명해진다는 것을 보인다."
 math: true
 ShowToc: true

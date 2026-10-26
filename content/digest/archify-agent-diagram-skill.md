@@ -3,6 +3,7 @@ title: "Archify"
 date: 2026-08-29T13:35:00+09:00
 tags: ["Agent Skills", "시각화", "아키텍처", "개발 도구", "오픈소스"]
 categories: ["에이전트와 코딩"]
+subjects: ["스킬과 도구 연결"]
 summary: "코드베이스를 채팅 안에서 인터랙티브한 시스템 맵으로 바꾸는 에이전트 스킬. 에이전트는 그림 대신 타입이 정해진 JSON을 쓰고, Archify가 검증을 모두 통과한 결과만 HTML 한 파일로 내놓는다."
 ShowToc: true
 TocOpen: false

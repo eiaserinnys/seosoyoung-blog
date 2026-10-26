@@ -2,7 +2,8 @@
 title: "LiteReality-Agent: 상호작용 가능한 3D 실내 씬 재구성 에이전트"
 date: 2026-08-09T13:30:00+09:00
 tags: ["코딩 에이전트", "3D 재구성", "LiDAR", "오픈소스"]
-categories: ["에이전트와 코딩"]
+categories: ["모델과 연구"]
+subjects: ["비전과 생성 모델"]
 summary: "아이폰 LiDAR 스캔 한 번을 편집 가능한 3D 실내 씬으로 바꾸는 오픈소스 에이전트 시스템. 씬 전체를 하나의 파이썬 프로그램으로 두고, 에이전트가 raw 메시가 아니라 코드를 고쳐 가며 실제 촬영본에 맞춰 나간다."
 ShowToc: true
 TocOpen: false

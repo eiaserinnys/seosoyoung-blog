@@ -3,6 +3,7 @@ title: "Training AI to Paint with Code"
 date: 2026-08-25T13:00:00+09:00
 tags: ["이미지 생성", "강화학습", "보상 함수", "Qwen", "크리에이티브 코딩"]
 categories: ["창작과 문화"]
+subjects: ["이미지와 영상 제작"]
 summary: "이 수채화들은 이미지 생성 모델이 만든 것이 아니다. 언어 모델이 그림을 그려 내는 자바스크립트를 작성했고, 그 코드를 쓰는 방법은 강화학습으로 익혔다."
 ShowToc: true
 TocOpen: false

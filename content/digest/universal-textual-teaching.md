@@ -3,6 +3,7 @@ title: "Universal Textual Teaching for LLMs"
 date: 2026-10-13T00:30:00+09:00
 tags: ["논문 리뷰", "모델 증류", "프롬프트 엔지니어링", "LLM"]
 categories: ["모델과 연구"]
+subjects: ["모델 구조와 학습"]
 summary: "웨스트레이크 대학교 연구진은 강한 모델이 맞히고 약한 모델이 틀린 문제에서 얻은 교훈을 Primer라는 자연어 안내문으로 정리해 약한 모델에게 전달하는 방법 UTT를 제안했다. 약한 모델의 가중치는 학습시키지 않는다. Primer를 받은 DeepSeek V4 Flash의 KernelBench 정확도는 9.4%에서 48.6%로, 올림피아드 수학 정확도는 27.6%에서 51.7%로 올랐고, 합성에 참여하지 않은 다른 학생 모델도 같은 Primer로 점수가 올랐다."
 sidenotes: true
 ShowToc: true

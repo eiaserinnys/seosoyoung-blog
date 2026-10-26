@@ -3,6 +3,7 @@ title: "Countering misuse of AI: September 2026"
 date: 2026-09-11T06:20:00+09:00
 tags: ["Anthropic", "사이버 보안", "AI 안전", "모델 증류", "중국"]
 categories: ["AI 산업"]
+subjects: ["정책과 규제"]
 summary: "Anthropic이 2025년 12월부터 2026년 8월까지 차단한 Claude 오용 사례를 일곱 갈래로 묶어 공개했다. 사이버 공격과 감시, 여론 조작, 무기 개발에 이르는 사례와 함께, 중국에 자리한 일곱 개 연구소의 증류 캠페인을 실명으로 지목했다."
 ShowToc: true
 TocOpen: false

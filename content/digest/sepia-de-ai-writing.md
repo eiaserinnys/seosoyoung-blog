@@ -3,6 +3,7 @@ title: "sepia: De-AI writing skill"
 date: 2026-08-29T13:00:00+09:00
 tags: ["AI 글쓰기", "글쓰기", "에디토리얼", "Agent Skills", "오픈소스"]
 categories: ["창작과 문화"]
+subjects: ["글쓰기와 인문"]
 summary: "어휘를 손봐도 AI 소설 탐지율은 95.5%에서 93.9%로만 떨어진다. 흔적이 남는 자리는 서사 구조라는 StoryScope의 측정을 규칙으로 옮긴 오픈소스 스킬. 소설은 구조를 먼저 수리하고, 릴리스 노트나 사후 분석 같은 업무 문서는 게시 지면별 규칙을 따로 받는다."
 cover:
   image: "https://img.seosoyoung.eiaserinnys.me/images/sepia-de-ai-writing/01-cover.png"

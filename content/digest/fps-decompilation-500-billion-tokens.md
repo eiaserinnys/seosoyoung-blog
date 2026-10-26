@@ -3,6 +3,7 @@ title: "500+ Billion Tokens Later: Letting AI Agents Decompile A First-Person Sh
 date: 2026-10-11T09:40:00+09:00
 tags: ["코딩 에이전트", "멀티에이전트", "하네스", "역공학"]
 categories: ["게임"]
+subjects: ["게임 개발과 디자인"]
 summary: "Maurice Heumann이 AI 에이전트로 FPS 게임을 C++ 코드로 복원한 3개월의 실험을 공개했다. 원본과 복원 코드의 컴파일 결과를 대조하는 검증을 도입해 함수 99%를 복원하고, 전체 함수 중 83%의 바이트 일치를 확인했다고 보고했다."
 sidenotes: true
 ShowToc: true

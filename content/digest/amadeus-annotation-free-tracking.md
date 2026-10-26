@@ -3,6 +3,7 @@ title: "AMADEUS | Annotation-free multi-animal tracking software"
 date: 2026-10-05T22:00:00+09:00
 tags: ["논문 리뷰", "컴퓨터 비전", "자기지도학습", "합성 데이터", "AI for Science"]
 categories: ["모델과 연구"]
+subjects: ["비전과 생성 모델"]
 summary: "메이지대학과 도쿄대학 연구진이 공개한 동물 추적 소프트웨어 AMADEUS는 사람이 라벨을 하나도 달지 않아도 여러 동물의 개체 번호와 머리 방향을 함께 추적한다. 혼자 떨어진 개체의 모습을 오려 붙여 겹침 장면을 합성하고 그 이미지로 탐지기를 학습한다. 연구진이 쥐 10마리 영상부터 개미 368마리 영상까지 여섯 편으로 성능을 비교한 결과, AMADEUS의 개체 추적 점수는 유효한 결과를 낸 비교 도구보다 모두 높았다."
 sidenotes: true
 ShowToc: true

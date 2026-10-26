@@ -3,6 +3,7 @@ title: "How ESCAPE VELOCITY was made"
 date: 2026-09-29T07:30:00+09:00
 tags: ["영상 생성", "Seedance", "Claude Code", "멀티에이전트", "Human-AI 공동 창작"]
 categories: ["창작과 문화"]
+subjects: ["이미지와 영상 제작"]
 summary: "anabology가 Opus 5.5에게 제작을 맡겨 약 19시간 만에 완성한 5분 6초짜리 AI 뮤직비디오 「ESCAPE VELOCITY」의 제작 기록을 정리했다. 사람은 50여 개의 메시지로 취향만 결정했고, Claude Code가 가사, 스토리보드, Midjourney와 Seedance 프롬프트, 편집, 모션 디자인까지 전부 수행했다."
 sidenotes: true
 ShowToc: true

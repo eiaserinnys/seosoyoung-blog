@@ -3,6 +3,7 @@ title: "手把手教你用 Opus 5.5 / Astra + Tripo 制作 3D 游戏"
 date: 2026-10-16T08:00:00+09:00
 tags: ["게임 개발", "3D 생성", "코딩 에이전트", "프롬프트 엔지니어링"]
 categories: ["게임"]
+subjects: ["게임 개발과 디자인"]
 summary: "1인 창작자 Sac(@Saccc_c)이 《어린 왕자》의 별 여행을 16일 동안 탐험형 3D 웹 게임으로 구현하며 사용한 AI 모델 분업 구조와 Tripo, Blender, Unity 연동 제작 과정 및 단계별 프롬프트를 정리한다."
 sidenotes: true
 ShowToc: true

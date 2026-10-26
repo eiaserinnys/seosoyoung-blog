@@ -3,6 +3,7 @@ title: "How Anthropic teams use Claude Code"
 date: 2026-09-10T02:00:00+09:00
 tags: ["Claude Code", "Anthropic", "코딩 에이전트", "조직 변화"]
 categories: ["에이전트와 코딩"]
+subjects: ["코딩 에이전트 활용"]
 summary: "Anthropic이 사내 파워 유저를 인터뷰해 열 개 팀의 Claude Code 사용법을 팀마다 두 쪽씩 정리한 23쪽 자료. 데이터 인프라와 보안, 추론 팀의 개발 워크플로우부터 법무와 마케팅, 디자인 팀이 코드를 모르는 채로 만든 도구까지, 팀별 사례와 자체 측정한 효과, 각 팀이 남긴 운용 수칙을 담았다."
 ShowToc: true
 TocOpen: false

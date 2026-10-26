@@ -2,7 +2,8 @@
 title: "Unraveling the multifaceted relationship between creativity and mental health with longitudinal analyses of genotyped twins"
 date: 2026-10-13T14:30:00+09:00
 tags: ["논문 리뷰", "창의성", "정신건강", "행동유전학", "쌍둥이 연구"]
-categories: ["창작과 문화"]
+categories: ["모델과 연구"]
+subjects: ["뇌와 마음"]
 summary: "스웨덴 쌍둥이 14,658명을 10년 간격으로 조사한 연구에서 예술 창의성은 우울 증상, 정신증 경향성, 불안장애 같은 정신 건강 문제와 연관됐고, 과학 창의성은 연관이 없거나 음의 연관을 나타냈다. 연관의 상당 부분은 공유 유전 요인으로 설명됐고, 우울 증상이 개방성을 높이는 경로 하나만 일란성 쌍둥이 비교에서도 유의했다."
 sidenotes: true
 ShowToc: true

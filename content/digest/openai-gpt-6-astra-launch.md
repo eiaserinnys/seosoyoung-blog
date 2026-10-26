@@ -3,6 +3,7 @@ title: "GPT-6 Astra: A new generation of intelligence"
 date: 2026-09-04T05:00:00+09:00
 tags: ["OpenAI", "벤치마크", "컴퓨터 사용", "정렬", "코딩 에이전트"]
 categories: ["AI 산업"]
+subjects: ["새 모델과 제품"]
 summary: "OpenAI가 2026년 9월 3일 GPT-6 Astra를 출시했다. 컴퓨터 사용과 소프트웨어 공학, 사이버보안, 과학에서 최고 기록을 내세우면서, 능력이 오른 대신 모델의 서술된 추론을 감시하기는 더 어려워졌다는 결과도 같은 공지에 함께 적었다."
 ShowToc: true
 TocOpen: false

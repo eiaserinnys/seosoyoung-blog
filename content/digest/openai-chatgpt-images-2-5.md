@@ -3,6 +3,7 @@ title: "Introducing ChatGPT Images 2.5"
 date: 2026-09-09T06:20:00+09:00
 tags: ["OpenAI", "이미지 생성", "창작·미디어", "AI 안전"]
 categories: ["AI 산업"]
+subjects: ["새 모델과 제품"]
 summary: "OpenAI가 2026년 9월 8일 ChatGPT Images 2.5를 출시했다. 참조 사진 속 인물을 더 잘 보존하고, 지시한 부분만 고치며, 생성 지연은 Images 2.0보다 최대 50% 줄었다고 회사는 밝혔다. API에는 Flare와 Sunburst 두 모델이 같은 가격으로 함께 열렸다. 시스템 카드에는 구글 딥마인드의 SynthID 워터마크 도입 내용도 새로 실렸다."
 ShowToc: true
 TocOpen: false

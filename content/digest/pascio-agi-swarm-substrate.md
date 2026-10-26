@@ -3,6 +3,7 @@ title: "What if AGI is already here, and it's made of... children?"
 date: 2026-09-13T23:00:00+09:00
 tags: ["AGI", "멀티에이전트", "초지능", "AI 안전"]
 categories: ["모델과 연구"]
+subjects: ["안전과 정렬"]
 summary: "1인 사업가 Pascio가 X Article로 올린 에세이. 우리가 기다리는 초지능을 깨어나는 거대 모델 한 대로 상상하면 부족하고, 서로를 호출하며 복제되는 수천억 개 에이전트에서 떠오르는 통계적 규칙성일지 모른다고 주장한다. 그렇다면 지금의 안전 장치는 이름도 서버도 없는 상대를 향해 세워진 셈이다."
 ShowToc: true
 TocOpen: false

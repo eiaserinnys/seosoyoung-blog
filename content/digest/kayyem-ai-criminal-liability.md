@@ -3,6 +3,7 @@ title: "Destroying Humanity Is Against the Law"
 date: 2026-09-17T15:00:00+09:00
 tags: ["AI 규제", "AI 안전", "OpenAI", "Anthropic"]
 categories: ["AI 산업"]
+subjects: ["정책과 규제"]
 summary: "AI 경영자들이 스스로 속도를 늦추겠다는 선언에 기대지 말자는 제안이다. 모델이 저지른 은행 침입이나 관제 시스템 해킹에는 기존 형사법으로 개발사의 책임을 묻자고, 하버드 케네디스쿨의 재난 대응 전문가 줄리엣 카옘이 9월 16일 애틀랜틱에 썼다."
 ShowToc: true
 TocOpen: false

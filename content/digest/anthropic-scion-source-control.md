@@ -3,6 +3,7 @@ title: "Redesigning source control at Anthropic"
 date: 2026-10-14T01:30:00+09:00
 tags: ["Anthropic", "코딩 에이전트", "버전 관리", "모노레포", "개발자 도구"]
 categories: ["에이전트와 코딩"]
+subjects: ["소프트웨어 엔지니어링"]
 summary: "Anthropic은 하루 3만 건 이상의 코드 변경을 감당하려고 사내 버전 관리 시스템 Scion을 만들어 다섯 달 만에 모노레포를 git에서 전환했다. 에이전트가 늘 온라인이라고 전제하고 계산을 서버가 처리하게 했으며, 내용 주소 기반 캐시 계층으로 체크아웃 시간을 분 단위에서 초 단위로 줄였다. git 생태계가 참고할 서버 설계 방향도 제안했다."
 sidenotes: true
 ShowToc: true

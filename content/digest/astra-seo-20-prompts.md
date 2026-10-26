@@ -3,6 +3,7 @@ title: "ChatGPT Astra로 로컬 SEO를 하는 프롬프트 모음"
 date: 2026-09-07T15:20:00+09:00
 tags: ["프롬프트 엔지니어링", "컴퓨터 사용", "SEO", "ChatGPT"]
 categories: ["에이전트와 코딩"]
+subjects: ["스킬과 도구 연결"]
 summary: "로컬 SEO 컨설턴트가 GPT-6 Astra용 프롬프트 20개를 공개한다고 예고한 X Article이다. 실린 프롬프트는 전부 크롬을 직접 열라는 지시로 시작하고, 경쟁 업체의 구글 비즈니스 프로필과 SEMrush, 구글 서치 콘솔을 훑어 스프레드시트로 정리하게 만든다. 번호가 붙은 프롬프트는 12개였다."
 ShowToc: true
 TocOpen: false

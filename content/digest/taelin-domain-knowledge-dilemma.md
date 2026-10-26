@@ -3,6 +3,7 @@ title: "AI 에이전트에 도메인 지식을 주입하는 모든 방법은 실
 date: 2026-05-01T12:10:00+09:00
 tags: ["AI 에이전트", "RAG", "파인튜닝", "컨텍스트 엔지니어링", "도메인 지식"]
 categories: ["에이전트와 코딩"]
+subjects: ["메모리와 RAG"]
 summary: "AGENTS.md, RAG, Skills 어느 것도 에이전트의 도메인 지식 문제를 풀지 못한다. 가시성과 검색성 사이의 딜레마를 벗어나는 길은 도메인 파인튜닝뿐이라는 주장."
 ShowToc: true
 TocOpen: false

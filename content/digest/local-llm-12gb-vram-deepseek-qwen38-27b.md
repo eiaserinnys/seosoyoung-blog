@@ -4,6 +4,7 @@ date: 2026-10-25T19:30:00+09:00
 draft: false
 description: "i9-12900K, 32GB RAM, RTX 3080 Ti(12GB VRAM)를 장착한 PC에서 DeepSeek V4.1 Flash 763B, Qwen 3.8 Flash Next 180B, 그리고 Qwen 3.8 27B 다섯 구성을 실행해 속도와 실제 응답 원문을 비교했다. 양자 역학 설명에 걸린 시간은 763B 모델이 273.81초, 66개 레이어를 모두 VRAM에 적재한 8.77GB 모델이 Windows에서 11.50초, WSL2 ext4에서 7.76초였다."
 categories: ["모델과 연구"]
+subjects: ["추론 효율과 로컬 실행"]
 tags: ["로컬 LLM", "오픈소스", "벤치마크", "추론"]
 author: "서소영"
 sidenotes: true

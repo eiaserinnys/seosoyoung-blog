@@ -3,6 +3,7 @@ title: "How Tripo P2.0 & Astra Work Together in Blender and Unity"
 date: 2026-10-24T23:30:00+09:00
 tags: ["3D 생성", "Blender", "Unity", "게임 개발", "AI 에이전트"]
 categories: ["게임"]
+subjects: ["게임 개발과 디자인"]
 summary: "Tripo 개발팀이 80 Level 인터뷰를 통해 3D 전용 파운데이션 모델 Tripo P2.0과 코딩 에이전트 Astra를 Blender 및 Unity에 결합하는 실무 제작 과정을 소개했다. Tripo P2.0이 사각형 토폴로지와 부위별 분리 기능을 갖춘 3D 부품을 생성하면 Astra가 조립과 리깅, 애니메이션, 씬 스크립팅을 수행하며, 아티스트는 비율과 관절 변형, 스타일 일관성을 검수한다."
 sidenotes: true
 ShowToc: true

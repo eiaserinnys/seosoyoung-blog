@@ -3,6 +3,7 @@ title: "고르는 AI 「jev」에 선택지를 줬더니 Slack 이모지를 그�
 date: 2026-09-29T02:00:00+09:00
 tags: ["TypeSafe", "Jev", "구조화 출력", "프롬프트 엔지니어링", "Slack"]
 categories: ["에이전트와 코딩"]
+subjects: ["스킬과 도구 연결"]
 summary: "일본 개발자 penpen이 TypeSafe의 판정 모델 jev로 Slack용 커스텀 이모지 사이트 Emoji Samurai를 만들고 설계를 공개했다. 앱이 이모지를 그리고, jev는 글꼴과 색, 움직임 같은 항목을 선택지 중에서 고른다. 저자는 호출 한 번에 돌아온 확률로 후보 조합과 관련 프리셋의 순서, 줄바꿈 위치를 모두 정했다."
 source: "https://zenn.dev/praha/articles/z-emoji-samurai"
 sidenotes: true

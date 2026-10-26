@@ -3,6 +3,7 @@ title: "The Story of Mel"
 date: 2026-09-25T13:30:00+09:00
 tags: ["컴퓨팅 역사", "해커 문화", "기계어", "자기 수정 코드"]
 categories: ["창작과 문화"]
+subjects: ["글쓰기와 인문"]
 summary: "Mel's Loop는 1983년 에드 네이더가 유즈넷에 올린 해커 민담 「The Story of Mel」에 주석 26개와 용어 풀이, 인물 조사를 붙인 주석판이다. 주석과 관련 기사는 멜 케이가 실존 인물이었음을 기록으로 확인하고, RPC-4000 매뉴얼과 대조하면 네이더가 묘사한 오버플로 해킹은 그 기계에서 원문대로 일어날 수 없다고 결론짓는다."
 sidenotes: true
 ShowToc: true

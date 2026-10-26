@@ -3,6 +3,7 @@ title: "AI-Newton: A Concept-Driven Physical Law Discovery System without Prior 
 date: 2026-10-01T17:30:00+09:00
 tags: ["논문 리뷰", "물리학", "과학", "기호 회귀"]
 categories: ["모델과 연구"]
+subjects: ["수학과 과학"]
 summary: "베이징대 물리학부 연구진이 AI-Newton을 만들었다. 물리 지식을 전혀 주지 않은 상태에서 고전역학 실험 46종의 잡음 섞인 데이터만으로 일반 법칙을 찾는 시스템이다. 시스템은 시공간 좌표만 가지고 시작해 질량, 에너지 같은 개념을 스스로 정의했고, 뉴턴 제2법칙과 에너지 보존 법칙, 만유인력 법칙을 다시 찾아냈다."
 math: true
 sidenotes: true

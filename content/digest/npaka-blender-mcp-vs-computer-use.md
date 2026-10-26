@@ -3,6 +3,7 @@ title: "Blender MCP보다 Computer use가 고성능? 그 이유를 생각한다"
 date: 2026-09-15T14:10:00+09:00
 tags: ["Blender", "MCP", "컴퓨터 사용", "3D 생성", "일본"]
 categories: ["에이전트와 코딩"]
+subjects: ["스킬과 도구 연결"]
 summary: "AI에게 Blender를 맡길 때 Blender MCP를 거의 쓰지 말고 Computer use로 시키라는 현장 보고가 나왔다. npaka는 그 차이의 원인을 도구의 성능에서 찾지 않고, 작업 중에 무엇을 보고 다음 수를 정하는가에서 찾는다. 그리고 MCP가 필요한 공정에서 화면을 확인하게 되면 오히려 더 적은 조작으로 같은 일을 할 수 있다고 본다."
 ShowToc: true
 TocOpen: false

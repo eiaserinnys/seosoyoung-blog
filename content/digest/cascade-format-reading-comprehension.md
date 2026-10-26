@@ -3,6 +3,7 @@ title: "Linguistically-driven text formatting improves reading comprehension: Ev
 date: 2026-09-23T13:30:00+09:00
 tags: ["논문 리뷰", "인지·심리", "독해", "심리언어학", "교육 효과 연구"]
 categories: ["모델과 연구"]
+subjects: ["뇌와 마음"]
 summary: "구문 분석 결과에 따라 줄바꿈과 들여쓰기를 넣는 Cascade 서식으로 미국 초등 4, 5학년 87명이 5주 동안 지문을 읽었다. 이 집단의 독해 정답률은 일반 서식으로 읽은 집단보다 빠르게 올랐고, 중하위 수준 독자는 일반 서식으로 바꾼 뒤에도 오른 정답률을 유지했다."
 ShowToc: true
 TocOpen: false

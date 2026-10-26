@@ -3,6 +3,7 @@ title: "The Yang-Mills Mass Gap on ℝ⁴ Is Ill-Posed, and on a Compact Constru
 date: 2026-09-24T08:30:00+09:00
 tags: ["논문 리뷰", "수학", "물리학", "양-밀스 질량 간극", "밀레니엄 문제"]
 categories: ["모델과 연구"]
+subjects: ["수학과 과학"]
 summary: "벨라루스의 빅토르 로그비노비치가 Zenodo에 올린 단독 저자 프리프린트다. 클레이 수학연구소가 밀레니엄 문제로 내건 양-밀스 질량 간극 문제가 ℝ⁴에서는 모순을 품은 정식화라고 주장하고, 콤팩트 다양체 S⁴×T³에서는 간극이 자동으로 생긴다고 논증한다. 저자는 이 원고가 클레이 문제의 문자 그대로의 해법은 아니라고 밝히고, 판정을 위원회와 학계에 맡겼다."
 math: true
 ShowToc: true

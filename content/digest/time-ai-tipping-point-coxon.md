@@ -3,6 +3,7 @@ title: "The AI Tipping Point"
 date: 2026-09-23T11:30:00+09:00
 tags: ["AI 안전", "AI 규제", "Anthropic", "OpenAI", "중국"]
 categories: ["AI 산업"]
+subjects: ["정책과 규제"]
 summary: "TIME 커버 기사. 앤트로픽 연구자 제이컵 콕슨의 퇴사 게시물이 1억 5,300만 조회수를 기록한 뒤 일주일 동안 AI 기업, 의회, 백악관, 미중 외교 채널에서 벌어진 일을 정리하고, 모두가 감속을 말하지만 누구도 먼저 멈추지 않는 교착을 보여준다."
 ShowToc: true
 TocOpen: false

@@ -2,7 +2,8 @@
 title: "SwarmWorld: Stigmergic technological evolution in societies of language-model agents"
 date: 2026-08-30T11:30:00+09:00
 tags: ["논문 리뷰", "멀티에이전트", "사회 시뮬레이션", "AI 에이전트"]
-categories: ["모델과 연구"]
+categories: ["에이전트와 코딩"]
+subjects: ["하네스와 에이전트 설계"]
 summary: "MIT 연구진이 역할도 레시피도 주지 않은 LLM 에이전트 수백 명을 지속적 물리 세계에 풀어놓고, 이들이 남긴 기술을 에이전트가 모두 사라진 뒤에 시험했다. 공유 세계를 가진 사회는 고립 탐색보다 넓고 견고한 기술 포트폴리오를 만들었지만, 최강 단일 발명품은 여전히 고립 탐색의 몫이었다."
 ShowToc: true
 TocOpen: false

@@ -3,6 +3,7 @@ title: "GenRec: An LLM-Backed Recommendation Ranker at Netflix"
 date: 2026-09-29T01:40:00+09:00
 tags: ["추천 시스템", "Netflix", "컨텍스트 엔지니어링", "스케일링 법칙", "논문 리뷰"]
 categories: ["모델과 연구"]
+subjects: ["모델 구조와 학습"]
 summary: "넷플릭스가 수천 개의 수작업 피처에 기반한 추천 랭커를 대체할 후보로 LLM 기반 랭커 GenRec을 만들고, 기존 랭커와 비교한 결과를 공개했다. GenRec은 시청 이력을 텍스트로 서술해 프리필 한 번으로 카탈로그 전체의 점수를 계산하며, 사후 학습 라벨을 40분의 1만 쓰고도 대규모 A/B 테스트에서 통계적으로 유의한 개선을 얻었다."
 math: true
 sidenotes: true

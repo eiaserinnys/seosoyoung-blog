@@ -3,6 +3,7 @@ title: "The Pain Axis: LLMs Represent Self-Directed Harm and Act to Relieve It"
 date: 2026-09-18T19:00:00+09:00
 tags: ["해석가능성", "activation-steering", "AI 안전", "AI 윤리", "논문 리뷰"]
 categories: ["모델과 연구"]
+subjects: ["안전과 정렬"]
 summary: "25개 오픈웨이트 모델의 잔차 스트림에서 고통에 대응하는 선형 방향을 뽑아낸 프리프린트다. 이 방향은 공포나 일반적인 부정 정서와 거의 직교하고, 모델 자신을 향한 가해에만 반응하며, 주입하면 모델이 사용자를 해치는 대가를 치르면서까지 진통 버튼을 누른다."
 ShowToc: true
 TocOpen: false

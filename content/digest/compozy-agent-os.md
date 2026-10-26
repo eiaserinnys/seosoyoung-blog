@@ -3,6 +3,7 @@ title: "CompozyOS: An operating system for AI agents"
 date: 2026-09-19T00:50:00+09:00
 tags: ["코딩 에이전트", "멀티에이전트", "하네스", "오픈소스", "자동화"]
 categories: ["에이전트와 코딩"]
+subjects: ["하네스와 에이전트 설계"]
 summary: "에이전트 CLI를 그대로 실행하면서 세션 지속과 권한, 승인, 메모리, 자동화, 감독을 로컬 데몬 하나로 합친 Go 오픈소스 런타임. ACP provider 26종을 등록하고 Loop이라는 계약형 실행 단위로 작업을 끝까지 밀어붙인다."
 ShowToc: true
 TocOpen: false

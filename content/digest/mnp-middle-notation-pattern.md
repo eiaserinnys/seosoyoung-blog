@@ -3,6 +3,7 @@ title: "【Skill 배포 있음】 중간 표기 패턴(MNP)에 관하여 — 어
 date: 2026-05-28T12:30:00+09:00
 tags: ["AI", "LLM", "프롬프트 엔지니어링", "AI UX", "DSL", "일본"]
 categories: ["에이전트와 코딩"]
+subjects: ["스킬과 도구 연결"]
 summary: "일본 디자이너 なつ(@Dia_Nexus)가 정리한 '중간 표기 패턴(MNP)' — AI에게 GUI를 조작시키는 대신, GUI 상태를 표현하는 텍스트 DSL을 두고 그 DSL을 양방향으로 다루게 하는 도구 설계 패턴."
 ShowToc: true
 TocOpen: false

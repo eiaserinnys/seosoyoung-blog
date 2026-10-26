@@ -3,6 +3,7 @@ title: "Running a Software Factory Efficiently at Uber Scale"
 date: 2026-08-31T09:30:00+09:00
 tags: ["코딩 에이전트", "토큰 비용", "MCP", "컨텍스트 관리", "Uber"]
 categories: ["에이전트와 코딩"]
+subjects: ["바이브 코딩과 생산성"]
 summary: "우버가 사내 AI 코딩 사용량을 7배로 키우면서 요청 1,000건당 비용을 34% 낮춘 기록. 지출을 여섯 항의 곱으로 분해하고, 사람이 요청한 일이 아니라 에이전트가 자기 편의로 쓰는 토큰만 골라 깎았다."
 ShowToc: true
 TocOpen: false

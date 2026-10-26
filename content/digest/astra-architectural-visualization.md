@@ -3,6 +3,7 @@ title: "Architectural visualization with Astra"
 date: 2026-09-06T09:30:00+09:00
 tags: ["Codex", "Blender", "Unreal Engine", "3D 생성", "코딩 에이전트"]
 categories: ["에이전트와 코딩"]
+subjects: ["코딩 에이전트 활용"]
 summary: "OpenAI 개발자 블로그가 Codex의 Astra로 집 한 채를 설계한 과정을 공개했다. 프롬프트 한 줄에서 시작해 편집 가능한 Blender 씬, 평면도, 30초 카메라 투어, 그리고 걸어 다닐 수 있는 Unreal Engine 5 빌드까지 이어졌다."
 ShowToc: true
 TocOpen: false

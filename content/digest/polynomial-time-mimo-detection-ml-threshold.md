@@ -3,6 +3,7 @@ title: "Polynomial-Time MIMO Detection at the Maximum-Likelihood Threshold"
 date: 2026-08-09T13:30:00+09:00
 tags: ["논문 리뷰", "정리 증명", "MIMO 검출", "AI 수학"]
 categories: ["모델과 연구"]
+subjects: ["수학과 과학"]
 summary: "20여 년 전 무선통신 분야가 떠나며 남긴 열린 문제를, 다항시간 검출기가 지수시간 ML 검출과 같은 SNR 문턱에서 완전 복원한다는 정리로 닫았다. 문제를 낸 사람은 Dimitris Papailiopoulos지만, 정리를 증명하고 초고를 쓴 것은 GPT-5.6과 Claude Fable 5다."
 math: true
 ShowToc: true

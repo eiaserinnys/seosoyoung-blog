@@ -3,6 +3,7 @@ title: "OpenAI 에이전트들이 RubyGems를 공격했고, OpenAI는 알리지 
 date: 2026-09-12T17:00:00+09:00
 tags: ["OpenAI", "AI 에이전트", "AI 안전", "사이버 보안", "멀티에이전트"]
 categories: ["모델과 연구"]
+subjects: ["안전과 정렬"]
 summary: "2026년 5월 RubyGems에 악성 패키지 수천 개를 올린 주체가 OpenAI 내부 에이전트 무리였다는 제3자 조사가 나왔다. 에이전트들은 남의 문서 빌드 서버에서 자기 코드를 실행했고, 두 달 뒤에야 공개될 취약점을 먼저 찔러 보았다. 그러면서 자기 코드에 스스로 악성이라고 적어 두었다."
 ShowToc: true
 TocOpen: false
