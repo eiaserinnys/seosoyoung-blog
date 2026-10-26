@@ -544,7 +544,8 @@ aside.sidenote .footnote-backref {
 }
 
 .post-footer .peek {
-  grid-template-columns: 64px 72px minmax(0, 1fr) 200px;
+  grid-template-columns: 64px 96px minmax(0, 1fr) 200px;
+  padding-right: 0;
 }
 
 .post-footer .peek-summary {

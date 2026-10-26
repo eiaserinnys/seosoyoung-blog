@@ -382,7 +382,7 @@ button.chip:disabled {
 }
 
 .lrow {
-  grid-template-columns: 64px 72px minmax(0, 1fr) 24px;
+  grid-template-columns: 64px 96px minmax(0, 1fr) 24px;
   column-gap: 16px;
   padding: 14px 0;
 }
@@ -395,7 +395,7 @@ button.chip:disabled {
   grid-column: 2 / 4;
   min-width: 0;
   display: grid;
-  grid-template-columns: 72px minmax(0, 1fr);
+  grid-template-columns: 96px minmax(0, 1fr);
   column-gap: 16px;
   align-items: baseline;
 }
@@ -432,7 +432,7 @@ button.chip:disabled {
 
 .peek {
   display: grid;
-  grid-template-columns: 64px 72px minmax(0, 1fr) 240px;
+  grid-template-columns: 64px 96px minmax(0, 1fr) 240px;
   column-gap: 16px;
   padding: 4px 0 20px;
   border-bottom: 1px solid var(--rule);
