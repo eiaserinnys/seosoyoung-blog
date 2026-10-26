@@ -1,4 +1,7 @@
-{{- if .Params.cover.image -}}
+{{- if .IsHome -}}
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="{{ "og/home.png" | absURL }}">
+{{- else if .Params.cover.image -}}
 <meta name="twitter:card" content="summary_large_image">
 {{- if (ne $.Params.cover.relative true) }}
 <meta name="twitter:image" content="{{ .Params.cover.image | absURL }}">
