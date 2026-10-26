@@ -29,8 +29,6 @@ function update() {
 
   for (const button of sectionButtons) {
     const section = button.dataset.filterSection;
-    const count = rows.filter((row) => matchesSection(row, section) && matchesChip(row, activeChip)).length;
-    button.querySelector(".mono").textContent = String(count);
     button.setAttribute("aria-pressed", String(section === activeSection));
   }
 
@@ -38,7 +36,6 @@ function update() {
     const chip = { kind: button.dataset.chipKind, value: button.dataset.chip };
     const count = rows.filter((row) => matchesSection(row, activeSection) && matchesChip(row, chip)).length;
     const disabled = count === 0;
-    button.querySelector(".mono").textContent = String(count);
     button.disabled = disabled;
     button.setAttribute("aria-disabled", String(disabled));
     button.setAttribute("aria-pressed", String(
@@ -62,7 +59,6 @@ function update() {
       if (node.matches(".lrow") && !node.hidden) count += 1;
     }
     month.hidden = count === 0;
-    month.querySelectorAll(".mono")[1].textContent = String(count);
   }
 }
 

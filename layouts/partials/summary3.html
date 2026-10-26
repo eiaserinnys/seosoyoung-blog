@@ -6,13 +6,20 @@
   {{- $summary = index $sections 1 -}}
   {{- $nextHeading := findRE `(?m)^## ` $summary 1 -}}
   {{- with $nextHeading }}{{ $summary = index (split $summary (index . 0)) 0 }}{{ end -}}
+  {{- $summary = replaceRE `\{\{[<%].*?[>%]\}\}` "" $summary -}}
   {{- $summary = strings.TrimSpace $summary -}}
 {{- end -}}
 {{- if $summary -}}
-  {{- $result = $summary | markdownify -}}
+  {{- $html := $summary | markdownify -}}
+  {{- $lists := findRE `(?s)<(?:ul|ol)>.*?</(?:ul|ol)>` $html 1 -}}
+  {{- if gt (len $lists) 0 -}}
+    {{- $result = index $lists 0 -}}
+  {{- else -}}
+    {{- $result = printf "<p>%s</p>" ($html | plainify | htmlEscape) -}}
+  {{- end -}}
 {{- else if .Params.summary -}}
   {{- $result = .Params.summary | markdownify -}}
 {{- else -}}
-  {{- $result = .Summary | markdownify -}}
+  {{- $result = printf "<p>%s</p>" (.Summary | plainify | htmlEscape) -}}
 {{- end -}}
-{{- return $result -}}
+{{- return ($result | safeHTML) -}}

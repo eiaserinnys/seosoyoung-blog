@@ -4,34 +4,41 @@
   {{- $galleryPages = $galleryPages.ByDate.Reverse -}}
   {{- $experiments := where $labPages "Params.shelf" "experiment" -}}
   {{- $atlases := where $labPages "Params.shelf" "atlas" -}}
-  {{- $reports := where $labPages "Params.shelf" "report" -}}
-  {{- $stats := slice -}}
+  {{- $tabs := slice -}}
   {{- if gt (len $experiments) 0 -}}
-    {{- $stats = $stats | append (dict "label" "실험" "value" (len $experiments)) -}}
+    {{- $tabs = $tabs | append (dict "id" "experiment" "title" "실험" "items" $experiments) -}}
   {{- end -}}
   {{- if gt (len $atlases) 0 -}}
-    {{- $stats = $stats | append (dict "label" "아틀라스" "value" (len $atlases)) -}}
+    {{- $tabs = $tabs | append (dict "id" "atlas" "title" "아틀라스" "items" $atlases) -}}
   {{- end -}}
-  {{- if gt (len $reports) 0 -}}
-    {{- $stats = $stats | append (dict "label" "리포트" "value" (len $reports)) -}}
+  {{- if gt (len $galleryPages) 0 -}}
+    {{- $tabs = $tabs | append (dict "id" "gallery" "title" "그림" "items" $galleryPages) -}}
   {{- end -}}
-  {{- $stats = $stats | append (dict "label" "그림" "value" (len $galleryPages)) -}}
   {{ partial "topic-bar.html" (dict "current" "") }}
-  {{ partial "page-head.html" (dict
-    "title" "실험실"
-    "stats" $stats
-  ) }}
-  {{- range (slice
-    (dict "id" "experiment" "title" "실험" "items" $experiments)
-    (dict "id" "atlas" "title" "아틀라스" "items" $atlases)
-    (dict "id" "report" "title" "리포트" "items" $reports)
-  ) -}}
-    {{- if .items -}}
-      {{ partial "lab-shelf.html" . }}
+  {{ partial "page-head.html" (dict "title" "실험실") }}
+  <nav class="lab-tabs" hidden aria-label="실험실">
+    <div class="seg" role="tablist" aria-label="갈래">
+      {{- range $index, $tab := $tabs -}}
+        <button id="tab-{{ $tab.id }}" type="button" role="tab" aria-selected="{{ if eq $index 0 }}true{{ else }}false{{ end }}" aria-controls="panel-{{ $tab.id }}">
+          {{- $tab.title -}}
+        </button>
+      {{- end -}}
+    </div>
+  </nav>
+  <div class="lab-panels">
+    {{- range $index, $tab := $tabs -}}
+      <section id="panel-{{ $tab.id }}" class="lab-panel" role="tabpanel" aria-labelledby="tab-{{ $tab.id }}">
+        {{- if eq $tab.id "gallery" -}}
+          {{ partial "gallery-wall.html" (dict "pages" $tab.items) }}
+        {{- else -}}
+          {{ partial "lab-shelf.html" (dict "items" $tab.items) }}
+        {{- end -}}
+      </section>
     {{- end -}}
-  {{- end -}}
-  <section id="gallery" class="lab-gallery">
-    {{ partial "section-head.html" (dict "title" "그림" "aside" (len $galleryPages)) }}
-    {{ partial "gallery-wall.html" (dict "pages" $galleryPages) }}
-  </section>
+  </div>
+{{ end }}
+
+{{ define "scripts" }}
+  {{- $script := resources.Get "js/lab.js" | js.Build (dict "minify" true) | fingerprint -}}
+  <script defer src="{{ $script.RelPermalink }}" integrity="{{ $script.Data.Integrity }}" crossorigin="anonymous"></script>
 {{ end }}

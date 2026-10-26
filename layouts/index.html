@@ -16,47 +16,17 @@
   {{- $galleryByDate := $gallery.ByDate.Reverse -}}
   {{- $experimentsByDate := $experiments.ByDate.Reverse -}}
   {{- $all := sort (append $posts $digest) "Date" "desc" -}}
-  {{- $year := "" -}}
-  {{- $latestDate := "서재" -}}
-  {{- with $all -}}
-    {{- $latest := index . 0 -}}
-    {{- $year = $latest.Date.Format "2006" -}}
-    {{- $latestDate = printf "%s월 %s일" ($latest.Date.Format "1") ($latest.Date.Format "2") -}}
-  {{- end -}}
-
-  {{- $now := time.Now | time.In "Asia/Seoul" -}}
-  {{- $weekday := int $now.Weekday -}}
-  {{- $daysSinceMonday := sub $weekday 1 -}}
-  {{- if eq $weekday 0 -}}
-    {{- $daysSinceMonday = 6 -}}
-  {{- end -}}
-  {{- $mondayDate := $now.AddDate 0 0 (sub 0 $daysSinceMonday) -}}
-  {{- $weekStart := time.AsTime ($mondayDate.Format "2006-01-02") "Asia/Seoul" -}}
-  {{- $thisWeekCount := 0 -}}
-  {{- range $digest -}}
-    {{- if ge .Date.Unix $weekStart.Unix -}}
-      {{- $thisWeekCount = add $thisWeekCount 1 -}}
+  {{- $featured := index $all 0 -}}
+  {{- $postsForList := slice -}}
+  {{- range $postsByDate -}}
+    {{- if ne .RelPermalink $featured.RelPermalink -}}
+      {{- $postsForList = $postsForList | append . -}}
     {{- end -}}
   {{- end -}}
-
-  {{- $monthStart := time.AsTime (printf "%04d-%02d-01" $now.Year (int $now.Month)) "Asia/Seoul" -}}
-  {{- $monthCounts := slice -}}
-  {{- range seq 0 6 -}}
-    {{- $month := $monthStart.AddDate 0 (sub . 6) 0 -}}
-    {{- $monthKey := $month.Format "2006-01" -}}
-    {{- $count := 0 -}}
-    {{- range $digest -}}
-      {{- $pageMonth := time.In "Asia/Seoul" .Date | time.Format "2006-01" -}}
-      {{- if eq $pageMonth $monthKey -}}
-        {{- $count = add $count 1 -}}
-      {{- end -}}
-    {{- end -}}
-    {{- $monthCounts = $monthCounts | append (dict "date" $month "count" $count) -}}
-  {{- end -}}
-  {{- $maxMonthCount := 1 -}}
-  {{- range $monthCounts -}}
-    {{- if gt .count $maxMonthCount -}}
-      {{- $maxMonthCount = .count -}}
+  {{- $digestForList := slice -}}
+  {{- range $digestByDate -}}
+    {{- if ne .RelPermalink $featured.RelPermalink -}}
+      {{- $digestForList = $digestForList | append . -}}
     {{- end -}}
   {{- end -}}
 
@@ -75,36 +45,31 @@
   {{- end -}}
   {{- $series = sort $series "latest" "desc" -}}
 
-  {{- $labCount := add (len $lab) (len $gallery) -}}
   <div class="home">
-  {{- partial "page-head.html" (dict "eyebrow" $year "title" $latestDate "stats" (slice
-    (dict "label" "쓴 글" "value" (len $posts) "url" ("posts/" | relURL))
-    (dict "label" "읽은 글" "value" (len $digest) "url" ("digest/" | relURL))
-    (dict "label" "실험실" "value" $labCount "url" ("lab/" | relURL))
-    (dict "label" "X" "value" 0 "url" ("twitter/" | relURL) "id" "stat-x"))) -}}
   {{- partial "topic-bar.html" (dict "current" "") -}}
 
   <div class="band">
-    {{- with $postsByDate -}}
-      {{- $lead := index . 0 -}}
       <article class="lead">
-        <a class="lead-main" href="{{ $lead.RelPermalink }}">
-          <div class="cv">
-            {{- with $lead.Params.cover.image -}}
-              {{- partial "thumb.html" (dict "src" . "w" 480 "alt" "" "focus" $lead.Params.cover.focus "eager" true "page" $lead) -}}
-            {{- end -}}
-          </div>
+        <a class="lead-main{{ if not $featured.Params.cover.image }} no-cover{{ end }}" href="{{ $featured.RelPermalink }}">
+          {{- with $featured.Params.cover.image -}}
+            <div class="cv">
+              {{- partial "thumb.html" (dict "src" . "w" 480 "alt" "" "focus" $featured.Params.cover.focus "eager" true "page" $featured) -}}
+            </div>
+          {{- end -}}
           <div class="lead-copy">
             <div class="meta">
-              {{- with $lead.Params.categories -}}<span class="lbl acc">{{ index . 0 }}</span>{{- end -}}
-              <span class="mono">{{ $lead.Date.Format "2006.01.02" }}</span>
+              {{- if eq $featured.Section "posts" }}<span class="badge w">쓴 글</span>
+              {{- else if eq $featured.Section "digest" }}<span class="badge">읽은 글</span>{{ end }}
+              {{- with $featured.Params.categories -}}<span class="lbl acc">{{ index . 0 }}</span>{{- end -}}
+              <span class="mono">{{ $featured.Date.Format "2006.01.02" }}</span>
             </div>
-            <h2>{{ $lead.Title }}</h2>
-            <p class="clamp2">{{ $lead.Summary | plainify }}</p>
+            <h2>{{ $featured.Title }}</h2>
+            <p class="clamp2">{{ $featured.Summary | plainify }}</p>
           </div>
         </a>
         <div class="more">
-          {{- range first 2 (after 1 $postsByDate) -}}
+          {{- partial "section-head.html" (dict "title" "쓴 글" "url" ("posts/" | relURL)) -}}
+          {{- range first 2 $postsForList -}}
             <a href="{{ .RelPermalink }}">
               <div class="meta">
                 {{- with .Params.categories -}}<span class="lbl acc">{{ index . 0 }}</span>{{- end -}}
@@ -115,24 +80,16 @@
           {{- end -}}
         </div>
       </article>
-    {{- end -}}
 
     <section class="ledger col" aria-label="읽은 글">
-      {{- partial "section-head.html" (dict "title" "읽은 글" "url" ("digest/" | relURL) "aside" (printf "이번 주 %d" $thisWeekCount)) -}}
-      <div class="ledger-first">
-        {{- range first 5 $digestByDate -}}
-          {{- partial "ledger-row.html" (dict "page" . "variant" "compact" "second" "category") -}}
-        {{- end -}}
-      </div>
-      <div class="ledger-rest">
-        {{- range first 2 (after 5 $digestByDate) -}}
-          {{- partial "ledger-row.html" (dict "page" . "variant" "compact" "second" "category") -}}
-        {{- end -}}
-      </div>
+      {{- partial "section-head.html" (dict "title" "읽은 글" "url" ("digest/" | relURL)) -}}
+      {{- range first 7 $digestForList -}}
+        {{- partial "ledger-row.html" (dict "page" . "variant" "compact" "second" "category") -}}
+      {{- end -}}
     </section>
 
     <aside class="vis col" aria-label="실험실, 그림, X">
-      {{- partial "section-head.html" (dict "title" "실험실" "url" ("lab/" | relURL) "aside" $labCount) -}}
+      {{- partial "section-head.html" (dict "title" "실험실" "url" ("lab/" | relURL)) -}}
       {{- with $experimentsByDate -}}
         {{- $experiment := index . 0 -}}
         <a class="labt" href="{{ $experiment.Params.url }}" aria-label="{{ $experiment.Title }}">
@@ -169,8 +126,8 @@
         </div>
       {{- end -}}
 
-      <div class="xs" hidden>
-        {{- partial "section-head.html" (dict "title" "X" "url" ("twitter/" | relURL) "aside" "0") -}}
+      <div class="xs">
+        {{- partial "section-head.html" (dict "title" "X" "url" ("twitter/" | relURL)) -}}
         <div class="x-rows"></div>
       </div>
     </aside>
@@ -194,7 +151,6 @@
         <article class="desk">
           <div class="dh">
             <a href="{{ $topic.url }}"><b>{{ $topic.name }}</b></a>
-            <span class="n">{{ $topic.count }}</span>
           </div>
           {{- with $topicPosts -}}
             {{- $anchor := index . 0 -}}
@@ -222,7 +178,7 @@
       <div class="series">
         {{- range . -}}
           <article class="ser">
-            <h4><a href="{{ .url }}">{{ .title }}</a><span class="mono">{{ len .pages }}편</span></h4>
+            <h4><a href="{{ .url }}">{{ .title }}</a></h4>
             <ol>
               {{- range $index, $page := first 4 .pages -}}
                 <li>
@@ -237,19 +193,6 @@
     </section>
   {{- end -}}
 
-  <section class="sec" aria-label="월별 글 수">
-    <div class="months">
-      {{- range $monthCounts -}}
-        {{- $height := div (mul .count 109) $maxMonthCount -}}
-        {{- $yearMonth := .date.Format "2006-01" -}}
-        <a class="mb" href="{{ printf "/digest/#m-%s" $yearMonth | relURL }}" aria-label="{{ .date.Format "2006년 1월" }} 읽은 글 {{ .count }}편">
-          <span class="v">{{ .count }}</span>
-          <span class="bar" style="height:{{ $height }}px"></span>
-          <span class="m">{{ .date.Format "06.01" }}</span>
-        </a>
-      {{- end -}}
-    </div>
-  </section>
   </div>
   {{- end }}
 {{ end }}

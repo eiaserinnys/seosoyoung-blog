@@ -14,19 +14,10 @@
     <span class="type">{{ $category }}</span>
     <span class="t clamp2"><a href="{{ $page.RelPermalink }}">{{ $page.Title }}</a></span>
   </div>
-  <button class="pk" type="button" aria-expanded="false" aria-controls="{{ $panelID }}" aria-label="요약 펼치기">
-    <svg viewBox="0 0 16 16" aria-hidden="true"><path class="plus" d="M8 3v10M3 8h10"></path><path class="minus" d="M3 8h10"></path></svg>
+  <button class="pk" type="button" aria-expanded="false" aria-controls="{{ $panelID }}" aria-label="요약 펼치기" data-peek="{{ with $page.OutputFormats.Get "peek" }}{{ .RelPermalink }}{{ end }}">
   </button>
 </div>
-<div class="peek" id="{{ $panelID }}" hidden>
-  <div class="peek-summary">
-    {{ partial "summary3.html" $page }}
-    <a class="go" href="{{ $page.RelPermalink }}">전문 읽기</a>
-  </div>
-  {{- with $page.Params.cover.image }}
-  <div class="cv">{{ partial "thumb.html" (dict "src" . "w" 240 "alt" "" "focus" $page.Params.cover.focus "page" $page) }}</div>
-  {{- end }}
-</div>
+<div class="peek" id="{{ $panelID }}" hidden></div>
 {{- else -}}
 <div class="lrow{{ if eq $page.Section "posts" }} ins{{ end }}" data-type="{{ $page.Section }}" data-subject="{{ $subject }}" data-tags="{{ delimit $tags "|" }}">
   <span class="date mono">{{ $page.Date.Format "01.02" }}</span>
@@ -40,17 +31,8 @@
     {{- end }}
     <span class="t clamp1"><a href="{{ $page.RelPermalink }}">{{ $page.Title }}</a></span>
   </div>
-  <button class="pk" type="button" aria-expanded="false" aria-controls="{{ $panelID }}" aria-label="요약 펼치기">
-    <svg viewBox="0 0 16 16" aria-hidden="true"><path class="plus" d="M8 3v10M3 8h10"></path><path class="minus" d="M3 8h10"></path></svg>
+  <button class="pk" type="button" aria-expanded="false" aria-controls="{{ $panelID }}" aria-label="요약 펼치기" data-peek="{{ with $page.OutputFormats.Get "peek" }}{{ .RelPermalink }}{{ end }}">
   </button>
 </div>
-<div class="peek" id="{{ $panelID }}" hidden>
-  <div class="peek-summary">
-    {{ partial "summary3.html" $page }}
-    <a class="go" href="{{ $page.RelPermalink }}">전문 읽기</a>
-  </div>
-  {{- with $page.Params.cover.image }}
-  <div class="cv">{{ partial "thumb.html" (dict "src" . "w" 240 "alt" "" "focus" $page.Params.cover.focus "page" $page) }}</div>
-  {{- end }}
-</div>
+<div class="peek" id="{{ $panelID }}" hidden></div>
 {{- end -}}

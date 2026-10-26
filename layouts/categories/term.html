@@ -9,20 +9,8 @@
   {{- $pages := where .Pages "Section" "in" (slice "posts" "digest") -}}
   {{- $pages = $pages.ByDate.Reverse -}}
   {{- $posts := where $pages "Section" "posts" -}}
-  {{- $written := len $posts -}}
-  {{- $read := len (where $pages "Section" "digest") -}}
-  {{- $thisMonth := now.Format "2006.01" -}}
-  {{- $monthCount := 0 -}}
-  {{- range $pages -}}
-    {{- if eq (.Date.Format "2006.01") $thisMonth -}}
-      {{- $monthCount = add $monthCount 1 -}}
-    {{- end -}}
-  {{- end -}}
   {{- partial "topic-bar.html" (dict "current" $topic) -}}
-  {{- partial "page-head.html" (dict "title" $topic "stats" (slice
-    (dict "label" "쓴 글" "value" $written)
-    (dict "label" "읽은 글" "value" $read)
-    (dict "label" "이번 달" "value" $monthCount))) -}}
+  {{- partial "page-head.html" (dict "title" $topic) -}}
 
   {{- with first 3 $posts -}}
     <div class="shelf">
@@ -52,9 +40,9 @@
   <div class="filt-origin" aria-hidden="true"></div>
   <div class="filt" role="group" aria-label="글 거르기">
     <div class="seg" role="group" aria-label="형식">
-      <button type="button" data-filter-section="all" aria-pressed="true">전체 <span class="mono" style="min-width: {{ len (printf "%d" (len $pages)) }}ch">{{ len $pages }}</span></button>
-      <button type="button" data-filter-section="posts" aria-pressed="false">쓴 글 <span class="mono" style="min-width: {{ len (printf "%d" $written) }}ch">{{ $written }}</span></button>
-      <button type="button" data-filter-section="digest" aria-pressed="false">읽은 글 <span class="mono" style="min-width: {{ len (printf "%d" $read) }}ch">{{ $read }}</span></button>
+      <button type="button" data-filter-section="all" aria-pressed="true">전체</button>
+      <button type="button" data-filter-section="posts" aria-pressed="false">쓴 글</button>
+      <button type="button" data-filter-section="digest" aria-pressed="false">읽은 글</button>
     </div>
     <div class="chip-set">
       {{- if $hasSubjectBlock -}}
@@ -67,7 +55,7 @@
             {{- end -}}
           {{- end -}}
           {{- if gt $count 0 -}}
-            <button class="chip" type="button" data-chip-kind="subject" data-chip="{{ $subject }}" aria-pressed="false">{{ $subject }}<span class="mono" style="min-width: {{ len (printf "%d" $count) }}ch">{{ $count }}</span></button>
+            <button class="chip" type="button" data-chip-kind="subject" data-chip="{{ $subject }}" aria-pressed="false">{{ $subject }}</button>
           {{- end -}}
         {{- end -}}
       {{- else -}}
@@ -94,7 +82,7 @@
         {{- end -}}
         {{- $tagItems = sort $tagItems "count" "desc" -}}
         {{- range first 8 $tagItems -}}
-          <button class="chip" type="button" data-chip-kind="tag" data-chip="{{ .name }}" aria-pressed="false">{{ .name }}<span class="mono" style="min-width: {{ len (printf "%d" .count) }}ch">{{ .count }}</span></button>
+          <button class="chip" type="button" data-chip-kind="tag" data-chip="{{ .name }}" aria-pressed="false">{{ .name }}</button>
         {{- end -}}
       {{- end -}}
     </div>

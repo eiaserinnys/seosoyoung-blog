@@ -1,0 +1,8 @@
+{{- $page := . -}}
+<div class="peek-summary">
+  {{ partial "summary3.html" $page }}
+  <a class="go" href="{{ $page.RelPermalink }}">전문 읽기</a>
+</div>
+{{- with $page.Params.cover.image }}
+<div class="cv">{{ partial "thumb.html" (dict "src" . "w" 240 "alt" "" "focus" $page.Params.cover.focus "page" $page) }}</div>
+{{- end }}

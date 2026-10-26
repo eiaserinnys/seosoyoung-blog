@@ -22,13 +22,8 @@
     {{- $pages = where $term.Pages "Section" "in" (slice "posts" "digest") -}}
     {{- $url = $term.Page.RelPermalink -}}
   {{- end -}}
-  {{- $written := where $pages "Section" "posts" -}}
-  {{- $read := where $pages "Section" "digest" -}}
   {{- $topics = $topics | append (dict
     "name" $name
-    "url" $url
-    "count" (add (len $written) (len $read))
-    "written" (len $written)
-    "read" (len $read)) -}}
+    "url" $url) -}}
 {{- end -}}
 {{- return $topics -}}

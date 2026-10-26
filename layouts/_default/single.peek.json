@@ -1,0 +1,1 @@
+{{ dict "html" (partial "peek-content.html" .) | jsonify }}

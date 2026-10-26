@@ -3,7 +3,6 @@
 {{- range $pages.GroupByDate "2006.01" }}
   <div class="mon" id="m-{{ replace .Key "." "-" }}">
     <span class="mono" style="color:var(--ink)">{{ .Key }}</span>
-    <span class="mono">{{ len .Pages }}</span>
   </div>
   {{- range .Pages }}
     {{- partial "ledger-row.html" (dict "page" . "variant" "wide" "second" $second) -}}

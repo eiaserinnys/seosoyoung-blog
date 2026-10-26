@@ -6,7 +6,7 @@
     {{- partial "pager-redirect.html" (dict "page" . "pager" $pager "part" "body") -}}
   {{- else -}}
   {{- $pages := .Pages.ByDate -}}
-  {{- partial "page-head.html" (dict "eyebrow" "시리즈" "title" .Title "stats" (slice (dict "label" "편수" "value" (len $pages)))) -}}
+  {{- partial "page-head.html" (dict "eyebrow" "시리즈" "title" .Title) -}}
   <ol class="series-list">
     {{- range $pages -}}
       <li>{{- partial "ledger-row.html" (dict "page" . "variant" "wide" "second" "category") -}}</li>
