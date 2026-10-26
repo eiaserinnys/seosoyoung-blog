@@ -1,8 +1,40 @@
 {{- /* Source: PaperMod (MIT), layouts/_default/index.json. */ -}}
 {{- $.Scratch.Add "index" slice -}}
 {{- range site.RegularPages -}}
-    {{- if and (not .Params.searchHidden) (ne .Layout `archives`) (ne .Layout `search`) }}
-    {{- $.Scratch.Add "index" (dict "title" .Title "content" .Plain "permalink" .Permalink "summary" .Summary) -}}
+    {{- if and (in (slice "posts" "digest" "gallery" "lab") .Section) (not .Params.searchHidden) (ne .Layout `archives`) (ne .Layout `search`) }}
+    {{- $title := .Title -}}
+    {{- if eq .Section "gallery" -}}
+      {{- $slug := .Params.slug | default .File.ContentBaseName -}}
+      {{- $title = .Params.title | default .Params.cover.alt | default (replace $slug "-" " ") -}}
+    {{- end -}}
+    {{- $content := .Plain -}}
+    {{- $permalink := .Permalink -}}
+    {{- $summary := .Summary -}}
+    {{- $kind := .Params.kind | default "" -}}
+    {{- $shelf := .Params.shelf | default "" -}}
+    {{- if eq .Section "gallery" -}}
+      {{- $summary = .Summary | plainify | strings.TrimSpace -}}
+      {{- $summary = replaceRE `^(?:(?:오리지널|3줄 요약|프롬프트|시리즈 변주|컨셉 변주|출처|메모|\([0-9]+종\))([[:space:]]+|$))+` "" $summary -}}
+      {{- $summary = replaceRE `^([0-9]+[.)]|[-*•])[[:space:]]*` "" $summary -}}
+      {{- $summary = strings.TrimSpace $summary -}}
+      {{- $firstSentence := findRE `(?s)^.*?[.!?]([[:space:]]|$)` $summary 1 -}}
+      {{- with $firstSentence -}}
+        {{- $summary = index . 0 | strings.TrimSpace -}}
+      {{- end -}}
+    {{- end -}}
+    {{- if eq .Section "lab" -}}
+      {{- $content = .Params.summary | default "" -}}
+      {{- $summary = .Params.summary | default "" -}}
+      {{- $permalink = .Params.url | default "" -}}
+      {{- if strings.HasPrefix $permalink "/" -}}
+        {{- $permalink = $permalink | absURL -}}
+      {{- end -}}
+    {{- end -}}
+    {{- $category := "" -}}
+    {{- with .Params.categories -}}
+      {{- $category = index . 0 -}}
+    {{- end -}}
+    {{- $.Scratch.Add "index" (dict "title" $title "content" $content "permalink" $permalink "summary" $summary "section" .Section "date" (.Date.Format "2006.01.02") "category" $category "kind" $kind "shelf" $shelf) -}}
     {{- end }}
 {{- end -}}
 {{- $.Scratch.Get "index" | jsonify -}}
