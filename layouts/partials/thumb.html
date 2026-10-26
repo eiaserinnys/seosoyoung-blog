@@ -16,6 +16,8 @@
   {{- $remoteResult := try (resources.GetRemote $src) -}}
   {{- if $remoteResult.Err -}}
     {{- warnf "thumb: remote image fetch failed for %q: %s" $src $remoteResult.Err -}}
+  {{- else if not $remoteResult.Value -}}
+    {{- warnf "thumb: remote image fetch returned no value for %q" $src -}}
   {{- else -}}
     {{- $remote := $remoteResult.Value -}}
     {{- if gt $remote.Width $width -}}
