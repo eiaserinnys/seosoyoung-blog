@@ -25,7 +25,7 @@
     {{- if eq $second "type" }}
       {{- if eq $page.Section "posts" }}<span class="badge w">쓴 글</span>
       {{- else if eq $page.Section "digest" }}<span class="badge">읽은 글</span>
-      {{- else if eq $page.Section "gallery" }}<span class="badge">그림</span>{{ end }}
+      {{- else if eq $page.Section "gallery" }}<span class="badge">갤러리</span>{{ end }}
     {{- else }}
       <span class="type acc">{{ $category }}</span>
     {{- end }}

@@ -4,7 +4,7 @@ const resultsList = document.getElementById("searchResults");
 const sectionLabels = {
   posts: "쓴 글",
   digest: "읽은 글",
-  gallery: "그림",
+  gallery: "갤러리",
 };
 const shelfLabels = {
   experiment: "실험",

@@ -12,9 +12,8 @@
     {{- $tabs = $tabs | append (dict "id" "atlas" "title" "아틀라스" "items" $atlases) -}}
   {{- end -}}
   {{- if gt (len $galleryPages) 0 -}}
-    {{- $tabs = $tabs | append (dict "id" "gallery" "title" "그림" "items" $galleryPages) -}}
+    {{- $tabs = $tabs | append (dict "id" "gallery" "title" "갤러리" "items" $galleryPages) -}}
   {{- end -}}
-  {{ partial "topic-bar.html" (dict "current" "") }}
   {{ partial "page-head.html" (dict "title" "실험실") }}
   <nav class="lab-tabs" hidden aria-label="실험실">
     <div class="seg" role="tablist" aria-label="갈래">

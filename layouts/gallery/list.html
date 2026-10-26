@@ -7,7 +7,7 @@
   {{- else -}}
   {{- $galleryPages := where site.RegularPages "Section" "gallery" -}}
   {{- $galleryPages = $galleryPages.ByDate.Reverse -}}
-  {{ partial "page-head.html" (dict "title" "그림") }}
+  {{ partial "page-head.html" (dict "title" "갤러리") }}
   {{ partial "gallery-wall.html" (dict "pages" $galleryPages) }}
   {{- end }}
 {{ end }}

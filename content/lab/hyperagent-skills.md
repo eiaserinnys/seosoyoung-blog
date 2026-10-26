@@ -6,7 +6,7 @@ params:
   kind: "랜딩"
   url: "/landing/hyperagent-skills/"
   thumb: "https://img.seosoyoung.eiaserinnys.me/images/lab/hyperagent-skills/thumb.jpg"
-  shelf: "experiment"
+  shelf: "atlas"
 build:
   render: never
   list: always
