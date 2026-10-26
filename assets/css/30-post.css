@@ -544,8 +544,8 @@ aside.sidenote .footnote-backref {
 }
 
 .post-footer .peek {
-  grid-template-columns: 64px 96px minmax(0, 1fr) 200px;
-  padding-right: 0;
+  grid-template-columns: 64px 96px minmax(0, 1fr) 180px;
+  padding-right: 40px;
 }
 
 .post-footer .peek-summary {
@@ -941,6 +941,14 @@ html.rsvp-active .post-single .post-content figcaption {
     max-width: 720px;
   }
 
+  .post-footer .peek-summary {
+    grid-column: 3 / 5;
+  }
+
+  .post-footer .peek .cv {
+    grid-column: 3;
+  }
+
 }
 
 @media (max-width: 767px) {
@@ -954,6 +962,16 @@ html.rsvp-active .post-single .post-content figcaption {
 
   .post-content ul li::before {
     inset-inline-start: 0;
+  }
+
+  .post-footer .peek {
+    padding-right: 0;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .post-footer .peek .cv {
+    width: 180px;
   }
 }
 

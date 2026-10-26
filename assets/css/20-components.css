@@ -77,6 +77,11 @@ button.chip:disabled {
   cursor: not-allowed;
 }
 
+button.chip:not(:disabled):hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
 .seg {
   display: flex;
   flex: 0 0 auto;
@@ -343,6 +348,17 @@ button.chip:disabled {
   content: "";
 }
 
+.row .t a:focus-visible,
+.lrow .t a:focus-visible {
+  outline: none;
+}
+
+.row .t a:focus-visible::after,
+.lrow .t a:focus-visible::after {
+  outline: var(--line-strong) solid var(--focus);
+  outline-offset: calc(0px - var(--line-strong));
+}
+
 .row .pk,
 .lrow .pk {
   position: relative;
@@ -452,10 +468,6 @@ button.chip:disabled {
   background: linear-gradient(var(--accent-soft), var(--accent-soft));
 }
 
-.lrow + .peek {
-  padding-right: 40px;
-}
-
 .peek[hidden] {
   display: none;
 }
@@ -512,6 +524,12 @@ button.chip:disabled {
   font-weight: 600;
 }
 
+@media (min-width: 768px) {
+  .lrow + .peek {
+    padding-right: 40px;
+  }
+}
+
 .mon {
   display: flex;
   justify-content: space-between;
@@ -563,6 +581,16 @@ button.chip:disabled {
   .tbar a {
     flex: 0 0 auto;
     white-space: nowrap;
+  }
+
+  .peek-summary {
+    grid-column: 3 / 5;
+  }
+
+  .peek .cv {
+    grid-column: 3;
+    width: 240px;
+    margin-top: 12px;
   }
 }
 
