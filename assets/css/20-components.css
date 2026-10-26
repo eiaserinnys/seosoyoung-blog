@@ -4,6 +4,7 @@
   font-weight: 500;
   color: var(--ink-2);
   font-variant-numeric: tabular-nums;
+  white-space: nowrap;
 }
 
 .lbl {
@@ -149,6 +150,7 @@
   font-weight: 300;
   line-height: 1;
   font-variant-numeric: tabular-nums;
+  white-space: nowrap;
 }
 
 .stat:hover .n {
@@ -373,6 +375,7 @@
 .row + .peek:not([hidden]) {
   display: block;
   padding-left: calc(48px + 12px);
+  padding-right: 36px;
 }
 
 .row + .peek .cv {
@@ -447,6 +450,74 @@
   margin-top: 40px;
   padding: 32px 0 48px;
   border-top: 1px solid var(--rule);
+}
+
+@media (max-width: 1023px) {
+  .head {
+    grid-template-columns: minmax(0, 1fr);
+    row-gap: 12px;
+  }
+
+  .head .date,
+  .stats {
+    grid-column: 1;
+  }
+
+  .stat:first-child {
+    padding-left: 0;
+  }
+
+  .tbar {
+    display: flex;
+    overflow-x: auto;
+  }
+
+  .tbar a {
+    flex: 0 0 auto;
+    white-space: nowrap;
+  }
+}
+
+@media (hover: hover) and (pointer: fine) {
+  @supports not selector(::-webkit-scrollbar) {
+    .tbar {
+      scrollbar-width: thin;
+      scrollbar-color: var(--scrollbar-thumb) var(--bg);
+    }
+  }
+
+  .tbar::-webkit-scrollbar {
+    width: var(--scrollbar-size);
+    height: var(--scrollbar-size);
+    background: var(--bg);
+  }
+
+  .tbar::-webkit-scrollbar-track {
+    background: var(--bg);
+  }
+
+  /* 가로 막대: 두께 쪽(위아래)만 안쪽 여백을 주고 양 끝은 주제 줄 양 끝선에 붙인다. */
+  .tbar::-webkit-scrollbar-thumb {
+    min-width: var(--scrollbar-thumb-min);
+    border: solid transparent;
+    border-width: var(--scrollbar-inset-block) 0;
+    background-color: var(--scrollbar-thumb);
+    background-clip: padding-box;
+  }
+
+  .tbar::-webkit-scrollbar-thumb:hover,
+  .tbar::-webkit-scrollbar-thumb:active {
+    border-width: calc(var(--scrollbar-inset-block) - 1px) 0;
+    background-color: var(--scrollbar-thumb-hover);
+  }
+
+  .tbar::-webkit-scrollbar-thumb:active {
+    background-color: var(--scrollbar-thumb-active);
+  }
+
+  .tbar::-webkit-scrollbar-corner {
+    background: var(--bg);
+  }
 }
 
 @media (max-width: 767px) {

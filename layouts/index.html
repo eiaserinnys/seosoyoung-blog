@@ -1,20 +1,253 @@
 {{ define "main" }}
   {{- $posts := where site.RegularPages "Section" "posts" -}}
   {{- $digest := where site.RegularPages "Section" "digest" -}}
+  {{- $gallery := where site.RegularPages "Section" "gallery" -}}
+  {{- $gallery = where $gallery "Draft" false -}}
+  {{- $lab := where site.RegularPages "Section" "lab" -}}
+  {{- $experiments := where $lab "Params.shelf" "eq" "experiment" -}}
+  {{- $postsByDate := $posts.ByDate.Reverse -}}
+  {{- $digestByDate := $digest.ByDate.Reverse -}}
+  {{- $galleryByDate := $gallery.ByDate.Reverse -}}
+  {{- $experimentsByDate := $experiments.ByDate.Reverse -}}
   {{- $all := sort (append $posts $digest) "Date" "desc" -}}
   {{- $year := "" -}}
   {{- $latestDate := "서재" -}}
-  {{- with $all }}
+  {{- with $all -}}
     {{- $latest := index . 0 -}}
     {{- $year = $latest.Date.Format "2006" -}}
     {{- $latestDate = printf "%s월 %s일" ($latest.Date.Format "1") ($latest.Date.Format "2") -}}
   {{- end -}}
+
+  {{- $now := time.Now | time.In "Asia/Seoul" -}}
+  {{- $weekday := int $now.Weekday -}}
+  {{- $daysSinceMonday := sub $weekday 1 -}}
+  {{- if eq $weekday 0 -}}
+    {{- $daysSinceMonday = 6 -}}
+  {{- end -}}
+  {{- $mondayDate := $now.AddDate 0 0 (sub 0 $daysSinceMonday) -}}
+  {{- $weekStart := time.AsTime ($mondayDate.Format "2006-01-02") "Asia/Seoul" -}}
+  {{- $thisWeekCount := 0 -}}
+  {{- range $digest -}}
+    {{- if ge .Date.Unix $weekStart.Unix -}}
+      {{- $thisWeekCount = add $thisWeekCount 1 -}}
+    {{- end -}}
+  {{- end -}}
+
+  {{- $monthStart := time.AsTime (printf "%04d-%02d-01" $now.Year (int $now.Month)) "Asia/Seoul" -}}
+  {{- $monthCounts := slice -}}
+  {{- range seq 0 6 -}}
+    {{- $month := $monthStart.AddDate 0 (sub . 6) 0 -}}
+    {{- $monthKey := $month.Format "2006-01" -}}
+    {{- $count := 0 -}}
+    {{- range $digest -}}
+      {{- $pageMonth := time.In "Asia/Seoul" .Date | time.Format "2006-01" -}}
+      {{- if eq $pageMonth $monthKey -}}
+        {{- $count = add $count 1 -}}
+      {{- end -}}
+    {{- end -}}
+    {{- $monthCounts = $monthCounts | append (dict "date" $month "count" $count) -}}
+  {{- end -}}
+  {{- $maxMonthCount := 1 -}}
+  {{- range $monthCounts -}}
+    {{- if gt .count $maxMonthCount -}}
+      {{- $maxMonthCount = .count -}}
+    {{- end -}}
+  {{- end -}}
+
+  {{- $series := slice -}}
+  {{- range site.Taxonomies.series -}}
+    {{- $seriesTerm := . -}}
+    {{- $seriesPages := .Pages.ByDate -}}
+    {{- with $seriesPages -}}
+      {{- $latest := index (.Reverse) 0 -}}
+      {{- $series = $series | append (dict
+        "title" $seriesTerm.Page.Title
+        "url" $seriesTerm.Page.RelPermalink
+        "pages" $seriesPages
+        "latest" $latest.Date.Unix) -}}
+    {{- end -}}
+  {{- end -}}
+  {{- $series = sort $series "latest" "desc" -}}
+
+  {{- $labCount := add (len $lab) (len $gallery) -}}
+  <div class="home">
   {{- partial "page-head.html" (dict "eyebrow" $year "title" $latestDate "stats" (slice
     (dict "label" "쓴 글" "value" (len $posts) "url" ("posts/" | relURL))
-    (dict "label" "읽은 글" "value" (len $digest) "url" ("digest/" | relURL)))) -}}
+    (dict "label" "읽은 글" "value" (len $digest) "url" ("digest/" | relURL))
+    (dict "label" "실험실" "value" $labCount "url" ("lab/" | relURL))
+    (dict "label" "X" "value" 0 "url" ("twitter/" | relURL) "id" "stat-x"))) -}}
   {{- partial "topic-bar.html" (dict "current" "") -}}
-  {{- partial "section-head.html" (dict "title" "읽은 글") -}}
-  {{- range first 7 $digest.ByDate.Reverse -}}
-    {{- partial "ledger-row.html" (dict "page" . "variant" "compact" "second" "category") -}}
+
+  <div class="band">
+    {{- with $postsByDate -}}
+      {{- $lead := index . 0 -}}
+      <article class="lead">
+        <a class="lead-main" href="{{ $lead.RelPermalink }}">
+          <div class="cv">
+            {{- with $lead.Params.cover.image -}}
+              {{- partial "thumb.html" (dict "src" . "w" 480 "alt" "" "focus" $lead.Params.cover.focus "eager" true) -}}
+            {{- end -}}
+          </div>
+          <div class="lead-copy">
+            <div class="meta">
+              {{- with $lead.Params.categories -}}<span class="lbl acc">{{ index . 0 }}</span>{{- end -}}
+              <span class="mono">{{ $lead.Date.Format "2006.01.02" }}</span>
+            </div>
+            <h2>{{ $lead.Title }}</h2>
+            <p class="clamp2">{{ $lead.Summary | plainify }}</p>
+          </div>
+        </a>
+        <div class="more">
+          {{- range first 2 (after 1 $postsByDate) -}}
+            <a href="{{ .RelPermalink }}">
+              <div class="meta">
+                {{- with .Params.categories -}}<span class="lbl acc">{{ index . 0 }}</span>{{- end -}}
+                <span class="mono">{{ .Date.Format "2006.01.02" }}</span>
+              </div>
+              <div class="t clamp1">{{ .Title }}</div>
+            </a>
+          {{- end -}}
+        </div>
+      </article>
+    {{- end -}}
+
+    <section class="ledger col" aria-label="읽은 글">
+      {{- partial "section-head.html" (dict "title" "읽은 글" "url" ("digest/" | relURL) "aside" (printf "이번 주 %d" $thisWeekCount)) -}}
+      <div class="ledger-first">
+        {{- range first 5 $digestByDate -}}
+          {{- partial "ledger-row.html" (dict "page" . "variant" "compact" "second" "category") -}}
+        {{- end -}}
+      </div>
+      <div class="ledger-rest">
+        {{- range first 2 (after 5 $digestByDate) -}}
+          {{- partial "ledger-row.html" (dict "page" . "variant" "compact" "second" "category") -}}
+        {{- end -}}
+      </div>
+    </section>
+
+    <aside class="vis col" aria-label="실험실, 그림, X">
+      {{- partial "section-head.html" (dict "title" "실험실" "url" ("lab/" | relURL) "aside" $labCount) -}}
+      {{- with $experimentsByDate -}}
+        {{- $experiment := index . 0 -}}
+        <a class="labt" href="{{ $experiment.Params.url }}" aria-label="{{ $experiment.Title }}">
+          <div class="cv">{{ partial "thumb.html" (dict "src" $experiment.Params.thumb "w" 320 "alt" "" "class" "" "eager" true) }}</div>
+          <div class="meta"><span class="mono">{{ $experiment.Params.kind }}</span></div>
+          <div class="t">{{ $experiment.Title }}</div>
+        </a>
+      {{- end -}}
+
+      {{- if gt (len $galleryByDate) 0 -}}
+        <div class="gal3{{ if not $experimentsByDate }} no-lab{{ end }}">
+          {{- with $experimentsByDate -}}
+            {{- $experiment := index . 0 -}}
+            <a class="ml" href="{{ $experiment.Params.url }}" aria-label="{{ $experiment.Title }}">
+              <div class="cv">{{ partial "thumb.html" (dict "src" $experiment.Params.thumb "w" 160 "alt" "" "class" "" "eager" true) }}</div>
+            </a>
+          {{- end -}}
+          {{- range first 3 $galleryByDate -}}
+            {{- $alt := .Params.title | default .Params.cover.alt -}}
+            {{- if not $alt -}}{{- $alt = printf "그림 %s" (.Date.Format "2006.01.02") -}}{{- end -}}
+            <a class="gal-item" href="{{ .RelPermalink }}" aria-label="{{ $alt }}">
+              <div class="cv">{{ partial "thumb.html" (dict "src" .Params.cover.image "w" 160 "alt" $alt "class" "" "focus" .Params.cover.focus "eager" true) }}</div>
+            </a>
+          {{- end -}}
+          {{- if not $experimentsByDate -}}
+            {{- with index $galleryByDate 3 -}}
+              {{- $alt := .Params.title | default .Params.cover.alt -}}
+              {{- if not $alt -}}{{- $alt = printf "그림 %s" (.Date.Format "2006.01.02") -}}{{- end -}}
+              <a class="gal-item mobile-only" href="{{ .RelPermalink }}" aria-label="{{ $alt }}">
+                <div class="cv">{{ partial "thumb.html" (dict "src" .Params.cover.image "w" 160 "alt" $alt "class" "" "focus" .Params.cover.focus "eager" true) }}</div>
+              </a>
+            {{- end -}}
+          {{- end -}}
+        </div>
+      {{- end -}}
+
+      <div class="xs" hidden>
+        {{- partial "section-head.html" (dict "title" "X" "url" ("twitter/" | relURL) "aside" "0") -}}
+        <div class="x-rows"></div>
+      </div>
+    </aside>
+  </div>
+
+  <section class="sec" aria-label="주제별 최신 글">
+    <div class="desks">
+      {{- $topics := partial "topics.html" . -}}
+      {{- range $topics -}}
+        {{- $topic := . -}}
+        {{- $topicTerms := where site.Taxonomies.categories.ByCount "Page.Title" $topic.name -}}
+        {{- $topicPages := slice -}}
+        {{- with $topicTerms -}}
+          {{- $term := index . 0 -}}
+          {{- $topicPages = where $term.Pages "Section" "in" (slice "posts" "digest") -}}
+        {{- end -}}
+        {{- $topicPosts := where $topicPages "Section" "posts" -}}
+        {{- $topicPosts = $topicPosts.ByDate.Reverse -}}
+        {{- $topicDigest := where $topicPages "Section" "digest" -}}
+        {{- $topicDigest = $topicDigest.ByDate.Reverse -}}
+        <article class="desk">
+          <div class="dh">
+            <a href="{{ $topic.url }}"><b>{{ $topic.name }}</b></a>
+            <span class="n">{{ $topic.count }}</span>
+          </div>
+          {{- with $topicPosts -}}
+            {{- $anchor := index . 0 -}}
+            <a class="anchor" href="{{ $anchor.RelPermalink }}">
+              <div class="cv">{{ partial "thumb.html" (dict "src" $anchor.Params.cover.image "w" 128 "alt" "" "focus" $anchor.Params.cover.focus) }}</div>
+              <div>
+                <span class="mono">{{ $anchor.Date.Format "2006.01.02" }}</span>
+                <div class="t clamp2">{{ $anchor.Title }}</div>
+              </div>
+            </a>
+          {{- end -}}
+          {{- range first 3 $topicDigest -}}
+            <a class="drow" href="{{ .RelPermalink }}">
+              <span class="mono">{{ .Date.Format "01.02" }}</span>
+              <span class="t clamp1">{{ .Title }}</span>
+            </a>
+          {{- end -}}
+        </article>
+      {{- end -}}
+    </div>
+  </section>
+
+  {{- with first 2 $series -}}
+    <section class="sec" aria-label="시리즈">
+      <div class="series">
+        {{- range . -}}
+          <article class="ser">
+            <h4><a href="{{ .url }}">{{ .title }}</a><span class="mono">{{ len .pages }}편</span></h4>
+            <ol>
+              {{- range $index, $page := first 4 .pages -}}
+                <li>
+                  <span class="mono">{{ printf "%02d" (add $index 1) }}</span>
+                  <span class="clamp1"><a href="{{ $page.RelPermalink }}">{{ $page.Title }}</a></span>
+                </li>
+              {{- end -}}
+            </ol>
+          </article>
+        {{- end -}}
+      </div>
+    </section>
   {{- end -}}
+
+  <section class="sec" aria-label="월별 글 수">
+    <div class="months">
+      {{- range $monthCounts -}}
+        {{- $height := div (mul .count 109) $maxMonthCount -}}
+        {{- $yearMonth := .date.Format "2006-01" -}}
+        <a class="mb" href="{{ printf "/digest/#m-%s" $yearMonth | relURL }}" aria-label="{{ .date.Format "2006년 1월" }} 읽은 글 {{ .count }}편">
+          <span class="v">{{ .count }}</span>
+          <span class="bar" style="height:{{ $height }}px"></span>
+          <span class="m">{{ .date.Format "06.01" }}</span>
+        </a>
+      {{- end -}}
+    </div>
+  </section>
+  </div>
+{{ end }}
+
+{{ define "scripts" }}
+  {{- $script := resources.Get "js/home.js" | js.Build (dict "minify" true) | fingerprint -}}
+  <script defer src="{{ $script.RelPermalink }}" integrity="{{ $script.Data.Integrity }}" crossorigin="anonymous"></script>
 {{ end }}
