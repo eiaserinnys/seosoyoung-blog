@@ -31,11 +31,20 @@
       function fitImage() {
         if (!big.naturalWidth) return;
         var viewportWidth = window.innerWidth * 0.96;
-        var width = Math.min(Math.max(renderedWidth, Math.min(big.naturalWidth, viewportWidth)), viewportWidth);
-        big.style.width = width + 'px';
+        var ratio = big.naturalHeight / big.naturalWidth;
         var captionHeight = capEl ? capEl.offsetHeight + parseFloat(getComputedStyle(capEl).marginTop) : 0;
         var availableHeight = Math.min(window.innerHeight * 0.88, window.innerHeight * 0.94 - captionHeight);
-        overlay.classList.toggle('ssy-lightbox--scroll', width * big.naturalHeight / big.naturalWidth > availableHeight);
+        // 화면에 통째로 맞춘 폭이 본문에서 보이던 폭 이상이면 통째로 보인다.
+        // 그보다 작아지는 그림(아주 긴 그림, 원래 크기가 작은 그림)만 본문 폭 이상으로 열고 넘치면 스크롤한다.
+        var fitWidth = Math.min(big.naturalWidth, viewportWidth, availableHeight / ratio);
+        var width = fitWidth;
+        var scroll = false;
+        if (fitWidth < renderedWidth - 1) {
+          width = Math.min(Math.max(renderedWidth, Math.min(big.naturalWidth, viewportWidth)), viewportWidth);
+          scroll = width * ratio > availableHeight;
+        }
+        big.style.width = width + 'px';
+        overlay.classList.toggle('ssy-lightbox--scroll', scroll);
       }
       var previousOverflow = document.documentElement.style.overflow;
       function close() {
