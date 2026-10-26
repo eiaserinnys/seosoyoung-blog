@@ -6,7 +6,7 @@ params:
   kind: "큐레이션"
   url: "https://pages.eiaserinnys.me/d/devgamm-awards-2026/"
   thumb: "https://img.seosoyoung.eiaserinnys.me/images/lab/devgamm-awards-2026/thumb.jpg"
-  shelf: "report"
+  shelf: "atlas"
 build:
   render: never
   list: always

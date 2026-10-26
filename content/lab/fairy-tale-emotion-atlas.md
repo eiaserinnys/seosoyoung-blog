@@ -6,7 +6,7 @@ params:
   kind: "아카이브"
   url: "https://pages.eiaserinnys.me/d/fairy-tale-emotion-atlas/"
   thumb: "https://img.seosoyoung.eiaserinnys.me/images/lab/fairy-tale-emotion-atlas/thumb.jpg"
-  shelf: "report"
+  shelf: "experiment"
 build:
   render: never
   list: always

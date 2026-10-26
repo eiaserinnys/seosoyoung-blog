@@ -6,7 +6,7 @@ params:
   kind: "시각화"
   url: "https://pages.eiaserinnys.me/d/openai-math-award-ladder-ko/"
   thumb: "https://img.seosoyoung.eiaserinnys.me/images/lab/openai-math-award-ladder-ko/thumb.jpg"
-  shelf: "report"
+  shelf: "experiment"
 build:
   render: never
   list: always
