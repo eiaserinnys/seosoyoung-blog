@@ -40,6 +40,10 @@
   object-fit: cover;
 }
 
+#main > .tbar + .head {
+  padding-top: 32px;
+}
+
 .chip {
   display: inline-flex;
   flex: 0 0 auto;
