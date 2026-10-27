@@ -113,6 +113,21 @@ button.chip:not(:disabled):hover {
   color: inherit;
 }
 
+.site-top {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: var(--bg);
+}
+
+.site-top[data-scrolled="true"] {
+  box-shadow: 0 var(--line) 0 var(--rule);
+}
+
+.site-top[data-scrolled="true"][data-subbar-stuck="true"] {
+  box-shadow: none;
+}
+
 .top {
   height: var(--topline-height);
   display: grid;

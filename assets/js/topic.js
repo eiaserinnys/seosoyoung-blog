@@ -4,6 +4,7 @@ const rows = [...document.querySelectorAll(".lrow")];
 const months = [...document.querySelectorAll(".mon")];
 const filter = document.querySelector(".filt");
 const filterOrigin = document.querySelector(".filt-origin");
+const siteTop = document.querySelector(".site-top");
 
 let activeSection = "all";
 let activeChip = null;
@@ -64,11 +65,28 @@ function update() {
 
 function updateAfterSelection() {
   const originY = filterOrigin.getBoundingClientRect().top + window.scrollY;
+  const stickyTop = filter ? parseFloat(getComputedStyle(filter).top) || 0 : 0;
   const wasStuck = filter
-    && window.scrollY > originY
-    && filter.getBoundingClientRect().top <= 1;
+    && window.scrollY > originY - stickyTop
+    && filter.getBoundingClientRect().top <= stickyTop + 1;
   update();
-  if (wasStuck) window.scrollTo({ top: originY, behavior: "instant" });
+  if (wasStuck) window.scrollTo({ top: originY - stickyTop, behavior: "instant" });
+}
+
+if (filter && siteTop) {
+  function updateSubbarStuckState() {
+    const stickyTop = parseFloat(getComputedStyle(filter).top) || 0;
+    const isStuck = window.scrollY > 0
+      && filter.getBoundingClientRect().top <= stickyTop + 1;
+    if (isStuck) {
+      siteTop.dataset.subbarStuck = "true";
+    } else {
+      delete siteTop.dataset.subbarStuck;
+    }
+  }
+
+  window.addEventListener("scroll", () => requestAnimationFrame(updateSubbarStuckState), { passive: true });
+  updateSubbarStuckState();
 }
 
 for (const button of sectionButtons) {

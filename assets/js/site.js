@@ -1,5 +1,19 @@
 const root = document.documentElement;
 const themeButton = document.querySelector(".theme-control");
+const siteTop = document.querySelector(".site-top");
+
+if (siteTop) {
+  function updateSiteTopScrollState() {
+    if (window.scrollY > 0) {
+      siteTop.dataset.scrolled = "true";
+    } else {
+      delete siteTop.dataset.scrolled;
+    }
+  }
+
+  window.addEventListener("scroll", () => requestAnimationFrame(updateSiteTopScrollState), { passive: true });
+  updateSiteTopScrollState();
+}
 
 function updateThemePressed() {
   const dark = root.dataset.theme
