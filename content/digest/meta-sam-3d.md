@@ -59,7 +59,7 @@ Meta 연구진은 이 문제를 **모델 루프 내**(Model-in-the-loop) **데�
 
 SA-3DAO 평가와 선호도 테스트에서 SAM 3D Objects는 3D 형상, 공간 배치, 시각적 품질 모두 기존 모델보다 높은 성적을 거두었다[^1].
 
-- **3D 형상과 공간 배치**: 형상 지표 F1(0.01) **0.2339**, 오차 거리 Chamfer Distance **0.0408**을 기록해 오차를 비교 모델(0.0990\~0.1292)의 절반 이하로 줄였다. 장면 배치 정확도도 3D IoU **0.4254**, ADD-S@0.1 **0.7232**로 기존 2단계 파이프라인(Hunyuan3D + Foundation Pose, Trellis + MegaPose)보다 높았다.
+- **3D 형상과 공간 배치**: 형상 지표 F1(0.01) **0.2339**, 오차 거리 Chamfer Distance **0.0408**을 기록해 오차를 비교 모델(0.0990\~0.1292)의 절반 이하로 줄였다. 장면 배치 정확도도 3D IoU **0.4254**, ADD-S&#64;0.1 **0.7232**로 기존 2단계 파이프라인(Hunyuan3D + Foundation Pose, Trellis + MegaPose)보다 높았다.
 - **인간 선호도와 추론 속도**: SA-1B와 LVIS 이미지 기반 일대일 선호도 평가에서 경쟁 모델 대비 **5대 1 이상의 승패 비율**(승률 83.6%\~90.8%)을 달성했다[^2]. 확산 모델 단축 기법(Diffusion Shortcuts)과 최적화를 거쳐 텍스처가 포함된 3D 복원 결과를 **수 초 안에** 반환하므로 로보틱스의 준실시간 3D 인식 모듈로도 쓸 수 있다.
 
 SAM 3D Objects의 현재 한계는 두 가지다. 첫째, 출력 해상도가 중간 수준이라 사람 전신처럼 복잡한 대상을 객체 모델로 복원하면 왜곡이나 세부 형태 손실이 발생한다. 둘째, 장면 속 객체를 하나씩 개별 예측하기 때문에 물체 간 접촉(Contact)이나 객체끼리 겹치는 현상(Interpenetration) 같은 물리적 상호작용을 함께 추론하지 못한다. 해상도 향상과 다중 객체 동시 예측 손실 함수 도입이 후속 과제로 제시됐다.
@@ -104,6 +104,6 @@ Meta AI, 「Introducing SAM 3D: Powerful 3D Reconstruction for Physical World Im
 - Meta Momentum Human Rig (MHR): [facebookresearch/MHR](https://github.com/facebookresearch/MHR)
 - 치비 서소영 삽화 2장은 「느낌적인 느낌을 숫자로 옮기는 일」의 치비 서소영 라인아트를 참조해 gpt-image-2.5-flare로 따로 생성했다.
 
-[^1]: F1(0.01)은 거리 임계값 0.01로 예측 점군과 정답 점군을 비교했을 때 정밀도와 재현율의 조화 평균이며 값이 높을수록 우수하다. Chamfer Distance는 두 점군 사이의 평균 최근접 거리 오차로 값이 낮을수록 우수하다. 배치 지표인 3D IoU는 3D 바운딩 박스의 교집합 대비 합집합 비율이고, ADD-S@0.1은 객체 지름의 10% 이내로 정점 좌표가 정합된 비율(높을수록 우수)이다. 오픈소스 Hunyuan3D 비교치는 Hunyuan3D-2.0과 Hunyuan3D-2.1 중 더 높은 성적을 낸 모델을 기준으로 집계했다.
+[^1]: F1(0.01)은 거리 임계값 0.01로 예측 점군과 정답 점군을 비교했을 때 정밀도와 재현율의 조화 평균이며 값이 높을수록 우수하다. Chamfer Distance는 두 점군 사이의 평균 최근접 거리 오차로 값이 낮을수록 우수하다. 배치 지표인 3D IoU는 3D 바운딩 박스의 교집합 대비 합집합 비율이고, ADD-S&#64;0.1은 객체 지름의 10% 이내로 정점 좌표가 정합된 비율(높을수록 우수)이다. 오픈소스 Hunyuan3D 비교치는 Hunyuan3D-2.0과 Hunyuan3D-2.1 중 더 높은 성적을 낸 모델을 기준으로 집계했다.
 [^2]: 선호도 평가에서 Trellis\*와 Hunyuan3D\*는 텍스처가 포함된 메시 기준으로 비교했고, 나머지 모델(Direct3D-S2, TripoSG, Hi3DGen)은 텍스처가 없는 형상 메시 기준으로 비교했다.
 [^3]: MPJPE(Mean Per Joint Position Error)는 예측된 3D 관절 좌표와 정답 관절 좌표 사이의 평균 오차(mm 단위, 낮을수록 우수)이며, PVE(Per Vertex Error)는 인체 메시 표면 정점 전체의 평균 좌표 오차(낮을수록 우수)다. PCK(Percentage of Correct Keypoints)는 재투영된 2D 관절점이 임계 거리 안에 들어온 정답 비율(높을수록 우수)이다.
