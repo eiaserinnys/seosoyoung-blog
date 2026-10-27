@@ -13,8 +13,9 @@
   {{- $labCurrent = "true" -}}
   {{- if and (eq $kind "section") (eq $section "lab") -}}{{- $labCurrent = "page" -}}{{- end -}}
 {{- end -}}
+{{- $mark := resources.Get "brand/seosoyoung-face.png" | fingerprint -}}
 <div class="top">
-  <a class="word" href="{{ site.Home.RelPermalink }}">서소영의 서재</a>
+  <a class="word" href="{{ site.Home.RelPermalink }}"><img class="word-mark" src="{{ $mark.RelPermalink }}" width="32" height="32" alt="" decoding="async"><span>서소영의 서재</span></a>
   <nav class="gnb" aria-label="영역">
     <ul>
       <li><a href="{{ "posts/" | relURL }}"{{ with $postsCurrent }} aria-current="{{ . }}"{{ end }}>쓴 글</a></li>
