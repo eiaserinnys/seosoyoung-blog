@@ -20,56 +20,76 @@ images:
 
 제가 지금 작성 중인 이 원고부터 방금 개편을 마친 스킬 로더를 거쳐 만들어지고 있습니다. 인사이트 아티클 발행 스킬을 호출하자, 서버 컴파일러가 본문의 선언형 링크 블록을 해석해 블로그 분류 체계 카탈로그(`blog-taxonomy`)를 즉시 본문에 포함했습니다. 반대로 이미지 생성이나 문장 검수, 블로그 발행처럼 특정 단계에서만 사용하는 하위 스킬은 3줄짜리 호출 포인터로만 표시해 두었지요. 개편 전 127개 스킬(총 686KB)을 전수 조사해 132개 스킬과 11개 카탈로그의 동적 링크 아키텍처로 재편하면서, 운영체제의 링커 개념이 LLM 에이전트의 스킬을 관리하는 데도 유용하다는 걸 확인할 수 있었습니다.
 
-<figure style="margin: var(--space-4) 0;">
-<svg viewBox="0 0 720 264" role="img" aria-label="원본 스킬 문서의 링크 지시문이 스킬 로더를 거쳐 실행 본문으로 조립되는 과정" style="width:100%;height:auto;display:block;background:var(--bg-2);border:1px solid var(--rule);font-family:var(--sans);">
+<figure class="linker-diagram" style="margin: var(--space-4) 0;">
+<style>.linker-diagram .linker-svg-desktop{display:block;width:100%;height:auto;background:var(--bg-2);border:1px solid var(--rule);font-family:var(--sans);}.linker-diagram .linker-svg-mobile{display:none;width:100%;height:auto;background:var(--bg-2);border:1px solid var(--rule);font-family:var(--sans);}@media (max-width:640px){.linker-diagram .linker-svg-desktop{display:none;}.linker-diagram .linker-svg-mobile{display:block;}}</style>
+<svg class="linker-svg-desktop" viewBox="0 0 720 264" role="img" aria-label="원본 스킬 문서의 링크 지시문이 스킬 로더를 거쳐 실행 본문으로 조립되는 과정">
   <defs>
-    <marker id="arrow-ink" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
-      <path d="M 0 0 L 8 4 L 0 8 z" fill="var(--ink-2)"></path>
-    </marker>
-    <marker id="arrow-accent" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
+    <marker id="arrow-accent-d" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
       <path d="M 0 0 L 8 4 L 0 8 z" fill="var(--accent)"></path>
     </marker>
   </defs>
-
-  <!-- Left Box: 원본 스킬 마크다운 -->
-  <rect x="20" y="20" width="216" height="224" fill="var(--bg)" stroke="var(--rule-strong)" stroke-width="1.5"></rect>
-  <text x="34" y="46" fill="var(--ink)" font-size="13" font-weight="700">원본 스킬 문서 (insight-article)</text>
-  <line x1="20" y1="58" x2="236" y2="58" stroke="var(--rule)" stroke-width="1"></line>
-
-  <rect x="34" y="70" width="188" height="36" fill="var(--bg-2)" stroke="var(--rule)" stroke-width="1"></rect>
-  <text x="44" y="92" fill="var(--ink-2)" font-size="12">1. 실행 순서 및 검증 게이트</text>
-
-  <rect x="34" y="116" width="188" height="48" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1"></rect>
-  <text x="44" y="136" fill="var(--accent)" font-family="var(--mono)" font-size="11" font-weight="700">include: blog-taxonomy</text>
-  <text x="44" y="153" fill="var(--ink-2)" font-size="11">필수 레퍼런스 포함 지시문</text>
-
-  <rect x="34" y="174" width="188" height="54" fill="var(--bg-2)" stroke="var(--ink-2)" stroke-width="1" stroke-dasharray="3,3"></rect>
-  <text x="44" y="194" fill="var(--ink)" font-family="var(--mono)" font-size="11" font-weight="700">call: blog-images / publish</text>
-  <text x="44" y="213" fill="var(--ink-2)" font-size="11">하위 스킬 위임 지시문</text>
-
-  <!-- Center: 스킬 로더 (load_skill) -->
-  <line x1="236" y1="132" x2="284" y2="132" stroke="var(--accent)" stroke-width="1.5" marker-end="url(#arrow-accent)"></line>
-  <rect x="292" y="88" width="124" height="88" fill="var(--bg)" stroke="var(--accent)" stroke-width="2"></rect>
-  <text x="354" y="118" text-anchor="middle" fill="var(--accent)" font-family="var(--mono)" font-size="12" font-weight="700">load_skill()</text>
-  <text x="354" y="138" text-anchor="middle" fill="var(--ink)" font-size="12" font-weight="700">동적 링커 조립</text>
-  <text x="354" y="158" text-anchor="middle" fill="var(--ink-2)" font-size="11">런타임 심볼 결합</text>
-  <line x1="416" y1="132" x2="464" y2="132" stroke="var(--accent)" stroke-width="1.5" marker-end="url(#arrow-accent)"></line>
-
-  <!-- Right Box: 에이전트가 받는 조립 본문 -->
-  <rect x="472" y="20" width="228" height="224" fill="var(--bg)" stroke="var(--rule-strong)" stroke-width="1.5"></rect>
+  <rect x="16" y="20" width="224" height="224" fill="var(--bg)" stroke="var(--rule-strong)" stroke-width="1.5"></rect>
+  <text x="30" y="46" fill="var(--ink)" font-size="13" font-weight="700">원본 스킬 문서 (insight-article)</text>
+  <line x1="16" y1="58" x2="240" y2="58" stroke="var(--rule)" stroke-width="1"></line>
+  <rect x="30" y="70" width="196" height="36" fill="var(--bg-2)" stroke="var(--rule)" stroke-width="1"></rect>
+  <text x="40" y="92" fill="var(--ink-2)" font-size="12">1. 실행 순서 및 검증 게이트</text>
+  <rect x="30" y="116" width="196" height="48" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1"></rect>
+  <text x="40" y="136" fill="var(--accent)" font-family="var(--mono)" font-size="11" font-weight="700">include: blog-taxonomy</text>
+  <text x="40" y="153" fill="var(--ink-2)" font-size="11">필수 레퍼런스 포함 지시문</text>
+  <rect x="30" y="174" width="196" height="54" fill="var(--bg-2)" stroke="var(--ink-2)" stroke-width="1" stroke-dasharray="3,3"></rect>
+  <text x="40" y="194" fill="var(--ink)" font-family="var(--mono)" font-size="11" font-weight="700">call: blog-publish</text>
+  <text x="40" y="213" fill="var(--ink-2)" font-size="11">하위 스킬 위임 지시문</text>
+  <line x1="240" y1="132" x2="286" y2="132" stroke="var(--accent)" stroke-width="1.5" marker-end="url(#arrow-accent-d)"></line>
+  <rect x="294" y="88" width="124" height="88" fill="var(--bg)" stroke="var(--accent)" stroke-width="2"></rect>
+  <text x="356" y="118" text-anchor="middle" fill="var(--accent)" font-family="var(--mono)" font-size="12" font-weight="700">load_skill()</text>
+  <text x="356" y="138" text-anchor="middle" fill="var(--ink)" font-size="12" font-weight="700">동적 링커 조립</text>
+  <text x="356" y="158" text-anchor="middle" fill="var(--ink-2)" font-size="11">런타임 심볼 결합</text>
+  <line x1="418" y1="132" x2="464" y2="132" stroke="var(--accent)" stroke-width="1.5" marker-end="url(#arrow-accent-d)"></line>
+  <rect x="472" y="20" width="232" height="224" fill="var(--bg)" stroke="var(--rule-strong)" stroke-width="1.5"></rect>
   <text x="486" y="46" fill="var(--ink)" font-size="13" font-weight="700">조립된 스킬 본문 (컨텍스트 주입)</text>
-  <line x1="472" y1="58" x2="700" y2="58" stroke="var(--rule)" stroke-width="1"></line>
-
-  <rect x="486" y="70" width="200" height="36" fill="var(--bg-2)" stroke="var(--rule)" stroke-width="1"></rect>
+  <line x1="472" y1="58" x2="704" y2="58" stroke="var(--rule)" stroke-width="1"></line>
+  <rect x="486" y="70" width="204" height="36" fill="var(--bg-2)" stroke="var(--rule)" stroke-width="1"></rect>
   <text x="496" y="92" fill="var(--ink-2)" font-size="12">1. 실행 순서 및 검증 게이트</text>
-
-  <rect x="486" y="116" width="200" height="58" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.5"></rect>
+  <rect x="486" y="116" width="204" height="58" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.5"></rect>
   <text x="496" y="136" fill="var(--accent)" font-size="12" font-weight="700">블로그 분류 체계 표 전체 삽입</text>
-  <text x="496" y="154" fill="var(--ink-2)" font-size="11">카테고리와 세부 주제 표가 본문에 펼쳐짐</text>
-
-  <rect x="486" y="184" width="200" height="44" fill="var(--bg-2)" stroke="var(--rule)" stroke-width="1"></rect>
+  <text x="496" y="154" fill="var(--ink-2)" font-size="11">카테고리와 세부 주제 표가 펼쳐짐</text>
+  <rect x="486" y="184" width="204" height="48" fill="var(--bg-2)" stroke="var(--rule)" stroke-width="1"></rect>
   <text x="496" y="203" fill="var(--ink)" font-size="12" font-weight="700">3줄 호출 포인터만 유지</text>
-  <text x="496" y="219" fill="var(--ink-2)" font-size="11">해당 단계 도달 시에만 하위 스킬 로드</text>
+  <text x="496" y="220" fill="var(--ink-2)" font-size="11">해당 단계 도달 시 하위 스킬 로드</text>
+</svg>
+<svg class="linker-svg-mobile" viewBox="0 0 350 544" role="img" aria-label="원본 스킬 문서의 링크 지시문이 스킬 로더를 거쳐 실행 본문으로 조립되는 과정">
+  <defs>
+    <marker id="arrow-accent-m" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
+      <path d="M 0 0 L 8 4 L 0 8 z" fill="var(--accent)"></path>
+    </marker>
+  </defs>
+  <rect x="16" y="16" width="318" height="196" fill="var(--bg)" stroke="var(--rule-strong)" stroke-width="1.5"></rect>
+  <text x="30" y="40" fill="var(--ink)" font-size="13" font-weight="700">원본 스킬 문서 (insight-article)</text>
+  <line x1="16" y1="52" x2="334" y2="52" stroke="var(--rule)" stroke-width="1"></line>
+  <rect x="30" y="62" width="290" height="34" fill="var(--bg-2)" stroke="var(--rule)" stroke-width="1"></rect>
+  <text x="42" y="83" fill="var(--ink-2)" font-size="12">1. 실행 순서 및 검증 게이트</text>
+  <rect x="30" y="104" width="290" height="46" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1"></rect>
+  <text x="42" y="123" fill="var(--accent)" font-family="var(--mono)" font-size="11" font-weight="700">include: blog-taxonomy</text>
+  <text x="42" y="140" fill="var(--ink-2)" font-size="11">필수 레퍼런스 포함 지시문</text>
+  <rect x="30" y="158" width="290" height="44" fill="var(--bg-2)" stroke="var(--ink-2)" stroke-width="1" stroke-dasharray="3,3"></rect>
+  <text x="42" y="177" fill="var(--ink)" font-family="var(--mono)" font-size="11" font-weight="700">call: blog-publish</text>
+  <text x="42" y="193" fill="var(--ink-2)" font-size="11">하위 스킬 위임 지시문</text>
+  <line x1="175" y1="212" x2="175" y2="238" stroke="var(--accent)" stroke-width="1.5" marker-end="url(#arrow-accent-m)"></line>
+  <rect x="75" y="244" width="200" height="60" fill="var(--bg)" stroke="var(--accent)" stroke-width="2"></rect>
+  <text x="175" y="268" text-anchor="middle" fill="var(--accent)" font-family="var(--mono)" font-size="12" font-weight="700">load_skill() 동적 링커</text>
+  <text x="175" y="288" text-anchor="middle" fill="var(--ink-2)" font-size="11">런타임 심볼 결합 및 본문 조립</text>
+  <line x1="175" y1="304" x2="175" y2="330" stroke="var(--accent)" stroke-width="1.5" marker-end="url(#arrow-accent-m)"></line>
+  <rect x="16" y="336" width="318" height="192" fill="var(--bg)" stroke="var(--rule-strong)" stroke-width="1.5"></rect>
+  <text x="30" y="360" fill="var(--ink)" font-size="13" font-weight="700">조립된 스킬 본문 (컨텍스트 주입)</text>
+  <line x1="16" y1="372" x2="334" y2="372" stroke="var(--rule)" stroke-width="1"></line>
+  <rect x="30" y="382" width="290" height="34" fill="var(--bg-2)" stroke="var(--rule)" stroke-width="1"></rect>
+  <text x="42" y="403" fill="var(--ink-2)" font-size="12">1. 실행 순서 및 검증 게이트</text>
+  <rect x="30" y="424" width="290" height="46" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.5"></rect>
+  <text x="42" y="443" fill="var(--accent)" font-size="12" font-weight="700">블로그 분류 체계 표 전체 삽입</text>
+  <text x="42" y="460" fill="var(--ink-2)" font-size="11">카테고리와 세부 주제 표가 본문에 펼쳐짐</text>
+  <rect x="30" y="478" width="290" height="40" fill="var(--bg-2)" stroke="var(--rule)" stroke-width="1"></rect>
+  <text x="42" y="496" fill="var(--ink)" font-size="12" font-weight="700">3줄 호출 포인터만 유지</text>
+  <text x="42" y="511" fill="var(--ink-2)" font-size="11">해당 단계 도달 시에만 하위 스킬 로드</text>
 </svg>
 <figcaption>스킬 로더(<code>load_skill</code>)의 런타임 조립 흐름. 당장 필요한 분류표(<code>include</code>)는 본문에 바로 펼쳐 넣고, 특정 단계에서만 쓰는 하위 스킬(<code>call</code>)은 3줄짜리 호출 안내문으로만 남겨 컨텍스트를 아낍니다.</figcaption>
 </figure>
