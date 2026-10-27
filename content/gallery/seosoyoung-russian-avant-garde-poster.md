@@ -77,19 +77,19 @@ draft: false
 
 <div style="display:flex;gap:8px;margin:20px 0;">
   <div style="flex:1;min-width:0;">
-    <div style="height:40px;border-radius:6px;background:#C24C35;box-shadow:inset 0 0 0 1px rgba(0,0,0,.08);"></div>
+    <div style="height:40px;border-radius:6px;background:#C24C35;box-shadow:inset 0 0 0 1px rgba(128,128,128,.4);"></div>
     <div style="font-size:13px;color:#86868b;margin-top:6px;">주홍 <code>#C24C35</code></div>
   </div>
   <div style="flex:1;min-width:0;">
-    <div style="height:40px;border-radius:6px;background:#22596A;box-shadow:inset 0 0 0 1px rgba(0,0,0,.08);"></div>
+    <div style="height:40px;border-radius:6px;background:#22596A;box-shadow:inset 0 0 0 1px rgba(128,128,128,.4);"></div>
     <div style="font-size:13px;color:#86868b;margin-top:6px;">청록 <code>#22596A</code></div>
   </div>
   <div style="flex:1;min-width:0;">
-    <div style="height:40px;border-radius:6px;background:#E8D2B4;box-shadow:inset 0 0 0 1px rgba(0,0,0,.08);"></div>
+    <div style="height:40px;border-radius:6px;background:#E8D2B4;box-shadow:inset 0 0 0 1px rgba(128,128,128,.4);"></div>
     <div style="font-size:13px;color:#86868b;margin-top:6px;">크림 <code>#E8D2B4</code></div>
   </div>
   <div style="flex:1;min-width:0;">
-    <div style="height:40px;border-radius:6px;background:#232221;box-shadow:inset 0 0 0 1px rgba(0,0,0,.08);"></div>
+    <div style="height:40px;border-radius:6px;background:#232221;box-shadow:inset 0 0 0 1px rgba(128,128,128,.4);"></div>
     <div style="font-size:13px;color:#86868b;margin-top:6px;">먹색 <code>#232221</code></div>
   </div>
 </div>
