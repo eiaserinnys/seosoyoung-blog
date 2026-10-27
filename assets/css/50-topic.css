@@ -37,7 +37,7 @@
 .filt {
   position: sticky;
   z-index: 2;
-  top: 0;
+  top: var(--topbar-height);
   display: flex;
   flex-wrap: wrap;
   gap: 8px;

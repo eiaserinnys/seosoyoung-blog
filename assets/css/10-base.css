@@ -6,6 +6,7 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: calc(var(--topbar-height) + var(--space-2));
   background: var(--bg);
   color: var(--ink);
   font-family: var(--sans);
@@ -48,7 +49,7 @@ button {
 
 .skip-link {
   position: absolute;
-  z-index: 5;
+  z-index: 20;
   inset-block-start: var(--space-2);
   inset-inline-start: var(--page-gutter);
   padding: var(--space-1) var(--space-2);

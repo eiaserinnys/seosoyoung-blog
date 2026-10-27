@@ -444,10 +444,6 @@
   margin-bottom: var(--space-1);
 }
 
-.post-content sup[id^="fnref"] {
-  scroll-margin-top: var(--space-2);
-}
-
 .post-content sup {
   line-height: 0;
 }

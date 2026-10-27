@@ -114,7 +114,8 @@
       function correctFootnoteScrollPosition() {
         var targetTop = scrollTarget.getBoundingClientRect().top;
         var scrollMarginTop = parseFloat(getComputedStyle(scrollTarget).scrollMarginTop) || 0;
-        if (Math.abs(targetTop - scrollMarginTop) > 4) {
+        var scrollPaddingTop = parseFloat(getComputedStyle(document.documentElement).scrollPaddingTop) || 0;
+        if (Math.abs(targetTop - scrollMarginTop - scrollPaddingTop) > 4) {
           scrollTarget.scrollIntoView({ block: 'start' });
         }
       }

@@ -376,10 +376,12 @@
     var rect = token.range.getBoundingClientRect();
     var dialogTop = dialog.getBoundingClientRect().top;
     var margin = 12;
+    var siteTop = document.querySelector(".site-top");
+    var upperSpaceTop = siteTop ? siteTop.getBoundingClientRect().bottom + margin : 0;
     var upperSpaceBottom = dialogTop - margin;
-    if (rect.top >= margin && rect.bottom <= upperSpaceBottom) return;
+    if (rect.top >= upperSpaceTop && rect.bottom <= upperSpaceBottom) return;
 
-    var targetCenter = Math.max(margin, upperSpaceBottom) / 2;
+    var targetCenter = upperSpaceTop + (upperSpaceBottom - upperSpaceTop) / 2;
     var targetTop = window.scrollY + rect.top + rect.height / 2 - targetCenter;
     var behavior = window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "instant" : "smooth";
     window.scrollTo({ top: Math.max(0, targetTop), behavior: behavior });
