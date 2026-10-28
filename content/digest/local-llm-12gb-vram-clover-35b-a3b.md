@@ -32,7 +32,7 @@ images:
 .clv-rows { display: flex; flex-direction: column; gap: 1.05rem; }
 .clv-head { display: flex; justify-content: space-between; align-items: baseline; gap: 0.25rem 0.6rem; flex-wrap: wrap; margin-bottom: 0.35rem; }
 .clv-name { font-size: 0.88rem; font-weight: 600; color: var(--ink); }
-.clv-val { font-family: var(--sans); font-variant-numeric: tabular-nums; font-size: 0.8rem; color: var(--ink-2); white-space: nowrap; }
+.clv-val { margin-left: auto; font-family: var(--sans); font-variant-numeric: tabular-nums; font-size: 0.8rem; color: var(--ink-2); white-space: nowrap; }
 .clv-val strong { font-family: var(--mono); color: var(--ink); font-size: 0.95rem; }
 .clv-best .clv-val strong { color: var(--accent); }
 .clv-tag { display: inline-block; font-family: var(--sans); font-size: 0.72rem; font-weight: 600; padding: 0 0.35rem; margin-left: 0.35rem; border: 1px solid var(--ink-2); color: var(--ink-2); line-height: 1.5; }
@@ -43,21 +43,25 @@ images:
 .clv-fill { height: 100%; background: var(--ink-2); min-width: 3px; }
 .clv-fill-acc { background: var(--accent); }
 .clv-fill-muted { background: var(--ink-3); }
-.clv-range { position: absolute; top: 0; bottom: 0; background: var(--ink-3); min-width: 4px; }
+.clv-range { position: absolute; top: 0; bottom: 0; background: var(--ink-2); min-width: 4px; }
 .clv-range-acc { background: var(--accent); }
 .clv-sub { font-size: 0.78rem; color: var(--ink-2); margin-top: 0.3rem; font-family: var(--sans); font-variant-numeric: tabular-nums; }
-.clv-axis { display: flex; justify-content: space-between; font-family: var(--sans); font-variant-numeric: tabular-nums; font-size: 0.74rem; color: var(--ink-2); margin-top: 0.4rem; }
+.clv-axis { position: relative; height: 1.1rem; margin: 0.4rem 1px 0 1px; font-family: var(--sans); font-variant-numeric: tabular-nums; font-size: 0.74rem; line-height: 1.1rem; color: var(--ink-2); }
+.clv-axis span { position: absolute; top: 0; transform: translateX(-50%); white-space: nowrap; }
+.clv-axis span:first-child { transform: none; }
+.clv-axis span:last-child { transform: translateX(-100%); }
 .clv-pair { display: flex; flex-direction: column; gap: 0.3rem; }
 .clv-line { display: grid; grid-template-columns: 4.4rem 1fr 3.4rem; align-items: center; gap: 0.5rem; }
 .clv-env { font-size: 0.78rem; color: var(--ink-2); }
 .clv-num { font-family: var(--mono); font-size: 0.82rem; color: var(--ink); text-align: right; white-space: nowrap; }
 .clv-na { font-family: var(--sans); font-size: 0.74rem; color: var(--ink-2); }
 .clv-axis-pair { display: grid; grid-template-columns: 4.4rem 1fr 3.4rem; gap: 0.5rem; margin-top: 0.4rem; }
-.clv-axis-pair .clv-axis { margin-top: 0; }
+.clv-axis-pair .clv-axis { margin: 0 1px; }
 .clv-resp { margin: 1.2rem 0; border: 1px solid var(--rule); background: var(--bg); }
 .clv-resp-head { display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 0.3rem 0.6rem; padding: 0.65rem 0.9rem; background: var(--bg-2); border-bottom: 1px solid var(--rule); }
 .clv-resp-title { font-size: 0.88rem; font-weight: 700; color: var(--ink); }
-.clv-resp-meta { font-family: var(--mono); font-size: 0.76rem; color: var(--ink-2); }
+.clv-resp-meta { margin-left: auto; display: inline-flex; align-items: baseline; flex-wrap: nowrap; white-space: nowrap; font-family: var(--mono); font-size: 0.76rem; color: var(--ink-2); }
+.clv-fold { margin-left: 0.85rem; font-family: var(--sans); }
 .clv-resp-body { padding: 0.85rem 1rem; font-size: 0.92rem; line-height: 1.75; color: var(--ink); word-break: keep-all; overflow-wrap: anywhere; }
 .clv-resp-body p { margin: 0 0 0.55rem 0; }
 .clv-resp-body p:last-child { margin-bottom: 0; }
@@ -95,13 +99,13 @@ DiffuSpace가 10월 28일 Apache-2.0 라이선스로 공개한 `Clover-35B-A3B-P
 
 <figure class="blog-diagram" style="margin: 2rem 0;">
 <style>.blog-diagram .diagram-svg-desktop { display: block; width: 100%; height: auto; background: var(--bg-2); border: 1px solid var(--rule); } .blog-diagram .diagram-svg-mobile { display: none; width: 100%; height: auto; background: var(--bg-2); border: 1px solid var(--rule); } @media (max-width: 640px) { .blog-diagram .diagram-svg-desktop { display: none; } .blog-diagram .diagram-svg-mobile { display: block; } }</style>
-<svg class="diagram-svg-desktop" viewBox="0 0 720 236" role="img" aria-label="draft-self 생성 흐름. 1 마스크 블록, 2 Clover가 블록을 한 번에 채워 후보 제안, 3 같은 Clover가 앞에서부터 검증, 4 맞은 토큰만 확정하고 다음 블록에서 반복" xmlns="http://www.w3.org/2000/svg">
+<svg class="diagram-svg-desktop" viewBox="0 0 720 214" role="img" aria-label="draft-self 생성 흐름. 1 마스크 블록, 2 Clover가 블록을 한 번에 채워 후보 제안, 3 같은 Clover가 앞 토큰부터 차례로 검증, 4 맞은 토큰만 확정하고 다음 블록에서 반복" xmlns="http://www.w3.org/2000/svg">
   <defs>
     <marker id="clv-arr-ink" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="var(--ink-2)"/></marker>
     <marker id="clv-arr-acc" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="var(--accent)"/></marker>
   </defs>
-  <rect width="720" height="236" fill="var(--bg-2)"/>
-  <rect x="20" y="24" width="150" height="140" fill="var(--bg)" stroke="var(--rule-strong)" stroke-width="1.5"/>
+  <rect width="720" height="214" fill="var(--bg-2)"/>
+  <rect x="20" y="24" width="150" height="120" fill="var(--bg)" stroke="var(--rule-strong)" stroke-width="1.5"/>
   <text x="34" y="50" font-family="var(--sans)" font-size="13" font-weight="700" fill="var(--ink)">1. 마스크 블록</text>
   <rect x="34" y="70" width="18" height="18" fill="var(--bg)" stroke="var(--ink-3)" stroke-width="1" stroke-dasharray="3,2"/>
   <rect x="56" y="70" width="18" height="18" fill="var(--bg)" stroke="var(--ink-3)" stroke-width="1" stroke-dasharray="3,2"/>
@@ -109,8 +113,7 @@ DiffuSpace가 10월 28일 Apache-2.0 라이선스로 공개한 `Clover-35B-A3B-P
   <rect x="100" y="70" width="18" height="18" fill="var(--bg)" stroke="var(--ink-3)" stroke-width="1" stroke-dasharray="3,2"/>
   <rect x="122" y="70" width="18" height="18" fill="var(--bg)" stroke="var(--ink-3)" stroke-width="1" stroke-dasharray="3,2"/>
   <text x="34" y="122" font-family="var(--sans)" font-size="11" fill="var(--ink-2)">빈 토큰 최대 15개</text>
-  <text x="34" y="140" font-family="var(--sans)" font-size="11" fill="var(--ink-2)">(이번 실측 기본값)</text>
-  <rect x="196" y="24" width="150" height="140" fill="var(--bg)" stroke="var(--rule-strong)" stroke-width="1.5"/>
+  <rect x="196" y="24" width="150" height="120" fill="var(--bg)" stroke="var(--rule-strong)" stroke-width="1.5"/>
   <text x="210" y="50" font-family="var(--sans)" font-size="13" font-weight="700" fill="var(--ink)">2. 한 번에 채움</text>
   <rect x="210" y="70" width="18" height="18" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1"/>
   <rect x="232" y="70" width="18" height="18" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1"/>
@@ -118,9 +121,8 @@ DiffuSpace가 10월 28일 Apache-2.0 라이선스로 공개한 `Clover-35B-A3B-P
   <rect x="276" y="70" width="18" height="18" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1"/>
   <rect x="298" y="70" width="18" height="18" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1"/>
   <text x="210" y="122" font-family="var(--sans)" font-size="11" fill="var(--ink-2)">Clover가 후보 제안</text>
-  <text x="210" y="140" font-family="var(--sans)" font-size="11" fill="var(--ink-2)">(계산 한 번)</text>
-  <rect x="372" y="24" width="150" height="140" fill="var(--bg)" stroke="var(--rule-strong)" stroke-width="1.5"/>
-  <text x="386" y="50" font-family="var(--sans)" font-size="13" font-weight="700" fill="var(--ink)">3. 앞에서부터 검증</text>
+  <rect x="372" y="24" width="150" height="120" fill="var(--bg)" stroke="var(--rule-strong)" stroke-width="1.5"/>
+  <text x="386" y="50" font-family="var(--sans)" font-size="13" font-weight="700" fill="var(--ink)">3. 같은 모델이 검증</text>
   <rect x="386" y="70" width="18" height="18" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1"/>
   <rect x="408" y="70" width="18" height="18" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1"/>
   <rect x="430" y="70" width="18" height="18" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1"/>
@@ -128,23 +130,21 @@ DiffuSpace가 10월 28일 Apache-2.0 라이선스로 공개한 `Clover-35B-A3B-P
   <rect x="474" y="70" width="18" height="18" fill="var(--bg)" stroke="var(--ink-2)" stroke-width="1"/>
   <path d="M 390 79 l 4 4 l 7 -8 M 412 79 l 4 4 l 7 -8 M 434 79 l 4 4 l 7 -8 M 456 79 l 4 4 l 7 -8" fill="none" stroke="var(--accent)" stroke-width="1.6"/>
   <path d="M 478 74 l 10 10 M 488 74 l -10 10" fill="none" stroke="var(--ink-2)" stroke-width="1.6"/>
-  <text x="386" y="122" font-family="var(--sans)" font-size="11" fill="var(--ink-2)">같은 Clover가 검증</text>
-  <text x="386" y="140" font-family="var(--sans)" font-size="11" fill="var(--ink-2)">(틀린 토큰부터 버림)</text>
-  <rect x="548" y="24" width="152" height="140" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.5"/>
+  <text x="386" y="122" font-family="var(--sans)" font-size="11" fill="var(--ink-2)">앞 토큰부터 차례로</text>
+  <rect x="548" y="24" width="152" height="120" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.5"/>
   <text x="562" y="50" font-family="var(--sans)" font-size="13" font-weight="700" fill="var(--accent)">4. 맞은 토큰 확정</text>
   <rect x="562" y="70" width="18" height="18" fill="var(--accent)" stroke="var(--accent)" stroke-width="1"/>
   <rect x="584" y="70" width="18" height="18" fill="var(--accent)" stroke="var(--accent)" stroke-width="1"/>
   <rect x="606" y="70" width="18" height="18" fill="var(--accent)" stroke="var(--accent)" stroke-width="1"/>
   <rect x="628" y="70" width="18" height="18" fill="var(--accent)" stroke="var(--accent)" stroke-width="1"/>
-  <text x="562" y="122" font-family="var(--sans)" font-size="11" fill="var(--ink-2)">확정한 토큰이</text>
-  <text x="562" y="140" font-family="var(--sans)" font-size="11" fill="var(--ink-2)">다음 블록의 앞 문맥</text>
-  <line x1="170" y1="94" x2="192" y2="94" stroke="var(--ink-2)" stroke-width="1.5" marker-end="url(#clv-arr-ink)"/>
-  <line x1="346" y1="94" x2="368" y2="94" stroke="var(--ink-2)" stroke-width="1.5" marker-end="url(#clv-arr-ink)"/>
-  <line x1="522" y1="94" x2="544" y2="94" stroke="var(--accent)" stroke-width="1.5" marker-end="url(#clv-arr-acc)"/>
-  <path d="M 624 164 L 624 196 L 95 196 L 95 168" fill="none" stroke="var(--accent)" stroke-width="1.5" stroke-dasharray="4,3" marker-end="url(#clv-arr-acc)"/>
-  <text x="360" y="220" text-anchor="middle" font-family="var(--sans)" font-size="11" fill="var(--ink-2)">다음 블록에서 1부터 반복</text>
+  <text x="562" y="122" font-family="var(--sans)" font-size="11" fill="var(--ink-2)">다음 블록의 앞 문맥</text>
+  <line x1="170" y1="84" x2="192" y2="84" stroke="var(--ink-2)" stroke-width="1.5" marker-end="url(#clv-arr-ink)"/>
+  <line x1="346" y1="84" x2="368" y2="84" stroke="var(--ink-2)" stroke-width="1.5" marker-end="url(#clv-arr-ink)"/>
+  <line x1="522" y1="84" x2="544" y2="84" stroke="var(--accent)" stroke-width="1.5" marker-end="url(#clv-arr-acc)"/>
+  <path d="M 624 144 L 624 176 L 95 176 L 95 148" fill="none" stroke="var(--accent)" stroke-width="1.5" stroke-dasharray="4,3" marker-end="url(#clv-arr-acc)"/>
+  <text x="360" y="200" text-anchor="middle" font-family="var(--sans)" font-size="11" fill="var(--ink-2)">다음 블록에서 1부터 반복</text>
 </svg>
-<svg class="diagram-svg-mobile" viewBox="0 0 350 448" role="img" aria-label="draft-self 생성 흐름(모바일). 마스크 블록, 한 번에 채움, 앞에서부터 검증, 맞은 토큰 확정 순서로 내려가고 다음 블록에서 반복" xmlns="http://www.w3.org/2000/svg">
+<svg class="diagram-svg-mobile" viewBox="0 0 350 448" role="img" aria-label="draft-self 생성 흐름(모바일). 마스크 블록, 한 번에 채움, 같은 모델이 검증, 맞은 토큰 확정 순서로 내려가고 다음 블록에서 반복" xmlns="http://www.w3.org/2000/svg">
   <defs>
     <marker id="clv-arr-ink-m" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="var(--ink-2)"/></marker>
     <marker id="clv-arr-acc-m" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="var(--accent)"/></marker>
@@ -169,8 +169,8 @@ DiffuSpace가 10월 28일 Apache-2.0 라이선스로 공개한 `Clover-35B-A3B-P
   <rect x="294" y="142" width="16" height="16" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1"/>
   <line x1="175" y1="194" x2="175" y2="216" stroke="var(--ink-2)" stroke-width="1.5" marker-end="url(#clv-arr-ink-m)"/>
   <rect x="16" y="220" width="318" height="76" fill="var(--bg)" stroke="var(--rule-strong)" stroke-width="1.5"/>
-  <text x="30" y="248" font-family="var(--sans)" font-size="13" font-weight="700" fill="var(--ink)">3. 앞에서부터 검증</text>
-  <text x="30" y="270" font-family="var(--sans)" font-size="11" fill="var(--ink-2)">같은 Clover가 검증</text>
+  <text x="30" y="248" font-family="var(--sans)" font-size="13" font-weight="700" fill="var(--ink)">3. 같은 모델이 검증</text>
+  <text x="30" y="270" font-family="var(--sans)" font-size="11" fill="var(--ink-2)">앞 토큰부터 차례로</text>
   <rect x="214" y="244" width="16" height="16" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1"/>
   <rect x="234" y="244" width="16" height="16" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1"/>
   <rect x="254" y="244" width="16" height="16" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1"/>
@@ -188,7 +188,7 @@ DiffuSpace가 10월 28일 Apache-2.0 라이선스로 공개한 `Clover-35B-A3B-P
   <rect x="274" y="346" width="16" height="16" fill="var(--accent)" stroke="var(--accent)" stroke-width="1"/>
   <text x="175" y="428" text-anchor="middle" font-family="var(--sans)" font-size="11" fill="var(--ink-2)">다음 블록에서 1부터 반복</text>
 </svg>
-<figcaption style="margin-top: 0.65rem; font-size: 0.85rem; color: var(--ink-2); text-align: center; line-height: 1.5;">llama.cpp <code>draft-self</code>의 생성 흐름. 제안과 검증을 같은 모델이 모두 맡는다.</figcaption>
+<figcaption style="margin-top: 0.65rem; font-size: 0.85rem; color: var(--ink-2); text-align: center; line-height: 1.5;">llama.cpp <code>draft-self</code>의 생성 흐름</figcaption>
 </figure>
 
 공식 블로그에 따르면 Clover는 SWE-bench Verified 73.6점을 비롯해 에이전트 평가 여섯 개에서 같은 크기의 자기회귀 모델 Qwen3.6-35B-A3B보다 높은 점수를 받았다. NVIDIA GB300 한 장에서 BF16, 배치 크기 1로 내부 에이전트 과제를 처리할 때 초당 680토큰, H200 한 장에서는 초당 515토큰을 생성했다. 16GB VRAM의 RTX 5070 Ti에서는 INT4 양자화로 MATH-500 문제를 초당 101.8토큰으로 풀었다고 한다.[^official-speed]
@@ -228,35 +228,35 @@ PR 작성자는 모든 가중치를 VRAM에 적재한 H200에서 `draft-self` �
 WSL에서는 26개 층이 한계였다. WSL은 Windows와 같은 GPU를 쓰고 Windows 화면이 VRAM 약 3GiB를 점유한다. 이 때문에 26개 층의 전문가 가중치를 RAM에 둔 설정에서 이미 전체 VRAM 12.29GiB 가운데 11.76GiB를 썼다. Windows 네이티브는 유휴 점유가 2.5GiB여서 두 개 층을 GPU에 더 적재할 수 있었다.
 
 <div class="clv-viz" role="region" aria-label="전문가 가중치를 RAM에 둔 층수별 일반 디코딩 생성 속도 비교">
-<div class="clv-viz-title">RAM에 둔 전문가 층수와 생성 속도 (일반 디코딩)</div>
+<div class="clv-viz-title">RAM에 둔 전문가 층수와 생성 속도 (일반 디코딩, 토큰/초)</div>
 <div class="clv-legend"><span class="clv-key"><span class="clv-sw clv-sw-ram"></span>전문가 가중치 RAM</span><span class="clv-key"><span class="clv-sw clv-sw-acc"></span>GPU</span><span class="clv-key"><span class="clv-sw clv-sw-ink"></span>생성 속도</span></div>
 <div class="clv-rows">
 <div class="clv-row">
-<div class="clv-head"><span class="clv-name">WSL, RAM 26층</span><span class="clv-val"><strong>32.95</strong> 토큰/초</span></div>
+<div class="clv-head"><span class="clv-name">WSL, RAM 26층</span><span class="clv-val"><strong>32.95</strong></span></div>
 <div class="clv-layers" aria-hidden="true"><span class="clv-l-ram" style="flex: 26;"></span><span class="clv-l-gpu" style="flex: 14;"></span></div>
 <div class="clv-track"><div class="clv-fill" style="width: 73.2%;"></div></div>
-<div class="clv-sub">프롬프트 처리 256 토큰/초</div>
+<div class="clv-sub">프롬프트 처리 256</div>
 </div>
 <div class="clv-row">
-<div class="clv-head"><span class="clv-name">Windows, RAM 26층</span><span class="clv-val"><strong>36.93</strong> 토큰/초</span></div>
+<div class="clv-head"><span class="clv-name">Windows, RAM 26층</span><span class="clv-val"><strong>36.93</strong></span></div>
 <div class="clv-layers" aria-hidden="true"><span class="clv-l-ram" style="flex: 26;"></span><span class="clv-l-gpu" style="flex: 14;"></span></div>
 <div class="clv-track"><div class="clv-fill" style="width: 82.1%;"></div></div>
-<div class="clv-sub">프롬프트 처리 136 토큰/초, 첫 실행 27.22 토큰/초</div>
-</div>
-<div class="clv-row clv-best">
-<div class="clv-head"><span class="clv-name">Windows, RAM 24층</span><span class="clv-val"><strong>42.72</strong> 토큰/초</span></div>
-<div class="clv-layers" aria-hidden="true"><span class="clv-l-ram" style="flex: 24;"></span><span class="clv-l-gpu" style="flex: 16;"></span></div>
-<div class="clv-track"><div class="clv-fill" style="width: 94.9%;"></div></div>
-<div class="clv-sub">프롬프트 처리 268 토큰/초</div>
+<div class="clv-sub">프롬프트 처리 136</div>
 </div>
 <div class="clv-row">
-<div class="clv-head"><span class="clv-name">Windows, RAM 22층<span class="clv-tag">VRAM 초과</span></span><span class="clv-val"><strong>23.48</strong> 토큰/초</span></div>
+<div class="clv-head"><span class="clv-name">Windows, RAM 24층</span><span class="clv-val"><strong>42.72</strong></span></div>
+<div class="clv-layers" aria-hidden="true"><span class="clv-l-ram" style="flex: 24;"></span><span class="clv-l-gpu" style="flex: 16;"></span></div>
+<div class="clv-track"><div class="clv-fill" style="width: 94.9%;"></div></div>
+<div class="clv-sub">프롬프트 처리 268</div>
+</div>
+<div class="clv-row">
+<div class="clv-head"><span class="clv-name">Windows, RAM 22층<span class="clv-tag">VRAM 초과</span></span><span class="clv-val"><strong>23.48</strong></span></div>
 <div class="clv-layers" aria-hidden="true"><span class="clv-l-ram" style="flex: 22;"></span><span class="clv-l-gpu" style="flex: 18;"></span></div>
 <div class="clv-track"><div class="clv-fill" style="width: 52.2%;"></div></div>
-<div class="clv-sub">프롬프트 처리 40 토큰/초</div>
+<div class="clv-sub">프롬프트 처리 40</div>
 </div>
 </div>
-<div class="clv-axis" aria-hidden="true"><span>0</span><span>15</span><span>30</span><span>45 토큰/초</span></div>
+<div class="clv-axis" aria-hidden="true"><span style="left: 0%;">0</span><span style="left: 33.333%;">15</span><span style="left: 66.667%;">30</span><span style="left: 100%;">45</span></div>
 </div>
 
 일반 디코딩 속도는 llama.cpp 벤치마크 도구 `llama-bench`로 쟀다. 128토큰을 생성하는 시험(tg128)과 512토큰 프롬프트를 처리하는 시험(pp512)의 속도다. Windows에서 전문가 24개 층을 RAM에 두었을 때 초당 42.72토큰으로 가장 빨랐다. 26개 층은 첫 실행에서 초당 27.22토큰이었다가 모델 파일이 캐시된 뒤 36.93토큰이 됐다. 22개 층은 VRAM 용량을 초과해 공유 메모리(GPU가 PCIe를 거쳐 사용하는 시스템 RAM)를 쓰기 시작했고, 생성은 초당 23.48토큰, 프롬프트 처리는 초당 40토큰으로 급락했다.
@@ -277,21 +277,21 @@ WSL에서는 26개 층이 한계였다. WSL은 Windows와 같은 GPU를 쓰고 W
 </div>
 </div>
 <div class="clv-row">
-<div class="clv-head"><span class="clv-name">한국어 단편</span><span class="clv-val">186 / 206토큰 생성</span></div>
+<div class="clv-head"><span class="clv-name">한국어 단편</span></div>
 <div class="clv-pair">
 <div class="clv-line"><span class="clv-env">WSL</span><div class="clv-track"><div class="clv-fill" style="width: 14.9%;"></div></div><span class="clv-num">6.7</span></div>
 <div class="clv-line"><span class="clv-env">Windows</span><div class="clv-track"><div class="clv-fill" style="width: 22.9%;"></div></div><span class="clv-num">10.3</span></div>
 </div>
 </div>
 <div class="clv-row">
-<div class="clv-head"><span class="clv-name">코딩</span><span class="clv-val">261 / 262토큰 생성</span></div>
+<div class="clv-head"><span class="clv-name">코딩</span></div>
 <div class="clv-pair">
 <div class="clv-line"><span class="clv-env">WSL</span><div class="clv-track"><div class="clv-fill" style="width: 40.7%;"></div></div><span class="clv-num">18.3</span></div>
 <div class="clv-line"><span class="clv-env">Windows</span><div class="clv-track"><div class="clv-fill" style="width: 54.2%;"></div></div><span class="clv-num">24.4</span></div>
 </div>
 </div>
 <div class="clv-row">
-<div class="clv-head"><span class="clv-name">확률 계산</span><span class="clv-val">157 / 133토큰 생성</span></div>
+<div class="clv-head"><span class="clv-name">확률 계산</span></div>
 <div class="clv-pair">
 <div class="clv-line"><span class="clv-env">WSL</span><div class="clv-track"><div class="clv-fill" style="width: 39.1%;"></div></div><span class="clv-num">17.6</span></div>
 <div class="clv-line"><span class="clv-env">Windows</span><div class="clv-track"><div class="clv-fill" style="width: 36.7%;"></div></div><span class="clv-num">16.5</span></div>
@@ -312,7 +312,7 @@ WSL에서는 26개 층이 한계였다. WSL은 Windows와 같은 GPU를 쓰고 W
 </div>
 </div>
 </div>
-<div class="clv-axis-pair" aria-hidden="true"><span></span><div class="clv-axis"><span>0</span><span>15</span><span>30</span><span>45</span></div><span class="clv-env">토큰/초</span></div>
+<div class="clv-axis-pair" aria-hidden="true"><span></span><div class="clv-axis"><span style="left: 0%;">0</span><span style="left: 33.333%;">15</span><span style="left: 66.667%;">30</span><span style="left: 100%;">45</span></div><span class="clv-env">토큰/초</span></div>
 </div>
 
 모든 실행에서 수락률이 100%로 표시됐다. 제안한 토큰을 검증 단계가 전부 받아들였다는 뜻이다. 그런데도 블록 크기가 15토큰일 때 가장 빨랐던 Windows 코딩 응답의 생성 속도는 초당 24.4토큰이었다. 같은 설정의 일반 디코딩 속도인 초당 42.72토큰의 약 57%다. 한국어 단편은 WSL 초당 6.7토큰, Windows 초당 10.3토큰으로 가장 느렸다. 블록 크기를 8토큰이나 4토큰으로 줄여도 코딩 응답의 생성 속도에는 큰 차이가 없었다. WSL은 초당 18.5에서 20.6토큰, Windows는 초당 24.6토큰이었다. 블록 크기가 15토큰일 때는 WSL 초당 18.3토큰, Windows 초당 24.4토큰이었다.[^bench-vs-prompt]
@@ -355,7 +355,7 @@ PR 작성자가 H200에서 보고한 생성 속도는 초당 약 32토큰이다.
 <div class="clv-track"><div class="clv-range clv-range-acc" style="left: 94.4%; width: 1%;"></div></div>
 </div>
 </div>
-<div class="clv-axis" aria-hidden="true"><span>0</span><span>15</span><span>30</span><span>45 토큰/초</span></div>
+<div class="clv-axis" aria-hidden="true"><span style="left: 0%;">0</span><span style="left: 33.333%;">15</span><span style="left: 66.667%;">30</span><span style="left: 100%;">45</span></div>
 </div>
 
 앞 글에서 같은 PC로 측정한 생성 속도와 비교하면, Windows 일반 디코딩(초당 42.72토큰)은 이 PC에서 지금까지 실행한 구성 가운데 가장 빠르다. 같은 4비트 `Q4_K_M`끼리 비교하면 Qwen 3.8 27B(초당 6.11에서 6.34토큰)의 약 7배다. Qwen 3.8 27B는 토큰마다 27B 파라미터를 모두 계산하는 밀집 모델이고, 16.46GB 파일의 일부 층을 RAM에 적재해야 했다. Clover는 토큰마다 약 3B만 계산하며, RAM에는 일부 층의 전문가 가중치만 두었다. Qwen 3.8 27B `IQ2_XS`는 2비트로 양자화해 66개 층을 모두 VRAM에 적재하고 MTP(다중 토큰 예측)를 켠 구성으로, 초당 27.73에서 40.02토큰을 냈다. 이 구성과 비교해도 4비트 Clover가 조금 빨랐다.[^prev-compare]
@@ -386,7 +386,7 @@ WSL의 한국어 단편은 400자를 요청했는데 응답은 공백을 포함�
 </div>
 
 <details class="clv-resp">
-<summary class="clv-resp-head"><span class="clv-resp-title">한국어 단편, Windows</span><span class="clv-resp-meta">10.3 토큰/초, 206토큰 <span class="clv-fold"></span></span></summary>
+<summary class="clv-resp-head"><span class="clv-resp-title">한국어 단편, Windows</span><span class="clv-resp-meta">10.3 토큰/초, 206토큰<span class="clv-fold"></span></span></summary>
 <div class="clv-resp-body">
 <p>"이봐, 이거 진짜로 하는 거야?"</p>
 <p>김현은 손에 든 서양식 가방을 번갈아 보며 한숨을 쉬었다. 검은 도자기로 만든 주전자가 그의 무릎 위에 놓여 있었다.</p>
@@ -454,7 +454,7 @@ def test_no_overlap():
 </div>
 
 <details class="clv-resp">
-<summary class="clv-resp-head"><span class="clv-resp-title">확률 계산, Windows</span><span class="clv-resp-meta">16.5 토큰/초, 133토큰 <span class="clv-fold"></span></span></summary>
+<summary class="clv-resp-head"><span class="clv-resp-title">확률 계산, Windows</span><span class="clv-resp-meta">16.5 토큰/초, 133토큰<span class="clv-fold"></span></span></summary>
 <div class="clv-resp-body">
 <p>전체 공 수: 3 + 5 = 8개.</p>
 <p>두 공의 색이 서로 다른 경우:<br>1) 첫 번째가 빨간, 두 번째가 파란: (3/8) × (5/7) = 15/56<br>2) 첫 번째가 파란, 두 번째가 빨간: (5/8) × (3/7) = 15/56</p>
