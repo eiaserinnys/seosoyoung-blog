@@ -9,10 +9,11 @@ sidenotes: true
 ShowToc: true
 TocOpen: false
 cover:
-  image: "https://img.seosoyoung.eiaserinnys.me/images/metatron-whole-body-execution/hero.jpg"
+  image: "https://img.seosoyoung.eiaserinnys.me/images/metatron-whole-body-execution/hero-clean.jpg"
   alt: "실내 공용 공간에서 걷는 실물 Unitree G1"
+  og_focus: "18%"
 images:
-  - "https://img.seosoyoung.eiaserinnys.me/images/metatron-whole-body-execution/hero.jpg"
+  - "https://img.seosoyoung.eiaserinnys.me/images/metatron-whole-body-execution/hero-clean.jpg"
 ---
 
 ## 3줄 요약
@@ -25,13 +26,16 @@ images:
 
 로봇이 멀리 있는 물건에 손을 뻗으려면 팔을 펴는 것만으로는 부족하다. 발을 옮기거나 몸을 기울이면서 균형도 유지해야 한다. 연구진은 이런 전신 조절을 모든 작업이 함께 쓰는 정책 하나에 학습시키고, 작업마다 필요한 목표는 프로그램으로 정하게 했다.[^paper]
 
-여기서 정책은 로봇의 관측과 목표를 받아 관절 명령을 출력하는 모델이다. 연구진은 정책에 주는 이 목표들을 통틀어 프롬프트라고 부른다. 프롬프트에는 손이나 발의 목표 위치와 방향, 도착 시각, 이동 속도, 몸이 향할 방향, 동작 스타일을 골라 넣을 수 있다. 일부 항목만 지정해도 된다. 지정하지 않은 신체 부위의 동작은 정책이 생성한다.
+여기서 정책은 로봇의 관측과 목표를 받아 관절 명령을 출력하는 모델이다. 연구진은 정책에 주는 이 목표들을 통틀어 프롬프트라고 부른다. 일부 항목만 지정해도 된다. 지정하지 않은 신체 부위의 동작은 정책이 생성한다.
 
 목표 위치는 공간에 고정된 세계 좌표로도, 로봇 몸을 기준으로 한 좌표로도 줄 수 있다. 로봇은 관절 센서와 관성 센서의 측정값으로 자기 몸의 상태를 계산한다. 세계 좌표로 준 목표를 추적하려면 공간에서 로봇이 어디 있는지도 따로 추정해야 한다. 가구를 이용하는 동작에서는 가구의 크기와 위치, 방향을 측정해 단순한 도형으로 정책에 전달한다.
 
-![속도와 진행 방향만 지정한 보행에서 주저하는 발 동작을 소개하는 원문 영상의 정지 화면](https://img.seosoyoung.eiaserinnys.me/images/metatron-whole-body-execution/prompting.jpg)
-
-*속도와 진행 방향만 지정하면 발 동작이 주저할 수 있다. 연구진은 여기에 도착 시각을 정한 발 목표를 추가하자 더 분명한 보행 동작이 나왔다고 설명한다. 그림은 목표 추가 전 영상의 정지 화면이다. 출처: [NVIDIA Metatron 프로젝트](https://research.nvidia.com/labs/par/projects/metatron/).*
+| 목표 입력 | 지정하는 내용 |
+| --- | --- |
+| 신체 부위 | 손, 발, 몸통의 목표 위치와 방향 |
+| 시간 | 목표에 도착할 시각 |
+| 이동 | 이동 속도와 몸이 향할 방향 |
+| 동작 스타일 | 참고할 자세 |
 
 ## 완전한 동작으로 배우고 일부 목표로 실행한다
 
