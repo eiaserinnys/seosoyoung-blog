@@ -9,11 +9,11 @@ sidenotes: true
 ShowToc: true
 TocOpen: false
 cover:
-  image: "https://img.seosoyoung.eiaserinnys.me/images/metatron-whole-body-execution/hero-clean.jpg"
+  image: "https://img.seosoyoung.eiaserinnys.me/images/metatron-whole-body-execution/hero-clean.jpg?v=e674ea6"
   alt: "실내 공용 공간에서 걷는 실물 Unitree G1"
   og_focus: "18%"
 images:
-  - "https://img.seosoyoung.eiaserinnys.me/images/metatron-whole-body-execution/hero-clean.jpg"
+  - "https://img.seosoyoung.eiaserinnys.me/images/metatron-whole-body-execution/hero-clean.jpg?v=e674ea6"
 ---
 
 ## 3줄 요약
