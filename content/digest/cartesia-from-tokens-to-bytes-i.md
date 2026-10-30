@@ -54,7 +54,7 @@ images:
 
 검증 자료의 1.28배는 H-Net이 약 22% 적은 연산으로 같은 손실을 얻었다는 뜻이다. Paloma와 OLMES에서는 정답에 부여하는 확률을 BPB로 환산해 스케일링 관계를 비교했다.[^metric] 코드에서는 H-Net이 더 많은 바이트를 한 청크로 묶어 계산을 덜 쓰면서도 예측 손실이 낮았다.
 
-![BPE Transformer와 H-Net의 학습 연산량 대비 BPB 손실 그래프. 검증 자료 1.28배, Paloma 1.83배, OLMES 2.06배의 연산 효율 차이를 표시한다.](https://img.seosoyoung.eiaserinnys.me/images/cartesia-from-tokens-to-bytes-i/scaling-laws.png)
+<p><picture><source media="(max-width: 640px)" srcset="https://img.seosoyoung.eiaserinnys.me/images/cartesia-from-tokens-to-bytes-i/scaling-laws-mobile.png"><img src="https://img.seosoyoung.eiaserinnys.me/images/cartesia-from-tokens-to-bytes-i/scaling-laws.png" alt="BPE Transformer와 H-Net의 학습 연산량 대비 BPB 손실 그래프. 검증 자료 1.28배, Paloma 1.83배, OLMES 2.06배의 연산 효율 차이를 표시한다." loading="lazy"></picture></p>
 
 *동일 손실에 필요한 학습 연산량을 비교한 원문 Figure 4. 출처: [Cartesia](https://www.cartesia.ai/blog/from-tokens-to-bytes-part-1).*
 
@@ -89,7 +89,7 @@ images:
 
 DNA 실험은 A, C, G, T라는 염기 단위로 입력을 읽는 Transformer와 H-Net을 비교했다. H-Net의 목표 압축률은 6배였다. 세 평가 자료에서 같은 예측 손실을 얻는 데 Transformer는 H-Net보다 약 5.8배에서 7.1배의 연산량이 필요했다.[^dna]
 
-![DNA 예측 실험의 세 평가 그래프. H-Net과 Transformer의 학습 연산 효율 차이는 각각 5.95배, 5.83배, 7.06배다.](https://img.seosoyoung.eiaserinnys.me/images/cartesia-from-tokens-to-bytes-i/dna-scaling.png)
+<p><picture><source media="(max-width: 640px)" srcset="https://img.seosoyoung.eiaserinnys.me/images/cartesia-from-tokens-to-bytes-i/dna-scaling-mobile.png"><img src="https://img.seosoyoung.eiaserinnys.me/images/cartesia-from-tokens-to-bytes-i/dna-scaling.png" alt="DNA 예측 실험의 세 평가 그래프. H-Net과 Transformer의 학습 연산 효율 차이는 각각 5.95배, 5.83배, 7.06배다." loading="lazy"></picture></p>
 
 *DNA 다음 염기 예측의 스케일링 비교인 원문 Figure 13. 출처: [Cartesia](https://www.cartesia.ai/blog/from-tokens-to-bytes-part-1).*
 
