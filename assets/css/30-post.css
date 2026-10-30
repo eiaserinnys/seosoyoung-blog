@@ -22,6 +22,13 @@
   text-wrap: balance;
 }
 
+/* 일본어 제목은 한국어용 keep-all 대신 일본어 줄바꿈과 금칙 처리를 쓴다 */
+.post-title:lang(ja) {
+  word-break: normal;
+  word-break: auto-phrase;
+  line-break: strict;
+}
+
 .post-lead {
   grid-column: 8 / 13;
   min-width: 0;

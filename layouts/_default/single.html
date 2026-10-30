@@ -36,7 +36,7 @@
           <span class="reading-time mono">{{ .ReadingTime }}분</span>
         </div>
       {{- end }}
-      <h1 class="post-title">{{ .Title }}</h1>
+      <h1 class="post-title"{{ if findRE `[\p{Hiragana}\p{Katakana}]` .Title 1 }} lang="ja"{{ end }}>{{ .Title }}</h1>
       {{- with $lead }}<p class="post-lead">{{ . }}</p>{{ end }}
     </header>
 
