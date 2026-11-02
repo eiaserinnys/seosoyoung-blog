@@ -8,6 +8,7 @@
         {{ partial "thumb.html" (dict
           "src" .Params.cover.image
           "w" 200
+          "square" true
           "alt" $alt
           "class" "gallery-image"
           "focus" .Params.cover.focus
