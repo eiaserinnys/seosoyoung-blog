@@ -53,53 +53,75 @@
   {{- $wrapWidth = 576 -}}
 {{- end -}}
 {{- $wrapCapacity := div (float (sub $wrapWidth $size)) (float $size) -}}
-{{- $words := findRE "\\S+" $title -}}
-{{- $wrappedTitle := "" -}}
-{{- range $wordIndex, $word := $words -}}
-  {{- if gt $wordIndex 0 -}}
-    {{- $wrappedTitle = printf "%s " $wrappedTitle -}}
-  {{- end -}}
-  {{- $wordRunes := findRE "." $word -}}
-  {{- $wordWidth := 0.0 -}}
-  {{- range $wordRunes -}}
-    {{- $runeWidth := 0.65 -}}
-    {{- if gt (len (findRE "[\\p{Han}\\p{Hangul}\\p{Hiragana}\\p{Katakana}\\x{3000}-\\x{303F}\\x{30FB}-\\x{30FC}\\x{FF00}-\\x{FFEF}]" .)) 0 -}}
-      {{- $runeWidth = 1.0 -}}
+{{- $tokens := findRE "[「『（〈《【“‘(]*[A-Za-z0-9]+(['’-][A-Za-z0-9]+)*[、。，．」』）〉》】！？％ー….,!?;:'”’)]*|[「『（〈《【“‘(]*[\\p{Han}\\p{Hangul}\\p{Hiragana}\\p{Katakana}\\x{3000}-\\x{303F}\\x{30FB}-\\x{30FC}\\x{FF00}-\\x{FFEF}][、。，．」』）〉》】！？％ー….,!?;:'”’)]*|\\s+|." $title -}}
+{{- $wrappedLines := "" -}}
+{{- $line := "" -}}
+{{- $lineWidth := 0.0 -}}
+{{- $pendingSpace := false -}}
+{{- range $tokens -}}
+  {{- $token := . -}}
+  {{- if gt (len (findRE "^\\s+$" $token)) 0 -}}
+    {{- if ne $line "" -}}
+      {{- $pendingSpace = true -}}
     {{- end -}}
-    {{- $wordWidth = add $wordWidth $runeWidth -}}
-  {{- end -}}
-  {{- if gt $wordWidth $wrapCapacity -}}
-    {{- $wrappedLines := "" -}}
-    {{- $line := "" -}}
-    {{- $lineWidth := 0.0 -}}
-    {{- range $wordRunes -}}
-      {{- $rune := . -}}
+  {{- else -}}
+    {{- $tokenRunes := findRE "." $token -}}
+    {{- $tokenWidth := 0.0 -}}
+    {{- range $tokenRunes -}}
       {{- $runeWidth := 0.65 -}}
-      {{- if gt (len (findRE "[\\p{Han}\\p{Hangul}\\p{Hiragana}\\p{Katakana}\\x{3000}-\\x{303F}\\x{30FB}-\\x{30FC}\\x{FF00}-\\x{FFEF}]" $rune)) 0 -}}
+      {{- if gt (len (findRE "[\\p{Han}\\p{Hangul}\\p{Hiragana}\\p{Katakana}\\x{3000}-\\x{303F}\\x{30FB}-\\x{30FC}\\x{FF00}-\\x{FFEF}]" .)) 0 -}}
         {{- $runeWidth = 1.0 -}}
       {{- end -}}
-      {{- if and (gt $lineWidth 0.0) (gt (add $lineWidth $runeWidth) $wrapCapacity) -}}
-        {{- if gt (len (findRE "[、。，．」』）〉》】！？％ー…]" $rune)) 0 -}}
+      {{- $tokenWidth = add $tokenWidth $runeWidth -}}
+    {{- end -}}
+    {{- $effectiveWidth := $tokenWidth -}}
+    {{- if and $pendingSpace (ne $line "") -}}
+      {{- $effectiveWidth = add $effectiveWidth 0.35 -}}
+    {{- end -}}
+    {{- if gt $tokenWidth $wrapCapacity -}}
+      {{- if and (gt $lineWidth 0.0) (gt (add $lineWidth $effectiveWidth) $wrapCapacity) -}}
+        {{- $wrappedLines = printf "%s%s\n" $wrappedLines $line -}}
+        {{- $line = "" -}}
+        {{- $lineWidth = 0.0 -}}
+      {{- end -}}
+      {{- $pendingSpace = false -}}
+      {{- range $tokenRunes -}}
+        {{- $rune := . -}}
+        {{- $runeWidth := 0.65 -}}
+        {{- if gt (len (findRE "[\\p{Han}\\p{Hangul}\\p{Hiragana}\\p{Katakana}\\x{3000}-\\x{303F}\\x{30FB}-\\x{30FC}\\x{FF00}-\\x{FFEF}]" $rune)) 0 -}}
+          {{- $runeWidth = 1.0 -}}
+        {{- end -}}
+        {{- if and (gt $lineWidth 0.0) (gt (add $lineWidth $runeWidth) $wrapCapacity) -}}
+          {{- if gt (len (findRE "[、。，．」』）〉》】！？％ー….,!?;:'”’)]" $rune)) 0 -}}
+            {{- $line = printf "%s%s" $line $rune -}}
+            {{- $lineWidth = add $lineWidth $runeWidth -}}
+          {{- else -}}
+            {{- $wrappedLines = printf "%s%s\n" $wrappedLines $line -}}
+            {{- $line = $rune -}}
+            {{- $lineWidth = $runeWidth -}}
+          {{- end -}}
+        {{- else -}}
           {{- $line = printf "%s%s" $line $rune -}}
           {{- $lineWidth = add $lineWidth $runeWidth -}}
-        {{- else -}}
-          {{- $wrappedLines = printf "%s%s\n" $wrappedLines $line -}}
-          {{- $line = $rune -}}
-          {{- $lineWidth = $runeWidth -}}
         {{- end -}}
-      {{- else -}}
-        {{- $line = printf "%s%s" $line $rune -}}
-        {{- $lineWidth = add $lineWidth $runeWidth -}}
       {{- end -}}
+    {{- else if and (gt $lineWidth 0.0) (gt (add $lineWidth $effectiveWidth) $wrapCapacity) -}}
+      {{- $wrappedLines = printf "%s%s\n" $wrappedLines $line -}}
+      {{- $line = $token -}}
+      {{- $lineWidth = $tokenWidth -}}
+      {{- $pendingSpace = false -}}
+    {{- else -}}
+      {{- if and $pendingSpace (ne $line "") -}}
+        {{- $line = printf "%s %s" $line $token -}}
+      {{- else -}}
+        {{- $line = printf "%s%s" $line $token -}}
+      {{- end -}}
+      {{- $lineWidth = add $lineWidth $effectiveWidth -}}
+      {{- $pendingSpace = false -}}
     {{- end -}}
-    {{- if ne $line "" -}}
-      {{- $wrappedLines = printf "%s%s" $wrappedLines $line -}}
-    {{- end -}}
-    {{- $wrappedTitle = printf "%s%s" $wrappedTitle $wrappedLines -}}
-  {{- else -}}
-    {{- $wrappedTitle = printf "%s%s" $wrappedTitle $word -}}
   {{- end -}}
 {{- end -}}
+{{- $wrappedTitle := printf "%s%s" $wrappedLines $line -}}
 {{- $title = $wrappedTitle -}}
 {{- $titleFont := "fonts/PretendardJP-Bold.ttf" -}}
 {{- $hasHan := gt (len (findRE "[\\p{Han}]" $title)) 0 -}}
