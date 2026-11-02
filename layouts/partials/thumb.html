@@ -5,6 +5,7 @@
 {{- $class := $data.class | default "" -}}
 {{- $focus := $data.focus | default "" -}}
 {{- $eager := $data.eager | default false -}}
+{{- $square := $data.square | default false -}}
 {{- $page := $data.page -}}
 {{- $outSrc := $src -}}
 {{- $outSrcset := "" -}}
@@ -35,10 +36,13 @@
   {{- warnf "thumb: source is not an allowed remote image: %q" $src -}}
 {{- end -}}
 {{- with $image -}}
-  {{- if gt .Width $width -}}
-    {{- $retinaWidth := int (math.Min (mul $width 2) .Width) -}}
-    {{- $smallResult := try (.Resize (printf "%dx webp q80" $width)) -}}
-    {{- $largeResult := try (.Resize (printf "%dx webp q80" $retinaWidth)) -}}
+  {{- $byHeight := and $square (gt .Width .Height) -}}
+  {{- $edge := cond $byHeight .Height .Width -}}
+  {{- $spec := cond $byHeight "x%d webp q80" "%dx webp q80" -}}
+  {{- if gt $edge $width -}}
+    {{- $retinaWidth := int (math.Min (mul $width 2) $edge) -}}
+    {{- $smallResult := try (.Resize (printf $spec $width)) -}}
+    {{- $largeResult := try (.Resize (printf $spec $retinaWidth)) -}}
     {{- if or $smallResult.Err $largeResult.Err -}}
       {{- warnf "thumb: image processing failed for %q" $src -}}
     {{- else -}}
