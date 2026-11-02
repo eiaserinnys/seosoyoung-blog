@@ -10,11 +10,11 @@ sidenotes: true
 ShowToc: true
 TocOpen: false
 cover:
-  image: "https://img.seosoyoung.eiaserinnys.me/images/neural-volumetric-clouds/00-cover-turntable.png"
+  image: "https://img.seosoyoung.eiaserinnys.me/images/neural-volumetric-clouds/00-cover-turntable-v2.png"
   alt: "경로 추적 정답(100.0%, 13.9초)과 기존 해석적 근사 모델(정답 밝기의 26.9%, 0.5ms), 뉴럴 셰이더 모델(정답 밝기의 93.3%, 0.6ms)이 같은 구름을 렌더링한 비교 화면"
-  og_focus: "83%"
+  og_focus: "100%"
 images:
-  - "https://img.seosoyoung.eiaserinnys.me/images/neural-volumetric-clouds/00-cover-turntable.png"
+  - "https://img.seosoyoung.eiaserinnys.me/images/neural-volumetric-clouds/00-cover-turntable-v2.png"
 ---
 
 ## 3줄 요약
