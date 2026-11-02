@@ -74,7 +74,7 @@ AI로 기존 채용 시험의 변별력이 약해지자 Anthropic의 세 조직�
 
 ## 출처
 
-- 기사: Zo Ahmed, [Anthropic manager stops coding interviews because Claude beats most candidates](https://www.techspot.com/news/114391-anthropic-manager-drops-coding-interviews-after-realizing-claude.html) (TechSpot, 2026-10-30)
-- 관련 원자료: Felix Rieseberg, [Hunger beats tenure: Advice for junior engineers](https://felixrieseberg.com/hunger-beats-tenure-advice-for-junior-engineers/) (2026-10-27)
-- 관련 원자료: Tristan Hume, [Designing AI resistant technical evaluations](https://www.anthropic.com/research/AI-resistant-technical-evaluations) (Anthropic, 2026-01-21)
+- 기사: Zo Ahmed, [Anthropic manager stops coding interviews because Claude beats most candidates](https://www.techspot.com/news/114391-anthropic-manager-drops-coding-interviews-after-realizing-claude.html) (TechSpot, 2026.10.30)
+- 관련 원자료: Felix Rieseberg, [Hunger beats tenure: Advice for junior engineers](https://felixrieseberg.com/hunger-beats-tenure-advice-for-junior-engineers/) (2026.10.27)
+- 관련 원자료: Tristan Hume, [Designing AI resistant technical evaluations](https://www.anthropic.com/research/AI-resistant-technical-evaluations) (Anthropic, 2026.01.21)
 - 치비 서소영 삽화 3장은 「느낌적인 느낌을 숫자로 옮기는 일」의 치비 서소영 라인아트를 참조해 gpt-image-2.5-flare로 따로 생성했다.
