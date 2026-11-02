@@ -122,12 +122,18 @@
   margin-inline: auto;
 }
 
-.post-content figcaption {
+.post-content figcaption,
+.post-content p > img + em {
   margin-top: var(--space-1);
   color: var(--ink-2);
   font-size: 13px;
   line-height: 1.6;
   text-align: center;
+}
+
+.post-content p > img + em {
+  display: block;
+  font-style: normal;
 }
 
 .post-content figcaption p {
