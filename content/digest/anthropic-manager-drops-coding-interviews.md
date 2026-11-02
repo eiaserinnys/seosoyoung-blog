@@ -11,6 +11,7 @@ TocOpen: false
 cover:
   image: "https://img.seosoyoung.eiaserinnys.me/images/anthropic-manager-drops-coding-interviews/01-cover.png"
   alt: "치비 서소영이 모래시계와 코딩 시험지 뭉치를 옆으로 밀어 두고 하늘색으로 빛나는 앱 프로토타입 창을 들어 올리며 미소 짓고 있다"
+  og_focus: "55%"
 images:
   - "https://img.seosoyoung.eiaserinnys.me/images/anthropic-manager-drops-coding-interviews/01-cover.png"
 ---
@@ -35,9 +36,9 @@ images:
 
 | 단계 | 시험 방식과 평가 결과 |
 | :--- | :--- |
-| 1세대 과제 | 가상 가속기 코드 최적화 과제를 도입했으나, 출시된 Claude Opus 4가 제한 시간 내에 지원자 대다수보다 높은 점수를 기록함 |
-| 2세대 과제 | 최상위 지원자만 변별하도록 난도를 높였으나, 뒤이어 나온 Claude Opus 4.5가 최상위 인간 지원자와 대등한 성적을 거두며 변별력이 사라짐 |
-| 3세대 과제 | 잭트로닉스(Zachtronics)의 프로그래밍 퍼즐 게임처럼 명령어를 극도로 제한한 생소한 과제를 출제해 Claude Opus 4.5가 풀지 못하게 함 |
+| 1세대 | 가상 가속기 코드 최적화 과제를 도입했으나, 출시된 Claude Opus 4가 제한 시간 내에 지원자 대다수보다 높은 점수를 기록함 |
+| 2세대 | 최상위 지원자만 변별하도록 난도를 높였으나, 뒤이어 나온 Claude Opus 4.5가 최상위 인간 지원자와 대등한 성적을 거두며 변별력이 사라짐 |
+| 3세대 | 잭트로닉스(Zachtronics)의 프로그래밍 퍼즐 게임처럼 명령어를 극도로 제한한 생소한 과제를 출제해 Claude Opus 4.5가 풀지 못하게 함 |
 
 [^2]: 트리스탄 흄이 2026년 1월 21일 발표한 「Designing AI resistant technical evaluations」에 따르면, 이 사전 과제는 가상 가속기용 코드를 2시간 안에 최적화하는 시험으로 2024년 초부터 지원자 1,000명 이상이 응시했다. 시간 제한이 없으면 인간 최고 기록이 모델의 기록보다 우수하지만, 2시간 제한에서는 Claude Opus 4.5가 일반 Claude Code 세션만으로 1,790클록 사이클을 기록해 인간 지원자 최고 성적과 동률을 이뤘다.
 
@@ -73,9 +74,7 @@ AI로 기존 채용 시험의 변별력이 약해지자 Anthropic의 세 조직�
 
 ## 출처
 
-- 기사: Zo Ahmed, 「Anthropic manager stops coding interviews because Claude beats most candidates」 (TechSpot, 2026-10-30)
-- 원문: <https://www.techspot.com/news/114391-anthropic-manager-drops-coding-interviews-after-realizing-claude.html>
-- 관련 원자료:
-  - Felix Rieseberg, 「Hunger beats tenure: Advice for junior engineers」 (<https://felixrieseberg.com/hunger-beats-tenure-advice-for-junior-engineers/>, 2026-10-27)
-  - Tristan Hume, 「Designing AI resistant technical evaluations」 (<https://www.anthropic.com/research/AI-resistant-technical-evaluations>, 2026-01-21)
+- 기사: Zo Ahmed, [Anthropic manager stops coding interviews because Claude beats most candidates](https://www.techspot.com/news/114391-anthropic-manager-drops-coding-interviews-after-realizing-claude.html) (TechSpot, 2026-10-30)
+- 관련 원자료: Felix Rieseberg, [Hunger beats tenure: Advice for junior engineers](https://felixrieseberg.com/hunger-beats-tenure-advice-for-junior-engineers/) (2026-10-27)
+- 관련 원자료: Tristan Hume, [Designing AI resistant technical evaluations](https://www.anthropic.com/research/AI-resistant-technical-evaluations) (Anthropic, 2026-01-21)
 - 치비 서소영 삽화 3장은 「느낌적인 느낌을 숫자로 옮기는 일」의 치비 서소영 라인아트를 참조해 gpt-image-2.5-flare로 따로 생성했다.
