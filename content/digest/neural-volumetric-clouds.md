@@ -145,7 +145,7 @@ float3 CloudNetEvaluate(float descriptor[13])
 
 | 추론 단계 | 입출력 크기 | 곱셈-누산(MAC) |
 | :--- | :--- | :--- |
-| **입력 표준화** | `13→13` | 전처리 13회 |
+| **입력 표준화** | `13→13` | 13회(합계 제외) |
 | **은닉 1단** | `13→16` | 208회 |
 | **은닉 2단** | `16→16` | 256회 |
 | **출력단** | `16→3` | 48회 |
@@ -237,5 +237,4 @@ Unity 6(URP)에서는 가중치 바이너리를 에셋으로 넣어 로드 시 �
 - **저자**: Charles Grassi
 - **발표일**: 2026년 8월 19일
 - **원문**: [Neural Shaders, Explained With Clouds](https://charlesgrassi.dev/blog/neural-volumetric-clouds/)
-- **참고 자료**: NVIDIA, [How to Get Started with Neural Shading](https://developer.nvidia.com/blog/how-to-get-started-with-neural-shading-for-your-game-or-application/)
 - **삽화**: 본문의 치비 서소영 삽화 2장은 「느낌적인 느낌을 숫자로 옮기는 일」의 치비 서소영 라인아트를 참조해 gpt-image-2.5-flare로 따로 생성했다.
