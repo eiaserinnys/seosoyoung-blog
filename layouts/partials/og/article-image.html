@@ -72,9 +72,9 @@
     {{- $wrappedLines := "" -}}
     {{- $line := "" -}}
     {{- $lineWidth := 0.0 -}}
-    {{- range $wordRunes -}}
+    {{- range (findRE "[A-Za-z0-9]+|." $word) -}}
       {{- $rune := . -}}
-      {{- $runeWidth := 0.65 -}}
+      {{- $runeWidth := mul 0.65 (len (findRE "." $rune)) -}}
       {{- if gt (len (findRE "[\\p{Han}\\p{Hangul}\\p{Hiragana}\\p{Katakana}\\x{3000}-\\x{303F}\\x{30FB}-\\x{30FC}\\x{FF00}-\\x{FFEF}]" $rune)) 0 -}}
         {{- $runeWidth = 1.0 -}}
       {{- end -}}
