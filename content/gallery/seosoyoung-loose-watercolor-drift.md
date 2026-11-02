@@ -19,15 +19,15 @@ draft: false
 
 <div style="display:grid;grid-template-columns:minmax(0,1fr);gap:20px;margin:20px 0;">
   <figure style="margin:0;">
-    <img src="https://pub-236dc9dc170e487faec4c8b5e2d084c6.r2.dev/gallery/seosoyoung-loose-watercolor-drift/v1-teal.png" alt="서소영이 접은 지우산에 기대어 걷고, 검은 치마가 바람에 풀려 왼쪽으로 청록빛 물이 되어 흐르는 수채화." style="width:100%;height:auto;display:block;">
+    <img src="https://pub-236dc9dc170e487faec4c8b5e2d084c6.r2.dev/gallery/seosoyoung-loose-watercolor-drift/v1-teal.png" alt="서소영이 접은 지우산에 기대어 걷고, 검은 치마가 바람에 풀려 왼쪽으로 청록빛 물이 되어 흐르는 수채화." style="width:100%;height:auto;display:block;box-shadow:0 0 0 var(--line) var(--rule);">
     <figcaption style="font-size:13px;color:#86868b;margin-top:6px;">청록</figcaption>
   </figure>
   <figure style="margin:0;">
-    <img src="https://pub-236dc9dc170e487faec4c8b5e2d084c6.r2.dev/gallery/seosoyoung-loose-watercolor-drift/v2-tricolore.png" alt="서소영이 고개를 숙여 펼친 책을 읽고, 검은 소매와 치마 끝이 주홍과 쪽빛, 황토색으로 번지는 수채화." style="width:100%;height:auto;display:block;">
+    <img src="https://pub-236dc9dc170e487faec4c8b5e2d084c6.r2.dev/gallery/seosoyoung-loose-watercolor-drift/v2-tricolore.png" alt="서소영이 고개를 숙여 펼친 책을 읽고, 검은 소매와 치마 끝이 주홍과 쪽빛, 황토색으로 번지는 수채화." style="width:100%;height:auto;display:block;box-shadow:0 0 0 var(--line) var(--rule);">
     <figcaption style="font-size:13px;color:#86868b;margin-top:6px;">다색</figcaption>
   </figure>
   <figure style="margin:0;">
-    <img src="https://pub-236dc9dc170e487faec4c8b5e2d084c6.r2.dev/gallery/seosoyoung-loose-watercolor-drift/v4-indigo.png" alt="서소영이 쪽빛 말을 타고 달리고, 치마와 말의 뒷몸이 물로 풀려 왼쪽으로 사라지는 수채화." style="width:100%;height:auto;display:block;">
+    <img src="https://pub-236dc9dc170e487faec4c8b5e2d084c6.r2.dev/gallery/seosoyoung-loose-watercolor-drift/v4-indigo.png" alt="서소영이 쪽빛 말을 타고 달리고, 치마와 말의 뒷몸이 물로 풀려 왼쪽으로 사라지는 수채화." style="width:100%;height:auto;display:block;box-shadow:0 0 0 var(--line) var(--rule);">
     <figcaption style="font-size:13px;color:#86868b;margin-top:6px;">쪽빛</figcaption>
   </figure>
 </div>
@@ -36,19 +36,19 @@ draft: false
 
 <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:20px 0;">
   <figure style="margin:0;">
-    <img src="https://pub-236dc9dc170e487faec4c8b5e2d084c6.r2.dev/gallery/seosoyoung-loose-watercolor-drift/ref3-crimson-ballerina.jpg" alt="도약하는 발레리나의 치마가 진홍빛 번짐이 되는 원본 예시" style="width:100%;height:auto;display:block;">
+    <img src="https://pub-236dc9dc170e487faec4c8b5e2d084c6.r2.dev/gallery/seosoyoung-loose-watercolor-drift/ref3-crimson-ballerina.jpg" alt="도약하는 발레리나의 치마가 진홍빛 번짐이 되는 원본 예시" style="width:100%;height:auto;display:block;box-shadow:0 0 0 var(--line) var(--rule);">
     <figcaption style="font-size:13px;color:#86868b;margin-top:6px;">진홍</figcaption>
   </figure>
   <figure style="margin:0;">
-    <img src="https://pub-236dc9dc170e487faec4c8b5e2d084c6.r2.dev/gallery/seosoyoung-loose-watercolor-drift/ref1-teal-wanderer.jpg" alt="지팡이를 쥐고 걷는 노인의 옷자락이 청록빛으로 번지는 원본 예시" style="width:100%;height:auto;display:block;">
+    <img src="https://pub-236dc9dc170e487faec4c8b5e2d084c6.r2.dev/gallery/seosoyoung-loose-watercolor-drift/ref1-teal-wanderer.jpg" alt="지팡이를 쥐고 걷는 노인의 옷자락이 청록빛으로 번지는 원본 예시" style="width:100%;height:auto;display:block;box-shadow:0 0 0 var(--line) var(--rule);">
     <figcaption style="font-size:13px;color:#86868b;margin-top:6px;">청록</figcaption>
   </figure>
   <figure style="margin:0;">
-    <img src="https://pub-236dc9dc170e487faec4c8b5e2d084c6.r2.dev/gallery/seosoyoung-loose-watercolor-drift/ref2-fan-dancer.jpg" alt="부채를 든 여인의 기모노가 주홍과 쪽빛 붓자국으로 풀리는 원본 예시" style="width:100%;height:auto;display:block;">
+    <img src="https://pub-236dc9dc170e487faec4c8b5e2d084c6.r2.dev/gallery/seosoyoung-loose-watercolor-drift/ref2-fan-dancer.jpg" alt="부채를 든 여인의 기모노가 주홍과 쪽빛 붓자국으로 풀리는 원본 예시" style="width:100%;height:auto;display:block;box-shadow:0 0 0 var(--line) var(--rule);">
     <figcaption style="font-size:13px;color:#86868b;margin-top:6px;">다색</figcaption>
   </figure>
   <figure style="margin:0;">
-    <img src="https://pub-236dc9dc170e487faec4c8b5e2d084c6.r2.dev/gallery/seosoyoung-loose-watercolor-drift/ref4-indigo-horse.jpg" alt="달리는 말의 몸통이 쪽빛 물로 비워지는 원본 예시" style="width:100%;height:auto;display:block;">
+    <img src="https://pub-236dc9dc170e487faec4c8b5e2d084c6.r2.dev/gallery/seosoyoung-loose-watercolor-drift/ref4-indigo-horse.jpg" alt="달리는 말의 몸통이 쪽빛 물로 비워지는 원본 예시" style="width:100%;height:auto;display:block;box-shadow:0 0 0 var(--line) var(--rule);">
     <figcaption style="font-size:13px;color:#86868b;margin-top:6px;">쪽빛</figcaption>
   </figure>
 </div>
