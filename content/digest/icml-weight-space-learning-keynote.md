@@ -4,7 +4,7 @@ date: 2026-11-05T08:20:00+09:00
 categories: ["모델과 연구"]
 subjects: ["모델 구조와 학습"]
 tags: ["논문 리뷰", "아키텍처", "학습 역학", "컴퓨터 비전"]
-summary: "스위스 장크트갈렌 대학교 다미안 보르트 교수의 ICML 2026 워크숍 키노트 발표를 정리한다. 신경망 가중치 자체를 새로운 데이터 모달리티로 다루는 가중치 공간 학습(Weight Space Learning)의 분류 체계를 살펴보고, 100개 사전학습 모델의 가중치만으로 지리공간 파운데이션 모델을 생성하는 GeoSANE과 데이터셋 프롬프트로 맞춤형 가중치를 합성하는 WeightCLIP의 실험 결과를 소개한다."
+summary: "다미안 보르트 교수의 ICML 2026 가중치 대칭성 워크숍 키노트를 정리했다. 신경망 가중치를 독립된 데이터 모달리티로 다루는 가중치 공간 학습(WSL)의 분류 체계와 두 핵심 연구인 GeoSANE, WeightCLIP의 실험 결과를 살펴본다."
 math: true
 sidenotes: true
 ShowToc: true
@@ -38,7 +38,7 @@ images:
 | 다운스트림 영역 | 세부 활용 과제 |
 | :--- | :--- |
 | 모델 분석 (Model Analysis) | 모델 버전 관리, 진단, 테스트 정확도 예측, 모델 속성 추정 |
-| 학습 역학 (Learning Dynamics) | 최적화 경로 분석, 조기 종료(Early-stopping) 판단, 모델 선택 |
+| 학습 역학 (Learning Dynamics) | 최적화 경로 분석, 조기 종료(Early‑stopping) 판단, 모델 선택 |
 | 기하 및 표현 (Representation) | 가중치 다양체 학습(Manifold learning), 손실 지형 및 기하 구조 분석 |
 | 모델 생성 (Model Generation) | 가중치 초기화, 앙상블 구성, 전이 학습, 모델 희소화(Sparsification) 및 압축 |
 
@@ -60,17 +60,15 @@ images:
 ![모델 동물원의 분포를 결정하는 5대 생성 요인을 정리한 개념도](https://img.seosoyoung.eiaserinnys.me/images/icml-weight-space-learning-keynote/fig2b-population-view.png)
 *신경망 집단을 형성하는 다섯 가지 생성 요인: 데이터셋($\mathcal{D}$), 아키텍처($\mathcal{A}$), 하이퍼파라미터($\lambda$), 학습 과제($\tau$), 확률적 요소($\mathcal{E}$) (출처: 원문 슬라이드 18)*
 
-방법론적 관점(Methodological View)에서는 가중치 공간을 학습하는 기존 아키텍처들을 인코더 단독, 디코더 단독, 오토인코더, 등변 및 그래프 신경망(GNN)의 네 가지 패러다임으로 분류한다.
+방법론적 관점(Methodological View)에서는 가중치 공간을 학습하는 기존 아키텍처들을 네 가지 패러다임으로 분류한다.
 
 ![가중치 공간 학습의 4대 방법론 패러다임을 정리한 도식](https://img.seosoyoung.eiaserinnys.me/images/icml-weight-space-learning-keynote/fig3-methodological-view.png)
-*가중치 공간 학습의 네 가지 방법론 패러다임: 판별 과제 중심의 인코더 단독 모델, 조건부 파라미터 분포를 생성하는 디코더 단독 모델, 잠재 표현과 복원을 결합한 오토인코더 모델, 파라미터 대칭성을 반영한 등변 및 그래프 신경망 모델 (출처: 원문 슬라이드 20)*
+*가중치 공간 학습의 4대 방법론 패러다임 분류 (출처: 원문 슬라이드 20)*
 
-| 방법론 패러다임 | 작동 원리 및 주요 기법 | 대표 모델 및 대상 규모 |
-| :--- | :--- | :--- |
-| 인코더 단독 (Encoder Only) | 가중치 $\theta$에서 판별 과제용 특징 벡터를 추출해 속성 $\hat{y}$를 예측한다. 수동 통계량 추출, 1D/2D 합성곱, 선형/LSTM/집합(Set) 인코더를 사용한다. | StatNN, LinDet, MoTHer(86M ViT-B), PhyDet(67M Llama3), ModelZoo, NeRN |
-| 디코더 단독 (Decoder Only) | 조건부 잠재 벡터 $z$로부터 파라미터 분포를 자기회귀 방식으로 생성($\hat{\theta} \in \Theta$)한다. 구조 메타데이터나 순번 ID를 입력받는 INR/RNN 디코더를 활용한다. | NeuMeta(25M ResNet50), RNN-Decoder |
-| 오토인코더 (Autoencoder Models) | 파라미터 정보를 보존하는 저차원 잠재 표현($g_\rho, h_\psi$)을 학습한다. 트랜스포머 오토인코더는 생성과 판별을 모두 수행하며, VAE/DAE 및 잠재 확산 결합 모델은 가중치 생성에 특화된다. | HypRep, SANE(44M ResNet101), SANE-HF(125M GPT-2), G.pt, HyperDiff, P-diff, D2NWG(164M GPT2-small), RPG-diff(198M ConvNeXt-L) |
-| 등변 및 GNN (Equivariant/GNN) | 파라미터 순열 대칭성에 대해 등변(생성용) 또는 불변(판별용)인 함수를 학습한다. 커스텀 등변 블록이나 계산 그래프 기반 그래프 신경망(GNN)을 사용한다. | DWSNet(209k MLP), NFN, NFT, UNF(330k Transformer), GL-net, GMN, NG-GNN, NiNo(111M Llama3-B), ScaleGMN |
+- **인코더 단독 (Encoder Only)**: 가중치 $\theta$에서 판별 과제용 특징 벡터를 추출해 속성 $\hat{y}$를 예측하며, 수동 통계량 추출과 1D/2D 합성곱, 선형, LSTM, 집합(Set) 인코더를 사용한다. 대표 모델은 StatNN, LinDet, MoTHer(86M ViT-B), PhyDet(67M Llama3), ModelZoo, NeRN이다.
+- **디코더 단독 (Decoder Only)**: 조건부 잠재 벡터 $z$와 구조 메타데이터를 입력받는 암묵적 신경 표현(INR) 또는 RNN 디코더를 활용해 파라미터 분포를 자기회귀 방식으로 생성($\hat{\theta} \in \Theta$)한다. 대표 모델은 NeuMeta(25M ResNet50)와 RNN-Decoder다.
+- **오토인코더 (Autoencoder Models)**: 파라미터 정보를 보존하는 저차원 잠재 표현($g_\rho, h_\psi$)을 학습해 판별과 가중치 생성을 모두 수행하며, 트랜스포머 오토인코더와 VAE/DAE, 잠재 확산 결합 모델을 포함한다. 대표 모델은 HypRep, SANE(44M ResNet101), SANE-HF(125M GPT-2), G.pt, HyperDiff, P-diff, D2NWG(164M GPT2-small), RPG-diff(198M ConvNeXt-L)다.
+- **등변 및 그래프 신경망 (Equivariant/GNN)**: 파라미터 순열 대칭성에 대해 등변(생성용) 또는 불변(판별용)인 함수를 커스텀 등변 블록이나 계산 그래프 기반 그래프 신경망(GNN)으로 학습한다. 대표 모델은 DWSNet(209k MLP), NFN, NFT, UNF(330k Transformer), GL-net, GMN, NG-GNN, NiNo(111M Llama3-B), ScaleGMN이다.
 
 평가 관점(Evaluation View)에서는 다운스트림 과제를 판별 과제(Discriminative DST)와 생성 과제(Generative DST)로 구분한다. 판별 과제는 테스트 데이터 없이 가중치만으로 정확도, 일반화 격차(Generalization gap), CLIP 점수, F1 점수를 예측하거나, 모델의 파생 계보(Lineage)와 학습 도메인 및 하이퍼파라미터를 역추론한다. 생성 과제는 신경망 전체 가중치를 합성, 편집, 최적화하거나, 배치 정규화(BN) 층, 분류 헤드, LoRA 및 DoRA 어댑터 같은 부분 가중치를 생성한다. 2022년 수천($10^3$) 파라미터 규모의 소형 MLP와 CNN을 다루던 생성 연구는 2024년과 2025년에 이르러 1억($10^8$) 파라미터를 상회하는 GPT-2 및 ConvNeXt-L 규모로 확장됐다. 그러나 개별 논문마다 서로 다른 모델 동물원과 평가 지표를 사용하고 있어, 연구팀은 분야 전체의 발전을 위해 표준화된 통합 벤치마크 구축이 필수적이라고 지적한다.
 
@@ -94,16 +92,16 @@ images:
 
 | 백본 아키텍처 | 벤치마크 데이터셋 | 과제 유형 (모달리티) | 무작위 초기화 (Scratch) | GeoSANE 초기화 | 성능 향상폭 |
 | :--- | :--- | :--- | :---: | :---: | :---: |
-| ViT-L | EuroSAT | 토지 피복 분류 (Sentinel-2) | 95.0% | **99.1%** | +4.1%p |
-| ViT-L | RESISC-45 | 장면 분류 (RGB 항공영상) | 78.0% | **96.5%** | +18.5%p |
-| ViT-L | fMoW | 시설물 분류 (다중분광) | 34.1% | **58.9%** | +24.8%p |
-| ViT-L | Sen12Flood | 홍수 탐지 (SAR + 광학) | 80.4% | **85.2%** | +4.8%p |
-| ViT-L | Cal. Wildfires | 산불 피해 분류 (다중분광) | 88.7% | **94.9%** | +6.2%p |
-| ViT-L | BigEarthNet | 다중 라벨 분류 (Sentinel-2) | 68.3% | **88.7%** | +20.4%p |
-| Swin-B | DFC2020 | 의미론적 분할 (SAR + 다중분광) | 46.8% | **54.3%** | +7.5%p |
-| Swin-B | Spacenet1 | 건물 분할 (고해상도 광학) | 72.2% | **78.2%** | +6.0%p |
-| Swin-B | Sen1Floods11 | 홍수 영역 분할 (SAR) | 81.0% | **89.6%** | +8.6%p |
-| Swin-B | DIOR | 객체 탐지 (RGB 항공영상) | 67.5% | **79.0%** | +11.5%p |
+| ViT‑L | EuroSAT | 토지 피복 분류 (Sentinel‑2) | 95.0% | **99.1%** | +4.1%p |
+| ViT‑L | RESISC‑45 | 장면 분류 (RGB 항공영상) | 78.0% | **96.5%** | +18.5%p |
+| ViT‑L | fMoW | 시설물 분류 (다중분광) | 34.1% | **58.9%** | +24.8%p |
+| ViT‑L | Sen12Flood | 홍수 탐지 (SAR + 광학) | 80.4% | **85.2%** | +4.8%p |
+| ViT‑L | Cal. Wildfires | 산불 피해 분류 (다중분광) | 88.7% | **94.9%** | +6.2%p |
+| ViT‑L | BigEarthNet | 다중 라벨 분류 (Sentinel‑2) | 68.3% | **88.7%** | +20.4%p |
+| Swin‑B | DFC2020 | 의미론적 분할 (SAR + 다중분광) | 46.8% | **54.3%** | +7.5%p |
+| Swin‑B | Spacenet1 | 건물 분할 (고해상도 광학) | 72.2% | **78.2%** | +6.0%p |
+| Swin‑B | Sen1Floods11 | 홍수 영역 분할 (SAR) | 81.0% | **89.6%** | +8.6%p |
+| Swin‑B | DIOR | 객체 탐지 (RGB 항공영상) | 67.5% | **79.0%** | +11.5%p |
 
 10개 벤치마크 전 구간에서 큰 폭의 성능 향상이 확인됐으며, 특히 다중분광 위성 영상을 다루는 fMoW(+24.8%p)와 BigEarthNet(+20.4%p)에서 상승폭이 두드러졌다. 두 번째 실험(Q2)에서는 수천만 장의 위성 영상으로 직접 사전학습한 전용 원격탐사 파운데이션 모델(RSFM)들과 성적을 대조했다. GeoSANE은 Sen12Flood(85.2%, CROMA 83.4% 대비 +1.8%p), Wildfires(94.9%, CROMA 93.3% 대비 +1.6%p), DFC2020(54.3%, CROMA 49.8% 대비 +4.5%p), BigEarthNet(88.7%, SkySense 88.6% 대비 +0.1%p)에서 기존 전용 모델들보다 높은 정확도를 기록했다. 또한 Geo-Bench 4개 과제 중 `m-bigearthnet`(74.2% 대 73.1%)과 `m-so2sat`(65.7% 대 64.9%)에서도 12,000 GPU시간을 투입한 TerraFM의 성적을 상회했다.
 
@@ -118,15 +116,15 @@ images:
 
 | 목표 모델 크기 | 비교 데이터셋 | 가지치기 / 드롭아웃 최고치 | 지식 증류 (KD) 최고치 | GeoSANE 직접 생성 | KD 최고치 대비 격차 |
 | :--- | :--- | :---: | :---: | :---: | :---: |
-| 11M 파라미터 | RESISC-45 | 62.6% | 91.1% (ScaleMAE) | **92.2%** | +1.1%p |
+| 11M 파라미터 | RESISC‑45 | 62.6% | 91.1% (ScaleMAE) | **92.2%** | +1.1%p |
 | 11M 파라미터 | EuroSAT | 93.8% | 97.9% (SatMAE) | **98.7%** | +0.8%p |
 | 11M 파라미터 | fMoW | 34.4% | 43.1% (ScaleMAE) | **53.5%** | +10.4%p |
-| 11M 파라미터 | BigEarthNet | 66.7% | 67.3% (ViT-L) | **83.7%** | +16.4%p |
-| 11M 파라미터 | Sen12Flood | 82.8% | 82.1% (ViT-L / SatMAE) | **84.0%** | +1.9%p |
-| 11M 파라미터 | Cal. Wildfires | 89.2% | 88.0% (ViT-L) | **91.6%** | +3.6%p |
-| 3.5M 파라미터 | BigEarthNet | 67.5% (5M 기준) | 60.7% (ViT-L) | **73.3%** | +12.6%p |
-| 3.5M 파라미터 | Sen12Flood | 80.5% (5M 기준) | 64.7% (ViT-L) | **70.2%** | +5.5%p |
-| 3.5M 파라미터 | RESISC-45 | 51.3% (5M 기준) | 68.1% (ScaleMAE) | **70.0%** | +1.9%p |
+| 11M 파라미터 | BigEarthNet | 66.7% | 67.3% (ViT‑L) | **83.7%** | +16.4%p |
+| 11M 파라미터 | Sen12Flood | 82.8% | 82.1% (ViT‑L / SatMAE) | **84.0%** | +1.9%p |
+| 11M 파라미터 | Cal. Wildfires | 89.2% | 88.0% (ViT‑L) | **91.6%** | +3.6%p |
+| 3.5M 파라미터 | BigEarthNet | 67.5% (5M 기준) | 60.7% (ViT‑L) | **73.3%** | +12.6%p |
+| 3.5M 파라미터 | Sen12Flood | 80.5% (5M 기준) | 64.7% (ViT‑L) | **70.2%** | +5.5%p |
+| 3.5M 파라미터 | RESISC‑45 | 51.3% (5M 기준) | 68.1% (ScaleMAE) | **70.0%** | +1.9%p |
 
 1,100만 파라미터 규모에서는 6개 데이터셋 전부에서 GeoSANE이 지식 증류 최고치를 앞섰으며, BigEarthNet(+16.4%p)과 fMoW(+10.4%p)에서는 큰 격차를 벌렸다. 350만 파라미터 초경량 모델에서도 6개 중 5개 데이터셋에서 지식 증류를 상회하여, 교사-학생 증류 파이프라인 없이도 원하는 크기의 고성능 소형 모델을 즉시 합성할 수 있음을 확인했다.
 
@@ -142,28 +140,33 @@ images:
 ![WeightCLIP 적용 전후의 가중치 잠재 공간 군집 구조를 비교한 시각화](https://img.seosoyoung.eiaserinnys.me/images/icml-weight-space-learning-keynote/fig6b-weightclip-alignment.png)
 *WeightCLIP 적용 전(좌측)에는 서로 다른 데이터셋에서 훈련된 모델 임베딩들이 뒤섞여 있으나, 데이터-가중치 대조 정렬을 적용한 후(우측)에는 학습 데이터셋별로 뚜렷한 군집이 형성된다 (출처: 원문 슬라이드 41)*
 
-연구팀은 미지(OOD)의 시각 데이터셋 6종을 프롬프트로 입력해 ResNet-18 가중치를 생성했다. 생성 직후인 미세조정 전(Epoch 0)과 1에폭 미세조정 후(Epoch 1)의 분류 정확도를 무작위 초기화(Scratch), 모델 검색 기법(TANS), 하이퍼네트워크(Hypernetwork)와 비교한 결과는 아래 표와 같다.[^5]
+연구팀은 미지(OOD)의 시각 데이터셋 6종을 프롬프트로 입력해 ResNet-18 가중치를 생성했다. 생성 직후인 미세조정 전(Epoch 0)과 1에폭 미세조정 후(Epoch 1)의 분류 정확도를 무작위 초기화(Scratch), 모델 검색 기법(TANS), 하이퍼네트워크(Hypernetwork)와 각각 비교했다.[^5]
 
 [^5]: 실험에서는 선형 매핑을 사용하는 WeightCLIP-LM과 다층 매핑 모듈을 사용하는 WeightCLIP-MBM 두 가지 변형을 평가했으며, 표에는 두 변형 중 더 높은 성적을 기록한 값을 제시했다.
 
-| 평가 시점 | 비교 방법론 | Colo.H | COVID-19 | CIFAR10 | Speed. | Honey P. | Real/Draw. |
-| :--- | :--- | :---: | :---: | :---: | :---: | :---: | :---: |
-| 미세조정 전 (Epoch 0) | 무작위 초기화 (Scratch) | 12.5% | 33.3% | 10.0% | 25.0% | 25.0% | 10.0% |
-| 미세조정 전 (Epoch 0) | TANS (모델 검색) | 13.7% | 37.9% | 10.6% | 28.4% | 23.0% | 9.5% |
-| 미세조정 전 (Epoch 0) | Hypernetwork | 10.9% | 26.8% | 10.0% | 25.2% | **26.8%** | 11.4% |
-| 미세조정 전 (Epoch 0) | **WeightCLIP (최고치)** | **18.3%** | **47.4%** | **12.2%** | **40.0%** | 26.5% | **18.1%** |
-| 1에폭 미세조정 (Epoch 1) | 무작위 초기화 (Scratch) | 54.1% | 60.7% | 38.9% | 26.1% | 56.4% | 27.0% |
-| 1에폭 미세조정 (Epoch 1) | TANS (모델 검색) | 50.8% | 60.7% | 32.0% | 32.4% | 48.0% | 19.6% |
-| 1에폭 미세조정 (Epoch 1) | Hypernetwork | 59.1% | 82.9% | 42.7% | 27.8% | 82.3% | 34.2% |
-| 1에폭 미세조정 (Epoch 1) | **WeightCLIP (최고치)** | **68.4%** | **90.8%** | **47.7%** | **48.0%** | **82.8%** | **35.9%** |
+| 비교 방법론 (Epoch 0) | Colo.H | COVID‑19 | CIFAR10 | Speed. | Honey P. | Real/Draw. |
+| :--- | :---: | :---: | :---: | :---: | :---: | :---: |
+| 무작위 초기화 | 12.5% | 33.3% | 10.0% | 25.0% | 25.0% | 10.0% |
+| TANS | 13.7% | 37.9% | 10.6% | 28.4% | 23.0% | 9.5% |
+| Hypernetwork | 10.9% | 26.8% | 10.0% | 25.2% | **26.8%** | 11.4% |
+| **WeightCLIP** | **18.3%** | **47.4%** | **12.2%** | **40.0%** | 26.5% | **18.1%** |
 
-단 한 번의 경사 업데이트도 거치지 않은 Epoch 0 상태에서 WeightCLIP은 COVID-19 데이터셋 47.4%(무작위 초기화 33.3%), Speed Signs 데이터셋 40.0%(무작위 초기화 25.0%)를 기록하며 6개 중 5개 데이터셋에서 가장 높은 초기 정확도를 달성했다. 이어서 단 1에폭의 미세조정을 수행하자 6개 데이터셋 전부에서 1위를 기록했으며, 무작위 초기화 대비 COVID-19에서는 30.1%p(60.7% 대 90.8%), Honey Bee Pollen에서는 26.4%p(56.4% 대 82.8%), Speed Signs에서는 21.9%p(26.1% 대 48.0%) 높은 정확도를 보여 빠른 수렴 속도를 증명했다.
+단 한 번의 경사 업데이트도 거치지 않은 Epoch 0 상태에서 WeightCLIP은 COVID-19 데이터셋 47.4%(무작위 초기화 33.3%), Speed Signs 데이터셋 40.0%(무작위 초기화 25.0%)를 기록하며 6개 중 5개 데이터셋에서 가장 높은 초기 정확도를 달성했다.
+
+| 비교 방법론 (Epoch 1) | Colo.H | COVID‑19 | CIFAR10 | Speed. | Honey P. | Real/Draw. |
+| :--- | :---: | :---: | :---: | :---: | :---: | :---: |
+| 무작위 초기화 | 54.1% | 60.7% | 38.9% | 26.1% | 56.4% | 27.0% |
+| TANS | 50.8% | 60.7% | 32.0% | 32.4% | 48.0% | 19.6% |
+| Hypernetwork | 59.1% | 82.9% | 42.7% | 27.8% | 82.3% | 34.2% |
+| **WeightCLIP** | **68.4%** | **90.8%** | **47.7%** | **48.0%** | **82.8%** | **35.9%** |
+
+이어서 단 1에폭의 미세조정을 수행하자 6개 데이터셋 전부에서 1위를 기록했으며, 무작위 초기화 대비 COVID-19에서는 30.1%p(60.7% 대 90.8%), Honey Bee Pollen에서는 26.4%p(56.4% 대 82.8%), Speed Signs에서는 21.9%p(26.1% 대 48.0%) 높은 정확도를 보여 빠른 수렴 속도를 증명했다.
 
 WeightCLIP이 제시한 또 하나의 중요한 기법은 잠재 공간 미세조정(Latent Refinement)이다. 고차원 가중치 공간($\Theta$)에서 직접 경사하강법을 수행하는 표준 미세조정(Standard Fine-tuning)과 달리, 이 기법은 다운스트림 손실 $\mathcal{L}$의 경사를 디코더 $h_\psi$를 거쳐 저차원 가중치 잠재 공간($\mathcal{Z}$)으로 역전파한다. 이를 통해 잠재 임베딩 $z$를 먼저 갱신한 뒤 가중치로 다시 복원한다. 동일한 연산 예산(1,000 스텝) 조건에서 6개 CNN 데이터셋에 대해 표준 미세조정과 잠재 공간 미세조정을 비교한 결과는 다음과 같다.
 
-| 데이터셋 | 초기 정확도 (Initial) | 표준 미세조정 (Fine-tune, 1000 steps) | 잠재 공간 미세조정 (Latent Refine, 1000 steps) | 표준 미세조정 대비 향상폭 |
+| 데이터셋 | 초기 정확도 (Initial) | 표준 미세조정 (Fine‑tune, 1000 steps) | 잠재 공간 미세조정 (Latent Refine, 1000 steps) | 표준 미세조정 대비 향상폭 |
 | :--- | :---: | :---: | :---: | :---: |
-| CIFAR-10 | 10.6% | 21.2% | **23.1%** | +1.9%p |
+| CIFAR‑10 | 10.6% | 21.2% | **23.1%** | +1.9%p |
 | EuroSAT | 11.7% | 26.5% | **28.0%** | +1.5%p |
 | MedMNIST (COVID) | 49.0% | 55.2% | **63.5%** | +8.3%p |
 | Honey Bee Pollen | 51.3% | 69.2% | **76.6%** | +7.4%p |
@@ -187,4 +190,4 @@ WeightCLIP이 선보인 잠재 공간 미세조정(Latent Refinement) 역시 신
 - 발표자 및 소속: Prof. Dr. Damian Borth (University of St. Gallen, HSG-AIML)
 - 발표 학회: Weight Symmetry Workshop at ICML 2026 (Keynote)
 - 원문 슬라이드: <https://drive.google.com/file/d/1yy6HwyUYX4sgApBUeZMIrrEm9tWXU8Vo/view>
-- 일러스트: `generate-chibi-seosoyoung` 스킬(`gpt-image-2.6-flare`)로 생성
+- 커버의 치비 서소영 삽화는 gpt-image-2.6-flare로 그렸다.
