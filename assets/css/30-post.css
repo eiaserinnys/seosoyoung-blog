@@ -311,6 +311,10 @@
   min-width: 100%;
 }
 
+.table-scroll.is-overflowing > table:has(tr > :nth-child(6)) {
+  width: max-content;
+}
+
 .post-content table :is(th, td) {
   padding: var(--space-1) var(--space-2);
   border-bottom: var(--line) solid var(--rule);
@@ -968,6 +972,10 @@ html.rsvp-active .post-single .post-content figcaption {
 @media (max-width: 767px) {
   .post-title {
     font-size: 28px;
+  }
+
+  .table-scroll.is-overflowing > table:has(tr > :nth-child(6)) :is(th, td) {
+    white-space: nowrap;
   }
 
   .post-content ul li::before {

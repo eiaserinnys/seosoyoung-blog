@@ -12,7 +12,6 @@ TocOpen: false
 cover:
   image: "https://img.seosoyoung.eiaserinnys.me/images/metr-anthropic-ai-rd-acceleration-2026/02-attribution-sketch.png"
   alt: "2024년부터 2027년까지의 AECI 추세를 개념적으로 그린 도식. 2025년 10월 이후 관측된 추세(AI 활용)가 AI 미활용 추정 추세와 과거 추세보다 가파르게 상승하며, 두 추세의 차이가 각각 AI 요인과 비AI 요인에 의한 초과 성장으로 표시되어 있다."
-  caption: "AI 요인과 비AI 요인의 기여도 분해를 설명하기 위해 가상 데이터(FAKE DATA)로 그린 개념도 (출처: METR)"
 images:
   - "https://img.seosoyoung.eiaserinnys.me/images/metr-anthropic-ai-rd-acceleration-2026/02-attribution-sketch.png"
 ---
