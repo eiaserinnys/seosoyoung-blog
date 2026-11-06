@@ -140,23 +140,23 @@ Kimi K3 등이 채택한 **분위수 균형**(Quantile balancing)은 이 문제�
 
 전문가 내부 설계에서는 개수와 폭(세분성), 통신 압축(LatentMoE), 공유 전문가(Shared experts), 가변 연산, 활성화 함수 클리핑을 결정한다.
 
-| 모델 | 활성 / 전체 전문가 | 전문가 폭 | LatentMoE 투영 | 공유 전문가 (개수×폭) | 활성화 함수와 상한 |
-| --- | --- | --- | --- | --- | --- |
-| DeepSeek‑V4.1‑Flash | 6/384 | 2,304 | 없음 | 1×2,304 | SwiGLU, 상한 10 |
-| GLM‑5.3 | 8/256 | 2,048 | 없음 | 1×2,048 | SiLU |
-| Kimi K3 | 16/896 | 3,072 | ${7{,}168\to3{,}584}$ | 2×3,072 | SiTU‑GLU, 상한 4와 25 |
-| LongCat‑Flash | 12/768 | 2,048 | 없음 | 없음 | SiLU |
-| MiMo‑V2.6‑Pro‑RL | 8/384 | 2,048 | 없음 | 없음 | SiLU |
-| Nemotron 3 Ultra | 22/512 | 5,120 | ${8{,}192\to2{,}048}$ | 1×10,240 | $\text{ReLU}^2$ |
-| Qwen3.8 2.4T‑A95B | 10/512 | 2,048 | 없음 | 1×2,048 | SiLU |
-| Step 5 Preview | 8/352 | 1,536 | 없음 | 1×1,536 | SwiGLU, 상한 7 |
+| 모델 | 활성 / 전체 전문가 | 전문가 폭 | 공유 전문가<br>(개수×폭) | 활성화 함수와 상한 |
+| --- | --- | --- | --- | --- |
+| DeepSeek‑V4.1‑Flash | 6/384 | 2,304 | 1×2,304 | SwiGLU, 상한 10 |
+| GLM‑5.3 | 8/256 | 2,048 | 1×2,048 | SiLU |
+| Kimi K3 | 16/896 | 3,072 | 2×3,072 | SiTU‑GLU, 상한 4와 25 |
+| LongCat‑Flash | 12/768 | 2,048 | 없음 | SiLU |
+| MiMo‑V2.6‑Pro‑RL | 8/384 | 2,048 | 없음 | SiLU |
+| Nemotron 3 Ultra | 22/512 | 5,120 | 1×10,240 | $\text{ReLU}^2$ |
+| Qwen3.8 2.4T‑A95B | 10/512 | 2,048 | 1×2,048 | SiLU |
+| Step 5 Preview | 8/352 | 1,536 | 1×1,536 | SwiGLU, 상한 7 |
 
 표의 여덟 모델 중 일곱 모델은 모든 토큰에 같은 폭의 전문가를 고정 개수(Top-$k$)만큼 실행하지만, LongCat-Flash는 768개 전문가 가운데 256개를 연산이 없는 항등(무연산) 전문가로 두어 토큰마다 실제 활성 파라미터 수(평균 27B)를 달리한다. 한편 Liew 등은 18레이어 모델로 **세분성**(granularity) 실험을 했다. 총 파라미터와 활성 파라미터를 고정한 채 전문가 폭을 줄이고 개수와 $k$를 같은 배수로 늘리는 실험이다. 전문가 폭을 $d/4$로 줄인 구성(전문가 128개, Top-8)까지는 손실이 2.334에서 2.297로 꾸준히 내려갔다. 그보다 더 세분화하면 손실은 나아지지 않았고, 행렬곱(GEMM)이 작아지고 토큰 복사본이 늘어 GPU 효율만 떨어졌다. Sarkar 등은 시스템 효율까지 고려한 스케일링을 연구했다. 모델 FLOPs만 기준으로 삼으면 가장 희소한 구성을 고르게 된다. 실제 클러스터 학습 속도까지 반영하면 같은 학습 시간에서 예측 손실이 가장 낮은 구성은 덜 희소한 구성이었고, 가장 희소한 구성보다 손실이 0.031 nat 낮았다.
 
 ![같은 총 파라미터와 활성 연산량에서 전문가를 세분화하는 단계 비교](https://img.seosoyoung.eiaserinnys.me/images/moe-training-handbook/expert-granularity.png)
 *Figure 3.4.1: 총 파라미터(전체 면적)와 활성 연산량(진한 면적)을 유지한 채 전문가 폭을 줄이고 개수를 늘리는 세분화 단계 (출처: Hugging Face)*
 
-세분화를 진행할 때 늘어나는 네트워크 통신량을 억제하는 기법이 Nemotron 3와 Kimi K3가 채택한 **LatentMoE**다(`--moe-latent-size`). 토큰을 디스패치하기 전에 은닉 차원 $d$를 더 작은 잠재 차원 $\ell = d/\alpha$로 선형 투영하고, $\ell$ 차원에서 전문가를 실행한 뒤 결합 이후 다시 $d$로 복원한다. 이렇게 하면 같은 통신량과 전문가 연산량 조건에서 전문가 수와 Top-$k$를 각각 $\alpha$배 늘릴 수 있다. NVIDIA의 73B-A8B 실험에서 LatentMoE는 같은 규모 표준 MoE보다 MMLU-Pro 점수를 4.6점 높였다. 단, Kimi K3(2.8T 규모)처럼 대규모 모델에서는 상향 투영 전 활성화가 폭주할 수 있어 `--moe-use-norm-before-up-proj`로 RMSNorm을 추가한다.
+세분화를 진행할 때 늘어나는 네트워크 통신량을 억제하는 기법이 Nemotron 3 Ultra($8,192 \to 2,048$)와 Kimi K3($7,168 \to 3,584$)가 채택한 **LatentMoE**다(`--moe-latent-size`). 토큰을 디스패치하기 전에 은닉 차원 $d$를 더 작은 잠재 차원 $\ell = d/\alpha$로 선형 투영하고, $\ell$ 차원에서 전문가를 실행한 뒤 결합 이후 다시 $d$로 복원한다. 이렇게 하면 같은 통신량과 전문가 연산량 조건에서 전문가 수와 Top-$k$를 각각 $\alpha$배 늘릴 수 있다. NVIDIA의 73B-A8B 실험에서 LatentMoE는 같은 규모 표준 MoE보다 MMLU-Pro 점수를 4.6점 높였다. 단, Kimi K3(2.8T 규모)처럼 대규모 모델에서는 상향 투영 전 활성화가 폭주할 수 있어 `--moe-use-norm-before-up-proj`로 RMSNorm을 추가한다.
 
 ![표준 MoE와 LatentMoE의 토큰 전송 크기와 선택 전문가 수 비교](https://img.seosoyoung.eiaserinnys.me/images/moe-training-handbook/latent-moe.png)
 *Figure 3.4.4: 토큰 차원을 절반으로 줄여 같은 통신량으로 2배 많은 전문가를 활성화하는 LatentMoE 구조 (출처: Hugging Face)*
