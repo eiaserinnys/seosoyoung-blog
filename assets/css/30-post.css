@@ -307,8 +307,12 @@
 }
 
 .table-scroll.is-overflowing > table {
-  width: max-content;
+  width: 32rem;
   min-width: 100%;
+}
+
+.table-scroll.is-overflowing > table:has(tr > :nth-child(6)) {
+  width: max-content;
 }
 
 .post-content table :is(th, td) {
@@ -970,7 +974,7 @@ html.rsvp-active .post-single .post-content figcaption {
     font-size: 28px;
   }
 
-  .table-scroll.is-overflowing > table :is(th, td) {
+  .table-scroll.is-overflowing > table:has(tr > :nth-child(6)) :is(th, td) {
     white-space: nowrap;
   }
 
