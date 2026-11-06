@@ -10,11 +10,11 @@ sidenotes: true
 ShowToc: true
 TocOpen: false
 cover:
-  image: "https://img.seosoyoung.eiaserinnys.me/images/moe-training-handbook/cover-moe-layer-v2.png"
-  alt: "MoE 레이어 구조도: 각 토큰이 라우터를 거쳐 64개 전문가 중 상위 8개(Top-8)를 선택하고 가중 합산으로 출력을 만드는 과정"
-  og_focus: "48.4%"
+  image: "https://img.seosoyoung.eiaserinnys.me/images/moe-training-handbook/hero-anatomy-zoom-v3.png"
+  alt: "MoE 레이어의 전체 구조: 배치 토큰, 라우터, 공유 전문가와 라우팅 전문가, 가중 합산 출력 단계"
+  og_focus: "56.6%"
 images:
-  - "https://img.seosoyoung.eiaserinnys.me/images/moe-training-handbook/cover-moe-layer-v2.png"
+  - "https://img.seosoyoung.eiaserinnys.me/images/moe-training-handbook/hero-anatomy-zoom-v3.png"
 ---
 
 ## 3줄 요약
@@ -69,15 +69,15 @@ MoE 레이어는 All-to-All 통신을 두 번 수행한다. 토큰을 담당 전
 
 라우터는 각 토큰의 은닉 상태를 전문가 수만큼의 로짓(logit)으로 변환한 뒤 상위 $k$개 전문가를 고르고 가중합에 쓸 가중치를 산출한다. 이 과정에서 정할 것은 네 가지다. 게이팅 함수, 출력 스케일(재정규화와 스케일링 계수), 분포의 뾰족함(sharpness), 연산 정밀도다.
 
-| 모델 | 게이팅 함수 | 활성 / 전체 전문가 | 재정규화 후 배수 | 뾰족함 제어 | 라우터 정밀도 (학습 / 추론) |
+| 모델 | 게이팅 함수 | 활성 / 전체 전문가 | 재정규화 후 배수 | 뾰족함 제어 | 추론 코드 정밀도 |
 | --- | --- | --- | --- | --- | --- |
-| DeepSeek‑V4.1‑Flash | $\sqrt{\text{softplus}}$ | 6 / 384 | 1.5배 ($\sqrt{k}=2.45$) | 온도 1.0 | 미기재 / FP32 |
-| Gemma 4 26B‑A4B | Softmax | 8 / 128 | 전문가별 학습 스케일 | RMSNorm + 스케일 + $1/\sqrt{d}$ | 미기재 / BF16 (Softmax FP32) |
-| GLM‑5.3 | Sigmoid | 8 / 256 | 2.5배 ($\sqrt{k}=2.83$) | 없음 | 미기재 / FP32 |
-| Kimi K3 | Sigmoid | 16 / 896 | 1.0배 ($\sqrt{k}=4$) | 없음 | QAT 초과 정밀도 / FP32 |
-| MiMo‑V2.6‑Pro‑RL | Sigmoid | 8 / 384 | 1.0배 (배수 없음) | 없음 | 미기재 / FP32 |
-| Qwen3.8‑Flash‑Next | Softmax | 10 / 512 | 1.0배 (배수 없음) | 없음 | 미기재 / BF16 (Softmax FP32) |
-| Step‑5‑Preview | Sigmoid | 8 / 352 | 3.0배 ($\sqrt{k}=2.83$) | 없음 | 미기재 / FP32 |
+| DeepSeek‑V4.1‑Flash | $\sqrt{\text{softplus}}$ | 6/384 | 1.5배 | 온도 1.0 | FP32 |
+| Gemma 4 26B‑A4B | Softmax | 8/128 | 학습 스케일 | RMSNorm, $1/\sqrt{d}$ | BF16 |
+| GLM‑5.3 | Sigmoid | 8/256 | 2.5배 | 없음 | FP32 |
+| Kimi K3 | Sigmoid | 16/896 | 1.0배 | 없음 | FP32 |
+| MiMo‑V2.6‑Pro‑RL | Sigmoid | 8/384 | 1.0배 | 없음 | FP32 |
+| Qwen3.8‑Flash‑Next | Softmax | 10/- | 1.0배 | 없음 | BF16 |
+| Step‑5‑Preview | Sigmoid | 8/352 | 3.0배 | 없음 | FP32 |
 
 게이팅 함수인 Softmax, Sigmoid, $\sqrt{\text{softplus}}$는 모두 단조 증가 함수다. 따라서 편향 항이 없을 때 전문가 순위는 바꾸지 않지만, 선택된 전문가들 사이의 가중치 비율은 달라진다. 로짓 크기가 커질수록 Softmax는 1위 전문가에 가중치를 집중시킨다. Sigmoid에서는 상위 전문가들의 점수가 모두 1에 수렴해, 재정규화 후 $1/k$씩 같은 가중치를 갖는다. DeepSeek-V4가 채택한 $\sqrt{\text{softplus}}$는 Softmax처럼 한 전문가에 쏠리지도 않고 Sigmoid처럼 완전히 평평해지지도 않는 완만한 곡선을 그린다. Megatron에서 무손실 전문가 편향(3.3절)을 쓸 때는 Softmax를 허용하지 않으므로 Sigmoid나 $\sqrt{\text{softplus}}$를 선택해야 한다.
 
@@ -89,7 +89,7 @@ MoE 레이어는 All-to-All 통신을 두 번 수행한다. 토큰을 담당 전
 ![BF16 라우터에서 로짓 상승에 따라 발생하는 전문가 선택 뒤집힘 비율](https://img.seosoyoung.eiaserinnys.me/images/moe-training-handbook/router-precision-v2.png)
 *Figure 3.1.4: 로짓 오프셋 상승 시 BF16 라우터에서 FP32보다 선택 전문가가 달라지는 토큰 비율과 z-loss의 영향 (출처: Hugging Face)*
 
-연산 정밀도는 앞의 세 요소와 달리 토큰마다 선택되는 전문가 자체를 직접 바꾼다. BF16은 정밀도가 낮아, 값이 비슷한 두 로짓이 같은 값으로 반올림되면서 동점(tie)이 생긴다. 이 때문에 FP32 라우터와 다른 전문가를 고르는 뒤집힘(flip)이 일어난다. Switch Transformers에서도 BF16 라우터는 발산했지만 FP32 라우터는 BF16과 같은 속도로 안정적으로 학습됐다. 따라서 `--moe-router-dtype fp32`는 모든 실행에서 기본으로 켜야 하며, Softmax 라우터에서 로짓이 계속 커질 때는 ST-MoE와 같게 `--moe-z-loss-coeff 1e-3`을 추가한다.
+연산 정밀도는 앞의 세 요소와 달리 토큰마다 선택되는 전문가 자체를 직접 바꾼다. BF16은 정밀도가 낮아, 값이 비슷한 두 로짓이 같은 값으로 반올림되면서 동점(tie)이 생긴다. 이 때문에 FP32 라우터와 다른 전문가를 고르는 뒤집힘(flip)이 일어난다. 표에서 추론 코드 정밀도가 BF16인 Gemma 4와 Qwen3.8-Flash-Next도 Softmax 계산은 FP32로 수행하며, Kimi K3는 사후학습 QAT 중 MXFP4 초과 정밀도로 라우터를 보호한다. Switch Transformers에서도 BF16 라우터는 발산했지만 FP32 라우터는 BF16과 같은 속도로 안정적으로 학습됐다. 따라서 `--moe-router-dtype fp32`는 모든 실행에서 기본으로 켜야 하며, Softmax 라우터에서 로짓이 계속 커질 때는 ST-MoE와 같게 `--moe-z-loss-coeff 1e-3`을 추가한다.
 
 [^top1-pre-softmax]: 단, $k=1$(Top-1)에서 Softmax를 쓸 때는 선택된 단일 로짓에 대한 재정규화 산출값이 항상 1이 되어 라우터에 기울기가 흐르지 않는다. 이때는 `--moe-router-pre-softmax`를 켜서 전체 전문가에 대한 Softmax 확률을 먼저 구한 뒤 Top-1을 뽑아야 한다.
 
@@ -140,16 +140,16 @@ Kimi K3 등이 채택한 **분위수 균형**(Quantile balancing)은 이 문제�
 
 전문가 내부 설계에서는 개수와 폭(세분성), 통신 압축(LatentMoE), 공유 전문가(Shared experts), 가변 연산, 활성화 함수 클리핑을 결정한다.
 
-| 모델 | 활성 / 전체 전문가 | 전문가 폭 | LatentMoE 투영 | 공유 전문가 | 활성화 함수와 상한 |
+| 모델 | 활성 / 전체 전문가 | 전문가 폭 | LatentMoE 투영 | 공유 전문가 (개수×폭) | 활성화 함수와 상한 |
 | --- | --- | --- | --- | --- | --- |
-| DeepSeek‑V4.1‑Flash | 6 / 384 | 2,304 | 없음 | 1개 (폭 2,304) | SwiGLU, 상한 10 |
-| GLM‑5.3 | 8 / 256 | 2,048 | 없음 | 1개 (폭 2,048) | SiLU |
-| Kimi K3 | 16 / 896 | 3,072 | $7,168 \to 3,584$ (정규화 포함) | 2개 (각 폭 3,072) | SiTU‑GLU, 상한 4와 25 |
-| LongCat‑Flash | 12 / 768 | 2,048 | 없음 | 없음 | SiLU |
-| MiMo‑V2.6‑Pro‑RL | 8 / 384 | 2,048 | 없음 | 없음 | SiLU |
-| Nemotron 3 Ultra | 22 / 512 | 5,120 | $8,192 \to 2,048$ | 1개 (폭 10,240) | $\text{ReLU}^2$ |
-| Qwen3.8 2.4T‑A95B | 10 / 512 | 2,048 | 없음 | 1개 (폭 2,048) | SiLU |
-| Step 5 Preview | 8 / 352 | 1,536 | 없음 | 1개 (폭 1,536) | SwiGLU, 상한 7 |
+| DeepSeek‑V4.1‑Flash | 6/384 | 2,304 | 없음 | 1×2,304 | SwiGLU, 상한 10 |
+| GLM‑5.3 | 8/256 | 2,048 | 없음 | 1×2,048 | SiLU |
+| Kimi K3 | 16/896 | 3,072 | ${7{,}168\to3{,}584}$ | 2×3,072 | SiTU‑GLU, 상한 4와 25 |
+| LongCat‑Flash | 12/768 | 2,048 | 없음 | 없음 | SiLU |
+| MiMo‑V2.6‑Pro‑RL | 8/384 | 2,048 | 없음 | 없음 | SiLU |
+| Nemotron 3 Ultra | 22/512 | 5,120 | ${8{,}192\to2{,}048}$ | 1×10,240 | $\text{ReLU}^2$ |
+| Qwen3.8 2.4T‑A95B | 10/512 | 2,048 | 없음 | 1×2,048 | SiLU |
+| Step 5 Preview | 8/352 | 1,536 | 없음 | 1×1,536 | SwiGLU, 상한 7 |
 
 표의 여덟 모델 중 일곱 모델은 모든 토큰에 같은 폭의 전문가를 고정 개수(Top-$k$)만큼 실행하지만, LongCat-Flash는 768개 전문가 가운데 256개를 연산이 없는 항등(무연산) 전문가로 두어 토큰마다 실제 활성 파라미터 수(평균 27B)를 달리한다. 한편 Liew 등은 18레이어 모델로 **세분성**(granularity) 실험을 했다. 총 파라미터와 활성 파라미터를 고정한 채 전문가 폭을 줄이고 개수와 $k$를 같은 배수로 늘리는 실험이다. 전문가 폭을 $d/4$로 줄인 구성(전문가 128개, Top-8)까지는 손실이 2.334에서 2.297로 꾸준히 내려갔다. 그보다 더 세분화하면 손실은 나아지지 않았고, 행렬곱(GEMM)이 작아지고 토큰 복사본이 늘어 GPU 효율만 떨어졌다. Sarkar 등은 시스템 효율까지 고려한 스케일링을 연구했다. 모델 FLOPs만 기준으로 삼으면 가장 희소한 구성을 고르게 된다. 실제 클러스터 학습 속도까지 반영하면 같은 학습 시간에서 예측 손실이 가장 낮은 구성은 덜 희소한 구성이었고, 가장 희소한 구성보다 손실이 0.031 nat 낮았다.
 
