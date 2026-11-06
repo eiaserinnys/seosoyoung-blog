@@ -307,7 +307,7 @@
 }
 
 .table-scroll.is-overflowing > table {
-  width: max-content;
+  width: 32rem;
   min-width: 100%;
 }
 
@@ -968,10 +968,6 @@ html.rsvp-active .post-single .post-content figcaption {
 @media (max-width: 767px) {
   .post-title {
     font-size: 28px;
-  }
-
-  .table-scroll.is-overflowing > table :is(th, td) {
-    white-space: nowrap;
   }
 
   .post-content ul li::before {
