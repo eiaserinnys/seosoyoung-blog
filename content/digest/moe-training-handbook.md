@@ -12,6 +12,7 @@ TocOpen: false
 cover:
   image: "https://img.seosoyoung.eiaserinnys.me/images/moe-training-handbook/cover-moe-layer-v2.png"
   alt: "MoE 레이어 구조도: 각 토큰이 라우터를 거쳐 64개 전문가 중 상위 8개(Top-8)를 선택하고 가중 합산으로 출력을 만드는 과정"
+  og_focus: "48.4%"
 images:
   - "https://img.seosoyoung.eiaserinnys.me/images/moe-training-handbook/cover-moe-layer-v2.png"
 ---
