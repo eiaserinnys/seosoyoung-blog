@@ -55,6 +55,8 @@
   font-size: 13px;
   font-weight: 500;
   white-space: nowrap;
+  -webkit-user-select: none;
+  user-select: none;
 }
 
 button.chip {
@@ -145,6 +147,8 @@ button.chip:not(:disabled):hover {
   font-size: 17px;
   font-weight: 700;
   letter-spacing: -0.01em;
+  -webkit-user-select: none;
+  user-select: none;
 }
 
 .word-mark {
@@ -179,6 +183,8 @@ button.chip:not(:disabled):hover {
   font-size: 15px;
   font-weight: 600;
   white-space: nowrap;
+  -webkit-user-select: none;
+  user-select: none;
 }
 
 .gnb a[aria-current] {
@@ -220,11 +226,15 @@ button.chip:not(:disabled):hover {
   border-radius: var(--zero);
   background: transparent;
   cursor: pointer;
+  -webkit-user-select: none;
+  user-select: none;
 }
 
 .theme-control {
   justify-self: end;
   color: var(--ink-2);
+  -webkit-user-select: none;
+  user-select: none;
 }
 
 .theme-control:active {
@@ -290,6 +300,8 @@ button.chip:not(:disabled):hover {
   border-left: 1px solid var(--rule);
   font-size: 15px;
   font-weight: 600;
+  -webkit-user-select: none;
+  user-select: none;
 }
 
 .tbar a:first-child {

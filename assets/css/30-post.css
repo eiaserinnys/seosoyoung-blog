@@ -69,6 +69,8 @@
   font: inherit;
   text-decoration: none;
   cursor: pointer;
+  -webkit-user-select: none;
+  user-select: none;
 }
 
 .rsvp-launch::before {
@@ -429,6 +431,8 @@
   font-weight: 600;
   line-height: 1.4;
   cursor: pointer;
+  -webkit-user-select: none;
+  user-select: none;
 }
 
 .copy-code:hover {
@@ -498,6 +502,8 @@ aside.sidenote .footnote-backref {
   font-weight: 600;
   cursor: pointer;
   list-style: none;
+  -webkit-user-select: none;
+  user-select: none;
 }
 
 .toc summary::-webkit-details-marker {
@@ -578,6 +584,8 @@ aside.sidenote .footnote-backref {
 
 .post-tags .chip {
   color: var(--ink-2);
+  -webkit-user-select: none;
+  user-select: none;
 }
 
 .post-tags .chip:hover {

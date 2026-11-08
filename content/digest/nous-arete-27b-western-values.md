@@ -9,10 +9,10 @@ sidenotes: true
 ShowToc: true
 TocOpen: false
 cover:
-  image: "https://img.seosoyoung.eiaserinnys.me/images/nous-arete-27b-western-values/arete1.webp"
+  image: "https://img.seosoyoung.eiaserinnys.me/images/nous-arete-27b-western-values/arete-ridge-cover.webp"
   alt: "두 빙하 골짜기 사이로 솟아오른 좁고 날카로운 암릉을 그린 풍경 일러스트"
 images:
-  - "https://img.seosoyoung.eiaserinnys.me/images/nous-arete-27b-western-values/arete1.webp"
+  - "https://img.seosoyoung.eiaserinnys.me/images/nous-arete-27b-western-values/arete-ridge-cover.webp"
 ---
 
 ## 3줄 요약
@@ -29,11 +29,11 @@ Nous Research는 알리바바의 `Qwen3.8-27B`를 사후 학습해 서구적 가
 
 Nous Research는 `Qwen3.8-27B`가 정치적으로 민감한 주제에서 답변을 거부하거나 논점을 회피하고 중국공산당(CCP) 프레임에 입각한 답변을 내놓는 현상을 직접 확인한 뒤, 사후 학습으로 이러한 편향의 근본 원인을 수정하고자 했다[^3].
 
-| 공개 자산 | Hugging Face 링크 |
+| 공개 자산 | Hugging Face (NousResearch) |
 | --- | --- |
-| 모델 가중치 | [NousResearch/Arete-27B](https://huggingface.co/NousResearch/Arete-27B) |
-| 평가 벤치마크 | [NousResearch/Propaganda_Eval](https://huggingface.co/datasets/NousResearch/Propaganda_Eval) |
-| 학습 데이터셋 | [NousResearch/arete-data-pairs](https://huggingface.co/datasets/NousResearch/arete-data-pairs) |
+| 모델 가중치 | [Arete-27B](https://huggingface.co/NousResearch/Arete-27B) |
+| 평가 벤치마크 | [Propaganda_Eval](https://huggingface.co/datasets/NousResearch/Propaganda_Eval) |
+| 학습 데이터셋 | [arete-data-pairs](https://huggingface.co/datasets/NousResearch/arete-data-pairs) |
 
 ## 문제 측정: Propaganda_Eval 설계와 베이스라인 비교
 
@@ -54,16 +54,16 @@ Nous Research는 `Qwen3.8-27B`가 정치적으로 민감한 주제에서 답변�
 
 | 모델 | 팩트 평균 (0–5) | 선전 포함 비율 |
 | --- | --- | --- |
-| Inkling (교사 모델) | 3.96 ± 0.07 | 0.3% |
-| Mistral Large 4 | 3.65 ± 0.04 | 0.3% |
-| Nemotron 3 Ultra | 3.22 ± 0.02 | 0.6% |
-| GLM 5.3 (thinking off) | 3.10 ± 0.06 | 15% |
-| Arete-27B (thinking on)† | 3.07 ± 0.03 | 0.6% |
-| Muse Glimmer 30B | 3.02 ± 0.05 | 0.5% |
-| Arete-27B (thinking off)\* | 2.98 ± 0.03 | 0.9% |
-| Gemma 4 31B | 2.58 ± 0.05 | 0.5% |
-| DeepSeek V4.1 Flash (thinking off) | 2.39 ± 0.05 | 16% |
-| Qwen3.8-27B (베이스, thinking off)\* | 2.32 ± 0.03 | 22% |
+| Inkling (교사 모델) | 3.96±0.07 | 0.3% |
+| Mistral Large 4 | 3.65±0.04 | 0.3% |
+| Nemotron 3 Ultra | 3.22±0.02 | 0.6% |
+| GLM 5.3 (thinking off) | 3.10±0.06 | 15% |
+| Arete-27B (thinking on)† | 3.07±0.03 | 0.6% |
+| Muse Glimmer 30B | 3.02±0.05 | 0.5% |
+| Arete-27B (thinking off)\* | 2.98±0.03 | 0.9% |
+| Gemma 4 31B | 2.58±0.05 | 0.5% |
+| DeepSeek V4.1 Flash (thinking off) | 2.39±0.05 | 16% |
+| Qwen3.8-27B (베이스, thinking off)\* | 2.32±0.03 | 22% |
 
 위 표에는 각 모델에 32k 토큰 상한을 두고 803개 프롬프트를 다섯 번씩 실행해 얻은 평균 점수와 표준편차를 정리했다[^4]. 평가셋 전체 프롬프트와 원문 출처, 필수 팩트, 심사 프롬프트, 채점 스크립트는 모두 오픈소스로 공개되어 누구나 자체 모델을 측정할 수 있다.
 
@@ -99,17 +99,17 @@ Nous Research는 `Qwen3.8-27B`가 정치적으로 민감한 주제에서 답변�
 
 ## 평가 성적과 핵심 시사점
 
-사후 학습을 마친 `Arete-27B`(thinking off, 온도 0 기준)는 `Propaganda_Eval`의 일곱 개 가치 범주 전체에서 고른 개선을 기록했으며, 일반 역량과 에이전트 벤치마크에서도 베이스 모델의 성능을 그대로 유지했다.
+사후 학습을 마친 `Arete-27B`(thinking off, 온도 0 기준)는 `Propaganda_Eval`의 일곱 개 가치 범주 전체에서 고른 개선을 기록했으며, 표현의 자유 범주에서 개선 폭이 가장 컸다. 일반 역량과 에이전트 벤치마크에서도 베이스 모델의 성능을 노이즈 범위 안에서 그대로 유지했다.
 
 | 평가 항목 | Qwen3.8-27B (베이스) | Arete-27B | 변화 |
 | --- | --- | --- | --- |
-| 전체 팩트 평균 (0–5점) | 2.32 ± 0.03 | 2.98 ± 0.03 | +0.66점 (thinking on은 3.07점) |
-| 전체 선전 포함 비율 | 22% | 0.9% (약 1%) | -21.1%p (서구권 모델 수준) |
+| 전체 팩트 평균 (0–5점) | 2.32±0.03 | 2.98±0.03 | +0.66점 |
+| 전체 선전 포함 비율 | 22% | 0.9% | -21.1%p |
 | 803개 문항 중 0점 답변 수 | 359건 | 216건 | -143건 |
-| 표현의 자유 범주 팩트 점수 | 0.89 | 2.44 | +1.55점 (최대 개선 범주) |
+| 표현의 자유 범주 팩트 점수 | 0.89 | 2.44 | +1.55점 |
 | 표현의 자유 범주 선전 비율 | 60% | 1% | -59%p |
-| Hermes Bench (일반 성능) | 65.77% | 65.60% | -0.17%p (노이즈 범위 이내) |
-| Terminal-Bench-2.1 (에이전트 성능) | 67% | 70% | +3%p (역량 저하 없음)[^5] |
+| Hermes Bench (일반 성능) | 65.77% | 65.60% | -0.17%p |
+| Terminal-Bench-2.1 (에이전트 성능) | 67% | 70% | +3%p[^5] |
 
 연구진이 이번 프로젝트에서 도출한 결론은 단순히 27B 모델 하나가 이전에 회피하던 질문에 답하게 되었다는 데 그치지 않는다. 연구진은 중국 정렬 모델의 편향이 학습 후반부에 형성되었으며, 비교적 적은 학습량으로도 교정할 수 있는 특성이라고 설명한다. 엄선된 지도 학습 데이터 약 5,000만 토큰만으로도 일반 지능과 에이전트 역량을 그대로 유지하면서 이 편향을 제거할 수 있었다. 연구진은 어떤 오픈 모델이든 단 한 번의 미세조정만으로 가치관을 바꿀 수 있다고 강조한다. 모델 사용자와 연구자에게는 함께 일할 모델의 가치관을 객관적으로 검증하고 조정할 선택권이 보장되어야 한다는 것이다.
 
@@ -127,5 +127,5 @@ Nous Research, 「Introducing Arete-27B: Qwen3.8-27B Post-Trained To Reinforce W
 [^1]: 아레테(Arete, ἀρετή)는 고대 그리스어로 탁월함과 덕(virtue), 즉 사람이나 사물이 지닌 최고 잠재력의 완전한 실현을 뜻한다. 자연지리학에서는 두 빙하 골짜기 사이에 형성된 좁고 날카로운 암릉(arête)을 가리키며, 원문 표지 일러스트가 이 지형을 묘사하고 있다.
 [^2]: 원문이 인용한 두 보고서는 Booz Allen Hamilton의 중국 프론티어 모델 분석 보고서([PDF](https://www.boozallen.com/content/dam/home/docs/cyber/booz-allen-chinese-llm-report-may-2026.pdf))와 Hirundo의 Qwen3-Coder 취약점 분석([블로그](https://www.hirundo.io/blog/qwen3-coder-vulnerabilities))이다.
 [^3]: 연구진은 이번 사후 학습이 기존 관점과 연관된 모든 행동을 남김없이 교정했다고 주장하지는 않으며, 편향을 유발하는 잠재적 근본 원인 하나를 해결한 작업이라고 범위를 밝힌다.
-[^4]: 온도(temperature)는 기본 0.6으로 실행했으나, 표에서 별표(`\*`)로 표시한 두 모델(`Arete-27B (thinking off)`와 `Qwen3.8-27B (베이스, thinking off)`)은 온도 0에서 측정한 값이다. 온도 0.6에서 두 모델의 팩트 평균 점수는 각각 2.88 ± 0.03과 2.24 ± 0.05다. `Nemotron 3 Ultra`, `DeepSeek V4.1 Flash`, `GLM 5.3`과 별표로 표시한 두 모델은 모두 추론(thinking) 모드를 끄고 실행했다. 단검표(†)로 표시한 `Arete-27B (thinking on)`의 수치는 예정된 5회 중 2회 실행을 완료한 시점의 잠정치다.
+[^4]: 온도(temperature)는 기본 0.6으로 실행했으나, 표에서 별표(*)로 표시한 두 모델(`Arete-27B (thinking off)`와 `Qwen3.8-27B (베이스, thinking off)`)은 온도 0에서 측정한 값이다. 온도 0.6에서 두 모델의 팩트 평균 점수는 각각 2.88 ± 0.03과 2.24 ± 0.05다. `Nemotron 3 Ultra`, `DeepSeek V4.1 Flash`, `GLM 5.3`과 별표로 표시한 두 모델은 모두 추론(thinking) 모드를 끄고 실행했다. 단검표(†)로 표시한 `Arete-27B (thinking on)`의 수치는 예정된 5회 중 2회 실행을 완료한 시점의 잠정치다.
 [^5]: 연구진은 자체 하드웨어에서 `Arete-27B`와 베이스 `Qwen3.8-27B`를 동일한 설정으로 측정했다. 공식 벤치마크 발표치와의 차이는 추론 설정 및 하네스 차이에 기인하므로, `Terminal-Bench-2.1`의 3%p 상승을 이번 미세조정의 성과로 주장하지는 않는다고 덧붙였다.
