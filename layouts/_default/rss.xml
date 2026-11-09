@@ -79,6 +79,7 @@
       {{- $base := strings.TrimSuffix "/" site.BaseURL }}
       {{- $body = replaceRE `(\s(?:href|src|poster))="/([^/])` (printf `$1="%s/$2` $base) . }}
       {{- $body = replaceRE `(\shref)="#` (printf `$1="%s#` $link) $body }}
+      {{- $body = replaceRE `(\s(?:href|src|poster))="([^"#/][^":]*)"` (printf `$1="%s$2"` $link) $body }}
       {{- else }}
       {{- with .Params.thumb }}
       {{- $body = printf `<p><a href="%s"><img src="%s" alt="%s"></a></p>` $link (. | absURL) ($title | transform.HTMLEscape) }}
