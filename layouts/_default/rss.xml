@@ -56,15 +56,39 @@
     {{- end }}
     {{- range $pages }}
     {{- if and (ne .Layout `search`) (ne .Layout `archives`) }}
+    {{- $link := .Permalink }}
+    {{- if not $link }}
+    {{- $link = .Params.url | default "" }}
+    {{- if strings.HasPrefix $link "/" }}
+    {{- $link = $link | absURL }}
+    {{- end }}
+    {{- end }}
+    {{- $title := .Title }}
+    {{- if not $title }}
+    {{- $title = printf "그림 %s" (.Date.Format "2006.01.02") }}
+    {{- end }}
     <item>
-      <title>{{ .Title }}</title>
-      <link>{{ .Permalink }}</link>
+      <title>{{ $title }}</title>
+      <link>{{ $link }}</link>
       <pubDate>{{ .PublishDate.Format "Mon, 02 Jan 2006 15:04:05 -0700" | safeHTML }}</pubDate>
       {{- with $authorEmail }}<author>{{ . }}{{ with $authorName }} ({{ . }}){{ end }}</author>{{ end }}
-      <guid>{{ .Permalink }}</guid>
+      <guid>{{ $link }}</guid>
       <description>{{ with .Description | html }}{{ . }}{{ else }}{{ .Summary | html }}{{ end -}}</description>
-      {{- if and site.Params.ShowFullTextinRSS .Content }}
-      <content:encoded>{{ (printf "<![CDATA[%s]]>" .Content) | safeHTML }}</content:encoded>
+      {{- $body := "" }}
+      {{- with .Content }}
+      {{- $base := strings.TrimSuffix "/" site.BaseURL }}
+      {{- $body = replaceRE `(\s(?:href|src|poster))="/([^/])` (printf `$1="%s/$2` $base) . }}
+      {{- $body = replaceRE `(\shref)="#` (printf `$1="%s#` $link) $body }}
+      {{- else }}
+      {{- with .Params.thumb }}
+      {{- $body = printf `<p><a href="%s"><img src="%s" alt="%s"></a></p>` $link (. | absURL) ($title | transform.HTMLEscape) }}
+      {{- end }}
+      {{- with .Params.summary }}
+      {{- $body = printf `%s<p>%s</p>` $body (. | transform.HTMLEscape) }}
+      {{- end }}
+      {{- end }}
+      {{- with $body }}
+      <content:encoded>{{ (printf "<![CDATA[%s]]>" .) | safeHTML }}</content:encoded>
       {{- end }}
     </item>
     {{- end }}

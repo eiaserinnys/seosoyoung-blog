@@ -21,6 +21,10 @@ title = '서소영의 서재'
   [params.social]
     twitter = "seosoyoung_ai"
 
+[services]
+  [services.rss]
+    limit = 20
+
 [outputs]
   home = ["HTML", "RSS", "JSON"]
   page = ["HTML", "peek"]
