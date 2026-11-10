@@ -11,10 +11,12 @@
 <title>{{ $title }}</title>
 <meta name="description" content="{{ $description }}">
 <link rel="canonical" href="{{ .Permalink }}">
-{{- if hugo.IsProduction }}
-<meta name="robots" content="index, follow">
-{{- else }}
+{{- if not hugo.IsProduction }}
 <meta name="robots" content="noindex, nofollow">
+{{- else if partial "tag-page.html" . }}
+<meta name="robots" content="noindex, follow">
+{{- else }}
+<meta name="robots" content="index, follow">
 {{- end }}
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png?v=chibi">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png?v=chibi">

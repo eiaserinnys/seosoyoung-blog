@@ -1,0 +1,2 @@
+{{- /* 태그 첫 화면과 태그별 목록: 색인에서 빼고 사이트맵에서도 뺀다(카드 #1153, 디렉터 결정). 분류, 주제, 시리즈 목록은 해당 없음. */ -}}
+{{- return (and (in (slice "taxonomy" "term") .Kind) (eq .Data.Plural "tags")) -}}
