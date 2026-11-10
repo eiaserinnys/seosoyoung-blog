@@ -379,11 +379,11 @@
   font-size: 0.9em;
 }
 
-.post-content .math-nowrap {
+:is(.post-content, aside.sidenote) .math-nowrap {
   white-space: nowrap;
 }
 
-.post-content .math-nowrap .math-break {
+:is(.post-content, aside.sidenote) .math-nowrap .math-break {
   white-space: normal;
 }
 

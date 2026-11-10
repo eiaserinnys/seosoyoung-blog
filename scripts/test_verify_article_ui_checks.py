@@ -62,6 +62,33 @@ class ArticleUiChecksTest(unittest.TestCase):
         self.assertTrue(resized_sidenotes_ok(final, without))
         self.assertFalse(resized_sidenotes_ok(final, {"sidenotes": [1]}))
 
+    def test_sidenote_math_bounds_and_adjacent_text(self):
+        self.page.set_content("""<style>
+          aside { width: 100px; font: 16px/24px monospace }
+          .lead { display: inline-block; width: 20px }
+          .katex { display: inline-block; width: 80px }
+          .math-nowrap { white-space: nowrap }
+        </style><div class="post-content"></div><aside class="sidenote"><p><span class="lead"></span><span><span class="katex">x</span></span>Cf의</p></aside>""")
+        self.assertEqual(self.page.evaluate(A10_JS)["checked"], 0)
+        before = self.page.evaluate(A10_JS, True)
+        self.assertEqual(before["checked"], 1)
+        self.assertEqual(before["violations"], 1)
+        self.page.evaluate("""() => {
+          const p = document.querySelector('aside p');
+          const unit = p.querySelector('.katex').parentElement;
+          const wrap = document.createElement('span');
+          wrap.className = 'math-nowrap';
+          p.insertBefore(wrap, unit);
+          wrap.append(unit, unit.nextSibling);
+        }""")
+        self.assertEqual(self.page.evaluate(A10_JS, True)["violations"], 0)
+        self.page.locator('.katex').evaluate("el => el.style.width = '140px'")
+        self.assertGreater(self.page.evaluate(A11_JS, True)["bounds"][0]["over"], 1)
+        self.page.locator('.katex').evaluate("el => el.style.width = '60px'")
+        self.assertLessEqual(self.page.evaluate(A11_JS, True)["bounds"][0]["over"], 1)
+        self.page.locator('aside p').evaluate("el => el.innerHTML = '<span><span class=\"katex\">x</span></span> Cf'")
+        self.assertEqual(self.page.evaluate(A10_JS, True)["checked"], 0)
+
 
 if __name__ == '__main__':
     unittest.main()

@@ -66,7 +66,7 @@ A9_JS = r"""
 """
 
 A10_JS = r"""
-() => {
+(includeSide = false) => {
   const content = document.querySelector('.post-content');
   if (!content) return {math: [], checked: 0, violations: 0};
   const topOfChar = (node, offset) => {
@@ -76,7 +76,9 @@ A10_JS = r"""
     const rects = range.getClientRects();
     return rects.length ? +rects[0].top.toFixed(1) : null;
   };
-  const mathEls = [...content.querySelectorAll('.katex')].filter((m) => !m.closest('.katex-display'));
+  const mathEls = [...content.querySelectorAll('.katex'),
+    ...(includeSide ? document.querySelectorAll('aside.sidenote .katex') : [])]
+    .filter((m) => !m.closest('.katex-display'));
   const out = mathEls.map((m, i) => {
     const parent = m.parentElement;
     // auto-render puts the returned .katex inside an anonymous span; that span
@@ -127,18 +129,21 @@ A10_JS = r"""
     }
     let nextChar = null;
     let nextTop = null;
+    let nextAdjacent = false;
     if (next && next.nodeType === 3) {
       const lead = next.data.match(/^\s*/)[0].length;
       if (lead < next.data.length) {
         nextChar = next.data[lead];
         nextTop = topOfChar(next, lead);
+        nextAdjacent = lead === 0;
       }
     }
     const rects = mathNode.getClientRects();
     const startTop = rects.length ? +rects[0].top.toFixed(1) : null;
     const endTop = rects.length ? +rects[rects.length - 1].top.toFixed(1) : null;
     const open = !!prevChar && /[(\[{]/.test(prevChar);
-    const close = !!nextChar && /[)\]},.:;!?%]/.test(nextChar);
+    const close = !!nextChar && (/[)\]},.:;!?%]/.test(nextChar)
+      || (nextAdjacent && /[A-Za-z]/.test(nextChar)));
     const openViolation = !!(open && prevTop !== null && startTop !== null
       && Math.abs(prevTop - startTop) > 1);
     const closeViolation = !!(close && nextTop !== null && endTop !== null
@@ -148,6 +153,7 @@ A10_JS = r"""
     const cell = m.closest('td,th');
     return {
       i: i,
+      side: !!m.closest('aside.sidenote'),
       cell: cell ? cell.textContent.slice(0, 60) : null,
       prevChar: prevChar,
       nextChar: nextChar,
@@ -178,19 +184,22 @@ A10_JS = r"""
 """
 
 A11_JS = r"""
-() => {
+(includeSide = false) => {
   const content = document.querySelector('.post-content');
   const blockSelector = 'p,li,td,th,blockquote,h1,h2,h3,h4,h5,h6,figcaption,dd,dt';
-  const maths = [...content.querySelectorAll('.katex')].filter((k) => !k.closest('.katex-display'));
+  const maths = [...content.querySelectorAll('.katex'),
+    ...(includeSide ? document.querySelectorAll('aside.sidenote .katex') : [])]
+    .filter((k) => !k.closest('.katex-display'));
   const bounds = maths.map((k, i) => {
     let unit = k;
     const parent = k.parentElement;
     if (parent && parent.tagName === 'SPAN' && !parent.className && parent.childNodes.length === 1) unit = parent;
     const outer = unit.parentElement && unit.parentElement.classList.contains('math-nowrap') ? unit.parentElement : unit;
-    const block = outer.parentElement.closest(blockSelector) || content;
+    const side = k.closest('aside.sidenote');
+    const block = side || outer.parentElement.closest(blockSelector) || content;
     const style = getComputedStyle(block);
     const right = block.getBoundingClientRect().right - parseFloat(style.paddingRight) - parseFloat(style.borderRightWidth);
-    return {i, over: +(outer.getBoundingClientRect().right - right).toFixed(2),
+    return {i, side: !!side, over: +(outer.getBoundingClientRect().right - right).toFixed(2),
       tex: (k.querySelector('annotation') || {}).textContent || '', block: block.tagName};
   });
   const tables = [...content.querySelectorAll('.table-scroll')].map((wrap, i) => {
@@ -295,7 +304,13 @@ def a11_checks(path, configs):
         entries.append({"ok": bool(bounds) and not bad,
                         "detail": f"{path} {name}: math={len(bounds)} over={len(bad)} "
                                   f"examples={bad[:4]}"})
-    tables = ((configs.get("wide-light") or {}).get("a11") or {}).get("tables") or []
+    wide = ((configs.get("wide-light") or {}).get("a11") or {})
+    side_bounds = [item for item in wide.get("bounds", []) if item.get("side")]
+    if side_bounds:
+        bad = [item for item in side_bounds if item["over"] > 1]
+        entries.append({"ok": not bad, "detail": f"{path} wide-light: side math={len(side_bounds)} "
+                                                 f"over={len(bad)} examples={bad[:4]}"})
+    tables = wide.get("tables") or []
     for table in tables:
         entries.append({"ok": not table["overflowing"],
                         "detail": f"{path} wide-light: math table {table['i']} overflowing={table['overflowing']}"})

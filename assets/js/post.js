@@ -72,7 +72,7 @@
         ? (prev.data.match(/[(\[{]+$/) || [""])[0]
         : "";
       var closeHead = next && next.nodeType === Node.TEXT_NODE
-        ? (next.data.match(/^[)\]},.:;!?%ㄱ-ㆎ가-힣]+/) || [""])[0]
+        ? (next.data.match(/^[)\]},.:;!?%A-Za-zㄱ-ㆎ가-힣]+/) || [""])[0]
         : "";
       if (!openTail && !closeHead) return;
 

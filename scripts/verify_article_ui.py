@@ -49,6 +49,7 @@ DEFAULT_PATHS = [
     "/digest/oist-quantum-spins-centimeter-object/",
     "/digest/combining-llms-cofailure-ceiling/",
     "/digest/qwenputer-riscv-cpu/",
+    "/digest/it3-periodic-table-z172/",
 ]
 
 MATH_PATHS = DEFAULT_PATHS[1:2] + DEFAULT_PATHS[4:]
@@ -445,8 +446,8 @@ def capture_config(browser, url, out_dir, name, width, height, dpr, scheme, a10=
     m["failedRequests"] = failed
     m["a9"] = page.evaluate(A9_JS)
     if a10:
-        m["a10"] = page.evaluate(A10_JS)
-        m["a11"] = page.evaluate(A11_JS)
+        m["a10"] = page.evaluate(A10_JS, name == "wide-light")
+        m["a11"] = page.evaluate(A11_JS, name == "wide-light")
     d = out_dir / name
     d.mkdir(parents=True, exist_ok=True)
     page.add_style_tag(content=".site-top{position:static!important} html{scroll-behavior:auto!important}")
