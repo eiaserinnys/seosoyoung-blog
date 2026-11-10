@@ -1,7 +1,8 @@
-"""A9/A10 measurements for verify_article_ui.py (card #1177, round 2).
+"""A9/A10/A11 measurements for verify_article_ui.py (card #1177).
 
 A9: table inline code mid-word breaks, measured per character with Range rects.
 A10: inline math punctuation orphan, measured with Range rect tops.
+A11: math bounds and wide table overflow.
 
 Both measurements run identically on the 9b8f1de build and the new build.
 A10 does not depend on `.math-nowrap`; it reads the rendered math box that
@@ -84,6 +85,37 @@ A10_JS = r"""
       && parent.textContent.trim() === m.textContent.trim()) ? parent : m;
     const prev = mathNode.previousSibling;
     const next = mathNode.nextSibling;
+    // Punctuation can have been split into a text node inside math-nowrap,
+    // with the following Korean text still outside it in the earlier build.
+    const following = [];
+    let sibling = next;
+    while (sibling && sibling.nodeType === Node.TEXT_NODE) {
+      following.push(sibling);
+      sibling = sibling.nextSibling;
+    }
+    const wrapper = mathNode.parentElement;
+    if (!sibling && wrapper && wrapper.classList.contains('math-nowrap')) {
+      sibling = wrapper.nextSibling;
+      while (sibling && sibling.nodeType === Node.TEXT_NODE) {
+        following.push(sibling);
+        sibling = sibling.nextSibling;
+      }
+    }
+    let hangulTop = null;
+    let hangulChar = null;
+    let seekingHangul = true;
+    for (const node of following) {
+      for (let offset = 0; offset < node.data.length && seekingHangul; offset++) {
+        const ch = node.data[offset];
+        if (/[)\]},.:;!?%]/.test(ch)) continue;
+        if (/[ㄱ-ㆎ가-힣]/.test(ch)) {
+          hangulChar = ch;
+          hangulTop = topOfChar(node, offset);
+        }
+        seekingHangul = false;
+      }
+      if (!seekingHangul) break;
+    }
     let prevChar = null;
     let prevTop = null;
     if (prev && prev.nodeType === 3) {
@@ -111,6 +143,8 @@ A10_JS = r"""
       && Math.abs(prevTop - startTop) > 1);
     const closeViolation = !!(close && nextTop !== null && endTop !== null
       && Math.abs(nextTop - endTop) > 1);
+    const hangulViolation = !!(hangulChar && hangulTop !== null && endTop !== null
+      && Math.abs(hangulTop - endTop) > 1);
     const cell = m.closest('td,th');
     return {
       i: i,
@@ -125,6 +159,9 @@ A10_JS = r"""
       close: close,
       openViolation: openViolation,
       closeViolation: closeViolation,
+      hangulChar: hangulChar,
+      hangulTop: hangulTop,
+      hangulViolation: hangulViolation,
       mathNodeTag: mathNode.tagName,
       mathNodeClass: String(mathNode.className || ''),
       mathNodeSiblings: [prev ? prev.nodeName : null, next ? next.nodeName : null],
@@ -132,15 +169,51 @@ A10_JS = r"""
   });
   return {
     math: out,
-    checked: out.filter((m) => m.open || m.close).length,
-    violations: out.filter((m) => m.openViolation || m.closeViolation).length,
+    checked: out.filter((m) => m.open || m.close || m.hangulChar).length,
+    hangulChecked: out.filter((m) => m.hangulChar).length,
+    hangulViolations: out.filter((m) => m.hangulViolation).length,
+    violations: out.filter((m) => m.openViolation || m.closeViolation || m.hangulViolation).length,
   };
+}
+"""
+
+A11_JS = r"""
+() => {
+  const content = document.querySelector('.post-content');
+  const blockSelector = 'p,li,td,th,blockquote,h1,h2,h3,h4,h5,h6,figcaption,dd,dt';
+  const maths = [...content.querySelectorAll('.katex')].filter((k) => !k.closest('.katex-display'));
+  const bounds = maths.map((k, i) => {
+    let unit = k;
+    const parent = k.parentElement;
+    if (parent && parent.tagName === 'SPAN' && !parent.className && parent.childNodes.length === 1) unit = parent;
+    const outer = unit.parentElement && unit.parentElement.classList.contains('math-nowrap') ? unit.parentElement : unit;
+    const block = outer.parentElement.closest(blockSelector) || content;
+    const style = getComputedStyle(block);
+    const right = block.getBoundingClientRect().right - parseFloat(style.paddingRight) - parseFloat(style.borderRightWidth);
+    return {i, over: +(outer.getBoundingClientRect().right - right).toFixed(2),
+      tex: (k.querySelector('annotation') || {}).textContent || '', block: block.tagName};
+  });
+  const tables = [...content.querySelectorAll('.table-scroll')].map((wrap, i) => {
+    const table = wrap.querySelector('table');
+    return {i: i + 1, hasMath: !!table.querySelector('.katex'), overflowing: wrap.classList.contains('is-overflowing')};
+  }).filter((table) => table.hasMath);
+  return {bounds, tables};
 }
 """
 
 A9_WIDE_CONFIGS = ("mid-light", "wide-light")
 A9_NARROW_CONFIGS = ("min360-light", "narrow-light", "min390-light", "min414-light")
 A10_CONFIGS = ("min360-light", "narrow-light", "min390-light", "min414-light", "wide-light")
+A11_NARROW_CONFIGS = ("min360-light", "narrow-light", "min414-light")
+
+
+def sidenote_presence_ok(wide):
+    return not wide["footnoteMarkers"] or bool(wide["sidenotes"])
+
+
+def resized_sidenotes_ok(final, wide):
+    return (final["sidenoteCount"] == len(wide["sidenotes"])
+            and final["numberedSidenotes"] == final["sidenoteCount"])
 
 
 def _midword_breaks(code):
@@ -186,7 +259,7 @@ def a9_checks(path, configs):
 
 
 def a10_checks(path, configs):
-    if "memory-caching-rnns" not in path:
+    if not any((config or {}).get("a10") for config in configs.values()):
         return []
     entries = []
     for name in A10_CONFIGS:
@@ -194,16 +267,36 @@ def a10_checks(path, configs):
         math = data.get("math") or []
         checked = data.get("checked", 0)
         violations = data.get("violations", 0)
-        bad = [m for m in math if m.get("openViolation") or m.get("closeViolation")]
+        bad = [m for m in math if m.get("openViolation") or m.get("closeViolation") or m.get("hangulViolation")]
         sample = "; ".join(
             f"{m.get('cell') or '(본문)'} prev={m.get('prevChar')!r}@{m.get('prevTop')} "
             f"math={m.get('startTop')}..{m.get('endTop')} next={m.get('nextChar')!r}@{m.get('nextTop')} "
-            f"open={m.get('openViolation')} close={m.get('closeViolation')}"
+            f"hangul={m.get('hangulChar')!r}@{m.get('hangulTop')} "
+            f"open={m.get('openViolation')} close={m.get('closeViolation')} hangulDrop={m.get('hangulViolation')}"
             for m in bad[:4]
         )
         entries.append({
             "ok": checked > 0 and violations == 0,
-            "detail": f"{path} {name}: checked={checked} violations={violations}"
+            "detail": f"{path} {name}: checked={checked} violations={violations} "
+                      f"hangul={data.get('hangulChecked', 0)} hangulDrop={data.get('hangulViolations', 0)}"
                       + (f" / {sample}" if sample else ""),
         })
+    return entries
+
+
+def a11_checks(path, configs):
+    if not any((config or {}).get("a11") for config in configs.values()):
+        return []
+    entries = []
+    for name in A11_NARROW_CONFIGS:
+        data = (configs.get(name) or {}).get("a11") or {}
+        bounds = data.get("bounds") or []
+        bad = [item for item in bounds if item["over"] > 1]
+        entries.append({"ok": bool(bounds) and not bad,
+                        "detail": f"{path} {name}: math={len(bounds)} over={len(bad)} "
+                                  f"examples={bad[:4]}"})
+    tables = ((configs.get("wide-light") or {}).get("a11") or {}).get("tables") or []
+    for table in tables:
+        entries.append({"ok": not table["overflowing"],
+                        "detail": f"{path} wide-light: math table {table['i']} overflowing={table['overflowing']}"})
     return entries

@@ -72,7 +72,7 @@
         ? (prev.data.match(/[(\[{]+$/) || [""])[0]
         : "";
       var closeHead = next && next.nodeType === Node.TEXT_NODE
-        ? (next.data.match(/^[)\]},.:;!?%]+/) || [""])[0]
+        ? (next.data.match(/^[)\]},.:;!?%ㄱ-ㆎ가-힣]+/) || [""])[0]
         : "";
       if (!openTail && !closeHead) return;
 
@@ -83,6 +83,18 @@
         wrapper.appendChild(prev.splitText(prev.data.length - openTail.length));
       }
       wrapper.appendChild(math);
+      // 인라인 블록 뒤 줄바꿈은 부모 white-space를 따르므로, 수식은 nowrap으로 두고 .base 사이에만 줄바꿈 자리를 연다.
+      math.querySelectorAll(".katex-html").forEach(function (html) {
+        var bases = Array.from(html.children).filter(function (child) {
+          return child.classList.contains("base");
+        });
+        bases.slice(1).forEach(function (base) {
+          var breakPoint = document.createElement("span");
+          breakPoint.className = "math-break";
+          breakPoint.textContent = "\u200b";
+          html.insertBefore(breakPoint, base);
+        });
+      });
       if (closeHead) {
         next.splitText(closeHead.length);
         wrapper.appendChild(next);

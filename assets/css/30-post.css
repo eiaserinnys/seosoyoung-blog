@@ -383,6 +383,10 @@
   white-space: nowrap;
 }
 
+.post-content .math-nowrap .math-break {
+  white-space: normal;
+}
+
 .post-content pre {
   position: relative;
   max-width: 100%;

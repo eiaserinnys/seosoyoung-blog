@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""서재 글 화면 시각 검수 스크립트 (폭·테마 캡처, A1~A10 측정, 각주 왕복, 창 크기 시나리오).
+"""서재 글 화면 시각 검수 스크립트 (폭·테마 캡처, A1~A11 측정, 각주 왕복, 창 크기 시나리오).
 
 사용법:
   PLAYWRIGHT_BROWSERS_PATH="$HOME/.cache/ms-playwright" \
@@ -7,7 +7,7 @@
       [--path /digest/roguelike-wikipedia/] [--path /digest/paradox-of-tragedy-three-aesthetics-papers/]
 
 --path를 여러 번 주면 글마다 <out_dir>/<slug>/ 아래에 산출하고, <out_dir>/metrics.json에
-전체 A1~A10 판정을 모은다. 분석 비콘(umami) 요청은 연결이 없는 환경에서 load 이벤트를
+전체 A1~A11 판정을 모은다. 분석 비콘(umami) 요청은 연결이 없는 환경에서 load 이벤트를
 막으므로 차단한다. 화면과 무관하다.
 """
 import argparse
@@ -24,7 +24,10 @@ from pathlib import Path
 from playwright.sync_api import sync_playwright
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from verify_article_ui_checks import A10_CONFIGS, A10_JS, A9_JS, a9_checks, a10_checks
+from verify_article_ui_checks import (
+    A10_CONFIGS, A10_JS, A11_JS, A9_JS, a9_checks, a10_checks, a11_checks,
+    resized_sidenotes_ok, sidenote_presence_ok,
+)
 
 CONFIGS = [
     ("wide-light", 1440, 900, 1, "light"),
@@ -42,7 +45,13 @@ DEFAULT_PATHS = [
     "/digest/memory-caching-rnns/",
     "/digest/pixellab-ai-pixel-art-generator/",
     "/digest/compozy-agent-os/",
+    "/digest/skillopt-text-space-optimizer-2026/",
+    "/digest/oist-quantum-spins-centimeter-object/",
+    "/digest/combining-llms-cofailure-ceiling/",
+    "/digest/qwenputer-riscv-cpu/",
 ]
+
+MATH_PATHS = DEFAULT_PATHS[1:2] + DEFAULT_PATHS[4:]
 
 RESIZE_SCENARIOS = [
     ("1440-1100-600-1440", [1440, 1100, 600, 1440]),
@@ -437,6 +446,7 @@ def capture_config(browser, url, out_dir, name, width, height, dpr, scheme, a10=
     m["a9"] = page.evaluate(A9_JS)
     if a10:
         m["a10"] = page.evaluate(A10_JS)
+        m["a11"] = page.evaluate(A11_JS)
     d = out_dir / name
     d.mkdir(parents=True, exist_ok=True)
     page.add_style_tag(content=".site-top{position:static!important} html{scroll-behavior:auto!important}")
@@ -546,7 +556,7 @@ def short_first_cell(text):
 
 
 def path_checks(report):
-    checks = {key: [] for key in ("A1", "A2", "A3", "A4", "A5", "A6", "A7", "A8", "A9", "A10")}
+    checks = {key: [] for key in ("A1", "A2", "A3", "A4", "A5", "A6", "A7", "A8", "A9", "A10", "A11")}
 
     def add(key, ok, detail):
         checks[key].append({"ok": bool(ok), "detail": detail})
@@ -589,7 +599,7 @@ def path_checks(report):
             and note["startsWithNumber"] and note["numberText"] == note["markerText"],
             f"{path} sidenote {note['i']}: num={note['numberText']!r} marker={note['markerText']!r} "
             f"first={note['numberIsFirst']} startsWith={note['startsWithNumber']}")
-    add("A4", len(wide["sidenotes"]) > 0, f"{path} 1440: sidenote {len(wide['sidenotes'])}개")
+    add("A4", sidenote_presence_ok(wide), f"{path} 1440: markers={wide['footnoteMarkers']} sidenote={len(wide['sidenotes'])}")
     add("A4", len(mid["sidenotes"]) == 0 and (mid["footnotesSection"] is None or mid["footnotesSection"]["display"] != "none"),
         f"{path} 1024: sidenote={len(mid['sidenotes'])} "
         f"footnotesDisplay={(mid['footnotesSection'] or {}).get('display')}")
@@ -603,7 +613,7 @@ def path_checks(report):
                     f"width={table['tableWidth']}px")
         final = data["stages"][-1]
         if final["stageWidth"] == 1440:
-            add("A5", final["sidenoteCount"] > 0 and final["numberedSidenotes"] == final["sidenoteCount"],
+            add("A5", resized_sidenotes_ok(final, wide),
                 f"{path} {scenario} 1440 복귀: sidenote={final['sidenoteCount']} 번호={final['numberedSidenotes']}")
             fresh = {t["i"]: t for t in wide["tables"]}
             for table in final["tables"]:
@@ -642,6 +652,8 @@ def path_checks(report):
         add("A9", entry["ok"], entry["detail"])
     for entry in a10_checks(path, configs):
         add("A10", entry["ok"], entry["detail"])
+    for entry in a11_checks(path, configs):
+        add("A11", entry["ok"], entry["detail"])
 
     summary = {}
     for key, entries in checks.items():
@@ -691,7 +703,7 @@ def main():
                     url = f"http://127.0.0.1:{port}{path}"
                     report = {"url": url, "path": path, "configs": {}, "interactions": {},
                               "tables_375": {}, "resize": {}}
-                    a10_path = "memory-caching-rnns" in path
+                    a10_path = path in MATH_PATHS
                     for name, w, h, dpr, scheme in CONFIGS:
                         report["configs"][name] = capture_config(
                             browser, url, path_out, name, w, h, dpr, scheme,
@@ -713,7 +725,7 @@ def main():
                 "configs": [{"name": c[0], "width": c[1], "height": c[2], "dpr": c[3], "colorScheme": c[4]}
                             for c in CONFIGS],
                 "skipped": skipped, "paths": reports, "summary": {}}
-    aggregate = {key: [] for key in ("A1", "A2", "A3", "A4", "A5", "A6", "A7", "A8", "A9", "A10")}
+    aggregate = {key: [] for key in ("A1", "A2", "A3", "A4", "A5", "A6", "A7", "A8", "A9", "A10", "A11")}
     for path, report in reports.items():
         summary, raw = path_checks(report)
         report["verdicts"] = summary
