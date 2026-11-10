@@ -14,6 +14,7 @@ import argparse
 import json
 import re
 import socket
+import struct
 import subprocess
 import sys
 import time
@@ -333,6 +334,39 @@ def element_shot(page, selector, path, nth=0):
     return str(path)
 
 
+def png_size(path):
+    with open(path, "rb") as handle:
+        head = handle.read(24)
+    return list(struct.unpack(">II", head[16:24]))
+
+
+def table_state(page, index):
+    return page.evaluate(
+        """(n) => {
+          const wrapper = document.querySelectorAll('.post-content .table-scroll')[n];
+          const table = wrapper.querySelector('table');
+          const rect = table.getBoundingClientRect();
+          return {overflowing: wrapper.classList.contains('is-overflowing'),
+                  width: +rect.width.toFixed(1), height: +rect.height.toFixed(1)};
+        }""",
+        index,
+    )
+
+
+def apply_table_state(page, tables):
+    # 요소 캡처가 일으키는 resize가 overflow 판정을 바꿀 수 있다.
+    # 캡처 직전에는 측정 시점의 표 상태로 되돌려, 캡처와 metrics를 같은 상태로 맞춘다.
+    page.evaluate(
+        """(states) => {
+          document.querySelectorAll('.post-content .table-scroll').forEach((wrapper, i) => {
+            const want = !!(states[i] && states[i].overflowing);
+            wrapper.classList.toggle('is-overflowing', want);
+          });
+        }""",
+        [{"overflowing": table["overflowing"]} for table in tables if table["wrapper"]],
+    )
+
+
 def viewport_shot(page, selector, path, nth=0):
     loc = page.locator(selector).nth(nth)
     loc.scroll_into_view_if_needed()
@@ -403,8 +437,16 @@ def capture_config(browser, url, out_dir, name, width, height, dpr, scheme):
         else:
             shots["diagram"] = element_shot(page, "figure.blog-diagram", d / "diagram.png")
     t_count = page.locator(".post-content .table-scroll").count()
+    capture_states = []
     for i in range(t_count):
-        shots[f"table{i+1}"] = element_shot(page, ".post-content .table-scroll", d / f"table{i+1}.png", nth=i)
+        apply_table_state(page, m["tables"])
+        state_before = table_state(page, i)
+        shot_path = d / f"table{i+1}.png"
+        shots[f"table{i+1}"] = element_shot(page, ".post-content .table-scroll", shot_path, nth=i)
+        state_after = table_state(page, i)
+        capture_states.append({"i": i + 1, "before": state_before, "after": state_after,
+                               "png": png_size(shot_path)})
+    m["tableCaptureStates"] = capture_states
     img_count = page.locator(".post-content p:has(> img)").count()
     for i in range(img_count):
         shots[f"image{i+2}"] = element_shot(page, ".post-content p:has(> img)", d / f"image{i+2:02d}.png", nth=i)
@@ -415,6 +457,7 @@ def capture_config(browser, url, out_dir, name, width, height, dpr, scheme):
         shots["footnotes"] = element_shot(page, ".footnotes", d / "footnotes.png")
     if name in ("narrow-light", "wide-light"):
         m["interaction"] = footnote_roundtrip(page, name, d)
+    apply_table_state(page, m["tables"])
     m["overflowBeforeFullPage"] = page.evaluate(OVERFLOW_JS)
     page.evaluate("window.scrollTo(0, 0)")
     page.screenshot(path=str(d / "full.png"), full_page=True)
