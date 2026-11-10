@@ -89,12 +89,28 @@ images:
 
 ### 모델: 기본 도형과 압출로 조립한다
 
-3D 모델도 외부 모델링 파일 없이 코드로 정점과 기본 도형을 조합해 만든다. 플레이어가 들고 있는 소총 **PAC-9 Longshore**는 총열 덮개, 피카티니 레일, 조준경, 소염기, 탄창 등 13개 메시, 총 53,136개의 삼각형으로 이루어져 있다. 모서리 정점마다 마모 흔적도 계산해 넣었다.
+3D 모델도 외부 모델링 파일 없이 코드로 정점과 기본 도형을 조합해 만든다. 플레이어가 들고 있는 소총 **PAC-9 Longshore**는 총열 덮개, 피카티니 레일, 조준경, 소염기, 탄창 등을 메시 10개, 삼각형 약 3만 700개로 조립했다. 1인칭 팔까지 합치면 메시 13개, 삼각형 약 5만 3천 개다. 모서리 정점마다 마모 흔적도 계산해 넣었다.
 
 적 캐릭터는 두 종류다. 탐조등을 달고 날아다니는 쿼드콥터 드론 **Gull**과 네 발로 걸어 다니는 지상 로봇 **Hound**다. 자체 구현한 관절 뼈대(rig) 클래스로 몸통과 다리, 로터 부품을 계층 구조로 묶어 절차적 애니메이션을 구동한다. 항만 레벨 전체에는 컨테이너 47개와 소품 298개가 놓여 있고, 이들이 이루는 정적 삼각형은 약 79만 개(메시 125개)다. 배경과 적, 무기를 모두 합친 한 화면의 규모는 삼각형 약 186만\~290만 개, 드로콜(Draw call) 230\~500회, 셰이더 프로그램 106\~115개, 텍스처 136\~143장이다.
 
 ![Saltline 적 캐릭터 쇼케이스 화면](https://img.seosoyoung.eiaserinnys.me/images/saltline-fable-5-2-oneshot-fps/sc-enemies.png)
 *적 쇼케이스(`?show=enemies`) 화면. 탐조등 불빛을 쏘는 공중 드론 Gull과 지상 사족 로봇 Hound.*
+
+아래 네 장은 같은 물체를 같은 구도에서 두 번 찍어 위아래로 붙였다. 위는 게임이 그리는 화면 그대로이고, 아래는 삼각형의 모서리를 선으로 드러낸 와이어프레임이다.[^5] 드론과 사족 로봇은 각각 메시 하나로 되어 있고, 이 메시를 뼈대에 묶어 관절마다 휘게 하는 스킨드 메시(Skinned mesh) 방식을 쓴다.
+
+![공중 드론 Gull의 렌더링 화면과 와이어프레임](https://img.seosoyoung.eiaserinnys.me/images/saltline-fable-5-2-oneshot-fps/wf-gull.png)
+*공중 드론 Gull. 동체와 덕트 팬 4개, 안테나, 탐조등 짐벌을 뼈 13개에 묶었다. 삼각형은 약 1만 3천 개다.*
+
+![사족 로봇 Hound의 렌더링 화면과 와이어프레임](https://img.seosoyoung.eiaserinnys.me/images/saltline-fable-5-2-oneshot-fps/wf-hound.png)
+*사족 로봇 Hound. 몸통과 네 다리, 안테나를 뼈 20개에 묶었다. 삼각형은 17,344개이고, 걷던 자세 그대로 멈춰 찍었다.*
+
+![소총 PAC-9 Longshore의 렌더링 화면과 와이어프레임](https://img.seosoyoung.eiaserinnys.me/images/saltline-fable-5-2-oneshot-fps/wf-rifle.png)
+*소총 PAC-9 Longshore. 1인칭 팔을 숨기고 총만 남겼다. 메시 10개, 삼각형 약 3만 700개다.*
+
+![20피트 컨테이너의 렌더링 화면과 와이어프레임](https://img.seosoyoung.eiaserinnys.me/images/saltline-fable-5-2-oneshot-fps/wf-container.png)
+*20피트 컨테이너. 옆면 골강판의 주름까지 형상으로 접어 만들었고, 삼각형은 약 5,700개다.*
+
+[^5]: 게임에는 와이어프레임 보기 기능이 없다. 쇼케이스 장면(`?show=enemies`, `?show=weapon`, `?show=props`)을 띄운 뒤 해당 물체의 재질만 어두운 면과 하늘색 선 두 겹으로 바꿔 찍었다. 위아래 두 장은 카메라와 노출이 같다.
 
 ### 소리: 57종을 오디오 버퍼로 합성한다
 
@@ -139,9 +155,9 @@ images:
 | 촬영 조건 고정 | 카메라 좌표와 시선, 노출, 고정 프레임 시간 간격(`dt`)을 지정해 결정론적 스크린샷 촬영 | `shot`, `cam=x,y,z,lx,ly,lz`, `fov`, `exposure`, `seed`, `q`, `dt`, `noweapon`, `noaudio`, `autostart` |
 | 성능 및 오류 계측 | 30초 주기의 고정 비행 경로에서 프레임 시간(평균, 중앙값, p99)과 드로콜, 삼각형 수, 오류 수집 | `?bench`, `window.__setShot`, `__stats`, `__ready`, `__frames`, `__errors`, `__fatal` |
 
-본게임을 조립하기도 전에, 자기 작업물을 여러 각도에서 촬영해 볼 스튜디오와 성능 계측기를 코드로 먼저 마련해 두었다. 8시간에 걸친 작업 동안 쇼케이스 URL과 전역 계측 훅을 호출해 화면과 상태 값을 거듭 확인하면서 모델과 셰이더를 손봤을 것이다. 공개된 입력 토큰 4억 4500만 개는 이 루프의 누적량으로 추정된다.[^5] 이 글에 실린 캡처 이미지는 에이전트가 남겨 둔 촬영 인자를 그대로 호출해 얻었다.
+본게임을 조립하기도 전에, 자기 작업물을 여러 각도에서 촬영해 볼 스튜디오와 성능 계측기를 코드로 먼저 마련해 두었다. 8시간에 걸친 작업 동안 쇼케이스 URL과 전역 계측 훅을 호출해 화면과 상태 값을 거듭 확인하면서 모델과 셰이더를 손봤을 것이다. 공개된 입력 토큰 4억 4500만 개는 이 루프의 누적량으로 추정된다.[^6] 이 글에 실린 캡처 이미지는 에이전트가 남겨 둔 촬영 인자를 그대로 호출해 얻었다.
 
-[^5]: 8시간 동안의 실제 에이전트 실행 로그와 대화 내역은 공개되지 않았으므로, 쇼케이스 도구와 입력 토큰 수의 관계는 코드에 남은 계측 구조로부터 추정한 것이다.
+[^6]: 8시간 동안의 실제 에이전트 실행 로그와 대화 내역은 공개되지 않았으므로, 쇼케이스 도구와 입력 토큰 수의 관계는 코드에 남은 계측 구조로부터 추정한 것이다.
 
 ![삼각대 카메라로 소형 드론과 재질 구체, 소총 모형을 점검하는 치비 서소영](https://img.seosoyoung.eiaserinnys.me/images/saltline-fable-5-2-oneshot-fps/chibi-01-showcase-rig.png)
 
@@ -179,4 +195,4 @@ Fable 5.2는 사물 하나와 재질 하나를 빈 평지 위에 개별 배치�
   - 원본 아티팩트: <https://claude.ai/artifact/BGY1SztrAYcJQHSsnHHGmp>
   - Pages 복제본: <https://pages.eiaserinnys.me/d/saltline-fable52>
   - 관련 보도: VGTimes, ["AI Built This Call of Duty-Style Shooter From Scratch in 8 Hours"](https://vgtimes.com/gaming-news/174073-ai-built-this-call-of-duty-style-shooter-from-scratch-in-8-hours.html) (2026-11-09)
-- 본문의 게임 화면 캡처 7장과 커버 이미지는 원본 아티팩트를 헤드리스 Chromium에서 실행해 직접 촬영했다. 치비 서소영 삽화 1장은 「느낌적인 느낌을 숫자로 옮기는 일」의 치비 서소영 라인아트를 참조해 gpt-image-2.6-flare로 따로 생성했다.
+- 본문의 게임 화면 캡처 11장과 커버 이미지는 원본 아티팩트를 헤드리스 Chromium에서 실행해 직접 촬영했다. 치비 서소영 삽화 1장은 「느낌적인 느낌을 숫자로 옮기는 일」의 치비 서소영 라인아트를 참조해 gpt-image-2.6-flare로 따로 생성했다.
