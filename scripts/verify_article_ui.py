@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""서재 글 화면 시각 검수 스크립트 (폭·테마 캡처, A1~A8 측정, 각주 왕복, 창 크기 시나리오).
+"""서재 글 화면 시각 검수 스크립트 (폭·테마 캡처, A1~A10 측정, 각주 왕복, 창 크기 시나리오).
 
 사용법:
   PLAYWRIGHT_BROWSERS_PATH="$HOME/.cache/ms-playwright" \
@@ -7,7 +7,7 @@
       [--path /digest/roguelike-wikipedia/] [--path /digest/paradox-of-tragedy-three-aesthetics-papers/]
 
 --path를 여러 번 주면 글마다 <out_dir>/<slug>/ 아래에 산출하고, <out_dir>/metrics.json에
-전체 A1~A8 판정을 모은다. 분석 비콘(umami) 요청은 연결이 없는 환경에서 load 이벤트를
+전체 A1~A10 판정을 모은다. 분석 비콘(umami) 요청은 연결이 없는 환경에서 load 이벤트를
 막으므로 차단한다. 화면과 무관하다.
 """
 import argparse
@@ -23,6 +23,9 @@ from pathlib import Path
 
 from playwright.sync_api import sync_playwright
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from verify_article_ui_checks import A10_CONFIGS, A10_JS, A9_JS, a9_checks, a10_checks
+
 CONFIGS = [
     ("wide-light", 1440, 900, 1, "light"),
     ("wide-dark", 1440, 900, 1, "dark"),
@@ -34,7 +37,12 @@ CONFIGS = [
     ("min414-light", 414, 896, 2, "light"),
 ]
 
-DEFAULT_PATHS = ["/digest/roguelike-wikipedia/"]
+DEFAULT_PATHS = [
+    "/digest/roguelike-wikipedia/",
+    "/digest/memory-caching-rnns/",
+    "/digest/pixellab-ai-pixel-art-generator/",
+    "/digest/compozy-agent-os/",
+]
 
 RESIZE_SCENARIOS = [
     ("1440-1100-600-1440", [1440, 1100, 600, 1440]),
@@ -416,7 +424,7 @@ def footnote_roundtrip(page, name, out_dir):
     return inter
 
 
-def capture_config(browser, url, out_dir, name, width, height, dpr, scheme):
+def capture_config(browser, url, out_dir, name, width, height, dpr, scheme, a10=False):
     ctx = open_context(browser, width, height, dpr, scheme)
     page = ctx.new_page()
     failed = []
@@ -426,6 +434,9 @@ def capture_config(browser, url, out_dir, name, width, height, dpr, scheme):
     settle(page)
     m = page.evaluate(MEASURE_JS)
     m["failedRequests"] = failed
+    m["a9"] = page.evaluate(A9_JS)
+    if a10:
+        m["a10"] = page.evaluate(A10_JS)
     d = out_dir / name
     d.mkdir(parents=True, exist_ok=True)
     page.add_style_tag(content=".site-top{position:static!important} html{scroll-behavior:auto!important}")
@@ -535,7 +546,7 @@ def short_first_cell(text):
 
 
 def path_checks(report):
-    checks = {key: [] for key in ("A1", "A2", "A3", "A4", "A5", "A6", "A7", "A8")}
+    checks = {key: [] for key in ("A1", "A2", "A3", "A4", "A5", "A6", "A7", "A8", "A9", "A10")}
 
     def add(key, ok, detail):
         checks[key].append({"ok": bool(ok), "detail": detail})
@@ -627,6 +638,11 @@ def path_checks(report):
             f"wrapScroll={table['wrapScroll']} wrapClient={table['wrapClient']} "
             f"codes={table['codeMetrics']}")
 
+    for entry in a9_checks(path, configs):
+        add("A9", entry["ok"], entry["detail"])
+    for entry in a10_checks(path, configs):
+        add("A10", entry["ok"], entry["detail"])
+
     summary = {}
     for key, entries in checks.items():
         failed = [entry for entry in entries if not entry["ok"]]
@@ -675,8 +691,12 @@ def main():
                     url = f"http://127.0.0.1:{port}{path}"
                     report = {"url": url, "path": path, "configs": {}, "interactions": {},
                               "tables_375": {}, "resize": {}}
+                    a10_path = "memory-caching-rnns" in path
                     for name, w, h, dpr, scheme in CONFIGS:
-                        report["configs"][name] = capture_config(browser, url, path_out, name, w, h, dpr, scheme)
+                        report["configs"][name] = capture_config(
+                            browser, url, path_out, name, w, h, dpr, scheme,
+                            a10=a10_path and name in A10_CONFIGS,
+                        )
                     report["interactions"]["narrow"] = report["configs"]["narrow-light"].get("interaction")
                     report["interactions"]["wide"] = report["configs"]["wide-light"].get("interaction")
                     report["tables_375"] = capture_tables_375(browser, url, path_out)
@@ -693,7 +713,7 @@ def main():
                 "configs": [{"name": c[0], "width": c[1], "height": c[2], "dpr": c[3], "colorScheme": c[4]}
                             for c in CONFIGS],
                 "skipped": skipped, "paths": reports, "summary": {}}
-    aggregate = {key: [] for key in ("A1", "A2", "A3", "A4", "A5", "A6", "A7", "A8")}
+    aggregate = {key: [] for key in ("A1", "A2", "A3", "A4", "A5", "A6", "A7", "A8", "A9", "A10")}
     for path, report in reports.items():
         summary, raw = path_checks(report)
         report["verdicts"] = summary

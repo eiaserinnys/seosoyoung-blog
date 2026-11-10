@@ -330,10 +330,6 @@
   word-break: keep-all;
 }
 
-.post-content table :not(pre) > code {
-  overflow-wrap: anywhere;
-}
-
 .post-content table thead {
   color: var(--ink-2);
   font-size: 13px;
@@ -381,6 +377,10 @@
   background: var(--bg-2);
   font-family: var(--mono);
   font-size: 0.9em;
+}
+
+.post-content .math-nowrap {
+  white-space: nowrap;
 }
 
 .post-content pre {
@@ -991,6 +991,10 @@ html.rsvp-active .post-single .post-content figcaption {
 @media (max-width: 767px) {
   .post-title {
     font-size: 28px;
+  }
+
+  .post-content .table-scroll:not(.is-overflowing) table :not(pre) > code {
+    overflow-wrap: anywhere;
   }
 
   .table-scroll.is-overflowing > table:has(tr > :nth-child(6)) :is(th, td) {

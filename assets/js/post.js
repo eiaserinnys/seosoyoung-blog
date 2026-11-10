@@ -55,6 +55,34 @@
 
   var MIN_COLUMN_EM = 8;
 
+  function glueMathPunctuation() {
+    document.querySelectorAll(".post-content .katex").forEach(function (math) {
+      if (math.closest(".katex-display")) return;
+
+      var prev = math.previousSibling;
+      var next = math.nextSibling;
+      var openTail = prev && prev.nodeType === Node.TEXT_NODE
+        ? (prev.data.match(/[(\[{]+$/) || [""])[0]
+        : "";
+      var closeHead = next && next.nodeType === Node.TEXT_NODE
+        ? (next.data.match(/^[)\]},.:;!?%]+/) || [""])[0]
+        : "";
+      if (!openTail && !closeHead) return;
+
+      var wrapper = document.createElement("span");
+      wrapper.className = "math-nowrap";
+      math.parentNode.insertBefore(wrapper, math);
+      if (openTail) {
+        wrapper.appendChild(prev.splitText(prev.data.length - openTail.length));
+      }
+      wrapper.appendChild(math);
+      if (closeHead) {
+        next.splitText(closeHead.length);
+        wrapper.appendChild(next);
+      }
+    });
+  }
+
   function wrapTables() {
     var wrappers = [];
     document.querySelectorAll(".post-content table").forEach(function (table) {
@@ -133,6 +161,7 @@
   });
 
   function preparePostContent() {
+    glueMathPunctuation();
     copyButtons();
     wrapTables();
     preserveImageWidths();

@@ -185,9 +185,12 @@
         var num = document.createElement('span');
         num.className = 'sidenote-num';
         num.textContent = number;
-        var firstParagraph = sidenote.querySelector('p');
-        if (firstParagraph) firstParagraph.insertBefore(num, firstParagraph.firstChild);
-        else sidenote.insertBefore(num, sidenote.firstChild);
+        var firstElement = sidenote.firstElementChild;
+        if (firstElement && firstElement.tagName === 'P') {
+          firstElement.insertBefore(num, firstElement.firstChild);
+        } else {
+          sidenote.insertBefore(num, sidenote.firstChild);
+        }
         source.removeAttribute('id');
         article.appendChild(sidenote);
 
