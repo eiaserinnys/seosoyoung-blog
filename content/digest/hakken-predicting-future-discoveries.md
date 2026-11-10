@@ -179,12 +179,12 @@ Figure 3과 요약 표에서는 세 가지 결과가 확인된다. 첫째, 예�
 | **RAF1 → TNF** | 발현 감소 및 조절 | **0.83114** | THP-1 (급성 단핵구 백혈병) | **지지됨** |
 | **SOAT1 → STAT3** | 전사 활성에 영향 | **0.84183** | HepG2 (인간 간암) | **기각됨** |
 
-첫 번째로 검증된 가설은 **TP53**이 **BAMBI**의 발현에 영향을 미친다는 예측이다(신뢰도 0.85391). TP53은 인간 암에서 변이가 가장 흔한 종양 억제 유전자이고, BAMBI는 TGF-$\beta$ 신호전달의 비신호성 유사수용체(pseudoreceptor)다. 연구진은 인간 간세포암종 세포주 HepG2에 MDM2 억제제인 저분자 화합물 **Nutlin-3**를 0.01\~10 $\mu$M 농도로 처리해 P53 단백질 수준을 인위적으로 높이고, RT-qPCR로 BAMBI mRNA 발현량을 측정했다. 양성 대조군에는 TGF-$\beta$1 10 ng/mL를 썼다.
+첫 번째로 검증된 가설은 **TP53**이 **BAMBI**의 발현에 영향을 미친다는 예측이다(신뢰도 0.85391). TP53은 인간 암에서 변이가 가장 흔한 종양 억제 유전자이고, BAMBI는 TGF-$\beta$ 신호전달의 비신호성 유사수용체(pseudoreceptor)다. 연구진은 인간 간세포암종 세포주 HepG2에 MDM2 억제제인 저분자 화합물 **Nutlin-3**를 0.01\~10&nbsp;μM 농도로 처리해 P53 단백질 수준을 인위적으로 높이고, RT-qPCR로 BAMBI mRNA 발현량을 측정했다. 양성 대조군에는 TGF-$\beta$1 10 ng/mL를 썼다.
 
 ![Nutlin-3 처리 농도 및 시간 경과(8, 16, 24, 48시간)에 따른 HepG2 세포의 BAMBI mRNA 발현 변화율. 10 μM Nutlin-3 처리 시 24시간 뒤 16%, 48시간 뒤 38%의 통계적으로 유의미한 발현 증가가 확인되었다.](https://img.seosoyoung.eiaserinnys.me/images/hakken-predicting-future-discoveries/fig14-tp53-bambi.png)
 *Figure 14: 확증 실험(confirmatory assay)에서 Nutlin-3 농도 및 시간 경과(8, 16, 24, 48시간)에 따른 HepG2 세포의 BAMBI/ACTB 발현 변화율(%). 출처: [arXiv:2609.04494](https://arxiv.org/abs/2609.04494) (arXiv non-exclusive license)*
 
-24시간 한 시점만 본 1차 실험에서는 10 $\mu$M Nutlin-3를 처리하자 P53 단백질이 8.7배 늘었고, BAMBI 발현은 세 가지 세포 밀도 조건에서 대조군보다 각각 **33%, 17%, 23%** 높아졌다. 8, 16, 24, 48시간에 걸쳐 진행한 2차 확증 실험(Figure 14)에서는 10 $\mu$M Nutlin-3가 P53 단백질을 최대 11배까지 늘렸고, BAMBI 발현은 24시간에 **16%**, 48시간에 **38%** 유의미하게 증가했다. 반면 0.156\~2.5 $\mu$M의 낮은 농도에서는 BAMBI 발현이 최대 18% 줄어 농도와 맥락에 따라 조절 양상이 달라졌다. 이로써 기존 문헌에 보고된 적 없던 TP53과 BAMBI 사이의 기능적 조절 관계가 실험으로 입증되었으며, TP53이 결손된 암세포가 BAMBI와 TGF-$\beta$ 경로를 통해 종양 진행이나 섬유화, 전이를 어떻게 조절하는지 밝힐 새 단서도 확보되었다.
+24시간 한 시점만 본 1차 실험에서는 10&nbsp;μM Nutlin-3를 처리하자 P53 단백질이 8.7배 늘었고, BAMBI 발현은 세 가지 세포 밀도 조건에서 대조군보다 각각 **33%, 17%, 23%** 높아졌다. 8, 16, 24, 48시간에 걸쳐 진행한 2차 확증 실험(Figure 14)에서는 10&nbsp;μM Nutlin-3가 P53 단백질을 최대 11배까지 늘렸고, BAMBI 발현은 24시간에 **16%**, 48시간에 **38%** 유의미하게 증가했다. 반면 0.156\~2.5&nbsp;μM의 낮은 농도에서는 BAMBI 발현이 최대 18% 줄어 농도와 맥락에 따라 조절 양상이 달라졌다. 이로써 기존 문헌에 보고된 적 없던 TP53과 BAMBI 사이의 기능적 조절 관계가 실험으로 입증되었으며, TP53이 결손된 암세포가 BAMBI와 TGF-$\beta$ 경로를 통해 종양 진행이나 섬유화, 전이를 어떻게 조절하는지 밝힐 새 단서도 확보되었다.
 
 ![RAF1 억제제 GW5074 및 AZ 628 처리에 따른 THP-1 세포의 TNF mRNA 발현 변화. 선택적 RAF1 억제제인 GW5074 1000 nM(+++) 처리 시 4시간 및 24시간 모두에서 TNF 발현이 유의미하게 증가했다.](https://img.seosoyoung.eiaserinnys.me/images/hakken-predicting-future-discoveries/fig11-raf1-tnf.png)
 *Figure 11: RAF1 억제제 GW5074 및 AZ 628 처리 후 4시간 및 24시간 시점의 THP-1 세포 내 TNF/ACTB 발현 변화($\log_2$ fold change). 출처: [arXiv:2609.04494](https://arxiv.org/abs/2609.04494) (arXiv non-exclusive license)*
