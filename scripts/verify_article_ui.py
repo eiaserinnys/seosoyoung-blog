@@ -1,18 +1,33 @@
 #!/usr/bin/env python3
-"""서재 글 화면 시각 검수 스크립트 (6가지 뷰포트·테마 캡처 및 배치·대비·표·도식·alt 측정).
+"""서재 글 화면 시각 검수 스크립트 (폭·테마 캡처, A1~A11 측정, 각주 왕복, 창 크기 시나리오).
 
 사용법:
-  python3 -P scripts/verify_article_ui.py <build_dir> <out_dir> [--path /digest/roguelike-wikipedia/]
+  PLAYWRIGHT_BROWSERS_PATH="$HOME/.cache/ms-playwright" \
+    python3 -P scripts/verify_article_ui.py <build_dir> <out_dir> \
+      [--path /digest/roguelike-wikipedia/] [--path /digest/paradox-of-tragedy-three-aesthetics-papers/]
+
+--path를 여러 번 주면 글마다 <out_dir>/<slug>/ 아래에 산출하고, <out_dir>/metrics.json에
+전체 A1~A11 판정을 모은다. 분석 비콘(umami) 요청은 연결이 없는 환경에서 load 이벤트를
+막으므로 차단한다. 화면과 무관하다.
 """
 import argparse
 import json
+import re
 import socket
+import struct
 import subprocess
 import sys
 import time
+from datetime import datetime, timezone
 from pathlib import Path
 
 from playwright.sync_api import sync_playwright
+
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from verify_article_ui_checks import (
+    A10_CONFIGS, A10_JS, A11_JS, A9_JS, a9_checks, a10_checks, a11_checks,
+    resized_sidenotes_ok, sidenote_presence_ok,
+)
 
 CONFIGS = [
     ("wide-light", 1440, 900, 1, "light"),
@@ -21,7 +36,35 @@ CONFIGS = [
     ("narrow-light", 375, 812, 2, "light"),
     ("narrow-dark", 375, 812, 2, "dark"),
     ("min360-light", 360, 740, 2, "light"),
+    ("min390-light", 390, 844, 2, "light"),
+    ("min414-light", 414, 896, 2, "light"),
 ]
+
+DEFAULT_PATHS = [
+    "/digest/roguelike-wikipedia/",
+    "/digest/memory-caching-rnns/",
+    "/digest/pixellab-ai-pixel-art-generator/",
+    "/digest/compozy-agent-os/",
+    "/digest/skillopt-text-space-optimizer-2026/",
+    "/digest/oist-quantum-spins-centimeter-object/",
+    "/digest/combining-llms-cofailure-ceiling/",
+    "/digest/qwenputer-riscv-cpu/",
+    "/digest/it3-periodic-table-z172/",
+]
+
+MATH_PATHS = DEFAULT_PATHS[1:2] + DEFAULT_PATHS[4:]
+
+RESIZE_SCENARIOS = [
+    ("1440-1100-600-1440", [1440, 1100, 600, 1440]),
+    ("1440-375-1440", [1440, 375, 1440]),
+    ("340-375", [340, 375]),
+]
+
+TOC_GAP = 32
+TOC_GAP_TOL = 1
+MIN_TABLE_COLS = 3
+MAX_SQUEEZE_TEST_COLS = 5
+SHORT_CELL_WIDTH_LIMIT = 100
 
 MEASURE_JS = r"""
 () => {
@@ -48,6 +91,12 @@ MEASURE_JS = r"""
   out.bodyScrollWidth = document.body.scrollWidth;
   out.horizontalOverflow = document.documentElement.scrollWidth > innerWidth;
   out.content = r(content);
+
+  const toc = document.querySelector('.toc');
+  const first = content ? content.firstElementChild : null;
+  out.tocGap = (toc && first) ? +(first.getBoundingClientRect().top - toc.getBoundingClientRect().bottom).toFixed(1) : null;
+  out.tocOpen = toc ? toc.hasAttribute('open') : null;
+  out.firstContent = {tag: first ? first.tagName : null, className: first ? String(first.className || '') : null, rect: r(first)};
 
   const wide = [];
   content.querySelectorAll('*').forEach((el) => { const b = el.getBoundingClientRect(); if (b.width === 0) return;
@@ -109,25 +158,81 @@ MEASURE_JS = r"""
   }
 
   out.tables = [...content.querySelectorAll('table')].map((t, i) => {
-    const wrap = t.closest('.table-scroll'); const th = t.querySelector('thead th'); const td = t.querySelector('tbody td');
+    const wrap = t.closest('.table-scroll');
+    const th = t.querySelector('thead th');
+    const td = t.querySelector('tbody td');
+    const rows = [...t.querySelectorAll('tr')];
+    let cols = 0;
+    rows.forEach((row) => { let count = 0; [...row.children].forEach((cell) => { count += cell.colSpan || 1; }); if (count > cols) cols = count; });
+    const overflowBefore = wrap ? wrap.classList.contains('is-overflowing') : null;
+    const style = getComputedStyle(t);
+    if (wrap) wrap.classList.remove('is-overflowing');
+    const oldWidth = t.style.getPropertyValue('width');
+    const oldPriority = t.style.getPropertyPriority('width');
+    t.style.setProperty('width', 'max-content');
+    const maxContentWidth = +t.getBoundingClientRect().width.toFixed(1);
+    if (oldWidth) t.style.setProperty('width', oldWidth, oldPriority); else t.style.removeProperty('width');
+    if (wrap && overflowBefore) wrap.classList.add('is-overflowing');
+
+    const firstBodyCell = t.querySelector('tbody td') || t.querySelector('td');
+    const firstCellStyle = firstBodyCell ? getComputedStyle(firstBodyCell) : null;
+    const codeMetrics = [...t.querySelectorAll('td code, th code')].map((c) => {
+      const cs = getComputedStyle(c);
+      const lineHeight = parseFloat(cs.lineHeight) || parseFloat(cs.fontSize) * 1.4;
+      const b = c.getBoundingClientRect();
+      return {text: c.textContent.trim().slice(0, 48), lines: lineHeight > 0 ? +(b.height / lineHeight).toFixed(2) : null};
+    });
     const colWidths = [...t.querySelectorAll('tbody tr:first-child td')].map((c) => Math.round(c.getBoundingClientRect().width));
     const maxLinesPerCell = Math.max(...[...t.querySelectorAll('td')].map((c) => Math.round((c.getBoundingClientRect().height - 16) / parseFloat(getComputedStyle(c).lineHeight))));
-    return {i: i + 1, cols: t.querySelectorAll('thead th').length, rows: t.querySelectorAll('tbody tr').length,
+    return {i: i + 1, cols, headerCols: t.querySelectorAll('thead th').length, rows: rows.length,
       wrapper: wrap ? wrap.className : null, wrapClient: wrap ? wrap.clientWidth : null, wrapScroll: wrap ? wrap.scrollWidth : null,
+      wrapping: wrap ? wrap.classList.contains('is-overflowing') : null, overflowing: overflowBefore,
+      wrapDelta: wrap ? wrap.scrollWidth - wrap.clientWidth : null,
       tableRect: r(t), wrapRect: r(wrap), th: textInfo(th, 'th'), td: textInfo(td, 'td'),
       colWidths, maxLinesPerCell,
       firstColWidths: [...t.querySelectorAll('tbody tr td:first-child')].slice(0, 3).map((c) => +c.getBoundingClientRect().width.toFixed(1)),
-      maxCellHeight: Math.max(...[...t.querySelectorAll('td')].map((c) => c.getBoundingClientRect().height))};
+      maxCellHeight: Math.max(...[...t.querySelectorAll('td')].map((c) => c.getBoundingClientRect().height)),
+      maxContentWidth, fontSize: parseFloat(style.fontSize),
+      firstCellMinWidth: firstCellStyle ? firstCellStyle.minWidth : null,
+      firstCellWidth: firstBodyCell ? +firstBodyCell.getBoundingClientRect().width.toFixed(1) : null,
+      firstCellText: firstBodyCell ? firstBodyCell.textContent.trim().slice(0, 24) : null,
+      hasInlineCode: codeMetrics.length > 0, codeMetrics};
   });
 
-  const notes = [...document.querySelectorAll('aside.sidenote')];
   const markers = [...content.querySelectorAll('sup[id^="fnref"], a.footnote-ref')].filter((m) => m.tagName === 'SUP' || !m.closest('sup'));
+  const normalizeKey = (value) => {
+    let key = String(value || '').trim();
+    if (key.charAt(0) === '#') key = key.slice(1);
+    try { key = decodeURIComponent(key); } catch (error) {}
+    return key.replace(/^fnref[:\-]/, '').replace(/^fn[:\-]/, '');
+  };
+  const markerKey = (marker) => {
+    const link = marker.matches('a[href^="#fn"]') ? marker : marker.querySelector('a[href^="#fn"]');
+    return (link && normalizeKey(link.getAttribute('href'))) || normalizeKey(marker.id);
+  };
+  const markerByKey = {};
+  markers.forEach((marker) => { const key = markerKey(marker); if (key && !(key in markerByKey)) markerByKey[key] = marker; });
+
+  const notes = [...document.querySelectorAll('aside.sidenote')];
   out.footnoteMarkers = markers.length;
   out.footnotesSection = (() => { const f = document.querySelector('.footnotes'); if (!f) return null; const cs = getComputedStyle(f);
     return {display: cs.display, visibility: cs.visibility, rect: r(f), items: f.querySelectorAll('li').length, text: textInfo(f.querySelector('li p') || f.querySelector('li'), 'footnote li')}; })();
-  out.sidenotes = notes.map((n, i) => { const m = markers[i]; const nr = r(n); const mr = m ? r(m) : null;
-    return {i: i + 1, rect: nr, markerY: mr ? mr.y : null, offsetFromMarker: mr ? +(nr.y - mr.y).toFixed(1) : null,
-      gapFromContent: +(nr.x - r(content).right).toFixed(1), beyondViewport: nr.right > innerWidth, text: textInfo(n, 'sidenote')}; });
+  out.sidenotes = notes.map((n, i) => {
+    const num = n.querySelector('.sidenote-num');
+    const key = n.dataset.footnoteKey || '';
+    const marker = markerByKey[key] || markers[i];
+    const markerLink = marker ? (marker.matches('a') ? marker : marker.querySelector('a[href^="#fn"]')) : null;
+    const nr = r(n);
+    const text = n.textContent.trim();
+    const numText = num ? num.textContent.trim() : null;
+    return {i: i + 1, rect: nr, markerY: marker ? r(marker).y : null,
+      offsetFromMarker: marker ? +(nr.y - r(marker).y).toFixed(1) : null,
+      gapFromContent: +(nr.x - r(content).right).toFixed(1), beyondViewport: nr.right > innerWidth, text: textInfo(n, 'sidenote'),
+      numberText: numText,
+      numberIsFirst: !!num && (n.firstElementChild === num || (n.firstElementChild && n.firstElementChild.firstElementChild === num)),
+      startsWithNumber: !!numText && text.startsWith(numText),
+      markerText: markerLink ? markerLink.textContent.trim() : (marker ? marker.textContent.trim() : null)};
+  });
   out.sidenoteOverlaps = [];
   for (let i = 1; i < notes.length; i++) { const a = notes[i - 1].getBoundingClientRect(), b = notes[i].getBoundingClientRect();
     out.sidenoteOverlaps.push(+(b.top - a.bottom).toFixed(1)); }
@@ -138,6 +243,83 @@ MEASURE_JS = r"""
     textInfo(document.querySelector('.post-meta'), 'post-meta'), textInfo(content.querySelector('ol li'), 'summary li')];
   out.bodyPWidth = bodyP ? r(bodyP).w : null;
   return out;
+}
+"""
+
+STATE_JS = r"""
+() => {
+  const tables = [...document.querySelectorAll('.post-content .table-scroll')].map((wrap, i) => {
+    const table = wrap.querySelector('table');
+    const was = wrap.classList.contains('is-overflowing');
+    wrap.classList.remove('is-overflowing');
+    const rows = [...table.querySelectorAll('tr')];
+    let cols = 0;
+    rows.forEach((row) => { let count = 0; [...row.children].forEach((cell) => { count += cell.colSpan || 1; }); if (count > cols) cols = count; });
+    const natural = wrap.scrollWidth > wrap.clientWidth + 1 || table.scrollWidth > wrap.clientWidth + 1;
+    const fontSize = parseFloat(getComputedStyle(table).fontSize);
+    let squeezed = false;
+    if (!natural && cols >= 3 && cols <= 5 && wrap.clientWidth / cols < fontSize * 8) {
+      const oldWidth = table.style.getPropertyValue('width');
+      const oldPriority = table.style.getPropertyPriority('width');
+      table.style.setProperty('width', 'max-content');
+      const maxContent = table.getBoundingClientRect().width;
+      if (oldWidth) table.style.setProperty('width', oldWidth, oldPriority); else table.style.removeProperty('width');
+      squeezed = maxContent > wrap.clientWidth + 1;
+    }
+    wrap.classList.toggle('is-overflowing', was);
+    return {index: i + 1, cols, isOverflowing: was, expected: natural || squeezed,
+      natural, squeezed, wrapClient: wrap.clientWidth, wrapScroll: wrap.scrollWidth,
+      tableWidth: +table.getBoundingClientRect().width.toFixed(1),
+      tableHeight: +table.getBoundingClientRect().height.toFixed(1)};
+  });
+  const sidenotes = [...document.querySelectorAll('aside.sidenote')].map((n, i) => ({
+    index: i + 1,
+    numberText: (n.querySelector('.sidenote-num') || {}).textContent
+      ? n.querySelector('.sidenote-num').textContent.trim() : null,
+  }));
+  const footnotes = document.querySelector('.footnotes');
+  const content = document.querySelector('.post-content');
+  const toc = document.querySelector('.toc');
+  const first = content ? content.firstElementChild : null;
+  return {width: innerWidth, tables, sidenoteCount: sidenotes.length,
+    numberedSidenotes: sidenotes.filter((n) => n.numberText).length,
+    sidenotes,
+    footnotesDisplay: footnotes ? getComputedStyle(footnotes).display : null,
+    horizontalOverflow: document.documentElement.scrollWidth > innerWidth,
+    tocGap: (toc && first) ? +(first.getBoundingClientRect().top - toc.getBoundingClientRect().bottom).toFixed(1) : null};
+}
+"""
+
+OVERFLOW_JS = r"""
+() => [...document.querySelectorAll('.post-content .table-scroll')].map((w, i) => {
+  const t = w.querySelector('table');
+  return {index: i + 1, overflowing: w.classList.contains('is-overflowing'),
+    tableWidth: +t.getBoundingClientRect().width.toFixed(1)};
+})
+"""
+
+ACTIVE_JS = r"""
+() => {
+  const a = document.activeElement;
+  if (!a) return {tag: null};
+  const b = a.getBoundingClientRect();
+  const num = a.querySelector ? a.querySelector('.sidenote-num') : null;
+  return {tag: a.tagName, id: a.id, className: String(a.className || ''),
+    isSidenote: a.matches('aside.sidenote'), sidenoteNumber: num ? num.textContent.trim() : null,
+    top: +b.top.toFixed(1), inViewport: b.top >= -1 && b.bottom <= innerHeight + 1,
+    hash: location.hash};
+}
+"""
+
+BACKREF_JS = r"""
+() => {
+  const marker = document.querySelector('.post-content sup[id^="fnref"]');
+  const a = document.activeElement;
+  const b = marker ? marker.getBoundingClientRect() : null;
+  return {activeTag: a ? a.tagName : null, activeId: a ? a.id : null,
+    markerTop: b ? +b.top.toFixed(1) : null,
+    markerInViewport: b ? (b.top >= -1 && b.bottom <= innerHeight + 1) : null,
+    hash: location.hash};
 }
 """
 
@@ -155,31 +337,52 @@ def settle(page):
     y = 0
     while y < h:
         page.evaluate(f"window.scrollTo(0, {y})")
-        page.wait_for_timeout(120)
-        y += 600
+        page.wait_for_timeout(40)
+        y += 1400
         h = page.evaluate("document.documentElement.scrollHeight")
     page.wait_for_load_state("networkidle")
     page.evaluate("Promise.all([...document.images].map(i => i.complete ? 1 : new Promise(r => { i.onload = i.onerror = r; })))")
     page.evaluate("document.fonts.ready")
     page.evaluate("window.scrollTo(0, 0)")
-    page.wait_for_timeout(1500)
+    page.wait_for_timeout(1000)
 
 
-def clip_shot(page, path, el_selector=None, rect=None, pad=24, nth=0):
-    if el_selector:
-        rect = page.evaluate(
-            """([s, n]) => { const e = document.querySelectorAll(s)[n]; if (!e) return null; const b = e.getBoundingClientRect();
-            return {x: b.left + scrollX, y: b.top + scrollY, w: b.width, h: b.height}; }""",
-            [el_selector, nth],
-        )
-    if not rect:
-        return None
-    vw = page.viewport_size["width"]
-    x = max(0, rect["x"] - pad)
-    y = max(0, rect["y"] - pad)
-    w = min(vw - x, rect["w"] + pad * 2)
-    page.screenshot(path=str(path), full_page=True, clip={"x": x, "y": y, "width": w, "height": rect["h"] + pad * 2})
+def element_shot(page, selector, path, nth=0):
+    page.locator(selector).nth(nth).screenshot(path=str(path))
     return str(path)
+
+
+def png_size(path):
+    with open(path, "rb") as handle:
+        head = handle.read(24)
+    return list(struct.unpack(">II", head[16:24]))
+
+
+def table_state(page, index):
+    return page.evaluate(
+        """(n) => {
+          const wrapper = document.querySelectorAll('.post-content .table-scroll')[n];
+          const table = wrapper.querySelector('table');
+          const rect = table.getBoundingClientRect();
+          return {overflowing: wrapper.classList.contains('is-overflowing'),
+                  width: +rect.width.toFixed(1), height: +rect.height.toFixed(1)};
+        }""",
+        index,
+    )
+
+
+def apply_table_state(page, tables):
+    # 요소 캡처가 일으키는 resize가 overflow 판정을 바꿀 수 있다.
+    # 캡처 직전에는 측정 시점의 표 상태로 되돌려, 캡처와 metrics를 같은 상태로 맞춘다.
+    page.evaluate(
+        """(states) => {
+          document.querySelectorAll('.post-content .table-scroll').forEach((wrapper, i) => {
+            const want = !!(states[i] && states[i].overflowing);
+            wrapper.classList.toggle('is-overflowing', want);
+          });
+        }""",
+        [{"overflowing": table["overflowing"]} for table in tables if table["wrapper"]],
+    )
 
 
 def viewport_shot(page, selector, path, nth=0):
@@ -193,13 +396,288 @@ def viewport_shot(page, selector, path, nth=0):
     page.screenshot(path=str(path))
 
 
+def open_context(browser, width, height, dpr, scheme):
+    ctx = browser.new_context(
+        viewport={"width": width, "height": height},
+        device_scale_factor=dpr,
+        color_scheme=scheme,
+        is_mobile=(width < 500),
+        has_touch=(width < 500),
+        reduced_motion="reduce",
+    )
+    # 분석 비콘은 연결 없는 환경에서 load 이벤트를 막는다. 화면과 무관하다.
+    ctx.route("https://umami.eiaserinnys.me/**", lambda route: route.abort())
+    return ctx
+
+
+def footnote_roundtrip(page, name, out_dir):
+    inter = {}
+    page.evaluate("window.scrollTo(0, 0)")
+    refs = page.locator(".post-content a.footnote-ref")
+    if refs.count() == 0:
+        return {"applicable": False, "reason": "본문에 각주 링크가 없다"}
+    ref = refs.first
+    ref.scroll_into_view_if_needed()
+    ref.click()
+    page.wait_for_timeout(1600)
+    inter["afterRefClick"] = page.evaluate(ACTIVE_JS)
+    page.screenshot(path=str(out_dir / "after-ref-click.png"))
+    if name == "narrow-light":
+        back = page.locator(".footnotes a.footnote-backref").first
+        if back.count() and back.is_visible():
+            back.click()
+            page.wait_for_timeout(1600)
+            inter["afterBackref"] = page.evaluate(BACKREF_JS)
+            page.screenshot(path=str(out_dir / "after-backref.png"))
+        else:
+            inter["afterBackref"] = "backref not visible"
+    return inter
+
+
+def capture_config(browser, url, out_dir, name, width, height, dpr, scheme, a10=False):
+    ctx = open_context(browser, width, height, dpr, scheme)
+    page = ctx.new_page()
+    failed = []
+    page.on("requestfailed", lambda req: failed.append(req.url))
+    page.on("response", lambda res: failed.append(f"{res.status} {res.url}") if res.status >= 400 else None)
+    page.goto(url, wait_until="load", timeout=60000)
+    settle(page)
+    m = page.evaluate(MEASURE_JS)
+    m["failedRequests"] = failed
+    m["a9"] = page.evaluate(A9_JS)
+    if a10:
+        m["a10"] = page.evaluate(A10_JS, name == "wide-light")
+        m["a11"] = page.evaluate(A11_JS, name == "wide-light")
+    d = out_dir / name
+    d.mkdir(parents=True, exist_ok=True)
+    page.add_style_tag(content=".site-top{position:static!important} html{scroll-behavior:auto!important}")
+    shots = {}
+    if page.locator("figure.blog-diagram").count() > 0:
+        if width < 500:
+            viewport_shot(page, "figure.blog-diagram", d / "diagram.png")
+            shots["diagram"] = str(d / "diagram.png")
+        else:
+            shots["diagram"] = element_shot(page, "figure.blog-diagram", d / "diagram.png")
+    t_count = page.locator(".post-content .table-scroll").count()
+    capture_states = []
+    for i in range(t_count):
+        apply_table_state(page, m["tables"])
+        state_before = table_state(page, i)
+        shot_path = d / f"table{i+1}.png"
+        shots[f"table{i+1}"] = element_shot(page, ".post-content .table-scroll", shot_path, nth=i)
+        state_after = table_state(page, i)
+        capture_states.append({"i": i + 1, "before": state_before, "after": state_after,
+                               "png": png_size(shot_path)})
+    m["tableCaptureStates"] = capture_states
+    img_count = page.locator(".post-content p:has(> img)").count()
+    for i in range(img_count):
+        shots[f"image{i+2}"] = element_shot(page, ".post-content p:has(> img)", d / f"image{i+2:02d}.png", nth=i)
+    if m["sidenotes"]:
+        for s in m["sidenotes"]:
+            shots[f"sidenote{s['i']}"] = element_shot(page, "aside.sidenote", d / f"sidenote{s['i']}.png", nth=s["i"] - 1)
+    elif page.locator(".footnotes").count() > 0:
+        shots["footnotes"] = element_shot(page, ".footnotes", d / "footnotes.png")
+    if name in ("narrow-light", "wide-light"):
+        m["interaction"] = footnote_roundtrip(page, name, d)
+    apply_table_state(page, m["tables"])
+    m["overflowBeforeFullPage"] = page.evaluate(OVERFLOW_JS)
+    page.evaluate("window.scrollTo(0, 0)")
+    page.screenshot(path=str(d / "full.png"), full_page=True)
+    m["overflowAfterFullPage"] = page.evaluate(OVERFLOW_JS)
+    m["overflowStableAcrossFullPage"] = m["overflowBeforeFullPage"] == m["overflowAfterFullPage"]
+    page.evaluate("window.scrollTo(0, 0)")
+    page.screenshot(path=str(d / "first-screen.png"))
+    m["shots"] = shots
+    ctx.close()
+    return m
+
+
+def capture_tables_375(browser, url, out_dir):
+    d = out_dir / "tables-375"
+    d.mkdir(parents=True, exist_ok=True)
+    ctx = open_context(browser, 375, 4800, 1, "light")
+    page = ctx.new_page()
+    page.goto(url, wait_until="load", timeout=60000)
+    page.evaluate("document.fonts.ready")
+    page.wait_for_timeout(1200)
+    page.add_style_tag(content=".site-top{position:static!important} html{scroll-behavior:auto!important}")
+    info = {}
+    t_count = page.locator(".post-content .table-scroll").count()
+    for i in range(t_count):
+        el = page.locator(".post-content .table-scroll").nth(i)
+        el.screenshot(path=str(d / f"375-table{i+1}.png"))
+        info[f"table{i+1}"] = page.evaluate(
+            """(index) => {
+              const w = document.querySelectorAll('.post-content .table-scroll')[index];
+              const t = w.querySelector('table');
+              const rows = [...t.querySelectorAll('tr')];
+              let cols = 0;
+              rows.forEach((row) => { let count = 0; [...row.children].forEach((cell) => { count += cell.colSpan || 1; }); if (count > cols) cols = count; });
+              return {height: Math.round(t.getBoundingClientRect().height),
+                overflowing: w.classList.contains('is-overflowing'), wrapClient: w.clientWidth, wrapScroll: w.scrollWidth,
+                cols, colWidths: [...t.querySelectorAll('tbody tr:first-child td')].map(c => Math.round(c.getBoundingClientRect().width)),
+                maxLinesPerCell: Math.max(...[...t.querySelectorAll('td')].map(c => Math.round((c.getBoundingClientRect().height - 16) / parseFloat(getComputedStyle(c).lineHeight)))),
+                codeLines: [...t.querySelectorAll('td code')].map(c => {
+                  const cs = getComputedStyle(c); const lh = parseFloat(cs.lineHeight) || parseFloat(cs.fontSize) * 1.4;
+                  return {text: c.textContent.trim().slice(0, 48), lines: lh > 0 ? +(c.getBoundingClientRect().height / lh).toFixed(2) : null};
+                })};
+            }""",
+            i,
+        )
+    ctx.close()
+    (d / "tables-375.json").write_text(json.dumps(info, ensure_ascii=False, indent=1), encoding="utf-8")
+    return info
+
+
+def run_resize_scenarios(browser, url, out_dir):
+    results = {}
+    for scenario, widths in RESIZE_SCENARIOS:
+        first_width = widths[0]
+        ctx = open_context(browser, first_width, 900 if first_width >= 600 else 812, 1, "light")
+        page = ctx.new_page()
+        page.goto(url, wait_until="load", timeout=60000)
+        settle(page)
+        stages = []
+        for stage_index, width in enumerate(widths):
+            if page.viewport_size["width"] != width:
+                page.set_viewport_size({"width": width, "height": 900 if width >= 600 else 812})
+            page.wait_for_timeout(900)
+            state = page.evaluate(STATE_JS)
+            state["stageWidth"] = width
+            page.screenshot(path=str(out_dir / f"resize-{scenario}-{stage_index}-{width}.png"))
+            stages.append(state)
+        ctx.close()
+        results[scenario] = {"widths": widths, "stages": stages}
+    return results
+
+
+def short_first_cell(text):
+    value = (text or "").strip()
+    return len(value) <= 6 or bool(re.fullmatch(r"\d{4}", value))
+
+
+def path_checks(report):
+    checks = {key: [] for key in ("A1", "A2", "A3", "A4", "A5", "A6", "A7", "A8", "A9", "A10", "A11")}
+
+    def add(key, ok, detail):
+        checks[key].append({"ok": bool(ok), "detail": detail})
+
+    configs = report["configs"]
+    path = report["path"]
+
+    for name in ("min360-light", "narrow-light", "min414-light", "wide-light"):
+        metric = configs[name]
+        if metric["tocGap"] is not None:
+            add("A1", abs(metric["tocGap"] - TOC_GAP) <= TOC_GAP_TOL,
+                f"{path} {name}: tocGap={metric['tocGap']}px (기준 {TOC_GAP}px)")
+
+    for name in ("min360-light", "narrow-light", "min390-light", "min414-light"):
+        for table in configs[name]["tables"]:
+            if MIN_TABLE_COLS <= table["cols"] <= MAX_SQUEEZE_TEST_COLS:
+                ok = table["overflowing"] or (table["maxContentWidth"] <= table["wrapClient"] + 1)
+                add("A2", ok,
+                    f"{path} {name} table {table['i']} ({table['cols']}칸): "
+                    f"overflowing={table['overflowing']} maxContent={table['maxContentWidth']}px "
+                    f"wrap={table['wrapClient']}px width={table['tableRect']['w']}px height={table['tableRect']['h']}px")
+
+    for name in ("narrow-light", "wide-light"):
+        for table in configs[name]["tables"]:
+            if table["cols"] != 4:
+                continue
+            min_width = table["firstCellMinWidth"]
+            add("A3", min_width in ("auto", "0px", "0"),
+                f"{path} {name} table {table['i']} (4칸): minWidth={min_width} "
+                f"width={table['firstCellWidth']}px text={table['firstCellText']!r}")
+            if short_first_cell(table["firstCellText"]):
+                add("A3", table["firstCellWidth"] is not None and table["firstCellWidth"] <= SHORT_CELL_WIDTH_LIMIT,
+                    f"{path} {name} table {table['i']} (4칸, 짧은 첫 칸): "
+                    f"width={table['firstCellWidth']}px (기준 <= {SHORT_CELL_WIDTH_LIMIT}px)")
+
+    wide = configs["wide-light"]
+    mid = configs["mid-light"]
+    for note in wide["sidenotes"]:
+        add("A4", note["numberText"] is not None and note["numberIsFirst"]
+            and note["startsWithNumber"] and note["numberText"] == note["markerText"],
+            f"{path} sidenote {note['i']}: num={note['numberText']!r} marker={note['markerText']!r} "
+            f"first={note['numberIsFirst']} startsWith={note['startsWithNumber']}")
+    add("A4", sidenote_presence_ok(wide), f"{path} 1440: markers={wide['footnoteMarkers']} sidenote={len(wide['sidenotes'])}")
+    add("A4", len(mid["sidenotes"]) == 0 and (mid["footnotesSection"] is None or mid["footnotesSection"]["display"] != "none"),
+        f"{path} 1024: sidenote={len(mid['sidenotes'])} "
+        f"footnotesDisplay={(mid['footnotesSection'] or {}).get('display')}")
+
+    for scenario, data in report["resize"].items():
+        for stage in data["stages"]:
+            for table in stage["tables"]:
+                add("A5", table["isOverflowing"] == table["expected"],
+                    f"{path} {scenario}@{stage['stageWidth']} table {table['index']} ({table['cols']}칸): "
+                    f"is-overflowing={table['isOverflowing']} expected={table['expected']} "
+                    f"width={table['tableWidth']}px")
+        final = data["stages"][-1]
+        if final["stageWidth"] == 1440:
+            add("A5", resized_sidenotes_ok(final, wide),
+                f"{path} {scenario} 1440 복귀: sidenote={final['sidenoteCount']} 번호={final['numberedSidenotes']}")
+            fresh = {t["i"]: t for t in wide["tables"]}
+            for table in final["tables"]:
+                reference = fresh.get(table["index"])
+                if reference:
+                    add("A5", table["isOverflowing"] == reference["overflowing"],
+                        f"{path} {scenario} 1440 복귀 table {table['index']}: "
+                        f"is-overflowing={table['isOverflowing']} 새로 연 1440={reference['overflowing']}")
+
+    add("A6", configs["min360-light"]["docScrollWidth"] <= configs["min360-light"]["viewport"]["w"],
+        f"{path} 360: scrollWidth={configs['min360-light']['docScrollWidth']} "
+        f"innerWidth={configs['min360-light']['viewport']['w']}")
+
+    for name in ("narrow-light", "wide-light"):
+        for table in configs[name]["tables"]:
+            if table["cols"] < 6:
+                continue
+            natural = table["maxContentWidth"] > table["wrapClient"] + 1
+            add("A7", table["overflowing"] == natural,
+                f"{path} {name} table {table['i']} ({table['cols']}칸): "
+                f"overflowing={table['overflowing']} natural={natural} width={table['tableRect']['w']}px "
+                f"maxContent={table['maxContentWidth']}px wrap={table['wrapClient']}px")
+
+    for table in configs["narrow-light"]["tables"]:
+        if table["cols"] != 2 or not table["hasInlineCode"]:
+            continue
+        long_codes = [c for c in table["codeMetrics"] if len(c["text"]) >= 20]
+        wrap_ok = all((c["lines"] or 0) >= 2 for c in long_codes)
+        fits = not table["overflowing"] and table["wrapScroll"] <= table["wrapClient"] + 1
+        add("A8", fits and wrap_ok,
+            f"{path} 375 table {table['i']} (2칸, 코드): overflowing={table['overflowing']} "
+            f"wrapScroll={table['wrapScroll']} wrapClient={table['wrapClient']} "
+            f"codes={table['codeMetrics']}")
+
+    for entry in a9_checks(path, configs):
+        add("A9", entry["ok"], entry["detail"])
+    for entry in a10_checks(path, configs):
+        add("A10", entry["ok"], entry["detail"])
+    for entry in a11_checks(path, configs):
+        add("A11", entry["ok"], entry["detail"])
+
+    summary = {}
+    for key, entries in checks.items():
+        failed = [entry for entry in entries if not entry["ok"]]
+        summary[key] = {
+            "checked": len(entries),
+            "passed": len(entries) - len(failed),
+            "failed": len(failed),
+            "pass": len(entries) > 0 and not failed,
+            "failures": failed[:40],
+        }
+    return summary, checks
+
+
 def main():
-    parser = argparse.ArgumentParser(description="Verify blog article UI/UX across 6 states")
+    parser = argparse.ArgumentParser(description="Verify blog article UI/UX across widths, themes, interactions")
     parser.add_argument("build_dir", type=Path)
     parser.add_argument("out_dir", type=Path)
-    parser.add_argument("--path", default="/digest/roguelike-wikipedia/")
+    parser.add_argument("--path", action="append", default=None,
+                        help="검수할 글 경로. 여러 번 넘길 수 있다.")
     args = parser.parse_args()
 
+    paths = args.path or DEFAULT_PATHS
     args.out_dir.mkdir(parents=True, exist_ok=True)
     port = free_port()
     server = subprocess.Popen(
@@ -208,95 +686,68 @@ def main():
         stderr=subprocess.DEVNULL,
     )
     time.sleep(1.0)
-    url = f"http://127.0.0.1:{port}{args.path}"
-    report = {"url": url, "configs": {}, "interactions": {}, "tables_375": {}}
 
+    reports = {}
+    skipped = []
     try:
         with sync_playwright() as p:
             browser = p.chromium.launch()
-            for name, w, h, dpr, scheme in CONFIGS:
-                ctx = browser.new_context(
-                    viewport={"width": w, "height": h},
-                    device_scale_factor=dpr,
-                    color_scheme=scheme,
-                    is_mobile=(w < 500),
-                    has_touch=(w < 500),
-                )
-                page = ctx.new_page()
-                failed = []
-                page.on("requestfailed", lambda req: failed.append(req.url))
-                page.on("response", lambda res: failed.append(f"{res.status} {res.url}") if res.status >= 400 else None)
-                page.goto(url, wait_until="load")
-                settle(page)
-                m = page.evaluate(MEASURE_JS)
-                m["failedRequests"] = failed
-                d = args.out_dir / name
-                d.mkdir(exist_ok=True)
-                page.screenshot(path=str(d / "full.png"), full_page=True)
-                page.screenshot(path=str(d / "first-screen.png"))
-                shots = {}
-                if page.locator("figure.blog-diagram").count() > 0:
-                    if w < 500:
-                        viewport_shot(page, "figure.blog-diagram", d / "diagram.png")
-                        shots["diagram"] = str(d / "diagram.png")
-                    else:
-                        shots["diagram"] = clip_shot(page, d / "diagram.png", "figure.blog-diagram")
-                t_count = page.locator(".post-content table").count()
-                for i in range(t_count):
-                    shots[f"table{i+1}"] = clip_shot(page, d / f"table{i+1}.png", ".post-content table", nth=i)
-                img_count = page.locator(".post-content p:has(> img)").count()
-                for i in range(img_count):
-                    rect = page.evaluate(
-                        """(n) => { const p = document.querySelectorAll('.post-content p:has(> img)')[n]; if (!p) return null;
-                        const a = p.getBoundingClientRect(); const c = p.nextElementSibling; const b = c ? c.getBoundingClientRect() : a;
-                        return {x: Math.min(a.left, b.left) + scrollX, y: a.top + scrollY, w: Math.max(a.right, b.right) - Math.min(a.left, b.left), h: b.bottom - a.top}; }""",
-                        i,
-                    )
-                    shots[f"image{i+2}"] = clip_shot(page, d / f"image{i+2:02d}.png", rect=rect)
-                if m["sidenotes"]:
-                    for s in m["sidenotes"]:
-                        rr = {"x": m["content"]["x"], "y": s["rect"]["y"] - 80, "w": s["rect"]["right"] - m["content"]["x"], "h": s["rect"]["h"] + 160}
-                        shots[f"sidenote{s['i']}"] = clip_shot(page, d / f"sidenote{s['i']}.png", rect=rr, pad=16)
-                elif page.locator(".footnotes").count() > 0:
-                    shots["footnotes"] = clip_shot(page, d / "footnotes.png", ".footnotes")
-                m["shots"] = shots
-                report["configs"][name] = m
-                ctx.close()
-
-            # 375 폭 표 키 큰 뷰포트 단발 캡처 및 측정
-            t375_dir = args.out_dir / "tables-375"
-            t375_dir.mkdir(exist_ok=True)
-            ctx_t = browser.new_context(viewport={"width": 375, "height": 4800}, device_scale_factor=1, is_mobile=True, has_touch=True, color_scheme="light")
-            page_t = ctx_t.new_page()
-            page_t.add_init_script(
-                "document.addEventListener('DOMContentLoaded', () => { const s = document.createElement('style'); s.textContent = 'html{scroll-behavior:auto!important}'; document.head.appendChild(s); });"
-            )
-            page_t.goto(url, wait_until="load")
-            page_t.evaluate("document.fonts.ready")
-            page_t.wait_for_timeout(1200)
-            t_count = page_t.locator(".post-content .table-scroll").count()
-            for i in range(t_count):
-                el = page_t.locator(".post-content .table-scroll").nth(i)
-                box = el.bounding_box()
-                page_t.evaluate(f"window.scrollTo(0, {box['y']} + scrollY - 20)")
-                page_t.wait_for_timeout(200)
-                box = el.bounding_box()
-                th = min(box["height"] + 40, 4800 - max(0, box["y"] - 20))
-                page_t.screenshot(path=str(t375_dir / f"375-table{i+1}.png"), clip={"x": 0, "y": max(0, box["y"] - 20), "width": 375, "height": th})
-                report["tables_375"][f"table{i+1}"] = {
-                    "height": round(box["height"]),
-                    "overflowing": page_t.evaluate(f"document.querySelectorAll('.post-content .table-scroll')[{i}].classList.contains('is-overflowing')"),
-                    "colWidths": page_t.evaluate(f"[...document.querySelectorAll('.post-content table')[{i}].querySelectorAll('tbody tr:first-child td')].map(c => Math.round(c.getBoundingClientRect().width))"),
-                    "maxLinesPerCell": page_t.evaluate(f"Math.max(...[...document.querySelectorAll('.post-content table')[{i}].querySelectorAll('td')].map(c => Math.round((c.getBoundingClientRect().height - 16) / parseFloat(getComputedStyle(c).lineHeight))))"),
-                }
-            ctx_t.close()
-            browser.close()
+            try:
+                for path in paths:
+                    index = args.build_dir / path.strip("/") / "index.html"
+                    if not index.exists():
+                        skipped.append(path)
+                        continue
+                    slug = path.strip("/").split("/")[-1]
+                    path_out = args.out_dir / slug
+                    path_out.mkdir(parents=True, exist_ok=True)
+                    url = f"http://127.0.0.1:{port}{path}"
+                    report = {"url": url, "path": path, "configs": {}, "interactions": {},
+                              "tables_375": {}, "resize": {}}
+                    a10_path = path in MATH_PATHS
+                    for name, w, h, dpr, scheme in CONFIGS:
+                        report["configs"][name] = capture_config(
+                            browser, url, path_out, name, w, h, dpr, scheme,
+                            a10=a10_path and name in A10_CONFIGS,
+                        )
+                    report["interactions"]["narrow"] = report["configs"]["narrow-light"].get("interaction")
+                    report["interactions"]["wide"] = report["configs"]["wide-light"].get("interaction")
+                    report["tables_375"] = capture_tables_375(browser, url, path_out)
+                    report["resize"] = run_resize_scenarios(browser, url, path_out)
+                    reports[path] = report
+            finally:
+                browser.close()
     finally:
         server.terminate()
         server.wait(timeout=5)
 
-    (args.out_dir / "metrics.json").write_text(json.dumps(report, ensure_ascii=False, indent=1), encoding="utf-8")
-    (args.out_dir / "tables-375" / "tables-375.json").write_text(json.dumps(report["tables_375"], ensure_ascii=False, indent=1), encoding="utf-8")
+    combined = {"generatedAt": datetime.now(timezone.utc).isoformat(),
+                "buildDir": str(args.build_dir), "outDir": str(args.out_dir),
+                "configs": [{"name": c[0], "width": c[1], "height": c[2], "dpr": c[3], "colorScheme": c[4]}
+                            for c in CONFIGS],
+                "skipped": skipped, "paths": reports, "summary": {}}
+    aggregate = {key: [] for key in ("A1", "A2", "A3", "A4", "A5", "A6", "A7", "A8", "A9", "A10", "A11")}
+    for path, report in reports.items():
+        summary, raw = path_checks(report)
+        report["verdicts"] = summary
+        for key in aggregate:
+            aggregate[key].extend(raw[key])
+        slug = path.strip("/").split("/")[-1]
+        (args.out_dir / slug / "metrics.json").write_text(
+            json.dumps(report, ensure_ascii=False, indent=1), encoding="utf-8")
+
+    for key, entries in aggregate.items():
+        failed = [entry for entry in entries if not entry["ok"]]
+        combined["summary"][key] = {
+            "checked": len(entries),
+            "passed": len(entries) - len(failed),
+            "failed": len(failed),
+            "pass": len(entries) > 0 and not failed,
+            "failures": failed[:60],
+        }
+    (args.out_dir / "metrics.json").write_text(json.dumps(combined, ensure_ascii=False, indent=1), encoding="utf-8")
+    print(json.dumps(combined["summary"], ensure_ascii=False, indent=1))
+    print("skipped:", skipped)
     print("wrote", args.out_dir / "metrics.json")
 
 

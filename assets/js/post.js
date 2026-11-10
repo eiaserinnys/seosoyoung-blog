@@ -53,6 +53,55 @@
     });
   }
 
+  var MIN_COLUMN_EM = 8;
+
+  function glueMathPunctuation() {
+    document.querySelectorAll(".post-content .katex").forEach(function (math) {
+      if (math.closest(".katex-display")) return;
+
+      // KaTeX auto-render는 수식마다 class 없는 span을 만들어 그 안에 .katex를 그린다.
+      // 앞뒤 텍스트는 그 span의 형제이므로 span을 수식 단위로 삼는다.
+      var parent = math.parentElement;
+      if (parent && parent.tagName === "SPAN" && !parent.className && parent.childNodes.length === 1) {
+        math = parent;
+      }
+
+      var prev = math.previousSibling;
+      var next = math.nextSibling;
+      var openTail = prev && prev.nodeType === Node.TEXT_NODE
+        ? (prev.data.match(/[(\[{]+$/) || [""])[0]
+        : "";
+      var closeHead = next && next.nodeType === Node.TEXT_NODE
+        ? (next.data.match(/^[)\]},.:;!?%A-Za-zㄱ-ㆎ가-힣]+/) || [""])[0]
+        : "";
+      if (!openTail && !closeHead) return;
+
+      var wrapper = document.createElement("span");
+      wrapper.className = "math-nowrap";
+      math.parentNode.insertBefore(wrapper, math);
+      if (openTail) {
+        wrapper.appendChild(prev.splitText(prev.data.length - openTail.length));
+      }
+      wrapper.appendChild(math);
+      // 인라인 블록 뒤 줄바꿈은 부모 white-space를 따르므로, 수식은 nowrap으로 두고 .base 사이에만 줄바꿈 자리를 연다.
+      math.querySelectorAll(".katex-html").forEach(function (html) {
+        var bases = Array.from(html.children).filter(function (child) {
+          return child.classList.contains("base");
+        });
+        bases.slice(1).forEach(function (base) {
+          var breakPoint = document.createElement("span");
+          breakPoint.className = "math-break";
+          breakPoint.textContent = "\u200b";
+          html.insertBefore(breakPoint, base);
+        });
+      });
+      if (closeHead) {
+        next.splitText(closeHead.length);
+        wrapper.appendChild(next);
+      }
+    });
+  }
+
   function wrapTables() {
     var wrappers = [];
     document.querySelectorAll(".post-content table").forEach(function (table) {
@@ -65,19 +114,46 @@
         table.parentNode.insertBefore(wrapper, table);
         wrapper.appendChild(table);
       }
-      wrappers.push({ table: table, wrapper: wrapper });
+      var cols = 0;
+      table.querySelectorAll("tr").forEach(function (row) {
+        var count = 0;
+        Array.prototype.forEach.call(row.children, function (cell) {
+          count += cell.colSpan || 1;
+        });
+        if (count > cols) cols = count;
+      });
+      table.style.setProperty("--table-cols", cols);
+      wrappers.push({ table: table, wrapper: wrapper, cols: cols });
     });
 
     function updateOverflow() {
       wrappers.forEach(function (item) {
-        var overflows = item.wrapper.scrollWidth > item.wrapper.clientWidth + 1
+        item.wrapper.classList.remove("is-overflowing");
+      });
+      wrappers.forEach(function (item) {
+        var natural = item.wrapper.scrollWidth > item.wrapper.clientWidth + 1
           || item.table.scrollWidth > item.wrapper.clientWidth + 1;
-        item.wrapper.classList.toggle("is-overflowing", overflows);
+        var squeezed = false;
+        if (!natural && item.cols >= 3 && item.cols <= 5) {
+          var fontSize = parseFloat(getComputedStyle(item.table).fontSize);
+          if (item.wrapper.clientWidth / item.cols < fontSize * MIN_COLUMN_EM) {
+            var inlineWidth = item.table.style.getPropertyValue("width");
+            var inlinePriority = item.table.style.getPropertyPriority("width");
+            item.table.style.setProperty("width", "max-content");
+            squeezed = item.table.getBoundingClientRect().width > item.wrapper.clientWidth + 1;
+            if (inlineWidth) item.table.style.setProperty("width", inlineWidth, inlinePriority);
+            else item.table.style.removeProperty("width");
+          }
+        }
+        item.wrapper.classList.toggle("is-overflowing", natural || squeezed);
       });
     }
 
     updateOverflow();
     window.addEventListener("resize", updateOverflow);
+    if (document.fonts && document.fonts.ready) {
+      document.fonts.ready.then(updateOverflow).catch(function () {});
+    }
   }
 
   function preserveImageWidths() {
@@ -104,6 +180,7 @@
   });
 
   function preparePostContent() {
+    glueMathPunctuation();
     copyButtons();
     wrapTables();
     preserveImageWidths();

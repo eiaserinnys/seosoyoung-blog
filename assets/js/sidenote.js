@@ -177,6 +177,20 @@
         sidenote.tabIndex = -1;
         sidenote.dataset.footnoteKey = key;
         sidenote.innerHTML = source.innerHTML;
+        var markerLink = marker.matches('a')
+          ? marker
+          : marker.querySelector('a[href^="#fn"]');
+        var number = (markerLink && markerLink.textContent.trim())
+          || String(Array.prototype.indexOf.call(footnoteList.children, source) + 1);
+        var num = document.createElement('span');
+        num.className = 'sidenote-num';
+        num.textContent = number;
+        var firstElement = sidenote.firstElementChild;
+        if (firstElement && firstElement.tagName === 'P') {
+          firstElement.insertBefore(num, firstElement.firstChild);
+        } else {
+          sidenote.insertBefore(num, sidenote.firstChild);
+        }
         source.removeAttribute('id');
         article.appendChild(sidenote);
 

@@ -167,6 +167,10 @@
   letter-spacing: -0.015em;
 }
 
+.toc + .post-content > :first-child {
+  margin-top: 0;
+}
+
 .post-content h3 {
   margin: 40px 0 var(--space-2);
   font-size: 18px;
@@ -309,7 +313,7 @@
 }
 
 .table-scroll.is-overflowing > table {
-  width: 32rem;
+  width: max(32rem, calc(var(--table-cols, 3) * 9em));
   min-width: 100%;
 }
 
@@ -340,10 +344,6 @@
 
 .post-content table :is(th, td):first-child {
   padding-inline-start: 0;
-}
-
-.post-content table:has(tr > :nth-child(4)) :is(th, td):first-child {
-  min-width: 8em;
 }
 
 .post-content .highlight table,
@@ -377,6 +377,14 @@
   background: var(--bg-2);
   font-family: var(--mono);
   font-size: 0.9em;
+}
+
+:is(.post-content, aside.sidenote) .math-nowrap {
+  white-space: nowrap;
+}
+
+:is(.post-content, aside.sidenote) .math-nowrap .math-break {
+  white-space: normal;
 }
 
 .post-content pre {
@@ -705,6 +713,13 @@ aside.sidenote .footnote-backref {
     line-height: 1.55;
   }
 
+  article.post-single.has-sidenotes .sidenote-num {
+    margin-inline-end: 0.3em;
+    color: var(--accent);
+    font-weight: 600;
+    font-variant-numeric: tabular-nums;
+  }
+
   article.post-single.has-sidenotes .sidenote p {
     margin: 0 0 var(--space-1);
   }
@@ -980,6 +995,10 @@ html.rsvp-active .post-single .post-content figcaption {
 @media (max-width: 767px) {
   .post-title {
     font-size: 28px;
+  }
+
+  .post-content .table-scroll:not(.is-overflowing) table :not(pre) > code {
+    overflow-wrap: anywhere;
   }
 
   .table-scroll.is-overflowing > table:has(tr > :nth-child(6)) :is(th, td) {
