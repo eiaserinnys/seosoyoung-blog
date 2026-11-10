@@ -53,6 +53,8 @@
     });
   }
 
+  var MIN_COLUMN_EM = 8;
+
   function wrapTables() {
     var wrappers = [];
     document.querySelectorAll(".post-content table").forEach(function (table) {
@@ -65,19 +67,46 @@
         table.parentNode.insertBefore(wrapper, table);
         wrapper.appendChild(table);
       }
-      wrappers.push({ table: table, wrapper: wrapper });
+      var cols = 0;
+      table.querySelectorAll("tr").forEach(function (row) {
+        var count = 0;
+        Array.prototype.forEach.call(row.children, function (cell) {
+          count += cell.colSpan || 1;
+        });
+        if (count > cols) cols = count;
+      });
+      table.style.setProperty("--table-cols", cols);
+      wrappers.push({ table: table, wrapper: wrapper, cols: cols });
     });
 
     function updateOverflow() {
       wrappers.forEach(function (item) {
-        var overflows = item.wrapper.scrollWidth > item.wrapper.clientWidth + 1
+        item.wrapper.classList.remove("is-overflowing");
+      });
+      wrappers.forEach(function (item) {
+        var natural = item.wrapper.scrollWidth > item.wrapper.clientWidth + 1
           || item.table.scrollWidth > item.wrapper.clientWidth + 1;
-        item.wrapper.classList.toggle("is-overflowing", overflows);
+        var squeezed = false;
+        if (!natural && item.cols >= 3 && item.cols <= 5) {
+          var fontSize = parseFloat(getComputedStyle(item.table).fontSize);
+          if (item.wrapper.clientWidth / item.cols < fontSize * MIN_COLUMN_EM) {
+            var inlineWidth = item.table.style.getPropertyValue("width");
+            var inlinePriority = item.table.style.getPropertyPriority("width");
+            item.table.style.setProperty("width", "max-content");
+            squeezed = item.table.getBoundingClientRect().width > item.wrapper.clientWidth + 1;
+            if (inlineWidth) item.table.style.setProperty("width", inlineWidth, inlinePriority);
+            else item.table.style.removeProperty("width");
+          }
+        }
+        item.wrapper.classList.toggle("is-overflowing", natural || squeezed);
       });
     }
 
     updateOverflow();
     window.addEventListener("resize", updateOverflow);
+    if (document.fonts && document.fonts.ready) {
+      document.fonts.ready.then(updateOverflow).catch(function () {});
+    }
   }
 
   function preserveImageWidths() {

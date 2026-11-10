@@ -167,6 +167,10 @@
   letter-spacing: -0.015em;
 }
 
+.post-content > :first-child {
+  margin-top: 0;
+}
+
 .post-content h3 {
   margin: 40px 0 var(--space-2);
   font-size: 18px;
@@ -309,7 +313,7 @@
 }
 
 .table-scroll.is-overflowing > table {
-  width: 32rem;
+  width: max(32rem, calc(var(--table-cols, 3) * 9em));
   min-width: 100%;
 }
 
@@ -326,6 +330,10 @@
   word-break: keep-all;
 }
 
+.post-content table :not(pre) > code {
+  overflow-wrap: anywhere;
+}
+
 .post-content table thead {
   color: var(--ink-2);
   font-size: 13px;
@@ -340,10 +348,6 @@
 
 .post-content table :is(th, td):first-child {
   padding-inline-start: 0;
-}
-
-.post-content table:has(tr > :nth-child(4)) :is(th, td):first-child {
-  min-width: 8em;
 }
 
 .post-content .highlight table,
@@ -703,6 +707,13 @@ aside.sidenote .footnote-backref {
     color: var(--ink-2);
     font-size: 0.82rem;
     line-height: 1.55;
+  }
+
+  article.post-single.has-sidenotes .sidenote-num {
+    margin-inline-end: 0.3em;
+    color: var(--accent);
+    font-weight: 600;
+    font-variant-numeric: tabular-nums;
   }
 
   article.post-single.has-sidenotes .sidenote p {
