@@ -59,6 +59,13 @@
     document.querySelectorAll(".post-content .katex").forEach(function (math) {
       if (math.closest(".katex-display")) return;
 
+      // KaTeX auto-render는 수식마다 class 없는 span을 만들어 그 안에 .katex를 그린다.
+      // 앞뒤 텍스트는 그 span의 형제이므로 span을 수식 단위로 삼는다.
+      var parent = math.parentElement;
+      if (parent && parent.tagName === "SPAN" && !parent.className && parent.childNodes.length === 1) {
+        math = parent;
+      }
+
       var prev = math.previousSibling;
       var next = math.nextSibling;
       var openTail = prev && prev.nodeType === Node.TEXT_NODE
