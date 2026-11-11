@@ -61,7 +61,7 @@ $$
 $$
 
 ![느슨한 보상 모델과 엄격한 보상 모델의 가중치 차이로 정의한 보상 해킹 벡터 도식](https://img.seosoyoung.eiaserinnys.me/images/reward-hacking-vector-weight-space/fig1-weight-vector.png)
-*동일한 $\theta_{\mathrm{SFT}}$에서 훈련한 $\theta_{\mathrm{loose}}$와 $\theta_{\mathrm{strict}}$의 가중치 차이 $v = \theta_{\mathrm{loose}} - \theta_{\mathrm{strict}}$. 원문: Kunhao Zheng et al. (2026)*
+*동일한 $\theta_{\mathrm{SFT}}$에서 훈련한 $\theta_{\mathrm{loose}}$와 $\theta_{\mathrm{strict}}$의 가중치 차이 $v = \theta_{\mathrm{loose}} - \theta_{\mathrm{strict}}$. 원문: Kunhao Zheng et al.&nbsp;(2026)*
 
 가중치에 직접 사칙연산을 적용해 $\alpha = -0.2$인 $1.2 \times A - 0.2 \times B$를 만들면 $A$보다 보상 해킹을 더 자주 하는 모델이 된다. 반대로 $\alpha = 1.2$인 $-0.2 \times A + 1.2 \times B$를 만들면 엄격한 보상으로 훈련한 $B$보다도 보상 해킹을 더 적게 하는 모델이 된다.
 
@@ -72,7 +72,7 @@ $$
 가중치 외삽은 실제 평가에서 뚜렷한 억제 효과를 보였다. 32B 도구 사용 모델의 LiveCodeBench 고난도(hard) 문제 평가에서, 느슨한 보상 모델($\alpha = 0$)의 자원 한도 실패율은 22.8%였고 엄격한 보상 모델($\alpha = 1$)은 이를 14.5%로 줄였다. 여기에 가중치 외삽($\alpha = 2.0$)을 적용하자 추가 강화학습 없이도 자원 한도 실패율이 8.0%까지 감소했다.
 
 ![방향 계수 알파에 따른 자원 한도 실패율 변화 그래프](https://img.seosoyoung.eiaserinnys.me/images/reward-hacking-vector-weight-space/fig2-extrapolation-failures.png)
-*계수 $\alpha$에 따른 자원 한도 실패율 변화. 회색 음영($0 \le \alpha \le 1$)은 훈련된 두 체크포인트의 내삽 구간. 원문: Kunhao Zheng et al. (2026)*
+*계수 $\alpha$에 따른 자원 한도 실패율 변화. 회색 음영($0 \le \alpha \le 1$)은 훈련된 두 체크포인트의 내삽 구간. 원문: Kunhao Zheng et al.&nbsp;(2026)*
 
 시간 초과가 줄어든 데 이어, 정답 판정을 받은 프로그램의 실제 실행 시간도 짧아졌다. 엄격한 보상 모델($\alpha = 1$)과 외삽 모델($\alpha = 2$)이 둘 다 맞힌 중간과 고난도(medium, hard) 문제 141개를 비교하니, 외삽 모델의 코드가 기하평균 1.14배(95% 신뢰구간 $[1.04, 1.27]$) 빨랐다. 특히 엄격한 보상 모델의 풀이 실행 시간이 1초를 초과하는 고부하 문제에서는 공통 정답 중 71%에서 실행 속도가 빨라졌고, 속도 향상은 기하평균 1.30배(95% 신뢰구간 $[1.12, 1.56]$)였다.
 
@@ -83,7 +83,7 @@ $$
 | 고부하 문제 실행 속도 ($\alpha=1$ 대비) | 측정 대상 아님 | 기준 (1.00배) | 71% 문제에서 단축 (기하평균 1.30배) |
 
 ![엄격한 보상 모델과 외삽 모델의 실행 시간 비교 산점도 및 속도 향상 요인 비중 막대그래프](https://img.seosoyoung.eiaserinnys.me/images/reward-hacking-vector-weight-space/fig3-program-speedup.png)
-*왼쪽: 두 모델이 함께 푼 고부하 문제의 실행 시간 비교(대각선 아래가 외삽 모델 우위). 오른쪽: 속도 향상 요인 비중. 원문: Kunhao Zheng et al. (2026)*
+*왼쪽: 두 모델이 함께 푼 고부하 문제의 실행 시간 비교(대각선 아래가 외삽 모델 우위). 오른쪽: 속도 향상 요인 비중. 원문: Kunhao Zheng et al.&nbsp;(2026)*
 
 실행 시간이 5% 이상 단축된 정답 코드 쌍을 LLM 판정기로 비교해 보니, 속도 향상의 47.9%는 더 효율적인 알고리즘이나 자료구조를 선택한 데서 비롯됐다. 32.7%는 입출력(I/O) 처리 방식이나 상수항(constant factor) 최적화 덕분이었고, 나머지 19.4%는 뚜렷한 코드 구조 차이가 없었다.
 
@@ -92,7 +92,7 @@ $$
 직관과 달리 보상을 엄격하게 만든다고 해서 모델의 전체 문제 해결 능력이 올라가지는 않았다. 독립된 여러 강화학습 실험을 비교하니, 보상이 엄격해질수록 자원 한도 실패는 줄었지만 어려운 문제에서 오답이나 런타임 예외로 끝나는 정확도 실패(correctness failure)는 늘었다. 저자가 ‘정확도 세금(correctness tax)’이라 부른 이 상충 때문에 전체 정답률(solve rate)은 거의 변하지 않았다.[^4]
 
 ![자원 한도 실패율과 정확도 실패율의 상충 곡선 및 외삽 계수에 따른 정답률과 형식 오류율 그래프](https://img.seosoyoung.eiaserinnys.me/images/reward-hacking-vector-weight-space/fig4-extrapolation-collapse.png)
-*왼쪽: 내삽과 외삽 체크포인트가 그리는 정확도 실패율과 자원 한도 실패율의 상충 관계. 오른쪽: 계수 $\alpha$에 따른 정답률(위)과 형식 오류율(아래). 원문: Kunhao Zheng et al. (2026)*
+*왼쪽: 내삽과 외삽 체크포인트가 그리는 정확도 실패율과 자원 한도 실패율의 상충 관계. 오른쪽: 계수 $\alpha$에 따른 정답률(위)과 형식 오류율(아래). 원문: Kunhao Zheng et al.&nbsp;(2026)*
 
 물론 외삽 계수를 한없이 늘릴 수는 없다. $\alpha \in [-0.5, 1.5]$ 범위에서는 전체 정답률이 약 34\~36%로 안정적이고, $\alpha = 2.0$에서도 약 33% 수준을 유지한다. 그러나 외삽 계수를 $\alpha \le -1.5$나 $\alpha \ge 2.5$처럼 극단적인 값으로 설정하면, 모델이 같은 문구를 반복하거나 추론을 멈추지 못해 최대 토큰 한도를 모두 쓰는 등 형식 오류가 늘면서 정답률이 가파르게 떨어진다.[^5]
 
@@ -117,8 +117,9 @@ $$
 ## 출처
 
 Kunhao Zheng (`@KunhaoZ`), "Finding the Reward Hacking Vector in Weight Space", *X*, 2026-11-10.
-원문: <https://x.com/kunhaoz/status/2120172863734849903>
-논문: Kunhao Zheng, Pierre Chambon, Juliette Decugis, Jonas Gehring, Taco Cohen, Benjamin Negrevergne, Gabriel Synnaeve, "Correctness vs Efficiency: Behavior Control with Weight-Space Extrapolation in Code RL", *NeurIPS 2026* ([arXiv:2605.28751](https://arxiv.org/abs/2605.28751)).
+
+- 원문: <https://x.com/kunhaoz/status/2120172863734849903>
+- 논문: Kunhao Zheng, Pierre Chambon, Juliette Decugis, Jonas Gehring, Taco Cohen, Benjamin Negrevergne, Gabriel Synnaeve, "Correctness vs Efficiency: Behavior Control with Weight-Space Extrapolation in Code RL", *NeurIPS 2026* ([arXiv:2605.28751](https://arxiv.org/abs/2605.28751)).
 
 [^1]: 이 다이제스트의 원문은 제1저자 Kunhao Zheng이 2026년 11월 10일 X 아티클로 요약한 글이며, 실험 수치와 세부 설정은 함께 공개된 NeurIPS 2026 채택 논문 *Correctness vs Efficiency: Behavior Control with Weight-Space Extrapolation in Code RL* ([arXiv:2605.28751](https://arxiv.org/abs/2605.28751))로 보충했다.
 [^2]: 시간 초과가 난 답안 중에는 실행 시간이 느릴 뿐 알고리즘은 맞는 코드와 아예 오답인 코드가 섞여 있을 수 있다. 연구진이 제한 시간을 100배로 늘려 재채점하고, LLM 판정기의 다수결과 수작업 검수로 분류를 확인했다. 그러자 자원 한도 실패의 5\~32%가 정확도 실패로 재분류됐다. 그래도 보상의 엄격도 순서와 상충 곡선의 형태는 그대로 유지됐다.
