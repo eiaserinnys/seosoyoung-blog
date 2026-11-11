@@ -10,7 +10,7 @@ ShowToc: true
 TocOpen: false
 cover:
   image: "https://img.seosoyoung.eiaserinnys.me/images/unsloth-qwen38-local-guide/01-cover.png"
-  alt: "Unsloth Dynamic V3.1이 적용된 Qwen3.8-27B 로컬 실행 가이드 대표 배너"
+  alt: "Qwen3.8-27B Unsloth V3.1 GGUF 벤치마크 차트(코딩 회복률, Terminal Bench 2.1, DeepSWE v1.1, LiveCodeBench v6)"
 images:
   - "https://img.seosoyoung.eiaserinnys.me/images/unsloth-qwen38-local-guide/01-cover.png"
 ---
@@ -68,7 +68,7 @@ Unsloth는 출시 당일(day zero)에 Qwen 팀으로부터 모델 접근 권한�
 
 ## Qwen3.8-27B 벤치마크 성적과 실행 설정
 
-Qwen3.8-27B 원본 모델은 코딩과 에이전트 벤치마크 전반에서 이전 세대인 Qwen3.6-27B와 Qwen3.7-Plus보다 높은 점수를 받았다. 특히 에이전트 코딩 과제인 DeepSWE 1.1에서는 42.2점으로, Qwen3.6-27B(13.3점)의 3배 이상이다. SWE-bench Pro(61.7점)와 QwenSWEBench(79.0점), 사무 작업 벤치마크인 CoWorkBench(70.7점)에서는 비교 대상인 Opus 4.6 Max보다도 점수가 높다.
+Qwen3.8-27B 원본 모델은 코딩과 에이전트 벤치마크 전반에서 이전 세대인 Qwen3.6-27B와 Qwen3.7-Plus보다 높은 점수를 받았다. 특히 에이전트 코딩 과제인 DeepSWE 1.1에서는 42.2점으로, Qwen3.6-27B(13.3점)의 3배 이상이다. SWE-bench Pro(61.7점)와 QwenSWEBench(79.0점), 사무 작업 벤치마크인 CoWorkBench(70.7점)에서는 비교 대상인 Opus 4.6 Max보다도 점수가 높다. Unsloth와 Qwen이 공개한 주요 벤치마크 비교 수치는 아래 표와 같다.
 
 | 분류 | 벤치마크 | Qwen3.8-27B | Qwen3.6-27B | Qwen3.7-Plus | Muse Glimmer-30B | Opus 4.6 Max |
 |---|---|---|---|---|---|---|
@@ -85,15 +85,12 @@ Qwen3.8-27B 원본 모델은 코딩과 에이전트 벤치마크 전반에서 �
 | 일반 | GPQA Diamond (과학 추론) | 89.2 | 87.8 | 90.3 | 83.5 | **91.3** |
 | 일반 | HLE (다학제 추론) | 30.8 | 24.0 | 34.7 | 22.0 | **40.0** |
 
-![Qwen3.8-27B 주요 벤치마크 성적 요약](https://img.seosoyoung.eiaserinnys.me/images/unsloth-qwen38-local-guide/08-qwen38-27b-bench.jpg)
-*Qwen3.8-27B의 주요 벤치마크 비교 차트. 출처: Unsloth / Qwen*
-
 Qwen3.8-27B는 Thinking 모드와 Instruct 모드를 모두 지원하는 하이브리드 모델이다. 아래 표는 로컬 실행에 필요한 양자화 비트별 메모리 요구량과 모드별 권장 샘플링 파라미터를 정리한 것이다. 메모리 요구량은 RAM과 VRAM을 합산하거나 통합 메모리를 기준으로 한다.
 
 | 구분 | 세부 항목 | 값 / 요구 사양 |
 |---|---|---|
-| 메모리 요구량 | 1비트 / 2비트 / 3비트 | 7\~8 GB / 9\~11 GB / 12\~14 GB |
-| 메모리 요구량 | 4비트 / 6비트 / 8비트 / BF16 | 16\~19 GB / 23\~26 GB / 31 GB / 56 GB |
+| 메모리 요구량 | 1비트 / 2비트 / 3비트 | 7\~8&nbsp;GB / 9\~11&nbsp;GB / 12\~14&nbsp;GB |
+| 메모리 요구량 | 4비트 / 6비트 / 8비트 / BF16 | 16\~19&nbsp;GB / 23\~26&nbsp;GB / 31&nbsp;GB / 56&nbsp;GB |
 | Thinking 모드 설정 | `temperature` / `top_p` / `top_k` / `min_p` | `1.0` / `0.95` / `20` / `0.0` (`presence_penalty=0.0`, `repetition_penalty=1.0`) |
 | Instruct 모드 설정 | `temperature` / `top_p` / `top_k` / `min_p` | `0.7` / `0.80` / `20` / `0.0` (`presence_penalty=1.5`, `repetition_penalty=1.0`) |
 | 추론 강도 (`reasoning_effort`) | 지원 단계 | `xhigh`(기본값, 심층 분석), `medium`(균형), `low`(속도 및 비용 우선), `none` |
@@ -124,12 +121,12 @@ NVIDIA B200 GPU 1장에서 측정한 배치 크기별 추론 속도(tokens/s)는
 
 BF16 무손실 원본의 용량은 4.9TB에 달해 일반 워크스테이션에서는 적재 자체가 불가능하다. Unsloth는 이를 해결하려고 세 가지 신규 데이터 타입을 고안했다[^5]. `llama.cpp`의 기존 1비트 양자화 포맷인 `IQ1_S`(가중치당 1.5625비트)에서 코드북(codebook)의 항목 수를 단계적으로 줄여, 비트율을 세분화한 것이다.
 
-| 데이터 타입 (Unsloth 명칭) | HF 리포 표기명 | 가중치당 비트 수 (BPW) | 코드북 항목 수 | 인덱스 비트 | 블록 크기 | Qwen3.8-2.4T 용량 | 다른 대형 모델 실측 (용량 / PPL / KLD) |
-|---|---|---|---|---|---|---|---|
-| `IQ1_S` (기존 표준) | `IQ1_S` | **1.5625** | 2048 | 11 | 50 B | 508 GB | 553.2 GiB / 2.58 / 0.565 |
-| `UD-IQ1_XS` | `TQ2_0` | 1.4375 | 1024 | 10 | 46 B | -- | 513.6 GiB / 2.93 / 0.690 |
-| `UD-IQ1_XXS` | `TQ1_0` | 1.3125 | 512 | 9 | 42 B | -- | 474.0 GiB / 3.54 / 0.876 |
-| `UD-IQ1_XXXS` | `Q1_0` | **1.1875** | 256 | 8 | 38 B | **397 GB** | 434.3 GiB / 4.49 / 1.110 |
+| 데이터 타입 | HF 표기명 | 비트율 (BPW) | 코드북 (인덱스) | 블록 크기 | 2.4T 용량 |
+|---|---|---|---|---|---|
+| `IQ1_S` (표준) | `IQ1_S` | **1.5625** | 2048&nbsp;(11비트) | 50&nbsp;B | 508&nbsp;GB |
+| `UD-IQ1_XS` | `TQ2_0` | 1.4375 | 1024&nbsp;(10비트) | 46&nbsp;B | -- |
+| `UD-IQ1_XXS` | `TQ1_0` | 1.3125 | 512&nbsp;(9비트) | 42&nbsp;B | -- |
+| `UD-IQ1_XXXS` | `Q1_0` | **1.1875** | 256&nbsp;(8비트) | 38&nbsp;B | **397&nbsp;GB** |
 
 압축률이 가장 높은 `UD-IQ1_XXXS`(`Q1_0`)를 적용하면 4.9TB였던 Qwen3.8-2.4T-A95B가 **397GB**로 줄어든다(원문 표기 기준 91% 축소). Unsloth는 이 모델을 양자화 인식 학습(QAT)이나 증류(QAD) 없이 사후 양자화(PTQ)만으로 만들었다.
 
@@ -154,4 +151,4 @@ Unsloth, 「Qwen3.8 - How to Run Locally」, 2026-11-11.
 [^2]: Unsloth는 Exllama-v3가 토큰 임베딩을 BF16으로 유지하는 이유를 따로 조사하지는 않았다. 강하게 양자화된 `lm_head`에서 생기는 손상을 양자화하지 않은 임베딩 레이어가 보완했을 가능성이 있다고 추정한다.
 [^3]: Unsloth는 채점 도구인 Math Verify와 LightEval을 모두 교차 확인했고, 온도를 0으로 두는 그리디 디코딩(greedy decoding)으로도 여러 번 실행했다. 그래도 GPU 자체의 비결정성 때문에 100% 회복률은 재현되지 않았다고 밝혔다.
 [^4]: SGLang에서는 Unsloth가 NVFP4 모델의 `lm_head`를 FP8로 양자화했으므로, 이를 불러올 수 있도록 커널 패치가 반영된 `v0.5.19` 이상 버전을 써야 한다. vLLM은 `CompressedTensorsW8A8Fp8` 커널로 이를 기본 지원한다.
-[^5]: Unsloth는 Hugging Face 리포지토리가 파일 형식을 자동으로 인식하는 데 문제가 있어, 실제 업로드한 파일명에 `UD-IQ1_XS`, `UD-IQ1_XXS`, `UD-IQ1_XXXS` 대신 각각 `TQ2_0`, `TQ1_0`, `Q1_0`을 썼다.
+[^5]: Unsloth는 Hugging Face 리포지토리가 파일 형식을 자동으로 인식하는 데 문제가 있어, 실제 업로드한 파일명에 `UD-IQ1_XS`, `UD-IQ1_XXS`, `UD-IQ1_XXXS` 대신 각각 `TQ2_0`, `TQ1_0`, `Q1_0`을 썼다. 다른 대형 모델에서 네 포맷의 용량과 혼란도(PPL), KLD를 실측한 결과는 `IQ1_S`가 553.2 GiB(PPL 2.58, KLD 0.565), `UD-IQ1_XS`가 513.6 GiB(PPL 2.93, KLD 0.690), `UD-IQ1_XXS`가 474.0 GiB(PPL 3.54, KLD 0.876), `UD-IQ1_XXXS`가 434.3 GiB(PPL 4.49, KLD 1.110)였다.
