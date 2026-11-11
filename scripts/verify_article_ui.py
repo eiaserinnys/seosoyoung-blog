@@ -53,7 +53,7 @@ DEFAULT_PATHS = [
     "/digest/ai-agents-unmapped-maya-site/",
 ]
 
-MATH_PATHS = DEFAULT_PATHS[1:2] + DEFAULT_PATHS[4:]
+MATH_PATHS = DEFAULT_PATHS[1:2] + DEFAULT_PATHS[4:9]
 
 RESIZE_SCENARIOS = [
     ("1440-1100-600-1440", [1440, 1100, 600, 1440]),
