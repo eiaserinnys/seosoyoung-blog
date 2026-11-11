@@ -112,7 +112,7 @@ sidenotes: true
 ![IT³ 가둠 사다리. 세로축은 에너지이며 단위는 테라전자볼트(TeV)다. 파란 선은 바탕 질량 약 174 GeV, 초록 선은 가둠 문턱 약 0.966 TeV, 빨간 선은 Z 프라임 공명 약 1.088 TeV를 나타낸다. 초록 선과 빨간 선 사이의 화살표는 약 12% 차이를 뜻한다.](https://img.seosoyoung.eiaserinnys.me/images/logvinovich-yang-mills-mass-gap-ill-posed/fig11-confinement-ladder.png)
 *원고 그림 11. 값은 저자의 원고 「Ab-Initio Prediction of the 1.088 TeV Topological Resonance」에서 가져왔다. Victor Logvinovich, CC BY 4.0.*
 
-알파 붕괴 항목에는 원고 스스로 단서를 달았다. 저자는 이 체계를 \"좌표 문법\"이라고 부르고, 반감기와 붕괴 에너지와 단면적은 예측하지 않는다고 덧붙였다. 원고는 실험이 판정할 대상은 이 예측 목록이며, $\mathbb{R}^4$에 관한 반증은 판단의 틀일 뿐이라고 정리했다.
+알파 붕괴 항목에는 원고 스스로 단서를 달았다. 저자는 이 체계를 "좌표 문법"이라고 부르고, 반감기와 붕괴 에너지와 단면적은 예측하지 않는다고 덧붙였다. 원고는 실험이 판정할 대상은 이 예측 목록이며, $\mathbb{R}^4$에 관한 반증은 판단의 틀일 뿐이라고 정리했다.
 
 ## 원고를 덮고 계속 생각난 것
 
