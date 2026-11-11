@@ -18,19 +18,19 @@ draft: false
 
 <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin:20px 0;">
   <figure style="margin:0;">
-    <img src="https://pub-236dc9dc170e487faec4c8b5e2d084c6.r2.dev/gallery/seosoyoung-surreal-editorial-poster/poster-1-mirror-archive.png" alt="THE MIRROR ARCHIVE 에디토리얼 포스터" style="width:100%;height:auto;display:block;border-radius:6px;border:2px solid transparent;">
+    <img src="https://pub-236dc9dc170e487faec4c8b5e2d084c6.r2.dev/gallery/seosoyoung-surreal-editorial-poster/poster-1-mirror-archive.png" alt="THE MIRROR ARCHIVE 에디토리얼 포스터" style="width:100%;height:auto;display:block;border-radius:6px;">
     <figcaption style="font-size:13px;color:#86868b;margin-top:6px;">1. THE MIRROR ARCHIVE</figcaption>
   </figure>
   <figure style="margin:0;">
-    <img src="https://pub-236dc9dc170e487faec4c8b5e2d084c6.r2.dev/gallery/seosoyoung-surreal-editorial-poster/poster-2-silent-observer.png" alt="THE SILENT OBSERVER 에디토리얼 포스터" style="width:100%;height:auto;display:block;border-radius:6px;border:2px solid #c97a4e;">
+    <img src="https://pub-236dc9dc170e487faec4c8b5e2d084c6.r2.dev/gallery/seosoyoung-surreal-editorial-poster/poster-2-silent-observer.png" alt="THE SILENT OBSERVER 에디토리얼 포스터" style="width:100%;height:auto;display:block;border-radius:6px;outline:2px solid #c97a4e;outline-offset:-2px;">
     <figcaption style="font-size:13px;color:#c97a4e;margin-top:6px;font-weight:600;">2. THE SILENT OBSERVER (커버)</figcaption>
   </figure>
   <figure style="margin:0;">
-    <img src="https://pub-236dc9dc170e487faec4c8b5e2d084c6.r2.dev/gallery/seosoyoung-surreal-editorial-poster/poster-3-borrowed-voice.png" alt="THE BORROWED VOICE 에디토리얼 포스터" style="width:100%;height:auto;display:block;border-radius:6px;border:2px solid transparent;">
+    <img src="https://pub-236dc9dc170e487faec4c8b5e2d084c6.r2.dev/gallery/seosoyoung-surreal-editorial-poster/poster-3-borrowed-voice.png" alt="THE BORROWED VOICE 에디토리얼 포스터" style="width:100%;height:auto;display:block;border-radius:6px;">
     <figcaption style="font-size:13px;color:#86868b;margin-top:6px;">3. THE BORROWED VOICE</figcaption>
   </figure>
   <figure style="margin:0;">
-    <img src="https://pub-236dc9dc170e487faec4c8b5e2d084c6.r2.dev/gallery/seosoyoung-surreal-editorial-poster/poster-4-second-skin.png" alt="A SECOND SKIN 에디토리얼 포스터" style="width:100%;height:auto;display:block;border-radius:6px;border:2px solid transparent;">
+    <img src="https://pub-236dc9dc170e487faec4c8b5e2d084c6.r2.dev/gallery/seosoyoung-surreal-editorial-poster/poster-4-second-skin.png" alt="A SECOND SKIN 에디토리얼 포스터" style="width:100%;height:auto;display:block;border-radius:6px;">
     <figcaption style="font-size:13px;color:#86868b;margin-top:6px;">4. A SECOND SKIN</figcaption>
   </figure>
 </div>

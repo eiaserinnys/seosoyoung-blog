@@ -8,6 +8,7 @@ Both measurements run identically on the 9b8f1de build and the new build.
 A10 does not depend on `.math-nowrap`; it reads the rendered math box that
 KaTeX auto-render leaves in place.
 """
+import re
 
 A9_JS = r"""
 () => {
@@ -214,6 +215,9 @@ A9_WIDE_CONFIGS = ("mid-light", "wide-light")
 A9_NARROW_CONFIGS = ("min360-light", "narrow-light", "min390-light", "min414-light")
 A10_CONFIGS = ("min360-light", "narrow-light", "min390-light", "min414-light", "wide-light")
 A11_NARROW_CONFIGS = ("min360-light", "narrow-light", "min414-light")
+A12_CONFIGS = ("wide-light", "wide-dark", "narrow-light", "narrow-dark")
+A13_CONFIGS = A12_CONFIGS
+ROW_WIDTH_TOL = 0.5
 
 
 def sidenote_presence_ok(wide):
@@ -315,3 +319,104 @@ def a11_checks(path, configs):
         entries.append({"ok": not table["overflowing"],
                         "detail": f"{path} wide-light: math table {table['i']} overflowing={table['overflowing']}"})
     return entries
+
+
+def _post_images(config):
+    return (config or {}).get("postImages") or []
+
+
+def _path_has_images(configs):
+    return any(_post_images(config) for config in configs.values())
+
+
+def _alpha(color):
+    value = (color or "").strip().lower()
+    if value == "transparent":
+        return 0.0
+    match = re.match(r"rgba?\(([^)]+)\)", value)
+    if not match:
+        return 1.0
+    parts = [part for part in re.split(r"[,/ ]+", match.group(1).strip()) if part]
+    return float(parts[3]) if len(parts) > 3 else 1.0
+
+
+def _visible_width(image):
+    widths = image.get("borderWidths") or [0, 0, 0, 0]
+    return float(image.get("w") or 0) - float(widths[3]) - float(widths[1])
+
+
+def a12_checks(path, configs):
+    if not _path_has_images(configs):
+        return [{"ok": True, "na": True, "detail": f"{path}: 본문 이미지 0건 (A12 해당 없음)"}]
+    entries = []
+    for name in A12_CONFIGS:
+        config = configs.get(name) or {}
+        rule = config.get("ruleColor") or ""
+        for image in _post_images(config):
+            shadow = image.get("boxShadow") or ""
+            ok = bool(rule) and rule in shadow and "0px 0px 0px 1px" in shadow
+            entries.append({
+                "ok": ok,
+                "detail": f"{path} {name} {image.get('src')}: boxShadow={shadow!r} rule={rule!r}",
+            })
+    return entries
+
+
+def a13_checks(path, configs):
+    if not _path_has_images(configs):
+        return [{"ok": True, "na": True, "detail": f"{path}: 본문 이미지 0건 (A13 해당 없음)"}]
+    entries = []
+    for name in A13_CONFIGS:
+        config = configs.get(name) or {}
+        rule = config.get("ruleColor") or ""
+        hairline = []
+        for image in _post_images(config):
+            shadow = image.get("boxShadow") or ""
+            if not (rule and rule in shadow and "0px 0px 0px 1px" in shadow):
+                continue
+            hairline.append(image)
+            widths = image.get("borderWidths") or [0, 0, 0, 0]
+            colors = image.get("borderColors") or ["", "", "", ""]
+            gaps = [
+                f"{side} {width}px {color!r}"
+                for side, width, color in zip(("top", "right", "bottom", "left"), widths, colors)
+                if float(width) > 0 and _alpha(color) == 0
+            ]
+            entries.append({
+                "ok": not gaps,
+                "detail": f"{path} {name} {image.get('src')}: borderGaps={gaps or '없음'} "
+                          f"outline={image.get('outline')!r}",
+            })
+        rows = {}
+        for image in hairline:
+            key = image.get("rowKey")
+            if key is not None:
+                rows.setdefault(key, []).append(image)
+        for key in sorted(rows):
+            row = rows[key]
+            if len(row) < 2:
+                continue
+            widths = [_visible_width(image) for image in row]
+            spread = max(widths) - min(widths)
+            entries.append({
+                "ok": spread <= ROW_WIDTH_TOL,
+                "detail": f"{path} {name} row {key}: visibleWidths="
+                          f"{[round(width, 1) for width in widths]} spread={spread:.1f}px "
+                          f"(기준 <= {ROW_WIDTH_TOL}px)",
+            })
+    return entries
+
+
+def summarize_checks(entries, limit=40):
+    graded = [entry for entry in entries if not entry.get("na")]
+    na = [entry for entry in entries if entry.get("na")]
+    failed = [entry for entry in graded if not entry["ok"]]
+    return {
+        "checked": len(graded),
+        "na": len(na),
+        "passed": len(graded) - len(failed),
+        "failed": len(failed),
+        "pass": bool(entries) and not failed,
+        "failures": failed[:limit],
+        "naDetails": [entry["detail"] for entry in na][:5],
+    }

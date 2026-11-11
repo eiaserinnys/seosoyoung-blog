@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""서재 글 화면 시각 검수 스크립트 (폭·테마 캡처, A1~A11 측정, 각주 왕복, 창 크기 시나리오).
+"""서재 글 화면 시각 검수 스크립트 (폭·테마 캡처, A1~A13 측정, 각주 왕복, 창 크기 시나리오).
 
 사용법:
   PLAYWRIGHT_BROWSERS_PATH="$HOME/.cache/ms-playwright" \
@@ -7,7 +7,7 @@
       [--path /digest/roguelike-wikipedia/] [--path /digest/paradox-of-tragedy-three-aesthetics-papers/]
 
 --path를 여러 번 주면 글마다 <out_dir>/<slug>/ 아래에 산출하고, <out_dir>/metrics.json에
-전체 A1~A11 판정을 모은다. 분석 비콘(umami) 요청은 연결이 없는 환경에서 load 이벤트를
+전체 A1~A13 판정을 모은다. 분석 비콘(umami) 요청은 연결이 없는 환경에서 load 이벤트를
 막으므로 차단한다. 화면과 무관하다.
 """
 import argparse
@@ -25,8 +25,8 @@ from playwright.sync_api import sync_playwright
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from verify_article_ui_checks import (
-    A10_CONFIGS, A10_JS, A11_JS, A9_JS, a9_checks, a10_checks, a11_checks,
-    resized_sidenotes_ok, sidenote_presence_ok,
+    A10_CONFIGS, A10_JS, A11_JS, A9_JS, a9_checks, a10_checks, a11_checks, a12_checks,
+    a13_checks, resized_sidenotes_ok, sidenote_presence_ok, summarize_checks,
 )
 
 CONFIGS = [
@@ -50,9 +50,18 @@ DEFAULT_PATHS = [
     "/digest/combining-llms-cofailure-ceiling/",
     "/digest/qwenputer-riscv-cpu/",
     "/digest/it3-periodic-table-z172/",
+    "/digest/ai-agents-unmapped-maya-site/",
+    "/gallery/seosoyoung-russian-avant-garde-poster/",
 ]
 
-MATH_PATHS = DEFAULT_PATHS[1:2] + DEFAULT_PATHS[4:]
+MATH_PATHS = [
+    "/digest/memory-caching-rnns/",
+    "/digest/skillopt-text-space-optimizer-2026/",
+    "/digest/oist-quantum-spins-centimeter-object/",
+    "/digest/combining-llms-cofailure-ceiling/",
+    "/digest/qwenputer-riscv-cpu/",
+    "/digest/it3-periodic-table-z172/",
+]
 
 RESIZE_SCENARIOS = [
     ("1440-1100-600-1440", [1440, 1100, 600, 1440]),
@@ -122,6 +131,41 @@ MEASURE_JS = r"""
       contentLeftDiff: ir ? +(ir.x - r(content).x).toFixed(1) : null,
       contentRightDiff: ir ? +(r(content).right - ir.right).toFixed(1) : null};
   });
+
+  const probe = document.createElement('span');
+  probe.style.color = 'var(--rule)';
+  document.body.appendChild(probe);
+  out.ruleColor = getComputedStyle(probe).color;
+  probe.remove();
+
+  // 같은 flex/grid 줄에 놓인 이미지를 묶으려고 가장 가까운 격자 조상을 행 키로 준다.
+  const rowHosts = new Map();
+  const rowKeyOf = (img) => {
+    let e = img.parentElement;
+    while (e && e !== content) {
+      const d = getComputedStyle(e).display;
+      if (d === 'flex' || d === 'inline-flex' || d === 'grid' || d === 'inline-grid') {
+        if (!rowHosts.has(e)) rowHosts.set(e, rowHosts.size);
+        return rowHosts.get(e);
+      }
+      e = e.parentElement;
+    }
+    return null;
+  };
+  out.postImages = [...content.querySelectorAll('img')]
+    .filter((img) => img.getBoundingClientRect().width > 0)
+    .map((img) => {
+      const b = img.getBoundingClientRect();
+      const cs = getComputedStyle(img);
+      return {src: img.src.split('/').pop(), x: +b.left.toFixed(1), y: +(b.top + scrollY).toFixed(1),
+        w: +b.width.toFixed(1), h: +b.height.toFixed(1), boxShadow: cs.boxShadow,
+        borderWidths: [parseFloat(cs.borderTopWidth), parseFloat(cs.borderRightWidth),
+          parseFloat(cs.borderBottomWidth), parseFloat(cs.borderLeftWidth)],
+        borderColors: [cs.borderTopColor, cs.borderRightColor, cs.borderBottomColor, cs.borderLeftColor],
+        outline: {width: parseFloat(cs.outlineWidth), style: cs.outlineStyle,
+          color: cs.outlineColor, offset: parseFloat(cs.outlineOffset)},
+        rowKey: rowKeyOf(img)};
+    });
 
   const fig = content.querySelector('figure.blog-diagram');
   if (fig) {
@@ -246,6 +290,30 @@ MEASURE_JS = r"""
 }
 """
 
+GRID_IMAGES_JS = r"""
+() => {
+  const content = document.querySelector('.post-content');
+  if (!content) return [];
+  const isRowHost = (el) => {
+    const d = getComputedStyle(el).display;
+    return d === 'flex' || d === 'inline-flex' || d === 'grid' || d === 'inline-grid';
+  };
+  return [...content.querySelectorAll('img')].filter((img) => {
+    if (img.getBoundingClientRect().width <= 0) return false;
+    let e = img.parentElement;
+    while (e && e !== content) {
+      if (isRowHost(e)) return true;
+      e = e.parentElement;
+    }
+    return false;
+  }).map((img) => {
+    const b = img.getBoundingClientRect();
+    return {src: img.src.split('/').pop(), x: +(b.left + scrollX).toFixed(1),
+      y: +(b.top + scrollY).toFixed(1), w: +b.width.toFixed(1), h: +b.height.toFixed(1)};
+  });
+}
+"""
+
 STATE_JS = r"""
 () => {
   const tables = [...document.querySelectorAll('.post-content .table-scroll')].map((wrap, i) => {
@@ -349,6 +417,53 @@ def settle(page):
 
 def element_shot(page, selector, path, nth=0):
     page.locator(selector).nth(nth).screenshot(path=str(path))
+    return str(path)
+
+
+def wait_for_sidenote_settle(page):
+    # full-page 캡처가 일으킨 reflow 뒤 sidenote.js가 노드를 다시 그린다(120ms 디바운스).
+    # 다음 요소 캡처가 분리된 노드를 잡지 않게 재배치가 끝날 때까지 기다린다.
+    if page.locator("aside.sidenote").count():
+        page.wait_for_timeout(400)
+
+
+def padded_element_shot(page, selector, path, nth=0, pad=8):
+    # 본문 폭을 꽉 채운 이미지는 요소 캡처 경계에서 box-shadow 1px 선이 잘린다.
+    # 요소 상자를 사방 pad만큼 넓혀 찍고 페이지 범위로 자른다.
+    page.locator(selector).nth(nth).scroll_into_view_if_needed()
+    box = page.evaluate(
+        """([s, n]) => {
+          const el = document.querySelectorAll(s)[n];
+          const b = el.getBoundingClientRect();
+          return {x: b.left + scrollX, y: b.top + scrollY, w: b.width, h: b.height,
+                  docW: document.documentElement.scrollWidth,
+                  docH: document.documentElement.scrollHeight};
+        }""",
+        [selector, nth],
+    )
+    x = max(0.0, box["x"] - pad)
+    y = max(0.0, box["y"] - pad)
+    width = min(box["docW"], box["x"] + box["w"] + pad) - x
+    height = min(box["docH"], box["y"] + box["h"] + pad) - y
+    # clip은 페이지 좌표라 full_page와 함께 줘야 뷰포트 밖 영역까지 찍힌다.
+    page.screenshot(path=str(path), full_page=True,
+                    clip={"x": x, "y": y, "width": width, "height": height})
+    wait_for_sidenote_settle(page)
+    return str(path)
+
+
+def padded_box_shot(page, box, path, pad=8):
+    # 격자(flex/grid) 안 이미지는 페이지 좌표 상자로 받아 사방 pad만큼 넓혀 찍는다.
+    doc = page.evaluate(
+        "() => ({w: document.documentElement.scrollWidth, h: document.documentElement.scrollHeight})"
+    )
+    x = max(0.0, box["x"] - pad)
+    y = max(0.0, box["y"] - pad)
+    width = min(doc["w"], box["x"] + box["w"] + pad) - x
+    height = min(doc["h"], box["y"] + box["h"] + pad) - y
+    page.screenshot(path=str(path), full_page=True,
+                    clip={"x": x, "y": y, "width": width, "height": height})
+    wait_for_sidenote_settle(page)
     return str(path)
 
 
@@ -471,7 +586,10 @@ def capture_config(browser, url, out_dir, name, width, height, dpr, scheme, a10=
     m["tableCaptureStates"] = capture_states
     img_count = page.locator(".post-content p:has(> img)").count()
     for i in range(img_count):
-        shots[f"image{i+2}"] = element_shot(page, ".post-content p:has(> img)", d / f"image{i+2:02d}.png", nth=i)
+        shots[f"image{i+2}"] = padded_element_shot(page, ".post-content p:has(> img)", d / f"image{i+2:02d}.png", nth=i)
+    if name in ("wide-light", "narrow-light"):
+        for i, box in enumerate(page.evaluate(GRID_IMAGES_JS)):
+            shots[f"grid-image{i+1}"] = padded_box_shot(page, box, d / f"grid-image{i+1:02d}.png")
     if m["sidenotes"]:
         for s in m["sidenotes"]:
             shots[f"sidenote{s['i']}"] = element_shot(page, "aside.sidenote", d / f"sidenote{s['i']}.png", nth=s["i"] - 1)
@@ -557,10 +675,10 @@ def short_first_cell(text):
 
 
 def path_checks(report):
-    checks = {key: [] for key in ("A1", "A2", "A3", "A4", "A5", "A6", "A7", "A8", "A9", "A10", "A11")}
+    checks = {key: [] for key in ("A1", "A2", "A3", "A4", "A5", "A6", "A7", "A8", "A9", "A10", "A11", "A12", "A13")}
 
-    def add(key, ok, detail):
-        checks[key].append({"ok": bool(ok), "detail": detail})
+    def add(key, ok, detail, na=False):
+        checks[key].append({"ok": bool(ok), "na": na, "detail": detail})
 
     configs = report["configs"]
     path = report["path"]
@@ -655,17 +773,12 @@ def path_checks(report):
         add("A10", entry["ok"], entry["detail"])
     for entry in a11_checks(path, configs):
         add("A11", entry["ok"], entry["detail"])
+    for entry in a12_checks(path, configs):
+        add("A12", entry["ok"], entry["detail"], na=entry.get("na", False))
+    for entry in a13_checks(path, configs):
+        add("A13", entry["ok"], entry["detail"], na=entry.get("na", False))
 
-    summary = {}
-    for key, entries in checks.items():
-        failed = [entry for entry in entries if not entry["ok"]]
-        summary[key] = {
-            "checked": len(entries),
-            "passed": len(entries) - len(failed),
-            "failed": len(failed),
-            "pass": len(entries) > 0 and not failed,
-            "failures": failed[:40],
-        }
+    summary = {key: summarize_checks(entries) for key, entries in checks.items()}
     return summary, checks
 
 
@@ -726,7 +839,7 @@ def main():
                 "configs": [{"name": c[0], "width": c[1], "height": c[2], "dpr": c[3], "colorScheme": c[4]}
                             for c in CONFIGS],
                 "skipped": skipped, "paths": reports, "summary": {}}
-    aggregate = {key: [] for key in ("A1", "A2", "A3", "A4", "A5", "A6", "A7", "A8", "A9", "A10", "A11")}
+    aggregate = {key: [] for key in ("A1", "A2", "A3", "A4", "A5", "A6", "A7", "A8", "A9", "A10", "A11", "A12", "A13")}
     for path, report in reports.items():
         summary, raw = path_checks(report)
         report["verdicts"] = summary
@@ -737,14 +850,7 @@ def main():
             json.dumps(report, ensure_ascii=False, indent=1), encoding="utf-8")
 
     for key, entries in aggregate.items():
-        failed = [entry for entry in entries if not entry["ok"]]
-        combined["summary"][key] = {
-            "checked": len(entries),
-            "passed": len(entries) - len(failed),
-            "failed": len(failed),
-            "pass": len(entries) > 0 and not failed,
-            "failures": failed[:60],
-        }
+        combined["summary"][key] = summarize_checks(entries, limit=60)
     (args.out_dir / "metrics.json").write_text(json.dumps(combined, ensure_ascii=False, indent=1), encoding="utf-8")
     print(json.dumps(combined["summary"], ensure_ascii=False, indent=1))
     print("skipped:", skipped)

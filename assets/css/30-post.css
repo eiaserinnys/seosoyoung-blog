@@ -113,7 +113,8 @@
   cursor: zoom-in;
 }
 
-/* 흰 종이 바탕 커버가 페이지 바탕에 묻히지 않게 갤러리 상세에만 머리카락 선을 둔다. */
+/* 흰 종이 바탕 이미지가 페이지 바탕에 묻히지 않게 본문 이미지와 갤러리 상세 커버에 머리카락 선을 둔다. */
+.post-content img,
 .gallery-single .entry-cover img {
   box-shadow: 0 0 0 var(--line) var(--rule);
 }

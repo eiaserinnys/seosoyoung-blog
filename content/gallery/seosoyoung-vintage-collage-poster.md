@@ -18,19 +18,19 @@ draft: false
 
 <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:20px 0;">
   <figure style="margin:0;">
-    <img src="https://pub-236dc9dc170e487faec4c8b5e2d084c6.r2.dev/gallery/seosoyoung-vintage-collage-poster/v1-paperroom.png" alt="v1 PAPERROOM 고서와 열람실 콜라주 포스터" style="width:100%;height:auto;display:block;border-radius:6px;border:2px solid transparent;">
+    <img src="https://pub-236dc9dc170e487faec4c8b5e2d084c6.r2.dev/gallery/seosoyoung-vintage-collage-poster/v1-paperroom.png" alt="v1 PAPERROOM 고서와 열람실 콜라주 포스터" style="width:100%;height:auto;display:block;border-radius:6px;">
     <figcaption style="font-size:13px;color:#86868b;margin-top:6px;">v1. PAPERROOM</figcaption>
   </figure>
   <figure style="margin:0;">
-    <img src="https://pub-236dc9dc170e487faec4c8b5e2d084c6.r2.dev/gallery/seosoyoung-vintage-collage-poster/v2-midnight-fm.png" alt="v2 MIDNIGHT FM 바이닐 레코드 콜라주 포스터" style="width:100%;height:auto;display:block;border-radius:6px;border:2px solid transparent;">
+    <img src="https://pub-236dc9dc170e487faec4c8b5e2d084c6.r2.dev/gallery/seosoyoung-vintage-collage-poster/v2-midnight-fm.png" alt="v2 MIDNIGHT FM 바이닐 레코드 콜라주 포스터" style="width:100%;height:auto;display:block;border-radius:6px;">
     <figcaption style="font-size:13px;color:#86868b;margin-top:6px;">v2. MIDNIGHT FM</figcaption>
   </figure>
   <figure style="margin:0;">
-    <img src="https://pub-236dc9dc170e487faec4c8b5e2d084c6.r2.dev/gallery/seosoyoung-vintage-collage-poster/v3-velora.png" alt="v3 VELORA 다마스크 로즈와 향수 콜라주 포스터" style="width:100%;height:auto;display:block;border-radius:6px;border:2px solid transparent;">
+    <img src="https://pub-236dc9dc170e487faec4c8b5e2d084c6.r2.dev/gallery/seosoyoung-vintage-collage-poster/v3-velora.png" alt="v3 VELORA 다마스크 로즈와 향수 콜라주 포스터" style="width:100%;height:auto;display:block;border-radius:6px;">
     <figcaption style="font-size:13px;color:#86868b;margin-top:6px;">v3. VELORA</figcaption>
   </figure>
   <figure style="margin:0;">
-    <img src="https://pub-236dc9dc170e487faec4c8b5e2d084c6.r2.dev/gallery/seosoyoung-vintage-collage-poster/v4-mirror-atlas.png" alt="v4 MIRROR ATLAS 클로이스터몬트 고지도 콜라주 포스터" style="width:100%;height:auto;display:block;border-radius:6px;border:2px solid #c97a4e;">
+    <img src="https://pub-236dc9dc170e487faec4c8b5e2d084c6.r2.dev/gallery/seosoyoung-vintage-collage-poster/v4-mirror-atlas.png" alt="v4 MIRROR ATLAS 클로이스터몬트 고지도 콜라주 포스터" style="width:100%;height:auto;display:block;border-radius:6px;outline:2px solid #c97a4e;outline-offset:-2px;">
     <figcaption style="font-size:13px;color:#c97a4e;margin-top:6px;font-weight:600;">v4. MIRROR ATLAS (커버)</figcaption>
   </figure>
 </div>
