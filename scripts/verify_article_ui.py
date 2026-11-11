@@ -62,6 +62,7 @@ MATH_PATHS = [
     "/digest/qwenputer-riscv-cpu/",
     "/digest/it3-periodic-table-z172/",
     "/digest/reasoning-as-pathfinding/",
+    "/digest/q35-timelines-update-2027/",
 ]
 
 RESIZE_SCENARIOS = [
@@ -547,6 +548,40 @@ def footnote_roundtrip(page, name, out_dir):
             page.screenshot(path=str(out_dir / "after-backref.png"))
         else:
             inter["afterBackref"] = "backref not visible"
+        imgs = page.locator(".post-content p > img")
+        if imgs.count() > 0:
+            img = imgs.first
+            img.scroll_into_view_if_needed()
+            page.wait_for_timeout(300)
+            y_before = page.evaluate("scrollY")
+            img.tap()
+            page.wait_for_timeout(500)
+            lb_open = page.evaluate("!!document.querySelector('.ssy-lightbox')")
+            lb_caption = page.evaluate("(document.querySelector('.ssy-lightbox-caption')||{}).textContent || null")
+            page.screenshot(path=str(out_dir / "lightbox-open.png"))
+            page.keyboard.press("Escape")
+            page.wait_for_timeout(400)
+            lb_after = page.evaluate("!!document.querySelector('.ssy-lightbox')")
+            scroll_kept = abs(page.evaluate("scrollY") - y_before) < 2
+            active_after = page.evaluate("document.activeElement ? document.activeElement.tagName + '.' + document.activeElement.className : null")
+            inter["lightbox"] = {
+                "open": lb_open,
+                "caption": lb_caption,
+                "afterEsc": lb_after,
+                "scrollKept": scroll_kept,
+                "activeAfterEsc": active_after,
+            }
+        overflow_wraps = page.locator(".post-content .table-scroll.is-overflowing")
+        if overflow_wraps.count() > 0:
+            wrap = overflow_wraps.first
+            wrap.scroll_into_view_if_needed()
+            page.evaluate("() => { const w = document.querySelector('.post-content .table-scroll.is-overflowing'); if (w) w.scrollLeft = w.scrollWidth; }")
+            page.wait_for_timeout(300)
+            inter["tableScroll"] = {
+                "scrollLeft": page.evaluate("(() => { const w = document.querySelector('.post-content .table-scroll.is-overflowing'); return w ? w.scrollLeft : 0; })()"),
+                "docScrollX": page.evaluate("[scrollX, document.documentElement.scrollWidth, innerWidth]"),
+            }
+            wrap.screenshot(path=str(out_dir / "table-scrolled-end.png"))
     return inter
 
 
