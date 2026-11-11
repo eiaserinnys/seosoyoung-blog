@@ -19,19 +19,19 @@ draft: false
 
 <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:20px 0;">
   <figure style="margin:0;">
-    <a href="https://pub-236dc9dc170e487faec4c8b5e2d084c6.r2.dev/gallery/seosoyoung-russian-avant-garde-poster/v1-diagonal-reach.png" target="_blank"><img src="https://pub-236dc9dc170e487faec4c8b5e2d084c6.r2.dev/gallery/seosoyoung-russian-avant-garde-poster/v1-diagonal-reach.png" alt="검은 띠와 나란히 몸을 뻗고 양갈래를 같은 방향으로 날린 서소영" style="width:100%;height:auto;display:block;border-radius:6px;border:2px solid transparent;"></a>
+    <a href="https://pub-236dc9dc170e487faec4c8b5e2d084c6.r2.dev/gallery/seosoyoung-russian-avant-garde-poster/v1-diagonal-reach.png" target="_blank"><img src="https://pub-236dc9dc170e487faec4c8b5e2d084c6.r2.dev/gallery/seosoyoung-russian-avant-garde-poster/v1-diagonal-reach.png" alt="검은 띠와 나란히 몸을 뻗고 양갈래를 같은 방향으로 날린 서소영" style="width:100%;height:auto;display:block;border-radius:6px;"></a>
     <figcaption style="font-size:13px;color:#86868b;margin-top:6px;">1. 사선으로 뻗은 몸</figcaption>
   </figure>
   <figure style="margin:0;">
-    <a href="https://pub-236dc9dc170e487faec4c8b5e2d084c6.r2.dev/gallery/seosoyoung-russian-avant-garde-poster/v2-rays-from-gaze.png" target="_blank"><img src="https://pub-236dc9dc170e487faec4c8b5e2d084c6.r2.dev/gallery/seosoyoung-russian-avant-garde-poster/v2-rays-from-gaze.png" alt="올려다보는 서소영의 눈썹 끝에서 빛살이 퍼지는 클로즈업" style="width:100%;height:auto;display:block;border-radius:6px;border:2px solid #c97a4e;"></a>
+    <a href="https://pub-236dc9dc170e487faec4c8b5e2d084c6.r2.dev/gallery/seosoyoung-russian-avant-garde-poster/v2-rays-from-gaze.png" target="_blank"><img src="https://pub-236dc9dc170e487faec4c8b5e2d084c6.r2.dev/gallery/seosoyoung-russian-avant-garde-poster/v2-rays-from-gaze.png" alt="올려다보는 서소영의 눈썹 끝에서 빛살이 퍼지는 클로즈업" style="width:100%;height:auto;display:block;border-radius:6px;outline:2px solid #c97a4e;outline-offset:-2px;"></a>
     <figcaption style="font-size:13px;color:#c97a4e;margin-top:6px;font-weight:600;">2. 눈썹 끝의 빛살 (커버)</figcaption>
   </figure>
   <figure style="margin:0;">
-    <a href="https://pub-236dc9dc170e487faec4c8b5e2d084c6.r2.dev/gallery/seosoyoung-russian-avant-garde-poster/v3-concentric-rings.png" target="_blank"><img src="https://pub-236dc9dc170e487faec4c8b5e2d084c6.r2.dev/gallery/seosoyoung-russian-avant-garde-poster/v3-concentric-rings.png" alt="동심원 앞에서 손에 뺨을 괴고 고개를 기울인 서소영" loading="lazy" style="width:100%;height:auto;display:block;border-radius:6px;border:2px solid transparent;"></a>
+    <a href="https://pub-236dc9dc170e487faec4c8b5e2d084c6.r2.dev/gallery/seosoyoung-russian-avant-garde-poster/v3-concentric-rings.png" target="_blank"><img src="https://pub-236dc9dc170e487faec4c8b5e2d084c6.r2.dev/gallery/seosoyoung-russian-avant-garde-poster/v3-concentric-rings.png" alt="동심원 앞에서 손에 뺨을 괴고 고개를 기울인 서소영" loading="lazy" style="width:100%;height:auto;display:block;border-radius:6px;"></a>
     <figcaption style="font-size:13px;color:#86868b;margin-top:6px;">3. 동심원에 기댄 고개</figcaption>
   </figure>
   <figure style="margin:0;">
-    <a href="https://pub-236dc9dc170e487faec4c8b5e2d084c6.r2.dev/gallery/seosoyoung-russian-avant-garde-poster/v4-pushing-the-plane.png" target="_blank"><img src="https://pub-236dc9dc170e487faec4c8b5e2d084c6.r2.dev/gallery/seosoyoung-russian-avant-garde-poster/v4-pushing-the-plane.png" alt="손바닥으로 붉은 면의 경계를 밀고 그 손에서 빛살이 퍼지는 서소영" loading="lazy" style="width:100%;height:auto;display:block;border-radius:6px;border:2px solid transparent;"></a>
+    <a href="https://pub-236dc9dc170e487faec4c8b5e2d084c6.r2.dev/gallery/seosoyoung-russian-avant-garde-poster/v4-pushing-the-plane.png" target="_blank"><img src="https://pub-236dc9dc170e487faec4c8b5e2d084c6.r2.dev/gallery/seosoyoung-russian-avant-garde-poster/v4-pushing-the-plane.png" alt="손바닥으로 붉은 면의 경계를 밀고 그 손에서 빛살이 퍼지는 서소영" loading="lazy" style="width:100%;height:auto;display:block;border-radius:6px;"></a>
     <figcaption style="font-size:13px;color:#86868b;margin-top:6px;">4. 붉은 면을 미는 손</figcaption>
   </figure>
 </div>

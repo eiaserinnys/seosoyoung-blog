@@ -4,7 +4,10 @@ import unittest
 
 from playwright.sync_api import sync_playwright
 
-from verify_article_ui_checks import A10_JS, A11_JS, a12_checks, resized_sidenotes_ok, sidenote_presence_ok
+from verify_article_ui_checks import (
+    A10_JS, A11_JS, a12_checks, a13_checks, resized_sidenotes_ok, sidenote_presence_ok,
+    summarize_checks,
+)
 
 
 class ArticleUiChecksTest(unittest.TestCase):
@@ -96,6 +99,50 @@ class ArticleUiChecksTest(unittest.TestCase):
         without_line = dict(base, postImages=[{"src": "image06.png", "boxShadow": "none"}])
         self.assertTrue(all(entry["ok"] for entry in a12_checks("/digest/x/", {"wide-light": with_line})))
         self.assertFalse(any(entry["ok"] for entry in a12_checks("/digest/x/", {"wide-light": without_line})))
+
+    def test_post_image_checks_na_without_images(self):
+        configs = {"wide-light": {"ruleColor": "rgb(228, 228, 225)", "postImages": []}}
+        for check in (a12_checks, a13_checks):
+            entries = check("/digest/x/", configs)
+            self.assertEqual(len(entries), 1)
+            self.assertTrue(entries[0]["ok"])
+            self.assertTrue(entries[0]["na"])
+            summary = summarize_checks(entries)
+            self.assertEqual(summary["checked"], 0)
+            self.assertEqual(summary["na"], 1)
+            self.assertEqual(summary["failed"], 0)
+            self.assertTrue(summary["pass"])
+
+    def test_post_image_gap_and_row_widths(self):
+        rule = "rgb(228, 228, 225)"
+        shadow = f"{rule} 0px 0px 0px 1px"
+        outline = {"width": 2.0, "style": "solid", "color": "rgb(201, 122, 78)", "offset": -2.0}
+
+        def image(src, **extra):
+            record = {"src": src, "w": 100.0, "h": 100.0, "boxShadow": shadow,
+                      "borderWidths": [0.0, 0.0, 0.0, 0.0],
+                      "borderColors": ["rgb(0, 0, 0)"] * 4,
+                      "outline": {"width": 0.0, "style": "none",
+                                  "color": "rgb(0, 0, 0)", "offset": 0.0},
+                      "rowKey": None}
+            record.update(extra)
+            return record
+
+        fixed = [
+            image("v2-rays-from-gaze.png", rowKey=0, outline=outline),
+            image("v1-diagonal-reach.png", rowKey=0),
+        ]
+        fixed_configs = {"wide-light": {"ruleColor": rule, "postImages": fixed}}
+        self.assertTrue(all(entry["ok"] for entry in a13_checks("/gallery/x/", fixed_configs)))
+
+        broken = [
+            image("v2-rays-from-gaze.png", rowKey=0, outline=outline),
+            image("v1-diagonal-reach.png", rowKey=0,
+                  borderWidths=[2.0, 2.0, 2.0, 2.0],
+                  borderColors=["rgba(0, 0, 0, 0)"] * 4),
+        ]
+        broken_configs = {"wide-light": {"ruleColor": rule, "postImages": broken}}
+        self.assertTrue(any(not entry["ok"] for entry in a13_checks("/gallery/x/", broken_configs)))
 
 
 if __name__ == '__main__':

@@ -18,19 +18,19 @@ draft: false
 
 <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:20px 0;">
   <figure style="margin:0;">
-    <a href="https://pub-236dc9dc170e487faec4c8b5e2d084c6.r2.dev/gallery/seosoyoung-blue-glass-greek-sculpture/v1-chiton-bust.png" target="_blank"><img src="https://pub-236dc9dc170e487faec4c8b5e2d084c6.r2.dev/gallery/seosoyoung-blue-glass-greek-sculpture/v1-chiton-bust.png" alt="1. 고전 키톤과 겹깃 흉상" style="width:100%;height:auto;display:block;border-radius:6px;border:2px solid transparent;"></a>
+    <a href="https://pub-236dc9dc170e487faec4c8b5e2d084c6.r2.dev/gallery/seosoyoung-blue-glass-greek-sculpture/v1-chiton-bust.png" target="_blank"><img src="https://pub-236dc9dc170e487faec4c8b5e2d084c6.r2.dev/gallery/seosoyoung-blue-glass-greek-sculpture/v1-chiton-bust.png" alt="1. 고전 키톤과 겹깃 흉상" style="width:100%;height:auto;display:block;border-radius:6px;"></a>
     <figcaption style="font-size:13px;color:#86868b;margin-top:6px;">1. 고전 키톤과 겹깃 흉상</figcaption>
   </figure>
   <figure style="margin:0;">
-    <a href="https://pub-236dc9dc170e487faec4c8b5e2d084c6.r2.dev/gallery/seosoyoung-blue-glass-greek-sculpture/v2-winged-himation.png" target="_blank"><img src="https://pub-236dc9dc170e487faec4c8b5e2d084c6.r2.dev/gallery/seosoyoung-blue-glass-greek-sculpture/v2-winged-himation.png" alt="2. 히마티온 날개 베일 상" style="width:100%;height:auto;display:block;border-radius:6px;border:2px solid #c97a4e;"></a>
+    <a href="https://pub-236dc9dc170e487faec4c8b5e2d084c6.r2.dev/gallery/seosoyoung-blue-glass-greek-sculpture/v2-winged-himation.png" target="_blank"><img src="https://pub-236dc9dc170e487faec4c8b5e2d084c6.r2.dev/gallery/seosoyoung-blue-glass-greek-sculpture/v2-winged-himation.png" alt="2. 히마티온 날개 베일 상" style="width:100%;height:auto;display:block;border-radius:6px;outline:2px solid #c97a4e;outline-offset:-2px;"></a>
     <figcaption style="font-size:13px;color:#c97a4e;margin-top:6px;font-weight:600;">2. 히마티온 날개 베일 상 (커버)</figcaption>
   </figure>
   <figure style="margin:0;">
-    <a href="https://pub-236dc9dc170e487faec4c8b5e2d084c6.r2.dev/gallery/seosoyoung-blue-glass-greek-sculpture/v3-contemplative-profile.png" target="_blank"><img src="https://pub-236dc9dc170e487faec4c8b5e2d084c6.r2.dev/gallery/seosoyoung-blue-glass-greek-sculpture/v3-contemplative-profile.png" alt="3. 유리 월계관과 두루마리 명상 상" style="width:100%;height:auto;display:block;border-radius:6px;border:2px solid transparent;"></a>
+    <a href="https://pub-236dc9dc170e487faec4c8b5e2d084c6.r2.dev/gallery/seosoyoung-blue-glass-greek-sculpture/v3-contemplative-profile.png" target="_blank"><img src="https://pub-236dc9dc170e487faec4c8b5e2d084c6.r2.dev/gallery/seosoyoung-blue-glass-greek-sculpture/v3-contemplative-profile.png" alt="3. 유리 월계관과 두루마리 명상 상" style="width:100%;height:auto;display:block;border-radius:6px;"></a>
     <figcaption style="font-size:13px;color:#86868b;margin-top:6px;">3. 유리 월계관과 두루마리 명상 상</figcaption>
   </figure>
   <figure style="margin:0;">
-    <a href="https://pub-236dc9dc170e487faec4c8b5e2d084c6.r2.dev/gallery/seosoyoung-blue-glass-greek-sculpture/v4-water-nymph-relief.png" target="_blank"><img src="https://pub-236dc9dc170e487faec4c8b5e2d084c6.r2.dev/gallery/seosoyoung-blue-glass-greek-sculpture/v4-water-nymph-relief.png" alt="4. 파도와 가리비 부조 좌대 상" style="width:100%;height:auto;display:block;border-radius:6px;border:2px solid transparent;"></a>
+    <a href="https://pub-236dc9dc170e487faec4c8b5e2d084c6.r2.dev/gallery/seosoyoung-blue-glass-greek-sculpture/v4-water-nymph-relief.png" target="_blank"><img src="https://pub-236dc9dc170e487faec4c8b5e2d084c6.r2.dev/gallery/seosoyoung-blue-glass-greek-sculpture/v4-water-nymph-relief.png" alt="4. 파도와 가리비 부조 좌대 상" style="width:100%;height:auto;display:block;border-radius:6px;"></a>
     <figcaption style="font-size:13px;color:#86868b;margin-top:6px;">4. 파도와 가리비 부조 좌대 상</figcaption>
   </figure>
 </div>
