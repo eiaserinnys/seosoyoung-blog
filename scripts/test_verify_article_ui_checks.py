@@ -4,7 +4,7 @@ import unittest
 
 from playwright.sync_api import sync_playwright
 
-from verify_article_ui_checks import A10_JS, A11_JS, resized_sidenotes_ok, sidenote_presence_ok
+from verify_article_ui_checks import A10_JS, A11_JS, a12_checks, resized_sidenotes_ok, sidenote_presence_ok
 
 
 class ArticleUiChecksTest(unittest.TestCase):
@@ -88,6 +88,14 @@ class ArticleUiChecksTest(unittest.TestCase):
         self.assertLessEqual(self.page.evaluate(A11_JS, True)["bounds"][0]["over"], 1)
         self.page.locator('aside p').evaluate("el => el.innerHTML = '<span><span class=\"katex\">x</span></span> Cf'")
         self.assertEqual(self.page.evaluate(A10_JS, True)["checked"], 0)
+
+    def test_post_image_hairline(self):
+        base = {"ruleColor": "rgb(228, 228, 225)"}
+        with_line = dict(base, postImages=[{"src": "image06.png",
+                                            "boxShadow": "rgb(228, 228, 225) 0px 0px 0px 1px"}])
+        without_line = dict(base, postImages=[{"src": "image06.png", "boxShadow": "none"}])
+        self.assertTrue(all(entry["ok"] for entry in a12_checks("/digest/x/", {"wide-light": with_line})))
+        self.assertFalse(any(entry["ok"] for entry in a12_checks("/digest/x/", {"wide-light": without_line})))
 
 
 if __name__ == '__main__':

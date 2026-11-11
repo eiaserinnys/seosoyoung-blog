@@ -214,6 +214,7 @@ A9_WIDE_CONFIGS = ("mid-light", "wide-light")
 A9_NARROW_CONFIGS = ("min360-light", "narrow-light", "min390-light", "min414-light")
 A10_CONFIGS = ("min360-light", "narrow-light", "min390-light", "min414-light", "wide-light")
 A11_NARROW_CONFIGS = ("min360-light", "narrow-light", "min414-light")
+A12_CONFIGS = ("wide-light", "wide-dark", "narrow-light", "narrow-dark")
 
 
 def sidenote_presence_ok(wide):
@@ -314,4 +315,20 @@ def a11_checks(path, configs):
     for table in tables:
         entries.append({"ok": not table["overflowing"],
                         "detail": f"{path} wide-light: math table {table['i']} overflowing={table['overflowing']}"})
+    return entries
+
+
+def a12_checks(path, configs):
+    entries = []
+    for name in A12_CONFIGS:
+        config = configs.get(name) or {}
+        rule = config.get("ruleColor") or ""
+        images = config.get("postImages") or []
+        for image in images:
+            shadow = image.get("boxShadow") or ""
+            ok = bool(rule) and rule in shadow and "0px 0px 0px 1px" in shadow
+            entries.append({
+                "ok": ok,
+                "detail": f"{path} {name} {image.get('src')}: boxShadow={shadow!r} rule={rule!r}",
+            })
     return entries

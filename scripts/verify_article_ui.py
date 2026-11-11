@@ -25,7 +25,7 @@ from playwright.sync_api import sync_playwright
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from verify_article_ui_checks import (
-    A10_CONFIGS, A10_JS, A11_JS, A9_JS, a9_checks, a10_checks, a11_checks,
+    A10_CONFIGS, A10_JS, A11_JS, A9_JS, a9_checks, a10_checks, a11_checks, a12_checks,
     resized_sidenotes_ok, sidenote_presence_ok,
 )
 
@@ -50,6 +50,7 @@ DEFAULT_PATHS = [
     "/digest/combining-llms-cofailure-ceiling/",
     "/digest/qwenputer-riscv-cpu/",
     "/digest/it3-periodic-table-z172/",
+    "/digest/ai-agents-unmapped-maya-site/",
 ]
 
 MATH_PATHS = DEFAULT_PATHS[1:2] + DEFAULT_PATHS[4:]
@@ -122,6 +123,20 @@ MEASURE_JS = r"""
       contentLeftDiff: ir ? +(ir.x - r(content).x).toFixed(1) : null,
       contentRightDiff: ir ? +(r(content).right - ir.right).toFixed(1) : null};
   });
+
+  const probe = document.createElement('span');
+  probe.style.color = 'var(--rule)';
+  document.body.appendChild(probe);
+  out.ruleColor = getComputedStyle(probe).color;
+  probe.remove();
+
+  out.postImages = [...content.querySelectorAll('img')]
+    .filter((img) => img.getBoundingClientRect().width > 0)
+    .map((img) => {
+      const b = img.getBoundingClientRect();
+      return {src: img.src.split('/').pop(), x: +b.left.toFixed(1), y: +(b.top + scrollY).toFixed(1),
+        w: +b.width.toFixed(1), h: +b.height.toFixed(1), boxShadow: getComputedStyle(img).boxShadow};
+    });
 
   const fig = content.querySelector('figure.blog-diagram');
   if (fig) {
@@ -352,6 +367,33 @@ def element_shot(page, selector, path, nth=0):
     return str(path)
 
 
+def padded_element_shot(page, selector, path, nth=0, pad=8):
+    # 본문 폭을 꽉 채운 이미지는 요소 캡처 경계에서 box-shadow 1px 선이 잘린다.
+    # 요소 상자를 사방 pad만큼 넓혀 찍고 페이지 범위로 자른다.
+    page.locator(selector).nth(nth).scroll_into_view_if_needed()
+    box = page.evaluate(
+        """([s, n]) => {
+          const el = document.querySelectorAll(s)[n];
+          const b = el.getBoundingClientRect();
+          return {x: b.left + scrollX, y: b.top + scrollY, w: b.width, h: b.height,
+                  docW: document.documentElement.scrollWidth,
+                  docH: document.documentElement.scrollHeight};
+        }""",
+        [selector, nth],
+    )
+    x = max(0.0, box["x"] - pad)
+    y = max(0.0, box["y"] - pad)
+    width = min(box["docW"], box["x"] + box["w"] + pad) - x
+    height = min(box["docH"], box["y"] + box["h"] + pad) - y
+    # clip은 페이지 좌표라 full_page와 함께 줘야 뷰포트 밖 영역까지 찍힌다.
+    page.screenshot(path=str(path), full_page=True,
+                    clip={"x": x, "y": y, "width": width, "height": height})
+    # full-page 캡처가 일으킨 reflow 뒤 sidenote.js가 노드를 다시 그린다(120ms 디바운스).
+    # 다음 요소 캡처가 분리된 노드를 잡지 않게 재배치가 끝날 때까지 기다린다.
+    page.wait_for_timeout(400)
+    return str(path)
+
+
 def png_size(path):
     with open(path, "rb") as handle:
         head = handle.read(24)
@@ -471,7 +513,7 @@ def capture_config(browser, url, out_dir, name, width, height, dpr, scheme, a10=
     m["tableCaptureStates"] = capture_states
     img_count = page.locator(".post-content p:has(> img)").count()
     for i in range(img_count):
-        shots[f"image{i+2}"] = element_shot(page, ".post-content p:has(> img)", d / f"image{i+2:02d}.png", nth=i)
+        shots[f"image{i+2}"] = padded_element_shot(page, ".post-content p:has(> img)", d / f"image{i+2:02d}.png", nth=i)
     if m["sidenotes"]:
         for s in m["sidenotes"]:
             shots[f"sidenote{s['i']}"] = element_shot(page, "aside.sidenote", d / f"sidenote{s['i']}.png", nth=s["i"] - 1)
@@ -557,7 +599,7 @@ def short_first_cell(text):
 
 
 def path_checks(report):
-    checks = {key: [] for key in ("A1", "A2", "A3", "A4", "A5", "A6", "A7", "A8", "A9", "A10", "A11")}
+    checks = {key: [] for key in ("A1", "A2", "A3", "A4", "A5", "A6", "A7", "A8", "A9", "A10", "A11", "A12")}
 
     def add(key, ok, detail):
         checks[key].append({"ok": bool(ok), "detail": detail})
@@ -655,6 +697,8 @@ def path_checks(report):
         add("A10", entry["ok"], entry["detail"])
     for entry in a11_checks(path, configs):
         add("A11", entry["ok"], entry["detail"])
+    for entry in a12_checks(path, configs):
+        add("A12", entry["ok"], entry["detail"])
 
     summary = {}
     for key, entries in checks.items():
@@ -726,7 +770,7 @@ def main():
                 "configs": [{"name": c[0], "width": c[1], "height": c[2], "dpr": c[3], "colorScheme": c[4]}
                             for c in CONFIGS],
                 "skipped": skipped, "paths": reports, "summary": {}}
-    aggregate = {key: [] for key in ("A1", "A2", "A3", "A4", "A5", "A6", "A7", "A8", "A9", "A10", "A11")}
+    aggregate = {key: [] for key in ("A1", "A2", "A3", "A4", "A5", "A6", "A7", "A8", "A9", "A10", "A11", "A12")}
     for path, report in reports.items():
         summary, raw = path_checks(report)
         report["verdicts"] = summary
