@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""서재 글 화면 시각 검수 스크립트 (폭·테마 캡처, A1~A13 측정, 각주 왕복, 창 크기 시나리오).
+"""서재 글 화면 시각 검수 스크립트 (폭·테마 캡처, A1~A15 측정, 각주 왕복, 창 크기 시나리오).
 
 사용법:
   PLAYWRIGHT_BROWSERS_PATH="$HOME/.cache/ms-playwright" \
@@ -7,7 +7,7 @@
       [--path /digest/roguelike-wikipedia/] [--path /digest/paradox-of-tragedy-three-aesthetics-papers/]
 
 --path를 여러 번 주면 글마다 <out_dir>/<slug>/ 아래에 산출하고, <out_dir>/metrics.json에
-전체 A1~A13 판정을 모은다. 분석 비콘(umami) 요청은 연결이 없는 환경에서 load 이벤트를
+전체 A1~A15 판정을 모은다. 분석 비콘(umami) 요청은 연결이 없는 환경에서 load 이벤트를
 막으므로 차단한다. 화면과 무관하다.
 """
 import argparse
@@ -21,12 +21,13 @@ import time
 from datetime import datetime, timezone
 from pathlib import Path
 
-from playwright.sync_api import sync_playwright
+from playwright.sync_api import Error as PlaywrightError, sync_playwright
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from verify_article_ui_checks import (
-    A10_CONFIGS, A10_JS, A11_JS, A9_JS, a9_checks, a10_checks, a11_checks, a12_checks,
-    a13_checks, resized_sidenotes_ok, sidenote_presence_ok, summarize_checks,
+    A10_CONFIGS, A10_JS, A11_JS, A15_JS, A9_JS, a9_checks, a10_checks, a11_checks, a12_checks,
+    a13_checks, a14_checks, a15_checks, resized_sidenotes_ok, sidenote_presence_ok,
+    summarize_checks,
 )
 
 CONFIGS = [
@@ -40,6 +41,13 @@ CONFIGS = [
     ("min414-light", 414, 896, 2, "light"),
 ]
 
+# lightbox.js의 prepareLightboxImages가 isLightboxImage인 그림에만 aria-haspopup을 단다.
+# 링크로 감싼 그림은 누르면 링크로 가는 것이 의도된 동작이라 대상이 아니다.
+LIGHTBOX_SELECTOR = ('.post-content img[aria-haspopup="dialog"], '
+                     'article.post-single .entry-cover img[aria-haspopup="dialog"]')
+LIGHTBOX_CONFIGS = ("wide-light", "narrow-light", "narrow-dark")
+LIGHTBOX_MAX_IMAGES = 4  # 동작이 그림마다 같아 DOM 순서 앞 4장만 잰다
+
 DEFAULT_PATHS = [
     "/digest/roguelike-wikipedia/",
     "/digest/memory-caching-rnns/",
@@ -52,6 +60,7 @@ DEFAULT_PATHS = [
     "/digest/it3-periodic-table-z172/",
     "/digest/ai-agents-unmapped-maya-site/",
     "/gallery/seosoyoung-russian-avant-garde-poster/",
+    "/posts/why-rsi-might-not-reach-agi/",
 ]
 
 MATH_PATHS = [
@@ -393,6 +402,32 @@ BACKREF_JS = r"""
 """
 
 
+LIGHTBOX_STATE_JS = r"""
+() => {
+  const o = document.querySelector('.ssy-lightbox');
+  const ae = document.activeElement;
+  const res = {open: !!o, rootOverflow: document.documentElement.style.overflow,
+    activeInLightbox: !!(o && ae && o.contains(ae)),
+    activeSrc: (ae && ae.tagName === 'IMG' && ae.getAttribute('src'))
+      ? ae.getAttribute('src').split('/').pop() : null};
+  if (o) {
+    const b = o.querySelector('img');
+    const r = b.getBoundingClientRect();
+    res.big = {x: r.x, y: r.y, w: r.width, h: r.height, right: r.right, bottom: r.bottom,
+      natural: [b.naturalWidth, b.naturalHeight], complete: b.complete, src: b.currentSrc.split('/').pop()};
+    res.vw = innerWidth; res.vh = innerHeight;
+    res.inView = r.x >= 0 && r.y >= 0 && r.right <= innerWidth + 0.5 && r.bottom <= innerHeight + 0.5;
+    res.scrollMode = o.classList.contains('ssy-lightbox--scroll');
+    res.inViewX = r.x >= 0 && r.right <= innerWidth + 0.5;
+    res.overlayScrollable = o.scrollHeight > o.clientHeight + 1;
+    res.ratioErr = b.naturalWidth ? Math.abs(r.width / r.height - b.naturalWidth / b.naturalHeight) : null;
+    res.role = o.getAttribute('role'); res.label = o.getAttribute('aria-label');
+  }
+  return res;
+}
+"""
+
+
 def free_port():
     s = socket.socket()
     s.bind(("127.0.0.1", 0))
@@ -561,6 +596,8 @@ def capture_config(browser, url, out_dir, name, width, height, dpr, scheme, a10=
     m = page.evaluate(MEASURE_JS)
     m["failedRequests"] = failed
     m["a9"] = page.evaluate(A9_JS)
+    if name == "wide-light":
+        m["quotes"] = page.evaluate(A15_JS)
     if a10:
         m["a10"] = page.evaluate(A10_JS, name == "wide-light")
         m["a11"] = page.evaluate(A11_JS, name == "wide-light")
@@ -670,13 +707,69 @@ def run_resize_scenarios(browser, url, out_dir):
     return results
 
 
+def run_lightbox_scenarios(browser, url, out_dir):
+    results = {}
+    configs = {config[0]: config for config in CONFIGS}
+    for name in LIGHTBOX_CONFIGS:
+        _, width, height, dpr, scheme = configs[name]
+        ctx = open_context(browser, width, height, dpr, scheme)
+        page = ctx.new_page()
+        page.goto(url, wait_until="load", timeout=60000)
+        settle(page)
+        count = page.locator(LIGHTBOX_SELECTOR).count()
+        if count == 0:
+            results[name] = {"applicable": False, "reason": "확대할 그림이 없다"}
+            ctx.close()
+            continue
+        rows = []
+        for i in range(min(count, LIGHTBOX_MAX_IMAGES)):
+            img = page.locator(LIGHTBOX_SELECTOR).nth(i)
+            meta = None
+            try:
+                img.scroll_into_view_if_needed()
+                page.wait_for_timeout(300)
+                meta = img.evaluate(
+                    "e => ({src: e.getAttribute('src').split('/').pop(),"
+                    " role: e.getAttribute('role'), tabIndex: e.tabIndex,"
+                    " haspopup: e.getAttribute('aria-haspopup')})")
+                before = page.evaluate(LIGHTBOX_STATE_JS)
+                img.click()
+                page.wait_for_selector(".ssy-lightbox img", state="attached", timeout=15000)
+                page.wait_for_function(
+                    "() => { const b = document.querySelector('.ssy-lightbox img');"
+                    " return b && b.complete && b.naturalWidth > 0; }", timeout=15000)
+                page.wait_for_timeout(250)
+                opened = page.evaluate(LIGHTBOX_STATE_JS)
+                if i == 0:
+                    page.screenshot(path=str(out_dir / f"lightbox-{name}-0.png"))
+                page.keyboard.press("Tab")
+                after_tab = page.evaluate(LIGHTBOX_STATE_JS)
+                page.keyboard.press("Escape")
+                page.wait_for_timeout(150)
+                after_esc = page.evaluate(LIGHTBOX_STATE_JS)
+                page.keyboard.press("Enter")
+                page.wait_for_selector(".ssy-lightbox", state="attached")
+                page.mouse.click(5, 5)
+                page.wait_for_timeout(150)
+                after_outside = page.evaluate(LIGHTBOX_STATE_JS)
+                rows.append({"img": meta, "before": before, "opened": opened,
+                             "afterTab": after_tab, "afterEsc": after_esc,
+                             "afterOutsideClick": after_outside})
+            except PlaywrightError as e:
+                rows.append({"img": meta, "error": str(e)})
+                page.keyboard.press("Escape")
+        results[name] = {"applicable": True, "rows": rows}
+        ctx.close()
+    return results
+
+
 def short_first_cell(text):
     value = (text or "").strip()
     return len(value) <= 6 or bool(re.fullmatch(r"\d{4}", value))
 
 
 def path_checks(report):
-    checks = {key: [] for key in ("A1", "A2", "A3", "A4", "A5", "A6", "A7", "A8", "A9", "A10", "A11", "A12", "A13")}
+    checks = {key: [] for key in ("A1", "A2", "A3", "A4", "A5", "A6", "A7", "A8", "A9", "A10", "A11", "A12", "A13", "A14", "A15")}
 
     def add(key, ok, detail, na=False):
         checks[key].append({"ok": bool(ok), "na": na, "detail": detail})
@@ -778,6 +871,10 @@ def path_checks(report):
         add("A12", entry["ok"], entry["detail"], na=entry.get("na", False))
     for entry in a13_checks(path, configs):
         add("A13", entry["ok"], entry["detail"], na=entry.get("na", False))
+    for entry in a14_checks(path, report["lightbox"]):
+        add("A14", entry["ok"], entry["detail"], na=entry.get("na", False))
+    for entry in a15_checks(path, configs):
+        add("A15", entry["ok"], entry["detail"], na=entry.get("na", False))
 
     summary = {key: summarize_checks(entries) for key, entries in checks.items()}
     return summary, checks
@@ -817,7 +914,7 @@ def main():
                     path_out.mkdir(parents=True, exist_ok=True)
                     url = f"http://127.0.0.1:{port}{path}"
                     report = {"url": url, "path": path, "configs": {}, "interactions": {},
-                              "tables_375": {}, "resize": {}}
+                              "tables_375": {}, "resize": {}, "lightbox": {}}
                     a10_path = path in MATH_PATHS
                     for name, w, h, dpr, scheme in CONFIGS:
                         report["configs"][name] = capture_config(
@@ -828,6 +925,7 @@ def main():
                     report["interactions"]["wide"] = report["configs"]["wide-light"].get("interaction")
                     report["tables_375"] = capture_tables_375(browser, url, path_out)
                     report["resize"] = run_resize_scenarios(browser, url, path_out)
+                    report["lightbox"] = run_lightbox_scenarios(browser, url, path_out)
                     reports[path] = report
             finally:
                 browser.close()
@@ -840,7 +938,7 @@ def main():
                 "configs": [{"name": c[0], "width": c[1], "height": c[2], "dpr": c[3], "colorScheme": c[4]}
                             for c in CONFIGS],
                 "skipped": skipped, "paths": reports, "summary": {}}
-    aggregate = {key: [] for key in ("A1", "A2", "A3", "A4", "A5", "A6", "A7", "A8", "A9", "A10", "A11", "A12", "A13")}
+    aggregate = {key: [] for key in ("A1", "A2", "A3", "A4", "A5", "A6", "A7", "A8", "A9", "A10", "A11", "A12", "A13", "A14", "A15")}
     for path, report in reports.items():
         summary, raw = path_checks(report)
         report["verdicts"] = summary

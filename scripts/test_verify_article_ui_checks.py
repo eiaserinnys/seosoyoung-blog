@@ -5,9 +5,21 @@ import unittest
 from playwright.sync_api import sync_playwright
 
 from verify_article_ui_checks import (
-    A10_JS, A11_JS, a12_checks, a13_checks, resized_sidenotes_ok, sidenote_presence_ok,
-    summarize_checks,
+    A10_JS, A11_JS, A15_JS, a12_checks, a13_checks, a14_checks, a15_checks,
+    resized_sidenotes_ok, sidenote_presence_ok, summarize_checks,
 )
+
+
+def lightbox_row(src="image.png"):
+    big = {"y": 27.0, "w": 1200.0, "h": 800.0, "natural": [2400, 1600], "complete": True, "src": src}
+    before = {"open": False, "rootOverflow": "", "activeInLightbox": False, "activeSrc": None}
+    opened = {"open": True, "rootOverflow": "hidden", "big": big, "vw": 1440, "vh": 900,
+              "inView": True, "ratioErr": 0.001, "role": "dialog", "label": "이미지 확대",
+              "activeInLightbox": True, "activeSrc": src}
+    after_esc = {"open": False, "rootOverflow": "", "activeInLightbox": False, "activeSrc": src}
+    return {"img": {"src": src, "role": "button", "tabIndex": 0, "haspopup": "dialog"},
+            "before": before, "opened": opened, "afterTab": dict(opened),
+            "afterEsc": after_esc, "afterOutsideClick": dict(after_esc)}
 
 
 class ArticleUiChecksTest(unittest.TestCase):
@@ -143,6 +155,49 @@ class ArticleUiChecksTest(unittest.TestCase):
         ]
         broken_configs = {"wide-light": {"ruleColor": rule, "postImages": broken}}
         self.assertTrue(any(not entry["ok"] for entry in a13_checks("/gallery/x/", broken_configs)))
+
+
+    def test_lightbox_verdicts(self):
+        path = "/posts/x/"
+        good = {"wide-light": {"applicable": True, "rows": [lightbox_row()]}}
+        entries = a14_checks(path, good)
+        self.assertEqual(len(entries), 1)
+        self.assertTrue(entries[0]["ok"])
+        self.assertFalse(entries[0].get("na", False))
+
+        scroll = lightbox_row()
+        scroll["opened"].update({"inView": False, "scrollMode": True,
+                                 "inViewX": True, "overlayScrollable": True})
+        entries = a14_checks(path, {"wide-light": {"applicable": True, "rows": [scroll]}})
+        self.assertEqual(len(entries), 1)
+        self.assertTrue(entries[0]["ok"])
+
+        bad = lightbox_row()
+        bad["afterEsc"]["activeSrc"] = "other.png"
+        self.assertFalse(a14_checks(path, {"wide-light": {"applicable": True, "rows": [bad]}})[0]["ok"])
+
+        error = {"img": {"src": "x.png"}, "error": "Timeout 15000ms exceeded"}
+        self.assertFalse(a14_checks(path, {"wide-light": {"applicable": True, "rows": [error]}})[0]["ok"])
+
+        entries = a14_checks(path, {"wide-light": {"applicable": False, "reason": "확대할 그림이 없다"}})
+        self.assertEqual(len(entries), 1)
+        self.assertTrue(entries[0]["ok"])
+        self.assertTrue(entries[0]["na"])
+
+    def test_straight_quote_detector(self):
+        self.page.set_content(
+            '<div class="post-content"><p>“봐 줘"라고 <code>"코드"는</code> “맞다”고</p></div>')
+        self.assertEqual(self.page.evaluate(A15_JS)["hitCount"], 1)
+        self.page.set_content('<div class="post-content"><p>“봐 줘”라고</p></div>')
+        self.assertEqual(self.page.evaluate(A15_JS)["hitCount"], 0)
+
+    def test_straight_quote_checks(self):
+        path = "/posts/x/"
+        passing = {"wide-light": {"quotes": {"blocks": 2, "hitCount": 0, "hits": []}}}
+        self.assertTrue(a15_checks(path, passing)[0]["ok"])
+        failing = {"wide-light": {"quotes": {"blocks": 2, "hitCount": 1, "hits": ['“a"b']}}}
+        self.assertFalse(a15_checks(path, failing)[0]["ok"])
+        self.assertTrue(a15_checks(path, {"wide-light": {}})[0]["na"])
 
 
 if __name__ == '__main__':

@@ -1,0 +1,9 @@
+{{- /*
+  goldmark typographer는 따옴표마다 앞뒤 글자만 보고 바꾼다. 「“…봐 줘"라고」처럼 닫는 따옴표 앞뒤가
+  모두 글자(또는 앞 구두점, 뒤 각주 링크)이면 여는 쪽은 &ldquo;로 바뀌지만 닫는 쪽은 &quot;로 남는다.
+  빌드된 .Content에서 본문 텍스트의 곧은 큰따옴표는 항상 &quot; 개체이고, 태그 속성의 구분자는 날 "이며,
+  하이라이트 코드 블록의 따옴표는 &#34;이다.
+  같은 인라인 흐름에서 짝이 없는 &ldquo; 뒤 첫 &quot;를 &rdquo;로 바꾼다. pre, 블록 경계, 다른 따옴표는 건너지 못한다.
+*/ -}}
+{{- $re := `(&ldquo;(?:[^&<“”"]|&(?:[lr]squo|hellip|[nm]dash|amp|lt|gt|nbsp|middot|times|#[0-9]+|#x[0-9a-fA-F]+);|</?(?:em|strong|a|b|i|span|mark|sup|sub|small|del|ins|abbr|u|s|br|wbr)\b[^<>]*>|<code\b[^<>]*>[^<]*</code>)*)&quot;` -}}
+{{- return (replaceRE $re "${1}&rdquo;" . | safeHTML) -}}

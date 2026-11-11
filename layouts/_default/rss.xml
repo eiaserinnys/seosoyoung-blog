@@ -77,7 +77,7 @@
       {{- $body := "" }}
       {{- with .Content }}
       {{- $base := strings.TrimSuffix "/" site.BaseURL }}
-      {{- $body = replaceRE `(\s(?:href|src|poster))="/([^/])` (printf `$1="%s/$2` $base) . }}
+      {{- $body = replaceRE `(\s(?:href|src|poster))="/([^/])` (printf `$1="%s/$2` $base) (partial "typography/close-quotes.html" .) }}
       {{- $body = replaceRE `(\shref)="#` (printf `$1="%s#` $link) $body }}
       {{- $body = replaceRE `(\s(?:href|src|poster))="([^"#/][^":]*)"` (printf `$1="%s$2"` $link) $body }}
       {{- else }}

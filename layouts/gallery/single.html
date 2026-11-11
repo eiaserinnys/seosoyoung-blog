@@ -15,7 +15,7 @@
     <figure class="entry-cover">
       <img src="{{ .Params.cover.image }}" alt="{{ .Params.cover.alt | default "" }}" loading="eager" decoding="async">
     </figure>
-    <div class="post-content">{{ .Content }}</div>
+    <div class="post-content">{{ partial "typography/close-quotes.html" .Content }}</div>
   </article>
 
   {{- $galleryPages := where site.RegularPages "Section" "gallery" -}}
