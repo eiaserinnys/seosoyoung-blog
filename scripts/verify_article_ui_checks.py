@@ -218,6 +218,45 @@ A11_JS = r"""
 }
 """
 
+A15_JS = r"""
+() => {
+  const content = document.querySelector('.post-content');
+  if (!content) return {blocks: 0, hitCount: 0, hits: []};
+  const skipSelector = 'pre, code, kbd, samp, script, style, .katex, .katex-display, math';
+  const blockSelector = 'p, li, td, th, h1, h2, h3, h4, h5, h6, figcaption, dt, dd';
+  const blocks = new Map();
+  const order = [];
+  const walker = document.createTreeWalker(content, NodeFilter.SHOW_TEXT);
+  let node;
+  while ((node = walker.nextNode())) {
+    const parent = node.parentElement;
+    if (!parent || parent.closest(skipSelector)) continue;
+    const block = parent.closest(blockSelector) || content;
+    if (!blocks.has(block)) { blocks.set(block, []); order.push(block); }
+    blocks.get(block).push(node.data);
+  }
+  let hitCount = 0;
+  const hits = [];
+  for (const block of order) {
+    const text = blocks.get(block).join('');
+    let open = false;
+    for (let i = 0; i < text.length; i++) {
+      const ch = text[i];
+      if (ch === '“') { open = true; continue; }
+      if (ch === '”') { open = false; continue; }
+      if (ch !== '"') continue;
+      const prev = text[i - 1] || '';
+      const next = text[i + 1] || '';
+      if (open || /[가-힣]/.test(prev) || /[가-힣]/.test(next)) {
+        hitCount++;
+        if (hits.length < 20) hits.push(text.slice(Math.max(0, i - 20), i + 21));
+      }
+    }
+  }
+  return {blocks: order.length, hitCount, hits};
+}
+"""
+
 A9_WIDE_CONFIGS = ("mid-light", "wide-light")
 A9_NARROW_CONFIGS = ("min360-light", "narrow-light", "min390-light", "min414-light")
 A10_CONFIGS = ("min360-light", "narrow-light", "min390-light", "min414-light", "wide-light")
@@ -418,6 +457,72 @@ def a13_checks(path, configs):
                           f"(기준 <= {ROW_WIDTH_TOL}px)",
             })
     return entries
+
+
+def _a14_failed_conditions(row):
+    opened = row["opened"]
+    after_tab = row["afterTab"]
+    after_esc = row["afterEsc"]
+    after_outside = row["afterOutsideClick"]
+    before = row["before"]
+    src = (row.get("img") or {}).get("src")
+    big = opened.get("big") or {}
+    in_view_ok = bool(opened.get("inView")) or (
+        bool(opened.get("scrollMode")) and bool(opened.get("inViewX"))
+        and big.get("y") is not None and big["y"] >= 0
+        and bool(opened.get("overlayScrollable")))
+    conditions = [
+        ("opened.open", bool(opened.get("open"))),
+        ("opened.inView", in_view_ok),
+        ("opened.ratioErr", opened.get("ratioErr") is not None and opened["ratioErr"] < 0.01),
+        ("afterTab.open", bool(after_tab.get("open"))),
+        ("afterTab.activeInLightbox", bool(after_tab.get("activeInLightbox"))),
+        ("afterEsc.open", not after_esc.get("open")),
+        ("afterEsc.activeSrc", after_esc.get("activeSrc") == src),
+        ("afterEsc.rootOverflow", after_esc.get("rootOverflow") == before.get("rootOverflow")),
+        ("afterOutsideClick.open", not after_outside.get("open")),
+        ("afterOutsideClick.rootOverflow",
+         after_outside.get("rootOverflow") == before.get("rootOverflow")),
+    ]
+    return [name for name, ok in conditions if not ok]
+
+
+def a14_checks(path, lightbox):
+    if not any((data or {}).get("applicable") for data in (lightbox or {}).values()):
+        return [{"ok": True, "na": True, "detail": f"{path}: 확대할 그림 0건 (A14 해당 없음)"}]
+    entries = []
+    for name, data in (lightbox or {}).items():
+        if not (data or {}).get("applicable"):
+            continue
+        for row in data.get("rows") or []:
+            meta = row.get("img") or {}
+            if row.get("error"):
+                entries.append({"ok": False,
+                                "detail": f"{path} {name} {meta.get('src')}: error={row['error']}"})
+                continue
+            failed = _a14_failed_conditions(row)
+            opened = row["opened"]
+            big = opened.get("big") or {}
+            entries.append({
+                "ok": not failed,
+                "detail": f"{path} {name} {meta.get('src')}: big={big.get('w')}x{big.get('h')} "
+                          f"in {opened.get('vw')}x{opened.get('vh')} "
+                          f"scrollMode={bool(opened.get('scrollMode'))} failed={failed or '없음'}",
+            })
+    return entries
+
+
+def a15_checks(path, configs):
+    quotes = (configs.get("wide-light") or {}).get("quotes")
+    if not quotes:
+        return [{"ok": True, "na": True, "detail": f"{path}: 곧은 따옴표 측정 없음 (A15 해당 없음)"}]
+    hits = quotes.get("hits") or []
+    sample = "; ".join(repr(hit) for hit in hits[:3])
+    return [{
+        "ok": quotes.get("hitCount", 0) == 0,
+        "detail": f"{path} wide-light: blocks={quotes.get('blocks', 0)} "
+                  f"hitCount={quotes.get('hitCount', 0)}" + (f" / {sample}" if sample else ""),
+    }]
 
 
 def summarize_checks(entries, limit=40):
