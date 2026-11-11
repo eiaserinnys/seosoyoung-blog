@@ -61,6 +61,7 @@ MATH_PATHS = [
     "/digest/combining-llms-cofailure-ceiling/",
     "/digest/qwenputer-riscv-cpu/",
     "/digest/it3-periodic-table-z172/",
+    "/digest/reasoning-as-pathfinding/",
 ]
 
 RESIZE_SCENARIOS = [

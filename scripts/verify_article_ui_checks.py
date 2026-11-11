@@ -207,14 +207,21 @@ A11_JS = r"""
     const table = wrap.querySelector('table');
     return {i: i + 1, hasMath: !!table.querySelector('.katex'), overflowing: wrap.classList.contains('is-overflowing')};
   }).filter((table) => table.hasMath);
-  return {bounds, tables};
+  const displays = [...content.querySelectorAll('.katex-display')].map((k, i) => ({
+    i: i + 1,
+    clientW: k.clientWidth,
+    scrollW: k.scrollWidth,
+    over: +(k.scrollWidth - k.clientWidth).toFixed(2),
+    tex: (k.querySelector('annotation') || {}).textContent || '',
+  }));
+  return {bounds, tables, displays};
 }
 """
 
 A9_WIDE_CONFIGS = ("mid-light", "wide-light")
 A9_NARROW_CONFIGS = ("min360-light", "narrow-light", "min390-light", "min414-light")
 A10_CONFIGS = ("min360-light", "narrow-light", "min390-light", "min414-light", "wide-light")
-A11_NARROW_CONFIGS = ("min360-light", "narrow-light", "min414-light")
+A11_NARROW_CONFIGS = ("min360-light", "narrow-light", "min390-light", "min414-light")
 A12_CONFIGS = ("wide-light", "wide-dark", "narrow-light", "narrow-dark")
 A13_CONFIGS = A12_CONFIGS
 ROW_WIDTH_TOL = 0.5
@@ -308,6 +315,12 @@ def a11_checks(path, configs):
         entries.append({"ok": bool(bounds) and not bad,
                         "detail": f"{path} {name}: math={len(bounds)} over={len(bad)} "
                                   f"examples={bad[:4]}"})
+        displays = data.get("displays") or []
+        if displays:
+            bad_disp = [item for item in displays if item["over"] > 1]
+            entries.append({"ok": not bad_disp,
+                            "detail": f"{path} {name}: displayMath={len(displays)} over={len(bad_disp)} "
+                                      f"examples={bad_disp[:4]}"})
     wide = ((configs.get("wide-light") or {}).get("a11") or {})
     side_bounds = [item for item in wide.get("bounds", []) if item.get("side")]
     if side_bounds:
