@@ -148,6 +148,39 @@
   margin: 0;
 }
 
+/* 반응형 인라인 SVG 도표 (blog-images 스킬 규약): 데스크톱 SVG는 viewBox 폭 720, 모바일 SVG는 350으로 그린다.
+   데스크톱 도표는 그린 폭 그대로만 쓰고 줄이지 않는다. 본문 폭이 720보다 좁으면 모바일 도표로 바꾼다.
+   모바일 도표는 가장 큰 폰(440px 화면)의 본문 폭 400까지만 키우고, 그보다 넓은 칸에서는 가운데에 둔다. */
+.post-content .blog-diagram {
+  container-type: inline-size;
+}
+
+.post-content .blog-diagram .diagram-svg-desktop,
+.post-content .blog-diagram .diagram-svg-mobile {
+  display: block;
+  width: 100%;
+  height: auto;
+  background: var(--bg-2);
+  border: var(--line) solid var(--rule);
+  font-family: var(--sans);
+}
+
+.post-content .blog-diagram .diagram-svg-mobile {
+  display: none;
+  max-width: 400px;
+  margin-inline: auto;
+}
+
+@container (width < 720px) {
+  .post-content .blog-diagram .diagram-svg-desktop {
+    display: none;
+  }
+
+  .post-content .blog-diagram .diagram-svg-mobile {
+    display: block;
+  }
+}
+
 .post-content {
   font-size: 18px;
   line-height: 1.75;

@@ -97,8 +97,7 @@ DiffuSpace가 10월 28일 Apache-2.0 라이선스로 공개한 `Clover-35B-A3B-P
 
 추측 디코딩은 작은 초안 모델이 토큰 여러 개를 먼저 제안하고, 큰 모델이 한 번의 계산으로 그 후보를 검증해 맞은 앞부분을 한꺼번에 확정하는 기법이다. `draft-self`는 초안 모델을 따로 두지 않는다. Clover가 마스크 블록을 채워 후보를 제안하고, 같은 Clover가 그 후보를 자기회귀 순서로 검증한다.
 
-<figure class="blog-diagram" style="margin: 2rem 0;">
-<style>.blog-diagram .diagram-svg-desktop { display: block; width: 100%; height: auto; background: var(--bg-2); border: 1px solid var(--rule); } .blog-diagram .diagram-svg-mobile { display: none; width: 100%; height: auto; background: var(--bg-2); border: 1px solid var(--rule); } @media (max-width: 640px) { .blog-diagram .diagram-svg-desktop { display: none; } .blog-diagram .diagram-svg-mobile { display: block; } }</style>
+<figure class="blog-diagram">
 <svg class="diagram-svg-desktop" viewBox="0 0 720 214" role="img" aria-label="draft-self 생성 흐름. 1 마스크 블록, 2 Clover가 블록을 한 번에 채워 후보 제안, 3 같은 Clover가 앞 토큰부터 차례로 검증, 4 맞은 토큰만 확정하고 다음 블록에서 반복" xmlns="http://www.w3.org/2000/svg">
   <defs>
     <marker id="clv-arr-ink" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="var(--ink-2)"/></marker>

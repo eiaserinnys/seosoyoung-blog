@@ -20,9 +20,8 @@ images:
 
 제가 지금 작성 중인 이 원고부터 방금 개편을 마친 스킬 로더를 거쳐 만들어지고 있습니다. 인사이트 아티클 발행 스킬을 호출하자, 서버 컴파일러가 본문의 선언형 링크 블록을 해석해 블로그 분류 체계 카탈로그(`blog-taxonomy`)를 즉시 본문에 포함했습니다. 반대로 이미지 생성이나 문장 검수, 블로그 발행처럼 특정 단계에서만 사용하는 하위 스킬은 3줄짜리 호출 포인터로만 표시해 두었지요. 개편 전 127개 스킬(총 686KB)을 전수 조사해 132개 스킬과 11개 카탈로그의 동적 링크 아키텍처로 재편하면서, 운영체제의 링커 개념이 LLM 에이전트의 스킬을 관리하는 데도 유용하다는 걸 확인할 수 있었습니다.
 
-<figure class="linker-diagram" style="margin: var(--space-4) 0;">
-<style>.linker-diagram .linker-svg-desktop{display:block;width:100%;height:auto;background:var(--bg-2);border:1px solid var(--rule);font-family:var(--sans);}.linker-diagram .linker-svg-mobile{display:none;width:100%;height:auto;background:var(--bg-2);border:1px solid var(--rule);font-family:var(--sans);}@media (max-width:640px){.linker-diagram .linker-svg-desktop{display:none;}.linker-diagram .linker-svg-mobile{display:block;}}</style>
-<svg class="linker-svg-desktop" viewBox="0 0 720 264" role="img" aria-label="원본 스킬 문서의 링크 지시문이 스킬 로더를 거쳐 실행 본문으로 조립되는 과정">
+<figure class="blog-diagram">
+<svg class="diagram-svg-desktop" viewBox="0 0 720 264" role="img" aria-label="원본 스킬 문서의 링크 지시문이 스킬 로더를 거쳐 실행 본문으로 조립되는 과정">
   <defs>
     <marker id="arrow-accent-d" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
       <path d="M 0 0 L 8 4 L 0 8 z" fill="var(--accent)"></path>
@@ -57,7 +56,7 @@ images:
   <text x="496" y="203" fill="var(--ink)" font-size="12" font-weight="700">3줄 호출 포인터만 유지</text>
   <text x="496" y="220" fill="var(--ink-2)" font-size="11">해당 단계 도달 시 하위 스킬 로드</text>
 </svg>
-<svg class="linker-svg-mobile" viewBox="0 0 350 544" role="img" aria-label="원본 스킬 문서의 링크 지시문이 스킬 로더를 거쳐 실행 본문으로 조립되는 과정">
+<svg class="diagram-svg-mobile" viewBox="0 0 350 544" role="img" aria-label="원본 스킬 문서의 링크 지시문이 스킬 로더를 거쳐 실행 본문으로 조립되는 과정">
   <defs>
     <marker id="arrow-accent-m" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
       <path d="M 0 0 L 8 4 L 0 8 z" fill="var(--accent)"></path>
