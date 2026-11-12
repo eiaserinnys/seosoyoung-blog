@@ -263,7 +263,139 @@ A10_CONFIGS = ("min360-light", "narrow-light", "min390-light", "min414-light", "
 A11_NARROW_CONFIGS = ("min360-light", "narrow-light", "min390-light", "min414-light")
 A12_CONFIGS = ("wide-light", "wide-dark", "narrow-light", "narrow-dark")
 A13_CONFIGS = A12_CONFIGS
+A16_CONFIGS = ("min360-light", "narrow-light", "min390-light", "min414-light", "mid-light", "wide-light", "wide-dark", "narrow-dark")
 ROW_WIDTH_TOL = 0.5
+DIAGRAM_MIN_EFF_PX = 10.9
+DIAGRAM_HEADER_RIGHT_TOL = 1.5
+DIAGRAM_SWATCH_GAP_TOL = 1.5
+DIAGRAM_ITEM_GAP_TOL = 2.0
+
+A16_JS = r"""
+() => {
+  const content = document.querySelector('.post-content');
+  if (!content) return {figs: []};
+  const figs = [...content.querySelectorAll('figure.blog-diagram')];
+  const out = figs.map((fig, fi) => {
+    const visibleSvgs = [...fig.querySelectorAll('svg')].filter(
+      (s) => getComputedStyle(s).display !== 'none'
+    );
+    const svg = visibleSvgs[0];
+    if (!svg) {
+      return {fig: fi + 1, visibleSvgCount: 0, pInside: fig.querySelectorAll('p').length,
+              brInside: fig.querySelectorAll('br').length};
+    }
+    const r = svg.getBoundingClientRect();
+    const vb = svg.viewBox.baseVal;
+    const scale = r.width / (vb.width || 1);
+    const texts = [...svg.querySelectorAll('text')].map((t) => {
+      const b = t.getBBox();
+      const fs = parseFloat(getComputedStyle(t).fontSize);
+      return {
+        text: t.textContent.trim(),
+        fs,
+        eff: +(fs * scale).toFixed(2),
+        x: b.x,
+        y: b.y,
+        w: b.width,
+        h: b.height,
+        r: +(b.x + b.width).toFixed(1),
+        fill: getComputedStyle(t).fill,
+        anchor: t.getAttribute('text-anchor') || 'start',
+      };
+    });
+    const rects = [...svg.querySelectorAll('rect')]
+      .map((rc) => ({
+        x: +rc.getAttribute('x') || 0,
+        y: +rc.getAttribute('y') || 0,
+        w: +rc.getAttribute('width'),
+        h: +rc.getAttribute('height'),
+        fill: rc.getAttribute('fill'),
+        stroke: rc.getAttribute('stroke'),
+      }))
+      .filter((rc) => !(rc.w === vb.width && rc.h === vb.height));
+    const outside = texts
+      .filter((t) => t.x < -0.5 || t.y < -0.5 || t.x + t.w > vb.width + 0.5 || t.y + t.h > vb.height + 0.5)
+      .map((t) => ({text: t.text, tb: [+t.x.toFixed(1), +t.y.toFixed(1), +t.w.toFixed(1), +t.h.toFixed(1)]}));
+    const ov = [];
+    for (let i = 0; i < texts.length; i++) {
+      for (let j = i + 1; j < texts.length; j++) {
+        const a = texts[i], b = texts[j];
+        const ix = Math.min(a.x + a.w, b.x + b.w) - Math.max(a.x, b.x);
+        const iy = Math.min(a.y + a.h, b.y + b.h) - Math.max(a.y, b.y);
+        if (ix > 0.5 && iy > 0.5) ov.push([a.text, b.text, +ix.toFixed(1), +iy.toFixed(1)]);
+      }
+    }
+    const cross = [];
+    texts.forEach((t) => rects.forEach((rc) => {
+      const inside = (px, py) => px >= rc.x - 0.5 && px <= rc.x + rc.w + 0.5
+                              && py >= rc.y - 0.5 && py <= rc.y + rc.h + 0.5;
+      const strictIn = (px, py) => px > rc.x + 0.5 && px < rc.x + rc.w - 0.5
+                                && py > rc.y + 0.5 && py < rc.y + rc.h - 0.5;
+      const inCount = [strictIn(t.x, t.y), strictIn(t.x + t.w, t.y),
+                       strictIn(t.x, t.y + t.h), strictIn(t.x + t.w, t.y + t.h)].filter(Boolean).length;
+      const outCount = [!inside(t.x, t.y), !inside(t.x + t.w, t.y),
+                        !inside(t.x, t.y + t.h), !inside(t.x + t.w, t.y + t.h)].filter(Boolean).length;
+      if (inCount > 0 && outCount > 0) {
+        cross.push({text: t.text, rect: [rc.x, rc.y, rc.w, rc.h],
+                    tb: [+t.x.toFixed(1), +t.y.toFixed(1), +t.w.toFixed(1), +t.h.toFixed(1)]});
+      }
+    }));
+    const boxRects = rects.filter((rc) => rc.w > 40 && rc.h > 24);
+    const headerRules = [...svg.querySelectorAll('line')].filter((l) => {
+      const x1 = +l.getAttribute('x1'), x2 = +l.getAttribute('x2');
+      const y1 = +l.getAttribute('y1'), y2 = +l.getAttribute('y2');
+      if (y1 !== y2 || (x2 - x1) <= vb.width * 0.8) return false;
+      return !boxRects.some((rc) => y1 > rc.y + 1 && y1 < rc.y + rc.h - 1
+                                 && x1 >= rc.x - 1 && x2 <= rc.x + rc.w + 1);
+    });
+    let headerRow = null;
+    if (headerRules.length > 0) {
+      const hr = headerRules[0];
+      const rx1 = +hr.getAttribute('x1'), rx2 = +hr.getAttribute('x2'), ry = +hr.getAttribute('y1');
+      const items = [...svg.querySelectorAll('text, rect')]
+        .map((e) => ({tag: e.tagName.toLowerCase(), t: (e.textContent || '').trim().slice(0, 24), b: e.getBBox()}))
+        .filter((e) => e.b.width > 0 && e.b.y + e.b.height <= ry + 1 && !(e.b.width >= vb.width - 1))
+        .map((e) => ({tag: e.tag, t: e.t, x: +e.b.x.toFixed(1), r: +(e.b.x + e.b.width).toFixed(1),
+                      w: +e.b.width.toFixed(1), cy: +(e.b.y + e.b.height / 2).toFixed(1)}))
+        .sort((a, b) => a.x - b.x);
+      const rightEdge = items.length ? Math.max(...items.map((it) => it.r)) : null;
+      const rightDiff = rightEdge !== null ? +(rx2 - rightEdge).toFixed(1) : null;
+      const swatchGaps = [];
+      const itemGaps = [];
+      for (let i = 0; i < items.length - 1; i++) {
+        if (items[i].tag === 'rect' && items[i + 1].tag === 'text') {
+          swatchGaps.push(+(items[i + 1].x - items[i].r).toFixed(1));
+          if (i + 2 < items.length && items[i + 2].tag === 'rect') {
+            itemGaps.push(+(items[i + 2].x - items[i + 1].r).toFixed(1));
+          }
+        }
+      }
+      headerRow = {rule: [rx1, rx2, ry], items, rightEdge, rightDiff, swatchGaps, itemGaps};
+    }
+    const effs = texts.map((t) => t.eff);
+    return {
+      fig: fi + 1,
+      visibleSvgCount: visibleSvgs.length,
+      pInside: fig.querySelectorAll('p').length,
+      brInside: fig.querySelectorAll('br').length,
+      cls: svg.getAttribute('class'),
+      vb: [vb.width, vb.height],
+      rendered: [+r.width.toFixed(1), +r.height.toFixed(1)],
+      scale: +scale.toFixed(3),
+      minEff: effs.length ? Math.min(...effs) : null,
+      maxEff: effs.length ? Math.max(...effs) : null,
+      textCount: texts.length,
+      small: texts.filter((t) => t.eff < 10.9).map((t) => [t.text, t.eff]),
+      outside,
+      ov,
+      cross,
+      headerRow,
+      caption: fig.querySelector('figcaption') ? fig.querySelector('figcaption').textContent.trim() : null,
+    };
+  });
+  return {figs: out};
+}
+"""
 
 
 def sidenote_presence_ok(wide):
@@ -523,6 +655,60 @@ def a15_checks(path, configs):
         "detail": f"{path} wide-light: blocks={quotes.get('blocks', 0)} "
                   f"hitCount={quotes.get('hitCount', 0)}" + (f" / {sample}" if sample else ""),
     }]
+
+
+def a16_checks(path, configs):
+    has_figs = any(((cfg or {}).get("diagrams") or {}).get("figs") for cfg in configs.values())
+    if not has_figs:
+        return [{"ok": True, "na": True, "detail": f"{path}: 인라인 도표 0건 (A16 해당 없음)"}]
+    entries = []
+    for name in A16_CONFIGS:
+        figs = (((configs.get(name) or {}).get("diagrams")) or {}).get("figs") or []
+        if not figs:
+            continue
+        all_swatch = []
+        all_item = []
+        for f in figs:
+            dom_ok = (f.get("visibleSvgCount") == 1
+                      and f.get("pInside", 0) == 0
+                      and f.get("brInside", 0) == 0)
+            min_eff = f.get("minEff")
+            small = f.get("small") or []
+            outside = f.get("outside") or []
+            ov = f.get("ov") or []
+            cross = f.get("cross") or []
+            hr = f.get("headerRow")
+            hr_diff = hr.get("rightDiff") if hr else None
+            hr_ok = hr is None or (hr_diff is not None and abs(hr_diff) <= DIAGRAM_HEADER_RIGHT_TOL)
+            ok = (dom_ok and min_eff is not None and min_eff >= DIAGRAM_MIN_EFF_PX
+                  and not small and not outside and not ov and not cross and hr_ok)
+            entries.append({
+                "ok": ok,
+                "detail": (
+                    f"{path} {name} fig{f.get('fig')} ({f.get('cls')}): "
+                    f"eff={min_eff}..{f.get('maxEff')} small={len(small)} "
+                    f"outside={len(outside)} ov={len(ov)} cross={len(cross)} "
+                    f"headerRightDiff={hr_diff}"
+                ),
+            })
+            if hr:
+                all_swatch.extend(hr.get("swatchGaps") or [])
+                all_item.extend(hr.get("itemGaps") or [])
+        if len(all_swatch) >= 2:
+            spread = round(max(all_swatch) - min(all_swatch), 1)
+            entries.append({
+                "ok": spread <= DIAGRAM_SWATCH_GAP_TOL,
+                "detail": f"{path} {name} legend swatchGaps={all_swatch} spread={spread}px "
+                          f"(기준 <= {DIAGRAM_SWATCH_GAP_TOL}px)",
+            })
+        if len(all_item) >= 2:
+            spread = round(max(all_item) - min(all_item), 1)
+            entries.append({
+                "ok": spread <= DIAGRAM_ITEM_GAP_TOL,
+                "detail": f"{path} {name} legend itemGaps={all_item} spread={spread}px "
+                          f"(기준 <= {DIAGRAM_ITEM_GAP_TOL}px)",
+            })
+    return entries
 
 
 def summarize_checks(entries, limit=40):

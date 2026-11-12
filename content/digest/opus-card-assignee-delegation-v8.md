@@ -47,7 +47,7 @@ images:
   <rect x="240" y="18" width="464" height="220" fill="var(--bg)" stroke="var(--rule-strong)" stroke-width="1.5"/>
   <text x="256" y="44" font-size="13" font-weight="700" fill="var(--ink)">카드 담당 Opus (대화 누적 유지)</text>
   <rect x="524" y="27" width="164" height="24" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1"/>
-  <text x="606" y="43" text-anchor="middle" font-size="11" font-weight="700" fill="var(--accent)">평균 대화 약 22만 토큰</text>
+  <text x="606" y="43" text-anchor="middle" font-size="11" font-weight="700" fill="var(--ink)">평균 대화 약 22만 토큰</text>
   <line x1="240" y1="58" x2="704" y2="58" stroke="var(--rule)" stroke-width="1"/>
   <rect x="256" y="70" width="210" height="46" fill="var(--bg-2)" stroke="var(--rule)" stroke-width="1"/>
   <text x="268" y="90" font-size="12" font-weight="700" fill="var(--ink)">1. 직접 코드 조사와 검색</text>
@@ -62,7 +62,7 @@ images:
   <text x="490" y="146" font-size="12" font-weight="700" fill="var(--ink)">4. 중간 카드 기록 반복</text>
   <text x="490" y="163" font-size="11" fill="var(--ink-2)">648호출 (입력의 14.3%)</text>
   <rect x="256" y="184" width="432" height="40" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.5"/>
-  <text x="472" y="202" text-anchor="middle" font-size="12" font-weight="700" fill="var(--accent)">도구 1회 호출 = API 1회 호출 = 누적 대화 전체 재입력</text>
+  <text x="472" y="202" text-anchor="middle" font-size="12" font-weight="700" fill="var(--ink)">도구 1회 호출 = API 1회 호출 = 누적 대화 전체 재입력</text>
   <text x="472" y="218" text-anchor="middle" font-size="11" fill="var(--ink-2)">입력 토큰의 98.4%가 캐시 읽기 (18시간 동안 36세션 12.7억 토큰)</text>
 </svg>
 <svg class="diagram-svg-mobile" viewBox="0 0 350 462" role="img" aria-label="옛 구조에서 카드 담당 Opus가 직접 조사와 검증을 반복하며 대화를 재입력하는 흐름 (모바일)" xmlns="http://www.w3.org/2000/svg">
@@ -89,7 +89,7 @@ images:
   <rect x="28" y="342" width="294" height="36" fill="var(--bg-2)" stroke="var(--rule)" stroke-width="1"/>
   <text x="40" y="365" font-size="12" fill="var(--ink)">4. 중간 카드 기록 반복 (648호출)</text>
   <rect x="28" y="388" width="294" height="46" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.5"/>
-  <text x="175" y="408" text-anchor="middle" font-size="12" font-weight="700" fill="var(--accent)">도구 1회 호출마다 누적 대화 전체 재입력</text>
+  <text x="175" y="408" text-anchor="middle" font-size="12" font-weight="700" fill="var(--ink)">도구 1회 호출마다 누적 대화 전체 재입력</text>
   <text x="175" y="426" text-anchor="middle" font-size="12" fill="var(--ink-2)">입력의 98.4%가 캐시 읽기 (12.7억 토큰)</text>
 </svg>
 <figcaption>그림 1. 옛 위임 구조의 비용 발생 경로. 하위 세션의 말뿐인 보고를 믿기 어려워 카드 담당 Opus가 조사와 검증 도구를 직접 불렀고, 호출마다 약 22만 토큰 분량의 대화가 다시 입력됐다.</figcaption>
@@ -98,91 +98,97 @@ images:
 담당이 도구를 거듭 부른 까닭은 하위 모델이 말로 쓴 보고를 그대로 믿기 어려웠기 때문이다. 하위 세션의 완료 알림으로 시작된 검수 55턴을 살피자 완료 보고와 달리 결함이 남아 있던 일이 다섯 건 있었다. 담당이 이 결함들을 직접 확인하고 수습하면서 호출 수가 급증했다[^3].
 
 <figure class="blog-diagram">
-<svg class="diagram-svg-desktop" viewBox="0 0 720 356" role="img" aria-label="카드 담당 Opus 입력 토큰의 작업별 비중 추정 막대그래프" xmlns="http://www.w3.org/2000/svg">
-  <rect width="720" height="356" fill="var(--bg-2)"/>
-  <text x="24" y="34" font-size="13" font-weight="700" fill="var(--ink)">카드 담당 Opus 입력 토큰의 작업별 비중 (직전 도구 결과 기준 추정)</text>
-  <text x="696" y="34" text-anchor="end" font-family="var(--mono)" font-size="11" fill="var(--ink-2)">2026-11-11 00:00~18:10, 7세션</text>
-  <line x1="24" y1="46" x2="696" y2="46" stroke="var(--rule)" stroke-width="1"/>
-  <text x="156" y="76" text-anchor="end" font-size="12" font-weight="700" fill="var(--accent)">직접 조사</text>
-  <line x1="168" y1="72" x2="528" y2="72" stroke="var(--rule)" stroke-width="1"/>
-  <rect x="168" y="64" width="336.8" height="16" fill="var(--accent)"/>
-  <text x="514.8" y="76" font-family="var(--mono)" font-size="12" font-weight="700" fill="var(--accent)">42.1% (1,905호출)</text>
-  <text x="156" y="107" text-anchor="end" font-size="12" font-weight="400" fill="var(--ink)">그 밖</text>
-  <line x1="168" y1="103" x2="528" y2="103" stroke="var(--rule)" stroke-width="1"/>
-  <rect x="168" y="95" width="145.6" height="16" fill="var(--ink-2)"/>
-  <text x="323.6" y="107" font-family="var(--mono)" font-size="12" font-weight="400" fill="var(--ink)">18.2%</text>
-  <text x="156" y="138" text-anchor="end" font-size="12" font-weight="700" fill="var(--accent)">카드 관리</text>
-  <line x1="168" y1="134" x2="528" y2="134" stroke="var(--rule)" stroke-width="1"/>
-  <rect x="168" y="126" width="114.4" height="16" fill="var(--accent)"/>
-  <text x="292.4" y="138" font-family="var(--mono)" font-size="12" font-weight="700" fill="var(--accent)">14.3% (648호출)</text>
-  <text x="156" y="169" text-anchor="end" font-size="12" font-weight="400" fill="var(--ink)">위임과 결과 읽기</text>
-  <line x1="168" y1="165" x2="528" y2="165" stroke="var(--rule)" stroke-width="1"/>
-  <rect x="168" y="157" width="62.4" height="16" fill="var(--ink-2)"/>
-  <text x="240.4" y="169" font-family="var(--mono)" font-size="12" font-weight="400" fill="var(--ink)">7.8%</text>
-  <text x="156" y="200" text-anchor="end" font-size="12" font-weight="400" fill="var(--ink)">배포와 머지</text>
-  <line x1="168" y1="196" x2="528" y2="196" stroke="var(--rule)" stroke-width="1"/>
-  <rect x="168" y="188" width="41.6" height="16" fill="var(--ink-2)"/>
-  <text x="219.6" y="200" font-family="var(--mono)" font-size="12" font-weight="400" fill="var(--ink)">5.2%</text>
-  <text x="156" y="231" text-anchor="end" font-size="12" font-weight="400" fill="var(--ink)">임시 파일</text>
-  <line x1="168" y1="227" x2="528" y2="227" stroke="var(--rule)" stroke-width="1"/>
-  <rect x="168" y="219" width="32.0" height="16" fill="var(--ink-2)"/>
-  <text x="210.0" y="231" font-family="var(--mono)" font-size="12" font-weight="400" fill="var(--ink)">4.0%</text>
-  <text x="156" y="262" text-anchor="end" font-size="12" font-weight="400" fill="var(--ink)">스킬과 규칙 읽기</text>
-  <line x1="168" y1="258" x2="528" y2="258" stroke="var(--rule)" stroke-width="1"/>
-  <rect x="168" y="250" width="29.6" height="16" fill="var(--ink-2)"/>
-  <text x="207.6" y="262" font-family="var(--mono)" font-size="12" font-weight="400" fill="var(--ink)">3.7%</text>
-  <text x="156" y="293" text-anchor="end" font-size="12" font-weight="400" fill="var(--ink)">직접 시험과 빌드</text>
-  <line x1="168" y1="289" x2="528" y2="289" stroke="var(--rule)" stroke-width="1"/>
-  <rect x="168" y="281" width="20.0" height="16" fill="var(--ink-2)"/>
-  <text x="198.0" y="293" font-family="var(--mono)" font-size="12" font-weight="400" fill="var(--ink)">2.5% (91호출)</text>
-  <text x="156" y="324" text-anchor="end" font-size="12" font-weight="400" fill="var(--ink)">직접 구현</text>
-  <line x1="168" y1="320" x2="528" y2="320" stroke="var(--rule)" stroke-width="1"/>
-  <rect x="168" y="312" width="2.5" height="16" fill="var(--ink-2)"/>
-  <text x="180.5" y="324" font-family="var(--mono)" font-size="12" font-weight="400" fill="var(--ink)">0.3% (14호출)</text>
+<svg class="diagram-svg-desktop" viewBox="0 0 720 348" role="img" aria-label="카드 담당 Opus 입력 토큰의 작업별 비중 추정 막대그래프" xmlns="http://www.w3.org/2000/svg">
+  <rect width="720" height="348" fill="var(--bg-2)"/>
+  <text x="24" y="29" font-size="11" fill="var(--ink-2)">2026-11-11 00:00~18:10 (단위: 입력 토큰 비중 %)</text>
+  <rect x="556.1" y="19" width="10" height="10" fill="var(--accent)"/>
+  <text x="612.7" y="29" text-anchor="end" text-rendering="geometricPrecision" font-size="11" font-weight="700" fill="var(--ink)">절감 대상</text>
+  <rect x="629.2" y="19" width="10" height="10" fill="var(--ink-2)"/>
+  <text x="695.5" y="29" text-anchor="end" text-rendering="geometricPrecision" font-size="11" fill="var(--ink-2)">나머지 항목</text>
+  <line x1="24" y1="40" x2="696" y2="40" stroke="var(--rule)" stroke-width="1"/>
+  <text x="156" y="68" text-anchor="end" font-size="12" font-weight="700" fill="var(--accent)">직접 조사</text>
+  <line x1="168" y1="64" x2="528" y2="64" stroke="var(--rule)" stroke-width="1"/>
+  <rect x="168" y="56" width="336.8" height="16" fill="var(--accent)"/>
+  <text x="514.8" y="68" font-family="var(--mono)" font-size="12" font-weight="700" fill="var(--accent)">42.1% (1,905호출)</text>
+  <text x="156" y="99" text-anchor="end" font-size="12" font-weight="400" fill="var(--ink)">그 밖</text>
+  <line x1="168" y1="95" x2="528" y2="95" stroke="var(--rule)" stroke-width="1"/>
+  <rect x="168" y="87" width="145.6" height="16" fill="var(--ink-2)"/>
+  <text x="323.6" y="99" font-family="var(--mono)" font-size="12" font-weight="400" fill="var(--ink)">18.2%</text>
+  <text x="156" y="130" text-anchor="end" font-size="12" font-weight="700" fill="var(--accent)">카드 관리</text>
+  <line x1="168" y1="126" x2="528" y2="126" stroke="var(--rule)" stroke-width="1"/>
+  <rect x="168" y="118" width="114.4" height="16" fill="var(--accent)"/>
+  <text x="292.4" y="130" font-family="var(--mono)" font-size="12" font-weight="700" fill="var(--accent)">14.3% (648호출)</text>
+  <text x="156" y="161" text-anchor="end" font-size="12" font-weight="400" fill="var(--ink)">위임과 결과 읽기</text>
+  <line x1="168" y1="157" x2="528" y2="157" stroke="var(--rule)" stroke-width="1"/>
+  <rect x="168" y="149" width="62.4" height="16" fill="var(--ink-2)"/>
+  <text x="240.4" y="161" font-family="var(--mono)" font-size="12" font-weight="400" fill="var(--ink)">7.8%</text>
+  <text x="156" y="192" text-anchor="end" font-size="12" font-weight="400" fill="var(--ink)">배포와 머지</text>
+  <line x1="168" y1="188" x2="528" y2="188" stroke="var(--rule)" stroke-width="1"/>
+  <rect x="168" y="180" width="41.6" height="16" fill="var(--ink-2)"/>
+  <text x="219.6" y="192" font-family="var(--mono)" font-size="12" font-weight="400" fill="var(--ink)">5.2%</text>
+  <text x="156" y="223" text-anchor="end" font-size="12" font-weight="400" fill="var(--ink)">임시 파일</text>
+  <line x1="168" y1="219" x2="528" y2="219" stroke="var(--rule)" stroke-width="1"/>
+  <rect x="168" y="211" width="32.0" height="16" fill="var(--ink-2)"/>
+  <text x="210.0" y="223" font-family="var(--mono)" font-size="12" font-weight="400" fill="var(--ink)">4.0%</text>
+  <text x="156" y="254" text-anchor="end" font-size="12" font-weight="400" fill="var(--ink)">스킬과 규칙 읽기</text>
+  <line x1="168" y1="250" x2="528" y2="250" stroke="var(--rule)" stroke-width="1"/>
+  <rect x="168" y="242" width="29.6" height="16" fill="var(--ink-2)"/>
+  <text x="207.6" y="254" font-family="var(--mono)" font-size="12" font-weight="400" fill="var(--ink)">3.7%</text>
+  <text x="156" y="285" text-anchor="end" font-size="12" font-weight="400" fill="var(--ink)">직접 시험과 빌드</text>
+  <line x1="168" y1="281" x2="528" y2="281" stroke="var(--rule)" stroke-width="1"/>
+  <rect x="168" y="273" width="20.0" height="16" fill="var(--ink-2)"/>
+  <text x="198.0" y="285" font-family="var(--mono)" font-size="12" font-weight="400" fill="var(--ink)">2.5% (91호출)</text>
+  <text x="156" y="316" text-anchor="end" font-size="12" font-weight="400" fill="var(--ink)">직접 구현</text>
+  <line x1="168" y1="312" x2="528" y2="312" stroke="var(--rule)" stroke-width="1"/>
+  <rect x="168" y="304" width="2.5" height="16" fill="var(--ink-2)"/>
+  <text x="180.5" y="316" font-family="var(--mono)" font-size="12" font-weight="400" fill="var(--ink)">0.3% (14호출)</text>
 </svg>
-<svg class="diagram-svg-mobile" viewBox="0 0 350 444" role="img" aria-label="카드 담당 Opus 입력 토큰의 작업별 비중 추정 막대그래프 (모바일)" xmlns="http://www.w3.org/2000/svg">
-  <rect width="350" height="444" fill="var(--bg-2)"/>
-  <text x="16" y="30" font-size="13" font-weight="700" fill="var(--ink)">담당 Opus 입력 토큰의 작업별 비중 (추정)</text>
-  <text x="16" y="48" font-size="12" fill="var(--ink-2)">직전 도구 결과 기준, 11-11 00:00~18:10 (7세션)</text>
-  <line x1="16" y1="58" x2="334" y2="58" stroke="var(--rule)" stroke-width="1"/>
-  <text x="16" y="86" font-size="12" font-weight="700" fill="var(--accent)">직접 조사</text>
-  <text x="334" y="86" text-anchor="end" font-family="var(--mono)" font-size="12" font-weight="700" fill="var(--accent)">42.1% (1,905호출)</text>
-  <line x1="16" y1="98" x2="334" y2="98" stroke="var(--rule)" stroke-width="6"/>
-  <rect x="16" y="94" width="297.5" height="8" fill="var(--accent)"/>
-  <text x="16" y="126" font-size="12" font-weight="400" fill="var(--ink)">그 밖</text>
-  <text x="334" y="126" text-anchor="end" font-family="var(--mono)" font-size="12" font-weight="400" fill="var(--ink)">18.2%</text>
-  <line x1="16" y1="138" x2="334" y2="138" stroke="var(--rule)" stroke-width="6"/>
-  <rect x="16" y="134" width="128.6" height="8" fill="var(--ink-2)"/>
-  <text x="16" y="166" font-size="12" font-weight="700" fill="var(--accent)">카드 관리</text>
-  <text x="334" y="166" text-anchor="end" font-family="var(--mono)" font-size="12" font-weight="700" fill="var(--accent)">14.3% (648호출)</text>
-  <line x1="16" y1="178" x2="334" y2="178" stroke="var(--rule)" stroke-width="6"/>
-  <rect x="16" y="174" width="101.1" height="8" fill="var(--accent)"/>
-  <text x="16" y="206" font-size="12" font-weight="400" fill="var(--ink)">위임과 결과 읽기</text>
-  <text x="334" y="206" text-anchor="end" font-family="var(--mono)" font-size="12" font-weight="400" fill="var(--ink)">7.8%</text>
-  <line x1="16" y1="218" x2="334" y2="218" stroke="var(--rule)" stroke-width="6"/>
-  <rect x="16" y="214" width="55.1" height="8" fill="var(--ink-2)"/>
-  <text x="16" y="246" font-size="12" font-weight="400" fill="var(--ink)">배포와 머지</text>
-  <text x="334" y="246" text-anchor="end" font-family="var(--mono)" font-size="12" font-weight="400" fill="var(--ink)">5.2%</text>
-  <line x1="16" y1="258" x2="334" y2="258" stroke="var(--rule)" stroke-width="6"/>
-  <rect x="16" y="254" width="36.7" height="8" fill="var(--ink-2)"/>
-  <text x="16" y="286" font-size="12" font-weight="400" fill="var(--ink)">임시 파일</text>
-  <text x="334" y="286" text-anchor="end" font-family="var(--mono)" font-size="12" font-weight="400" fill="var(--ink)">4.0%</text>
-  <line x1="16" y1="298" x2="334" y2="298" stroke="var(--rule)" stroke-width="6"/>
-  <rect x="16" y="294" width="28.3" height="8" fill="var(--ink-2)"/>
-  <text x="16" y="326" font-size="12" font-weight="400" fill="var(--ink)">스킬과 규칙 읽기</text>
-  <text x="334" y="326" text-anchor="end" font-family="var(--mono)" font-size="12" font-weight="400" fill="var(--ink)">3.7%</text>
-  <line x1="16" y1="338" x2="334" y2="338" stroke="var(--rule)" stroke-width="6"/>
-  <rect x="16" y="334" width="26.1" height="8" fill="var(--ink-2)"/>
-  <text x="16" y="366" font-size="12" font-weight="400" fill="var(--ink)">직접 시험과 빌드</text>
-  <text x="334" y="366" text-anchor="end" font-family="var(--mono)" font-size="12" font-weight="400" fill="var(--ink)">2.5% (91호출)</text>
-  <line x1="16" y1="378" x2="334" y2="378" stroke="var(--rule)" stroke-width="6"/>
-  <rect x="16" y="374" width="17.7" height="8" fill="var(--ink-2)"/>
-  <text x="16" y="406" font-size="12" font-weight="400" fill="var(--ink)">직접 구현</text>
-  <text x="334" y="406" text-anchor="end" font-family="var(--mono)" font-size="12" font-weight="400" fill="var(--ink)">0.3% (14호출)</text>
-  <line x1="16" y1="418" x2="334" y2="418" stroke="var(--rule)" stroke-width="6"/>
-  <rect x="16" y="414" width="2.5" height="8" fill="var(--ink-2)"/>
+<svg class="diagram-svg-mobile" viewBox="0 0 350 426" role="img" aria-label="카드 담당 Opus 입력 토큰의 작업별 비중 추정 막대그래프 (모바일)" xmlns="http://www.w3.org/2000/svg">
+  <rect width="350" height="426" fill="var(--bg-2)"/>
+  <text x="16" y="30" font-size="12" fill="var(--ink-2)">11-11 00:00~18:10 (%)</text>
+  <rect x="186.2" y="20" width="10" height="10" fill="var(--accent)"/>
+  <text x="246.5" y="30" text-anchor="end" text-rendering="geometricPrecision" font-size="12" font-weight="700" fill="var(--ink)">절감 대상</text>
+  <rect x="263.1" y="20" width="10" height="10" fill="var(--ink-2)"/>
+  <text x="334.0" y="30" text-anchor="end" text-rendering="geometricPrecision" font-size="12" fill="var(--ink-2)">나머지 항목</text>
+  <line x1="16" y1="42" x2="334" y2="42" stroke="var(--rule)" stroke-width="1"/>
+  <text x="16" y="68" font-size="12" font-weight="700" fill="var(--accent)">직접 조사</text>
+  <text x="334" y="68" text-anchor="end" font-family="var(--mono)" font-size="12" font-weight="700" fill="var(--accent)">42.1% (1,905호출)</text>
+  <line x1="16" y1="80" x2="334" y2="80" stroke="var(--rule)" stroke-width="6"/>
+  <rect x="16" y="76" width="297.5" height="8" fill="var(--accent)"/>
+  <text x="16" y="108" font-size="12" font-weight="400" fill="var(--ink)">그 밖</text>
+  <text x="334" y="108" text-anchor="end" font-family="var(--mono)" font-size="12" font-weight="400" fill="var(--ink)">18.2%</text>
+  <line x1="16" y1="120" x2="334" y2="120" stroke="var(--rule)" stroke-width="6"/>
+  <rect x="16" y="116" width="128.6" height="8" fill="var(--ink-2)"/>
+  <text x="16" y="148" font-size="12" font-weight="700" fill="var(--accent)">카드 관리</text>
+  <text x="334" y="148" text-anchor="end" font-family="var(--mono)" font-size="12" font-weight="700" fill="var(--accent)">14.3% (648호출)</text>
+  <line x1="16" y1="160" x2="334" y2="160" stroke="var(--rule)" stroke-width="6"/>
+  <rect x="16" y="156" width="101.1" height="8" fill="var(--accent)"/>
+  <text x="16" y="188" font-size="12" font-weight="400" fill="var(--ink)">위임과 결과 읽기</text>
+  <text x="334" y="188" text-anchor="end" font-family="var(--mono)" font-size="12" font-weight="400" fill="var(--ink)">7.8%</text>
+  <line x1="16" y1="200" x2="334" y2="200" stroke="var(--rule)" stroke-width="6"/>
+  <rect x="16" y="196" width="55.1" height="8" fill="var(--ink-2)"/>
+  <text x="16" y="228" font-size="12" font-weight="400" fill="var(--ink)">배포와 머지</text>
+  <text x="334" y="228" text-anchor="end" font-family="var(--mono)" font-size="12" font-weight="400" fill="var(--ink)">5.2%</text>
+  <line x1="16" y1="240" x2="334" y2="240" stroke="var(--rule)" stroke-width="6"/>
+  <rect x="16" y="236" width="36.7" height="8" fill="var(--ink-2)"/>
+  <text x="16" y="268" font-size="12" font-weight="400" fill="var(--ink)">임시 파일</text>
+  <text x="334" y="268" text-anchor="end" font-family="var(--mono)" font-size="12" font-weight="400" fill="var(--ink)">4.0%</text>
+  <line x1="16" y1="280" x2="334" y2="280" stroke="var(--rule)" stroke-width="6"/>
+  <rect x="16" y="276" width="28.3" height="8" fill="var(--ink-2)"/>
+  <text x="16" y="308" font-size="12" font-weight="400" fill="var(--ink)">스킬과 규칙 읽기</text>
+  <text x="334" y="308" text-anchor="end" font-family="var(--mono)" font-size="12" font-weight="400" fill="var(--ink)">3.7%</text>
+  <line x1="16" y1="320" x2="334" y2="320" stroke="var(--rule)" stroke-width="6"/>
+  <rect x="16" y="316" width="26.1" height="8" fill="var(--ink-2)"/>
+  <text x="16" y="348" font-size="12" font-weight="400" fill="var(--ink)">직접 시험과 빌드</text>
+  <text x="334" y="348" text-anchor="end" font-family="var(--mono)" font-size="12" font-weight="400" fill="var(--ink)">2.5% (91호출)</text>
+  <line x1="16" y1="360" x2="334" y2="360" stroke="var(--rule)" stroke-width="6"/>
+  <rect x="16" y="356" width="17.7" height="8" fill="var(--ink-2)"/>
+  <text x="16" y="388" font-size="12" font-weight="400" fill="var(--ink)">직접 구현</text>
+  <text x="334" y="388" text-anchor="end" font-family="var(--mono)" font-size="12" font-weight="400" fill="var(--ink)">0.3% (14호출)</text>
+  <line x1="16" y1="400" x2="334" y2="400" stroke="var(--rule)" stroke-width="6"/>
+  <rect x="16" y="396" width="2.5" height="8" fill="var(--ink-2)"/>
 </svg>
-<figcaption>그림 2. 카드 담당 Opus 일곱 세션의 입력 토큰을 작업 종류별로 분해한 추정치(직전 도구 결과 기준). 직접 구현은 0.3%뿐이었고 직접 조사(42.1%)와 카드 관리(14.3%)의 비중이 가장 컸다.</figcaption>
+<figcaption>그림 2. 카드 담당 Opus 일곱 세션의 입력 토큰을 작업 종류별로 분해한 추정치(직전 도구 결과 기준). 직접 구현은 0.3%뿐이었고 직접 조사(42.1%), 그 밖(18.2%), 카드 관리(14.3%) 순으로 비중이 컸다.</figcaption>
 </figure>
 
 ## 2. 위임 구조 8판: 모델의 보고 대신 기계의 봉인을 읽는다
@@ -199,7 +205,7 @@ images:
   </defs>
   <rect width="720" height="388" fill="var(--bg-2)"/>
   <rect x="16" y="18" width="444" height="134" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.5"/>
-  <text x="30" y="44" font-size="13" font-weight="700" fill="var(--accent)">카드 담당 (Opus, 대화 압축 상한 25만)</text>
+  <text x="30" y="44" font-size="13" font-weight="700" fill="var(--ink)">카드 담당 (Opus, 대화 압축 상한 25만)</text>
   <line x1="16" y1="56" x2="460" y2="56" stroke="var(--accent)" stroke-width="1"/>
   <text x="30" y="78" font-size="12" font-weight="700" fill="var(--ink)">허용 도구:</text>
   <text x="92" y="78" font-size="12" fill="var(--ink)">기준본 작성, 발췌 읽기, 하위 위임, 눈 호출, 승인 1회</text>
@@ -209,7 +215,7 @@ images:
   <line x1="460" y1="72" x2="494" y2="72" stroke="var(--accent)" stroke-width="1.5" marker-end="url(#arr-acc-f3d)"/>
   <line x1="496" y1="98" x2="462" y2="98" stroke="var(--accent)" stroke-width="1.5" marker-end="url(#arr-acc-f3d)"/>
   <rect x="498" y="18" width="206" height="134" fill="var(--bg)" stroke="var(--accent)" stroke-width="1.5" stroke-dasharray="4,3"/>
-  <text x="512" y="44" font-size="13" font-weight="700" fill="var(--accent)">눈 (읽기 전용 Opus)</text>
+  <text x="512" y="44" font-size="13" font-weight="700" fill="var(--ink)">눈 (읽기 전용 Opus)</text>
   <line x1="498" y1="56" x2="704" y2="56" stroke="var(--rule)" stroke-width="1"/>
   <text x="512" y="78" font-size="12" fill="var(--ink)">별도 컨텍스트에서 파일과</text>
   <text x="512" y="98" font-size="12" fill="var(--ink)">산출물 그림을 직접 확인</text>
@@ -217,9 +223,9 @@ images:
   <rect x="16" y="172" width="688" height="34" fill="var(--bg)" stroke="var(--rule)" stroke-width="1"/>
   <text x="360" y="194" text-anchor="middle" font-size="12" font-weight="700" fill="var(--ink)">산출물 계약: 담당은 기준본(해시 고정)으로 발주하고, 작업자는 봉인 꾸러미를 제출한다</text>
   <line x1="97" y1="206" x2="97" y2="226" stroke="var(--ink-2)" stroke-width="1.5" marker-end="url(#arr-ink-f3d)"/>
-  <line x1="272" y1="206" x2="272" y2="226" stroke="var(--accent)" stroke-width="1.5" marker-end="url(#arr-acc-f3d)"/>
+  <line x1="272" y1="206" x2="272" y2="226" stroke="var(--ink-2)" stroke-width="1.5" marker-end="url(#arr-ink-f3d)"/>
   <line x1="447" y1="206" x2="447" y2="226" stroke="var(--ink-2)" stroke-width="1.5" marker-end="url(#arr-ink-f3d)"/>
-  <line x1="622" y1="206" x2="622" y2="226" stroke="var(--accent)" stroke-width="1.5" marker-end="url(#arr-acc-f3d)"/>
+  <line x1="622" y1="206" x2="622" y2="226" stroke="var(--ink-2)" stroke-width="1.5" marker-end="url(#arr-ink-f3d)"/>
   <rect x="16" y="230" width="163" height="140" fill="var(--bg)" stroke="var(--rule-strong)" stroke-width="1.5"/>
   <text x="28" y="254" font-size="12" font-weight="700" fill="var(--ink)">조사원 블로썸</text>
   <text x="28" y="271" font-size="11" fill="var(--ink-2)">DeepSeek / Terra / Sol</text>
@@ -249,41 +255,48 @@ images:
   <text x="553" y="320" font-size="11" fill="var(--ink)">담당의 커밋 대조 승인 뒤</text>
   <text x="553" y="338" font-size="11" fill="var(--ink)">2턴: 배포 봉인과 정리</text>
 </svg>
-<svg class="diagram-svg-mobile" viewBox="0 0 350 676" role="img" aria-label="위임 구조 8판의 여섯 역할 분담과 기준본 및 봉인 꾸러미 흐름 (모바일)" xmlns="http://www.w3.org/2000/svg">
+<svg class="diagram-svg-mobile" viewBox="0 0 350 700" role="img" aria-label="위임 구조 8판의 여섯 역할 분담과 기준본 및 봉인 꾸러미 흐름 (모바일)" xmlns="http://www.w3.org/2000/svg">
   <defs>
     <marker id="arr-ink-f3m" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="var(--ink-2)"/></marker>
     <marker id="arr-acc-f3m" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="var(--accent)"/></marker>
   </defs>
-  <rect width="350" height="676" fill="var(--bg-2)"/>
-  <rect x="14" y="16" width="322" height="132" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.5"/>
-  <text x="28" y="40" font-size="13" font-weight="700" fill="var(--accent)">카드 담당 (Opus, 압축 상한 25만)</text>
+  <rect width="350" height="700" fill="var(--bg-2)"/>
+  <rect x="14" y="16" width="322" height="122" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.5"/>
+  <text x="28" y="40" font-size="13" font-weight="700" fill="var(--ink)">카드 담당 (Opus, 압축 상한 25만)</text>
   <line x1="14" y1="52" x2="336" y2="52" stroke="var(--accent)" stroke-width="1"/>
   <text x="28" y="74" font-size="12" fill="var(--ink)">허용: 기준본, 발췌 읽기, 위임, 눈, 승인 1회</text>
   <text x="28" y="96" font-size="12" fill="var(--ink-2)">제외: 일반 셸, 코드 편집, 검색, 하위 로그</text>
   <text x="28" y="118" font-size="12" fill="var(--ink-2)">중간 카드 기록은 상황판 1회로 축소</text>
-  <line x1="175" y1="148" x2="175" y2="172" stroke="var(--accent)" stroke-width="1.5" marker-end="url(#arr-acc-f3m)"/>
-  <rect x="14" y="176" width="322" height="78" fill="var(--bg)" stroke="var(--accent)" stroke-width="1.5" stroke-dasharray="4,3"/>
-  <text x="28" y="200" font-size="13" font-weight="700" fill="var(--accent)">눈 (읽기 전용 Opus 하위)</text>
-  <text x="28" y="222" font-size="12" fill="var(--ink)">별도 컨텍스트에서 파일과 그림을 확인하고</text>
-  <text x="28" y="240" font-size="12" fill="var(--ink-2)">판정과 핵심 원문 몇 줄만 반환</text>
-  <line x1="175" y1="254" x2="175" y2="278" stroke="var(--ink-2)" stroke-width="1.5" marker-end="url(#arr-ink-f3m)"/>
-  <rect x="14" y="282" width="322" height="84" fill="var(--bg)" stroke="var(--rule-strong)" stroke-width="1.5"/>
-  <text x="28" y="306" font-size="12" font-weight="700" fill="var(--ink)">조사원 블로썸 (DeepSeek / Terra / Sol)</text>
-  <text x="28" y="328" font-size="12" fill="var(--ink-2)">요약 없이 원문 발췌와 검색 결과만 담은</text>
-  <text x="28" y="346" font-size="12" fill="var(--ink-2)">조사 꾸러미 작성</text>
-  <rect x="14" y="376" width="322" height="84" fill="var(--bg)" stroke="var(--rule-strong)" stroke-width="1.5"/>
-  <text x="28" y="400" font-size="12" font-weight="700" fill="var(--ink)">구현원 로젤린 (DeepSeek / Terra / Sol)</text>
-  <text x="28" y="422" font-size="12" fill="var(--ink-2)">수정과 시험, PR 작성 뒤 검수 봉인 실행</text>
-  <text x="28" y="440" font-size="12" fill="var(--ink-2)">미통과(종료 코드 1) 시 스스로 1회 수정</text>
-  <rect x="14" y="470" width="322" height="84" fill="var(--bg)" stroke="var(--ink-2)" stroke-width="1" stroke-dasharray="4,3"/>
-  <text x="28" y="494" font-size="12" font-weight="700" fill="var(--ink)">수습공 버터컵 (일회용 Opus)</text>
-  <text x="28" y="516" font-size="12" fill="var(--ink-2)">같은 원인으로 구현원이 2회 실패한 범위만</text>
-  <text x="28" y="534" font-size="12" fill="var(--ink-2)">직접 고치고 검수 봉인</text>
-  <rect x="14" y="564" width="322" height="96" fill="var(--bg)" stroke="var(--rule-strong)" stroke-width="1.5"/>
-  <text x="28" y="588" font-size="12" font-weight="700" fill="var(--ink)">배달원 버블 (일회용 Sol)</text>
-  <text x="28" y="610" font-size="12" fill="var(--ink-2)">1턴 머지와 대기 보고 → 담당 커밋 대조 승인</text>
-  <text x="28" y="628" font-size="12" fill="var(--ink-2)">→ 2턴 배포 완료 확인과 배포 봉인</text>
-  <text x="28" y="646" font-size="12" fill="var(--accent)" font-weight="700">모든 작업자는 봉인된 꾸러미로만 보고</text>
+  <line x1="155" y1="138" x2="155" y2="166" stroke="var(--accent)" stroke-width="1.5" marker-end="url(#arr-acc-f3m)"/>
+  <line x1="195" y1="170" x2="195" y2="142" stroke="var(--accent)" stroke-width="1.5" marker-end="url(#arr-acc-f3m)"/>
+  <rect x="14" y="170" width="322" height="78" fill="var(--bg)" stroke="var(--accent)" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <text x="28" y="194" font-size="13" font-weight="700" fill="var(--ink)">눈 (읽기 전용 Opus)</text>
+  <text x="28" y="216" font-size="12" fill="var(--ink)">별도 컨텍스트에서 파일과 그림을 확인하고</text>
+  <text x="28" y="234" font-size="12" fill="var(--ink-2)">판정과 핵심 원문 몇 줄만 반환</text>
+  <rect x="14" y="264" width="322" height="54" fill="var(--bg)" stroke="var(--rule)" stroke-width="1"/>
+  <text x="175" y="286" text-anchor="middle" font-size="12" font-weight="700" fill="var(--ink)">산출물 계약: 기준본(해시 고정)으로 발주</text>
+  <text x="175" y="306" text-anchor="middle" font-size="12" fill="var(--ink-2)">모든 작업자는 봉인된 꾸러미로만 보고</text>
+  <line x1="24" y1="318" x2="24" y2="644" stroke="var(--ink-2)" stroke-width="1.5"/>
+  <line x1="24" y1="374" x2="40" y2="374" stroke="var(--ink-2)" stroke-width="1.5" marker-end="url(#arr-ink-f3m)"/>
+  <rect x="44" y="334" width="292" height="80" fill="var(--bg)" stroke="var(--rule-strong)" stroke-width="1.5"/>
+  <text x="56" y="358" font-size="12" font-weight="700" fill="var(--ink)">조사원 블로썸 (DeepSeek / Terra / Sol)</text>
+  <text x="56" y="380" font-size="12" fill="var(--ink-2)">요약 없이 원문 발췌와 검색 결과만 담은</text>
+  <text x="56" y="398" font-size="12" fill="var(--ink-2)">조사 꾸러미 작성</text>
+  <line x1="24" y1="464" x2="40" y2="464" stroke="var(--ink-2)" stroke-width="1.5" marker-end="url(#arr-ink-f3m)"/>
+  <rect x="44" y="424" width="292" height="80" fill="var(--bg)" stroke="var(--rule-strong)" stroke-width="1.5"/>
+  <text x="56" y="448" font-size="12" font-weight="700" fill="var(--ink)">구현원 로젤린 (DeepSeek / Terra / Sol)</text>
+  <text x="56" y="470" font-size="12" fill="var(--ink-2)">수정과 시험, PR 작성 뒤 검수 봉인 실행</text>
+  <text x="56" y="488" font-size="12" fill="var(--ink-2)">미통과(종료 코드 1) 시 스스로 1회 수정</text>
+  <line x1="24" y1="554" x2="40" y2="554" stroke="var(--ink-2)" stroke-width="1.5" marker-end="url(#arr-ink-f3m)"/>
+  <rect x="44" y="514" width="292" height="80" fill="var(--bg)" stroke="var(--ink-2)" stroke-width="1" stroke-dasharray="4,3"/>
+  <text x="56" y="538" font-size="12" font-weight="700" fill="var(--ink)">수습공 버터컵 (일회용 Opus)</text>
+  <text x="56" y="560" font-size="12" fill="var(--ink-2)">같은 원인으로 구현원이 2회 실패한 범위만</text>
+  <text x="56" y="578" font-size="12" fill="var(--ink-2)">직접 고치고 검수 봉인</text>
+  <line x1="24" y1="644" x2="40" y2="644" stroke="var(--ink-2)" stroke-width="1.5" marker-end="url(#arr-ink-f3m)"/>
+  <rect x="44" y="604" width="292" height="80" fill="var(--bg)" stroke="var(--rule-strong)" stroke-width="1.5"/>
+  <text x="56" y="628" font-size="12" font-weight="700" fill="var(--ink)">배달원 버블 (일회용 Sol)</text>
+  <text x="56" y="650" font-size="12" fill="var(--ink-2)">1턴 머지와 대기 보고 → 담당 커밋 승인</text>
+  <text x="56" y="668" font-size="12" fill="var(--ink-2)">→ 2턴 배포 완료 확인과 배포 봉인</text>
 </svg>
 <figcaption>그림 3. 위임 구조 8판의 여섯 역할 분담. 카드 담당 Opus는 일반 셸, 편집, 검색 도구 없이 기준본 발주와 봉인 꾸러미 검수만 맡는다.</figcaption>
 </figure>
@@ -307,9 +320,9 @@ images:
   <line x1="192" y1="138" x2="232" y2="138" stroke="var(--ink-2)" stroke-width="1.5" marker-end="url(#arr-ink-f4d)"/>
   <line x1="192" y1="168" x2="232" y2="220" stroke="var(--ink-2)" stroke-width="1.5" marker-end="url(#arr-ink-f4d)"/>
   <rect x="238" y="18" width="466" height="72" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.5"/>
-  <text x="254" y="42" font-size="12" font-weight="700" fill="var(--accent)">종료 코드 0: 기계 통과</text>
+  <text x="254" y="42" font-size="12" font-weight="700" fill="var(--ink)">종료 코드 0: 기계 통과</text>
   <text x="254" y="61" font-size="11" fill="var(--ink)">잔여물 없음, 검증 명령 모두 0, 대상 커밋 CI 성공 확정, 기준본 해시 일치</text>
-  <text x="254" y="79" font-size="11" font-weight="700" fill="var(--accent)">→ 카드 담당 Opus가 꾸러미만 읽고 설계 부합 여부 판단</text>
+  <text x="254" y="79" font-size="11" font-weight="700" fill="var(--ink)">→ 카드 담당 Opus가 꾸러미만 읽고 설계 부합 여부 판단</text>
   <rect x="238" y="102" width="466" height="72" fill="var(--bg)" stroke="var(--rule-strong)" stroke-width="1.5"/>
   <text x="254" y="126" font-size="12" font-weight="700" fill="var(--ink)">종료 코드 1: 미통과</text>
   <text x="254" y="145" font-size="11" fill="var(--ink-2)">미커밋 잔여물, 검증 명령 실패, 미푸시, CI 실패</text>
@@ -319,32 +332,32 @@ images:
   <text x="254" y="229" font-size="11" fill="var(--ink-2)">대기 한도 초과, CI 조회 불가, CI 커밋 불일치, 기준본 해시 불일치</text>
   <text x="254" y="247" font-size="11" font-weight="700" fill="var(--ink)">→ 구현원이 고칠 수 없어 그대로 봉인해 카드 담당 호출</text>
 </svg>
-<svg class="diagram-svg-mobile" viewBox="0 0 350 458" role="img" aria-label="봉인 스크립트의 종료 코드 0, 1, 2 판정과 후속 처리 흐름 (모바일)" xmlns="http://www.w3.org/2000/svg">
+<svg class="diagram-svg-mobile" viewBox="0 0 350 380" role="img" aria-label="봉인 스크립트의 종료 코드 0, 1, 2 판정과 후속 처리 흐름 (모바일)" xmlns="http://www.w3.org/2000/svg">
   <defs>
     <marker id="arr-ink-f4m" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="var(--ink-2)"/></marker>
     <marker id="arr-acc-f4m" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="var(--accent)"/></marker>
   </defs>
-  <rect width="350" height="458" fill="var(--bg-2)"/>
+  <rect width="350" height="380" fill="var(--bg-2)"/>
   <rect x="14" y="16" width="322" height="74" fill="var(--bg)" stroke="var(--rule-strong)" stroke-width="1.5"/>
   <text x="28" y="40" font-size="13" font-weight="700" fill="var(--ink)">봉인 스크립트 실행</text>
   <text x="28" y="62" font-size="12" fill="var(--ink-2)">기준본 해시, 잔여물, 검증 원출력,</text>
   <text x="28" y="79" font-size="12" fill="var(--ink-2)">대상 커밋 CI 결론, 변경분을 한 꾸러미로 수집</text>
-  <line x1="175" y1="90" x2="175" y2="114" stroke="var(--accent)" stroke-width="1.5" marker-end="url(#arr-acc-f4m)"/>
-  <rect x="14" y="118" width="322" height="102" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.5"/>
-  <text x="28" y="142" font-size="12" font-weight="700" fill="var(--accent)">종료 코드 0: 기계 통과</text>
-  <text x="28" y="164" font-size="12" fill="var(--ink)">잔여물 없음, 검증 0, 대상 CI 성공, 해시 일치</text>
-  <text x="28" y="186" font-size="12" font-weight="700" fill="var(--accent)">→ 카드 담당이 꾸러미만 읽고 합격 판단</text>
-  <text x="28" y="206" font-size="12" fill="var(--ink-2)">(합격 확정이 아닌 검수 준비 완료 신호)</text>
-  <rect x="14" y="232" width="322" height="100" fill="var(--bg)" stroke="var(--rule-strong)" stroke-width="1.5"/>
-  <text x="28" y="256" font-size="12" font-weight="700" fill="var(--ink)">종료 코드 1: 미통과</text>
-  <text x="28" y="278" font-size="12" fill="var(--ink-2)">잔여물 존재, 검증 명령 실패, 미푸시, CI 실패</text>
-  <text x="28" y="300" font-size="12" font-weight="700" fill="var(--ink)">→ 담당 호출 전 구현원이 1회 자체 수정</text>
-  <text x="28" y="318" font-size="12" fill="var(--ink-2)">수습 뒤 재봉인해도 실패하면 그때 보고</text>
-  <rect x="14" y="344" width="322" height="98" fill="var(--bg)" stroke="var(--ink-2)" stroke-width="1" stroke-dasharray="4,3"/>
-  <text x="28" y="368" font-size="12" font-weight="700" fill="var(--ink)">종료 코드 2: 확인 미완료</text>
-  <text x="28" y="390" font-size="12" fill="var(--ink-2)">대기 한도 초과, CI 불명, 해시 불일치</text>
-  <text x="28" y="412" font-size="12" font-weight="700" fill="var(--ink)">→ 그대로 봉인해 카드 담당에게 보고</text>
-  <text x="28" y="430" font-size="12" fill="var(--ink-2)">환경 문제와 기준본 변경을 담당이 판단</text>
+  <line x1="24" y1="90" x2="24" y2="324" stroke="var(--ink-2)" stroke-width="1.5"/>
+  <line x1="24" y1="144" x2="40" y2="144" stroke="var(--ink-2)" stroke-width="1.5" marker-end="url(#arr-ink-f4m)"/>
+  <rect x="44" y="104" width="292" height="80" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.5"/>
+  <text x="56" y="128" font-size="12" font-weight="700" fill="var(--ink)">종료 코드 0: 기계 통과</text>
+  <text x="56" y="150" font-size="12" fill="var(--ink)">잔여물 없음, 검증 0, 대상 CI 성공, 해시 일치</text>
+  <text x="56" y="170" font-size="12" font-weight="700" fill="var(--ink)">→ 카드 담당이 꾸러미만 읽고 합격 판단</text>
+  <line x1="24" y1="234" x2="40" y2="234" stroke="var(--ink-2)" stroke-width="1.5" marker-end="url(#arr-ink-f4m)"/>
+  <rect x="44" y="194" width="292" height="80" fill="var(--bg)" stroke="var(--rule-strong)" stroke-width="1.5"/>
+  <text x="56" y="218" font-size="12" font-weight="700" fill="var(--ink)">종료 코드 1: 미통과</text>
+  <text x="56" y="240" font-size="12" fill="var(--ink-2)">잔여물 존재, 검증 명령 실패, 미푸시, CI 실패</text>
+  <text x="56" y="260" font-size="12" font-weight="700" fill="var(--ink)">→ 담당 호출 전 구현원이 1회 자체 수정</text>
+  <line x1="24" y1="324" x2="40" y2="324" stroke="var(--ink-2)" stroke-width="1.5" marker-end="url(#arr-ink-f4m)"/>
+  <rect x="44" y="284" width="292" height="80" fill="var(--bg)" stroke="var(--ink-2)" stroke-width="1" stroke-dasharray="4,3"/>
+  <text x="56" y="308" font-size="12" font-weight="700" fill="var(--ink)">종료 코드 2: 확인 미완료</text>
+  <text x="56" y="330" font-size="12" fill="var(--ink-2)">대기 한도 초과, CI 불명, 해시 불일치</text>
+  <text x="56" y="350" font-size="12" font-weight="700" fill="var(--ink)">→ 그대로 봉인해 카드 담당에게 보고</text>
 </svg>
 <figcaption>그림 4. 봉인 스크립트의 세 가지 판정 경로. 기계 통과(0)는 합격 확정이 아닌, Opus가 읽을 준비를 마쳤다는 신호다.</figcaption>
 </figure>
@@ -356,60 +369,60 @@ images:
 8판 구조를 코드 카드 세 장(격리 캐시 수정, 배포 관리기 갱신, 재연결 중복 실행 수정)에 시범 적용한 결과 세 장 모두 완료됐고, `눈` 에이전트의 입력까지 합쳐도 검수 턴 평균 입력은 5분의 1로 줄었다[^4].
 
 <figure class="blog-diagram">
-<svg class="diagram-svg-desktop" viewBox="0 0 720 296" role="img" aria-label="옛 담당 55턴과 8판 시범 23턴의 검수 턴 입력 토큰 전후 비교 그래프" xmlns="http://www.w3.org/2000/svg">
-  <rect width="720" height="296" fill="var(--bg-2)"/>
-  <text x="24" y="34" font-size="13" font-weight="700" fill="var(--ink)">검수 턴 입력 토큰 전후 비교 (단위: 백만 토큰)</text>
-  <rect x="442" y="23" width="12" height="12" fill="var(--ink-2)"/>
-  <text x="460" y="34" font-size="11" fill="var(--ink-2)">옛 담당 (5세션 55턴)</text>
-  <rect x="580" y="23" width="12" height="12" fill="var(--accent)"/>
-  <text x="598" y="34" font-size="11" font-weight="700" fill="var(--accent)">8판 시범 (23턴)</text>
-  <line x1="24" y1="48" x2="696" y2="48" stroke="var(--rule)" stroke-width="1"/>
-  <text x="166" y="88" text-anchor="end" font-size="12" font-weight="700" fill="var(--ink)">검수 턴 중앙값</text>
-  <rect x="180" y="68" width="99.8" height="16" fill="var(--ink-2)"/>
-  <text x="289.8" y="80" font-family="var(--mono)" font-size="12" fill="var(--ink-2)">2.85M</text>
-  <rect x="180" y="90" width="19.2" height="16" fill="var(--accent)"/>
-  <text x="209.2" y="102" font-family="var(--mono)" font-size="12" font-weight="700" fill="var(--accent)">0.55M</text>
-  <text x="166" y="146" text-anchor="end" font-size="12" font-weight="700" fill="var(--ink)">상위 10% (P90)</text>
-  <rect x="180" y="126" width="406.0" height="16" fill="var(--ink-2)"/>
-  <text x="596.0" y="138" font-family="var(--mono)" font-size="12" fill="var(--ink-2)">11.60M</text>
-  <rect x="180" y="148" width="33.9" height="16" fill="var(--accent)"/>
-  <text x="223.9" y="160" font-family="var(--mono)" font-size="12" font-weight="700" fill="var(--accent)">0.97M</text>
-  <text x="166" y="204" text-anchor="end" font-size="12" font-weight="700" fill="var(--ink)">평균 (눈 입력 합산)</text>
-  <rect x="180" y="184" width="186.6" height="16" fill="var(--ink-2)"/>
-  <text x="376.6" y="196" font-family="var(--mono)" font-size="12" fill="var(--ink-2)">5.33M</text>
-  <rect x="180" y="206" width="37.1" height="16" fill="var(--accent)"/>
-  <text x="227.1" y="218" font-family="var(--mono)" font-size="12" font-weight="700" fill="var(--accent)">1.06M</text>
-  <rect x="24" y="244" width="328" height="36" fill="var(--bg)" stroke="var(--rule)" stroke-width="1"/>
-  <text x="188" y="267" text-anchor="middle" font-size="12" fill="var(--ink)">검수 턴 일량 중앙값: 도구 16회 → 모델 호출 4회</text>
-  <rect x="368" y="244" width="328" height="36" fill="var(--bg)" stroke="var(--rule)" stroke-width="1"/>
-  <text x="532" y="267" text-anchor="middle" font-size="12" fill="var(--ink)">담당 첫 호출 입력: 0.19M → 0.05M</text>
+<svg class="diagram-svg-desktop" viewBox="0 0 720 288" role="img" aria-label="옛 담당 55턴과 8판 시범 23턴의 검수 턴 입력 토큰 전후 비교 그래프" xmlns="http://www.w3.org/2000/svg">
+  <rect width="720" height="288" fill="var(--bg-2)"/>
+  <text x="24" y="29" font-size="11" fill="var(--ink-2)">단위: 백만 입력 토큰 (M)</text>
+  <rect x="578.1" y="19" width="10" height="10" fill="var(--ink-2)"/>
+  <text x="625.4" y="29" text-anchor="end" text-rendering="geometricPrecision" font-size="11" fill="var(--ink-2)">옛 담당</text>
+  <rect x="641.9" y="19" width="10" height="10" fill="var(--accent)"/>
+  <text x="696.0" y="29" text-anchor="end" text-rendering="geometricPrecision" font-size="11" font-weight="700" fill="var(--ink)">8판 시범</text>
+  <line x1="24" y1="40" x2="696" y2="40" stroke="var(--rule)" stroke-width="1"/>
+  <text x="166" y="80" text-anchor="end" font-size="12" font-weight="700" fill="var(--ink)">검수 턴 중앙값</text>
+  <rect x="180" y="60" width="99.8" height="16" fill="var(--ink-2)"/>
+  <text x="289.8" y="72" font-family="var(--mono)" font-size="12" fill="var(--ink-2)">2.85M</text>
+  <rect x="180" y="82" width="19.2" height="16" fill="var(--accent)"/>
+  <text x="209.2" y="94" font-family="var(--mono)" font-size="12" font-weight="700" fill="var(--accent)">0.55M</text>
+  <text x="166" y="138" text-anchor="end" font-size="12" font-weight="700" fill="var(--ink)">상위 10% (P90)</text>
+  <rect x="180" y="118" width="406.0" height="16" fill="var(--ink-2)"/>
+  <text x="596.0" y="130" font-family="var(--mono)" font-size="12" fill="var(--ink-2)">11.60M</text>
+  <rect x="180" y="140" width="33.9" height="16" fill="var(--accent)"/>
+  <text x="223.9" y="152" font-family="var(--mono)" font-size="12" font-weight="700" fill="var(--accent)">0.97M</text>
+  <text x="166" y="196" text-anchor="end" font-size="12" font-weight="700" fill="var(--ink)">평균 (눈 입력 합산)</text>
+  <rect x="180" y="176" width="186.6" height="16" fill="var(--ink-2)"/>
+  <text x="376.6" y="188" font-family="var(--mono)" font-size="12" fill="var(--ink-2)">5.33M</text>
+  <rect x="180" y="198" width="37.1" height="16" fill="var(--accent)"/>
+  <text x="227.1" y="210" font-family="var(--mono)" font-size="12" font-weight="700" fill="var(--accent)">1.06M</text>
+  <rect x="24" y="236" width="328" height="36" fill="var(--bg)" stroke="var(--rule)" stroke-width="1"/>
+  <text x="188" y="259" text-anchor="middle" font-size="12" fill="var(--ink)">검수 턴 일량 중앙값: 도구 16회 → 모델 호출 4회</text>
+  <rect x="368" y="236" width="328" height="36" fill="var(--bg)" stroke="var(--rule)" stroke-width="1"/>
+  <text x="532" y="259" text-anchor="middle" font-size="12" fill="var(--ink)">담당 첫 호출 입력: 0.19M → 0.05M</text>
 </svg>
-<svg class="diagram-svg-mobile" viewBox="0 0 350 386" role="img" aria-label="검수 턴 입력 토큰 전후 비교 그래프 (모바일)" xmlns="http://www.w3.org/2000/svg">
-  <rect width="350" height="386" fill="var(--bg-2)"/>
-  <text x="16" y="30" font-size="13" font-weight="700" fill="var(--ink)">검수 턴 입력 전후 비교 (백만 토큰)</text>
-  <rect x="16" y="42" width="10" height="10" fill="var(--ink-2)"/>
-  <text x="32" y="52" font-size="12" fill="var(--ink-2)">옛 담당 (55턴)</text>
-  <rect x="148" y="42" width="10" height="10" fill="var(--accent)"/>
-  <text x="164" y="52" font-size="12" font-weight="700" fill="var(--accent)">8판 시범 (23턴)</text>
-  <line x1="16" y1="64" x2="334" y2="64" stroke="var(--rule)" stroke-width="1"/>
-  <text x="16" y="94" font-size="12" font-weight="700" fill="var(--ink)">검수 턴 중앙값</text>
-  <rect x="16" y="104" width="56.1" height="14" fill="var(--ink-2)"/>
-  <text x="80.1" y="116" font-family="var(--mono)" font-size="12" fill="var(--ink-2)">2.85M</text>
-  <rect x="16" y="124" width="10.8" height="14" fill="var(--accent)"/>
-  <text x="34.8" y="136" font-family="var(--mono)" font-size="12" font-weight="700" fill="var(--accent)">0.55M</text>
-  <text x="16" y="174" font-size="12" font-weight="700" fill="var(--ink)">상위 10% (P90)</text>
-  <rect x="16" y="184" width="228.1" height="14" fill="var(--ink-2)"/>
-  <text x="252.1" y="196" font-family="var(--mono)" font-size="12" fill="var(--ink-2)">11.60M</text>
-  <rect x="16" y="204" width="19.1" height="14" fill="var(--accent)"/>
-  <text x="43.1" y="216" font-family="var(--mono)" font-size="12" font-weight="700" fill="var(--accent)">0.97M</text>
-  <text x="16" y="254" font-size="12" font-weight="700" fill="var(--ink)">평균 (눈 입력 합산)</text>
-  <rect x="16" y="264" width="104.8" height="14" fill="var(--ink-2)"/>
-  <text x="128.8" y="276" font-family="var(--mono)" font-size="12" fill="var(--ink-2)">5.33M</text>
-  <rect x="16" y="284" width="20.8" height="14" fill="var(--accent)"/>
-  <text x="44.8" y="296" font-family="var(--mono)" font-size="12" font-weight="700" fill="var(--accent)">1.06M</text>
-  <rect x="16" y="324" width="318" height="48" fill="var(--bg)" stroke="var(--rule)" stroke-width="1"/>
-  <text x="28" y="344" font-size="12" fill="var(--ink)">검수 일량 중앙값: 도구 16회 → 모델 호출 4회</text>
-  <text x="28" y="362" font-size="12" fill="var(--ink-2)">담당 첫 호출 입력: 0.19M → 0.05M</text>
+<svg class="diagram-svg-mobile" viewBox="0 0 350 364" role="img" aria-label="검수 턴 입력 토큰 전후 비교 그래프 (모바일)" xmlns="http://www.w3.org/2000/svg">
+  <rect width="350" height="364" fill="var(--bg-2)"/>
+  <text x="16" y="30" font-size="12" fill="var(--ink-2)">단위: 백만 토큰 (M)</text>
+  <rect x="209.6" y="20" width="10" height="10" fill="var(--ink-2)"/>
+  <text x="259.8" y="30" text-anchor="end" text-rendering="geometricPrecision" font-size="12" fill="var(--ink-2)">옛 담당</text>
+  <rect x="276.4" y="20" width="10" height="10" fill="var(--accent)"/>
+  <text x="334.0" y="30" text-anchor="end" text-rendering="geometricPrecision" font-size="12" font-weight="700" fill="var(--ink)">8판 시범</text>
+  <line x1="16" y1="42" x2="334" y2="42" stroke="var(--rule)" stroke-width="1"/>
+  <text x="16" y="72" font-size="12" font-weight="700" fill="var(--ink)">검수 턴 중앙값</text>
+  <rect x="16" y="82" width="56.1" height="14" fill="var(--ink-2)"/>
+  <text x="80.1" y="94" font-family="var(--mono)" font-size="12" fill="var(--ink-2)">2.85M</text>
+  <rect x="16" y="102" width="10.8" height="14" fill="var(--accent)"/>
+  <text x="34.8" y="114" font-family="var(--mono)" font-size="12" font-weight="700" fill="var(--accent)">0.55M</text>
+  <text x="16" y="152" font-size="12" font-weight="700" fill="var(--ink)">상위 10% (P90)</text>
+  <rect x="16" y="162" width="228.1" height="14" fill="var(--ink-2)"/>
+  <text x="252.1" y="174" font-family="var(--mono)" font-size="12" fill="var(--ink-2)">11.60M</text>
+  <rect x="16" y="182" width="19.1" height="14" fill="var(--accent)"/>
+  <text x="43.1" y="194" font-family="var(--mono)" font-size="12" font-weight="700" fill="var(--accent)">0.97M</text>
+  <text x="16" y="232" font-size="12" font-weight="700" fill="var(--ink)">평균 (눈 입력 합산)</text>
+  <rect x="16" y="242" width="104.8" height="14" fill="var(--ink-2)"/>
+  <text x="128.8" y="254" font-family="var(--mono)" font-size="12" fill="var(--ink-2)">5.33M</text>
+  <rect x="16" y="262" width="20.8" height="14" fill="var(--accent)"/>
+  <text x="44.8" y="274" font-family="var(--mono)" font-size="12" font-weight="700" fill="var(--accent)">1.06M</text>
+  <rect x="16" y="302" width="318" height="48" fill="var(--bg)" stroke="var(--rule)" stroke-width="1"/>
+  <text x="28" y="322" font-size="12" fill="var(--ink)">검수 일량 중앙값: 도구 16회 → 모델 호출 4회</text>
+  <text x="28" y="340" font-size="12" fill="var(--ink-2)">담당 첫 호출 입력: 0.19M → 0.05M</text>
 </svg>
 <figcaption>그림 5. 옛 담당 다섯 세션(검수 55턴)과 8판 시범(검수 23턴)의 입력 토큰 비교. 눈 에이전트가 쓴 입력을 모두 검수 턴에 합산해도 평균이 5.33M 토큰에서 1.06M 토큰으로 줄었다.</figcaption>
 </figure>
@@ -417,67 +430,64 @@ images:
 판단의 질도 유지됐다. 재연결 중복 실행 수정 카드에서는 `눈` 에이전트가 설계에 앞서 오류로 끝난 턴의 기록이 유실되는 원인을 찾아냈다. 카드 담당은 이를 바탕으로 조사원이 제안한 재시도 상한 축소 대신 근본 원인을 고치는 설계를 세웠고, 검수에서는 이번 변경과 무관하게 이미 실패하던 시험 세 건도 가려냈다.
 
 <figure class="blog-diagram">
-<svg class="diagram-svg-desktop" viewBox="0 0 720 304" role="img" aria-label="완료된 8판 시범 카드 세 장의 카드 담당, 눈, 수습공 Opus 입력 토큰 구성 막대그래프" xmlns="http://www.w3.org/2000/svg">
-  <rect width="720" height="304" fill="var(--bg-2)"/>
-  <text x="24" y="34" font-size="13" font-weight="700" fill="var(--ink)">시범 카드 세 장의 Opus 입력 구성 (단위: 백만 토큰)</text>
-  <rect x="386" y="23" width="12" height="12" fill="var(--accent)"/>
-  <text x="403" y="34" font-size="11" fill="var(--ink)">카드 담당</text>
-  <rect x="468" y="23" width="12" height="12" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.5"/>
-  <text x="485" y="34" font-size="11" fill="var(--ink)">눈 (읽기 전용)</text>
-  <rect x="574" y="23" width="12" height="12" fill="var(--ink-2)"/>
-  <text x="591" y="34" font-size="11" fill="var(--ink)">수습공 버터컵</text>
-  <line x1="24" y1="48" x2="696" y2="48" stroke="var(--rule)" stroke-width="1"/>
-  <text x="182" y="81" text-anchor="end" font-size="12" font-weight="700" fill="var(--ink)">격리 캐시 수정</text>
-  <text x="182" y="98" text-anchor="end" font-size="11" fill="var(--ink-2)">완료</text>
-  <rect x="196" y="68" width="123.2" height="18" fill="var(--accent)"/>
-  <rect x="319.2" y="68" width="24.6" height="18" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.5"/>
-  <rect x="343.8" y="68" width="34.8" height="18" fill="var(--ink-2)"/>
-  <text x="388.6" y="82" font-size="12" font-weight="700" fill="var(--ink)">합계 8.30M</text>
-  <text x="196" y="102" font-size="11" fill="var(--ink-2)">담당 5.60M, 눈 1.12M(1회), 수습공 1.58M</text>
-  <text x="182" y="141" text-anchor="end" font-size="12" font-weight="700" fill="var(--ink)">배포 관리기 갱신</text>
-  <text x="182" y="158" text-anchor="end" font-size="11" fill="var(--ink-2)">완료</text>
-  <rect x="196" y="128" width="232.5" height="18" fill="var(--accent)"/>
-  <rect x="428.5" y="128" width="6.6" height="18" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.5"/>
-  <text x="445.1" y="142" font-size="12" font-weight="700" fill="var(--ink)">합계 10.88M</text>
-  <text x="196" y="162" font-size="11" fill="var(--ink-2)">담당 10.57M, 눈 0.30M(4회), 수습공 없음</text>
-  <text x="182" y="201" text-anchor="end" font-size="12" font-weight="700" fill="var(--ink)">재연결 중복 실행 수정</text>
-  <text x="182" y="218" text-anchor="end" font-size="11" fill="var(--ink-2)">완료</text>
-  <rect x="196" y="188" width="192.9" height="18" fill="var(--accent)"/>
-  <rect x="388.9" y="188" width="198.7" height="18" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.5"/>
-  <text x="597.6" y="202" font-size="12" font-weight="700" fill="var(--ink)">합계 17.80M</text>
-  <text x="196" y="222" font-size="11" fill="var(--ink-2)">담당 8.77M, 눈 9.03M(3회), 수습공 없음</text>
-  <rect x="24" y="250" width="672" height="36" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1"/>
-  <text x="360" y="273" text-anchor="middle" font-size="12" font-weight="700" fill="var(--accent)">세 카드 Opus 입력 합계: 36.98M (카드 담당 24.94M + 눈 10.45M + 수습공 1.58M)</text>
+<svg class="diagram-svg-desktop" viewBox="0 0 720 292" role="img" aria-label="완료된 8판 시범 카드 세 장의 카드 담당, 눈, 수습공 Opus 입력 토큰 구성 막대그래프" xmlns="http://www.w3.org/2000/svg">
+  <rect width="720" height="292" fill="var(--bg-2)"/>
+  <text x="24" y="29" font-size="11" fill="var(--ink-2)">단위: 백만 입력 토큰 (M)</text>
+  <rect x="454.3" y="19" width="10" height="10" fill="var(--accent)"/>
+  <text x="511.1" y="29" text-anchor="end" text-rendering="geometricPrecision" font-size="11" fill="var(--ink)">카드 담당</text>
+  <rect x="527.6" y="19" width="10" height="10" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.5"/>
+  <text x="604.2" y="29" text-anchor="end" text-rendering="geometricPrecision" font-size="11" fill="var(--ink)">눈 (읽기 전용)</text>
+  <rect x="620.2" y="19" width="10" height="10" fill="var(--ink-2)"/>
+  <text x="696.0" y="29" text-anchor="end" text-rendering="geometricPrecision" font-size="11" fill="var(--ink)">수습공 버터컵</text>
+  <line x1="24" y1="40" x2="696" y2="40" stroke="var(--rule)" stroke-width="1"/>
+  <text x="182" y="74" text-anchor="end" font-size="12" font-weight="700" fill="var(--ink)">격리 캐시 수정</text>
+  <rect x="196" y="60" width="123.2" height="18" fill="var(--accent)"/>
+  <rect x="319.2" y="60" width="24.6" height="18" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.5"/>
+  <rect x="343.8" y="60" width="34.8" height="18" fill="var(--ink-2)"/>
+  <text x="388.6" y="74" font-size="12" font-weight="700" fill="var(--ink)">합계 8.30M</text>
+  <text x="196" y="94" font-size="11" fill="var(--ink-2)">담당 5.60M, 눈 1.12M(1회), 수습공 1.58M</text>
+  <text x="182" y="132" text-anchor="end" font-size="12" font-weight="700" fill="var(--ink)">배포 관리기 갱신</text>
+  <rect x="196" y="118" width="232.5" height="18" fill="var(--accent)"/>
+  <rect x="428.5" y="118" width="6.6" height="18" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.5"/>
+  <text x="445.1" y="132" font-size="12" font-weight="700" fill="var(--ink)">합계 10.88M</text>
+  <text x="196" y="152" font-size="11" fill="var(--ink-2)">담당 10.57M, 눈 0.30M(4회), 수습공 없음</text>
+  <text x="182" y="190" text-anchor="end" font-size="12" font-weight="700" fill="var(--ink)">재연결 중복 실행 수정</text>
+  <rect x="196" y="176" width="192.9" height="18" fill="var(--accent)"/>
+  <rect x="388.9" y="176" width="198.7" height="18" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.5"/>
+  <text x="597.6" y="190" font-size="12" font-weight="700" fill="var(--ink)">합계 17.80M</text>
+  <text x="196" y="210" font-size="11" fill="var(--ink-2)">담당 8.77M, 눈 9.03M(3회), 수습공 없음</text>
+  <rect x="24" y="238" width="672" height="36" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1"/>
+  <text x="360" y="261" text-anchor="middle" font-size="12" font-weight="700" fill="var(--ink)">세 카드 Opus 입력 합계: 36.98M (카드 담당 24.94M + 눈 10.45M + 수습공 1.58M)</text>
 </svg>
-<svg class="diagram-svg-mobile" viewBox="0 0 350 398" role="img" aria-label="완료된 8판 시범 카드 세 장의 Opus 입력 토큰 구성 막대그래프 (모바일)" xmlns="http://www.w3.org/2000/svg">
-  <rect width="350" height="398" fill="var(--bg-2)"/>
-  <text x="16" y="30" font-size="13" font-weight="700" fill="var(--ink)">시범 세 카드 Opus 입력 구성 (백만 토큰)</text>
-  <rect x="16" y="42" width="10" height="10" fill="var(--accent)"/>
-  <text x="30" y="52" font-size="12" fill="var(--ink)">담당</text>
-  <rect x="74" y="42" width="10" height="10" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.5"/>
-  <text x="88" y="52" font-size="12" fill="var(--ink)">눈</text>
-  <rect x="122" y="42" width="10" height="10" fill="var(--ink-2)"/>
-  <text x="136" y="52" font-size="12" fill="var(--ink)">수습공 버터컵</text>
-  <line x1="16" y1="64" x2="334" y2="64" stroke="var(--rule)" stroke-width="1"/>
-  <text x="16" y="94" font-size="12" font-weight="700" fill="var(--ink)">격리 캐시 수정 (완료)</text>
-  <text x="334" y="94" text-anchor="end" font-family="var(--mono)" font-size="12" font-weight="700" fill="var(--accent)">8.30M</text>
-  <rect x="16" y="104" width="92.4" height="14" fill="var(--accent)"/>
-  <rect x="108.4" y="104" width="18.5" height="14" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.5"/>
-  <rect x="126.9" y="104" width="26.1" height="14" fill="var(--ink-2)"/>
-  <text x="16" y="136" font-size="12" fill="var(--ink-2)">담당 5.60M, 눈 1.12M(1회), 수습공 1.58M</text>
-  <text x="16" y="178" font-size="12" font-weight="700" fill="var(--ink)">배포 관리기 갱신 (완료)</text>
-  <text x="334" y="178" text-anchor="end" font-family="var(--mono)" font-size="12" font-weight="700" fill="var(--accent)">10.88M</text>
-  <rect x="16" y="188" width="174.4" height="14" fill="var(--accent)"/>
-  <rect x="190.4" y="188" width="5.0" height="14" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.5"/>
-  <text x="16" y="220" font-size="12" fill="var(--ink-2)">담당 10.57M, 눈 0.30M(4회), 수습공 없음</text>
-  <text x="16" y="262" font-size="12" font-weight="700" fill="var(--ink)">재연결 중복 실행 수정 (완료)</text>
-  <text x="334" y="262" text-anchor="end" font-family="var(--mono)" font-size="12" font-weight="700" fill="var(--accent)">17.80M</text>
-  <rect x="16" y="272" width="144.7" height="14" fill="var(--accent)"/>
-  <rect x="160.7" y="272" width="149.0" height="14" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.5"/>
-  <text x="16" y="304" font-size="12" fill="var(--ink-2)">담당 8.77M, 눈 9.03M(3회), 수습공 없음</text>
-  <rect x="16" y="334" width="318" height="48" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1"/>
-  <text x="175" y="354" text-anchor="middle" font-size="12" font-weight="700" fill="var(--accent)">세 카드 Opus 합계: 36.98M</text>
-  <text x="175" y="372" text-anchor="middle" font-size="12" fill="var(--ink)">담당 24.94M + 눈 10.45M + 수습공 1.58M</text>
+<svg class="diagram-svg-mobile" viewBox="0 0 350 376" role="img" aria-label="완료된 8판 시범 카드 세 장의 Opus 입력 토큰 구성 막대그래프 (모바일)" xmlns="http://www.w3.org/2000/svg">
+  <rect width="350" height="376" fill="var(--bg-2)"/>
+  <text x="16" y="30" font-size="12" fill="var(--ink-2)">단위: 백만 토큰 (M)</text>
+  <rect x="191.1" y="20" width="10" height="10" fill="var(--accent)"/>
+  <text x="227.9" y="30" text-anchor="end" text-rendering="geometricPrecision" font-size="12" fill="var(--ink)">담당</text>
+  <rect x="244.5" y="20" width="10" height="10" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.5"/>
+  <text x="270.9" y="30" text-anchor="end" text-rendering="geometricPrecision" font-size="12" fill="var(--ink)">눈</text>
+  <rect x="286.9" y="20" width="10" height="10" fill="var(--ink-2)"/>
+  <text x="334.0" y="30" text-anchor="end" text-rendering="geometricPrecision" font-size="12" fill="var(--ink)">수습공</text>
+  <line x1="16" y1="42" x2="334" y2="42" stroke="var(--rule)" stroke-width="1"/>
+  <text x="16" y="72" font-size="12" font-weight="700" fill="var(--ink)">격리 캐시 수정</text>
+  <text x="334" y="72" text-anchor="end" font-family="var(--mono)" font-size="12" font-weight="700" fill="var(--accent)">8.30M</text>
+  <rect x="16" y="82" width="92.4" height="14" fill="var(--accent)"/>
+  <rect x="108.4" y="82" width="18.5" height="14" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.5"/>
+  <rect x="126.9" y="82" width="26.1" height="14" fill="var(--ink-2)"/>
+  <text x="16" y="114" font-size="12" fill="var(--ink-2)">담당 5.60M, 눈 1.12M(1회), 수습공 1.58M</text>
+  <text x="16" y="156" font-size="12" font-weight="700" fill="var(--ink)">배포 관리기 갱신</text>
+  <text x="334" y="156" text-anchor="end" font-family="var(--mono)" font-size="12" font-weight="700" fill="var(--accent)">10.88M</text>
+  <rect x="16" y="166" width="174.4" height="14" fill="var(--accent)"/>
+  <rect x="190.4" y="166" width="5.0" height="14" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.5"/>
+  <text x="16" y="198" font-size="12" fill="var(--ink-2)">담당 10.57M, 눈 0.30M(4회), 수습공 없음</text>
+  <text x="16" y="240" font-size="12" font-weight="700" fill="var(--ink)">재연결 중복 실행 수정</text>
+  <text x="334" y="240" text-anchor="end" font-family="var(--mono)" font-size="12" font-weight="700" fill="var(--accent)">17.80M</text>
+  <rect x="16" y="250" width="144.7" height="14" fill="var(--accent)"/>
+  <rect x="160.7" y="250" width="149.0" height="14" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.5"/>
+  <text x="16" y="282" font-size="12" fill="var(--ink-2)">담당 8.77M, 눈 9.03M(3회), 수습공 없음</text>
+  <rect x="16" y="312" width="318" height="48" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1"/>
+  <text x="175" y="332" text-anchor="middle" font-size="12" font-weight="700" fill="var(--ink)">세 카드 Opus 합계: 36.98M</text>
+  <text x="175" y="350" text-anchor="middle" font-size="12" fill="var(--ink-2)">담당 24.94M + 눈 10.45M + 수습공 1.58M</text>
 </svg>
 <figcaption>그림 6. 완료된 시범 카드 세 장의 Opus 입력 토큰 구성. 코드 수정과 시험, 배포 대기는 하위 모델이 맡고 수습공 버터컵은 격리 캐시 수정 카드에서 한 번 투입됐다.</figcaption>
 </figure>

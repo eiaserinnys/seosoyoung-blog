@@ -25,8 +25,8 @@ from playwright.sync_api import Error as PlaywrightError, sync_playwright
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from verify_article_ui_checks import (
-    A10_CONFIGS, A10_JS, A11_JS, A15_JS, A9_JS, a9_checks, a10_checks, a11_checks, a12_checks,
-    a13_checks, a14_checks, a15_checks, resized_sidenotes_ok, sidenote_presence_ok,
+    A10_CONFIGS, A10_JS, A11_JS, A15_JS, A16_JS, A9_JS, a9_checks, a10_checks, a11_checks, a12_checks,
+    a13_checks, a14_checks, a15_checks, a16_checks, resized_sidenotes_ok, sidenote_presence_ok,
     summarize_checks,
 )
 
@@ -631,6 +631,7 @@ def capture_config(browser, url, out_dir, name, width, height, dpr, scheme, a10=
     m = page.evaluate(MEASURE_JS)
     m["failedRequests"] = failed
     m["a9"] = page.evaluate(A9_JS)
+    m["diagrams"] = page.evaluate(A16_JS)
     if name == "wide-light":
         m["quotes"] = page.evaluate(A15_JS)
     has_katex = page.locator(".post-content .katex, aside.sidenote .katex").count() > 0
@@ -653,12 +654,15 @@ def capture_config(browser, url, out_dir, name, width, height, dpr, scheme, a10=
                 page, ".post-content .katex-display", d / f"display{i+1}-end.png", nth=i, pad=24)
             page.evaluate(
                 "(idx) => { document.querySelectorAll('.post-content .katex-display')[idx].scrollLeft = 0; }", i)
-    if page.locator("figure.blog-diagram").count() > 0:
+    diag_count = page.locator("figure.blog-diagram").count()
+    for i in range(diag_count):
+        key = "diagram" if i == 0 else f"diagram{i+1}"
+        out_png = d / f"{key}.png"
         if width < 500:
-            viewport_shot(page, "figure.blog-diagram", d / "diagram.png")
-            shots["diagram"] = str(d / "diagram.png")
+            viewport_shot(page, "figure.blog-diagram", out_png, nth=i)
+            shots[key] = str(out_png)
         else:
-            shots["diagram"] = element_shot(page, "figure.blog-diagram", d / "diagram.png")
+            shots[key] = element_shot(page, "figure.blog-diagram", out_png, nth=i)
     t_count = page.locator(".post-content .table-scroll").count()
     capture_states = []
     for i in range(t_count):
@@ -817,7 +821,7 @@ def short_first_cell(text):
 
 
 def path_checks(report):
-    checks = {key: [] for key in ("A1", "A2", "A3", "A4", "A5", "A6", "A7", "A8", "A9", "A10", "A11", "A12", "A13", "A14", "A15")}
+    checks = {key: [] for key in ("A1", "A2", "A3", "A4", "A5", "A6", "A7", "A8", "A9", "A10", "A11", "A12", "A13", "A14", "A15", "A16")}
 
     def add(key, ok, detail, na=False):
         checks[key].append({"ok": bool(ok), "na": na, "detail": detail})
@@ -923,6 +927,8 @@ def path_checks(report):
         add("A14", entry["ok"], entry["detail"], na=entry.get("na", False))
     for entry in a15_checks(path, configs):
         add("A15", entry["ok"], entry["detail"], na=entry.get("na", False))
+    for entry in a16_checks(path, configs):
+        add("A16", entry["ok"], entry["detail"], na=entry.get("na", False))
 
     summary = {key: summarize_checks(entries) for key, entries in checks.items()}
     return summary, checks
@@ -986,7 +992,7 @@ def main():
                 "configs": [{"name": c[0], "width": c[1], "height": c[2], "dpr": c[3], "colorScheme": c[4]}
                             for c in CONFIGS],
                 "skipped": skipped, "paths": reports, "summary": {}}
-    aggregate = {key: [] for key in ("A1", "A2", "A3", "A4", "A5", "A6", "A7", "A8", "A9", "A10", "A11", "A12", "A13", "A14", "A15")}
+    aggregate = {key: [] for key in ("A1", "A2", "A3", "A4", "A5", "A6", "A7", "A8", "A9", "A10", "A11", "A12", "A13", "A14", "A15", "A16")}
     for path, report in reports.items():
         summary, raw = path_checks(report)
         report["verdicts"] = summary
