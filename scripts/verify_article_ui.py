@@ -34,12 +34,18 @@ CONFIGS = [
     ("wide-light", 1440, 900, 1, "light"),
     ("wide-dark", 1440, 900, 1, "dark"),
     ("mid-light", 1024, 800, 1, "light"),
+    ("tablet820-light", 820, 1180, 2, "light"),
+    ("tablet-light", 768, 1024, 2, "light"),
+    ("phablet-light", 600, 960, 2, "light"),
     ("narrow-light", 375, 812, 2, "light"),
     ("narrow-dark", 375, 812, 2, "dark"),
     ("min360-light", 360, 740, 2, "light"),
     ("min390-light", 390, 844, 2, "light"),
     ("min414-light", 414, 896, 2, "light"),
 ]
+
+# 태블릿·큰 폰은 겹쳐 뜨는 스크롤바를 쓰는 터치 기기라 데스크톱 스크롤바가 폭을 먹지 않는다.
+TOUCH_CONFIGS = {"phablet-light", "tablet-light", "tablet820-light"}
 
 # lightbox.js의 prepareLightboxImages가 isLightboxImage인 그림에만 aria-haspopup을 단다.
 # 링크로 감싼 그림은 누르면 링크로 가는 것이 의도된 동작이라 대상이 아니다.
@@ -548,13 +554,13 @@ def viewport_shot(page, selector, path, nth=0):
     page.screenshot(path=str(path))
 
 
-def open_context(browser, width, height, dpr, scheme):
+def open_context(browser, width, height, dpr, scheme, touch=False):
     ctx = browser.new_context(
         viewport={"width": width, "height": height},
         device_scale_factor=dpr,
         color_scheme=scheme,
-        is_mobile=(width < 500),
-        has_touch=(width < 500),
+        is_mobile=(width < 500 or touch),
+        has_touch=(width < 500 or touch),
         reduced_motion="reduce",
     )
     # 분석 비콘은 연결 없는 환경에서 load 이벤트를 막는다. 화면과 무관하다.
@@ -621,7 +627,7 @@ def footnote_roundtrip(page, name, out_dir):
 
 
 def capture_config(browser, url, out_dir, name, width, height, dpr, scheme, a10=False):
-    ctx = open_context(browser, width, height, dpr, scheme)
+    ctx = open_context(browser, width, height, dpr, scheme, touch=name in TOUCH_CONFIGS)
     page = ctx.new_page()
     failed = []
     page.on("requestfailed", lambda req: failed.append(req.url))

@@ -246,6 +246,14 @@ class ArticleUiChecksTest(unittest.TestCase):
         uneven_cfg = {"wide-light": {"diagrams": {"figs": [fig_a, fig_b]}}}
         self.assertFalse(all(e["ok"] for e in a16_checks("/digest/x/", uneven_cfg)))
 
+        # Mobile SVG must not be scaled beyond 1.15x; 1.143x is the largest expected fitting scale
+        mobile_too_big = dict(fig, cls="diagram-svg-mobile", scale=1.6)
+        mobile_bad_cfg = {"wide-light": {"diagrams": {"figs": [mobile_too_big]}}}
+        self.assertFalse(all(e["ok"] for e in a16_checks("/digest/x/", mobile_bad_cfg)))
+        mobile_ok = dict(fig, cls="diagram-svg-mobile", scale=1.143)
+        mobile_ok_cfg = {"wide-light": {"diagrams": {"figs": [mobile_ok]}}}
+        self.assertTrue(all(e["ok"] for e in a16_checks("/digest/x/", mobile_ok_cfg)))
+
         # Pages without diagrams should return NA
         na_entries = a16_checks("/digest/none/", {"wide-light": {"diagrams": {"figs": []}}})
         self.assertTrue(na_entries[0]["na"])
