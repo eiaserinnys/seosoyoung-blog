@@ -633,13 +633,26 @@ def capture_config(browser, url, out_dir, name, width, height, dpr, scheme, a10=
     m["a9"] = page.evaluate(A9_JS)
     if name == "wide-light":
         m["quotes"] = page.evaluate(A15_JS)
-    if a10:
+    has_katex = page.locator(".post-content .katex, aside.sidenote .katex").count() > 0
+    if (a10 or has_katex) and name in A10_CONFIGS:
         m["a10"] = page.evaluate(A10_JS, name == "wide-light")
         m["a11"] = page.evaluate(A11_JS, name == "wide-light")
     d = out_dir / name
     d.mkdir(parents=True, exist_ok=True)
     page.add_style_tag(content=".site-top{position:static!important} html{scroll-behavior:auto!important}")
     shots = {}
+    if width < 500:
+        disp_count = page.locator(".post-content .katex-display").count()
+        for i in range(disp_count):
+            shots[f"display{i+1}-start"] = padded_element_shot(
+                page, ".post-content .katex-display", d / f"display{i+1}-start.png", nth=i, pad=24)
+            page.evaluate(
+                "(idx) => { const k = document.querySelectorAll('.post-content .katex-display')[idx]; k.scrollLeft = k.scrollWidth; }", i)
+            page.wait_for_timeout(100)
+            shots[f"display{i+1}-end"] = padded_element_shot(
+                page, ".post-content .katex-display", d / f"display{i+1}-end.png", nth=i, pad=24)
+            page.evaluate(
+                "(idx) => { document.querySelectorAll('.post-content .katex-display')[idx].scrollLeft = 0; }", i)
     if page.locator("figure.blog-diagram").count() > 0:
         if width < 500:
             viewport_shot(page, "figure.blog-diagram", d / "diagram.png")

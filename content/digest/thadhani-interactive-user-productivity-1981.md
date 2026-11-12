@@ -51,11 +51,11 @@ MVS 운영체제의 자원 관리 측정 도구인 RMF(Resource Management Facil
 
 ## 1초 미만 응답 시간에서 급증하는 사용자 생산성
 
-여기서 **대화형 사용자 생산성**(IUP, Interactive User Productivity)은 사용자 1명이 1시간 동안 컴퓨터와 주고받은 평균 상호작용 횟수(interactions/user/hour)를 뜻한다[^iup-caveat]. 15분 간격으로 측정한 RMF 데이터에서 IUP는 다음 식으로 계산한다.
+여기서 **대화형 사용자 생산성**(IUP, Interactive User Productivity)은 사용자 1명이 1시간 동안 컴퓨터와 주고받은 평균 상호작용 횟수(interactions/user/hour)를 뜻한다[^iup-caveat]. 15분 간격으로 측정한 RMF 데이터에서 15분 동안 완료된 상호작용 수를 $N$, 활성 사용자 수를 $U$라 하면 시간당 생산성 IUP는 다음 식으로 계산한다.
 
-$$\text{IUP} = \frac{\text{15분 동안 완료된 상호작용 수}}{\text{활성 사용자 수}} \times 4 \quad (\text{interactions/user/hour})$$
+$$\text{IUP} = \frac{N}{U} \times 4$$
 
-인간 집약적 상호작용의 생산성은 위 식의 분자에 전체 TSO 상호작용 대신 1주기(period 1)에 완료된 상호작용 수를 대입해 구한다. System A(그림 3)와 System B(표지 그림 4)의 실측 데이터를 3차 음지수 다항식으로 최소제곱 피팅했다. 그 결과 두 시스템 모두에서 컴퓨터 응답 시간(CRT)이 짧아질수록 사용자 생산성(IUP)이 뚜렷하게 증가했다.
+인간 집약적 상호작용의 생산성은 위 식의 분자 $N$에 전체 TSO 상호작용 대신 1주기(period 1)에 완료된 상호작용 수를 대입해 구한다. System A(그림 3)와 System B(표지 그림 4)의 실측 데이터를 3차 음지수 다항식으로 최소제곱 피팅했다. 그 결과 두 시스템 모두에서 컴퓨터 응답 시간(CRT)이 짧아질수록 사용자 생산성(IUP)이 뚜렷하게 증가했다.
 
 ![System A에서 컴퓨터 응답 시간(초)에 따른 대화형 사용자 생산성(시간당 사용자당 상호작용 수) 산점도와 회귀 곡선. 응답 시간 0.5초에서 시간당 222회이던 생산성이 3.0초에서 106회로 감소한다.](https://img.seosoyoung.eiaserinnys.me/images/thadhani-interactive-user-productivity-1981/fig3-system-a-iup-vs-crt.png)
 *그림 3. System A의 인간 집약적 상호작용에 대한 컴퓨터 응답 시간(CRT) 대 사용자 생산성(IUP) (출처: Thadhani, IBM Systems Journal, 1981)*
@@ -72,9 +72,9 @@ System B의 실측 데이터는 대부분 CRT 0.25\~3.0초 구간에 분포했�
 
 ## 왜 컴퓨터가 빨라지면 사람의 생각 시간까지 줄어드는가
 
-RMF는 사용자가 생각하는 시간(URT)과 네트워크 지연(NRT)을 따로 기록하지 않는다. 대신 상호작용 1회에 걸리는 평균 시간($\text{UNRT} + \text{CRT}$)이 시간당 상호작용 횟수(IUP)의 역수와 같다는 관계를 이용하면, 컴퓨터가 관측한 사용자 및 네트워크 응답 시간(UNRT)을 역산할 수 있다.
+RMF는 사용자가 생각하는 시간(URT)과 네트워크 지연(NRT)을 따로 기록하지 않는다. 대신 상호작용 1회에 걸리는 평균 시간($\text{UNRT} + \text{CRT}$)이 시간당 상호작용 횟수(IUP)의 역수와 같다는 관계를 이용하면, 컴퓨터가 관측한 사용자 및 네트워크 응답 시간(UNRT, 단위: 초)을 역산할 수 있다.
 
-$$\text{UNRT} = \frac{3600\text{ seconds}}{\text{IUP}} - \text{CRT seconds}$$
+$$\text{UNRT} = \frac{3600}{\text{IUP}} - \text{CRT}$$
 
 이 관계식을 System A와 System B의 실측치에 대입해 컴퓨터 응답 시간(CRT)별 UNRT 변화를 그리면 그림 5와 같다. 원격 사용자가 절반인 System A는 네트워크 지연(NRT)이 커서 UNRT 전체가 높게 나타난다. 반면 사용자의 90% 이상이 로컬 채널 단말기를 쓰는 System B는 NRT가 매우 작아, UNRT가 사용자의 실제 반응 시간(URT)을 거의 그대로 반영한다.
 
