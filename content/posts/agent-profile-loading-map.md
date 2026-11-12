@@ -50,11 +50,10 @@ images:
   <rect x="240" y="14" width="166" height="176" fill="var(--bg)" stroke="var(--accent)" stroke-width="1.5"/>
   <text x="323" y="37" text-anchor="middle" font-family="var(--sans)" font-size="13" font-weight="700" fill="var(--ink)">세션 시작 조립기</text>
   <line x1="240" y1="48" x2="406" y2="48" stroke="var(--rule)" stroke-width="1"/>
-  <text x="323" y="70" text-anchor="middle" font-family="var(--sans)" font-size="11.5" font-weight="700" fill="var(--accent)">번들 10종 (환경 필터 5종)</text>
-  <text x="323" y="94" text-anchor="middle" font-family="var(--sans)" font-size="11.5" fill="var(--ink)">OS, 호스트, 백엔드 판정</text>
-  <text x="323" y="116" text-anchor="middle" font-family="var(--sans)" font-size="11.5" fill="var(--ink)">작업 카드 담당 여부 대조</text>
-  <text x="323" y="142" text-anchor="middle" font-family="var(--sans)" font-size="11.5" fill="var(--ink-2)">+ 실행 폴더 배경 문서 합산</text>
-  <text x="323" y="170" text-anchor="middle" font-family="var(--sans)" font-size="11.5" font-weight="700" fill="var(--ink-2)">실선: 시작 시 고정 주입</text>
+  <text x="323" y="80" text-anchor="middle" font-family="var(--sans)" font-size="11.5" font-weight="700" fill="var(--accent)">번들 10종 (환경 필터 5종)</text>
+  <text x="323" y="108" text-anchor="middle" font-family="var(--sans)" font-size="11.5" fill="var(--ink)">OS, 호스트, 백엔드 판정</text>
+  <text x="323" y="136" text-anchor="middle" font-family="var(--sans)" font-size="11.5" fill="var(--ink)">작업 카드 담당 여부 대조</text>
+  <text x="323" y="164" text-anchor="middle" font-family="var(--sans)" font-size="11.5" fill="var(--ink-2)">+ 실행 폴더 배경 문서 합산</text>
   <line x1="406" y1="62" x2="436" y2="62" stroke="var(--accent)" stroke-width="1.5" marker-end="url(#arr-acc-d1)"/>
   <line x1="406" y1="146" x2="436" y2="146" stroke="var(--accent)" stroke-width="1.5" marker-end="url(#arr-acc-d1)"/>
   <rect x="442" y="14" width="264" height="82" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.5"/>
@@ -64,14 +63,14 @@ images:
   <rect x="442" y="106" width="264" height="84" fill="var(--bg)" stroke="var(--rule-strong)" stroke-width="1.5"/>
   <text x="454" y="129" font-family="var(--sans)" font-size="12.5" font-weight="700" fill="var(--ink)">방식 2. 색인 주입 (시작 시 목차만)</text>
   <text x="454" y="151" font-family="var(--sans)" font-size="11.5" fill="var(--ink)">상황 지침 색인(2.4K) + 핵심 스킬 목차</text>
-  <text x="454" y="171" font-family="var(--sans)" font-size="11.5" fill="var(--ink-2)">원문은 아래 점선 경로로 실행 중 호출</text>
+  <text x="454" y="171" font-family="var(--sans)" font-size="11.5" fill="var(--ink-2)">원문은 실행 중 호출</text>
   <line x1="574" y1="190" x2="574" y2="206" stroke="var(--ink-2)" stroke-width="1.5" stroke-dasharray="4,3" marker-end="url(#arr-ink-d1)"/>
   <line x1="200" y1="218" x2="234" y2="242" stroke="var(--ink-2)" stroke-width="1.5" stroke-dasharray="4,3" marker-end="url(#arr-ink-d1)"/>
   <line x1="200" y1="271" x2="234" y2="271" stroke="var(--ink-2)" stroke-width="1.5" stroke-dasharray="4,3" marker-end="url(#arr-ink-d1)"/>
   <rect x="240" y="210" width="466" height="100" fill="var(--bg)" stroke="var(--ink-2)" stroke-width="1.3" stroke-dasharray="5,3"/>
-  <text x="254" y="234" font-family="var(--sans)" font-size="12.5" font-weight="700" fill="var(--ink)">세션 실행 중 모델 호출 (점선): 원문 조회 및 방식 3. 런타임 검색</text>
-  <text x="254" y="258" font-family="var(--sans)" font-size="11.5" fill="var(--ink)">방식 2 후속: 상황 진입 시 위키 원문 조회 (compile_subtree) 또는 스킬 로드</text>
-  <text x="254" y="281" font-family="var(--mono)" font-size="11.5" font-weight="700" fill="var(--accent)">방식 3: search_skills (Jev 채점) → load_skill (카탈로그 결합)</text>
+  <text x="254" y="234" font-family="var(--sans)" font-size="12.5" font-weight="700" fill="var(--ink)">세션 실행 중 모델 호출: 원문 조회 및 방식 3. 런타임 검색</text>
+  <text x="254" y="258" font-family="var(--sans)" font-size="11.5" fill="var(--ink)">방식 2 후속: 상황 진입 시 위키 원문 조회 (<tspan font-family="var(--mono)">compile_subtree</tspan>) 또는 스킬 로드</text>
+  <text x="254" y="281" font-family="var(--sans)" font-size="11.5" font-weight="700" fill="var(--accent)">방식 3: <tspan font-family="var(--mono)">search_skills</tspan> (Jev 채점) → <tspan font-family="var(--mono)">load_skill</tspan> (카탈로그 결합)</text>
   <text x="254" y="300" font-family="var(--sans)" font-size="11.5" fill="var(--ink-2)">목차에서 제외한 나머지 스킬과 도메인 카탈로그를 요청 시점에 결합</text>
 </svg>
 <svg class="diagram-svg-mobile" viewBox="0 0 350 610" role="img" aria-label="중앙 위키 원본이 세션 시작 시점(실선)과 실행 중 모델 호출(점선)로 전달되는 흐름 (모바일)" xmlns="http://www.w3.org/2000/svg">
@@ -88,10 +87,10 @@ images:
   <text x="26" y="116" font-family="var(--sans)" font-size="12.5" fill="var(--ink-2)">스킬 159종, 카탈로그 23종 → 방식 2, 3</text>
   <line x1="175" y1="130" x2="175" y2="152" stroke="var(--accent)" stroke-width="1.5" marker-end="url(#arr-acc-m1)"/>
   <rect x="14" y="156" width="322" height="94" fill="var(--bg)" stroke="var(--accent)" stroke-width="1.5"/>
-  <text x="26" y="180" font-family="var(--sans)" font-size="13.5" font-weight="700" fill="var(--ink)">세션 시작 조립기 (실선 경로)</text>
+  <text x="26" y="180" font-family="var(--sans)" font-size="13.5" font-weight="700" fill="var(--ink)">세션 시작 조립기</text>
   <line x1="14" y1="192" x2="336" y2="192" stroke="var(--rule)" stroke-width="1"/>
   <text x="26" y="214" font-family="var(--sans)" font-size="12.5" fill="var(--ink)">환경 필터 번들 5종 대조 (불일치 제외)</text>
-  <text x="26" y="236" font-family="var(--sans)" font-size="12.5" fill="var(--ink-2)">실행 폴더 배경 문서(atom_ref) 합산</text>
+  <text x="26" y="236" font-family="var(--sans)" font-size="12.5" fill="var(--ink-2)">실행 폴더 배경 문서(<tspan font-family="var(--mono)">atom_ref</tspan>) 합산</text>
   <line x1="175" y1="250" x2="175" y2="272" stroke="var(--accent)" stroke-width="1.5" marker-end="url(#arr-acc-m1)"/>
   <rect x="14" y="276" width="322" height="84" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.5"/>
   <text x="26" y="300" font-family="var(--sans)" font-size="13" font-weight="700" fill="var(--ink)">방식 1. 전문 상시 주입 (시작 시)</text>
@@ -100,12 +99,12 @@ images:
   <rect x="14" y="370" width="322" height="84" fill="var(--bg)" stroke="var(--rule-strong)" stroke-width="1.5"/>
   <text x="26" y="394" font-family="var(--sans)" font-size="13" font-weight="700" fill="var(--ink)">방식 2. 색인 주입 (시작 시 목차만)</text>
   <text x="26" y="416" font-family="var(--sans)" font-size="12.5" fill="var(--ink)">상황 지침 색인(2.4K) + 핵심 스킬 목차</text>
-  <text x="26" y="438" font-family="var(--sans)" font-size="12.5" fill="var(--ink-2)">원문은 실행 중 점선 경로로 호출</text>
+  <text x="26" y="438" font-family="var(--sans)" font-size="12.5" fill="var(--ink-2)">원문은 실행 중 호출</text>
   <line x1="175" y1="454" x2="175" y2="476" stroke="var(--ink-2)" stroke-width="1.5" stroke-dasharray="4,3" marker-end="url(#arr-ink-m1)"/>
   <rect x="14" y="480" width="322" height="114" fill="var(--bg)" stroke="var(--ink-2)" stroke-width="1.3" stroke-dasharray="5,3"/>
-  <text x="26" y="504" font-family="var(--sans)" font-size="13" font-weight="700" fill="var(--ink)">실행 중 모델 호출 (점선 경로)</text>
-  <text x="26" y="528" font-family="var(--sans)" font-size="12.5" fill="var(--ink)">방식 2 원문 조회 (compile_subtree)</text>
-  <text x="26" y="552" font-family="var(--mono)" font-size="12.5" font-weight="700" fill="var(--accent)">방식 3: search_skills → load_skill</text>
+  <text x="26" y="504" font-family="var(--sans)" font-size="13" font-weight="700" fill="var(--ink)">실행 중 모델 호출</text>
+  <text x="26" y="528" font-family="var(--sans)" font-size="12.5" fill="var(--ink)">방식 2 원문 조회 (<tspan font-family="var(--mono)">compile_subtree</tspan>)</text>
+  <text x="26" y="552" font-family="var(--sans)" font-size="12.5" font-weight="700" fill="var(--accent)">방식 3: <tspan font-family="var(--mono)">search_skills</tspan> → <tspan font-family="var(--mono)">load_skill</tspan></text>
   <text x="26" y="576" font-family="var(--sans)" font-size="12.5" fill="var(--ink-2)">미주입 스킬 검색 후 카탈로그 동적 결합</text>
 </svg>
 <figcaption>그림 1. 중앙 위키(atom) 원본의 세 가지 전달 방식과 호출 시점. 실선은 시작 프롬프트에 처음부터 포함되는 경로이고, 점선은 세션 실행 도중 모델이 도구를 직접 호출해 원문을 읽거나 스킬을 검색하는 경로입니다.</figcaption>
@@ -232,11 +231,11 @@ images:
   <rect x="12" y="12" width="326" height="540" fill="var(--bg)" stroke="var(--rule-strong)" stroke-width="1.5"/>
   <text x="24" y="36" font-family="var(--sans)" font-size="13.5" font-weight="700" fill="var(--ink)">시작 주입량 분해 지도 (단위: K자)</text>
   <rect x="24" y="48" width="11" height="11" fill="var(--accent)"/>
-  <text x="39" y="58" font-family="var(--sans)" font-size="12.5" fill="var(--ink)">지침</text>
-  <rect x="78" y="48" width="11" height="11" fill="var(--accent-press)" stroke="var(--accent)" stroke-width="1"/>
-  <text x="93" y="58" font-family="var(--sans)" font-size="12.5" fill="var(--ink)">스킬 목차</text>
-  <rect x="164" y="48" width="11" height="11" fill="var(--bg-2)" stroke="var(--ink-2)" stroke-width="1"/>
-  <text x="179" y="58" font-family="var(--sans)" font-size="12.5" fill="var(--ink)">폴더 문서</text>
+  <text x="39" y="58" font-family="var(--sans)" font-size="12.5" fill="var(--ink)">상시 지침</text>
+  <rect x="104" y="48" width="11" height="11" fill="var(--accent-press)" stroke="var(--accent)" stroke-width="1"/>
+  <text x="119" y="58" font-family="var(--sans)" font-size="12.5" fill="var(--ink)">스킬 목차</text>
+  <rect x="184" y="48" width="11" height="11" fill="var(--bg-2)" stroke="var(--ink-2)" stroke-width="1"/>
+  <text x="199" y="58" font-family="var(--sans)" font-size="12.5" fill="var(--ink)">폴더 배경 문서</text>
   <line x1="12" y1="68" x2="338" y2="68" stroke="var(--rule)" stroke-width="1"/>
   <line x1="128.0" y1="74" x2="128.0" y2="520" stroke="var(--rule)" stroke-width="1" stroke-dasharray="3,3"/>
   <text x="128.0" y="538" text-anchor="middle" font-family="var(--mono)" font-size="12.5" fill="var(--ink-2)">0K</text>
@@ -329,40 +328,61 @@ images:
 API 정가로 환산했을 때 10월과 11월(2기) 전체 모델 비용의 83%는 Claude Opus에서 발생했습니다. 11월 10일 개편 직전 일반 서소영의 시작 지침 52.8K자는 서버 추정식(4자당 1토큰)에서 약 13.2K 토큰에 해당했습니다. 도구 스키마와 기억 색인까지 합친 첫 호출 입력 중앙값이 100.7K 토큰이었으니 시작 지침은 10%대에 불과했습니다[^manifest_note]. 반면 11월 11일에는 18시간 동안 코드 작업 담당 Opus 36세션이 입력 토큰 12.7억 개를 소비했습니다. 이 가운데 98.4%는 캐시에서 읽은 토큰이었습니다. 정가 환산 약 542달러로 구독 계정의 주간 한도를 빠르게 소진한 규모입니다. 담당 세션이 전체 입력 토큰의 42.1%를 쓴 코드 검색과 테스트 확인을 직접 수행하면서 도구 출력이 대화 맥락에 계속 누적되었습니다. 도구를 한 번 더 호출할 때마다 평균 22만 토큰에 이르는 이전 대화를 통째로 다시 입력해야 했던 셈입니다.
 
 <figure class="blog-diagram">
-<svg class="diagram-svg-desktop" viewBox="0 0 720 228" role="img" aria-label="첫 호출의 시작 지침 비중과 다회 도구 호출 시 누적 대화 재입력 규모의 대비" xmlns="http://www.w3.org/2000/svg">
-  <rect width="720" height="228" fill="var(--bg-2)"/>
-  <rect x="14" y="14" width="692" height="200" fill="var(--bg)" stroke="var(--rule-strong)" stroke-width="1.5"/>
-  <text x="28" y="38" font-family="var(--sans)" font-size="13" font-weight="700" fill="var(--ink)">시작 프롬프트 절감(1기)과 누적 대화 재입력 차단(2기)의 규모 대비</text>
+<svg class="diagram-svg-desktop" viewBox="0 0 720 218" role="img" aria-label="첫 모델 호출 입력(100.7K 토큰)과 다회 호출 시 도구 1회당 누적 대화 재입력(220.0K 토큰)을 동일 눈금 축에 비례로 그린 막대 비교" xmlns="http://www.w3.org/2000/svg">
+  <rect width="720" height="218" fill="var(--bg-2)"/>
+  <rect x="14" y="14" width="692" height="190" fill="var(--bg)" stroke="var(--rule-strong)" stroke-width="1.5"/>
+  <text x="28" y="38" font-family="var(--sans)" font-size="13" font-weight="700" fill="var(--ink)">시작 지침과 누적 대화 재입력 규모 대비 (단위: K 토큰)</text>
+  <rect x="336" y="27" width="12" height="12" fill="var(--accent)"/>
+  <text x="352" y="38" font-family="var(--sans)" font-size="11.5" fill="var(--ink)">시작 지침 (<tspan font-family="var(--mono)">13.2K</tspan>)</text>
+  <rect x="457" y="27" width="12" height="12" fill="var(--bg-2)" stroke="var(--ink-2)" stroke-width="1"/>
+  <text x="473" y="38" font-family="var(--sans)" font-size="11.5" fill="var(--ink)">스키마, 기억 (<tspan font-family="var(--mono)">87.5K</tspan>)</text>
+  <rect x="593" y="27" width="12" height="12" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.5"/>
+  <text x="609" y="38" font-family="var(--sans)" font-size="11.5" fill="var(--ink)">누적 재입력</text>
   <line x1="14" y1="50" x2="706" y2="50" stroke="var(--rule)" stroke-width="1"/>
-  <text x="28" y="78" font-family="var(--sans)" font-size="12" font-weight="700" fill="var(--ink)">1. 일반 서소영 첫 모델 호출 입력 (중앙값 100.7K 토큰, 11.10 개편 전)</text>
-  <rect x="28" y="88" width="84" height="24" fill="var(--accent)"/>
-  <text x="70" y="104" text-anchor="middle" font-family="var(--mono)" font-size="11.5" font-weight="700" fill="var(--bg)">약 13.2K</text>
-  <rect x="112" y="88" width="556" height="24" fill="var(--bg-2)" stroke="var(--ink-2)" stroke-width="1"/>
-  <text x="390" y="104" text-anchor="middle" font-family="var(--sans)" font-size="11.5" fill="var(--ink)">나머지 약 87.5K 토큰: 도구 스키마 + 자동 기억 색인 + 런타임 기본 프롬프트</text>
-  <text x="28" y="142" font-family="var(--sans)" font-size="12" font-weight="700" fill="var(--ink)">2. 코드 담당 Opus 다회 호출 시 누적 재입력 (18시간 36세션 합계 12.7억 토큰)</text>
-  <rect x="28" y="152" width="640" height="26" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.5"/>
-  <text x="348" y="169" text-anchor="middle" font-family="var(--sans)" font-size="11.5" font-weight="700" fill="var(--ink)">도구 1회 호출마다 평균 22만 토큰 누적 대화 전체 재입력 (98.4%가 캐시 읽기, 직접 조사 42.1%)</text>
-  <text x="28" y="198" font-family="var(--sans)" font-size="11.5" fill="var(--ink-2)">해법 전환: 시작 지침만 줄여서는 한계 → 담당의 검색과 실행 도구를 차단하고 원문 조사를 하위 세션(블로썸 등) 대화창으로 격리</text>
+  <line x1="28.0" y1="56" x2="28.0" y2="174" stroke="var(--rule)" stroke-width="1" stroke-dasharray="3,3"/>
+  <text x="28.0" y="191" text-anchor="middle" font-family="var(--mono)" font-size="11.5" fill="var(--ink-2)">0K</text>
+  <line x1="165.5" y1="56" x2="165.5" y2="174" stroke="var(--rule)" stroke-width="1" stroke-dasharray="3,3"/>
+  <text x="165.5" y="191" text-anchor="middle" font-family="var(--mono)" font-size="11.5" fill="var(--ink-2)">50K</text>
+  <line x1="303.0" y1="56" x2="303.0" y2="174" stroke="var(--rule)" stroke-width="1" stroke-dasharray="3,3"/>
+  <text x="303.0" y="191" text-anchor="middle" font-family="var(--mono)" font-size="11.5" fill="var(--ink-2)">100K</text>
+  <line x1="440.5" y1="56" x2="440.5" y2="174" stroke="var(--rule)" stroke-width="1" stroke-dasharray="3,3"/>
+  <text x="440.5" y="191" text-anchor="middle" font-family="var(--mono)" font-size="11.5" fill="var(--ink-2)">150K</text>
+  <line x1="578.0" y1="56" x2="578.0" y2="174" stroke="var(--rule)" stroke-width="1" stroke-dasharray="3,3"/>
+  <text x="578.0" y="191" text-anchor="middle" font-family="var(--mono)" font-size="11.5" fill="var(--ink-2)">200K</text>
+  <text x="28" y="75" font-family="var(--sans)" font-size="12" font-weight="700" fill="var(--ink)">1. 첫 모델 호출 입력 (일반 서소영 중앙값)</text>
+  <rect x="28.0" y="84" width="36.3" height="22" fill="var(--accent)"/>
+  <rect x="64.3" y="84" width="240.6" height="22" fill="var(--bg-2)" stroke="var(--ink-2)" stroke-width="1"/>
+  <text x="312.9" y="99" font-family="var(--mono)" font-size="11.5" font-weight="700" fill="var(--ink)">100.7K</text>
+  <text x="28" y="131" font-family="var(--sans)" font-size="12" font-weight="700" fill="var(--ink)">2. 다회 호출 시 도구 1회당 재입력 (코드 담당 평균)</text>
+  <rect x="28.0" y="140" width="605.0" height="22" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.5"/>
+  <text x="641.0" y="155" font-family="var(--mono)" font-size="11.5" font-weight="700" fill="var(--ink)">220.0K</text>
 </svg>
-<svg class="diagram-svg-mobile" viewBox="0 0 350 326" role="img" aria-label="첫 호출의 시작 지침 비중과 다회 도구 호출 시 누적 대화 재입력 규모의 대비 (모바일)" xmlns="http://www.w3.org/2000/svg">
-  <rect width="350" height="326" fill="var(--bg-2)"/>
-  <rect x="12" y="12" width="326" height="302" fill="var(--bg)" stroke="var(--rule-strong)" stroke-width="1.5"/>
-  <text x="24" y="36" font-family="var(--sans)" font-size="13.5" font-weight="700" fill="var(--ink)">시작 지침 대 누적 대화 재입력</text>
-  <line x1="12" y1="48" x2="338" y2="48" stroke="var(--rule)" stroke-width="1"/>
-  <text x="24" y="72" font-family="var(--sans)" font-size="12.5" font-weight="700" fill="var(--ink)">1. 첫 호출 입력 (중앙값 100.7K 토큰)</text>
-  <rect x="24" y="82" width="48" height="22" fill="var(--accent)"/>
-  <rect x="72" y="82" width="252" height="22" fill="var(--bg-2)" stroke="var(--ink-2)" stroke-width="1"/>
-  <text x="24" y="122" font-family="var(--sans)" font-size="12.5" fill="var(--ink)">시작 지침 추정 약 13.2K (나머지 스키마, 기억)</text>
-  <line x1="24" y1="138" x2="326" y2="138" stroke="var(--rule)" stroke-width="1" stroke-dasharray="3,3"/>
-  <text x="24" y="162" font-family="var(--sans)" font-size="12.5" font-weight="700" fill="var(--ink)">2. 코드 담당 다회 호출 (18시간 12.7억)</text>
-  <rect x="24" y="172" width="300" height="50" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.5"/>
-  <text x="34" y="194" font-family="var(--sans)" font-size="12.5" font-weight="700" fill="var(--ink)">호출마다 평균 22만 토큰 대화 재입력</text>
-  <text x="34" y="214" font-family="var(--sans)" font-size="12.5" fill="var(--ink-2)">입력의 98.4%가 캐시 읽기 (조사 42.1%)</text>
-  <text x="24" y="250" font-family="var(--sans)" font-size="12.5" font-weight="700" fill="var(--accent)">해법: 담당의 검색과 실행 도구 차단</text>
-  <text x="24" y="272" font-family="var(--sans)" font-size="12.5" fill="var(--ink)">도구 출력을 하위 세션 대화창으로 격리해</text>
-  <text x="24" y="294" font-family="var(--sans)" font-size="12.5" fill="var(--ink)">검수 턴 중앙값을 2.85M → 0.55M으로 감축</text>
+<svg class="diagram-svg-mobile" viewBox="0 0 350 256" role="img" aria-label="첫 모델 호출 입력(100.7K 토큰)과 다회 호출 시 도구 1회당 누적 대화 재입력(220.0K 토큰)의 동일 축 비례 막대 비교 (모바일)" xmlns="http://www.w3.org/2000/svg">
+  <rect width="350" height="256" fill="var(--bg-2)"/>
+  <rect x="12" y="12" width="326" height="232" fill="var(--bg)" stroke="var(--rule-strong)" stroke-width="1.5"/>
+  <text x="24" y="36" font-family="var(--sans)" font-size="13.5" font-weight="700" fill="var(--ink)">시작 지침과 누적 재입력 대비 (단위: K 토큰)</text>
+  <rect x="24" y="48" width="11" height="11" fill="var(--accent)"/>
+  <text x="39" y="58" font-family="var(--sans)" font-size="12" fill="var(--ink)">시작 지침 (<tspan font-family="var(--mono)">13.2K</tspan>)</text>
+  <rect x="164" y="48" width="11" height="11" fill="var(--bg-2)" stroke="var(--ink-2)" stroke-width="1"/>
+  <text x="179" y="58" font-family="var(--sans)" font-size="12" fill="var(--ink)">스키마, 기억 (<tspan font-family="var(--mono)">87.5K</tspan>)</text>
+  <rect x="24" y="68" width="11" height="11" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.5"/>
+  <text x="39" y="78" font-family="var(--sans)" font-size="12" fill="var(--ink)">누적 재입력</text>
+  <line x1="12" y1="88" x2="338" y2="88" stroke="var(--rule)" stroke-width="1"/>
+  <line x1="24.0" y1="94" x2="24.0" y2="212" stroke="var(--rule)" stroke-width="1" stroke-dasharray="3,3"/>
+  <text x="24.0" y="230" text-anchor="middle" font-family="var(--mono)" font-size="12.5" fill="var(--ink-2)">0K</text>
+  <line x1="134.0" y1="94" x2="134.0" y2="212" stroke="var(--rule)" stroke-width="1" stroke-dasharray="3,3"/>
+  <text x="134.0" y="230" text-anchor="middle" font-family="var(--mono)" font-size="12.5" fill="var(--ink-2)">100K</text>
+  <line x1="244.0" y1="94" x2="244.0" y2="212" stroke="var(--rule)" stroke-width="1" stroke-dasharray="3,3"/>
+  <text x="244.0" y="230" text-anchor="middle" font-family="var(--mono)" font-size="12.5" fill="var(--ink-2)">200K</text>
+  <text x="24" y="114" font-family="var(--sans)" font-size="12.5" font-weight="700" fill="var(--ink)">1. 첫 모델 호출 입력 (일반 서소영 중앙값)</text>
+  <rect x="24.0" y="122" width="14.5" height="20" fill="var(--accent)"/>
+  <rect x="38.5" y="122" width="96.3" height="20" fill="var(--bg-2)" stroke="var(--ink-2)" stroke-width="1"/>
+  <text x="140.8" y="137" font-family="var(--mono)" font-size="12.5" font-weight="700" fill="var(--ink)">100.7K</text>
+  <text x="24" y="170" font-family="var(--sans)" font-size="12.5" font-weight="700" fill="var(--ink)">2. 다회 호출 시 도구 1회당 재입력 (코드 담당 평균)</text>
+  <rect x="24.0" y="178" width="242.0" height="20" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.5"/>
+  <text x="272.0" y="193" font-family="var(--mono)" font-size="12.5" font-weight="700" fill="var(--ink)">220.0K</text>
 </svg>
-<figcaption>그림 3. 첫 모델 호출에서 시작 지침이 차지하는 비중과 도구를 여러 번 호출할 때 누적 대화를 다시 입력하는 규모의 비교. 시작 지침 절감만으로는 대화 맥락에 누적되는 도구 출력 재입력을 해소할 수 없어 실행 격리 방식으로 바꿨습니다.</figcaption>
+<figcaption>그림 3. 일반 서소영의 첫 모델 호출 입력(중앙값 100.7K 토큰, 이 중 시작 지침 추정 13.2K)과 코드 담당 세션이 도구를 호출할 때마다 다시 입력하는 누적 대화(평균 220.0K 토큰)의 규모 비교.</figcaption>
 </figure>
 
 이에 따라 운영자는 담당(`utonium`)의 검색과 편집, 셸 도구를 차단해 도구 출력이 상위 대화 맥락에 누적될 수 없게 했습니다. 하위 전담 세션인 블로썸과 버블이 별도 대화에서 원문 검색과 배포 확인을 처리하고, 담당은 기계 검증을 마친 짧은 결과 문서만 읽도록 역할을 고정했습니다. 이 구조를 3개 작업 카드의 23턴에 시범 적용해 기존 담당 세션 55턴과 비교하자, 검수 턴 입력 중앙값은 285만 토큰에서 55만 토큰으로 81% 감소했습니다. 운영자가 최종 확인에서 재작성을 요구한 반려는 한 번도 없었습니다.
@@ -373,7 +393,7 @@ API 정가로 환산했을 때 10월과 11월(2기) 전체 모델 비용의 83%�
 | <strong>1기: 2026.09.28\~29</strong> | 단발 세션의 시작 주입 낭비와 스킬 요약 목록 비대화 | 중앙 DB 프로필과 번들 10종 도입, <strong>경량판 2종</strong> 신설, 상시 스킬 축소 및 `find-skill` 검색 도입 | 일반 서소영(41.4K자) 대비 단발용 경량판(약 9.0K자) 분리, 스킬 검색으로 세션당 약 10K자 절감 |
 | <strong>2기(전환): 2026.10.01\~12</strong> | 화면 기준 색인 미열람, 모든 세션에 카드 절차(13.5K자) 포함, 상주 관제 맥락 누적 | <strong>세라피엘</strong>(10월 4일)과 <strong>서소영 PAS</strong>(10월 5일) 신설, 공통 카드 절차를 1.1K자 요약과 담당 전용 `card-work` 스킬(보강 후 20.4K자)로 분리 | 비담당 세션 카드 본문 제거, PAS 시작 주입 24.0K(10월 6일) → 16.9K자(10월 12일) |
 | <strong>2기: 2026.10.17\~19</strong> | 사전 조사 세션에 코딩 규칙(17.2K자)과 워크트리 도구 포함, 원격 지침 로드 실패 시 지침 없이 기동 | 워크트리 도구 4종을 차단한 <strong>로젤린 조사</strong> 신설(10월 17일), 필수 지침 로드 실패 시 실행 전 오류 종료(10월 19일) | 조사 세션 첫 호출 108.4K → 41.2K자, 원격 요청 대기 5초 → 30초 |
-| <strong>2기: 2026.10.25\~27</strong> | 스킬이 127개(686K자)로 늘며 복제 문서 불일치와 문서 ID 직접 기재(48건) 누적 | 도메인 카탈로그 11종 분리 및 `load_skill` 동적 링커 도입, 심볼 이름 참조로 통일 | `html-publish` 127.6K → 11.2K자(91% 감소), `skill-creator` 65% 감소, `digest-post` 61% 감소, 린트 경고 67 → 5건[^linker] |
+| <strong>2기: 2026.10.25\~27</strong> | 스킬이 127개(686K자)로 늘며 복제 문서 불일치와 문서 ID 직접 기재(48건) 누적 | 도메인 카탈로그 11종 분리 및 `load_skill` 동적 링커 도입, 심볼 이름 참조로 통일 | `html-publish` 127.6K → 11.2K자(91% 감소), `skill-creator` 65% 감소, `digest-post` 61% 감소, 린트 경고 67 → 5건 |
 | <strong>2기: 2026.11.06\~10</strong> | Opus 비용 비중(83%)과 주간 한도 소진, 일반 서소영 상시 지침 재증가(52.8K자) | 구현 기본을 <strong>DeepSeek</strong>로, 집필을 <strong>Argon</strong>으로 전환, 일반 프로필의 화면 검수 위임 문서(8.7K)와 `ui-design`(11.4K)을 스킬로 전환, 미사용 도구 10종(기본 6, 연동 4) 제거 | 지침 주입 52.8K → 38.2K자(14.6K자 감소), 지침 이외의 개편과 합산해 첫 호출 입력 100.7K → 68.8K 토큰(32% 감소)[^nov10_note] |
 | <strong>2기: 2026.11.11\~12</strong> | 코드 담당 Opus가 직접 검색과 확인을 반복하며 18시간 동안 12.7억 토큰 소비 | 검색과 실행 도구를 차단한 <strong>담당 utonium</strong>과 공정 전담 <strong>블로썸, 버블, 버터컵</strong> 신설(설계안 8판) | 시범 3개 카드(23턴) 검수 턴 입력 중앙값 2.85M → 0.55M 토큰(81% 감소)[^v8_stats] |
 
