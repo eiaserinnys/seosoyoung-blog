@@ -131,7 +131,7 @@ DiffuSpace가 10월 28일 Apache-2.0 라이선스로 공개한 `Clover-35B-A3B-P
   <path d="M 478 74 l 10 10 M 488 74 l -10 10" fill="none" stroke="var(--ink-2)" stroke-width="1.6"/>
   <text x="386" y="122" font-family="var(--sans)" font-size="11" fill="var(--ink-2)">앞 토큰부터 차례로</text>
   <rect x="548" y="24" width="152" height="120" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.5"/>
-  <text x="562" y="50" font-family="var(--sans)" font-size="13" font-weight="700" fill="var(--accent)">4. 맞은 토큰 확정</text>
+  <text x="562" y="50" font-family="var(--sans)" font-size="13" font-weight="700" fill="var(--accent-ink)">4. 맞은 토큰 확정</text>
   <rect x="562" y="70" width="18" height="18" fill="var(--accent)" stroke="var(--accent)" stroke-width="1"/>
   <rect x="584" y="70" width="18" height="18" fill="var(--accent)" stroke="var(--accent)" stroke-width="1"/>
   <rect x="606" y="70" width="18" height="18" fill="var(--accent)" stroke="var(--accent)" stroke-width="1"/>
@@ -151,7 +151,7 @@ DiffuSpace가 10월 28일 Apache-2.0 라이선스로 공개한 `Clover-35B-A3B-P
   <rect width="350" height="448" fill="var(--bg-2)"/>
   <rect x="16" y="16" width="318" height="76" fill="var(--bg)" stroke="var(--rule-strong)" stroke-width="1.5"/>
   <text x="30" y="44" font-family="var(--sans)" font-size="13" font-weight="700" fill="var(--ink)">1. 마스크 블록</text>
-  <text x="30" y="66" font-family="var(--sans)" font-size="11" fill="var(--ink-2)">빈 토큰 최대 15개</text>
+  <text x="30" y="66" font-family="var(--sans)" font-size="12" fill="var(--ink-2)">빈 토큰 최대 15개</text>
   <rect x="214" y="40" width="16" height="16" fill="var(--bg)" stroke="var(--ink-3)" stroke-width="1" stroke-dasharray="3,2"/>
   <rect x="234" y="40" width="16" height="16" fill="var(--bg)" stroke="var(--ink-3)" stroke-width="1" stroke-dasharray="3,2"/>
   <rect x="254" y="40" width="16" height="16" fill="var(--bg)" stroke="var(--ink-3)" stroke-width="1" stroke-dasharray="3,2"/>
@@ -160,7 +160,7 @@ DiffuSpace가 10월 28일 Apache-2.0 라이선스로 공개한 `Clover-35B-A3B-P
   <line x1="175" y1="92" x2="175" y2="114" stroke="var(--ink-2)" stroke-width="1.5" marker-end="url(#clv-arr-ink-m)"/>
   <rect x="16" y="118" width="318" height="76" fill="var(--bg)" stroke="var(--rule-strong)" stroke-width="1.5"/>
   <text x="30" y="146" font-family="var(--sans)" font-size="13" font-weight="700" fill="var(--ink)">2. 한 번에 채움</text>
-  <text x="30" y="168" font-family="var(--sans)" font-size="11" fill="var(--ink-2)">Clover가 후보 제안</text>
+  <text x="30" y="168" font-family="var(--sans)" font-size="12" fill="var(--ink-2)">Clover가 후보 제안</text>
   <rect x="214" y="142" width="16" height="16" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1"/>
   <rect x="234" y="142" width="16" height="16" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1"/>
   <rect x="254" y="142" width="16" height="16" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1"/>
@@ -169,7 +169,7 @@ DiffuSpace가 10월 28일 Apache-2.0 라이선스로 공개한 `Clover-35B-A3B-P
   <line x1="175" y1="194" x2="175" y2="216" stroke="var(--ink-2)" stroke-width="1.5" marker-end="url(#clv-arr-ink-m)"/>
   <rect x="16" y="220" width="318" height="76" fill="var(--bg)" stroke="var(--rule-strong)" stroke-width="1.5"/>
   <text x="30" y="248" font-family="var(--sans)" font-size="13" font-weight="700" fill="var(--ink)">3. 같은 모델이 검증</text>
-  <text x="30" y="270" font-family="var(--sans)" font-size="11" fill="var(--ink-2)">앞 토큰부터 차례로</text>
+  <text x="30" y="270" font-family="var(--sans)" font-size="12" fill="var(--ink-2)">앞 토큰부터 차례로</text>
   <rect x="214" y="244" width="16" height="16" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1"/>
   <rect x="234" y="244" width="16" height="16" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1"/>
   <rect x="254" y="244" width="16" height="16" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1"/>
@@ -179,13 +179,13 @@ DiffuSpace가 10월 28일 Apache-2.0 라이선스로 공개한 `Clover-35B-A3B-P
   <path d="M 298 248 l 8 8 M 306 248 l -8 8" fill="none" stroke="var(--ink-2)" stroke-width="1.5"/>
   <line x1="175" y1="296" x2="175" y2="318" stroke="var(--accent)" stroke-width="1.5" marker-end="url(#clv-arr-acc-m)"/>
   <rect x="16" y="322" width="318" height="76" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.5"/>
-  <text x="30" y="350" font-family="var(--sans)" font-size="13" font-weight="700" fill="var(--accent)">4. 맞은 토큰 확정</text>
-  <text x="30" y="372" font-family="var(--sans)" font-size="11" fill="var(--ink-2)">다음 블록의 앞 문맥</text>
+  <text x="30" y="350" font-family="var(--sans)" font-size="13" font-weight="700" fill="var(--accent-ink)">4. 맞은 토큰 확정</text>
+  <text x="30" y="372" font-family="var(--sans)" font-size="12" fill="var(--ink-2)">다음 블록의 앞 문맥</text>
   <rect x="214" y="346" width="16" height="16" fill="var(--accent)" stroke="var(--accent)" stroke-width="1"/>
   <rect x="234" y="346" width="16" height="16" fill="var(--accent)" stroke="var(--accent)" stroke-width="1"/>
   <rect x="254" y="346" width="16" height="16" fill="var(--accent)" stroke="var(--accent)" stroke-width="1"/>
   <rect x="274" y="346" width="16" height="16" fill="var(--accent)" stroke="var(--accent)" stroke-width="1"/>
-  <text x="175" y="428" text-anchor="middle" font-family="var(--sans)" font-size="11" fill="var(--ink-2)">다음 블록에서 1부터 반복</text>
+  <text x="175" y="428" text-anchor="middle" font-family="var(--sans)" font-size="12" fill="var(--ink-2)">다음 블록에서 1부터 반복</text>
 </svg>
 <figcaption style="margin-top: 0.65rem; font-size: 0.85rem; color: var(--ink-2); text-align: center; line-height: 1.5;">llama.cpp <code>draft-self</code>의 생성 흐름</figcaption>
 </figure>

@@ -149,6 +149,7 @@ button {
     --rule: CanvasText;
     --rule-strong: CanvasText;
     --accent: LinkText;
+    --accent-ink: LinkText;
     --accent-soft: Highlight;
     --accent-press: Highlight;
     --focus: Highlight;

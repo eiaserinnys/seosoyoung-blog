@@ -201,7 +201,8 @@
   letter-spacing: -0.015em;
 }
 
-.toc + .post-content > :first-child {
+.toc + .post-content > :first-child,
+.toc + .post-content > style:first-child + * {
   margin-top: 0;
 }
 

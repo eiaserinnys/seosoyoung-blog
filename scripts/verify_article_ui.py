@@ -119,7 +119,7 @@ MEASURE_JS = r"""
   out.content = r(content);
 
   const toc = document.querySelector('.toc');
-  const first = content ? content.firstElementChild : null;
+  const first = content ? [...content.children].find((el) => el.getBoundingClientRect().height > 0) || null : null;
   out.tocGap = (toc && first) ? +(first.getBoundingClientRect().top - toc.getBoundingClientRect().bottom).toFixed(1) : null;
   out.tocOpen = toc ? toc.hasAttribute('open') : null;
   out.firstContent = {tag: first ? first.tagName : null, className: first ? String(first.className || '') : null, rect: r(first)};
@@ -365,7 +365,7 @@ STATE_JS = r"""
   const footnotes = document.querySelector('.footnotes');
   const content = document.querySelector('.post-content');
   const toc = document.querySelector('.toc');
-  const first = content ? content.firstElementChild : null;
+  const first = content ? [...content.children].find((el) => el.getBoundingClientRect().height > 0) || null : null;
   return {width: innerWidth, tables, sidenoteCount: sidenotes.length,
     numberedSidenotes: sidenotes.filter((n) => n.numberText).length,
     sidenotes,
@@ -922,9 +922,9 @@ def path_checks(report):
     for entry in a9_checks(path, configs):
         add("A9", entry["ok"], entry["detail"])
     for entry in a10_checks(path, configs):
-        add("A10", entry["ok"], entry["detail"])
+        add("A10", entry["ok"], entry["detail"], na=entry.get("na", False))
     for entry in a11_checks(path, configs):
-        add("A11", entry["ok"], entry["detail"])
+        add("A11", entry["ok"], entry["detail"], na=entry.get("na", False))
     for entry in a12_checks(path, configs):
         add("A12", entry["ok"], entry["detail"], na=entry.get("na", False))
     for entry in a13_checks(path, configs):
@@ -935,6 +935,15 @@ def path_checks(report):
         add("A15", entry["ok"], entry["detail"], na=entry.get("na", False))
     for entry in a16_checks(path, configs):
         add("A16", entry["ok"], entry["detail"], na=entry.get("na", False))
+
+    for key, what in (
+        ("A2", "좁은 폭에서 3~5칸 표"),
+        ("A3", "4칸 표"),
+        ("A7", "6칸 이상 표"),
+        ("A8", "375px 2칸 코드 표"),
+    ):
+        if not checks[key]:
+            add(key, True, f"{path}: {what} 0건 ({key} 해당 없음)", na=True)
 
     summary = {key: summarize_checks(entries) for key, entries in checks.items()}
     return summary, checks
