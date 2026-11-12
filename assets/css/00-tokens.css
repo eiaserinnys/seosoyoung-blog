@@ -8,6 +8,7 @@
   --rule: #E4E4E1;
   --rule-strong: #0F0F0F;
   --accent: #0B7A4B;
+  --accent-ink: #0A6B42;
   --accent-soft: rgb(11 122 75 / 8%);
   --accent-press: rgb(11 122 75 / 14%);
   --focus: #0B7A4B;
@@ -55,6 +56,7 @@
   --rule: #242724;
   --rule-strong: #ECEDEA;
   --accent: #4FD69C;
+  --accent-ink: var(--accent);
   --accent-soft: rgb(79 214 156 / 10%);
   --accent-press: rgb(79 214 156 / 18%);
   --focus: #4FD69C;
@@ -72,6 +74,7 @@
     --rule: #242724;
     --rule-strong: #ECEDEA;
     --accent: #4FD69C;
+    --accent-ink: var(--accent);
     --accent-soft: rgb(79 214 156 / 10%);
     --accent-press: rgb(79 214 156 / 18%);
     --focus: #4FD69C;

@@ -452,7 +452,7 @@ def a9_checks(path, configs):
 
 def a10_checks(path, configs):
     if not any((config or {}).get("a10") for config in configs.values()):
-        return []
+        return [{"ok": True, "na": True, "detail": f"{path}: 수식 측정 없음 (A10 해당 없음)"}]
     entries = []
     for name in A10_CONFIGS:
         data = (configs.get(name) or {}).get("a10") or {}
@@ -478,7 +478,7 @@ def a10_checks(path, configs):
 
 def a11_checks(path, configs):
     if not any((config or {}).get("a11") for config in configs.values()):
-        return []
+        return [{"ok": True, "na": True, "detail": f"{path}: 수식 측정 없음 (A11 해당 없음)"}]
     entries = []
     for name in A11_NARROW_CONFIGS:
         data = (configs.get(name) or {}).get("a11") or {}

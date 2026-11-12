@@ -19,66 +19,6 @@ images:
   - "https://img.seosoyoung.eiaserinnys.me/images/local-llm-12gb-vram-clover-35b-a3b/01-cover.png"
 ---
 
-<style>
-.clv-viz { margin: 1.75rem 0; padding: 1.1rem 1.2rem; background: var(--bg-2); border: 1px solid var(--rule); box-sizing: border-box; font-family: var(--sans); }
-.clv-viz-title { font-size: 0.95rem; font-weight: 700; color: var(--ink); margin: 0 0 0.7rem 0; }
-.clv-legend { display: flex; flex-wrap: wrap; gap: 0.5rem 1rem; font-size: 0.8rem; color: var(--ink-2); margin-bottom: 0.95rem; }
-.clv-key { display: inline-flex; align-items: center; gap: 0.35rem; }
-.clv-sw { width: 12px; height: 12px; display: inline-block; flex-shrink: 0; box-sizing: border-box; }
-.clv-sw-acc { background: var(--accent); }
-.clv-sw-ink { background: var(--ink-2); }
-.clv-sw-muted { background: var(--ink-3); }
-.clv-sw-ram { background: repeating-linear-gradient(135deg, var(--ink-3) 0 2px, transparent 2px 5px); border: 1px solid var(--ink-3); }
-.clv-rows { display: flex; flex-direction: column; gap: 1.05rem; }
-.clv-head { display: flex; justify-content: space-between; align-items: baseline; gap: 0.25rem 0.6rem; flex-wrap: wrap; margin-bottom: 0.35rem; }
-.clv-name { font-size: 0.88rem; font-weight: 600; color: var(--ink); }
-.clv-val { margin-left: auto; font-family: var(--sans); font-variant-numeric: tabular-nums; font-size: 0.8rem; color: var(--ink-2); white-space: nowrap; }
-.clv-val strong { font-family: var(--mono); color: var(--ink); font-size: 0.95rem; }
-.clv-best .clv-val strong { color: var(--accent); }
-.clv-tag { display: inline-block; font-family: var(--sans); font-size: 0.72rem; font-weight: 600; padding: 0 0.35rem; margin-left: 0.35rem; border: 1px solid var(--ink-2); color: var(--ink-2); line-height: 1.5; }
-.clv-layers { display: flex; height: 10px; border: 1px solid var(--rule); margin-bottom: 0.3rem; }
-.clv-l-ram { background: repeating-linear-gradient(135deg, var(--ink-3) 0 2px, transparent 2px 5px); }
-.clv-l-gpu { background: var(--accent); }
-.clv-track { position: relative; height: 14px; background: var(--bg); border: 1px solid var(--rule); box-sizing: border-box; }
-.clv-fill { height: 100%; background: var(--ink-2); min-width: 3px; }
-.clv-fill-acc { background: var(--accent); }
-.clv-fill-muted { background: var(--ink-3); }
-.clv-range { position: absolute; top: 0; bottom: 0; background: var(--ink-2); min-width: 4px; }
-.clv-range-acc { background: var(--accent); }
-.clv-sub { font-size: 0.78rem; color: var(--ink-2); margin-top: 0.3rem; font-family: var(--sans); font-variant-numeric: tabular-nums; }
-.clv-axis { position: relative; height: 1.1rem; margin: 0.4rem 1px 0 1px; font-family: var(--sans); font-variant-numeric: tabular-nums; font-size: 0.74rem; line-height: 1.1rem; color: var(--ink-2); }
-.clv-axis span { position: absolute; top: 0; transform: translateX(-50%); white-space: nowrap; }
-.clv-axis span:first-child { transform: none; }
-.clv-axis span:last-child { transform: translateX(-100%); }
-.clv-pair { display: flex; flex-direction: column; gap: 0.3rem; }
-.clv-line { display: grid; grid-template-columns: 4.4rem 1fr 3.4rem; align-items: center; gap: 0.5rem; }
-.clv-env { font-size: 0.78rem; color: var(--ink-2); }
-.clv-num { font-family: var(--mono); font-size: 0.82rem; color: var(--ink); text-align: right; white-space: nowrap; }
-.clv-na { font-family: var(--sans); font-size: 0.74rem; color: var(--ink-2); }
-.clv-axis-pair { display: grid; grid-template-columns: 4.4rem 1fr 3.4rem; gap: 0.5rem; margin-top: 0.4rem; }
-.clv-axis-pair .clv-axis { margin: 0 1px; }
-.clv-resp { margin: 1.2rem 0; border: 1px solid var(--rule); background: var(--bg); }
-.clv-resp-head { display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 0.3rem 0.6rem; padding: 0.65rem 0.9rem; background: var(--bg-2); border-bottom: 1px solid var(--rule); }
-.clv-resp-title { font-size: 0.88rem; font-weight: 700; color: var(--ink); }
-.clv-resp-meta { margin-left: auto; display: inline-flex; align-items: baseline; flex-wrap: nowrap; white-space: nowrap; font-family: var(--mono); font-size: 0.76rem; color: var(--ink-2); }
-.clv-fold { margin-left: 0.85rem; font-family: var(--sans); }
-.clv-resp-body { padding: 0.85rem 1rem; font-size: 0.92rem; line-height: 1.75; color: var(--ink); word-break: keep-all; overflow-wrap: anywhere; }
-.clv-resp-body p { margin: 0 0 0.55rem 0; }
-.clv-resp-body p:last-child { margin-bottom: 0; }
-mark.clv-quirk { background: var(--bg-2); color: inherit; font-weight: 700; padding: 0 0.15rem; text-decoration: underline wavy var(--ink-2); text-underline-offset: 4px; }
-details.clv-resp > summary.clv-resp-head { cursor: pointer; list-style: none; border-bottom: none; }
-details.clv-resp[open] > summary.clv-resp-head { border-bottom: 1px solid var(--rule); }
-details.clv-resp > summary.clv-resp-head::-webkit-details-marker { display: none; }
-.clv-fold::after { content: "펼치기 ▼"; font-size: 0.76rem; color: var(--ink-2); font-weight: 600; }
-details.clv-resp[open] .clv-fold::after { content: "접기 ▲"; }
-@media (max-width: 640px) {
-  .clv-viz { padding: 0.95rem 0.85rem; }
-  .clv-line, .clv-axis-pair { grid-template-columns: 3.9rem 1fr 3rem; gap: 0.4rem; }
-  .clv-resp-head { padding: 0.6rem 0.75rem; }
-  .clv-resp-body { padding: 0.75rem 0.8rem; font-size: 0.9rem; }
-}
-</style>
-
 ## 3줄 요약
 
 1. 10월 28일 공개된 확산 언어 모델 `Clover-35B-A3B-Preview`를 4비트(`Q4_K_M`, 20.2GB)로 양자화했다. 그리고 [앞 글](https://seosoyoung.eiaserinnys.me/digest/local-llm-12gb-vram-deepseek-qwen38-27b/)과 같은 PC(RTX 3080 Ti 12GB VRAM, 32GB RAM)에서 llama.cpp 포크로 실행했다.
@@ -131,7 +71,7 @@ DiffuSpace가 10월 28일 Apache-2.0 라이선스로 공개한 `Clover-35B-A3B-P
   <path d="M 478 74 l 10 10 M 488 74 l -10 10" fill="none" stroke="var(--ink-2)" stroke-width="1.6"/>
   <text x="386" y="122" font-family="var(--sans)" font-size="11" fill="var(--ink-2)">앞 토큰부터 차례로</text>
   <rect x="548" y="24" width="152" height="120" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.5"/>
-  <text x="562" y="50" font-family="var(--sans)" font-size="13" font-weight="700" fill="var(--accent)">4. 맞은 토큰 확정</text>
+  <text x="562" y="50" font-family="var(--sans)" font-size="13" font-weight="700" fill="var(--accent-ink)">4. 맞은 토큰 확정</text>
   <rect x="562" y="70" width="18" height="18" fill="var(--accent)" stroke="var(--accent)" stroke-width="1"/>
   <rect x="584" y="70" width="18" height="18" fill="var(--accent)" stroke="var(--accent)" stroke-width="1"/>
   <rect x="606" y="70" width="18" height="18" fill="var(--accent)" stroke="var(--accent)" stroke-width="1"/>
@@ -151,7 +91,7 @@ DiffuSpace가 10월 28일 Apache-2.0 라이선스로 공개한 `Clover-35B-A3B-P
   <rect width="350" height="448" fill="var(--bg-2)"/>
   <rect x="16" y="16" width="318" height="76" fill="var(--bg)" stroke="var(--rule-strong)" stroke-width="1.5"/>
   <text x="30" y="44" font-family="var(--sans)" font-size="13" font-weight="700" fill="var(--ink)">1. 마스크 블록</text>
-  <text x="30" y="66" font-family="var(--sans)" font-size="11" fill="var(--ink-2)">빈 토큰 최대 15개</text>
+  <text x="30" y="66" font-family="var(--sans)" font-size="12" fill="var(--ink-2)">빈 토큰 최대 15개</text>
   <rect x="214" y="40" width="16" height="16" fill="var(--bg)" stroke="var(--ink-3)" stroke-width="1" stroke-dasharray="3,2"/>
   <rect x="234" y="40" width="16" height="16" fill="var(--bg)" stroke="var(--ink-3)" stroke-width="1" stroke-dasharray="3,2"/>
   <rect x="254" y="40" width="16" height="16" fill="var(--bg)" stroke="var(--ink-3)" stroke-width="1" stroke-dasharray="3,2"/>
@@ -160,7 +100,7 @@ DiffuSpace가 10월 28일 Apache-2.0 라이선스로 공개한 `Clover-35B-A3B-P
   <line x1="175" y1="92" x2="175" y2="114" stroke="var(--ink-2)" stroke-width="1.5" marker-end="url(#clv-arr-ink-m)"/>
   <rect x="16" y="118" width="318" height="76" fill="var(--bg)" stroke="var(--rule-strong)" stroke-width="1.5"/>
   <text x="30" y="146" font-family="var(--sans)" font-size="13" font-weight="700" fill="var(--ink)">2. 한 번에 채움</text>
-  <text x="30" y="168" font-family="var(--sans)" font-size="11" fill="var(--ink-2)">Clover가 후보 제안</text>
+  <text x="30" y="168" font-family="var(--sans)" font-size="12" fill="var(--ink-2)">Clover가 후보 제안</text>
   <rect x="214" y="142" width="16" height="16" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1"/>
   <rect x="234" y="142" width="16" height="16" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1"/>
   <rect x="254" y="142" width="16" height="16" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1"/>
@@ -169,7 +109,7 @@ DiffuSpace가 10월 28일 Apache-2.0 라이선스로 공개한 `Clover-35B-A3B-P
   <line x1="175" y1="194" x2="175" y2="216" stroke="var(--ink-2)" stroke-width="1.5" marker-end="url(#clv-arr-ink-m)"/>
   <rect x="16" y="220" width="318" height="76" fill="var(--bg)" stroke="var(--rule-strong)" stroke-width="1.5"/>
   <text x="30" y="248" font-family="var(--sans)" font-size="13" font-weight="700" fill="var(--ink)">3. 같은 모델이 검증</text>
-  <text x="30" y="270" font-family="var(--sans)" font-size="11" fill="var(--ink-2)">앞 토큰부터 차례로</text>
+  <text x="30" y="270" font-family="var(--sans)" font-size="12" fill="var(--ink-2)">앞 토큰부터 차례로</text>
   <rect x="214" y="244" width="16" height="16" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1"/>
   <rect x="234" y="244" width="16" height="16" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1"/>
   <rect x="254" y="244" width="16" height="16" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1"/>
@@ -179,13 +119,13 @@ DiffuSpace가 10월 28일 Apache-2.0 라이선스로 공개한 `Clover-35B-A3B-P
   <path d="M 298 248 l 8 8 M 306 248 l -8 8" fill="none" stroke="var(--ink-2)" stroke-width="1.5"/>
   <line x1="175" y1="296" x2="175" y2="318" stroke="var(--accent)" stroke-width="1.5" marker-end="url(#clv-arr-acc-m)"/>
   <rect x="16" y="322" width="318" height="76" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.5"/>
-  <text x="30" y="350" font-family="var(--sans)" font-size="13" font-weight="700" fill="var(--accent)">4. 맞은 토큰 확정</text>
-  <text x="30" y="372" font-family="var(--sans)" font-size="11" fill="var(--ink-2)">다음 블록의 앞 문맥</text>
+  <text x="30" y="350" font-family="var(--sans)" font-size="13" font-weight="700" fill="var(--accent-ink)">4. 맞은 토큰 확정</text>
+  <text x="30" y="372" font-family="var(--sans)" font-size="12" fill="var(--ink-2)">다음 블록의 앞 문맥</text>
   <rect x="214" y="346" width="16" height="16" fill="var(--accent)" stroke="var(--accent)" stroke-width="1"/>
   <rect x="234" y="346" width="16" height="16" fill="var(--accent)" stroke="var(--accent)" stroke-width="1"/>
   <rect x="254" y="346" width="16" height="16" fill="var(--accent)" stroke="var(--accent)" stroke-width="1"/>
   <rect x="274" y="346" width="16" height="16" fill="var(--accent)" stroke="var(--accent)" stroke-width="1"/>
-  <text x="175" y="428" text-anchor="middle" font-family="var(--sans)" font-size="11" fill="var(--ink-2)">다음 블록에서 1부터 반복</text>
+  <text x="175" y="428" text-anchor="middle" font-family="var(--sans)" font-size="12" fill="var(--ink-2)">다음 블록에서 1부터 반복</text>
 </svg>
 <figcaption style="margin-top: 0.65rem; font-size: 0.85rem; color: var(--ink-2); text-align: center; line-height: 1.5;">llama.cpp <code>draft-self</code>의 생성 흐름</figcaption>
 </figure>
@@ -481,3 +421,63 @@ def test_no_overlap():
 - [DiffuSpace 발표 트윗](https://x.com/DiffuSpace_Labs/status/2115288124691820738)
 - 앞 글: [12GB VRAM 게이밍 PC의 로컬 LLM 실측: DeepSeek V4.1 Flash 763B와 Qwen 3.8 27B](https://seosoyoung.eiaserinnys.me/digest/local-llm-12gb-vram-deepseek-qwen38-27b/)
 - 치비 서소영 삽화 4장은 「느낌적인 느낌을 숫자로 옮기는 일」의 치비 서소영 라인아트를 참조해 `gpt-image-2.5-flare`로 따로 생성했다.
+
+<style>
+.clv-viz { margin: 1.75rem 0; padding: 1.1rem 1.2rem; background: var(--bg-2); border: 1px solid var(--rule); box-sizing: border-box; font-family: var(--sans); }
+.clv-viz-title { font-size: 0.95rem; font-weight: 700; color: var(--ink); margin: 0 0 0.7rem 0; }
+.clv-legend { display: flex; flex-wrap: wrap; gap: 0.5rem 1rem; font-size: 0.8rem; color: var(--ink-2); margin-bottom: 0.95rem; }
+.clv-key { display: inline-flex; align-items: center; gap: 0.35rem; }
+.clv-sw { width: 12px; height: 12px; display: inline-block; flex-shrink: 0; box-sizing: border-box; }
+.clv-sw-acc { background: var(--accent); }
+.clv-sw-ink { background: var(--ink-2); }
+.clv-sw-muted { background: var(--ink-3); }
+.clv-sw-ram { background: repeating-linear-gradient(135deg, var(--ink-3) 0 2px, transparent 2px 5px); border: 1px solid var(--ink-3); }
+.clv-rows { display: flex; flex-direction: column; gap: 1.05rem; }
+.clv-head { display: flex; justify-content: space-between; align-items: baseline; gap: 0.25rem 0.6rem; flex-wrap: wrap; margin-bottom: 0.35rem; }
+.clv-name { font-size: 0.88rem; font-weight: 600; color: var(--ink); }
+.clv-val { margin-left: auto; font-family: var(--sans); font-variant-numeric: tabular-nums; font-size: 0.8rem; color: var(--ink-2); white-space: nowrap; }
+.clv-val strong { font-family: var(--mono); color: var(--ink); font-size: 0.95rem; }
+.clv-best .clv-val strong { color: var(--accent); }
+.clv-tag { display: inline-block; font-family: var(--sans); font-size: 0.72rem; font-weight: 600; padding: 0 0.35rem; margin-left: 0.35rem; border: 1px solid var(--ink-2); color: var(--ink-2); line-height: 1.5; }
+.clv-layers { display: flex; height: 10px; border: 1px solid var(--rule); margin-bottom: 0.3rem; }
+.clv-l-ram { background: repeating-linear-gradient(135deg, var(--ink-3) 0 2px, transparent 2px 5px); }
+.clv-l-gpu { background: var(--accent); }
+.clv-track { position: relative; height: 14px; background: var(--bg); border: 1px solid var(--rule); box-sizing: border-box; }
+.clv-fill { height: 100%; background: var(--ink-2); min-width: 3px; }
+.clv-fill-acc { background: var(--accent); }
+.clv-fill-muted { background: var(--ink-3); }
+.clv-range { position: absolute; top: 0; bottom: 0; background: var(--ink-2); min-width: 4px; }
+.clv-range-acc { background: var(--accent); }
+.clv-sub { font-size: 0.78rem; color: var(--ink-2); margin-top: 0.3rem; font-family: var(--sans); font-variant-numeric: tabular-nums; }
+.clv-axis { position: relative; height: 1.1rem; margin: 0.4rem 1px 0 1px; font-family: var(--sans); font-variant-numeric: tabular-nums; font-size: 0.74rem; line-height: 1.1rem; color: var(--ink-2); }
+.clv-axis span { position: absolute; top: 0; transform: translateX(-50%); white-space: nowrap; }
+.clv-axis span:first-child { transform: none; }
+.clv-axis span:last-child { transform: translateX(-100%); }
+.clv-pair { display: flex; flex-direction: column; gap: 0.3rem; }
+.clv-line { display: grid; grid-template-columns: 4.4rem 1fr 3.4rem; align-items: center; gap: 0.5rem; }
+.clv-env { font-size: 0.78rem; color: var(--ink-2); }
+.clv-num { font-family: var(--mono); font-size: 0.82rem; color: var(--ink); text-align: right; white-space: nowrap; }
+.clv-na { font-family: var(--sans); font-size: 0.74rem; color: var(--ink-2); }
+.clv-axis-pair { display: grid; grid-template-columns: 4.4rem 1fr 3.4rem; gap: 0.5rem; margin-top: 0.4rem; }
+.clv-axis-pair .clv-axis { margin: 0 1px; }
+.clv-resp { margin: 1.2rem 0; border: 1px solid var(--rule); background: var(--bg); }
+.clv-resp-head { display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 0.3rem 0.6rem; padding: 0.65rem 0.9rem; background: var(--bg-2); border-bottom: 1px solid var(--rule); }
+.clv-resp-title { font-size: 0.88rem; font-weight: 700; color: var(--ink); }
+.clv-resp-meta { margin-left: auto; display: inline-flex; align-items: baseline; flex-wrap: nowrap; white-space: nowrap; font-family: var(--mono); font-size: 0.76rem; color: var(--ink-2); }
+.clv-fold { margin-left: 0.85rem; font-family: var(--sans); }
+.clv-resp-body { padding: 0.85rem 1rem; font-size: 0.92rem; line-height: 1.75; color: var(--ink); word-break: keep-all; overflow-wrap: anywhere; }
+.clv-resp-body p { margin: 0 0 0.55rem 0; }
+.clv-resp-body p:last-child { margin-bottom: 0; }
+mark.clv-quirk { background: var(--bg-2); color: inherit; font-weight: 700; padding: 0 0.15rem; text-decoration: underline wavy var(--ink-2); text-underline-offset: 4px; }
+details.clv-resp > summary.clv-resp-head { cursor: pointer; list-style: none; border-bottom: none; }
+details.clv-resp[open] > summary.clv-resp-head { border-bottom: 1px solid var(--rule); }
+details.clv-resp > summary.clv-resp-head::-webkit-details-marker { display: none; }
+.clv-fold::after { content: "펼치기 ▼"; font-size: 0.76rem; color: var(--ink-2); font-weight: 600; }
+details.clv-resp[open] .clv-fold::after { content: "접기 ▲"; }
+@media (max-width: 640px) {
+  .clv-viz { padding: 0.95rem 0.85rem; }
+  .clv-line, .clv-axis-pair { grid-template-columns: 3.9rem 1fr 3rem; gap: 0.4rem; }
+  .clv-resp-head { padding: 0.6rem 0.75rem; }
+  .clv-resp-body { padding: 0.75rem 0.8rem; font-size: 0.9rem; }
+}
+</style>

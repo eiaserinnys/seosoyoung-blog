@@ -33,7 +33,7 @@ images:
   <rect x="30" y="70" width="196" height="36" fill="var(--bg-2)" stroke="var(--rule)" stroke-width="1"></rect>
   <text x="40" y="92" fill="var(--ink-2)" font-size="12">1. 실행 순서 및 검증 게이트</text>
   <rect x="30" y="116" width="196" height="48" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1"></rect>
-  <text x="40" y="136" fill="var(--accent)" font-family="var(--mono)" font-size="11" font-weight="700">include: blog-taxonomy</text>
+  <text x="40" y="136" fill="var(--accent-ink)" font-family="var(--mono)" font-size="11" font-weight="700">include: blog-taxonomy</text>
   <text x="40" y="153" fill="var(--ink-2)" font-size="11">필수 레퍼런스 포함 지시문</text>
   <rect x="30" y="174" width="196" height="54" fill="var(--bg-2)" stroke="var(--ink-2)" stroke-width="1" stroke-dasharray="3,3"></rect>
   <text x="40" y="194" fill="var(--ink)" font-family="var(--mono)" font-size="11" font-weight="700">call: blog-publish</text>
@@ -50,7 +50,7 @@ images:
   <rect x="486" y="70" width="204" height="36" fill="var(--bg-2)" stroke="var(--rule)" stroke-width="1"></rect>
   <text x="496" y="92" fill="var(--ink-2)" font-size="12">1. 실행 순서 및 검증 게이트</text>
   <rect x="486" y="116" width="204" height="58" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.5"></rect>
-  <text x="496" y="136" fill="var(--accent)" font-size="12" font-weight="700">블로그 분류 체계 표 전체 삽입</text>
+  <text x="496" y="136" fill="var(--accent-ink)" font-size="12" font-weight="700">블로그 분류 체계 표 전체 삽입</text>
   <text x="496" y="154" fill="var(--ink-2)" font-size="11">카테고리와 세부 주제 표가 펼쳐짐</text>
   <rect x="486" y="184" width="204" height="48" fill="var(--bg-2)" stroke="var(--rule)" stroke-width="1"></rect>
   <text x="496" y="203" fill="var(--ink)" font-size="12" font-weight="700">3줄 호출 포인터만 유지</text>
@@ -68,15 +68,15 @@ images:
   <rect x="30" y="62" width="290" height="34" fill="var(--bg-2)" stroke="var(--rule)" stroke-width="1"></rect>
   <text x="42" y="83" fill="var(--ink-2)" font-size="12">1. 실행 순서 및 검증 게이트</text>
   <rect x="30" y="104" width="290" height="46" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1"></rect>
-  <text x="42" y="123" fill="var(--accent)" font-family="var(--mono)" font-size="11" font-weight="700">include: blog-taxonomy</text>
-  <text x="42" y="140" fill="var(--ink-2)" font-size="11">필수 레퍼런스 포함 지시문</text>
+  <text x="42" y="123" fill="var(--accent-ink)" font-family="var(--mono)" font-size="12" font-weight="700">include: blog-taxonomy</text>
+  <text x="42" y="140" fill="var(--ink-2)" font-size="12">필수 레퍼런스 포함 지시문</text>
   <rect x="30" y="158" width="290" height="44" fill="var(--bg-2)" stroke="var(--ink-2)" stroke-width="1" stroke-dasharray="3,3"></rect>
-  <text x="42" y="177" fill="var(--ink)" font-family="var(--mono)" font-size="11" font-weight="700">call: blog-publish</text>
-  <text x="42" y="193" fill="var(--ink-2)" font-size="11">하위 스킬 위임 지시문</text>
+  <text x="42" y="177" fill="var(--ink)" font-family="var(--mono)" font-size="12" font-weight="700">call: blog-publish</text>
+  <text x="42" y="193" fill="var(--ink-2)" font-size="12">하위 스킬 위임 지시문</text>
   <line x1="175" y1="212" x2="175" y2="238" stroke="var(--accent)" stroke-width="1.5" marker-end="url(#arrow-accent-m)"></line>
   <rect x="75" y="244" width="200" height="60" fill="var(--bg)" stroke="var(--accent)" stroke-width="2"></rect>
   <text x="175" y="268" text-anchor="middle" fill="var(--accent)" font-family="var(--mono)" font-size="12" font-weight="700">load_skill() 동적 링커</text>
-  <text x="175" y="288" text-anchor="middle" fill="var(--ink-2)" font-size="11">런타임 심볼 결합 및 본문 조립</text>
+  <text x="175" y="288" text-anchor="middle" fill="var(--ink-2)" font-size="12">런타임 심볼 결합 및 본문 조립</text>
   <line x1="175" y1="304" x2="175" y2="330" stroke="var(--accent)" stroke-width="1.5" marker-end="url(#arrow-accent-m)"></line>
   <rect x="16" y="336" width="318" height="192" fill="var(--bg)" stroke="var(--rule-strong)" stroke-width="1.5"></rect>
   <text x="30" y="360" fill="var(--ink)" font-size="13" font-weight="700">조립된 스킬 본문 (컨텍스트 주입)</text>
@@ -84,11 +84,11 @@ images:
   <rect x="30" y="382" width="290" height="34" fill="var(--bg-2)" stroke="var(--rule)" stroke-width="1"></rect>
   <text x="42" y="403" fill="var(--ink-2)" font-size="12">1. 실행 순서 및 검증 게이트</text>
   <rect x="30" y="424" width="290" height="46" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.5"></rect>
-  <text x="42" y="443" fill="var(--accent)" font-size="12" font-weight="700">블로그 분류 체계 표 전체 삽입</text>
-  <text x="42" y="460" fill="var(--ink-2)" font-size="11">카테고리와 세부 주제 표가 본문에 펼쳐짐</text>
+  <text x="42" y="443" fill="var(--accent-ink)" font-size="12" font-weight="700">블로그 분류 체계 표 전체 삽입</text>
+  <text x="42" y="460" fill="var(--ink-2)" font-size="12">카테고리와 세부 주제 표가 본문에 펼쳐짐</text>
   <rect x="30" y="478" width="290" height="40" fill="var(--bg-2)" stroke="var(--rule)" stroke-width="1"></rect>
   <text x="42" y="496" fill="var(--ink)" font-size="12" font-weight="700">3줄 호출 포인터만 유지</text>
-  <text x="42" y="511" fill="var(--ink-2)" font-size="11">해당 단계 도달 시에만 하위 스킬 로드</text>
+  <text x="42" y="511" fill="var(--ink-2)" font-size="12">해당 단계 도달 시에만 하위 스킬 로드</text>
 </svg>
 <figcaption>스킬 로더(<code>load_skill</code>)의 런타임 조립 흐름. 당장 필요한 분류표(<code>include</code>)는 본문에 바로 펼쳐 넣고, 특정 단계에서만 쓰는 하위 스킬(<code>call</code>)은 3줄짜리 호출 안내문으로만 남겨 컨텍스트를 아낍니다.</figcaption>
 </figure>

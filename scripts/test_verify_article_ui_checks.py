@@ -125,6 +125,31 @@ class ArticleUiChecksTest(unittest.TestCase):
             self.assertEqual(summary["failed"], 0)
             self.assertTrue(summary["pass"])
 
+    def test_zero_target_checks_are_na(self):
+        from verify_article_ui import path_checks
+
+        names = ("min360-light", "narrow-light", "min390-light", "min414-light",
+                 "wide-light", "mid-light", "wide-dark", "narrow-dark",
+                 "phablet-light", "tablet-light", "tablet820-light")
+
+        def config(width):
+            return {"tocGap": 32, "tables": [], "sidenotes": [], "footnoteMarkers": 0,
+                    "footnotesSection": None, "docScrollWidth": width,
+                    "viewport": {"w": width}, "a9": {"codes": []}, "quotes": None,
+                    "postImages": [], "diagrams": {"figs": []}}
+
+        configs = {name: config(360 if name == "min360-light" else 1440) for name in names}
+        report = {"path": "/digest/x/", "configs": configs, "resize": {}, "lightbox": {}}
+        summary, checks = path_checks(report)
+        for key in ("A2", "A3", "A7", "A8", "A10", "A11"):
+            self.assertEqual(len(checks[key]), 1, key)
+            self.assertTrue(checks[key][0]["na"], key)
+            self.assertTrue(checks[key][0]["ok"], key)
+            self.assertEqual(summary[key]["checked"], 0, key)
+            self.assertEqual(summary[key]["na"], 1, key)
+            self.assertTrue(summary[key]["pass"], key)
+        self.assertFalse(summarize_checks([])["pass"])
+
     def test_post_image_gap_and_row_widths(self):
         rule = "rgb(228, 228, 225)"
         shadow = f"{rule} 0px 0px 0px 1px"
