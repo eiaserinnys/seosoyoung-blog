@@ -1,6 +1,7 @@
 {{ define "head" }}{{ partial "pager-redirect.html" (dict "page" . "pager" (.Paginate (where site.RegularPages "Section" "posts")) "part" "head") }}{{ end }}
 
 {{ define "main" }}
+  {{- partialCached "check-term-spellings.html" . "site" -}}
   {{- $pager := .Paginate (where site.RegularPages "Section" "posts") -}}
   {{- if gt $pager.PageNumber 1 -}}
     {{- partial "pager-redirect.html" (dict "page" . "pager" $pager "part" "body") -}}
