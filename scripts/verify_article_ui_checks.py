@@ -263,9 +263,10 @@ A10_CONFIGS = ("min360-light", "narrow-light", "min390-light", "min414-light", "
 A11_NARROW_CONFIGS = ("min360-light", "narrow-light", "min390-light", "min414-light")
 A12_CONFIGS = ("wide-light", "wide-dark", "narrow-light", "narrow-dark")
 A13_CONFIGS = A12_CONFIGS
-A16_CONFIGS = ("min360-light", "narrow-light", "min390-light", "min414-light", "mid-light", "wide-light", "wide-dark", "narrow-dark")
+A16_CONFIGS = ("min360-light", "narrow-light", "min390-light", "min414-light", "phablet-light", "tablet-light", "tablet820-light", "mid-light", "wide-light", "wide-dark", "narrow-dark")
 ROW_WIDTH_TOL = 0.5
 DIAGRAM_MIN_EFF_PX = 10.9
+DIAGRAM_MOBILE_MAX_SCALE = 1.15
 DIAGRAM_HEADER_RIGHT_TOL = 1.5
 DIAGRAM_SWATCH_GAP_TOL = 1.5
 DIAGRAM_ITEM_GAP_TOL = 2.0
@@ -680,7 +681,12 @@ def a16_checks(path, configs):
             hr = f.get("headerRow")
             hr_diff = hr.get("rightDiff") if hr else None
             hr_ok = hr is None or (hr_diff is not None and abs(hr_diff) <= DIAGRAM_HEADER_RIGHT_TOL)
+            cls = f.get("cls") or ""
+            scale = f.get("scale")
+            mobile_scale_ok = ("diagram-svg-mobile" not in cls.split()) or (
+                scale is not None and scale <= DIAGRAM_MOBILE_MAX_SCALE)
             ok = (dom_ok and min_eff is not None and min_eff >= DIAGRAM_MIN_EFF_PX
+                  and mobile_scale_ok
                   and not small and not outside and not ov and not cross and hr_ok)
             entries.append({
                 "ok": ok,
@@ -688,7 +694,7 @@ def a16_checks(path, configs):
                     f"{path} {name} fig{f.get('fig')} ({f.get('cls')}): "
                     f"eff={min_eff}..{f.get('maxEff')} small={len(small)} "
                     f"outside={len(outside)} ov={len(ov)} cross={len(cross)} "
-                    f"headerRightDiff={hr_diff}"
+                    f"headerRightDiff={hr_diff} scale={scale}"
                 ),
             })
             if hr:

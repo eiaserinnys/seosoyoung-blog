@@ -111,8 +111,7 @@ images:
 
 UC 산타크루즈 학생이던 글렌 위크먼(Glenn Wichman)과 마이클 토이는 텍스트 게임 *Star Trek*(1971)과 *Adventure*(1975)의 경험을 판마다 무작위로 달라지게 하려고 1980년 *Rogue*를 제작했다. 제작진은 던전을 만든 가상의 마법사 로드니(Rodney)의 철자를 거꾸로 뒤집어 '옌더(Yendor)'라 이름 붙이고, 플레이어가 던전 최하층에서 이 '옌더의 부적(Amulet of Yendor)'을 회수해 오는 이야기를 부여했다. 토이는 UC 버클리 컴퓨터 연구소에 취업해 `curses` 라이브러리 제작자인 켄 아널드를 만났고, 이때 코드 최적화와 기능 확장이 이루어졌다. *Rogue*는 유닉스의 창시자 켄 톰프슨(Ken Thompson)까지 즐겨 플레이할 만큼 인기를 끌었다. 데니스 리치(Dennis Ritchie)는 당시 *Rogue*를 두고 "역사상 가장 거대한 CPU 사이클 낭비"라고 농담을 남겼다.
 
-<figure class="blog-diagram" style="margin: 2.2rem 0;">
-<style>.blog-diagram .diagram-svg-desktop { display: block; width: 100%; height: auto; background: var(--bg-2); border: 1px solid var(--rule); } .blog-diagram .diagram-svg-mobile { display: none; width: 100%; height: auto; background: var(--bg-2); border: 1px solid var(--rule); } @media (max-width: 640px) { .blog-diagram .diagram-svg-desktop { display: none; } .blog-diagram .diagram-svg-mobile { display: block; } }</style>
+<figure class="blog-diagram">
 <svg class="diagram-svg-desktop" viewBox="0 0 720 356" role="img" aria-label="Rogue(1980)에서 분기한 Hack 계열과 Moria 계열의 로그라이크 역사 계보도" xmlns="http://www.w3.org/2000/svg">
   <defs>
     <marker id="arr-ink" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="var(--ink-2)"/></marker>

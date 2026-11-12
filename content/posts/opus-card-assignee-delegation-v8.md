@@ -30,7 +30,6 @@ images:
 도구를 한 번 부를 때마다 API를 한 번 호출하고 그때까지 누적된 대화 전체를 다시 입력한다. 담당의 호출당 평균 대화는 약 22만 토큰이었다. 1시간 캐시가 만료돼서 비용이 늘어난 것도 아니었고, Fable 5.2 출시(11월 9일) 뒤 Opus가 위임을 꺼린다는 가설도 452세션의 시기별 지표를 대조해 기각했다[^2].
 
 <figure class="blog-diagram">
-<style>.blog-diagram{margin:var(--space-4) 0;}.blog-diagram .diagram-svg-desktop{display:block;width:100%;height:auto;background:var(--bg-2);border:1px solid var(--rule);font-family:var(--sans);}.blog-diagram .diagram-svg-mobile{display:none;width:100%;height:auto;background:var(--bg-2);border:1px solid var(--rule);font-family:var(--sans);}@media (max-width:640px){.blog-diagram .diagram-svg-desktop{display:none;}.blog-diagram .diagram-svg-mobile{display:block;}}</style>
 <svg class="diagram-svg-desktop" viewBox="0 0 720 256" role="img" aria-label="옛 구조에서 카드 담당 Opus가 하위 보고 뒤 직접 조사와 검증을 반복하며 호출마다 약 22만 토큰 대화를 재입력하는 흐름" xmlns="http://www.w3.org/2000/svg">
   <defs>
     <marker id="arr-ink-f1d" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="var(--ink-2)"/></marker>
