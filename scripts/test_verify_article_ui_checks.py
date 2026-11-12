@@ -5,7 +5,7 @@ import unittest
 from playwright.sync_api import sync_playwright
 
 from verify_article_ui_checks import (
-    A10_JS, A11_JS, A15_JS, a12_checks, a13_checks, a14_checks, a15_checks,
+    A10_JS, A11_JS, A15_JS, A16_JS, a12_checks, a13_checks, a14_checks, a15_checks, a16_checks,
     resized_sidenotes_ok, sidenote_presence_ok, summarize_checks,
 )
 
@@ -198,6 +198,57 @@ class ArticleUiChecksTest(unittest.TestCase):
         failing = {"wide-light": {"quotes": {"blocks": 2, "hitCount": 1, "hits": ['“a"b']}}}
         self.assertFalse(a15_checks(path, failing)[0]["ok"])
         self.assertTrue(a15_checks(path, {"wide-light": {}})[0]["na"])
+
+    def test_diagram_audit_and_header_row_checks(self):
+        self.page.set_viewport_size({"width": 800, "height": 600})
+        self.page.set_content("""<style>
+          .post-content { width: 720px; }
+          figure.blog-diagram { margin: 0; }
+          svg { display: block; width: 100%; height: auto; font-family: monospace; }
+        </style><div class="post-content">
+          <figure class="blog-diagram">
+            <svg class="diagram-svg-desktop" viewBox="0 0 720 120">
+              <rect width="720" height="120" fill="#eee"/>
+              <text x="24" y="30" font-size="12">단위: 백만 토큰</text>
+              <rect x="560" y="20" width="10" height="10" fill="#333"/>
+              <text id="leg1" x="576" y="30" font-size="12">옛</text>
+              <rect id="sw2" x="668" y="20" width="10" height="10" fill="#c30"/>
+              <text id="leg2" x="696" y="30" text-anchor="end" font-size="12">새</text>
+              <line x1="24" y1="42" x2="696" y2="42" stroke="#999"/>
+              <rect x="24" y="56" width="200" height="44" fill="#fff" stroke="#333"/>
+              <text x="36" y="82" font-size="12">상자 안 텍스트</text>
+            </svg>
+          </figure>
+        </div>""")
+        self.page.evaluate("""() => {
+          const b2 = document.getElementById('leg2').getBBox();
+          document.getElementById('sw2').setAttribute('x', String(+(b2.x - 16).toFixed(1)));
+        }""")
+        measured = self.page.evaluate(A16_JS)
+        self.assertEqual(len(measured["figs"]), 1)
+        fig = measured["figs"][0]
+        self.assertEqual(fig["outside"], [])
+        self.assertEqual(fig["ov"], [])
+        self.assertEqual(fig["cross"], [])
+        self.assertAlmostEqual(fig["headerRow"]["rightDiff"], 0.0, delta=1.5)
+
+        good_cfg = {"wide-light": {"diagrams": measured}}
+        self.assertTrue(all(e["ok"] for e in a16_checks("/digest/x/", good_cfg)))
+
+        # Unaligned header right edge should fail A16
+        bad_fig = dict(fig, headerRow=dict(fig["headerRow"], rightDiff=25.8))
+        bad_cfg = {"wide-light": {"diagrams": {"figs": [bad_fig]}}}
+        self.assertFalse(all(e["ok"] for e in a16_checks("/digest/x/", bad_cfg)))
+
+        # Uneven legend item gaps across multiple charts should fail A16
+        fig_a = dict(fig, fig=1, headerRow=dict(fig["headerRow"], swatchGaps=[6.0], itemGaps=[16.0]))
+        fig_b = dict(fig, fig=2, headerRow=dict(fig["headerRow"], swatchGaps=[6.0], itemGaps=[32.0]))
+        uneven_cfg = {"wide-light": {"diagrams": {"figs": [fig_a, fig_b]}}}
+        self.assertFalse(all(e["ok"] for e in a16_checks("/digest/x/", uneven_cfg)))
+
+        # Pages without diagrams should return NA
+        na_entries = a16_checks("/digest/none/", {"wide-light": {"diagrams": {"figs": []}}})
+        self.assertTrue(na_entries[0]["na"])
 
 
 if __name__ == '__main__':
