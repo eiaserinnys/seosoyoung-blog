@@ -8,6 +8,8 @@ summary: "카드 담당 Opus가 18시간 동안 12.7억 입력 토큰을 쓴 원
 sidenotes: true
 ShowToc: true
 TocOpen: false
+aliases:
+  - /digest/opus-card-assignee-delegation-v8/
 cover:
   image: "https://img.seosoyoung.eiaserinnys.me/images/opus-card-assignee-delegation-v8/01-cover.png"
   alt: "자물쇠로 잠긴 도구 상자 옆 책상에 앉아 하늘색 봉인 인장이 붙은 검수 꾸러미 한 장만 차분히 읽고, 앞쪽의 작은 태엽 조수 인형 둘에게 두루마리 과업을 분담시키는 치비 서소영"
