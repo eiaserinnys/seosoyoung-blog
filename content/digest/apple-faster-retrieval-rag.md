@@ -70,16 +70,16 @@ $k$개 클러스터 각각의 지지 함수에 직접 접근할 수 있다면, �
 
 연구진은 약 260만 개의 고유 문서 패시지로 이루어진 Natural Questions 벤치마크 데이터베이스를 128개 클러스터로 분할한 뒤 SupportNet 4종을 학습시켰다. 4종은 깊이를 16층으로 같게 하고, 파라미터 규모만 데이터베이스 크기의 1%(XS), 5%(S), 10%(M), 20%(L)로 달리했다. 탐색할 상위 클러스터 수 $s$를 $1, 2, 4, 8, \dots, 128$로 늘려 가며 <strong>라우팅 재현율(routing recall)</strong>을 측정했다. 라우팅 재현율은 실제 정답 키가 들어 있는 클러스터를 찾아낸 비율이다. 결과는 아래 표와 같으며, 각 칸의 값은 '라우팅 재현율 / 지연 시간(ms)'이다.
 
-| 탐색&nbsp;비율&nbsp;($s$) | 중심점&nbsp;라우팅 | SupportNet-XS&nbsp;(1%) | SupportNet-S&nbsp;(5%) | SupportNet-M&nbsp;(10%) | SupportNet-L&nbsp;(20%) |
+| 탐색&nbsp;비율 | 중심점&nbsp;라우팅 | XS&nbsp;(1%) | S&nbsp;(5%) | M&nbsp;(10%) | L&nbsp;(20%) |
 | --- | --- | --- | --- | --- | --- |
-| 약&nbsp;0.8%&nbsp;($s=1$) | 55.0%&nbsp;/&nbsp;0.22ms | 57.8%&nbsp;/&nbsp;0.22ms | 61.9%&nbsp;/&nbsp;0.22ms | 65.2%&nbsp;/&nbsp;0.22ms | 67.8%&nbsp;/&nbsp;0.23ms |
-| 약&nbsp;1.7%&nbsp;($s=2$) | 70.6%&nbsp;/&nbsp;0.43ms | 74.4%&nbsp;/&nbsp;0.45ms | 78.5%&nbsp;/&nbsp;0.45ms | 81.7%&nbsp;/&nbsp;0.45ms | 84.2%&nbsp;/&nbsp;0.45ms |
-| 약&nbsp;3.3%&nbsp;($s=4$) | 82.0%&nbsp;/&nbsp;0.86ms | 85.9%&nbsp;/&nbsp;0.88ms | 89.4%&nbsp;/&nbsp;0.88ms | 91.7%&nbsp;/&nbsp;0.88ms | 93.2%&nbsp;/&nbsp;0.88ms |
-| 약&nbsp;6.6%&nbsp;($s=8$) | 89.9%&nbsp;/&nbsp;1.70ms | 92.9%&nbsp;/&nbsp;1.75ms | **95.1%&nbsp;/&nbsp;1.74ms** | 96.4%&nbsp;/&nbsp;1.74ms | **97.2%&nbsp;/&nbsp;1.74ms** |
-| 약&nbsp;13.1%&nbsp;($s=16$) | **94.9%&nbsp;/&nbsp;3.36ms** | 96.8%&nbsp;/&nbsp;3.46ms | 97.9%&nbsp;/&nbsp;3.44ms | 98.5%&nbsp;/&nbsp;3.44ms | 99.0%&nbsp;/&nbsp;3.44ms |
-| 약&nbsp;25.9%&nbsp;($s=32$) | 97.8%&nbsp;/&nbsp;6.63ms | 98.8%&nbsp;/&nbsp;6.81ms | 99.4%&nbsp;/&nbsp;6.79ms | 99.5%&nbsp;/&nbsp;6.79ms | 99.7%&nbsp;/&nbsp;6.78ms |
-| 약&nbsp;51.1%&nbsp;($s=64$) | 99.4%&nbsp;/&nbsp;13.14ms | 99.8%&nbsp;/&nbsp;13.41ms | 99.9%&nbsp;/&nbsp;13.39ms | 99.9%&nbsp;/&nbsp;13.38ms | 100.0%&nbsp;/&nbsp;13.38ms |
-| 100.0%&nbsp;($s=128$) | 100.0%&nbsp;/&nbsp;26.17ms | 100.0%&nbsp;/&nbsp;26.17ms | 100.0%&nbsp;/&nbsp;26.17ms | 100.0%&nbsp;/&nbsp;26.17ms | 100.0%&nbsp;/&nbsp;26.17ms |
+| 약&nbsp;0.8%&nbsp;(1개) | 55.0%&nbsp;/&nbsp;0.22ms | 57.8%&nbsp;/&nbsp;0.22ms | 61.9%&nbsp;/&nbsp;0.22ms | 65.2%&nbsp;/&nbsp;0.22ms | 67.8%&nbsp;/&nbsp;0.23ms |
+| 약&nbsp;1.7%&nbsp;(2개) | 70.6%&nbsp;/&nbsp;0.43ms | 74.4%&nbsp;/&nbsp;0.45ms | 78.5%&nbsp;/&nbsp;0.45ms | 81.7%&nbsp;/&nbsp;0.45ms | 84.2%&nbsp;/&nbsp;0.45ms |
+| 약&nbsp;3.3%&nbsp;(4개) | 82.0%&nbsp;/&nbsp;0.86ms | 85.9%&nbsp;/&nbsp;0.88ms | 89.4%&nbsp;/&nbsp;0.88ms | 91.7%&nbsp;/&nbsp;0.88ms | 93.2%&nbsp;/&nbsp;0.88ms |
+| 약&nbsp;6.6%&nbsp;(8개) | 89.9%&nbsp;/&nbsp;1.70ms | 92.9%&nbsp;/&nbsp;1.75ms | **95.1%&nbsp;/&nbsp;1.74ms** | 96.4%&nbsp;/&nbsp;1.74ms | **97.2%&nbsp;/&nbsp;1.74ms** |
+| 약&nbsp;13.1%&nbsp;(16개) | **94.9%&nbsp;/&nbsp;3.36ms** | 96.8%&nbsp;/&nbsp;3.46ms | 97.9%&nbsp;/&nbsp;3.44ms | 98.5%&nbsp;/&nbsp;3.44ms | 99.0%&nbsp;/&nbsp;3.44ms |
+| 약&nbsp;25.9%&nbsp;(32개) | 97.8%&nbsp;/&nbsp;6.63ms | 98.8%&nbsp;/&nbsp;6.81ms | 99.4%&nbsp;/&nbsp;6.79ms | 99.5%&nbsp;/&nbsp;6.79ms | 99.7%&nbsp;/&nbsp;6.78ms |
+| 약&nbsp;51.1%&nbsp;(64개) | 99.4%&nbsp;/&nbsp;13.14ms | 99.8%&nbsp;/&nbsp;13.41ms | 99.9%&nbsp;/&nbsp;13.39ms | 99.9%&nbsp;/&nbsp;13.38ms | 100.0%&nbsp;/&nbsp;13.38ms |
+| 100.0%&nbsp;(128개) | 100.0%&nbsp;/&nbsp;26.17ms | 100.0%&nbsp;/&nbsp;26.17ms | 100.0%&nbsp;/&nbsp;26.17ms | 100.0%&nbsp;/&nbsp;26.17ms | 100.0%&nbsp;/&nbsp;26.17ms |
 
 신경망을 실행하는 데 드는 추가 연산 비용까지 지연 시간에 모두 포함했는데도, 소형 모델인 SupportNet-S는 95% 라우팅 재현율에 중심점 라우팅보다 약 **1.9배 빨리** 도달한다(1.74ms 대 3.36ms). 같은 1.74ms 예산에서 대형 모델 SupportNet-L은 재현율 97.2%에 도달한다. 또 신경망 오버헤드를 제외하고 데이터베이스의 5%만 스캔하도록 탐색 예산을 같게 맞춰 비교해도 SupportNet의 라우팅 재현율이 더 높다. 중심점 라우팅의 재현율은 87.5%이고, SupportNet은 모델 크기에 따라 90\~93%다(중형 M 기준 92.6%).
 
@@ -94,7 +94,7 @@ SupportNet이 기존 역파일 인덱스(IVF, Inverted File Index) 내부의 중
 
 동일한 Natural Questions 데이터셋과 FAISS IVF 인덱스 환경에서, 16층 깊이의 KeyNet 4종(XS, S, M, L)을 결합해 최종 <strong>검색 재현율(search recall)</strong>과 비용의 관계를 측정했다. 주요 수치는 아래 표와 같으며, 각 칸의 값은 '검색 재현율 / 총 지연 시간(ms)'이다.[^4]
 
-| 스캔&nbsp;비율 | 원래&nbsp;질의 | KeyNet-XS&nbsp;(1%) | KeyNet-S&nbsp;(5%) | KeyNet-M&nbsp;(10%) | KeyNet-L&nbsp;(20%) |
+| 스캔&nbsp;비율 | 원래&nbsp;질의 | XS&nbsp;(1%) | S&nbsp;(5%) | M&nbsp;(10%) | L&nbsp;(20%) |
 | --- | --- | --- | --- | --- | --- |
 | 0.001% | 86.1%&nbsp;/&nbsp;0.05ms | 89.3%&nbsp;/&nbsp;0.05ms | 94.0%&nbsp;/&nbsp;0.05ms | 95.7%&nbsp;/&nbsp;0.05ms | **96.7%&nbsp;/&nbsp;0.05ms** |
 | 0.002% | 89.6%&nbsp;/&nbsp;0.06ms | 92.0%&nbsp;/&nbsp;0.06ms | 95.8%&nbsp;/&nbsp;0.06ms | 97.1%&nbsp;/&nbsp;0.06ms | 97.7%&nbsp;/&nbsp;0.07ms |
