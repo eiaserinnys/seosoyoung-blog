@@ -357,6 +357,11 @@
 }
 
 /* 넘치는 표의 첫 열을 가로 스크롤 중에도 고정한다(post.js가 is-sticky-first를 붙인다). */
+.table-scroll.is-sticky-first {
+  /* 표 레이어(will-change)의 마지막 화소 줄이 감싸개의 overflow 잘림에 걸리지 않게 한 줄을 비워 둔다(A18). */
+  padding-bottom: var(--line);
+}
+
 .table-scroll.is-sticky-first > table {
   border-collapse: separate;
   border-spacing: 0;

@@ -169,7 +169,13 @@
     }
 
     updateOverflow();
-    window.addEventListener("resize", updateOverflow);
+    // 모바일 주소창이 접히며 높이만 바뀌는 resize는 건너뛴다. 클래스를 뗐다 붙이면 밀어 둔 표의 scrollLeft가 0으로 돌아간다.
+    var lastWidth = window.innerWidth;
+    window.addEventListener("resize", function () {
+      if (window.innerWidth === lastWidth) return;
+      lastWidth = window.innerWidth;
+      updateOverflow();
+    });
     if (document.fonts && document.fonts.ready) {
       document.fonts.ready.then(updateOverflow).catch(function () {});
     }

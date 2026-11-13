@@ -769,7 +769,7 @@ def a17_checks(path, configs):
 
 
 def a18_checks(path, configs):
-    """A18: 고정 표 첫 열과 둘째 열의 그려진 가로 괘선 y 목록이 같은지.
+    """A18: 고정 표 첫 열과 둘째 열의 그려진 가로 괘선 y 목록이 같은지, 표 맨 아래 줄이 두 열 모두에 있는지.
 
     측정값(configs[name]["seams"])은 verify_article_ui.py가 rest/end 스크린샷에서 만든다.
     """
@@ -789,6 +789,7 @@ def a18_checks(path, configs):
                     s = states.get(state) or {}
                     bits.append(f"{state}: a={str(s.get('a'))[:200]} b={str(s.get('b'))[:200]} "
                                 f"strongA={s.get('strongA')} strongB={s.get('strongB')} "
+                                f"bottomA={s.get('bottomA')} bottomB={s.get('bottomB')} "
                                 f"reason={s.get('reason')}")
                 detail = (f"{path} {name} table {rec.get('table')} ({rec.get('text')}): "
                           f"괘선 어긋남 {'; '.join(bits)}")
@@ -796,9 +797,33 @@ def a18_checks(path, configs):
             else:
                 entries.append({"ok": True,
                                 "detail": f"{path} {name} table {rec.get('table')}: "
-                                          f"rest+end 괘선 {lines}줄 일치"})
+                                          f"rest+end 괘선 {lines}줄 일치, 표 맨 아래 줄 확인"})
     if not tables:
         entries.append({"ok": True, "na": True, "detail": f"{path}: A18 대상 고정 표 0건 (A18 해당 없음)"})
+    return entries
+
+
+def a19_checks(path, rows):
+    """A19: 창 높이만 바뀐 뒤에도 밀어 둔 넘치는 표의 scrollLeft와 두 클래스가 그대로인지."""
+    entries = []
+    for row in rows or []:
+        before = row.get("before") or {}
+        after = row.get("after") or {}
+        pushed = (before.get("scrollLeft") or 0) > 1
+        kept = (after.get("scrollLeft") is not None and before.get("scrollLeft") is not None
+                and abs(after["scrollLeft"] - before["scrollLeft"]) <= 1)
+        same_classes = (after.get("overflowing") == before.get("overflowing")
+                        and after.get("sticky") == before.get("sticky"))
+        ok = pushed and kept and same_classes
+        detail = (f"{path} narrow-light table {row.get('table')} ({row.get('text')}): "
+                  f"높이만 변경 전 scrollLeft={before.get('scrollLeft')}/{before.get('max')} "
+                  f"overflowing={before.get('overflowing')} sticky={before.get('sticky')} → "
+                  f"후 scrollLeft={after.get('scrollLeft')}/{after.get('max')} "
+                  f"overflowing={after.get('overflowing')} sticky={after.get('sticky')}"
+                  f"{'' if pushed else ' (밀리지 않아 판정 불가)'}")
+        entries.append({"ok": ok, "detail": detail})
+    if not entries:
+        entries.append({"ok": True, "na": True, "detail": f"{path}: A19 대상 넘치는 표 0건 (A19 해당 없음)"})
     return entries
 
 

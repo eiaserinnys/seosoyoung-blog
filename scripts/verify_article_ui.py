@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""서재 글 화면 시각 검수 스크립트 (폭·테마 캡처, A1~A18 측정, 각주 왕복, 창 크기 시나리오).
+"""서재 글 화면 시각 검수 스크립트 (폭·테마 캡처, A1~A19 측정, 각주 왕복, 창 크기 시나리오).
 
 사용법:
   PLAYWRIGHT_BROWSERS_PATH="$HOME/.cache/ms-playwright" \
@@ -7,7 +7,7 @@
       [--path /digest/roguelike-wikipedia/] [--path /digest/paradox-of-tragedy-three-aesthetics-papers/]
 
 --path를 여러 번 주면 글마다 <out_dir>/<slug>/ 아래에 산출하고, <out_dir>/metrics.json에
-전체 A1~A18 판정을 모은다. 분석 비콘(umami) 요청은 연결이 없는 환경에서 load 이벤트를
+전체 A1~A19 판정을 모은다. 분석 비콘(umami) 요청은 연결이 없는 환경에서 load 이벤트를
 막으므로 차단한다. 화면과 무관하다.
 """
 import argparse
@@ -28,7 +28,7 @@ from playwright.sync_api import Error as PlaywrightError, sync_playwright
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from verify_article_ui_checks import (
     A10_CONFIGS, A10_JS, A11_JS, A15_JS, A16_JS, A17_CONFIGS, A9_JS, a9_checks, a10_checks, a11_checks,
-    a12_checks, a13_checks, a14_checks, a15_checks, a16_checks, a17_checks, a18_checks,
+    a12_checks, a13_checks, a14_checks, a15_checks, a16_checks, a17_checks, a18_checks, a19_checks,
     resized_sidenotes_ok, sidenote_presence_ok, summarize_checks,
 )
 
@@ -750,6 +750,12 @@ def table_scroll_end_capture(page, name, out_dir):
 A18_COLOR_TOL = 2
 A18_MIN_LINE_PX = 32
 A18_HEADER_WINDOW_PX = 3
+# 표 맨 아래 --rule 줄이 두 x 모두에 있는지는 표 바닥(장치 화소) 위아래 이 창 안에서 찾는다.
+# 표가 화면 높이로 잘려 찍히면 바닥을 못 재므로 창 높이를 표 전체가 들어올 만큼 올려 찍는다.
+# full_page 캡처는 창 크기를 바꿔 resize가 가로 스크롤을 되돌리므로 쓰지 않는다.
+A18_BOTTOM_WINDOW_PX = 4
+A18_TOP_GAP_CSS_PX = 120
+A18_BOTTOM_PAD_CSS_PX = 8
 
 A18_LIST_JS = r"""
 () => {
@@ -774,13 +780,19 @@ A18_LIST_JS = r"""
 """
 
 A18_PLACE_JS = r"""
-([i, frac]) => { const w = document.querySelectorAll('.post-content .table-scroll')[i];
+([i, frac, gap]) => { const w = document.querySelectorAll('.post-content .table-scroll')[i];
   w.scrollLeft = (w.scrollWidth - w.clientWidth) * frac;
   const top = w.getBoundingClientRect().top + scrollY;
-  window.scrollTo(0, top - 120);
+  window.scrollTo(0, top - gap);
   const r = w.getBoundingClientRect();
-  return {x: r.left, y: r.top, w: r.width, h: Math.min(r.height, innerHeight - r.top - 4)};
+  const t = w.querySelector('table').getBoundingClientRect();
+  return {x: r.left, y: r.top, w: r.width, h: r.height, tableBottom: t.bottom - r.top, viewH: innerHeight};
 }
+"""
+
+A18_TALLEST_JS = r"""
+() => Math.ceil(Math.max(0, ...[...document.querySelectorAll('.post-content .table-scroll.is-sticky-first')]
+  .map((w) => w.getBoundingClientRect().height)))
 """
 
 A18_COLOR_JS = r"""
@@ -843,7 +855,54 @@ def seam_diff(a, b):
     return len(left - right) + len(right - left)
 
 
+def seam_state_record(image, table, dpr, rule, strong, bottom_px):
+    """한 상태(rest 또는 end)의 표 그림에서 두 x의 괘선 y 목록과 표 바닥 줄을 잰다."""
+    pix = image.load()
+    xa = int((table["aRight"] - 4) * dpr)
+    xb = int((table["bLeft"] + 3) * dpr)
+    empty = {"ok": False, "a": [], "b": [], "strongA": [], "strongB": [], "mismatch": 0,
+             "bottomA": [], "bottomB": []}
+    if xa < 0 or xb < 0 or xa >= image.width or xb >= image.width:
+        return dict(empty, reason=f"잰 x가 그림 밖: xa={xa} xb={xb} width={image.width}")
+    first_runs = seam_runs(pix, image.width, image.height, xa, rule)
+    second_runs = seam_runs(pix, image.width, image.height, xb, rule)
+    strong_first, strong_second = [], []
+    if table["headTop"] is not None and table["headBottom"] is not None:
+        for base in (table["headTop"] * dpr, table["headBottom"] * dpr):
+            y0 = max(0, int(round(base)) - A18_HEADER_WINDOW_PX)
+            y1 = min(image.height, int(round(base)) + A18_HEADER_WINDOW_PX + 1)
+            strong_first.extend(seam_runs(pix, image.width, image.height, xa, strong, y0, y1))
+            strong_second.extend(seam_runs(pix, image.width, image.height, xb, strong, y0, y1))
+        strong_ok = bool(strong_first) and bool(strong_second)
+    else:
+        strong_ok = True
+    # 표 맨 아래 --rule 줄: 두 x 모두 표 바닥 위아래 창 안에 있어야 한다(둘 다 같게 없는 경우도 실패).
+    by0 = max(0, bottom_px - A18_BOTTOM_WINDOW_PX)
+    by1 = min(image.height, bottom_px + A18_BOTTOM_WINDOW_PX + 1)
+    bottom_first = seam_runs(pix, image.width, image.height, xa, rule, by0, by1)
+    bottom_second = seam_runs(pix, image.width, image.height, xb, rule, by0, by1)
+    bottom_ok = bool(bottom_first) and bool(bottom_second)
+    ok = (bool(first_runs) and bool(second_runs) and first_runs == second_runs
+          and strong_ok and strong_first == strong_second and bottom_ok)
+    record = {"ok": ok, "a": first_runs, "b": second_runs,
+              "strongA": strong_first, "strongB": strong_second,
+              "bottomA": bottom_first, "bottomB": bottom_second,
+              "mismatch": seam_diff(first_runs, second_runs) + seam_diff(strong_first, strong_second)}
+    if not ok:
+        if not bottom_ok:
+            record["reason"] = (f"표 맨 아래 --rule 줄 없음(첫 열 x={bool(bottom_first)}, "
+                                f"둘째 열 x={bool(bottom_second)}, 바닥 y={bottom_px})")
+        elif not first_runs or not second_runs:
+            record["reason"] = "괘선을 찾지 못함"
+        elif not strong_ok:
+            record["reason"] = "머리 위아래 --rule-strong 줄을 찾지 못함"
+        else:
+            record["reason"] = "두 x의 괘선 y 목록이 다름"
+    return record
+
+
 def capture_sticky_seams(page, out_dir, name, dpr):
+    original = page.viewport_size
     tables = page.evaluate(A18_LIST_JS)
     sticky_count = page.evaluate(
         "() => document.querySelectorAll('.post-content .table-scroll.is-sticky-first').length")
@@ -855,58 +914,47 @@ def capture_sticky_seams(page, out_dir, name, dpr):
                         "states": {"rest": dict(missing), "end": dict(missing)}})
     if not tables:
         return records
-    colors = page.evaluate(A18_COLOR_JS)
-    rule = parse_rgb(colors["rule"])
-    strong = parse_rgb(colors["rule-strong"])
-    for table in tables:
-        record = {"table": table["i"] + 1, "text": table["text"], "states": {}}
-        for frac, state in ((0, "rest"), (1, "end")):
-            box = page.evaluate(A18_PLACE_JS, [table["i"], frac])
-            page.wait_for_timeout(250)
-            empty = {"ok": False, "a": [], "b": [], "strongA": [], "strongB": [], "mismatch": 0}
-            if box["w"] < 20 or box["h"] < 20:
-                record["states"][state] = dict(empty, reason="표가 화면에 들어오지 않음")
-                continue
-            png = page.screenshot(clip={"x": box["x"], "y": box["y"],
-                                        "width": box["w"], "height": box["h"]})
-            image = Image.open(io.BytesIO(png)).convert("RGB")
-            pix = image.load()
-            xa = int((table["aRight"] - 4) * dpr)
-            xb = int((table["bLeft"] + 3) * dpr)
-            if xa < 0 or xb < 0 or xa >= image.width or xb >= image.width:
-                record["states"][state] = dict(
-                    empty, reason=f"잰 x가 그림 밖: xa={xa} xb={xb} width={image.width}")
-                continue
-            first_runs = seam_runs(pix, image.width, image.height, xa, rule)
-            second_runs = seam_runs(pix, image.width, image.height, xb, rule)
-            strong_first, strong_second = [], []
-            if table["headTop"] is not None and table["headBottom"] is not None:
-                for base in (table["headTop"] * dpr, table["headBottom"] * dpr):
-                    y0 = max(0, int(round(base)) - A18_HEADER_WINDOW_PX)
-                    y1 = min(image.height, int(round(base)) + A18_HEADER_WINDOW_PX + 1)
-                    strong_first.extend(seam_runs(pix, image.width, image.height, xa, strong, y0, y1))
-                    strong_second.extend(seam_runs(pix, image.width, image.height, xb, strong, y0, y1))
-                strong_ok = bool(strong_first) and bool(strong_second)
-            else:
-                strong_ok = True
-            ok = (bool(first_runs) and bool(second_runs) and first_runs == second_runs
-                  and strong_ok and strong_first == strong_second)
-            state_record = {"ok": ok, "a": first_runs, "b": second_runs,
-                            "strongA": strong_first, "strongB": strong_second,
-                            "mismatch": seam_diff(first_runs, second_runs)
-                            + seam_diff(strong_first, strong_second)}
-            if not ok:
-                if not first_runs or not second_runs:
-                    state_record["reason"] = "괘선을 찾지 못함"
-                elif not strong_ok:
-                    state_record["reason"] = "머리 위아래 --rule-strong 줄을 찾지 못함"
-                else:
-                    state_record["reason"] = "두 x의 괘선 y 목록이 다름"
-                image.save(out_dir / f"a18-{name}-table{table['i'] + 1}-{state}.png")
-            record["states"][state] = state_record
-        records.append(record)
-    page.evaluate(A18_END_JS)
-    page.wait_for_timeout(100)
+    # 표 전체가 한 화면에 들어오도록 창 높이만 올린다(가로 폭은 그대로라 post.js가 다시 계산하지 않는다).
+    tallest = page.evaluate(A18_TALLEST_JS)
+    tall = max(original["height"], tallest + A18_TOP_GAP_CSS_PX + A18_BOTTOM_PAD_CSS_PX + 16)
+    page.set_viewport_size({"width": original["width"], "height": tall})
+    page.wait_for_timeout(300)
+    try:
+        # 높이를 바꾼 뒤의 좌표로 다시 잰다.
+        tables = page.evaluate(A18_LIST_JS)
+        colors = page.evaluate(A18_COLOR_JS)
+        rule = parse_rgb(colors["rule"])
+        strong = parse_rgb(colors["rule-strong"])
+        for table in tables:
+            record = {"table": table["i"] + 1, "text": table["text"], "states": {}}
+            for frac, state in ((0, "rest"), (1, "end")):
+                box = page.evaluate(A18_PLACE_JS, [table["i"], frac, A18_TOP_GAP_CSS_PX])
+                page.wait_for_timeout(250)
+                empty = {"ok": False, "a": [], "b": [], "strongA": [], "strongB": [], "mismatch": 0,
+                         "bottomA": [], "bottomB": []}
+                if box["w"] < 20 or box["h"] < 20:
+                    record["states"][state] = dict(empty, reason="표가 화면에 들어오지 않음")
+                    continue
+                if box["y"] < 0 or box["y"] + box["h"] + A18_BOTTOM_PAD_CSS_PX > box["viewH"]:
+                    record["states"][state] = dict(
+                        empty, reason=f"표 전체가 한 화면에 들어오지 않음: y={box['y']:.1f} h={box['h']:.1f} viewH={box['viewH']}")
+                    continue
+                # clip을 쓰면 캡처 원점이 바뀌어 화소 맞춤이 실제 화면과 달라진다. 화면 전체를 찍고 잘라 낸다.
+                full = Image.open(io.BytesIO(page.screenshot())).convert("RGB")
+                x0 = int(round(box["x"] * dpr))
+                y0 = int(round(box["y"] * dpr))
+                image = full.crop((x0, y0, min(full.width, x0 + int(round(box["w"] * dpr))),
+                                   min(full.height, y0 + int(round((box["h"] + A18_BOTTOM_PAD_CSS_PX) * dpr)))))
+                bottom_px = int(round(box["tableBottom"] * dpr))
+                state_record = seam_state_record(image, table, dpr, rule, strong, bottom_px)
+                if not state_record["ok"]:
+                    image.save(out_dir / f"a18-{name}-table{table['i'] + 1}-{state}.png")
+                record["states"][state] = state_record
+            records.append(record)
+    finally:
+        page.evaluate(A18_END_JS)
+        page.set_viewport_size(original)
+        page.wait_for_timeout(300)
     return records
 
 
@@ -1055,6 +1103,41 @@ def run_resize_scenarios(browser, url, out_dir):
     return results
 
 
+# A19: 창 높이만 바뀌는 resize(모바일 주소창이 접히며 생기는 것)에서 밀어 둔 표의 가로 스크롤이 유지되는지.
+# post.js가 가로 폭이 같은 resize에서 is-overflowing을 뗐다 붙이면 scrollLeft가 0으로 돌아간다.
+A19_WIDTH = 375
+A19_HEIGHT = 812
+A19_HEIGHT_DELTA_PX = 96
+
+A19_STATE_JS = r"""
+(arm) => [...document.querySelectorAll('.post-content .table-scroll')].map((w, i) => {
+  if (arm && w.classList.contains('is-overflowing')) w.scrollLeft = w.scrollWidth;
+  const row = [...w.querySelectorAll('tr')].find((r) => r.children[0]);
+  return {i, text: row ? row.children[0].textContent.trim().slice(0, 20) : '',
+          overflowing: w.classList.contains('is-overflowing'),
+          sticky: w.classList.contains('is-sticky-first'),
+          scrollLeft: +w.scrollLeft.toFixed(1), max: +(w.scrollWidth - w.clientWidth).toFixed(1)};
+})
+"""
+
+
+def run_height_resize(browser, url):
+    ctx = open_context(browser, A19_WIDTH, A19_HEIGHT, 2, "light")
+    page = ctx.new_page()
+    page.goto(url, wait_until="load", timeout=60000)
+    settle(page)
+    page.add_style_tag(content="html{scroll-behavior:auto!important}")
+    before = page.evaluate(A19_STATE_JS, True)
+    page.wait_for_timeout(200)
+    before = page.evaluate(A19_STATE_JS, False)
+    page.set_viewport_size({"width": A19_WIDTH, "height": A19_HEIGHT + A19_HEIGHT_DELTA_PX})
+    page.wait_for_timeout(500)
+    after = page.evaluate(A19_STATE_JS, False)
+    ctx.close()
+    return [{"table": b["i"] + 1, "text": b["text"], "before": b, "after": a}
+            for b, a in zip(before, after) if b["overflowing"]]
+
+
 def run_lightbox_scenarios(browser, url, out_dir):
     results = {}
     configs = {config[0]: config for config in CONFIGS}
@@ -1117,7 +1200,7 @@ def short_first_cell(text):
 
 
 def path_checks(report):
-    checks = {key: [] for key in ("A1", "A2", "A3", "A4", "A5", "A6", "A7", "A8", "A9", "A10", "A11", "A12", "A13", "A14", "A15", "A16", "A17", "A18")}
+    checks = {key: [] for key in ("A1", "A2", "A3", "A4", "A5", "A6", "A7", "A8", "A9", "A10", "A11", "A12", "A13", "A14", "A15", "A16", "A17", "A18", "A19")}
 
     def add(key, ok, detail, na=False):
         checks[key].append({"ok": bool(ok), "na": na, "detail": detail})
@@ -1233,6 +1316,8 @@ def path_checks(report):
         add("A17", entry["ok"], entry["detail"], na=entry.get("na", False))
     for entry in a18_checks(path, configs):
         add("A18", entry["ok"], entry["detail"], na=entry.get("na", False))
+    for entry in a19_checks(path, report["heightResize"]):
+        add("A19", entry["ok"], entry["detail"], na=entry.get("na", False))
 
     for key, what in (
         ("A2", "좁은 폭에서 3~5칸 표"),
@@ -1281,7 +1366,7 @@ def main():
                     path_out.mkdir(parents=True, exist_ok=True)
                     url = f"http://127.0.0.1:{port}{path}"
                     report = {"url": url, "path": path, "configs": {}, "interactions": {},
-                              "tables_375": {}, "resize": {}, "lightbox": {}}
+                              "tables_375": {}, "resize": {}, "heightResize": [], "lightbox": {}}
                     a10_path = path in MATH_PATHS
                     for name, w, h, dpr, scheme in CONFIGS:
                         report["configs"][name] = capture_config(
@@ -1292,6 +1377,7 @@ def main():
                     report["interactions"]["wide"] = report["configs"]["wide-light"].get("interaction")
                     report["tables_375"] = capture_tables_375(browser, url, path_out)
                     report["resize"] = run_resize_scenarios(browser, url, path_out)
+                    report["heightResize"] = run_height_resize(browser, url)
                     report["lightbox"] = run_lightbox_scenarios(browser, url, path_out)
                     reports[path] = report
             finally:
@@ -1305,7 +1391,7 @@ def main():
                 "configs": [{"name": c[0], "width": c[1], "height": c[2], "dpr": c[3], "colorScheme": c[4]}
                             for c in CONFIGS],
                 "skipped": skipped, "paths": reports, "summary": {}}
-    aggregate = {key: [] for key in ("A1", "A2", "A3", "A4", "A5", "A6", "A7", "A8", "A9", "A10", "A11", "A12", "A13", "A14", "A15", "A16", "A17", "A18")}
+    aggregate = {key: [] for key in ("A1", "A2", "A3", "A4", "A5", "A6", "A7", "A8", "A9", "A10", "A11", "A12", "A13", "A14", "A15", "A16", "A17", "A18", "A19")}
     for path, report in reports.items():
         summary, raw = path_checks(report)
         report["verdicts"] = summary
@@ -1332,6 +1418,11 @@ def main():
     if not seam_tables:
         aggregate["A18"].append(
             {"ok": False, "na": False, "detail": "A18: 전체 실행에서 검사한 고정 표 0건"})
+
+    height_tables = sum(len(report["heightResize"]) for report in reports.values())
+    if not height_tables:
+        aggregate["A19"].append(
+            {"ok": False, "na": False, "detail": "A19: 전체 실행에서 검사한 넘치는 표 0건"})
 
     for key, entries in aggregate.items():
         combined["summary"][key] = summarize_checks(entries, limit=60)
