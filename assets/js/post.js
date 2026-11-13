@@ -157,7 +157,8 @@
         var overflowing = natural || squeezed;
         item.wrapper.classList.toggle("is-overflowing", overflowing);
         var sticky = false;
-        if (overflowing && item.wrapper.clientWidth > 0) {
+        // 2칸 표는 값 열이 좁은 창으로만 보여 읽기 나빠지므로 고정하지 않는다.
+        if (overflowing && item.cols >= 3 && item.wrapper.clientWidth > 0) {
           var width = firstColumnWidth(item.table);
           var fontSize = parseFloat(getComputedStyle(item.table).fontSize);
           sticky = width !== null && !isNaN(fontSize)

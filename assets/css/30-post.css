@@ -360,6 +360,8 @@
 .table-scroll.is-sticky-first > table {
   border-collapse: separate;
   border-spacing: 0;
+  /* sticky 셀과 나머지 칸의 가로 괘선을 같은 화소 줄에 그리게 한다(A18). */
+  will-change: transform;
 }
 
 .table-scroll.is-sticky-first > table :is(th, td):first-child {

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""서재 글 화면 시각 검수 스크립트 (폭·테마 캡처, A1~A15 측정, 각주 왕복, 창 크기 시나리오).
+"""서재 글 화면 시각 검수 스크립트 (폭·테마 캡처, A1~A18 측정, 각주 왕복, 창 크기 시나리오).
 
 사용법:
   PLAYWRIGHT_BROWSERS_PATH="$HOME/.cache/ms-playwright" \
@@ -7,10 +7,11 @@
       [--path /digest/roguelike-wikipedia/] [--path /digest/paradox-of-tragedy-three-aesthetics-papers/]
 
 --path를 여러 번 주면 글마다 <out_dir>/<slug>/ 아래에 산출하고, <out_dir>/metrics.json에
-전체 A1~A15 판정을 모은다. 분석 비콘(umami) 요청은 연결이 없는 환경에서 load 이벤트를
+전체 A1~A18 판정을 모은다. 분석 비콘(umami) 요청은 연결이 없는 환경에서 load 이벤트를
 막으므로 차단한다. 화면과 무관하다.
 """
 import argparse
+import io
 import json
 import re
 import socket
@@ -21,13 +22,14 @@ import time
 from datetime import datetime, timezone
 from pathlib import Path
 
+from PIL import Image
 from playwright.sync_api import Error as PlaywrightError, sync_playwright
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from verify_article_ui_checks import (
-    A10_CONFIGS, A10_JS, A11_JS, A15_JS, A16_JS, A9_JS, a9_checks, a10_checks, a11_checks, a12_checks,
-    a13_checks, a14_checks, a15_checks, a16_checks, a17_checks, resized_sidenotes_ok, sidenote_presence_ok,
-    summarize_checks,
+    A10_CONFIGS, A10_JS, A11_JS, A15_JS, A16_JS, A17_CONFIGS, A9_JS, a9_checks, a10_checks, a11_checks,
+    a12_checks, a13_checks, a14_checks, a15_checks, a16_checks, a17_checks, a18_checks,
+    resized_sidenotes_ok, sidenote_presence_ok, summarize_checks,
 )
 
 CONFIGS = [
@@ -323,6 +325,8 @@ TABLE_STICKY_JS = r"""
   return [...document.querySelectorAll('.post-content .table-scroll')].map((wrap, index) => {
     const table = wrap.querySelector('table');
     const rows = [...table.querySelectorAll('tr')];
+    let cols = 0;
+    rows.forEach((row) => { let count = 0; [...row.children].forEach((cell) => { count += cell.colSpan || 1; }); if (count > cols) cols = count; });
     let firstCell = null;
     for (const row of rows) {
       const cell = firstCellOf(row);
@@ -345,6 +349,7 @@ TABLE_STICKY_JS = r"""
     const cs = firstCell ? getComputedStyle(firstCell) : null;
     const data = {
       index: index + 1,
+      cols,
       overflowing: wrap.classList.contains('is-overflowing'),
       sticky: wrap.classList.contains('is-sticky-first'),
       wrapClient: wrap.clientWidth,
@@ -683,6 +688,13 @@ def table_scroll_end_capture(page, name, out_dir):
           const wouldStick = (w) => {
             if (!w.classList.contains('is-overflowing') || w.clientWidth <= 0) return false;
             const table = w.querySelector('table');
+            let cols = 0;
+            [...table.querySelectorAll('tr')].forEach((row) => {
+              let count = 0;
+              [...row.children].forEach((cell) => { count += cell.colSpan || 1; });
+              if (count > cols) cols = count;
+            });
+            if (cols < 3) return false;
             const font = parseFloat(getComputedStyle(table).fontSize);
             if (isNaN(font)) return false;
             for (const row of [...table.querySelectorAll('tr')]) {
@@ -731,6 +743,173 @@ def table_scroll_end_capture(page, name, out_dir):
     return data
 
 
+# A18: 고정 첫 열과 이웃 칸의 그려진 가로 괘선이 같은 화소 줄에 있는지 잰다.
+# 첫 열 오른쪽 끝 안쪽 x와 둘째 열 왼쪽 끝 안쪽 x에서 세로로 훑어 괘선색 y 구간 목록을 비교한다.
+# 글자 안티에일리어싱이 괘선색과 비슷한 한두 화소를 만들므로 가로로 32화소 이상 이어진 구간만
+# 괘선으로 센다. 머리 위아래 줄은 --rule-strong이라 DOM 머리 칸 경계 근처 창에서만 찾는다.
+A18_COLOR_TOL = 2
+A18_MIN_LINE_PX = 32
+A18_HEADER_WINDOW_PX = 3
+
+A18_LIST_JS = r"""
+() => {
+  const wraps = [...document.querySelectorAll('.post-content .table-scroll')];
+  wraps.forEach((w) => { w.scrollLeft = 0; });
+  return wraps.map((w, i) => {
+    if (!w.classList.contains('is-sticky-first')) return null;
+    const table = w.querySelector('table');
+    const row = [...table.querySelectorAll('tr')].find((r) => r.children.length > 1 && r.children[0].colSpan === 1);
+    if (!row) return null;
+    const wr = w.getBoundingClientRect();
+    const first = row.children[0].getBoundingClientRect();
+    const second = row.children[1].getBoundingClientRect();
+    const headRow = table.querySelector('thead tr');
+    const headCell = headRow ? ([...headRow.children].find((c) => c.colSpan === 1) || headRow.children[0]) : null;
+    const hr = headCell ? headCell.getBoundingClientRect() : null;
+    return {i, aRight: first.right - wr.left, bLeft: second.left - wr.left,
+            headTop: hr ? hr.top - wr.top : null, headBottom: hr ? hr.bottom - wr.top : null,
+            text: row.children[0].textContent.trim().slice(0, 20)};
+  }).filter(Boolean);
+}
+"""
+
+A18_PLACE_JS = r"""
+([i, frac]) => { const w = document.querySelectorAll('.post-content .table-scroll')[i];
+  w.scrollLeft = (w.scrollWidth - w.clientWidth) * frac;
+  const top = w.getBoundingClientRect().top + scrollY;
+  window.scrollTo(0, top - 120);
+  const r = w.getBoundingClientRect();
+  return {x: r.left, y: r.top, w: r.width, h: Math.min(r.height, innerHeight - r.top - 4)};
+}
+"""
+
+A18_COLOR_JS = r"""
+() => { const out = {};
+  for (const name of ['rule', 'rule-strong']) {
+    const span = document.createElement('span');
+    span.style.color = 'var(--' + name + ')';
+    document.body.appendChild(span);
+    out[name] = getComputedStyle(span).color;
+    span.remove();
+  }
+  return out; }
+"""
+
+A18_END_JS = "() => { document.querySelectorAll('.post-content .table-scroll').forEach((w) => { w.scrollLeft = 0; }); window.scrollTo(0, 0); }"
+
+
+def parse_rgb(text):
+    values = text[text.index("(") + 1:text.rindex(")")].split(",")[:3]
+    return tuple(int(round(float(value))) for value in values)
+
+
+def seam_hlen(pix, width, x, y, color):
+    def hit(px):
+        pixel = pix[px, y]
+        return max(abs(pixel[k] - color[k]) for k in range(3)) <= A18_COLOR_TOL
+    if not hit(x):
+        return 0
+    left = x
+    while left > 0 and hit(left - 1):
+        left -= 1
+    right = x
+    while right + 1 < width and hit(right + 1):
+        right += 1
+    return right - left + 1
+
+
+def seam_runs(pix, width, height, x, color, y0=0, y1=None):
+    if y1 is None:
+        y1 = height
+    runs = []
+    start = None
+    for y in range(y0, y1):
+        pixel = pix[x, y]
+        hit = max(abs(pixel[k] - color[k]) for k in range(3)) <= A18_COLOR_TOL
+        if hit and start is None:
+            start = y
+        if not hit and start is not None:
+            if seam_hlen(pix, width, x, start + (y - start) // 2, color) >= A18_MIN_LINE_PX:
+                runs.append([start, y - start])
+            start = None
+    if start is not None and seam_hlen(pix, width, x, start + (y1 - start) // 2, color) >= A18_MIN_LINE_PX:
+        runs.append([start, y1 - start])
+    return runs
+
+
+def seam_diff(a, b):
+    left = {tuple(run) for run in (a or [])}
+    right = {tuple(run) for run in (b or [])}
+    return len(left - right) + len(right - left)
+
+
+def capture_sticky_seams(page, out_dir, name, dpr):
+    tables = page.evaluate(A18_LIST_JS)
+    sticky_count = page.evaluate(
+        "() => document.querySelectorAll('.post-content .table-scroll.is-sticky-first').length")
+    records = []
+    if sticky_count > len(tables):
+        missing = {"ok": False, "a": [], "b": [], "strongA": [], "strongB": [], "mismatch": 0,
+                   "reason": f"측정하지 못한 고정 표 {sticky_count - len(tables)}건"}
+        records.append({"table": None, "text": None,
+                        "states": {"rest": dict(missing), "end": dict(missing)}})
+    if not tables:
+        return records
+    colors = page.evaluate(A18_COLOR_JS)
+    rule = parse_rgb(colors["rule"])
+    strong = parse_rgb(colors["rule-strong"])
+    for table in tables:
+        record = {"table": table["i"] + 1, "text": table["text"], "states": {}}
+        for frac, state in ((0, "rest"), (1, "end")):
+            box = page.evaluate(A18_PLACE_JS, [table["i"], frac])
+            page.wait_for_timeout(250)
+            empty = {"ok": False, "a": [], "b": [], "strongA": [], "strongB": [], "mismatch": 0}
+            if box["w"] < 20 or box["h"] < 20:
+                record["states"][state] = dict(empty, reason="표가 화면에 들어오지 않음")
+                continue
+            png = page.screenshot(clip={"x": box["x"], "y": box["y"],
+                                        "width": box["w"], "height": box["h"]})
+            image = Image.open(io.BytesIO(png)).convert("RGB")
+            pix = image.load()
+            xa = int((table["aRight"] - 4) * dpr)
+            xb = int((table["bLeft"] + 3) * dpr)
+            if xa < 0 or xb < 0 or xa >= image.width or xb >= image.width:
+                record["states"][state] = dict(
+                    empty, reason=f"잰 x가 그림 밖: xa={xa} xb={xb} width={image.width}")
+                continue
+            first_runs = seam_runs(pix, image.width, image.height, xa, rule)
+            second_runs = seam_runs(pix, image.width, image.height, xb, rule)
+            strong_first, strong_second = [], []
+            if table["headTop"] is not None and table["headBottom"] is not None:
+                for base in (table["headTop"] * dpr, table["headBottom"] * dpr):
+                    y0 = max(0, int(round(base)) - A18_HEADER_WINDOW_PX)
+                    y1 = min(image.height, int(round(base)) + A18_HEADER_WINDOW_PX + 1)
+                    strong_first.extend(seam_runs(pix, image.width, image.height, xa, strong, y0, y1))
+                    strong_second.extend(seam_runs(pix, image.width, image.height, xb, strong, y0, y1))
+                strong_ok = bool(strong_first) and bool(strong_second)
+            else:
+                strong_ok = True
+            ok = (bool(first_runs) and bool(second_runs) and first_runs == second_runs
+                  and strong_ok and strong_first == strong_second)
+            state_record = {"ok": ok, "a": first_runs, "b": second_runs,
+                            "strongA": strong_first, "strongB": strong_second,
+                            "mismatch": seam_diff(first_runs, second_runs)
+                            + seam_diff(strong_first, strong_second)}
+            if not ok:
+                if not first_runs or not second_runs:
+                    state_record["reason"] = "괘선을 찾지 못함"
+                elif not strong_ok:
+                    state_record["reason"] = "머리 위아래 --rule-strong 줄을 찾지 못함"
+                else:
+                    state_record["reason"] = "두 x의 괘선 y 목록이 다름"
+                image.save(out_dir / f"a18-{name}-table{table['i'] + 1}-{state}.png")
+            record["states"][state] = state_record
+        records.append(record)
+    page.evaluate(A18_END_JS)
+    page.wait_for_timeout(100)
+    return records
+
+
 def capture_config(browser, url, out_dir, name, width, height, dpr, scheme, a10=False):
     ctx = open_context(browser, width, height, dpr, scheme, touch=name in TOUCH_CONFIGS)
     page = ctx.new_page()
@@ -743,7 +922,7 @@ def capture_config(browser, url, out_dir, name, width, height, dpr, scheme, a10=
     m["failedRequests"] = failed
     m["a9"] = page.evaluate(A9_JS)
     m["diagrams"] = page.evaluate(A16_JS)
-    if name in ("min360-light", "narrow-light", "min390-light", "min414-light", "narrow-dark", "wide-light"):
+    if name in A17_CONFIGS:
         m["sticky"] = page.evaluate(TABLE_STICKY_JS)
     if name == "wide-light":
         m["quotes"] = page.evaluate(A15_JS)
@@ -754,6 +933,8 @@ def capture_config(browser, url, out_dir, name, width, height, dpr, scheme, a10=
     d = out_dir / name
     d.mkdir(parents=True, exist_ok=True)
     page.add_style_tag(content=".site-top{position:static!important} html{scroll-behavior:auto!important}")
+    if name in A17_CONFIGS:
+        m["seams"] = capture_sticky_seams(page, d, name, dpr)
     shots = {}
     if width < 500:
         disp_count = page.locator(".post-content .katex-display").count()
@@ -936,7 +1117,7 @@ def short_first_cell(text):
 
 
 def path_checks(report):
-    checks = {key: [] for key in ("A1", "A2", "A3", "A4", "A5", "A6", "A7", "A8", "A9", "A10", "A11", "A12", "A13", "A14", "A15", "A16", "A17")}
+    checks = {key: [] for key in ("A1", "A2", "A3", "A4", "A5", "A6", "A7", "A8", "A9", "A10", "A11", "A12", "A13", "A14", "A15", "A16", "A17", "A18")}
 
     def add(key, ok, detail, na=False):
         checks[key].append({"ok": bool(ok), "na": na, "detail": detail})
@@ -1050,6 +1231,8 @@ def path_checks(report):
         add("A16", entry["ok"], entry["detail"], na=entry.get("na", False))
     for entry in a17_checks(path, configs):
         add("A17", entry["ok"], entry["detail"], na=entry.get("na", False))
+    for entry in a18_checks(path, configs):
+        add("A18", entry["ok"], entry["detail"], na=entry.get("na", False))
 
     for key, what in (
         ("A2", "좁은 폭에서 3~5칸 표"),
@@ -1122,7 +1305,7 @@ def main():
                 "configs": [{"name": c[0], "width": c[1], "height": c[2], "dpr": c[3], "colorScheme": c[4]}
                             for c in CONFIGS],
                 "skipped": skipped, "paths": reports, "summary": {}}
-    aggregate = {key: [] for key in ("A1", "A2", "A3", "A4", "A5", "A6", "A7", "A8", "A9", "A10", "A11", "A12", "A13", "A14", "A15", "A16", "A17")}
+    aggregate = {key: [] for key in ("A1", "A2", "A3", "A4", "A5", "A6", "A7", "A8", "A9", "A10", "A11", "A12", "A13", "A14", "A15", "A16", "A17", "A18")}
     for path, report in reports.items():
         summary, raw = path_checks(report)
         report["verdicts"] = summary
@@ -1141,6 +1324,14 @@ def main():
     if not sticky_seen:
         aggregate["A17"].append(
             {"ok": False, "na": False, "detail": "A17: 전체 실행에서 is-sticky-first가 붙은 표 0건"})
+    seam_tables = sum(
+        len(config.get("seams") or [])
+        for report in reports.values()
+        for config in report["configs"].values()
+    )
+    if not seam_tables:
+        aggregate["A18"].append(
+            {"ok": False, "na": False, "detail": "A18: 전체 실행에서 검사한 고정 표 0건"})
 
     for key, entries in aggregate.items():
         combined["summary"][key] = summarize_checks(entries, limit=60)
