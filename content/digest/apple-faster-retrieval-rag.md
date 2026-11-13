@@ -68,18 +68,18 @@ $k$개 클러스터 각각의 지지 함수에 직접 접근할 수 있다면, �
 ![SupportNet이 학습한 지지 함수 등고선과 실제 표적 지지 함수 등고선의 수렴 비교](https://img.seosoyoung.eiaserinnys.me/images/apple-faster-retrieval-rag/fig3-supportnet-contours.png)
 *Figure 3: SupportNet($f_\theta$, 실선)은 각 클러스터의 실제 지지 함수($\sigma_k$, 점선)를 근사해, 중심점이 아닌 클러스터 내 최적 키와의 매칭 점수를 기준으로 질의를 배정한다. (출처: Apple Machine Learning Research)*
 
-연구진은 약 260만 개의 고유 문서 패시지로 이루어진 Natural Questions 벤치마크 데이터베이스를 128개 클러스터로 분할한 뒤 SupportNet 4종을 학습시켰다. 4종은 깊이를 16층으로 같게 하고, 파라미터 규모만 데이터베이스 크기의 1%(XS), 5%(S), 10%(M), 20%(L)로 달리했다. 탐색할 상위 클러스터 수 $s$를 $1, 2, 4, 8, \dots, 128$로 늘려 가며 <strong>라우팅 재현율(routing recall)</strong>을 측정했다. 라우팅 재현율은 실제 정답 키가 들어 있는 클러스터를 찾아낸 비율이다. 결과는 아래 표와 같다.
+연구진은 약 260만 개의 고유 문서 패시지로 이루어진 Natural Questions 벤치마크 데이터베이스를 128개 클러스터로 분할한 뒤 SupportNet 4종을 학습시켰다. 4종은 깊이를 16층으로 같게 하고, 파라미터 규모만 데이터베이스 크기의 1%(XS), 5%(S), 10%(M), 20%(L)로 달리했다. 탐색할 상위 클러스터 수 $s$를 $1, 2, 4, 8, \dots, 128$로 늘려 가며 <strong>라우팅 재현율(routing recall)</strong>을 측정했다. 라우팅 재현율은 실제 정답 키가 들어 있는 클러스터를 찾아낸 비율이다. 결과는 아래 표와 같으며, 각 칸의 값은 '라우팅 재현율 / 지연 시간(ms)'이다.
 
-| 탐색 클러스터 비율 (약 $s/128$) | 중심점 라우팅 재현율 / 지연(ms) | SupportNet-XS (1%) 재현율 / 지연(ms) | SupportNet-S (5%) 재현율 / 지연(ms) | SupportNet-M (10%) 재현율 / 지연(ms) | SupportNet-L (20%) 재현율 / 지연(ms) |
+| 탐색&nbsp;비율&nbsp;($s$) | 중심점&nbsp;라우팅 | SupportNet-XS&nbsp;(1%) | SupportNet-S&nbsp;(5%) | SupportNet-M&nbsp;(10%) | SupportNet-L&nbsp;(20%) |
 | --- | --- | --- | --- | --- | --- |
-| 약 0.8% ($s=1$) | 55.0% / 0.22ms | 57.8% / 0.22ms | 61.9% / 0.22ms | 65.2% / 0.22ms | 67.8% / 0.23ms |
-| 약 1.7% ($s=2$) | 70.6% / 0.43ms | 74.4% / 0.45ms | 78.5% / 0.45ms | 81.7% / 0.45ms | 84.2% / 0.45ms |
-| 약 3.3% ($s=4$) | 82.0% / 0.86ms | 85.9% / 0.88ms | 89.4% / 0.88ms | 91.7% / 0.88ms | 93.2% / 0.88ms |
-| 약 6.6% ($s=8$) | 89.9% / 1.70ms | 92.9% / 1.75ms | **95.1% / 1.74ms** | 96.4% / 1.74ms | **97.2% / 1.74ms** |
-| 약 13.1% ($s=16$) | **94.9% / 3.36ms** | 96.8% / 3.46ms | 97.9% / 3.44ms | 98.5% / 3.44ms | 99.0% / 3.44ms |
-| 약 25.9% ($s=32$) | 97.8% / 6.63ms | 98.8% / 6.81ms | 99.4% / 6.79ms | 99.5% / 6.79ms | 99.7% / 6.78ms |
-| 약 51.1% ($s=64$) | 99.4% / 13.14ms | 99.8% / 13.41ms | 99.9% / 13.39ms | 99.9% / 13.38ms | 100.0% / 13.38ms |
-| 100.0% ($s=128$) | 100.0% / 26.17ms | 100.0% / 26.17ms | 100.0% / 26.17ms | 100.0% / 26.17ms | 100.0% / 26.17ms |
+| 약&nbsp;0.8%&nbsp;($s=1$) | 55.0%&nbsp;/&nbsp;0.22ms | 57.8%&nbsp;/&nbsp;0.22ms | 61.9%&nbsp;/&nbsp;0.22ms | 65.2%&nbsp;/&nbsp;0.22ms | 67.8%&nbsp;/&nbsp;0.23ms |
+| 약&nbsp;1.7%&nbsp;($s=2$) | 70.6%&nbsp;/&nbsp;0.43ms | 74.4%&nbsp;/&nbsp;0.45ms | 78.5%&nbsp;/&nbsp;0.45ms | 81.7%&nbsp;/&nbsp;0.45ms | 84.2%&nbsp;/&nbsp;0.45ms |
+| 약&nbsp;3.3%&nbsp;($s=4$) | 82.0%&nbsp;/&nbsp;0.86ms | 85.9%&nbsp;/&nbsp;0.88ms | 89.4%&nbsp;/&nbsp;0.88ms | 91.7%&nbsp;/&nbsp;0.88ms | 93.2%&nbsp;/&nbsp;0.88ms |
+| 약&nbsp;6.6%&nbsp;($s=8$) | 89.9%&nbsp;/&nbsp;1.70ms | 92.9%&nbsp;/&nbsp;1.75ms | **95.1%&nbsp;/&nbsp;1.74ms** | 96.4%&nbsp;/&nbsp;1.74ms | **97.2%&nbsp;/&nbsp;1.74ms** |
+| 약&nbsp;13.1%&nbsp;($s=16$) | **94.9%&nbsp;/&nbsp;3.36ms** | 96.8%&nbsp;/&nbsp;3.46ms | 97.9%&nbsp;/&nbsp;3.44ms | 98.5%&nbsp;/&nbsp;3.44ms | 99.0%&nbsp;/&nbsp;3.44ms |
+| 약&nbsp;25.9%&nbsp;($s=32$) | 97.8%&nbsp;/&nbsp;6.63ms | 98.8%&nbsp;/&nbsp;6.81ms | 99.4%&nbsp;/&nbsp;6.79ms | 99.5%&nbsp;/&nbsp;6.79ms | 99.7%&nbsp;/&nbsp;6.78ms |
+| 약&nbsp;51.1%&nbsp;($s=64$) | 99.4%&nbsp;/&nbsp;13.14ms | 99.8%&nbsp;/&nbsp;13.41ms | 99.9%&nbsp;/&nbsp;13.39ms | 99.9%&nbsp;/&nbsp;13.38ms | 100.0%&nbsp;/&nbsp;13.38ms |
+| 100.0%&nbsp;($s=128$) | 100.0%&nbsp;/&nbsp;26.17ms | 100.0%&nbsp;/&nbsp;26.17ms | 100.0%&nbsp;/&nbsp;26.17ms | 100.0%&nbsp;/&nbsp;26.17ms | 100.0%&nbsp;/&nbsp;26.17ms |
 
 신경망을 실행하는 데 드는 추가 연산 비용까지 지연 시간에 모두 포함했는데도, 소형 모델인 SupportNet-S는 95% 라우팅 재현율에 중심점 라우팅보다 약 **1.9배 빨리** 도달한다(1.74ms 대 3.36ms). 같은 1.74ms 예산에서 대형 모델 SupportNet-L은 재현율 97.2%에 도달한다. 또 신경망 오버헤드를 제외하고 데이터베이스의 5%만 스캔하도록 탐색 예산을 같게 맞춰 비교해도 SupportNet의 라우팅 재현율이 더 높다. 중심점 라우팅의 재현율은 87.5%이고, SupportNet은 모델 크기에 따라 90\~93%다(중형 M 기준 92.6%).
 
@@ -92,17 +92,17 @@ SupportNet이 기존 역파일 인덱스(IVF, Inverted File Index) 내부의 중
 ![KeyNet으로 질의 x를 전처리해 변환한 뒤 기존 IVF 라우팅을 수행하는 과정](https://img.seosoyoung.eiaserinnys.me/images/apple-faster-retrieval-rag/fig5-keynet-ivf.png)
 *Figure 5: KeyNet은 질의 $\mathbf{x}$를 데이터베이스 내 최적 매칭 키 근방의 벡터 $F_\theta(\mathbf{x})$(주황색 원)로 변환한다. 변환된 벡터를 입력받은 기존 IVF 인덱스는 중심점 라우팅만으로도 정답 키가 속한 $\mathcal{C}_3$를 찾아낸다. (출처: Apple Machine Learning Research)*
 
-동일한 Natural Questions 데이터셋과 FAISS IVF 인덱스 환경에서, 16층 깊이의 KeyNet 4종(XS, S, M, L)을 결합해 최종 <strong>검색 재현율(search recall)</strong>과 비용의 관계를 측정했다. 주요 수치는 아래와 같다.[^4]
+동일한 Natural Questions 데이터셋과 FAISS IVF 인덱스 환경에서, 16층 깊이의 KeyNet 4종(XS, S, M, L)을 결합해 최종 <strong>검색 재현율(search recall)</strong>과 비용의 관계를 측정했다. 주요 수치는 아래 표와 같으며, 각 칸의 값은 '검색 재현율 / 총 지연 시간(ms)'이다.[^4]
 
-| 데이터베이스 스캔 비율 | 원래 질의 재현율 / 지연(ms) | KeyNet-XS (1%) 재현율 / 지연(ms) | KeyNet-S (5%) 재현율 / 지연(ms) | KeyNet-M (10%) 재현율 / 지연(ms) | KeyNet-L (20%) 재현율 / 지연(ms) |
+| 스캔&nbsp;비율 | 원래&nbsp;질의 | KeyNet-XS&nbsp;(1%) | KeyNet-S&nbsp;(5%) | KeyNet-M&nbsp;(10%) | KeyNet-L&nbsp;(20%) |
 | --- | --- | --- | --- | --- | --- |
-| 0.001% | 86.1% / 0.05ms | 89.3% / 0.05ms | 94.0% / 0.05ms | 95.7% / 0.05ms | **96.7% / 0.05ms** |
-| 0.002% | 89.6% / 0.06ms | 92.0% / 0.06ms | 95.8% / 0.06ms | 97.1% / 0.06ms | 97.7% / 0.07ms |
-| 0.005% | 93.2% / 0.15ms | 95.0% / 0.15ms | 97.6% / 0.15ms | 98.2% / 0.15ms | 98.6% / 0.15ms |
-| 0.01% | 95.1% / 0.23ms | 96.7% / 0.23ms | 98.4% / 0.23ms | 98.9% / 0.23ms | **99.1% / 0.23ms** |
-| 0.05% | 98.2% / 0.84ms | 99.1% / 0.86ms | 99.5% / 0.85ms | 99.6% / 0.84ms | 99.6% / 0.84ms |
-| 0.10% | **99.0% / 1.57ms** | 99.6% / 1.59ms | 99.8% / 1.60ms | 99.8% / 1.58ms | 99.7% / 1.59ms |
-| 0.15% | 99.4% / 2.32ms | 99.7% / 2.32ms | 99.9% / 2.31ms | 99.8% / 2.31ms | 99.8% / 2.34ms |
+| 0.001% | 86.1%&nbsp;/&nbsp;0.05ms | 89.3%&nbsp;/&nbsp;0.05ms | 94.0%&nbsp;/&nbsp;0.05ms | 95.7%&nbsp;/&nbsp;0.05ms | **96.7%&nbsp;/&nbsp;0.05ms** |
+| 0.002% | 89.6%&nbsp;/&nbsp;0.06ms | 92.0%&nbsp;/&nbsp;0.06ms | 95.8%&nbsp;/&nbsp;0.06ms | 97.1%&nbsp;/&nbsp;0.06ms | 97.7%&nbsp;/&nbsp;0.07ms |
+| 0.005% | 93.2%&nbsp;/&nbsp;0.15ms | 95.0%&nbsp;/&nbsp;0.15ms | 97.6%&nbsp;/&nbsp;0.15ms | 98.2%&nbsp;/&nbsp;0.15ms | 98.6%&nbsp;/&nbsp;0.15ms |
+| 0.01% | 95.1%&nbsp;/&nbsp;0.23ms | 96.7%&nbsp;/&nbsp;0.23ms | 98.4%&nbsp;/&nbsp;0.23ms | 98.9%&nbsp;/&nbsp;0.23ms | **99.1%&nbsp;/&nbsp;0.23ms** |
+| 0.05% | 98.2%&nbsp;/&nbsp;0.84ms | 99.1%&nbsp;/&nbsp;0.86ms | 99.5%&nbsp;/&nbsp;0.85ms | 99.6%&nbsp;/&nbsp;0.84ms | 99.6%&nbsp;/&nbsp;0.84ms |
+| 0.10% | **99.0%&nbsp;/&nbsp;1.57ms** | 99.6%&nbsp;/&nbsp;1.59ms | 99.8%&nbsp;/&nbsp;1.60ms | 99.8%&nbsp;/&nbsp;1.58ms | 99.7%&nbsp;/&nbsp;1.59ms |
+| 0.15% | 99.4%&nbsp;/&nbsp;2.32ms | 99.7%&nbsp;/&nbsp;2.32ms | 99.9%&nbsp;/&nbsp;2.31ms | 99.8%&nbsp;/&nbsp;2.31ms | 99.8%&nbsp;/&nbsp;2.34ms |
 
 핵심 성과는 두 가지다.
 
