@@ -11,8 +11,15 @@
   margin: var(--space-5) 0 var(--space-4);
 }
 
-.post-title {
+/* 메타 줄과 제목을 한 칸에 묶는다. 요약이 길어도 메타 줄은 제목 바로 위에 남고,
+   그리드의 last baseline 정렬로 제목 마지막 줄은 요약 마지막 줄과 계속 맞는다. */
+.post-heading {
   grid-column: 1 / 8;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.post-title {
   min-width: 0;
   margin: 0;
   font-size: 40px;
@@ -40,7 +47,6 @@
 }
 
 .post-meta {
-  grid-column: 1 / 13;
   display: flex;
   align-items: baseline;
   flex-wrap: wrap;
@@ -1007,13 +1013,13 @@ html.rsvp-active .post-single .post-content figcaption {
     margin-bottom: var(--space-3);
   }
 
-  .post-title,
-  .post-lead,
-  .post-meta {
+  .post-heading {
     grid-column: 1;
+    row-gap: var(--space-2);
   }
 
   .post-lead {
+    grid-column: 1;
     max-width: 720px;
   }
 

@@ -2,15 +2,17 @@
   {{- $date := .Date.Format "2006.01.02" -}}
   <article class="post-single gallery-single">
     <header class="post-header">
-      <div class="post-meta">
-        <time class="mono" datetime="{{ .Date.Format "2006-01-02" }}">{{ $date }}</time>
-        {{- with .Params.model }}<span class="mono">{{ . }}</span>{{ end -}}
+      <div class="post-heading">
+        <div class="post-meta">
+          <time class="mono" datetime="{{ .Date.Format "2006-01-02" }}">{{ $date }}</time>
+          {{- with .Params.model }}<span class="mono">{{ . }}</span>{{ end -}}
+        </div>
+        {{- with .Params.title }}
+          <h1 class="post-title">{{ . }}</h1>
+        {{- else }}
+          <h1 class="post-title visually-hidden">그림 {{ $date }}</h1>
+        {{- end }}
       </div>
-      {{- with .Params.title }}
-        <h1 class="post-title">{{ . }}</h1>
-      {{- else }}
-        <h1 class="post-title visually-hidden">그림 {{ $date }}</h1>
-      {{- end }}
     </header>
     <figure class="entry-cover">
       <img src="{{ .Params.cover.image }}" alt="{{ .Params.cover.alt | default "" }}" loading="eager" decoding="async">
