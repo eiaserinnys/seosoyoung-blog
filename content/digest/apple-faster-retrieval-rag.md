@@ -68,18 +68,18 @@ $k$개 클러스터 각각의 지지 함수에 직접 접근할 수 있다면, �
 ![SupportNet이 학습한 지지 함수 등고선과 실제 표적 지지 함수 등고선의 수렴 비교](https://img.seosoyoung.eiaserinnys.me/images/apple-faster-retrieval-rag/fig3-supportnet-contours.png)
 *Figure 3: SupportNet($f_\theta$, 실선)은 각 클러스터의 실제 지지 함수($\sigma_k$, 점선)를 근사해, 중심점이 아닌 클러스터 내 최적 키와의 매칭 점수를 기준으로 질의를 배정한다. (출처: Apple Machine Learning Research)*
 
-연구진은 약 260만 개의 고유 문서 패시지로 이루어진 Natural Questions 벤치마크 데이터베이스를 128개 클러스터로 분할한 뒤 SupportNet 4종을 학습시켰다. 4종은 깊이를 16층으로 같게 하고, 파라미터 규모만 데이터베이스 크기의 1%(XS), 5%(S), 10%(M), 20%(L)로 달리했다. 탐색할 상위 클러스터 수 $s$를 $1, 2, 4, 8, \dots, 128$로 늘려 가며 <strong>라우팅 재현율(routing recall)</strong>을 측정했다. 라우팅 재현율은 실제 정답 키가 들어 있는 클러스터를 찾아낸 비율이다. 결과는 아래 표와 같으며, 각 칸의 값은 '라우팅 재현율 / 지연 시간(ms)'이다.
+연구진은 약 260만 개의 고유 문서 패시지로 이루어진 Natural Questions 벤치마크 데이터베이스를 128개 클러스터로 분할한 뒤 SupportNet 4종을 학습시켰다. 4종은 깊이를 16층으로 같게 하고, 파라미터 규모만 데이터베이스 크기의 1%(XS), 5%(S), 10%(M), 20%(L)로 달리했다. 탐색할 상위 클러스터 수 $s$를 $1, 2, 4, 8, \dots, 128$로 늘려 가며 <strong>라우팅 재현율(routing recall)</strong>을 측정했다. 라우팅 재현율은 실제 정답 키가 들어 있는 클러스터를 찾아낸 비율이다. 결과는 아래 표와 같으며, 모델별 열의 값은 라우팅 재현율(%)이다.
 
-| 탐색&nbsp;비율 | 중심점&nbsp;라우팅 | XS&nbsp;(1%) | S&nbsp;(5%) | M&nbsp;(10%) | L&nbsp;(20%) |
-| --- | --- | --- | --- | --- | --- |
-| 약&nbsp;0.8%&nbsp;(1개) | 55.0%&nbsp;/&nbsp;0.22ms | 57.8%&nbsp;/&nbsp;0.22ms | 61.9%&nbsp;/&nbsp;0.22ms | 65.2%&nbsp;/&nbsp;0.22ms | 67.8%&nbsp;/&nbsp;0.23ms |
-| 약&nbsp;1.7%&nbsp;(2개) | 70.6%&nbsp;/&nbsp;0.43ms | 74.4%&nbsp;/&nbsp;0.45ms | 78.5%&nbsp;/&nbsp;0.45ms | 81.7%&nbsp;/&nbsp;0.45ms | 84.2%&nbsp;/&nbsp;0.45ms |
-| 약&nbsp;3.3%&nbsp;(4개) | 82.0%&nbsp;/&nbsp;0.86ms | 85.9%&nbsp;/&nbsp;0.88ms | 89.4%&nbsp;/&nbsp;0.88ms | 91.7%&nbsp;/&nbsp;0.88ms | 93.2%&nbsp;/&nbsp;0.88ms |
-| 약&nbsp;6.6%&nbsp;(8개) | 89.9%&nbsp;/&nbsp;1.70ms | 92.9%&nbsp;/&nbsp;1.75ms | **95.1%&nbsp;/&nbsp;1.74ms** | 96.4%&nbsp;/&nbsp;1.74ms | **97.2%&nbsp;/&nbsp;1.74ms** |
-| 약&nbsp;13.1%&nbsp;(16개) | **94.9%&nbsp;/&nbsp;3.36ms** | 96.8%&nbsp;/&nbsp;3.46ms | 97.9%&nbsp;/&nbsp;3.44ms | 98.5%&nbsp;/&nbsp;3.44ms | 99.0%&nbsp;/&nbsp;3.44ms |
-| 약&nbsp;25.9%&nbsp;(32개) | 97.8%&nbsp;/&nbsp;6.63ms | 98.8%&nbsp;/&nbsp;6.81ms | 99.4%&nbsp;/&nbsp;6.79ms | 99.5%&nbsp;/&nbsp;6.79ms | 99.7%&nbsp;/&nbsp;6.78ms |
-| 약&nbsp;51.1%&nbsp;(64개) | 99.4%&nbsp;/&nbsp;13.14ms | 99.8%&nbsp;/&nbsp;13.41ms | 99.9%&nbsp;/&nbsp;13.39ms | 99.9%&nbsp;/&nbsp;13.38ms | 100.0%&nbsp;/&nbsp;13.38ms |
-| 100.0%&nbsp;(128개) | 100.0%&nbsp;/&nbsp;26.17ms | 100.0%&nbsp;/&nbsp;26.17ms | 100.0%&nbsp;/&nbsp;26.17ms | 100.0%&nbsp;/&nbsp;26.17ms | 100.0%&nbsp;/&nbsp;26.17ms |
+| 탐색&nbsp;비율 | 지연(ms) | 중심점&nbsp;라우팅 | XS&nbsp;(1%) | S&nbsp;(5%) | M&nbsp;(10%) | L&nbsp;(20%) |
+| --- | --- | --- | --- | --- | --- | --- |
+| 약&nbsp;0.8%&nbsp;(1개) | 0.22\~0.23 | 55.0 | 57.8 | 61.9 | 65.2 | 67.8 |
+| 약&nbsp;1.7%&nbsp;(2개) | 0.43\~0.45 | 70.6 | 74.4 | 78.5 | 81.7 | 84.2 |
+| 약&nbsp;3.3%&nbsp;(4개) | 0.86\~0.88 | 82.0 | 85.9 | 89.4 | 91.7 | 93.2 |
+| 약&nbsp;6.6%&nbsp;(8개) | 1.70\~1.75 | 89.9 | 92.9 | **95.1** | 96.4 | **97.2** |
+| 약&nbsp;13.1%&nbsp;(16개) | 3.36\~3.46 | **94.9** | 96.8 | 97.9 | 98.5 | 99.0 |
+| 약&nbsp;25.9%&nbsp;(32개) | 6.63\~6.81 | 97.8 | 98.8 | 99.4 | 99.5 | 99.7 |
+| 약&nbsp;51.1%&nbsp;(64개) | 13.14\~13.41 | 99.4 | 99.8 | 99.9 | 99.9 | 100.0 |
+| 100.0%&nbsp;(128개) | 26.17 | 100.0 | 100.0 | 100.0 | 100.0 | 100.0 |
 
 신경망을 실행하는 데 드는 추가 연산 비용까지 지연 시간에 모두 포함했는데도, 소형 모델인 SupportNet-S는 95% 라우팅 재현율에 중심점 라우팅보다 약 **1.9배 빨리** 도달한다(1.74ms 대 3.36ms). 같은 1.74ms 예산에서 대형 모델 SupportNet-L은 재현율 97.2%에 도달한다. 또 신경망 오버헤드를 제외하고 데이터베이스의 5%만 스캔하도록 탐색 예산을 같게 맞춰 비교해도 SupportNet의 라우팅 재현율이 더 높다. 중심점 라우팅의 재현율은 87.5%이고, SupportNet은 모델 크기에 따라 90\~93%다(중형 M 기준 92.6%).
 
@@ -92,17 +92,17 @@ SupportNet이 기존 역파일 인덱스(IVF, Inverted File Index) 내부의 중
 ![KeyNet으로 질의 x를 전처리해 변환한 뒤 기존 IVF 라우팅을 수행하는 과정](https://img.seosoyoung.eiaserinnys.me/images/apple-faster-retrieval-rag/fig5-keynet-ivf.png)
 *Figure 5: KeyNet은 질의 $\mathbf{x}$를 데이터베이스 내 최적 매칭 키 근방의 벡터 $F_\theta(\mathbf{x})$(주황색 원)로 변환한다. 변환된 벡터를 입력받은 기존 IVF 인덱스는 중심점 라우팅만으로도 정답 키가 속한 $\mathcal{C}_3$를 찾아낸다. (출처: Apple Machine Learning Research)*
 
-동일한 Natural Questions 데이터셋과 FAISS IVF 인덱스 환경에서, 16층 깊이의 KeyNet 4종(XS, S, M, L)을 결합해 최종 <strong>검색 재현율(search recall)</strong>과 비용의 관계를 측정했다. 주요 수치는 아래 표와 같으며, 각 칸의 값은 '검색 재현율 / 총 지연 시간(ms)'이다.[^4]
+동일한 Natural Questions 데이터셋과 FAISS IVF 인덱스 환경에서, 16층 깊이의 KeyNet 4종(XS, S, M, L)을 결합해 최종 <strong>검색 재현율(search recall)</strong>과 비용의 관계를 측정했다. 주요 수치는 아래 표와 같으며, 각 칸의 값은 '검색 재현율(%) / 총 지연 시간(ms)'이다.[^4]
 
 | 스캔&nbsp;비율 | 원래&nbsp;질의 | XS&nbsp;(1%) | S&nbsp;(5%) | M&nbsp;(10%) | L&nbsp;(20%) |
 | --- | --- | --- | --- | --- | --- |
-| 0.001% | 86.1%&nbsp;/&nbsp;0.05ms | 89.3%&nbsp;/&nbsp;0.05ms | 94.0%&nbsp;/&nbsp;0.05ms | 95.7%&nbsp;/&nbsp;0.05ms | **96.7%&nbsp;/&nbsp;0.05ms** |
-| 0.002% | 89.6%&nbsp;/&nbsp;0.06ms | 92.0%&nbsp;/&nbsp;0.06ms | 95.8%&nbsp;/&nbsp;0.06ms | 97.1%&nbsp;/&nbsp;0.06ms | 97.7%&nbsp;/&nbsp;0.07ms |
-| 0.005% | 93.2%&nbsp;/&nbsp;0.15ms | 95.0%&nbsp;/&nbsp;0.15ms | 97.6%&nbsp;/&nbsp;0.15ms | 98.2%&nbsp;/&nbsp;0.15ms | 98.6%&nbsp;/&nbsp;0.15ms |
-| 0.01% | 95.1%&nbsp;/&nbsp;0.23ms | 96.7%&nbsp;/&nbsp;0.23ms | 98.4%&nbsp;/&nbsp;0.23ms | 98.9%&nbsp;/&nbsp;0.23ms | **99.1%&nbsp;/&nbsp;0.23ms** |
-| 0.05% | 98.2%&nbsp;/&nbsp;0.84ms | 99.1%&nbsp;/&nbsp;0.86ms | 99.5%&nbsp;/&nbsp;0.85ms | 99.6%&nbsp;/&nbsp;0.84ms | 99.6%&nbsp;/&nbsp;0.84ms |
-| 0.10% | **99.0%&nbsp;/&nbsp;1.57ms** | 99.6%&nbsp;/&nbsp;1.59ms | 99.8%&nbsp;/&nbsp;1.60ms | 99.8%&nbsp;/&nbsp;1.58ms | 99.7%&nbsp;/&nbsp;1.59ms |
-| 0.15% | 99.4%&nbsp;/&nbsp;2.32ms | 99.7%&nbsp;/&nbsp;2.32ms | 99.9%&nbsp;/&nbsp;2.31ms | 99.8%&nbsp;/&nbsp;2.31ms | 99.8%&nbsp;/&nbsp;2.34ms |
+| 0.001% | 86.1&nbsp;/&nbsp;0.05 | 89.3&nbsp;/&nbsp;0.05 | 94.0&nbsp;/&nbsp;0.05 | 95.7&nbsp;/&nbsp;0.05 | **96.7&nbsp;/&nbsp;0.05** |
+| 0.002% | 89.6&nbsp;/&nbsp;0.06 | 92.0&nbsp;/&nbsp;0.06 | 95.8&nbsp;/&nbsp;0.06 | 97.1&nbsp;/&nbsp;0.06 | 97.7&nbsp;/&nbsp;0.07 |
+| 0.005% | 93.2&nbsp;/&nbsp;0.15 | 95.0&nbsp;/&nbsp;0.15 | 97.6&nbsp;/&nbsp;0.15 | 98.2&nbsp;/&nbsp;0.15 | 98.6&nbsp;/&nbsp;0.15 |
+| 0.01% | 95.1&nbsp;/&nbsp;0.23 | 96.7&nbsp;/&nbsp;0.23 | 98.4&nbsp;/&nbsp;0.23 | 98.9&nbsp;/&nbsp;0.23 | **99.1&nbsp;/&nbsp;0.23** |
+| 0.05% | 98.2&nbsp;/&nbsp;0.84 | 99.1&nbsp;/&nbsp;0.86 | 99.5&nbsp;/&nbsp;0.85 | 99.6&nbsp;/&nbsp;0.84 | 99.6&nbsp;/&nbsp;0.84 |
+| 0.10% | **99.0&nbsp;/&nbsp;1.57** | 99.6&nbsp;/&nbsp;1.59 | 99.8&nbsp;/&nbsp;1.60 | 99.8&nbsp;/&nbsp;1.58 | 99.7&nbsp;/&nbsp;1.59 |
+| 0.15% | 99.4&nbsp;/&nbsp;2.32 | 99.7&nbsp;/&nbsp;2.32 | 99.9&nbsp;/&nbsp;2.31 | 99.8&nbsp;/&nbsp;2.31 | 99.8&nbsp;/&nbsp;2.34 |
 
 핵심 성과는 두 가지다.
 
@@ -110,7 +110,7 @@ SupportNet이 기존 역파일 인덱스(IVF, Inverted File Index) 내부의 중
 * **스캔 키 수 최대 11배가량 절감**: 데이터베이스의 단 <strong>0.001%</strong>만 스캔할 때 원래 질의의 정답 회수율은 86.1%에 그치지만, KeyNet 변환 질의는 89.3\~96.7%(KeyNet-L 기준 96.7%)를 회수한다. 99% 재현율에 도달하기 위해 스캔해야 하는 데이터베이스 비율 역시 원래 질의의 약 0.10%에서 KeyNet-L 보간 기준 약 <strong>0.009%</strong>로 11분의 1 수준이 된다.
 
 ![Natural Questions 데이터셋의 'What is Matchbox Twenty?' 질의에서 원래 질의와 KeyNet 변환 질의가 반환한 상위 3개 검색 결과 비교](https://img.seosoyoung.eiaserinnys.me/images/apple-faster-retrieval-rag/fig7-nq-example.png)
-*Figure 7: Natural Questions의 'What is Matchbox Twenty?' 질문에서 원래 질의(왼쪽)는 단어 일부만 겹치는 엉뚱한 문서 세 건을 반환해 정답을 놓친다. 반면 KeyNet 변환 질의(오른쪽)는 미국 록 밴드 Matchbox Twenty를 설명하는 정답 문서를 1순위로 찾아낸다. (출처: Apple Machine Learning Research)*
+*Figure 7: Natural Questions의 'What is Matchbox Twenty?' 질문에서 원래 질의(왼쪽)와 KeyNet 변환 질의(오른쪽)가 검색한 상위 3개 문서 비교. (출처: Apple Machine Learning Research)*
 
 Natural Questions 데이터셋의 개별 질문에서 검색된 상위 문서들을 대조하면 두 방식의 차이가 선명하게 확인된다. 예를 들어 사용자가 <em>"What is Matchbox Twenty?"</em>라는 짧은 질문을 입력한 경우를 보자. 원래 질의 벡터로 IVF 인덱스를 그대로 탐색하면 상위 3개 결과로 2014년에 도입된 'Box 23' 기능, 영국 축구 잡지 'MATCH', '1부터 90까지 숫자 중 25개(Twenty-five) 추첨'이 나온다. 모두 표면 어휘만 단편적으로 겹치는 문서라서 정답을 놓친다. 반면 KeyNet으로 변환한 질의 벡터를 넣으면 <em>"Matchbox Twenty는 1995년 플로리다주 올랜도에서 결성된 미국의 록 밴드다"</em>라는 정의 문서와 리드 싱어 Rob Thomas에 관한 문서들이 상위 3개 결과로 함께 나온다.
 
@@ -140,7 +140,7 @@ Apple Machine Learning Research (원 논문 저자: Theo X. Olausson, João Mont
 - 논문 소개 페이지: <https://machinelearning.apple.com/research/amortizing-inner-product-search>
 - 공식 코드: <https://github.com/apple/ml-amips>
 
-[^1]: 논문 원제는 「Amortizing Maximum Inner Product Search with Learned Support Functions」다. 저자는 Theo X. Olausson, João Monteiro, Michal Klein, Marco Cuturi이며, Olausson은 MIT 소속으로 애플 인턴십 중에 이 연구를 수행했다. 공식 구현 코드는 GitHub 리포지토리(<https://github.com/apple/ml-amips>)에 공개되어 있다.
+[^1]: 제1저자 Theo X. Olausson은 MIT 소속이며, 애플 인턴십 기간에 이 연구를 진행했다.
 [^2]: 입력 볼록 신경망(ICNN)은 Brandon Amos, Lei Xu, J. Zico Kolter가 ICML 2017 논문(「Input Convex Neural Networks」)에서 제안한 구조다. 활성화 함수를 볼록 비감소 함수로 한정하고 가중치를 비음수(non-negative)로 제한해, 출력이 입력에 대해 볼록하도록 보장한다.
 [^3]: 지지 함수 $\sigma(\mathbf{x})$는 양의 1차 동차 함수(positively homogeneous of degree 1, 즉 $c > 0$일 때 $\sigma(c\mathbf{x}) = c\sigma(\mathbf{x})$)다. 오일러의 동차 함수 정리에 의해 $\langle \mathbf{x}, \nabla \sigma(\mathbf{x}) \rangle = \sigma(\mathbf{x})$가 성립하므로, KeyNet이 예측한 키 벡터 $F_\theta(\mathbf{x})$와 질의 $\mathbf{x}$의 내적이 실제 최대 내적 점수와 일치하도록 손실 항을 구성할 수 있다.
 [^4]: 이 표(원문 Figure 6)의 지연 시간(latency)은 KeyNet으로 질의를 변환하는 전처리 시간과 IVF 인덱스 탐색 시간을 합산한 총 소요 시간이다(원래 질의 기준선은 순수 IVF 탐색 시간만 포함). 작은 KeyNet이라도 전처리에 들인 시간보다 뒤따르는 IVF 탐색에서 줄어드는 시간이 훨씬 커서 전체 지연 시간이 단축된다.

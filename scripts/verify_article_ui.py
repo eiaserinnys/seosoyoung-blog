@@ -898,12 +898,16 @@ def path_checks(report):
         f"{path} 360: scrollWidth={configs['min360-light']['docScrollWidth']} "
         f"innerWidth={configs['min360-light']['viewport']['w']}")
 
-    for name in ("narrow-light", "wide-light"):
+    for name in ("narrow-light", "tablet820-light", "mid-light", "wide-light"):
         for table in configs[name]["tables"]:
             if table["cols"] < 6:
                 continue
             natural = table["maxContentWidth"] > table["wrapClient"] + 1
-            add("A7", table["overflowing"] == natural,
+            if name in ("tablet820-light", "mid-light", "wide-light") and table["cols"] <= 7:
+                ok = not natural and not table["overflowing"]
+            else:
+                ok = table["overflowing"] == natural
+            add("A7", ok,
                 f"{path} {name} table {table['i']} ({table['cols']}칸): "
                 f"overflowing={table['overflowing']} natural={natural} width={table['tableRect']['w']}px "
                 f"maxContent={table['maxContentWidth']}px wrap={table['wrapClient']}px")

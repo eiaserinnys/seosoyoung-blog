@@ -283,6 +283,43 @@ class ArticleUiChecksTest(unittest.TestCase):
         na_entries = a16_checks("/digest/none/", {"wide-light": {"diagrams": {"figs": []}}})
         self.assertTrue(na_entries[0]["na"])
 
+    def test_six_col_table_must_fit_at_820_and_above(self):
+        from verify_article_ui import path_checks
+
+        names = ("min360-light", "narrow-light", "min390-light", "min414-light",
+                 "wide-light", "mid-light", "wide-dark", "narrow-dark",
+                 "phablet-light", "tablet-light", "tablet820-light")
+
+        def make_configs(wide_max_content, wide_overflowing):
+            out = {}
+            for name in names:
+                is_wide = name in ("tablet820-light", "mid-light", "wide-light")
+                wrap = 712 if name == "tablet820-light" else (720 if is_wide else 323)
+                max_content = wide_max_content if is_wide else 694
+                overflowing = wide_overflowing if is_wide else True
+                out[name] = {
+                    "tocGap": 32,
+                    "tables": [{
+                        "i": 1, "cols": 6, "overflowing": overflowing,
+                        "maxContentWidth": max_content, "wrapClient": wrap,
+                        "tableRect": {"w": max(wrap, max_content) if overflowing else wrap, "h": 300},
+                    }],
+                    "sidenotes": [], "footnoteMarkers": 0, "footnotesSection": None,
+                    "docScrollWidth": 1440, "viewport": {"w": 1440},
+                    "a9": {"codes": []}, "quotes": None, "postImages": [], "diagrams": {"figs": []},
+                }
+            return out
+
+        bad_summary, _ = path_checks({
+            "path": "/digest/x/", "configs": make_configs(896, True), "resize": {}, "lightbox": {},
+        })
+        self.assertFalse(bad_summary["A7"]["pass"])
+
+        good_summary, _ = path_checks({
+            "path": "/digest/x/", "configs": make_configs(712, False), "resize": {}, "lightbox": {},
+        })
+        self.assertTrue(good_summary["A7"]["pass"])
+
 
 if __name__ == '__main__':
     unittest.main()
