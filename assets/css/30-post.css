@@ -356,6 +356,20 @@
   width: max-content;
 }
 
+/* 넘치는 표의 첫 열을 가로 스크롤 중에도 고정한다(post.js가 is-sticky-first를 붙인다). */
+.table-scroll.is-sticky-first > table {
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+.table-scroll.is-sticky-first > table :is(th, td):first-child {
+  position: sticky;
+  inset-inline-start: 0;
+  z-index: 1;
+  background: var(--bg);
+  box-shadow: inset -1px 0 var(--rule);
+}
+
 .post-content table :is(th, td) {
   padding: var(--space-1) var(--space-2);
   border-bottom: var(--line) solid var(--rule);

@@ -26,7 +26,7 @@ from playwright.sync_api import Error as PlaywrightError, sync_playwright
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from verify_article_ui_checks import (
     A10_CONFIGS, A10_JS, A11_JS, A15_JS, A16_JS, A9_JS, a9_checks, a10_checks, a11_checks, a12_checks,
-    a13_checks, a14_checks, a15_checks, a16_checks, resized_sidenotes_ok, sidenote_presence_ok,
+    a13_checks, a14_checks, a15_checks, a16_checks, a17_checks, resized_sidenotes_ok, sidenote_presence_ok,
     summarize_checks,
 )
 
@@ -257,6 +257,9 @@ MEASURE_JS = r"""
       firstCellMinWidth: firstCellStyle ? firstCellStyle.minWidth : null,
       firstCellWidth: firstBodyCell ? +firstBodyCell.getBoundingClientRect().width.toFixed(1) : null,
       firstCellText: firstBodyCell ? firstBodyCell.textContent.trim().slice(0, 24) : null,
+      sticky: wrap ? wrap.classList.contains('is-sticky-first') : null,
+      firstCellPosition: firstCellStyle ? firstCellStyle.position : null,
+      firstCellBg: firstCellStyle ? firstCellStyle.backgroundColor : null,
       hasInlineCode: codeMetrics.length > 0, codeMetrics};
   });
 
@@ -304,6 +307,46 @@ MEASURE_JS = r"""
     textInfo(document.querySelector('.post-meta'), 'post-meta'), textInfo(content.querySelector('ol li'), 'summary li')];
   out.bodyPWidth = bodyP ? r(bodyP).w : null;
   return out;
+}
+"""
+
+TABLE_STICKY_JS = r"""
+() => {
+  const parseRGB = (s) => { const m = String(s || '').match(/rgba?\(([^)]+)\)/); if (!m) return null;
+    const p = m[1].split(/[ ,/]+/).filter(Boolean).map(Number); return {r:p[0], g:p[1], b:p[2], a: p.length > 3 ? p[3] : 1}; };
+  const bodyBg = (() => {
+    const b = parseRGB(getComputedStyle(document.body).backgroundColor);
+    if (b && b.a > 0) return b;
+    return parseRGB(getComputedStyle(document.documentElement).backgroundColor);
+  })();
+  return [...document.querySelectorAll('.post-content .table-scroll')].map((wrap, index) => {
+    const table = wrap.querySelector('table');
+    const rows = [...table.querySelectorAll('tr')];
+    let firstCell = null;
+    for (const row of rows) {
+      const cell = row.children[0];
+      if (cell && cell.colSpan === 1) { firstCell = cell; break; }
+    }
+    wrap.scrollLeft = wrap.scrollWidth;
+    const wrapRect = wrap.getBoundingClientRect();
+    const cellRect = firstCell ? firstCell.getBoundingClientRect() : null;
+    const cs = firstCell ? getComputedStyle(firstCell) : null;
+    const data = {
+      index: index + 1,
+      overflowing: wrap.classList.contains('is-overflowing'),
+      sticky: wrap.classList.contains('is-sticky-first'),
+      wrapClient: wrap.clientWidth,
+      scrollLeft: +wrap.scrollLeft.toFixed(1),
+      maxScroll: +(wrap.scrollWidth - wrap.clientWidth).toFixed(1),
+      firstCellWidth: cellRect ? +cellRect.width.toFixed(1) : null,
+      firstLeftDiff: cellRect ? +(cellRect.left - wrapRect.left).toFixed(1) : null,
+      firstCellPosition: cs ? cs.position : null,
+      firstCellBg: cs ? parseRGB(cs.backgroundColor) : null,
+      bodyBg,
+    };
+    wrap.scrollLeft = 0;
+    return data;
+  });
 }
 """
 
@@ -612,18 +655,63 @@ def footnote_roundtrip(page, name, out_dir):
                 "scrollKept": scroll_kept,
                 "activeAfterEsc": active_after,
             }
-        overflow_wraps = page.locator(".post-content .table-scroll.is-overflowing")
-        if overflow_wraps.count() > 0:
-            wrap = overflow_wraps.first
-            wrap.scroll_into_view_if_needed()
-            page.evaluate("() => { const w = document.querySelector('.post-content .table-scroll.is-overflowing'); if (w) w.scrollLeft = w.scrollWidth; }")
-            page.wait_for_timeout(300)
-            inter["tableScroll"] = {
-                "scrollLeft": page.evaluate("(() => { const w = document.querySelector('.post-content .table-scroll.is-overflowing'); return w ? w.scrollLeft : 0; })()"),
-                "docScrollX": page.evaluate("[scrollX, document.documentElement.scrollWidth, innerWidth]"),
-            }
-            wrap.screenshot(path=str(out_dir / "table-scrolled-end.png"))
     return inter
+
+
+def table_scroll_end_capture(page, name, out_dir):
+    # 첫 열 고정을 보이는 표를 끝까지 민 상태로 찍는다.
+    # 변경 전 빌드(is-sticky-first 없음)에서도 같은 표를 찍도록 post.js와 같은 폭 비율(40%)로 고른다.
+    index = page.evaluate(
+        """() => {
+          const wraps = [...document.querySelectorAll('.post-content .table-scroll')];
+          const sticky = wraps.findIndex((w) => w.classList.contains('is-sticky-first'));
+          if (sticky >= 0) return sticky;
+          const ratio = (w) => {
+            const table = w.querySelector('table');
+            for (const row of [...table.querySelectorAll('tr')]) {
+              const cell = row.children[0];
+              if (cell && cell.colSpan === 1) {
+                return w.clientWidth > 0 ? cell.getBoundingClientRect().width / w.clientWidth : null;
+              }
+            }
+            return null;
+          };
+          const overflowing = wraps.map((w, i) => i).filter((i) => wraps[i].classList.contains('is-overflowing'));
+          const wouldStick = overflowing.find((i) => { const r = ratio(wraps[i]); return r !== null && r <= 0.4; });
+          if (wouldStick !== undefined) return wouldStick;
+          return overflowing.length ? overflowing[0] : -1;
+        }"""
+    )
+    if index is None or index < 0:
+        return None
+    wrap = page.locator(".post-content .table-scroll").nth(index)
+    wrap.scroll_into_view_if_needed()
+    page.evaluate(
+        "(i) => { const w = document.querySelectorAll('.post-content .table-scroll')[i]; if (w) w.scrollLeft = w.scrollWidth; }", index)
+    page.wait_for_timeout(300)
+    data = page.evaluate(
+        """(i) => {
+          const w = document.querySelectorAll('.post-content .table-scroll')[i];
+          if (!w) return null;
+          const table = w.querySelector('table');
+          let first = null;
+          for (const row of [...table.querySelectorAll('tr')]) {
+            const cell = row.children[0];
+            if (cell && cell.colSpan === 1) { first = cell; break; }
+          }
+          const wr = w.getBoundingClientRect();
+          const fr = first ? first.getBoundingClientRect() : null;
+          return {table: i + 1, scrollLeft: +w.scrollLeft.toFixed(1),
+                  maxScroll: +(w.scrollWidth - w.clientWidth).toFixed(1),
+                  sticky: w.classList.contains('is-sticky-first'),
+                  firstLeftDiff: fr ? +(fr.left - wr.left).toFixed(1) : null};
+        }""",
+        index,
+    )
+    filename = "table-scrolled-end-dark.png" if name == "narrow-dark" else "table-scrolled-end.png"
+    wrap.screenshot(path=str(out_dir / filename))
+    page.evaluate("() => { document.querySelectorAll('.post-content .table-scroll').forEach((w) => { w.scrollLeft = 0; }); }")
+    return data
 
 
 def capture_config(browser, url, out_dir, name, width, height, dpr, scheme, a10=False):
@@ -638,6 +726,8 @@ def capture_config(browser, url, out_dir, name, width, height, dpr, scheme, a10=
     m["failedRequests"] = failed
     m["a9"] = page.evaluate(A9_JS)
     m["diagrams"] = page.evaluate(A16_JS)
+    if name in ("narrow-light", "narrow-dark", "wide-light"):
+        m["sticky"] = page.evaluate(TABLE_STICKY_JS)
     if name == "wide-light":
         m["quotes"] = page.evaluate(A15_JS)
     has_katex = page.locator(".post-content .katex, aside.sidenote .katex").count() > 0
@@ -693,6 +783,8 @@ def capture_config(browser, url, out_dir, name, width, height, dpr, scheme, a10=
         shots["footnotes"] = element_shot(page, ".footnotes", d / "footnotes.png")
     if name in ("narrow-light", "wide-light"):
         m["interaction"] = footnote_roundtrip(page, name, d)
+    if name in ("narrow-light", "narrow-dark"):
+        m["tableScrollEnd"] = table_scroll_end_capture(page, name, d)
     apply_table_state(page, m["tables"])
     m["overflowBeforeFullPage"] = page.evaluate(OVERFLOW_JS)
     page.evaluate("window.scrollTo(0, 0)")
@@ -827,7 +919,7 @@ def short_first_cell(text):
 
 
 def path_checks(report):
-    checks = {key: [] for key in ("A1", "A2", "A3", "A4", "A5", "A6", "A7", "A8", "A9", "A10", "A11", "A12", "A13", "A14", "A15", "A16")}
+    checks = {key: [] for key in ("A1", "A2", "A3", "A4", "A5", "A6", "A7", "A8", "A9", "A10", "A11", "A12", "A13", "A14", "A15", "A16", "A17")}
 
     def add(key, ok, detail, na=False):
         checks[key].append({"ok": bool(ok), "na": na, "detail": detail})
@@ -939,6 +1031,8 @@ def path_checks(report):
         add("A15", entry["ok"], entry["detail"], na=entry.get("na", False))
     for entry in a16_checks(path, configs):
         add("A16", entry["ok"], entry["detail"], na=entry.get("na", False))
+    for entry in a17_checks(path, configs):
+        add("A17", entry["ok"], entry["detail"], na=entry.get("na", False))
 
     for key, what in (
         ("A2", "좁은 폭에서 3~5칸 표"),
@@ -1011,7 +1105,7 @@ def main():
                 "configs": [{"name": c[0], "width": c[1], "height": c[2], "dpr": c[3], "colorScheme": c[4]}
                             for c in CONFIGS],
                 "skipped": skipped, "paths": reports, "summary": {}}
-    aggregate = {key: [] for key in ("A1", "A2", "A3", "A4", "A5", "A6", "A7", "A8", "A9", "A10", "A11", "A12", "A13", "A14", "A15", "A16")}
+    aggregate = {key: [] for key in ("A1", "A2", "A3", "A4", "A5", "A6", "A7", "A8", "A9", "A10", "A11", "A12", "A13", "A14", "A15", "A16", "A17")}
     for path, report in reports.items():
         summary, raw = path_checks(report)
         report["verdicts"] = summary
@@ -1020,6 +1114,16 @@ def main():
         slug = path.strip("/").split("/")[-1]
         (args.out_dir / slug / "metrics.json").write_text(
             json.dumps(report, ensure_ascii=False, indent=1), encoding="utf-8")
+
+    sticky_seen = any(
+        table.get("sticky")
+        for report in reports.values()
+        for config in report["configs"].values()
+        for table in (config.get("sticky") or [])
+    )
+    if not sticky_seen:
+        aggregate["A17"].append(
+            {"ok": False, "na": False, "detail": "A17: 전체 실행에서 is-sticky-first가 붙은 표 0건"})
 
     for key, entries in aggregate.items():
         combined["summary"][key] = summarize_checks(entries, limit=60)

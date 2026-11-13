@@ -54,6 +54,7 @@
   }
 
   var MIN_COLUMN_EM = 8;
+  var STICKY_FIRST_MAX_RATIO = 0.4;
 
   function glueMathPunctuation() {
     document.querySelectorAll(".post-content .katex").forEach(function (math) {
@@ -126,9 +127,18 @@
       wrappers.push({ table: table, wrapper: wrapper, cols: cols });
     });
 
+    function firstColumnWidth(table) {
+      var rows = table.querySelectorAll("tr");
+      for (var i = 0; i < rows.length; i++) {
+        var cell = rows[i].children[0];
+        if (cell && cell.colSpan === 1) return cell.getBoundingClientRect().width;
+      }
+      return null;
+    }
+
     function updateOverflow() {
       wrappers.forEach(function (item) {
-        item.wrapper.classList.remove("is-overflowing");
+        item.wrapper.classList.remove("is-overflowing", "is-sticky-first");
       });
       wrappers.forEach(function (item) {
         var natural = item.wrapper.scrollWidth > item.wrapper.clientWidth + 1
@@ -145,7 +155,13 @@
             else item.table.style.removeProperty("width");
           }
         }
-        item.wrapper.classList.toggle("is-overflowing", natural || squeezed);
+        var overflowing = natural || squeezed;
+        item.wrapper.classList.toggle("is-overflowing", overflowing);
+        var width = overflowing && item.wrapper.clientWidth > 0
+          ? firstColumnWidth(item.table)
+          : null;
+        item.wrapper.classList.toggle("is-sticky-first",
+          width !== null && width <= item.wrapper.clientWidth * STICKY_FIRST_MAX_RATIO);
       });
     }
 

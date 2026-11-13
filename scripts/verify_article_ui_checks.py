@@ -717,6 +717,49 @@ def a16_checks(path, configs):
     return entries
 
 
+# A17: 넘치는 표 첫 열 고정(post.js의 is-sticky-first). 폭 비율 기준은 post.js와 같다.
+STICKY_FIRST_MAX_RATIO = 0.4
+A17_CONFIGS = ("narrow-light", "narrow-dark")
+
+
+def a17_checks(path, configs):
+    entries = []
+    tables = 0
+    for name in A17_CONFIGS:
+        for row in ((configs.get(name) or {}).get("sticky") or []):
+            tables += 1
+            width = row.get("firstCellWidth")
+            wrap = row.get("wrapClient") or 0
+            expected = (bool(row.get("overflowing")) and width is not None and wrap > 0
+                        and width <= wrap * STICKY_FIRST_MAX_RATIO)
+            bg = row.get("firstCellBg") or {}
+            body = row.get("bodyBg") or {}
+            bg_same = (bg.get("a") == 1 and body.get("a") is not None
+                       and (bg.get("r"), bg.get("g"), bg.get("b"))
+                       == (body.get("r"), body.get("g"), body.get("b")))
+            if expected:
+                left = row.get("firstLeftDiff")
+                ok = bool(row.get("sticky")) and left is not None and abs(left) <= 1 and bg_same
+                detail = (f"{path} {name} table {row.get('index')}: sticky={row.get('sticky')} "
+                          f"expected=True firstCol={width}/{wrap}px firstLeftDiff={left} "
+                          f"bg={bg} bodyBg={body}")
+            else:
+                ok = not row.get("sticky") and row.get("firstCellPosition") == "static"
+                detail = (f"{path} {name} table {row.get('index')}: sticky={row.get('sticky')} "
+                          f"expected=False position={row.get('firstCellPosition')} "
+                          f"overflowing={row.get('overflowing')} firstCol={width}/{wrap}px")
+            entries.append({"ok": ok, "detail": detail})
+    for row in ((configs.get("wide-light") or {}).get("sticky") or []):
+        if row.get("overflowing"):
+            continue
+        entries.append({"ok": not row.get("sticky"),
+                        "detail": f"{path} wide-light table {row.get('index')}: "
+                                  f"sticky={row.get('sticky')} overflowing=False"})
+    if not tables:
+        entries.append({"ok": True, "na": True, "detail": f"{path}: 375 폭 표 0건 (A17 해당 없음)"})
+    return entries
+
+
 def summarize_checks(entries, limit=40):
     graded = [entry for entry in entries if not entry.get("na")]
     na = [entry for entry in entries if entry.get("na")]
