@@ -717,6 +717,116 @@ def a16_checks(path, configs):
     return entries
 
 
+# A17: 넘치는 표 첫 열 고정(post.js의 is-sticky-first). 여유 폭 기준은 post.js와 같다.
+# 2칸 표는 고정하지 않는다(post.js의 cols >= 3 조건).
+MIN_COLUMN_EM = 8
+MIN_TABLE_COLS = 3
+A17_CONFIGS = ("min360-light", "narrow-light", "min390-light", "min414-light", "narrow-dark", "wide-light")
+
+
+def a17_checks(path, configs):
+    entries = []
+    tables = 0
+    for name in A17_CONFIGS:
+        for row in ((configs.get(name) or {}).get("sticky") or []):
+            tables += 1
+            width = row.get("firstCellWidth")
+            wrap = row.get("wrapClient") or 0
+            font = row.get("fontSize")
+            room = None if width is None else wrap - width
+            need = None if font is None else font * MIN_COLUMN_EM
+            cols = row.get("cols")
+            expected = (bool(row.get("overflowing")) and cols is not None and cols >= MIN_TABLE_COLS
+                        and width is not None and wrap > 0 and need is not None and room >= need)
+            bg = row.get("firstCellBg") or {}
+            body = row.get("bodyBg") or {}
+            bg_same = (bg.get("a") == 1 and body.get("a") is not None
+                       and (bg.get("r"), bg.get("g"), bg.get("b"))
+                       == (body.get("r"), body.get("g"), body.get("b")))
+            if expected:
+                head_left = row.get("firstLeftDiff")
+                body_left = row.get("bodyLeftDiff")
+                scroll_left = row.get("scrollLeft")
+                max_scroll = row.get("maxScroll")
+                at_end = (scroll_left is not None and max_scroll is not None
+                          and abs(scroll_left - max_scroll) <= 1)
+                ok = (bool(row.get("sticky"))
+                      and head_left is not None and body_left is not None
+                      and abs(head_left) <= 1 and abs(body_left) <= 1 and at_end and bg_same)
+                detail = (f"{path} {name} table {row.get('index')} ({cols}칸): sticky={row.get('sticky')} "
+                          f"expected=True room={room}px need={need}px "
+                          f"headLeftDiff={row.get('firstLeftDiff')} bodyLeftDiff={row.get('bodyLeftDiff')} "
+                          f"scroll={scroll_left}/{max_scroll} bg={bg} bodyBg={body}")
+            else:
+                ok = not row.get("sticky") and row.get("firstCellPosition") == "static"
+                detail = (f"{path} {name} table {row.get('index')} ({cols}칸): sticky={row.get('sticky')} "
+                          f"expected=False position={row.get('firstCellPosition')} "
+                          f"overflowing={row.get('overflowing')} room={room}px need={need}px")
+            entries.append({"ok": ok, "detail": detail})
+    if not tables:
+        entries.append({"ok": True, "na": True, "detail": f"{path}: A17 대상 폭 표 0건 (A17 해당 없음)"})
+    return entries
+
+
+def a18_checks(path, configs):
+    """A18: 고정 표 첫 열과 둘째 열의 그려진 가로 괘선 y 목록이 같은지, 표 맨 아래 줄이 두 열 모두에 있는지.
+
+    측정값(configs[name]["seams"])은 verify_article_ui.py가 rest/end 스크린샷에서 만든다.
+    """
+    entries = []
+    tables = 0
+    for name in A17_CONFIGS:
+        for rec in ((configs.get(name) or {}).get("seams") or []):
+            tables += 1
+            states = rec.get("states") or {}
+            bad = [state for state in ("rest", "end") if not (states.get(state) or {}).get("ok")]
+            lines = sum(len((states.get(state) or {}).get("a") or [])
+                        + len((states.get(state) or {}).get("strongA") or [])
+                        for state in ("rest", "end"))
+            if bad:
+                bits = []
+                for state in bad:
+                    s = states.get(state) or {}
+                    bits.append(f"{state}: a={str(s.get('a'))[:200]} b={str(s.get('b'))[:200]} "
+                                f"strongA={s.get('strongA')} strongB={s.get('strongB')} "
+                                f"bottomA={s.get('bottomA')} bottomB={s.get('bottomB')} "
+                                f"reason={s.get('reason')}")
+                detail = (f"{path} {name} table {rec.get('table')} ({rec.get('text')}): "
+                          f"괘선 어긋남 {'; '.join(bits)}")
+                entries.append({"ok": False, "detail": detail})
+            else:
+                entries.append({"ok": True,
+                                "detail": f"{path} {name} table {rec.get('table')}: "
+                                          f"rest+end 괘선 {lines}줄 일치, 표 맨 아래 줄 확인"})
+    if not tables:
+        entries.append({"ok": True, "na": True, "detail": f"{path}: A18 대상 고정 표 0건 (A18 해당 없음)"})
+    return entries
+
+
+def a19_checks(path, rows):
+    """A19: 창 높이만 바뀐 뒤에도 밀어 둔 넘치는 표의 scrollLeft와 두 클래스가 그대로인지."""
+    entries = []
+    for row in rows or []:
+        before = row.get("before") or {}
+        after = row.get("after") or {}
+        pushed = (before.get("scrollLeft") or 0) > 1
+        kept = (after.get("scrollLeft") is not None and before.get("scrollLeft") is not None
+                and abs(after["scrollLeft"] - before["scrollLeft"]) <= 1)
+        same_classes = (after.get("overflowing") == before.get("overflowing")
+                        and after.get("sticky") == before.get("sticky"))
+        ok = pushed and kept and same_classes
+        detail = (f"{path} narrow-light table {row.get('table')} ({row.get('text')}): "
+                  f"높이만 변경 전 scrollLeft={before.get('scrollLeft')}/{before.get('max')} "
+                  f"overflowing={before.get('overflowing')} sticky={before.get('sticky')} → "
+                  f"후 scrollLeft={after.get('scrollLeft')}/{after.get('max')} "
+                  f"overflowing={after.get('overflowing')} sticky={after.get('sticky')}"
+                  f"{'' if pushed else ' (밀리지 않아 판정 불가)'}")
+        entries.append({"ok": ok, "detail": detail})
+    if not entries:
+        entries.append({"ok": True, "na": True, "detail": f"{path}: A19 대상 넘치는 표 0건 (A19 해당 없음)"})
+    return entries
+
+
 def summarize_checks(entries, limit=40):
     graded = [entry for entry in entries if not entry.get("na")]
     na = [entry for entry in entries if entry.get("na")]

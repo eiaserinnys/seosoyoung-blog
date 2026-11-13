@@ -126,9 +126,18 @@
       wrappers.push({ table: table, wrapper: wrapper, cols: cols });
     });
 
+    function firstColumnWidth(table) {
+      var rows = table.querySelectorAll("tr");
+      for (var i = 0; i < rows.length; i++) {
+        var cell = rows[i].children[0];
+        if (cell && cell.colSpan === 1) return cell.getBoundingClientRect().width;
+      }
+      return null;
+    }
+
     function updateOverflow() {
       wrappers.forEach(function (item) {
-        item.wrapper.classList.remove("is-overflowing");
+        item.wrapper.classList.remove("is-overflowing", "is-sticky-first");
       });
       wrappers.forEach(function (item) {
         var natural = item.wrapper.scrollWidth > item.wrapper.clientWidth + 1
@@ -145,12 +154,28 @@
             else item.table.style.removeProperty("width");
           }
         }
-        item.wrapper.classList.toggle("is-overflowing", natural || squeezed);
+        var overflowing = natural || squeezed;
+        item.wrapper.classList.toggle("is-overflowing", overflowing);
+        var sticky = false;
+        // 2칸 표는 값 열이 좁은 창으로만 보여 읽기 나빠지므로 고정하지 않는다.
+        if (overflowing && item.cols >= 3 && item.wrapper.clientWidth > 0) {
+          var width = firstColumnWidth(item.table);
+          var fontSize = parseFloat(getComputedStyle(item.table).fontSize);
+          sticky = width !== null && !isNaN(fontSize)
+            && item.wrapper.clientWidth - width >= fontSize * MIN_COLUMN_EM;
+        }
+        item.wrapper.classList.toggle("is-sticky-first", sticky);
       });
     }
 
     updateOverflow();
-    window.addEventListener("resize", updateOverflow);
+    // 모바일 주소창이 접히며 높이만 바뀌는 resize는 건너뛴다. 클래스를 뗐다 붙이면 밀어 둔 표의 scrollLeft가 0으로 돌아간다.
+    var lastWidth = window.innerWidth;
+    window.addEventListener("resize", function () {
+      if (window.innerWidth === lastWidth) return;
+      lastWidth = window.innerWidth;
+      updateOverflow();
+    });
     if (document.fonts && document.fonts.ready) {
       document.fonts.ready.then(updateOverflow).catch(function () {});
     }
