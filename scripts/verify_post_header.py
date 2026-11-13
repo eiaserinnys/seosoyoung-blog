@@ -286,12 +286,16 @@ def main():
             failures.append(f"조건 2: {width}px after gap 편차 {max(gaps) - min(gaps):.2f}px "
                             f"(최소 {min(gaps)}, 최대 {max(gaps)})")
 
-    measured_gaps = [gap for gap in before_gaps.values() if gap is not None]
-    min_gap = min(measured_gaps) if measured_gaps else 0.0
-    unpushed = {path for path, gap in before_gaps.items() if gap is not None and gap <= min_gap + 1.0}
-    stable = unpushed | {GALLERY_PATH}
-    for path in sorted(stable):
-        for width in WIDE_WIDTHS:
+    # "제목이 밀리지 않았던 글"은 폭마다 그 폭의 before 표본 최솟값으로 고른다.
+    for width in WIDE_WIDTHS:
+        measured_gaps = [before[path].get(width, {}).get("gap") for path in paths]
+        measured_gaps = [gap for gap in measured_gaps if gap is not None]
+        min_gap = min(measured_gaps) if measured_gaps else 0.0
+        stable = {path for path in paths
+                  if before[path].get(width, {}).get("gap") is not None
+                  and before[path].get(width, {}).get("gap") <= min_gap + 1.0}
+        stable.add(GALLERY_PATH)
+        for path in sorted(stable):
             cell = cell_issues.get((path, width), [])
             if cell:
                 continue
