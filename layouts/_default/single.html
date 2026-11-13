@@ -20,23 +20,25 @@
   {{- $lead := .Params.summary -}}
   <article class="post-single{{ if .Params.sidenotes }} has-sidenotes{{ end }}">
     <header class="post-header">
-      {{- if $isPost }}
-        <div class="post-meta">
-          {{- with $.Params.categories }}
-            {{- $category := index . 0 -}}
-            {{- $matches := where site.Taxonomies.categories.ByCount "Page.Title" $category -}}
-            {{- with $matches }}
-              {{- $term := index . 0 }}
-              <a class="post-category" href="{{ $term.Page.RelPermalink }}">{{ $category }}</a>
-            {{- else }}
-              <span class="post-category">{{ $category }}</span>
+      <div class="post-heading">
+        {{- if $isPost }}
+          <div class="post-meta">
+            {{- with $.Params.categories }}
+              {{- $category := index . 0 -}}
+              {{- $matches := where site.Taxonomies.categories.ByCount "Page.Title" $category -}}
+              {{- with $matches }}
+                {{- $term := index . 0 }}
+                <a class="post-category" href="{{ $term.Page.RelPermalink }}">{{ $category }}</a>
+              {{- else }}
+                <span class="post-category">{{ $category }}</span>
+              {{- end }}
             {{- end }}
-          {{- end }}
-          <time class="mono" datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2006.01.02" }}</time>
-          <span class="reading-time mono">{{ .ReadingTime }}분</span>
-        </div>
-      {{- end }}
-      <h1 class="post-title"{{ if findRE `[\p{Hiragana}\p{Katakana}]` .Title 1 }} lang="ja"{{ end }}>{{ .Title }}</h1>
+            <time class="mono" datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2006.01.02" }}</time>
+            <span class="reading-time mono">{{ .ReadingTime }}분</span>
+          </div>
+        {{- end }}
+        <h1 class="post-title"{{ if findRE `[\p{Hiragana}\p{Katakana}]` .Title 1 }} lang="ja"{{ end }}>{{ .Title }}</h1>
+      </div>
       {{- with $lead }}<p class="post-lead">{{ . }}</p>{{ end }}
     </header>
 
