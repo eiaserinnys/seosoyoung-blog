@@ -54,7 +54,6 @@
   }
 
   var MIN_COLUMN_EM = 8;
-  var STICKY_FIRST_MAX_RATIO = 0.4;
 
   function glueMathPunctuation() {
     document.querySelectorAll(".post-content .katex").forEach(function (math) {
@@ -157,11 +156,14 @@
         }
         var overflowing = natural || squeezed;
         item.wrapper.classList.toggle("is-overflowing", overflowing);
-        var width = overflowing && item.wrapper.clientWidth > 0
-          ? firstColumnWidth(item.table)
-          : null;
-        item.wrapper.classList.toggle("is-sticky-first",
-          width !== null && width <= item.wrapper.clientWidth * STICKY_FIRST_MAX_RATIO);
+        var sticky = false;
+        if (overflowing && item.wrapper.clientWidth > 0) {
+          var width = firstColumnWidth(item.table);
+          var fontSize = parseFloat(getComputedStyle(item.table).fontSize);
+          sticky = width !== null && !isNaN(fontSize)
+            && item.wrapper.clientWidth - width >= fontSize * MIN_COLUMN_EM;
+        }
+        item.wrapper.classList.toggle("is-sticky-first", sticky);
       });
     }
 

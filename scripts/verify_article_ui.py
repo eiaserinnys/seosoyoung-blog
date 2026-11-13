@@ -319,17 +319,29 @@ TABLE_STICKY_JS = r"""
     if (b && b.a > 0) return b;
     return parseRGB(getComputedStyle(document.documentElement).backgroundColor);
   })();
+  const firstCellOf = (row) => (row && row.children[0] && row.children[0].colSpan === 1 ? row.children[0] : null);
   return [...document.querySelectorAll('.post-content .table-scroll')].map((wrap, index) => {
     const table = wrap.querySelector('table');
     const rows = [...table.querySelectorAll('tr')];
     let firstCell = null;
     for (const row of rows) {
-      const cell = row.children[0];
-      if (cell && cell.colSpan === 1) { firstCell = cell; break; }
+      const cell = firstCellOf(row);
+      if (cell) { firstCell = cell; break; }
     }
+    const firstCellIn = (selector) => {
+      for (const row of table.querySelectorAll(selector)) {
+        const cell = firstCellOf(row);
+        if (cell) return cell;
+      }
+      return null;
+    };
+    const headCell = firstCellIn('thead tr');
+    const bodyCell = firstCellIn('tbody tr');
     wrap.scrollLeft = wrap.scrollWidth;
     const wrapRect = wrap.getBoundingClientRect();
     const cellRect = firstCell ? firstCell.getBoundingClientRect() : null;
+    const headRect = headCell ? headCell.getBoundingClientRect() : null;
+    const bodyRect = bodyCell ? bodyCell.getBoundingClientRect() : null;
     const cs = firstCell ? getComputedStyle(firstCell) : null;
     const data = {
       index: index + 1,
@@ -339,7 +351,9 @@ TABLE_STICKY_JS = r"""
       scrollLeft: +wrap.scrollLeft.toFixed(1),
       maxScroll: +(wrap.scrollWidth - wrap.clientWidth).toFixed(1),
       firstCellWidth: cellRect ? +cellRect.width.toFixed(1) : null,
-      firstLeftDiff: cellRect ? +(cellRect.left - wrapRect.left).toFixed(1) : null,
+      fontSize: parseFloat(getComputedStyle(table).fontSize),
+      firstLeftDiff: headRect ? +(headRect.left - wrapRect.left).toFixed(1) : null,
+      bodyLeftDiff: bodyRect ? +(bodyRect.left - wrapRect.left).toFixed(1) : null,
       firstCellPosition: cs ? cs.position : null,
       firstCellBg: cs ? parseRGB(cs.backgroundColor) : null,
       bodyBg,
@@ -660,25 +674,28 @@ def footnote_roundtrip(page, name, out_dir):
 
 def table_scroll_end_capture(page, name, out_dir):
     # 첫 열 고정을 보이는 표를 끝까지 민 상태로 찍는다.
-    # 변경 전 빌드(is-sticky-first 없음)에서도 같은 표를 찍도록 post.js와 같은 폭 비율(40%)로 고른다.
+    # 변경 전 빌드(is-sticky-first 없음)에서도 같은 표를 찍도록 post.js와 같은 폭 조건으로 고른다.
     index = page.evaluate(
         """() => {
           const wraps = [...document.querySelectorAll('.post-content .table-scroll')];
           const sticky = wraps.findIndex((w) => w.classList.contains('is-sticky-first'));
           if (sticky >= 0) return sticky;
-          const ratio = (w) => {
+          const wouldStick = (w) => {
+            if (!w.classList.contains('is-overflowing') || w.clientWidth <= 0) return false;
             const table = w.querySelector('table');
+            const font = parseFloat(getComputedStyle(table).fontSize);
+            if (isNaN(font)) return false;
             for (const row of [...table.querySelectorAll('tr')]) {
               const cell = row.children[0];
               if (cell && cell.colSpan === 1) {
-                return w.clientWidth > 0 ? cell.getBoundingClientRect().width / w.clientWidth : null;
+                return w.clientWidth - cell.getBoundingClientRect().width >= font * 8;
               }
             }
-            return null;
+            return false;
           };
           const overflowing = wraps.map((w, i) => i).filter((i) => wraps[i].classList.contains('is-overflowing'));
-          const wouldStick = overflowing.find((i) => { const r = ratio(wraps[i]); return r !== null && r <= 0.4; });
-          if (wouldStick !== undefined) return wouldStick;
+          const expected = overflowing.find((i) => wouldStick(wraps[i]));
+          if (expected !== undefined) return expected;
           return overflowing.length ? overflowing[0] : -1;
         }"""
     )
@@ -726,7 +743,7 @@ def capture_config(browser, url, out_dir, name, width, height, dpr, scheme, a10=
     m["failedRequests"] = failed
     m["a9"] = page.evaluate(A9_JS)
     m["diagrams"] = page.evaluate(A16_JS)
-    if name in ("narrow-light", "narrow-dark", "wide-light"):
+    if name in ("min360-light", "narrow-light", "min390-light", "min414-light", "narrow-dark", "wide-light"):
         m["sticky"] = page.evaluate(TABLE_STICKY_JS)
     if name == "wide-light":
         m["quotes"] = page.evaluate(A15_JS)
@@ -783,7 +800,7 @@ def capture_config(browser, url, out_dir, name, width, height, dpr, scheme, a10=
         shots["footnotes"] = element_shot(page, ".footnotes", d / "footnotes.png")
     if name in ("narrow-light", "wide-light"):
         m["interaction"] = footnote_roundtrip(page, name, d)
-    if name in ("narrow-light", "narrow-dark"):
+    if name in ("narrow-light", "narrow-dark", "wide-light"):
         m["tableScrollEnd"] = table_scroll_end_capture(page, name, d)
     apply_table_state(page, m["tables"])
     m["overflowBeforeFullPage"] = page.evaluate(OVERFLOW_JS)

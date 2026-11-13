@@ -367,7 +367,7 @@
   inset-inline-start: 0;
   z-index: 1;
   background: var(--bg);
-  box-shadow: inset -1px 0 var(--rule);
+  box-shadow: inset calc(var(--line) * -1) 0 var(--rule);
 }
 
 .post-content table :is(th, td) {

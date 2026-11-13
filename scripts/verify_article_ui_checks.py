@@ -717,9 +717,9 @@ def a16_checks(path, configs):
     return entries
 
 
-# A17: 넘치는 표 첫 열 고정(post.js의 is-sticky-first). 폭 비율 기준은 post.js와 같다.
-STICKY_FIRST_MAX_RATIO = 0.4
-A17_CONFIGS = ("narrow-light", "narrow-dark")
+# A17: 넘치는 표 첫 열 고정(post.js의 is-sticky-first). 여유 폭 기준은 post.js와 같다.
+MIN_COLUMN_EM = 8
+A17_CONFIGS = ("min360-light", "narrow-light", "min390-light", "min414-light", "narrow-dark", "wide-light")
 
 
 def a17_checks(path, configs):
@@ -730,33 +730,38 @@ def a17_checks(path, configs):
             tables += 1
             width = row.get("firstCellWidth")
             wrap = row.get("wrapClient") or 0
+            font = row.get("fontSize")
+            room = None if width is None else wrap - width
+            need = None if font is None else font * MIN_COLUMN_EM
             expected = (bool(row.get("overflowing")) and width is not None and wrap > 0
-                        and width <= wrap * STICKY_FIRST_MAX_RATIO)
+                        and need is not None and room >= need)
             bg = row.get("firstCellBg") or {}
             body = row.get("bodyBg") or {}
             bg_same = (bg.get("a") == 1 and body.get("a") is not None
                        and (bg.get("r"), bg.get("g"), bg.get("b"))
                        == (body.get("r"), body.get("g"), body.get("b")))
             if expected:
-                left = row.get("firstLeftDiff")
-                ok = bool(row.get("sticky")) and left is not None and abs(left) <= 1 and bg_same
+                head_left = row.get("firstLeftDiff")
+                body_left = row.get("bodyLeftDiff")
+                scroll_left = row.get("scrollLeft")
+                max_scroll = row.get("maxScroll")
+                at_end = (scroll_left is not None and max_scroll is not None
+                          and abs(scroll_left - max_scroll) <= 1)
+                ok = (bool(row.get("sticky"))
+                      and head_left is not None and body_left is not None
+                      and abs(head_left) <= 1 and abs(body_left) <= 1 and at_end and bg_same)
                 detail = (f"{path} {name} table {row.get('index')}: sticky={row.get('sticky')} "
-                          f"expected=True firstCol={width}/{wrap}px firstLeftDiff={left} "
-                          f"bg={bg} bodyBg={body}")
+                          f"expected=True room={room}px need={need}px "
+                          f"headLeftDiff={row.get('firstLeftDiff')} bodyLeftDiff={row.get('bodyLeftDiff')} "
+                          f"scroll={scroll_left}/{max_scroll} bg={bg} bodyBg={body}")
             else:
                 ok = not row.get("sticky") and row.get("firstCellPosition") == "static"
                 detail = (f"{path} {name} table {row.get('index')}: sticky={row.get('sticky')} "
                           f"expected=False position={row.get('firstCellPosition')} "
-                          f"overflowing={row.get('overflowing')} firstCol={width}/{wrap}px")
+                          f"overflowing={row.get('overflowing')} room={room}px need={need}px")
             entries.append({"ok": ok, "detail": detail})
-    for row in ((configs.get("wide-light") or {}).get("sticky") or []):
-        if row.get("overflowing"):
-            continue
-        entries.append({"ok": not row.get("sticky"),
-                        "detail": f"{path} wide-light table {row.get('index')}: "
-                                  f"sticky={row.get('sticky')} overflowing=False"})
     if not tables:
-        entries.append({"ok": True, "na": True, "detail": f"{path}: 375 폭 표 0건 (A17 해당 없음)"})
+        entries.append({"ok": True, "na": True, "detail": f"{path}: A17 대상 폭 표 0건 (A17 해당 없음)"})
     return entries
 
 
