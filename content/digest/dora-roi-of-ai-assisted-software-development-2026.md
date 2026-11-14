@@ -86,7 +86,11 @@ AI 투자의 전체 비즈니스 가치를 산정하기 위해, 보고서는 기
 
 보고서는 DORA AI 역량 모델의 7가지 핵심 역량이 뒷받침된다는 전제에서, 엔지니어링 지표의 변화를 재무적 가치(매출 증가 및 비용 절감)로 환산해 총투자비용과 비교하는 ROI 계산 모델을 제시한다.[^4] 기본 ROI는 총가치(Value)에서 총투자액(Investment)을 뺀 순편익(Net Benefit)을 총투자액 대비 백분율로 산출한다.
 
-$$\text{ROI (\%)} = \frac{\text{Value} - \text{Investment}}{\text{Investment}} = \frac{\text{First year benefit}}{\text{First year investment}}$$
+$$\begin{aligned}
+&\text{ROI (\%)} \\
+&= \frac{\text{Value} - \text{Investment}}{\text{Investment}} \\
+&= \frac{\text{First year benefit}}{\text{First year investment}}
+\end{aligned}$$
 
 ![AI 도입에서 ROI에 이르는 가치 모델 흐름도: AI 도입과 7대 역량이 소프트웨어 배포 지표를 거쳐 비재무적 가치와 재무적 가치로 전환되고 총구현비용과 비교되어 ROI를 산출하는 구조](https://img.seosoyoung.eiaserinnys.me/images/dora-roi-of-ai-assisted-software-development-2026/05-value-model-from-adoption-to-roi.png)
 *AI 도입에서 ROI에 이르는 가치 모델(Figure 5). 왼쪽의 AI 도입이 7가지 DORA 역량과 결합해 배포 지표(리드 타임, 배포 빈도, 변경 실패율, 복구 시간, 재작업률)를 개선하면, 선행 지표인 비재무적 가치(생산성, 개발자 경험, 사용자 경험)를 거쳐 후행 지표인 재무적 가치(매출 성장, 비용 효율성)로 이어진다. 출처: DORA & Google Cloud (CC BY-NC-SA 4.0)*
@@ -97,7 +101,12 @@ $$\text{ROI (\%)} = \frac{\text{Value} - \text{Investment}}{\text{Investment}} =
 
 첫째는 **인력 재투자 여력**(Headcount reinvestment capacity)이다. 저자들은 시간 절감분을 근거로 인력을 감축(headcount reduction)하는 전략에 강하게 반대한다. 인력 감축은 사기와 조직 문화를 훼손할 뿐 아니라 구성원이 업무 프로세스 개선을 꺼리게 만드는 역유인이 된다. 대신 절감된 시간을 혁신과 신규 개발에 재투자해 추가 채용 비용을 회피하는 가치로 계산한다. 선행 연구에서 개발자의 AI 시간 절감 추정치는 하루 40분에서 150분 사이로 분포하는데, 샘플 모델은 보수적으로 하루 8시간 중 약 1시간인 **12.5%** 수준의 순절감률(검증 세금을 차감한 뒤의 순효과)을 적용해 연간 1,100만 달러를 산출한다.
 
-$$\text{Headcount reinvestment capacity} = \text{Staff size} \times \text{Fully loaded salary} \times \text{Net time saved per developer}$$
+$$\begin{aligned}
+&\text{Reinvestment capacity} \\
+&= \text{Staff size} \\
+&\quad \times \text{Fully loaded salary} \\
+&\quad \times \text{Net time saved}
+\end{aligned}$$
 
 | 가치 구성 항목 | 샘플 입력 가정 | 연간 산출 가치 |
 |---|---|---:|
@@ -108,11 +117,23 @@ $$\text{Headcount reinvestment capacity} = \text{Staff size} \times \text{Fully 
 
 둘째는 **추가 기능 배포에 따른 매출**(Revenue from extra feature deployments)이다. AI 도입으로 연간 기능 배포 수가 기존 50개(주 1회 수준)에서 56개로 12% 증가한다고 가정한다. 온라인 통제 실험(A/B 테스트) 연구에 따르면 출시된 기능이 실제 매출을 늘리는 아이디어 성공률(idea success rate)은 약 3분의 1(33%)이다.[^6] 성공한 기능 하나당 평균 매출 기여율은 보수적 권장 범위(0.01%\~1%)의 중간값인 0.5%(포트폴리오 매출 1억 달러 기준 기능당 50만 달러)로 잡아 연간 99만 달러의 추가 매출을 얻는다.[^7]
 
-$$\text{Extra feature revenue} = (\text{Target features} - \text{Current features}) \times \text{Idea success rate} \times \text{Revenue impact} \times \text{Portfolio revenue}$$
+$$\begin{aligned}
+&\text{Extra feature revenue} \\
+&= (\text{Target features} - \text{Current}) \\
+&\quad \times \text{Idea success rate} \\
+&\quad \times \text{Revenue impact} \\
+&\quad \times \text{Portfolio revenue}
+\end{aligned}$$
 
 셋째는 **다운타임 변화에 따른 영향**(Downtime impact)이다. AI 도입에 따른 배포 불안정성 증가를 재무 모델에 정직하게 반영한 항목이다. 연간 배포 횟수가 50회에서 56회로 늘어날 때 변경 실패율(CFR)도 기존 5%에서 6%로 상승(20% 악화)하고, 배포 실패 복구 시간(FDRT) 4시간과 시간당 다운타임 비용 10만 달러는 동일하다고 가정한다. 기존 연간 장애 비용은 100만 달러이고 AI 도입 후 장애 비용은 134만 4,000달러가 되어, 34만 4,000달러의 추가 손실(가치 산정 시 −34만 4,000달러)이 발생한다.
 
-$$\text{Downtime impact} = (\text{Current deploys} \times \text{Current CFR} \times \text{FDRT} \times \text{Hourly cost}) - (\text{Target deploys} \times \text{Target CFR} \times \text{FDRT} \times \text{Hourly cost})$$
+$$\begin{aligned}
+&\text{Downtime impact} \\
+&= \text{Current deploys} \times \text{CFR}_{\text{cur}} \\
+&\quad \times \text{FDRT} \times \text{Hourly cost} \\
+&\quad - \text{Target deploys} \times \text{CFR}_{\text{tgt}} \\
+&\quad \times \text{FDRT} \times \text{Hourly cost}
+\end{aligned}$$
 
 ### 2. 첫해 총투자액(Investment)과 회수 기간 산출
 
@@ -122,9 +143,19 @@ $$\text{Downtime impact} = (\text{Current deploys} \times \text{Current CFR} \ti
 비용 원장은 눈에 보이는 직접 지출인 하드 비용(Total hard costs)과 초기 혼란에 따른 J-커브 비용(J-Curve cost) 두 가지로 구성된다.
 
 - **직접 하드 비용**(도구 및 교육): 1인당 연간 기본 AI 라이선스 비용 **250달러**(월 약 20달러 수준), API와 토큰 등 추가 AI 변동 비용 **80달러**, 그리고 인력 교육 및 변화 관리(enablement) 비용 **9,600달러**를 합산해 500명에 곱하고, 컴퓨팅과 네트워크, 스토리지, 모니터링을 위한 연간 추가 AI 인프라 비용 **10만 달러**를 더한다.
-  $$\text{Direct hard costs} = ((250 + 80 + 9,600) \times 500) + 100,000 = 506\text{만 }5,000\text{달러}$$
+  $$\begin{aligned}
+  &\text{Direct hard costs} \\
+  &= (250 + 80 + 9,600) \times 500 \\
+  &\quad + 100,000 \\
+  &= 506\text{만 }5,000\text{달러}
+  \end{aligned}$$
 - **J-커브 전환 수업료**: 기술 인력 500명이 초기 **3개월**(연간의 12분의 3) 동안 15% 수준의 생산성 하락을 겪는다고 가정해 이를 인건비 환산액으로 계상한다.
-  $$\text{J-Curve cost} = 500 \times 176,000 \times 15\% \times \frac{3}{12} = 330\text{만 달러}$$
+  $$\begin{aligned}
+  &\text{J-Curve cost} \\
+  &= 500 \times 176,000 \\
+  &\quad \times 15\% \times \frac{3}{12} \\
+  &= 330\text{만 달러}
+  \end{aligned}$$
 
 직접 하드 비용과 J-커브 전환 수업료를 합한 **첫해 총투자액**(First year investment)은 **836만 5,000달러**이며, 첫해 총가치(1,164만 6,000달러)에서 이를 차감한 **첫해 순편익**(First year benefit)은 **328만 1,000달러**다.[^8]
 
