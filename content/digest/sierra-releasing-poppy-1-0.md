@@ -58,37 +58,37 @@ images:
     <marker id="arr-acc" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="var(--accent)"/></marker>
   </defs>
   <rect width="720" height="250" fill="var(--bg-2)"/>
-  <rect x="20" y="24" width="185" height="202" fill="var(--bg)" stroke="var(--rule-strong)" stroke-width="1.5"/>
-  <text x="34" y="50" font-family="var(--sans)" font-size="13" font-weight="700" fill="var(--ink)">1. 개인 에이전트 (Muse 등)</text>
-  <text x="34" y="74" font-family="var(--sans)" font-size="11.5" fill="var(--ink-2)">사용자 위임 작업 요청</text>
-  <rect x="34" y="92" width="157" height="52" fill="var(--bg-2)" stroke="var(--rule)" stroke-width="1"/>
-  <text x="44" y="113" font-family="var(--mono)" font-size="11" fill="var(--ink)">/.well-known/poppy.json</text>
-  <text x="44" y="132" font-family="var(--sans)" font-size="11" fill="var(--ink-2)">최우선 탐색 및 신원 제시</text>
-  <rect x="34" y="156" width="157" height="52" fill="var(--bg-2)" stroke="var(--rule)" stroke-width="1"/>
-  <text x="44" y="177" font-family="var(--sans)" font-size="11.5" font-weight="700" fill="var(--ink)">고객 권한 통제</text>
-  <text x="44" y="196" font-family="var(--sans)" font-size="11" fill="var(--ink-2)">중요 동작 전 사용자 승인</text>
-  <line x1="205" y1="125" x2="237" y2="125" stroke="var(--accent)" stroke-width="1.5" marker-end="url(#arr-acc)"/>
-  <rect x="241" y="24" width="210" height="202" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.5"/>
-  <text x="255" y="50" font-family="var(--sans)" font-size="13" font-weight="700" fill="var(--accent-ink)">2. Poppy 1.0 연결 규격</text>
-  <text x="255" y="74" font-family="var(--sans)" font-size="11.5" fill="var(--accent-ink)">세션 연속성 및 OAuth 권한 관리</text>
-  <rect x="255" y="90" width="182" height="36" fill="var(--bg)" stroke="var(--accent)" stroke-width="1"/>
-  <text x="265" y="113" font-family="var(--mono)" font-size="11" fill="var(--ink)">Session JWT + OAuth 2.0</text>
-  <rect x="255" y="136" width="182" height="36" fill="var(--bg)" stroke="var(--accent)" stroke-width="1"/>
-  <text x="265" y="159" font-family="var(--mono)" font-size="11" fill="var(--ink)">MCP / OpenAPI / UCP 결합</text>
-  <rect x="255" y="182" width="182" height="32" fill="var(--bg)" stroke="var(--ink-2)" stroke-width="1" stroke-dasharray="3,3"/>
-  <text x="265" y="202" font-family="var(--sans)" font-size="11" fill="var(--ink-2)">산업별 확장 (Commerce 등)</text>
-  <line x1="451" y1="125" x2="483" y2="125" stroke="var(--accent)" stroke-width="1.5" marker-end="url(#arr-acc)"/>
-  <rect x="487" y="24" width="213" height="202" fill="var(--bg)" stroke="var(--rule-strong)" stroke-width="1.5"/>
-  <text x="501" y="50" font-family="var(--sans)" font-size="13" font-weight="700" fill="var(--ink)">3. 기업의 3대 상호작용 채널</text>
-  <rect x="501" y="68" width="185" height="42" fill="var(--bg-2)" stroke="var(--rule)" stroke-width="1"/>
-  <text x="511" y="87" font-family="var(--sans)" font-size="11.5" font-weight="700" fill="var(--ink)">웹사이트 (Website)</text>
-  <text x="511" y="103" font-family="var(--sans)" font-size="11" fill="var(--ink-2)">브라우저 세션 연동 및 탐색</text>
-  <rect x="501" y="118" width="185" height="42" fill="var(--bg-2)" stroke="var(--rule)" stroke-width="1"/>
-  <text x="511" y="137" font-family="var(--sans)" font-size="11.5" font-weight="700" fill="var(--ink)">표준 API (MCP, OpenAPI, UCP)</text>
-  <text x="511" y="153" font-family="var(--sans)" font-size="11" fill="var(--ink-2)">조회, 장바구니, 결제, 송금 요청</text>
-  <rect x="501" y="168" width="185" height="44" fill="var(--bg-2)" stroke="var(--rule)" stroke-width="1"/>
-  <text x="511" y="187" font-family="var(--sans)" font-size="11.5" font-weight="700" fill="var(--ink)">비즈니스 에이전트 (UCP Ask 등)</text>
-  <text x="511" y="203" font-family="var(--sans)" font-size="11" fill="var(--ink-2)">기업 전용 에이전트와 직접 대화</text>
+  <rect x="16" y="24" width="206" height="202" fill="var(--bg)" stroke="var(--rule-strong)" stroke-width="1.5"/>
+  <text x="28" y="50" font-family="var(--sans)" font-size="13" font-weight="700" fill="var(--ink)">1. 개인 에이전트 (Muse 등)</text>
+  <text x="28" y="74" font-family="var(--sans)" font-size="11.5" fill="var(--ink-2)">사용자 위임 작업 요청</text>
+  <rect x="28" y="92" width="182" height="52" fill="var(--bg-2)" stroke="var(--rule)" stroke-width="1"/>
+  <text x="38" y="113" font-family="var(--mono)" font-size="11" fill="var(--ink)">/.well-known/poppy.json</text>
+  <text x="38" y="132" font-family="var(--sans)" font-size="11" fill="var(--ink-2)">최우선 탐색 및 신원 제시</text>
+  <rect x="28" y="156" width="182" height="52" fill="var(--bg-2)" stroke="var(--rule)" stroke-width="1"/>
+  <text x="38" y="177" font-family="var(--sans)" font-size="11.5" font-weight="700" fill="var(--ink)">고객 권한 통제</text>
+  <text x="38" y="196" font-family="var(--sans)" font-size="11" fill="var(--ink-2)">중요 동작 전 사용자 승인</text>
+  <line x1="222" y1="125" x2="246" y2="125" stroke="var(--accent)" stroke-width="1.5" marker-end="url(#arr-acc)"/>
+  <rect x="250" y="24" width="206" height="202" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.5"/>
+  <text x="262" y="50" font-family="var(--sans)" font-size="13" font-weight="700" fill="var(--accent-ink)">2. Poppy 1.0 연결 규격</text>
+  <text x="262" y="74" font-family="var(--sans)" font-size="11.5" fill="var(--accent-ink)">세션 연속성 및 OAuth 권한 관리</text>
+  <rect x="262" y="90" width="182" height="36" fill="var(--bg)" stroke="var(--accent)" stroke-width="1"/>
+  <text x="272" y="113" font-family="var(--mono)" font-size="11" fill="var(--ink)">Session JWT + OAuth 2.0</text>
+  <rect x="262" y="136" width="182" height="36" fill="var(--bg)" stroke="var(--accent)" stroke-width="1"/>
+  <text x="272" y="159" font-family="var(--mono)" font-size="11" fill="var(--ink)">MCP / OpenAPI / UCP 결합</text>
+  <rect x="262" y="182" width="182" height="32" fill="var(--bg)" stroke="var(--ink-2)" stroke-width="1" stroke-dasharray="3,3"/>
+  <text x="272" y="202" font-family="var(--sans)" font-size="11" fill="var(--ink-2)">산업별 확장 (Commerce 등)</text>
+  <line x1="456" y1="125" x2="480" y2="125" stroke="var(--accent)" stroke-width="1.5" marker-end="url(#arr-acc)"/>
+  <rect x="484" y="24" width="220" height="202" fill="var(--bg)" stroke="var(--rule-strong)" stroke-width="1.5"/>
+  <text x="496" y="50" font-family="var(--sans)" font-size="13" font-weight="700" fill="var(--ink)">3. 기업의 3대 상호작용 채널</text>
+  <rect x="496" y="68" width="196" height="42" fill="var(--bg-2)" stroke="var(--rule)" stroke-width="1"/>
+  <text x="506" y="87" font-family="var(--sans)" font-size="11.5" font-weight="700" fill="var(--ink)">웹사이트 (Website)</text>
+  <text x="506" y="103" font-family="var(--sans)" font-size="11" fill="var(--ink-2)">브라우저 세션 연동 및 탐색</text>
+  <rect x="496" y="118" width="196" height="42" fill="var(--bg-2)" stroke="var(--rule)" stroke-width="1"/>
+  <text x="506" y="137" font-family="var(--sans)" font-size="11.5" font-weight="700" fill="var(--ink)">표준 API (MCP, OpenAPI, UCP)</text>
+  <text x="506" y="153" font-family="var(--sans)" font-size="11" fill="var(--ink-2)">조회, 장바구니, 결제, 송금 요청</text>
+  <rect x="496" y="168" width="196" height="44" fill="var(--bg-2)" stroke="var(--rule)" stroke-width="1"/>
+  <text x="506" y="187" font-family="var(--sans)" font-size="11.5" font-weight="700" fill="var(--ink)">비즈니스 에이전트 (UCP Ask 등)</text>
+  <text x="506" y="203" font-family="var(--sans)" font-size="11" fill="var(--ink-2)">기업 전용 에이전트와 직접 대화</text>
 </svg>
 <svg class="diagram-svg-mobile" viewBox="0 0 350 430" role="img" aria-label="Poppy 1.0 프로토콜의 탐색, 인증, 3대 상호작용 채널 구조 (모바일)" xmlns="http://www.w3.org/2000/svg">
   <defs>
