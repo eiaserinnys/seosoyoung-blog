@@ -5,8 +5,8 @@ import unittest
 from playwright.sync_api import sync_playwright
 
 from verify_article_ui_checks import (
-    A10_JS, A11_JS, A15_JS, A16_JS, a12_checks, a13_checks, a14_checks, a15_checks, a16_checks,
-    resized_sidenotes_ok, sidenote_presence_ok, summarize_checks,
+    A10_JS, A11_JS, A15_JS, A16_JS, a11_checks, a12_checks, a13_checks, a14_checks, a15_checks,
+    a16_checks, resized_sidenotes_ok, sidenote_presence_ok, summarize_checks,
 )
 
 
@@ -234,6 +234,45 @@ class ArticleUiChecksTest(unittest.TestCase):
         self.page.set_content(
             '<div class="post-content"><p>‘J-커브(J-Curve)’를 “가(나)”를 만났다</p></div>')
         self.assertEqual(self.page.evaluate(A15_JS)["hitCount"], 0)
+
+    def test_a15_counts_flipped_quote_after_inline_tag(self):
+        # **강조**"의가 렌더된 “강조“의는 앞의 여는 따옴표가 아직 닫히지 않았다.
+        self.page.set_content('<div class="post-content"><p>“강조“의 말</p></div>')
+        self.assertEqual(self.page.evaluate(A15_JS)["hitCount"], 1)
+        self.page.set_content('<div class="post-content"><p>‘강조‘의 말</p></div>')
+        self.assertEqual(self.page.evaluate(A15_JS)["hitCount"], 1)
+        # 닫는 인라인 태그 뒤에 뒤집힌 닫는 따옴표도 센다(태그는 글 추출에서 빠진다).
+        self.page.set_content(
+            '<div class="post-content"><p>“<strong>언제 효력이 발생하는가</strong>“의</p></div>')
+        self.assertEqual(self.page.evaluate(A15_JS)["hitCount"], 1)
+        # 앞선 여는 따옴표가 없으면 정당한 여는 따옴표다.
+        self.page.set_content(
+            '<div class="post-content"><p><strong>말했다</strong>“안녕”이라고</p></div>')
+        self.assertEqual(self.page.evaluate(A15_JS)["hitCount"], 0)
+
+    def test_a11_overflowing_display_math_needs_hint(self):
+        self.page.set_viewport_size({"width": 800, "height": 600})
+        self.page.set_content("""<style>
+          .post-content { width: 300px }
+          .katex-display { width: 200px; overflow: hidden }
+          .katex-display .katex { display: inline-block; width: 400px }
+        </style><div class="post-content"><div class="katex-display"><span class="katex">x</span></div></div>""")
+        measured = self.page.evaluate(A11_JS)
+        self.assertGreater(measured["displays"][0]["over"], 1)
+        config = {"min360-light": {"a11": {"bounds": [{"over": 0}],
+                                           "displays": measured["displays"], "tables": []}}}
+        entries = [e for e in a11_checks("/posts/x/", config) if "displayMath" in e["detail"]]
+        self.assertFalse(entries[0]["ok"], "힌트 없는 넘침 블록 수식은 실패해야 한다")
+        # 가로 스크롤과 넘침 그림자 힌트를 갖추면 통과한다.
+        self.page.evaluate("""() => {
+          const d = document.querySelector('.katex-display');
+          d.style.overflowX = 'auto';
+          d.style.backgroundImage = 'linear-gradient(to right, #fff, transparent)';
+        }""")
+        measured = self.page.evaluate(A11_JS)
+        config["min360-light"]["a11"]["displays"] = measured["displays"]
+        entries = [e for e in a11_checks("/posts/x/", config) if "displayMath" in e["detail"]]
+        self.assertTrue(entries[0]["ok"])
 
     def test_settle_waits_only_for_visible_images_and_is_bounded(self):
         import time

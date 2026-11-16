@@ -207,13 +207,18 @@ A11_JS = r"""
     const table = wrap.querySelector('table');
     return {i: i + 1, hasMath: !!table.querySelector('.katex'), overflowing: wrap.classList.contains('is-overflowing')};
   }).filter((table) => table.hasMath);
-  const displays = [...content.querySelectorAll('.katex-display')].map((k, i) => ({
-    i: i + 1,
-    clientW: k.clientWidth,
-    scrollW: k.scrollWidth,
-    over: +(k.scrollWidth - k.clientWidth).toFixed(2),
-    tex: (k.querySelector('annotation') || {}).textContent || '',
-  }));
+  const displays = [...content.querySelectorAll('.katex-display')].map((k, i) => {
+    const style = getComputedStyle(k);
+    return {
+      i: i + 1,
+      clientW: k.clientWidth,
+      scrollW: k.scrollWidth,
+      over: +(k.scrollWidth - k.clientWidth).toFixed(2),
+      overflowX: style.overflowX,
+      backgroundImage: style.backgroundImage,
+      tex: (k.querySelector('annotation') || {}).textContent || '',
+    };
+  });
   return {bounds, tables, displays};
 }
 """
@@ -239,22 +244,32 @@ A15_JS = r"""
   const hits = [];
   for (const block of order) {
     const text = blocks.get(block).join('');
-    let open = false;
+    let singleOpen = false;
+    let doubleOpen = false;
     for (let i = 0; i < text.length; i++) {
       const ch = text[i];
       const prev = text[i - 1] || '';
       const next = text[i + 1] || '';
-      // 닫는 소괄호 뒤에 여는 따옴표가 한글 조사와 이어지면 닫는 따옴표가 뒤집힌 것이다.
-      if ((ch === '‘' || ch === '“') && prev === ')' && /[가-힣]/.test(next)) {
+      // 여는 따옴표가 한글 조사와 이어지는데 바로 앞이 닫는 소괄호이거나, 같은 블록에 아직 닫히지 않은
+      // 같은 종류의 여는 따옴표가 앞에 있으면 닫는 따옴표가 뒤집힌 것이다.
+      const sameKindOpen = ch === '‘' ? singleOpen : ch === '“' ? doubleOpen : false;
+      if ((ch === '‘' || ch === '“') && /[가-힣]/.test(next) && (prev === ')' || sameKindOpen)) {
         hitCount++;
         if (hits.length < 20) hits.push(text.slice(Math.max(0, i - 20), i + 21));
+        // 뒤집힌 부호는 앞의 여는 따옴표를 닫는 자리이므로 상태를 닫는다.
+        if (ch === '‘') singleOpen = false; else doubleOpen = false;
+        continue;
       }
-      if (ch === '“') { open = true; continue; }
-      if (ch === '”') { open = false; continue; }
+      if (ch === '‘') { singleOpen = true; continue; }
+      if (ch === '’') { singleOpen = false; continue; }
+      if (ch === '“') { doubleOpen = true; continue; }
+      if (ch === '”') { doubleOpen = false; continue; }
       if (ch !== '"') continue;
-      if (open || /[가-힣]/.test(prev) || /[가-힣]/.test(next)) {
+      if (doubleOpen || /[가-힣]/.test(prev) || /[가-힣]/.test(next)) {
         hitCount++;
         if (hits.length < 20) hits.push(text.slice(Math.max(0, i - 20), i + 21));
+        // 곧은 큰따옴표가 닫는 자리였으면 앞의 여는 따옴표를 닫는다.
+        doubleOpen = false;
       }
     }
   }
@@ -494,10 +509,14 @@ def a11_checks(path, configs):
                                   f"examples={bad[:4]}"})
         displays = data.get("displays") or []
         if displays:
-            bad_disp = [item for item in displays if item["over"] > 1]
+            # 못 줄이는 블록 수식은 넘치되 가로 스크롤과 넘침 그림자 힌트를 갖춰야 통과한다.
+            over = [item for item in displays if item["over"] > 1]
+            bad_disp = [item for item in over
+                        if item.get("overflowX") not in ("auto", "scroll")
+                        or (item.get("backgroundImage") or "none") == "none"]
             entries.append({"ok": not bad_disp,
-                            "detail": f"{path} {name}: displayMath={len(displays)} over={len(bad_disp)} "
-                                      f"examples={bad_disp[:4]}"})
+                            "detail": f"{path} {name}: displayMath={len(displays)} over={len(over)} "
+                                      f"noHint={len(bad_disp)} examples={bad_disp[:4]}"})
     wide = ((configs.get("wide-light") or {}).get("a11") or {})
     side_bounds = [item for item in wide.get("bounds", []) if item.get("side")]
     if side_bounds:
@@ -652,8 +671,9 @@ def _a14_state_geometry(row):
         "fit": fit,
         "heightFit": height_fit,
         "legacyWidth": legacy,
-        # 반올림 경계에서 판정이 흔들리지 않게 5px 여유를 둔다.
-        "newRule": fit < rendered * 1.5 - 5 and height_fit > fit + 5,
+        # 반올림 경계에서 판정이 흔들리지 않게 5px 여유를 둔다. lightbox.js와 같이 25% 이상 넓어질 때만 새 규칙이다.
+        "newRule": fit < rendered * 1.5 - 5 and height_fit > fit + 5
+                   and height_fit >= fit * 1.25,
     }
 
 

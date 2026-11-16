@@ -34,15 +34,17 @@
         var ratio = big.naturalHeight / big.naturalWidth;
         var captionHeight = capEl ? capEl.offsetHeight + parseFloat(getComputedStyle(capEl).marginTop) : 0;
         var availableHeight = Math.min(window.innerHeight * 0.88, window.innerHeight * 0.94 - captionHeight);
-        // 화면에 통째로 맞춘 폭이 본문에서 보이던 폭의 1.5배보다 작고, 높이에 맞추면 그보다 넓어지는 그림이면
-        // 높이를 화면에 맞춰 연다. 화면보다 넓으면 왼쪽 끝에서 시작해 가로로 밀어 본다.
+        // 화면에 통째로 맞춘 폭이 본문에서 보이던 폭의 1.5배보다 작고, 높이에 맞추면 그보다 25% 이상
+        // 넓어지는 그림이면 높이를 화면에 맞춰 연다. 25%에 못 미치면 몇십 px만 화면을 넘겨 오른쪽만
+        // 잘리므로 통째로 맞춘 폭으로 둔다. 화면보다 넓으면 왼쪽 끝에서 시작해 가로로 밀어 본다.
         // 화면에 통째로 맞춘 폭이 본문 폭 이상인 그림은 지금처럼 통째로 보인다.
         var fitWidth = Math.min(big.naturalWidth, viewportWidth, availableHeight / ratio);
         var heightFitWidth = Math.min(big.naturalWidth, availableHeight / ratio);
         var width = fitWidth;
         var scroll = false;
         var wide = false;
-        if (fitWidth < renderedWidth * 1.5 && heightFitWidth > fitWidth) {
+        if (fitWidth < renderedWidth * 1.5 && heightFitWidth > fitWidth
+            && heightFitWidth >= fitWidth * 1.25) {
           width = heightFitWidth;
           wide = width > viewportWidth + 1;
         } else if (fitWidth < renderedWidth - 1) {
