@@ -626,6 +626,11 @@ def _a14_failed_conditions(row):
     before = row["before"]
     src = (row.get("img") or {}).get("src")
     big = opened.get("big") or {}
+    # 화면 폭 상한보다 넓게 열었다면 화면 폭 상한의 1.5배 이상이어야 한다. 화면보다 조금만 넓게
+    # 열려 일부만 잘리는 상태는 만들지 않는다.
+    width_limit = float(opened.get("vw") or 0) * 0.96
+    big_w = float(big.get("w") or 0)
+    no_slight_overflow = big_w <= width_limit + 1 or big_w >= width_limit * 1.5 - 2
     in_view_ok = bool(opened.get("inView")) or (
         bool(opened.get("scrollMode")) and bool(opened.get("inViewX"))
         and big.get("y") is not None and big["y"] >= 0
@@ -646,6 +651,7 @@ def _a14_failed_conditions(row):
         ("afterOutsideClick.open", not after_outside.get("open")),
         ("afterOutsideClick.rootOverflow",
          after_outside.get("rootOverflow") == before.get("rootOverflow")),
+        ("noSlightOverflow", no_slight_overflow),
     ]
     return [name for name, ok in conditions if not ok]
 
@@ -673,9 +679,9 @@ def _a14_state_geometry(row):
         "fit": fit,
         "heightFit": height_fit,
         "legacyWidth": legacy,
-        # 반올림 경계에서 판정이 흔들리지 않게 5px 여유를 둔다. lightbox.js와 같이 25% 이상 넓어질 때만 새 규칙이다.
-        "newRule": fit < rendered * 1.5 - 5 and height_fit > fit + 5
-                   and height_fit >= fit * 1.25,
+        # 반올림 경계에서 판정이 흔들리지 않게 5px 여유를 둔다.
+        # lightbox.js와 같이 높이에 맞춘 폭이 화면 폭 상한의 1.5배 이상일 때만 새 규칙이다.
+        "newRule": fit < rendered * 1.5 - 5 and height_fit >= width_limit * 1.5,
     }
 
 

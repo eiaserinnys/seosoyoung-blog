@@ -53,7 +53,7 @@ TOUCH_CONFIGS = {"phablet-light", "tablet-light", "tablet820-light"}
 # 링크로 감싼 그림은 누르면 링크로 가는 것이 의도된 동작이라 대상이 아니다.
 LIGHTBOX_SELECTOR = ('.post-content img[aria-haspopup="dialog"], '
                      'article.post-single .entry-cover img[aria-haspopup="dialog"]')
-LIGHTBOX_CONFIGS = ("wide-light", "narrow-light", "narrow-dark")
+LIGHTBOX_CONFIGS = ("wide-light", "mid-light", "narrow-light", "narrow-dark")
 LIGHTBOX_MAX_IMAGES = 4  # 동작이 그림마다 같아 DOM 순서 앞 4장만 잰다
 
 DEFAULT_PATHS = [

@@ -210,6 +210,31 @@ class ArticleUiChecksTest(unittest.TestCase):
         self.assertTrue(entries[0]["ok"])
         self.assertTrue(entries[0]["na"])
 
+    def test_lightbox_no_slight_overflow(self):
+        def row(width, whole=False):
+            record = lightbox_row()
+            record["opened"].update({"vw": 375, "vh": 812, "wideMode": not whole,
+                                     "inView": whole, "inViewX": True,
+                                     "overlayScrollableX": True})
+            record["opened"]["big"] = dict(record["opened"]["big"], w=float(width), x=0.0,
+                                           right=float(width))
+            return record
+
+        def verdict(record):
+            entries = a14_checks("/posts/x/", {"narrow-light": {"applicable": True, "rows": [record]}})
+            return entries[0]["ok"], entries[0]["detail"]
+
+        # 375 화면에서 512px로 열면 화면 폭 상한(360px)보다 조금 넓은 채 오른쪽이 잘린다.
+        ok, detail = verdict(row(512))
+        self.assertFalse(ok)
+        self.assertIn("noSlightOverflow", detail)
+        # 화면 폭 상한의 1.5배 넘게 열고 가로로 밀 수 있으면 통과한다.
+        ok, detail = verdict(row(1058))
+        self.assertTrue(ok, detail)
+        # 화면 안에 통째로 들어오는 폭은 그대로 통과한다.
+        ok, detail = verdict(row(360, whole=True))
+        self.assertTrue(ok, detail)
+
     def test_straight_quote_detector(self):
         self.page.set_content(
             '<div class="post-content"><p>“봐 줘"라고 <code>"코드"는</code> “맞다”고</p></div>')
