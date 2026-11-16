@@ -251,9 +251,11 @@ A15_JS = r"""
       const prev = text[i - 1] || '';
       const next = text[i + 1] || '';
       // 여는 따옴표가 한글 조사와 이어지는데 바로 앞이 닫는 소괄호이거나, 같은 블록에 아직 닫히지 않은
-      // 같은 종류의 여는 따옴표가 앞에 있으면 닫는 따옴표가 뒤집힌 것이다.
+      // 같은 종류의 여는 따옴표가 앞에 있으면 닫는 따옴표가 뒤집힌 것이다. 바로 앞이 같은 여는 부호인
+      // 자리는 겹쳐 쓴 여는 부호이므로 후처리와 같이 세지 않는다.
       const sameKindOpen = ch === '‘' ? singleOpen : ch === '“' ? doubleOpen : false;
-      if ((ch === '‘' || ch === '“') && /[가-힣]/.test(next) && (prev === ')' || sameKindOpen)) {
+      if ((ch === '‘' || ch === '“') && /[가-힣]/.test(next)
+          && (prev === ')' || (sameKindOpen && prev !== ch))) {
         hitCount++;
         if (hits.length < 20) hits.push(text.slice(Math.max(0, i - 20), i + 21));
         // 뒤집힌 부호는 앞의 여는 따옴표를 닫는 자리이므로 상태를 닫는다.

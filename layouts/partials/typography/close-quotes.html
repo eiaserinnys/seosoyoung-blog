@@ -5,17 +5,17 @@
   하이라이트 코드 블록의 따옴표는 &#34;이다.
   같은 인라인 흐름에서 짝이 없는 &ldquo; 뒤 첫 &quot;를 &rdquo;로 바꾼다. pre, 블록 경계, 다른 따옴표는 건너지 못한다.
 
-  닫는 소괄호 )나 닫는 인라인 태그(</em>, </strong>, </span>, </code> 등) 뒤의 닫는 따옴표도 같은 이유로
-  여는 부호로 뒤집힌다(예: 'J-커브(J-Curve)'를 → &lsquo;J-커브(J-Curve)&lsquo;를,
-  「봐 줘」*강조*"라고 → 「봐 줘」<em>강조</em>&ldquo;라고). 같은 인라인 흐름에 짝이 없는 여는 따옴표가
-  앞에 있을 때만 그 여는 부호를 닫는 부호로 되돌린다. 정당한 여는 따옴표는 앞에 짝 없는 여는 따옴표가
-  없으므로 그대로 둔다. Go 정규식에는 앞보기(lookahead)가 없어 뒤 한글 글자를 잡아 되돌려 쓴다.
+  닫는 따옴표가 앞 글자 때문에 여는 부호로 뒤집히는 병은 )나 닫는 인라인 태그 뒤에서만 생기지 않는다.
+  5판은 앞 글자 조건을 없앤다. 같은 인라인 흐름에 짝이 없는 같은 종류의 여는 따옴표가 앞에 있고 그 사이에
+  한 글자 이상이 있으면, 뒤에 나온 여는 부호+한글을 닫는 부호로 되돌린다(예: </code>&ldquo;라고,
+  이다!&ldquo;라고). 원문에서 곧은 따옴표를 겹쳐 쓴 &ldquo;&ldquo;나라면 같은 꼴은 둘째 부호가 여는
+  자리이므로 건드리지 않는다(반복을 +로 두어 사이 글자를 하나 이상 요구한다). Go 정규식에는
+  앞보기(lookahead)가 없어 뒤 한글 글자를 잡아 되돌려 쓴다.
 */ -}}
 {{- $tags := `</?(?:em|strong|a|b|i|span|mark|sup|sub|small|del|ins|abbr|u|s|br|wbr)\b[^<>]*>|<code\b[^<>]*>[^<]*</code>` -}}
-{{- $beforeWrongQuote := `(?:\)|</(?:em|strong|a|b|i|span|mark|sup|sub|small|del|ins|abbr|u|s|br|wbr)\b[^<>]*>|</code\b[^<>]*>)` -}}
 {{- $fixDoubleStraight := printf `(&ldquo;(?:[^&<“”"]|&(?:[lr]squo|hellip|[nm]dash|amp|lt|gt|nbsp|middot|times|#[0-9]+|#x[0-9a-fA-F]+);|%s)*)&quot;` $tags -}}
-{{- $fixSingleClose := printf `(&lsquo;(?:[^&<‘’“”"']|&(?:hellip|[nm]dash|amp|lt|gt|nbsp|middot|times|#[0-9]+|#x[0-9a-fA-F]+);|%s)*%s)&lsquo;([가-힣])` $tags $beforeWrongQuote -}}
-{{- $fixDoubleClose := printf `(&ldquo;(?:[^&<‘’“”"']|&(?:lsquo|rsquo|hellip|[nm]dash|amp|lt|gt|nbsp|middot|times|#[0-9]+|#x[0-9a-fA-F]+);|%s)*%s)&ldquo;([가-힣])` $tags $beforeWrongQuote -}}
+{{- $fixSingleClose := printf `(&lsquo;(?:[^&<‘’“”"']|&(?:hellip|[nm]dash|amp|lt|gt|nbsp|middot|times|#[0-9]+|#x[0-9a-fA-F]+);|%s)+)&lsquo;([가-힣])` $tags -}}
+{{- $fixDoubleClose := printf `(&ldquo;(?:[^&<‘’“”"']|&(?:lsquo|rsquo|hellip|[nm]dash|amp|lt|gt|nbsp|middot|times|#[0-9]+|#x[0-9a-fA-F]+);|%s)+)&ldquo;([가-힣])` $tags -}}
 {{- $out := replaceRE $fixDoubleStraight "${1}&rdquo;" . -}}
 {{- $out = replaceRE $fixSingleClose "${1}&rsquo;${2}" $out -}}
 {{- $out = replaceRE $fixDoubleClose "${1}&rdquo;${2}" $out -}}

@@ -250,6 +250,14 @@ class ArticleUiChecksTest(unittest.TestCase):
             '<div class="post-content"><p><strong>말했다</strong>“안녕”이라고</p></div>')
         self.assertEqual(self.page.evaluate(A15_JS)["hitCount"], 0)
 
+    def test_a15_counts_flipped_quote_after_any_character_but_not_doubled_openers(self):
+        # 짝 없는 여는 따옴표 뒤 여는 부호+한글은 앞 글자가 무엇이든 센다.
+        self.page.set_content('<div class="post-content"><p>“지난주 매출이 얼마였지?“라고</p></div>')
+        self.assertEqual(self.page.evaluate(A15_JS)["hitCount"], 1)
+        # 곧은 따옴표를 겹쳐 쓴 자리는 둘째 부호가 여는 자리이므로 세지 않는다.
+        self.page.set_content('<div class="post-content"><p>““나라면 이렇게””</p></div>')
+        self.assertEqual(self.page.evaluate(A15_JS)["hitCount"], 0)
+
     def test_a11_overflowing_display_math_needs_hint(self):
         self.page.set_viewport_size({"width": 800, "height": 600})
         self.page.set_content("""<style>
