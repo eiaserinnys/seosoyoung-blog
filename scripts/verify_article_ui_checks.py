@@ -242,11 +242,16 @@ A15_JS = r"""
     let open = false;
     for (let i = 0; i < text.length; i++) {
       const ch = text[i];
+      const prev = text[i - 1] || '';
+      const next = text[i + 1] || '';
+      // 닫는 소괄호 뒤에 여는 따옴표가 한글 조사와 이어지면 닫는 따옴표가 뒤집힌 것이다.
+      if ((ch === '‘' || ch === '“') && prev === ')' && /[가-힣]/.test(next)) {
+        hitCount++;
+        if (hits.length < 20) hits.push(text.slice(Math.max(0, i - 20), i + 21));
+      }
       if (ch === '“') { open = true; continue; }
       if (ch === '”') { open = false; continue; }
       if (ch !== '"') continue;
-      const prev = text[i - 1] || '';
-      const next = text[i + 1] || '';
       if (open || /[가-힣]/.test(prev) || /[가-힣]/.test(next)) {
         hitCount++;
         if (hits.length < 20) hits.push(text.slice(Math.max(0, i - 20), i + 21));
@@ -603,7 +608,11 @@ def _a14_failed_conditions(row):
     in_view_ok = bool(opened.get("inView")) or (
         bool(opened.get("scrollMode")) and bool(opened.get("inViewX"))
         and big.get("y") is not None and big["y"] >= 0
-        and bool(opened.get("overlayScrollable")))
+        and bool(opened.get("overlayScrollable"))) or (
+        # 좁은 화면에서 높이에 맞춰 연 그림은 화면보다 넓다. 왼쪽 끝에서 시작하고 가로로 밀 수 있으면 된다.
+        bool(opened.get("wideMode")) and big.get("x") is not None and big["x"] >= -0.5
+        and big.get("y") is not None and big["y"] >= 0
+        and bool(opened.get("overlayScrollableX")))
     conditions = [
         ("opened.open", bool(opened.get("open"))),
         ("opened.inView", in_view_ok),
@@ -618,6 +627,34 @@ def _a14_failed_conditions(row):
          after_outside.get("rootOverflow") == before.get("rootOverflow")),
     ]
     return [name for name, ok in conditions if not ok]
+
+
+def _a14_state_geometry(row):
+    """연 그림의 원래 본문 폭과 화면으로부터, 지금/예전 규칙의 열림 폭과 새 규칙 적용 여부를 셈한다."""
+    meta = row.get("img") or {}
+    opened = row.get("opened") or {}
+    big = opened.get("big") or {}
+    natural = big.get("natural") or [0, 0]
+    rendered = meta.get("width")
+    vw = opened.get("vw")
+    vh = opened.get("vh")
+    if not (natural[0] and natural[1] and rendered and vw and vh):
+        return None
+    ratio = natural[1] / natural[0]
+    width_limit = vw * 0.96
+    height_limit = min(vh * 0.88, vh * 0.94 - float(opened.get("captionH") or 0))
+    fit = min(natural[0], width_limit, height_limit / ratio)
+    height_fit = min(natural[0], height_limit / ratio)
+    legacy = (min(max(rendered, min(natural[0], width_limit)), width_limit)
+              if fit < rendered - 1 else fit)
+    return {
+        "rendered": rendered,
+        "fit": fit,
+        "heightFit": height_fit,
+        "legacyWidth": legacy,
+        # 반올림 경계에서 판정이 흔들리지 않게 5px 여유를 둔다.
+        "newRule": fit < rendered * 1.5 - 5 and height_fit > fit + 5,
+    }
 
 
 def a14_checks(path, lightbox):
@@ -636,11 +673,29 @@ def a14_checks(path, lightbox):
             failed = _a14_failed_conditions(row)
             opened = row["opened"]
             big = opened.get("big") or {}
+            geo = _a14_state_geometry(row)
+            if geo and name in ("narrow-light", "narrow-dark") and geo["newRule"]:
+                panned = row.get("panned") or {}
+                panned_big = panned.get("big") or {}
+                vw = opened.get("vw") or 0
+                failed += [name_ for name_, ok in (
+                    ("narrow.width>=1.5x", (big.get("w") or 0) >= geo["rendered"] * 1.5 - 1),
+                    ("narrow.leftEdge", big.get("x") is not None and big["x"] >= -0.5),
+                    ("narrow.panToEnd", panned_big.get("right") is not None
+                     and panned_big["right"] <= vw + 0.5
+                     and bool(panned.get("overlayScrollableX"))),
+                ) if not ok]
+            if geo and name == "wide-light":
+                failed += [name_ for name_, ok in (
+                    ("wide.widthUnchanged", abs((big.get("w") or 0) - geo["legacyWidth"]) <= 2),
+                ) if not ok]
             entries.append({
                 "ok": not failed,
                 "detail": f"{path} {name} {meta.get('src')}: big={big.get('w')}x{big.get('h')} "
+                          f"body={geo and round(geo['rendered'], 1)} "
                           f"in {opened.get('vw')}x{opened.get('vh')} "
-                          f"scrollMode={bool(opened.get('scrollMode'))} failed={failed or '없음'}",
+                          f"scrollMode={bool(opened.get('scrollMode'))} "
+                          f"wideMode={bool(opened.get('wideMode'))} failed={failed or '없음'}",
             })
     return entries
 

@@ -139,7 +139,8 @@ class ArticleUiChecksTest(unittest.TestCase):
                     "postImages": [], "diagrams": {"figs": []}}
 
         configs = {name: config(360 if name == "min360-light" else 1440) for name in names}
-        report = {"path": "/digest/x/", "configs": configs, "resize": {}, "lightbox": {}}
+        report = {"path": "/digest/x/", "configs": configs, "resize": {}, "heightResize": [],
+                  "lightbox": {}}
         summary, checks = path_checks(report)
         for key in ("A2", "A3", "A7", "A8", "A10", "A11"):
             self.assertEqual(len(checks[key]), 1, key)
@@ -223,6 +224,54 @@ class ArticleUiChecksTest(unittest.TestCase):
         failing = {"wide-light": {"quotes": {"blocks": 2, "hitCount": 1, "hits": ['“a"b']}}}
         self.assertFalse(a15_checks(path, failing)[0]["ok"])
         self.assertTrue(a15_checks(path, {"wide-light": {}})[0]["na"])
+
+    def test_a15_counts_opening_quote_after_closing_paren(self):
+        # 닫는 소괄호 뒤 여는 따옴표 + 한글 조사는 뒤집힌 닫는 따옴표다.
+        self.page.set_content(
+            '<div class="post-content"><p>‘J-커브(J-Curve)‘를 “가(나)“를 만났다</p></div>')
+        self.assertEqual(self.page.evaluate(A15_JS)["hitCount"], 2)
+        # 올바른 닫는 따옴표는 세지 않는다.
+        self.page.set_content(
+            '<div class="post-content"><p>‘J-커브(J-Curve)’를 “가(나)”를 만났다</p></div>')
+        self.assertEqual(self.page.evaluate(A15_JS)["hitCount"], 0)
+
+    def test_settle_waits_only_for_visible_images_and_is_bounded(self):
+        import time
+
+        from verify_article_ui import settle
+
+        self.page.set_viewport_size({"width": 375, "height": 400})
+        self.page.set_content("""
+          <div style="height: 1600px"></div>
+          <p><img id="below" loading="lazy" alt=""
+                  src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40'%3E%3Crect width='40' height='40'/%3E%3C/svg%3E"
+                  style="width: 40px; height: 40px"></p>
+          <div style="display: none"><img id="hidden" alt="hidden" src="data:image/gif;base64,R0lGODlhAQABAAAAACw="></div>
+        """)
+        # display:none 안의 이미지는 화면에 그려지지 않으므로 끝없이 기다리면 안 된다.
+        self.page.evaluate("""() => {
+          const img = document.getElementById('hidden');
+          Object.defineProperty(img, 'complete', { get: () => false });
+        }""")
+        started = time.monotonic()
+        settle(self.page, image_timeout_ms=3000)
+        self.assertLess(time.monotonic() - started, 20)
+        self.assertTrue(self.page.evaluate("document.getElementById('below').complete"))
+
+        # 화면에 그려지는 이미지가 끝내 로드되지 않아도 한도 안에 돌아온다.
+        page = self.browser.new_page(viewport={"width": 375, "height": 400})
+        try:
+            page.set_content('<p style="margin: 0"><img id="pending" alt="" '
+                             'style="width: 40px; height: 40px"></p>')
+            page.evaluate("""() => {
+              const img = document.getElementById('pending');
+              Object.defineProperty(img, 'complete', { get: () => false });
+            }""")
+            started = time.monotonic()
+            settle(page, image_timeout_ms=300)
+            self.assertLess(time.monotonic() - started, 10)
+        finally:
+            page.close()
 
     def test_diagram_audit_and_header_row_checks(self):
         self.page.set_viewport_size({"width": 800, "height": 600})
@@ -311,12 +360,14 @@ class ArticleUiChecksTest(unittest.TestCase):
             return out
 
         bad_summary, _ = path_checks({
-            "path": "/digest/x/", "configs": make_configs(896, True), "resize": {}, "lightbox": {},
+            "path": "/digest/x/", "configs": make_configs(896, True), "resize": {}, "heightResize": [],
+            "lightbox": {},
         })
         self.assertFalse(bad_summary["A7"]["pass"])
 
         good_summary, _ = path_checks({
-            "path": "/digest/x/", "configs": make_configs(712, False), "resize": {}, "lightbox": {},
+            "path": "/digest/x/", "configs": make_configs(712, False), "resize": {}, "heightResize": [],
+            "lightbox": {},
         })
         self.assertTrue(good_summary["A7"]["pass"])
 

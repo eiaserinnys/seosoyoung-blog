@@ -68,11 +68,13 @@
 
       var prev = math.previousSibling;
       var next = math.nextSibling;
+      // 여는 따옴표(“ " ‘ ')도 수식과 묶어 줄 끝에 따옴표만 홀로 남지 않게 한다.
       var openTail = prev && prev.nodeType === Node.TEXT_NODE
-        ? (prev.data.match(/[(\[{]+$/) || [""])[0]
+        ? (prev.data.match(/[(\[{“‘\"']+$/) || [""])[0]
         : "";
+      // 닫는 따옴표(” " ’ ')도 수식 뒤 글자와 함께 묶는다.
       var closeHead = next && next.nodeType === Node.TEXT_NODE
-        ? (next.data.match(/^[)\]},.:;!?%A-Za-zㄱ-ㆎ가-힣]+/) || [""])[0]
+        ? (next.data.match(/^[)\]},.:;!?%”’\"'A-Za-zㄱ-ㆎ가-힣]+/) || [""])[0]
         : "";
       if (!openTail && !closeHead) return;
 
