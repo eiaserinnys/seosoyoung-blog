@@ -34,17 +34,25 @@
         var ratio = big.naturalHeight / big.naturalWidth;
         var captionHeight = capEl ? capEl.offsetHeight + parseFloat(getComputedStyle(capEl).marginTop) : 0;
         var availableHeight = Math.min(window.innerHeight * 0.88, window.innerHeight * 0.94 - captionHeight);
-        // 화면에 통째로 맞춘 폭이 본문에서 보이던 폭 이상이면 통째로 보인다.
-        // 그보다 작아지는 그림(아주 긴 그림, 원래 크기가 작은 그림)만 본문 폭 이상으로 열고 넘치면 스크롤한다.
+        // 화면에 통째로 맞춘 폭이 본문에서 보이던 폭의 1.5배보다 작고, 높이에 맞춘 폭이 화면 폭 상한의
+        // 1.5배 이상인 그림이면 높이를 화면에 맞춰 연다. 화면보다 조금만 넓게 열려 일부만 잘리는
+        // 상태는 만들지 않는다. 화면보다 넓으면 왼쪽 끝에서 시작해 가로로 밀어 본다.
+        // 화면에 통째로 맞춘 폭이 본문 폭 이상인 그림은 지금처럼 통째로 보인다.
         var fitWidth = Math.min(big.naturalWidth, viewportWidth, availableHeight / ratio);
+        var heightFitWidth = Math.min(big.naturalWidth, availableHeight / ratio);
         var width = fitWidth;
         var scroll = false;
-        if (fitWidth < renderedWidth - 1) {
+        var wide = false;
+        if (fitWidth < renderedWidth * 1.5 && heightFitWidth >= viewportWidth * 1.5) {
+          width = heightFitWidth;
+          wide = width > viewportWidth + 1;
+        } else if (fitWidth < renderedWidth - 1) {
           width = Math.min(Math.max(renderedWidth, Math.min(big.naturalWidth, viewportWidth)), viewportWidth);
           scroll = width * ratio > availableHeight;
         }
         big.style.width = width + 'px';
         overlay.classList.toggle('ssy-lightbox--scroll', scroll);
+        overlay.classList.toggle('ssy-lightbox--wide', wide);
       }
       var previousOverflow = document.documentElement.style.overflow;
       function close() {
@@ -63,7 +71,25 @@
           big.focus({ preventScroll: true });
         }
       }
-      overlay.addEventListener('click', close);
+      // 가로로 민 동작(포인터가 8px 넘게 움직인 뒤의 click)은 닫기로 삼지 않는다.
+      var downX = 0;
+      var downY = 0;
+      var dragged = false;
+      overlay.addEventListener('pointerdown', function (e) {
+        downX = e.clientX;
+        downY = e.clientY;
+        dragged = false;
+      });
+      overlay.addEventListener('pointermove', function (e) {
+        if (Math.abs(e.clientX - downX) > 8 || Math.abs(e.clientY - downY) > 8) dragged = true;
+      });
+      overlay.addEventListener('click', function () {
+        if (dragged) {
+          dragged = false;
+          return;
+        }
+        close();
+      });
       document.addEventListener('keydown', onKey, true);
       window.addEventListener('resize', fitImage);
       big.addEventListener('load', fitImage);

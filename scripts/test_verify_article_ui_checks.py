@@ -5,8 +5,8 @@ import unittest
 from playwright.sync_api import sync_playwright
 
 from verify_article_ui_checks import (
-    A10_JS, A11_JS, A15_JS, A16_JS, a12_checks, a13_checks, a14_checks, a15_checks, a16_checks,
-    resized_sidenotes_ok, sidenote_presence_ok, summarize_checks,
+    A10_JS, A11_JS, A15_JS, A16_JS, a11_checks, a12_checks, a13_checks, a14_checks, a15_checks,
+    a16_checks, resized_sidenotes_ok, sidenote_presence_ok, summarize_checks,
 )
 
 
@@ -139,7 +139,8 @@ class ArticleUiChecksTest(unittest.TestCase):
                     "postImages": [], "diagrams": {"figs": []}}
 
         configs = {name: config(360 if name == "min360-light" else 1440) for name in names}
-        report = {"path": "/digest/x/", "configs": configs, "resize": {}, "lightbox": {}}
+        report = {"path": "/digest/x/", "configs": configs, "resize": {}, "heightResize": [],
+                  "lightbox": {}}
         summary, checks = path_checks(report)
         for key in ("A2", "A3", "A7", "A8", "A10", "A11"):
             self.assertEqual(len(checks[key]), 1, key)
@@ -209,6 +210,31 @@ class ArticleUiChecksTest(unittest.TestCase):
         self.assertTrue(entries[0]["ok"])
         self.assertTrue(entries[0]["na"])
 
+    def test_lightbox_no_slight_overflow(self):
+        def row(width, whole=False):
+            record = lightbox_row()
+            record["opened"].update({"vw": 375, "vh": 812, "wideMode": not whole,
+                                     "inView": whole, "inViewX": True,
+                                     "overlayScrollableX": True})
+            record["opened"]["big"] = dict(record["opened"]["big"], w=float(width), x=0.0,
+                                           right=float(width))
+            return record
+
+        def verdict(record):
+            entries = a14_checks("/posts/x/", {"narrow-light": {"applicable": True, "rows": [record]}})
+            return entries[0]["ok"], entries[0]["detail"]
+
+        # 375 화면에서 512px로 열면 화면 폭 상한(360px)보다 조금 넓은 채 오른쪽이 잘린다.
+        ok, detail = verdict(row(512))
+        self.assertFalse(ok)
+        self.assertIn("noSlightOverflow", detail)
+        # 화면 폭 상한의 1.5배 넘게 열고 가로로 밀 수 있으면 통과한다.
+        ok, detail = verdict(row(1058))
+        self.assertTrue(ok, detail)
+        # 화면 안에 통째로 들어오는 폭은 그대로 통과한다.
+        ok, detail = verdict(row(360, whole=True))
+        self.assertTrue(ok, detail)
+
     def test_straight_quote_detector(self):
         self.page.set_content(
             '<div class="post-content"><p>“봐 줘"라고 <code>"코드"는</code> “맞다”고</p></div>')
@@ -223,6 +249,101 @@ class ArticleUiChecksTest(unittest.TestCase):
         failing = {"wide-light": {"quotes": {"blocks": 2, "hitCount": 1, "hits": ['“a"b']}}}
         self.assertFalse(a15_checks(path, failing)[0]["ok"])
         self.assertTrue(a15_checks(path, {"wide-light": {}})[0]["na"])
+
+    def test_a15_counts_opening_quote_after_closing_paren(self):
+        # 닫는 소괄호 뒤 여는 따옴표 + 한글 조사는 뒤집힌 닫는 따옴표다.
+        self.page.set_content(
+            '<div class="post-content"><p>‘J-커브(J-Curve)‘를 “가(나)“를 만났다</p></div>')
+        self.assertEqual(self.page.evaluate(A15_JS)["hitCount"], 2)
+        # 올바른 닫는 따옴표는 세지 않는다.
+        self.page.set_content(
+            '<div class="post-content"><p>‘J-커브(J-Curve)’를 “가(나)”를 만났다</p></div>')
+        self.assertEqual(self.page.evaluate(A15_JS)["hitCount"], 0)
+
+    def test_a15_counts_flipped_quote_after_inline_tag(self):
+        # **강조**"의가 렌더된 “강조“의는 앞의 여는 따옴표가 아직 닫히지 않았다.
+        self.page.set_content('<div class="post-content"><p>“강조“의 말</p></div>')
+        self.assertEqual(self.page.evaluate(A15_JS)["hitCount"], 1)
+        self.page.set_content('<div class="post-content"><p>‘강조‘의 말</p></div>')
+        self.assertEqual(self.page.evaluate(A15_JS)["hitCount"], 1)
+        # 닫는 인라인 태그 뒤에 뒤집힌 닫는 따옴표도 센다(태그는 글 추출에서 빠진다).
+        self.page.set_content(
+            '<div class="post-content"><p>“<strong>언제 효력이 발생하는가</strong>“의</p></div>')
+        self.assertEqual(self.page.evaluate(A15_JS)["hitCount"], 1)
+        # 앞선 여는 따옴표가 없으면 정당한 여는 따옴표다.
+        self.page.set_content(
+            '<div class="post-content"><p><strong>말했다</strong>“안녕”이라고</p></div>')
+        self.assertEqual(self.page.evaluate(A15_JS)["hitCount"], 0)
+
+    def test_a15_counts_flipped_quote_after_any_character_but_not_doubled_openers(self):
+        # 짝 없는 여는 따옴표 뒤 여는 부호+한글은 앞 글자가 무엇이든 센다.
+        self.page.set_content('<div class="post-content"><p>“지난주 매출이 얼마였지?“라고</p></div>')
+        self.assertEqual(self.page.evaluate(A15_JS)["hitCount"], 1)
+        # 곧은 따옴표를 겹쳐 쓴 자리는 둘째 부호가 여는 자리이므로 세지 않는다.
+        self.page.set_content('<div class="post-content"><p>““나라면 이렇게””</p></div>')
+        self.assertEqual(self.page.evaluate(A15_JS)["hitCount"], 0)
+
+    def test_a11_overflowing_display_math_needs_hint(self):
+        self.page.set_viewport_size({"width": 800, "height": 600})
+        self.page.set_content("""<style>
+          .post-content { width: 300px }
+          .katex-display { width: 200px; overflow: hidden }
+          .katex-display .katex { display: inline-block; width: 400px }
+        </style><div class="post-content"><div class="katex-display"><span class="katex">x</span></div></div>""")
+        measured = self.page.evaluate(A11_JS)
+        self.assertGreater(measured["displays"][0]["over"], 1)
+        config = {"min360-light": {"a11": {"bounds": [{"over": 0}],
+                                           "displays": measured["displays"], "tables": []}}}
+        entries = [e for e in a11_checks("/posts/x/", config) if "displayMath" in e["detail"]]
+        self.assertFalse(entries[0]["ok"], "힌트 없는 넘침 블록 수식은 실패해야 한다")
+        # 가로 스크롤과 넘침 그림자 힌트를 갖추면 통과한다.
+        self.page.evaluate("""() => {
+          const d = document.querySelector('.katex-display');
+          d.style.overflowX = 'auto';
+          d.style.backgroundImage = 'linear-gradient(to right, #fff, transparent)';
+        }""")
+        measured = self.page.evaluate(A11_JS)
+        config["min360-light"]["a11"]["displays"] = measured["displays"]
+        entries = [e for e in a11_checks("/posts/x/", config) if "displayMath" in e["detail"]]
+        self.assertTrue(entries[0]["ok"])
+
+    def test_settle_waits_only_for_visible_images_and_is_bounded(self):
+        import time
+
+        from verify_article_ui import settle
+
+        self.page.set_viewport_size({"width": 375, "height": 400})
+        self.page.set_content("""
+          <div style="height: 1600px"></div>
+          <p><img id="below" loading="lazy" alt=""
+                  src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40'%3E%3Crect width='40' height='40'/%3E%3C/svg%3E"
+                  style="width: 40px; height: 40px"></p>
+          <div style="display: none"><img id="hidden" alt="hidden" src="data:image/gif;base64,R0lGODlhAQABAAAAACw="></div>
+        """)
+        # display:none 안의 이미지는 화면에 그려지지 않으므로 끝없이 기다리면 안 된다.
+        self.page.evaluate("""() => {
+          const img = document.getElementById('hidden');
+          Object.defineProperty(img, 'complete', { get: () => false });
+        }""")
+        started = time.monotonic()
+        settle(self.page, image_timeout_ms=3000)
+        self.assertLess(time.monotonic() - started, 20)
+        self.assertTrue(self.page.evaluate("document.getElementById('below').complete"))
+
+        # 화면에 그려지는 이미지가 끝내 로드되지 않아도 한도 안에 돌아온다.
+        page = self.browser.new_page(viewport={"width": 375, "height": 400})
+        try:
+            page.set_content('<p style="margin: 0"><img id="pending" alt="" '
+                             'style="width: 40px; height: 40px"></p>')
+            page.evaluate("""() => {
+              const img = document.getElementById('pending');
+              Object.defineProperty(img, 'complete', { get: () => false });
+            }""")
+            started = time.monotonic()
+            settle(page, image_timeout_ms=300)
+            self.assertLess(time.monotonic() - started, 10)
+        finally:
+            page.close()
 
     def test_diagram_audit_and_header_row_checks(self):
         self.page.set_viewport_size({"width": 800, "height": 600})
@@ -311,12 +432,14 @@ class ArticleUiChecksTest(unittest.TestCase):
             return out
 
         bad_summary, _ = path_checks({
-            "path": "/digest/x/", "configs": make_configs(896, True), "resize": {}, "lightbox": {},
+            "path": "/digest/x/", "configs": make_configs(896, True), "resize": {}, "heightResize": [],
+            "lightbox": {},
         })
         self.assertFalse(bad_summary["A7"]["pass"])
 
         good_summary, _ = path_checks({
-            "path": "/digest/x/", "configs": make_configs(712, False), "resize": {}, "lightbox": {},
+            "path": "/digest/x/", "configs": make_configs(712, False), "resize": {}, "heightResize": [],
+            "lightbox": {},
         })
         self.assertTrue(good_summary["A7"]["pass"])
 

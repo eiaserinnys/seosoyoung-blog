@@ -2,7 +2,7 @@
 {{- if not .IsHome -}}
   {{- $title = printf "%s | %s" .Title site.Title -}}
 {{- end -}}
-{{- $description := or .Description .Summary site.Params.description | plainify | htmlUnescape | strings.TrimSpace -}}
+{{- $description := or .Description .Summary site.Params.description | partial "typography/close-quotes.html" | plainify | htmlUnescape | strings.TrimSpace -}}
 {{- $styles := resources.Match "css/*.css" -}}
 {{- $styles = sort $styles "Name" -}}
 {{- $style := resources.Concat "css/site.css" $styles | minify | fingerprint -}}

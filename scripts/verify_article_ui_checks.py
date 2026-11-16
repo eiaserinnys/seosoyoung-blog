@@ -207,13 +207,18 @@ A11_JS = r"""
     const table = wrap.querySelector('table');
     return {i: i + 1, hasMath: !!table.querySelector('.katex'), overflowing: wrap.classList.contains('is-overflowing')};
   }).filter((table) => table.hasMath);
-  const displays = [...content.querySelectorAll('.katex-display')].map((k, i) => ({
-    i: i + 1,
-    clientW: k.clientWidth,
-    scrollW: k.scrollWidth,
-    over: +(k.scrollWidth - k.clientWidth).toFixed(2),
-    tex: (k.querySelector('annotation') || {}).textContent || '',
-  }));
+  const displays = [...content.querySelectorAll('.katex-display')].map((k, i) => {
+    const style = getComputedStyle(k);
+    return {
+      i: i + 1,
+      clientW: k.clientWidth,
+      scrollW: k.scrollWidth,
+      over: +(k.scrollWidth - k.clientWidth).toFixed(2),
+      overflowX: style.overflowX,
+      backgroundImage: style.backgroundImage,
+      tex: (k.querySelector('annotation') || {}).textContent || '',
+    };
+  });
   return {bounds, tables, displays};
 }
 """
@@ -239,17 +244,34 @@ A15_JS = r"""
   const hits = [];
   for (const block of order) {
     const text = blocks.get(block).join('');
-    let open = false;
+    let singleOpen = false;
+    let doubleOpen = false;
     for (let i = 0; i < text.length; i++) {
       const ch = text[i];
-      if (ch === '“') { open = true; continue; }
-      if (ch === '”') { open = false; continue; }
-      if (ch !== '"') continue;
       const prev = text[i - 1] || '';
       const next = text[i + 1] || '';
-      if (open || /[가-힣]/.test(prev) || /[가-힣]/.test(next)) {
+      // 여는 따옴표가 한글 조사와 이어지는데 바로 앞이 닫는 소괄호이거나, 같은 블록에 아직 닫히지 않은
+      // 같은 종류의 여는 따옴표가 앞에 있으면 닫는 따옴표가 뒤집힌 것이다. 바로 앞이 같은 여는 부호인
+      // 자리는 겹쳐 쓴 여는 부호이므로 후처리와 같이 세지 않는다.
+      const sameKindOpen = ch === '‘' ? singleOpen : ch === '“' ? doubleOpen : false;
+      if ((ch === '‘' || ch === '“') && /[가-힣]/.test(next)
+          && (prev === ')' || (sameKindOpen && prev !== ch))) {
         hitCount++;
         if (hits.length < 20) hits.push(text.slice(Math.max(0, i - 20), i + 21));
+        // 뒤집힌 부호는 앞의 여는 따옴표를 닫는 자리이므로 상태를 닫는다.
+        if (ch === '‘') singleOpen = false; else doubleOpen = false;
+        continue;
+      }
+      if (ch === '‘') { singleOpen = true; continue; }
+      if (ch === '’') { singleOpen = false; continue; }
+      if (ch === '“') { doubleOpen = true; continue; }
+      if (ch === '”') { doubleOpen = false; continue; }
+      if (ch !== '"') continue;
+      if (doubleOpen || /[가-힣]/.test(prev) || /[가-힣]/.test(next)) {
+        hitCount++;
+        if (hits.length < 20) hits.push(text.slice(Math.max(0, i - 20), i + 21));
+        // 곧은 큰따옴표가 닫는 자리였으면 앞의 여는 따옴표를 닫는다.
+        doubleOpen = false;
       }
     }
   }
@@ -489,10 +511,14 @@ def a11_checks(path, configs):
                                   f"examples={bad[:4]}"})
         displays = data.get("displays") or []
         if displays:
-            bad_disp = [item for item in displays if item["over"] > 1]
+            # 못 줄이는 블록 수식은 넘치되 가로 스크롤과 넘침 그림자 힌트를 갖춰야 통과한다.
+            over = [item for item in displays if item["over"] > 1]
+            bad_disp = [item for item in over
+                        if item.get("overflowX") not in ("auto", "scroll")
+                        or (item.get("backgroundImage") or "none") == "none"]
             entries.append({"ok": not bad_disp,
-                            "detail": f"{path} {name}: displayMath={len(displays)} over={len(bad_disp)} "
-                                      f"examples={bad_disp[:4]}"})
+                            "detail": f"{path} {name}: displayMath={len(displays)} over={len(over)} "
+                                      f"noHint={len(bad_disp)} examples={bad_disp[:4]}"})
     wide = ((configs.get("wide-light") or {}).get("a11") or {})
     side_bounds = [item for item in wide.get("bounds", []) if item.get("side")]
     if side_bounds:
@@ -600,10 +626,19 @@ def _a14_failed_conditions(row):
     before = row["before"]
     src = (row.get("img") or {}).get("src")
     big = opened.get("big") or {}
+    # 화면 폭 상한보다 넓게 열었다면 화면 폭 상한의 1.5배 이상이어야 한다. 화면보다 조금만 넓게
+    # 열려 일부만 잘리는 상태는 만들지 않는다.
+    width_limit = float(opened.get("vw") or 0) * 0.96
+    big_w = float(big.get("w") or 0)
+    no_slight_overflow = big_w <= width_limit + 1 or big_w >= width_limit * 1.5 - 2
     in_view_ok = bool(opened.get("inView")) or (
         bool(opened.get("scrollMode")) and bool(opened.get("inViewX"))
         and big.get("y") is not None and big["y"] >= 0
-        and bool(opened.get("overlayScrollable")))
+        and bool(opened.get("overlayScrollable"))) or (
+        # 좁은 화면에서 높이에 맞춰 연 그림은 화면보다 넓다. 왼쪽 끝에서 시작하고 가로로 밀 수 있으면 된다.
+        bool(opened.get("wideMode")) and big.get("x") is not None and big["x"] >= -0.5
+        and big.get("y") is not None and big["y"] >= 0
+        and bool(opened.get("overlayScrollableX")))
     conditions = [
         ("opened.open", bool(opened.get("open"))),
         ("opened.inView", in_view_ok),
@@ -616,8 +651,38 @@ def _a14_failed_conditions(row):
         ("afterOutsideClick.open", not after_outside.get("open")),
         ("afterOutsideClick.rootOverflow",
          after_outside.get("rootOverflow") == before.get("rootOverflow")),
+        ("noSlightOverflow", no_slight_overflow),
     ]
     return [name for name, ok in conditions if not ok]
+
+
+def _a14_state_geometry(row):
+    """연 그림의 원래 본문 폭과 화면으로부터, 지금/예전 규칙의 열림 폭과 새 규칙 적용 여부를 셈한다."""
+    meta = row.get("img") or {}
+    opened = row.get("opened") or {}
+    big = opened.get("big") or {}
+    natural = big.get("natural") or [0, 0]
+    rendered = meta.get("width")
+    vw = opened.get("vw")
+    vh = opened.get("vh")
+    if not (natural[0] and natural[1] and rendered and vw and vh):
+        return None
+    ratio = natural[1] / natural[0]
+    width_limit = vw * 0.96
+    height_limit = min(vh * 0.88, vh * 0.94 - float(opened.get("captionH") or 0))
+    fit = min(natural[0], width_limit, height_limit / ratio)
+    height_fit = min(natural[0], height_limit / ratio)
+    legacy = (min(max(rendered, min(natural[0], width_limit)), width_limit)
+              if fit < rendered - 1 else fit)
+    return {
+        "rendered": rendered,
+        "fit": fit,
+        "heightFit": height_fit,
+        "legacyWidth": legacy,
+        # 반올림 경계에서 판정이 흔들리지 않게 5px 여유를 둔다.
+        # lightbox.js와 같이 높이에 맞춘 폭이 화면 폭 상한의 1.5배 이상일 때만 새 규칙이다.
+        "newRule": fit < rendered * 1.5 - 5 and height_fit >= width_limit * 1.5,
+    }
 
 
 def a14_checks(path, lightbox):
@@ -636,11 +701,29 @@ def a14_checks(path, lightbox):
             failed = _a14_failed_conditions(row)
             opened = row["opened"]
             big = opened.get("big") or {}
+            geo = _a14_state_geometry(row)
+            if geo and name in ("narrow-light", "narrow-dark") and geo["newRule"]:
+                panned = row.get("panned") or {}
+                panned_big = panned.get("big") or {}
+                vw = opened.get("vw") or 0
+                failed += [name_ for name_, ok in (
+                    ("narrow.width>=1.5x", (big.get("w") or 0) >= geo["rendered"] * 1.5 - 1),
+                    ("narrow.leftEdge", big.get("x") is not None and big["x"] >= -0.5),
+                    ("narrow.panToEnd", panned_big.get("right") is not None
+                     and panned_big["right"] <= vw + 0.5
+                     and bool(panned.get("overlayScrollableX"))),
+                ) if not ok]
+            if geo and name == "wide-light":
+                failed += [name_ for name_, ok in (
+                    ("wide.widthUnchanged", abs((big.get("w") or 0) - geo["legacyWidth"]) <= 2),
+                ) if not ok]
             entries.append({
                 "ok": not failed,
                 "detail": f"{path} {name} {meta.get('src')}: big={big.get('w')}x{big.get('h')} "
+                          f"body={geo and round(geo['rendered'], 1)} "
                           f"in {opened.get('vw')}x{opened.get('vh')} "
-                          f"scrollMode={bool(opened.get('scrollMode'))} failed={failed or '없음'}",
+                          f"scrollMode={bool(opened.get('scrollMode'))} "
+                          f"wideMode={bool(opened.get('wideMode'))} failed={failed or '없음'}",
             })
     return entries
 

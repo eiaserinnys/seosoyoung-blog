@@ -327,13 +327,9 @@
   margin-bottom: 0;
 }
 
-.table-scroll {
-  position: relative;
-  width: 100%;
-  max-width: 100%;
-  margin: 0 0 var(--space-3);
-  overflow-x: auto;
-  overflow-y: hidden;
+/* 넘치는 표와 긴 블록 수식은 같은 가로 넘침 그림자 힌트를 쓴다(넘치지 않으면 그림자가 보이지 않는다). */
+.table-scroll,
+.post-content .katex-display {
   background-image:
     linear-gradient(to right, var(--bg) 30%, transparent),
     linear-gradient(to left, var(--bg) 30%, transparent),
@@ -343,6 +339,15 @@
   background-size: 40px 100%, 40px 100%, 16px 100%, 16px 100%;
   background-repeat: no-repeat;
   background-attachment: local, local, scroll, scroll;
+}
+
+.table-scroll {
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  margin: 0 0 var(--space-3);
+  overflow-x: auto;
+  overflow-y: hidden;
 }
 
 .post-content table {
@@ -700,6 +705,15 @@ aside.sidenote .footnote-backref {
 
 .ssy-lightbox--scroll {
   justify-content: flex-start;
+}
+
+/* 높이에 맞춰 연 가로로 긴 그림은 왼쪽 끝에서 시작하고, 화면보다 넓으면 가로로 민다. */
+.ssy-lightbox--wide {
+  align-items: flex-start;
+}
+
+.ssy-lightbox--wide img {
+  max-width: none;
 }
 
 .ssy-lightbox .ssy-lightbox-caption {

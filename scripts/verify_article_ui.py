@@ -53,7 +53,7 @@ TOUCH_CONFIGS = {"phablet-light", "tablet-light", "tablet820-light"}
 # 링크로 감싼 그림은 누르면 링크로 가는 것이 의도된 동작이라 대상이 아니다.
 LIGHTBOX_SELECTOR = ('.post-content img[aria-haspopup="dialog"], '
                      'article.post-single .entry-cover img[aria-haspopup="dialog"]')
-LIGHTBOX_CONFIGS = ("wide-light", "narrow-light", "narrow-dark")
+LIGHTBOX_CONFIGS = ("wide-light", "mid-light", "narrow-light", "narrow-dark")
 LIGHTBOX_MAX_IMAGES = 4  # 동작이 그림마다 같아 DOM 순서 앞 4장만 잰다
 
 DEFAULT_PATHS = [
@@ -86,6 +86,7 @@ RESIZE_SCENARIOS = [
     ("1440-1100-600-1440", [1440, 1100, 600, 1440]),
     ("1440-375-1440", [1440, 375, 1440]),
     ("340-375", [340, 375]),
+    ("390-844", [390, 844]),
 ]
 
 TOC_GAP = 32
@@ -482,13 +483,18 @@ LIGHTBOX_STATE_JS = r"""
   if (o) {
     const b = o.querySelector('img');
     const r = b.getBoundingClientRect();
+    const cap = o.querySelector('.ssy-lightbox-caption');
+    res.captionH = cap ? cap.offsetHeight + (parseFloat(getComputedStyle(cap).marginTop) || 0) : 0;
     res.big = {x: r.x, y: r.y, w: r.width, h: r.height, right: r.right, bottom: r.bottom,
       natural: [b.naturalWidth, b.naturalHeight], complete: b.complete, src: b.currentSrc.split('/').pop()};
     res.vw = innerWidth; res.vh = innerHeight;
     res.inView = r.x >= 0 && r.y >= 0 && r.right <= innerWidth + 0.5 && r.bottom <= innerHeight + 0.5;
     res.scrollMode = o.classList.contains('ssy-lightbox--scroll');
+    res.wideMode = o.classList.contains('ssy-lightbox--wide');
     res.inViewX = r.x >= 0 && r.right <= innerWidth + 0.5;
     res.overlayScrollable = o.scrollHeight > o.clientHeight + 1;
+    res.overlayScrollableX = o.scrollWidth > o.clientWidth + 1;
+    res.scrollLeft = +o.scrollLeft.toFixed(1);
     res.ratioErr = b.naturalWidth ? Math.abs(r.width / r.height - b.naturalWidth / b.naturalHeight) : null;
     res.role = o.getAttribute('role'); res.label = o.getAttribute('aria-label');
   }
@@ -505,16 +511,47 @@ def free_port():
     return port
 
 
-def settle(page):
-    h = page.evaluate("document.documentElement.scrollHeight")
+SETTLE_IMAGE_TIMEOUT_MS = 8000
+
+
+SETTLE_IMAGES_JS = r"""
+(limitMs) => new Promise((resolve) => {
+  // display:none 안의 lazy 이미지는 화면에 그려지지 않으므로 기다리지 않는다.
+  const waiting = [...document.images].filter(
+    (img) => !img.complete && img.getClientRects().length > 0
+  );
+  if (!waiting.length) { resolve(0); return; }
+  let done = false;
+  const finish = () => {
+    if (done) return;
+    done = true;
+    resolve(waiting.filter((img) => !img.complete).length);
+  };
+  setTimeout(finish, limitMs);
+  Promise.all(waiting.map((img) => new Promise((r) => {
+    img.addEventListener('load', r, { once: true });
+    img.addEventListener('error', r, { once: true });
+  }))).then(finish);
+})
+"""
+
+
+def settle(page, image_timeout_ms=SETTLE_IMAGE_TIMEOUT_MS):
+    # 스크롤 간격을 뷰포트 높이 이하로 두어 페이지의 모든 구간이 화면에 한 번씩 들어오게 한다.
+    step = max(1, int(page.evaluate("window.innerHeight") or 1))
     y = 0
+    h = page.evaluate("document.documentElement.scrollHeight")
     while y < h:
         page.evaluate(f"window.scrollTo(0, {y})")
         page.wait_for_timeout(40)
-        y += 1400
+        y += step
         h = page.evaluate("document.documentElement.scrollHeight")
     page.wait_for_load_state("networkidle")
-    page.evaluate("Promise.all([...document.images].map(i => i.complete ? 1 : new Promise(r => { i.onload = i.onerror = r; })))")
+    # 그려지는 이미지만 기다리고 전체에 한도를 둔다. 한도에 걸리면 남은 수를 알리고 진행한다.
+    pending = page.evaluate(SETTLE_IMAGES_JS, image_timeout_ms)
+    if pending:
+        print(f"settle: 그려지는 이미지 {pending}장이 {image_timeout_ms}ms 안에 로드되지 않아 넘어갑니다.",
+              flush=True)
     page.evaluate("document.fonts.ready")
     page.evaluate("window.scrollTo(0, 0)")
     page.wait_for_timeout(1000)
@@ -1162,6 +1199,7 @@ def run_lightbox_scenarios(browser, url, out_dir):
                 meta = img.evaluate(
                     "e => ({src: e.getAttribute('src').split('/').pop(),"
                     " role: e.getAttribute('role'), tabIndex: e.tabIndex,"
+                    " width: e.getBoundingClientRect().width,"
                     " haspopup: e.getAttribute('aria-haspopup')})")
                 before = page.evaluate(LIGHTBOX_STATE_JS)
                 img.click()
@@ -1173,6 +1211,22 @@ def run_lightbox_scenarios(browser, url, out_dir):
                 opened = page.evaluate(LIGHTBOX_STATE_JS)
                 if i == 0:
                     page.screenshot(path=str(out_dir / f"lightbox-{name}-0.png"))
+                # 가로로 넘치는 라이트박스는 끝까지 밀었을 때 오른쪽 끝이 보이는지 잰다.
+                page.evaluate(
+                    "() => { const o = document.querySelector('.ssy-lightbox'); o.scrollLeft = o.scrollWidth; }")
+                page.wait_for_timeout(120)
+                panned = page.evaluate(LIGHTBOX_STATE_JS)
+                if i == 0 and opened.get("overlayScrollableX"):
+                    page.screenshot(path=str(out_dir / f"lightbox-{name}-0-end.png"))
+                page.evaluate("() => { const o = document.querySelector('.ssy-lightbox'); o.scrollLeft = 0; }")
+                after_resize = None
+                if i == 0:
+                    # 연 채로 창 폭을 바꿔도 열린 채 다시 맞춰지는지 잰다(§0 18번).
+                    page.set_viewport_size({"width": 600 if width < 500 else 1024, "height": height})
+                    page.wait_for_timeout(400)
+                    after_resize = page.evaluate(LIGHTBOX_STATE_JS)
+                    page.set_viewport_size({"width": width, "height": height})
+                    page.wait_for_timeout(300)
                 page.keyboard.press("Tab")
                 after_tab = page.evaluate(LIGHTBOX_STATE_JS)
                 page.keyboard.press("Escape")
@@ -1183,7 +1237,8 @@ def run_lightbox_scenarios(browser, url, out_dir):
                 page.mouse.click(5, 5)
                 page.wait_for_timeout(150)
                 after_outside = page.evaluate(LIGHTBOX_STATE_JS)
-                rows.append({"img": meta, "before": before, "opened": opened,
+                rows.append({"img": meta, "before": before, "opened": opened, "panned": panned,
+                             "afterResize": after_resize,
                              "afterTab": after_tab, "afterEsc": after_esc,
                              "afterOutsideClick": after_outside})
             except PlaywrightError as e:
