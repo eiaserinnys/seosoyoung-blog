@@ -14,7 +14,7 @@ hugo.toml에서 strikethrough=false로 엔진 레벨에서 막았으므로 참�
 
 사용:
   python3 scripts/lint_md.py content/posts/some-post.md [more.md ...]
-  python3 scripts/lint_md.py            # content/posts, content/digest 전체
+  python3 scripts/lint_md.py            # content/posts, content/digest, content/gallery 전체
   python3 scripts/lint_md.py --rules doubled-quote,merged-heading   # 고른 규칙만
 
 종료 코드: 실행한 규칙의 위험 패턴이 하나라도 있으면 1.
@@ -223,7 +223,7 @@ def lint_file(path: pathlib.Path, rules):
 
 def main() -> int:
     parser = argparse.ArgumentParser(description="발행 전 마크다운 형식 린트")
-    parser.add_argument("files", nargs="*", help="검사할 파일. 없으면 content/posts·content/digest 전체")
+    parser.add_argument("files", nargs="*", help="검사할 파일. 없으면 content/posts·content/digest·content/gallery 전체")
     parser.add_argument("--rules", default=None,
                         help="검사할 규칙을 쉼표로 고른다: " + ", ".join(RULES))
     args = parser.parse_args()
@@ -243,6 +243,7 @@ def main() -> int:
         files = sorted(
             list((root / "content" / "posts").glob("*.md"))
             + list((root / "content" / "digest").glob("*.md"))
+            + list((root / "content" / "gallery").glob("*.md"))
         )
     had_error = False
     for f in files:

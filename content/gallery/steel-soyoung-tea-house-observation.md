@@ -107,11 +107,11 @@ v3-2를 시드로 `--size 2048x2048 --quality high`로 굴렸다. 약 3분 49초
 
 ## 가장 흥미로운 지점
 
-**시드의 양식 갭이 클 때는 통일을 명시적으로 못박아야 한다.** 서소영 시드는 실사 결의 일러스트(긴 검은 머리, 한복풍 의상, 섬세한 음영), 스틸 시드는 평면적인 chibi 아이콘(굵은 윤곽선, 단순한 면 처리, 비례 왜곡). 두 시드를 같이 넘기면 모델은 두 양식을 한 화면에 *공존*시키는 경향이 있다 — 스틸을 그대로 평면 아이콘 결로 두거나, 반대로 서소영의 정교한 결을 스틸의 평면 결로 끌어내리거나. 프롬프트에 *render BOTH in the SAME unified cinematic illustration style* + *do NOT keep Steel as a flat cartoon icon; restyle him to match Soyoung's painterly refinement while keeping his identifying traits (gray mushroom cut, round glasses, pale blue shirt)*를 명시적으로 못박는 패턴이 핵심이었다. *어떤 양식으로 통일할지*와 *어떤 식별 형질만 보존할지*를 동시에 짚어줘야 한다.
+**시드의 양식 갭이 클 때는 통일을 명시적으로 못박아야 한다.** 서소영 시드는 실사 결의 일러스트(긴 검은 머리, 한복풍 의상, 섬세한 음영), 스틸 시드는 평면적인 chibi 아이콘(굵은 윤곽선, 단순한 면 처리, 비례 왜곡). 두 시드를 같이 넘기면 모델은 두 양식을 한 화면에 *공존*시키는 경향이 있다 — 스틸을 그대로 평면 아이콘 결로 두거나, 반대로 서소영의 정교한 결을 스틸의 평면 결로 끌어내리거나. 프롬프트에 *render BOTH in the SAME unified cinematic illustration style* + <em>do NOT keep Steel as a flat cartoon icon; restyle him to match Soyoung's painterly refinement while keeping his identifying traits (gray mushroom cut, round glasses, pale blue shirt)</em>를 명시적으로 못박는 패턴이 핵심이었다. *어떤 양식으로 통일할지*와 *어떤 식별 형질만 보존할지*를 동시에 짚어줘야 한다.
 
 **강한 신호가 약한 신호를 가린다.** 2단계의 곁눈질은 candid 감을 만들어 줄 의도였지만, 화면에서 *시선의 방향*이라는 큰 정보가 너무 또렷이 잡히면서 미소·자세·시선 내림 같은 다른 약한 신호들이 묻혔다 — 결과적으로 *관찰자가 관찰자임을 자각한* 표정이 되었다. 3단계에서 곁눈질을 회수하고 *입꼬리 1mm*라는 약한 신호 하나로 대체한 순간, 다른 신호들이 다시 보이기 시작했고 컨셉의 미묘함이 살아났다. *어떤 정서를 만들 때는 신호의 절대 크기가 아니라 다른 신호와의 상대적 위계가 더 중요하다*. 
 
-**Refinement pass의 프롬프트는 보존 축을 *나열*해야 한다.** 2단계·3단계 모두 *refinement pass*로 시작하고, *preserve EVERYTHING from the canonical reference (구도·포즈·의상·조명·...)*을 한 줄씩 못박은 뒤, *Apply only ONE/TWO targeted refinements:* 식으로 변경 축을 *수치적으로* 제한했다. "유지하라"는 단일 지시는 모델에게 너무 약한 신호다. *어떤 축이 보존돼야 하는지*를 한 줄씩 *exactly* 또는 *identical*과 함께 짚어줘야 모델의 재해석 충동이 눌린다. peony 카드의 5단계 *Minor edit only* 패턴과 동일한 원리다.
+**Refinement pass의 프롬프트는 보존 축을 *나열*해야 한다.** 2단계·3단계 모두 *refinement pass*로 시작하고, <em>preserve EVERYTHING from the canonical reference (구도·포즈·의상·조명·...)</em>을 한 줄씩 못박은 뒤, *Apply only ONE/TWO targeted refinements:* 식으로 변경 축을 *수치적으로* 제한했다. "유지하라"는 단일 지시는 모델에게 너무 약한 신호다. *어떤 축이 보존돼야 하는지*를 한 줄씩 *exactly* 또는 *identical*과 함께 짚어줘야 모델의 재해석 충동이 눌린다. peony 카드의 5단계 *Minor edit only* 패턴과 동일한 원리다.
 
 **업스케일은 *re-render*임을 인식하고 보존 프롬프트로 시작한다.** gpt-image-2의 `images/edits`는 진짜 픽셀 업스케일이 아니라 *재렌더*다. 본 프롬프트를 그대로 길게 동봉하면 모델이 *새로 그리는* 모드로 빠진다. 4단계 프롬프트는 *quality lift, not a re-take*로 시작해 모델에게 *해석이 아니라 충실한 재현*이라는 모드를 또렷이 선언했다 — 이전 카드(`fisheye-summer-crosswalk`, `seosoyoung-peony-papercut-portrait`)의 교훈을 그대로 적용한 라운드.
 

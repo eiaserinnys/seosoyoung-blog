@@ -1,8 +1,11 @@
 import pathlib
+import contextlib
+import io
 import subprocess
 import sys
 import tempfile
 import unittest
+from unittest import mock
 
 import lint_md
 
@@ -84,6 +87,19 @@ a*b
                     )
                     self.assertEqual(1, result.returncode)
                     self.assertIn("emphasis-flanking", result.stdout)
+
+    def test_default_scan_includes_gallery(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = pathlib.Path(directory)
+            gallery = root / "content" / "gallery"
+            gallery.mkdir(parents=True)
+            (gallery / "article.md").write_text("*모란(牡丹)*으로\n", encoding="utf-8")
+            script = root / "scripts" / "lint_md.py"
+            with mock.patch.object(lint_md, "__file__", str(script)), \
+                    mock.patch.object(sys, "argv", [str(script)]), \
+                    contextlib.redirect_stdout(io.StringIO()) as output:
+                self.assertEqual(1, lint_md.main())
+            self.assertIn("gallery/article.md:1", output.getvalue())
 
     def test_multiline_paragraph(self):
         self.assertEqual([], self.lint("여기 *강조가\n이어진다*는 문장이다.\n"))
