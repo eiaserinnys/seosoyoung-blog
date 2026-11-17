@@ -1635,7 +1635,8 @@ def run_synthetic_table(browser, url, out_dir):
     fixture = '<table id="a23-synthetic"><thead><tr><th>항목</th><th>긴 설명</th><th>값</th></tr></thead><tbody><tr><td>하나</td><td>' + sentence + '</td><td>둘</td></tr></tbody></table>'
     def inject(route):
         response = route.fetch()
-        body = response.text().replace('<div class="post-content">', '<div class="post-content">' + fixture, 1)
+        # 배포와 같은 --minify 빌드는 속성 따옴표를 빼므로, 따옴표 있는 꼴과 없는 꼴을 모두 받는다.
+        body = re.sub(r'(<div class=(?:"post-content"|post-content)>)', lambda m: m.group(1) + fixture, response.text(), count=1)
         route.fulfill(response=response, body=body)
     page.route(url, inject)
     page.goto(url, wait_until='load', timeout=60000)
