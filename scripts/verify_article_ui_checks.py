@@ -279,8 +279,10 @@ A15_JS = r"""
 }
 """
 
-A9_WIDE_CONFIGS = ("mid-light", "wide-light")
+A9_WIDE_CONFIGS = ("tablet-light", "mid-light", "wide-light")
 A9_NARROW_CONFIGS = ("min360-light", "narrow-light", "min390-light", "min414-light")
+WIDE_TABLE_MAX_CELL_LINES = 6
+WIDE_CODE_SHORT_LEN = 24
 A10_CONFIGS = ("min360-light", "narrow-light", "min390-light", "min414-light", "wide-light")
 A11_NARROW_CONFIGS = ("min360-light", "narrow-light", "min390-light", "min414-light")
 A12_CONFIGS = ("wide-light", "wide-dark", "narrow-light", "narrow-dark")
@@ -292,6 +294,7 @@ DIAGRAM_MOBILE_MAX_SCALE = 1.15
 DIAGRAM_HEADER_RIGHT_TOL = 1.5
 DIAGRAM_SWATCH_GAP_TOL = 1.5
 DIAGRAM_ITEM_GAP_TOL = 2.0
+DIAGRAM_BOX_PAD_RATIO_MAX = 1.45
 
 A16_JS = r"""
 () => {
@@ -395,6 +398,27 @@ A16_JS = r"""
       }
       headerRow = {rule: [rx1, rx2, ry], items, rightEdge, rightDiff, swatchGaps, itemGaps};
     }
+    const boxPads = boxRects.filter((rc) => rc.stroke).map((rc) => {
+      const inside = texts.filter((t) => t.x >= rc.x - 0.5 && t.x + t.w <= rc.x + rc.w + 0.5
+                                      && t.y >= rc.y - 0.5 && t.y + t.h <= rc.y + rc.h + 0.5);
+      const insideRects = boxRects.filter((other) => other !== rc
+                                      && other.x >= rc.x - 0.5 && other.x + other.w <= rc.x + rc.w + 0.5
+                                      && other.y >= rc.y - 0.5 && other.y + other.h <= rc.y + rc.h + 0.5);
+      if (!inside.length || insideRects.length > 0) return null;
+      const top = Math.min(...inside.map((t) => t.y));
+      const bottom = Math.max(...inside.map((t) => t.y + t.h));
+      const topGap = +(top - rc.y).toFixed(1);
+      const bottomGap = +((rc.y + rc.h) - bottom).toFixed(1);
+      const lo = Math.max(1, Math.min(topGap, bottomGap));
+      const hi = Math.max(topGap, bottomGap);
+      return {
+        box: [rc.x, rc.y, rc.w, rc.h],
+        first: inside[0].text.slice(0, 24),
+        topGap,
+        bottomGap,
+        padRatio: +(hi / lo).toFixed(2),
+      };
+    }).filter(Boolean);
     const effs = texts.map((t) => t.eff);
     return {
       fig: fi + 1,
@@ -412,6 +436,7 @@ A16_JS = r"""
       outside,
       ov,
       cross,
+      boxPads,
       headerRow,
       caption: fig.querySelector('figcaption') ? fig.querySelector('figcaption').textContent.trim() : null,
     };
@@ -438,15 +463,26 @@ def _midword_breaks(code):
     ]
 
 
-def _a9_detail(path, name, codes):
-    bad = [c for c in codes if c.get("midWord")]
+def _code_split_bad(code):
+    lines = code.get("lines") or 1
+    text = (code.get("text") or "").strip()
+    return bool(code.get("midWord")) or (lines > 1 and len(text) <= WIDE_CODE_SHORT_LEN) or lines > 2
+
+
+def _a9_detail(path, name, codes, tables=None):
+    bad = [c for c in codes if _code_split_bad(c)]
+    max_lines = max(((c.get("lines") or 1) for c in codes), default=0)
     sample = "; ".join(
-        f"table {c.get('table')} {c.get('text')!r} breaks={_midword_breaks(c)}"
+        f"table {c.get('table')} {c.get('text')!r} lines={c.get('lines')} breaks={_midword_breaks(c)}"
         for c in bad[:5]
     )
+    table_part = ""
+    if tables is not None:
+        cell_lines = [f"t{t.get('i')}={t.get('maxLinesPerCell')}" for t in tables]
+        table_part = f" maxLinesPerCell=[{', '.join(cell_lines)}]"
     return (
-        f"{path} {name}: code={len(codes)} midWord={len(bad)} "
-        f"overflowing={sum(1 for c in codes if c.get('overflowing'))}"
+        f"{path} {name}: code={len(codes)} maxCodeLines={max_lines} badCode={len(bad)} "
+        f"overflowing={sum(1 for c in codes if c.get('overflowing'))}{table_part}"
         + (f" / {sample}" if sample else "")
     )
 
@@ -454,10 +490,13 @@ def _a9_detail(path, name, codes):
 def a9_checks(path, configs):
     entries = []
     for name in A9_WIDE_CONFIGS:
-        codes = ((configs.get(name) or {}).get("a9") or {}).get("codes") or []
+        cfg = configs.get(name) or {}
+        codes = (cfg.get("a9") or {}).get("codes") or []
+        tables = cfg.get("tables") or []
+        bad_tables = [t for t in tables if (t.get("maxLinesPerCell") or 0) > WIDE_TABLE_MAX_CELL_LINES]
         entries.append({
-            "ok": not any(c.get("midWord") for c in codes),
-            "detail": _a9_detail(path, name, codes),
+            "ok": not any(_code_split_bad(c) for c in codes) and not bad_tables,
+            "detail": _a9_detail(path, name, codes, tables),
         })
     for name in A9_NARROW_CONFIGS:
         codes = [
@@ -768,16 +807,19 @@ def a16_checks(path, configs):
             scale = f.get("scale")
             mobile_scale_ok = ("diagram-svg-mobile" not in cls.split()) or (
                 scale is not None and scale <= DIAGRAM_MOBILE_MAX_SCALE)
+            box_pads = f.get("boxPads") or []
+            bad_pads = [b for b in box_pads if (b.get("padRatio") or 1) > DIAGRAM_BOX_PAD_RATIO_MAX]
             ok = (dom_ok and min_eff is not None and min_eff >= DIAGRAM_MIN_EFF_PX
                   and mobile_scale_ok
-                  and not small and not outside and not ov and not cross and hr_ok)
+                  and not small and not outside and not ov and not cross and not bad_pads and hr_ok)
             entries.append({
                 "ok": ok,
                 "detail": (
                     f"{path} {name} fig{f.get('fig')} ({f.get('cls')}): "
                     f"eff={min_eff}..{f.get('maxEff')} small={len(small)} "
                     f"outside={len(outside)} ov={len(ov)} cross={len(cross)} "
-                    f"headerRightDiff={hr_diff} scale={scale}"
+                    f"badPads={len(bad_pads)} headerRightDiff={hr_diff} scale={scale}"
+                    + (f" padFailures={bad_pads[:3]}" if bad_pads else "")
                 ),
             })
             if hr:
