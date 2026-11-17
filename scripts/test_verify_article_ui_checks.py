@@ -612,9 +612,10 @@ class NewArticleChecksTest(unittest.TestCase):
 
     def test_a23_wrapped_table(self):
         from verify_article_ui_checks import a23_checks
-        self.assertTrue(a23_checks('/x/', [{'lines': 5, 'overflowing': True, 'scroll': 900, 'client': 720}])[0]['ok'])
-        self.assertFalse(a23_checks('/x/', [{'lines': 6, 'overflowing': True, 'scroll': 900, 'client': 720}])[0]['ok'])
-        self.assertFalse(a23_checks('/x/', [{'lines': 2, 'overflowing': False, 'scroll': 800, 'client': 720}])[0]['ok'])
+        row = {'table':1,'cols':3,'expanded':True,'overflowing':True,'natural':False,'squeezed':False,
+               'scroll':900,'client':720,'maxColumn':500,'visible':600,'linesBefore':8,'lines':4}
+        self.assertTrue(a23_checks('/x/', [row])[0]['ok'])
+        self.assertFalse(a23_checks('/x/', [dict(row, maxColumn=602)])[0]['ok'])
 
     def test_a24_image_reservation(self):
         from verify_article_ui_checks import a24_checks
@@ -630,7 +631,8 @@ class RevisedChecksTest(unittest.TestCase):
     def test_a5_independent_expected_overflow(self):
         from verify_article_ui_checks import a5_overflow_checks
         passing = {'index': 1, 'cols': 5, 'isOverflowing': True, 'natural': False,
-                   'squeezed': False, 'longCell': True, 'maxContentWidth': 1200, 'wrapClient': 720}
+                   'squeezed': False, 'longCell': True, 'maxContentWidth': 1200, 'wrapClient': 720,
+                   'minimumMaxColumn': 700, 'minimumVisible': 720}
         self.assertTrue(a5_overflow_checks('/x/', passing)[0]['ok'])
         failing = dict(passing, isOverflowing=False)
         self.assertFalse(a5_overflow_checks('/x/', failing)[0]['ok'])
@@ -695,16 +697,50 @@ class RevisedBrowserChecksTest(unittest.TestCase):
         from pathlib import Path
         css = Path('assets/css/30-post.css').read_text(encoding='utf-8')
         js = Path('assets/js/post.js').read_text(encoding='utf-8')
-        self.page.set_viewport_size({'width': 375, 'height': 812})
+        self.page.set_viewport_size({'width': 1440, 'height': 900})
         self.page.set_content('''<style>*, *::before, *::after{box-sizing:border-box}:root{--space-1:8px;--space-2:16px;--space-3:24px;
           --line:1px;--line-strong:2px;--bg:white;--rule:#ccc;--rule-strong:#333;--ink-2:#333;
-          --topbar-height:64px} .post-content{width:335px;font-size:18px}</style>
+          --topbar-height:64px} .post-content{width:720px;font-size:18px}</style>
           <div class="post-content"><table><thead><tr><th>모델</th><th>메모리</th><th>함수</th><th>갱신</th></tr></thead>
           <tbody><tr><td>SWLA</td><td>길고 긴 메모리 설명이 여러 줄로 자주 줄바꿈되도록 충분히 길게 반복합니다 길고 긴 메모리 설명이 여러 줄로 자주 줄바꿈되도록 반복합니다</td><td>목적 함수에 대한 설명</td><td>갱신 규칙을 설명합니다</td></tr>
           <tr><td>Titans (LMM)</td><td>심층 신경망</td><td>회귀 손실</td><td>가중치 감쇠</td></tr></tbody></table></div>''')
+        self.page.locator('tbody tr:first-child td:nth-child(2)').evaluate("e => e.textContent = e.textContent.repeat(6)")
         self.page.add_style_tag(content=css)
         self.page.evaluate(js)
         wrapper = self.page.locator('.table-scroll')
         self.assertIn('is-expanded', wrapper.get_attribute('class'))
         width = wrapper.locator('tbody td').first.evaluate('e => e.getBoundingClientRect().width')
         self.assertLessEqual(width, 100)
+
+class Card1521SecondReviewTest(unittest.TestCase):
+    def test_a22_rule_pixels(self):
+        from verify_article_ui_checks import a22_rule_checks
+        row = {'scheme':'light', 'width':1440, 'kind':'normal', 'top':True, 'bottom':True,
+               'beforeThickness':1, 'afterThickness':1}
+        self.assertTrue(a22_rule_checks('/x/', [row])[0]['ok'])
+        for change in ({'top':False}, {'bottom':False}, {'afterThickness':3}):
+            self.assertFalse(a22_rule_checks('/x/', [dict(row, **change)])[0]['ok'])
+
+    def test_a23_contract(self):
+        from verify_article_ui_checks import a23_checks
+        row = {'table':1, 'cols':3, 'expanded':True, 'overflowing':True, 'natural':False,
+               'squeezed':False, 'scroll':900, 'client':720, 'maxColumn':500, 'visible':600,
+               'linesBefore':8, 'lines':4}
+        self.assertTrue(a23_checks('/x/', [row])[0]['ok'])
+        for change in ({'maxColumn':602}, {'lines':8}, {'natural':True},
+                       {'expanded':False, 'overflowing':False, 'scroll':900}):
+            self.assertFalse(a23_checks('/x/', [dict(row, **change)])[0]['ok'])
+
+    def test_a5_rejected_candidate_needs_evidence(self):
+        from verify_article_ui_checks import a5_overflow_checks
+        row = {'index':1,'cols':3,'isOverflowing':False,'natural':False,'squeezed':False,
+               'longCell':True,'maxContentWidth':1500,'wrapClient':720,
+               'minimumMaxColumn':700,'minimumVisible':720}
+        self.assertFalse(a5_overflow_checks('/x/', row)[0]['ok'])
+        row['minimumMaxColumn'] = 722
+        self.assertTrue(a5_overflow_checks('/x/', row)[0]['ok'])
+
+    def test_a23_synthetic_must_run(self):
+        from verify_article_ui_checks import a23_synthetic_coverage
+        self.assertFalse(a23_synthetic_coverage({'/x/': {'synthetic': []}}))
+        self.assertTrue(a23_synthetic_coverage({'/x/': {'synthetic': [{'synthetic': True}]}}))

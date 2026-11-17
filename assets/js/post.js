@@ -138,6 +138,51 @@
       return null;
     }
 
+    // Find the widest candidate whose columns fit the visible part of the wrapper.
+    function expandedWidth(item, maximum) {
+      var wrapper = item.wrapper;
+      var table = item.table;
+      var originalClass = wrapper.className;
+      var savedWidth = table.style.getPropertyValue("--table-expanded-width");
+      var savedPriority = table.style.getPropertyPriority("--table-expanded-width");
+      var fontSize = parseFloat(getComputedStyle(table).fontSize);
+      var bodyCell = table.querySelector("tbody tr:first-child > :first-child");
+      var label = bodyCell ? bodyCell.textContent.trim().slice(0, 24) : "";
+      function fits(width) {
+        wrapper.className = originalClass;
+        wrapper.classList.add("is-overflowing", "is-expanded");
+        table.style.setProperty("--table-expanded-width", width + "px");
+        if (item.cols === 4 && bodyCell && (label.length <= 6 || /^\d{4}$/.test(label))
+            && bodyCell.getBoundingClientRect().width > 100) {
+          wrapper.classList.add("is-compact-first");
+        }
+        var first = firstColumnWidth(table);
+        var sticky = first !== null && wrapper.clientWidth - first >= fontSize * MIN_COLUMN_EM;
+        wrapper.classList.toggle("is-sticky-first", sticky);
+        first = firstColumnWidth(table);
+        var visible = wrapper.clientWidth - (sticky ? first : 0);
+        var row = table.tHead ? table.tHead.rows[0] : table.rows[0];
+        var widest = Math.max.apply(null, Array.from(row.cells).map(function (cell) {
+          return cell.getBoundingClientRect().width;
+        }));
+        return widest <= visible + 1 && table.getBoundingClientRect().width <= width + 1;
+      }
+      var low = wrapper.clientWidth + 1;
+      var high = maximum;
+      var best = 0;
+      if (high > low && fits(low)) {
+        for (var i = 0; i < 16; i++) {
+          var middle = (low + high) / 2;
+          if (fits(middle)) { best = middle; low = middle; }
+          else high = middle;
+        }
+      }
+      wrapper.className = originalClass;
+      if (savedWidth) table.style.setProperty("--table-expanded-width", savedWidth, savedPriority);
+      else table.style.removeProperty("--table-expanded-width");
+      return best;
+    }
+
     function updateOverflow() {
       wrappers.forEach(function (item) {
         item.wrapper.classList.remove("is-overflowing", "is-sticky-first", "is-expanded", "is-compact-first");
@@ -160,7 +205,7 @@
         }
         // Measure text lines before applying a wider table, then cap the widened width.
         var expanded = false;
-        if (item.cols >= 3) {
+        if (!natural && !squeezed && item.cols >= 3) {
           var longCell = Array.from(item.table.querySelectorAll("th, td")).some(function (cell) {
             var style = getComputedStyle(cell);
             var contentHeight = cell.getBoundingClientRect().height
@@ -177,8 +222,11 @@
             else item.table.style.removeProperty("width");
             if (maxWidth > item.wrapper.clientWidth + 1) {
               var cap = parseFloat(getComputedStyle(item.table).fontSize) * item.cols * EXPANDED_COLUMN_EM;
-              item.table.style.setProperty("--table-expanded-width", Math.min(maxWidth, cap) + "px");
-              expanded = true;
+              var width = expandedWidth(item, Math.min(maxWidth, cap));
+              if (width > item.wrapper.clientWidth + 1) {
+                item.table.style.setProperty("--table-expanded-width", width + "px");
+                expanded = true;
+              }
             }
           }
         }

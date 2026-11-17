@@ -985,13 +985,15 @@ A17_CONFIGS = ("min360-light", "narrow-light", "min390-light", "min414-light", "
 
 
 def a5_overflow_checks(path, row):
-    expanded = (row['cols'] >= 3 and row['longCell']
-                and row['maxContentWidth'] > row['wrapClient'] + 1)
-    expected = row['natural'] or row['squeezed'] or expanded
-    return [{'ok': row['isOverflowing'] == expected,
+    candidate = (not row['natural'] and not row['squeezed'] and row['cols'] >= 3
+                 and row['longCell'] and row['maxContentWidth'] > row['wrapClient'] + 1)
+    expected = row['natural'] or row['squeezed'] or candidate
+    rejected = (candidate and not row['isOverflowing'] and row.get('minimumMaxColumn') is not None
+                and row['minimumMaxColumn'] > row['minimumVisible'] + 1)
+    return [{'ok': row['isOverflowing'] == expected or rejected,
              'detail': f"{path} table {row['index']}: overflowing={row['isOverflowing']} "
-                       f"expected={expected} natural={row['natural']} squeezed={row['squeezed']} "
-                       f"longCell={row['longCell']} maxContent={row['maxContentWidth']} wrap={row['wrapClient']}"}]
+                       f"natural={row['natural']} squeezed={row['squeezed']} candidate={candidate} "
+                       f"minimum={row.get('minimumMaxColumn')}/{row.get('minimumVisible')}"}]
 
 
 def a17_checks(path, configs):
@@ -1135,10 +1137,34 @@ def a22_checks(path, rows):
     return entries
 
 
+def a22_rule_checks(path, rows):
+    return [{'ok': bool(row['top'] and row['bottom'] and row['beforeThickness'] > 0
+                        and row['afterThickness'] > 0
+                        and abs(row['beforeThickness'] - row['afterThickness']) <= 1),
+             'detail': f"{path} A22 rule {row}"} for row in rows]
+
+
+def a23_synthetic_coverage(reports):
+    return any(row.get('synthetic') for report in reports.values() for row in report.get('synthetic', []))
+
+
 def a23_checks(path, rows):
-    return [{'ok': ((row['lines'] <= 5 if row['overflowing'] else row['scroll'] <= row['client'] + 1)
-                    and ('expectedOverflow' not in row or row['overflowing'] == row['expectedOverflow'])),
-             'detail': f'{path} A23 {row}'} for row in rows]
+    entries = []
+    for row in rows:
+        if row['cols'] < 3:
+            continue
+        ok = (not (row['natural'] or row['squeezed']) or not row['expanded'])
+        if row['expanded']:
+            ok = (ok and row['overflowing'] and row['maxColumn'] <= row['visible'] + 1
+                  and row['lines'] < row['linesBefore'])
+        if not row['overflowing']:
+            ok = ok and row['scroll'] <= row['client'] + 1
+        if 'expectedOverflow' in row:
+            ok = ok and row['expanded'] == row['expectedOverflow']
+        if row.get('synthetic'):
+            ok = ok and row['expanded'] and row['maxContentWidth'] > 3 * row['client']
+        entries.append({'ok': bool(ok), 'detail': f'{path} A23 {row}'})
+    return entries
 
 
 def a24_checks(path, rows):
