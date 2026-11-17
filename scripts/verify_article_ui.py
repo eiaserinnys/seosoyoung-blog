@@ -19,6 +19,8 @@ import struct
 import subprocess
 import sys
 import time
+import threading
+from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -29,6 +31,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 from verify_article_ui_checks import (
     A10_CONFIGS, A10_JS, A11_JS, A15_JS, A16_JS, A17_CONFIGS, A9_JS, a9_checks, a10_checks, a11_checks,
     a12_checks, a13_checks, a14_checks, a15_checks, a16_checks, a17_checks, a18_checks, a19_checks,
+    a21_checks, a22_checks, a23_checks, a24_checks,
     resized_sidenotes_ok, sidenote_presence_ok, strict_lightbox_checks, summarize_checks,
 )
 
@@ -227,7 +230,7 @@ MEASURE_JS = r"""
     });
   }
 
-  out.tables = [...content.querySelectorAll('table')].map((t, i) => {
+  out.tables = [...content.querySelectorAll('table')].filter(t => !t.closest('.table-header-clone')).map((t, i) => {
     const wrap = t.closest('.table-scroll');
     const th = t.querySelector('thead th');
     const td = t.querySelector('tbody td');
@@ -1026,6 +1029,10 @@ def capture_config(browser, url, out_dir, name, width, height, dpr, scheme, a10=
     m["failedRequests"] = failed
     m["a9"] = page.evaluate(A9_JS)
     m["diagrams"] = page.evaluate(A16_JS)
+    m["diagramTextLengths"] = page.evaluate("""() => [...document.querySelectorAll('.post-content .blog-diagram .diagram-svg-mobile text')]
+      .filter(e => e.getBoundingClientRect().width > 0).map(e => e.getComputedTextLength())""")
+    if name == "wide-light":
+        m["lineTables"] = page.evaluate(LINE_TABLES_JS)
     if name in A17_CONFIGS:
         m["sticky"] = page.evaluate(TABLE_STICKY_JS)
     if name == "wide-light":
@@ -1409,13 +1416,192 @@ def run_lightbox_scenarios(browser, url, out_dir):
     return results
 
 
+
+LINE_TABLES_JS = r"""
+() => [...document.querySelectorAll('.post-content .table-scroll')].map((w, i) => {
+  const t = w.querySelector(':scope > table');
+  let max = 0;
+  t.querySelectorAll('th,td').forEach(cell => {
+    const tops = [], tolerance = parseFloat(getComputedStyle(cell).lineHeight) / 2;
+    const walk = document.createTreeWalker(cell, NodeFilter.SHOW_TEXT);
+    let node;
+    while (node = walk.nextNode()) {
+      if (!node.textContent.trim() || node.parentElement.closest('.katex-mathml')) continue;
+      const range = document.createRange(); range.selectNodeContents(node);
+      for (const r of range.getClientRects())
+        if (r.width && r.height && !tops.some(y => Math.abs(y-r.top) < tolerance)) tops.push(r.top);
+    }
+    max = Math.max(max, tops.length);
+  });
+  return {table: i + 1, lines: max, overflowing: w.classList.contains('is-overflowing'),
+          scroll: w.scrollWidth, client: w.clientWidth};
+})
+"""
+
+HEADER_STATE_JS = r"""
+(index) => {
+  const w = document.querySelectorAll('.post-content .table-scroll')[index];
+  const t = w.querySelector(':scope > table'), head = t.tHead;
+  const clone = w.querySelector('.table-header-clone');
+  const over = w.classList.contains('is-overflowing');
+  const h = over ? clone && !clone.hidden ? clone.querySelector('thead') : null : head;
+  const top = document.querySelector('.site-top').getBoundingClientRect().bottom;
+  const heads = h ? [...h.querySelectorAll('tr:first-child > *')] : [];
+  const cells = [...(t.tBodies[0]?.rows[0]?.cells || [])];
+  let edges = [];
+  if (heads.length === cells.length) heads.forEach((c, i) => {
+    const a = c.getBoundingClientRect(), b = cells[i].getBoundingClientRect();
+    edges.push(a.left-b.left, a.right-b.right);
+  });
+  return {topDiff: heads.length ? heads[0].getBoundingClientRect().top - top : 999, edges,
+          shown: !!h, inert: !over || !!(clone && clone.hasAttribute('inert') && clone.getAttribute('aria-hidden') === 'true'),
+          tabSafe: !over || !!(clone && (clone.inert || !clone.querySelector('a, button, input, select, textarea, [tabindex]')))};
+}
+"""
+
+
+def run_header_scenarios(browser, url, out_dir):
+    rows = []
+    for width in (1440, 375):
+        ctx = open_context(browser, width, 900, 1, 'light')
+        page = ctx.new_page()
+        page.goto(url, wait_until='load', timeout=60000)
+        settle(page)
+        page.add_style_tag(content='html{scroll-behavior:auto!important}')
+        indices = page.evaluate("""() => [...document.querySelectorAll('.post-content .table-scroll')].map((w, i) => {
+          const t = w.querySelector(':scope > table');
+          return {i, kind: w.classList.contains('is-overflowing') ? 'overflow' : 'normal',
+                  eligible: !!(t.tHead && t.tBodies[0]?.rows.length && t.getBoundingClientRect().height > t.tHead.getBoundingClientRect().height + 100)};
+        })""")
+        for kind in ('normal', 'overflow'):
+            candidate = next((x for x in indices if x['kind'] == kind and x['eligible']), None)
+            if not candidate:
+                continue
+            i = candidate['i']
+            page.evaluate("""i => { const w=document.querySelectorAll('.post-content .table-scroll')[i];
+              const h=w.querySelector(':scope > table').tHead; window.scrollTo(0, scrollY+h.getBoundingClientRect().top-64+8); }""", i)
+            page.wait_for_timeout(120)
+            initial = page.evaluate(HEADER_STATE_JS, i)
+            page.evaluate("i => {const w=document.querySelectorAll('.post-content .table-scroll')[i]; w.scrollLeft=w.scrollWidth;}", i)
+            page.wait_for_timeout(120)
+            scrolled = page.evaluate(HEADER_STATE_JS, i)
+            page.screenshot(path=str(out_dir / f'header-{width}-{kind}.png'))
+            tab_safe = True
+            if kind == 'overflow':
+                for _ in range(15):
+                    page.keyboard.press('Tab')
+                    if page.evaluate("() => !!document.activeElement.closest('.table-header-clone')"):
+                        tab_safe = False
+                page.evaluate("""i => {const h=document.querySelectorAll('.post-content .table-scroll')[i].querySelector(':scope > table').tHead;
+                    window.scrollTo(0,scrollY+h.getBoundingClientRect().top-64+8);}""", i)
+                page.wait_for_timeout(120)
+            page.set_viewport_size({'width': 1300 if width == 1440 else 390, 'height': 900})
+            page.wait_for_timeout(250)
+            resized = page.evaluate(HEADER_STATE_JS, i)
+            page.evaluate("""i => {const w=document.querySelectorAll('.post-content .table-scroll')[i];
+              window.scrollTo(0,scrollY+w.getBoundingClientRect().bottom+100);}""", i)
+            page.wait_for_timeout(120)
+            hidden = not page.evaluate(HEADER_STATE_JS, i)['shown'] if kind == 'overflow' else page.evaluate(
+                """i => { const t=document.querySelectorAll('.post-content .table-scroll')[i].querySelector(':scope > table');
+                    return t.tHead.querySelector('th,td').getBoundingClientRect().bottom < document.querySelector('.site-top').getBoundingClientRect().bottom; }""", i)
+            rows.append({'kind': kind, 'width': width, 'table': i+1, 'topDiff': initial['topDiff'],
+                         'edges': initial['edges'], 'afterScrollEdges': scrolled['edges'],
+                         'afterScrollTop': scrolled['topDiff'], 'afterResizeEdges': resized['edges'],
+                         'afterResizeTop': resized['topDiff'], 'hiddenAfter': hidden,
+                         'inert': initial['inert'], 'tabSafe': initial['tabSafe'] and tab_safe})
+            page.set_viewport_size({'width': width, 'height': 900})
+            page.wait_for_timeout(150)
+        ctx.close()
+    return rows
+
+
+def run_image_reservation(browser, url, out_dir):
+    ctx = open_context(browser, 375, 812, 1, 'light')
+    page = ctx.new_page()
+    page.goto(url, wait_until='load', timeout=60000)
+    settle(page)
+    choice = page.evaluate("""() => {
+      const imgs=[...document.querySelectorAll('.post-content img[width][height]')];
+      for (const img of imgs) {
+        const h=[...document.querySelectorAll('.post-content h2[id],.post-content h3[id]')]
+          .find(e => img.compareDocumentPosition(e) & Node.DOCUMENT_POSITION_FOLLOWING);
+        if (h && img.complete && img.naturalWidth) return {img:imgs.indexOf(img), id:h.id, src:img.currentSrc};
+      } return null;
+    }""")
+    if not choice:
+        ctx.close()
+        return []
+    response = ctx.request.get(choice['src'], timeout=15000)
+    if not response.ok:
+        ctx.close()
+        return []
+    image_bytes = response.body()
+    content_type = response.headers.get('content-type', 'application/octet-stream')
+    release = threading.Event()
+    class DelayedImage(BaseHTTPRequestHandler):
+        def do_GET(self):
+            release.wait(30)
+            self.send_response(200)
+            self.send_header('Content-Type', content_type)
+            self.send_header('Content-Length', str(len(image_bytes)))
+            self.end_headers()
+            self.wfile.write(image_bytes)
+        def log_message(self, *args):
+            pass
+    server = ThreadingHTTPServer(('127.0.0.1', 0), DelayedImage)
+    thread = threading.Thread(target=server.serve_forever, daemon=True)
+    thread.start()
+    try:
+        page.evaluate("""c => {const img=document.querySelectorAll('.post-content img[width][height]')[c.img];
+          const fresh=img.cloneNode(false); fresh.removeAttribute('src'); fresh.removeAttribute('srcset');
+          img.replaceWith(fresh); fresh.loading='eager'; fresh.src=c.src; fresh.scrollIntoView({block:'center'});}""",
+          {**choice, 'src': f'http://127.0.0.1:{server.server_port}/delayed-image'})
+        page.wait_for_timeout(250)
+        page.screenshot(path=str(out_dir / 'image-before-load.png'))
+        page.evaluate("id => document.getElementById(id).scrollIntoView()", choice['id'])
+        before = page.evaluate("""c => {const img=document.querySelectorAll('.post-content img[width][height]')[c.img];
+          const b=img.getBoundingClientRect(); return {width:b.width,height:b.height,
+          attrWidth:Number(img.getAttribute('width')),attrHeight:Number(img.getAttribute('height')),
+          anchor:document.getElementById(c.id).getBoundingClientRect().top, src:c.src, complete:img.complete};}""", choice)
+        release.set()
+        page.wait_for_function("""c => {const i=document.querySelectorAll('.post-content img[width][height]')[c.img];
+          return i.complete && i.naturalWidth > 0;}""", arg=choice, timeout=15000)
+        after = page.evaluate("id => document.getElementById(id).getBoundingClientRect().top", choice['id'])
+        before['loaded'] = True
+        before['anchorShift'] = after - before.pop('anchor')
+        page.screenshot(path=str(out_dir / 'image-after-load.png'))
+        return [before]
+    finally:
+        release.set()
+        server.shutdown()
+        server.server_close()
+        thread.join()
+        ctx.close()
+
+
+def capture_failed_image(browser, url, image_url, out_path):
+    """Capture the existing broken-image fallback with the response deliberately aborted."""
+    ctx = open_context(browser, 375, 812, 1, 'light')
+    ctx.route(image_url, lambda route: route.abort())
+    page = ctx.new_page()
+    page.goto(url, wait_until='load', timeout=60000)
+    img = page.locator('.post-content img').locator(f'xpath=self::img[@src="{image_url}"]').first
+    img.scroll_into_view_if_needed()
+    page.wait_for_timeout(200)
+    result = img.evaluate("""e => ({outerHTML:e.outerHTML, complete:e.complete, naturalWidth:e.naturalWidth,
+       width:e.getAttribute('width'), height:e.getAttribute('height')})""")
+    page.screenshot(path=str(out_path))
+    ctx.close()
+    return result
+
+
 def short_first_cell(text):
     value = (text or "").strip()
     return len(value) <= 6 or bool(re.fullmatch(r"\d{4}", value))
 
 
 def path_checks(report, strict_lightbox=False):
-    checks = {key: [] for key in ("A1", "A2", "A3", "A4", "A5", "A6", "A7", "A8", "A9", "A10", "A11", "A12", "A13", "A14", "A15", "A16", "A17", "A18", "A19", "A20")}
+    checks = {key: [] for key in ("A1", "A2", "A3", "A4", "A5", "A6", "A7", "A8", "A9", "A10", "A11", "A12", "A13", "A14", "A15", "A16", "A17", "A18", "A19", "A20", "A21", "A22", "A23", "A24")}
 
     def add(key, ok, detail, na=False):
         checks[key].append({"ok": bool(ok), "na": na, "detail": detail})
@@ -1539,6 +1725,23 @@ def path_checks(report, strict_lightbox=False):
     else:
         add("A20", True, f"{path}: --strict-lightbox 없이 실행 (A20 해당 없음)", na=True)
 
+    lengths = {str(width): configs[name].get('diagramTextLengths', []) for width, name in
+               ((360, 'min360-light'), (375, 'narrow-light'), (390, 'min390-light'), (414, 'min414-light'))}
+    table_rows = configs['wide-light'].get('lineTables', [])
+    targets = {'/digest/memory-caching-rnns/': (2, True),
+               '/digest/spritefusion-jev-realtime-level-gen/': (2, False),
+               '/digest/4danyone-monocular-4d-human/': (5, False)}
+    if path in targets:
+        index, expected = targets[path]
+        for row in table_rows:
+            if row['table'] == index:
+                row['expectedOverflow'] = expected
+    for key, entries in (('A21', a21_checks(path, lengths)), ('A22', a22_checks(path, report.get('headers', []))),
+                         ('A23', a23_checks(path, table_rows)),
+                         ('A24', a24_checks(path, report.get('imageReservation', [])))):
+        for entry in entries:
+            add(key, entry['ok'], entry['detail'])
+
     for key, what in (
         ("A2", "좁은 폭에서 3~5칸 표"),
         ("A3", "4칸 표"),
@@ -1560,7 +1763,11 @@ def main():
                         help="검수할 글 경로. 여러 번 넘길 수 있다.")
     parser.add_argument("--strict-lightbox", action="store_true",
                         help="스크롤바를 보이게 띄우고 연 상태마다 바탕 넘침·가운데를 판정한다. 하나라도 어긋나면 1로 끝난다.")
+    parser.add_argument("--require", default="", help="쉼표로 구분한 검사 ID를 필수 판정한다.")
     args = parser.parse_args()
+    required = [item.strip().upper() for item in args.require.split(',') if item.strip()]
+    if any(item not in {f'A{i}' for i in range(1, 25)} for item in required):
+        parser.error('--require에 알 수 없는 검사 ID가 있다')
 
     paths = args.path or DEFAULT_PATHS
     args.out_dir.mkdir(parents=True, exist_ok=True)
@@ -1604,6 +1811,8 @@ def main():
                     report["resize"] = run_resize_scenarios(browser, url, path_out)
                     report["heightResize"] = run_height_resize(browser, url)
                     report["lightbox"] = run_lightbox_scenarios(browser, url, path_out)
+                    report['headers'] = run_header_scenarios(browser, url, path_out)
+                    report['imageReservation'] = run_image_reservation(browser, url, path_out)
                     reports[path] = report
             finally:
                 browser.close()
@@ -1616,7 +1825,7 @@ def main():
                 "configs": [{"name": c[0], "width": c[1], "height": c[2], "dpr": c[3], "colorScheme": c[4]}
                             for c in CONFIGS],
                 "skipped": skipped, "paths": reports, "summary": {}}
-    aggregate = {key: [] for key in ("A1", "A2", "A3", "A4", "A5", "A6", "A7", "A8", "A9", "A10", "A11", "A12", "A13", "A14", "A15", "A16", "A17", "A18", "A19", "A20")}
+    aggregate = {key: [] for key in ("A1", "A2", "A3", "A4", "A5", "A6", "A7", "A8", "A9", "A10", "A11", "A12", "A13", "A14", "A15", "A16", "A17", "A18", "A19", "A20", "A21", "A22", "A23", "A24")}
     for path, report in reports.items():
         summary, raw = path_checks(report, strict_lightbox=args.strict_lightbox)
         report["verdicts"] = summary
@@ -1655,6 +1864,15 @@ def main():
     print(json.dumps(combined["summary"], ensure_ascii=False, indent=1))
     print("skipped:", skipped)
     print("wrote", args.out_dir / "metrics.json")
+    if required:
+        failed_required = [key for key in required if not combined['summary'][key]['checked'] or combined['summary'][key]['failed']]
+        if 'A22' in required:
+            seen = {(row['width'], row['kind']) for report in reports.values() for row in report['headers']}
+            if not {(1440, 'normal'), (1440, 'overflow'), (375, 'normal'), (375, 'overflow')} <= seen:
+                failed_required.append('A22 coverage')
+        if failed_required:
+            print('필수 검사 실패:', ', '.join(failed_required))
+            sys.exit(1)
     if args.strict_lightbox:
         strict_failures = [entry for entry in aggregate["A20"]
                            if not entry.get("na") and not entry["ok"]]

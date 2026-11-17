@@ -13,7 +13,7 @@ import re
 A9_JS = r"""
 () => {
   const wrappers = [...document.querySelectorAll('.post-content .table-scroll')];
-  const codes = [...document.querySelectorAll('.post-content table :not(pre) > code')].map((c, i) => {
+  const codes = [...document.querySelectorAll('.post-content table :not(pre) > code')].filter(c => !c.closest('.table-header-clone')).map((c, i) => {
     const wrap = c.closest('.table-scroll');
     const cs = getComputedStyle(c);
     const cell = c.closest('td,th');
@@ -1100,3 +1100,43 @@ def summarize_checks(entries, limit=40):
         "failures": failed[:limit],
         "naDetails": [entry["detail"] for entry in na][:5],
     }
+
+
+def a21_checks(path, samples):
+    entries = []
+    widths = ('360', '375', '390', '414')
+    arrays = [samples.get(width, []) for width in widths]
+    if all(arrays) and len({len(a) for a in arrays}) == 1:
+        for i, values in enumerate(zip(*arrays)):
+            low, high = min(values), max(values)
+            entries.append({'ok': low > 0 and high / low <= 1.005,
+                            'detail': f'{path} SVG text {i}: {values}'})
+    return entries
+
+
+def a22_checks(path, rows):
+    entries = []
+    for row in rows:
+        edges = row['edges'] + row['afterScrollEdges'] + row['afterResizeEdges']
+        ok = (all(abs(row[k]) <= 1 for k in ('topDiff', 'afterScrollTop', 'afterResizeTop')) and all(row[k] for k in ('edges', 'afterScrollEdges', 'afterResizeEdges'))
+              and all(abs(x) <= 1 for x in edges)
+              and row['hiddenAfter'] and row['inert'] and row['tabSafe'])
+        entries.append({'ok': ok, 'detail': f'{path} A22 {row}'})
+    return entries
+
+
+def a23_checks(path, rows):
+    return [{'ok': ((row['lines'] <= 5 if row['overflowing'] else row['scroll'] <= row['client'] + 1)
+                    and ('expectedOverflow' not in row or row['overflowing'] == row['expectedOverflow'])),
+             'detail': f'{path} A23 {row}'} for row in rows]
+
+
+def a24_checks(path, rows):
+    entries = []
+    for row in rows:
+        width, height = row.get('attrWidth'), row.get('attrHeight')
+        ok = (bool(width and height) and row.get('loaded') and not row.get('complete')
+              and abs(row['height'] - row['width'] * height / width) <= 1
+              and row.get('anchorShift') is not None and abs(row['anchorShift']) <= 2)
+        entries.append({'ok': bool(ok), 'detail': f'{path} A24 {row}'})
+    return entries

@@ -591,3 +591,37 @@ class ArticleUiChecksTest(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main()
+
+class NewArticleChecksTest(unittest.TestCase):
+    def test_a21_diagram_text_ratio(self):
+        from verify_article_ui_checks import a21_checks
+        good = {str(w): [100.0, 120.0] for w in (360, 375, 390, 414)}
+        self.assertTrue(all(e['ok'] for e in a21_checks('/x/', good)))
+        good['390'][0] = 101
+        self.assertFalse(all(e['ok'] for e in a21_checks('/x/', good)))
+
+    def test_a22_table_header(self):
+        from verify_article_ui_checks import a22_checks
+        row = {'kind': 'overflow', 'width': 375, 'topDiff': 0.5, 'edges': [0.5, -0.5],
+               'afterScrollEdges': [0.5], 'afterScrollTop': 0, 'afterResizeEdges': [0.5],
+               'afterResizeTop': 0, 'hiddenAfter': True,
+               'inert': True, 'tabSafe': True}
+        self.assertTrue(a22_checks('/x/', [row])[0]['ok'])
+        row['afterScrollEdges'] = [2]
+        self.assertFalse(a22_checks('/x/', [row])[0]['ok'])
+
+    def test_a23_wrapped_table(self):
+        from verify_article_ui_checks import a23_checks
+        self.assertTrue(a23_checks('/x/', [{'lines': 5, 'overflowing': True, 'scroll': 900, 'client': 720}])[0]['ok'])
+        self.assertFalse(a23_checks('/x/', [{'lines': 6, 'overflowing': True, 'scroll': 900, 'client': 720}])[0]['ok'])
+        self.assertFalse(a23_checks('/x/', [{'lines': 2, 'overflowing': False, 'scroll': 800, 'client': 720}])[0]['ok'])
+
+    def test_a24_image_reservation(self):
+        from verify_article_ui_checks import a24_checks
+        row = {'width': 600, 'height': 300, 'attrWidth': 1200, 'attrHeight': 600, 'anchorShift': 1, 'loaded': True, 'complete': False}
+        self.assertTrue(a24_checks('/x/', [row])[0]['ok'])
+        row['anchorShift'] = 3
+        self.assertFalse(a24_checks('/x/', [row])[0]['ok'])
+        row['anchorShift'] = 0
+        row['height'] = 10
+        self.assertFalse(a24_checks('/x/', [row])[0]['ok'])
