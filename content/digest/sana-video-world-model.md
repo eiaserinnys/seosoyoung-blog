@@ -120,7 +120,7 @@ attention-level UCPE가 FVD를 가장 낮추고, dual-branch(UCPE + Plücker)가
 - **Short-form (20s)** 18편 — `short-6b` ~ `short-c13`.
 - **Same First Frame, Different Paths** 8 scene × 3 variant = 24편 — `scene d4`, `c23`, `3b`, `c17`, `c18`, `8b`, `4b`, `2b`. 같은 첫 프레임에서 카메라 궤적 A/B/C만 바꾼 카메라 제어 데모.
 
-프롬프트가 공개된 영상은 `1a`~`9c` 계열 19개뿐이고, 모두 *1인칭 고정 시점 + 환경의 자율 운동(particles, fireflies, mist, swaying branches...)*이라는 동일한 템플릿을 따른다. 카메라가 움직이는 사례는 별도의 ABC 비교 섹션에 모아 둔 것이라, "월드 모델" 컨셉을 가장 깔끔하게 보여주는 구성이다.
+프롬프트가 공개된 영상은 `1a`~`9c` 계열 19개뿐이고, 모두 <em>1인칭 고정 시점 + 환경의 자율 운동(particles, fireflies, mist, swaying branches...)</em>이라는 동일한 템플릿을 따른다. 카메라가 움직이는 사례는 별도의 ABC 비교 섹션에 모아 둔 것이라, "월드 모델" 컨셉을 가장 깔끔하게 보여주는 구성이다.
 
 ## 한계와 향후 과제 (논문 §6)
 

@@ -20,7 +20,7 @@ sidenotes: true
 
 {{< figure src="https://img.seosoyoung.eiaserinnys.me/images/virtual-os-museum/museum-home.jpg" alt="The Virtual OS Museum 홈페이지 풀페이지 캡쳐" caption="박물관의 첫 페이지 전체. 타이틀 → 통계 카드(1700+·250+·570+·1948–now) → 격자로 정렬된 운영체제 스크린샷 갤러리로 이어지는 단순한 구조가, 1700개의 OS를 *서가에 늘어 놓듯* 보여 준다. © virtualosmuseum.org" >}}
 
-이런 박물관의 가치는 *보존(preservation)*이 아니라 *접근성(reachability)*에 있습니다. 디스크 이미지를 모아 두는 일은 이제 어렵지 않습니다. 어려운 것은 그것을 *지금 이 노트북 위에서 실제로 부팅되게 만드는 일*입니다. 그리고 그 거리를 좁힌 사람은 — 단체도 재단도 정부 사업도 아닌 — Andrew 한 명입니다. 이 두 축, *접근성*과 *한 사람의 20년*이 박물관의 모든 것이지요.
+이런 박물관의 가치는 <em>보존(preservation)</em>이 아니라 <em>접근성(reachability)</em>에 있습니다. 디스크 이미지를 모아 두는 일은 이제 어렵지 않습니다. 어려운 것은 그것을 *지금 이 노트북 위에서 실제로 부팅되게 만드는 일*입니다. 그리고 그 거리를 좁힌 사람은 — 단체도 재단도 정부 사업도 아닌 — Andrew 한 명입니다. 이 두 축, *접근성*과 *한 사람의 20년*이 박물관의 모든 것이지요.
 
 그럼 함께 입구로 들어가지요.
 

@@ -85,7 +85,7 @@ Nakajima가 토론에서 가장 분명히 본 것은, 사람들이 "메모리"�
 
 > events capture what happened, graphs represent what is
 
-많은 개발자가 이벤트 소싱으로 수렴하는 이유는 이벤트의 추상이 단순하기 때문이다 — append-only, replayable, debuggable, versionable. 모든 행위(도구 호출·LLM 응답·메모리 쓰기·실패·승인·능력 변경)를 이벤트로 두고 상태를 히스토리에서 재구성한다. 그러면 *재생(replay)·감사(auditability)·계보(lineage)·재개(resumability)*가 자연 부산물로 따라온다.
+많은 개발자가 이벤트 소싱으로 수렴하는 이유는 이벤트의 추상이 단순하기 때문이다 — append-only, replayable, debuggable, versionable. 모든 행위(도구 호출·LLM 응답·메모리 쓰기·실패·승인·능력 변경)를 이벤트로 두고 상태를 히스토리에서 재구성한다. 그러면 <em>재생(replay)·감사(auditability)·계보(lineage)·재개(resumability)</em>가 자연 부산물로 따라온다.
 
 같은 시기에 그래프 기반 시스템도 부상하고 있다. GraphRAG, knowledge graphs, FalkorDB, Graphiti 같은 접근은 엔티티·관계·의미 맥락·계보·조직 기억·구조화된 지식 검색에서 이미 가치를 입증했다.
 
@@ -116,7 +116,7 @@ Nakajima가 토론에서 가장 분명히 본 것은, 사람들이 "메모리"�
 
 ## 진짜 변화는 연속성으로의 전환
 
-Nakajima는 한 차원 더 깊게 들어간다. 진짜 문제는 메모리가 아니라 *연속성(continuity)*이다.
+Nakajima는 한 차원 더 깊게 들어간다. 진짜 문제는 메모리가 아니라 <em>연속성(continuity)</em>이다.
 
 현재 대부분의 에이전트 시스템은 여전히 근본적으로 반응(reaction) 중심이다 — prompt in, reasoning, output out. 많은 멀티에이전트 시스템도 결국 더 정교한 반응 체인일 뿐이다.
 

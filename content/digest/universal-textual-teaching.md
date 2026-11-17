@@ -33,7 +33,7 @@ images:
 
 ## 가르칠 문제를 고르는 단계
 
-![UTT의 전체 흐름도. 왼쪽 'Knowledge-Gap Construction' 상자에서는 전체 문제 집합 D를 선생과 학생이 각각 풀고 쌍 평가(Paired Evaluation)를 거쳐 증류 합성용, 증류 평가용, 유지, 미해결 부분집합으로 분할한다. 오른쪽 위 'Primer Synthesis' 상자에서는 학생, 과제 채점기, Prompter, 선생이 차례로 이어지고, 그 기록을 Synthesizer가 받아 Primer P_t를 만들며 점선 화살표로 다시 학생에게 돌려준다. 오른쪽 아래 'Evaluation' 상자에서는 최종 Primer P*를 원래 학생과 전이 대상 학생에게 주고 과제 채점기로 평가한다. 모든 모델에 고정을 뜻하는 눈송이 표시가 있다.](https://img.seosoyoung.eiaserinnys.me/images/universal-textual-teaching/02-framework.png)
+![UTT의 전체 흐름도. 왼쪽 'Knowledge-Gap Construction' 상자에서는 전체 문제 집합 D를 선생과 학생이 각각 풀고 쌍 평가(Paired Evaluation)를 거쳐 증류 합성용, 증류 평가용, 유지, 미해결 부분집합으로 분할한다. 오른쪽 위 'Primer Synthesis' 상자에서는 학생, 과제 채점기, Prompter, 선생이 차례로 이어지고, 그 기록을 Synthesizer가 받아 Primer P_t를 만들며 점선 화살표로 다시 학생에게 돌려준다. 오른쪽 아래 'Evaluation' 상자에서는 최종 Primer P\*를 원래 학생과 전이 대상 학생에게 주고 과제 채점기로 평가한다. 모든 모델에 고정을 뜻하는 눈송이 표시가 있다.](https://img.seosoyoung.eiaserinnys.me/images/universal-textual-teaching/02-framework.png)
 *그림 2. UTT의 전체 흐름. 왼쪽은 선생과 학생을 함께 채점해 문제를 분류하는 단계, 오른쪽 위는 여러 역할이 Primer를 합성하는 단계, 오른쪽 아래는 완성된 Primer를 평가하는 단계다. 눈송이 표시는 가중치를 고정한 모델이다. 출처: Lu & Wang, arXiv:2610.12114*
 
 UTT는 먼저 같은 문제를 선생과 학생에게 각각 여러 번 풀게 해서, 문제마다 두 모델의 정답률을 잰다. 실험에서는 문제마다 답을 다섯 번씩 생성했다. 이 정답률을 기준으로 전체 문제를 세 부분집합으로 분류한다. 각 문제는 세 부분집합 가운데 하나에만 포함된다.

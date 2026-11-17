@@ -26,7 +26,7 @@ LLM이 점점 더 자연스러운 대화 파트너로 활용되고 있지만, �
 
 Dixit의 핵심 메커니즘을 차용했다. 화자는 '일부만 알아듣는' 수준의 단서를 내야 승리한다. 156개 합성 이미지 카드와 4인 토너먼트 100회로 구성된다.
 
-- Gemini-2.5-Pro가 최고 점수(27.81)를 기록했으나, **obvious clue 비율이 59%**에 달한다
+- Gemini-2.5-Pro가 최고 점수(27.81)를 기록했으나, <strong>obvious clue 비율이 59%</strong>에 달한다
 - GPT-5는 obvious clue 75%, just-right clue 22%로 가장 직접적이다
 - 전체적으로 just-right clue(목표)는 22\~40%에 불과하다
 

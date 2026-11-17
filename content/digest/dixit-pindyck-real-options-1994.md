@@ -39,7 +39,7 @@ sidenotes: true
 
 ## 투자 기회는 콜옵션이다
 
-논문의 핵심 비유는 다음과 같다. 투자 기회는 어떤 자산(미래 현금흐름의 현재가치)을 *살 권리이지만 살 의무는 아닌* 콜옵션과 구조가 같다. 회사가 비가역적 투자 지출을 단행하는 순간 그 콜옵션을 *행사(exercise)*하는 셈이다. 행사가 일단 일어나면, 시장 조건이 나빠져도 매도는 되돌릴 수 없으므로 *기다리며 새 정보를 얻을 권리* 자체가 소멸한다.
+논문의 핵심 비유는 다음과 같다. 투자 기회는 어떤 자산(미래 현금흐름의 현재가치)을 *살 권리이지만 살 의무는 아닌* 콜옵션과 구조가 같다. 회사가 비가역적 투자 지출을 단행하는 순간 그 콜옵션을 <em>행사(exercise)</em>하는 셈이다. 행사가 일단 일어나면, 시장 조건이 나빠져도 매도는 되돌릴 수 없으므로 *기다리며 새 정보를 얻을 권리* 자체가 소멸한다.
 
 > When a company exercises its option by making an irreversible investment, it effectively "kills" the option. In other words, by deciding to go ahead with an expenditure, the company gives up the possibility of waiting for new information that might affect the desirability or timing of the investment.
 

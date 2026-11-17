@@ -67,7 +67,7 @@ Zukowski(2022)가 정리한 Steam의 노출 경계는 "유료 구매자의 평�
 
 ### 2. 점수 등급 경계 — 매출이 어디까지 증폭되는가
 
-![Steam 평점 등급별 위시리스트 → 1개월 매출 전환률 — *압도적으로 긍정적*에서 0.51배까지 도약](https://img.seosoyoung.eiaserinnys.me/images/gdc-month1-reviews-2024/review-score.png)
+![Steam 평점 등급별 위시리스트 → 1개월 매출 전환률 — 압도적으로 긍정적에서 0.51배까지 도약](https://img.seosoyoung.eiaserinnys.me/images/gdc-month1-reviews-2024/review-score.png)
 
 *— Carless 2024, GameDiscoverCo*
 

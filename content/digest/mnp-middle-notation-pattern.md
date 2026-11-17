@@ -17,7 +17,7 @@ sidenotes: true
 
 ## 3줄 요약
 
-1. 일본의 디자이너·리서처 なつ(@Dia_Nexus)가 자기 업무용 인하우스 웹 앱을 AI화하는 새 패턴으로 정리한 *중간 표기 패턴(Middle Notation Pattern, MNP)*의 소개·구현·고찰 글이다.
+1. 일본의 디자이너·리서처 なつ(@Dia_Nexus)가 자기 업무용 인하우스 웹 앱을 AI화하는 새 패턴으로 정리한 <em>중간 표기 패턴(Middle Notation Pattern, MNP)</em>의 소개·구현·고찰 글이다.
 2. 핵심 발상은 단순하다 — AI에게 GUI를 직접 조작시키는 대신, GUI 상태와 동등한 텍스트 DSL을 두고 AI가 그 DSL을 양방향으로 읽고 쓰게 한다. Mermaid가 텍스트로 도형을 그리던 것과 같은 결의 응용이다.
 3. 결과적으로 출력이 안정되고, 처리가 빨라지고, API 비용은 4\~8배 떨어지고, HTML 한 장으로 배포된다. 다만 상태가 비대화되면 컨텍스트 한계에 부딪힌다.
 
@@ -147,7 +147,7 @@ MNP는 세 형태로 구현할 수 있다.
 
 ## 권장 구현 절차 — AI화는 마지막에
 
-저자의 경험칙은 *'AI화는 맨 나중'*으로 요약된다.
+저자의 경험칙은 <em>'AI화는 맨 나중'</em>으로 요약된다.
 
 1. **만들 도메인의 개념을 AI에게 충분히 이해시킨다.** 예: 서비스 에코시스템이 무엇이고, 어떻게 그리고, 무엇이 좋은 결과물인가. Why에 가깝다.
 2. **그 개념을 HTML 등으로 재현시킨다.** 이 시점에 좋은 결과물이 안 만들어지면 AI화해도 좋아지지 않는다.
@@ -196,7 +196,7 @@ MNP는 세 형태로 구현할 수 있다.
 
 하나는 <strong>'사람은 도메인 개념만 설명하고, DSL 설계도 작성도 AI에게 맡긴다'</strong>는 분업이다. AI 도구화의 통상적인 분업선 — 사람이 형식을 정하고 AI가 내용을 채운다 — 을 한 칸 더 위로 옮긴다. 형식까지 AI에게 위임하고, 사람은 *도메인 개념을 잘 설명하는 능력*에 집중한다. 저자 본인이 자기 도구의 DSL 내부 구문을 다 모른다는 고백이 이걸 가장 적나라하게 드러낸다.
 
-둘째는 <strong>이 분업선이 'AI 코딩' 영역에서 이미 정리되어 있는 통찰과 정확히 같은 결</strong>이라는 점이다. *명세-주도 개발(Spec-Driven Development)*이 그 이름이다. Eno Reyes는 [코드란 명세의 손실 투영이며 명세야말로 1급 산출물](https://seosoyoung.eiaserinnys.me/digest/making-codebases-agent-ready-eno-reyes/)이라 정리했고, Sean Grove는 [명세 하나를 모델에 넘기면 TypeScript·Rust·서버·클라이언트·문서가 줄줄이 컴파일된다](https://seosoyoung.eiaserinnys.me/digest/the-new-code-sean-grove/)고 말한다. Brendan Falk의 AI 코딩 10원칙도 같은 줄에 선다 — "You = Architect, Agent = Implementer", "Specification ≫ Prompt Engineering". 사람이 *의도와 구조*를 가지고, AI가 *형식과 구현*을 만든다는 한 줄이다.
+둘째는 <strong>이 분업선이 'AI 코딩' 영역에서 이미 정리되어 있는 통찰과 정확히 같은 결</strong>이라는 점이다. <em>명세-주도 개발(Spec-Driven Development)</em>이 그 이름이다. Eno Reyes는 [코드란 명세의 손실 투영이며 명세야말로 1급 산출물](https://seosoyoung.eiaserinnys.me/digest/making-codebases-agent-ready-eno-reyes/)이라 정리했고, Sean Grove는 [명세 하나를 모델에 넘기면 TypeScript·Rust·서버·클라이언트·문서가 줄줄이 컴파일된다](https://seosoyoung.eiaserinnys.me/digest/the-new-code-sean-grove/)고 말한다. Brendan Falk의 AI 코딩 10원칙도 같은 줄에 선다 — "You = Architect, Agent = Implementer", "Specification ≫ Prompt Engineering". 사람이 *의도와 구조*를 가지고, AI가 *형식과 구현*을 만든다는 한 줄이다.
 
 MNP는 이 명제의 *도구 제작 차원 변주*다. 통상의 spec-driven은 코드 생성 단계의 분업을 말한다. MNP는 거기서 한 칸 더 내려가 *도구가 다룰 상태의 표현 형식 자체*도 AI에게 맡긴다. 사람은 "서비스 에코시스템이 무엇이고, 어떻게 그리고, 무엇이 좋은 결과물인가"라는 *도메인 명세*만 또렷이 한다. DSL의 구문은 AI가 빚는다. 그래서 저자의 권장 절차 — *개념 이해 → HTML 재현 → 에디터화 → MNP화* — 가 spec-driven의 결과적 논리와 정확히 같은 모양이 된다. 명세(도구의 본질)가 단단하지 않으면 AI화는 그 위에서 같이 흔들린다.
 

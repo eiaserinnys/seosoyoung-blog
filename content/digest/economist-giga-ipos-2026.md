@@ -96,7 +96,7 @@ SpaceX는 락업 해제를 단계적으로 푼다.
 
 ## AI 상관 리스크 — 단일 종목이 아니라 섹터의 문제
 
-세 회사 모두 AI 진척에 강하게 묶여 있다. 미국 상장 *AI 관련 빅테크 10개사*는 이미 **S&P 500 시총의 40%**를 차지한다.
+세 회사 모두 AI 진척에 강하게 묶여 있다. 미국 상장 *AI 관련 빅테크 10개사*는 이미 <strong>S&P 500 시총의 40%</strong>를 차지한다.
 
 - SpaceX 한 종목의 부진 → 인덱스 추종 펀드 입장에선 견딜 만.
 - *AI 전반*의 디레이팅[^de-rating] → 인덱스 펀드 전반에 광범위한 타격.
@@ -147,7 +147,7 @@ Illustration: Fortunate Joaquin
 
 [^s1]: **S-1**. 미국 증권거래위원회(SEC)에 IPO 전에 제출하는 등록서류로, 사업·재무·리스크·자본 구조를 공시한다. 한국으로 치면 한국거래소에 내는 *증권신고서*에 해당한다. 참고: [SEC.gov — Form S-1](https://www.sec.gov/forms)
 
-[^psr]: **PSR**(Price-to-Sales Ratio, 주가매출비율). 시가총액을 연간 매출액으로 나눈 값. 이익이 거의 없거나 적자인 성장주의 밸류에이션을 가늠할 때 자주 쓰인다. 본문의 *"PSR 90배 이상"*은 SpaceX의 시가총액이 매출의 90배가 넘는다는 뜻이다. 참고: [Investopedia — Price-to-Sales Ratio](https://www.investopedia.com/terms/p/price-to-salesratio.asp)
+[^psr]: **PSR**(Price-to-Sales Ratio, 주가매출비율). 시가총액을 연간 매출액으로 나눈 값. 이익이 거의 없거나 적자인 성장주의 밸류에이션을 가늠할 때 자주 쓰인다. 본문의 <em>"PSR 90배 이상"</em>은 SpaceX의 시가총액이 매출의 90배가 넘는다는 뜻이다. 참고: [Investopedia — Price-to-Sales Ratio](https://www.investopedia.com/terms/p/price-to-salesratio.asp)
 
 [^trading-frenzy]: **거래 광란**(trading frenzy). 특정 종목·이벤트에 매수·매도 주문이 단기간에 폭증하면서 가격·거래량이 급변하는 상태를 비유적으로 일컫는 표현. 합리적 가치 평가보다 *모멘텀과 군중 행동*이 시세를 끌고 가는 국면.
 
@@ -159,11 +159,11 @@ Illustration: Fortunate Joaquin
 
 [^free-float]: **유동 주식 비율**(free float). 전체 발행 주식 중 *시장에서 실제로 자유롭게 거래 가능한 주식의 비율*. 내부자 보유 주식이나 락업이 걸린 주식은 제외된다. 대부분의 시가가중 지수는 *시가총액 × free float*으로 가중치를 산정해, 실제 매수 가능한 물량에 맞춰 비중을 조정한다. 참고: [Investopedia — Free Float](https://www.investopedia.com/terms/f/freefloat.asp)
 
-[^underperform]: **언더퍼폼**(underperform). 특정 종목·펀드의 수익률이 *벤치마크(주로 시장 지수) 수익률에 못 미치는 상태*. 본문의 *"-20%p 언더퍼폼"*은 IPO 종목이 시장 평균보다 누적 수익률이 20%포인트 낮았다는 뜻이다.
+[^underperform]: **언더퍼폼**(underperform). 특정 종목·펀드의 수익률이 *벤치마크(주로 시장 지수) 수익률에 못 미치는 상태*. 본문의 <em>"-20%p 언더퍼폼"</em>은 IPO 종목이 시장 평균보다 누적 수익률이 20%포인트 낮았다는 뜻이다.
 
 [^bull-bear]: **강세장 / 약세장**(bull market / bear market). 강세장은 주가가 장기 상승 추세에 있는 시장, 약세장은 통상 *고점 대비 20% 이상 하락한 추세*가 이어지는 시장. *블록버스터 IPO 러시 → 강세장 정점 → 약세장 진입*이 본문이 환기하는 역사 패턴이다. 참고: [Investopedia — Bull vs. Bear Market](https://www.investopedia.com/insights/digging-deeper-bull-and-bear-markets/)
 
-[^de-rating]: **디레이팅**(de-rating). 같은 이익·매출 수준이라도 시장이 그 기업·섹터에 매기는 *밸류에이션 배수(PER·PSR 등)를 하향 조정*해 주가가 떨어지는 현상. 본문의 *"AI 전반의 디레이팅"*은 AI 관련주 전체에 적용되는 *기대치 자체*가 깎이는 시나리오를 가리킨다.
+[^de-rating]: **디레이팅**(de-rating). 같은 이익·매출 수준이라도 시장이 그 기업·섹터에 매기는 *밸류에이션 배수(PER·PSR 등)를 하향 조정*해 주가가 떨어지는 현상. 본문의 <em>"AI 전반의 디레이팅"</em>은 AI 관련주 전체에 적용되는 *기대치 자체*가 깎이는 시나리오를 가리킨다.
 
 [^buyback]: **자사주 매입**(share buyback). 회사가 자기 회사 주식을 시장에서 직접 사들이는 행위. 발행주식수가 줄어 EPS(주당순이익)가 늘고 주가가 오르는 효과가 있다. 신주 발행과는 *정확히 반대 방향*의 자본 흐름이다. 참고: [Investopedia — Share Buyback](https://www.investopedia.com/terms/b/buyback.asp)
 

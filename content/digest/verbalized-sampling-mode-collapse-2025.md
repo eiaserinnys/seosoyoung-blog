@@ -60,9 +60,9 @@ p < 10⁻¹⁴는 통계적으로 *압도적으로 유의미*하다. 우연이 �
 
 α > 0가 데이터에 들어가 있으면, KL-regularized RLHF의 closed-form 최적해가 다음과 같이 변한다(Rafailov et al. 2024).
 
-> π*(y | x) ∝ π_ref(y | x)^γ · exp(r_true(x, y) / β),  단 γ = 1 + α/β > 1
+> π\*(y | x) ∝ π_ref(y | x)^γ · exp(r_true(x, y) / β),  단 γ = 1 + α/β > 1
 
-γ > 1은 *temperature scaling*과 같은 효과다. base 분포 π_ref에 거듭제곱이 걸리면 mass가 mode 쪽으로 압축된다. 진짜 utility가 동률인 응답군 𝒮에서는 π*(y) ∝ π_ref(y)^γ만 남으므로, γ가 크면 가장 typical한 한 응답으로 *mode collapse*된다.
+γ > 1은 *temperature scaling*과 같은 효과다. base 분포 π_ref에 거듭제곱이 걸리면 mass가 mode 쪽으로 압축된다. 진짜 utility가 동률인 응답군 𝒮에서는 π\*(y) ∝ π_ref(y)^γ만 남으므로, γ가 크면 가장 typical한 한 응답으로 *mode collapse*된다.
 
 핵심 함의: α가 *데이터 차원*에 있으므로, 어떤 reward model을 쓰든·어떤 optimizer(PPO·DPO·GRPO)를 쓰든 collapse는 그대로 일어난다. 알고리즘 개선만으로는 *근본적으로* 풀리지 않는 문제다. 풀려면 데이터 차원의 개입(annotator 가이드라인 변경, typicality 재가중) 또는 inference 시점의 우회가 필요하다.
 

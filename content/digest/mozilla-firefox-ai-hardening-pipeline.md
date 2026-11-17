@@ -30,7 +30,7 @@ sidenotes: true
 이 역학이 단 몇 달 만에 뒤집혔다. 두 축이 동시에 움직였다고 원문은 적는다.
 
 1. 모델 자체의 추론 능력 향상.
-2. *모델을 다루는 기법(harnessing)*의 진화 — steering, scaling, stacking으로 신호를 키우고 노이즈를 거른다.
+2. <em>모델을 다루는 기법(harnessing)</em>의 진화 — steering, scaling, stacking으로 신호를 키우고 노이즈를 거른다.
 
 두 축이 곱해지면서 신호가 노이즈를 압도했다.
 

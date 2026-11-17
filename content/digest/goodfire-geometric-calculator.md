@@ -53,7 +53,7 @@ Llama 3.1 8B는 두 전략 모두 쓰지 않는다. 모델은 단일 forward pas
 
 > Figure from Kantamneni & Tegmark (2025). GPT-J encodes numbers on circles.
 
-언어 모델이 숫자를 표현하는 방식은 직관과 어긋난다. 활성화 공간 안에 1, 2, 3, … 이 직선으로 나열된 *내부 자(internal ruler)*도 아니고, 컴퓨터처럼 이진수도 아니다.
+언어 모델이 숫자를 표현하는 방식은 직관과 어긋난다. 활성화 공간 안에 1, 2, 3, … 이 직선으로 나열된 <em>내부 자(internal ruler)</em>도 아니고, 컴퓨터처럼 이진수도 아니다.
 
 LLM은 숫자를 *여러 개의 모듈러 원*의 좌표 집합으로 인코딩한다. 각 원은 "숫자 modulo k"에 해당한다.
 
