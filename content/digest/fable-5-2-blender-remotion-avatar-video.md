@@ -27,7 +27,7 @@ images:
 
 AI 아바타 영상은 올인원 상용 서비스로 만드는 경우가 많다. 인물의 입 모양과 음성을 한 번에 처리해 주는 HeyGen, 카메라 연출 템플릿을 제공하는 Higgsfield가 대표적이다. 이런 도구는 마우스 클릭 몇 번으로 결과를 빠르게 얻기 좋다. 그러나 완성된 영상에 기성 템플릿 특유의 인상이 드러나기 쉽고, 부분적인 조명이나 공간 연출, 자막 타이밍은 세밀하게 고치기 어렵다.
 
-소(`@so_ainsight`)가 공개한 31.9초짜리 일본어 영상은 올인원 아바타 서비스를 쓰지 않았고, Premiere Pro나 CapCut 같은 타임라인 편집 프로그램도 한 번 열지 않았다. 대신 인물 화면, 음성, 입 모양 구동, 3D 공간 연출, 배경음악, 자막과 장면 전환을 각각 다른 도구와 스크립트로 따로 만든 뒤 마지막에 코드로 합쳤다.
+소(`@so_ainsight`)가 공개한 31.9초짜리 일본어 영상은 올인원 아바타 서비스를 쓰지 않았고, Premiere Pro나 CapCut 같은 타임라인 편집 프로그램도 한 번 열지 않았다. 대신 인물 화면, 음성, 입 모양 구동, 스톡 영상 없이 제작한 3D 공간 연출, 음원 라이브러리를 쓰지 않은 배경음악, React 코드로 작성한 자막과 장면 전환을 각각 다른 도구와 스크립트로 따로 만든 뒤 마지막에 코드로 합쳤다.
 
 <figure class="blog-diagram">
 <svg class="diagram-svg-desktop" viewBox="0 0 720 310" role="img" aria-label="Claude Fable 5.2 기획부터 4개 에셋 모듈을 거쳐 Remotion 4로 954프레임을 조립하는 파이프라인 도식" xmlns="http://www.w3.org/2000/svg">
@@ -36,11 +36,11 @@ AI 아바타 영상은 올인원 상용 서비스로 만드는 경우가 많다.
     <marker id="arr-acc" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="var(--accent)"/></marker>
   </defs>
   <rect width="720" height="310" fill="var(--bg-2)"/>
-  <rect x="20" y="95" width="165" height="120" fill="var(--bg)" stroke="var(--rule-strong)" stroke-width="1.5"/>
-  <text x="34" y="123" font-family="var(--sans)" font-size="13" font-weight="700" fill="var(--ink)">1. 대본 및 연출 설계</text>
-  <text x="34" y="147" font-family="var(--mono)" font-size="12" fill="var(--accent)">Claude Fable 5.2</text>
-  <text x="34" y="171" font-family="var(--sans)" font-size="12" fill="var(--ink-2)">11개 컷 구성안 작성</text>
-  <text x="34" y="191" font-family="var(--sans)" font-size="12" fill="var(--ink-2)">발화 문장 및 리듬 확정</text>
+  <rect x="20" y="98" width="165" height="114" fill="var(--bg)" stroke="var(--rule-strong)" stroke-width="1.5"/>
+  <text x="34" y="124" font-family="var(--sans)" font-size="13" font-weight="700" fill="var(--ink)">1. 대본 및 연출 설계</text>
+  <text x="34" y="148" font-family="var(--mono)" font-size="12" fill="var(--accent)">Claude Fable 5.2</text>
+  <text x="34" y="172" font-family="var(--sans)" font-size="12" fill="var(--ink-2)">11개 컷 구성안 작성</text>
+  <text x="34" y="192" font-family="var(--sans)" font-size="12" fill="var(--ink-2)">발화 문장 및 리듬 확정</text>
   <rect x="225" y="18" width="250" height="60" fill="var(--bg)" stroke="var(--rule-strong)" stroke-width="1.5"/>
   <text x="239" y="42" font-family="var(--sans)" font-size="12" font-weight="700" fill="var(--ink)">2A. 인물화 및 배경 사진</text>
   <text x="239" y="62" font-family="var(--sans)" font-size="11" fill="var(--ink-2)">화자 인물 4장 + 5번 컷 배경 사진 3장</text>
@@ -56,9 +56,9 @@ AI 아바타 영상은 올인원 상용 서비스로 만드는 경우가 많다.
   <rect x="515" y="85" width="185" height="140" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.5"/>
   <text x="529" y="115" font-family="var(--sans)" font-size="13" font-weight="700" fill="var(--accent-ink)">3. 최종 코드 조립</text>
   <text x="529" y="139" font-family="var(--mono)" font-size="12" font-weight="700" fill="var(--accent-ink)">Remotion 4</text>
-  <text x="529" y="163" font-family="var(--sans)" font-size="12" fill="var(--ink)">자막, 색보정, 화면 전환</text>
+  <text x="529" y="163" font-family="var(--sans)" font-size="12" fill="var(--ink)">자막, 색보정, 배경 분리, 전환</text>
   <text x="529" y="183" font-family="var(--sans)" font-size="12" fill="var(--ink)">16:9, 30fps, 11컷</text>
-  <text x="529" y="203" font-family="var(--mono)" font-size="12" font-weight="700" fill="var(--accent-ink)">954 frames (31.9s)</text>
+  <text x="529" y="203" font-family="var(--sans)" font-size="12" font-weight="700" fill="var(--accent-ink)">954프레임 (31.9초)</text>
   <line x1="185" y1="130" x2="221" y2="52" stroke="var(--ink-2)" stroke-width="1.5" marker-end="url(#arr-ink)"/>
   <line x1="185" y1="145" x2="221" y2="120" stroke="var(--ink-2)" stroke-width="1.5" marker-end="url(#arr-ink)"/>
   <line x1="185" y1="165" x2="221" y2="192" stroke="var(--ink-2)" stroke-width="1.5" marker-end="url(#arr-ink)"/>
@@ -68,51 +68,40 @@ AI 아바타 영상은 올인원 상용 서비스로 만드는 경우가 많다.
   <line x1="475" y1="192" x2="511" y2="165" stroke="var(--accent)" stroke-width="1.5" marker-end="url(#arr-acc)"/>
   <line x1="475" y1="262" x2="511" y2="185" stroke="var(--accent)" stroke-width="1.5" marker-end="url(#arr-acc)"/>
 </svg>
-<svg class="diagram-svg-mobile" viewBox="0 0 350 530" role="img" aria-label="Claude Fable 5.2 기획부터 에셋 모듈을 거쳐 Remotion 4로 조립하는 파이프라인 도식 (모바일)" xmlns="http://www.w3.org/2000/svg">
+<svg class="diagram-svg-mobile" viewBox="0 0 350 486" role="img" aria-label="Claude Fable 5.2 기획부터 에셋 모듈을 거쳐 Remotion 4로 조립하는 파이프라인 도식 (모바일)" xmlns="http://www.w3.org/2000/svg">
   <defs>
     <marker id="arr-ink-m" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="var(--ink-2)"/></marker>
     <marker id="arr-acc-m" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="var(--accent)"/></marker>
   </defs>
-  <rect width="350" height="530" fill="var(--bg-2)"/>
-  <rect x="16" y="16" width="318" height="78" fill="var(--bg)" stroke="var(--rule-strong)" stroke-width="1.5"/>
+  <rect width="350" height="486" fill="var(--bg-2)"/>
+  <rect x="16" y="16" width="318" height="65" fill="var(--bg)" stroke="var(--rule-strong)" stroke-width="1.5"/>
   <text x="30" y="42" font-family="var(--sans)" font-size="13" font-weight="700" fill="var(--ink)">1. 대본 및 연출 설계 (Claude Fable 5.2)</text>
-  <text x="30" y="64" font-family="var(--sans)" font-size="12" fill="var(--ink-2)">11개 컷 구성안 작성 및 발화 리듬 확정</text>
-  <line x1="175" y1="94" x2="175" y2="114" stroke="var(--ink-2)" stroke-width="1.5" marker-end="url(#arr-ink-m)"/>
-  <rect x="16" y="118" width="318" height="272" fill="var(--bg)" stroke="var(--rule-strong)" stroke-width="1.5"/>
-  <text x="30" y="144" font-family="var(--sans)" font-size="13" font-weight="700" fill="var(--ink)">2. 모듈별 에셋 제작 및 합성</text>
-  <text x="30" y="172" font-family="var(--sans)" font-size="12" font-weight="700" fill="var(--ink)">2A. 인물화 4장 + 5번 컷 배경 사진 3장</text>
-  <text x="30" y="192" font-family="var(--sans)" font-size="12" fill="var(--ink-2)">기성 아바타 템플릿 없이 장면별 이미지 제작</text>
-  <text x="30" y="224" font-family="var(--sans)" font-size="12" font-weight="700" fill="var(--ink)">2B. 일본어 음성 + 입 모양 구동 5개</text>
-  <text x="30" y="244" font-family="var(--sans)" font-size="12" fill="var(--ink-2)">발화 구간에 맞춘 립싱크 클립 5개 제작</text>
-  <text x="30" y="276" font-family="var(--sans)" font-size="12" font-weight="700" fill="var(--ink)">2C. Blender 5.2.1 (6, 7번 컷 3D 장면)</text>
-  <text x="30" y="296" font-family="var(--sans)" font-size="12" fill="var(--ink-2)">벽면 패널 18장 조립 및 EEVEE 조명 연출</text>
-  <text x="30" y="328" font-family="var(--sans)" font-size="12" font-weight="700" fill="var(--ink)">2D. Python 파형 합성 배경음악</text>
-  <text x="30" y="348" font-family="var(--sans)" font-size="12" fill="var(--ink-2)">84 BPM, 8소절 멜로디를 코드로 직접 합성</text>
-  <line x1="175" y1="390" x2="175" y2="410" stroke="var(--accent)" stroke-width="1.5" marker-end="url(#arr-acc-m)"/>
-  <rect x="16" y="414" width="318" height="98" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.5"/>
-  <text x="30" y="440" font-family="var(--sans)" font-size="13" font-weight="700" fill="var(--accent-ink)">3. 최종 코드 조립 (Remotion 4)</text>
-  <text x="30" y="464" font-family="var(--sans)" font-size="12" fill="var(--ink)">자막, 색보정, 배경 분리, 화면 전환 코드화</text>
-  <text x="30" y="488" font-family="var(--mono)" font-size="12" font-weight="700" fill="var(--accent-ink)">16:9 / 30fps / 11컷 / 954프레임 (31.9초)</text>
+  <text x="30" y="64" font-family="var(--sans)" font-size="12" fill="var(--ink-2)">11개 컷 구성안 작성 및 발화 문장, 리듬 확정</text>
+  <line x1="175" y1="81" x2="175" y2="101" stroke="var(--ink-2)" stroke-width="1.5" marker-end="url(#arr-ink-m)"/>
+  <rect x="16" y="105" width="318" height="247" fill="var(--bg)" stroke="var(--rule-strong)" stroke-width="1.5"/>
+  <text x="30" y="131" font-family="var(--sans)" font-size="13" font-weight="700" fill="var(--ink)">2. 모듈별 에셋 제작 및 합성</text>
+  <text x="30" y="159" font-family="var(--sans)" font-size="12" font-weight="700" fill="var(--ink)">2A. 인물화 및 배경 사진</text>
+  <text x="30" y="179" font-family="var(--sans)" font-size="12" fill="var(--ink-2)">화자 인물 4장 + 5번 컷 배경 사진 3장</text>
+  <text x="30" y="211" font-family="var(--sans)" font-size="12" font-weight="700" fill="var(--ink)">2B. 음성 및 입 모양 구동</text>
+  <text x="30" y="231" font-family="var(--sans)" font-size="12" fill="var(--ink-2)">일본어 음성 합성 + 입 모양 클립 5개</text>
+  <text x="30" y="263" font-family="var(--sans)" font-size="12" font-weight="700" fill="var(--ink)">2C. 3D 공간 연출 (Blender 5.2.1)</text>
+  <text x="30" y="283" font-family="var(--sans)" font-size="12" fill="var(--ink-2)">6, 7번 컷: 벽면 패널 18장 조립 및 조명</text>
+  <text x="30" y="315" font-family="var(--sans)" font-size="12" font-weight="700" fill="var(--ink)">2D. 배경음악 합성 (Python)</text>
+  <text x="30" y="335" font-family="var(--sans)" font-size="12" fill="var(--ink-2)">파형 직접 합성 (84 BPM, 8소절 멜로디)</text>
+  <line x1="175" y1="352" x2="175" y2="372" stroke="var(--accent)" stroke-width="1.5" marker-end="url(#arr-acc-m)"/>
+  <rect x="16" y="376" width="318" height="92" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.5"/>
+  <text x="30" y="402" font-family="var(--sans)" font-size="13" font-weight="700" fill="var(--accent-ink)">3. 최종 코드 조립 (Remotion 4)</text>
+  <text x="30" y="426" font-family="var(--sans)" font-size="12" fill="var(--ink)">자막, 색보정, 배경 분리, 전환</text>
+  <text x="30" y="450" font-family="var(--sans)" font-size="12" font-weight="700" fill="var(--accent-ink)">16:9, 30fps, 11컷 / 954프레임 (31.9초)</text>
 </svg>
-<figcaption style="margin-top: 0.65rem; font-size: 0.85rem; color: var(--ink-2); text-align: center; line-height: 1.5;">올인원 아바타 SaaS와 편집 소프트웨어를 쓰지 않고 6개 작업 모듈을 코드로 연결한 31.9초 영상 제작 흐름</figcaption>
+<figcaption>올인원 아바타 SaaS와 편집 소프트웨어를 쓰지 않고 6개 작업 모듈을 코드로 연결한 31.9초 영상 제작 흐름</figcaption>
 </figure>
-
-원문 게시물이 밝힌 제작 사양과 도구별 역할은 다음과 같다.
-
-| 영역 | 사용 도구 및 모델 | 제작 수치 및 세부 내역 |
-| :--- | :--- | :--- |
-| **대본 및 연출** | Claude Fable 5.2 | 전체 11개 컷의 대본과 화면 연출 구성 |
-| **인물 및 배경 이미지** | 이미지 생성 AI | 발표자 기본 인물화 4장, 5번 컷용 배경 사진 3장 생성 |
-| **음성 및 입 모양** | 음성 합성 및 립싱크 모델 | 일본어 내레이션 및 입 모양 구동 클립 5개 제작[^2] |
-| **3D 공간 연출** | Blender 5.2.1 (EEVEE) | 6번과 7번 컷 전용. 벽면 패널 18장 조립과 조명 점등 (스톡 영상 0건) |
-| **배경음악** | Python 스크립트 | 음원 라이브러리를 쓰지 않고 기초 파형부터 합성한 84 BPM, 8소절 멜로디 |
-| **최종 조립 및 출력** | Remotion 4 | 자막, 색보정, 화면 전환을 React 코드로 작성해 16:9, 30fps, 954프레임(31.9초) 출력 |
-
-[^2]: 원문 게시물은 HeyGen과 Higgsfield를 쓰지 않았다는 점만 명시하고, 인물 이미지 4장과 입 모양 클립 5개를 어떤 모델로 만들었는지는 본문에 적지 않았다. 상세한 제작 방법은 작성자가 LINE 오픈채팅에서 공유한다.
 
 ## 에셋 제작과 3D 공간 연출: 브라우저 3D에서 Blender 5.2.1로 바꾼 과정
 
-화면에 등장하는 여성 발표자는 기성 아바타 템플릿 없이 만들었다. 먼저 이미지 생성 모델로 인물 이미지를 네 가지 구도로 만들었다. 어두운 편집실 데스크 정면, 세이지 그린 벽면 정면, 크림색 배경에서 양손을 쓰는 제스처, 세이지 그린 벽면에서 손짓하는 구도다. 이어서 발표자가 말하는 구간에 맞춰 입 모양 구동 영상 다섯 개를 만들어 각 컷에 배치했다.
+화면에 등장하는 여성 발표자는 기성 아바타 템플릿 없이 만들었다. 먼저 이미지 생성 모델로 인물 이미지를 네 가지 구도로 만들었다. 어두운 편집실 데스크 정면, 세이지 그린 벽면 정면, 크림색 배경에서 양손을 쓰는 제스처, 세이지 그린 벽면에서 손짓하는 구도다. 이어서 발표자가 말하는 구간에 맞춰 입 모양 구동 영상 다섯 개를 만들어 각 컷에 배치했다.[^2]
+
+[^2]: 원문 게시물은 HeyGen과 Higgsfield를 쓰지 않았다는 점만 명시하고, 인물 이미지 4장과 입 모양 클립 5개를 어떤 모델로 만들었는지는 본문에 적지 않았다. 상세한 제작 방법은 작성자가 LINE 오픈채팅에서 공유한다.
 
 ![세이지 그린 배경 앞에 선 AI 발표자. 왼쪽에 색보정을 뜻하는 일본어 타이포그래피가 크게 놓인 3번 컷 화면](https://img.seosoyoung.eiaserinnys.me/images/fable-5-2-blender-remotion-avatar-video/02-color-grade.jpg)
 *3번 컷(`COLOR / AUTO GRADE`). 채도가 낮은 화면에서 시작해 따뜻한 색보정이 적용되는 과정을 보여준다. 출처: [@so_ainsight 원문 영상](https://x.com/so_ainsight/status/2121970275353010214)*
@@ -142,19 +131,19 @@ AI 아바타 영상은 올인원 상용 서비스로 만드는 경우가 많다.
 
 완성된 31.9초(954프레임) 영상의 11개 컷 구성을 시간순으로 정리하면 다음과 같다.
 
-| 컷 | 시간 구간 | 왼쪽 위 배지 표기 | 일본어 내레이션 및 화면 문구 (한국어 뜻) | 화면 연출 및 사용 에셋 |
-| :--- | :--- | :--- | :--- | :--- |
-| **1** | 0.0\~5.8초 | `EDITED BY` | この動画、人は作っていません。編集したのは Fable 5.2 です。 (이 영상, 사람은 만들지 않았습니다. 편집한 것은 Fable 5.2입니다.) | 어두운 듀얼 모니터 편집실 배경의 발표자(인물화 1) 정면 발화 및 `Fable 5.2` 타이포그래피 등장 |
-| **2** | 5.9\~6.7초 | 없음 | `Fable 5.2` | 산호색 전체 화면 타이틀 카드 전환 |
-| **3** | 6.8\~9.7초 | `COLOR / AUTO GRADE` | まず、色を整えて。 (먼저, 색을 정돈하고.) | 세이지 그린 벽면 앞 발표자(인물화 2). 무채색에 가까운 톤에서 따뜻한 색보정으로 전환 |
-| **4** | 9.8\~12.6초 | `CUTOUT / LIVE MATTE` | 次に、私を背景から切り抜いて (다음으로, 저를 배경에서 오려내어) | 크림색 단색 배경 위로 누끼(배경 분리) 처리된 발표자(인물화 3)가 양손을 벌리며 설명 |
-| **5** | 12.7\~14.5초 | `PLACE / ANYWHERE` | 好きな場所へ。 (원하는 장소로.) | 왼쪽 주황색 아치 프레임 안의 발표자와 오른쪽 아래 폴라로이드 배경 사진 3장(해변, 역 승강장, 설산) 배치 |
-| **6** | 14.6\~16.5초 | `B-ROLL / SET BUILD` | 背景も、ゼロから。 (배경도, 처음부터.) | Blender 5.2.1 EEVEE 렌더링. 반사 바닥 위에서 벽면 패널 18장이 맞물리며 조명이 켜짐 |
-| **7** | 16.6\~18.5초 | `SOUND / FROM ZERO` | 音楽まで。 (음악까지.) | Blender 5.2.1 EEVEE 렌더링. 입체 블록 사이로 카메라가 이동하며 Python 합성 84 BPM 멜로디 강조 |
-| **8** | 18.6\~21.8초 | 없음 | 編集ソフトは 一度も 開いていません。 (편집 소프트웨어는 단 한 번도 열지 않았습니다.) | 오른쪽에 발표자(인물화 2), 왼쪽 여백에 3줄 타이포그래피 순차 노출 |
-| **9** | 21.9\~25.1초 | `CAST / GENERATED` | ついでに、この私も AIです。 (덧붙이면, 지금 이 저도 AI입니다.) | 오른쪽 발표자(인물화 4) 손짓과 함께 왼쪽 아래에 붉은색 강조 문구 `AIです。` 표시 |
-| **10** | 25.2\~28.3초 | `USER` (입력창) | 人がやったのは 最初の一言だけ / `かっこいい動画を1本つくって` (사람이 한 일은 처음 한마디뿐 / 멋진 영상을 한 편 만들어 줘) | 편집실 배경(인물화 1) 왼쪽에 프롬프트 입력창이 나타나며 지시문이 타이핑됨 |
-| **11** | 28.4\~31.9초 | `YOU` (입력창) | 次は、あなたの一言で。 (다음은, 당신의 한마디로.) | 프롬프트 입력창이 `YOU \|` 커서 대기 상태로 바뀌며 954프레임에서 페이드아웃 |
+| 컷 | 시간 | 일본어 내레이션 및 문구 (한국어 뜻) | 화면 연출 및 에셋 |
+| :--- | :--- | :--- | :--- |
+| **1** | 0.0\~5.8초 | この動画、人は作っていません。編集したのは Fable 5.2 です。 (이 영상, 사람은 만들지 않았습니다. 편집한 것은 Fable 5.2입니다.) | 어두운 편집실 배경의 발표자(인물화 1) 정면 발화 |
+| **2** | 5.9\~6.7초 | Fable 5.2 | 산호색 전체 화면 타이틀 카드 전환 |
+| **3** | 6.8\~9.7초 | まず、色を整えて。 (먼저, 색을 정돈하고.) | 세이지 그린 벽면 앞 발표자(인물화 2) 색보정 전환 |
+| **4** | 9.8\~12.6초 | 次に、私を背景から切り抜いて (다음으로, 저를 배경에서 오려내어) | 크림색 단색 배경 위 발표자(인물화 3) 양손 제스처 |
+| **5** | 12.7\~14.5초 | 好きな場所へ。 (원하는 장소로.) | 왼쪽 아치 프레임 안 발표자와 오른쪽 배경 사진 3장 |
+| **6** | 14.6\~16.5초 | 背景も、ゼロから。 (배경도, 처음부터.) | 반사 바닥 위 벽면 패널 18장 조립 및 조명 점등 |
+| **7** | 16.6\~18.5초 | 音楽まで。 (음악까지.) | 입체 블록 사이 카메라 이동과 84 BPM 멜로디 결합 |
+| **8** | 18.6\~21.8초 | 編集ソフトは 一度も 開いていません。 (편집 소프트웨어는 단 한 번도 열지 않았습니다.) | 오른쪽 발표자(인물화 2), 왼쪽 3줄 타이포그래피 노출 |
+| **9** | 21.9\~25.1초 | ついでに、この私も AIです。 (덧붙이면, 지금 이 저도 AI입니다.) | 오른쪽 발표자(인물화 4) 손짓과 붉은색 강조 문구 표시 |
+| **10** | 25.2\~28.3초 | 人がやったのは 最初の一言だけ / かっこいい動画を1本つくって (사람이 한 일은 처음 한마디뿐 / 멋진 영상을 한 편 만들어 줘) | 편집실 배경(인물화 1) 왼쪽 입력창에 지시문 타이핑 |
+| **11** | 28.4\~31.9초 | 次は、あなたの一言で。 (다음은, 당신의 한마디로.) | 입력창이 YOU 대기 커서로 바뀌며 954프레임 페이드아웃 |
 
 8번과 9번 컷에서 발표자는 편집 소프트웨어를 한 번도 열지 않았다고 말한 데 이어, 자신도 AI로 생성한 캐릭터라고 밝힌다. 10번과 11번 컷은 다시 처음의 편집실 데스크 장면으로 돌아온다. 사람이 한 일은 프롬프트 입력창에 적은 첫 한마디, "멋진 영상을 한 편 만들어 줘(`かっこいい動画を1本つくって`)"뿐이라는 메시지로 영상이 끝난다.
 
