@@ -160,7 +160,7 @@
         }
         // Measure text lines before applying a wider table, then cap the widened width.
         var expanded = false;
-        if (!natural && !squeezed && item.cols >= 3) {
+        if (item.cols >= 3) {
           var longCell = Array.from(item.table.querySelectorAll("th, td")).some(function (cell) {
             var range = document.createRange();
             range.selectNodeContents(cell);
