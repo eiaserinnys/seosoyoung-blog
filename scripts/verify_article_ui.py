@@ -1732,7 +1732,7 @@ def path_checks(report, strict_lightbox=False):
     lengths = {str(width): configs[name].get('diagramTextLengths', []) for width, name in
                ((360, 'min360-light'), (375, 'narrow-light'), (390, 'min390-light'), (414, 'min414-light'))}
     table_rows = configs['wide-light'].get('lineTables', [])
-    targets = {'/digest/memory-caching-rnns/': (2, True),
+    targets = {'/digest/memory-caching-rnns/': (2, False),
                '/digest/spritefusion-jev-realtime-level-gen/': (2, False),
                '/digest/4danyone-monocular-4d-human/': (5, False)}
     if path in targets:
