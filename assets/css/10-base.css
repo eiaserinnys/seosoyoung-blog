@@ -92,25 +92,72 @@ button {
     scrollbar-gutter: stable;
   }
 
+  /* 라이트박스 바탕은 세로 스크롤바가 생겨도 안쪽 폭이 바뀌지 않게 양쪽에 자리를 미리 둔다.
+     폭 계산의 정본(lightbox.js fitImage)이 이 안쪽 폭을 그대로 읽는다. */
+  .ssy-lightbox {
+    scrollbar-gutter: stable both-edges;
+  }
+
+  /* 라이트박스가 열린 동안은 페이지 스크롤바 자리를 풀어 바탕이 창 전체를 덮게 한다.
+     닫으면 lightbox.js가 표시를 거둬 원래 자리로 돌아간다. */
+  html.ssy-lightbox-open {
+    scrollbar-gutter: auto;
+  }
+
   @supports not selector(::-webkit-scrollbar) {
-    html {
+    html,
+    .ssy-lightbox {
       scrollbar-width: thin;
       scrollbar-color: var(--scrollbar-thumb) var(--bg);
     }
   }
 
-  html::-webkit-scrollbar {
+  html::-webkit-scrollbar,
+  .ssy-lightbox::-webkit-scrollbar {
     width: var(--scrollbar-size);
     height: var(--scrollbar-size);
     background: var(--bg);
   }
 
-  html::-webkit-scrollbar-track {
+  html::-webkit-scrollbar-track,
+  .ssy-lightbox::-webkit-scrollbar-track {
     background: var(--bg);
     box-shadow: inset var(--line) 0 0 var(--rule);
   }
 
-  html::-webkit-scrollbar-thumb {
+  /* 가로 막대는 축이 달라 세로 기준 썸 여백과 트랙 괘선을 그대로 쓰면 굵어지지 않고 괘선이
+     구석 토막으로 남는다. 같은 토큰을 가로축에 맞춰 건다(세라피엘 1차 반려 1). */
+  html::-webkit-scrollbar-track:horizontal,
+  .ssy-lightbox::-webkit-scrollbar-track:horizontal {
+    background: var(--bg);
+    box-shadow: inset 0 var(--line) 0 var(--rule);
+  }
+
+  html::-webkit-scrollbar-thumb:horizontal,
+  .ssy-lightbox::-webkit-scrollbar-thumb:horizontal {
+    min-height: 0;
+    min-width: var(--scrollbar-thumb-min);
+    border: solid transparent;
+    border-width: var(--scrollbar-inset-start) var(--scrollbar-inset-block) var(--scrollbar-inset-end) var(--scrollbar-inset-block);
+    background-color: var(--scrollbar-thumb);
+    background-clip: padding-box;
+  }
+
+  html::-webkit-scrollbar-thumb:horizontal:hover,
+  html::-webkit-scrollbar-thumb:horizontal:active,
+  .ssy-lightbox::-webkit-scrollbar-thumb:horizontal:hover,
+  .ssy-lightbox::-webkit-scrollbar-thumb:horizontal:active {
+    border-width: var(--scrollbar-inset-start-hover) var(--scrollbar-inset-block) var(--scrollbar-inset-end-hover) var(--scrollbar-inset-block);
+    background-color: var(--scrollbar-thumb-hover);
+  }
+
+  html::-webkit-scrollbar-thumb:horizontal:active,
+  .ssy-lightbox::-webkit-scrollbar-thumb:horizontal:active {
+    background-color: var(--scrollbar-thumb-active);
+  }
+
+  html::-webkit-scrollbar-thumb,
+  .ssy-lightbox::-webkit-scrollbar-thumb {
     min-height: var(--scrollbar-thumb-min);
     border: solid transparent;
     border-width: var(--scrollbar-inset-block) var(--scrollbar-inset-end) var(--scrollbar-inset-block) var(--scrollbar-inset-start);
@@ -119,16 +166,20 @@ button {
   }
 
   html::-webkit-scrollbar-thumb:hover,
-  html::-webkit-scrollbar-thumb:active {
+  html::-webkit-scrollbar-thumb:active,
+  .ssy-lightbox::-webkit-scrollbar-thumb:hover,
+  .ssy-lightbox::-webkit-scrollbar-thumb:active {
     border-width: var(--scrollbar-inset-block) var(--scrollbar-inset-end-hover) var(--scrollbar-inset-block) var(--scrollbar-inset-start-hover);
     background-color: var(--scrollbar-thumb-hover);
   }
 
-  html::-webkit-scrollbar-thumb:active {
+  html::-webkit-scrollbar-thumb:active,
+  .ssy-lightbox::-webkit-scrollbar-thumb:active {
     background-color: var(--scrollbar-thumb-active);
   }
 
-  html::-webkit-scrollbar-corner {
+  html::-webkit-scrollbar-corner,
+  .ssy-lightbox::-webkit-scrollbar-corner {
     background: var(--bg);
   }
 }

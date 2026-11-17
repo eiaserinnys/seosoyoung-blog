@@ -61,7 +61,9 @@ sidenotes: true
 >
 > 세 가지 독립적 관찰이 한 점으로 수렴합니다. (1) Garry Tan — 병목은 모델이 아니라 스키마 이해다. (2) Factory Missions — 에이전트는 컨텍스트에 매우 반응적이다. (3) Eno Reyes — readiness는 코드베이스의 속성이다. 코드베이스는 수동적 데이터가 아니라, 에이전트의 사고를 제약하고 증폭하는 외골격입니다. 코드 품질은 문서 가치가 아니라 직접적인 AI 역량 투자이옵니다.
 >
-> `exoskeleton` `agent-cognition` `codebase` ## 다른 영상과의 교차점
+> `exoskeleton` `agent-cognition` `codebase`
+
+## 다른 영상과의 교차점
 
 - Factor 3 "컨텍스트 윈도우를 직접 소유"는 Reyes의 "에이전트는 컨텍스트에 매우 반응적이다" 명제와 같은 뿌리를 공유합니다. Factor 10 "작고 집중된 에이전트"는 agent-readiness가 높은 코드베이스에서 더 빛나는 구조이옵니다.
 - "시뮬레이터를 검증 경계로 둔 자율 실행" 패턴은 Reyes의 "자동화된 검증이 율속"과 같은 원리에서 출발합니다. Chat은 가설, Agent는 검증이라는 구분도 명세 주도 개발의 실천적 표현입니다.

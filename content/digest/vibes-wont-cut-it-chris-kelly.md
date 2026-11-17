@@ -42,7 +42,9 @@ Chris의 처방: 문서화된 표준, 재현 가능한 개발 환경, 빠른 로
 "At Augment we believe that context is like the most important part of all AI generation in code." 모델 품질이 아니라 코드베이스에 대한 정확한 이해가 출력 품질을 결정합니다. 사람이 막히는 환경에서는 AI도 막힌다는 사실을 받아들여야 하며, 별도의 AI용 워크플로우를 만들 것이 아니라 인간 엔지니어에게 좋은 환경이 곧 AI에게도 좋은 환경이옵니다.
 
 
-> *""The best code is no code at all." Jeff Atwood — Chris Kelly가 인용하며, AI가 많이 생성할수록 시스템이 나빠진다는 역설을 강조"* ## 두 세계의 대비
+> *"The best code is no code at all." Jeff Atwood — Chris Kelly가 인용하며, AI가 많이 생성할수록 시스템이 나빠진다는 역설을 강조*
+
+## 두 세계의 대비
 
 
 ### 결과 동작만 보고 진행
@@ -90,7 +92,9 @@ AI는 정확히 같은 일(코드 작성)을 하므로 인간과 같은 도구�
 현재 코드 리뷰 도구는 "파일 A 변경, 파일 B 변경"을 알파벳 순으로 보여줄 뿐입니다. 변경의 의미적 그룹·논리적 흐름을 보여주지 못합니다. Chris의 직설: "frankly suck."
 
 
-> *""AI talks like a human but is actually a machine." Chris Kelly — LLM이 "파일을 스캔했다"고 사과하는 것은 학습된 의인화 텍스트일 뿐, 실제 동작이 아님을 경고"* ## 검증된 인사이트
+> *"AI talks like a human but is actually a machine." Chris Kelly — LLM이 "파일을 스캔했다"고 사과하는 것은 학습된 의인화 텍스트일 뿐, 실제 동작이 아님을 경고*
+
+## 검증된 인사이트
 
 
 > **💡 [Insight 1] 코드 리뷰 도구 부재가 에이전트 자율성의 율속(律速)이다**
@@ -100,7 +104,9 @@ AI는 정확히 같은 일(코드 작성)을 하므로 인간과 같은 도구�
 
 > **💡 [Insight 2] AI 도입 ROI는 SE 위생을 초과하지 못한다**
 >
-> Chris의 자발적 시인("AI-ready 5조건은 그냥 SE처럼 들린다")과 Microsoft Collaborating with Agents의 '환경 청결성 ↔ ROI: R²≈0.40' 데이터를 결합하면: AI 도구가 만들어낼 수 있는 효과의 상한은 팀의 위생 수준으로 제약됩니다. 위생이 낮은 팀이 AI를 먼저 도입하는 것은 우선순위 역전이옵니다. 표준·재현 환경·테스트 자동화 투자가 AI 도구 투자보다 먼저여야 도구 투자가 돌아옵니다. AI 자체가 위생을 만들 수도 있으나, 그 수준도 '검증 표면 부재 시 음 ROI'가 설정한 천장에 갇힙니다. ## 다른 영상과의 교차점
+> Chris의 자발적 시인("AI-ready 5조건은 그냥 SE처럼 들린다")과 Microsoft Collaborating with Agents의 '환경 청결성 ↔ ROI: R²≈0.40' 데이터를 결합하면: AI 도구가 만들어낼 수 있는 효과의 상한은 팀의 위생 수준으로 제약됩니다. 위생이 낮은 팀이 AI를 먼저 도입하는 것은 우선순위 역전이옵니다. 표준·재현 환경·테스트 자동화 투자가 AI 도구 투자보다 먼저여야 도구 투자가 돌아옵니다. AI 자체가 위생을 만들 수도 있으나, 그 수준도 '검증 표면 부재 시 음 ROI'가 설정한 천장에 갇힙니다.
+
+## 다른 영상과의 교차점
 
 - Factor 3 '컨텍스트 윈도우 직접 소유'와 Chris의 "컨텍스트가 AI 코드 생성의 1순위" 명제가 직접 결합됩니다. Augment가 회사 차원에서 같은 명제를 실무 확언한 것으로, 'context engineering' 카테고리 명명의 근거이옵니다.
 - 같은 Augment에서 나온 두 강연입니다. 영상 3의 '코드베이스는 텍스트가 아니다', 'Chat=가설/Agent=검증' 명제를 Chris는 "LLM은 패턴만 생성하고, snowflake는 패턴 매칭으로 해결되지 않는다"로 한 단계 더 구체화합니다. 일관된 진화이지 모순은 없습니다.

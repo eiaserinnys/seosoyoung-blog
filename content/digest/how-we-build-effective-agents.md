@@ -37,7 +37,9 @@ sidenotes: true
 Anthropic이 빌드한 coding, computer use, search 에이전트는 제품 표면과 범위와 역량이 매우 다르지만, 거의 동일한 backbone 코드를 공유합니다. 차이는 도구 세트와 시스템 프롬프트에서 옵니다. 이는 루프 자체가 아니라 도구와 프롬프트가 에이전트를 차별화하는 본질적 요소임을 실증하는 것이옵니다.
 
 
-> *""We learned the hard way — complexity kills iteration speed." Barry Zhang — Anthropic이 세 가지 에이전트를 만들며 체득한 핵심 교훈"* ## 에이전트를 빌드하기 전에
+> *"We learned the hard way — complexity kills iteration speed." Barry Zhang — Anthropic이 세 가지 에이전트를 만들며 체득한 핵심 교훈*
+
+## 에이전트를 빌드하기 전에
 
 
 ### 모든 것에 에이전트를 만들지 말라
@@ -79,7 +81,9 @@ Anthropic이 빌드한 coding, computer use, search 에이전트는 제품 표�
 시스템 프롬프트를 Claude에 보여주고 모호성 여부를 묻습니다. 도구 설명의 파라미터 적정성을 확인합니다. 전체 궤적을 던지고 "왜 이 결정을 했는가, 더 나은 결정을 위해 무엇이 필요한가"를 묻습니다. 자기 이해를 대체하지는 않지만, 에이전트 관점에 근접하는 실용적 방법이옵니다.
 
 
-> *""Put yourself in the agent's context window." Barry Zhang — 에이전트의 실수를 탓하기 전에, 에이전트에게 무엇을 보여주었는지를 먼저 확인하라"* ## 미래 방향
+> *"Put yourself in the agent's context window." Barry Zhang — 에이전트의 실수를 탓하기 전에, 에이전트에게 무엇을 보여주었는지를 먼저 확인하라*
+
+## 미래 방향
 
 
 ### Budget-aware가 프로덕션 배포를 연다
@@ -110,7 +114,9 @@ Anthropic이 빌드한 coding, computer use, search 에이전트는 제품 표�
 
 > **💡 [Insight 2 — 확장] 에이전트 간 통신은 새로운 검증 표면이다**
 >
-> 멀티에이전트 시스템의 미해결 문제(비동기 통신, 역할 인식)는 "자율성 ≡ 검증 표면의 함수" 명제의 새로운 차원이옵니다. 기존 검증 표면은 human-agent 경계에 집중해왔으나, agent-agent 경계의 검증은 아직 미개척 영역이옵니다. 에이전트가 서로의 출력을 어떻게 검증하는가가 멀티에이전트 프로덕션의 핵심 과제가 됩니다. ## 명제 정합성: 자율성 ≡ 검증 표면
+> 멀티에이전트 시스템의 미해결 문제(비동기 통신, 역할 인식)는 "자율성 ≡ 검증 표면의 함수" 명제의 새로운 차원이옵니다. 기존 검증 표면은 human-agent 경계에 집중해왔으나, agent-agent 경계의 검증은 아직 미개척 영역이옵니다. 에이전트가 서로의 출력을 어떻게 검증하는가가 멀티에이전트 프로덕션의 핵심 과제가 됩니다.
+
+## 명제 정합성: 자율성 ≡ 검증 표면
 
 
 ### 강화: 출력 검증 가능성이 자율성을 결정한다

@@ -86,7 +86,9 @@ Vibe coding은 반복 실험입니다. 화이트보드처럼 지우고 다시 �
 >
 > 기존 린터·태스크 러너 인프라가 에이전트 모드에 자동 피드백되면, 조직이 이미 갖고 있는 코드 품질 규칙이 AI의 실시간 가드레일이 됩니다. 새로운 검증 시스템을 구축할 필요 없이, 기존 CI/CD 파이프라인의 초기 단계를 에디터 안으로 끌어온 것이지요. 검증 표면을 넓히는 가장 비용 효율적인 방법입니다.
 >
-> `linter` `self-correction` `devops` ## 다른 영상과의 교차점
+> `linter` `self-correction` `devops`
+
+## 다른 영상과의 교차점
 
 - 같은 Microsoft/VS Code 팀의 발표입니다. Isidor가 copilot-instructions.md와 .instructions 파일 체계를 통한 "컨텍스트 주입"을 다뤘다면, Harald는 그 위에 Chat Modes, Prompts, MCP까지 쌓아 조직 단위 확장을 논합니다. 두 발표를 합치면 VS Code의 AI 커스터마이징 전체 그림이 완성됩니다.
 - "컨텍스트가 AI 코드 생성의 1순위"라는 Chris의 선언은 Harald의 Structured Vibes 단계가 존재하는 이유를 설명합니다. 규칙 파일 + 계획 마크다운의 Create-Refine 루프는 Spec-Driven 단계의 구체적 실천법과 정확히 겹칩니다.

@@ -66,7 +66,9 @@ Context financial engineering(prompt arbitrage)은 cache write의 5분/1시간 T
 >
 > Rate limit → 컨텍스트 축소 → 검증 생략 → vibes coding. 이것이 vibes coding의 경제적 경로입니다.
 >
-> `adversarial-verified insight` ## 다른 영상과의 교차점
+> `adversarial-verified insight`
+
+## 다른 영상과의 교차점
 
 - **영상 #8 — Vibes Won't Cut It (Chris Kelly, Augment)** — 영상 8이 "왜 vibes가 나쁜가"를 말했다면, 영상 10은 "왜 vibes가 매력적인가"의 경제적 답을 제시합니다. 검증 비용이 높으면 검증을 포기하게 된다 — token anxiety가 vibes의 인력(引力)입니다.
 - **영상 #9 — The Model Isn't Wrong (Dan)** — Reasoning 내재화(모델이 스스로 추론) vs 외부 컨텍스트 의존 사이에 미세한 긴장이 존재합니다. WEKA는 "더 많은 외부 컨텍스트를, 더 싸게"를 주장하지만, 모델 자체의 reasoning 능력이 발전하면 인프라 투자의 장기 가치는 감소할 수 있습니다. 단기 인프라 최적화 vs 장기 모델 진화라는 시간 축의 긴장입니다.

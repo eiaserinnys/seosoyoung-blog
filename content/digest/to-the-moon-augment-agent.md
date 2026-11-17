@@ -89,7 +89,9 @@ Chat 모드에서 인간과 에이전트가 함께 가설을 적고, Agent 모�
 > `human-in-the-loop` `agent-limits`
 
 
-> *""In order to get high quality outputs from any of the models, they require high quality input. Doing that for codebases is not necessarily straightforward — it's not just like text." — Matt Ball, Augment Code"* ## 교차 연결 포인트
+> *"In order to get high quality outputs from any of the models, they require high quality input. Doing that for codebases is not necessarily straightforward — it's not just like text." — Matt Ball, Augment Code*
+
+## 교차 연결 포인트
 
 - **[검증 표면 패턴] 12-Factor Agents — Dex Horthy** — 'Own your prompts'와 'Small, focused agents'가 Augment의 '검증 경계를 에이전트가 수정할 수 없게 고정한다'는 설계와 직접 대응한다. 자율성의 범위를 검증 가능성으로 한정하는 원칙은 두 발표 모두의 핵심이다.
 - **[컨텍스트 엔진] 코드를 코드로 다루는 검색** — Augment가 '텍스트가 아닌 코드로' 다루겠다는 컨텍스트 엔진 철학은 RAG의 한계를 지적하는 여러 발표와 공명한다. 키워드 매칭이 아닌 의미적 코드 그래프 구축이 차세대 코딩 도구의 분기점이 될 수 있다.

@@ -76,7 +76,9 @@ Windsurf만이 "상시 작동 + 자체 SE 모델"을 동시에 추구하여, 4�
 >
 > Windsurf Reviews(비동기 PR 리뷰)는 검증 표면 자동화이고, Conversational Suite의 correctness는 검증 지표를 벤치마크에 내재화한 것이며, 99% agent 목표는 검증 완전성에 비례하는 자율성 상한을 나타냅니다. 다만, 보안/권한 모델(blast radius)과 에이전트 간 조율, 비용 모델은 아직 언급되지 않은 gap이옵니다.
 >
-> `autonomy` `verification` `security-gap` ## 다른 영상과의 교차점
+> `autonomy` `verification` `security-gap`
+
+## 다른 영상과의 교차점
 
 
 *IDE가 죽느냐, 사느냐의 논쟁에서 Windsurf는 흥미로운 제3의 답을 내놓았습니다. "IDE가 죽는 것이 아니라, IDE가 모든 곳으로 간다." Shared Timeline이라는 개념은 단순히 채팅 기록을 넘어, 개발자의 전체 작업 흐름을 하나의 시간축으로 표현한다는 점에서 제법 야심찬 아키텍처이옵니다. 다만, 가장 마음에 걸리는 것은 보안과 권한의 부재입니다. 99% 에이전트가 PR을 열고, 배포하고, 서드파티와 상호작용하는 세계에서 blast radius를 어떻게 제한할 것인지 — 이 질문에 대한 답이 아직 없다는 점은, 비전의 크기만큼이나 눈에 띄는 공백이옵니다.*

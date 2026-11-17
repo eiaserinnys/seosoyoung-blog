@@ -29,7 +29,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 from verify_article_ui_checks import (
     A10_CONFIGS, A10_JS, A11_JS, A15_JS, A16_JS, A17_CONFIGS, A9_JS, a9_checks, a10_checks, a11_checks,
     a12_checks, a13_checks, a14_checks, a15_checks, a16_checks, a17_checks, a18_checks, a19_checks,
-    resized_sidenotes_ok, sidenote_presence_ok, summarize_checks,
+    resized_sidenotes_ok, sidenote_presence_ok, strict_lightbox_checks, summarize_checks,
 )
 
 CONFIGS = [
@@ -55,6 +55,12 @@ LIGHTBOX_SELECTOR = ('.post-content img[aria-haspopup="dialog"], '
                      'article.post-single .entry-cover img[aria-haspopup="dialog"]')
 LIGHTBOX_CONFIGS = ("wide-light", "mid-light", "narrow-light", "narrow-dark")
 LIGHTBOX_MAX_IMAGES = 4  # 동작이 그림마다 같아 DOM 순서 앞 4장만 잰다
+
+# 썸 두께를 픽셀로 재는 설정. device_scale_factor가 1인 데스크톱 설정만 쓴다.
+LIGHTBOX_THUMB_CONFIGS = {"wide-light", "mid-light"}
+LIGHTBOX_THUMB_BAR_PX = 12
+LIGHTBOX_THUMB_STRIP_PX = 220
+THUMB_COLOR_DISTANCE = 24
 
 DEFAULT_PATHS = [
     "/digest/roguelike-wikipedia/",
@@ -476,18 +482,31 @@ LIGHTBOX_STATE_JS = r"""
 () => {
   const o = document.querySelector('.ssy-lightbox');
   const ae = document.activeElement;
+  const bodyFirst = document.body ? document.body.firstElementChild : null;
   const res = {open: !!o, rootOverflow: document.documentElement.style.overflow,
     activeInLightbox: !!(o && ae && o.contains(ae)),
     activeSrc: (ae && ae.tagName === 'IMG' && ae.getAttribute('src'))
-      ? ae.getAttribute('src').split('/').pop() : null};
+      ? ae.getAttribute('src').split('/').pop() : null,
+    scrollY: +window.scrollY.toFixed(2),
+    bodyFirstX: bodyFirst ? +bodyFirst.getBoundingClientRect().x.toFixed(2) : null};
   if (o) {
     const b = o.querySelector('img');
     const r = b.getBoundingClientRect();
+    const or = o.getBoundingClientRect();
+    const oc = getComputedStyle(o);
     const cap = o.querySelector('.ssy-lightbox-caption');
     res.captionH = cap ? cap.offsetHeight + (parseFloat(getComputedStyle(cap).marginTop) || 0) : 0;
     res.big = {x: r.x, y: r.y, w: r.width, h: r.height, right: r.right, bottom: r.bottom,
       natural: [b.naturalWidth, b.naturalHeight], complete: b.complete, src: b.currentSrc.split('/').pop()};
+    res.overlay = {left: +or.left.toFixed(2), top: +or.top.toFixed(2), right: +or.right.toFixed(2),
+      bottom: +or.bottom.toFixed(2), clientW: o.clientWidth, clientH: o.clientHeight,
+      scrollW: o.scrollWidth, scrollH: o.scrollHeight,
+      leftGap: +(r.left - or.left).toFixed(2), rightGap: +(or.right - r.right).toFixed(2)};
+    res.box = {w: +(o.clientWidth - parseFloat(oc.paddingLeft) - parseFloat(oc.paddingRight)).toFixed(2),
+      h: +(o.clientHeight - parseFloat(oc.paddingTop) - parseFloat(oc.paddingBottom)).toFixed(2)};
     res.vw = innerWidth; res.vh = innerHeight;
+    res.screenLeftGap = +r.left.toFixed(2);
+    res.screenRightGap = +(innerWidth - r.right).toFixed(2);
     res.inView = r.x >= 0 && r.y >= 0 && r.right <= innerWidth + 0.5 && r.bottom <= innerHeight + 0.5;
     res.scrollMode = o.classList.contains('ssy-lightbox--scroll');
     res.wideMode = o.classList.contains('ssy-lightbox--wide');
@@ -1175,6 +1194,136 @@ def run_height_resize(browser, url):
             for b, a in zip(before, after) if b["overflowing"]]
 
 
+def css_rgb_triplet(value):
+    """getComputedStyle의 rgb()/rgba() 문자열을 (r, g, b)로 바꾼다."""
+    numbers = re.findall(r"[\d.]+", value or "")
+    if len(numbers) < 3:
+        return None
+    return tuple(int(round(float(number))) for number in numbers[:3])
+
+
+def measure_thumb_run(png_path, axis, bg=None):
+    """막대 캡처에서 썸 색 구간의 두께(px)와 막대 방향 위치를 잰다.
+
+    세로 막대는 행마다 x 방향으로, 가로 막대는 열마다 y 방향으로 배경색과 다른 구간을
+    찾아 가장 흔한 길이를 썸 두께로 쓴다. 세라피엘 검수의 픽셀 스캔 방식을 그대로 옮겼다.
+    배경색은 페이지에서 읽은 --bg를 넘긴다. 썸이 길게 그려져 캡처 대부분을 차지해도
+    배경을 썸 색으로 잘못 고르지 않는다.
+    """
+    with Image.open(png_path) as im:
+        rgb = im.convert("RGB")
+    width, height = rgb.size
+    px = rgb.load()
+    if bg is None:
+        bg = px[0, height - 1]
+
+    def differs(color):
+        return sum((a - b) ** 2 for a, b in zip(color, bg)) > THUMB_COLOR_DISTANCE ** 2
+
+    runs = []
+    if axis == "x":
+        for y in range(height):
+            start = None
+            for x in range(width + 1):
+                on = x < width and differs(px[x, y])
+                if on and start is None:
+                    start = x
+                elif not on and start is not None:
+                    runs.append((x - start, y))
+                    start = None
+    else:
+        for x in range(width):
+            start = None
+            for y in range(height + 1):
+                on = y < height and differs(px[x, y])
+                if on and start is None:
+                    start = y
+                elif not on and start is not None:
+                    runs.append((y - start, x))
+                    start = None
+    runs = [run for run in runs if run[0] >= 2]
+    if not runs:
+        return {"thickness": None, "pos": None}
+    counts = {}
+    for length, _ in runs:
+        counts[length] = counts.get(length, 0) + 1
+    thickness = max(counts, key=lambda length: (counts[length], length))
+    positions = sorted(pos for length, pos in runs if length == thickness)
+    return {"thickness": thickness, "pos": positions[len(positions) // 2]}
+
+
+def capture_page_thumb(page, out_dir, name):
+    """같은 화면의 페이지 세로 막대 썸 두께를 보통·올림·누름에서 잰다."""
+    view = page.evaluate("() => ({vw: innerWidth, vh: innerHeight})")
+    vw, vh = view["vw"], view["vh"]
+    bg = css_rgb_triplet(page.evaluate(
+        "() => getComputedStyle(document.documentElement).backgroundColor"))
+    bar = LIGHTBOX_THUMB_BAR_PX
+    x = max(0, vw - bar)
+    height = min(LIGHTBOX_THUMB_STRIP_PX, vh)
+    clip = {"x": x, "y": 0, "width": bar, "height": height}
+    page.mouse.move(vw // 2, 10)
+    page.wait_for_timeout(150)
+    normal_path = out_dir / f"lightbox-{name}-page-vbar-normal.png"
+    page.screenshot(path=str(normal_path), clip=clip)
+    normal = measure_thumb_run(normal_path, "x", bg)
+    result = {"normal": normal["thickness"], "pos": normal["pos"], "crop": str(normal_path)}
+    if not normal["thickness"]:
+        return result
+    y = min(max(1, normal["pos"]), vh - 2)
+    page.mouse.move(vw - bar // 2, y)
+    page.wait_for_timeout(250)
+    hover_path = out_dir / f"lightbox-{name}-page-vbar-hover.png"
+    page.screenshot(path=str(hover_path), clip=clip)
+    result["hover"] = measure_thumb_run(hover_path, "x", bg)["thickness"]
+    page.mouse.down()
+    page.wait_for_timeout(200)
+    active_path = out_dir / f"lightbox-{name}-page-vbar-active.png"
+    page.screenshot(path=str(active_path), clip=clip)
+    result["active"] = measure_thumb_run(active_path, "x", bg)["thickness"]
+    page.mouse.move(max(0, vw - bar - 40), y, steps=4)
+    page.mouse.up()
+    page.evaluate("window.scrollTo(0, 0)")
+    page.wait_for_timeout(200)
+    return result
+
+
+def capture_overlay_thumb(page, out_dir, name, index):
+    """wide 라이트박스 가로 막대 썸 두께를 보통·올림·누름에서 잰다."""
+    view = page.evaluate("() => ({vw: innerWidth, vh: innerHeight})")
+    vw, vh = view["vw"], view["vh"]
+    bg = css_rgb_triplet(page.evaluate(
+        "() => getComputedStyle(document.documentElement).backgroundColor"))
+    bar = LIGHTBOX_THUMB_BAR_PX
+    y = max(0, vh - bar)
+    clip = {"x": 0, "y": y, "width": min(420, vw), "height": bar}
+    page.mouse.move(vw // 2, vh // 2)
+    page.wait_for_timeout(150)
+    normal_path = out_dir / f"lightbox-{name}-{index}-hbar-normal.png"
+    page.screenshot(path=str(normal_path), clip=clip)
+    normal = measure_thumb_run(normal_path, "y", bg)
+    result = {"normal": normal["thickness"], "pos": normal["pos"], "crop": str(normal_path)}
+    if not normal["thickness"]:
+        return result
+    x = min(max(1, normal["pos"]), vw - 2)
+    page.mouse.move(x, vh - bar // 2)
+    page.wait_for_timeout(250)
+    hover_path = out_dir / f"lightbox-{name}-{index}-hbar-hover.png"
+    page.screenshot(path=str(hover_path), clip=clip)
+    result["hover"] = measure_thumb_run(hover_path, "y", bg)["thickness"]
+    page.mouse.down()
+    page.wait_for_timeout(200)
+    active_path = out_dir / f"lightbox-{name}-{index}-hbar-active.png"
+    page.screenshot(path=str(active_path), clip=clip)
+    result["active"] = measure_thumb_run(active_path, "y", bg)["thickness"]
+    # 누른 채 조금 끌어야 click이 닫기로 해석되지 않는다(dragged).
+    page.mouse.move(min(vw - 2, x + 40), vh - bar // 2, steps=4)
+    page.mouse.up()
+    page.evaluate("() => { const o = document.querySelector('.ssy-lightbox'); if (o) o.scrollLeft = 0; }")
+    page.wait_for_timeout(150)
+    return result
+
+
 def run_lightbox_scenarios(browser, url, out_dir):
     results = {}
     configs = {config[0]: config for config in CONFIGS}
@@ -1189,6 +1338,10 @@ def run_lightbox_scenarios(browser, url, out_dir):
             results[name] = {"applicable": False, "reason": "확대할 그림이 없다"}
             ctx.close()
             continue
+        # wide 가로 막대 썸과 비교할 같은 화면의 페이지 세로 막대 썸을 먼저 잰다.
+        page_thumb = None
+        if name in LIGHTBOX_THUMB_CONFIGS:
+            page_thumb = capture_page_thumb(page, out_dir, name)
         rows = []
         for i in range(min(count, LIGHTBOX_MAX_IMAGES)):
             img = page.locator(LIGHTBOX_SELECTOR).nth(i)
@@ -1211,6 +1364,12 @@ def run_lightbox_scenarios(browser, url, out_dir):
                 opened = page.evaluate(LIGHTBOX_STATE_JS)
                 if i == 0:
                     page.screenshot(path=str(out_dir / f"lightbox-{name}-0.png"))
+                wide_thumb = None
+                if opened.get("wideMode") and name in LIGHTBOX_THUMB_CONFIGS:
+                    try:
+                        wide_thumb = capture_overlay_thumb(page, out_dir, name, i)
+                    except Exception as e:  # 픽셀 측정 실패도 판정 실패로 남긴다.
+                        wide_thumb = {"error": str(e)}
                 # 가로로 넘치는 라이트박스는 끝까지 밀었을 때 오른쪽 끝이 보이는지 잰다.
                 page.evaluate(
                     "() => { const o = document.querySelector('.ssy-lightbox'); o.scrollLeft = o.scrollWidth; }")
@@ -1238,13 +1397,14 @@ def run_lightbox_scenarios(browser, url, out_dir):
                 page.wait_for_timeout(150)
                 after_outside = page.evaluate(LIGHTBOX_STATE_JS)
                 rows.append({"img": meta, "before": before, "opened": opened, "panned": panned,
-                             "afterResize": after_resize,
+                             "afterResize": after_resize, "wideThumb": wide_thumb,
                              "afterTab": after_tab, "afterEsc": after_esc,
                              "afterOutsideClick": after_outside})
             except PlaywrightError as e:
                 rows.append({"img": meta, "error": str(e)})
                 page.keyboard.press("Escape")
-        results[name] = {"applicable": True, "rows": rows}
+        results[name] = {"applicable": True, "rows": rows, "pageThumb": page_thumb,
+                         "thumbEligible": name in LIGHTBOX_THUMB_CONFIGS}
         ctx.close()
     return results
 
@@ -1254,8 +1414,8 @@ def short_first_cell(text):
     return len(value) <= 6 or bool(re.fullmatch(r"\d{4}", value))
 
 
-def path_checks(report):
-    checks = {key: [] for key in ("A1", "A2", "A3", "A4", "A5", "A6", "A7", "A8", "A9", "A10", "A11", "A12", "A13", "A14", "A15", "A16", "A17", "A18", "A19")}
+def path_checks(report, strict_lightbox=False):
+    checks = {key: [] for key in ("A1", "A2", "A3", "A4", "A5", "A6", "A7", "A8", "A9", "A10", "A11", "A12", "A13", "A14", "A15", "A16", "A17", "A18", "A19", "A20")}
 
     def add(key, ok, detail, na=False):
         checks[key].append({"ok": bool(ok), "na": na, "detail": detail})
@@ -1373,6 +1533,11 @@ def path_checks(report):
         add("A18", entry["ok"], entry["detail"], na=entry.get("na", False))
     for entry in a19_checks(path, report["heightResize"]):
         add("A19", entry["ok"], entry["detail"], na=entry.get("na", False))
+    if strict_lightbox:
+        for entry in strict_lightbox_checks(path, report.get("lightbox")):
+            add("A20", entry["ok"], entry["detail"], na=entry.get("na", False))
+    else:
+        add("A20", True, f"{path}: --strict-lightbox 없이 실행 (A20 해당 없음)", na=True)
 
     for key, what in (
         ("A2", "좁은 폭에서 3~5칸 표"),
@@ -1393,6 +1558,8 @@ def main():
     parser.add_argument("out_dir", type=Path)
     parser.add_argument("--path", action="append", default=None,
                         help="검수할 글 경로. 여러 번 넘길 수 있다.")
+    parser.add_argument("--strict-lightbox", action="store_true",
+                        help="스크롤바를 보이게 띄우고 연 상태마다 바탕 넘침·가운데를 판정한다. 하나라도 어긋나면 1로 끝난다.")
     args = parser.parse_args()
 
     paths = args.path or DEFAULT_PATHS
@@ -1409,7 +1576,10 @@ def main():
     skipped = []
     try:
         with sync_playwright() as p:
-            browser = p.chromium.launch()
+            # Playwright 헤드리스는 기본으로 스크롤바를 숨긴다. 엄격 판정에서는 실제 스크롤바가
+            # 폭을 먹는 상태를 재야 하므로 숨기기를 끈다.
+            launch_kwargs = {"ignore_default_args": ["--hide-scrollbars"]} if args.strict_lightbox else {}
+            browser = p.chromium.launch(**launch_kwargs)
             try:
                 for path in paths:
                     index = args.build_dir / path.strip("/") / "index.html"
@@ -1446,9 +1616,9 @@ def main():
                 "configs": [{"name": c[0], "width": c[1], "height": c[2], "dpr": c[3], "colorScheme": c[4]}
                             for c in CONFIGS],
                 "skipped": skipped, "paths": reports, "summary": {}}
-    aggregate = {key: [] for key in ("A1", "A2", "A3", "A4", "A5", "A6", "A7", "A8", "A9", "A10", "A11", "A12", "A13", "A14", "A15", "A16", "A17", "A18", "A19")}
+    aggregate = {key: [] for key in ("A1", "A2", "A3", "A4", "A5", "A6", "A7", "A8", "A9", "A10", "A11", "A12", "A13", "A14", "A15", "A16", "A17", "A18", "A19", "A20")}
     for path, report in reports.items():
-        summary, raw = path_checks(report)
+        summary, raw = path_checks(report, strict_lightbox=args.strict_lightbox)
         report["verdicts"] = summary
         for key in aggregate:
             aggregate[key].extend(raw[key])
@@ -1485,6 +1655,13 @@ def main():
     print(json.dumps(combined["summary"], ensure_ascii=False, indent=1))
     print("skipped:", skipped)
     print("wrote", args.out_dir / "metrics.json")
+    if args.strict_lightbox:
+        strict_failures = [entry for entry in aggregate["A20"]
+                           if not entry.get("na") and not entry["ok"]]
+        if strict_failures:
+            for entry in strict_failures:
+                print("strict-lightbox 실패:", entry["detail"])
+            sys.exit(1)
 
 
 if __name__ == "__main__":

@@ -37,7 +37,9 @@ Karpathy의 vibe coding(코드를 안 보고 accept 연타)도, half coding(관�
 Vibe engineering은 영어를 쓰면 LLM이 대신하는 것이 아닙니다. 모델 한계 인지, 에이전트 역량 이해, 컨텍스트 관리, rules 작성, 기술 지식 전체가 필요합니다. 코드가 'good enough'인지 판단하는 능력은 LLM 이전에도 가치 있었고, LLM 시대에 더 가치 있습니다. "Being chronically on Twitter"도 필수—도구·모델·기법이 매일 바뀌기 때문이옵니다.
 
 
-> *""You look at your screen like I'm going to catch you." Kitze — 에이전트를 방치하지 않고 매 순간 감시하는 vibe engineer의 자세를 한 줄로 압축"* ## Vibe Coding의 함정
+> *"You look at your screen like I'm going to catch you." Kitze — 에이전트를 방치하지 않고 매 순간 감시하는 vibe engineer의 자세를 한 줄로 압축*
+
+## Vibe Coding의 함정
 
 
 ## 두 실천의 대비
@@ -82,7 +84,9 @@ Vibe engineering은 영어를 쓰면 LLM이 대신하는 것이 아닙니다. �
 주니어를 저임금으로 고용하고 LLM을 주는 것은 "가장 멍청한 아이디어". 에이전트 출력의 옳고 그름을 판단할 기술 지식이 없기 때문입니다. 회의적 시니어를 vibe engineering으로 전환시키면 10x 결과를 얻습니다. U자형 채택: 주니어(열광)와 초시니어(활용)가 양 극단, 중간 시니어가 가장 저항합니다.
 
 
-> *""One more prompt and the bug will disappear." Kitze — vibe coding의 도박사의 오류를 한 줄로 요약하며, 카지노에서 "한 판만 더"와 동일한 심리적 함정임을 지적"* ## 검증된 인사이트
+> *"One more prompt and the bug will disappear." Kitze — vibe coding의 도박사의 오류를 한 줄로 요약하며, 카지노에서 "한 판만 더"와 동일한 심리적 함정임을 지적*
+
+## 검증된 인사이트
 
 
 > **💡 [Insight 1] 실시간 개입은 검증의 시간 해상도다**
@@ -97,7 +101,9 @@ Vibe engineering은 영어를 쓰면 LLM이 대신하는 것이 아닙니다. �
 
 > **💡 [Insight 3] PA Dev — 과잉 최적화가 채택의 진짜 장벽이다**
 >
-> 2줄 PR에 nitpick, 2분 이상의 리뷰, LGTM 불가, 탭 vs 스페이스 종교전쟁. 이런 과잉 최적화 성향의 개발자(PA dev)가 vibe coding/engineering 거부의 가장 큰 원인입니다. Kitze의 통찰은 이 성향 자체의 비판이 아닌, 회의적 시니어를 설득하여 vibe engineering으로 전환시키면 10x 결과를 얻는다는 것이옵니다. PA dev는 AGI 이후에도 사라지지 않습니다—"matrix pod에서 일어나 AGI를 교정할 것이다." ## 다른 영상과의 교차점
+> 2줄 PR에 nitpick, 2분 이상의 리뷰, LGTM 불가, 탭 vs 스페이스 종교전쟁. 이런 과잉 최적화 성향의 개발자(PA dev)가 vibe coding/engineering 거부의 가장 큰 원인입니다. Kitze의 통찰은 이 성향 자체의 비판이 아닌, 회의적 시니어를 설득하여 vibe engineering으로 전환시키면 10x 결과를 얻는다는 것이옵니다. PA dev는 AGI 이후에도 사라지지 않습니다—"matrix pod에서 일어나 AGI를 교정할 것이다."
+
+## 다른 영상과의 교차점
 
 - Chris는 vibe를 부정하고 SE 위생으로 대체하며, Kitze는 vibe를 수용하되 'engineering'으로 인간 판단의 필수성을 명시합니다. 그러나 핵심 결론은 동일합니다—검증 없는 에이전트 자율성은 실패한다는 것이옵니다. Chris의 "컨텍스트가 AI 코드 생성의 1순위"는 Kitze의 "rules·context가 없으면 실패한다"와 같은 뿌리입니다.
 - Ian은 수용+검증 추가(thinking prompt, rules file, 검증 표면)를 처방합니다. Kitze는 수용+'engineering'으로 개인의 기술적 감시를 강조합니다. 두 접근은 상보적이옵니다: Ian의 체계적 검증 메커니즘과 Kitze의 실시간 개인 판단이 결합되어야 완전한 그림이 됩니다. 한쪽만으로는 부족합니다.

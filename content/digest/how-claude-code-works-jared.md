@@ -84,7 +84,9 @@ Jared는 “AI 치료사 문제”라는 비유를 들어, 코딩 에이전트�
 
 > **💡 [Insight] 컨텍스트 관리가 에이전트 IQ를 결정한다**
 >
-> Sub-agent, 컨텍스트 압축, Sandbox 파일 저장, Skills의 지연 로딩 — Claude Code의 모든 설계 결정은 “컨텍스트를 최대한 짧게 유지하라”는 단일 원칙에 수렴합니다. AMP의 Handoff, Cursor의 Composer 속도 최적화도 결국 같은 문제의 다른 해법입니다. 에이전트 성능의 천장은 모델 능력이 아니라 컨텍스트 밀도에 달려 있다는 것이 여러 에이전트를 비교해본 실무적 결론입니다. ## 다른 영상과의 교차점
+> Sub-agent, 컨텍스트 압축, Sandbox 파일 저장, Skills의 지연 로딩 — Claude Code의 모든 설계 결정은 “컨텍스트를 최대한 짧게 유지하라”는 단일 원칙에 수렴합니다. AMP의 Handoff, Cursor의 Composer 속도 최적화도 결국 같은 문제의 다른 해법입니다. 에이전트 성능의 천장은 모델 능력이 아니라 컨텍스트 밀도에 달려 있다는 것이 여러 에이전트를 비교해본 실무적 결론입니다.
+
+## 다른 영상과의 교차점
 
 - **12-Factor Agents (Dex Horthy)** — Dex의 Factor 8(제어 흐름 직접 소유)과 Factor 12(무상태 reducer)는 Claude Code의 마스터 루프 철학과 정확히 정렬됩니다. 다만 Dex는 “소유하라”고 말하고, Jared는 “모델에 맡겨라”고 말합니다. 프레임워크 의존을 경계한다는 점에서는 같지만, 결정론 대 유연성의 스펙트럼에서 서로 다른 지점을 택한 것입니다.
 - **Vibes won't cut it (Chris Kelly, Augment)** — “컨텍스트가 AI 코드 생성의 1순위”라는 Chris의 선언은, Jared의 “컨텍스트가 가장 큰 적”이라는 명제의 거울상입니다. 같은 사실의 양면 — 좋은 컨텍스트는 무기이고, 나쁜 컨텍스트는 독입니다. Chris의 rules 파일 + plan markdown 패턴은 Claude Code의 CLAUDE.md + Skills 구조와 직접 대응됩니다.

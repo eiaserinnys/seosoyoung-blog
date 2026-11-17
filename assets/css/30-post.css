@@ -697,7 +697,7 @@ aside.sidenote .footnote-backref {
 }
 
 .ssy-lightbox img {
-  max-width: 96vw;
+  max-width: 100%;
   flex-shrink: 0;
   border-radius: var(--zero);
   cursor: zoom-out;
