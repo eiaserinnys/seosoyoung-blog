@@ -171,6 +171,10 @@
   font-family: var(--sans);
 }
 
+.post-content .blog-diagram svg {
+  text-rendering: geometricPrecision;
+}
+
 .post-content .blog-diagram .diagram-svg-mobile {
   display: none;
   max-width: 400px;
@@ -346,6 +350,10 @@
   width: 100%;
   max-width: 100%;
   margin: 0 0 var(--space-3);
+  overflow: visible;
+}
+
+.table-scroll.is-overflowing {
   overflow-x: auto;
   overflow-y: hidden;
 }
@@ -363,8 +371,51 @@
   min-width: 100%;
 }
 
-.table-scroll.is-overflowing > table:has(tr > :nth-child(6)) {
+.table-scroll.is-overflowing.is-expanded > table {
+  width: var(--table-expanded-width);
+}
+
+.table-scroll.is-expanded.is-compact-first > table :is(th, td):first-child {
+  width: 100px;
+  max-width: 100px;
+}
+
+.table-scroll.is-overflowing:not(.is-expanded) > table:has(tr > :nth-child(6)) {
   width: max-content;
+}
+
+.table-scroll:not(.is-overflowing) > table thead :is(th, td) {
+  position: sticky;
+  top: var(--topbar-height);
+  z-index: 2;
+  background: var(--bg);
+  border-top-color: transparent;
+  border-bottom-color: transparent;
+  box-shadow: inset 0 var(--line) 0 var(--rule-strong),
+    inset 0 calc(var(--line) * -1) 0 var(--rule-strong);
+}
+
+.table-header-clone {
+  position: fixed;
+  overflow: hidden;
+  z-index: 10;
+  pointer-events: none;
+  background: var(--bg);
+}
+
+.post-content .table-header-clone table {
+  position: relative;
+  margin: 0;
+  max-width: none;
+  table-layout: fixed;
+  background: var(--bg);
+}
+
+.table-scroll.is-sticky-first .table-header-clone th:first-child {
+  position: relative;
+  z-index: 1;
+  background: var(--bg);
+  box-shadow: inset calc(var(--line) * -1) 0 var(--rule);
 }
 
 /* 넘치는 표의 첫 열을 가로 스크롤 중에도 고정한다(post.js가 is-sticky-first를 붙인다). */

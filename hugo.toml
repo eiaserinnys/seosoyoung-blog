@@ -64,10 +64,10 @@ title = '서소영의 서재'
 
 [caches]
   [caches.getresource]
-    dir = ':cacheDir/:project'
+    dir = ':cacheDir/seosoyoung-blog'
     maxAge = -1
   [caches.images]
-    dir = ':cacheDir/:project'
+    dir = ':cacheDir/seosoyoung-blog'
     maxAge = -1
 
 [related]

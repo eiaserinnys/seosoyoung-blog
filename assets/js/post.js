@@ -54,6 +54,7 @@
   }
 
   var MIN_COLUMN_EM = 8;
+  var EXPANDED_COLUMN_EM = 20;
 
   function glueMathPunctuation() {
     document.querySelectorAll(".post-content .katex").forEach(function (math) {
@@ -137,9 +138,55 @@
       return null;
     }
 
+    // Find the widest candidate whose columns fit the visible part of the wrapper.
+    function expandedWidth(item, maximum) {
+      var wrapper = item.wrapper;
+      var table = item.table;
+      var originalClass = wrapper.className;
+      var savedWidth = table.style.getPropertyValue("--table-expanded-width");
+      var savedPriority = table.style.getPropertyPriority("--table-expanded-width");
+      var fontSize = parseFloat(getComputedStyle(table).fontSize);
+      var bodyCell = table.querySelector("tbody tr:first-child > :first-child");
+      var label = bodyCell ? bodyCell.textContent.trim().slice(0, 24) : "";
+      function fits(width) {
+        wrapper.className = originalClass;
+        wrapper.classList.add("is-overflowing", "is-expanded");
+        table.style.setProperty("--table-expanded-width", width + "px");
+        if (item.cols === 4 && bodyCell && (label.length <= 6 || /^\d{4}$/.test(label))
+            && bodyCell.getBoundingClientRect().width > 100) {
+          wrapper.classList.add("is-compact-first");
+        }
+        var first = firstColumnWidth(table);
+        var sticky = first !== null && wrapper.clientWidth - first >= fontSize * MIN_COLUMN_EM;
+        wrapper.classList.toggle("is-sticky-first", sticky);
+        first = firstColumnWidth(table);
+        var visible = wrapper.clientWidth - (sticky ? first : 0);
+        var row = table.tHead ? table.tHead.rows[0] : table.rows[0];
+        var widest = Math.max.apply(null, Array.from(row.cells).map(function (cell) {
+          return cell.getBoundingClientRect().width;
+        }));
+        return widest <= visible + 1 && table.getBoundingClientRect().width <= width + 1;
+      }
+      var low = wrapper.clientWidth + 1;
+      var high = maximum;
+      var best = 0;
+      if (high > low && fits(low)) {
+        for (var i = 0; i < 16; i++) {
+          var middle = (low + high) / 2;
+          if (fits(middle)) { best = middle; low = middle; }
+          else high = middle;
+        }
+      }
+      wrapper.className = originalClass;
+      if (savedWidth) table.style.setProperty("--table-expanded-width", savedWidth, savedPriority);
+      else table.style.removeProperty("--table-expanded-width");
+      return best;
+    }
+
     function updateOverflow() {
       wrappers.forEach(function (item) {
-        item.wrapper.classList.remove("is-overflowing", "is-sticky-first");
+        item.wrapper.classList.remove("is-overflowing", "is-sticky-first", "is-expanded", "is-compact-first");
+        item.table.style.removeProperty("--table-expanded-width");
       });
       wrappers.forEach(function (item) {
         var natural = item.wrapper.scrollWidth > item.wrapper.clientWidth + 1
@@ -156,8 +203,41 @@
             else item.table.style.removeProperty("width");
           }
         }
-        var overflowing = natural || squeezed;
+        // Measure text lines before applying a wider table, then cap the widened width.
+        var expanded = false;
+        if (!natural && !squeezed && item.cols >= 3) {
+          var longCell = Array.from(item.table.querySelectorAll("th, td")).some(function (cell) {
+            var style = getComputedStyle(cell);
+            var contentHeight = cell.getBoundingClientRect().height
+              - parseFloat(style.paddingTop) - parseFloat(style.paddingBottom)
+              - parseFloat(style.borderTopWidth) - parseFloat(style.borderBottomWidth);
+            return Math.round(contentHeight / parseFloat(style.lineHeight)) >= 5;
+          });
+          if (longCell) {
+            var oldWidth = item.table.style.getPropertyValue("width");
+            var oldPriority = item.table.style.getPropertyPriority("width");
+            item.table.style.setProperty("width", "max-content");
+            var maxWidth = item.table.getBoundingClientRect().width;
+            if (oldWidth) item.table.style.setProperty("width", oldWidth, oldPriority);
+            else item.table.style.removeProperty("width");
+            if (maxWidth > item.wrapper.clientWidth + 1) {
+              var cap = parseFloat(getComputedStyle(item.table).fontSize) * item.cols * EXPANDED_COLUMN_EM;
+              var width = expandedWidth(item, Math.min(maxWidth, cap));
+              if (width > item.wrapper.clientWidth + 1) {
+                item.table.style.setProperty("--table-expanded-width", width + "px");
+                expanded = true;
+              }
+            }
+          }
+        }
+        var overflowing = natural || squeezed || expanded;
+        item.wrapper.classList.toggle("is-expanded", expanded);
         item.wrapper.classList.toggle("is-overflowing", overflowing);
+        var firstBodyCell = item.table.querySelector("tbody tr:first-child > :first-child");
+        var firstLabel = firstBodyCell ? firstBodyCell.textContent.trim().slice(0, 24) : "";
+        item.wrapper.classList.toggle("is-compact-first", expanded && item.cols === 4
+          && firstBodyCell && (firstLabel.length <= 6 || /^\d{4}$/.test(firstLabel))
+          && firstBodyCell.getBoundingClientRect().width > 100);
         var sticky = false;
         // 2칸 표는 값 열이 좁은 창으로만 보여 읽기 나빠지므로 고정하지 않는다.
         if (overflowing && item.cols >= 3 && item.wrapper.clientWidth > 0) {
@@ -167,8 +247,57 @@
             && item.wrapper.clientWidth - width >= fontSize * MIN_COLUMN_EM;
         }
         item.wrapper.classList.toggle("is-sticky-first", sticky);
+        syncHeader(item);
       });
     }
+
+    function syncHeader(item) {
+      var head = item.table.tHead;
+      if (!head || !item.wrapper.classList.contains("is-overflowing")) {
+        if (item.clone) item.clone.hidden = true;
+        return;
+      }
+      if (!item.clone) {
+        var clone = document.createElement("div");
+        clone.className = "table-header-clone";
+        clone.setAttribute("aria-hidden", "true");
+        clone.setAttribute("inert", "");
+        clone.hidden = true;
+        var copy = item.table.cloneNode(false);
+        copy.removeAttribute("id");
+        copy.appendChild(head.cloneNode(true));
+        copy.querySelectorAll("[id]").forEach(function (el) { el.removeAttribute("id"); });
+        clone.appendChild(copy);
+        item.wrapper.appendChild(clone);
+        item.clone = clone;
+      }
+      var wrapperRect = item.wrapper.getBoundingClientRect();
+      var headRect = head.getBoundingClientRect();
+      var tableRect = item.table.getBoundingClientRect();
+      var topbar = document.querySelector(".site-top");
+      var top = topbar ? topbar.getBoundingClientRect().bottom : 0;
+      var visible = headRect.top < top && tableRect.bottom > top + headRect.height;
+      item.clone.hidden = !visible;
+      if (!visible) return;
+      var cloneTable = item.clone.firstElementChild;
+      var originals = head.querySelectorAll("tr:first-child > *");
+      var copies = cloneTable.querySelectorAll("tr:first-child > *");
+      cloneTable.style.width = tableRect.width + "px";
+      cloneTable.style.left = -item.wrapper.scrollLeft + "px";
+      originals.forEach(function (cell, index) {
+        if (copies[index]) copies[index].style.width = cell.getBoundingClientRect().width + "px";
+      });
+      if (copies[0]) copies[0].style.transform = item.wrapper.classList.contains("is-sticky-first")
+        ? "translateX(" + item.wrapper.scrollLeft + "px)" : "";
+      item.clone.style.top = top + "px";
+      item.clone.style.left = wrapperRect.left + "px";
+      item.clone.style.width = item.wrapper.clientWidth + "px";
+    }
+
+    wrappers.forEach(function (item) {
+      item.wrapper.addEventListener("scroll", function () { syncHeader(item); }, { passive: true });
+    });
+    window.addEventListener("scroll", function () { wrappers.forEach(syncHeader); }, { passive: true });
 
     updateOverflow();
     // 모바일 주소창이 접히며 높이만 바뀌는 resize는 건너뛴다. 클래스를 뗐다 붙이면 밀어 둔 표의 scrollLeft가 0으로 돌아간다.

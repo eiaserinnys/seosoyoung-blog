@@ -13,7 +13,7 @@ import re
 A9_JS = r"""
 () => {
   const wrappers = [...document.querySelectorAll('.post-content .table-scroll')];
-  const codes = [...document.querySelectorAll('.post-content table :not(pre) > code')].map((c, i) => {
+  const codes = [...document.querySelectorAll('.post-content table :not(pre) > code')].filter(c => !c.closest('.table-header-clone')).map((c, i) => {
     const wrap = c.closest('.table-scroll');
     const cs = getComputedStyle(c);
     const cell = c.closest('td,th');
@@ -190,7 +190,7 @@ A11_JS = r"""
   const blockSelector = 'p,li,td,th,blockquote,h1,h2,h3,h4,h5,h6,figcaption,dd,dt';
   const maths = [...content.querySelectorAll('.katex'),
     ...(includeSide ? document.querySelectorAll('aside.sidenote .katex') : [])]
-    .filter((k) => !k.closest('.katex-display'));
+    .filter((k) => !k.closest('.katex-display') && !k.closest('.table-header-clone[hidden]'));
   const bounds = maths.map((k, i) => {
     let unit = k;
     const parent = k.parentElement;
@@ -984,6 +984,18 @@ MIN_TABLE_COLS = 3
 A17_CONFIGS = ("min360-light", "narrow-light", "min390-light", "min414-light", "narrow-dark", "wide-light")
 
 
+def a5_overflow_checks(path, row):
+    candidate = (not row['natural'] and not row['squeezed'] and row['cols'] >= 3
+                 and row['longCell'] and row['maxContentWidth'] > row['wrapClient'] + 1)
+    expected = row['natural'] or row['squeezed'] or candidate
+    rejected = (candidate and not row['isOverflowing'] and row.get('minimumMaxColumn') is not None
+                and row['minimumMaxColumn'] > row['minimumVisible'] + 1)
+    return [{'ok': row['isOverflowing'] == expected or rejected,
+             'detail': f"{path} table {row['index']}: overflowing={row['isOverflowing']} "
+                       f"natural={row['natural']} squeezed={row['squeezed']} candidate={candidate} "
+                       f"minimum={row.get('minimumMaxColumn')}/{row.get('minimumVisible')}"}]
+
+
 def a17_checks(path, configs):
     entries = []
     tables = 0
@@ -1018,9 +1030,9 @@ def a17_checks(path, configs):
                           f"headLeftDiff={row.get('firstLeftDiff')} bodyLeftDiff={row.get('bodyLeftDiff')} "
                           f"scroll={scroll_left}/{max_scroll} bg={bg} bodyBg={body}")
             else:
-                ok = not row.get("sticky") and row.get("firstCellPosition") == "static"
+                ok = not row.get("sticky") and row.get("bodyCellPosition") == "static"
                 detail = (f"{path} {name} table {row.get('index')} ({cols}칸): sticky={row.get('sticky')} "
-                          f"expected=False position={row.get('firstCellPosition')} "
+                          f"expected=False bodyPosition={row.get('bodyCellPosition')} "
                           f"overflowing={row.get('overflowing')} room={room}px need={need}px")
             entries.append({"ok": ok, "detail": detail})
     if not tables:
@@ -1100,3 +1112,67 @@ def summarize_checks(entries, limit=40):
         "failures": failed[:limit],
         "naDetails": [entry["detail"] for entry in na][:5],
     }
+
+
+def a21_checks(path, samples):
+    entries = []
+    widths = ('360', '375', '390', '414')
+    arrays = [samples.get(width, []) for width in widths]
+    if all(arrays) and len({len(a) for a in arrays}) == 1:
+        for i, values in enumerate(zip(*arrays)):
+            low, high = min(values), max(values)
+            entries.append({'ok': low > 0 and high / low <= 1.005,
+                            'detail': f'{path} SVG text {i}: {values}'})
+    return entries
+
+
+def a22_checks(path, rows):
+    entries = []
+    for row in rows:
+        edges = row['edges'] + row['afterScrollEdges'] + row['afterResizeEdges']
+        ok = (all(abs(row[k]) <= 1 for k in ('topDiff', 'afterScrollTop', 'afterResizeTop')) and all(row[k] for k in ('edges', 'afterScrollEdges', 'afterResizeEdges'))
+              and all(abs(x) <= 1 for x in edges)
+              and row['hiddenAfter'] and row['inert'] and row['tabSafe'])
+        entries.append({'ok': ok, 'detail': f'{path} A22 {row}'})
+    return entries
+
+
+def a22_rule_checks(path, rows):
+    return [{'ok': bool(row['top'] and row['bottom'] and row['beforeThickness'] > 0
+                        and row['afterThickness'] > 0
+                        and abs(row['beforeThickness'] - row['afterThickness']) <= 1),
+             'detail': f"{path} A22 rule {row}"} for row in rows]
+
+
+def a23_synthetic_coverage(reports):
+    return any(row.get('synthetic') for report in reports.values() for row in report.get('synthetic', []))
+
+
+def a23_checks(path, rows):
+    entries = []
+    for row in rows:
+        if row['cols'] < 3:
+            continue
+        ok = (not (row['natural'] or row['squeezed']) or not row['expanded'])
+        if row['expanded']:
+            ok = (ok and row['overflowing'] and row['maxColumn'] <= row['visible'] + 1
+                  and row['lines'] < row['linesBefore'])
+        if not row['overflowing']:
+            ok = ok and row['scroll'] <= row['client'] + 1
+        if 'expectedOverflow' in row:
+            ok = ok and row['expanded'] == row['expectedOverflow']
+        if row.get('synthetic'):
+            ok = ok and row['expanded'] and row['maxContentWidth'] > 3 * row['client']
+        entries.append({'ok': bool(ok), 'detail': f'{path} A23 {row}'})
+    return entries
+
+
+def a24_checks(path, rows):
+    entries = []
+    for row in rows:
+        width, height = row.get('attrWidth'), row.get('attrHeight')
+        ok = (bool(width and height) and row.get('loaded') and not row.get('complete')
+              and abs(row['height'] - row['width'] * height / width) <= 1
+              and row.get('anchorShift') is not None and abs(row['anchorShift']) <= 2)
+        entries.append({'ok': bool(ok), 'detail': f'{path} A24 {row}'})
+    return entries
