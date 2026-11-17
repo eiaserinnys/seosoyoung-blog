@@ -68,6 +68,7 @@
         window.removeEventListener('resize', fitImage);
         document.removeEventListener('keydown', onKey, true);
         document.documentElement.style.overflow = previousOverflow;
+        document.documentElement.classList.remove('ssy-lightbox-open');
         img.focus({ preventScroll: true });
       }
       function onKey(e) {
@@ -101,6 +102,7 @@
       document.addEventListener('keydown', onKey, true);
       window.addEventListener('resize', fitImage);
       big.addEventListener('load', fitImage);
+      document.documentElement.classList.add('ssy-lightbox-open');
       document.documentElement.style.overflow = 'hidden';
       document.body.appendChild(overlay);
       fitImage();

@@ -729,17 +729,36 @@ def a14_checks(path, lightbox):
     return entries
 
 
-def strict_lightbox_checks(path, lightbox):
-    """--strict-lightbox: 연 상태마다 바탕 넘침과 가운데 정렬을 잰다.
+LIGHTBOX_THUMB_STATES = ("normal", "hover", "active")
 
-    wide가 아니면 가로 넘침이 없고(scrollWidth <= clientWidth + 1) 좌우 틈 차이가 1px 이하이며,
-    wide면 세로 넘침이 없어야 한다(scrollHeight <= clientHeight + 1). 처음 연 상태(opened)와
-    창 크기를 바꾼 뒤(afterResize)를 모두 본다.
+
+def _lightbox_thumb_values(thumb):
+    """썸 두께 측정값이 보통·올림·누름 모두 숫자로 있으면 돌려준다. 아니면 None."""
+    if not isinstance(thumb, dict) or thumb.get("error"):
+        return None
+    values = {}
+    for state in LIGHTBOX_THUMB_STATES:
+        value = thumb.get(state)
+        if isinstance(value, bool) or not isinstance(value, (int, float)):
+            return None
+        values[state] = value
+    return values
+
+
+def strict_lightbox_checks(path, lightbox):
+    """--strict-lightbox: 연 상태마다 바탕 넘침과 화면 정렬을 잰다.
+
+    wide가 아니면 가로 넘침이 없고(scrollWidth <= clientWidth + 1) 바탕 안 좌우 틈 차이와
+    창 기준 좌우 틈 차이가 1px 이하이며, wide면 세로 넘침이 없어야 한다. 열린 모든 상태에서
+    바탕 오른쪽 끝이 window.innerWidth와 1px 안이어야 하고, 닫은 뒤 scrollY와 본문 첫 요소 x가
+    연 앞과 1px 안으로 같아야 한다. 데스크톱 wide 가로 막대 썸 두께는 같은 상태의 페이지 세로
+    막대 썸 두께와 같아야 한다. 처음 연 상태(opened)와 창 크기를 바꾼 뒤(afterResize)를 본다.
     """
     entries = []
     for name, data in (lightbox or {}).items():
         if not (data or {}).get("applicable"):
             continue
+        page_thumb = _lightbox_thumb_values((data or {}).get("pageThumb"))
         for row in data.get("rows") or []:
             src = (row.get("img") or {}).get("src")
             if row.get("error"):
@@ -761,26 +780,82 @@ def strict_lightbox_checks(path, lightbox):
                 scroll_h = overlay.get("scrollH")
                 left_gap = overlay.get("leftGap")
                 right_gap = overlay.get("rightGap")
-                if None in (client_w, client_h, scroll_w, scroll_h, left_gap, right_gap):
+                overlay_right = overlay.get("right")
+                vw = measured.get("vw")
+                if None in (client_w, client_h, scroll_w, scroll_h, left_gap, right_gap,
+                            overlay_right, vw):
                     entries.append({"ok": False,
                                     "detail": f"{path} {name} {src} [{state}]: 바탕 측정값 없음 {overlay!r}"})
                     continue
+                right_diff = abs(overlay_right - vw)
                 if measured.get("wideMode"):
-                    ok = scroll_h <= client_h + 1
+                    ok = scroll_h <= client_h + 1 and right_diff <= 1
                     entries.append({
                         "ok": ok,
-                        "detail": (f"{path} {name} {src} [{state}] wide {measured.get('vw')}x{measured.get('vh')}: "
-                                   f"scrollH={scroll_h} clientH={client_h}"),
+                        "detail": (f"{path} {name} {src} [{state}] wide {vw}x{measured.get('vh')}: "
+                                   f"scrollH={scroll_h} clientH={client_h} "
+                                   f"overlayRight={overlay_right} vw={vw} rightDiff={round(right_diff, 2)}"),
                     })
                 else:
+                    screen_left = measured.get("screenLeftGap")
+                    screen_right = measured.get("screenRightGap")
+                    if None in (screen_left, screen_right):
+                        entries.append({"ok": False,
+                                        "detail": f"{path} {name} {src} [{state}]: 창 기준 틈 측정값 없음"})
+                        continue
                     gap_diff = abs(left_gap - right_gap)
-                    ok = scroll_w <= client_w + 1 and gap_diff <= 1
+                    win_diff = abs(screen_left - screen_right)
+                    ok = scroll_w <= client_w + 1 and gap_diff <= 1 and win_diff <= 1 and right_diff <= 1
                     mode = "scroll" if measured.get("scrollMode") else "fit"
                     entries.append({
                         "ok": ok,
-                        "detail": (f"{path} {name} {src} [{state}] {mode} {measured.get('vw')}x{measured.get('vh')}: "
+                        "detail": (f"{path} {name} {src} [{state}] {mode} {vw}x{measured.get('vh')}: "
                                    f"scrollW={scroll_w} clientW={client_w} "
-                                   f"leftGap={left_gap} rightGap={right_gap} gapDiff={round(gap_diff, 2)}"),
+                                   f"leftGap={left_gap} rightGap={right_gap} gapDiff={round(gap_diff, 2)} "
+                                   f"screenLeftGap={screen_left} screenRightGap={screen_right} "
+                                   f"winDiff={round(win_diff, 2)} "
+                                   f"overlayRight={overlay_right} vw={vw} rightDiff={round(right_diff, 2)}"),
+                    })
+            if not (row.get("opened") or {}).get("open"):
+                continue
+            before = row.get("before") or {}
+            base_y = before.get("scrollY")
+            base_x = before.get("bodyFirstX")
+            if base_y is None or base_x is None:
+                entries.append({"ok": False,
+                                "detail": f"{path} {name} {src}: 연 앞 scrollY/본문 x 측정값 없음"})
+            else:
+                for state in ("afterEsc", "afterOutsideClick"):
+                    closed = row.get(state) or {}
+                    closed_y = closed.get("scrollY")
+                    closed_x = closed.get("bodyFirstX")
+                    if closed_y is None or closed_x is None:
+                        entries.append({"ok": False,
+                                        "detail": f"{path} {name} {src} [{state}]: 닫은 뒤 측정값 없음"})
+                        continue
+                    y_diff = abs(closed_y - base_y)
+                    x_diff = abs(closed_x - base_x)
+                    entries.append({
+                        "ok": y_diff <= 1 and x_diff <= 1,
+                        "detail": (f"{path} {name} {src} [{state}]: scrollY={closed_y} (연 앞 {base_y}) "
+                                   f"diff={round(y_diff, 2)} bodyFirstX={closed_x} (연 앞 {base_x}) "
+                                   f"diff={round(x_diff, 2)}"),
+                    })
+            opened = row.get("opened") or {}
+            if opened.get("wideMode") and (data or {}).get("thumbEligible"):
+                wide_values = _lightbox_thumb_values(row.get("wideThumb"))
+                if page_thumb is None or wide_values is None:
+                    entries.append({
+                        "ok": False,
+                        "detail": (f"{path} {name} {src} wide: 썸 두께 측정값 없음 "
+                                   f"page={data.get('pageThumb')!r} wide={row.get('wideThumb')!r}"),
+                    })
+                else:
+                    same = all(wide_values[s] == page_thumb[s] for s in LIGHTBOX_THUMB_STATES)
+                    entries.append({
+                        "ok": same,
+                        "detail": (f"{path} {name} {src} wide: pageThumb={page_thumb} "
+                                   f"wideThumb={wide_values}"),
                     })
     if not entries:
         return [{"ok": True, "na": True,

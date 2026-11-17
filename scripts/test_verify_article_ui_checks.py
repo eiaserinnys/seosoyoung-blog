@@ -254,11 +254,15 @@ class ArticleUiChecksTest(unittest.TestCase):
     def test_strict_lightbox_checks(self):
         def strict_row(**overrides):
             overlay = {"clientW": 1404, "clientH": 885, "scrollW": 1404, "scrollH": 885,
-                       "leftGap": 55.2, "rightGap": 55.2}
+                       "leftGap": 55.2, "rightGap": 55.2, "right": 1440}
+            before = {"open": False, "scrollY": 1200.0, "bodyFirstX": 16.0}
+            closed = {"open": False, "scrollY": 1200.0, "bodyFirstX": 16.0}
             opened = {"open": True, "vw": 1440, "vh": 900, "wideMode": False,
-                      "scrollMode": False, "overlay": dict(overlay)}
+                      "scrollMode": False, "screenLeftGap": 55.2, "screenRightGap": 55.2,
+                      "overlay": dict(overlay)}
             opened.update(overrides)
-            return {"img": {"src": "x.png"}, "opened": opened}
+            return {"img": {"src": "x.png"}, "opened": opened, "before": before,
+                    "afterEsc": dict(closed), "afterOutsideClick": dict(closed)}
 
         def verdict(row):
             entries = strict_lightbox_checks("/digest/x/", {"wide-light": {"applicable": True, "rows": [row]}})
@@ -306,6 +310,75 @@ class ArticleUiChecksTest(unittest.TestCase):
                                                                        "reason": "확대할 그림이 없다"}})
         self.assertEqual(len(entries), 1)
         self.assertTrue(entries[0]["na"])
+
+    def test_strict_lightbox_window_closed_and_thumb_checks(self):
+        def strict_row(**overrides):
+            overlay = {"clientW": 1404, "clientH": 885, "scrollW": 1404, "scrollH": 885,
+                       "leftGap": 55.2, "rightGap": 55.2, "right": 1440}
+            before = {"open": False, "scrollY": 1200.0, "bodyFirstX": 16.0}
+            closed = {"open": False, "scrollY": 1200.0, "bodyFirstX": 16.0}
+            opened = {"open": True, "vw": 1440, "vh": 900, "wideMode": False,
+                      "scrollMode": False, "screenLeftGap": 55.2, "screenRightGap": 55.2,
+                      "overlay": dict(overlay)}
+            opened.update(overrides)
+            return {"img": {"src": "x.png"}, "opened": opened, "before": before,
+                    "afterEsc": dict(closed), "afterOutsideClick": dict(closed)}
+
+        def verdict(row, page_thumb=None, thumb_eligible=False):
+            data = {"applicable": True, "rows": [row]}
+            if page_thumb is not None:
+                data["pageThumb"] = page_thumb
+            if thumb_eligible:
+                data["thumbEligible"] = True
+            entries = strict_lightbox_checks("/digest/x/", {"wide-light": data})
+            return (all(entry["ok"] for entry in entries),
+                    " | ".join(entry["detail"] for entry in entries))
+
+        ok, detail = verdict(strict_row())
+        self.assertTrue(ok, detail)
+
+        window = strict_row()
+        window["opened"]["screenRightGap"] = 67.2
+        ok, detail = verdict(window)
+        self.assertFalse(ok)
+        self.assertIn("winDiff=12.0", detail)
+
+        strip = strict_row()
+        strip["opened"]["overlay"]["right"] = 1428
+        ok, detail = verdict(strip)
+        self.assertFalse(ok)
+        self.assertIn("rightDiff=12", detail)
+
+        moved = strict_row()
+        moved["afterEsc"]["scrollY"] = 1210.0
+        ok, detail = verdict(moved)
+        self.assertFalse(ok)
+        self.assertIn("[afterEsc]", detail)
+        self.assertIn("diff=10.0", detail)
+
+        shifted = strict_row()
+        shifted["afterOutsideClick"]["bodyFirstX"] = 17.5
+        ok, detail = verdict(shifted)
+        self.assertFalse(ok)
+        self.assertIn("[afterOutsideClick]", detail)
+        self.assertIn("bodyFirstX=17.5", detail)
+
+        page_thumb = {"normal": 6, "hover": 8, "active": 8}
+        wide = strict_row(wideMode=True)
+        wide["wideThumb"] = dict(page_thumb)
+        ok, detail = verdict(wide, page_thumb=page_thumb, thumb_eligible=True)
+        self.assertTrue(ok, detail)
+
+        thin = strict_row(wideMode=True)
+        thin["wideThumb"] = {"normal": 6, "hover": 6, "active": 8}
+        ok, detail = verdict(thin, page_thumb=page_thumb, thumb_eligible=True)
+        self.assertFalse(ok)
+        self.assertIn("wideThumb", detail)
+
+        missing = strict_row(wideMode=True)
+        ok, detail = verdict(missing, page_thumb=page_thumb, thumb_eligible=True)
+        self.assertFalse(ok)
+        self.assertIn("썸 두께 측정값 없음", detail)
 
     def test_straight_quote_detector(self):
         self.page.set_content(
