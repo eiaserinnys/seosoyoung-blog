@@ -375,6 +375,11 @@
   width: var(--table-expanded-width);
 }
 
+.table-scroll.is-expanded.is-compact-first > table :is(th, td):first-child {
+  width: 100px;
+  max-width: 100px;
+}
+
 .table-scroll.is-overflowing:not(.is-expanded) > table:has(tr > :nth-child(6)) {
   width: max-content;
 }

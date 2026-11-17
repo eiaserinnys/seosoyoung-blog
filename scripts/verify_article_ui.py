@@ -31,7 +31,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 from verify_article_ui_checks import (
     A10_CONFIGS, A10_JS, A11_JS, A15_JS, A16_JS, A17_CONFIGS, A9_JS, a9_checks, a10_checks, a11_checks,
     a12_checks, a13_checks, a14_checks, a15_checks, a16_checks, a17_checks, a18_checks, a19_checks,
-    a21_checks, a22_checks, a23_checks, a24_checks,
+    a5_overflow_checks, a21_checks, a22_checks, a23_checks, a24_checks,
     resized_sidenotes_ok, sidenote_presence_ok, strict_lightbox_checks, summarize_checks,
 )
 
@@ -370,6 +370,7 @@ TABLE_STICKY_JS = r"""
       firstLeftDiff: headRect ? +(headRect.left - wrapRect.left).toFixed(1) : null,
       bodyLeftDiff: bodyRect ? +(bodyRect.left - wrapRect.left).toFixed(1) : null,
       firstCellPosition: cs ? cs.position : null,
+      bodyCellPosition: bodyCell ? getComputedStyle(bodyCell).position : null,
       firstCellBg: cs ? parseRGB(cs.backgroundColor) : null,
       bodyBg,
     };
@@ -408,24 +409,35 @@ STATE_JS = r"""
   const tables = [...document.querySelectorAll('.post-content .table-scroll')].map((wrap, i) => {
     const table = wrap.querySelector('table');
     const was = wrap.classList.contains('is-overflowing');
-    wrap.classList.remove('is-overflowing');
+    const originalClass = wrap.className;
+    const expandedWidth = table.style.getPropertyValue('--table-expanded-width');
+    const expandedPriority = table.style.getPropertyPriority('--table-expanded-width');
+    const scrollLeft = wrap.scrollLeft;
+    wrap.classList.remove('is-overflowing', 'is-sticky-first', 'is-expanded');
+    table.style.removeProperty('--table-expanded-width');
     const rows = [...table.querySelectorAll('tr')];
     let cols = 0;
     rows.forEach((row) => { let count = 0; [...row.children].forEach((cell) => { count += cell.colSpan || 1; }); if (count > cols) cols = count; });
     const natural = wrap.scrollWidth > wrap.clientWidth + 1 || table.scrollWidth > wrap.clientWidth + 1;
     const fontSize = parseFloat(getComputedStyle(table).fontSize);
-    let squeezed = false;
-    if (!natural && cols >= 3 && cols <= 5 && wrap.clientWidth / cols < fontSize * 8) {
-      const oldWidth = table.style.getPropertyValue('width');
-      const oldPriority = table.style.getPropertyPriority('width');
-      table.style.setProperty('width', 'max-content');
-      const maxContent = table.getBoundingClientRect().width;
-      if (oldWidth) table.style.setProperty('width', oldWidth, oldPriority); else table.style.removeProperty('width');
-      squeezed = maxContent > wrap.clientWidth + 1;
-    }
-    wrap.classList.toggle('is-overflowing', was);
-    return {index: i + 1, cols, isOverflowing: was, expected: natural || squeezed,
-      natural, squeezed, wrapClient: wrap.clientWidth, wrapScroll: wrap.scrollWidth,
+    const longCell = cols >= 3 && [...table.querySelectorAll('th,td')].some(cell => {
+      const cs = getComputedStyle(cell);
+      const h = cell.getBoundingClientRect().height - parseFloat(cs.paddingTop) - parseFloat(cs.paddingBottom)
+        - parseFloat(cs.borderTopWidth) - parseFloat(cs.borderBottomWidth);
+      return Math.round(h / parseFloat(cs.lineHeight)) >= 5;
+    });
+    const oldWidth = table.style.getPropertyValue('width');
+    const oldPriority = table.style.getPropertyPriority('width');
+    table.style.setProperty('width', 'max-content');
+    const maxContentWidth = table.getBoundingClientRect().width;
+    if (oldWidth) table.style.setProperty('width', oldWidth, oldPriority); else table.style.removeProperty('width');
+    const squeezed = !natural && cols >= 3 && cols <= 5
+      && wrap.clientWidth / cols < fontSize * 8 && maxContentWidth > wrap.clientWidth + 1;
+    wrap.className = originalClass;
+    if (expandedWidth) table.style.setProperty('--table-expanded-width', expandedWidth, expandedPriority);
+    wrap.scrollLeft = scrollLeft;
+    return {index: i + 1, cols, isOverflowing: was, natural, squeezed, longCell,
+      maxContentWidth, wrapClient: wrap.clientWidth, wrapScroll: wrap.scrollWidth,
       tableWidth: +table.getBoundingClientRect().width.toFixed(1),
       tableHeight: +table.getBoundingClientRect().height.toFixed(1)};
   });
@@ -1422,16 +1434,10 @@ LINE_TABLES_JS = r"""
   const t = w.querySelector(':scope > table');
   let max = 0;
   t.querySelectorAll('th,td').forEach(cell => {
-    const tops = [], tolerance = parseFloat(getComputedStyle(cell).lineHeight) / 2;
-    const walk = document.createTreeWalker(cell, NodeFilter.SHOW_TEXT);
-    let node;
-    while (node = walk.nextNode()) {
-      if (!node.textContent.trim() || node.parentElement.closest('.katex-mathml')) continue;
-      const range = document.createRange(); range.selectNodeContents(node);
-      for (const r of range.getClientRects())
-        if (r.width && r.height && !tops.some(y => Math.abs(y-r.top) < tolerance)) tops.push(r.top);
-    }
-    max = Math.max(max, tops.length);
+    const cs = getComputedStyle(cell);
+    const h = cell.getBoundingClientRect().height - parseFloat(cs.paddingTop) - parseFloat(cs.paddingBottom)
+      - parseFloat(cs.borderTopWidth) - parseFloat(cs.borderBottomWidth);
+    max = Math.max(max, Math.round(h / parseFloat(cs.lineHeight)));
   });
   return {table: i + 1, lines: max, overflowing: w.classList.contains('is-overflowing'),
           scroll: w.scrollWidth, client: w.clientWidth};
@@ -1652,10 +1658,8 @@ def path_checks(report, strict_lightbox=False):
     for scenario, data in report["resize"].items():
         for stage in data["stages"]:
             for table in stage["tables"]:
-                add("A5", table["isOverflowing"] == table["expected"],
-                    f"{path} {scenario}@{stage['stageWidth']} table {table['index']} ({table['cols']}칸): "
-                    f"is-overflowing={table['isOverflowing']} expected={table['expected']} "
-                    f"width={table['tableWidth']}px")
+                for entry in a5_overflow_checks(f"{path} {scenario}@{stage['stageWidth']}", table):
+                    add("A5", entry["ok"], entry["detail"])
         final = data["stages"][-1]
         if final["stageWidth"] == 1440:
             add("A5", resized_sidenotes_ok(final, wide),

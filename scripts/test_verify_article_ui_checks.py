@@ -625,3 +625,86 @@ class NewArticleChecksTest(unittest.TestCase):
         row['anchorShift'] = 0
         row['height'] = 10
         self.assertFalse(a24_checks('/x/', [row])[0]['ok'])
+
+class RevisedChecksTest(unittest.TestCase):
+    def test_a5_independent_expected_overflow(self):
+        from verify_article_ui_checks import a5_overflow_checks
+        passing = {'index': 1, 'cols': 5, 'isOverflowing': True, 'natural': False,
+                   'squeezed': False, 'longCell': True, 'maxContentWidth': 1200, 'wrapClient': 720}
+        self.assertTrue(a5_overflow_checks('/x/', passing)[0]['ok'])
+        failing = dict(passing, isOverflowing=False)
+        self.assertFalse(a5_overflow_checks('/x/', failing)[0]['ok'])
+        failing = dict(passing, longCell=False)
+        self.assertFalse(a5_overflow_checks('/x/', failing)[0]['ok'])
+
+    def test_a17_vertical_sticky_does_not_hide_body_horizontal_failure(self):
+        from verify_article_ui_checks import a17_checks
+        row = {'index': 1, 'cols': 3, 'overflowing': False, 'sticky': False,
+               'wrapClient': 720, 'firstCellWidth': 100, 'fontSize': 18,
+               'firstCellPosition': 'sticky', 'bodyCellPosition': 'static'}
+        self.assertTrue(a17_checks('/x/', {'wide-light': {'sticky': [row]}})[0]['ok'])
+        row['bodyCellPosition'] = 'sticky'
+        self.assertFalse(a17_checks('/x/', {'wide-light': {'sticky': [row]}})[0]['ok'])
+
+class RevisedBrowserChecksTest(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls):
+        cls.playwright = sync_playwright().start()
+        cls.browser = cls.playwright.chromium.launch()
+
+    @classmethod
+    def tearDownClass(cls):
+        cls.browser.close()
+        cls.playwright.stop()
+
+    def setUp(self):
+        self.page = self.browser.new_page()
+
+    def tearDown(self):
+        self.page.close()
+
+    def test_a11_ignores_only_hidden_header_clone(self):
+        self.page.set_content('''<style>.post-content{width:300px} table{width:200px;table-layout:fixed} th{padding:8px 16px}
+          .katex{display:inline-block;width:30px}</style><div class="post-content">
+          <table><thead><tr><th><span class="katex">x</span></th></tr></thead></table>
+          <div class="table-header-clone" hidden><table><thead><tr><th>
+          <span class="katex">x</span></th></tr></thead></table></div></div>''')
+        self.assertEqual(len(self.page.evaluate(A11_JS)['bounds']), 1)
+        self.page.locator('.table-header-clone').evaluate('e => e.hidden=false')
+        self.page.locator('.table-header-clone .katex').evaluate("e => e.style.width='400px'")
+        result = self.page.evaluate(A11_JS)['bounds']
+        self.assertEqual(len(result), 2)
+        self.assertGreater(result[1]['over'], 1)
+
+    def test_a5_measures_long_cell_without_reading_overflow_class(self):
+        from verify_article_ui import STATE_JS
+        from verify_article_ui_checks import a5_overflow_checks
+        self.page.set_content('''<style>.table-scroll{width:260px} table{width:100%;border-collapse:collapse;
+          font:16px/24px sans-serif} td,th{padding:4px 8px;vertical-align:top}</style>
+          <div class="post-content"><div class="table-scroll"><table><thead><tr><th>A</th><th>B</th><th>C</th></tr></thead>
+          <tbody><tr><td>one</td><td>words words words words words words words words words words words words words words words words</td><td>end</td></tr></tbody></table></div></div>''')
+        state = self.page.evaluate(STATE_JS)['tables'][0]
+        self.assertTrue(state['longCell'])
+        self.assertGreater(state['maxContentWidth'], state['wrapClient'])
+        self.assertFalse(a5_overflow_checks('/x/', state)[0]['ok'])
+        self.page.locator('.table-scroll').evaluate("e => e.classList.add('is-overflowing')")
+        state = self.page.evaluate(STATE_JS)['tables'][0]
+        self.assertTrue(a5_overflow_checks('/x/', state)[0]['ok'])
+
+    def test_expanded_four_column_table_keeps_short_first_column_readable(self):
+        from pathlib import Path
+        css = Path('assets/css/30-post.css').read_text(encoding='utf-8')
+        js = Path('assets/js/post.js').read_text(encoding='utf-8')
+        self.page.set_viewport_size({'width': 375, 'height': 812})
+        self.page.set_content('''<style>*, *::before, *::after{box-sizing:border-box}:root{--space-1:8px;--space-2:16px;--space-3:24px;
+          --line:1px;--line-strong:2px;--bg:white;--rule:#ccc;--rule-strong:#333;--ink-2:#333;
+          --topbar-height:64px} .post-content{width:335px;font-size:18px}</style>
+          <div class="post-content"><table><thead><tr><th>모델</th><th>메모리</th><th>함수</th><th>갱신</th></tr></thead>
+          <tbody><tr><td>SWLA</td><td>길고 긴 메모리 설명이 여러 줄로 자주 줄바꿈되도록 충분히 길게 반복합니다 길고 긴 메모리 설명이 여러 줄로 자주 줄바꿈되도록 반복합니다</td><td>목적 함수에 대한 설명</td><td>갱신 규칙을 설명합니다</td></tr>
+          <tr><td>Titans (LMM)</td><td>심층 신경망</td><td>회귀 손실</td><td>가중치 감쇠</td></tr></tbody></table></div>''')
+        self.page.add_style_tag(content=css)
+        self.page.evaluate(js)
+        wrapper = self.page.locator('.table-scroll')
+        self.assertIn('is-expanded', wrapper.get_attribute('class'))
+        width = wrapper.locator('tbody td').first.evaluate('e => e.getBoundingClientRect().width')
+        self.assertLessEqual(width, 100)

@@ -140,7 +140,7 @@
 
     function updateOverflow() {
       wrappers.forEach(function (item) {
-        item.wrapper.classList.remove("is-overflowing", "is-sticky-first", "is-expanded");
+        item.wrapper.classList.remove("is-overflowing", "is-sticky-first", "is-expanded", "is-compact-first");
         item.table.style.removeProperty("--table-expanded-width");
       });
       wrappers.forEach(function (item) {
@@ -162,15 +162,11 @@
         var expanded = false;
         if (item.cols >= 3) {
           var longCell = Array.from(item.table.querySelectorAll("th, td")).some(function (cell) {
-            var range = document.createRange();
-            range.selectNodeContents(cell);
-            var tops = [];
-            Array.from(range.getClientRects()).forEach(function (rect) {
-              if (rect.width && rect.height && !tops.some(function (top) { return Math.abs(top - rect.top) < 2; })) {
-                tops.push(rect.top);
-              }
-            });
-            return tops.length >= 5;
+            var style = getComputedStyle(cell);
+            var contentHeight = cell.getBoundingClientRect().height
+              - parseFloat(style.paddingTop) - parseFloat(style.paddingBottom)
+              - parseFloat(style.borderTopWidth) - parseFloat(style.borderBottomWidth);
+            return Math.round(contentHeight / parseFloat(style.lineHeight)) >= 5;
           });
           if (longCell) {
             var oldWidth = item.table.style.getPropertyValue("width");
@@ -189,6 +185,11 @@
         var overflowing = natural || squeezed || expanded;
         item.wrapper.classList.toggle("is-expanded", expanded);
         item.wrapper.classList.toggle("is-overflowing", overflowing);
+        var firstBodyCell = item.table.querySelector("tbody tr:first-child > :first-child");
+        var firstLabel = firstBodyCell ? firstBodyCell.textContent.trim().slice(0, 24) : "";
+        item.wrapper.classList.toggle("is-compact-first", expanded && item.cols === 4
+          && firstBodyCell && (firstLabel.length <= 6 || /^\d{4}$/.test(firstLabel))
+          && firstBodyCell.getBoundingClientRect().width > 100);
         var sticky = false;
         // 2칸 표는 값 열이 좁은 창으로만 보여 읽기 나빠지므로 고정하지 않는다.
         if (overflowing && item.cols >= 3 && item.wrapper.clientWidth > 0) {

@@ -190,7 +190,7 @@ A11_JS = r"""
   const blockSelector = 'p,li,td,th,blockquote,h1,h2,h3,h4,h5,h6,figcaption,dd,dt';
   const maths = [...content.querySelectorAll('.katex'),
     ...(includeSide ? document.querySelectorAll('aside.sidenote .katex') : [])]
-    .filter((k) => !k.closest('.katex-display'));
+    .filter((k) => !k.closest('.katex-display') && !k.closest('.table-header-clone[hidden]'));
   const bounds = maths.map((k, i) => {
     let unit = k;
     const parent = k.parentElement;
@@ -984,6 +984,16 @@ MIN_TABLE_COLS = 3
 A17_CONFIGS = ("min360-light", "narrow-light", "min390-light", "min414-light", "narrow-dark", "wide-light")
 
 
+def a5_overflow_checks(path, row):
+    expanded = (row['cols'] >= 3 and row['longCell']
+                and row['maxContentWidth'] > row['wrapClient'] + 1)
+    expected = row['natural'] or row['squeezed'] or expanded
+    return [{'ok': row['isOverflowing'] == expected,
+             'detail': f"{path} table {row['index']}: overflowing={row['isOverflowing']} "
+                       f"expected={expected} natural={row['natural']} squeezed={row['squeezed']} "
+                       f"longCell={row['longCell']} maxContent={row['maxContentWidth']} wrap={row['wrapClient']}"}]
+
+
 def a17_checks(path, configs):
     entries = []
     tables = 0
@@ -1018,9 +1028,9 @@ def a17_checks(path, configs):
                           f"headLeftDiff={row.get('firstLeftDiff')} bodyLeftDiff={row.get('bodyLeftDiff')} "
                           f"scroll={scroll_left}/{max_scroll} bg={bg} bodyBg={body}")
             else:
-                ok = not row.get("sticky") and row.get("firstCellPosition") == "static"
+                ok = not row.get("sticky") and row.get("bodyCellPosition") == "static"
                 detail = (f"{path} {name} table {row.get('index')} ({cols}칸): sticky={row.get('sticky')} "
-                          f"expected=False position={row.get('firstCellPosition')} "
+                          f"expected=False bodyPosition={row.get('bodyCellPosition')} "
                           f"overflowing={row.get('overflowing')} room={room}px need={need}px")
             entries.append({"ok": ok, "detail": detail})
     if not tables:
