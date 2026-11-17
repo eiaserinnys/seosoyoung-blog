@@ -71,7 +71,9 @@ CLI는 에이전트를 유닉스 도구처럼 파이프로 연결하고, 백그�
 >
 > 대부분의 조직이 코딩 가이드라인을 문서로 작성하지만, Qodo의 접근법은 다릅니다. 실제 코드 리뷰 과정에서 반복되는 패턴을 자동으로 수집하여 조직의 베스트 프랙티스 데이터베이스를 구축합니다. 이 축적된 컨텍스트가 코드 생성 시점에 Shift-left로 주입되어, "사후 교정" 대신 "사전 예방"이 가능해집니다.
 >
-> `shift-left` `best-practices` `organizational-knowledge` ## 다른 영상과의 교차점
+> `shift-left` `best-practices` `organizational-knowledge`
+
+## 다른 영상과의 교차점
 
 - Dex의 "에이전트는 무상태 fold 함수" 원칙과 Itamar의 "에이전트를 파이프로 연결" 비전이 만납니다. 12-Factor의 제어 흐름 소유 원칙은 Qodo CLI가 워크플로우를 사용자 손에 돌려놓는 철학과 정확히 일치합니다.
 - "컨텍스트가 AI 코드 생성의 1순위"라는 Chris의 선언은 Itamar가 Karpathy의 재고를 인용하며 도달한 결론과 동일합니다. 두 발표 모두 vibe coding의 한계를 인정하고 구조화된 컨텍스트 주입을 해법으로 제시합니다.

@@ -71,7 +71,9 @@ copilot-instructions.md와 .instructions(applyTo glob)는 일회성 프롬프트
 
 > **💡 [Debugging Heuristic] 에이전트 오작동의 9/10은 컨텍스트 부족이다**
 >
-> Copilot이 의도와 어긋난 결과를 냈을 때, 모델 교체나 프롬프트 재작성보다 instructions 파일·MCP 서버를 먼저 손본다. 에이전트의 잘못된 행동은 일차적으로 환경 결함이지 모델 결함이 아니다. ## 교차 연결
+> Copilot이 의도와 어긋난 결과를 냈을 때, 모델 교체나 프롬프트 재작성보다 instructions 파일·MCP 서버를 먼저 손본다. 에이전트의 잘못된 행동은 일차적으로 환경 결함이지 모델 결함이 아니다.
+
+## 교차 연결
 
 - '에이전트의 잘못된 행동은 환경 결함'이라는 Harrison & Peck의 진단은 Reyes의 'environment readiness' 명제와 동일 구조다. 두 발표 모두 에이전트 성공률의 결정 변수가 모델이 아니라 환경이라는 결론에 수렴한다.
 - Coding Agent의 6중 격리 게이트는 12-Factor의 '인간 검증 루프 내재화' 원칙의 구체적 구현이다. Horthy가 추상 원칙으로 제시한 것을 GitHub이 인프라 수준에서 강제한 사례.

@@ -29,7 +29,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 from verify_article_ui_checks import (
     A10_CONFIGS, A10_JS, A11_JS, A15_JS, A16_JS, A17_CONFIGS, A9_JS, a9_checks, a10_checks, a11_checks,
     a12_checks, a13_checks, a14_checks, a15_checks, a16_checks, a17_checks, a18_checks, a19_checks,
-    resized_sidenotes_ok, sidenote_presence_ok, summarize_checks,
+    resized_sidenotes_ok, sidenote_presence_ok, strict_lightbox_checks, summarize_checks,
 )
 
 CONFIGS = [
@@ -483,10 +483,18 @@ LIGHTBOX_STATE_JS = r"""
   if (o) {
     const b = o.querySelector('img');
     const r = b.getBoundingClientRect();
+    const or = o.getBoundingClientRect();
+    const oc = getComputedStyle(o);
     const cap = o.querySelector('.ssy-lightbox-caption');
     res.captionH = cap ? cap.offsetHeight + (parseFloat(getComputedStyle(cap).marginTop) || 0) : 0;
     res.big = {x: r.x, y: r.y, w: r.width, h: r.height, right: r.right, bottom: r.bottom,
       natural: [b.naturalWidth, b.naturalHeight], complete: b.complete, src: b.currentSrc.split('/').pop()};
+    res.overlay = {left: +or.left.toFixed(2), top: +or.top.toFixed(2), right: +or.right.toFixed(2),
+      bottom: +or.bottom.toFixed(2), clientW: o.clientWidth, clientH: o.clientHeight,
+      scrollW: o.scrollWidth, scrollH: o.scrollHeight,
+      leftGap: +(r.left - or.left).toFixed(2), rightGap: +(or.right - r.right).toFixed(2)};
+    res.box = {w: +(o.clientWidth - parseFloat(oc.paddingLeft) - parseFloat(oc.paddingRight)).toFixed(2),
+      h: +(o.clientHeight - parseFloat(oc.paddingTop) - parseFloat(oc.paddingBottom)).toFixed(2)};
     res.vw = innerWidth; res.vh = innerHeight;
     res.inView = r.x >= 0 && r.y >= 0 && r.right <= innerWidth + 0.5 && r.bottom <= innerHeight + 0.5;
     res.scrollMode = o.classList.contains('ssy-lightbox--scroll');
@@ -1254,8 +1262,8 @@ def short_first_cell(text):
     return len(value) <= 6 or bool(re.fullmatch(r"\d{4}", value))
 
 
-def path_checks(report):
-    checks = {key: [] for key in ("A1", "A2", "A3", "A4", "A5", "A6", "A7", "A8", "A9", "A10", "A11", "A12", "A13", "A14", "A15", "A16", "A17", "A18", "A19")}
+def path_checks(report, strict_lightbox=False):
+    checks = {key: [] for key in ("A1", "A2", "A3", "A4", "A5", "A6", "A7", "A8", "A9", "A10", "A11", "A12", "A13", "A14", "A15", "A16", "A17", "A18", "A19", "A20")}
 
     def add(key, ok, detail, na=False):
         checks[key].append({"ok": bool(ok), "na": na, "detail": detail})
@@ -1373,6 +1381,11 @@ def path_checks(report):
         add("A18", entry["ok"], entry["detail"], na=entry.get("na", False))
     for entry in a19_checks(path, report["heightResize"]):
         add("A19", entry["ok"], entry["detail"], na=entry.get("na", False))
+    if strict_lightbox:
+        for entry in strict_lightbox_checks(path, report.get("lightbox")):
+            add("A20", entry["ok"], entry["detail"], na=entry.get("na", False))
+    else:
+        add("A20", True, f"{path}: --strict-lightbox 없이 실행 (A20 해당 없음)", na=True)
 
     for key, what in (
         ("A2", "좁은 폭에서 3~5칸 표"),
@@ -1393,6 +1406,8 @@ def main():
     parser.add_argument("out_dir", type=Path)
     parser.add_argument("--path", action="append", default=None,
                         help="검수할 글 경로. 여러 번 넘길 수 있다.")
+    parser.add_argument("--strict-lightbox", action="store_true",
+                        help="스크롤바를 보이게 띄우고 연 상태마다 바탕 넘침·가운데를 판정한다. 하나라도 어긋나면 1로 끝난다.")
     args = parser.parse_args()
 
     paths = args.path or DEFAULT_PATHS
@@ -1409,7 +1424,10 @@ def main():
     skipped = []
     try:
         with sync_playwright() as p:
-            browser = p.chromium.launch()
+            # Playwright 헤드리스는 기본으로 스크롤바를 숨긴다. 엄격 판정에서는 실제 스크롤바가
+            # 폭을 먹는 상태를 재야 하므로 숨기기를 끈다.
+            launch_kwargs = {"ignore_default_args": ["--hide-scrollbars"]} if args.strict_lightbox else {}
+            browser = p.chromium.launch(**launch_kwargs)
             try:
                 for path in paths:
                     index = args.build_dir / path.strip("/") / "index.html"
@@ -1446,9 +1464,9 @@ def main():
                 "configs": [{"name": c[0], "width": c[1], "height": c[2], "dpr": c[3], "colorScheme": c[4]}
                             for c in CONFIGS],
                 "skipped": skipped, "paths": reports, "summary": {}}
-    aggregate = {key: [] for key in ("A1", "A2", "A3", "A4", "A5", "A6", "A7", "A8", "A9", "A10", "A11", "A12", "A13", "A14", "A15", "A16", "A17", "A18", "A19")}
+    aggregate = {key: [] for key in ("A1", "A2", "A3", "A4", "A5", "A6", "A7", "A8", "A9", "A10", "A11", "A12", "A13", "A14", "A15", "A16", "A17", "A18", "A19", "A20")}
     for path, report in reports.items():
-        summary, raw = path_checks(report)
+        summary, raw = path_checks(report, strict_lightbox=args.strict_lightbox)
         report["verdicts"] = summary
         for key in aggregate:
             aggregate[key].extend(raw[key])
@@ -1485,6 +1503,13 @@ def main():
     print(json.dumps(combined["summary"], ensure_ascii=False, indent=1))
     print("skipped:", skipped)
     print("wrote", args.out_dir / "metrics.json")
+    if args.strict_lightbox:
+        strict_failures = [entry for entry in aggregate["A20"]
+                           if not entry.get("na") and not entry["ok"]]
+        if strict_failures:
+            for entry in strict_failures:
+                print("strict-lightbox 실패:", entry["detail"])
+            sys.exit(1)
 
 
 if __name__ == "__main__":

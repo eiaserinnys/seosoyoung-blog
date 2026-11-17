@@ -92,25 +92,35 @@ button {
     scrollbar-gutter: stable;
   }
 
+  /* 라이트박스 바탕은 세로 스크롤바가 생겨도 안쪽 폭이 바뀌지 않게 양쪽에 자리를 미리 둔다.
+     폭 계산의 정본(lightbox.js fitImage)이 이 안쪽 폭을 그대로 읽는다. */
+  .ssy-lightbox {
+    scrollbar-gutter: stable both-edges;
+  }
+
   @supports not selector(::-webkit-scrollbar) {
-    html {
+    html,
+    .ssy-lightbox {
       scrollbar-width: thin;
       scrollbar-color: var(--scrollbar-thumb) var(--bg);
     }
   }
 
-  html::-webkit-scrollbar {
+  html::-webkit-scrollbar,
+  .ssy-lightbox::-webkit-scrollbar {
     width: var(--scrollbar-size);
     height: var(--scrollbar-size);
     background: var(--bg);
   }
 
-  html::-webkit-scrollbar-track {
+  html::-webkit-scrollbar-track,
+  .ssy-lightbox::-webkit-scrollbar-track {
     background: var(--bg);
     box-shadow: inset var(--line) 0 0 var(--rule);
   }
 
-  html::-webkit-scrollbar-thumb {
+  html::-webkit-scrollbar-thumb,
+  .ssy-lightbox::-webkit-scrollbar-thumb {
     min-height: var(--scrollbar-thumb-min);
     border: solid transparent;
     border-width: var(--scrollbar-inset-block) var(--scrollbar-inset-end) var(--scrollbar-inset-block) var(--scrollbar-inset-start);
@@ -119,16 +129,20 @@ button {
   }
 
   html::-webkit-scrollbar-thumb:hover,
-  html::-webkit-scrollbar-thumb:active {
+  html::-webkit-scrollbar-thumb:active,
+  .ssy-lightbox::-webkit-scrollbar-thumb:hover,
+  .ssy-lightbox::-webkit-scrollbar-thumb:active {
     border-width: var(--scrollbar-inset-block) var(--scrollbar-inset-end-hover) var(--scrollbar-inset-block) var(--scrollbar-inset-start-hover);
     background-color: var(--scrollbar-thumb-hover);
   }
 
-  html::-webkit-scrollbar-thumb:active {
+  html::-webkit-scrollbar-thumb:active,
+  .ssy-lightbox::-webkit-scrollbar-thumb:active {
     background-color: var(--scrollbar-thumb-active);
   }
 
-  html::-webkit-scrollbar-corner {
+  html::-webkit-scrollbar-corner,
+  .ssy-lightbox::-webkit-scrollbar-corner {
     background: var(--bg);
   }
 }

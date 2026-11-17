@@ -27,7 +27,9 @@ sidenotes: true
 하네스는 모델이 사용자 및 코드와 소통하고 도구를 실행하는 인터페이스 레이어입니다. 커스텀 도구의 모델 친화성, 모델별 프롬프트 튜닝, Thinking 모델 레이턴시, 컨텍스트 윈도우 관리와 컴팩션, MCP 플러밍, 이미지 해상도 압축, API 진화 추종 등 — 겉보기보다 훨씬 어려운 과제가 산적해 있습니다.
 
 
-> *""People kind of over-complicate things. It's made out of three parts." Bill Chen — OpenAI Applied AI Startups"* ## 모델의 습관을 이해하는 것이 전부입니다
+> *"People kind of over-complicate things. It's made out of three parts." Bill Chen — OpenAI Applied AI Startups*
+
+## 모델의 습관을 이해하는 것이 전부입니다
 
 
 ### 모델 = Intelligence + Habit
@@ -48,7 +50,9 @@ GPT-5 출시 시 발견된 반직관적 현상입니다. 다른 모델용 프롬
 Cursor는 Codex 모델과 도구를 'in distribution'으로 정렬하여 최상 성능을 달성했습니다. 새 모델 도입 시 기존 프롬프트를 버리고 모델의 자연 습관을 먼저 관찰하는 것, 도구 설계를 모델의 훈련 분포에 맞추는 것 — 이것이 실무에서의 핵심 시사점이옵니다.
 
 
-> *""Developing a feel for these habits is how you become a good prompt engineer." Bill Chen — OpenAI"* ## 하네스를 추상화 계층으로
+> *"Developing a feel for these habits is how you become a good prompt engineer." Bill Chen — OpenAI*
+
+## 하네스를 추상화 계층으로
 
 
 ### 하네스 SDK = 새 추상화 계층
@@ -66,7 +70,9 @@ Cursor는 Codex 모델과 도구를 'in distribution'으로 정렬하여 최상 
 정의: 모델이 바뀌어도 에이전트 하네스를 재작성하지 않아도 되는 속성. 메커니즘: 모델 습관 의존적 코드를 하네스 SDK에 캡슐화하여 벤더가 모델별 적응을 담당합니다. 제품 코드는 하네스 API 위에서만 동작하므로 모델 변경에 불투명합니다. 모델 세대가 진화하면 "trust ceiling"이 상승하고, SDK가 새 역량을 자동 노출합니다.
 
 
-> *""Focusing most of your efforts on differentiating your product is what this pattern allows you to do." Brian Fioca — OpenAI"* ## 핵심 인사이트
+> *"Focusing most of your efforts on differentiating your product is what this pattern allows you to do." Brian Fioca — OpenAI*
+
+## 핵심 인사이트
 
 
 > **💡 [Insight 1] 프롬프트 엔지니어링은 지능 추출이 아니라 습관 정렬이다**
@@ -86,7 +92,9 @@ Cursor는 Codex 모델과 도구를 'in distribution'으로 정렬하여 최상 
 
 > **💡 [Insight 4] 에이전트의 다음 진화: 도구를 만드는 도구**
 >
-> 단순한 도구 사용을 넘어, 자신에게 없는 도구를 즉석에서 만들 수 있는 메타 도구의 등장. 엔터프라이즈에서는 고객별 API 플러그인 커넥터를 자동 생성하여, 과거 Professional Services 팀이 하던 일을 코드가 대체합니다. ## 반증과 맹점
+> 단순한 도구 사용을 넘어, 자신에게 없는 도구를 즉석에서 만들 수 있는 메타 도구의 등장. 엔터프라이즈에서는 고객별 API 플러그인 커넥터를 자동 생성하여, 과거 Professional Services 팀이 하던 일을 코드가 대체합니다.
+
+## 반증과 맹점
 
 
 ### SDK 벤더 = 단일 실패점

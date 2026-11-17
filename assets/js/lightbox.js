@@ -30,24 +30,32 @@
       }
       function fitImage() {
         if (!big.naturalWidth) return;
-        var viewportWidth = window.innerWidth * 0.96;
+        // 폭의 정본은 바탕의 실제 안쪽 폭이다. 데스크톱에서 바탕은 scrollbar-gutter로 스크롤바 자리를
+        // 미리 두므로, 세로 스크롤바가 생겨도 이 값이 바뀌지 않는다. CSS 그림 최대 폭(max-width: 100%)도
+        // 같은 안쪽 폭을 따른다.
+        var overlayStyle = getComputedStyle(overlay);
+        var boxWidth = overlay.clientWidth
+          - parseFloat(overlayStyle.paddingLeft) - parseFloat(overlayStyle.paddingRight);
+        var boxHeight = overlay.clientHeight
+          - parseFloat(overlayStyle.paddingTop) - parseFloat(overlayStyle.paddingBottom);
+        if (!boxWidth || !boxHeight) return;
         var ratio = big.naturalHeight / big.naturalWidth;
         var captionHeight = capEl ? capEl.offsetHeight + parseFloat(getComputedStyle(capEl).marginTop) : 0;
-        var availableHeight = Math.min(window.innerHeight * 0.88, window.innerHeight * 0.94 - captionHeight);
-        // 화면에 통째로 맞춘 폭이 본문에서 보이던 폭의 1.5배보다 작고, 높이에 맞춘 폭이 화면 폭 상한의
+        var availableHeight = Math.min(boxHeight * 0.88, boxHeight * 0.94 - captionHeight);
+        // 화면에 통째로 맞춘 폭이 본문에서 보이던 폭의 1.5배보다 작고, 높이에 맞춘 폭이 안쪽 폭의
         // 1.5배 이상인 그림이면 높이를 화면에 맞춰 연다. 화면보다 조금만 넓게 열려 일부만 잘리는
         // 상태는 만들지 않는다. 화면보다 넓으면 왼쪽 끝에서 시작해 가로로 밀어 본다.
         // 화면에 통째로 맞춘 폭이 본문 폭 이상인 그림은 지금처럼 통째로 보인다.
-        var fitWidth = Math.min(big.naturalWidth, viewportWidth, availableHeight / ratio);
+        var fitWidth = Math.min(big.naturalWidth, boxWidth, availableHeight / ratio);
         var heightFitWidth = Math.min(big.naturalWidth, availableHeight / ratio);
         var width = fitWidth;
         var scroll = false;
         var wide = false;
-        if (fitWidth < renderedWidth * 1.5 && heightFitWidth >= viewportWidth * 1.5) {
+        if (fitWidth < renderedWidth * 1.5 && heightFitWidth >= boxWidth * 1.5) {
           width = heightFitWidth;
-          wide = width > viewportWidth + 1;
+          wide = width > boxWidth + 1;
         } else if (fitWidth < renderedWidth - 1) {
-          width = Math.min(Math.max(renderedWidth, Math.min(big.naturalWidth, viewportWidth)), viewportWidth);
+          width = Math.min(Math.max(renderedWidth, Math.min(big.naturalWidth, boxWidth)), boxWidth);
           scroll = width * ratio > availableHeight;
         }
         big.style.width = width + 'px';

@@ -6,7 +6,7 @@ from playwright.sync_api import sync_playwright
 
 from verify_article_ui_checks import (
     A10_JS, A11_JS, A15_JS, A16_JS, a11_checks, a12_checks, a13_checks, a14_checks, a15_checks,
-    a16_checks, resized_sidenotes_ok, sidenote_presence_ok, summarize_checks,
+    a16_checks, resized_sidenotes_ok, sidenote_presence_ok, strict_lightbox_checks, summarize_checks,
 )
 
 
@@ -14,6 +14,7 @@ def lightbox_row(src="image.png"):
     big = {"y": 27.0, "w": 1200.0, "h": 800.0, "natural": [2400, 1600], "complete": True, "src": src}
     before = {"open": False, "rootOverflow": "", "activeInLightbox": False, "activeSrc": None}
     opened = {"open": True, "rootOverflow": "hidden", "big": big, "vw": 1440, "vh": 900,
+              "box": {"w": 1317.6, "h": 831.0},
               "inView": True, "ratioErr": 0.001, "role": "dialog", "label": "이미지 확대",
               "activeInLightbox": True, "activeSrc": src}
     after_esc = {"open": False, "rootOverflow": "", "activeInLightbox": False, "activeSrc": src}
@@ -142,7 +143,7 @@ class ArticleUiChecksTest(unittest.TestCase):
         report = {"path": "/digest/x/", "configs": configs, "resize": {}, "heightResize": [],
                   "lightbox": {}}
         summary, checks = path_checks(report)
-        for key in ("A2", "A3", "A7", "A8", "A10", "A11"):
+        for key in ("A2", "A3", "A7", "A8", "A10", "A11", "A20"):
             self.assertEqual(len(checks[key]), 1, key)
             self.assertTrue(checks[key][0]["na"], key)
             self.assertTrue(checks[key][0]["ok"], key)
@@ -214,6 +215,7 @@ class ArticleUiChecksTest(unittest.TestCase):
         def row(width, whole=False):
             record = lightbox_row()
             record["opened"].update({"vw": 375, "vh": 812, "wideMode": not whole,
+                                     "box": {"w": 352.5, "h": 789.5},
                                      "inView": whole, "inViewX": True,
                                      "overlayScrollableX": True})
             record["opened"]["big"] = dict(record["opened"]["big"], w=float(width), x=0.0,
@@ -224,16 +226,86 @@ class ArticleUiChecksTest(unittest.TestCase):
             entries = a14_checks("/posts/x/", {"narrow-light": {"applicable": True, "rows": [record]}})
             return entries[0]["ok"], entries[0]["detail"]
 
-        # 375 화면에서 512px로 열면 화면 폭 상한(360px)보다 조금 넓은 채 오른쪽이 잘린다.
+        # 375 화면에서 512px로 열면 바탕 안쪽 폭(352.5px)보다 조금 넓은 채 오른쪽이 잘린다.
         ok, detail = verdict(row(512))
         self.assertFalse(ok)
         self.assertIn("noSlightOverflow", detail)
-        # 화면 폭 상한의 1.5배 넘게 열고 가로로 밀 수 있으면 통과한다.
+        # 바탕 안쪽 폭의 1.5배 넘게 열고 가로로 밀 수 있으면 통과한다.
         ok, detail = verdict(row(1058))
         self.assertTrue(ok, detail)
-        # 화면 안에 통째로 들어오는 폭은 그대로 통과한다.
-        ok, detail = verdict(row(360, whole=True))
+        # 바탕 안쪽 폭 안에 통째로 들어오는 폭은 그대로 통과한다.
+        ok, detail = verdict(row(352, whole=True))
         self.assertTrue(ok, detail)
+
+    def test_a14_width_rule_uses_overlay_box(self):
+        record = lightbox_row("wide-box.png")
+        record["img"]["width"] = 720.0
+        record["opened"]["big"] = dict(record["opened"]["big"], natural=[1600, 800],
+                                       w=1317.6, h=658.8)
+        entries = a14_checks("/digest/x/", {"wide-light": {"applicable": True, "rows": [record]}})
+        self.assertTrue(entries[0]["ok"], entries[0]["detail"])
+
+        # 예전 96vw 상수(1382.4px)로 연 폭은 바탕 안쪽 폭 규칙과 어긋난다.
+        record["opened"]["big"] = dict(record["opened"]["big"], w=1382.4, h=691.2)
+        entries = a14_checks("/digest/x/", {"wide-light": {"applicable": True, "rows": [record]}})
+        self.assertFalse(entries[0]["ok"])
+        self.assertIn("wide.expectedWidth", entries[0]["detail"])
+
+    def test_strict_lightbox_checks(self):
+        def strict_row(**overrides):
+            overlay = {"clientW": 1404, "clientH": 885, "scrollW": 1404, "scrollH": 885,
+                       "leftGap": 55.2, "rightGap": 55.2}
+            opened = {"open": True, "vw": 1440, "vh": 900, "wideMode": False,
+                      "scrollMode": False, "overlay": dict(overlay)}
+            opened.update(overrides)
+            return {"img": {"src": "x.png"}, "opened": opened}
+
+        def verdict(row):
+            entries = strict_lightbox_checks("/digest/x/", {"wide-light": {"applicable": True, "rows": [row]}})
+            return (all(entry["ok"] for entry in entries),
+                    " | ".join(entry["detail"] for entry in entries))
+
+        ok, detail = verdict(strict_row())
+        self.assertTrue(ok, detail)
+
+        overflow = strict_row()
+        overflow["opened"]["overlay"]["scrollW"] = 1448
+        ok, detail = verdict(overflow)
+        self.assertFalse(ok)
+        self.assertIn("scrollW=1448 clientW=1404", detail)
+
+        off_center = strict_row()
+        off_center["opened"]["overlay"]["rightGap"] = 60.2
+        ok, detail = verdict(off_center)
+        self.assertFalse(ok)
+        self.assertIn("gapDiff=5.0", detail)
+
+        wide_tall = strict_row(wideMode=True)
+        wide_tall["opened"]["overlay"].update({"scrollW": 2900, "scrollH": 900})
+        ok, detail = verdict(wide_tall)
+        self.assertFalse(ok)
+        self.assertIn("wide", detail)
+
+        wide_ok = strict_row(wideMode=True)
+        wide_ok["opened"]["overlay"].update({"scrollW": 2900, "scrollH": 885})
+        ok, detail = verdict(wide_ok)
+        self.assertTrue(ok, detail)
+
+        resized = strict_row()
+        resized["afterResize"] = dict(strict_row()["opened"], vw=1024, overlay=dict(
+            strict_row()["opened"]["overlay"], clientW=988, scrollW=1028))
+        ok, detail = verdict(resized)
+        self.assertFalse(ok)
+        self.assertIn("afterResize", detail)
+
+        error = {"img": {"src": "x.png"}, "error": "Timeout 15000ms exceeded"}
+        ok, detail = verdict(error)
+        self.assertFalse(ok)
+
+        entries = strict_lightbox_checks("/digest/x/", {"wide-light": {"applicable": False,
+                                                                       "reason": "확대할 그림이 없다"}})
+        self.assertEqual(len(entries), 1)
+        self.assertTrue(entries[0]["na"])
 
     def test_straight_quote_detector(self):
         self.page.set_content(
