@@ -900,6 +900,34 @@ A18_COLOR_JS = r"""
 
 A18_END_JS = "() => { document.querySelectorAll('.post-content .table-scroll').forEach((w) => { w.scrollLeft = 0; }); window.scrollTo(0, 0); }"
 
+# A18 캡처 동안만 표 감싸개의 오버레이 스크롤바를 숨긴다.
+# 좁은 화면(모바일 에뮬레이션)의 오버레이 스크롤바는 자리를 차지하지 않고, 그 썸이 스크롤 0 에서
+# 고정 첫 열 아래 표 바닥 괘선을 덮어 그려진 줄과 측정값이 어긋난다. 실제 휴대폰의 오버레이
+# 스크롤바는 스크롤하는 동안에만 보이므로 화면 결함이 아니다. 반면 데스크톱의 클래식 스크롤바는
+# 자리(15 CSS px)를 차지하므로 숨기면 표 감싸개 높이와 뒤 요소 위치가 바뀐다.
+# 그래서 자리를 차지하지 않는(offset - client == 0) 감싸개에만 표시 속성을 붙여 숨긴다.
+A18_HIDE_SCROLLBAR_JS = r"""
+() => {
+  const style = document.createElement('style');
+  style.id = 'a18-hide-scrollbar';
+  style.textContent = '[data-a18-hide-scrollbar] { scrollbar-width: none; }' +
+    '[data-a18-hide-scrollbar]::-webkit-scrollbar { display: none; }';
+  document.head.appendChild(style);
+  document.querySelectorAll('.post-content .table-scroll.is-overflowing').forEach((w) => {
+    if (w.offsetWidth - w.clientWidth === 0 && w.offsetHeight - w.clientHeight === 0) {
+      w.setAttribute('data-a18-hide-scrollbar', '');
+    }
+  });
+}
+"""
+A18_SHOW_SCROLLBAR_JS = r"""
+() => {
+  const style = document.getElementById('a18-hide-scrollbar');
+  if (style) style.remove();
+  document.querySelectorAll('[data-a18-hide-scrollbar]').forEach((w) => w.removeAttribute('data-a18-hide-scrollbar'));
+}
+"""
+
 
 def parse_rgb(text):
     values = text[text.index("(") + 1:text.rindex(")")].split(",")[:3]
@@ -1011,6 +1039,8 @@ def capture_sticky_seams(page, out_dir, name, dpr):
     page.set_viewport_size({"width": original["width"], "height": tall})
     page.wait_for_timeout(300)
     try:
+        # 괘선을 재기 전에 오버레이 스크롤바만 숨긴다(창 높이를 올려도 자리 차지는 0 그대로다).
+        page.evaluate(A18_HIDE_SCROLLBAR_JS)
         # 높이를 바꾼 뒤의 좌표로 다시 잰다.
         tables = page.evaluate(A18_LIST_JS)
         colors = page.evaluate(A18_COLOR_JS)
@@ -1043,6 +1073,7 @@ def capture_sticky_seams(page, out_dir, name, dpr):
                 record["states"][state] = state_record
             records.append(record)
     finally:
+        page.evaluate(A18_SHOW_SCROLLBAR_JS)
         page.evaluate(A18_END_JS)
         page.set_viewport_size(original)
         page.wait_for_timeout(300)
