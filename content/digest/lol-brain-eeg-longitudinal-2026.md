@@ -18,7 +18,7 @@ sidenotes: true
 
 ## 연구 설계
 
-Brain Sciences에 게재된 논문 *"Effects of Video Game Type on Cognitive Performance and Brain Functional Connectivity: A Longitudinal EEG Study"*의 내용이다.
+Brain Sciences에 게재된 논문 <em>"Effects of Video Game Type on Cognitive Performance and Brain Functional Connectivity: A Longitudinal EEG Study"</em>의 내용이다.
 
 성질이 크게 다른 두 게임을 비교 변수로 설정했다.
 

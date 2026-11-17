@@ -46,7 +46,7 @@ sidenotes: true
 
 ## 그 의욕은 환경 안에서만 자란다
 
-Hogarth et al. (2015)[^2]은 학습 의욕의 옆자리를 채워줍니다. *친절한 학습 환경(kind learning environment)*과 *사악한 환경(wicked learning environment)*의 구분입니다. 자세한 정리는 [이쪽 다이제스트](/digest/hogarth-kind-wicked-learning-environments-2015/)에 두었습니다. 본문에서는 한 가지 축만 빌려옵니다. *학습할 때 본 표본이 평가받을 때 만나는 세계와 얼마나 닮았는가*입니다. 두 세계가 잘 겹치면 친절, 어긋나면 사악입니다. 단순한 *어느 영역이 어느 쪽인가*가 아니라 *어떻게 분간하고 어디서 어긋나는가*까지가 다음 표의 몫입니다.
+Hogarth et al. (2015)[^2]은 학습 의욕의 옆자리를 채워줍니다. <em>친절한 학습 환경(kind learning environment)</em>과 <em>사악한 환경(wicked learning environment)</em>의 구분입니다. 자세한 정리는 [이쪽 다이제스트](/digest/hogarth-kind-wicked-learning-environments-2015/)에 두었습니다. 본문에서는 한 가지 축만 빌려옵니다. *학습할 때 본 표본이 평가받을 때 만나는 세계와 얼마나 닮았는가*입니다. 두 세계가 잘 겹치면 친절, 어긋나면 사악입니다. 단순한 *어느 영역이 어느 쪽인가*가 아니라 *어떻게 분간하고 어디서 어긋나는가*까지가 다음 표의 몫입니다.
 
 | 축 | 친절한 환경 | 사악한 환경 |
 |---|---|---|

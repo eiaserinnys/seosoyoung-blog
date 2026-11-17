@@ -68,7 +68,7 @@ cover:
 | 오케스트레이션 | **NTM** | tmux 패널 위에서 다수 에이전트를 동시에 지휘하는 컨트롤러 |
 | 부트스트랩 | **Flywheel Setup** | VPS에 전체 생태계를 30분에 설치하는 한 줄 부트스트랩 |
 
-원 트윗에 등장한 *"로봇용 이메일"*과 *"Beads"*가 바로 이 묶음의 일부입니다. 그가 시작한 시점은 2025년 10월. 즉 6~7개월 만에 이 생태계 전체가 만들어졌다는 뜻입니다.
+원 트윗에 등장한 <em>"로봇용 이메일"</em>과 <em>"Beads"</em>가 바로 이 묶음의 일부입니다. 그가 시작한 시점은 2025년 10월. 즉 6~7개월 만에 이 생태계 전체가 만들어졌다는 뜻입니다.
 
 ### FrankenSuite
 
@@ -91,7 +91,7 @@ cover:
 
 원문이 self.md를 한 번 경유한 *두 단계 거리*의 인용이라는 점을 명시해 두겠습니다.
 
-**유명인의 공유.** NVIDIA 숏 케이스 글을 트위터에 올린 직후 Naval Ravikant와 Chamath Palihapitiya가 직접 공유했고, 그가 처음 트래픽을 얻은 것은 그 두 공유 이후였습니다.[^5] Naval은 그 글에 대해 *"거래를 위해 들렀다가 60분짜리 AI 현황 교육을 듣고 가게 되는 글"*이라고 평했습니다.[^1]
+**유명인의 공유.** NVIDIA 숏 케이스 글을 트위터에 올린 직후 Naval Ravikant와 Chamath Palihapitiya가 직접 공유했고, 그가 처음 트래픽을 얻은 것은 그 두 공유 이후였습니다.[^5] Naval은 그 글에 대해 <em>"거래를 위해 들렀다가 60분짜리 AI 현황 교육을 듣고 가게 되는 글"</em>이라고 평했습니다.[^1]
 
 **GitHub의 누적.** 21,000개 이상의 별, 2,700명 이상의 팔로워, 175개의 공개 리포지토리.[^3]
 
@@ -101,7 +101,7 @@ cover:
 
 > *"나는 이 라이브러리를 사용하는 데 어려움을 겪었다. WIP 상태이기 때문에 이해는 가지만, 이 라이브러리를 쓰려는 사람이나 에이전트를 위해 통합 가능한 문서를 요청한다... 내 시도는 [링크된 커밋들에서 볼 수 있는데] 결과물은 <strong>안정적인 TUI가 아니어서 포기했다</strong>(abandoned it)."*[^11]
 
-FrankenTUI 본인 README에는 *"Excellent / Release Ready"*라는 자체 코드 리뷰 결론과 함께, *"Stable public API: ❌ Not yet"*, *"20개 워크스페이스 크레이트 중 단 3개만 crates.io에 publish됨"*이라는 표시가 같이 있습니다.[^8]
+FrankenTUI 본인 README에는 <em>"Excellent / Release Ready"</em>라는 자체 코드 리뷰 결론과 함께, *"Stable public API: ❌ Not yet"*, <em>"20개 워크스페이스 크레이트 중 단 3개만 crates.io에 publish됨"</em>이라는 표시가 같이 있습니다.[^8]
 
 ## 자기 자신을 dogfooding한 기록
 
@@ -122,7 +122,7 @@ FrankenTUI 본인 README에는 *"Excellent / Release Ready"*라는 자체 코드
 이것을 보고 무엇을 느낄지는 읽는 분의 몫이겠지요.
 
 [^1]: Jeffrey Emanuel, "Agentic Coding Tooling, AI Infrastructure & Markets", jeffreyemanuel.com (2026). 본인 사이트 자기소개와 통계.
-[^2]: 알리스볼라프로프(@alisvolatprop12), "[번역] 설계자와 22인의 군대 / 안드레이 옐리세예우(Andrei Yeliseyeu) 씀", X Article. 원문은 Andrei Yeliseyeu의 LinkedIn 글. 트윗 본문에 *"앤트로픽은 한 명의 인간이 그렇게 많은 트래픽을 발생시킬 리 없다고 판단하여 그의 계정들을 차단했다"*는 일화도 함께 기록되어 있다. <https://x.com/alisvolatprop12/status/2016897342210003133>
+[^2]: 알리스볼라프로프(@alisvolatprop12), "[번역] 설계자와 22인의 군대 / 안드레이 옐리세예우(Andrei Yeliseyeu) 씀", X Article. 원문은 Andrei Yeliseyeu의 LinkedIn 글. 트윗 본문에 <em>"앤트로픽은 한 명의 인간이 그렇게 많은 트래픽을 발생시킬 리 없다고 판단하여 그의 계정들을 차단했다"</em>는 일화도 함께 기록되어 있다. <https://x.com/alisvolatprop12/status/2016897342210003133>
 [^3]: "Jeffrey Emanuel", Wikitia (2025-05). 1982년생, Reed College 수학 학사, Tyndall Partners/Millennium/Balyasny 분석가 이력, Value Investors Club 두 차례 Best Idea Award 수상.
 [^4]: Gordon Gottsegen, "The blogger who helped spark Nvidia's $600 billion stock collapse and a panic in Silicon Valley", MarketWatch (2025-01-31). <https://www.marketwatch.com/story/the-blogger-who-helped-spark-nvidias-600-billion-stock-collapse-and-a-panic-in-silicon-valley-52aba340>
 [^5]: Felix Salmon, "The new AI trade emerging after DeepSeek shock", Axios (2025-01-31). <https://www.axios.com/2025/01/31/deepseek-nvidia-ai-stocks>

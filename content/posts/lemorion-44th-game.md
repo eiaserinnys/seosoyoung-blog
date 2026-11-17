@@ -97,7 +97,7 @@ LINK Penguins의 부진을 보고 시간 낭비라고 하기 쉽지만, 그 7개
 
 [^1]: 레모리온, "『めっちゃカメレオン』開発者インタビュー" — GameWith, 2026-06-23. <https://gamewith.jp/gamedb/17059/articles/59486>
 
-[^2]: 레모리온 인터뷰 — Game*Spark, 2026-06-19. <https://www.gamespark.jp/article/2026/06/19/168187.html>
+[^2]: 레모리온 인터뷰 — Game\*Spark, 2026-06-19. <https://www.gamespark.jp/article/2026/06/19/168187.html>
 
 [^3]: 같은 인터뷰 — GameWith, 2026-06-23.
 
@@ -107,7 +107,7 @@ LINK Penguins의 부진을 보고 시간 낭비라고 하기 쉽지만, 그 7개
 
 [^6]: ITmedia, "個人開発「めっちゃカメレオン」異次元のヒット、12日で700万本突破" — 2026-06-22. <https://www.itmedia.co.jp/news/articles/2606/22/news110.html>
 
-[^7]: Game*Spark 인터뷰, 같은 출처.
+[^7]: Game\*Spark 인터뷰, 같은 출처.
 
 [^8]: ukyousan, 메차 카멜레온 성공 요인 분석 — note, 2026-06-19. note의 game_i 계정이 정리, 인용함. <https://note.com/game_i/n/n12bb2ccc0302>
 

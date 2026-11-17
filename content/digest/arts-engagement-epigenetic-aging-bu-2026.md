@@ -23,7 +23,7 @@ sidenotes: true
 
 ## 어떤 연구인가
 
-이번 연구는 영국 정부 지원의 대형 패널 조사 *Understanding Society — UK Household Longitudinal Study(UKHLS)*의 DNA 메틸화(DNAm) 하위표본을 사용했다. 2010\~2012년(2·3차 웨이브) 간호사 방문 시 채혈한 혈액 시료에서 Illumina Methylation EPIC BeadChip으로 85만+ CpG 사이트를 측정했고, 결측·이상치를 제거한 분석 표본은 백인 유럽 혈통 성인 3,354명(평균 52.3세)이다.
+이번 연구는 영국 정부 지원의 대형 패널 조사 <em>Understanding Society — UK Household Longitudinal Study(UKHLS)</em>의 DNA 메틸화(DNAm) 하위표본을 사용했다. 2010\~2012년(2·3차 웨이브) 간호사 방문 시 채혈한 혈액 시료에서 Illumina Methylation EPIC BeadChip으로 85만+ CpG 사이트를 측정했고, 결측·이상치를 제거한 분석 표본은 백인 유럽 혈통 성인 3,354명(평균 52.3세)이다.
 
 저자는 UCL Behavioural Science & Health 소속 5인 — **Daisy Fancourt**(교신저자), Lehané Masebo, Saoirse Finn, Hei Wan Mak, **Feifei Bu**(senior author). 자금은 Wellcome Discovery Award와 미국 National Endowment for the Arts의 EpiArts Lab 등.[^geroni-2026][^ucl-2026]
 

@@ -55,7 +55,7 @@ Standard 파이프라인(주제로 영상 생성), AssetBased 파이프라인(�
 >
 > "After writing, self-check the openings of all storyboards to ensure no repeated use of the same word or phrase as an opening"
 
-풀어 말하면 *"각 컷의 첫머리에 같은 단어를 두 번 이상 쓰면 그 결과물은 실패한 것으로 간주한다. 다 쓴 다음 너 스스로 컷들의 첫머리를 다시 점검하여 같은 단어·구절이 반복되지 않는지 확인하라"*는 지시다. 숏폼 자동 생성이 가장 자주 무너지는 지점이 바로 "그런데 말이죠", "사실은 말이에요"가 컷마다 반복되며 *AI 티가 나는* 순간이다. 사람 손이 닿지 않는 자동 파이프라인에서 이걸 잡으려면 결국 LLM 자신에게 검증을 시키는 수밖에 없는데, Pixelle-Video는 검증 기준을 *오프닝 단어의 중복 여부*라는 매우 구체적인 형태로 좁혀 명시한다. 정답을 보장하지는 못해도 의도는 분명하다.
+풀어 말하면 <em>"각 컷의 첫머리에 같은 단어를 두 번 이상 쓰면 그 결과물은 실패한 것으로 간주한다. 다 쓴 다음 너 스스로 컷들의 첫머리를 다시 점검하여 같은 단어·구절이 반복되지 않는지 확인하라"</em>는 지시다. 숏폼 자동 생성이 가장 자주 무너지는 지점이 바로 "그런데 말이죠", "사실은 말이에요"가 컷마다 반복되며 *AI 티가 나는* 순간이다. 사람 손이 닿지 않는 자동 파이프라인에서 이걸 잡으려면 결국 LLM 자신에게 검증을 시키는 수밖에 없는데, Pixelle-Video는 검증 기준을 *오프닝 단어의 중복 여부*라는 매우 구체적인 형태로 좁혀 명시한다. 정답을 보장하지는 못해도 의도는 분명하다.
 
 ### 4. 스토리보드 응집성 제약
 
@@ -63,7 +63,7 @@ Standard 파이프라인(주제로 영상 생성), AssetBased 파이프라인(�
 
 > "Each storyboard should sound like the same person continuously sharing viewpoints"
 
-즉 *"각 컷이 마치 같은 사람이 이어서 한 호흡으로 말하는 것처럼 들려야 한다"*는 지시다. 거기에 더해 narrative arc — 공감 → 관점 → 심층 → 영감(`resonate → propose viewpoint → in-depth explanation → provide inspiration`) — 네 단계가 명시되어 있어, 컷들이 단순한 나열이 아니라 하나의 호흡으로 묶이도록 유도한다.
+즉 <em>"각 컷이 마치 같은 사람이 이어서 한 호흡으로 말하는 것처럼 들려야 한다"</em>는 지시다. 거기에 더해 narrative arc — 공감 → 관점 → 심층 → 영감(`resonate → propose viewpoint → in-depth explanation → provide inspiration`) — 네 단계가 명시되어 있어, 컷들이 단순한 나열이 아니라 하나의 호흡으로 묶이도록 유도한다.
 
 ### 5. Narration ↔ Image prompt 1:1 매칭 강제
 

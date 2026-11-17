@@ -4,7 +4,7 @@ date: 2026-05-09T14:20:00+09:00
 tags: ["AI", "코드 품질", "GitClear", "code clones"]
 categories: ["에이전트와 코딩"]
 subjects: ["바이브 코딩과 생산성"]
-summary: "GitClear가 2020-2024년 211M 라인을 분석한 보고서. AI 도입 4년 차에 코드 *재사용·리팩토링*이 *복사·붙여넣기*로 대체되는 추세가 정량 측정되며, 같은 시점의 Google DORA 데이터·Mo·Zhang(2023) 학술 연구와 일관되게 호응한다."
+summary: "GitClear가 2020-2024년 211M 라인을 분석한 보고서. AI 도입 4년 차에 코드 재사용·리팩토링이 복사·붙여넣기로 대체되는 추세가 정량 측정되며, 같은 시점의 Google DORA 데이터·Mo·Zhang(2023) 학술 연구와 일관되게 호응한다."
 ShowToc: true
 TocOpen: false
 sidenotes: true
@@ -117,9 +117,9 @@ GitClear는 본 보고서에서 처음으로 *5라인 이상 연속된 중복 �
 
 GitClear는 *중복이 곧 버그를 부른다*는 직관에 학술적 근거를 댄다. ACM 2023의 *Exploring the Impact of Code Clones on Deep Learning Software*(Ran Mo·Yao Zhang 외)[^mo-zhang-2023]가 핵심 인용이다. 핵심 결과 셋이다.
 
-- 딥러닝 프로젝트의 *코드 조각 16.3%*가 클론을 포함 — 전통 소프트웨어의 약 두 배
+- 딥러닝 프로젝트의 <em>코드 조각 16.3%</em>가 클론을 포함 — 전통 소프트웨어의 약 두 배
 - 3,113쌍의 *공동 변경된 클론*을 분석한 결과, *57.1%가 버그에 관여*
-- 34개 DL 프로젝트 중 *28개(82.4%)*에서 공동 변경된 클론이 버그에 관여
+- 34개 DL 프로젝트 중 <em>28개(82.4%)</em>에서 공동 변경된 클론이 버그에 관여
 
 ![Mo·Zhang(2023) Figure 14: Type 1·2·3 클론이 같은 파일/같은 폴더/다른 폴더에 어떻게 분포하는지.](https://img.seosoyoung.eiaserinnys.me/images/gitclear-ai-code-quality-2025/fig10-mo-zhang-clone-types.png)
 *Type 1(완전 동일)은 다른 폴더에 압도적으로 많고(83.9%), Type 2·3(이름·일부 변형)은 같은 파일/폴더/다른 폴더에 비교적 고르게 분포한다.*
@@ -166,7 +166,7 @@ GitClear는 이 인지·측정 어긋남을 다음과 같이 화해시킨다.
 
 2024년에 수정된 라인 중 *80%가 작성된 지 1개월 이내*이고, 1\~2년 된 라인을 손보는 비율은 6.2%에서 2.6%로 *반 이상* 줄었다.
 
-![연도별로 *작성된 지 1개월 미만*의 코드를 수정하는 비율. 2024년에 가파른 상승.](https://img.seosoyoung.eiaserinnys.me/images/gitclear-ai-code-quality-2025/fig07-age-of-revised-code.png)
+![연도별로 작성된 지 1개월 미만의 코드를 수정하는 비율. 2024년에 가파른 상승.](https://img.seosoyoung.eiaserinnys.me/images/gitclear-ai-code-quality-2025/fig07-age-of-revised-code.png)
 *4년간 67\~71% 사이에서 안정적이던 비율이 2024년에 79.2%로 도약한다.*
 
 이어서 *새로 작성된 라인이 2주 또는 4주 안에 다시 수정되는 비율*(churn)도 2021년 베이스라인 대비 2024년에 *20\~25%* 증가하였다.

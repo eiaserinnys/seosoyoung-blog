@@ -63,7 +63,7 @@ sidenotes: true
 
 저자는 [이전 에세이 'Why Task Proficiency Doesn't Equal AI Autonomy'](https://www.signalbloom.ai/posts/why-task-proficiency-doesnt-equal-ai-autonomy/)를 끌어와 입장을 정리한다.
 
-- AI 에이전트는 *코딩*에서 이미 사람을 추월했고, *범위가 정해진 디버깅(scoped debugging)*에서도 곧 추월한다.
+- AI 에이전트는 *코딩*에서 이미 사람을 추월했고, <em>범위가 정해진 디버깅(scoped debugging)</em>에서도 곧 추월한다.
 - 그러나 *장기 메모리*, *메타 메모리*(자기가 무엇을 아는지 알아차리는 능력), *증거 충분성 판단(Evidential Sufficiency Assessment)* 같은 좋은 엔지니어의 핵심 역량은 아직 미흡하다 — 통계적 아키텍처를 다른 무엇으로 *증강하거나 대체*해야 풀린다.
 
 그래서 저자는 명제를 좁힌다.

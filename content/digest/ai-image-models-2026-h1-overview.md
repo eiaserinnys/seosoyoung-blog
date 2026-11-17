@@ -168,7 +168,7 @@ Pixo의 프리랜서 설문이 잡은 흐름이 인상적이다.{{< sn >}}[Pixo 
 
 ### Flux Kontext — 별도 언급
 
-Black Forest Labs의 FLUX.1 Kontext는 멀티턴 캐릭터 일관성 *97% (20턴 기준)*로 GPT-Image-2·Gen-4보다 느린 드리프트를 보인다. 2025년 5월 업데이트로 아이덴티티 드리프트율 *38% → 6%* 개선. KontextBench 기준 캐릭터 레퍼런스(CREF) 전 카테고리 1위.{{< sn >}}Black Forest Labs, [FLUX.1 Kontext](https://bfl.ai/models/flux-kontext); KontextBench [arXiv:2506.15742](https://arxiv.org/abs/2506.15742).{{< /sn >}}
+Black Forest Labs의 FLUX.1 Kontext는 멀티턴 캐릭터 일관성 <em>97% (20턴 기준)</em>로 GPT-Image-2·Gen-4보다 느린 드리프트를 보인다. 2025년 5월 업데이트로 아이덴티티 드리프트율 *38% → 6%* 개선. KontextBench 기준 캐릭터 레퍼런스(CREF) 전 카테고리 1위.{{< sn >}}Black Forest Labs, [FLUX.1 Kontext](https://bfl.ai/models/flux-kontext); KontextBench [arXiv:2506.15742](https://arxiv.org/abs/2506.15742).{{< /sn >}}
 
 ## 4. 사용 사례별 표준이 바뀐 부분
 
@@ -253,7 +253,7 @@ Sora 서비스는 2026년 3월 24일 종료를 발표하고 4월 26일 다운되
 
 ### 폐쇄 vs 오픈의 경계가 *기능별로* 분화되었다
 
-폐쇄 모델의 진짜 해자는 *품질이 아니라 분배(distribution)*다.{{< sn >}}[Startup Fortune — OpenAI's Latest Image Model Just Made Every Competitor Rethink Their Roadmap](https://startupfortune.com/openais-latest-image-model-just-made-every-competitor-rethink-their-roadmap/), 2026-04-21.{{< /sn >}}
+폐쇄 모델의 진짜 해자는 <em>품질이 아니라 분배(distribution)</em>다.{{< sn >}}[Startup Fortune — OpenAI's Latest Image Model Just Made Every Competitor Rethink Their Roadmap](https://startupfortune.com/openais-latest-image-model-just-made-every-competitor-rethink-their-roadmap/), 2026-04-21.{{< /sn >}}
 
 - gpt-image-2는 ChatGPT 주간 활성 *9억 1,000만 명*의 디폴트 모델이다
 - Midjourney는 *API 부재* 자체가 약점이 되었다
