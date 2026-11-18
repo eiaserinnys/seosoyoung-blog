@@ -601,16 +601,44 @@ class ArticleUiChecksTest(unittest.TestCase):
         self.assertIn("maxLines=2줄", passing)
 
 
-if __name__ == '__main__':
-    unittest.main()
-
 class NewArticleChecksTest(unittest.TestCase):
     def test_a21_diagram_text_ratio(self):
         from verify_article_ui_checks import a21_checks
         good = {str(w): [100.0, 120.0] for w in (360, 375, 390, 414)}
-        self.assertTrue(all(e['ok'] for e in a21_checks('/x/', good)))
+        present = {str(w): 1 for w in (360, 375, 390, 414)}
+        self.assertTrue(all(e['ok'] for e in a21_checks('/x/', good, present)))
         good['390'][0] = 101
-        self.assertFalse(all(e['ok'] for e in a21_checks('/x/', good)))
+        self.assertFalse(all(e['ok'] for e in a21_checks('/x/', good, present)))
+
+    def test_a21_na_without_mobile_diagram(self):
+        from verify_article_ui_checks import a21_checks
+        widths = (360, 375, 390, 414)
+        entries = a21_checks('/x/', {str(w): [] for w in widths}, {str(w): 0 for w in widths})
+        self.assertEqual(len(entries), 1)
+        self.assertTrue(entries[0]['ok'])
+        self.assertTrue(entries[0]['na'])
+        summary = summarize_checks(entries)
+        self.assertEqual((summary['checked'], summary['na'], summary['pass']), (0, 1, True))
+
+    def test_a21_mobile_diagram_without_text_fails(self):
+        from verify_article_ui_checks import a21_checks
+        widths = (360, 375, 390, 414)
+        entries = a21_checks('/x/', {str(w): [] for w in widths}, {str(w): 1 for w in widths})
+        self.assertEqual(len(entries), 1)
+        self.assertFalse(entries[0]['ok'])
+        self.assertFalse(entries[0].get('na', False))
+
+    def test_require_treats_na_only_check_as_applicable(self):
+        from verify_article_ui import required_failures
+
+        def row(checked, na, failed):
+            return {'checked': checked, 'na': na, 'failed': failed}
+
+        summary = {'A20': row(0, 1, 0), 'A21': row(0, 1, 0),
+                   'A16': row(0, 0, 0), 'A18': row(5, 0, 2)}
+        self.assertEqual(required_failures(summary, ['A20', 'A21']), [])
+        self.assertEqual(required_failures(summary, ['A16']), ['A16'])
+        self.assertEqual(required_failures(summary, ['A18']), ['A18'])
 
     def test_a22_table_header(self):
         from verify_article_ui_checks import a22_checks
@@ -756,3 +784,7 @@ class Card1521SecondReviewTest(unittest.TestCase):
         from verify_article_ui_checks import a23_synthetic_coverage
         self.assertFalse(a23_synthetic_coverage({'/x/': {'synthetic': []}}))
         self.assertTrue(a23_synthetic_coverage({'/x/': {'synthetic': [{'synthetic': True}]}}))
+
+
+if __name__ == '__main__':
+    unittest.main()

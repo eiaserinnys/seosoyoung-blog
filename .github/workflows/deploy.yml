@@ -73,3 +73,21 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v5
+
+  # 빌드가 새 캐시(hugo-cache-<run_id>)를 저장한 뒤 가장 새것 하나만 남기고 지운다.
+  # 실패해도 배포를 막지 않는다(deploy는 build만 기다린다).
+  prune-hugo-cache:
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      actions: write
+    steps:
+      - name: Delete older Hugo caches
+        continue-on-error: true
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+        run: |
+          gh cache list --key hugo-cache- --sort created_at --order desc --limit 100 \
+            --json id --jq '.[1:][].id' \
+          | while read -r id; do gh cache delete "$id"; done
