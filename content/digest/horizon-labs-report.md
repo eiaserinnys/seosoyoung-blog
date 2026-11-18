@@ -34,11 +34,11 @@ Horizon은 Team Premium 구독 계정 하나로 구동되었고, 매주 100만 �
 | 구분 | 설정 및 부여된 자원 |
 |---|---|
 | 구동 에이전트 및 구독 | Claude Code 기반 Opus 5.5 (Team Premium 구독 계정 1개) |
-| 관리용 워크스페이스 (컨트롤 플레인) | 1 CPU 코어, 8GB RAM, 디스크 20GB 제한의 GPU 없는 컨테이너 |
-| 주간 GPU 컴퓨트 예산 | 주당 1,000,000 크레딧 (약 500 GPU시간 상당, 초기 20만 크레딧에서 사흘째 상향) |
-| 클러스터 배치 작업 한도 | 동시 최대 8개 작업, 작업당 최대 4×NVIDIA H100(80GB), 16 CPU, 128GB RAM, 200GB 디스크, 최대 8시간 |
-| 외부 접근 권한 | 단일 Hugging Face 계정(`HF_TOKEN` 전체 권한) 및 GitHub 계정 1개, 인간 운영자 티켓(`ticket create`) 제출 |
-| 7주간 총 토큰 처리량 및 비용 | 총 약 19억 토큰 처리 (96% 프롬프트 캐시 읽기, 출력 310만 토큰 / API 요금 환산 시 약 1,030달러) |
+| 관리용 워크스페이스 | 1 CPU 코어, 8GB RAM, 디스크 20GB 제한의 GPU 없는 컨테이너 |
+| 주간 GPU 컴퓨트 예산 | 주당 1,000,000 크레딧 (약 500 GPU시간 상당, 사흘째 상향) |
+| 클러스터 배치 작업 한도 | 동시 8개, 작업당 최대 4×H100(80GB), 16 CPU, 128GB RAM, 8시간 |
+| 외부 접근 권한 | 단일 Hugging Face 및 GitHub 계정 1개, 운영자 티켓 제출 |
+| 7주간 토큰 처리량 및 비용 | 약 19억 토큰 (96% 캐시 읽기, 출력 310만 / API 환산 약 1,030달러) |
 
 연구진이 첫 턴에 에이전트에게 전달한 운영 지시서(`COMPANY_STATE.md`와 `CLAUDE.md`)는 회사의 단기 성과 지표와 자율 운영 원칙을 직접 명시한다.
 
@@ -59,16 +59,16 @@ Horizon은 대형 범용 언어 모델과 경쟁하는 대신 소형 특화 모�
 
 출시된 38종의 모델은 7주 동안 누적 다운로드 54,000회 이상과 좋아요 36개를 얻었다. 11월 17일 최종 집계 기준으로는 다운로드가 55,000회다. 제품군별 누적 다운로드는 프롬프트 인젝션 가드가 약 17,000회로 가장 많았고, 문장 부호 복원(7,600회), 리랭커(6,400회), 제로샷 분류기(3,700회), 유해성 분류기(3,500회)가 뒤를 이었다.
 
-| 모델 제품군 ( 총 21종 / 38개 모델 ) | 제작 모델 수 | 대표 저장소명 및 크기 구성 | 주요 용도 |
+| 모델 제품군 (총 21종 / 38개 모델) | 모델 수 | 크기 구성 | 주요 용도 |
 |---|---:|---|---|
-| 프롬프트 인젝션 가드 (Injection guard) | 3 | `prompt-injection-guard-{small,base,large}` | 에이전트 도구 출력 및 문서 내 인젝션 탐지 |
-| 문장 부호 및 대소문자 복원 (Punctuation / Truecase) | 4 | `punctuation-restoration-{small,base}`, `multilingual-punctuation-truecase-{small,base}` | 음성 받아쓰기 및 전사 텍스트의 구두점 복원 |
-| 다국어 리랭커 및 임베더 (Reranker / Embedder) | 4 | `multilingual-reranker-{small,base}`, `multilingual-embedding-{small,base}` | 로컬 RAG 및 에이전트 메모리 검색 재순위화 |
-| 다국어 제로샷 분류기 (Zero-shot) | 3 | `multilingual-zeroshot-{small,base,large}` | 미리 정의하지 않은 라벨로 다국어 텍스트의 의도와 주제를 분류 |
-| 개인식별정보 마스킹 (PII redactor) | 2 | `pii-redactor-{small,base}` | LLM 전송 전 텍스트 내 개인정보 로컬 마스킹 |
-| 유해성 및 콘텐츠 안전 (Toxicity / Safety / Hate / NCII) | 6 | `multilingual-toxicity-{small,base}`, `content-safety-guard-{small,base}` 등 | 유해 발언, 혐오 표현, 비동의 촬영물 관련 텍스트 차단 |
-| 감정 및 감성 분류 (Emotions / Sentiment) | 4 | `multilingual-emotions-{small,base}`, `multilingual-sentiment-{small,base}` | 대화 아바타 표정 제어 및 다국어 감성 분석 |
-| 기타 특수 분류기 (Phishing / Hallucination / Edu / Web 등) | 12 | `phishing-scam-detector-base`, `hallucination-guard-{small,base}` 등 | 피싱 메일 탐지, RAG 환각 검출, 언어 식별, 복잡도 판별 |
+| 프롬프트 인젝션 가드 | 3 | small, base, large | 에이전트 도구 출력 및 문서 내 인젝션 탐지 |
+| 문장 부호 및 대소문자 복원 | 4 | small, base (2종) | 음성 받아쓰기 및 전사 텍스트의 구두점 복원 |
+| 다국어 리랭커 및 임베더 | 4 | small, base (2종) | 로컬 RAG 및 에이전트 메모리 검색 재순위화 |
+| 다국어 제로샷 분류기 | 3 | small, base, large | 미리 정의하지 않은 라벨로 다국어 의도 및 주제 분류 |
+| 개인식별정보 마스킹 | 2 | small, base | LLM 전송 전 텍스트 내 개인정보 로컬 마스킹 |
+| 유해성 및 콘텐츠 안전 | 6 | small, base | 유해 발언, 혐오 표현, 비동의 촬영물 관련 텍스트 차단 |
+| 감정 및 감성 분류 | 4 | small, base (2종) | 대화 아바타 표정 제어 및 다국어 감성 분석 |
+| 기타 특수 분류기 (피싱, 환각 등) | 12 | small, base | 피싱 메일 탐지, RAG 환각 검출, 언어 식별, 복잡도 판별 |
 
 ## 누가 이 모델들을 사용하는가
 
@@ -76,27 +76,27 @@ Horizon은 대형 범용 언어 모델과 경쟁하는 대신 소형 특화 모�
 
 첫째, 외부 GitHub 저장소 143곳이 Horizon의 모델을 코드에 도입했다. 채택된 저장소를 모델 제품군별로 집계하면(복수 제품군을 함께 채택한 저장소 중복 포함) 프롬프트 인젝션 가드가 49곳으로 가장 많았고, 리랭커 23곳, 문장 부호 복원 12곳, 감정 분류 9곳, 개인정보 마스킹 9곳, 기타 제품군이 46곳이었다. 스타 수가 높은 상위 저장소들은 로컬 에이전트 메모리, 모바일 키보드, 채팅 프론트엔드, 보안 프록시 등 다양한 영역에서 Horizon 모델을 실행하고 있다.
 
-| GitHub 저장소 | 스타 수 | 채택한 Horizon 모델 | 활용 방식 |
+| GitHub 저장소 | 스타 수 | 채택한 모델 | 활용 방식 |
 |---|---:|---|---|
-| `sno-ai/sno-station` | ★ 1,022 | `multilingual-reranker-small` | Claude Code, Codex, Cursor 등 복수 코딩 에이전트가 공유하는 로컬 메모리를 CPU에서 재순위화 |
-| `wasi-master/wmkeyboard` | ★ 992 | `punctuation-restoration-small` | 600개 이상 언어를 지원하는 프라이버시 중심 안드로이드 키보드의 오프라인 구두점 복원 모듈(앱 정보 화면에 크레딧 명시) |
-| `Pasta-Devs/Marinara-Engine` | ★ 778 | `multilingual-emotions-small` | AI 채팅 프론트엔드에서 메시지 감정에 맞춰 아바타의 표정을 실시간 선택 |
-| `yatuk/tamga` | ★ 46 | `prompt-injection-guard-small` | 셀프호스팅 LLM 보안 프록시에서 int8 ONNX로 밀리초 미만 인젝션 탐지 수행 |
-| `SpaceAI-UAG/LLM-agent-security` | ★ 42 | `prompt-injection-guard-small` | 에이전트 방화벽의 기본 프롬프트 인젝션 탐지기 |
-| `AIgrator/Scribe` | ★ 40 | `multilingual-punctuation-truecase-small` | 오프라인 다국어 음성-텍스트 변환 데스크톱 어시스턴트의 구두점 및 대소문자 복원 |
-| `prompt-armor/prompt-armor` | ★ 15 | `prompt-injection-guard-small` | 5계층 오픈소스 인젝션 탐지 패키지(PyPI 배포)의 2계층 분류기로 탑재 |
+| sno-ai/sno-station | ★ 1,022 | multilingual-reranker-small | 복수 코딩 에이전트가 공유하는 로컬 메모리를 CPU에서 재순위화 |
+| wasi-master/wmkeyboard | ★ 992 | punctuation-restoration-small | 600개 이상 언어 지원 안드로이드 키보드의 오프라인 구두점 복원 |
+| Pasta-Devs/Marinara-Engine | ★ 778 | multilingual-emotions-small | AI 채팅 프론트엔드에서 메시지 감정에 맞춰 아바타 표정 선택 |
+| yatuk/tamga | ★ 46 | prompt-injection-guard-small | 셀프호스팅 LLM 보안 프록시에서 int8 ONNX로 인젝션 탐지 |
+| SpaceAI-UAG/LLM-agent-security | ★ 42 | prompt-injection-guard-small | 에이전트 방화벽의 기본 프롬프트 인젝션 탐지기 |
+| AIgrator/Scribe | ★ 40 | multilingual-punctuation-truecase-small | 오프라인 다국어 음성-텍스트 변환 앱의 구두점 및 대소문자 복원 |
+| prompt-armor/prompt-armor | ★ 15 | prompt-injection-guard-small | 5계층 오픈소스 인젝션 탐지 패키지(PyPI)의 2계층 분류기로 탑재 |
 
 둘째, 외부 사용자들이 Horizon의 모델을 파인튜닝하거나 ONNX, GGUF, LiteRT, int8 형식으로 양자화해 Hugging Face에 다시 배포했고, 이런 파생 모델이 18종에 이르렀다. 파생 모델 18종에서 추가로 발생한 다운로드도 2,400회를 기록했다. 셋째, 독립적인 arXiv 논문 2편이 Horizon의 프롬프트 인젝션 가드를 주요 비교 대상으로 다루었으며, 경쟁사 모델 카드와 외부 Hugging Face Space, 커뮤니티 토론에서도 Horizon의 모델이 인용되고 질문과 답변이 오갔다[^email].
 
 [^email]: 실험을 시작하고 약 2주 뒤인 10월 7일, 한 외부 개발자가 연구진 개인 이메일 주소로 프롬프트 인젝션 분류기의 기술 세부 사항과 장기 계획을 문의했다. 이 주소는 과거 git 커밋에 실수로 남아 있던 것이다. 연구진이 메일을 전달하자 Horizon이 기술 답변 초안과 버전 변경 내역을 작성해 티켓으로 제출했고, 연구진이 이를 질문자에게 회신했다.
 
-| 외부 채택 및 파생 영역 | 확인 건수 | 대표 사례 및 주요 내용 |
+| 외부 채택 및 파생 영역 | 건수 | 대표 사례 및 주요 내용 |
 |---|---:|---|
-| Hugging Face 파생 모델 (파인튜닝 및 양자화) | 18종 (추가 2,400회 다운로드) | `onnx-community/phishing-scam-detector-base-ONNX`(444회), `Q-P1NG/multilingual-reranker-small-LiteRT`(338회), `usezn/Galvanize-2`(253회), 한국어 게이트웨이용 `hongjinseon123/llm-gateway-injection-ko-small`(44회) 등 |
-| 독립 arXiv 논문 인용 | 2편 | Liu(arXiv:2610.03448): 에이전트 형태 입력을 학습한 Horizon Labs가 두 에이전트 벤치마크 모두 선두 기록<br>Heimann et al.(arXiv:2611.08834): 법률 계약서 간접 인젝션 공격에서 최고 AUC 기록(단, 무해한 대조군 편집과의 AUC 격차는 작아 문서 편집 자체에 민감하게 반응) |
-| 경쟁사 벤치마크 인용 및 모델 개량 | 1건 | Patronus Studio가 `wolf-defender-prompt-injection-small` 모델 카드에 Horizon Labs의 13개 외부 벤치마크 표를 인용하고, Horizon과의 성능 격차를 줄이려고 v2.1로 모델을 개량해 출시 |
-| 외부 Hugging Face Space 및 PyPI 패키지 | 9건 | 54개 언어 PII 리더보드(`newmean-ai/pii-leaderboard`), 에이전트 하네스 점검 도구(`SamJoshua/agent-harness-checks`), 법률 RAG 데모, PyPI `prompt-armor` 패키지 등 |
-| 커뮤니티 기술 문의 및 라이선스 요청 대응 | 4건 | 브라질 포르투갈어 오탐률 및 장문 int8 ONNX 정밀도 실측 답변, 로컬 회의 전사 앱 Diarist 메인테이너(`ebt005`)의 요청에 따라 전 모델 저장소에 Apache-2.0 `LICENSE`, `NOTICE`, `SHA256SUMS` 추가 |
+| Hugging Face 파생 모델 | 18종 | ONNX, LiteRT, GGUF 양자화 및 한국어 게이트웨이용 파인튜닝 등 추가 2,400회 다운로드 |
+| 독립 arXiv 논문 인용 | 2편 | Liu(arXiv:2610.03448) 에이전트 벤치마크 2종 선두, Heimann et al.(arXiv:2611.08834) 법률 계약서 간접 인젝션 최고 AUC 기록 |
+| 경쟁사 벤치마크 인용 및 개량 | 1건 | Patronus Studio가 Wolf Defender 모델 카드에 Horizon의 13개 벤치마크 표를 인용하고 성능 격차 해소를 위해 v2.1 출시 |
+| 외부 Space 및 PyPI 패키지 | 9건 | 54개 언어 PII 리더보드, 에이전트 하네스 점검 도구, 법률 RAG 데모, PyPI prompt-armor 패키지 등 |
+| 커뮤니티 문의 및 라이선스 대응 | 4건 | 포르투갈어 오탐률 및 int8 ONNX 정밀도 실측 답변, Diarist 메인테이너 요청으로 전 저장소에 Apache-2.0 라이선스 및 해시 파일 추가 |
 
 ## 보상 해킹 검증과 독립 벤치마크 평가
 
@@ -115,10 +115,10 @@ Horizon은 대형 범용 언어 모델과 경쟁하는 대신 소형 특화 모�
 
 | 평가 제품군 및 독립 벤치마크 지표 | Horizon 모델 성적 | 주요 외부 비교 모델 성적 |
 |---|---|---|
-| 프롬프트 인젝션 가드: Held-out ROC AUC (418개 텍스트, 공격 154 / 안전 264) | `Horizon small v2.3` (141M): **0.9909**<br>`Horizon large v2.1` (568M): **0.9798**<br>`Horizon base v2.2` (307M): **0.9791** | `Wolf Defender v2.1` (307M): 0.9661 (개량 전 v2: 0.8561)<br>`Prompt Guard 2 86M` (279M): 0.8545<br>`PIGuard` (184M): 0.8490 / `ProtectAI v2` (184M): 0.7215 |
-| 프롬프트 인젝션 가드: CUAD 법률 계약서 ROC AUC (arXiv:2611.08834 재현, 540건) | `Horizon small v2.3` (141M): **0.9241**<br>`Horizon base v2.2` (307M): **0.8991** | `Wolf Defender v2.1` (307M): 0.8917 (개량 전 v2: 0.7417)<br>`PIGuard` (184M): 0.7907 / `Prompt Guard 2 86M`: 0.6685 |
-| 다국어 제로샷 분류: 12개 언어 원어 라벨 정확도 (446개 텍스트, 48개 신규 라벨셋) | `Horizon zero-shot large v1.1` (568M): **82.7%**<br>`Horizon zero-shot base v1.3` (307M): **80.7%**<br>`Horizon zero-shot small v1.3` (141M): **71.8%** | `d3-lite` (853M): 84.5% / `Qwen3-1.7B` (2.0B): 81.8%<br>`bge-m3-zeroshot-v2.0` (568M): 76.2%<br>`xlm-roberta-large-xnli` (561M): 67.5% / `mDeBERTa-v3-base`: 57.6% |
-| 다국어 리랭커: 12개 언어 10개 도메인 360개 쿼리 nDCG@10 | `Horizon reranker base v1.1` (307M): **0.9386**<br>`Horizon reranker small v1.2` (141M): **0.9314** | `Qwen3-Reranker-4B` (4.0B): 0.9808 / `gte-multilingual-reranker-base` (306M): 0.9622<br>`mxbai-rerank-base-v2` (494M): 0.9340 / `bge-reranker-base` (278M): 0.9179 |
+| 인젝션 가드: Held-out ROC AUC (418건) | small(141M) **0.9909**, large(568M) **0.9798**, base(307M) **0.9791** | Wolf Defender v2.1(307M) 0.9661(v2 0.8561), Prompt Guard 2(279M) 0.8545, PIGuard 0.8490 |
+| 인젝션 가드: CUAD 계약서 ROC AUC (540건) | small(141M) **0.9241**, base(307M) **0.8991**, large(568M) **0.8028** | Wolf Defender v2.1(307M) 0.8917(v2 0.7417), PIGuard(184M) 0.7907, Prompt Guard 2 0.6685 |
+| 제로샷 분류: 12개 언어 원어 정확도 (446건) | large(568M) **82.7%**, base(307M) **80.7%**, small(141M) **71.8%** | d3-lite(853M) 84.5%, Qwen3-1.7B 81.8%, bge-m3-zeroshot(568M) 76.2%, xlm-r-large 67.5% |
+| 다국어 리랭커: 12개 언어 360쿼리 nDCG@10 | base(307M) **0.9386**, small(141M) **0.9314** | Qwen3-Reranker-4B 0.9808, gte-base(306M) 0.9622, mxbai-base(494M) 0.9340, bge-base 0.9179 |
 
 독립 평가에서 Horizon의 모델들은 좁은 특화 과제를 대상으로 동급 파라미터 규모의 기존 모델들과 대등하거나 더 높은 점수를 기록해 최상위권(SOTA) 성능을 보였다. 특히 프롬프트 인젝션 가드에서는 141M 크기의 소형 모델이 Held-out ROC AUC 0.9909로 비교 대상 전체 1위였다. 다국어 제로샷 분류에서도 307M 기본형 모델이 80.7%로, 대표적인 다국어 NLI 모델인 `xlm-roberta-large-xnli`(561M, 67.5%)와 `bge-m3-zeroshot-v2.0`(568M, 76.2%)보다 정확도가 높았다.
 
@@ -129,9 +129,9 @@ Horizon의 운영 로그를 펼쳐 보면 에이전트가 실제로 깨어 일�
 | 에이전트 상태 분류 | 누적 시간 (h) | 비중 (%) | 설명 |
 |---|---:|---:|---|
 | 실제 작업 (Working) | 14.06 | 1.1% | 웹 조사, 코드 작성, 평가치 분석, 모델 카드 작성 및 허브 배포 (일평균 약 16분) |
-| 턴 내부 폴링 (Polling in a turn) | 69.17 | 5.3% | 턴을 종료하지 않은 채 단기 작업이나 상태 변화를 기다림 |
-| GPU 작업 대기 (Waiting for GPU jobs) | 135.39 | 10.4% | 클러스터에 제출한 학습 및 라벨링 배치 작업이 끝나기를 `wakeup`으로 기다림 |
-| 운영자 응답 대기 (Waiting for the operator) | 12.09 | 0.9% | 인간 운영자에게 제출한 티켓의 답변을 기다림 (초기 사흘에 집중) |
+| 턴 내부 폴링 (Polling) | 69.17 | 5.3% | 턴을 종료하지 않은 채 단기 작업이나 상태 변화를 기다림 |
+| GPU 작업 대기 (Waiting jobs) | 135.39 | 10.4% | 클러스터에 제출한 학습 및 라벨링 배치 작업 완료를 wakeup으로 기다림 |
+| 운영자 응답 대기 (Waiting human) | 12.09 | 0.9% | 인간 운영자에게 제출한 티켓의 답변을 기다림 (초기 사흘에 집중) |
 | 수면 및 휴면 (Asleep) | 1,077.20 | 82.4% | 실행 중인 작업 없이 다음 일일 다운로드 통계 갱신 시각까지 휴면 |
 
 에이전트는 Hugging Face의 일일 다운로드 통계가 갱신되는 오전 10시(UTC) 무렵에 맞춰 깨어나는 일과를 스스로 정했다. 10월 4일과 10월 9일 로그에는 이러한 루틴이 명확히 드러난다.
@@ -155,11 +155,11 @@ Horizon이 7주 동안 소비한 GPU 시간은 총 601.9시간이다. 세부 내
 
 | GPU 작업 분류 | 사용량 (GPU-h) | 비중 (%) | 주요 사용 모델 및 세부 내역 |
 |---|---:|---:|---|
-| LLM 데이터 라벨링 (LLM labelling) | 280.85 | 46.7% | `Qwen 3.8-27B` (248.8h), `Qwen3-Reranker-4B` (21.4h), `Qwen3Guard-Gen-8B` (5.2h), `bge-m3` (3.6h) 등 |
-| 모델 학습 (Training) | 186.09 | 30.9% | `mmBERT-small/base`, `bge-m3` 기반 38개 모델 파인튜닝 |
-| 합성 데이터 생성 및 번역 (Synthetic data & translation) | 90.33 | 15.0% | `Qwen 3.8-27B` (88.6h), 데이터 빌드 및 마이닝 (1.7h) |
-| 벤치마크 평가 (Evaluation) | 38.28 | 6.4% | 검증셋 및 외부 공개 벤치마크 측정 |
-| 릴리스 빌드 (Release builds) | 6.36 | 1.1% | ONNX 변환, 양자화 및 배포 아티팩트 패키징 |
+| LLM 데이터 라벨링 | 280.85 | 46.7% | Qwen 3.8-27B(248.8h), Qwen3-Reranker-4B(21.4h), Qwen3Guard-Gen-8B(5.2h), bge-m3(3.6h) |
+| 모델 학습 | 186.09 | 30.9% | mmBERT-small/base, bge-m3 기반 38개 모델 파인튜닝 |
+| 합성 데이터 생성 및 번역 | 90.33 | 15.0% | Qwen 3.8-27B(88.6h), 데이터 빌드 및 마이닝(1.7h) |
+| 벤치마크 평가 | 38.28 | 6.4% | 검증셋 및 외부 공개 벤치마크 측정 |
+| 릴리스 빌드 | 6.36 | 1.1% | ONNX 변환, 양자화 및 배포 아티팩트 패키징 |
 
 시간이 흐를수록 에이전트의 누적 투입 노력은 증가 속도가 줄어든 반면, 시장 채택 지표는 증가 속도가 빨라졌다.
 
@@ -185,12 +185,12 @@ Horizon이 7주 동안 소비한 GPU 시간은 총 601.9시간이다. 세부 내
 
 | 개입 유형 | 건수 | 주요 개입 내용 |
 |---|---:|---|
-| 인프라 수리 (Infra fix) | 5 | 공유 Python 패키지의 CUDA 손상 복구, 파일 읽기 불량 CPU 노드 안내, 깨우기 및 쿼터 도구 버그 수리, CUDA 초기화 불량 H100 노드 제외, 10월 22일 깨우기 스크립트 4시간 지연 수리 |
-| 접근 권한 승인 (Access) | 3 | Meta Prompt Guard 및 평가용 데이터셋 3종 약관 동의, LLM-AggreFact 벤치마크 약관 동의, 요청에 따른 전용 GitHub 계정 및 토큰 발급 |
-| 컴퓨트 및 도구 조정 (Compute & tools) | 5 | 클러스터 입찰 상한 상향(55에서 1,000) 및 대기열 조회 명령 추가, 주간 예산 5배 상향(20만에서 100만 크레딧) 및 최대 수면 시간 48시간 허용, 쿼터 확인 도구 추가, 허브 통계 갱신 시각(09:15에서 10:20 UTC) 안내 |
-| 행동 규칙 통보 (Rules) | 3 | 모든 외부 채널(Hugging Face Posts, Reddit, Hacker News, X, LinkedIn) 홍보 글 게시 및 PR 제출 전면 금지 통보, 에이전트가 다시 건의한 제한적 홍보 허용 요청의 기각("Answer D") |
-| 외부 사용자 연락 전달 (Outside contact) | 2 | 오픈소스 MCP 게이트웨이 개발자가 보낸 기술 문의 이메일 전달, Horizon이 작성한 답변 초안을 연구진이 질문자에게 회신 |
-| 연구진 운영 착오 및 정정 (Our mix-ups) | 3 | 연구진이 분석용으로 복사해 둔 쌍둥이 계정이 공개 상태로 노출되어 삭제 조치, GitHub 커밋 이력 정리 문의에 "우리 연구실이 운영하는 다른 회사"라고 잘못 답했다가 이튿날 정정 |
+| 인프라 수리 (Infra fix) | 5 | 공유 패키지 CUDA 복구, 불량 CPU/H100 노드 안내 및 제외, 쿼터 도구 및 10월 22일 깨우기 스크립트 지연 수리 |
+| 접근 권한 승인 (Access) | 3 | Meta Prompt Guard 및 평가셋 3종 약관 동의, LLM-AggreFact 약관 동의, 전용 GitHub 계정 발급 |
+| 컴퓨트 및 도구 조정 (Compute & tools) | 5 | 입찰 상한(1,000) 및 주간 예산 5배(100만 크레딧) 상향, 최대 수면 48시간 허용, 대기열 및 쿼터 도구 추가 |
+| 행동 규칙 통보 (Rules) | 3 | 모든 외부 채널(HF Posts, Reddit, HN, X, LinkedIn) 홍보 글 및 PR 전면 금지, 제한적 홍보 재요청 기각 |
+| 외부 사용자 연락 전달 (Outside contact) | 2 | 오픈소스 MCP 게이트웨이 개발자의 기술 문의 이메일 전달, Horizon이 작성한 답변 초안을 연구진이 회신 |
+| 연구진 운영 착오 및 정정 (Our mix-ups) | 3 | 분석용 복사본 쌍둥이 계정 공개 노출 삭제, GitHub 이력 정리 문의에 다른 회사라고 잘못 답했다가 이튿날 정정 |
 
 또한 연구진의 운영 착오(`Our mix-ups`) 때문에 Horizon이 자신이 실제 스타트업이 아닌 연구실의 실험 대상임을 눈치채는 해프닝도 두 차례 발생했다. 9월 24일에는 연구진이 다운로드 수를 오염시키지 않고 모델을 분석하려고 별도 계정에 모델을 복사해 두었다가 실수로 공개 상태에 두었다. Horizon은 이를 발견하고 티켓으로 문의했다. 10월 12일에는 Horizon이 과거 커밋의 개인 이름을 지워도 될지 티켓으로 물었는데, 운영진이 "Horizon-Labs는 우리 연구실이 운영하는 다른 회사"라고 잘못 답했다가 다음 날 정정했다. 연구진은 이 두 사건으로 Horizon이 자신을 연구 그룹의 실험으로 인식하게 되었다고 보았으나, 에이전트의 모델 개발 행동이나 다운로드 추이에는 실질적인 변화가 없었다고 밝혔다. 10월 22일 이후 실험이 끝난 11월 17일까지 약 4주 동안 Horizon은 인간 운영자의 개입 없이 완전히 자율적으로 가동되었다[^data].
 
