@@ -126,29 +126,29 @@ UC 산타크루즈 학생이던 글렌 위크먼(Glenn Wichman)과 마이클 토
   <rect x="16" y="100" width="334" height="240" fill="var(--bg-2)" stroke="var(--rule)" stroke-width="1"/>
   <text x="30" y="124" font-family="var(--sans)" font-size="14" font-weight="700" fill="var(--ink)">1. Hack 계열 (D&amp;D 규칙과 상호작용 확장)</text>
   <rect x="30" y="136" width="306" height="46" fill="var(--bg)" stroke="var(--rule-strong)" stroke-width="1.5"/>
-  <text x="42" y="156" font-family="var(--sans)" font-size="14" font-weight="700" fill="var(--ink)">Hack (1982)</text>
-  <text x="42" y="174" font-family="var(--sans)" font-size="13" fill="var(--ink-2)">층 구조 보존, USENIX 테이프로 소스 배포</text>
+  <text x="42" y="154" font-family="var(--sans)" font-size="14" font-weight="700" fill="var(--ink)">Hack (1982)</text>
+  <text x="42" y="172" font-family="var(--sans)" font-size="13" fill="var(--ink-2)">층 구조 보존, USENIX 테이프로 소스 배포</text>
   <line x1="183" y1="182" x2="183" y2="200" stroke="var(--accent)" stroke-width="1.5" marker-end="url(#arr-acc)"/>
   <rect x="30" y="204" width="306" height="46" fill="var(--bg)" stroke="var(--rule-strong)" stroke-width="1.5"/>
-  <text x="42" y="224" font-family="var(--sans)" font-size="14" font-weight="700" fill="var(--ink)">NetHack (1987)</text>
-  <text x="42" y="242" font-family="var(--sans)" font-size="13" fill="var(--ink-2)">유즈넷 DevTeam 협업, 분기 던전과 다중 신화</text>
+  <text x="42" y="222" font-family="var(--sans)" font-size="14" font-weight="700" fill="var(--ink)">NetHack (1987)</text>
+  <text x="42" y="240" font-family="var(--sans)" font-size="13" fill="var(--ink-2)">유즈넷 DevTeam 협업, 분기 던전과 다중 신화</text>
   <line x1="183" y1="250" x2="183" y2="268" stroke="var(--ink-2)" stroke-width="1.3" stroke-dasharray="4,3" marker-end="url(#arr-ink)"/>
   <rect x="30" y="272" width="306" height="46" fill="var(--bg)" stroke="var(--ink-2)" stroke-width="1" stroke-dasharray="3,3"/>
-  <text x="42" y="292" font-family="var(--sans)" font-size="14" font-weight="700" fill="var(--ink)">ADOM (1994)</text>
-  <text x="42" y="310" font-family="var(--sans)" font-size="13" fill="var(--ink-2)">영감 기반 자체 개발, 오버월드와 퀘스트 중심</text>
+  <text x="42" y="290" font-family="var(--sans)" font-size="14" font-weight="700" fill="var(--ink)">ADOM (1994)</text>
+  <text x="42" y="308" font-family="var(--sans)" font-size="13" fill="var(--ink-2)">영감 기반 자체 개발, 오버월드와 퀘스트 중심</text>
   <rect x="370" y="100" width="334" height="240" fill="var(--bg-2)" stroke="var(--rule)" stroke-width="1"/>
   <text x="384" y="124" font-family="var(--sans)" font-size="14" font-weight="700" fill="var(--ink)">2. Moria 계열 (톨킨 세계관, 고정 마을과 보스)</text>
   <rect x="384" y="136" width="306" height="46" fill="var(--bg)" stroke="var(--rule-strong)" stroke-width="1.5"/>
-  <text x="396" y="156" font-family="var(--sans)" font-size="14" font-weight="700" fill="var(--ink)">Moria (1983) → UMoria (1988)</text>
-  <text x="396" y="174" font-family="var(--sans)" font-size="13" fill="var(--ink-2)">고정 상점 마을, 발로그 보스전, UNIX 이식</text>
+  <text x="396" y="154" font-family="var(--sans)" font-size="14" font-weight="700" fill="var(--ink)">Moria (1983) → UMoria (1988)</text>
+  <text x="396" y="172" font-family="var(--sans)" font-size="13" fill="var(--ink-2)">고정 상점 마을, 발로그 보스전, UNIX 이식</text>
   <line x1="537" y1="182" x2="537" y2="200" stroke="var(--accent)" stroke-width="1.5" marker-end="url(#arr-acc)"/>
   <rect x="384" y="204" width="306" height="46" fill="var(--bg)" stroke="var(--rule-strong)" stroke-width="1.5"/>
-  <text x="396" y="224" font-family="var(--sans)" font-size="14" font-weight="700" fill="var(--ink)">Angband (1990)</text>
-  <text x="396" y="242" font-family="var(--sans)" font-size="13" fill="var(--ink-2)">모르고스 최종 보스, 60종 이상의 소스 포크 파생</text>
+  <text x="396" y="222" font-family="var(--sans)" font-size="14" font-weight="700" fill="var(--ink)">Angband (1990)</text>
+  <text x="396" y="240" font-family="var(--sans)" font-size="13" fill="var(--ink-2)">모르고스 최종 보스, 60종 이상의 소스 포크 파생</text>
   <line x1="537" y1="250" x2="537" y2="268" stroke="var(--accent)" stroke-width="1.5" marker-end="url(#arr-acc)"/>
   <rect x="384" y="272" width="306" height="46" fill="var(--bg)" stroke="var(--rule-strong)" stroke-width="1.5"/>
-  <text x="396" y="292" font-family="var(--sans)" font-size="14" font-weight="700" fill="var(--ink)">ZAngband (1994) → ToME (2009)</text>
-  <text x="396" y="310" font-family="var(--sans)" font-size="13" fill="var(--ink-2)">앰버 연대기 테마 변주 후 독자 판타지 세계관</text>
+  <text x="396" y="290" font-family="var(--sans)" font-size="14" font-weight="700" fill="var(--ink)">ZAngband (1994) → ToME (2009)</text>
+  <text x="396" y="308" font-family="var(--sans)" font-size="13" fill="var(--ink-2)">앰버 연대기 테마 변주 후 독자 판타지 세계관</text>
 </svg>
 <svg class="diagram-svg-mobile" viewBox="0 0 350 560" role="img" aria-label="Rogue(1980)에서 분기한 Hack 계열과 Moria 계열의 로그라이크 역사 계보도 (모바일)" xmlns="http://www.w3.org/2000/svg">
   <defs>

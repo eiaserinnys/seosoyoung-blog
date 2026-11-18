@@ -1114,15 +1114,20 @@ def summarize_checks(entries, limit=40):
     }
 
 
-def a21_checks(path, samples):
-    entries = []
+def a21_checks(path, samples, diagram_counts):
     widths = ('360', '375', '390', '414')
     arrays = [samples.get(width, []) for width in widths]
-    if all(arrays) and len({len(a) for a in arrays}) == 1:
-        for i, values in enumerate(zip(*arrays)):
-            low, high = min(values), max(values)
-            entries.append({'ok': low > 0 and high / low <= 1.005,
-                            'detail': f'{path} SVG text {i}: {values}'})
+    if not any(diagram_counts.get(width, 0) for width in widths):
+        return [{'ok': True, 'na': True,
+                 'detail': f'{path}: 모바일 도식 0건 (A21 해당 없음)'}]
+    if not all(arrays) or len({len(a) for a in arrays}) != 1:
+        return [{'ok': False,
+                 'detail': f'{path}: 모바일 도식 글자 목록이 비었거나 폭마다 길이가 다름 {arrays}'}]
+    entries = []
+    for i, values in enumerate(zip(*arrays)):
+        low, high = min(values), max(values)
+        entries.append({'ok': low > 0 and high / low <= 1.005,
+                        'detail': f'{path} SVG text {i}: {values}'})
     return entries
 
 

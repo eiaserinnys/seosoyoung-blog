@@ -1105,6 +1105,8 @@ def capture_config(browser, url, out_dir, name, width, height, dpr, scheme, a10=
     m["diagrams"] = page.evaluate(A16_JS)
     m["diagramTextLengths"] = page.evaluate("""() => [...document.querySelectorAll('.post-content .blog-diagram .diagram-svg-mobile text')]
       .filter(e => e.getBoundingClientRect().width > 0).map(e => e.getComputedTextLength())""")
+    m["diagramMobileCount"] = page.evaluate(
+        "() => document.querySelectorAll('.post-content .blog-diagram .diagram-svg-mobile').length")
     if name in ("wide-light", "narrow-light"):
         m["lineTables"] = page.evaluate(LINE_TABLES_JS, page.evaluate(STATE_JS)['tables'])
     if name in A17_CONFIGS:
@@ -1881,6 +1883,8 @@ def path_checks(report, strict_lightbox=False):
 
     lengths = {str(width): configs[name].get('diagramTextLengths', []) for width, name in
                ((360, 'min360-light'), (375, 'narrow-light'), (390, 'min390-light'), (414, 'min414-light'))}
+    mobile_counts = {str(width): configs[name].get('diagramMobileCount', 0) for width, name in
+                     ((360, 'min360-light'), (375, 'narrow-light'), (390, 'min390-light'), (414, 'min414-light'))}
     table_rows = configs['wide-light'].get('lineTables', [])
     targets = {'/digest/memory-caching-rnns/': (2, False),
                '/digest/spritefusion-jev-realtime-level-gen/': (2, False),
@@ -1890,11 +1894,11 @@ def path_checks(report, strict_lightbox=False):
         for row in table_rows:
             if row['table'] == index:
                 row['expectedOverflow'] = expected
-    for key, entries in (('A21', a21_checks(path, lengths)), ('A22', a22_checks(path, report.get('headers', [])) + a22_rule_checks(path, report.get('headerRules', []))),
+    for key, entries in (('A21', a21_checks(path, lengths, mobile_counts)), ('A22', a22_checks(path, report.get('headers', [])) + a22_rule_checks(path, report.get('headerRules', []))),
                          ('A23', a23_checks(path + ' 1440', table_rows) + a23_checks(path + ' 375', configs['narrow-light'].get('lineTables', [])) + a23_checks(path + ' synthetic', report.get('synthetic', []))),
                          ('A24', a24_checks(path, report.get('imageReservation', [])))):
         for entry in entries:
-            add(key, entry['ok'], entry['detail'])
+            add(key, entry['ok'], entry['detail'], na=entry.get('na', False))
 
     for key, what in (
         ("A2", "좁은 폭에서 3~5칸 표"),
@@ -1907,6 +1911,14 @@ def path_checks(report, strict_lightbox=False):
 
     summary = {key: summarize_checks(entries) for key, entries in checks.items()}
     return summary, checks
+
+
+def required_failures(summary, required):
+    """--require 판정. 실패가 있거나, 잰 항목도 해당 없음도 없으면 실패다.
+    해당 없음(na)만 있는 검사는 이 글에 그 검사가 적용되지 않는다는 뜻이라 통과로 본다."""
+    return [key for key in required
+            if summary[key]['failed']
+            or (not summary[key]['checked'] and not summary[key]['na'])]
 
 
 def main():
@@ -2021,7 +2033,7 @@ def main():
     print("skipped:", skipped)
     print("wrote", args.out_dir / "metrics.json")
     if required:
-        failed_required = [key for key in required if not combined['summary'][key]['checked'] or combined['summary'][key]['failed']]
+        failed_required = required_failures(combined['summary'], required)
         if 'A22' in required:
             seen = {(row['width'], row['kind']) for report in reports.values() for row in report['headers']}
             if not {(1440, 'normal'), (1440, 'overflow'), (375, 'normal'), (375, 'overflow')} <= seen:
