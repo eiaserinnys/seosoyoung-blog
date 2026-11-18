@@ -81,11 +81,11 @@ images:
   <rect x="484" y="24" width="220" height="202" fill="var(--bg)" stroke="var(--rule-strong)" stroke-width="1.5"/>
   <text x="496" y="50" font-family="var(--sans)" font-size="13" font-weight="700" fill="var(--ink)">3. 기업의 3대 상호작용 채널</text>
   <rect x="496" y="68" width="196" height="42" fill="var(--bg-2)" stroke="var(--rule)" stroke-width="1"/>
-  <text x="506" y="87" font-family="var(--sans)" font-size="11.5" font-weight="700" fill="var(--ink)">웹사이트 (Website)</text>
-  <text x="506" y="103" font-family="var(--sans)" font-size="11" fill="var(--ink-2)">브라우저 세션 연동 및 탐색</text>
+  <text x="506" y="85" font-family="var(--sans)" font-size="11.5" font-weight="700" fill="var(--ink)">웹사이트 (Website)</text>
+  <text x="506" y="101" font-family="var(--sans)" font-size="11" fill="var(--ink-2)">브라우저 세션 연동 및 탐색</text>
   <rect x="496" y="118" width="196" height="42" fill="var(--bg-2)" stroke="var(--rule)" stroke-width="1"/>
-  <text x="506" y="137" font-family="var(--sans)" font-size="11.5" font-weight="700" fill="var(--ink)">표준 API (MCP, OpenAPI, UCP)</text>
-  <text x="506" y="153" font-family="var(--sans)" font-size="11" fill="var(--ink-2)">조회, 장바구니, 결제, 송금 요청</text>
+  <text x="506" y="135" font-family="var(--sans)" font-size="11.5" font-weight="700" fill="var(--ink)">표준 API (MCP, OpenAPI, UCP)</text>
+  <text x="506" y="151" font-family="var(--sans)" font-size="11" fill="var(--ink-2)">조회, 장바구니, 결제, 송금 요청</text>
   <rect x="496" y="168" width="196" height="44" fill="var(--bg-2)" stroke="var(--rule)" stroke-width="1"/>
   <text x="506" y="187" font-family="var(--sans)" font-size="11.5" font-weight="700" fill="var(--ink)">비즈니스 에이전트 (UCP Ask 등)</text>
   <text x="506" y="203" font-family="var(--sans)" font-size="11" fill="var(--ink-2)">기업 전용 에이전트와 직접 대화</text>
@@ -96,9 +96,9 @@ images:
   </defs>
   <rect width="350" height="430" fill="var(--bg-2)"/>
   <rect x="16" y="16" width="318" height="104" fill="var(--bg)" stroke="var(--rule-strong)" stroke-width="1.5"/>
-  <text x="30" y="40" font-family="var(--sans)" font-size="13" font-weight="700" fill="var(--ink)">1. 개인 에이전트 (Muse 등)</text>
-  <text x="30" y="64" font-family="var(--mono)" font-size="12" fill="var(--ink)">/.well-known/poppy.json 탐색</text>
-  <text x="30" y="86" font-family="var(--sans)" font-size="12" fill="var(--ink-2)">에이전트 신원 제시 및 중요 동작 전 고객 승인</text>
+  <text x="30" y="49" font-family="var(--sans)" font-size="13" font-weight="700" fill="var(--ink)">1. 개인 에이전트 (Muse 등)</text>
+  <text x="30" y="73" font-family="var(--mono)" font-size="12" fill="var(--ink)">/.well-known/poppy.json 탐색</text>
+  <text x="30" y="95" font-family="var(--sans)" font-size="12" fill="var(--ink-2)">에이전트 신원 제시 및 중요 동작 전 고객 승인</text>
   <line x1="175" y1="120" x2="175" y2="142" stroke="var(--accent)" stroke-width="1.5" marker-end="url(#arr-acc-m)"/>
   <rect x="16" y="146" width="318" height="116" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.5"/>
   <text x="30" y="170" font-family="var(--sans)" font-size="13" font-weight="700" fill="var(--accent-ink)">2. Poppy 1.0 연결 규격</text>
@@ -107,10 +107,10 @@ images:
   <text x="30" y="242" font-family="var(--sans)" font-size="12" fill="var(--accent-ink)">산업별 확장 규격 (Shopify Commerce 등)</text>
   <line x1="175" y1="262" x2="175" y2="284" stroke="var(--accent)" stroke-width="1.5" marker-end="url(#arr-acc-m)"/>
   <rect x="16" y="288" width="318" height="126" fill="var(--bg)" stroke="var(--rule-strong)" stroke-width="1.5"/>
-  <text x="30" y="312" font-family="var(--sans)" font-size="13" font-weight="700" fill="var(--ink)">3. 기업의 3대 상호작용 채널</text>
-  <text x="30" y="338" font-family="var(--sans)" font-size="12" fill="var(--ink)">웹사이트: 브라우저 세션 연동 및 웹 탐색</text>
-  <text x="30" y="364" font-family="var(--sans)" font-size="12" fill="var(--ink)">표준 API: 조회, 장바구니, 결제, 송금 처리</text>
-  <text x="30" y="390" font-family="var(--sans)" font-size="12" fill="var(--ink)">비즈니스 에이전트: 기업 에이전트와 직접 대화</text>
+  <text x="30" y="316" font-family="var(--sans)" font-size="13" font-weight="700" fill="var(--ink)">3. 기업의 3대 상호작용 채널</text>
+  <text x="30" y="342" font-family="var(--sans)" font-size="12" fill="var(--ink)">웹사이트: 브라우저 세션 연동 및 웹 탐색</text>
+  <text x="30" y="368" font-family="var(--sans)" font-size="12" fill="var(--ink)">표준 API: 조회, 장바구니, 결제, 송금 처리</text>
+  <text x="30" y="394" font-family="var(--sans)" font-size="12" fill="var(--ink)">비즈니스 에이전트: 기업 에이전트와 직접 대화</text>
 </svg>
 <figcaption style="margin-top: 0.65rem; font-size: 0.85rem; color: var(--ink-2); text-align: center; line-height: 1.5;">Poppy 1.0 아키텍처: 개인 에이전트가 도메인의 poppy.json으로 지원 채널을 탐색하고, Session JWT와 OAuth 권한을 바탕으로 웹사이트, API, 비즈니스 에이전트와 상호작용한다.</figcaption>
 </figure>

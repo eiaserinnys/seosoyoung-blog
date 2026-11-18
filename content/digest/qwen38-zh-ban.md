@@ -78,28 +78,28 @@ images:
   </defs>
   <rect width="720" height="220" fill="var(--bg-2)"/>
   <rect x="16" y="20" width="212" height="180" fill="var(--bg)" stroke="var(--rule-strong)" stroke-width="1.5"/>
-  <text x="28" y="46" font-family="var(--sans)" font-size="13" font-weight="700" fill="var(--ink)">1. 출력층 구조 (248,320행)</text>
-  <text x="28" y="74" font-family="var(--sans)" font-size="11.5" fill="var(--ink)">정상 어휘: 222,626개 행 (유지)</text>
-  <text x="28" y="100" font-family="var(--sans)" font-size="11.5" fill="var(--accent)">중국어 금지 대상: 25,451개 행</text>
-  <text x="28" y="126" font-family="var(--sans)" font-size="11.5" fill="var(--ink-2)">JIS X 0213 외 한자 21,601개</text>
-  <text x="28" y="146" font-family="var(--sans)" font-size="11.5" fill="var(--ink-2)">중문 위키 고빈도 어휘 3,850개</text>
-  <text x="28" y="176" font-family="var(--mono)" font-size="11" fill="var(--ink)">미사용 행: 243개 (id:248077~)</text>
+  <text x="28" y="49" font-family="var(--sans)" font-size="13" font-weight="700" fill="var(--ink)">1. 출력층 구조 (248,320행)</text>
+  <text x="28" y="77" font-family="var(--sans)" font-size="11.5" fill="var(--ink)">정상 어휘: 222,626개 행 (유지)</text>
+  <text x="28" y="103" font-family="var(--sans)" font-size="11.5" fill="var(--accent)">중국어 금지 대상: 25,451개 행</text>
+  <text x="28" y="129" font-family="var(--sans)" font-size="11.5" fill="var(--ink-2)">JIS X 0213 외 한자 21,601개</text>
+  <text x="28" y="149" font-family="var(--sans)" font-size="11.5" fill="var(--ink-2)">중문 위키 고빈도 어휘 3,850개</text>
+  <text x="28" y="179" font-family="var(--mono)" font-size="11" fill="var(--ink)">미사용 행: 243개 (id:248077~)</text>
   <line x1="228" y1="110" x2="250" y2="110" stroke="var(--accent)" stroke-width="1.5" marker-end="url(#arr-acc)"/>
   <rect x="254" y="20" width="212" height="180" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.5"/>
-  <text x="266" y="46" font-family="var(--mono)" font-size="12.5" font-weight="700" fill="var(--accent-ink)">2. kestrom rows ban</text>
-  <text x="266" y="74" font-family="var(--sans)" font-size="11.5" fill="var(--accent-ink)">미사용 첫 행(id:248077) 바이트를</text>
-  <text x="266" y="94" font-family="var(--sans)" font-size="11.5" fill="var(--accent-ink)">금지 대상 25,451개 행에 복사</text>
-  <text x="266" y="124" font-family="var(--sans)" font-size="11.5" fill="var(--accent-ink)">8비트 양자화 텐서 3종 동시 반영</text>
-  <text x="266" y="146" font-family="var(--mono)" font-size="11" fill="var(--accent-ink)">weight / scales / biases</text>
-  <text x="266" y="176" font-family="var(--sans)" font-size="11.5" fill="var(--accent-ink)">나머지 행은 1바이트도 변경 없음</text>
+  <text x="266" y="49" font-family="var(--mono)" font-size="12.5" font-weight="700" fill="var(--accent-ink)">2. kestrom rows ban</text>
+  <text x="266" y="77" font-family="var(--sans)" font-size="11.5" fill="var(--accent-ink)">미사용 첫 행(id:248077) 바이트를</text>
+  <text x="266" y="97" font-family="var(--sans)" font-size="11.5" fill="var(--accent-ink)">금지 대상 25,451개 행에 복사</text>
+  <text x="266" y="127" font-family="var(--sans)" font-size="11.5" fill="var(--accent-ink)">8비트 양자화 텐서 3종 동시 반영</text>
+  <text x="266" y="149" font-family="var(--mono)" font-size="11" fill="var(--accent-ink)">weight / scales / biases</text>
+  <text x="266" y="179" font-family="var(--sans)" font-size="11.5" fill="var(--accent-ink)">나머지 행은 1바이트도 변경 없음</text>
   <line x1="466" y1="110" x2="488" y2="110" stroke="var(--ink-2)" stroke-width="1.5" marker-end="url(#arr-ink)"/>
   <rect x="492" y="20" width="212" height="180" fill="var(--bg)" stroke="var(--rule-strong)" stroke-width="1.5"/>
-  <text x="504" y="46" font-family="var(--sans)" font-size="13" font-weight="700" fill="var(--ink)">3. 파일 저장 및 검증 요약</text>
-  <text x="504" y="74" font-family="var(--sans)" font-size="11.5" fill="var(--ink)">출력층 파일(약 650MB)만 새로 기록</text>
-  <text x="504" y="98" font-family="var(--sans)" font-size="11.5" fill="var(--ink-2)">가중치 70GB + ngram 30GB는 링크</text>
-  <text x="504" y="128" font-family="var(--sans)" font-size="11.5" fill="var(--accent)">60문항 중국어 혼입: 27% → 0%</text>
-  <text x="504" y="152" font-family="var(--sans)" font-size="11.5" fill="var(--ink)">상위 20위 포함: 36,969토큰 중 0회</text>
-  <text x="504" y="176" font-family="var(--sans)" font-size="11.5" fill="var(--ink)">탐욕적 디코딩 60문항 100% 일치</text>
+  <text x="504" y="49" font-family="var(--sans)" font-size="13" font-weight="700" fill="var(--ink)">3. 파일 저장 및 검증 요약</text>
+  <text x="504" y="77" font-family="var(--sans)" font-size="11.5" fill="var(--ink)">출력층 파일(약 650MB)만 새로 기록</text>
+  <text x="504" y="101" font-family="var(--sans)" font-size="11.5" fill="var(--ink-2)">가중치 70GB + ngram 30GB는 링크</text>
+  <text x="504" y="131" font-family="var(--sans)" font-size="11.5" fill="var(--accent)">60문항 중국어 혼입: 27% → 0%</text>
+  <text x="504" y="155" font-family="var(--sans)" font-size="11.5" fill="var(--ink)">상위 20위 포함: 36,969토큰 중 0회</text>
+  <text x="504" y="179" font-family="var(--sans)" font-size="11.5" fill="var(--ink)">탐욕적 디코딩 60문항 100% 일치</text>
 </svg>
 <svg class="diagram-svg-mobile" viewBox="0 0 350 450" role="img" aria-label="Qwen3.8-Flash-Next 출력층 행 교체와 파일 구성 흐름 (모바일)" xmlns="http://www.w3.org/2000/svg">
   <defs>
@@ -108,22 +108,22 @@ images:
   </defs>
   <rect width="350" height="450" fill="var(--bg-2)"/>
   <rect x="16" y="16" width="318" height="124" fill="var(--bg)" stroke="var(--rule-strong)" stroke-width="1.5"/>
-  <text x="30" y="40" font-family="var(--sans)" font-size="13" font-weight="700" fill="var(--ink)">1. 출력층 구조 (전체 248,320행)</text>
-  <text x="30" y="64" font-family="var(--sans)" font-size="12" fill="var(--ink)">정상 어휘 222,626개 행 유지 / 미사용 243개 행</text>
-  <text x="30" y="88" font-family="var(--sans)" font-size="12" fill="var(--accent)">중국어 금지 대상: 25,451개 행</text>
-  <text x="30" y="112" font-family="var(--sans)" font-size="12" fill="var(--ink-2)">JIS 외 한자 21,601개 + 중문 위키 어휘 3,850개</text>
+  <text x="30" y="46" font-family="var(--sans)" font-size="13" font-weight="700" fill="var(--ink)">1. 출력층 구조 (전체 248,320행)</text>
+  <text x="30" y="70" font-family="var(--sans)" font-size="12" fill="var(--ink)">정상 어휘 222,626개 행 유지 / 미사용 243개 행</text>
+  <text x="30" y="94" font-family="var(--sans)" font-size="12" fill="var(--accent)">중국어 금지 대상: 25,451개 행</text>
+  <text x="30" y="118" font-family="var(--sans)" font-size="12" fill="var(--ink-2)">JIS 외 한자 21,601개 + 중문 위키 어휘 3,850개</text>
   <line x1="175" y1="140" x2="175" y2="160" stroke="var(--accent)" stroke-width="1.5" marker-end="url(#arr-acc-m)"/>
   <rect x="16" y="164" width="318" height="124" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.5"/>
-  <text x="30" y="188" font-family="var(--mono)" font-size="13" font-weight="700" fill="var(--accent-ink)">2. kestrom rows ban (바이트 복사)</text>
-  <text x="30" y="212" font-family="var(--sans)" font-size="12" fill="var(--accent-ink)">미사용 첫 행(id:248077)을 25,451개 행에 복사</text>
-  <text x="30" y="236" font-family="var(--sans)" font-size="12" fill="var(--accent-ink)">8비트 텐서 3종(weight, scales, biases) 반영</text>
-  <text x="30" y="260" font-family="var(--sans)" font-size="12" fill="var(--accent-ink)">나머지 어휘 행과 가중치는 1바이트도 변경 없음</text>
+  <text x="30" y="195" font-family="var(--mono)" font-size="13" font-weight="700" fill="var(--accent-ink)">2. kestrom rows ban (바이트 복사)</text>
+  <text x="30" y="219" font-family="var(--sans)" font-size="12" fill="var(--accent-ink)">미사용 첫 행(id:248077)을 25,451개 행에 복사</text>
+  <text x="30" y="243" font-family="var(--sans)" font-size="12" fill="var(--accent-ink)">8비트 텐서 3종(weight, scales, biases) 반영</text>
+  <text x="30" y="267" font-family="var(--sans)" font-size="12" fill="var(--accent-ink)">나머지 어휘 행과 가중치는 1바이트도 변경 없음</text>
   <line x1="175" y1="288" x2="175" y2="308" stroke="var(--ink-2)" stroke-width="1.5" marker-end="url(#arr-ink-m)"/>
   <rect x="16" y="312" width="318" height="122" fill="var(--bg)" stroke="var(--rule-strong)" stroke-width="1.5"/>
-  <text x="30" y="336" font-family="var(--sans)" font-size="13" font-weight="700" fill="var(--ink)">3. 파일 저장 및 검증 요약</text>
-  <text x="30" y="360" font-family="var(--sans)" font-size="12" fill="var(--ink)">출력층(650MB)만 저장, 나머지 100GB는 원본 링크</text>
-  <text x="30" y="384" font-family="var(--sans)" font-size="12" fill="var(--accent)">중국어 혼입 27% → 0% (상위 20위 포함 0회)</text>
-  <text x="30" y="408" font-family="var(--sans)" font-size="12" fill="var(--ink)">탐욕적 디코딩 60문항 원본과 100% 일치</text>
+  <text x="30" y="341" font-family="var(--sans)" font-size="13" font-weight="700" fill="var(--ink)">3. 파일 저장 및 검증 요약</text>
+  <text x="30" y="365" font-family="var(--sans)" font-size="12" fill="var(--ink)">출력층(650MB)만 저장, 나머지 100GB는 원본 링크</text>
+  <text x="30" y="389" font-family="var(--sans)" font-size="12" fill="var(--accent)">중국어 혼입 27% → 0% (상위 20위 포함 0회)</text>
+  <text x="30" y="413" font-family="var(--sans)" font-size="12" fill="var(--ink)">탐욕적 디코딩 60문항 원본과 100% 일치</text>
 </svg>
 <figcaption style="margin-top: 0.65rem; font-size: 0.85rem; color: var(--ink-2); text-align: center; line-height: 1.5;">Kestrom을 이용한 Qwen3.8-Flash-Next 출력층 행 교체와 검증 요약</figcaption>
 </figure>
