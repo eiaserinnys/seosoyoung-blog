@@ -81,7 +81,7 @@ ChatGPT Image 2에서 사진 한 장과 프롬프트로 자기 캐릭터를 만�
 
 머터리얼·셰이더 설정과 VRC Avatar Descriptor 초기 셋업이 필요한데, 필자는 셰이더 매핑이 막막해 Claude Code에 상담했다. 그러자 "자동으로 머터리얼과 셰이더를 세팅하는 툴"을 즉석에서 만들어줬고, 그 툴과 모델을 Unity에 넣고 버튼 하나로 마쳤다.
 
-![Blender→Unity 이행 단계 — "복잡한 부분은 Claude Code 맡김"](https://img.seosoyoung.eiaserinnys.me/images/claude-code-vrchat-avatar-pichikyo/07.jpg)
+![Blender→Unity 이행 단계 — "복잡한 부분은 Claude Code 맡김"](https://img.seosoyoung.eiaserinnys.me/images/claude-code-vrchat-avatar-pichikyo/07.png)
 
 ![첫 빌드를 마치고 VRChat에 들어가 풀트래킹으로 찍은 셀피](https://img.seosoyoung.eiaserinnys.me/images/claude-code-vrchat-avatar-pichikyo/08.jpg)
 

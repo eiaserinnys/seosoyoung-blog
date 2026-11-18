@@ -34,7 +34,7 @@ StrokeGen은 두 면이 공유하는 변을 검사한다. 두 면 중 한 면이
 
 핵심은 윤곽선의 연결 관계를 GPU에서 계산하는 것이다. CPU로 데이터를 가져와 순서대로 추적하는 과정을 피하면서, 화면에 나타나는 윤곽선만 처리한다.
 
-![메쉬의 사전 처리, 래스터화, 벡터화, 스트로크 생성과 스타일 적용 순서를 보여 주는 도식](https://img.seosoyoung.eiaserinnys.me/images/strokegen-cedec2024/slide-17.jpg)
+![메쉬의 사전 처리, 래스터화, 벡터화, 스트로크 생성과 스타일 적용 순서를 보여 주는 도식](https://img.seosoyoung.eiaserinnys.me/images/strokegen-cedec2024/slide-17.webp)
 
 *출처: [CEDEC 2024 발표 자료](https://www.slideshare.net/slideshow/npr-strokegen/271221318), 슬라이드 17. © Silicon Studio Corp., all rights reserved.*
 
@@ -61,7 +61,7 @@ StrokeGen은 두 면이 공유하는 변을 검사한다. 두 면 중 한 면이
 
 벡터 점열을 직접 그리면 선을 따라 텍스처를 늘이는 방식과, 사각형 브러시를 반복하는 스탬프 방식을 모두 구현할 수 있다. 스탬프의 크기, 늘어나는 비율과 선 방향을 따라 회전하는 정도도 조절한다.
 
-![선 경계에 브러시 텍스처를 적용한 패스 방식과 스탬프 방식의 비교](https://img.seosoyoung.eiaserinnys.me/images/strokegen-cedec2024/slide-63-brush.jpg)
+![선 경계에 브러시 텍스처를 적용한 패스 방식과 스탬프 방식의 비교](https://img.seosoyoung.eiaserinnys.me/images/strokegen-cedec2024/slide-63-brush.webp)
 
 *출처: [CEDEC 2024 발표 자료](https://www.slideshare.net/slideshow/npr-strokegen/271221318), 슬라이드 63. © Silicon Studio Corp., all rights reserved.*
 

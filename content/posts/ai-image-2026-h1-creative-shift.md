@@ -40,7 +40,7 @@ GPT-Image-2의 텍스트 정확도가 99%에 도달했다.[^tokenmix] 영문 헤
 
 라틴·CJK·힌디·벵골을 한 이미지에 함께 넣어도 글자가 무너지지 않는다.
 
-![다국어 텍스트 포스터](https://img.seosoyoung.eiaserinnys.me/images/ai-image-models-2026-h1-overview/fig01b-multilingual-poster.jpg)
+![다국어 텍스트 포스터](https://img.seosoyoung.eiaserinnys.me/images/ai-image-models-2026-h1-overview/fig01b-multilingual-poster.webp)
 *다섯 문자 체계가 정확히 렌더링됐다. ([OpenAI](https://openai.com/index/introducing-chatgpt-images-2-0/))*
 
 웹 검색을 그라운딩한 인포그래픽도 한 호출로 나온다. 기상 데이터·체크리스트·아이콘이 올바르게 배치된다.
@@ -67,14 +67,14 @@ Flux 2 Pro와 Google Imagen 4가 공동 1위다. TokenMix 포토리얼리즘 벤
 ![Flux 2 Pro 인물 포트레이트](https://img.seosoyoung.eiaserinnys.me/images/ai-image-models-2026-h1-overview/fig15-flux2-product.jpg)
 *피부 윤기·머리카락 가닥·역광 보케. ([picassoia](https://blog.picassoia.com/flux-2-pro-review-best-ai-image-tool-2026))*
 
-![Imagen 4, 물총새](https://img.seosoyoung.eiaserinnys.me/images/ai-image-models-2026-h1-overview/fig18-imagen4.webp)
+![Imagen 4, 물총새](https://img.seosoyoung.eiaserinnys.me/images/ai-image-models-2026-h1-overview/fig18-imagen4.png)
 *깃털 광택, 부리 광 반사. ([Google DeepMind](https://deepmind.google/technologies/imagen/))*
 
 두 모델은 보완적이다. Imagen 4는 빠르다. 한 장에 1\~3초, 동시 호출에서 큐가 짧아 *후보를 수백 장씩 펼치는* 작업에 어울린다. Flux 2 Pro는 제어가 좋다. 색상 코드(HEX)와 포즈 가이드로 *고른 한 장의 정밀도*를 잡을 수 있다. 4축으로 보면 둘 다 *자동화 지원*이 좋다는 점이 공통. 차이는 *큐레이션 단계*에서 나뉜다.
 
 신생 *Reve Image*도 포토리얼 평가에서 상위에 들어와 있다. 작은 회사도 1위를 노릴 수 있는 영역이다.
 
-![Reve Image, 체스 보드 위 검은 나이트](https://img.seosoyoung.eiaserinnys.me/images/ai-image-models-2026-h1-overview/fig13-reve.png)
+![Reve Image, 체스 보드 위 검은 나이트](https://img.seosoyoung.eiaserinnys.me/images/ai-image-models-2026-h1-overview/fig13-reve.webp)
 *시네마틱 광선·먼지 효과의 포토리얼. ([Oakgen](https://oakgen.ai/blog/reve-image-1-review))*
 
 ## 캐릭터 일관성

@@ -257,7 +257,18 @@ MEASURE_JS = r"""
     });
     const colWidths = [...t.querySelectorAll('tbody tr:first-child td')].map((c) => Math.round(c.getBoundingClientRect().width));
     const maxLinesPerCell = Math.max(...[...t.querySelectorAll('td')].map((c) => Math.round((c.getBoundingClientRect().height - 16) / parseFloat(getComputedStyle(c).lineHeight))));
+    // A23과 같은 줄 세기: 칸 내용 높이를 그 칸 줄 높이로 나눠 반올림한다(머리 칸 포함).
+    const cellLines = [...t.querySelectorAll('th,td')].map((cell) => {
+      const cs = getComputedStyle(cell);
+      const h = cell.getBoundingClientRect().height - parseFloat(cs.paddingTop) - parseFloat(cs.paddingBottom)
+        - parseFloat(cs.borderTopWidth) - parseFloat(cs.borderBottomWidth);
+      return {lines: Math.round(h / parseFloat(cs.lineHeight)), text: cell.textContent.trim().slice(0, 24)};
+    });
+    const longestCell = cellLines.reduce((best, c) =>
+      (c.lines > best.lines || (c.lines === best.lines && c.text.length > best.text.length)) ? c : best,
+      {lines: 0, text: ''});
     return {i: i + 1, cols, headerCols: t.querySelectorAll('thead th').length, rows: rows.length,
+      linesBefore: Math.max(0, longestCell.lines), linesBeforeText: longestCell.text,
       wrapper: wrap ? wrap.className : null, wrapClient: wrap ? wrap.clientWidth : null, wrapScroll: wrap ? wrap.scrollWidth : null,
       wrapping: wrap ? wrap.classList.contains('is-overflowing') : null, overflowing: overflowBefore,
       wrapDelta: wrap ? wrap.scrollWidth - wrap.clientWidth : null,
@@ -1739,6 +1750,10 @@ def short_first_cell(text):
     return len(value) <= 6 or bool(re.fullmatch(r"\d{4}", value))
 
 
+# A7: 820px 이상에서 6~7칸 표는 max-content가 래퍼에 들지 않아도, 눌린 칸이 모두 이 줄 수 이하면 통과한다.
+A7_MAX_SQUEEZE_LINES = 2
+
+
 def path_checks(report, strict_lightbox=False):
     checks = {key: [] for key in ("A1", "A2", "A3", "A4", "A5", "A6", "A7", "A8", "A9", "A10", "A11", "A12", "A13", "A14", "A15", "A16", "A17", "A18", "A19", "A20", "A21", "A22", "A23", "A24")}
 
@@ -1815,13 +1830,15 @@ def path_checks(report, strict_lightbox=False):
                 continue
             natural = table["maxContentWidth"] > table["wrapClient"] + 1
             if name in ("tablet820-light", "mid-light", "wide-light") and table["cols"] <= 7:
-                ok = not natural and not table["overflowing"]
+                ok = not table["overflowing"] and (
+                    not natural or table["linesBefore"] <= A7_MAX_SQUEEZE_LINES)
             else:
                 ok = table["overflowing"] == natural
             add("A7", ok,
                 f"{path} {name} table {table['i']} ({table['cols']}칸): "
                 f"overflowing={table['overflowing']} natural={natural} width={table['tableRect']['w']}px "
-                f"maxContent={table['maxContentWidth']}px wrap={table['wrapClient']}px")
+                f"maxContent={table['maxContentWidth']}px wrap={table['wrapClient']}px "
+                f"maxLines={table['linesBefore']}줄 text={table['linesBeforeText']!r}")
 
     for table in configs["narrow-light"]["tables"]:
         if table["cols"] != 2 or not table["hasInlineCode"]:

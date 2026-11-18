@@ -55,7 +55,7 @@ ComicBook.com은 코믹스·영화·TV·게임·애니메이션 전반을 다루
 - 강력한 적과의 전투는 흐름을 살짝 늦추면서, 압도적인 빌드에 기대기보다 전략적으로 사고하도록 강제한다.
 - 천사의 축복 시스템이 런 도중의 빌드·전략을 끊임없이 흔든다.
 
-![전투 장면 — 거대한 적 무리를 베어내는 펜릭스](https://img.seosoyoung.eiaserinnys.me/images/comicbook-ember-and-blade-feature-2026/Ember-and-Blade-Combat.jpg)
+![전투 장면 — 거대한 적 무리를 베어내는 펜릭스](https://img.seosoyoung.eiaserinnys.me/images/comicbook-ember-and-blade-feature-2026/Ember-and-Blade-Combat.webp)
 
 ## 운명의 심판자 — 가장 두드러진 지점
 
@@ -65,7 +65,7 @@ ComicBook.com은 코믹스·영화·TV·게임·애니메이션 전반을 다루
 
 회피, 쿨다운 관리, 즉각적인 반응이 어우러진 전투 흐름이 여느 서바이버즈 풍보다 능동적이고 강렬하다는 평이다.
 
-![분(boon) 선택 화면](https://img.seosoyoung.eiaserinnys.me/images/comicbook-ember-and-blade-feature-2026/Ember-and-Blade-Boons.jpg)
+![분(boon) 선택 화면](https://img.seosoyoung.eiaserinnys.me/images/comicbook-ember-and-blade-feature-2026/Ember-and-Blade-Boons.webp)
 
 ## 핵심 인용 — "기계적으로 베끼지 않았다"
 
