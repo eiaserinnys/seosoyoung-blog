@@ -556,7 +556,7 @@ class ArticleUiChecksTest(unittest.TestCase):
                  "wide-light", "mid-light", "wide-dark", "narrow-dark",
                  "phablet-light", "tablet-light", "tablet820-light")
 
-        def make_configs(wide_max_content, wide_overflowing):
+        def make_configs(wide_max_content, wide_overflowing, wide_lines=2):
             out = {}
             for name in names:
                 is_wide = name in ("tablet820-light", "mid-light", "wide-light")
@@ -568,6 +568,7 @@ class ArticleUiChecksTest(unittest.TestCase):
                     "tables": [{
                         "i": 1, "cols": 6, "overflowing": overflowing,
                         "maxContentWidth": max_content, "wrapClient": wrap,
+                        "linesBefore": wide_lines if is_wide else 2, "linesBeforeText": "MoE 35B-A3B",
                         "tableRect": {"w": max(wrap, max_content) if overflowing else wrap, "h": 300},
                     }],
                     "sidenotes": [], "footnoteMarkers": 0, "footnotesSection": None,
@@ -576,17 +577,28 @@ class ArticleUiChecksTest(unittest.TestCase):
                 }
             return out
 
-        bad_summary, _ = path_checks({
-            "path": "/digest/x/", "configs": make_configs(896, True), "resize": {}, "heightResize": [],
-            "lightbox": {},
-        })
+        def run(wide_max_content, wide_overflowing, wide_lines=2):
+            return path_checks({
+                "path": "/digest/x/", "configs": make_configs(wide_max_content, wide_overflowing, wide_lines),
+                "resize": {}, "heightResize": [], "lightbox": {},
+            })
+
+        bad_summary, bad_checks = run(896, True)
         self.assertFalse(bad_summary["A7"]["pass"])
 
-        good_summary, _ = path_checks({
-            "path": "/digest/x/", "configs": make_configs(712, False), "resize": {}, "heightResize": [],
-            "lightbox": {},
-        })
+        good_summary, _ = run(712, False)
         self.assertTrue(good_summary["A7"]["pass"])
+
+        # 눌린 6칸 표: 칸이 2줄 이하로만 꺾이면 통과, 3줄 이상 꺾이면 실패한다.
+        squeezed_ok, squeezed_ok_checks = run(896, False, wide_lines=2)
+        self.assertTrue(squeezed_ok["A7"]["pass"])
+        squeezed_bad, squeezed_bad_checks = run(896, False, wide_lines=3)
+        self.assertFalse(squeezed_bad["A7"]["pass"])
+        failure = next(e["detail"] for e in squeezed_bad_checks["A7"] if "wide-light" in e["detail"])
+        self.assertIn("maxLines=3줄", failure)
+        self.assertIn("MoE 35B-A3B", failure)
+        passing = next(e["detail"] for e in squeezed_ok_checks["A7"] if "wide-light" in e["detail"])
+        self.assertIn("maxLines=2줄", passing)
 
 
 if __name__ == '__main__':

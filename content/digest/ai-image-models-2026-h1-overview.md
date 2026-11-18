@@ -21,7 +21,7 @@ draft: true
 
 ## 1. gpt-image-2의 충격 (2026-04-21)
 
-![gpt-image-2의 다국어 텍스트 렌더링 — 일본어·한국어·중국어·힌디어·벵골어 동시 출력](https://img.seosoyoung.eiaserinnys.me/images/ai-image-models-2026-h1-overview/fig01b-multilingual-poster.jpg)
+![gpt-image-2의 다국어 텍스트 렌더링 — 일본어·한국어·중국어·힌디어·벵골어 동시 출력](https://img.seosoyoung.eiaserinnys.me/images/ai-image-models-2026-h1-overview/fig01b-multilingual-poster.webp)
 *단일 이미지 안에 다섯 가지 문자 체계가 모두 정확히 렌더링됐다 ([OpenAI 공식](https://openai.com/index/introducing-chatgpt-images-2-0/)).*
 
 OpenAI가 키노트 없이 모델 페이지와 갤러리만으로 공개한 이 모델은 출시 당일 *모든* 카테고리에서 1위를 차지했다.
@@ -96,7 +96,7 @@ Pixo의 프리랜서 설문이 잡은 흐름이 인상적이다.{{< sn >}}[Pixo 
 - **포지션**: 고볼륨 배치 생성의 1순위. SynthID 워터마킹 내장으로 콘텐츠 진위 확인 가능
 - **추가**: ArtificialAnalysis 아레나에서 *Imagen 4 Ultra Preview 0606* 버전이 ELO 1,165\~1,175(전체 9위)로 활동 중 — 후속 라인을 시사하는 데이터
 
-![Google Imagen 4 — 자연 사진 수준의 포토리얼 출력 (물총새 클로즈업)](https://img.seosoyoung.eiaserinnys.me/images/ai-image-models-2026-h1-overview/fig18-imagen4.webp)
+![Google Imagen 4 — 자연 사진 수준의 포토리얼 출력 (물총새 클로즈업)](https://img.seosoyoung.eiaserinnys.me/images/ai-image-models-2026-h1-overview/fig18-imagen4.png)
 *Google Imagen 4의 포토리얼 출력. 깃털 광택, 부리 광 반사, 배경 보케 분리가 일반 카메라 사진과 구분이 어려운 수준. TokenMix 벤치마크 92/100 ([Google DeepMind Imagen](https://deepmind.google/technologies/imagen/)).*
 
 ## 3. 중국 진영의 약진
@@ -154,7 +154,7 @@ Pixo의 프리랜서 설문이 잡은 흐름이 인상적이다.{{< sn >}}[Pixo 
 ![Recraft V3 — SVG 네이티브 출력 (자전거 라인 아트)](https://img.seosoyoung.eiaserinnys.me/images/ai-image-models-2026-h1-overview/fig12-recraft.svg)
 *Recraft V3가 직접 생성한 SVG 벡터 파일. 업계 유일의 SVG 네이티브 출력으로 Illustrator·Figma에 곧바로 반입 가능하다 ([Replicate Recraft V3 SVG](https://replicate.com/recraft-ai/recraft-v3-svg)).*
 
-![Reve Image 1.0 — Halfmoon 엔진 기반 포토리얼리즘](https://img.seosoyoung.eiaserinnys.me/images/ai-image-models-2026-h1-overview/fig13-reve.png)
+![Reve Image 1.0 — Halfmoon 엔진 기반 포토리얼리즘](https://img.seosoyoung.eiaserinnys.me/images/ai-image-models-2026-h1-overview/fig13-reve.webp)
 *Reve Image 1.0 출력. Halfmoon 엔진이 생성·편집·스타일 리믹스를 프롬프트에서 자동 분기한다. 포토리얼리즘 평가에서 Midjourney·Flux를 제친 모델 ([Oakgen 리뷰](https://oakgen.ai/blog/reve-image-1-review)).*
 
 ![Ideogram 3.0 — "FUTURE BUILD 2026" 컨퍼런스 포스터](https://img.seosoyoung.eiaserinnys.me/images/ai-image-models-2026-h1-overview/fig22-ideogram.png)

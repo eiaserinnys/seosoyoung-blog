@@ -46,7 +46,7 @@ SpaceX는 자금난에 몰린 회사가 아니다. 2026년 1분기 말 현금이
 
 원문이 *지금이라는 타이밍*을 읽는 근거 중 하나가 락업[^lockup] 구조다. 머스크는 자기 주식만 366일 동안 한 주도 팔지 않겠다고 법적 문서에 명시했다. 창업자·큰손이 보통 묶이는 180일의 두 배다. 임직원과 일반 투자자에게는 2분기 실적 뒤부터 며칠 단위로 푸는 *조기 락업 해제*[^early-unlock]를 깔았는데, 본인과 특정 투자자들만 거기서 빠진다.
 
-![신규 상장 종목은 락업 종료 부근에서 시들고, 락업 후 6개월 누적수익률은 -62.9%~+61.6%로 분산된다](https://img.seosoyoung.eiaserinnys.me/images/spacex-ipo-why-now-2026/ipo-lockup-fade.jpg)
+![신규 상장 종목은 락업 종료 부근에서 시들고, 락업 후 6개월 누적수익률은 -62.9%~+61.6%로 분산된다](https://img.seosoyoung.eiaserinnys.me/images/spacex-ipo-why-now-2026/ipo-lockup-fade.png)
 
 원문 해석은 이렇다.
 

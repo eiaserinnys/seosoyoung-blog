@@ -28,7 +28,7 @@ Gamesight의 분석에 따르면, 스팀 리뷰 점수가 높을수록 광고 �
 
 반면 무료 게임에서는 리뷰 점수가 전환율에 "측정 가능한 영향이 없었다(no measurable impact)". Gamesight는 이를 플레이어가 지불해야 할 비용 장벽이 없기 때문으로 본다. 단, 가격과 무관하게 커뮤니티 신뢰는 여전히 중요한 요인이라고 언급했다. 설치 후 인게임 과금이 이루어지는 구조에서는 더욱 그렇다.
 
-![프리미엄 게임의 리뷰 등급별 전환율 분석 (출처: Gamesight)](https://img.seosoyoung.eiaserinnys.me/images/gamesight-steam-reviews-conversion-2026/gamesight-premium-vs-f2p.jpg)
+![프리미엄 게임의 리뷰 등급별 전환율 분석 (출처: Gamesight)](https://img.seosoyoung.eiaserinnys.me/images/gamesight-steam-reviews-conversion-2026/gamesight-premium-vs-f2p.png)
 
 Gamesight의 데이터 분석가 Marlie Tandoc은 등급 상승의 동인을 이렇게 설명한다.
 

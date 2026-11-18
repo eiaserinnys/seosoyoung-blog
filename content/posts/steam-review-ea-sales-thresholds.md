@@ -57,7 +57,7 @@ sidenotes: true
 
 ### 1. 리뷰 개수 경계 — 게임이 노출되는가
 
-![10리뷰 통과 직후 탐색 대기열 트래픽이 비선형으로 점프하는 사례 — 5월 12일 임계값 통과 후 녹색선 폭증](https://img.seosoyoung.eiaserinnys.me/images/zukowski-first-10-reviews-2022/dq-may12-greenline.jpg)
+![10리뷰 통과 직후 탐색 대기열 트래픽이 비선형으로 점프하는 사례 — 5월 12일 임계값 통과 후 녹색선 폭증](https://img.seosoyoung.eiaserinnys.me/images/zukowski-first-10-reviews-2022/dq-may12-greenline.png)
 
 *— Zukowski 2022, How To Market A Game*
 
