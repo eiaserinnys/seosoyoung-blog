@@ -1,0 +1,57 @@
+/* 글자 선택 정책.
+   문서형 페이지이므로 본문은 기본으로 열어 두고, 눌러서 동작하는 조작 요소만 막는다.
+   카드 #1736: 20-components.css와 30-post.css에 흩어져 있던 선언을 선택자 그대로 옮겼다. */
+
+.chip {
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+.word {
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+.gnb a {
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+.control {
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+.theme-control {
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+.tbar a {
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+.rsvp-launch {
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+.copy-code {
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+.toc summary {
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+.post-tags .chip {
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+.sn-marker {
+  user-select: none;
+}

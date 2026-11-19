@@ -23,13 +23,13 @@
 .home .meta {
   display: flex;
   align-items: baseline;
-  gap: 12px;
+  gap: var(--space-1-5);
   margin-top: var(--space-2);
 }
 
 .home .lead h2 {
   margin-top: var(--space-1);
-  font-size: 28px;
+  font-size: var(--type-section);
   font-weight: 700;
   line-height: 1.28;
   letter-spacing: -0.02em;
@@ -39,7 +39,7 @@
 .home .lead p {
   margin-top: var(--space-1);
   color: var(--ink-2);
-  font-size: 17px;
+  font-size: var(--type-body);
   line-height: 1.6;
 }
 
@@ -58,8 +58,8 @@
 }
 
 .home .more .t {
-  margin-top: 4px;
-  font-size: 17px;
+  margin-top: var(--space-0-5);
+  font-size: var(--type-body);
   font-weight: 600;
 }
 
@@ -95,8 +95,8 @@
 }
 
 .home .labt .t {
-  margin-top: 2px;
-  font-size: 15px;
+  margin-top: var(--line-strong);
+  font-size: var(--type-small);
   font-weight: 600;
 }
 
@@ -128,13 +128,13 @@
 
 .home .tw {
   display: block;
-  padding: 12px 0;
+  padding: var(--space-1-5) 0;
   border-bottom: var(--line) solid var(--rule);
 }
 
 .home .tw .t {
-  margin-top: 4px;
-  font-size: 15px;
+  margin-top: var(--space-0-5);
+  font-size: var(--type-small);
   line-height: 1.5;
 }
 
@@ -174,7 +174,7 @@
 }
 
 .home .desk .dh b {
-  font-size: 22px;
+  font-size: var(--type-title);
   font-weight: 700;
   letter-spacing: -0.015em;
 }
@@ -194,7 +194,7 @@
 }
 
 .home .anchor .t {
-  font-size: 17px;
+  font-size: var(--type-body);
   font-weight: 700;
   line-height: 1.35;
 }
@@ -202,7 +202,7 @@
 .home .drow {
   display: grid;
   grid-template-columns: 48px minmax(0, 1fr);
-  gap: 12px;
+  gap: var(--space-1-5);
   padding: var(--space-1) 0;
   align-items: baseline;
   border-top: var(--line) solid var(--rule);
@@ -210,7 +210,7 @@
 
 .home .drow .t {
   min-width: 0;
-  font-size: 15px;
+  font-size: var(--type-small);
 }
 
 .home .series {
@@ -224,9 +224,9 @@
   display: flex;
   align-items: baseline;
   justify-content: space-between;
-  padding-bottom: 10px;
+  padding-bottom: var(--space-1);
   border-bottom: var(--line) solid var(--rule-strong);
-  font-size: 18px;
+  font-size: var(--type-lead);
   font-weight: 700;
 }
 
@@ -237,10 +237,10 @@
 .home .ser li {
   display: grid;
   grid-template-columns: 32px minmax(0, 1fr);
-  padding: 10px 0;
+  padding: var(--space-1) 0;
   align-items: baseline;
   border-bottom: var(--line) solid var(--rule);
-  font-size: 15px;
+  font-size: var(--type-small);
 }
 
 @media (min-width: 1024px) and (max-width: 1279px) {
@@ -357,7 +357,7 @@
 
   .home .lead-copy h2 {
     margin-top: var(--space-1);
-    font-size: 22px;
+    font-size: var(--type-title);
     font-weight: 700;
     line-height: 1.3;
   }

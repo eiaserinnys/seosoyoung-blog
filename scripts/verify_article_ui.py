@@ -107,6 +107,51 @@ MIN_TABLE_COLS = 3
 MAX_SQUEEZE_TEST_COLS = 5
 SHORT_CELL_WIDTH_LIMIT = 100
 
+# A8: 줄바꿈 경로를 시험하도록 40자 넘는 인라인 코드가 든 2칸 표를 시험 안에서만 넣는다(글 내용은 그대로).
+# 붙임표·마침표 없이 이어진 한 낱말이라 overflow-wrap이 없으면 칸을 넘친다.
+INLINE_CODE_TABLE_TEXT = "connectivitymodulatedrecurrentstateupdatealphabetagammadelta"
+# A25: 글 안 인라인 코드(표 머리, 그림 설명, 각주, small 속)의 계산된 글자 크기 하한.
+CODE_SIZE_PATHS = ["/digest/automated-cloud-factory/", "/posts/skill-catalog-dynamic-linking/", "/digest/trycua-cua/"]
+CODE_SIZE_WIDTHS = (1440, 375)
+CODE_SIZE_MIN_PX = 13
+
+INLINE_CODE_SIZE_JS = r"""
+() => {
+  const content = document.querySelector('.post-content');
+  if (!content) return {missing: true};
+  const ctxOf = (el) => {
+    const order = [['footnotes', '.footnotes'], ['sidenote', 'aside.sidenote'], ['th', 'th'], ['td', 'td'],
+                   ['figcaption', 'figcaption'], ['sup', 'sup, sub'], ['small', 'small'],
+                   ['heading', ':is(h2,h3,h4,h5,h6)'], ['blockquote', 'blockquote'], ['li', 'li'], ['p', 'p']];
+    for (const [name, sel] of order) if (el.closest(sel)) return name;
+    return 'other';
+  };
+  // 글 안에서 인라인 style이 글자 크기를 정한 곳은 이 단언에서 뺀다. 레이아웃용 style(--table-cols 등)은
+  // 검사 대상 코드를 숨기지 않도록 글자 크기만 본다.
+  const inlineFontSize = (el) => {
+    for (let e = el; e; e = e.parentElement) {
+      const value = e.getAttribute && e.getAttribute('style');
+      if (value && /(?:^|;)\s*font-size\s*:/i.test(value)) return true;
+    }
+    return false;
+  };
+  const codes = [];
+  for (const code of content.querySelectorAll('code')) {
+    // 글 안 인라인 style과 SVG 글자는 이 단언에서 뺀다. 블록 코드(pre)도 인라인이 아니다.
+    if (code.closest('pre, svg')) continue;
+    if (inlineFontSize(code)) continue;
+    const cs = getComputedStyle(code);
+    if (cs.display === 'none' || cs.visibility === 'hidden') continue;
+    const r = code.getBoundingClientRect();
+    if (r.width < 1 || r.height < 1) continue;
+    codes.push({text: code.textContent.trim().slice(0, 40), size: +parseFloat(cs.fontSize).toFixed(2), ctx: ctxOf(code)});
+  }
+  const below = codes.filter((c) => c.size < 13 - 0.01);
+  return {count: codes.length, min: codes.length ? Math.min(...codes.map((c) => c.size)) : null,
+          belowCount: below.length, below: below.slice(0, 12)};
+}
+"""
+
 MEASURE_JS = r"""
 () => {
   const r = (el) => { if (!el) return null; const b = el.getBoundingClientRect();
@@ -256,7 +301,14 @@ MEASURE_JS = r"""
       const cs = getComputedStyle(c);
       const lineHeight = parseFloat(cs.lineHeight) || parseFloat(cs.fontSize) * 1.4;
       const b = c.getBoundingClientRect();
-      return {text: c.textContent.trim().slice(0, 48), lines: lineHeight > 0 ? +(b.height / lineHeight).toFixed(2) : null};
+      const cell = c.closest('td, th');
+      let cellContentRight = null;
+      if (cell) {
+        const ccs = getComputedStyle(cell);
+        cellContentRight = +(cell.getBoundingClientRect().right - parseFloat(ccs.paddingRight) - parseFloat(ccs.borderRightWidth)).toFixed(1);
+      }
+      return {text: c.textContent.trim().slice(0, 48), lines: lineHeight > 0 ? +(b.height / lineHeight).toFixed(2) : null,
+              right: +b.right.toFixed(1), cellContentRight};
     });
     const colWidths = [...t.querySelectorAll('tbody tr:first-child td')].map((c) => Math.round(c.getBoundingClientRect().width));
     const maxLinesPerCell = Math.max(...[...t.querySelectorAll('td')].map((c) => Math.round((c.getBoundingClientRect().height - 16) / parseFloat(getComputedStyle(c).lineHeight))));
@@ -1644,6 +1696,74 @@ def run_header_rules(browser, url, out_dir, path):
     return results
 
 
+def run_inline_code_table(browser, url, out_dir):
+    """A8: 40자 넘는 인라인 코드가 든 2칸 표를 375px에 넣어 칸 안 오른쪽 끝과 표 넘침을 잰다."""
+    ctx = open_context(browser, 375, 812, 2, 'light')
+    page = ctx.new_page()
+    fixture = ('<table id="a8-synthetic"><thead><tr><th>항목</th><th>설명</th></tr></thead>'
+               '<tbody><tr><td>코드</td><td><code>' + INLINE_CODE_TABLE_TEXT + '</code></td></tr></tbody></table>')
+
+    def inject(route):
+        response = route.fetch()
+        body = re.sub(r'(<div class=(?:"post-content"|post-content)>)', lambda m: m.group(1) + fixture,
+                      response.text(), count=1)
+        route.fulfill(response=response, body=body)
+
+    page.route(url, inject)
+    page.goto(url, wait_until='load', timeout=60000)
+    # 글자 크기와 표 폭만 재므로 그림을 기다리지 않는다. 표 감싸기(post.js)가 끝날 만큼만 기다린다.
+    page.wait_for_timeout(500)
+    result = page.evaluate("""() => {
+      const wrap = [...document.querySelectorAll('.post-content .table-scroll')]
+        .find((w) => !!w.querySelector('#a8-synthetic'));
+      if (!wrap) return null;
+      const table = wrap.querySelector('#a8-synthetic');
+      const code = table.querySelector('tbody code');
+      const cell = code.closest('td');
+      const ccs = getComputedStyle(cell);
+      const cellRect = cell.getBoundingClientRect();
+      const cellContentRight = cellRect.right - parseFloat(ccs.paddingRight) - parseFloat(ccs.borderRightWidth);
+      const codeRect = code.getBoundingClientRect();
+      const tableRect = table.getBoundingClientRect();
+      const wrapRect = wrap.getBoundingClientRect();
+      return {
+        text: code.textContent.trim(),
+        codeRight: +codeRect.right.toFixed(1), cellContentRight: +cellContentRight.toFixed(1),
+        tableRight: +tableRect.right.toFixed(1), wrapRight: +wrapRect.right.toFixed(1),
+        wrapClient: wrap.clientWidth, wrapScroll: wrap.scrollWidth,
+        overflowing: wrap.classList.contains('is-overflowing'),
+        fontSize: parseFloat(getComputedStyle(code).fontSize),
+      };
+    }""")
+    if result:
+        result['rightInCell'] = result['codeRight'] <= result['cellContentRight'] + 1
+        result['tableInside'] = result['tableRight'] <= result['wrapRight'] + 1
+        result['ok'] = (result['rightInCell'] and result['tableInside']
+                        and not result['overflowing'] and result['wrapScroll'] <= result['wrapClient'] + 1)
+        page.evaluate("() => { const w = document.querySelector('#a8-synthetic').closest('.table-scroll'); if (w) w.id = 'a8-synthetic-wrap'; }")
+        page.locator('#a8-synthetic-wrap').screenshot(path=str(out_dir / 'inline-code-table-375.png'))
+    ctx.close()
+    return result
+
+
+def run_inline_code_sizes(browser, base_url, paths, out_dir):
+    """A25: 글 안 인라인 코드의 계산된 글자 크기를 폭별로 모은다(인라인 style과 SVG는 뺀다)."""
+    out_dir.mkdir(parents=True, exist_ok=True)
+    results = {}
+    for width in CODE_SIZE_WIDTHS:
+        ctx = open_context(browser, width, 900, 1, 'light')
+        page = ctx.new_page()
+        rows = {}
+        for path in paths:
+            page.goto(f"{base_url}{path}", wait_until='load', timeout=60000)
+            page.wait_for_timeout(250)
+            rows[path] = page.evaluate(INLINE_CODE_SIZE_JS)
+        ctx.close()
+        results[str(width)] = rows
+    (out_dir / 'inline-code-sizes.json').write_text(json.dumps(results, ensure_ascii=False, indent=1), encoding='utf-8')
+    return results
+
+
 def run_synthetic_table(browser, url, out_dir):
     ctx = open_context(browser, 1440, 900, 1, 'light')
     page = ctx.new_page()
@@ -1848,13 +1968,21 @@ def path_checks(report, strict_lightbox=False):
     for table in configs["narrow-light"]["tables"]:
         if table["cols"] != 2 or not table["hasInlineCode"]:
             continue
-        long_codes = [c for c in table["codeMetrics"] if len(c["text"]) >= 20]
-        wrap_ok = all((c["lines"] or 0) >= 2 for c in long_codes)
+        # 줄 수가 아니라 넘침으로 본다. 인라인 코드 상자의 오른쪽 끝이 칸 안에 있고 표가 넘치지 않아야 한다.
+        right_ok = all(c.get("cellContentRight") is not None and c["right"] <= c["cellContentRight"] + 1
+                       for c in table["codeMetrics"])
         fits = not table["overflowing"] and table["wrapScroll"] <= table["wrapClient"] + 1
-        add("A8", fits and wrap_ok,
+        add("A8", fits and right_ok,
             f"{path} 375 table {table['i']} (2칸, 코드): overflowing={table['overflowing']} "
-            f"wrapScroll={table['wrapScroll']} wrapClient={table['wrapClient']} "
+            f"wrapScroll={table['wrapScroll']} wrapClient={table['wrapClient']} rightInCell={right_ok} "
             f"codes={table['codeMetrics']}")
+    synthetic_code_table = report.get("inlineCodeTable")
+    if synthetic_code_table:
+        add("A8", synthetic_code_table["ok"],
+            f"{path} 375 시험용 2칸 코드 표(40자+): rightInCell={synthetic_code_table['rightInCell']} "
+            f"tableInside={synthetic_code_table['tableInside']} overflowing={synthetic_code_table['overflowing']} "
+            f"wrapScroll={synthetic_code_table['wrapScroll']} wrapClient={synthetic_code_table['wrapClient']} "
+            f"code={synthetic_code_table['text']!r}")
 
     for entry in a9_checks(path, configs):
         add("A9", entry["ok"], entry["detail"])
@@ -1935,7 +2063,7 @@ def main():
     parser.add_argument("--require", default="", help="쉼표로 구분한 검사 ID를 필수 판정한다.")
     args = parser.parse_args()
     required = [item.strip().upper() for item in args.require.split(',') if item.strip()]
-    if any(item not in {f'A{i}' for i in range(1, 25)} for item in required):
+    if any(item not in {f'A{i}' for i in range(1, 26)} for item in required):
         parser.error('--require에 알 수 없는 검사 ID가 있다')
 
     paths = args.path or DEFAULT_PATHS
@@ -1984,7 +2112,11 @@ def main():
                     report['headerRules'] = run_header_rules(browser, url, path_out, path)
                     report['synthetic'] = run_synthetic_table(browser, url, path_out) if path == paths[0] else []
                     report['imageReservation'] = run_image_reservation(browser, url, path_out)
+                    report['inlineCodeTable'] = run_inline_code_table(browser, url, path_out)
                     reports[path] = report
+                code_paths = list(dict.fromkeys(list(reports) + CODE_SIZE_PATHS))
+                code_sizes = run_inline_code_sizes(browser, f"http://127.0.0.1:{port}", code_paths,
+                                                   args.out_dir / 'inline-code')
             finally:
                 browser.close()
     finally:
@@ -1996,12 +2128,29 @@ def main():
                 "configs": [{"name": c[0], "width": c[1], "height": c[2], "dpr": c[3], "colorScheme": c[4]}
                             for c in CONFIGS],
                 "skipped": skipped, "paths": reports, "summary": {}}
-    aggregate = {key: [] for key in ("A1", "A2", "A3", "A4", "A5", "A6", "A7", "A8", "A9", "A10", "A11", "A12", "A13", "A14", "A15", "A16", "A17", "A18", "A19", "A20", "A21", "A22", "A23", "A24")}
+    aggregate = {key: [] for key in ("A1", "A2", "A3", "A4", "A5", "A6", "A7", "A8", "A9", "A10", "A11", "A12", "A13", "A14", "A15", "A16", "A17", "A18", "A19", "A20", "A21", "A22", "A23", "A24", "A25")}
+    # A25: 인라인 코드 13px 하한. --path로 준 글과 함께 고정 세 글을 폭별로 잰다.
+    for width, rows in code_sizes.items():
+        for path, row in rows.items():
+            if row.get('missing'):
+                aggregate['A25'].append({'ok': True, 'na': True,
+                                         'detail': f'{path} {width}: 글 본문 없음 (A25 해당 없음)'})
+                continue
+            if not row['count']:
+                aggregate['A25'].append({'ok': True, 'na': True,
+                                         'detail': f'{path} {width}: 인라인 코드 0개 (A25 해당 없음)'})
+                continue
+            ok = row['min'] >= CODE_SIZE_MIN_PX - 0.01
+            detail = f"{path} {width}: 인라인 코드 {row['count']}개, 최소 {row['min']}px"
+            if not ok:
+                samples = ', '.join(f"{c['ctx']}:{c['size']}px {c['text']!r}" for c in row['below'])
+                detail += f", 13px 미만 {row['belowCount']}개 [{samples}]"
+            aggregate['A25'].append({'ok': ok, 'na': False, 'detail': detail})
     for path, report in reports.items():
         summary, raw = path_checks(report, strict_lightbox=args.strict_lightbox)
         report["verdicts"] = summary
         for key in aggregate:
-            aggregate[key].extend(raw[key])
+            aggregate[key].extend(raw.get(key, []))
         slug = path.strip("/").split("/")[-1]
         (args.out_dir / slug / "metrics.json").write_text(
             json.dumps(report, ensure_ascii=False, indent=1), encoding="utf-8")

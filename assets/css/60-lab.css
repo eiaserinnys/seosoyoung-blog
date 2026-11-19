@@ -55,13 +55,13 @@
   display: flex;
   align-items: baseline;
   gap: var(--space-2);
-  margin-top: 10px;
+  margin-top: var(--space-1);
 }
 
 .lab-title {
   display: block;
-  margin-top: 10px;
-  font-size: 18px;
+  margin-top: var(--space-1);
+  font-size: var(--type-lead);
   font-weight: 700;
 }
 

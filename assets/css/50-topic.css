@@ -21,14 +21,14 @@
 
 .shelf .meta {
   display: flex;
-  gap: 12px;
+  gap: var(--space-1-5);
   align-items: baseline;
-  margin-top: 16px;
+  margin-top: var(--space-2);
 }
 
 .shelf .t {
-  margin-top: 8px;
-  font-size: 20px;
+  margin-top: var(--space-1);
+  font-size: var(--type-title);
   font-weight: 700;
   line-height: 1.35;
   letter-spacing: -0.01em;
@@ -40,9 +40,9 @@
   top: var(--topbar-height);
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
+  gap: var(--space-1);
   align-items: flex-start;
-  padding: 12px 0;
+  padding: var(--space-1-5) 0;
   border-top: 2px solid var(--rule-strong);
   border-bottom: 1px solid var(--rule);
   background: var(--bg);
@@ -60,8 +60,8 @@
   min-width: 0;
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
-  padding-top: 1px;
+  gap: var(--space-1);
+  padding-top: var(--line);
 }
 
 .lrow[hidden],
@@ -89,7 +89,7 @@
   align-self: baseline;
   color: var(--ink-2);
   font-family: var(--mono);
-  font-size: 13px;
+  font-size: var(--type-meta);
   font-weight: 500;
   font-variant-numeric: tabular-nums;
   content: counter(series-row, decimal-leading-zero);
@@ -130,7 +130,7 @@
   .series-list > li > .peek .cv {
     grid-column: 4;
     width: 240px;
-    margin-top: 12px;
+    margin-top: var(--space-1-5);
   }
 }
 
@@ -144,7 +144,7 @@
   .shelf > a {
     display: grid;
     grid-template-columns: 128px minmax(0, 1fr);
-    column-gap: 16px;
+    column-gap: var(--space-2);
     align-items: start;
   }
 
@@ -157,8 +157,8 @@
   }
 
   .shelf .t {
-    margin-top: 4px;
-    font-size: 18px;
+    margin-top: var(--space-0-5);
+    font-size: var(--type-lead);
   }
 
   .filt {
