@@ -91,6 +91,6 @@ Gemini-2.0-flash에서도 경향은 같았다(SSR 분포 유사도 0.80, 인구�
 
 ## 출처
 
-Benjamin F. Maier, Ulf Aslak, Luca Fiaschi, Nina Rismal, Kemble Fletcher, Christian C. Luhmann (PyMC Labs), Robbie Dow, Kli Pappas (Colgate-Palmolive), Thomas V. Wiecki (PyMC Labs). "LLMs Reproduce Human Purchase Intent via Semantic Similarity Elicitation of Likert Ratings." arXiv:2510.08338 \[cs.AI\], v3 (2025-10-27).
+Benjamin F. Maier, Ulf Aslak, Luca Fiaschi, Nina Rismal, Kemble Fletcher, Christian C. Luhmann (PyMC Labs), Robbie Dow, Kli Pappas (Colgate-Palmolive), Thomas V. Wiecki (PyMC Labs). "LLMs Reproduce Human Purchase Intent via Semantic Similarity Elicitation of Likert Ratings." arXiv:2510.08338 (cs.AI), v3 (2025-10-27).
 
 원문: <https://arxiv.org/abs/2510.08338>
