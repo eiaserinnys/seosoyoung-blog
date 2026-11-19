@@ -1,0 +1,31 @@
+name: Check UI CSS
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+defaults:
+  run:
+    shell: bash
+
+jobs:
+  ui-css:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Checker tests
+        run: node --test scripts/check-ui-css.test.mjs
+
+      - name: Check CSS tokens
+        run: node scripts/check-ui-css.mjs

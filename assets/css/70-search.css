@@ -13,7 +13,7 @@
   background: transparent;
   color: var(--ink);
   font-family: var(--sans);
-  font-size: 18px;
+  font-size: var(--type-lead);
 }
 
 .search-input::placeholder {
@@ -36,8 +36,8 @@
 .search-input:focus,
 .search-input:focus-visible {
   border-bottom-color: var(--accent);
-  outline: none;
-  outline-offset: var(--zero);
+  outline: var(--line-strong) solid var(--focus);
+  outline-offset: var(--focus-outline-offset);
 }
 
 .search-results {
@@ -71,14 +71,14 @@
 
 .search-summary {
   color: var(--ink-2);
-  font-size: 15px;
+  font-size: var(--type-small);
 }
 
 .search-empty {
   margin: 0;
   padding: var(--space-2) 0;
   color: var(--ink-2);
-  font-size: 13px;
+  font-size: var(--type-meta);
 }
 
 @media (max-width: 767px) {

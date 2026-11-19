@@ -1,0 +1,18 @@
+{
+  "cssRoots": ["assets/css"],
+  "tsxRoots": [],
+  "tsxExclude": [],
+  "tokenFiles": ["assets/css/00-tokens.css"],
+  "selectionPolicyFiles": ["assets/css/05-selection.css"],
+  "baseline": "scripts/ui-css-baseline.json",
+  "rules": {
+    "color-literal": {"enabled": true, "hint": "--bg, --ink, --accent 같은 색 토큰을 쓴다."},
+    "font-literal": {"enabled": true, "hint": "--type-meta, --type-body, --type-title 같은 글자 토큰을 쓴다."},
+    "radius-literal": {"enabled": true, "hint": "곡률은 var(--zero)를 쓴다."},
+    "spacing-literal": {"enabled": true, "hint": "--space-1, --space-1-5 같은 간격 토큰을 쓴다."},
+    "selection-outside-policy": {"enabled": true, "hint": "assets/css/05-selection.css의 선택자 목록에 더한다."},
+    "outline-none": {"enabled": true, "hint": "outline: var(--line-strong) solid var(--focus)와 outline-offset: var(--focus-outline-offset)을 :focus-visible에 함께 둔다."},
+    "tw-text-arbitrary": {"enabled": true, "hint": "text-sm 같은 스케일 클래스나 --type-body 같은 토큰을 쓴다."},
+    "tw-rounded-arbitrary": {"enabled": true, "hint": "rounded-none 같은 스케일 클래스나 var(--zero)를 쓴다."}
+  }
+}
