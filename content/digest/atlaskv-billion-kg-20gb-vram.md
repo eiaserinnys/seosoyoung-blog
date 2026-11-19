@@ -96,11 +96,11 @@ $$
 
 | 방법론 | 추론 시간 복잡도 | 추론 메모리 복잡도 |
 | --- | --- | --- |
-| ICL | $\mathcal{O}((MT + N)^2 \cdot D)$ | $\mathcal{O}((MT + N) \cdot (MT + N + D))$ |
-| RAG | $\mathcal{O}(M + RT + (RT + N)^2 \cdot D)$ | $\mathcal{O}((RT + N) \cdot (RT + N + D))$ |
-| CAG | $\mathcal{O}((RT + N)^2 \cdot D)$ | $\mathcal{O}((RT + N) \cdot (N + D))$ |
-| KBLaM | $\mathcal{O}((M + N) \cdot N \cdot D)$ | $\mathcal{O}((M + N) \cdot (N + D))$ |
-| AtlasKV | $\mathcal{O}((C_t \sqrt[3]{M} + N) \cdot N \cdot D)$ | $\mathcal{O}((C_m \sqrt[3]{M} + N) \cdot (N + D))$ |
+| ICL | $\mathcal{O}((MT + N)^2 D)$ | $\mathcal{O}((MT + N)(MT + N + D))$ |
+| RAG | $\mathcal{O}(M + RT + (RT + N)^2 D)$ | $\mathcal{O}((RT + N)(RT + N + D))$ |
+| CAG | $\mathcal{O}((RT + N)^2 D)$ | $\mathcal{O}((RT + N)(N + D))$ |
+| KBLaM | $\mathcal{O}((M + N)ND)$ | $\mathcal{O}((M + N)(N + D))$ |
+| AtlasKV | $\mathcal{O}((C_t \sqrt[3]{M} + N)ND)$ | $\mathcal{O}((C_m \sqrt[3]{M} + N)(N + D))$ |
 
 논문의 표 2(위 표)는 문맥 내 학습(ICL), RAG, 캐시 증강 생성(CAG), KBLaM, AtlasKV의 시간 및 메모리 복잡도를 비교한다($T$는 트리플당 평균 토큰 길이, $R$은 검색된 관련 트리플 수). HiKVP를 적용한 AtlasKV는 세 단계에서 각각 $\sqrt[3]{M}$개, $k_R \sqrt[3]{M}$개, $k_I \sqrt[3]{M}$개의 키만 GPU에 적재한다. 따라서 상수 $C_t = 1 + k_R + k_I$와 $C_m = \max(1, k_R, k_I)$를 두면 시간 복잡도와 메모리 복잡도가 모두 $\sqrt[3]{M}$에 비례하는 부분선형(sub-linear)으로 낮아진다. 트리플이 10억($10^9$) 개로 늘어도 군집 크기는 세제곱근인 $\sqrt[3]{10^9} = 1{,}000$이므로, GPU VRAM 소비량이 급증하지 않는다.
 

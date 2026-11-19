@@ -205,9 +205,10 @@ A11_JS = r"""
   });
   const tables = [...content.querySelectorAll('.table-scroll')].map((wrap, i) => {
     const table = wrap.querySelector('table');
-    const katexEls = [...table.querySelectorAll('.katex')];
-    const maxLines = katexEls.length ? Math.max(...katexEls.map((k) => k.getClientRects().length)) : 0;
-    return {i: i + 1, hasMath: katexEls.length > 0, overflowing: wrap.classList.contains('is-overflowing'), maxLines};
+    const allKatex = [...table.querySelectorAll('.katex')];
+    const standaloneKatex = allKatex.filter((k) => !k.querySelector('.math-break'));
+    const maxLines = standaloneKatex.length ? Math.max(...standaloneKatex.map((k) => k.getClientRects().length)) : 0;
+    return {i: i + 1, hasMath: allKatex.length > 0, overflowing: wrap.classList.contains('is-overflowing'), maxLines};
   }).filter((table) => table.hasMath);
   const displays = [...content.querySelectorAll('.katex-display')].map((k, i) => {
     const style = getComputedStyle(k);
