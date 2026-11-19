@@ -33,7 +33,7 @@
   --type-display: 40px;
   --type-hero: 56px;
   --type-hero-fluid: clamp(1.8rem, 7vw, 2.6rem);
-  --type-inline: 0.85em;
+  --type-inline: max(var(--type-meta), 0.85em);
   --type-sup: 0.75em;
   --zero: 0px;
   --line: 1px;

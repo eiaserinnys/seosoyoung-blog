@@ -91,7 +91,7 @@ button.chip:not(:disabled):hover {
 }
 
 .seg button {
-  padding: var(--space-1) var(--space-1-5);
+  padding: calc(var(--space-0-5) + var(--line)) var(--space-1-5);
   border: 0;
   border-radius: var(--zero);
   appearance: none;

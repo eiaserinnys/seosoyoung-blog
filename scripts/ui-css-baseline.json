@@ -3,7 +3,8 @@
   "font-literal": {},
   "outline-none": {
     "assets/css/10-base.css": 1,
-    "assets/css/20-components.css": 1
+    "assets/css/20-components.css": 1,
+    "assets/css/70-search.css": 1
   },
   "radius-literal": {},
   "selection-outside-policy": {},

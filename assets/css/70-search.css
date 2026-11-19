@@ -35,9 +35,9 @@
 
 .search-input:focus,
 .search-input:focus-visible {
-  border-bottom-color: var(--accent);
-  outline: var(--line-strong) solid var(--focus);
-  outline-offset: var(--focus-outline-offset);
+  outline: none;
+  border-bottom-color: var(--focus);
+  box-shadow: 0 var(--line-strong) 0 var(--focus);
 }
 
 .search-results {
