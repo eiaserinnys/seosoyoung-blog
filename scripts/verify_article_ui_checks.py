@@ -205,10 +205,11 @@ A11_JS = r"""
   });
   const tables = [...content.querySelectorAll('.table-scroll')].map((wrap, i) => {
     const table = wrap.querySelector('table');
-    const allKatex = [...table.querySelectorAll('.katex')];
-    const standaloneKatex = allKatex.filter((k) => !k.querySelector('.math-break'));
-    const maxLines = standaloneKatex.length ? Math.max(...standaloneKatex.map((k) => k.getClientRects().length)) : 0;
-    return {i: i + 1, hasMath: allKatex.length > 0, overflowing: wrap.classList.contains('is-overflowing'), maxLines};
+    const allKatex = [...table.querySelectorAll('.katex')].filter((k) => !k.closest('.katex-display'));
+    const isMathTable = wrap.classList.contains('is-math-table');
+    const maxLines = allKatex.length ? Math.max(...allKatex.map((k) => k.getClientRects().length)) : 0;
+    const overflowing = wrap.classList.contains('is-overflowing') && !wrap.classList.contains('is-expanded');
+    return {i: i + 1, hasMath: allKatex.length > 0, isMathTable, overflowing, maxLines};
   }).filter((table) => table.hasMath);
   const displays = [...content.querySelectorAll('.katex-display')].map((k, i) => {
     const style = getComputedStyle(k);
@@ -562,6 +563,8 @@ def a11_checks(path, configs):
                             "detail": f"{path} {name}: displayMath={len(displays)} over={len(over)} "
                                       f"noHint={len(bad_disp)} examples={bad_disp[:4]}"})
         for table in data.get("tables") or []:
+            if not table.get("isMathTable"):
+                continue
             max_lines = table.get("maxLines", 1)
             entries.append({"ok": max_lines <= 1,
                             "detail": f"{path} {name}: math table {table['i']} maxLines={max_lines}"})
@@ -574,8 +577,10 @@ def a11_checks(path, configs):
     tables = wide.get("tables") or []
     for table in tables:
         max_lines = table.get("maxLines", 1)
-        entries.append({"ok": not table["overflowing"] and max_lines <= 1,
-                        "detail": f"{path} wide-light: math table {table['i']} overflowing={table['overflowing']} maxLines={max_lines}"})
+        lines_ok = (max_lines <= 1) if table.get("isMathTable") else True
+        entries.append({"ok": not table["overflowing"] and lines_ok,
+                        "detail": f"{path} wide-light: math table {table['i']} overflowing={table['overflowing']}"
+                                  + (f" maxLines={max_lines}" if table.get("isMathTable") else "")})
     return entries
 
 

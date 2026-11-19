@@ -464,7 +464,7 @@
   padding-inline-start: 0;
 }
 
-.post-content table .katex {
+.table-scroll.is-math-table > table .katex {
   white-space: nowrap;
 }
 

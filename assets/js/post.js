@@ -129,6 +129,19 @@
       wrappers.push({ table: table, wrapper: wrapper, cols: cols });
     });
 
+    function isMathOnlyTable(table, cols) {
+      var bodyRows = Array.from(table.querySelectorAll("tbody tr"));
+      return cols >= 2 && bodyRows.length > 0 && bodyRows.every(function (row) {
+        var cells = Array.from(row.children).slice(1);
+        return cells.length > 0 && cells.every(function (cell) {
+          if (!cell.querySelector(".katex")) return false;
+          var clone = cell.cloneNode(true);
+          clone.querySelectorAll(".katex").forEach(function (k) { k.remove(); });
+          return clone.textContent.trim() === "";
+        });
+      });
+    }
+
     function firstColumnWidth(table) {
       var rows = table.querySelectorAll("tr");
       for (var i = 0; i < rows.length; i++) {
@@ -186,6 +199,7 @@
     function updateOverflow() {
       wrappers.forEach(function (item) {
         item.wrapper.classList.remove("is-overflowing", "is-sticky-first", "is-expanded", "is-compact-first");
+        item.wrapper.classList.toggle("is-math-table", isMathOnlyTable(item.table, item.cols));
         item.table.style.removeProperty("--table-expanded-width");
       });
       wrappers.forEach(function (item) {

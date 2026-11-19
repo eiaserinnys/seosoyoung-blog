@@ -89,6 +89,9 @@ MATH_PATHS = [
     "/digest/it3-periodic-table-z172/",
     "/digest/reasoning-as-pathfinding/",
     "/digest/q35-timelines-update-2027/",
+    "/digest/hakken-predicting-future-discoveries/",
+    "/digest/chenglou-handwired/",
+    "/digest/cram-classical-energies-reasoning/",
 ]
 
 RESIZE_SCENARIOS = [
