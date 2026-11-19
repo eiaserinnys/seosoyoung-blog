@@ -205,7 +205,9 @@ A11_JS = r"""
   });
   const tables = [...content.querySelectorAll('.table-scroll')].map((wrap, i) => {
     const table = wrap.querySelector('table');
-    return {i: i + 1, hasMath: !!table.querySelector('.katex'), overflowing: wrap.classList.contains('is-overflowing')};
+    const katexEls = [...table.querySelectorAll('.katex')];
+    const maxLines = katexEls.length ? Math.max(...katexEls.map((k) => k.getClientRects().length)) : 0;
+    return {i: i + 1, hasMath: katexEls.length > 0, overflowing: wrap.classList.contains('is-overflowing'), maxLines};
   }).filter((table) => table.hasMath);
   const displays = [...content.querySelectorAll('.katex-display')].map((k, i) => {
     const style = getComputedStyle(k);
@@ -558,6 +560,10 @@ def a11_checks(path, configs):
             entries.append({"ok": not bad_disp,
                             "detail": f"{path} {name}: displayMath={len(displays)} over={len(over)} "
                                       f"noHint={len(bad_disp)} examples={bad_disp[:4]}"})
+        for table in data.get("tables") or []:
+            max_lines = table.get("maxLines", 1)
+            entries.append({"ok": max_lines <= 1,
+                            "detail": f"{path} {name}: math table {table['i']} maxLines={max_lines}"})
     wide = ((configs.get("wide-light") or {}).get("a11") or {})
     side_bounds = [item for item in wide.get("bounds", []) if item.get("side")]
     if side_bounds:
@@ -566,8 +572,9 @@ def a11_checks(path, configs):
                                                  f"over={len(bad)} examples={bad[:4]}"})
     tables = wide.get("tables") or []
     for table in tables:
-        entries.append({"ok": not table["overflowing"],
-                        "detail": f"{path} wide-light: math table {table['i']} overflowing={table['overflowing']}"})
+        max_lines = table.get("maxLines", 1)
+        entries.append({"ok": not table["overflowing"] and max_lines <= 1,
+                        "detail": f"{path} wide-light: math table {table['i']} overflowing={table['overflowing']} maxLines={max_lines}"})
     return entries
 
 

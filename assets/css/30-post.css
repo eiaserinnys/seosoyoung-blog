@@ -464,6 +464,10 @@
   padding-inline-start: 0;
 }
 
+.post-content table .katex {
+  white-space: nowrap;
+}
+
 .post-content .highlight table,
 .post-content table.highlighttable {
   display: table;

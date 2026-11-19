@@ -785,6 +785,18 @@ class Card1521SecondReviewTest(unittest.TestCase):
         self.assertFalse(a23_synthetic_coverage({'/x/': {'synthetic': []}}))
         self.assertTrue(a23_synthetic_coverage({'/x/': {'synthetic': [{'synthetic': True}]}}))
 
+    def test_a11_table_katex_max_lines(self):
+        configs_fail = {
+            'wide-light': {'a11': {'bounds': [], 'tables': [{'i': 1, 'hasMath': True, 'overflowing': False, 'maxLines': 2}]}},
+            'narrow-light': {'a11': {'bounds': [{'over': 0}], 'tables': [{'i': 1, 'hasMath': True, 'overflowing': True, 'maxLines': 2}]}},
+        }
+        self.assertTrue(any(not e['ok'] and 'maxLines=2' in e['detail'] for e in a11_checks('/digest/x/', configs_fail)))
+        configs_ok = {
+            'wide-light': {'a11': {'bounds': [], 'tables': [{'i': 1, 'hasMath': True, 'overflowing': False, 'maxLines': 1}]}},
+            'narrow-light': {'a11': {'bounds': [{'over': 0}], 'tables': [{'i': 1, 'hasMath': True, 'overflowing': True, 'maxLines': 1}]}},
+        }
+        self.assertTrue(all(e['ok'] for e in a11_checks('/digest/x/', configs_ok) if 'math table' in e['detail']))
+
 
 if __name__ == '__main__':
     unittest.main()
