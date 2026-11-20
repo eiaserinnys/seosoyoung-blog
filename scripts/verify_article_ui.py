@@ -315,6 +315,38 @@ MEASURE_JS = r"""
     const dataRows = (t.tBodies[0] ? [...t.tBodies[0].rows] : rows.slice(t.tHead ? t.tHead.rows.length : 1)).filter((row) => [...row.children].every((c) => (c.colSpan || 1) === 1));
     const colTextLengths = Array.from({length: cols}, (_, ci) => dataRows.reduce((sum, row) => sum + (row.children[ci] ? row.children[ci].textContent.trim().length : 0), 0));
     const colHeaders = t.tHead && t.tHead.rows[0] ? [...t.tHead.rows[0].cells].map((c) => c.textContent.trim().slice(0, 24)) : [];
+    // 화면에 보이는 글자만 잰다. KaTeX의 숨은 MathML 사본은 뺀다.
+    const textRects = (cell) => {
+      const out = [];
+      const walker = document.createTreeWalker(cell, NodeFilter.SHOW_TEXT);
+      let node;
+      while ((node = walker.nextNode())) {
+        if (!node.data.trim() || (node.parentElement && node.parentElement.closest('.katex-mathml'))) continue;
+        const range = document.createRange();
+        range.selectNodeContents(node);
+        for (const rect of range.getClientRects()) if (rect.width > 0) out.push(rect);
+      }
+      return out;
+    };
+    const colNeedWidths = [];
+    for (let c = 0; c < cols; c++) {
+      let needW = 0;
+      for (const row of rows) {
+        const cell = row.children[c];
+        if (!cell || (cell.colSpan || 1) !== 1) continue;
+        const cr = cell.getBoundingClientRect();
+        const rects = textRects(cell);
+        if (rects.length) {
+          const right = Math.max(...rects.map((x) => x.right));
+          needW = Math.max(needW, right - cr.left);
+        }
+      }
+      colNeedWidths.push(Math.round(needW));
+    }
+    const isSticky = wrap ? wrap.classList.contains('is-sticky-first') : false;
+    const firstColCell = (rows[1] && rows[1].children[0]) || firstBodyCell;
+    const firstColW = firstColCell ? firstColCell.getBoundingClientRect().width : 0;
+    const visibleWidth = wrap ? Math.round(wrap.clientWidth - (isSticky ? firstColW : 0)) : null;
     const maxLinesPerCell = Math.max(...[...t.querySelectorAll('td')].map((c) => Math.round((c.getBoundingClientRect().height - 16) / parseFloat(getComputedStyle(c).lineHeight))));
     // A23과 같은 줄 세기: 칸 내용 높이를 그 칸 줄 높이로 나눠 반올림한다(머리 칸 포함).
     const cellLines = [...t.querySelectorAll('th,td')].map((cell) => {
@@ -332,7 +364,7 @@ MEASURE_JS = r"""
       wrapping: wrap ? wrap.classList.contains('is-overflowing') : null, overflowing: overflowBefore,
       wrapDelta: wrap ? wrap.scrollWidth - wrap.clientWidth : null,
       tableRect: r(t), wrapRect: r(wrap), th: textInfo(th, 'th'), td: textInfo(td, 'td'),
-      colWidths, maxLinesPerCell, colTextLengths, colHeaders,
+      colWidths, maxLinesPerCell, colTextLengths, colHeaders, colNeedWidths, visibleWidth,
       firstColWidths: [...t.querySelectorAll('tbody tr td:first-child')].slice(0, 3).map((c) => +c.getBoundingClientRect().width.toFixed(1)),
       maxCellHeight: Math.max(...[...t.querySelectorAll('td')].map((c) => c.getBoundingClientRect().height)),
       maxContentWidth, fontSize: parseFloat(style.fontSize),

@@ -668,21 +668,31 @@ class NewArticleChecksTest(unittest.TestCase):
         self.assertFalse(a24_checks('/x/', [row])[0]['ok'])
 
     def test_a26_longest_column_next_to_sticky_first(self):
-        long_third = {'i': 1, 'cols': 3, 'overflowing': True, 'sticky': True,
-                      'colTextLengths': [55, 185, 460], 'colHeaders': ['부문', '주요 발언자', '핵심 설계 목표와 제작 방식']}
-        entries = a26_checks('/x/', {'narrow-light': {'tables': [long_third]}})
+        not_sticky = {'i': 2, 'cols': 5, 'overflowing': True, 'sticky': False,
+                      'visibleWidth': 325, 'colNeedWidths': [245, 198, 63, 52, 65],
+                      'colHeaders': ['자아 형태', '주요 과제 및 내용', '레코드', '분석', '좌표']}
+        entries = a26_checks('/x/', {'narrow-light': {'tables': [not_sticky]}})
         self.assertEqual(len(entries), 1)
         self.assertFalse(entries[0]['ok'])
         self.assertFalse(entries[0].get('na', False))
 
-        long_second = dict(long_third, colTextLengths=[55, 460, 185],
-                           colHeaders=['부문', '핵심 설계 목표와 제작 방식', '주요 발언자'])
-        entries = a26_checks('/x/', {'narrow-light': {'tables': [long_second]}})
+        too_wide_col = {'i': 3, 'cols': 3, 'overflowing': True, 'sticky': True,
+                        'visibleWidth': 161, 'colNeedWidths': [164, 233, 73],
+                        'colHeaders': ['분류기에 제공한 뇌 영역 범위', '비교 기준 및 통계 검정', '균형 정확도']}
+        entries = a26_checks('/x/', {'narrow-light': {'tables': [too_wide_col]}})
+        self.assertEqual(len(entries), 1)
+        self.assertFalse(entries[0]['ok'])
+        self.assertFalse(entries[0].get('na', False))
+
+        fitting_cols = {'i': 2, 'cols': 6, 'overflowing': True, 'sticky': True,
+                        'visibleWidth': 287, 'colNeedWidths': [38, 224, 236, 63, 52, 65],
+                        'colHeaders': ['기호', '자아 형태', '주요 과제 및 내용', '레코드', '분석', '좌표']}
+        entries = a26_checks('/x/', {'narrow-light': {'tables': [fitting_cols]}})
         self.assertEqual(len(entries), 1)
         self.assertTrue(entries[0]['ok'])
 
         no_target = {'i': 1, 'cols': 3, 'overflowing': False, 'sticky': False,
-                     'colTextLengths': [55, 185, 460], 'colHeaders': []}
+                     'visibleWidth': 325, 'colNeedWidths': [55, 120, 140], 'colHeaders': []}
         entries = a26_checks('/x/', {'narrow-light': {'tables': [no_target]}})
         self.assertEqual(len(entries), 1)
         self.assertTrue(entries[0]['ok'])
