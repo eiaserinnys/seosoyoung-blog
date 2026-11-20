@@ -97,18 +97,17 @@ A9_JS = r"""
       }
       const lines = [];
       for (const item of items) {
-        const line = lines.find((l) => Math.min(item.bottom, l.bottom) - Math.max(item.top, l.top) > 1);
+        const mid = (item.top + item.bottom) / 2;
+        const line = lines.find((l) => Math.abs(mid - l.mid) <= 9);
         if (line) {
-          line.top = Math.min(line.top, item.top);
-          line.bottom = Math.max(line.bottom, item.bottom);
           line.text += item.text;
         } else {
-          lines.push({top: item.top, bottom: item.bottom, text: item.text});
+          lines.push({mid, text: item.text});
         }
       }
       if (lines.length > 1) {
         const lone = lines
-          .filter((l) => l.text.length === 1 && !/[가-힣ㄱ-ㅎㅏ-ㅣ]/.test(l.text))
+          .filter((l) => l.text.length === 1 && !/[가-힣ㄱ-ㅎㅏ-ㅣ.,:;!?()\[\]]/.test(l.text))
           .map((l) => l.text);
         if (lone.length) {
           loneCharCells.push({
