@@ -1194,3 +1194,26 @@ def a24_checks(path, rows):
               and row.get('anchorShift') is not None and abs(row['anchorShift']) <= 2)
         entries.append({'ok': bool(ok), 'detail': f'{path} A24 {row}'})
     return entries
+
+
+def a26_checks(path, configs):
+    """375px에서 넘치는 고정 첫 열 표는 글이 가장 긴 열이 고정 열 바로 옆(2열)에 온다."""
+    narrow = configs.get('narrow-light') or {}
+    tables = narrow.get('tables') or []
+    targets = [t for t in tables
+               if bool(t.get('overflowing')) and bool(t.get('sticky')) and (t.get('cols') or 0) >= 3]
+    if not targets:
+        return [{'ok': True, 'na': True,
+                 'detail': f'{path}: 375px 고정 첫 열 넘치는 표 0건 (A26 해당 없음)'}]
+    entries = []
+    for t in targets:
+        lengths = t.get('colTextLengths') or []
+        max_len = max(lengths) if lengths else 0
+        longest_col = lengths.index(max_len) + 1 if max_len else None
+        ok = len(lengths) >= 2 and max_len > 0 and lengths[1] == max_len
+        entries.append({'ok': bool(ok),
+                        'detail': f"{path} 375 table {t.get('i')} ({t.get('cols')}칸): "
+                                  f"col2Len={lengths[1] if len(lengths) > 1 else None} "
+                                  f"longestCol={longest_col}({max_len}자) "
+                                  f"colTextLengths={lengths} headers={t.get('colHeaders')}"})
+    return entries

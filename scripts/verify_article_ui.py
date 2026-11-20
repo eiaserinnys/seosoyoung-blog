@@ -32,6 +32,7 @@ from verify_article_ui_checks import (
     A10_CONFIGS, A10_JS, A11_JS, A15_JS, A16_JS, A17_CONFIGS, A9_JS, a9_checks, a10_checks, a11_checks,
     a12_checks, a13_checks, a14_checks, a15_checks, a16_checks, a17_checks, a18_checks, a19_checks,
     a5_overflow_checks, a21_checks, a22_checks, a22_rule_checks, a23_checks, a23_synthetic_coverage, a24_checks,
+    a26_checks,
     resized_sidenotes_ok, sidenote_presence_ok, strict_lightbox_checks, summarize_checks,
 )
 
@@ -311,6 +312,9 @@ MEASURE_JS = r"""
               right: +b.right.toFixed(1), cellContentRight};
     });
     const colWidths = [...t.querySelectorAll('tbody tr:first-child td')].map((c) => Math.round(c.getBoundingClientRect().width));
+    const dataRows = (t.tBodies[0] ? [...t.tBodies[0].rows] : rows.slice(t.tHead ? t.tHead.rows.length : 1)).filter((row) => [...row.children].every((c) => (c.colSpan || 1) === 1));
+    const colTextLengths = Array.from({length: cols}, (_, ci) => dataRows.reduce((sum, row) => sum + (row.children[ci] ? row.children[ci].textContent.trim().length : 0), 0));
+    const colHeaders = t.tHead && t.tHead.rows[0] ? [...t.tHead.rows[0].cells].map((c) => c.textContent.trim().slice(0, 24)) : [];
     const maxLinesPerCell = Math.max(...[...t.querySelectorAll('td')].map((c) => Math.round((c.getBoundingClientRect().height - 16) / parseFloat(getComputedStyle(c).lineHeight))));
     // A23과 같은 줄 세기: 칸 내용 높이를 그 칸 줄 높이로 나눠 반올림한다(머리 칸 포함).
     const cellLines = [...t.querySelectorAll('th,td')].map((cell) => {
@@ -328,7 +332,7 @@ MEASURE_JS = r"""
       wrapping: wrap ? wrap.classList.contains('is-overflowing') : null, overflowing: overflowBefore,
       wrapDelta: wrap ? wrap.scrollWidth - wrap.clientWidth : null,
       tableRect: r(t), wrapRect: r(wrap), th: textInfo(th, 'th'), td: textInfo(td, 'td'),
-      colWidths, maxLinesPerCell,
+      colWidths, maxLinesPerCell, colTextLengths, colHeaders,
       firstColWidths: [...t.querySelectorAll('tbody tr td:first-child')].slice(0, 3).map((c) => +c.getBoundingClientRect().width.toFixed(1)),
       maxCellHeight: Math.max(...[...t.querySelectorAll('td')].map((c) => c.getBoundingClientRect().height)),
       maxContentWidth, fontSize: parseFloat(style.fontSize),
@@ -1880,7 +1884,7 @@ A7_MAX_SQUEEZE_LINES = 2
 
 
 def path_checks(report, strict_lightbox=False):
-    checks = {key: [] for key in ("A1", "A2", "A3", "A4", "A5", "A6", "A7", "A8", "A9", "A10", "A11", "A12", "A13", "A14", "A15", "A16", "A17", "A18", "A19", "A20", "A21", "A22", "A23", "A24")}
+    checks = {key: [] for key in ("A1", "A2", "A3", "A4", "A5", "A6", "A7", "A8", "A9", "A10", "A11", "A12", "A13", "A14", "A15", "A16", "A17", "A18", "A19", "A20", "A21", "A22", "A23", "A24", "A26")}
 
     def add(key, ok, detail, na=False):
         checks[key].append({"ok": bool(ok), "na": na, "detail": detail})
@@ -2027,7 +2031,8 @@ def path_checks(report, strict_lightbox=False):
                 row['expectedOverflow'] = expected
     for key, entries in (('A21', a21_checks(path, lengths, mobile_counts)), ('A22', a22_checks(path, report.get('headers', [])) + a22_rule_checks(path, report.get('headerRules', []))),
                          ('A23', a23_checks(path + ' 1440', table_rows) + a23_checks(path + ' 375', configs['narrow-light'].get('lineTables', [])) + a23_checks(path + ' synthetic', report.get('synthetic', []))),
-                         ('A24', a24_checks(path, report.get('imageReservation', [])))):
+                         ('A24', a24_checks(path, report.get('imageReservation', []))),
+                         ('A26', a26_checks(path, configs))):
         for entry in entries:
             add(key, entry['ok'], entry['detail'], na=entry.get('na', False))
 
@@ -2063,7 +2068,7 @@ def main():
     parser.add_argument("--require", default="", help="쉼표로 구분한 검사 ID를 필수 판정한다.")
     args = parser.parse_args()
     required = [item.strip().upper() for item in args.require.split(',') if item.strip()]
-    if any(item not in {f'A{i}' for i in range(1, 26)} for item in required):
+    if any(item not in {f'A{i}' for i in range(1, 27)} for item in required):
         parser.error('--require에 알 수 없는 검사 ID가 있다')
 
     paths = args.path or DEFAULT_PATHS
@@ -2128,7 +2133,7 @@ def main():
                 "configs": [{"name": c[0], "width": c[1], "height": c[2], "dpr": c[3], "colorScheme": c[4]}
                             for c in CONFIGS],
                 "skipped": skipped, "paths": reports, "summary": {}}
-    aggregate = {key: [] for key in ("A1", "A2", "A3", "A4", "A5", "A6", "A7", "A8", "A9", "A10", "A11", "A12", "A13", "A14", "A15", "A16", "A17", "A18", "A19", "A20", "A21", "A22", "A23", "A24", "A25")}
+    aggregate = {key: [] for key in ("A1", "A2", "A3", "A4", "A5", "A6", "A7", "A8", "A9", "A10", "A11", "A12", "A13", "A14", "A15", "A16", "A17", "A18", "A19", "A20", "A21", "A22", "A23", "A24", "A25", "A26")}
     # A25: 인라인 코드 13px 하한. --path로 준 글과 함께 고정 세 글을 폭별로 잰다.
     for width, rows in code_sizes.items():
         for path, row in rows.items():
