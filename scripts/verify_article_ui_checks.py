@@ -97,12 +97,13 @@ A9_JS = r"""
       }
       const lines = [];
       for (const item of items) {
-        const mid = (item.top + item.bottom) / 2;
-        const line = lines.find((l) => Math.abs(mid - l.mid) <= 6);
+        const line = lines.find((l) => Math.min(item.bottom, l.bottom) - Math.max(item.top, l.top) > 1);
         if (line) {
+          line.top = Math.min(line.top, item.top);
+          line.bottom = Math.max(line.bottom, item.bottom);
           line.text += item.text;
         } else {
-          lines.push({mid, text: item.text});
+          lines.push({top: item.top, bottom: item.bottom, text: item.text});
         }
       }
       if (lines.length > 1) {
