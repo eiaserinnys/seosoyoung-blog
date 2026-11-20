@@ -719,6 +719,35 @@ class RevisedChecksTest(unittest.TestCase):
         row['bodyCellPosition'] = 'sticky'
         self.assertFalse(a17_checks('/x/', {'wide-light': {'sticky': [row]}})[0]['ok'])
 
+    def test_a17_min390_overflowing_3col_table_requires_sticky_first(self):
+        from verify_article_ui_checks import a17_checks
+        too_wide_first = {'index': 5, 'cols': 6, 'overflowing': True, 'sticky': False,
+                          'wrapClient': 338, 'firstCellWidth': 255, 'fontSize': 16,
+                          'firstCellPosition': 'sticky', 'bodyCellPosition': 'static'}
+        self.assertFalse(a17_checks('/x/', {'min390-light': {'sticky': [too_wide_first]}})[0]['ok'])
+        self.assertTrue(a17_checks('/x/', {'min360-light': {'sticky': [too_wide_first]}})[0]['ok'])
+
+    def test_a9_narrow_lone_non_hangul_char_line_fails(self):
+        from verify_article_ui_checks import a9_checks
+        lone_cells = [
+            {'table': 5, 'text': 'BlueROV2 sin θ', 'lines': ['BlueROV2sin', 'θ'], 'lone': ['θ']},
+            {'table': 5, 'text': 'BlueROV2 cos θ', 'lines': ['BlueROV2cos', 'θ'], 'lone': ['θ']},
+        ]
+        bad_configs = {
+            name: {'a9': {'codes': [], 'loneCharCells': lone_cells}}
+            for name in ('min360-light', 'narrow-light', 'min390-light')
+        }
+        failed = [e for e in a9_checks('/x/', bad_configs) if not e['ok']]
+        self.assertEqual(len(failed), 2)
+        self.assertIn('BlueROV2 sin θ', failed[0]['detail'])
+        self.assertIn('BlueROV2 cos θ', failed[1]['detail'])
+        ok_configs = {
+            name: {'a9': {'codes': [], 'loneCharCells': []}}
+            for name in ('min360-light', 'narrow-light', 'min390-light')
+        }
+        self.assertTrue(all(e['ok'] for e in a9_checks('/x/', ok_configs)))
+
+
 class RevisedBrowserChecksTest(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
