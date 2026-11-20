@@ -1197,23 +1197,34 @@ def a24_checks(path, rows):
 
 
 def a26_checks(path, configs):
-    """375px에서 넘치는 고정 첫 열 표는 글이 가장 긴 열이 고정 열 바로 옆(2열)에 온다."""
+    """375px에서 넘치는 3칸 이상 표는 첫 열이 고정되고, 둘째 열부터 각 열의 글 폭이 남는 폭 안에 들어온다."""
     narrow = configs.get('narrow-light') or {}
     tables = narrow.get('tables') or []
     targets = [t for t in tables
-               if bool(t.get('overflowing')) and bool(t.get('sticky')) and (t.get('cols') or 0) >= 3]
+               if bool(t.get('overflowing')) and (t.get('cols') or 0) >= 3]
     if not targets:
         return [{'ok': True, 'na': True,
-                 'detail': f'{path}: 375px 고정 첫 열 넘치는 표 0건 (A26 해당 없음)'}]
+                 'detail': f'{path}: 375px 넘치는 3칸 이상 표 0건 (A26 해당 없음)'}]
     entries = []
     for t in targets:
-        lengths = t.get('colTextLengths') or []
-        max_len = max(lengths) if lengths else 0
-        longest_col = lengths.index(max_len) + 1 if max_len else None
-        ok = len(lengths) >= 2 and max_len > 0 and lengths[1] == max_len
+        sticky = bool(t.get('sticky'))
+        need_widths = t.get('colNeedWidths') or []
+        visible = t.get('visibleWidth')
+        if visible is None:
+            wrap_client = t.get('wrapClient') or 0
+            first_w = t.get('firstCellWidth') or 0
+            visible = round(wrap_client - (first_w if sticky else 0))
+        headers = t.get('colHeaders') or []
+        rest_needs = need_widths[1:]
+        max_need = max(rest_needs) if rest_needs else 0
+        over_cols = [
+            f"{idx + 2}열({headers[idx + 1] if idx + 1 < len(headers) else ''}={w}px>{visible}px)"
+            for idx, w in enumerate(rest_needs)
+            if w > visible + 1
+        ]
+        ok = sticky and bool(rest_needs) and not over_cols
         entries.append({'ok': bool(ok),
                         'detail': f"{path} 375 table {t.get('i')} ({t.get('cols')}칸): "
-                                  f"col2Len={lengths[1] if len(lengths) > 1 else None} "
-                                  f"longestCol={longest_col}({max_len}자) "
-                                  f"colTextLengths={lengths} headers={t.get('colHeaders')}"})
+                                  f"sticky={sticky} visible={visible}px maxNeed={max_need}px "
+                                  f"colNeedWidths={need_widths} over={over_cols} headers={headers}"})
     return entries
