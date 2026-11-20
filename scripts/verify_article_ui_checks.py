@@ -62,7 +62,65 @@ A9_JS = r"""
       midWord: breaks.filter((b) => b.midWord).length,
     };
   });
-  return {codes: codes};
+  const loneCharCells = [];
+  wrappers.forEach((wrap, ti) => {
+    const table = wrap.querySelector(':scope > table');
+    if (!table) return;
+    [...table.querySelectorAll('th, td')].forEach((cell) => {
+      const items = [];
+      const walker = document.createTreeWalker(cell, NodeFilter.SHOW_ELEMENT | NodeFilter.SHOW_TEXT);
+      let node;
+      while ((node = walker.nextNode())) {
+        if (node.nodeType === Node.ELEMENT_NODE) {
+          if (node.classList.contains('katex')) {
+            const html = node.querySelector('.katex-html');
+            const text = (html ? html.textContent : node.textContent).replace(/\s+/g, '');
+            const rect = node.getBoundingClientRect();
+            if (text && rect.width > 0 && rect.height > 0) {
+              items.push({top: rect.top, bottom: rect.bottom, text});
+            }
+          }
+          continue;
+        }
+        const parent = node.parentElement;
+        if (!parent || parent.closest('.katex, script, style, svg')) continue;
+        for (let k = 0; k < node.data.length; k++) {
+          const ch = node.data[k];
+          if (!ch.trim()) continue;
+          const range = document.createRange();
+          range.setStart(node, k);
+          range.setEnd(node, k + 1);
+          const rects = range.getClientRects();
+          if (!rects.length) continue;
+          items.push({top: rects[0].top, bottom: rects[0].bottom, text: ch});
+        }
+      }
+      const lines = [];
+      for (const item of items) {
+        const mid = (item.top + item.bottom) / 2;
+        const line = lines.find((l) => Math.abs(mid - l.mid) <= 6);
+        if (line) {
+          line.text += item.text;
+        } else {
+          lines.push({mid, text: item.text});
+        }
+      }
+      if (lines.length > 1) {
+        const lone = lines
+          .filter((l) => l.text.length === 1 && !/[가-힣ㄱ-ㅎㅏ-ㅣ]/.test(l.text))
+          .map((l) => l.text);
+        if (lone.length) {
+          loneCharCells.push({
+            table: ti + 1,
+            text: cell.textContent.trim().slice(0, 48),
+            lines: lines.map((l) => l.text),
+            lone,
+          });
+        }
+      }
+    });
+  });
+  return {codes: codes, loneCharCells: loneCharCells};
 }
 """
 
@@ -285,6 +343,7 @@ A15_JS = r"""
 
 A9_WIDE_CONFIGS = ("tablet-light", "mid-light", "wide-light")
 A9_NARROW_CONFIGS = ("min360-light", "narrow-light", "min390-light", "min414-light")
+A9_LONE_CHAR_CONFIGS = ("min360-light", "narrow-light", "min390-light")
 WIDE_TABLE_MAX_CELL_LINES = 6
 WIDE_CODE_SHORT_LEN = 24
 A10_CONFIGS = ("min360-light", "narrow-light", "min390-light", "min414-light", "wide-light")
@@ -511,6 +570,24 @@ def a9_checks(path, configs):
         entries.append({
             "ok": not any(c.get("midWord") for c in codes),
             "detail": _a9_detail(path, name, codes),
+        })
+    lone_by_cell = {}
+    for name in A9_LONE_CHAR_CONFIGS:
+        for cell in (((configs.get(name) or {}).get("a9") or {}).get("loneCharCells") or []):
+            key = (cell.get("table"), cell.get("text"))
+            rec = lone_by_cell.setdefault(key, {
+                "table": cell.get("table"),
+                "text": cell.get("text"),
+                "lines": cell.get("lines"),
+                "lone": cell.get("lone"),
+                "configs": [],
+            })
+            rec["configs"].append(name)
+    for rec in lone_by_cell.values():
+        entries.append({
+            "ok": False,
+            "detail": (f"{path} {','.join(rec['configs'])} table {rec['table']} "
+                       f"{rec['text']!r}: 한글 아닌 한 글자 단독 줄 {rec['lone']} lines={rec['lines']}"),
         })
     return entries
 
