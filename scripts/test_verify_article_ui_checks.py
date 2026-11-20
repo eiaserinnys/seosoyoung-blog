@@ -6,7 +6,7 @@ from playwright.sync_api import sync_playwright
 
 from verify_article_ui_checks import (
     A10_JS, A11_JS, A15_JS, A16_JS, a11_checks, a12_checks, a13_checks, a14_checks, a15_checks,
-    a16_checks, resized_sidenotes_ok, sidenote_presence_ok, strict_lightbox_checks, summarize_checks,
+    a16_checks, a26_checks, resized_sidenotes_ok, sidenote_presence_ok, strict_lightbox_checks, summarize_checks,
 )
 
 
@@ -666,6 +666,27 @@ class NewArticleChecksTest(unittest.TestCase):
         row['anchorShift'] = 0
         row['height'] = 10
         self.assertFalse(a24_checks('/x/', [row])[0]['ok'])
+
+    def test_a26_longest_column_next_to_sticky_first(self):
+        long_third = {'i': 1, 'cols': 3, 'overflowing': True, 'sticky': True,
+                      'colTextLengths': [55, 185, 460], 'colHeaders': ['부문', '주요 발언자', '핵심 설계 목표와 제작 방식']}
+        entries = a26_checks('/x/', {'narrow-light': {'tables': [long_third]}})
+        self.assertEqual(len(entries), 1)
+        self.assertFalse(entries[0]['ok'])
+        self.assertFalse(entries[0].get('na', False))
+
+        long_second = dict(long_third, colTextLengths=[55, 460, 185],
+                           colHeaders=['부문', '핵심 설계 목표와 제작 방식', '주요 발언자'])
+        entries = a26_checks('/x/', {'narrow-light': {'tables': [long_second]}})
+        self.assertEqual(len(entries), 1)
+        self.assertTrue(entries[0]['ok'])
+
+        no_target = {'i': 1, 'cols': 3, 'overflowing': False, 'sticky': False,
+                     'colTextLengths': [55, 185, 460], 'colHeaders': []}
+        entries = a26_checks('/x/', {'narrow-light': {'tables': [no_target]}})
+        self.assertEqual(len(entries), 1)
+        self.assertTrue(entries[0]['ok'])
+        self.assertTrue(entries[0]['na'])
 
 class RevisedChecksTest(unittest.TestCase):
     def test_a5_independent_expected_overflow(self):
