@@ -709,6 +709,14 @@ class RevisedChecksTest(unittest.TestCase):
         row['bodyCellPosition'] = 'sticky'
         self.assertFalse(a17_checks('/x/', {'wide-light': {'sticky': [row]}})[0]['ok'])
 
+    def test_a17_min390_overflowing_3col_table_requires_sticky_first(self):
+        from verify_article_ui_checks import a17_checks
+        too_wide_first = {'index': 5, 'cols': 6, 'overflowing': True, 'sticky': False,
+                          'wrapClient': 338, 'firstCellWidth': 255, 'fontSize': 16,
+                          'firstCellPosition': 'sticky', 'bodyCellPosition': 'static'}
+        self.assertFalse(a17_checks('/x/', {'min390-light': {'sticky': [too_wide_first]}})[0]['ok'])
+        self.assertTrue(a17_checks('/x/', {'min360-light': {'sticky': [too_wide_first]}})[0]['ok'])
+
 class RevisedBrowserChecksTest(unittest.TestCase):
     @classmethod
     def setUpClass(cls):

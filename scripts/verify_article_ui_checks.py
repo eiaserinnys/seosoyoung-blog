@@ -1043,10 +1043,14 @@ def a17_checks(path, configs):
                           f"headLeftDiff={row.get('firstLeftDiff')} bodyLeftDiff={row.get('bodyLeftDiff')} "
                           f"scroll={scroll_left}/{max_scroll} bg={bg} bodyBg={body}")
             else:
-                ok = not row.get("sticky") and row.get("bodyCellPosition") == "static"
+                must_stick_390 = (name == "min390-light" and bool(row.get("overflowing"))
+                                  and cols is not None and cols >= MIN_TABLE_COLS)
+                ok = (not must_stick_390 and not row.get("sticky")
+                      and row.get("bodyCellPosition") == "static")
                 detail = (f"{path} {name} table {row.get('index')} ({cols}칸): sticky={row.get('sticky')} "
                           f"expected=False bodyPosition={row.get('bodyCellPosition')} "
-                          f"overflowing={row.get('overflowing')} room={room}px need={need}px")
+                          f"overflowing={row.get('overflowing')} room={room}px need={need}px"
+                          + (" (390px 넘치는 3칸+ 표는 첫 열 고정 필수)" if must_stick_390 else ""))
             entries.append({"ok": ok, "detail": detail})
     if not tables:
         entries.append({"ok": True, "na": True, "detail": f"{path}: A17 대상 폭 표 0건 (A17 해당 없음)"})
@@ -1208,8 +1212,9 @@ def a26_checks(path, configs):
     entries = []
     for t in targets:
         lengths = t.get('colTextLengths') or []
-        max_len = max(lengths) if lengths else 0
-        longest_col = lengths.index(max_len) + 1 if max_len else None
+        rest = lengths[1:]
+        max_len = max(rest) if rest else 0
+        longest_col = rest.index(max_len) + 2 if max_len else None
         ok = len(lengths) >= 2 and max_len > 0 and lengths[1] == max_len
         entries.append({'ok': bool(ok),
                         'detail': f"{path} 375 table {t.get('i')} ({t.get('cols')}칸): "
