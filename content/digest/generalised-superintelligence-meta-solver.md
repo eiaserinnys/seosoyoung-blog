@@ -31,74 +31,74 @@ images:
 오늘날 인공지능을 활용한 과학적 발견은 주로 막대한 연산 규모에 의존한다. 예컨대 OpenAI의 나비에-스토크스(Navier-Stokes) 방정식 탐색에는 약 1만 개의 에이전트와 1,300억 개의 출력 토큰이 투입됐다. 그만한 연산 비용의 태반은 애초에 해가 있을 수 없는 후보 공간을 탐색하는 데 허비된다는 것이 GSI 연구진의 분석이다. 어려운 문제는 전체 후보 공간이 전수 조사가 불가능할 만큼 방대하지만, 실제로 해가 있을 수 있는 영역은 아주 좁다. 대칭성, 대수적 항등식, 문제를 독립된 하위 부분으로 분해하는 규칙이 곧 문제의 구조다. 이 구조가 해가 있는 후보 영역을 특정한다.
 
 <figure class="blog-diagram">
-<svg class="diagram-svg-desktop" viewBox="0 0 720 310" role="img" aria-label="GSI 메타 솔버 플랫폼의 5단계 발견 파이프라인과 순환 검증 루프" xmlns="http://www.w3.org/2000/svg">
+<svg class="diagram-svg-desktop" viewBox="0 0 720 295" role="img" aria-label="GSI 메타 솔버 플랫폼의 5단계 발견 파이프라인과 순환 검증 루프" xmlns="http://www.w3.org/2000/svg">
   <defs>
     <marker id="arr-ink" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="var(--ink-2)"/></marker>
     <marker id="arr-acc" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="var(--accent)"/></marker>
   </defs>
-  <rect width="720" height="310" fill="var(--bg-2)"/>
-  <rect x="18" y="22" width="196" height="118" fill="var(--bg)" stroke="var(--rule-strong)" stroke-width="1.5"/>
+  <rect width="720" height="295" fill="var(--bg-2)"/>
+  <rect x="18" y="22" width="196" height="103" fill="var(--bg)" stroke="var(--rule-strong)" stroke-width="1.5"/>
   <text x="30" y="46" font-family="var(--mono)" font-size="11" font-weight="700" fill="var(--ink-2)">STEP 1. STRUCTURE</text>
   <text x="30" y="68" font-family="var(--sans)" font-size="13" font-weight="700" fill="var(--ink)">구조 선행 탐지</text>
   <text x="30" y="90" font-family="var(--sans)" font-size="11" fill="var(--ink-2)">대칭성과 대수적 항등식 식별</text>
   <text x="30" y="108" font-family="var(--sans)" font-size="11" fill="var(--ink-2)">체커가 확인한 뒤에만 확정</text>
-  <rect x="242" y="22" width="212" height="118" fill="var(--bg)" stroke="var(--rule-strong)" stroke-width="1.5"/>
+  <rect x="242" y="22" width="212" height="103" fill="var(--bg)" stroke="var(--rule-strong)" stroke-width="1.5"/>
   <text x="254" y="46" font-family="var(--mono)" font-size="11" font-weight="700" fill="var(--ink-2)">STEP 2. COMPILER</text>
   <text x="254" y="68" font-family="var(--sans)" font-size="13" font-weight="700" fill="var(--ink)">구조 전용 솔버 컴파일</text>
   <text x="254" y="90" font-family="var(--sans)" font-size="11" fill="var(--ink-2)">맞춤 데이터 레이아웃과 가지치기</text>
   <text x="254" y="108" font-family="var(--sans)" font-size="11" fill="var(--ink-2)">범용 솔버 대비 30,000배 이상 가속</text>
-  <rect x="482" y="22" width="220" height="118" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.5"/>
+  <rect x="482" y="22" width="220" height="103" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.5"/>
   <text x="494" y="46" font-family="var(--mono)" font-size="11" font-weight="700" fill="var(--accent-ink)">STEP 3. AGENT LOOP</text>
   <text x="494" y="68" font-family="var(--sans)" font-size="13" font-weight="700" fill="var(--accent-ink)">최적화, 시뮬레이션, 실험, 검증</text>
   <text x="494" y="90" font-family="var(--sans)" font-size="11" fill="var(--accent-ink)">저비용 시뮬레이션 후 전체 탐색</text>
   <text x="494" y="108" font-family="var(--sans)" font-size="11" fill="var(--accent-ink)">검증 실패 시 다음 라운드에 반영</text>
-  <line x1="214" y1="81" x2="238" y2="81" stroke="var(--ink-2)" stroke-width="1.5" marker-end="url(#arr-ink)"/>
-  <line x1="454" y1="81" x2="478" y2="81" stroke="var(--accent)" stroke-width="1.5" marker-end="url(#arr-acc)"/>
-  <rect x="376" y="172" width="326" height="116" fill="var(--bg)" stroke="var(--rule-strong)" stroke-width="1.5"/>
-  <text x="388" y="196" font-family="var(--mono)" font-size="11" font-weight="700" fill="var(--ink-2)">STEP 4. INDEPENDENT VERIFIERS</text>
-  <text x="388" y="218" font-family="var(--sans)" font-size="13" font-weight="700" fill="var(--ink)">다중 독립 검증과 인증서 발행</text>
-  <text x="388" y="240" font-family="var(--sans)" font-size="11" fill="var(--ink-2)">별도 작성된 복수의 검증기가 독립 재도출</text>
-  <text x="388" y="258" font-family="var(--sans)" font-size="11" fill="var(--ink-2)">명시적 행렬 및 SAT 반박 인증서 첨부</text>
-  <rect x="18" y="172" width="326" height="116" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.5"/>
-  <text x="30" y="196" font-family="var(--mono)" font-size="11" font-weight="700" fill="var(--accent-ink)">STEP 5. CENTRAL LIBRARY</text>
-  <text x="30" y="218" font-family="var(--sans)" font-size="13" font-weight="700" fill="var(--accent-ink)">탐지기, 검사기, 솔버 누적</text>
-  <text x="30" y="240" font-family="var(--sans)" font-size="11" fill="var(--accent-ink)">검증된 도구를 중앙 라이브러리에 영구 보존</text>
-  <text x="30" y="258" font-family="var(--sans)" font-size="11" fill="var(--accent-ink)">신규 문제도 6분 안에 검증된 솔버 구축</text>
-  <line x1="592" y1="140" x2="592" y2="168" stroke="var(--accent)" stroke-width="1.5" marker-end="url(#arr-acc)"/>
-  <line x1="376" y1="230" x2="348" y2="230" stroke="var(--accent)" stroke-width="1.5" marker-end="url(#arr-acc)"/>
-  <line x1="116" y1="172" x2="116" y2="144" stroke="var(--accent)" stroke-width="1.5" stroke-dasharray="3,3" marker-end="url(#arr-acc)"/>
+  <line x1="214" y1="74" x2="238" y2="74" stroke="var(--ink-2)" stroke-width="1.5" marker-end="url(#arr-ink)"/>
+  <line x1="454" y1="74" x2="478" y2="74" stroke="var(--accent)" stroke-width="1.5" marker-end="url(#arr-acc)"/>
+  <rect x="376" y="168" width="326" height="103" fill="var(--bg)" stroke="var(--rule-strong)" stroke-width="1.5"/>
+  <text x="388" y="192" font-family="var(--mono)" font-size="11" font-weight="700" fill="var(--ink-2)">STEP 4. INDEPENDENT VERIFIERS</text>
+  <text x="388" y="214" font-family="var(--sans)" font-size="13" font-weight="700" fill="var(--ink)">다중 독립 검증과 인증서 발행</text>
+  <text x="388" y="236" font-family="var(--sans)" font-size="11" fill="var(--ink-2)">별도 작성된 복수의 검증기가 독립 재도출</text>
+  <text x="388" y="254" font-family="var(--sans)" font-size="11" fill="var(--ink-2)">명시적 행렬 및 SAT 반박 인증서 첨부</text>
+  <rect x="18" y="168" width="326" height="103" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.5"/>
+  <text x="30" y="192" font-family="var(--mono)" font-size="11" font-weight="700" fill="var(--accent-ink)">STEP 5. CENTRAL LIBRARY</text>
+  <text x="30" y="214" font-family="var(--sans)" font-size="13" font-weight="700" fill="var(--accent-ink)">탐지기, 검사기, 솔버 누적</text>
+  <text x="30" y="236" font-family="var(--sans)" font-size="11" fill="var(--accent-ink)">검증된 도구를 중앙 라이브러리에 영구 보존</text>
+  <text x="30" y="254" font-family="var(--sans)" font-size="11" fill="var(--accent-ink)">신규 문제도 6분 안에 검증된 솔버 구축</text>
+  <line x1="592" y1="125" x2="592" y2="164" stroke="var(--accent)" stroke-width="1.5" marker-end="url(#arr-acc)"/>
+  <line x1="376" y1="220" x2="348" y2="220" stroke="var(--accent)" stroke-width="1.5" marker-end="url(#arr-acc)"/>
+  <line x1="116" y1="168" x2="116" y2="129" stroke="var(--accent)" stroke-width="1.5" stroke-dasharray="3,3" marker-end="url(#arr-acc)"/>
 </svg>
-<svg class="diagram-svg-mobile" viewBox="0 0 350 610" role="img" aria-label="GSI 메타 솔버 플랫폼의 5단계 발견 파이프라인과 순환 검증 루프 (모바일)" xmlns="http://www.w3.org/2000/svg">
+<svg class="diagram-svg-mobile" viewBox="0 0 350 544" role="img" aria-label="GSI 메타 솔버 플랫폼의 5단계 발견 파이프라인과 순환 검증 루프 (모바일)" xmlns="http://www.w3.org/2000/svg">
   <defs>
     <marker id="arr-ink-m" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="var(--ink-2)"/></marker>
     <marker id="arr-acc-m" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="var(--accent)"/></marker>
   </defs>
-  <rect width="350" height="610" fill="var(--bg-2)"/>
-  <rect x="16" y="16" width="318" height="96" fill="var(--bg)" stroke="var(--rule-strong)" stroke-width="1.5"/>
+  <rect width="350" height="544" fill="var(--bg-2)"/>
+  <rect x="16" y="16" width="318" height="82" fill="var(--bg)" stroke="var(--rule-strong)" stroke-width="1.5"/>
   <text x="28" y="38" font-family="var(--mono)" font-size="12" font-weight="700" fill="var(--ink-2)">1. 구조 선행 탐지 (STRUCTURE)</text>
   <text x="28" y="60" font-family="var(--sans)" font-size="13" font-weight="700" fill="var(--ink)">대칭성 및 대수적 항등식 식별</text>
   <text x="28" y="82" font-family="var(--sans)" font-size="12" fill="var(--ink-2)">체커가 확인한 뒤에만 구조 확정</text>
-  <line x1="175" y1="112" x2="175" y2="130" stroke="var(--ink-2)" stroke-width="1.5" marker-end="url(#arr-ink-m)"/>
-  <rect x="16" y="134" width="318" height="96" fill="var(--bg)" stroke="var(--rule-strong)" stroke-width="1.5"/>
-  <text x="28" y="156" font-family="var(--mono)" font-size="12" font-weight="700" fill="var(--ink-2)">2. 전용 솔버 컴파일 (COMPILER)</text>
-  <text x="28" y="178" font-family="var(--sans)" font-size="13" font-weight="700" fill="var(--ink)">맞춤 데이터 레이아웃 및 대칭 제거</text>
-  <text x="28" y="200" font-family="var(--sans)" font-size="12" fill="var(--ink-2)">범용 솔버 대비 30,000배 이상 가속</text>
-  <line x1="175" y1="230" x2="175" y2="248" stroke="var(--accent)" stroke-width="1.5" marker-end="url(#arr-acc-m)"/>
-  <rect x="16" y="252" width="318" height="96" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.5"/>
-  <text x="28" y="274" font-family="var(--mono)" font-size="12" font-weight="700" fill="var(--accent-ink)">3. 에이전트 루프 (AGENT LOOP)</text>
-  <text x="28" y="296" font-family="var(--sans)" font-size="13" font-weight="700" fill="var(--accent-ink)">최적화, 시뮬레이션, 실험, 검증</text>
-  <text x="28" y="318" font-family="var(--sans)" font-size="12" fill="var(--accent-ink)">저비용 시뮬레이션 후 컴파일된 탐색 실행</text>
-  <line x1="175" y1="348" x2="175" y2="366" stroke="var(--accent)" stroke-width="1.5" marker-end="url(#arr-acc-m)"/>
-  <rect x="16" y="370" width="318" height="96" fill="var(--bg)" stroke="var(--rule-strong)" stroke-width="1.5"/>
-  <text x="28" y="392" font-family="var(--mono)" font-size="12" font-weight="700" fill="var(--ink-2)">4. 다중 독립 검증 (VERIFIERS)</text>
-  <text x="28" y="414" font-family="var(--sans)" font-size="13" font-weight="700" fill="var(--ink)">별도 작성된 복수 검증기로 재도출</text>
-  <text x="28" y="436" font-family="var(--sans)" font-size="12" fill="var(--ink-2)">명시적 행렬 및 SAT 반박 인증서 발행</text>
-  <line x1="175" y1="466" x2="175" y2="484" stroke="var(--accent)" stroke-width="1.5" marker-end="url(#arr-acc-m)"/>
-  <rect x="16" y="488" width="318" height="104" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.5"/>
-  <text x="28" y="510" font-family="var(--mono)" font-size="12" font-weight="700" fill="var(--accent-ink)">5. 중앙 라이브러리 (LIBRARY)</text>
-  <text x="28" y="532" font-family="var(--sans)" font-size="13" font-weight="700" fill="var(--accent-ink)">탐지기, 검사기, 솔버 영구 축적</text>
-  <text x="28" y="554" font-family="var(--sans)" font-size="12" fill="var(--accent-ink)">다음 문제 탐색에 재사용해 발견 비용 절감</text>
-  <text x="28" y="574" font-family="var(--sans)" font-size="12" fill="var(--accent-ink)">신규 문제도 6분 안에 검증된 솔버 구축</text>
+  <line x1="175" y1="98" x2="175" y2="116" stroke="var(--ink-2)" stroke-width="1.5" marker-end="url(#arr-ink-m)"/>
+  <rect x="16" y="120" width="318" height="82" fill="var(--bg)" stroke="var(--rule-strong)" stroke-width="1.5"/>
+  <text x="28" y="142" font-family="var(--mono)" font-size="12" font-weight="700" fill="var(--ink-2)">2. 전용 솔버 컴파일 (COMPILER)</text>
+  <text x="28" y="164" font-family="var(--sans)" font-size="13" font-weight="700" fill="var(--ink)">맞춤 데이터 레이아웃 및 대칭 제거</text>
+  <text x="28" y="186" font-family="var(--sans)" font-size="12" fill="var(--ink-2)">범용 솔버 대비 30,000배 이상 가속</text>
+  <line x1="175" y1="202" x2="175" y2="220" stroke="var(--accent)" stroke-width="1.5" marker-end="url(#arr-acc-m)"/>
+  <rect x="16" y="224" width="318" height="82" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.5"/>
+  <text x="28" y="246" font-family="var(--mono)" font-size="12" font-weight="700" fill="var(--accent-ink)">3. 에이전트 루프 (AGENT LOOP)</text>
+  <text x="28" y="268" font-family="var(--sans)" font-size="13" font-weight="700" fill="var(--accent-ink)">최적화, 시뮬레이션, 실험, 검증</text>
+  <text x="28" y="290" font-family="var(--sans)" font-size="12" fill="var(--accent-ink)">저비용 시뮬레이션 후 컴파일된 탐색 실행</text>
+  <line x1="175" y1="306" x2="175" y2="324" stroke="var(--accent)" stroke-width="1.5" marker-end="url(#arr-acc-m)"/>
+  <rect x="16" y="328" width="318" height="82" fill="var(--bg)" stroke="var(--rule-strong)" stroke-width="1.5"/>
+  <text x="28" y="350" font-family="var(--mono)" font-size="12" font-weight="700" fill="var(--ink-2)">4. 다중 독립 검증 (VERIFIERS)</text>
+  <text x="28" y="372" font-family="var(--sans)" font-size="13" font-weight="700" fill="var(--ink)">별도 작성된 복수 검증기로 재도출</text>
+  <text x="28" y="394" font-family="var(--sans)" font-size="12" fill="var(--ink-2)">명시적 행렬 및 SAT 반박 인증서 발행</text>
+  <line x1="175" y1="410" x2="175" y2="428" stroke="var(--accent)" stroke-width="1.5" marker-end="url(#arr-acc-m)"/>
+  <rect x="16" y="432" width="318" height="96" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.5"/>
+  <text x="28" y="454" font-family="var(--mono)" font-size="12" font-weight="700" fill="var(--accent-ink)">5. 중앙 라이브러리 (LIBRARY)</text>
+  <text x="28" y="476" font-family="var(--sans)" font-size="13" font-weight="700" fill="var(--accent-ink)">탐지기, 검사기, 솔버 영구 축적</text>
+  <text x="28" y="498" font-family="var(--sans)" font-size="12" fill="var(--accent-ink)">다음 문제 탐색에 재사용해 발견 비용 절감</text>
+  <text x="28" y="516" font-family="var(--sans)" font-size="12" fill="var(--accent-ink)">신규 문제도 6분 안에 검증된 솔버 구축</text>
 </svg>
 <figcaption style="margin-top: 0.65rem; font-size: 0.85rem; color: var(--ink-2); text-align: center; line-height: 1.5;">GSI 메타 솔버 플랫폼의 5단계 작동 흐름: 문제의 구조를 먼저 식별해 전용 솔버를 컴파일하고, 다중 검증을 통과한 도구를 라이브러리에 누적해 다음 문제에 재사용한다.</figcaption>
 </figure>
@@ -117,7 +117,7 @@ GSI의 접근법(`Approach`)과 시스템 평가 노트(`GSI-R-0018`)에 따르�
 
 | 평가 항목 | 대상 문제 및 조건 | 측정 결과 |
 | --- | --- | --- |
-| 컴파일된 솔버 대 수작업 솔버 (`GSI-R-0018`) | 차수 33, 45, 51, 57의 윌리엄슨 행렬 전수 열거 (1스레드) | 수작업 프로그램 대비 소요 시간 비율은 차수 33에서 0.55배, 차수 45에서 0.47배, 차수 51에서 1.10배, 차수 57에서 1.01배다 |
+| 컴파일된 솔버 대 수작업 솔버 (GSI-R-0018) | 차수 33, 45, 51, 57의 윌리엄슨 행렬 전수 열거 (1스레드) | 수작업 프로그램 대비 소요 시간 비율은 차수 33에서 0.55배, 차수 45에서 0.47배, 차수 51에서 1.10배, 차수 57에서 1.01배다 |
 | 체커 우선(Checker-first) 신규 문제 해결 1 | 준순환(quasi-cyclic) 이진 선형 부호의 최소 거리 하한 | 시계를 켠 뒤 4분 46초 만에 체커와 솔버 결과가 일치했다(무작위 부호 300개 전수 일치, 심어둔 오류 6건 전량 거부) |
 | 체커 우선(Checker-first) 신규 문제 해결 2 | 세 개의 세제곱수의 합($x^3 + y^3 + z^3 = k$) 상자 내 전체 해 탐색 | 시계를 켠 뒤 5분 55초 만에 체커와 솔버 결과가 일치했다($k \le 130$ 구간 101개 상자, 407개 해 전수 일치) |
 
@@ -134,10 +134,10 @@ GSI가 첫 번째 시험대로 삼은 영역은 정답의 진위를 컴퓨터로
 
 | 세부 항목 | 대상 문제 및 기존 상태 | GSI의 발견 및 증명 결과 |
 | --- | --- | --- |
-| 아다마르 행렬 (`GSI-R-0001`, `GSI-R-0002`) | 원소가 $\pm 1$이고 서로 다른 행이 직교하는($HH^T = mI$) 행렬의 미해결 차수 | 미해결 아다마르, 반대칭(skew), 대칭(symmetric) 아다마르 행렬 200종 이상을 새로 구성했다. Cati-Pasechnik 표 4의 미해결 34개 차수와, 2025년 전수 조사에서 미결로 남은 홀수 $v < 2500$ 가운데 반대칭 106개, 대칭 85개를 해결했다 |
-| 순환 차집합 (`GSI-R-0004`) | La Jolla 저장소(버전 1.3) 최소 미해결 사례이자 라이저 추측 사례인 $(465, 145, 45)$ | 원 위의 점 465개 중 145개를 골라 거리 차이가 모두 45번씩 나타나게 하는 방법은 가능한 $8.3 \times 10^{123}$가지 조합 중 하나도 없음을 처음으로 완전히 증명했다 |
-| 순환 무게 행렬 (`GSI-R-0005`) | Tan(2018) 정리 4.24가 배제하고 La Jolla 1.3 및 2.0이 부재(No)로 등재한 $\text{CW}(120, 36)$ | 고유(proper) 순환 무게 행렬 $\text{CW}(120, 36)$을 명시적으로 발견해 기존 정리를 반박했다. La Jolla 1.3의 미해결 2,763개 쌍 중 2,397개를 기록(부재 2,342개, 고유 행렬 25개, 비고유 30개)했고, 2개를 미해결로 보류해 최종 2,395개를 판정했다 |
-| 완전 사상 정수열 (`GSI-R-0008`, `GSI-R-0009`) | 2006년 12번째 항($\mathbb{Z}_{25}$) 이후 20년간 새 항이 계산되지 않던 OEIS A003111 및 자기쌍대 부호 A003179 | 순환군 $\mathbb{Z}_{27}$, $\mathbb{Z}_{29}$, $\mathbb{Z}_{31}$의 완전 사상 개수인 $a(13)$, $a(14)$, $a(15)$를 계산했다($a(15) = 2,427,915,096,775,283,929,115$). 짝수 길이 42\~56의 이진 자기쌍대 부호 개수도 함께 계산했다 |
+| 아다마르 행렬 (GSI-R-0001, GSI-R-0002) | 원소가 $\pm 1$이고 서로 다른 행이 직교하는($HH^T = mI$) 행렬의 미해결 차수 | 미해결 아다마르, 반대칭(skew), 대칭(symmetric) 아다마르 행렬 200종 이상을 새로 구성했다. Cati-Pasechnik 표 4의 미해결 34개 차수와, 2025년 전수 조사에서 미결로 남은 홀수 $v < 2500$ 가운데 반대칭 106개, 대칭 85개를 해결했다 |
+| 순환 차집합 (GSI-R-0004) | La Jolla 저장소(버전 1.3) 최소 미해결 사례이자 라이저 추측 사례인 $(465, 145, 45)$ | 원 위의 점 465개 중 145개를 골라 거리 차이가 모두 45번씩 나타나게 하는 방법은 가능한 $8.3 \times 10^{123}$가지 조합 중 하나도 없음을 처음으로 완전히 증명했다 |
+| 순환 무게 행렬 (GSI-R-0005) | Tan(2018) 정리 4.24가 배제하고 La Jolla 1.3 및 2.0이 부재(No)로 등재한 $\text{CW}(120, 36)$ | 고유(proper) 순환 무게 행렬 $\text{CW}(120, 36)$을 명시적으로 발견해 기존 정리를 반박했다. La Jolla 1.3의 미해결 2,763개 쌍 중 2,397개를 기록(부재 2,342개, 고유 행렬 25개, 비고유 30개)했고, 2개를 미해결로 보류해 최종 2,395개를 판정했다 |
+| 완전 사상 정수열 (GSI-R-0008, GSI-R-0009) | 2006년 12번째 항($\mathbb{Z}_{25}$) 이후 20년간 새 항이 계산되지 않던 OEIS A003111 및 자기쌍대 부호 A003179 | 순환군 $\mathbb{Z}_{27}$, $\mathbb{Z}_{29}$, $\mathbb{Z}_{31}$의 완전 사상 개수인 $a(13)$, $a(14)$, $a(15)$를 계산했다($a(15) \approx 2.43 \times 10^{21}$). 짝수 길이 42\~56의 이진 자기쌍대 부호 개수도 함께 계산했다 |
 
 발표 스레드에서 GSI는 미해결 상태였다가 2025년 이후 해결된 아다마르 행렬 사례 106건 가운데 103건을 자사 플랫폼이 구성했다고 밝혔다[^2]. 또한 온라인 정수열 사전(OEIS)의 A003111은 $n \times n$ 격자의 모든 가로줄, 세로줄, 끝과 끝이 이어지는 대각선마다 표식을 하나씩 놓는 방법의 수를 센다. 2006년 Yuh-Pyng Shieh(셰위핑)가 12번째 항을 계산한 뒤 20년 동안 연산량 한계 때문에 아무도 다음 항을 계산하지 못했다. GSI는 13번째부터 15번째 항까지 계산해 수열을 확장했다. 15번째 항 $a(15)$는 약 $2.43 \times 10^{21}$이다[^3].
 
@@ -156,7 +156,7 @@ GSI는 순수 수학에서 구축한 솔버와 인증 기법을 물리학, 양�
 
 $$T_c < C_\infty \sqrt{\lambda \langle \omega^2 \rangle}$$
 
-반세기 동안 완전한 증명 없이 쓰이던 이 식은 2025년까지도 증명된 한계치가 실제 예측값의 두 배에 머물렀다. 2026년 9월 콘드라티예프(Kondratev)가 첫 완전 증명을 내놓은 데 이어, GSI는 독립적인 방법으로 상수 $C_\infty$를 $[0.18272624777228, 0.18272624777235]$ 구간으로 확정하고 다중 밴드(multiband), 이방성(anisotropy), 정적 쿨롱 척력 항($\mu^*$)을 포함한 현실적인 미그달-엘리아슈베르그 이론까지 증명을 확장했다. 이어 상압(zero-pressure) 초전도 물질 데이터베이스인 Alexandria의 계산 화합물 약 27,000개를 이 인증된 상한 공식($\omega_2 f(\lambda)$)에 대입해 전수 검증했다[^4].
+반세기 동안 완전한 증명 없이 쓰이던 이 식은 2025년까지도 증명된 한계치가 실제 예측값의 두 배에 머물렀다. 2026년 9월 콘드라티예프(Kondratev)가 첫 완전 증명을 내놓은 데 이어, GSI는 독립적인 방법으로 상수 $C_\infty$를 $0.18272624777228$ 이상 $0.18272624777235$ 이하 구간으로 확정하고 다중 밴드(multiband), 이방성(anisotropy), 정적 쿨롱 척력 항($\mu^*$)을 포함한 현실적인 미그달-엘리아슈베르그 이론까지 증명을 확장했다. 이어 상압(zero-pressure) 초전도 물질 데이터베이스인 Alexandria의 계산 화합물 약 27,000개를 이 인증된 상한 공식($\omega_2 f(\lambda)$)에 대입해 전수 검증했다[^4].
 
 | 초전도 검증 항목 | 검사 대상 및 조건 | 검증 결과 |
 | --- | --- | --- |
@@ -170,12 +170,12 @@ GSI가 연구 페이지에 공개한 나머지 6개 분야의 주요 검증 결�
 
 | 연구 분야 | 대표 문제 및 대상 | GSI의 검증 및 발견 내용 |
 | --- | --- | --- |
-| 양자 오류 정정 (`GSI-R-0003`, `GSI-R-0011`) | IBM의 288큐비트 two-gross `[[288, 12, 18]]` 및 108큐비트 이변량 자전거(bivariate-bicycle) 양자 메모리 회로 | 기존 상한이 18로 알려진 IBM 288큐비트 회로의 실제 회로 거리가 정확히 16임을 하한 증명과 함께 확립했다. 아울러 거리 18을 달성하는 비인터리브 스케줄(C1, C2)을 제시했고, 108큐비트 코드에서는 깊이 8 사이클로 회로 거리 10을 유지하면서 논리 오류율을 IBM 대비 0.76배로 낮췄다 |
-| 부호 이론 및 통신 (`GSI-R-0010`, `GSI-R-0017`) | 3GPP 5G NR LDPC 기본 그래프 부분 부호 및 이진 선형 부호(`codetables.de`) | 5G NR 기본 그래프 부분 부호 860개의 정확한 최소 거리와 해당 무게의 부호어를 계산하고 기존 논문(`arXiv:2607.04716v1`) 표 4의 오류 2건을 정정했다. 길이 111\~174의 이진 선형 부호 5개에서 `codetables.de` 하한을 갱신해 총 24개 셀의 하한을 높였다 |
-| SAT 및 대사 네트워크 (`GSI-R-0013`, `GSI-R-0014`) | SAT Competition 2023\~2025 메인 트랙 공식 및 대장균(*E. coli*) 코어 대사 네트워크 | 2025년 대회에서 미해결(unknown)로 남은 공식 11개에 대해 검산 가능한 반박 인증서를 도출했다. XOR 구조 인스턴스 20개에서 Kissat 및 CaDiCaL 대비 기하평균 341.6배 이상, At-most-one 인스턴스 19개에서 44.5배 이상 빨랐다. 대장균 95개 반응 네트워크의 크기 4 이하 최소 컷셋 747개를 자체 혼합정수계획 기준선 대비 87\~215배 빠르게 열거했다 |
-| 전자 기체 및 장거리 질서 (`White papers`) | 3차원 및 2차원 젤리움(Jellium) 바닥 상태 에너지, 2D 쌍극자 이징 모델과 스핀 아이스 | 고전 3차원 젤리움의 입자당 에너지 하한 $e_{\text{Jel}} \ge -1.448178733$을 증명하고 스미어링(smearing) 기법의 한계 상한($-1.44800699488$)을 규명했다. 2D 쌍극자 이징 모델에서 $J \in [0, 3.95]$ 구간(폭 $2.8 \times 10^{-6}$의 미해결 구간 제외)의 바닥 상태 상전이 전이값을 증명했다 |
-| 소재 설계 및 촉매 (`White papers`) | 주기적 이온 배치(SrTiO₃, Y₂O₃ 등), 준무작위 합금(SQS) 최소 슈퍼셀, 산소 발생 반응(OER) 볼케이노 상한 | 공간군 대칭 제약 없이 512개 격자점의 빅스바이트 $\text{Y}_2\text{O}_3$($-2111.537901\text{ eV}$)와 41개 주기적 이온 배치의 전역 최솟값을 증명했다. 1단계 에이링(Eyring) 촉매 사이클에서 전환 빈도($\ln \text{TOF}$)의 오목성을 증명하고, $1.5\text{ V}$ 산소 발생 반응의 동적 변조 상한(정적 최적치 대비 최대 2.6945 데케이드)을 도출했다 |
-| 반도체 칩 설계 (`White papers`) | EUV 리소그래피 포아송 샷 노이즈, 탄도 트랜지스터 스위칭 한계, ISPD 2005 배치 배선 길이 하한, 무어 그래프 | EUV 컨택트 노광 모델에서 실패 확률 구간과 로컬 레지스트의 네이만-피어슨 광자 선량 하한(3\~20 nm 범위별 $201.3\sim 11.4\text{ mJ/cm}^2$)을 도출했다. ISPD 2005 벤치마크 8개 넷리스트의 비중첩 배치 반둘레 배선 길이(HPWL) 하한(2025년 최저 보고치의 0.338\~0.604배)을 인증하고, 9개 입력 중앙값 비교기 네트워크의 최소 비교기 수가 정확히 19개임을 증명했다 |
+| 양자 오류 정정 (GSI-R-0003, GSI-R-0011) | IBM의 288큐비트 two-gross [[288, 12, 18]] 및 108큐비트 이변량 자전거(bivariate-bicycle) 양자 메모리 회로 | 기존 상한이 18로 알려진 IBM 288큐비트 회로의 실제 회로 거리가 정확히 16임을 하한 증명과 함께 확립했다. 아울러 거리 18을 달성하는 비인터리브 스케줄(C1, C2)을 제시했고, 108큐비트 코드에서는 깊이 8 사이클로 회로 거리 10을 유지하면서 논리 오류율을 IBM 대비 0.76배로 낮췄다 |
+| 부호 이론 및 통신 (GSI-R-0010, GSI-R-0017) | 3GPP 5G NR LDPC 기본 그래프 부분 부호 및 이진 선형 부호(codetables.de) | 5G NR 기본 그래프 부분 부호 860개의 정확한 최소 거리와 해당 무게의 부호어를 계산하고 기존 논문(arXiv:2607.04716v1) 표 4의 오류 2건을 정정했다. 길이 111\~174의 이진 선형 부호 5개에서 codetables.de 하한을 갱신해 총 24개 셀의 하한을 높였다 |
+| SAT 및 대사 네트워크 (GSI-R-0013, GSI-R-0014) | SAT Competition 2023\~2025 메인 트랙 공식 및 대장균(*E. coli*) 코어 대사 네트워크 | 2025년 대회에서 미해결(unknown)로 남은 공식 11개에 대해 검산 가능한 반박 인증서를 도출했다. XOR 구조 인스턴스 20개에서 Kissat 및 CaDiCaL 대비 기하평균 341.6배 이상, At-most-one 인스턴스 19개에서 44.5배 이상 빨랐다. 대장균 95개 반응 네트워크의 크기 4 이하 최소 컷셋 747개를 자체 혼합정수계획 기준선 대비 87\~215배 빠르게 열거했다 |
+| 전자 기체 및 장거리 질서 (백서 3편) | 3차원 및 2차원 젤리움(Jellium) 바닥 상태 에너지, 2D 쌍극자 이징 모델과 스핀 아이스 | 고전 3차원 젤리움의 입자당 에너지 하한 $e_{\text{Jel}} \ge -1.448178733$을 증명하고 스미어링(smearing) 기법의 한계 상한($-1.44800699488$)을 규명했다. 2D 쌍극자 이징 모델에서 $J \in [0, 3.95]$ 구간(폭 $2.8 \times 10^{-6}$의 미해결 구간 제외)의 바닥 상태 상전이 전이값을 증명했다 |
+| 소재 설계 및 촉매 (백서 3편) | 주기적 이온 배치(SrTiO₃, Y₂O₃ 등), 준무작위 합금(SQS) 최소 슈퍼셀, 산소 발생 반응(OER) 볼케이노 상한 | 공간군 대칭 제약 없이 512개 격자점의 빅스바이트 $\text{Y}_2\text{O}_3$($-2111.537901\text{ eV}$)와 41개 주기적 이온 배치의 전역 최솟값을 증명했다. 1단계 에이링(Eyring) 촉매 사이클에서 전환 빈도($\ln \text{TOF}$)의 오목성을 증명하고, $1.5\text{ V}$ 산소 발생 반응의 동적 변조 상한(정적 최적치 대비 최대 2.6945 데케이드)을 도출했다 |
+| 반도체 칩 설계 (백서 4편) | EUV 리소그래피 포아송 샷 노이즈, 탄도 트랜지스터 스위칭 한계, ISPD 2005 배치 배선 길이 하한, 무어 그래프 | EUV 컨택트 노광 모델에서 실패 확률 구간과 로컬 레지스트의 네이만-피어슨 광자 선량 하한(3\~20 nm 범위별 $201.3\sim 11.4\text{ mJ/cm}^2$)을 도출했다. ISPD 2005 벤치마크 8개 넷리스트의 비중첩 배치 반둘레 배선 길이(HPWL) 하한(2025년 최저 보고치의 0.338\~0.604배)을 인증하고, 9개 입력 중앙값 비교기 네트워크의 최소 비교기 수가 정확히 19개임을 증명했다 |
 
 ## 가장 흥미로운 지점
 
