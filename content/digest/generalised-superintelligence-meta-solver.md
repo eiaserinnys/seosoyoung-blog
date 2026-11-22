@@ -31,74 +31,59 @@ images:
 오늘날 인공지능을 활용한 과학적 발견은 주로 막대한 연산 규모에 의존한다. 예컨대 OpenAI의 나비에-스토크스(Navier-Stokes) 방정식 탐색에는 약 1만 개의 에이전트와 1,300억 개의 출력 토큰이 투입됐다. 그만한 연산 비용의 태반은 애초에 해가 있을 수 없는 후보 공간을 탐색하는 데 허비된다는 것이 GSI 연구진의 분석이다. 어려운 문제는 전체 후보 공간이 전수 조사가 불가능할 만큼 방대하지만, 실제로 해가 있을 수 있는 영역은 아주 좁다. 대칭성, 대수적 항등식, 문제를 독립된 하위 부분으로 분해하는 규칙이 곧 문제의 구조다. 이 구조가 해가 있는 후보 영역을 특정한다.
 
 <figure class="blog-diagram">
-<svg class="diagram-svg-desktop" viewBox="0 0 720 295" role="img" aria-label="GSI 메타 솔버 플랫폼의 5단계 발견 파이프라인과 순환 검증 루프" xmlns="http://www.w3.org/2000/svg">
+<svg class="diagram-svg-desktop" viewBox="0 0 720 198" role="img" aria-label="GSI 메타 솔버 플랫폼의 5단계 발견 파이프라인과 순환 검증 루프" xmlns="http://www.w3.org/2000/svg">
   <defs>
     <marker id="arr-ink" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="var(--ink-2)"/></marker>
     <marker id="arr-acc" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="var(--accent)"/></marker>
   </defs>
-  <rect width="720" height="295" fill="var(--bg-2)"/>
-  <rect x="18" y="22" width="196" height="103" fill="var(--bg)" stroke="var(--rule-strong)" stroke-width="1.5"/>
-  <text x="30" y="46" font-family="var(--mono)" font-size="11" font-weight="700" fill="var(--ink-2)">STEP 1. STRUCTURE</text>
-  <text x="30" y="68" font-family="var(--sans)" font-size="13" font-weight="700" fill="var(--ink)">구조 선행 탐지</text>
-  <text x="30" y="90" font-family="var(--sans)" font-size="11" fill="var(--ink-2)">대칭성과 대수적 항등식 식별</text>
-  <text x="30" y="108" font-family="var(--sans)" font-size="11" fill="var(--ink-2)">체커가 확인한 뒤에만 확정</text>
-  <rect x="242" y="22" width="212" height="103" fill="var(--bg)" stroke="var(--rule-strong)" stroke-width="1.5"/>
-  <text x="254" y="46" font-family="var(--mono)" font-size="11" font-weight="700" fill="var(--ink-2)">STEP 2. COMPILER</text>
-  <text x="254" y="68" font-family="var(--sans)" font-size="13" font-weight="700" fill="var(--ink)">구조 전용 솔버 컴파일</text>
-  <text x="254" y="90" font-family="var(--sans)" font-size="11" fill="var(--ink-2)">맞춤 데이터 레이아웃과 가지치기</text>
-  <text x="254" y="108" font-family="var(--sans)" font-size="11" fill="var(--ink-2)">범용 솔버 대비 30,000배 이상 가속</text>
-  <rect x="482" y="22" width="220" height="103" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.5"/>
-  <text x="494" y="46" font-family="var(--mono)" font-size="11" font-weight="700" fill="var(--accent-ink)">STEP 3. AGENT LOOP</text>
-  <text x="494" y="68" font-family="var(--sans)" font-size="13" font-weight="700" fill="var(--accent-ink)">최적화, 시뮬레이션, 실험, 검증</text>
-  <text x="494" y="90" font-family="var(--sans)" font-size="11" fill="var(--accent-ink)">저비용 시뮬레이션 후 전체 탐색</text>
-  <text x="494" y="108" font-family="var(--sans)" font-size="11" fill="var(--accent-ink)">검증 실패 시 다음 라운드에 반영</text>
-  <line x1="214" y1="74" x2="238" y2="74" stroke="var(--ink-2)" stroke-width="1.5" marker-end="url(#arr-ink)"/>
-  <line x1="454" y1="74" x2="478" y2="74" stroke="var(--accent)" stroke-width="1.5" marker-end="url(#arr-acc)"/>
-  <rect x="376" y="168" width="326" height="103" fill="var(--bg)" stroke="var(--rule-strong)" stroke-width="1.5"/>
-  <text x="388" y="192" font-family="var(--mono)" font-size="11" font-weight="700" fill="var(--ink-2)">STEP 4. INDEPENDENT VERIFIERS</text>
-  <text x="388" y="214" font-family="var(--sans)" font-size="13" font-weight="700" fill="var(--ink)">다중 독립 검증과 인증서 발행</text>
-  <text x="388" y="236" font-family="var(--sans)" font-size="11" fill="var(--ink-2)">별도 작성된 복수의 검증기가 독립 재도출</text>
-  <text x="388" y="254" font-family="var(--sans)" font-size="11" fill="var(--ink-2)">명시적 행렬 및 SAT 반박 인증서 첨부</text>
-  <rect x="18" y="168" width="326" height="103" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.5"/>
-  <text x="30" y="192" font-family="var(--mono)" font-size="11" font-weight="700" fill="var(--accent-ink)">STEP 5. CENTRAL LIBRARY</text>
-  <text x="30" y="214" font-family="var(--sans)" font-size="13" font-weight="700" fill="var(--accent-ink)">탐지기, 검사기, 솔버 누적</text>
-  <text x="30" y="236" font-family="var(--sans)" font-size="11" fill="var(--accent-ink)">검증된 도구를 중앙 라이브러리에 영구 보존</text>
-  <text x="30" y="254" font-family="var(--sans)" font-size="11" fill="var(--accent-ink)">신규 문제도 6분 안에 검증된 솔버 구축</text>
-  <line x1="592" y1="125" x2="592" y2="164" stroke="var(--accent)" stroke-width="1.5" marker-end="url(#arr-acc)"/>
-  <line x1="376" y1="220" x2="348" y2="220" stroke="var(--accent)" stroke-width="1.5" marker-end="url(#arr-acc)"/>
-  <line x1="116" y1="168" x2="116" y2="129" stroke="var(--accent)" stroke-width="1.5" stroke-dasharray="3,3" marker-end="url(#arr-acc)"/>
+  <rect width="720" height="198" fill="var(--bg-2)"/>
+  <rect x="18" y="20" width="196" height="58" fill="var(--bg)" stroke="var(--rule-strong)" stroke-width="1.5"/>
+  <text x="30" y="43" font-family="var(--mono)" font-size="12" font-weight="700" fill="var(--ink-2)">STEP 1. STRUCTURE</text>
+  <text x="30" y="64" font-family="var(--sans)" font-size="13" font-weight="700" fill="var(--ink)">구조 선행 탐지</text>
+  <rect x="242" y="20" width="212" height="58" fill="var(--bg)" stroke="var(--rule-strong)" stroke-width="1.5"/>
+  <text x="254" y="43" font-family="var(--mono)" font-size="12" font-weight="700" fill="var(--ink-2)">STEP 2. COMPILER</text>
+  <text x="254" y="64" font-family="var(--sans)" font-size="13" font-weight="700" fill="var(--ink)">구조 전용 솔버 컴파일</text>
+  <rect x="482" y="20" width="220" height="58" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.5"/>
+  <text x="494" y="43" font-family="var(--mono)" font-size="12" font-weight="700" fill="var(--accent-ink)">STEP 3. AGENT LOOP</text>
+  <text x="494" y="64" font-family="var(--sans)" font-size="13" font-weight="700" fill="var(--accent-ink)">최적화, 시뮬레이션, 실험, 검증</text>
+  <line x1="214" y1="49" x2="238" y2="49" stroke="var(--ink-2)" stroke-width="1.5" marker-end="url(#arr-ink)"/>
+  <line x1="454" y1="49" x2="478" y2="49" stroke="var(--accent)" stroke-width="1.5" marker-end="url(#arr-acc)"/>
+  <rect x="376" y="120" width="326" height="58" fill="var(--bg)" stroke="var(--rule-strong)" stroke-width="1.5"/>
+  <text x="388" y="143" font-family="var(--mono)" font-size="12" font-weight="700" fill="var(--ink-2)">STEP 4. VERIFIERS</text>
+  <text x="388" y="164" font-family="var(--sans)" font-size="13" font-weight="700" fill="var(--ink)">다중 독립 검증과 인증서 발행</text>
+  <rect x="18" y="120" width="326" height="58" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.5"/>
+  <text x="30" y="143" font-family="var(--mono)" font-size="12" font-weight="700" fill="var(--accent-ink)">STEP 5. LIBRARY</text>
+  <text x="30" y="164" font-family="var(--sans)" font-size="13" font-weight="700" fill="var(--accent-ink)">탐지기, 검사기, 솔버 누적</text>
+  <line x1="592" y1="78" x2="592" y2="116" stroke="var(--accent)" stroke-width="1.5" marker-end="url(#arr-acc)"/>
+  <line x1="376" y1="149" x2="348" y2="149" stroke="var(--accent)" stroke-width="1.5" marker-end="url(#arr-acc)"/>
+  <line x1="116" y1="120" x2="116" y2="82" stroke="var(--accent)" stroke-width="1.5" stroke-dasharray="3,3" marker-end="url(#arr-acc)"/>
 </svg>
-<svg class="diagram-svg-mobile" viewBox="0 0 350 544" role="img" aria-label="GSI 메타 솔버 플랫폼의 5단계 발견 파이프라인과 순환 검증 루프 (모바일)" xmlns="http://www.w3.org/2000/svg">
+<svg class="diagram-svg-mobile" viewBox="0 0 350 410" role="img" aria-label="GSI 메타 솔버 플랫폼의 5단계 발견 파이프라인과 순환 검증 루프 (모바일)" xmlns="http://www.w3.org/2000/svg">
   <defs>
     <marker id="arr-ink-m" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="var(--ink-2)"/></marker>
     <marker id="arr-acc-m" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="var(--accent)"/></marker>
   </defs>
-  <rect width="350" height="544" fill="var(--bg-2)"/>
-  <rect x="16" y="16" width="318" height="82" fill="var(--bg)" stroke="var(--rule-strong)" stroke-width="1.5"/>
-  <text x="28" y="38" font-family="var(--mono)" font-size="12" font-weight="700" fill="var(--ink-2)">1. 구조 선행 탐지 (STRUCTURE)</text>
-  <text x="28" y="60" font-family="var(--sans)" font-size="13" font-weight="700" fill="var(--ink)">대칭성 및 대수적 항등식 식별</text>
-  <text x="28" y="82" font-family="var(--sans)" font-size="12" fill="var(--ink-2)">체커가 확인한 뒤에만 구조 확정</text>
-  <line x1="175" y1="98" x2="175" y2="116" stroke="var(--ink-2)" stroke-width="1.5" marker-end="url(#arr-ink-m)"/>
-  <rect x="16" y="120" width="318" height="82" fill="var(--bg)" stroke="var(--rule-strong)" stroke-width="1.5"/>
-  <text x="28" y="142" font-family="var(--mono)" font-size="12" font-weight="700" fill="var(--ink-2)">2. 전용 솔버 컴파일 (COMPILER)</text>
-  <text x="28" y="164" font-family="var(--sans)" font-size="13" font-weight="700" fill="var(--ink)">맞춤 데이터 레이아웃 및 대칭 제거</text>
-  <text x="28" y="186" font-family="var(--sans)" font-size="12" fill="var(--ink-2)">범용 솔버 대비 30,000배 이상 가속</text>
-  <line x1="175" y1="202" x2="175" y2="220" stroke="var(--accent)" stroke-width="1.5" marker-end="url(#arr-acc-m)"/>
-  <rect x="16" y="224" width="318" height="82" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.5"/>
-  <text x="28" y="246" font-family="var(--mono)" font-size="12" font-weight="700" fill="var(--accent-ink)">3. 에이전트 루프 (AGENT LOOP)</text>
-  <text x="28" y="268" font-family="var(--sans)" font-size="13" font-weight="700" fill="var(--accent-ink)">최적화, 시뮬레이션, 실험, 검증</text>
-  <text x="28" y="290" font-family="var(--sans)" font-size="12" fill="var(--accent-ink)">저비용 시뮬레이션 후 컴파일된 탐색 실행</text>
-  <line x1="175" y1="306" x2="175" y2="324" stroke="var(--accent)" stroke-width="1.5" marker-end="url(#arr-acc-m)"/>
-  <rect x="16" y="328" width="318" height="82" fill="var(--bg)" stroke="var(--rule-strong)" stroke-width="1.5"/>
-  <text x="28" y="350" font-family="var(--mono)" font-size="12" font-weight="700" fill="var(--ink-2)">4. 다중 독립 검증 (VERIFIERS)</text>
-  <text x="28" y="372" font-family="var(--sans)" font-size="13" font-weight="700" fill="var(--ink)">별도 작성된 복수 검증기로 재도출</text>
-  <text x="28" y="394" font-family="var(--sans)" font-size="12" fill="var(--ink-2)">명시적 행렬 및 SAT 반박 인증서 발행</text>
-  <line x1="175" y1="410" x2="175" y2="428" stroke="var(--accent)" stroke-width="1.5" marker-end="url(#arr-acc-m)"/>
-  <rect x="16" y="432" width="318" height="96" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.5"/>
-  <text x="28" y="454" font-family="var(--mono)" font-size="12" font-weight="700" fill="var(--accent-ink)">5. 중앙 라이브러리 (LIBRARY)</text>
-  <text x="28" y="476" font-family="var(--sans)" font-size="13" font-weight="700" fill="var(--accent-ink)">탐지기, 검사기, 솔버 영구 축적</text>
-  <text x="28" y="498" font-family="var(--sans)" font-size="12" fill="var(--accent-ink)">다음 문제 탐색에 재사용해 발견 비용 절감</text>
-  <text x="28" y="516" font-family="var(--sans)" font-size="12" fill="var(--accent-ink)">신규 문제도 6분 안에 검증된 솔버 구축</text>
+  <rect width="350" height="410" fill="var(--bg-2)"/>
+  <rect x="16" y="16" width="290" height="58" fill="var(--bg)" stroke="var(--rule-strong)" stroke-width="1.5"/>
+  <text x="28" y="39" font-family="var(--mono)" font-size="12" font-weight="700" fill="var(--ink-2)">STEP 1. STRUCTURE</text>
+  <text x="28" y="60" font-family="var(--sans)" font-size="13" font-weight="700" fill="var(--ink)">구조 선행 탐지</text>
+  <line x1="161" y1="74" x2="161" y2="92" stroke="var(--ink-2)" stroke-width="1.5" marker-end="url(#arr-ink-m)"/>
+  <rect x="16" y="96" width="290" height="58" fill="var(--bg)" stroke="var(--rule-strong)" stroke-width="1.5"/>
+  <text x="28" y="119" font-family="var(--mono)" font-size="12" font-weight="700" fill="var(--ink-2)">STEP 2. COMPILER</text>
+  <text x="28" y="140" font-family="var(--sans)" font-size="13" font-weight="700" fill="var(--ink)">구조 전용 솔버 컴파일</text>
+  <line x1="161" y1="154" x2="161" y2="172" stroke="var(--accent)" stroke-width="1.5" marker-end="url(#arr-acc-m)"/>
+  <rect x="16" y="176" width="290" height="58" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.5"/>
+  <text x="28" y="199" font-family="var(--mono)" font-size="12" font-weight="700" fill="var(--accent-ink)">STEP 3. AGENT LOOP</text>
+  <text x="28" y="220" font-family="var(--sans)" font-size="13" font-weight="700" fill="var(--accent-ink)">최적화, 시뮬레이션, 실험, 검증</text>
+  <line x1="161" y1="234" x2="161" y2="252" stroke="var(--accent)" stroke-width="1.5" marker-end="url(#arr-acc-m)"/>
+  <rect x="16" y="256" width="290" height="58" fill="var(--bg)" stroke="var(--rule-strong)" stroke-width="1.5"/>
+  <text x="28" y="279" font-family="var(--mono)" font-size="12" font-weight="700" fill="var(--ink-2)">STEP 4. VERIFIERS</text>
+  <text x="28" y="300" font-family="var(--sans)" font-size="13" font-weight="700" fill="var(--ink)">다중 독립 검증과 인증서 발행</text>
+  <line x1="161" y1="314" x2="161" y2="332" stroke="var(--accent)" stroke-width="1.5" marker-end="url(#arr-acc-m)"/>
+  <rect x="16" y="336" width="290" height="58" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.5"/>
+  <text x="28" y="359" font-family="var(--mono)" font-size="12" font-weight="700" fill="var(--accent-ink)">STEP 5. LIBRARY</text>
+  <text x="28" y="380" font-family="var(--sans)" font-size="13" font-weight="700" fill="var(--accent-ink)">탐지기, 검사기, 솔버 누적</text>
+  <polyline points="306,365 326,365 326,45 310,45" fill="none" stroke="var(--accent)" stroke-width="1.5" stroke-dasharray="3,3" marker-end="url(#arr-acc-m)"/>
 </svg>
 <figcaption style="margin-top: 0.65rem; font-size: 0.85rem; color: var(--ink-2); text-align: center; line-height: 1.5;">GSI 메타 솔버 플랫폼의 5단계 작동 흐름: 문제의 구조를 먼저 식별해 전용 솔버를 컴파일하고, 다중 검증을 통과한 도구를 라이브러리에 누적해 다음 문제에 재사용한다.</figcaption>
 </figure>

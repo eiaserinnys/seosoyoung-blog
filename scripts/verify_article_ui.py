@@ -257,7 +257,7 @@ MEASURE_JS = r"""
       const cs = getComputedStyle(svg); const vb = svg.viewBox.baseVal; const rect = svg.getBoundingClientRect();
       const scale = rect.width / (vb.width || 1);
       const info = {cls: svg.className.baseVal, display: cs.display, rect: r(svg), viewBox: [vb.width, vb.height], scale: +scale.toFixed(3),
-        dashedCount: svg.querySelectorAll('line[stroke-dasharray], path[stroke-dasharray]').length, texts: []};
+        dashedCount: svg.querySelectorAll('line[stroke-dasharray], path[stroke-dasharray], polyline[stroke-dasharray]').length, texts: []};
       if (cs.display !== 'none') {
         const rects = [...svg.querySelectorAll('rect')].filter((x) => x.getAttribute('x') !== null).map((x) => ({x: +x.getAttribute('x'), y: +x.getAttribute('y'), w: +x.getAttribute('width'), h: +x.getAttribute('height')}));
         svg.querySelectorAll('text').forEach((t) => {

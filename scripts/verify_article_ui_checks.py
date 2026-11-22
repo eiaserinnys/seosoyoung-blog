@@ -365,6 +365,11 @@ A16_JS = r"""
   if (!content) return {figs: []};
   const figs = [...content.querySelectorAll('figure.blog-diagram')];
   const out = figs.map((fig, fi) => {
+    const deskSvg = fig.querySelector('svg.diagram-svg-desktop');
+    const mobSvg = fig.querySelector('svg.diagram-svg-mobile');
+    const countDashed = (s) => s ? s.querySelectorAll('line[stroke-dasharray], path[stroke-dasharray], polyline[stroke-dasharray]').length : null;
+    const deskDashedCount = countDashed(deskSvg);
+    const mobDashedCount = countDashed(mobSvg);
     const visibleSvgs = [...fig.querySelectorAll('svg')].filter(
       (s) => getComputedStyle(s).display !== 'none'
     );
@@ -501,6 +506,8 @@ A16_JS = r"""
       cross,
       boxPads,
       headerRow,
+      deskDashedCount,
+      mobDashedCount,
       caption: fig.querySelector('figcaption') ? fig.querySelector('figcaption').textContent.trim() : null,
     };
   });
@@ -1034,8 +1041,11 @@ def a16_checks(path, configs):
                 scale is not None and scale <= DIAGRAM_MOBILE_MAX_SCALE)
             box_pads = f.get("boxPads") or []
             bad_pads = [b for b in box_pads if (b.get("padRatio") or 1) > DIAGRAM_BOX_PAD_RATIO_MAX]
+            desk_dashed = f.get("deskDashedCount")
+            mob_dashed = f.get("mobDashedCount")
+            dashed_parity_ok = (desk_dashed is None or mob_dashed is None or desk_dashed == mob_dashed)
             ok = (dom_ok and min_eff is not None and min_eff >= DIAGRAM_MIN_EFF_PX
-                  and mobile_scale_ok
+                  and mobile_scale_ok and dashed_parity_ok
                   and not small and not outside and not ov and not cross and not bad_pads and hr_ok)
             entries.append({
                 "ok": ok,
@@ -1043,7 +1053,8 @@ def a16_checks(path, configs):
                     f"{path} {name} fig{f.get('fig')} ({f.get('cls')}): "
                     f"eff={min_eff}..{f.get('maxEff')} small={len(small)} "
                     f"outside={len(outside)} ov={len(ov)} cross={len(cross)} "
-                    f"badPads={len(bad_pads)} headerRightDiff={hr_diff} scale={scale}"
+                    f"badPads={len(bad_pads)} dashed={desk_dashed}/{mob_dashed} "
+                    f"headerRightDiff={hr_diff} scale={scale}"
                     + (f" padFailures={bad_pads[:3]}" if bad_pads else "")
                 ),
             })
