@@ -84,16 +84,16 @@ images:
   </defs>
   <rect width="720" height="198" fill="var(--bg-2)"/>
   <rect x="20" y="24" width="154" height="62" fill="var(--bg)" stroke="var(--rule-strong)" stroke-width="1.5"/>
-  <text x="30" y="48" font-family="var(--mono)" font-size="11" font-weight="700" fill="var(--ink-2)">1부터 4회차</text>
+  <text x="30" y="48" font-family="var(--sans)" font-size="11" font-weight="700" fill="var(--ink-2)">1부터 4회차</text>
   <text x="30" y="68" font-family="var(--sans)" font-size="12.5" font-weight="700" fill="var(--ink)">Astra 검토, PR 17건</text>
   <rect x="196" y="24" width="154" height="62" fill="var(--bg)" stroke="var(--rule-strong)" stroke-width="1.5"/>
-  <text x="206" y="48" font-family="var(--mono)" font-size="11" font-weight="700" fill="var(--ink-2)">5부터 8회차</text>
+  <text x="206" y="48" font-family="var(--sans)" font-size="11" font-weight="700" fill="var(--ink-2)">5부터 8회차</text>
   <text x="206" y="68" font-family="var(--sans)" font-size="12.5" font-weight="700" fill="var(--ink)">Fable 검토, PR 53건</text>
   <rect x="372" y="24" width="156" height="62" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.5"/>
-  <text x="382" y="48" font-family="var(--mono)" font-size="11" font-weight="700" fill="var(--accent-ink)">전부 수정</text>
+  <text x="382" y="48" font-family="var(--sans)" font-size="11" font-weight="700" fill="var(--accent-ink)">전부 수정</text>
   <text x="382" y="68" font-family="var(--sans)" font-size="12.5" font-weight="700" fill="var(--accent-ink)">위반 0건, PR 22건</text>
   <rect x="550" y="24" width="150" height="62" fill="var(--bg)" stroke="var(--rule-strong)" stroke-width="1.5"/>
-  <text x="562" y="48" font-family="var(--mono)" font-size="11" font-weight="700" fill="var(--ink-2)">CI 고정</text>
+  <text x="562" y="48" font-family="var(--sans)" font-size="11" font-weight="700" fill="var(--ink-2)">CI 고정</text>
   <text x="562" y="68" font-family="var(--sans)" font-size="12.5" font-weight="700" fill="var(--ink)">규칙 20개 켜기</text>
   <line x1="174" y1="55" x2="192" y2="55" stroke="var(--ink-2)" stroke-width="1.5" marker-end="url(#arr-ink)"/>
   <line x1="350" y1="55" x2="368" y2="55" stroke="var(--accent)" stroke-width="1.5" marker-end="url(#arr-acc)"/>
@@ -153,23 +153,22 @@ images:
 - **SQL**: #2124(세션 검색 연결 조인 세 벌)와 #2141(턴 요약 집계 두 벌)을 정리했다. #2162(세션 연결 카드 `LATERAL` 조인 두 벌)와 #2185(세션 배달 `INSERT`와 `UPDATE`)의 중복도 정리했다.
 - **웹과 앱의 정책과 문구**: #2123(사용량 요약 갱신 정책), #2129(동작 실패 문구), #2140(반복 스케줄과 한도 알림)을 통합했다. #2143(첨부 미리보기 MIME 목록), #2144(PAS 보고 링크 인식), #2168(카드 상태 라벨 일곱 벌)도 합쳤다.
 - **서버의 판정과 응답**: #2130(세션 종료와 보드 갱신 판정), #2165(폴더 가시성 집합 네 벌), #2166(서비스 bearer 인증 실패 매핑)을 정리했다. #2181(세션 명령 오류 응답 네 벌), #2184와 #2192(라우트 본문 검증과 `INVALID_REQUEST` 도우미), #2217(발신자 신원 판정)도 정리했다.
-- **공용 정본 통합**: 중앙과 워커, 화면이 함께 쓰는 타입과 직렬화를 공용 정본 한 곳으로 모았다. #2193(턴 요약 직렬화), #2213(호스트 계약 행), #2223(중앙과 워커 공용 타입), #2231(선호 설정을 감싸는 타입)이 대상이었다.
+- **공용 정본과 패키지 통합**: 중앙과 워커, 화면이 함께 쓰는 타입과 직렬화를 공용 정본 한 곳으로 모았다. #2193(턴 요약 직렬화), #2213(호스트 계약 행), #2223(중앙과 워커 공용 타입), #2231(선호 설정을 감싸는 타입)이 대상이었다. 공용 패키지로 통합한 #2131과 #2230에서는 원자적 파일 교체와 Codex 실행 파일 경로 찾기(새 공용 패키지)를 정리했다.
 - **값 판정 함수 사본**: 값이 객체인지 따지는 함수 사본들은 #2208과 #2237, #2243(17벌), #2246(108벌), 그리고 #2248, #2253, #2254를 거치며 모두 `wire-schema`의 `isRecord`와 `asRecord` 한 곳으로 합쳤다.
+- **함수 사본 정리**: #2207, #2209, #2210, #2225에서는 대시보드 아홉 쌍, `orch` 열한 쌍, 워커 열세 쌍, 앱 여섯 개의 함수 사본을 정리했다.
 - **다시 내보내기와 별칭**: #2182, #2236, #2242에서 선언을 옮길 때 기존 모듈에서 다시 내보내지 않고, 가져오는 곳을 모두 새 모듈로 고쳤다.
 - **순환 `import`**: #2244(화면), #2245(마크다운 뷰어), #2247(서버)의 순환 참조를 끊었다.
 
-손으로 다시 적은 타입을 `wire-schema` 생성 타입으로 바꾼 목록과 함수 사본을 정리한 내역은 다음 표와 같다.
+손으로 다시 적은 타입을 `wire-schema` 생성 타입으로 교체한 목록은 다음 표와 같다.
 
-| 정리 분류 | 회차와 PR | 대상 |
+| 회차 | PR | 대상 |
 | :-- | :-- | :-- |
-| 생성 타입으로 교체 | 2회차 #2132 | 세션 효과와 예약 타입 |
-| 생성 타입으로 교체 | 4회차 #2142 | `event-ack` |
-| 생성 타입으로 교체 | 5회차 #2171, #2177 | 카탈로그 델타, 세션 배달 |
-| 생성 타입으로 교체 | 6회차 #2183, #2186 | 폴더 항목 목록, SSE 이벤트 타입 53쌍 |
-| 생성 타입으로 교체 | 7회차 #2191, #2194, #2195 | 세션 배정, 남은 SSE 타입 사본, `intervene` 배달 필드 열두 개 |
-| 생성 타입으로 교체 | 8회차 #2214, #2219, #2221, #2229, #2232 | 워커, 앱, Claude 계정, `ContextItem`, `soul-ui`의 Claude 타입 |
-| 함수 사본 정리 | #2207, #2209, #2210, #2225 | 대시보드 아홉 쌍, `orch` 열한 쌍, 워커 열세 쌍, 앱 여섯 개 |
-| 공용 패키지 통합 | #2131, #2230 | 원자적 파일 교체, Codex 실행 파일 경로 찾기(새 공용 패키지) |
+| 2회차 | #2132 | 세션 효과와 예약 타입 |
+| 4회차 | #2142 | `event-ack` |
+| 5회차 | #2171, #2177 | 카탈로그 델타, 세션 배달 |
+| 6회차 | #2183, #2186 | 폴더 항목 목록, SSE 이벤트 타입 53쌍 |
+| 7회차 | #2191, #2194, #2195 | 세션 배정, 남은 SSE 타입 사본, `intervene` 배달 필드 열두 개 |
+| 8회차 | #2214, #2219, #2221, #2229, #2232 | 워커, 앱, Claude 계정, `ContextItem`, `soul-ui`의 Claude 타입 |
 
 ### 느슨한 시험
 
