@@ -46,96 +46,96 @@ Foyege의 진단은 이렇다. 기존 AI 영상 모델은 한 번에 생성하�
 
 사람이 실제로 감정을 드러내는 과정은 첫 순간부터 최고조로 폭발하지 않는다. Foyege는 프롬프트의 출발점으로 네 가지 핵심 정보를 제시한다. 실제 배우에게 연기를 지시할 때 감독이 감정 형용사 대신 전달하는 정보다.
 
-| 약어 | 구성 요소 | 프롬프트가 답해야 할 질문 |
-| --- | --- | --- |
-| **WHY** | 인물 목적 (人物目的) | 인물이 이 순간 상대에게서 무엇을 얻으려 하며, 왜 반드시 이 말을 꺼내야 하는가 |
-| **CUE** | 트리거 대사 (触发台词) | 어느 문장, 어느 단어를 발음하는 순간 감정의 균형이 바뀌는가 |
-| **ACT** | 가시적 동작 (可见动作) | 눈썹, 눈꺼풀, 입꼬리, 호흡, 상체 기울기에서 눈으로 볼 수 있는 어떤 변화가 일어나는가 |
-| **NO** | 금지 반응 (禁止反应) | 이 구간에서 아직 표면으로 드러나면 안 되는 감정이나 동작은 무엇인가 |
+| 핵심 요소 | 프롬프트가 답해야 할 질문 |
+| --- | --- |
+| **WHY: 인물 목적** (人物目的) | 인물이 이 순간 상대에게서 무엇을 얻으려 하며, 왜 반드시 이 말을 꺼내야 하는가 |
+| **CUE: 트리거 대사** (触发台词) | 어느 문장, 어느 단어를 발음하는 순간 감정의 균형이 바뀌는가 |
+| **ACT: 가시적 동작** (可见动作) | 눈썹, 눈꺼풀, 입꼬리, 호흡, 상체 기울기에서 눈으로 볼 수 있는 어떤 변화가 일어나는가 |
+| **NO: 금지 반응** (禁止反应) | 이 구간에서 아직 표면으로 드러나면 안 되는 감정이나 동작은 무엇인가 |
 
 ## 1단계: 프롬프트를 3개 계층으로 분리하기
 
 3,668자나 되는 지시문을 한 덩어리 줄글로 이어 쓰면 인물 외모 묘사, 카메라 워킹, 세부 연기 지시가 서로 간섭해 얼굴이 변하거나 카메라가 엉뚱한 순간에 바뀐다. Foyege는 전체 프롬프트를 역할이 서로 다른 세 계층으로 분리한다.
 
 <figure class="blog-diagram">
-<svg class="diagram-svg-desktop" viewBox="0 0 720 310" role="img" aria-label="Foyege의 3계층 프롬프트 구조와 30초 4샷 타임라인 매핑" xmlns="http://www.w3.org/2000/svg">
+<svg class="diagram-svg-desktop" viewBox="0 0 720 308" role="img" aria-label="Foyege의 3계층 프롬프트 구조와 30초 4샷 타임라인 매핑" xmlns="http://www.w3.org/2000/svg">
   <defs>
     <marker id="arr-ink" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="var(--ink-2)"/></marker>
     <marker id="arr-acc" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="var(--accent)"/></marker>
   </defs>
-  <rect width="720" height="310" fill="var(--bg-2)"/>
-  <rect x="18" y="18" width="212" height="274" fill="var(--bg)" stroke="var(--rule-strong)" stroke-width="1.5"/>
+  <rect width="720" height="308" fill="var(--bg-2)"/>
+  <rect x="18" y="18" width="212" height="272" fill="var(--bg)" stroke="var(--rule-strong)" stroke-width="1.5"/>
   <text x="32" y="44" font-family="var(--mono)" font-size="11" font-weight="700" fill="var(--ink-2)">LAYER 01 / GLOBAL</text>
   <text x="32" y="66" font-family="var(--sans)" font-size="13" font-weight="700" fill="var(--ink)">전역 제어 (촬영장과 배우 고정)</text>
-  <text x="32" y="92" font-family="var(--sans)" font-size="11" fill="var(--ink)">• 형식: 30초, 20:9, 24fps, 35mm 질감</text>
-  <text x="32" y="112" font-family="var(--sans)" font-size="11" fill="var(--ink)">• 공간: 1950년대 미국 노동자 뒷마당</text>
-  <text x="32" y="132" font-family="var(--sans)" font-size="11" fill="var(--ink)">• 남자: 50대 흑인 노동자, 중저음</text>
-  <text x="32" y="152" font-family="var(--sans)" font-size="11" fill="var(--ink)">• 여자: 40대 후반, 격자 홈드레스</text>
-  <text x="32" y="172" font-family="var(--sans)" font-size="11" fill="var(--ink)">• 축선: 180도 규칙 (남자 좌, 여자 우)</text>
-  <text x="32" y="192" font-family="var(--sans)" font-size="11" fill="var(--ink)">• 음향: 원어 립싱크, 배경음악 금지</text>
-  <text x="32" y="212" font-family="var(--sans)" font-size="11" fill="var(--ink-2)">• 제약: 자막, 워터마크, 얼굴 변형 금지</text>
-  <line x1="230" y1="155" x2="250" y2="155" stroke="var(--ink-2)" stroke-width="1.5" marker-end="url(#arr-ink)"/>
-  <rect x="254" y="18" width="212" height="274" fill="var(--bg)" stroke="var(--rule-strong)" stroke-width="1.5"/>
+  <text x="32" y="96" font-family="var(--sans)" font-size="11" fill="var(--ink)">• 형식: 30초, 20:9, 24fps, 35mm 질감</text>
+  <text x="32" y="125" font-family="var(--sans)" font-size="11" fill="var(--ink)">• 공간: 1950년대 미국 노동자 뒷마당</text>
+  <text x="32" y="154" font-family="var(--sans)" font-size="11" fill="var(--ink)">• 남자: 50대 흑인 노동자, 중저음</text>
+  <text x="32" y="183" font-family="var(--sans)" font-size="11" fill="var(--ink)">• 여자: 40대 후반, 격자 홈드레스</text>
+  <text x="32" y="212" font-family="var(--sans)" font-size="11" fill="var(--ink)">• 축선: 180도 규칙 (남자 좌, 여자 우)</text>
+  <text x="32" y="241" font-family="var(--sans)" font-size="11" fill="var(--ink)">• 음향: 원어 립싱크, 배경음악 금지</text>
+  <text x="32" y="271" font-family="var(--sans)" font-size="11" fill="var(--ink-2)">• 제약: 자막, 워터마크, 얼굴 변형 금지</text>
+  <line x1="230" y1="154" x2="250" y2="154" stroke="var(--ink-2)" stroke-width="1.5" marker-end="url(#arr-ink)"/>
+  <rect x="254" y="18" width="212" height="272" fill="var(--bg)" stroke="var(--rule-strong)" stroke-width="1.5"/>
   <text x="268" y="44" font-family="var(--mono)" font-size="11" font-weight="700" fill="var(--ink-2)">LAYER 02 / SHOT TIMELINE</text>
   <text x="268" y="66" font-family="var(--sans)" font-size="13" font-weight="700" fill="var(--ink)">샷 타임라인 (4개 샷 구성)</text>
-  <rect x="268" y="82" width="184" height="38" fill="var(--bg-2)" stroke="var(--rule)" stroke-width="1"/>
+  <rect x="268" y="82" width="184" height="40" fill="var(--bg-2)" stroke="var(--rule)" stroke-width="1"/>
   <text x="276" y="99" font-family="var(--mono)" font-size="11" font-weight="700" fill="var(--ink)">Shot 1 [0.0–3.7s]</text>
   <text x="276" y="113" font-family="var(--sans)" font-size="11" fill="var(--ink-2)">남자 85mm 클로즈업 (억제된 분노)</text>
-  <rect x="268" y="128" width="184" height="54" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.5"/>
+  <rect x="268" y="128" width="184" height="56" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.5"/>
   <text x="276" y="145" font-family="var(--mono)" font-size="11" font-weight="700" fill="var(--accent-ink)">Shot 2 [3.7–23.0s]</text>
   <text x="276" y="160" font-family="var(--sans)" font-size="11" fill="var(--accent-ink)">여자 오버더숄더 클로즈업</text>
   <text x="276" y="175" font-family="var(--sans)" font-size="11" fill="var(--accent-ink)">내부 5단계 감정 비트 세분화</text>
-  <rect x="268" y="190" width="184" height="42" fill="var(--bg-2)" stroke="var(--rule)" stroke-width="1"/>
+  <rect x="268" y="190" width="184" height="41" fill="var(--bg-2)" stroke="var(--rule)" stroke-width="1"/>
   <text x="276" y="207" font-family="var(--mono)" font-size="11" font-weight="700" fill="var(--ink)">Shot 3 [23.0–29.0s]</text>
   <text x="276" y="222" font-family="var(--sans)" font-size="11" fill="var(--ink-2)">남자 무언 리액션 3단계 + 여자 음성</text>
-  <rect x="268" y="240" width="184" height="38" fill="var(--bg-2)" stroke="var(--rule)" stroke-width="1"/>
-  <text x="276" y="257" font-family="var(--mono)" font-size="11" font-weight="700" fill="var(--ink)">Shot 4 [29.0–30.0s]</text>
-  <text x="276" y="271" font-family="var(--sans)" font-size="11" fill="var(--ink-2)">여자 익스트림 클로즈업 (눈물 흘림)</text>
-  <line x1="466" y1="155" x2="486" y2="155" stroke="var(--accent)" stroke-width="1.5" marker-end="url(#arr-acc)"/>
-  <rect x="490" y="18" width="212" height="274" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.5"/>
+  <rect x="268" y="238" width="184" height="40" fill="var(--bg-2)" stroke="var(--rule)" stroke-width="1"/>
+  <text x="276" y="255" font-family="var(--mono)" font-size="11" font-weight="700" fill="var(--ink)">Shot 4 [29.0–30.0s]</text>
+  <text x="276" y="269" font-family="var(--sans)" font-size="11" fill="var(--ink-2)">여자 익스트림 클로즈업 (눈물 흘림)</text>
+  <line x1="466" y1="154" x2="486" y2="154" stroke="var(--accent)" stroke-width="1.5" marker-end="url(#arr-acc)"/>
+  <rect x="490" y="18" width="212" height="272" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.5"/>
   <text x="504" y="44" font-family="var(--mono)" font-size="11" font-weight="700" fill="var(--accent-ink)">LAYER 03 / ACTING BEATS</text>
   <text x="504" y="66" font-family="var(--sans)" font-size="13" font-weight="700" fill="var(--accent-ink)">연기 제어 (샷 내부 8차원 공식)</text>
-  <text x="504" y="92" font-family="var(--sans)" font-size="11" fill="var(--accent-ink)">01 시간대: 샷 내부 세부 초 범위</text>
-  <text x="504" y="114" font-family="var(--sans)" font-size="11" fill="var(--accent-ink)">02 인물 목적: 이 순간의 심리적 목표</text>
-  <text x="504" y="136" font-family="var(--sans)" font-size="11" fill="var(--accent-ink)">03 감정 변화: 방어 유지 → 균열 → 파열</text>
-  <text x="504" y="158" font-family="var(--sans)" font-size="11" fill="var(--accent-ink)">04 트리거 단어: 변화가 시작되는 어절</text>
-  <text x="504" y="180" font-family="var(--sans)" font-size="11" fill="var(--accent-ink)">05 얼굴 동작과 AU: 자연어 + FACS 코드</text>
-  <text x="504" y="202" font-family="var(--sans)" font-size="11" fill="var(--accent-ink)">06 시선과 몸: 직시, 회피, 상체 기울기</text>
-  <text x="504" y="224" font-family="var(--sans)" font-size="11" fill="var(--accent-ink)">07 목소리와 호흡: 음량, 속도, 짧은 숨</text>
-  <text x="504" y="246" font-family="var(--sans)" font-size="11" fill="var(--accent-ink)">08 종료 상태와 금지: "아직 울지 말 것"</text>
+  <text x="504" y="95" font-family="var(--sans)" font-size="11" fill="var(--accent-ink)">01 시간대: 샷 내부 세부 초 범위</text>
+  <text x="504" y="120" font-family="var(--sans)" font-size="11" fill="var(--accent-ink)">02 인물 목적: 이 순간의 심리적 목표</text>
+  <text x="504" y="145" font-family="var(--sans)" font-size="11" fill="var(--accent-ink)">03 감정 변화: 방어 유지 → 균열 → 파열</text>
+  <text x="504" y="170" font-family="var(--sans)" font-size="11" fill="var(--accent-ink)">04 트리거 단어: 변화가 시작되는 어절</text>
+  <text x="504" y="195" font-family="var(--sans)" font-size="11" fill="var(--accent-ink)">05 얼굴 동작과 AU: 자연어 + FACS 코드</text>
+  <text x="504" y="220" font-family="var(--sans)" font-size="11" fill="var(--accent-ink)">06 시선과 몸: 직시, 회피, 상체 기울기</text>
+  <text x="504" y="245" font-family="var(--sans)" font-size="11" fill="var(--accent-ink)">07 목소리와 호흡: 음량, 속도, 짧은 숨</text>
+  <text x="504" y="271" font-family="var(--sans)" font-size="11" fill="var(--accent-ink)">08 종료 상태와 금지: 조기 낙루 차단</text>
 </svg>
-<svg class="diagram-svg-mobile" viewBox="0 0 350 670" role="img" aria-label="Foyege의 3계층 프롬프트 구조와 30초 4샷 타임라인 매핑 (모바일)" xmlns="http://www.w3.org/2000/svg">
+<svg class="diagram-svg-mobile" viewBox="0 0 350 618" role="img" aria-label="Foyege의 3계층 프롬프트 구조와 30초 4샷 타임라인 매핑 (모바일)" xmlns="http://www.w3.org/2000/svg">
   <defs>
     <marker id="arr-ink-m" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="var(--ink-2)"/></marker>
     <marker id="arr-acc-m" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="var(--accent)"/></marker>
   </defs>
-  <rect width="350" height="670" fill="var(--bg-2)"/>
-  <rect x="16" y="14" width="318" height="176" fill="var(--bg)" stroke="var(--rule-strong)" stroke-width="1.5"/>
+  <rect width="350" height="618" fill="var(--bg-2)"/>
+  <rect x="16" y="14" width="318" height="149" fill="var(--bg)" stroke="var(--rule-strong)" stroke-width="1.5"/>
   <text x="28" y="38" font-family="var(--mono)" font-size="12" font-weight="700" fill="var(--ink-2)">LAYER 01 / GLOBAL</text>
   <text x="28" y="58" font-family="var(--sans)" font-size="13" font-weight="700" fill="var(--ink)">전역 제어 (촬영장과 배우 고정)</text>
   <text x="28" y="82" font-family="var(--sans)" font-size="12" fill="var(--ink)">• 30초, 20:9, 24fps, 1950년대 미국 뒷마당</text>
   <text x="28" y="104" font-family="var(--sans)" font-size="12" fill="var(--ink)">• 남녀 외모, 복장, 성우 톤 고정, 180도 축선 유지</text>
   <text x="28" y="126" font-family="var(--sans)" font-size="12" fill="var(--ink)">• 원어 대사 동시 녹음, 배경음악과 효과음 배제</text>
   <text x="28" y="148" font-family="var(--sans)" font-size="12" fill="var(--ink-2)">• 자막, 워터마크, 얼굴 변형, 과장된 몸짓 금지</text>
-  <line x1="175" y1="190" x2="175" y2="210" stroke="var(--ink-2)" stroke-width="1.5" marker-end="url(#arr-ink-m)"/>
-  <rect x="16" y="214" width="318" height="200" fill="var(--bg)" stroke="var(--rule-strong)" stroke-width="1.5"/>
-  <text x="28" y="238" font-family="var(--mono)" font-size="12" font-weight="700" fill="var(--ink-2)">LAYER 02 / SHOT TIMELINE</text>
-  <text x="28" y="258" font-family="var(--sans)" font-size="13" font-weight="700" fill="var(--ink)">샷 타임라인 (4개 샷 구성)</text>
-  <text x="28" y="284" font-family="var(--sans)" font-size="12" fill="var(--ink)">• Shot 1 [0.0–3.7s]: 남자 85mm 클로즈업</text>
-  <text x="28" y="308" font-family="var(--sans)" font-size="12" font-weight="700" fill="var(--accent)">• Shot 2 [3.7–23.0s]: 여자 클로즈업 (5단계 비트)</text>
-  <text x="28" y="332" font-family="var(--sans)" font-size="12" fill="var(--ink)">• Shot 3 [23.0–29.0s]: 남자 무언 리액션 3단계</text>
-  <text x="28" y="356" font-family="var(--sans)" font-size="12" fill="var(--ink)">• Shot 4 [29.0–30.0s]: 여자 익스트림 클로즈업</text>
-  <text x="28" y="384" font-family="var(--sans)" font-size="12" fill="var(--ink-2)">※ 시간 코드만 나열하지 않고 카메라 대상부터 지정</text>
-  <line x1="175" y1="414" x2="175" y2="434" stroke="var(--accent)" stroke-width="1.5" marker-end="url(#arr-acc-m)"/>
-  <rect x="16" y="438" width="318" height="216" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.5"/>
-  <text x="28" y="462" font-family="var(--mono)" font-size="12" font-weight="700" fill="var(--accent-ink)">LAYER 03 / ACTING BEATS</text>
-  <text x="28" y="482" font-family="var(--sans)" font-size="13" font-weight="700" fill="var(--accent-ink)">연기 제어 (샷 내부 8차원 공식)</text>
-  <text x="28" y="508" font-family="var(--sans)" font-size="12" fill="var(--accent-ink)">01 시간대, 02 인물 목적, 03 감정 변화</text>
-  <text x="28" y="532" font-family="var(--sans)" font-size="12" fill="var(--accent-ink)">04 대사 트리거 단어 ("eighteen years", "my life")</text>
-  <text x="28" y="556" font-family="var(--sans)" font-size="12" fill="var(--accent-ink)">05 자연어 얼굴 동작 + FACS AU 코드와 강도(A–E)</text>
-  <text x="28" y="580" font-family="var(--sans)" font-size="12" fill="var(--accent-ink)">06 시선과 몸, 07 목소리와 호흡, 0.5초 멈춤</text>
-  <text x="28" y="604" font-family="var(--sans)" font-size="12" fill="var(--accent-ink)">08 종료 상태와 금지 반응 (조기 오열 차단)</text>
-  <text x="28" y="632" font-family="var(--sans)" font-size="12" fill="var(--accent-ink)">→ 다음 비트와 다음 샷의 시작 상태로 연결</text>
+  <line x1="175" y1="163" x2="175" y2="183" stroke="var(--ink-2)" stroke-width="1.5" marker-end="url(#arr-ink-m)"/>
+  <rect x="16" y="187" width="318" height="185" fill="var(--bg)" stroke="var(--rule-strong)" stroke-width="1.5"/>
+  <text x="28" y="211" font-family="var(--mono)" font-size="12" font-weight="700" fill="var(--ink-2)">LAYER 02 / SHOT TIMELINE</text>
+  <text x="28" y="231" font-family="var(--sans)" font-size="13" font-weight="700" fill="var(--ink)">샷 타임라인 (4개 샷 구성)</text>
+  <text x="28" y="257" font-family="var(--sans)" font-size="12" fill="var(--ink)">• Shot 1 [0.0–3.7s]: 남자 85mm 클로즈업</text>
+  <text x="28" y="281" font-family="var(--sans)" font-size="12" font-weight="700" fill="var(--accent)">• Shot 2 [3.7–23.0s]: 여자 클로즈업 (5단계 비트)</text>
+  <text x="28" y="305" font-family="var(--sans)" font-size="12" fill="var(--ink)">• Shot 3 [23.0–29.0s]: 남자 무언 리액션 3단계</text>
+  <text x="28" y="329" font-family="var(--sans)" font-size="12" fill="var(--ink)">• Shot 4 [29.0–30.0s]: 여자 익스트림 클로즈업</text>
+  <text x="28" y="357" font-family="var(--sans)" font-size="12" fill="var(--ink-2)">※ 시간 코드만 나열하지 않고 카메라 대상부터 지정</text>
+  <line x1="175" y1="372" x2="175" y2="392" stroke="var(--accent)" stroke-width="1.5" marker-end="url(#arr-acc-m)"/>
+  <rect x="16" y="396" width="318" height="209" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.5"/>
+  <text x="28" y="420" font-family="var(--mono)" font-size="12" font-weight="700" fill="var(--accent-ink)">LAYER 03 / ACTING BEATS</text>
+  <text x="28" y="440" font-family="var(--sans)" font-size="13" font-weight="700" fill="var(--accent-ink)">연기 제어 (샷 내부 8차원 공식)</text>
+  <text x="28" y="466" font-family="var(--sans)" font-size="12" fill="var(--accent-ink)">01 시간대, 02 인물 목적, 03 감정 변화</text>
+  <text x="28" y="490" font-family="var(--sans)" font-size="12" fill="var(--accent-ink)">04 대사 트리거 단어 ("eighteen years", "my life")</text>
+  <text x="28" y="514" font-family="var(--sans)" font-size="12" fill="var(--accent-ink)">05 자연어 얼굴 동작 + FACS AU 코드와 강도(A–E)</text>
+  <text x="28" y="538" font-family="var(--sans)" font-size="12" fill="var(--accent-ink)">06 시선과 몸, 07 목소리와 호흡, 0.5초 멈춤</text>
+  <text x="28" y="562" font-family="var(--sans)" font-size="12" fill="var(--accent-ink)">08 종료 상태와 금지 반응 (조기 오열 차단)</text>
+  <text x="28" y="590" font-family="var(--sans)" font-size="12" fill="var(--accent-ink)">→ 다음 비트와 다음 샷의 시작 상태로 연결</text>
 </svg>
 <figcaption style="margin-top: 0.65rem; font-size: 0.85rem; color: var(--ink-2); text-align: center; line-height: 1.5;">Foyege의 3,668자 원본 프롬프트에 적용된 3계층 구조. 전역 제어로 공간과 배우를 고정한 뒤, 4개 샷 타임라인과 8차원 연기 비트를 차례로 배치한다.</figcaption>
 </figure>
@@ -155,16 +155,16 @@ Foyege의 진단은 이렇다. 기존 AI 영상 모델은 한 번에 생성하�
 
 3,668자 원본 프롬프트에 기록된 4개 샷 전체의 시간대별 대사와 연기 설계를 표로 정리하면 다음과 같다.
 
-| 샷 및 시간 구간 | 단계 명칭 | 원본 프롬프트의 영어 대사 (<펜스> 2막 1장) | 핵심 신체 및 음성 지시와 금지 반응 |
-| --- | --- | --- | --- |
-| **샷 1** (`0.0\~3.7s`) | 남자의 억제된 폭발 | *"It's not easy for me to admit that I've been standing in the same place for eighteen years."* | 85mm 클로즈업. 입술을 다물고 턱을 악문 채 낮게 시작(`AU4+AU7+AU23`). `"eighteen years"`에서 콧방울이 벌어지고 상체를 몇 cm 앞으로 내밀며 짧게 폭발(`AU25+AU26`) 후 즉시 하드 컷. |
-| **샷 2-1** (`3.7\~6.5s`) | 반격 (反击) | *"Well, I've been standing with you! I've been right here with you, Troy! I got a life, too."* | 여자 오버더숄더 클로즈업. 상체를 급히 앞으로 기울이고 턱을 내밀며 치아 사이로 짜내듯 빠르고 날카롭게 반격(`AU4+AU5+AU9+AU10+AU20`). |
-| **샷 2-2** (`6.5\~11.5s`) | 자기 증명 (自证) | *"I gave eighteen years of my life to stand in the same spot as you."* | 물러서지 않고 직시하되 눈빛이 공격에서 자기 증명으로 전환. 눈썹 안쪽이 올라가고 아래 눈꺼풀에 물기가 비침. 오른손으로 자기 가슴을 짧게 한 번 가리키고 `"my life"`를 강조. |
-| **샷 2-3** (`11.5\~16.5s`) | 균열 (裂缝) | *"Don't you think I ever wanted other things? Don't you think I had dreams and hopes?"* | 0.5초 미만 고개를 숙였다가 다시 눈을 듦. 눈가가 젖어들고 아랫입술이 미세하게 떨리지만 **이 시점에 눈물이 흘러내리는 것은 금지**. 둘째 질문의 `"dreams and hopes"`에서 목소리가 낮아짐. |
-| **샷 2-4** (`16.5\~20.0s`) | 파열 (破音) | *"What about my life? What about me?"* | 목소리가 처음으로 뚜렷하게 갈라짐. 첫 문장은 높은 음량으로 직시, 두 문장 사이 짧고 급한 들숨과 0.5초 미만의 시선 하강, 둘째 문장은 가볍고 느린 톤으로 공격성 소멸. |
-| **샷 2-5** (`20.0\~23.0s`) | 고백 (坦白) | *"Don't you think it ever crossed my mind to want to know other men?"* | 눈을 다시 크게 뜨고 눈썹을 치켜올리며 고통스러운 자조가 스침. 웃음기 없는 입꼬리 경련 직후 입꼬리가 처지고 고개를 살짝 기울임. 대사 끝을 끊지 않고 다음 샷으로 연결. |
-| **샷 3** (`23.0\~29.0s`) | 남자의 무언 리액션 3단계 | (여자 오프스크린 대사) *"That I wanted to lay up somewhere and forget about my responsibilities? That I wanted someone to make me laugh..."* | 남자 클로즈업 하드 컷. `23\~25s` 반박하려 입을 살짝 열다 침묵 → `25\~27s` `"other men"`과 `"responsibilities"`를 듣고 눈가에 물기가 차며 **억제된 침 삼킴** 1회 → `27\~29s` 처음으로 시선을 오른쪽 위로 회피(수치심과 상처, 고집이 공존. **남자의 눈물 금지**). |
-| **샷 4** (`29.0\~30.0s`) | 결말의 감정 분출 | *"...so I could feel good?"* | `"laugh"` 직후 여자 익스트림 클로즈업(극클로즈업) 하드 컷. 마침내 눈물 제약 해제, 오른쪽 뺨을 따라 눈물이 흐르고 아랫입술이 뒤집히듯 떨림. `"good"` 직전 짧고 부서지는 들숨 후 이미 답을 아는 질문처럼 음량을 낮추며 0.3초 정지. |
+| 구간 | 시간과 단계 및 원작 <펜스> 영어 대사 | 핵심 신체 및 음성 지시와 금지 반응 |
+| --- | --- | --- |
+| **샷 1** | 0.0\~3.7초 (남자의 억제된 폭발): *"It's not easy for me to admit that I've been standing in the same place for eighteen years."* | 85mm 클로즈업. 입술을 다물고 턱을 악문 채 낮게 시작(`AU4 + AU7 + AU23`). `"eighteen years"`에서 콧방울이 벌어지고 상체를 몇 cm 앞으로 내밀며 짧게 폭발(`AU25 + AU26`) 후 즉시 하드 컷. |
+| **샷 2-1** | 3.7\~6.5초 (반격, 反击): *"Well, I've been standing with you! I've been right here with you, Troy! I got a life, too."* | 여자 오버더숄더 클로즈업. 상체를 급히 앞으로 기울이고 턱을 내밀며 치아 사이로 짜내듯 빠르고 날카롭게 반격(`AU4 + AU5 + AU9 + AU10 + AU20`). |
+| **샷 2-2** | 6.5\~11.5초 (자기 증명, 自证): *"I gave eighteen years of my life to stand in the same spot as you."* | 물러서지 않고 직시하되 눈빛이 공격에서 자기 증명으로 전환. 눈썹 안쪽이 올라가고 아래 눈꺼풀에 물기가 비침. 오른손으로 자기 가슴을 짧게 한 번 가리키고 `"my life"`를 강조. |
+| **샷 2-3** | 11.5\~16.5초 (균열, 裂缝): *"Don't you think I ever wanted other things? Don't you think I had dreams and hopes?"* | 0.5초 미만 고개를 숙였다가 다시 눈을 듦. 눈가가 젖어들고 아랫입술이 미세하게 떨리지만 **이 시점에 눈물이 흘러내리는 것은 금지**. 둘째 질문의 `"dreams and hopes"`에서 목소리가 낮아짐. |
+| **샷 2-4** | 16.5\~20.0초 (파열, 破音): *"What about my life? What about me?"* | 목소리가 처음으로 뚜렷하게 갈라짐. 첫 문장은 높은 음량으로 직시, 두 문장 사이 짧고 급한 들숨과 0.5초 미만의 시선 하강, 둘째 문장은 가볍고 느린 톤으로 공격성 소멸. |
+| **샷 2-5** | 20.0\~23.0초 (고백, 坦白): *"Don't you think it ever crossed my mind to want to know other men?"* | 눈을 다시 크게 뜨고 눈썹을 치켜올리며 고통스러운 자조가 스침. 웃음기 없는 입꼬리 경련 직후 입꼬리가 처지고 고개를 살짝 기울임. 대사 끝을 끊지 않고 다음 샷으로 연결. |
+| **샷 3** | 23.0\~29.0초 (남자의 무언 리액션 3단계, 여자 오프스크린 대사): *"That I wanted to lay up somewhere and forget about my responsibilities? That I wanted someone to make me laugh..."* | 남자 클로즈업 하드 컷. 23\~25초 반박하려 입을 살짝 열다 침묵 → 25\~27초 `"other men"`과 `"responsibilities"`를 듣고 눈가에 물기가 차며 **억제된 침 삼킴** 1회 → 27\~29초 처음으로 시선을 오른쪽 위로 회피(**남자의 눈물 금지**). |
+| **샷 4** | 29.0\~30.0초 (결말의 감정 분출): *"...so I could feel good?"* | `"laugh"` 직후 여자 익스트림 클로즈업(극클로즈업) 하드 컷. 마침내 눈물 제약 해제, 오른쪽 뺨을 따라 눈물이 흐르고 아랫입술이 뒤집히듯 떨림. `"good"` 직전 짧고 부서지는 들숨 후 이미 답을 아는 질문처럼 음량을 낮추며 0.3초 정지. |
 
 ![분노라는 보호막이 점진적으로 약해지며 슬픔이 드러나는 감정 곡선 도식](https://img.seosoyoung.eiaserinnys.me/images/foyege-seedance-2-5-acting-prompt/03-emotional-arc.jpg)
 *감정 곡선 설계: 인물은 먼저 분노로 자신을 보호하고, 그 방어 태세가 유지되지 못할 때 비로소 슬픔이 표면으로 드러난다. 출처: Foyege, Vibe Shot Club.*
