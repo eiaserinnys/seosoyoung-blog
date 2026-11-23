@@ -871,6 +871,29 @@ class Card1521SecondReviewTest(unittest.TestCase):
         entries_ok = a9_checks('/digest/x/', ok_cfg)
         self.assertTrue(all(e['ok'] for e in entries_ok))
 
+    def test_a9_wide_pre_overflow(self):
+        from verify_article_ui_checks import a9_checks
+        fail_cfg = {
+            'wide-light': {
+                'a9': {
+                    'codes': [],
+                    'pres': [{'i': 2, 'clientWidth': 720, 'scrollWidth': 750, 'over': 30.0, 'text': '[동적 영상 프롬프트]'}],
+                }
+            }
+        }
+        entries = a9_checks('/digest/x/', fail_cfg)
+        self.assertTrue(any(not e['ok'] and '코드 블록(pre) 가로 넘침' in e['detail'] for e in entries))
+        ok_cfg = {
+            'wide-light': {
+                'a9': {
+                    'codes': [],
+                    'pres': [{'i': 1, 'clientWidth': 720, 'scrollWidth': 720, 'over': 0.0, 'text': '[정적 인물 템플릿]'}],
+                }
+            }
+        }
+        entries_ok = a9_checks('/digest/x/', ok_cfg)
+        self.assertTrue(all(e['ok'] for e in entries_ok))
+
 
 if __name__ == '__main__':
     unittest.main()
