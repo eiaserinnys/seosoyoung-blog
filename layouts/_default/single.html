@@ -61,7 +61,8 @@
       </details>
     {{- end }}
 
-    <div class="post-content">{{ partial "typography/close-quotes.html" .Content }}</div>
+    {{- $content := replace (partial "typography/close-quotes.html" .Content) `</sup><sup id="fnref` `</sup><sup class="fn-adj" id="fnref` | safeHTML -}}
+    <div class="post-content">{{ $content }}</div>
 
     {{- if $isPost }}
       <footer class="post-footer">

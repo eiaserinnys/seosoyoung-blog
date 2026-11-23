@@ -500,14 +500,14 @@ class ArticleUiChecksTest(unittest.TestCase):
           <figure class="blog-diagram">
             <svg class="diagram-svg-desktop" viewBox="0 0 720 120">
               <rect width="720" height="120" fill="#eee"/>
-              <text x="24" y="30" font-size="12">단위: 백만 토큰</text>
+              <text x="24" y="30" font-size="13">단위: 백만 토큰</text>
               <rect x="560" y="20" width="10" height="10" fill="#333"/>
-              <text id="leg1" x="576" y="30" font-size="12">옛</text>
+              <text id="leg1" x="576" y="30" font-size="13">옛</text>
               <rect id="sw2" x="668" y="20" width="10" height="10" fill="#c30"/>
-              <text id="leg2" x="696" y="30" text-anchor="end" font-size="12">새</text>
+              <text id="leg2" x="696" y="30" text-anchor="end" font-size="13">새</text>
               <line x1="24" y1="42" x2="696" y2="42" stroke="#999"/>
               <rect x="24" y="56" width="200" height="44" fill="#fff" stroke="#333"/>
-              <text x="36" y="82" font-size="12">상자 안 텍스트</text>
+              <text x="36" y="82" font-size="13">상자 안 텍스트</text>
             </svg>
           </figure>
         </div>""")
@@ -811,6 +811,30 @@ class RevisedBrowserChecksTest(unittest.TestCase):
         self.assertIn('is-expanded', wrapper.get_attribute('class'))
         width = wrapper.locator('tbody td').first.evaluate('e => e.getBoundingClientRect().width')
         self.assertLessEqual(width, 100)
+
+    def test_adjacent_footnote_separator(self):
+        from pathlib import Path
+        css = Path('assets/css/30-post.css').read_text(encoding='utf-8')
+        self.page.set_viewport_size({'width': 1440, 'height': 900})
+        self.page.set_content('''<div class="post-content"><p>연속 각주<sup id="fnref:1"><a href="#fn:1" class="footnote-ref">14</a></sup><sup class="fn-adj" id="fnref:2"><a href="#fn:2" class="footnote-ref">1</a></sup> 그리고 문장 뒤 각주<sup id="fnref:3"><a href="#fn:3" class="footnote-ref">3</a></sup></p></div>''')
+        self.page.add_style_tag(content=css)
+        measured = self.page.evaluate('''() => {
+          const s1 = document.getElementById('fnref:1');
+          const s2 = document.getElementById('fnref:2');
+          const s3 = document.getElementById('fnref:3');
+          const a1 = s1.querySelector('a').getBoundingClientRect();
+          const a2 = s2.querySelector('a').getBoundingClientRect();
+          return {
+            before: getComputedStyle(s2, '::before').content,
+            strayBefore: getComputedStyle(s3, '::before').content,
+            linkGap: +(a2.left - a1.right).toFixed(1),
+            sameLine: Math.abs(a1.top - a2.top) < 2,
+          };
+        }''')
+        self.assertEqual(measured['before'], '","')
+        self.assertIn(measured['strayBefore'], ('none', 'normal', '""', ''))
+        self.assertGreater(measured['linkGap'], 1.0)
+        self.assertTrue(measured['sameLine'])
 
 class Card1521SecondReviewTest(unittest.TestCase):
     def test_a22_rule_pixels(self):
