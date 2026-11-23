@@ -104,88 +104,81 @@ AI가 환각(hallucination)을 일으켜 엉터리 논리를 지어내더라도 
 공교롭게도 알푀게의 발표가 나오기 꼭 여드레 전인 2026년 11월 12일, 임페리얼 칼리지 런던의 케빈 버자드 교수는 자신의 블로그에 「...그리고 그 증명은 Lean으로 검증되었습니다」라는 글을 올려 이 문제를 정면으로 다루었습니다[^buzzard-4q]. 강화학습 AI는 채점 기준만 통과하면 보상을 받습니다. 이 때문에 목표를 달성하려고 사람이 상상하기 힘든 방식으로 규칙의 빈틈을 파고드는 일이 잦은데, 이것을 <strong>보상 해킹(Reward Hacking)</strong>이라고 합니다. 버자드 교수는 AI가 짠 1,737만 줄의 Lean 코드가 올바른 증명인지 확인하려면 반드시 <strong>네 가지 관문</strong>을 통과해야 한다고 정리했습니다. 실제로 11월 20일부터 21일 사이 전 세계 Lean 커뮤니티는 정확히 이 네 가지 관문에 따라 알푀게와 클로드의 코드를 검증했습니다[^lean-cert].
 
 <figure class="blog-diagram">
-<svg class="diagram-svg-desktop" viewBox="0 0 720 330" role="img" aria-label="AI가 생성한 Lean 형식 증명 코드가 네 개의 기계 감사 관문을 거쳐 인간의 수학적 역공학으로 이어지는 검증 파이프라인" xmlns="http://www.w3.org/2000/svg">
+<svg class="diagram-svg-desktop" viewBox="0 0 720 456" role="img" aria-label="AI가 생성한 Lean 형식 증명 코드가 네 개의 기계 감사 관문을 거쳐 인간의 수학적 역공학으로 이어지는 검증 파이프라인" xmlns="http://www.w3.org/2000/svg">
   <defs>
     <marker id="arr-ink-d" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="var(--ink-2)"/></marker>
     <marker id="arr-acc-d" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="var(--accent)"/></marker>
   </defs>
-  <rect width="720" height="330" fill="var(--bg-2)"/>
-  <rect x="14" y="14" width="692" height="186" fill="var(--bg-2)" stroke="var(--rule-strong)" stroke-width="1.5"/>
-  <text x="26" y="36" font-family="var(--sans)" font-size="13" font-weight="700" fill="var(--ink)">1단계: 기계 검증의 4대 감사 관문 (2026.11.20~21 완료, 논리적 무결성 확인)</text>
-  <rect x="24" y="50" width="156" height="136" fill="var(--bg)" stroke="var(--rule-strong)" stroke-width="1.5"/>
-  <text x="34" y="72" font-family="var(--mono)" font-size="11" font-weight="700" fill="var(--accent)">관문 1. 기준 명제 검토</text>
-  <text x="34" y="92" font-family="var(--sans)" font-size="12" font-weight="700" fill="var(--ink)">문제지 정합성 확인</text>
-  <text x="34" y="112" font-family="var(--sans)" font-size="11" fill="var(--ink-2)">조건 누락이나 쉬운 문제로</text>
-  <text x="34" y="128" font-family="var(--sans)" font-size="11" fill="var(--ink-2)">변형되지 않았는지 검증</text>
-  <text x="34" y="152" font-family="var(--mono)" font-size="11" fill="var(--ink)">입력: Challenge.lean</text>
-  <text x="34" y="170" font-family="var(--mono)" font-size="11" fill="var(--ink)">Mathlib 표준 정의 일치</text>
-  <line x1="180" y1="118" x2="194" y2="118" stroke="var(--ink-2)" stroke-width="1.5" marker-end="url(#arr-ink-d)"/>
-  <rect x="196" y="50" width="156" height="136" fill="var(--bg)" stroke="var(--rule-strong)" stroke-width="1.5"/>
-  <text x="206" y="72" font-family="var(--mono)" font-size="11" font-weight="700" fill="var(--accent)">관문 2. 격리 샌드박스</text>
-  <text x="206" y="92" font-family="var(--sans)" font-size="12" font-weight="700" fill="var(--ink)">독립 재빌드와 추출</text>
-  <text x="206" y="112" font-family="var(--sans)" font-size="11" fill="var(--ink-2)">네트워크 차단 환경에서</text>
-  <text x="206" y="128" font-family="var(--sans)" font-size="11" fill="var(--ink-2)">17만 5천 파일 클린 빌드</text>
-  <text x="206" y="152" font-family="var(--mono)" font-size="11" fill="var(--ink)">입력: Main.lean</text>
-  <text x="206" y="170" font-family="var(--mono)" font-size="11" fill="var(--ink)">출력: 61.6GB 추출본</text>
-  <line x1="352" y1="118" x2="366" y2="118" stroke="var(--ink-2)" stroke-width="1.5" marker-end="url(#arr-ink-d)"/>
-  <rect x="368" y="50" width="156" height="136" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.5"/>
-  <text x="378" y="72" font-family="var(--mono)" font-size="11" font-weight="700" fill="var(--accent-ink)">관문 3. Comparator</text>
-  <text x="378" y="92" font-family="var(--sans)" font-size="12" font-weight="700" fill="var(--accent-ink)">보상 해킹과 반칙 색출</text>
-  <text x="378" y="112" font-family="var(--sans)" font-size="11" fill="var(--ink-2)">기호 덮어쓰기, 숨은 sorry,</text>
-  <text x="378" y="128" font-family="var(--sans)" font-size="11" fill="var(--ink-2)">가짜 공리 추가 전수 차단</text>
-  <text x="378" y="152" font-family="var(--mono)" font-size="11" fill="var(--accent-ink)">추출본 ↔ Challenge 대조</text>
-  <text x="378" y="170" font-family="var(--mono)" font-size="11" fill="var(--accent-ink)">3대 표준 공리만 허용</text>
-  <line x1="524" y1="118" x2="538" y2="118" stroke="var(--accent)" stroke-width="1.5" marker-end="url(#arr-acc-d)"/>
-  <rect x="540" y="50" width="156" height="136" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.5"/>
-  <text x="550" y="72" font-family="var(--mono)" font-size="11" font-weight="700" fill="var(--accent-ink)">관문 4. 다중 커널 검증</text>
-  <text x="550" y="92" font-family="var(--sans)" font-size="12" font-weight="700" fill="var(--accent-ink)">심판 버그 악용 차단</text>
-  <text x="550" y="112" font-family="var(--sans)" font-size="11" fill="var(--ink-2)">독립 언어 및 무결성 증명</text>
-  <text x="550" y="128" font-family="var(--sans)" font-size="11" fill="var(--ink-2)">커널들로 추출본 교차 검산</text>
-  <text x="550" y="152" font-family="var(--mono)" font-size="11" fill="var(--accent-ink)">nanoda / lean4lean</text>
-  <text x="550" y="170" font-family="var(--mono)" font-size="11" fill="var(--accent-ink)">con-leche / con-ron</text>
-  <line x1="360" y1="200" x2="360" y2="226" stroke="var(--accent)" stroke-width="1.5" marker-end="url(#arr-acc-d)"/>
-  <rect x="14" y="230" width="692" height="86" fill="var(--bg)" stroke="var(--ink-2)" stroke-width="1.5" stroke-dasharray="4,3"/>
-  <text x="30" y="254" font-family="var(--sans)" font-size="13" font-weight="700" fill="var(--ink)">2단계: 인간 수학계의 역공학과 제도적 검증 (현재 진행 중: '검증'에서 '이해'로)</text>
-  <text x="30" y="276" font-family="var(--sans)" font-size="12" fill="var(--ink-2)">• 비형식화(Informalization): 주석 없는 1,737만 줄 코드에서 핵심 보조정리와 수학적 직관(왜 참인가)을 인간의 언어로 해독</text>
-  <text x="30" y="296" font-family="var(--sans)" font-size="12" fill="var(--ink-2)">• 학술지 동료 심사와 클레이 연구소(CMI) 규정: 논문 출판 후 최소 2년간의 학계 수용 절차를 거쳐야 밀레니엄 상 공식 완결</text>
+  <rect width="720" height="456" fill="var(--bg-2)"/>
+  <rect x="14" y="14" width="692" height="304" fill="var(--bg-2)" stroke="var(--rule-strong)" stroke-width="1.5"/>
+  <text x="28" y="38" font-family="var(--sans)" font-size="14" font-weight="700" fill="var(--ink)">1단계: 기계 검증의 4대 감사 관문 (2026.11.20~21 완료, 논리적 무결성 확인)</text>
+  <rect x="28" y="52" width="318" height="112" fill="var(--bg)" stroke="var(--rule-strong)" stroke-width="1.5"/>
+  <text x="42" y="76" font-family="var(--mono)" font-size="13" font-weight="700" fill="var(--accent)">관문 1. 기준 명제 정합성 검토</text>
+  <text x="42" y="100" font-family="var(--sans)" font-size="13" font-weight="700" fill="var(--ink)">문제지 오류와 조건 누락 차단</text>
+  <text x="42" y="124" font-family="var(--sans)" font-size="13" fill="var(--ink-2)">Mathlib 표준 정의 및 교과서 동치 확인</text>
+  <text x="42" y="148" font-family="var(--mono)" font-size="13" fill="var(--ink)">입력: Challenge.lean (기준 명제)</text>
+  <line x1="346" y1="108" x2="372" y2="108" stroke="var(--ink-2)" stroke-width="1.5" marker-end="url(#arr-ink-d)"/>
+  <rect x="374" y="52" width="318" height="112" fill="var(--bg)" stroke="var(--rule-strong)" stroke-width="1.5"/>
+  <text x="388" y="76" font-family="var(--mono)" font-size="13" font-weight="700" fill="var(--accent)">관문 2. 격리 샌드박스 독립 재빌드</text>
+  <text x="388" y="100" font-family="var(--sans)" font-size="13" font-weight="700" fill="var(--ink)">외부 코드 격리 재현과 순수 데이터 추출</text>
+  <text x="388" y="124" font-family="var(--sans)" font-size="13" fill="var(--ink-2)">네트워크 차단 환경에서 17만 5천 파일 재빌드</text>
+  <text x="388" y="148" font-family="var(--mono)" font-size="13" fill="var(--ink)">Main.lean → 61.6GB 원시 추출본</text>
+  <path d="M 533 164 L 533 178 L 187 178 L 187 190" fill="none" stroke="var(--ink-2)" stroke-width="1.5" marker-end="url(#arr-ink-d)"/>
+  <rect x="28" y="192" width="318" height="112" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.5"/>
+  <text x="42" y="216" font-family="var(--mono)" font-size="13" font-weight="700" fill="var(--accent-ink)">관문 3. Comparator 격리 대조 감사</text>
+  <text x="42" y="240" font-family="var(--sans)" font-size="13" font-weight="700" fill="var(--accent-ink)">보상 해킹과 숨은 반칙 원천 색출</text>
+  <text x="42" y="264" font-family="var(--sans)" font-size="13" fill="var(--ink-2)">기호 덮어쓰기, 숨은 sorry, 가짜 공리 차단</text>
+  <text x="42" y="288" font-family="var(--mono)" font-size="13" fill="var(--accent-ink)">추출본 ↔ Challenge (3대 표준 공리)</text>
+  <line x1="346" y1="248" x2="372" y2="248" stroke="var(--accent)" stroke-width="1.5" marker-end="url(#arr-acc-d)"/>
+  <rect x="374" y="192" width="318" height="112" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.5"/>
+  <text x="388" y="216" font-family="var(--mono)" font-size="13" font-weight="700" fill="var(--accent-ink)">관문 4. 독립 다중 커널 교차 검증</text>
+  <text x="388" y="240" font-family="var(--sans)" font-size="13" font-weight="700" fill="var(--accent-ink)">심판 프로그램(공식 커널) 버그 악용 차단</text>
+  <text x="388" y="264" font-family="var(--sans)" font-size="13" fill="var(--ink-2)">독립 언어 및 무결성 증명 커널로 교차 검산</text>
+  <text x="388" y="288" font-family="var(--mono)" font-size="13" fill="var(--accent-ink)">nanoda, lean4lean, con-leche/ron</text>
+  <line x1="360" y1="318" x2="360" y2="344" stroke="var(--accent)" stroke-width="1.5" marker-end="url(#arr-acc-d)"/>
+  <rect x="14" y="346" width="692" height="96" fill="var(--bg)" stroke="var(--ink-2)" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <text x="30" y="372" font-family="var(--sans)" font-size="14" font-weight="700" fill="var(--ink)">2단계: 인간 수학계의 역공학과 제도적 검증 (현재 진행 중: '검증'에서 '이해'로)</text>
+  <text x="30" y="398" font-family="var(--sans)" font-size="13" fill="var(--ink-2)">• 비형식화(Informalization): 주석 없는 1,737만 줄 코드에서 핵심 보조정리와 수학적 직관(왜 참인가)을 인간의 언어로 해독</text>
+  <text x="30" y="422" font-family="var(--sans)" font-size="13" fill="var(--ink-2)">• 학술지 동료 심사와 클레이 연구소(CMI) 규정: 논문 출판 후 최소 2년간의 학계 수용 절차를 거쳐야 밀레니엄 상 공식 완결</text>
 </svg>
-<svg class="diagram-svg-mobile" viewBox="0 0 350 670" role="img" aria-label="AI가 생성한 Lean 형식 증명 코드가 네 개의 기계 감사 관문을 거쳐 인간의 수학적 역공학으로 이어지는 검증 파이프라인 (모바일)" xmlns="http://www.w3.org/2000/svg">
+<svg class="diagram-svg-mobile" viewBox="0 0 350 776" role="img" aria-label="AI가 생성한 Lean 형식 증명 코드가 네 개의 기계 감사 관문을 거쳐 인간의 수학적 역공학으로 이어지는 검증 파이프라인 (모바일)" xmlns="http://www.w3.org/2000/svg">
   <defs>
     <marker id="arr-ink-m" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="var(--ink-2)"/></marker>
     <marker id="arr-acc-m" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="var(--accent)"/></marker>
   </defs>
-  <rect width="350" height="670" fill="var(--bg-2)"/>
-  <text x="16" y="26" font-family="var(--sans)" font-size="13" font-weight="700" fill="var(--ink)">1단계: 기계 검증 4대 관문 (완료)</text>
-  <rect x="16" y="38" width="318" height="104" fill="var(--bg)" stroke="var(--rule-strong)" stroke-width="1.5"/>
-  <text x="28" y="60" font-family="var(--mono)" font-size="12" font-weight="700" fill="var(--accent)">관문 1. 기준 명제 정합성 검토</text>
-  <text x="28" y="80" font-family="var(--sans)" font-size="12" font-weight="700" fill="var(--ink)">문제지 오류 차단</text>
-  <text x="28" y="100" font-family="var(--sans)" font-size="12" fill="var(--ink-2)">조건 누락 없는 Mathlib 표준 정의 확인</text>
-  <text x="28" y="122" font-family="var(--mono)" font-size="12" fill="var(--ink)">입력: Challenge.lean (교과서 동치)</text>
-  <line x1="175" y1="142" x2="175" y2="158" stroke="var(--ink-2)" stroke-width="1.5" marker-end="url(#arr-ink-m)"/>
-  <rect x="16" y="160" width="318" height="104" fill="var(--bg)" stroke="var(--rule-strong)" stroke-width="1.5"/>
-  <text x="28" y="182" font-family="var(--mono)" font-size="12" font-weight="700" fill="var(--accent)">관문 2. 격리 샌드박스 빌드</text>
-  <text x="28" y="202" font-family="var(--sans)" font-size="12" font-weight="700" fill="var(--ink)">독립 재현과 순수 데이터 추출</text>
-  <text x="28" y="222" font-family="var(--sans)" font-size="12" fill="var(--ink-2)">네트워크 차단 환경에서 17만 5천 파일 재빌드</text>
-  <text x="28" y="244" font-family="var(--mono)" font-size="12" fill="var(--ink)">Main.lean → 61.6GB 추출본 생성</text>
-  <line x1="175" y1="264" x2="175" y2="280" stroke="var(--ink-2)" stroke-width="1.5" marker-end="url(#arr-ink-m)"/>
-  <rect x="16" y="282" width="318" height="104" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.5"/>
-  <text x="28" y="304" font-family="var(--mono)" font-size="12" font-weight="700" fill="var(--accent-ink)">관문 3. Comparator 감사</text>
-  <text x="28" y="324" font-family="var(--sans)" font-size="12" font-weight="700" fill="var(--accent-ink)">보상 해킹과 숨은 반칙 색출</text>
-  <text x="28" y="344" font-family="var(--sans)" font-size="12" fill="var(--ink-2)">중간 파일의 기호 재정의나 가짜 공리 차단</text>
-  <text x="28" y="366" font-family="var(--mono)" font-size="12" fill="var(--accent-ink)">추출본 ↔ Challenge 대조 및 3대 공리 확인</text>
-  <line x1="175" y1="386" x2="175" y2="402" stroke="var(--accent)" stroke-width="1.5" marker-end="url(#arr-acc-m)"/>
-  <rect x="16" y="404" width="318" height="104" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.5"/>
-  <text x="28" y="426" font-family="var(--mono)" font-size="12" font-weight="700" fill="var(--accent-ink)">관문 4. 독립 다중 커널 교차 검증</text>
-  <text x="28" y="446" font-family="var(--sans)" font-size="12" font-weight="700" fill="var(--accent-ink)">심판 프로그램 버그 악용 차단</text>
-  <text x="28" y="466" font-family="var(--sans)" font-size="12" fill="var(--ink-2)">독립 언어 및 무결성 증명 커널로 교차 재생</text>
-  <text x="28" y="488" font-family="var(--mono)" font-size="12" fill="var(--accent-ink)">nanoda / lean4lean / con-leche / con-ron</text>
-  <line x1="175" y1="508" x2="175" y2="528" stroke="var(--accent)" stroke-width="1.5" marker-end="url(#arr-acc-m)"/>
-  <rect x="16" y="530" width="318" height="124" fill="var(--bg)" stroke="var(--ink-2)" stroke-width="1.5" stroke-dasharray="4,3"/>
-  <text x="28" y="554" font-family="var(--sans)" font-size="13" font-weight="700" fill="var(--ink)">2단계: 인간 수학계의 역공학 (진행 중)</text>
-  <text x="28" y="578" font-family="var(--sans)" font-size="12" fill="var(--ink-2)">• 비형식화: 1,737만 줄 코드에서 핵심</text>
-  <text x="28" y="596" font-family="var(--sans)" font-size="12" fill="var(--ink-2)">  아이디어와 수학적 직관(왜 참인가) 해독</text>
-  <text x="28" y="618" font-family="var(--sans)" font-size="12" fill="var(--ink-2)">• 제도 검증: 학술지 동료 심사 출판 및</text>
-  <text x="28" y="636" font-family="var(--sans)" font-size="12" fill="var(--ink-2)">  클레이 연구소(CMI) 2년 학계 수용 절차</text>
+  <rect width="350" height="776" fill="var(--bg-2)"/>
+  <text x="14" y="28" font-family="var(--sans)" font-size="15" font-weight="700" fill="var(--ink)">1단계: 기계 검증 4대 관문 (완료)</text>
+  <rect x="14" y="40" width="322" height="112" fill="var(--bg)" stroke="var(--rule-strong)" stroke-width="1.5"/>
+  <text x="26" y="64" font-family="var(--mono)" font-size="14.5" font-weight="700" fill="var(--accent)">관문 1. 기준 명제 정합성 검토</text>
+  <text x="26" y="88" font-family="var(--sans)" font-size="14.5" font-weight="700" fill="var(--ink)">문제지 오류와 조건 누락 차단</text>
+  <text x="26" y="112" font-family="var(--sans)" font-size="14.5" fill="var(--ink-2)">Mathlib 표준 정의 및 교과서 동치</text>
+  <text x="26" y="136" font-family="var(--mono)" font-size="14.5" fill="var(--ink)">입력: Challenge.lean</text>
+  <line x1="175" y1="152" x2="175" y2="176" stroke="var(--ink-2)" stroke-width="1.5" marker-end="url(#arr-ink-m)"/>
+  <rect x="14" y="178" width="322" height="112" fill="var(--bg)" stroke="var(--rule-strong)" stroke-width="1.5"/>
+  <text x="26" y="202" font-family="var(--mono)" font-size="14.5" font-weight="700" fill="var(--accent)">관문 2. 격리 샌드박스 재빌드</text>
+  <text x="26" y="226" font-family="var(--sans)" font-size="14.5" font-weight="700" fill="var(--ink)">독립 재현과 순수 데이터 추출</text>
+  <text x="26" y="250" font-family="var(--sans)" font-size="14.5" fill="var(--ink-2)">네트워크 차단 17만 5천 파일 빌드</text>
+  <text x="26" y="274" font-family="var(--mono)" font-size="14.5" fill="var(--ink)">Main.lean → 61.6GB 추출본</text>
+  <line x1="175" y1="290" x2="175" y2="314" stroke="var(--ink-2)" stroke-width="1.5" marker-end="url(#arr-ink-m)"/>
+  <rect x="14" y="316" width="322" height="112" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.5"/>
+  <text x="26" y="340" font-family="var(--mono)" font-size="14.5" font-weight="700" fill="var(--accent-ink)">관문 3. Comparator 감사</text>
+  <text x="26" y="364" font-family="var(--sans)" font-size="14.5" font-weight="700" fill="var(--accent-ink)">보상 해킹과 숨은 반칙 색출</text>
+  <text x="26" y="388" font-family="var(--sans)" font-size="14.5" fill="var(--ink-2)">기호 재정의와 가짜 공리 전수 차단</text>
+  <text x="26" y="412" font-family="var(--mono)" font-size="14.5" fill="var(--accent-ink)">추출본 ↔ Challenge (3대 공리)</text>
+  <line x1="175" y1="428" x2="175" y2="452" stroke="var(--accent)" stroke-width="1.5" marker-end="url(#arr-acc-m)"/>
+  <rect x="14" y="454" width="322" height="136" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.5"/>
+  <text x="26" y="478" font-family="var(--mono)" font-size="14.5" font-weight="700" fill="var(--accent-ink)">관문 4. 독립 다중 커널 검증</text>
+  <text x="26" y="502" font-family="var(--sans)" font-size="14.5" font-weight="700" fill="var(--accent-ink)">심판 프로그램 버그 악용 차단</text>
+  <text x="26" y="526" font-family="var(--sans)" font-size="14.5" fill="var(--ink-2)">독립 언어 및 무결성 증명 커널 검산</text>
+  <text x="26" y="550" font-family="var(--mono)" font-size="14.5" fill="var(--accent-ink)">nanoda(Rust) / lean4lean</text>
+  <text x="26" y="574" font-family="var(--mono)" font-size="14.5" fill="var(--accent-ink)">con-leche / con-ron (무결성 증명)</text>
+  <line x1="175" y1="590" x2="175" y2="616" stroke="var(--accent)" stroke-width="1.5" marker-end="url(#arr-acc-m)"/>
+  <rect x="14" y="618" width="322" height="142" fill="var(--bg)" stroke="var(--ink-2)" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <text x="26" y="644" font-family="var(--sans)" font-size="15" font-weight="700" fill="var(--ink)">2단계: 인간 수학계의 역공학 (진행 중)</text>
+  <text x="26" y="670" font-family="var(--sans)" font-size="14.5" fill="var(--ink-2)">• 비형식화: 1,737만 줄 코드에서 핵심</text>
+  <text x="26" y="694" font-family="var(--sans)" font-size="14.5" fill="var(--ink-2)">  보조정리와 수학적 직관(왜 참인가) 해독</text>
+  <text x="26" y="720" font-family="var(--sans)" font-size="14.5" fill="var(--ink-2)">• 제도 검증: 학술지 동료 심사 출판 및</text>
+  <text x="26" y="744" font-family="var(--sans)" font-size="14.5" fill="var(--ink-2)">  클레이 연구소(CMI) 2년 학계 수용 절차</text>
 </svg>
 <figcaption style="margin-top: 0.65rem; font-size: 0.85rem; color: var(--ink-2); text-align: center; line-height: 1.5;">Lean 코드가 컴파일된 뒤에도 거쳐야 하는 기계 감사 관문 네 개(관문 1과 2는 준비 단계, 관문 3과 4는 핵심 대조와 다중 커널 검증)와, 그 뒤에 이어지는 인간 수학계의 역공학 단계.</figcaption>
 </figure>

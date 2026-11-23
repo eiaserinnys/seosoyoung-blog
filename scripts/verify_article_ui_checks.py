@@ -387,7 +387,7 @@ A12_CONFIGS = ("wide-light", "wide-dark", "narrow-light", "narrow-dark")
 A13_CONFIGS = A12_CONFIGS
 A16_CONFIGS = ("min360-light", "narrow-light", "min390-light", "min414-light", "phablet-light", "tablet-light", "tablet820-light", "mid-light", "wide-light", "wide-dark", "narrow-dark")
 ROW_WIDTH_TOL = 0.5
-DIAGRAM_MIN_EFF_PX = 10.9
+DIAGRAM_MIN_EFF_PX = 13.0
 DIAGRAM_MOBILE_MAX_SCALE = 1.15
 DIAGRAM_HEADER_RIGHT_TOL = 1.5
 DIAGRAM_SWATCH_GAP_TOL = 1.5
@@ -535,7 +535,7 @@ A16_JS = r"""
       minEff: effs.length ? Math.min(...effs) : null,
       maxEff: effs.length ? Math.max(...effs) : null,
       textCount: texts.length,
-      small: texts.filter((t) => t.eff < 10.9).map((t) => [t.text, t.eff]),
+      small: texts.filter((t) => t.eff < 13.0).map((t) => [t.text, t.eff]),
       outside,
       ov,
       cross,

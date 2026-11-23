@@ -772,6 +772,10 @@ aside.sidenote .footnote-backref {
   text-align: center;
 }
 
+.post-content sup[id^="fnref"] + sup[id^="fnref"]::before {
+  content: ",";
+}
+
 .sn-marker {
   margin: 0 0.15em;
   color: var(--ink-2);

@@ -393,6 +393,27 @@ MEASURE_JS = r"""
 
   const notes = [...document.querySelectorAll('aside.sidenote')];
   out.footnoteMarkers = markers.length;
+  out.adjacentFootnoteGroups = [];
+  const fnSups = [...content.querySelectorAll('sup[id^="fnref"]')];
+  for (const s of fnSups) {
+    const prev = s.previousSibling;
+    if (prev && prev.nodeType === 1 && prev.matches('sup[id^="fnref"]')) {
+      const a = prev.getBoundingClientRect();
+      const b = s.getBoundingClientRect();
+      const before = getComputedStyle(s, '::before').content;
+      const al = prev.querySelector('a') || prev;
+      const bl = s.querySelector('a') || s;
+      const ar = al.getBoundingClientRect();
+      const br = bl.getBoundingClientRect();
+      out.adjacentFootnoteGroups.push({
+        nums: [prev.textContent.trim(), s.textContent.trim()],
+        gap: +(b.left - a.right).toFixed(1),
+        linkGap: +(br.left - ar.right).toFixed(1),
+        sameLine: Math.abs(a.top - b.top) < 2,
+        before,
+      });
+    }
+  }
   out.footnotesSection = (() => { const f = document.querySelector('.footnotes'); if (!f) return null; const cs = getComputedStyle(f);
     return {display: cs.display, visibility: cs.visibility, rect: r(f), items: f.querySelectorAll('li').length, text: textInfo(f.querySelector('li p') || f.querySelector('li'), 'footnote li')}; })();
   out.sidenotes = notes.map((n, i) => {
@@ -1963,6 +1984,14 @@ def path_checks(report, strict_lightbox=False):
     add("A4", len(mid["sidenotes"]) == 0 and (mid["footnotesSection"] is None or mid["footnotesSection"]["display"] != "none"),
         f"{path} 1024: sidenote={len(mid['sidenotes'])} "
         f"footnotesDisplay={(mid['footnotesSection'] or {}).get('display')}")
+    for name in ("wide-light", "wide-dark", "narrow-light", "narrow-dark"):
+        for g in (configs.get(name) or {}).get("adjacentFootnoteGroups") or []:
+            sep_ok = (g.get("before") not in (None, "", "none", "normal")
+                      and (g.get("linkGap") or 0) > 1.0
+                      and bool(g.get("sameLine")))
+            add("A4", sep_ok,
+                f"{path} {name} 연속 각주 {g.get('nums')}: before={g.get('before')!r} "
+                f"linkGap={g.get('linkGap')}px sameLine={g.get('sameLine')}")
 
     for scenario, data in report["resize"].items():
         for stage in data["stages"]:
