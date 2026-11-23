@@ -155,16 +155,16 @@ Foyege의 진단은 이렇다. 기존 AI 영상 모델은 한 번에 생성하�
 
 3,668자 원본 프롬프트에 기록된 4개 샷 전체의 시간대별 대사와 연기 설계를 표로 정리하면 다음과 같다.
 
-| 구간 | 시간과 단계 및 원작 <펜스> 영어 대사 | 핵심 신체 및 음성 지시와 금지 반응 |
+| 샷 구분 | 시간과 단계 및 원작 <펜스> 영어 대사 | 핵심 신체 및 음성 지시와 금지 반응 |
 | --- | --- | --- |
-| **샷 1** | 0.0\~3.7초 (남자의 억제된 폭발): *"It's not easy for me to admit that I've been standing in the same place for eighteen years."* | 85mm 클로즈업. 입술을 다물고 턱을 악문 채 낮게 시작(`AU4 + AU7 + AU23`). `"eighteen years"`에서 콧방울이 벌어지고 상체를 몇 cm 앞으로 내밀며 짧게 폭발(`AU25 + AU26`) 후 즉시 하드 컷. |
-| **샷 2-1** | 3.7\~6.5초 (반격, 反击): *"Well, I've been standing with you! I've been right here with you, Troy! I got a life, too."* | 여자 오버더숄더 클로즈업. 상체를 급히 앞으로 기울이고 턱을 내밀며 치아 사이로 짜내듯 빠르고 날카롭게 반격(`AU4 + AU5 + AU9 + AU10 + AU20`). |
-| **샷 2-2** | 6.5\~11.5초 (자기 증명, 自证): *"I gave eighteen years of my life to stand in the same spot as you."* | 물러서지 않고 직시하되 눈빛이 공격에서 자기 증명으로 전환. 눈썹 안쪽이 올라가고 아래 눈꺼풀에 물기가 비침. 오른손으로 자기 가슴을 짧게 한 번 가리키고 `"my life"`를 강조. |
-| **샷 2-3** | 11.5\~16.5초 (균열, 裂缝): *"Don't you think I ever wanted other things? Don't you think I had dreams and hopes?"* | 0.5초 미만 고개를 숙였다가 다시 눈을 듦. 눈가가 젖어들고 아랫입술이 미세하게 떨리지만 **이 시점에 눈물이 흘러내리는 것은 금지**. 둘째 질문의 `"dreams and hopes"`에서 목소리가 낮아짐. |
-| **샷 2-4** | 16.5\~20.0초 (파열, 破音): *"What about my life? What about me?"* | 목소리가 처음으로 뚜렷하게 갈라짐. 첫 문장은 높은 음량으로 직시, 두 문장 사이 짧고 급한 들숨과 0.5초 미만의 시선 하강, 둘째 문장은 가볍고 느린 톤으로 공격성 소멸. |
-| **샷 2-5** | 20.0\~23.0초 (고백, 坦白): *"Don't you think it ever crossed my mind to want to know other men?"* | 눈을 다시 크게 뜨고 눈썹을 치켜올리며 고통스러운 자조가 스침. 웃음기 없는 입꼬리 경련 직후 입꼬리가 처지고 고개를 살짝 기울임. 대사 끝을 끊지 않고 다음 샷으로 연결. |
-| **샷 3** | 23.0\~29.0초 (남자의 무언 리액션 3단계, 여자 오프스크린 대사): *"That I wanted to lay up somewhere and forget about my responsibilities? That I wanted someone to make me laugh..."* | 남자 클로즈업 하드 컷. 23\~25초 반박하려 입을 살짝 열다 침묵 → 25\~27초 `"other men"`과 `"responsibilities"`를 듣고 눈가에 물기가 차며 **억제된 침 삼킴** 1회 → 27\~29초 처음으로 시선을 오른쪽 위로 회피(**남자의 눈물 금지**). |
-| **샷 4** | 29.0\~30.0초 (결말의 감정 분출): *"...so I could feel good?"* | `"laugh"` 직후 여자 익스트림 클로즈업(극클로즈업) 하드 컷. 마침내 눈물 제약 해제, 오른쪽 뺨을 따라 눈물이 흐르고 아랫입술이 뒤집히듯 떨림. `"good"` 직전 짧고 부서지는 들숨 후 이미 답을 아는 질문처럼 음량을 낮추며 0.3초 정지. |
+| **제1샷** | 0.0\~3.7초 (남자의 억제된 폭발): *"It's not easy for me to admit that I've been standing in the same place for eighteen years."* | 85mm 클로즈업. 입술을 다물고 턱을 악문 채 낮게 시작(AU4, AU7, AU23). `"eighteen years"`에서 콧방울이 벌어지고 상체를 몇 cm 앞으로 내밀며 짧게 폭발(AU25, AU26) 후 즉시 하드 컷. |
+| **제2샷 1구간** | 3.7\~6.5초 (반격, 反击): *"Well, I've been standing with you! I've been right here with you, Troy! I got a life, too."* | 여자 오버더숄더 클로즈업. 상체를 급히 앞으로 기울이고 턱을 내밀며 치아 사이로 짜내듯 빠르고 날카롭게 반격(AU4, AU5, AU9, AU10, AU20). |
+| **제2샷 2구간** | 6.5\~11.5초 (자기 증명, 自证): *"I gave eighteen years of my life to stand in the same spot as you."* | 물러서지 않고 직시하되 눈빛이 공격에서 자기 증명으로 전환. 눈썹 안쪽이 올라가고 아래 눈꺼풀에 물기가 비침. 오른손으로 자기 가슴을 짧게 한 번 가리키고 `"my life"`를 강조. |
+| **제2샷 3구간** | 11.5\~16.5초 (균열, 裂缝): *"Don't you think I ever wanted other things? Don't you think I had dreams and hopes?"* | 0.5초 미만 고개를 숙였다가 다시 눈을 듦. 눈가가 젖어들고 아랫입술이 미세하게 떨리지만 **이 시점에 눈물이 흘러내리는 것은 금지**. 둘째 질문의 `"dreams and hopes"`에서 목소리가 낮아짐. |
+| **제2샷 4구간** | 16.5\~20.0초 (파열, 破音): *"What about my life? What about me?"* | 목소리가 처음으로 뚜렷하게 갈라짐. 첫 문장은 높은 음량으로 직시, 두 문장 사이 짧고 급한 들숨과 0.5초 미만의 시선 하강, 둘째 문장은 가볍고 느린 톤으로 공격성 소멸. |
+| **제2샷 5구간** | 20.0\~23.0초 (고백, 坦白): *"Don't you think it ever crossed my mind to want to know other men?"* | 눈을 다시 크게 뜨고 눈썹을 치켜올리며 고통스러운 자조가 스침. 웃음기 없는 입꼬리 경련 직후 입꼬리가 처지고 고개를 살짝 기울임. 대사 끝을 끊지 않고 다음 샷으로 연결. |
+| **제3샷** | 23.0\~29.0초 (남자의 무언 리액션 3단계, 여자 오프스크린 대사): *"That I wanted to lay up somewhere and forget about my responsibilities? That I wanted someone to make me laugh..."* | 남자 클로즈업 하드 컷. 23\~25초 반박하려 입을 살짝 열다 침묵 → 25\~27초 `"other men"`과 `"responsibilities"`를 듣고 눈가에 물기가 차며 **억제된 침 삼킴** 1회 → 27\~29초 처음으로 시선을 오른쪽 위로 회피(**남자의 눈물 금지**). |
+| **제4샷** | 29.0\~30.0초 (결말의 감정 분출): *"...so I could feel good?"* | `"laugh"` 직후 여자 익스트림 클로즈업(극클로즈업) 하드 컷. 마침내 눈물 제약 해제, 오른쪽 뺨을 따라 눈물이 흐르고 아랫입술이 뒤집히듯 떨림. `"good"` 직전 짧고 부서지는 들숨 후 이미 답을 아는 질문처럼 음량을 낮추며 0.3초 정지. |
 
 ![분노라는 보호막이 점진적으로 약해지며 슬픔이 드러나는 감정 곡선 도식](https://img.seosoyoung.eiaserinnys.me/images/foyege-seedance-2-5-acting-prompt/03-emotional-arc.jpg)
 *감정 곡선 설계: 인물은 먼저 분노로 자신을 보호하고, 그 방어 태세가 유지되지 못할 때 비로소 슬픔이 표면으로 드러난다. 출처: Foyege, Vibe Shot Club.*
