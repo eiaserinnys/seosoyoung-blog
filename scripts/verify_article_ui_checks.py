@@ -155,7 +155,14 @@ A9_JS = r"""
       }
     }
   }
-  return {codes: codes, loneCharCells: loneCharCells, bracketBreaks: bracketBreaks};
+  const pres = [...document.querySelectorAll('.post-content pre')].map((p, i) => ({
+    i: i + 1,
+    clientWidth: p.clientWidth,
+    scrollWidth: p.scrollWidth,
+    over: +(p.scrollWidth - p.clientWidth).toFixed(1),
+    text: p.textContent.trim().slice(0, 60),
+  }));
+  return {codes: codes, loneCharCells: loneCharCells, bracketBreaks: bracketBreaks, pres: pres};
 }
 """
 
@@ -377,6 +384,7 @@ A15_JS = r"""
 """
 
 A9_WIDE_CONFIGS = ("tablet-light", "mid-light", "wide-light")
+A9_PRE_WIDE_CONFIGS = ("tablet-light", "tablet820-light", "mid-light", "wide-light", "wide-dark")
 A9_NARROW_CONFIGS = ("min360-light", "narrow-light", "min390-light", "min414-light")
 A9_LONE_CHAR_CONFIGS = ("min360-light", "narrow-light", "min390-light")
 WIDE_TABLE_MAX_CELL_LINES = 6
@@ -638,6 +646,22 @@ def a9_checks(path, configs):
             entries.append({
                 "ok": False,
                 "detail": f"{path} {name}: 작품명 꺾쇠 줄바꿈 {len(bracket_breaks)}건 {bracket_breaks[:5]}",
+            })
+    for name in A9_PRE_WIDE_CONFIGS:
+        pres = (((configs.get(name) or {}).get("a9") or {}).get("pres") or [])
+        bad_pres = [
+            p for p in pres
+            if (p.get("scrollWidth") or 0) > (p.get("clientWidth") or 0) + 1
+        ]
+        if bad_pres:
+            sample = "; ".join(
+                f"pre {p.get('i')} scrollWidth={p.get('scrollWidth')} "
+                f"clientWidth={p.get('clientWidth')} {p.get('text')!r}"
+                for p in bad_pres[:5]
+            )
+            entries.append({
+                "ok": False,
+                "detail": f"{path} {name}: 코드 블록(pre) 가로 넘침 {len(bad_pres)}건 / {sample}",
             })
     return entries
 

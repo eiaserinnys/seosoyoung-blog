@@ -27,12 +27,12 @@ images:
 X 계정 @VibeEverything은 2026년 11월 22일에 Foyege의 30초 AI 연기 프롬프트 작성법을 소개했다. 이때 전날인 11월 21일에 올린 9장짜리 요약 타래(「TS 말포이 시리즈를 만든 크리에이터 Foyege의 AI 캐릭터에 '숨 쉬는' 실제 피부 질감 입히는 법 요약」)를 함께 인용했다.[^1] 이 요약 타래의 1차 원문을 추적해 보면 두 가지 원본 자료가 확인된다. 하나는 Foyege가 2026년 8월 25일 빌리빌리(Bilibili)와 유튜브에 공개한 5분 24초짜리 해설 영상이다(`AI视频别再生成“伪人”模型脸了！一条视频让你的AI人物拥有会“呼吸”的真实皮肤质感`). 다른 하나는 2026년 10월 26일 Vibe Shot Club에 무료로 공개한 6편짜리 연재 강좌의 제2강이다(`AI 人物的真实皮肤怎么做：先修角色图，再写光线与表情`).[^2]
 
 ![Foyege가 제시한 인물 이미지 수정 순서: 01 얼굴(구조와 신원) → 02 피부 질감(표면과 반사) → 03 빛(피부를 지나가는 방식)](https://img.seosoyoung.eiaserinnys.me/images/foyege-ai-realistic-skin-texture/01-repair-order-three-steps.jpg)
-*인물 이미지를 처음부터 만들 때의 작업 순서는 3단계다. 얼굴 구조와 정체성을 먼저 확정한 뒤 피부 질감과 조명을 차례로 더하고, 감정 표현은 인물 템플릿이 안정된 뒤에 추가한다. 출처: Foyege, Vibe Shot Club 강좌 영상.*
+*강좌 영상 0분 55초 슬라이드(27장 중 4번). 출처: Foyege & LibTV.*
 
 2차 요약 타래와 1차 영상 및 텍스트 교안을 대조하면 몇 가지 흥미로운 차이가 드러난다. 먼저 **해상도 말실수 정정**(`口误`)이 눈에 띈다. Foyege는 영상 1분 13초 화면의 음성 해설에서 "4K 해상도를 우선 선택하라"고 말했다. 바이트댄스 이미지 모델 Seedream 5.0 Pro로 인물 템플릿을 만들 때의 안내였다. @VibeEverything의 두 번째 슬라이드도 이 음성을 그대로 옮겨 `"인물 템플릿은 Seedream 5.0 Pro로, 해상도는 4K를 우선 선택"`이라고 적었다. 그러나 영상 화면에 나온 크리에이티브 플랫폼 LibTV의 해상도 선택창에는 `1K`와 `2K` 두 가지가 전부다. Foyege 본인도 편집 과정에서 이 말실수를 발견하고 영상 하단에 **`这里生成分辨率最好首选2K（口误）`**("여기서 생성 해상도는 2K를 우선 선택하는 것이 가장 좋습니다, 말실수")라는 정정 자막을 달아 두었다.
 
 ![LibTV 작업 환경에서 Seedream 5.0 Pro 모델의 해상도(1K/2K)를 선택하는 화면과 Foyege의 2K 정정 자막](https://img.seosoyoung.eiaserinnys.me/images/foyege-ai-realistic-skin-texture/02-seedream-2k-template-ui.jpg)
-*강좌 영상 1분 13초 화면이다. 음성에서는 4K라고 발음했으나 실제 Seedream 5.0 Pro 설정창에는 1K와 2K만 있어 하단 자막으로 '2K 우선 선택(말실수)'이라고 정정했다. 출처: Foyege & LibTV.*
+*강좌 영상 1분 13초 화면. 출처: Foyege & LibTV.*
 
 아울러 **영상 강좌와 Vibe Shot Club 텍스트 교안은 서로 빈칸을 메워 준다**. 8월 25일 영상 강좌는 LibTV 플랫폼의 기능을 중심으로 시연한다. Foyege는 이 플랫폼에 계약 디렉터로 참여했다. 시연하는 기능은 `Seedream 5.0 Pro` 캐릭터 시트 생성, `人像质感调节`(인물 질감 조절) 노드, 내장 고해상도 캐릭터 라이브러리, `Seedance 2.5` 옴니 레퍼런스 5초 생성이다. 반면 10월 26일에 나온 Vibe Shot Club 텍스트 교안은 특정 플랫폼의 UI 설명을 덜어냈다. 그 대신 이미지 모델과 영상 모델 어디에나 쓸 수 있는 **프롬프트 5단계 고쳐 쓰기 연습표**, **시간 연속성의 세 가지 관찰 기준**, **생성 실패 증상별 역추적 점검표**를 새로 넣었다. 아래 표는 두 1차 자료와 2차 요약의 차이를 대조한 결과다.
 
@@ -54,62 +54,45 @@ Foyege는 AI 영상 속 인물이 사람 같지 않고 밀랍 인형이나 플�
 따라서 인물 이미지를 만드는 단계와 영상으로 변환하는 단계의 역할을 명확히 분리해야 한다. 인물 이미지는 한 번에 한 단계씩만 수정해야 한다. 순서는 <strong>얼굴(이목구비 비율과 정체성) → 피부 질감(표면 조직과 반사) → 조명(빛이 피부를 지나가는 방식) → 감정(절제, 경계심, 피로 등)</strong>이다. 얼굴 생김새와 피부 질감을 동시에 고치면 결과물이 달라졌을 때 어느 지시문이 원인인지 파악할 수 없기 때문이다.
 
 <figure class="blog-diagram">
-<svg class="diagram-svg-desktop" viewBox="0 0 720 284" role="img" aria-label="Foyege의 리얼 피부 2단계 제작 워크플로우와 6차원 피부 묘사 공식" xmlns="http://www.w3.org/2000/svg">
+<svg class="diagram-svg-desktop" viewBox="0 0 720 207" role="img" aria-label="Foyege의 6차원 피부 질감 설계 2단계 구성" xmlns="http://www.w3.org/2000/svg">
   <defs>
     <marker id="arr-acc" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="var(--accent)"/></marker>
   </defs>
-  <rect width="720" height="284" fill="var(--bg-2)"/>
-  <rect x="18" y="18" width="328" height="248" fill="var(--bg)" stroke="var(--rule-strong)" stroke-width="1.5"/>
-  <text x="32" y="43" font-family="var(--mono)" font-size="11" font-weight="700" fill="var(--ink-2)">STAGE 01 / STATIC CHARACTER TEMPLATE</text>
-  <text x="32" y="65" font-family="var(--sans)" font-size="13" font-weight="700" fill="var(--ink)">정적 인물 템플릿 (1–4차원: 표면과 반사 설계)</text>
-  <text x="32" y="93" font-family="var(--sans)" font-size="11" font-weight="700" fill="var(--ink)">01 물리적 상태: 자연 반무광 등 주 상태 1개만 선택</text>
-  <text x="32" y="119" font-family="var(--sans)" font-size="11" fill="var(--ink)">02 구역별 질감: 이마 잔모공, 콧방울 모공, 눈가 주름</text>
-  <text x="32" y="145" font-family="var(--sans)" font-size="11" fill="var(--ink)">03 절제된 결점: 미세한 톤 불균일, 콧방울 붉은기</text>
-  <text x="32" y="171" font-family="var(--sans)" font-size="11" font-weight="700" fill="var(--accent)">04 하이라이트 분포: 콧대, 광대, 아랫입술 국소 반사</text>
-  <text x="32" y="197" font-family="var(--sans)" font-size="11" fill="var(--ink-2)">• 양 볼과 턱은 저반사 유지, 측면광에서만 솜털 반짝임</text>
-  <text x="32" y="223" font-family="var(--sans)" font-size="11" fill="var(--ink-2)">• 제작 순서: 얼굴 정체성 → 피부 질감 → 조명 → 감정</text>
-  <text x="32" y="248" font-family="var(--sans)" font-size="11" fill="var(--ink-2)">• 기존 캐릭터 시트는 질감 조절 노드로 입자감만 보정</text>
-  <line x1="346" y1="142" x2="370" y2="142" stroke="var(--accent)" stroke-width="1.5" marker-end="url(#arr-acc)"/>
-  <rect x="374" y="18" width="328" height="248" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.5"/>
-  <text x="388" y="43" font-family="var(--mono)" font-size="11" font-weight="700" fill="var(--accent-ink)">STAGE 02 / DYNAMIC VIDEO PROMPT</text>
-  <text x="388" y="65" font-family="var(--sans)" font-size="13" font-weight="700" fill="var(--accent-ink)">동적 영상 프롬프트 (5–6차원: 빛과 연기 결합)</text>
-  <text x="388" y="93" font-family="var(--sans)" font-size="11" font-weight="700" fill="var(--accent-ink)">• 신원 고정: 참고 이미지 계승 ('예쁜 여성, 8K' 금지)</text>
-  <text x="388" y="119" font-family="var(--sans)" font-size="11" fill="var(--accent-ink)">• 샷 크기별 예산: 풀샷은 톤만, 클로즈업에서만 모공</text>
-  <text x="388" y="145" font-family="var(--sans)" font-size="11" font-weight="700" fill="var(--accent-ink)">05 빛과 표정 구동 (Light &amp; Expression Drive)</text>
-  <text x="388" y="171" font-family="var(--sans)" font-size="11" fill="var(--accent-ink)">앞 문장은 초 단위 연기 동작, 뒤 문장은 광원과 그림자가</text>
-  <text x="388" y="197" font-family="var(--sans)" font-size="11" fill="var(--accent-ink)">피부를 지나가는 방식을 한 문단에 짝지어 서술</text>
-  <text x="388" y="223" font-family="var(--sans)" font-size="11" font-weight="700" fill="var(--accent-ink)">06 시간 연속성 (Temporal Continuity)</text>
-  <text x="388" y="248" font-family="var(--sans)" font-size="11" fill="var(--accent-ink)">질감 부착 상태 유지, 표정 미세 신축, 하이라이트 이동</text>
+  <rect width="720" height="207" fill="var(--bg-2)"/>
+  <rect x="18" y="18" width="328" height="171" fill="var(--bg)" stroke="var(--rule-strong)" stroke-width="1.5"/>
+  <text x="32" y="43" font-family="var(--mono)" font-size="11" font-weight="700" fill="var(--ink-2)">STAGE 01 / STATIC TEMPLATE</text>
+  <text x="32" y="65" font-family="var(--sans)" font-size="13" font-weight="700" fill="var(--ink)">정적 인물 템플릿 (1~4차원)</text>
+  <text x="32" y="93" font-family="var(--sans)" font-size="11" fill="var(--ink)">01 물리적 상태: 자연 반무광 등 주 상태 1개</text>
+  <text x="32" y="119" font-family="var(--sans)" font-size="11" fill="var(--ink)">02 구역별 질감: 이마, 콧방울, 눈가, 볼 차등 배분</text>
+  <text x="32" y="145" font-family="var(--sans)" font-size="11" fill="var(--ink)">03 절제된 결점: 톤 불균일, 붉은기, 잔주름 2~3개</text>
+  <text x="32" y="171" font-family="var(--sans)" font-size="11" fill="var(--ink)">04 하이라이트 분포: 콧대, 광대, 아랫입술 국소 반사</text>
+  <line x1="346" y1="103.5" x2="370" y2="103.5" stroke="var(--accent)" stroke-width="1.5" marker-end="url(#arr-acc)"/>
+  <rect x="374" y="44" width="328" height="119" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.5"/>
+  <text x="388" y="69" font-family="var(--mono)" font-size="11" font-weight="700" fill="var(--accent-ink)">STAGE 02 / DYNAMIC VIDEO PROMPT</text>
+  <text x="388" y="91" font-family="var(--sans)" font-size="13" font-weight="700" fill="var(--accent-ink)">동적 영상 프롬프트 (5~6차원)</text>
+  <text x="388" y="119" font-family="var(--sans)" font-size="11" fill="var(--accent-ink)">05 빛과 표정 구동: 연기 동작과 광원 및 그림자 이동 결합</text>
+  <text x="388" y="145" font-family="var(--sans)" font-size="11" fill="var(--accent-ink)">06 시간 연속성: 표면 부착 유지, 표정 신축, 반사 이동</text>
 </svg>
-<svg class="diagram-svg-mobile" viewBox="0 0 350 536" role="img" aria-label="Foyege의 리얼 피부 2단계 제작 워크플로우와 6차원 피부 묘사 공식 (모바일)" xmlns="http://www.w3.org/2000/svg">
+<svg class="diagram-svg-mobile" viewBox="0 0 350 322" role="img" aria-label="Foyege의 6차원 피부 질감 설계 2단계 구성 (모바일)" xmlns="http://www.w3.org/2000/svg">
   <defs>
     <marker id="arr-acc-m" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="var(--accent)"/></marker>
   </defs>
-  <rect width="350" height="536" fill="var(--bg-2)"/>
-  <rect x="16" y="14" width="318" height="232" fill="var(--bg)" stroke="var(--rule-strong)" stroke-width="1.5"/>
+  <rect width="350" height="322" fill="var(--bg-2)"/>
+  <rect x="16" y="14" width="318" height="158" fill="var(--bg)" stroke="var(--rule-strong)" stroke-width="1.5"/>
   <text x="28" y="38" font-family="var(--mono)" font-size="12" font-weight="700" fill="var(--ink-2)">STAGE 01 / STATIC TEMPLATE</text>
-  <text x="28" y="58" font-family="var(--sans)" font-size="13" font-weight="700" fill="var(--ink)">정적 인물 템플릿 (1–4차원 설계)</text>
-  <text x="28" y="84" font-family="var(--sans)" font-size="12" font-weight="700" fill="var(--ink)">01 물리적 상태: 반무광 등 주 상태 1개만 선택</text>
-  <text x="28" y="108" font-family="var(--sans)" font-size="12" fill="var(--ink)">02 구역별 질감: 이마 잔모공, 콧방울 모공, 눈가 주름</text>
-  <text x="28" y="132" font-family="var(--sans)" font-size="12" fill="var(--ink)">03 절제된 결점: 톤 불균일, 콧방울 붉은기, 잔주름</text>
-  <text x="28" y="156" font-family="var(--sans)" font-size="12" font-weight="700" fill="var(--accent)">04 하이라이트 분포: 콧대, 광대, 아랫입술 국소 반사</text>
-  <text x="28" y="182" font-family="var(--sans)" font-size="12" fill="var(--ink-2)">• 양 볼과 턱은 저반사 유지, 측면광에서만 솜털 반짝임</text>
-  <text x="28" y="206" font-family="var(--sans)" font-size="12" fill="var(--ink-2)">• 제작 순서: 얼굴 정체성 → 피부 질감 → 조명 → 감정</text>
-  <text x="28" y="230" font-family="var(--sans)" font-size="12" fill="var(--ink-2)">• 기존 이미지는 질감 조절 노드로 입자감과 융합 보정</text>
-  <line x1="175" y1="246" x2="175" y2="268" stroke="var(--accent)" stroke-width="1.5" marker-end="url(#arr-acc-m)"/>
-  <rect x="16" y="272" width="318" height="250" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.5"/>
-  <text x="28" y="296" font-family="var(--mono)" font-size="12" font-weight="700" fill="var(--accent-ink)">STAGE 02 / DYNAMIC VIDEO PROMPT</text>
-  <text x="28" y="316" font-family="var(--sans)" font-size="13" font-weight="700" fill="var(--accent-ink)">동적 영상 프롬프트 (5–6차원 결합)</text>
-  <text x="28" y="342" font-family="var(--sans)" font-size="12" font-weight="700" fill="var(--accent-ink)">• 신원 고정: '예쁜 여성, 실사 피부, 8K' 재정의 금지</text>
-  <text x="28" y="366" font-family="var(--sans)" font-size="12" fill="var(--accent-ink)">• 샷 크기 예산: 풀샷은 톤만, 클로즈업에서만 모공</text>
-  <text x="28" y="392" font-family="var(--sans)" font-size="12" font-weight="700" fill="var(--accent-ink)">05 빛과 표정 구동 (Light &amp; Expression Drive)</text>
-  <text x="28" y="414" font-family="var(--sans)" font-size="12" fill="var(--accent-ink)">앞 문장은 초 단위 연기 동작, 뒤 문장은 광원과 그림자가</text>
-  <text x="28" y="436" font-family="var(--sans)" font-size="12" fill="var(--accent-ink)">피부를 지나가는 방식을 한 문단에 짝지어 서술</text>
-  <text x="28" y="462" font-family="var(--sans)" font-size="12" font-weight="700" fill="var(--accent-ink)">06 시간 연속성 (Temporal Continuity)</text>
-  <text x="28" y="484" font-family="var(--sans)" font-size="12" fill="var(--accent-ink)">질감 부착 상태 유지, 표정에 따른 미세 신축, 고개 각도에</text>
-  <text x="28" y="506" font-family="var(--sans)" font-size="12" fill="var(--accent-ink)">따른 하이라이트 이동 (깜빡임 및 새 얼굴 생성 차단)</text>
+  <text x="28" y="58" font-family="var(--sans)" font-size="13" font-weight="700" fill="var(--ink)">정적 인물 템플릿 (1~4차원)</text>
+  <text x="28" y="84" font-family="var(--sans)" font-size="12" fill="var(--ink)">01 물리적 상태: 자연 반무광 등 주 상태 1개</text>
+  <text x="28" y="108" font-family="var(--sans)" font-size="12" fill="var(--ink)">02 구역별 질감: 이마, 콧방울, 눈가, 볼 차등 배분</text>
+  <text x="28" y="132" font-family="var(--sans)" font-size="12" fill="var(--ink)">03 절제된 결점: 톤 불균일, 붉은기, 잔주름 2~3개</text>
+  <text x="28" y="156" font-family="var(--sans)" font-size="12" fill="var(--ink)">04 하이라이트 분포: 콧대, 광대, 아랫입술 국소 반사</text>
+  <line x1="175" y1="172" x2="175" y2="194" stroke="var(--accent)" stroke-width="1.5" marker-end="url(#arr-acc-m)"/>
+  <rect x="16" y="198" width="318" height="110" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.5"/>
+  <text x="28" y="222" font-family="var(--mono)" font-size="12" font-weight="700" fill="var(--accent-ink)">STAGE 02 / DYNAMIC VIDEO PROMPT</text>
+  <text x="28" y="242" font-family="var(--sans)" font-size="13" font-weight="700" fill="var(--accent-ink)">동적 영상 프롬프트 (5~6차원)</text>
+  <text x="28" y="268" font-family="var(--sans)" font-size="12" fill="var(--accent-ink)">05 빛과 표정 구동: 연기 동작과 광원 및 그림자 이동 결합</text>
+  <text x="28" y="292" font-family="var(--sans)" font-size="12" fill="var(--accent-ink)">06 시간 연속성: 표면 부착 유지, 표정 신축, 반사 이동</text>
 </svg>
-<figcaption style="margin-top: 0.65rem; font-size: 0.85rem; color: var(--ink-2); text-align: center; line-height: 1.5;">Foyege의 6차원 피부 질감 설계 구조다. 1부터 4차원은 정적 캐릭터 템플릿에서 피부 표면과 반사를 완성하고, 5와 6차원은 영상 프롬프트에서 빛이 이동해도 표면 연속성이 유지되게 한다.</figcaption>
+<figcaption style="margin-top: 0.65rem; font-size: 0.85rem; color: var(--ink-2); text-align: center; line-height: 1.5;">6차원 피부 질감 설계의 2단계 구성.</figcaption>
 </figure>
 
 ## 1\~2단계: 피부를 정의하는 6차원 공식과 정적 템플릿
@@ -125,7 +108,7 @@ Foyege는 막연한 화질 수식어를 버리고 여섯 가지 차원으로 피
 실제 사람의 얼굴에서는 부위마다 입자 크기와 표면 조직이 서로 다르다. 얼굴 전체에 균일한 노이즈나 굵은 모공을 깔아 놓으면 오히려 그래픽 텍스처처럼 보인다. 성인 자연 피부를 설계할 때는 얼굴을 여섯 구역으로 구분해 구역마다 다른 질감을 준다.
 
 ![얼굴 부위별로 서로 다른 피부 질감을 지정한 강좌 슬라이드(이마 잔모공, 눈 아래 미세한 주름, 콧방울 모공, 볼의 불균일한 질감, 입술 세로 주름)](https://img.seosoyoung.eiaserinnys.me/images/foyege-ai-realistic-skin-texture/03-region-based-texture.jpg)
-*구역별 질감(Layer 02) 설계다. 피부는 단일한 색 덩어리가 아니므로 이마, 눈 아래, 콧방울, 볼, 입술마다 모공의 크기와 표면 조직의 방향을 다르게 지정해야 한다. 출처: Foyege & LibTV.*
+*강좌 영상 1분 56초 슬라이드(27장 중 9번, Layer 02). 출처: Foyege & LibTV.*
 
 | 얼굴 구역 | 프롬프트에 지정할 세부 질감과 주의점 |
 | --- | --- |
@@ -141,14 +124,14 @@ Foyege는 막연한 화질 수식어를 버리고 여섯 가지 차원으로 피
 프롬프트에 `'완벽하고 티 없는 피부(完美无瑕)'`라고 적는 것은 모델에 가짜 인형을 만들라고 지시하는 것과 다름없다. Foyege는 결점이 단순한 흠이라기보다 실제 사람임을 증명하는 <strong>사람다움의 증거(人感证据)</strong>라고 설명한다. `미세한 피부 톤 불균일(轻微肤色不匀)`, `콧방울의 붉은기(鼻翼泛红)`, `눈가의 미세 잔주름(眼下微细纹)`, `옅은 색소 침착이나 잡티(淡淡色斑)` 가운데 인물의 나이와 설정에 맞는 두세 가지를 골라 넣는다. 물론 사실감을 높이겠다고 모공과 주름, 반점을 전부 과장해 넣으면 그 또한 부자연스러워지므로 적정 수준에서 절제해야 한다.
 
 ![절제된 결점을 '사람다움의 증거'로 정의한 강좌 슬라이드(미세한 톤 불균일, 콧방울 붉은기, 눈가 잔주름, 옅은 잡티)](https://img.seosoyoung.eiaserinnys.me/images/foyege-ai-realistic-skin-texture/04-restrained-imperfection.jpg)
-*절제된 결점(Layer 03) 설계다. 미세한 피부 톤 불균일, 콧방울 붉은기, 눈가 잔주름, 옅은 잡티는 과도하게 매끈한 표면을 깨뜨리는 사람다움의 증거다. 출처: Foyege & LibTV.*
+*강좌 영상 2분 12초 슬라이드(27장 중 11번, Layer 03). 출처: Foyege & LibTV.*
 
 ### ④ 하이라이트 분포: 기름기가 아닌 골격 곡면의 국소 반응
 
 AI 인물이 유독 기름지고 번들거려 보이는 까닭은 하이라이트가 얼굴 전체에 고르게 퍼져 있기 때문이다. 실제 피부에서 하이라이트는 얼굴 전체에 바른 기름층이라기보다, 광원이 얼굴의 뼈대 곡면(骨骼曲面)과 촉촉한 부위에 부딪혀 생기는 <strong>국소 반응(局部反应)</strong>이다. 이 때문에 작고 부서지는 하이라이트는 <strong>콧대(鼻梁), 광대뼈 상단(颧骨上缘), 아랫입술 중앙(下唇中心)</strong>에만 한정한다. 필요하면 촉촉한 눈가를 더한다. <strong>양 볼과 턱선은 낮은 반사율(低反射)</strong>을 유지하도록 명시한다.
 
 ![하이라이트를 콧대, 광대 위쪽, 아랫입술 중앙으로 한정하고 양 볼과 턱은 저반사로 유지한 예시 화면](https://img.seosoyoung.eiaserinnys.me/images/foyege-ai-realistic-skin-texture/05-local-highlight-distribution.jpg)
-*하이라이트 분포(Layer 04) 설계다. 골격이 돌출된 콧대와 광대 상단, 촉촉한 아랫입술 중앙에만 작고 부서지는 반사를 남기고 볼과 턱은 저반사로 유지한다(화면 상단의 예시 프롬프트는 王后知AIGC의 것). 출처: Foyege & LibTV.*
+*강좌 영상 2분 22초 슬라이드(Layer 04, 상단 예시 프롬프트는 王后知AIGC). 출처: Foyege & LibTV.*
 
 Vibe Shot Club 교안에는 5단계 고쳐 쓰기 연습표가 실려 있다. 연습표는 막연한 `'초사실적 피부'`라는 문구를 한 단계씩 고쳐 나가고, 단계마다 생성 뒤 화면의 어느 부위를 점검해야 하는지 보여 준다.
 
@@ -163,7 +146,7 @@ Vibe Shot Club 교안에는 5단계 고쳐 쓰기 연습표가 실려 있다. �
 이 네 가지 정적 차원을 하나로 묶어 Foyege가 공개한 **정적 인물 템플릿 프롬프트**(중국어 원문 및 한국어 번역)는 다음과 같다.
 
 ![정적 인물 템플릿 프롬프트 전문이 수록된 강좌 슬라이드](https://img.seosoyoung.eiaserinnys.me/images/foyege-ai-realistic-skin-texture/06-static-character-template-prompt.jpg)
-*정적 인물 템플릿 프롬프트(27장 중 14번 슬라이드)다. '4K 실사 피부' 같은 추상어 대신 물리적 상태, 구역별 질감, 절제된 결점, 하이라이트 분포, 측면광의 명암 전환을 관찰 가능한 언어로 적는다. 출처: Foyege & LibTV.*
+*강좌 영상 2분 40초 슬라이드(27장 중 14번). 출처: Foyege & LibTV.*
 
 ```text
 [중국어 원문: 자연 반무광 성인 피부 인물 템플릿]
@@ -181,7 +164,8 @@ Vibe Shot Club 교안에는 5단계 고쳐 쓰기 연습표가 실려 있다. �
 
 [한국어 번역]
 상반신 인물 클로즈업, 85mm 인물 렌즈, 자연스러운 반무광의 성인 피부.
-이마 모공은 작고 고우며 콧방울은 약간 뚜렷하고, 볼의 표면 입자 크기는 완전히 균일하지 않다.
+이마 모공은 작고 고우며 콧방울은 약간 뚜렷하고,
+볼의 표면 입자 크기는 완전히 균일하지 않다.
 미세한 피부 톤 불균일, 콧방울 붉은기, 눈가 잔주름을 유지한다.
 
 눈썹 뿌리, 관자놀이, 볼 바깥쪽 윤곽에는 투명하고 부드러운 잔솜털을 남겨
@@ -190,7 +174,8 @@ Vibe Shot Club 교안에는 5단계 고쳐 쓰기 연습표가 실려 있다. �
 작고 부서지는 하이라이트는 콧대, 광대 상단, 아랫입술 중앙으로 한정하고,
 양 볼과 턱은 낮은 반사율을 유지한다.
 부드러운 측면광이 이마, 콧대, 광대를 따라 연속적인 명암 전환을 형성한다.
-그림자 쪽에도 얼굴 골격 구조를 남기고, 피부 보정(블러)과 과도한 번들거림은 배제한다.
+그림자 쪽에도 얼굴 골격 구조를 남기고,
+피부 보정(블러)과 과도한 번들거림은 배제한다.
 ```
 
 ## 3단계: 기존 캐릭터 이미지의 질감 보정과 사전 분리 진단
@@ -198,7 +183,7 @@ Vibe Shot Club 교안에는 5단계 고쳐 쓰기 연습표가 실려 있다. �
 이미 만들어 둔 캐릭터 시트가 있는데 피부만 매끈한 플라스틱에 가깝다면, 캐릭터를 처음부터 다시 생성할 필요 없이 질감만 따로 보정할 수 있다. Foyege는 영상 강좌(2분 57초부터 3분 32초까지)에서 LibTV 작업 공간의 **`人像质感调节`(인물 질감 조절)** 노드 설정값을 공개했다. 기존 캐릭터 시트의 피부와 명암을 보정하는 권장값이다.
 
 ![LibTV의 인물 질감 조절(人像质感调节) 노드에서 5개 세부 파라미터를 설정하는 화면](https://img.seosoyoung.eiaserinnys.me/images/foyege-ai-realistic-skin-texture/07-libtv-portrait-control-ui.jpg)
-*기존 캐릭터 이미지가 있을 때 질감만 보정하는 LibTV '인물 질감 조절' 메뉴 화면이다. 입자감 있는 질감, 자연 피부 상태, 분위기 강화, 자연스러운 융합, 표준 선명도라는 다섯 항목의 조합을 권장한다. 출처: Foyege & LibTV.*
+*강좌 영상 3분 05초의 LibTV 작업 공간 화면. 출처: Foyege & LibTV.*
 
 | 조절 항목 (중국어 메뉴명) | 선택 가능한 3단계 옵션 | Foyege 권장 설정 및 이유 |
 | --- | --- | --- |
@@ -225,7 +210,7 @@ Vibe Shot Club 교안에는 5단계 고쳐 쓰기 연습표가 실려 있다. �
 여기서 많은 창작자가 놓치는 규칙이 <strong>샷 크기별 디테일 예산(Framing Budget)</strong>이다. 현재 카메라 구도에서 눈으로 볼 수 있는 디테일만 프롬프트에 적어야 모델이 화면 비율과 피부 질감을 동시에 안정적으로 처리한다.
 
 ![샷 크기(풀샷, 클로즈업, 매크로)에 따라 프롬프트에 적어야 할 피부 디테일 범위를 구분한 슬라이드](https://img.seosoyoung.eiaserinnys.me/images/foyege-ai-realistic-skin-texture/08-shot-scale-detail-budget.jpg)
-*샷 크기별 디테일 예산(27장 중 23번 슬라이드)이다. 풀샷에서는 피부 톤과 의상 반사 차이만 적고, 클로즈업에서 모공과 솜털을, 매크로에서는 한 번에 하나의 핵심 디테일만 지시한다. 출처: Foyege & LibTV.*
+*강좌 영상 4분 03초 슬라이드(27장 중 23번). 출처: Foyege & LibTV.*
 
 - **풀샷(全身, Full Shot)**: 화면에서 얼굴이 차지하는 면적이 매우 작다. 이때는 전체적인 피부 톤과 **노출된 피부와 의상 원단 사이의 반사율 차이**만 적는다. 풀샷 프롬프트에 콧방울 모공이나 속눈썹 뿌리까지 적어 넣으면 모델이 주의력을 얼굴에 지나치게 쓰는 바람에 전신 비율이나 얼굴 형태가 일그러진다.
 - **클로즈업(近景, Close-up)**: 모공, 투명한 잔솜털, 눈 아래의 미세한 조직, 세로 입술 주름, 국소 하이라이트를 본격적으로 적는 샷이다.
@@ -240,27 +225,32 @@ Vibe Shot Club 교안에는 5단계 고쳐 쓰기 연습표가 실려 있다. �
 3. **빛 각도에 따른 가시성 변화**: 볼 외곽의 투명한 잔솜털은 비스듬한 측면광이나 역광이 스칠 때 반짝이며 드러나고, 다른 각도에서는 덜 보인다. 이런 변화는 자연스럽다. 그런데 "모든 모공과 솜털이 매 순간 똑같이 선명하게 보여야 한다"고 지시하면 오히려 피부가 딱딱한 가면처럼 변한다. 따라서 <strong>"디테일이 피부 표면에 부착된 상태는 연속적으로 유지하되, 눈에 보이는 정도는 광원과 고개 각도를 따른다"</strong>고 적는 것이 정확하다.
 
 ```text
-[동적 영상 프롬프트: 신원 고정 및 빛 촉발 레이어 (Vibe Shot Club 및 영상 슬라이드 22/27 통합)]
+[동적 영상 프롬프트: 신원 고정 및 빛 촉발 레이어]
 沿用角色参考图的身份与肤质。
 低角度黄昏太阳位于车窗外、女主左后方，形成温暖的金色侧逆光。
 阳光沿发梢、耳缘、面颊外缘和肩膀勾出柔亮轮廓，
-车窗框与沿途树影随公交车行驶，偶尔从面部缓慢扫过，使明暗变化服从车辆行驶。
+车窗框与沿途树影随公交车行驶，偶尔从面部缓慢扫过，
+使明暗变化服从车辆行驶。
 
-高光随着转头，在鼻梁、颧骨上缘、湿润眼线和下唇中心自然移动并形成小而破碎的反射，
-面颊与下颌保持低反射。
+高光随着转头，在鼻梁、颧骨上缘、湿润眼线和下唇中心自然移动，
+形成小而破碎的反射，面颊与下颌保持低反射。
 毛孔、细软绒毛、眉毛根部和唇纹始终附着于运动中的同一面部表面，
 随表情产生细微拉伸和压缩，不漂移，不突然消失或重新生成。
 
 [한국어 번역]
 캐릭터 참고 이미지의 신원과 피부 질감을 그대로 따른다.
-낮은 각도의 황혼 태양이 차창 밖, 여주인공의 왼쪽 뒤에서 비추어 따뜻한 황금빛 측역광을 만든다.
-햇빛이 머리카락 끝, 귀 테두리, 볼 바깥 윤곽과 어깨선을 따라 밝은 윤곽선을 그려내고,
-차창 프레임과 길가의 나무 그림자가 버스 주행에 맞춰 얼굴 위를 천천히 스쳐 지나간다.
+낮은 각도의 황혼 태양이 차창 밖, 여주인공의 왼쪽 뒤에서 비추어
+따뜻한 황금빛 측역광을 만든다.
+햇빛이 머리카락 끝, 귀 테두리, 볼 바깥 윤곽과 어깨선을 따라
+밝은 윤곽선을 그려내고, 차창 프레임과 길가의 나무 그림자가
+버스 주행에 맞춰 얼굴 위를 천천히 스쳐 지나간다.
 
-하이라이트는 고개를 돌리는 동작에 맞춰 콧대, 광대 상단, 촉촉한 눈가, 아랫입술 중앙을 따라
-자연스럽게 이동하며 작고 부서지는 반사로 나타난다. 양 볼과 턱은 저반사를 유지한다.
-모공, 잔솜털, 눈썹 뿌리, 입술 주름은 움직이는 얼굴 표면에 항상 밀착된 채
-표정에 따라 미세하게 늘어나고 압축되며, 표면을 떠돌지도, 갑자기 사라지지도, 새로 생성되지도 않는다.
+하이라이트는 고개를 돌리는 동작에 맞춰 콧대, 광대 상단, 촉촉한 눈가,
+아랫입술 중앙을 따라 자연스럽게 이동하며 작고 부서지는 반사로 나타난다.
+양 볼과 턱은 저반사를 유지한다.
+모공, 잔솜털, 눈썹 뿌리, 입술 주름은 움직이는 얼굴 표면에 밀착된 채
+표정에 따라 미세하게 늘어나고 압축되며, 표면을 떠돌지도,
+갑자기 사라지지도, 새로 생성되지도 않는다.
 ```
 
 ## 5단계: 연기와 피부를 하나의 타임라인에서 맞물리게 하기
@@ -270,7 +260,7 @@ Vibe Shot Club 교안에는 5단계 고쳐 쓰기 연습표가 실려 있다. �
 **해안 도로 버스 창가 장면**은 이 원칙이 초 단위로 어떻게 작동하는지 보여 준다. Foyege가 강좌 말미(4분 30초부터 5분 24초까지)에 LibTV의 `Seedance 2.5`(`全能参考`, `16:9`, `720P`, `5초`)로 시연한 장면이다.
 
 ![해안 버스 창가 장면의 초 단위(T+02.30, T+03.70, T+05.00) 가시적 연기 프롬프트 슬라이드](https://img.seosoyoung.eiaserinnys.me/images/foyege-ai-realistic-skin-texture/09-bus-window-second-by-second.jpg)
-*초 단위 가시적 동작 설계(27장 중 25번 슬라이드)다. '수줍게 본다'는 추상적 감정어 대신 시선 이동과 머리 회전의 시차(T+02.30), 고개 숙임과 머리 넘김(T+03.70), 시선 복귀와 버스 진동(T+05.00)을 구체적으로 지시한다. 출처: Foyege & LibTV.*
+*강좌 영상 4분 22초 슬라이드(27장 중 25번). 출처: Foyege & LibTV.*
 
 | 시간 구간 | 카메라에 포착되는 가시적 연기 동작 (앞 문장) | 동시에 일어나는 피부 표면의 빛과 질감 변화 (뒤 문장) |
 | --- | --- | --- |
@@ -281,7 +271,7 @@ Vibe Shot Club 교안에는 5단계 고쳐 쓰기 연습표가 실려 있다. �
 중간 박자인 **T+03.70초** 구간의 프롬프트는 동작과 빛이 어떻게 연결되는지를 잘 보여 준다. 이 구간에는 복잡한 특수 조명 효과를 새로 추가하라는 지시가 전혀 들어 있지 않다. **그림자와 가려지는 부분은 '볼을 스치는 손과 머리카락'이 만들고, 하이라이트 밝기 변화는 '숙여지는 고개 각도'가 만든다.** 이처럼 빛의 변화가 모두 눈에 보이는 신체 동작에서 비롯될 때, 모델은 비로소 화면 속 피부를 평면 그림이 아닌 입체 표면으로 렌더링한다.
 
 ![Foyege가 Seedance 2.5로 생성한 해안 버스 창가 시연 영상의 실제 결과 화면](https://img.seosoyoung.eiaserinnys.me/images/foyege-ai-realistic-skin-texture/10-bus-window-demo-result.jpg)
-*강좌 5분 지점의 해안 버스 창가 시연 결과 화면이다. 차창 밖 황혼 측역광이 머리카락과 볼 외곽의 잔솜털을 비추고, 고개 회전과 손동작에 따라 광대와 아랫입술의 국소 하이라이트가 자연스럽게 변화한다. 출처: Foyege & LibTV.*
+*강좌 영상 5분 02초의 시연 결과 화면. 출처: Foyege & LibTV.*
 
 ## 생성 후 증상별 역추적 점검표
 
