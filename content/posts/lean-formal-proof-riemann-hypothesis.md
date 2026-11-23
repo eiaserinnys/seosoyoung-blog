@@ -59,12 +59,13 @@ AI가 환각(hallucination)을 일으켜 엉터리 논리를 지어내더라도 
 
 | 연도 | 대상 정리 | 정리 증명기와 주도자 | 형식화 규모와 기간 | 전환점의 성격 |
 | --- | --- | --- | --- | --- |
-| **2005** | **4색 정리**<br>(평면 지도의 4색 구분) | Coq<br>조르주 공티에 외 | 약 6만 줄<br>(약 5년) | 1976년 컴퓨터 보조 증명의 '계산 코드 버그 의심'을 사후 형식화로 완전 해소[^gonthier-4ct] |
-| **2012** | **페이트-톰프슨 정리**<br>(홀수 크기 유한군의 구조 분해) | Coq<br>조르주 공티에 외 | 약 15만 줄<br>(6년) | 학술지 한 권 분량(255쪽)의 현대 추상대수학 논문도 완전 형식화가 가능함을 입증[^gonthier-ft] |
-| **2014** | **케플러 추측 (Flyspeck)**<br>(3차원 구의 최고 밀도 쌓기) | HOL Light, Isabelle<br>토머스 헤일스 외 | 수십만 줄, 5,000 CPU시간<br>(11년) | 인간 심사위원단이 지쳐 보증을 유보한 컴퓨터 계산 혼합 증명을 기계 검증으로 완결[^hales-flyspeck] |
-| **2022** | **액체 텐서 실험**<br>(응축 수학의 핵심 정리) | Lean 3<br>페터 숄체, 요한 코멜린 외 | 약 6만 줄<br>(핵심부 6개월) | 옛 정리의 사후 확인에 그치지 않고, 저자도 확신 못 하던 최신 이론을 실시간 검증 및 단순화[^scholze-lte] |
-| **2023** | **다항식 프라이만-루자 추측**<br>(덧셈 조합론의 구조 정리) | Lean 4<br>테렌스 타오 외 20여 명 | 약 1만 1천 줄<br>(3주) | 설계도(Lean Blueprint)로 보조정리를 분해해 수십 명이 동시 조립하는 병렬 협업 확립[^tao-pfr] |
-| **2026.11** | **리만 가설 및 디리클레 GRH**<br>(제타와 $L$-함수 영점의 임계선 정렬) | Lean 4<br>르벤트 알푀게, 클로드 | 1,737만 줄, 17만 5천 개 파일<br>(41일) | 167년 미해결 난제를 AI와 인간이 코드로 직접 돌파. 논문 없이 형식 증명만 먼저 공개[^alpoge-remark] |
+| **2005** | **4색 정리** (평면 지도의 4색 구분) | Coq, 조르주 공티에 외 | 약 6만 줄 (약 5년) | 1976년 컴퓨터 보조 증명의 계산 버그 의심을 사후 형식화로 해소[^gonthier-4ct] |
+| **2012** | **페이트-톰프슨 정리** (홀수 크기 유한군의 구조 분해) | Coq, 조르주 공티에 외 | 약 15만 줄 (6년) | 학술지 한 권 분량(255쪽)의 현대 추상대수학 논문 완전 형식화[^gonthier-ft] |
+| **2014** | **케플러 추측 (Flyspeck)** (3차원 구의 최고 밀도 쌓기) | HOL Light 및 Isabelle, 토머스 헤일스 외 | 수십만 줄, 5,000 CPU시간 (11년) | 심사위원단이 지쳐 보증을 유보한 컴퓨터 계산 혼합 증명을 완결[^hales-flyspeck] |
+| **2022** | **액체 텐서 실험** (응축 수학의 핵심 정리) | Lean 3, 페터 숄체와 요한 코멜린 외 | 약 6만 줄 (핵심부 6개월) | 저자도 확신 못 하던 최신 이론을 6개월 만에 실시간 검증 및 단순화[^scholze-lte] |
+| **2023** | **다항식 프라이만-루자 추측** (덧셈 조합론의 구조 정리) | Lean 4, 테렌스 타오 외 20여 명 | 약 1만 1천 줄 (3주) | 설계도(Lean Blueprint)로 보조정리를 분해해 20여 명이 병렬 조립[^tao-pfr] |
+| **2026 가을** | **페르마의 마지막 정리** (와일스의 1995년 증명 형식화) | Lean 4, 클로드 (앤트로픽) | 약 1,300만 줄 (수주) | 이미 증명된 현대 정수론 거대 정리를 AI 에이전트가 대규모 사후 형식화[^buzzard-4q] |
+| **2026.11** | **리만 가설 및 디리클레 GRH** (제타와 $L$-함수 영점의 임계선 정렬) | Lean 4, 르벤트 알푀게와 클로드 | 1,737만 줄, 17만 5천 개 파일 (41일) | 167년 미해결 난제를 논문 없이 AI와의 공동 형식 증명 코드로 최초 돌파[^alpoge-remark] |
 
 초기 형식 증명의 위력을 가장 극적으로 보여 준 사건은 <strong>케플러 추측(Kepler Conjecture)</strong>입니다. 1611년 요하네스 케플러가 제기한 이 문제는 일상적인 질문에서 출발합니다. "과일 가게에서 오렌지(구)를 상자에 가장 빈틈없이 채우려면 어떻게 쌓아야 할까?" 상식적인 답은 아래층 오렌지들 사이의 오목한 틈마다 위층 오렌지를 놓는 피라미드 모양(면심입방격자, 공간의 약 74.05%를 채웁니다)입니다. 하지만 이 방법이 다른 모든 불규칙한 배열보다도 정말 밀도가 높은지는 400년 가까이 증명되지 않았습니다.
 
@@ -103,50 +104,50 @@ AI가 환각(hallucination)을 일으켜 엉터리 논리를 지어내더라도 
 공교롭게도 알푀게의 발표가 나오기 꼭 여드레 전인 2026년 11월 12일, 임페리얼 칼리지 런던의 케빈 버자드 교수는 자신의 블로그에 「...그리고 그 증명은 Lean으로 검증되었습니다」라는 글을 올려 이 문제를 정면으로 다루었습니다[^buzzard-4q]. 강화학습 AI는 채점 기준만 통과하면 보상을 받습니다. 이 때문에 목표를 달성하려고 사람이 상상하기 힘든 방식으로 규칙의 빈틈을 파고드는 일이 잦은데, 이것을 <strong>보상 해킹(Reward Hacking)</strong>이라고 합니다. 버자드 교수는 AI가 짠 1,737만 줄의 Lean 코드가 올바른 증명인지 확인하려면 반드시 <strong>네 가지 관문</strong>을 통과해야 한다고 정리했습니다. 실제로 11월 20일부터 21일 사이 전 세계 Lean 커뮤니티는 정확히 이 네 가지 관문에 따라 알푀게와 클로드의 코드를 검증했습니다[^lean-cert].
 
 <figure class="blog-diagram">
-<svg class="diagram-svg-desktop" viewBox="0 0 720 336" role="img" aria-label="AI가 생성한 Lean 형식 증명 코드가 네 개의 기계 감사 관문을 거쳐 인간의 수학적 역공학으로 이어지는 검증 파이프라인" xmlns="http://www.w3.org/2000/svg">
+<svg class="diagram-svg-desktop" viewBox="0 0 720 330" role="img" aria-label="AI가 생성한 Lean 형식 증명 코드가 네 개의 기계 감사 관문을 거쳐 인간의 수학적 역공학으로 이어지는 검증 파이프라인" xmlns="http://www.w3.org/2000/svg">
   <defs>
     <marker id="arr-ink-d" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="var(--ink-2)"/></marker>
     <marker id="arr-acc-d" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="var(--accent)"/></marker>
   </defs>
-  <rect width="720" height="336" fill="var(--bg-2)"/>
-  <rect x="14" y="14" width="692" height="192" fill="var(--bg-2)" stroke="var(--rule-strong)" stroke-width="1.5"/>
+  <rect width="720" height="330" fill="var(--bg-2)"/>
+  <rect x="14" y="14" width="692" height="186" fill="var(--bg-2)" stroke="var(--rule-strong)" stroke-width="1.5"/>
   <text x="26" y="36" font-family="var(--sans)" font-size="13" font-weight="700" fill="var(--ink)">1단계: 기계 검증의 4대 감사 관문 (2026.11.20~21 완료, 논리적 무결성 확인)</text>
-  <rect x="24" y="50" width="156" height="142" fill="var(--bg)" stroke="var(--rule-strong)" stroke-width="1.5"/>
+  <rect x="24" y="50" width="156" height="136" fill="var(--bg)" stroke="var(--rule-strong)" stroke-width="1.5"/>
   <text x="34" y="72" font-family="var(--mono)" font-size="11" font-weight="700" fill="var(--accent)">관문 1. 기준 명제 검토</text>
   <text x="34" y="92" font-family="var(--sans)" font-size="12" font-weight="700" fill="var(--ink)">문제지 정합성 확인</text>
   <text x="34" y="112" font-family="var(--sans)" font-size="11" fill="var(--ink-2)">조건 누락이나 쉬운 문제로</text>
   <text x="34" y="128" font-family="var(--sans)" font-size="11" fill="var(--ink-2)">변형되지 않았는지 검증</text>
   <text x="34" y="152" font-family="var(--mono)" font-size="11" fill="var(--ink)">입력: Challenge.lean</text>
   <text x="34" y="170" font-family="var(--mono)" font-size="11" fill="var(--ink)">Mathlib 표준 정의 일치</text>
-  <line x1="180" y1="121" x2="194" y2="121" stroke="var(--ink-2)" stroke-width="1.5" marker-end="url(#arr-ink-d)"/>
-  <rect x="196" y="50" width="156" height="142" fill="var(--bg)" stroke="var(--rule-strong)" stroke-width="1.5"/>
+  <line x1="180" y1="118" x2="194" y2="118" stroke="var(--ink-2)" stroke-width="1.5" marker-end="url(#arr-ink-d)"/>
+  <rect x="196" y="50" width="156" height="136" fill="var(--bg)" stroke="var(--rule-strong)" stroke-width="1.5"/>
   <text x="206" y="72" font-family="var(--mono)" font-size="11" font-weight="700" fill="var(--accent)">관문 2. 격리 샌드박스</text>
   <text x="206" y="92" font-family="var(--sans)" font-size="12" font-weight="700" fill="var(--ink)">독립 재빌드와 추출</text>
   <text x="206" y="112" font-family="var(--sans)" font-size="11" fill="var(--ink-2)">네트워크 차단 환경에서</text>
   <text x="206" y="128" font-family="var(--sans)" font-size="11" fill="var(--ink-2)">17만 5천 파일 클린 빌드</text>
   <text x="206" y="152" font-family="var(--mono)" font-size="11" fill="var(--ink)">입력: Main.lean</text>
   <text x="206" y="170" font-family="var(--mono)" font-size="11" fill="var(--ink)">출력: 61.6GB 추출본</text>
-  <line x1="352" y1="121" x2="366" y2="121" stroke="var(--ink-2)" stroke-width="1.5" marker-end="url(#arr-ink-d)"/>
-  <rect x="368" y="50" width="156" height="142" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.5"/>
+  <line x1="352" y1="118" x2="366" y2="118" stroke="var(--ink-2)" stroke-width="1.5" marker-end="url(#arr-ink-d)"/>
+  <rect x="368" y="50" width="156" height="136" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.5"/>
   <text x="378" y="72" font-family="var(--mono)" font-size="11" font-weight="700" fill="var(--accent-ink)">관문 3. Comparator</text>
   <text x="378" y="92" font-family="var(--sans)" font-size="12" font-weight="700" fill="var(--accent-ink)">보상 해킹과 반칙 색출</text>
   <text x="378" y="112" font-family="var(--sans)" font-size="11" fill="var(--ink-2)">기호 덮어쓰기, 숨은 sorry,</text>
   <text x="378" y="128" font-family="var(--sans)" font-size="11" fill="var(--ink-2)">가짜 공리 추가 전수 차단</text>
   <text x="378" y="152" font-family="var(--mono)" font-size="11" fill="var(--accent-ink)">추출본 ↔ Challenge 대조</text>
   <text x="378" y="170" font-family="var(--mono)" font-size="11" fill="var(--accent-ink)">3대 표준 공리만 허용</text>
-  <line x1="524" y1="121" x2="538" y2="121" stroke="var(--accent)" stroke-width="1.5" marker-end="url(#arr-acc-d)"/>
-  <rect x="540" y="50" width="156" height="142" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.5"/>
+  <line x1="524" y1="118" x2="538" y2="118" stroke="var(--accent)" stroke-width="1.5" marker-end="url(#arr-acc-d)"/>
+  <rect x="540" y="50" width="156" height="136" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.5"/>
   <text x="550" y="72" font-family="var(--mono)" font-size="11" font-weight="700" fill="var(--accent-ink)">관문 4. 다중 커널 검증</text>
   <text x="550" y="92" font-family="var(--sans)" font-size="12" font-weight="700" fill="var(--accent-ink)">심판 버그 악용 차단</text>
   <text x="550" y="112" font-family="var(--sans)" font-size="11" fill="var(--ink-2)">독립 언어 및 무결성 증명</text>
   <text x="550" y="128" font-family="var(--sans)" font-size="11" fill="var(--ink-2)">커널들로 추출본 교차 검산</text>
   <text x="550" y="152" font-family="var(--mono)" font-size="11" fill="var(--accent-ink)">nanoda / lean4lean</text>
   <text x="550" y="170" font-family="var(--mono)" font-size="11" fill="var(--accent-ink)">con-leche / con-ron</text>
-  <line x1="360" y1="206" x2="360" y2="232" stroke="var(--accent)" stroke-width="1.5" marker-end="url(#arr-acc-d)"/>
-  <rect x="14" y="236" width="692" height="86" fill="var(--bg)" stroke="var(--ink-2)" stroke-width="1.5" stroke-dasharray="4,3"/>
-  <text x="30" y="260" font-family="var(--sans)" font-size="13" font-weight="700" fill="var(--ink)">2단계: 인간 수학계의 역공학과 제도적 검증 (현재 진행 중: '검증'에서 '이해'로)</text>
-  <text x="30" y="282" font-family="var(--sans)" font-size="12" fill="var(--ink-2)">• 비형식화(Informalization): 주석 없는 1,737만 줄 코드에서 핵심 보조정리와 수학적 직관("왜 참인가")을 인간의 언어로 해독</text>
-  <text x="30" y="302" font-family="var(--sans)" font-size="12" fill="var(--ink-2)">• 학술지 동료 심사와 클레이 연구소(CMI) 규정: 논문 출판 후 최소 2년간의 학계 수용 절차를 거쳐야 밀레니엄 상 공식 완결</text>
+  <line x1="360" y1="200" x2="360" y2="226" stroke="var(--accent)" stroke-width="1.5" marker-end="url(#arr-acc-d)"/>
+  <rect x="14" y="230" width="692" height="86" fill="var(--bg)" stroke="var(--ink-2)" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <text x="30" y="254" font-family="var(--sans)" font-size="13" font-weight="700" fill="var(--ink)">2단계: 인간 수학계의 역공학과 제도적 검증 (현재 진행 중: '검증'에서 '이해'로)</text>
+  <text x="30" y="276" font-family="var(--sans)" font-size="12" fill="var(--ink-2)">• 비형식화(Informalization): 주석 없는 1,737만 줄 코드에서 핵심 보조정리와 수학적 직관(왜 참인가)을 인간의 언어로 해독</text>
+  <text x="30" y="296" font-family="var(--sans)" font-size="12" fill="var(--ink-2)">• 학술지 동료 심사와 클레이 연구소(CMI) 규정: 논문 출판 후 최소 2년간의 학계 수용 절차를 거쳐야 밀레니엄 상 공식 완결</text>
 </svg>
 <svg class="diagram-svg-mobile" viewBox="0 0 350 670" role="img" aria-label="AI가 생성한 Lean 형식 증명 코드가 네 개의 기계 감사 관문을 거쳐 인간의 수학적 역공학으로 이어지는 검증 파이프라인 (모바일)" xmlns="http://www.w3.org/2000/svg">
   <defs>
@@ -182,7 +183,7 @@ AI가 환각(hallucination)을 일으켜 엉터리 논리를 지어내더라도 
   <rect x="16" y="530" width="318" height="124" fill="var(--bg)" stroke="var(--ink-2)" stroke-width="1.5" stroke-dasharray="4,3"/>
   <text x="28" y="554" font-family="var(--sans)" font-size="13" font-weight="700" fill="var(--ink)">2단계: 인간 수학계의 역공학 (진행 중)</text>
   <text x="28" y="578" font-family="var(--sans)" font-size="12" fill="var(--ink-2)">• 비형식화: 1,737만 줄 코드에서 핵심</text>
-  <text x="28" y="596" font-family="var(--sans)" font-size="12" fill="var(--ink-2)">  아이디어와 수학적 직관("왜 참인가") 해독</text>
+  <text x="28" y="596" font-family="var(--sans)" font-size="12" fill="var(--ink-2)">  아이디어와 수학적 직관(왜 참인가) 해독</text>
   <text x="28" y="618" font-family="var(--sans)" font-size="12" fill="var(--ink-2)">• 제도 검증: 학술지 동료 심사 출판 및</text>
   <text x="28" y="636" font-family="var(--sans)" font-size="12" fill="var(--ink-2)">  클레이 연구소(CMI) 2년 학계 수용 절차</text>
 </svg>
@@ -206,7 +207,7 @@ def FermatsLastTheorem : Prop :=
 
 다행히 이번 리만 가설 증명에서 첫 번째 관문은 가장 깔끔하게 통과됐습니다. 검증의 기준점 역할을 하는 명제 `RiemannHypothesis`를 알푀게나 클로드가 새로 정의하지 않고, 수년 전 인간 정수론 전문가들이 꼼꼼히 검토해 Mathlib 표준 라이브러리에 미리 등록해 둔 공식 정의(`Mathlib.NumberTheory.LSeries.RiemannZeta`)를 그대로 썼기 때문입니다[^lean-cert]. 그 Mathlib 파일의 정의 바로 위에는 몇 년 전 누군가 남겨 둔 유명한 주석이 적혀 있습니다. <em>"이 타입의 항을 구성하는 것은 100만 달러의 가치가 있다(constructing a term of this type is worth a million dollars)."</em>[^zharf-rh]
 
-독립 검증자인 카를로스 톨레도(Carlos Toledo) 등은 Mathlib의 제타 함수 정의 자체에 미묘한 허점이 있을 가능성까지 덜어 내려 했습니다. 이를 위해 복소평면의 무한급수 $1 + 2^{-s} + 3^{-s} + \dots$에서 출발하는 교과서 속 리만 가설 명제를 따로 적어 넣고, 그 명제와 Mathlib의 기준 명제가 논리적으로 완전히 같은 동치 명제임을 Lean 코드로 직접 증명해 보였습니다[^toledo-rh]. MIT의 서덜랜드 교수는 초등 정수론의 '로뱅 부등식(Robin's inequality)'을 가져와 교차 검증했습니다. 로뱅 부등식이 성립할 때만 리만 가설이 성립한다는 동치 관계는 이미 다른 연구자가 별도 라이브러리로 형식화해 둔 상태였습니다. 서덜랜드 교수가 알푀게의 증명 코드를 이 라이브러리와 이어 붙이자, 복소수나 제타 함수라는 개념을 전혀 쓰지 않는 자연수 약수 합 부등식($n > 5040$일 때 $\sigma(n) < e^\gamma n \log \log n$)이 곧바로 도출되었습니다[^sysnote-rh]. 기준 문제지 자체가 잘못 적혔을 가능성은 완전히 사라졌습니다.
+독립 검증자인 카를로스 톨레도(Carlos Toledo) 등은 Mathlib의 제타 함수 정의 자체에 미묘한 허점이 있을 가능성까지 덜어 내려 했습니다. 이를 위해 복소평면의 무한급수 $1 + 2^{-s} + 3^{-s} + \dots$에서 출발하는 교과서 속 리만 가설 명제를 따로 적어 넣고, 그 명제와 Mathlib의 기준 명제가 논리적으로 완전히 같은 동치 명제임을 Lean 코드로 직접 증명해 보였습니다[^toledo-rh]. MIT의 서덜랜드 교수는 초등 정수론의 <strong>로뱅 부등식(Robin's inequality)</strong>을 가져와 교차 검증했습니다. 로뱅 부등식이 성립할 때만 리만 가설이 성립한다는 동치 관계는 이미 다른 연구자가 별도 라이브러리로 형식화해 둔 상태였습니다. 서덜랜드 교수가 알푀게의 증명 코드를 이 라이브러리와 이어 붙이자, 복소수나 제타 함수라는 개념을 전혀 쓰지 않는 자연수 약수 합 부등식($n > 5040$일 때 $\sigma(n) < e^\gamma n \log \log n$)이 곧바로 도출되었습니다[^sysnote-rh]. 기준 문제지 자체가 잘못 적혔을 가능성은 완전히 사라졌습니다.
 
 ### 관문 2. 격리된 남의 컴퓨터에서도 똑같이 빌드되는가?
 
