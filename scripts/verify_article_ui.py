@@ -394,13 +394,15 @@ MEASURE_JS = r"""
   const notes = [...document.querySelectorAll('aside.sidenote')];
   out.footnoteMarkers = markers.length;
   out.adjacentFootnoteGroups = [];
+  out.strayFootnoteCommas = [];
   const fnSups = [...content.querySelectorAll('sup[id^="fnref"]')];
   for (const s of fnSups) {
     const prev = s.previousSibling;
-    if (prev && prev.nodeType === 1 && prev.matches('sup[id^="fnref"]')) {
+    const before = getComputedStyle(s, '::before').content;
+    const isAdj = Boolean(prev && prev.nodeType === 1 && prev.matches('sup[id^="fnref"]'));
+    if (isAdj) {
       const a = prev.getBoundingClientRect();
       const b = s.getBoundingClientRect();
-      const before = getComputedStyle(s, '::before').content;
       const al = prev.querySelector('a') || prev;
       const bl = s.querySelector('a') || s;
       const ar = al.getBoundingClientRect();
@@ -412,6 +414,15 @@ MEASURE_JS = r"""
         sameLine: Math.abs(a.top - b.top) < 2,
         before,
       });
+    } else {
+      const hasComma = Boolean(before && before !== 'none' && before !== 'normal' && before !== '""');
+      if (hasComma) {
+        out.strayFootnoteCommas.push({
+          num: s.textContent.trim(),
+          before,
+          prevText: prev && prev.nodeType === 3 ? prev.textContent.slice(-16) : '',
+        });
+      }
     }
   }
   out.footnotesSection = (() => { const f = document.querySelector('.footnotes'); if (!f) return null; const cs = getComputedStyle(f);
@@ -1986,12 +1997,20 @@ def path_checks(report, strict_lightbox=False):
         f"footnotesDisplay={(mid['footnotesSection'] or {}).get('display')}")
     for name in ("wide-light", "wide-dark", "narrow-light", "narrow-dark"):
         for g in (configs.get(name) or {}).get("adjacentFootnoteGroups") or []:
-            sep_ok = (g.get("before") not in (None, "", "none", "normal")
+            sep_ok = (g.get("before") not in (None, "", "none", "normal", '""')
                       and (g.get("linkGap") or 0) > 1.0
                       and bool(g.get("sameLine")))
             add("A4", sep_ok,
                 f"{path} {name} 연속 각주 {g.get('nums')}: before={g.get('before')!r} "
                 f"linkGap={g.get('linkGap')}px sameLine={g.get('sameLine')}")
+    stray_wide = (configs.get("wide-light") or {}).get("strayFootnoteCommas") or []
+    if stray_wide:
+        for sc in stray_wide:
+            add("A4", False,
+                f"{path} wide-light 비연속 각주 {sc.get('num')!r} 앞 쉼표 노출: "
+                f"prev={sc.get('prevText')!r} before={sc.get('before')!r}")
+    else:
+        add("A4", True, f"{path} wide-light: 앞 노드가 글인 비연속 각주 번호의 ::before 쉼표 0건")
 
     for scenario, data in report["resize"].items():
         for stage in data["stages"]:
@@ -2118,6 +2137,38 @@ def required_failures(summary, required):
             or (not summary[key]['checked'] and not summary[key]['na'])]
 
 
+def scan_build_footnote_classes(build_dir: Path):
+    """빌드 산출물 전체에서 연속 각주(</sup><sup ... id="fnref)에만 fn-adj가 붙었는지 정적 검사한다."""
+    adj_re = re.compile(r'</sup><sup\b([^>]*)id="fnref[^"]*"')
+    all_fn_re = re.compile(r'(.{0,16})<sup\b([^>]*)id="fnref[^"]*"')
+    total_pages = 0
+    adj_total = 0
+    missing_adj = []
+    stray_adj = []
+    for section in ("posts", "digest", "gallery"):
+        for f in sorted((build_dir / section).glob("*/index.html")):
+            total_pages += 1
+            html = f.read_text(encoding="utf-8", errors="ignore")
+            for m in adj_re.finditer(html):
+                adj_total += 1
+                if "fn-adj" not in m.group(1):
+                    missing_adj.append(f"{section}/{f.parent.name}")
+            for m in all_fn_re.finditer(html):
+                prefix, attrs = m.group(1), m.group(2)
+                if "fn-adj" in attrs and not prefix.endswith("</sup>"):
+                    stray_adj.append(f"{section}/{f.parent.name}:{prefix[-8:]!r}")
+    ok = not missing_adj and not stray_adj
+    return {
+        "ok": ok,
+        "na": False,
+        "detail": (
+            f"build 전체({total_pages}편): 연속 각주 {adj_total}쌍, "
+            f"fn-adj 누락 {len(missing_adj)}건, 비연속 fn-adj 오부착 {len(stray_adj)}건"
+            + (f" missing={missing_adj[:5]} stray={stray_adj[:5]}" if not ok else "")
+        ),
+    }
+
+
 def main():
     parser = argparse.ArgumentParser(description="Verify blog article UI/UX across widths, themes, interactions")
     parser.add_argument("build_dir", type=Path)
@@ -2195,6 +2246,7 @@ def main():
                             for c in CONFIGS],
                 "skipped": skipped, "paths": reports, "summary": {}}
     aggregate = {key: [] for key in ("A1", "A2", "A3", "A4", "A5", "A6", "A7", "A8", "A9", "A10", "A11", "A12", "A13", "A14", "A15", "A16", "A17", "A18", "A19", "A20", "A21", "A22", "A23", "A24", "A25", "A26")}
+    aggregate["A4"].append(scan_build_footnote_classes(args.build_dir))
     # A25: 인라인 코드 13px 하한. --path로 준 글과 함께 고정 세 글을 폭별로 잰다.
     for width, rows in code_sizes.items():
         for path, row in rows.items():
