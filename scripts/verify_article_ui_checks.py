@@ -120,7 +120,42 @@ A9_JS = r"""
       }
     });
   });
-  return {codes: codes, loneCharCells: loneCharCells};
+  const bracketBreaks = [];
+  const root = document.querySelector('.post-content');
+  if (root) {
+    const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, {
+      acceptNode(n) {
+        if (!n.parentElement || n.parentElement.closest('pre, svg, code, script, style, .katex-mathml, .table-header-clone')) {
+          return NodeFilter.FILTER_REJECT;
+        }
+        return /[<>〈〉]/.test(n.nodeValue) ? NodeFilter.FILTER_ACCEPT : NodeFilter.FILTER_REJECT;
+      }
+    });
+    let n;
+    while ((n = walker.nextNode())) {
+      const t = n.nodeValue;
+      for (let i = 0; i < t.length; i++) {
+        const ch = t[i];
+        if (!'<>〈〉'.includes(ch)) continue;
+        const r = document.createRange();
+        r.setStart(n, i);
+        r.setEnd(n, i + 1);
+        const a = r.getClientRects()[0];
+        if (!a) continue;
+        const j = (ch === '<' || ch === '〈') ? i + 1 : i - 1;
+        if (j < 0 || j >= t.length || /\s/.test(t[j])) continue;
+        const r2 = document.createRange();
+        r2.setStart(n, j);
+        r2.setEnd(n, j + 1);
+        const b = r2.getClientRects()[0];
+        if (!b) continue;
+        if (Math.abs(a.top - b.top) > 4) {
+          bracketBreaks.push(t.slice(Math.max(0, i - 8), i + 8));
+        }
+      }
+    }
+  }
+  return {codes: codes, loneCharCells: loneCharCells, bracketBreaks: bracketBreaks};
 }
 """
 
@@ -596,6 +631,14 @@ def a9_checks(path, configs):
             "detail": (f"{path} {','.join(rec['configs'])} table {rec['table']} "
                        f"{rec['text']!r}: 한글 아닌 한 글자 단독 줄 {rec['lone']} lines={rec['lines']}"),
         })
+    for name in ("min360-light", "narrow-light", "min390-light", "min414-light",
+                 "phablet-light", "tablet-light", "tablet820-light", "mid-light", "wide-light"):
+        bracket_breaks = (((configs.get(name) or {}).get("a9") or {}).get("bracketBreaks") or [])
+        if bracket_breaks:
+            entries.append({
+                "ok": False,
+                "detail": f"{path} {name}: 작품명 꺾쇠 줄바꿈 {len(bracket_breaks)}건 {bracket_breaks[:5]}",
+            })
     return entries
 
 

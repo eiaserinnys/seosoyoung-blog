@@ -862,6 +862,15 @@ class Card1521SecondReviewTest(unittest.TestCase):
         }
         self.assertTrue(all(e['ok'] for e in a11_checks('/digest/x/', mixed_ok) if 'math table' in e['detail']))
 
+    def test_a9_bracket_linebreaks(self):
+        from verify_article_ui_checks import a9_checks
+        fail_cfg = {'narrow-light': {'a9': {'codes': [], 'loneCharCells': [], 'bracketBreaks': ['곡 <펜스>(Fences)']}}}
+        entries = a9_checks('/digest/x/', fail_cfg)
+        self.assertTrue(any(not e['ok'] and '작품명 꺾쇠 줄바꿈' in e['detail'] for e in entries))
+        ok_cfg = {'narrow-light': {'a9': {'codes': [], 'loneCharCells': [], 'bracketBreaks': []}}}
+        entries_ok = a9_checks('/digest/x/', ok_cfg)
+        self.assertTrue(all(e['ok'] for e in entries_ok))
+
 
 if __name__ == '__main__':
     unittest.main()
