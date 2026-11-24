@@ -335,8 +335,12 @@ A11_JS = r"""
     const allKatex = [...table.querySelectorAll('.katex')].filter((k) => !k.closest('.katex-display'));
     const isMathTable = wrap.classList.contains('is-math-table');
     const maxLines = allKatex.length ? Math.max(...allKatex.map((k) => k.getClientRects().length)) : 0;
+    const shortWraps = allKatex.map((k) => {
+      const tex = ((k.querySelector('annotation[encoding="application/x-tex"], annotation') || {}).textContent || '').trim();
+      return {tex, lines: k.getClientRects().length};
+    }).filter((x) => x.tex.length > 0 && x.tex.length <= 20 && x.lines > 1);
     const overflowing = wrap.classList.contains('is-overflowing') && !wrap.classList.contains('is-expanded');
-    return {i: i + 1, hasMath: allKatex.length > 0, isMathTable, overflowing, maxLines};
+    return {i: i + 1, hasMath: allKatex.length > 0, isMathTable, overflowing, maxLines, shortWraps};
   }).filter((table) => table.hasMath);
   const displays = [...content.querySelectorAll('.katex-display')].map((k, i) => {
     const style = getComputedStyle(k);
@@ -350,7 +354,13 @@ A11_JS = r"""
       tex: (k.querySelector('annotation') || {}).textContent || '',
     };
   });
-  return {bounds, tables, displays};
+  const unbracedCommas = [...document.querySelectorAll('.katex annotation[encoding="application/x-tex"]')]
+    .filter((a) => !a.closest('.table-header-clone') && /\d,\d{3}/.test(a.textContent))
+    .map((a) => a.textContent.trim().slice(0, 60));
+  const hangulInMath = [...content.querySelectorAll('.katex')]
+    .filter((k) => !k.closest('.table-header-clone') && /[가-힣]/.test(k.textContent))
+    .map((k) => ((k.querySelector('annotation') || k).textContent || '').trim().slice(0, 60));
+  return {bounds, tables, displays, unbracedCommas, hangulInMath};
 }
 """
 
@@ -750,6 +760,11 @@ def a11_checks(path, configs):
                             "detail": f"{path} {name}: displayMath={len(displays)} over={len(over)} "
                                       f"noHint={len(bad_disp)} examples={bad_disp[:4]}"})
         for table in data.get("tables") or []:
+            if name == "narrow-light":
+                short_wraps = table.get("shortWraps") or []
+                entries.append({"ok": not short_wraps,
+                                "detail": f"{path} {name}: table {table['i']} shortMathWraps={len(short_wraps)}"
+                                          + (f" examples={short_wraps[:4]}" if short_wraps else "")})
             if not table.get("isMathTable"):
                 continue
             max_lines = table.get("maxLines", 1)
@@ -768,6 +783,18 @@ def a11_checks(path, configs):
         entries.append({"ok": not table["overflowing"] and lines_ok,
                         "detail": f"{path} wide-light: math table {table['i']} overflowing={table['overflowing']}"
                                   + (f" maxLines={max_lines}" if table.get("isMathTable") else "")})
+        short_wraps = table.get("shortWraps") or []
+        entries.append({"ok": not short_wraps,
+                        "detail": f"{path} wide-light: table {table['i']} shortMathWraps={len(short_wraps)}"
+                                  + (f" examples={short_wraps[:4]}" if short_wraps else "")})
+    unbraced_commas = wide.get("unbracedCommas") or []
+    entries.append({"ok": not unbraced_commas,
+                    "detail": f"{path} wide-light: unbracedCommas={len(unbraced_commas)}"
+                              + (f" examples={unbraced_commas[:5]}" if unbraced_commas else "")})
+    hangul_math = wide.get("hangulInMath") or []
+    entries.append({"ok": not hangul_math,
+                    "detail": f"{path} wide-light: hangulInMath={len(hangul_math)}"
+                              + (f" examples={hangul_math[:5]}" if hangul_math else "")})
     return entries
 
 
