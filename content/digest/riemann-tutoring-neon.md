@@ -20,7 +20,7 @@ images:
 <style>
 .post-content .source-og-card {
   display: grid;
-  grid-template-columns: 260px minmax(0, 1fr);
+  grid-template-columns: 280px minmax(0, 1fr);
   border: 1px solid var(--rule-strong);
   background: var(--bg-2);
   color: var(--ink);
@@ -53,8 +53,8 @@ images:
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  gap: 0.4rem;
-  padding: 0.85rem 1.05rem;
+  gap: 0.25rem;
+  padding: 0.7rem 1rem;
   min-width: 0;
 }
 .post-content .source-og-card__meta {
@@ -62,27 +62,27 @@ images:
   font-size: var(--type-meta);
   color: var(--accent-ink);
   font-weight: 600;
-  line-height: 1.4;
+  line-height: 1.35;
 }
 .post-content .source-og-card__title {
   font-family: var(--sans);
-  font-size: 1.05rem;
+  font-size: 1.02rem;
   font-weight: 700;
   color: var(--ink);
-  line-height: 1.4;
+  line-height: 1.35;
 }
 .post-content .source-og-card__desc {
   font-family: var(--sans);
   font-size: var(--type-small);
   color: var(--ink-2);
-  line-height: 1.55;
+  line-height: 1.45;
 }
 .post-content .source-og-card__cta {
   font-family: var(--sans);
   font-size: var(--type-meta);
   font-weight: 600;
   color: var(--accent-ink);
-  line-height: 1.4;
+  line-height: 1.35;
 }
 @media (max-width: 640px) {
   .post-content .source-og-card {
@@ -92,6 +92,10 @@ images:
     border-inline-end: 0;
     border-bottom: 1px solid var(--rule);
   }
+  .post-content .source-og-card__body {
+    gap: 0.35rem;
+    padding: 0.85rem 1rem;
+  }
 }
 </style>
 <a class="source-og-card" href="https://pages.eiaserinnys.me/d/riemann-tutoring-neon" target="_blank" rel="noopener">
@@ -99,9 +103,9 @@ images:
     <img src="https://img.seosoyoung.eiaserinnys.me/images/riemann-tutoring-neon/00-og-pages.png" alt="수학을 놓은 고등학생과 리만 가설 증명 따라가기 원문 과외 대화 페이지 표지" loading="eager">
   </span>
   <span class="source-og-card__body">
-    <span class="source-og-card__meta">pages.eiaserinnys.me / 원문 과외 대화 (10개 장, 201회 문답)</span>
+    <span class="source-og-card__meta">pages.eiaserinnys.me / 원문 과외 대화 전문</span>
     <span class="source-og-card__title">수학을 놓은 고등학생과 리만 가설 증명 따라가기</span>
-    <span class="source-og-card__desc">중학교 1학년 때 수학을 놓은 고등학교 2학년 네온이 초콜릿 나누기와 타일 깔기에서 출발해 알푀게와 Claude의 리만 가설 증명을 끝까지 따라간 과외 대화 전문과 도식 10개, 사이드 노트 20개.</span>
+    <span class="source-og-card__desc">중학교 1학년 때 수학을 놓은 고등학생 네온이 알푀게와 Claude의 리만 가설 증명을 끝까지 따라간 10교시 과외 대화 전문(201문답, 도식 10개, 노트 20개).</span>
     <span class="source-og-card__cta">원문 과외 대화 페이지 열기 ↗</span>
   </span>
 </a>
