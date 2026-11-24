@@ -335,8 +335,12 @@ A11_JS = r"""
     const allKatex = [...table.querySelectorAll('.katex')].filter((k) => !k.closest('.katex-display'));
     const isMathTable = wrap.classList.contains('is-math-table');
     const maxLines = allKatex.length ? Math.max(...allKatex.map((k) => k.getClientRects().length)) : 0;
+    const shortWraps = allKatex.map((k) => {
+      const tex = ((k.querySelector('annotation[encoding="application/x-tex"], annotation') || {}).textContent || '').trim();
+      return {tex, lines: k.getClientRects().length};
+    }).filter((x) => x.tex.length > 0 && x.tex.length <= 20 && x.lines > 1);
     const overflowing = wrap.classList.contains('is-overflowing') && !wrap.classList.contains('is-expanded');
-    return {i: i + 1, hasMath: allKatex.length > 0, isMathTable, overflowing, maxLines};
+    return {i: i + 1, hasMath: allKatex.length > 0, isMathTable, overflowing, maxLines, shortWraps};
   }).filter((table) => table.hasMath);
   const displays = [...content.querySelectorAll('.katex-display')].map((k, i) => {
     const style = getComputedStyle(k);
@@ -350,7 +354,60 @@ A11_JS = r"""
       tex: (k.querySelector('annotation') || {}).textContent || '',
     };
   });
-  return {bounds, tables, displays};
+  const unbracedCommas = [...document.querySelectorAll('.katex annotation[encoding="application/x-tex"]')]
+    .filter((a) => !a.closest('.table-header-clone') && /\d,\d{3}/.test(a.textContent))
+    .map((a) => a.textContent.trim().slice(0, 60));
+  const hangulInMath = [...content.querySelectorAll('.katex')]
+    .filter((k) => !k.closest('.table-header-clone') && /[가-힣]/.test(k.textContent))
+    .map((k) => ((k.querySelector('annotation') || k).textContent || '').trim().slice(0, 60));
+  const OPS = /[+\-−×÷=<>≤≥\/]/;
+  const allTables = [...content.querySelectorAll('table')].filter((t) => !t.closest('.table-header-clone'));
+  const splits = [];
+  const cellChars = (cell) => {
+    const chars = [];
+    const walker = document.createTreeWalker(cell, NodeFilter.SHOW_TEXT, {
+      acceptNode: (n) => (n.parentElement.closest('.katex-mathml, annotation') ? NodeFilter.FILTER_REJECT : NodeFilter.FILTER_ACCEPT),
+    });
+    let n;
+    while ((n = walker.nextNode())) {
+      const t = n.textContent;
+      for (let i = 0; i < t.length; i++) {
+        const ch = t[i];
+        if (ch === '\u200b') continue;
+        if (/\s/.test(ch)) { chars.push({ch: ' '}); continue; }
+        const r = document.createRange(); r.setStart(n, i); r.setEnd(n, i + 1);
+        const rc = r.getClientRects()[0];
+        if (!rc || rc.width === 0) continue;
+        chars.push({ch, y: (rc.top + rc.bottom) / 2});
+      }
+    }
+    return chars;
+  };
+  allTables.forEach((table, ti) => {
+    [...table.rows].forEach((row, ri) => {
+      [...row.cells].forEach((cell, ci) => {
+        const lh = parseFloat(getComputedStyle(cell).lineHeight) || 24;
+        const tol = lh * 0.5;
+        const chars = cellChars(cell);
+        const stack = [];
+        const near = (k, dir) => { let j = k + dir; while (j >= 0 && j < chars.length && chars[j].ch === ' ') j += dir; return chars[j]; };
+        chars.forEach((c, k) => {
+          if (c.ch === '(') stack.push(k);
+          if (c.ch === ')' && stack.length) {
+            const s = stack.pop();
+            const inner = chars.slice(s, k + 1).map((x) => x.ch).join('');
+            for (let j = s + 1; j < k; j++) {
+              if (!OPS.test(chars[j].ch) || chars[j].y == null) continue;
+              const a = near(j, -1), b = near(j, 1);
+              const off = [a, b].some((x) => x && x.y != null && Math.abs(x.y - chars[j].y) > tol);
+              if (off) { splits.push({table: ti + 1, row: ri, col: ci + 1, text: inner}); break; }
+            }
+          }
+        });
+      });
+    });
+  });
+  return {bounds, tables, displays, unbracedCommas, hangulInMath, splits};
 }
 """
 
@@ -750,6 +807,11 @@ def a11_checks(path, configs):
                             "detail": f"{path} {name}: displayMath={len(displays)} over={len(over)} "
                                       f"noHint={len(bad_disp)} examples={bad_disp[:4]}"})
         for table in data.get("tables") or []:
+            if name == "narrow-light":
+                short_wraps = table.get("shortWraps") or []
+                entries.append({"ok": not short_wraps,
+                                "detail": f"{path} {name}: table {table['i']} shortMathWraps={len(short_wraps)}"
+                                          + (f" examples={short_wraps[:4]}" if short_wraps else "")})
             if not table.get("isMathTable"):
                 continue
             max_lines = table.get("maxLines", 1)
@@ -768,6 +830,23 @@ def a11_checks(path, configs):
         entries.append({"ok": not table["overflowing"] and lines_ok,
                         "detail": f"{path} wide-light: math table {table['i']} overflowing={table['overflowing']}"
                                   + (f" maxLines={max_lines}" if table.get("isMathTable") else "")})
+        short_wraps = table.get("shortWraps") or []
+        entries.append({"ok": not short_wraps,
+                        "detail": f"{path} wide-light: table {table['i']} shortMathWraps={len(short_wraps)}"
+                                  + (f" examples={short_wraps[:4]}" if short_wraps else "")})
+    unbraced_commas = wide.get("unbracedCommas") or []
+    entries.append({"ok": not unbraced_commas,
+                    "detail": f"{path} wide-light: unbracedCommas={len(unbraced_commas)}"
+                              + (f" examples={unbraced_commas[:5]}" if unbraced_commas else "")})
+    hangul_math = wide.get("hangulInMath") or []
+    entries.append({"ok": not hangul_math,
+                    "detail": f"{path} wide-light: hangulInMath={len(hangul_math)}"
+                              + (f" examples={hangul_math[:5]}" if hangul_math else "")})
+    for name in ("wide-light", "narrow-light", "min360-light"):
+        splits = ((configs.get(name) or {}).get("a11") or {}).get("splits") or []
+        entries.append({"ok": not splits,
+                        "detail": f"{path} {name}: parenOperatorSplits={len(splits)}"
+                                  + (f" examples={splits[:5]}" if splits else "")})
     return entries
 
 
