@@ -155,6 +155,33 @@ A9_JS = r"""
       }
     }
   }
+  const dateBreaks = [];
+  if (root) {
+    const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, {
+      acceptNode(n) {
+        if (!n.parentElement || n.parentElement.closest('pre, svg, code, script, style, .katex-mathml, .table-header-clone')) {
+          return NodeFilter.FILTER_REJECT;
+        }
+        return /\d{4}[-‑]\d{2}[-‑]\d{2}/.test(n.nodeValue) ? NodeFilter.FILTER_ACCEPT : NodeFilter.FILTER_REJECT;
+      }
+    });
+    let n;
+    const dateRe = /\d{4}[-‑]\d{2}[-‑]\d{2}/g;
+    while ((n = walker.nextNode())) {
+      dateRe.lastIndex = 0;
+      let m;
+      while ((m = dateRe.exec(n.nodeValue))) {
+        const r = document.createRange();
+        r.setStart(n, m.index);
+        r.setEnd(n, m.index + m[0].length);
+        const rects = [...r.getClientRects()].filter(x => x.width > 0);
+        const tops = new Set(rects.map(x => Math.round(x.top)));
+        if (tops.size > 1) {
+          dateBreaks.push(n.nodeValue.slice(Math.max(0, m.index - 15), m.index + m[0].length + 5));
+        }
+      }
+    }
+  }
   const pres = [...document.querySelectorAll('.post-content pre')].map((p, i) => ({
     i: i + 1,
     clientWidth: p.clientWidth,
@@ -162,7 +189,7 @@ A9_JS = r"""
     over: +(p.scrollWidth - p.clientWidth).toFixed(1),
     text: p.textContent.trim().slice(0, 60),
   }));
-  return {codes: codes, loneCharCells: loneCharCells, bracketBreaks: bracketBreaks, pres: pres};
+  return {codes: codes, loneCharCells: loneCharCells, bracketBreaks: bracketBreaks, dateBreaks: dateBreaks, pres: pres};
 }
 """
 
@@ -646,6 +673,15 @@ def a9_checks(path, configs):
             entries.append({
                 "ok": False,
                 "detail": f"{path} {name}: 작품명 꺾쇠 줄바꿈 {len(bracket_breaks)}건 {bracket_breaks[:5]}",
+            })
+    for name in ("min360-light", "narrow-light", "min390-light", "min414-light",
+                 "phablet-light", "tablet-light", "tablet820-light", "mid-light", "wide-light",
+                 "wide-dark", "narrow-dark"):
+        date_breaks = (((configs.get(name) or {}).get("a9") or {}).get("dateBreaks") or [])
+        if date_breaks:
+            entries.append({
+                "ok": False,
+                "detail": f"{path} {name}: 날짜 토큰 줄 중간 줄바꿈 {len(date_breaks)}건 {date_breaks[:5]}",
             })
     for name in A9_PRE_WIDE_CONFIGS:
         pres = (((configs.get(name) or {}).get("a9") or {}).get("pres") or [])
