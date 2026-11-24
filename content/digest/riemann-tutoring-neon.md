@@ -94,12 +94,12 @@ $0.5$는 자기 자신이 보호자($0.5 + 0.5 = 1$)이므로 홀로 남을 수 
 
 초콜릿 더미가 둘이서도, 셋이서도, 다섯이서도 남김없이 똑같이 나눠진다면 최소 몇 개 있어야 할까? 네온은 처음에 $2 + 3 + 5 = 10$개라고 답했다가 셋이 나누면 1개가 남는다는 점을 확인하고, 서로 겹치지 않는 소수를 곱한 $2 \times 3 \times 5 = 30$개 이상이어야 함을 찾아낸다. 여기에 일곱 명($7$)까지 나눠지려면 최소 $30 \times 7 = 210$개가 필요하다. 누군가 "상자에 초콜릿이 100개 미만으로 들어 있다"고 알려 주었는데 다른 사람이 "그 상자는 2, 3, 5, 7로 모두 똑같이 나눠진다"고 말한다면, 상자를 열어 보지 않아도 거짓말임을 즉시 알 수 있다.
 
-| 가정한 소수 개수 (10과 20 사이) | 최소 곱셈 검산 | 상자 크기 조건 ($N < 10,000$)과 대조 | 추론 결과 |
+| 가정 개수 | 최소 곱셈 검산 | 상자 조건 ($N < 10,000$) | 추론 결과 |
 |---|---:|---|---|
-| 소수가 4개 있다고 가정 | $11 \times 13 \times 17 \times 19 = 46,189$ (연속 자연수 넷도 $11 \times 12 \times 13 \times 14 = 24,024$) | $46,189 > 10,000$ (상자 한도 초과) | **4개 이상은 불가능** |
-| 소수가 3개 있다고 가정 | $11 \times 13 \times 17 = 2,431$ | $2,431 < 10,000$ (상자 한도 이내) | **많아야 3개라는 뚜껑 확정** |
+| 4개 가정 | $11 \times 13 \times 17 \times 19 = 46,189$ | $46,189 > 10,000$ (한도 초과) | **4개 이상은 불가능** |
+| 3개 가정 | $11 \times 13 \times 17 = 2,431$ | $2,431 < 10,000$ (한도 이내) | **많아야 3개 뚜껑 확정** |
 
-이 논리를 뒤집으면 소수 개수의 뚜껑이 된다. 10과 20 사이에 소수가 몇 개인지는 모른다고 하자. 아는 것은 두 가지뿐이다. 어떤 수 $N$이 그 구간의 소수를 전부 품고 있다는 점과, $N$이 1만보다 작다는 점이다. 그 구간에 소수가 네 개 있다면 네 소수의 곱이 최소 $46,189$가 되어 1만보다 작다는 조건에 모순되는 반면, 세 개를 곱한 $2,431$은 1만 미만이므로 조건과 부합한다. 따라서 소수를 직접 세어 보지 않고도, <strong>소수를 전부 품은 수의 크기가 작다는 조건만으로 "소수는 많아야 세 개"라는 뚜껑이 덮인다</strong>[^chebyshev-theta].
+이 논리를 뒤집으면 소수 개수의 뚜껑이 된다. 10과 20 사이에 소수가 몇 개인지는 모른다고 하자. 아는 것은 두 가지뿐이다. 어떤 수 $N$이 그 구간의 소수를 전부 품고 있다는 점과, $N$이 1만보다 작다는 점이다. 그 구간에 소수가 네 개 있다면 네 소수의 곱이 최소 $46,189$(연속 자연수 넷을 곱해도 $11 \times 12 \times 13 \times 14 = 24,024$)가 되어 1만보다 작다는 조건에 모순되는 반면, 세 개를 곱한 $2,431$은 1만 미만이므로 조건과 부합한다. 따라서 소수를 직접 세어 보지 않고도, <strong>소수를 전부 품은 수의 크기가 작다는 조건만으로 "소수는 많아야 세 개"라는 뚜껑이 덮인다</strong>[^chebyshev-theta].
 
 소수가 어디에 있는지 모르면서 구간 내의 소수를 전부 품은 수를 만드는 방법은 의외로 간단하다. 그 구간의 자연수를 통째로 곱한 뒤, 불필요한 군살을 빼기 위해 아래쪽 작은 수들로 나누는 것이다. 170년 전 파프누티 체비쇼프가 고안한 이항계수 상자 $\binom{2n}{n} = \frac{(2n)!}{n!\,n!}$이 이 수에 해당한다[^chebyshev-box]. 예를 들어 4부터 6까지의 소수(5)를 품으려면 $(6 \times 5 \times 4) \div (3 \times 2 \times 1) = 120 \div 6 = 20$을 만든다. 분모의 $3, 2, 1$에는 소수 5가 없고 작은 수들을 곱해 5를 만들 수도 없으므로, 나눗셈을 거쳐도 5는 지워지지 않고 살아남는다.
 
@@ -108,11 +108,11 @@ $0.5$는 자기 자신이 보호자($0.5 + 0.5 = 1$)이므로 홀로 남을 수 
 
 $n$개씩 위아래로 곱하고 나눈 이 상자는 언제나 $4$를 $n$번 거듭 곱한 수($4^n$)보다 작다. 체비쇼프는 이 성질을 이용해 역사상 처음으로 소수 개수의 상한을 증명했다. 그러나 네온이 <strong>"립밤 하나를 시켰는데 박스만 엄청 큰 택배 상자"</strong>라고 비유했듯, 이 옛 상자는 지나치게 헐렁해서 리만 가설을 증명하는 데 쓰기에는 역부족이었다.
 
-| 체비쇼프 상자 계산식 | 실제 상자 값 | 목표로 품은 소수 | 상자에 남은 군살(작은 소수) | 상자 크기 한도($4^n$) |
+| 실제 상자 값 | 체비쇼프 상자 계산식 | 목표로 품은 소수 | 남은 군살(작은 소수) | 상자 크기 한도($4^n$) |
 |---|---:|---|---|---:|
-| $(6 \times 5 \times 4) \div (3 \times 2 \times 1)$ | $20$ | $5$ ($3 < p \le 6$) | $2^2 = 4$ (4배) | $4^3 = 64$ |
-| $(10 \times \cdots \times 6) \div (5 \times \cdots \times 1)$ | $252$ | $7$ ($5 < p \le 10$) | $2^2 \times 3^2 = 36$ (36배) | $4^5 = 1,024$ |
-| $(20 \times \cdots \times 11) \div (10 \times \cdots \times 1)$ | $184,756$ | $11, 13, 17, 19$ ($10 < p \le 20$) | $2^2 = 4$ (4배) | $4^{10} \approx 105\text{만}$ |
+| **$20$** | $(6 \times 5 \times 4) \div (3 \times 2 \times 1)$ | $5$ ($3 < p \le 6$) | $2^2 = 4$ (4배) | $4^3 = 64$ |
+| **$252$** | $(10 \times \cdots \times 6) \div (5 \times \cdots \times 1)$ | $7$ ($5 < p \le 10$) | $2^2 \times 3^2 = 36$ (36배) | $4^5 = 1,024$ |
+| **$184,756$** | $(20 \times \cdots \times 11) \div (10 \times \cdots \times 1)$ | $11, 13, 17, 19$ | $2^2 = 4$ (4배) | $4^{10} \approx 105\text{만}$ |
 
 이 상자가 헐렁한 이유는 두 가지다. 첫째, 상자 한도인 $4^n$으로 덮은 뚜껑 자체가 실제 소수 개수보다 훨씬 크고, 수가 커질수록 그 차이가 계속 커진다. 5,000에서 1만 사이에는 실제 소수가 560개, 뚜껑이 814개로 차이는 254개, 곧 1만의 루트인 100의 약 2.5배다. 50만에서 100만 사이를 보면 실제 소수는 36,960개, 뚜껑은 52,822개다. 차이가 15,862개로 커져, 100만의 루트인 1,000의 약 16배에 이른다.
 
@@ -175,23 +175,23 @@ $n$개씩 위아래로 곱하고 나눈 이 상자는 언제나 $4$를 $n$번 �
 
 네온은 처음에 10번과 1,000번의 어림 중간값인 500번을 골라 계산해 본 뒤, 양쪽 오차가 똑같아져 합계가 가장 작아지는 횟수를 스스로 찾아낸다.
 
-| 리프트 탑승 횟수($k$) | 첫째 오차 ($10,000 \div k$) | 둘째 오차 ($k$) | 두 오차의 합계 | 판정 |
-|---:|---:|---:|---:|---|
-| 10번 | 1,000 | 10 | 1,010 | 너무 적게 타서 상자 여유분이 큼 |
-| 500번 | 20 | 500 | 520 | 리프트 요금 비중이 과도하게 큼 |
+| 횟수($k$) | 첫째 오차 ($10,000 \div k$) | 둘째 오차 ($k$) | 두 오차의 합계 | 판정 |
+|---|---:|---:|---:|---|
+| 10번 | 1,000 | 10 | 1,010 | 상자 여유분이 과도하게 큼 |
+| 500번 | 20 | 500 | 520 | 리프트 요금 비중이 과다함 |
 | 200번 | 50 | 200 | 250 | 아직 요금 비중이 큼 |
-| **100번 ($\sqrt{10,000}$)** | **100** | **100** | **200 (최소)** | **양쪽 오차가 100으로 팽팽한 균형점** |
-| 50번 | 200 | 50 | 250 | 다시 상자 여유분 비중이 커짐 |
-| 1,000번 | 10 | 1,000 | 1,010 | 너무 많이 타서 리프트 요금이 큼 |
+| **100번** | **100** | **100** | **200 (최소)** | **양쪽 100으로 팽팽한 균형점** |
+| 50번 | 200 | 50 | 250 | 다시 상자 여유분이 커짐 |
+| 1,000번 | 10 | 1,000 | 1,010 | 리프트 요금이 과도하게 큼 |
 
 두 오차가 100과 100으로 정확히 같아져 합계가 최소(200)가 되는 탑승 횟수는 <strong>100번</strong>이다. 이 값은 앞서 정사각형 타일에서 구했던 <strong>1만의 루트($\sqrt{10,000} = 100$)</strong>와 일치한다. 100만까지의 소수를 볼 때도 100만의 루트인 <strong>1,000번</strong>을 타면 첫째 오차($1,000,000 \div 1,000 = 1,000$)와 둘째 오차($1,000$)가 같아져 합계가 2,000, 곧 루트의 두 배(언저리)에 머문다. 리만 가설의 한계선인 '루트 언저리'와 물결 눈금 $0.5$가 이 리프트 줄다리기의 균형점에서 도출된 것이다.
 
 선생님은 이 대목에 얽힌 뒷이야기를 들려준다. 테타 리프트를 $\sqrt{X}$번(루트만큼) 이어 붙이자는 아이디어는 AI 모델 클로드(Claude)가 처음 제안했다. 알푀게는 발표문에 이 경위를 기록하면서 괄호에 <em>"하지만 달리 무엇일 수 있었겠는가?(What else could it have been?)"</em>라고 적었다. 답을 확인하고 나면 당연한 수순처럼 읽히지만, 167년 동안 어느 수학자도 이 횟수를 조합해 보지 못했다. 방금 500번부터 시험해 본 네온은 "당연한 줄은 전혀 몰랐다"며 놀란다.
 
-| 단계 (100만, $x = 10^6$ 기준) | 첫째 오차 (여유분) | 둘째 오차 (리프트 요금) | 균형 탑승 횟수($k$)와 최소 오차 | 환산 눈금과 상태 |
+| 구분 ($x = 10^6$) | 첫째 오차 (여유분) | 둘째 오차 (요금) | 균형 횟수와 최소 오차 | 환산 눈금과 상태 |
 |---|---|---|---|---|
-| **나눗셈 보정 전** | $10^6 \div k$ | $k^2$ (횟수의 제곱) | $k = 100$번 $\to 1\text{만} + 1\text{만} = 2\text{만}$ ($0$이 약 4개) | 눈금 $4 \div 6 = \mathbf{2/3}$ ($\approx 0.67$, 한계선 초과) |
-| **탄 횟수($k$)로 나눗셈 후** | $10^6 \div k$ | $k^2 \div k = k$ | $k = 1,000$번 $\to 1,000 + 1,000 = 2,000$ ($0$이 3개) | 눈금 $3 \div 6 = \mathbf{1/2}$ ($0.5$, 리만 가설 달성) |
+| **보정 전** | $10^6 \div k$ | $k^2$ (제곱) | $k = 100$번 ($1\text{만} + 1\text{만} = 2\text{만}$) | 눈금 $\mathbf{2/3}$ ($\approx 0.67$, 한계선 초과) |
+| **나눗셈 후** | $10^6 \div k$ | $k^2 \div k = k$ | $k = 1,000$번 ($1,000 + 1,000 = 2,000$) | 눈금 $\mathbf{1/2}$ ($0.5$, 리만 가설 달성) |
 
 그러나 실제 증명 과정에서는 마지막 위기가 한 번 더 있었다(9장 「가루와 점선」). 처음 계산에서는 리프트 환승 요금(둘째 오차)이 탄 횟수를 두 번 곱한 값, 곧 $k^2$만큼 들었기 때문이다[^two-thirds]. 위 표처럼 100만까지의 소수에서 리프트를 100번 타면 첫째 오차($10,000$)와 둘째 오차($100 \times 100 = 10,000$)가 같아져 최소 오차 합계가 <strong>2만</strong>이 된다. 100만(0이 여섯 개)에서 오차가 2만(0이 약 네 개)이라는 것은 눈금으로 환산하면 $4 \div 6 = \frac{2}{3} \approx 0.67$이다. 리만 가설이 요구하는 눈금 $0.5$(오차 1,000)보다 한참 큰 $2/3$에서 멈출 상황이었다.
 
@@ -206,55 +206,55 @@ $n$개씩 위아래로 곱하고 나눈 이 상자는 언제나 $4$를 $n$번 �
 
 네온은 "컴퓨터가 맞다고 하면 다 맞은 거냐"고 묻는다(10장 「검사기와 남은 일」). 이번 증명은 사람이 읽는 논문 없이 41일 동안 작성된 <strong>1,737만 줄의 Lean 4 코드</strong>(사람이 읽는 글로 풀면 25만 쪽 이상)로 발표됐다. Lean은 증명을 한 줄씩 읽으며 앞줄에서 규칙대로 도출되었는지만 검사하는 깐깐한 기계다[^lean-kernel]. 발표 이튿날인 11월 21일, 전 세계 연구자들은 네 가지 항목을 따로따로 점검했다.
 
-| 4중 기계 점검 항목 | 확인한 내용 | 결과 |
+| 점검 항목 | 확인한 내용 | 결과 |
 |---|---|---|
-| 1. 명제 정의 일치 | 코드가 증명한 문장이 원래의 리만 가설 명제와 일치하는가 | 통과 |
-| 2. 클린 환경 재실행 | 새 컴퓨터에서 처음부터 다시 실행해도 끝까지 통과하는가 | 통과 |
-| 3. 누락 및 우회 여부 | 중간에 몰래 건너뛴 줄(`sorry`나 허용되지 않은 공리)이 없는가 | 통과 |
-| 4. 독립 커널 교차 검증 | 다른 사람이 별도로 만든 독립 검사기에서도 똑같이 통과하는가 | 통과 |
+| 1. 명제 일치 | 증명한 문장이 리만 가설 본문과 일치하는가 | 통과 |
+| 2. 클린 재실행 | 새 컴퓨터에서 처음부터 돌려도 통과하는가 | 통과 |
+| 3. 무누락 확인 | 중간에 건너뛴 줄(`sorry` 등)이 없는가 | 통과 |
+| 4. 독립 검사기 | 별도 제작한 외부 검사기도 통과시키는가 | 통과 |
 
 네 가지 점검을 모두 통과해 "논리에 틀린 줄이 없다"는 확인은 끝났다. 하지만 네온이 스스로 진단했듯 일이 하나 남아 있다. 25만 쪽 분량의 기계 코드와 점선 구간을 사람이 읽고 이해할 수 있는 글로 옮기는 일이다.
 
 <figure class="blog-diagram">
-<svg class="diagram-svg-desktop" viewBox="0 0 720 300" role="img" aria-label="리만 가설 과외의 여섯 걸음 논증 흐름과 기계 검증 및 인간 이해의 분기" xmlns="http://www.w3.org/2000/svg">
+<svg class="diagram-svg-desktop" viewBox="0 0 720 302" role="img" aria-label="리만 가설 과외의 여섯 걸음 논증 흐름과 기계 검증 및 인간 이해의 분기" xmlns="http://www.w3.org/2000/svg">
   <defs>
     <marker id="arr-ink" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="var(--ink-2)"/></marker>
     <marker id="arr-acc" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="var(--accent)"/></marker>
   </defs>
-  <rect width="720" height="300" fill="var(--bg-2)"/>
+  <rect width="720" height="302" fill="var(--bg-2)"/>
   <rect x="16" y="16" width="216" height="84" fill="var(--bg)" stroke="var(--rule-strong)" stroke-width="1.5"/>
-  <text x="28" y="38" font-family="var(--sans)" font-size="13.5" font-weight="700" fill="var(--ink)">1. 소수 예보와 루트 한계선</text>
-  <text x="28" y="59" font-family="var(--sans)" font-size="13" fill="var(--ink-2)">오차 |π(x) − li(x)| ≤ √x 언저리</text>
-  <text x="28" y="79" font-family="var(--sans)" font-size="13" fill="var(--ink-2)">초콜릿 소수와 정사각형 타일(√x)</text>
+  <text x="28" y="42" font-family="var(--sans)" font-size="13.5" font-weight="700" fill="var(--ink)">1. 소수 예보와 루트 한계선</text>
+  <text x="28" y="63" font-family="var(--sans)" font-size="13" fill="var(--ink-2)">오차 |π(x) − li(x)| ≤ √x 언저리</text>
+  <text x="28" y="83" font-family="var(--sans)" font-size="13" fill="var(--ink-2)">초콜릿 소수와 정사각형 타일(√x)</text>
   <line x1="232" y1="58" x2="250" y2="58" stroke="var(--ink-2)" stroke-width="1.5" marker-end="url(#arr-ink)"/>
   <rect x="252" y="16" width="216" height="84" fill="var(--bg)" stroke="var(--rule-strong)" stroke-width="1.5"/>
-  <text x="264" y="38" font-family="var(--sans)" font-size="13.5" font-weight="700" fill="var(--ink)">2. 물결 눈금과 보호자 규칙</text>
-  <text x="264" y="59" font-family="var(--sans)" font-size="13" fill="var(--ink-2)">짝 대칭(β, 1−β)으로 큰 쪽만 차단</text>
-  <text x="264" y="79" font-family="var(--sans)" font-size="13" fill="var(--ink-2)">소수가 과도하게 많은 상한만 증명</text>
+  <text x="264" y="42" font-family="var(--sans)" font-size="13.5" font-weight="700" fill="var(--ink)">2. 물결 눈금과 보호자 규칙</text>
+  <text x="264" y="63" font-family="var(--sans)" font-size="13" fill="var(--ink-2)">짝 대칭(β, 1−β)으로 큰 쪽만 차단</text>
+  <text x="264" y="83" font-family="var(--sans)" font-size="13" fill="var(--ink-2)">소수가 과도하게 많은 상한만 증명</text>
   <line x1="468" y1="58" x2="486" y2="58" stroke="var(--ink-2)" stroke-width="1.5" marker-end="url(#arr-ink)"/>
   <rect x="488" y="16" width="216" height="84" fill="var(--bg)" stroke="var(--rule-strong)" stroke-width="1.5"/>
-  <text x="500" y="38" font-family="var(--sans)" font-size="13.5" font-weight="700" fill="var(--ink)">3. 택배 상자와 부스러기 장벽</text>
-  <text x="500" y="59" font-family="var(--sans)" font-size="13" fill="var(--ink-2)">작은 상자는 소수를 많이 못 품음</text>
-  <text x="500" y="79" font-family="var(--sans)" font-size="13" fill="var(--ink-2)">옛 상자 C(2n,n)은 군살과 부스러기 과다</text>
+  <text x="500" y="42" font-family="var(--sans)" font-size="13.5" font-weight="700" fill="var(--ink)">3. 택배 상자와 부스러기 장벽</text>
+  <text x="500" y="63" font-family="var(--sans)" font-size="13" fill="var(--ink-2)">작은 상자는 소수를 많이 못 품음</text>
+  <text x="500" y="83" font-family="var(--sans)" font-size="13" fill="var(--ink-2)">옛 상자는 군살과 부스러기 과다</text>
   <path d="M 596 100 L 596 116 L 124 116 L 124 132" fill="none" stroke="var(--ink-2)" stroke-width="1.5" marker-end="url(#arr-ink)"/>
   <rect x="16" y="134" width="216" height="84" fill="var(--bg)" stroke="var(--rule-strong)" stroke-width="1.5"/>
-  <text x="28" y="156" font-family="var(--sans)" font-size="13.5" font-weight="700" fill="var(--ink)">4. 정수를 미분하는 우회로</text>
-  <text x="28" y="177" font-family="var(--sans)" font-size="13" fill="var(--ink-2)">특수 함수에 미분 자를 대 정수 추출</text>
-  <text x="28" y="197" font-family="var(--sans)" font-size="13" fill="var(--ink-2)">3,024(3³ 품음), 부스러기는 끝 1회뿐</text>
+  <text x="28" y="160" font-family="var(--sans)" font-size="13.5" font-weight="700" fill="var(--ink)">4. 정수를 미분하는 우회로</text>
+  <text x="28" y="181" font-family="var(--sans)" font-size="13" fill="var(--ink-2)">특수 함수에 미분 자를 대 정수 추출</text>
+  <text x="28" y="201" font-family="var(--sans)" font-size="13" fill="var(--ink-2)">3,024(3³ 품음), 부스러기는 끝 1회뿐</text>
   <line x1="232" y1="176" x2="250" y2="176" stroke="var(--accent)" stroke-width="1.5" marker-end="url(#arr-acc)"/>
   <rect x="252" y="134" width="216" height="84" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.5"/>
-  <text x="264" y="156" font-family="var(--sans)" font-size="13.5" font-weight="700" fill="var(--accent-ink)">5. 테타 리프트 줄다리기 (√x)</text>
-  <text x="264" y="177" font-family="var(--sans)" font-size="13" fill="var(--accent-ink)">여유분(x/k) vs 환승 요금(k) 균형</text>
-  <text x="264" y="197" font-family="var(--sans)" font-size="13" fill="var(--accent-ink)">Claude 제안: k = √x 번 탑승 → 0.5</text>
+  <text x="264" y="160" font-family="var(--sans)" font-size="13.5" font-weight="700" fill="var(--accent-ink)">5. 테타 리프트 줄다리기 (√x)</text>
+  <text x="264" y="181" font-family="var(--sans)" font-size="13" fill="var(--accent-ink)">여유분(x/k) vs 환승 요금(k) 균형</text>
+  <text x="264" y="201" font-family="var(--sans)" font-size="13" fill="var(--accent-ink)">Claude 제안: k = √x 번 탑승 → 0.5</text>
   <line x1="468" y1="176" x2="486" y2="176" stroke="var(--accent)" stroke-width="1.5" marker-end="url(#arr-acc)"/>
   <rect x="488" y="134" width="216" height="84" fill="var(--bg)" stroke="var(--ink-2)" stroke-width="1.5" stroke-dasharray="4,3"/>
-  <text x="500" y="156" font-family="var(--sans)" font-size="13.5" font-weight="700" fill="var(--ink)">6. 가루 굵기의 바닥 (점선 구간)</text>
-  <text x="500" y="177" font-family="var(--sans)" font-size="13" fill="var(--ink-2)">나눗셈(k²→k)으로 생긴 분모 상한</text>
-  <text x="500" y="197" font-family="var(--sans)" font-size="13" fill="var(--ink-2)">기계 검증 완료, 자연어 해설 미작성</text>
-  <rect x="16" y="236" width="334" height="48" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.5"/>
+  <text x="500" y="160" font-family="var(--sans)" font-size="13.5" font-weight="700" fill="var(--ink)">6. 가루 굵기의 바닥 (점선 구간)</text>
+  <text x="500" y="181" font-family="var(--sans)" font-size="13" fill="var(--ink-2)">나눗셈(k²→k)으로 생긴 분모 상한</text>
+  <text x="500" y="201" font-family="var(--sans)" font-size="13" fill="var(--ink-2)">기계 검증 완료, 자연어 해설 미작성</text>
+  <rect x="16" y="236" width="334" height="50" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.5"/>
   <text x="28" y="257" font-family="var(--sans)" font-size="13" font-weight="700" fill="var(--accent-ink)">맞다는 확인 (검증): 1,737만 줄 Lean 코드, 4중 점검 통과</text>
   <text x="28" y="275" font-family="var(--sans)" font-size="13" fill="var(--accent-ink)">명제 일치, 재실행, 무누락, 독립 커널 교차 확인 완료</text>
-  <rect x="370" y="236" width="334" height="48" fill="var(--bg)" stroke="var(--ink-2)" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <rect x="370" y="236" width="334" height="50" fill="var(--bg)" stroke="var(--ink-2)" stroke-width="1.5" stroke-dasharray="4,3"/>
   <text x="382" y="257" font-family="var(--sans)" font-size="13" font-weight="700" fill="var(--ink)">왜 맞는지 이해 (해독): 인간 수학자의 새로운 숙제</text>
   <text x="382" y="275" font-family="var(--sans)" font-size="13" fill="var(--ink-2)">25만 쪽 분량 코드의 역공학과 점선 구간의 직관화</text>
 </svg>
@@ -265,28 +265,28 @@ $n$개씩 위아래로 곱하고 나눈 이 상자는 언제나 $4$를 $n$번 �
   </defs>
   <rect width="350" height="670" fill="var(--bg-2)"/>
   <rect x="16" y="14" width="318" height="72" fill="var(--bg)" stroke="var(--rule-strong)" stroke-width="1.5"/>
-  <text x="28" y="38" font-family="var(--sans)" font-size="15" font-weight="700" fill="var(--ink)">1. 소수 예보와 루트 한계선</text>
-  <text x="28" y="60" font-family="var(--sans)" font-size="14.5" fill="var(--ink-2)">오차 |π(x) − li(x)| ≤ √x 언저리 (타일 한 줄)</text>
+  <text x="28" y="44" font-family="var(--sans)" font-size="15" font-weight="700" fill="var(--ink)">1. 소수 예보와 루트 한계선</text>
+  <text x="28" y="66" font-family="var(--sans)" font-size="14.5" fill="var(--ink-2)">오차 |π(x) − li(x)| ≤ √x 언저리 (타일 한 줄)</text>
   <line x1="175" y1="86" x2="175" y2="100" stroke="var(--ink-2)" stroke-width="1.5" marker-end="url(#arr-ink-m)"/>
   <rect x="16" y="102" width="318" height="72" fill="var(--bg)" stroke="var(--rule-strong)" stroke-width="1.5"/>
-  <text x="28" y="126" font-family="var(--sans)" font-size="15" font-weight="700" fill="var(--ink)">2. 물결 눈금과 보호자 규칙</text>
-  <text x="28" y="148" font-family="var(--sans)" font-size="14.5" fill="var(--ink-2)">짝 대칭(β, 1−β)으로 0.5 초과 상한만 증명</text>
+  <text x="28" y="132" font-family="var(--sans)" font-size="15" font-weight="700" fill="var(--ink)">2. 물결 눈금과 보호자 규칙</text>
+  <text x="28" y="154" font-family="var(--sans)" font-size="14.5" fill="var(--ink-2)">짝 대칭(β, 1−β)으로 0.5 초과 상한만 증명</text>
   <line x1="175" y1="174" x2="175" y2="188" stroke="var(--ink-2)" stroke-width="1.5" marker-end="url(#arr-ink-m)"/>
   <rect x="16" y="190" width="318" height="72" fill="var(--bg)" stroke="var(--rule-strong)" stroke-width="1.5"/>
-  <text x="28" y="214" font-family="var(--sans)" font-size="15" font-weight="700" fill="var(--ink)">3. 택배 상자와 부스러기 장벽</text>
-  <text x="28" y="236" font-family="var(--sans)" font-size="14.5" fill="var(--ink-2)">옛 상자 C(2n,n)은 군살과 나눗셈 부스러기 과다</text>
+  <text x="28" y="220" font-family="var(--sans)" font-size="15" font-weight="700" fill="var(--ink)">3. 택배 상자와 부스러기 장벽</text>
+  <text x="28" y="242" font-family="var(--sans)" font-size="14.5" fill="var(--ink-2)">옛 상자 C(2n,n)은 군살과 나눗셈 부스러기 과다</text>
   <line x1="175" y1="262" x2="175" y2="276" stroke="var(--ink-2)" stroke-width="1.5" marker-end="url(#arr-ink-m)"/>
   <rect x="16" y="278" width="318" height="72" fill="var(--bg)" stroke="var(--rule-strong)" stroke-width="1.5"/>
-  <text x="28" y="302" font-family="var(--sans)" font-size="15" font-weight="700" fill="var(--ink)">4. 정수를 미분하는 우회로</text>
-  <text x="28" y="324" font-family="var(--sans)" font-size="14.5" fill="var(--ink-2)">특수 함수 미분(3,024), 부스러기는 끝 1회뿐</text>
+  <text x="28" y="308" font-family="var(--sans)" font-size="15" font-weight="700" fill="var(--ink)">4. 정수를 미분하는 우회로</text>
+  <text x="28" y="330" font-family="var(--sans)" font-size="14.5" fill="var(--ink-2)">특수 함수 미분(3,024), 부스러기는 끝 1회뿐</text>
   <line x1="175" y1="350" x2="175" y2="364" stroke="var(--accent)" stroke-width="1.5" marker-end="url(#arr-acc-m)"/>
   <rect x="16" y="366" width="318" height="72" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.5"/>
-  <text x="28" y="390" font-family="var(--sans)" font-size="15" font-weight="700" fill="var(--accent-ink)">5. 테타 리프트 줄다리기 (√x)</text>
-  <text x="28" y="412" font-family="var(--sans)" font-size="14.5" fill="var(--accent-ink)">여유분(x/k) = 요금(k) → k = √x 번 탑승 (0.5)</text>
+  <text x="28" y="396" font-family="var(--sans)" font-size="15" font-weight="700" fill="var(--accent-ink)">5. 테타 리프트 줄다리기 (√x)</text>
+  <text x="28" y="418" font-family="var(--sans)" font-size="14.5" fill="var(--accent-ink)">여유분(x/k) = 요금(k) → k = √x 번 탑승 (0.5)</text>
   <line x1="175" y1="438" x2="175" y2="452" stroke="var(--accent)" stroke-width="1.5" marker-end="url(#arr-acc-m)"/>
   <rect x="16" y="454" width="318" height="72" fill="var(--bg)" stroke="var(--ink-2)" stroke-width="1.5" stroke-dasharray="4,3"/>
-  <text x="28" y="478" font-family="var(--sans)" font-size="15" font-weight="700" fill="var(--ink)">6. 가루 굵기의 바닥 (점선 구간)</text>
-  <text x="28" y="500" font-family="var(--sans)" font-size="14.5" fill="var(--ink-2)">나눗셈(k²→k) 분모 상한: 기계만 검증 완료</text>
+  <text x="28" y="484" font-family="var(--sans)" font-size="15" font-weight="700" fill="var(--ink)">6. 가루 굵기의 바닥 (점선 구간)</text>
+  <text x="28" y="506" font-family="var(--sans)" font-size="14.5" fill="var(--ink-2)">나눗셈(k²→k) 분모 상한: 기계만 검증 완료</text>
   <rect x="16" y="542" width="318" height="52" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.5"/>
   <text x="28" y="564" font-family="var(--sans)" font-size="14.5" font-weight="700" fill="var(--accent-ink)">검증 완료: 1,737만 줄 Lean 코드, 4중 점검 통과</text>
   <text x="28" y="584" font-family="var(--sans)" font-size="14.5" fill="var(--accent-ink)">명제 일치, 재실행, 무누락, 독립 검사기 확인</text>
@@ -316,8 +316,8 @@ $n$개씩 위아래로 곱하고 나눈 이 상자는 언제나 $4$를 $n$번 �
 
 - 원문 발행 페이지: <https://pages.eiaserinnys.me/d/riemann-tutoring-neon>
 - 증명의 바탕이 된 원자료:
-  - Levent Alpöge, 「A remark on the Riemann Hypothesis」, 2026-11-20 (<https://alpo.ge/remark.pdf>)
-  - Michael Rubinstein, 「Commentary on Alpöge and Claude's proof of GRH」, 2026-11 (<https://www.math.uwaterloo.ca/~mrubinst/alpoge_claude_grh/>)
+  - Levent Alpöge, 「A remark on the Riemann Hypothesis」, 2026년 11월 20일 (<https://alpo.ge/remark.pdf>)
+  - Michael Rubinstein, 「Commentary on Alpöge and Claude's proof of GRH」, 2026년 11월 (<https://www.math.uwaterloo.ca/~mrubinst/alpoge_claude_grh/>)
   - 서소영의 서재 해설 글: [1,737만 줄의 Lean 코드는 리만 가설을 어떻게 증명했고, 왜 아직 검증이 필요한가](https://seosoyoung.eiaserinnys.me/posts/lean-formal-proof-riemann-hypothesis/)
 
 [^source-bg]: 원문 과외 대화는 77번의 실제 세션 문답으로 진행되었다. 작가 서소영이 이를 10개 장, 201번 주고받는 대화형 웹페이지로 윤문했고, 독자가 수식과도 대조할 수 있도록 수학 사이드 노트 20개와 도식 10개, 수채화풍 삽화 10장을 덧붙였다.
