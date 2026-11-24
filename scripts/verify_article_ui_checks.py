@@ -360,7 +360,54 @@ A11_JS = r"""
   const hangulInMath = [...content.querySelectorAll('.katex')]
     .filter((k) => !k.closest('.table-header-clone') && /[가-힣]/.test(k.textContent))
     .map((k) => ((k.querySelector('annotation') || k).textContent || '').trim().slice(0, 60));
-  return {bounds, tables, displays, unbracedCommas, hangulInMath};
+  const OPS = /[+\-−×÷=<>≤≥\/]/;
+  const allTables = [...content.querySelectorAll('table')].filter((t) => !t.closest('.table-header-clone'));
+  const splits = [];
+  const cellChars = (cell) => {
+    const chars = [];
+    const walker = document.createTreeWalker(cell, NodeFilter.SHOW_TEXT, {
+      acceptNode: (n) => (n.parentElement.closest('.katex-mathml, annotation') ? NodeFilter.FILTER_REJECT : NodeFilter.FILTER_ACCEPT),
+    });
+    let n;
+    while ((n = walker.nextNode())) {
+      const t = n.textContent;
+      for (let i = 0; i < t.length; i++) {
+        const ch = t[i];
+        if (ch === '\u200b') continue;
+        if (/\s/.test(ch)) { chars.push({ch: ' '}); continue; }
+        const r = document.createRange(); r.setStart(n, i); r.setEnd(n, i + 1);
+        const rc = r.getClientRects()[0];
+        if (!rc || rc.width === 0) continue;
+        chars.push({ch, y: (rc.top + rc.bottom) / 2});
+      }
+    }
+    return chars;
+  };
+  allTables.forEach((table, ti) => {
+    [...table.rows].forEach((row, ri) => {
+      [...row.cells].forEach((cell, ci) => {
+        const lh = parseFloat(getComputedStyle(cell).lineHeight) || 24;
+        const tol = lh * 0.5;
+        const chars = cellChars(cell);
+        const stack = [];
+        const near = (k, dir) => { let j = k + dir; while (j >= 0 && j < chars.length && chars[j].ch === ' ') j += dir; return chars[j]; };
+        chars.forEach((c, k) => {
+          if (c.ch === '(') stack.push(k);
+          if (c.ch === ')' && stack.length) {
+            const s = stack.pop();
+            const inner = chars.slice(s, k + 1).map((x) => x.ch).join('');
+            for (let j = s + 1; j < k; j++) {
+              if (!OPS.test(chars[j].ch) || chars[j].y == null) continue;
+              const a = near(j, -1), b = near(j, 1);
+              const off = [a, b].some((x) => x && x.y != null && Math.abs(x.y - chars[j].y) > tol);
+              if (off) { splits.push({table: ti + 1, row: ri, col: ci + 1, text: inner}); break; }
+            }
+          }
+        });
+      });
+    });
+  });
+  return {bounds, tables, displays, unbracedCommas, hangulInMath, splits};
 }
 """
 
@@ -795,6 +842,11 @@ def a11_checks(path, configs):
     entries.append({"ok": not hangul_math,
                     "detail": f"{path} wide-light: hangulInMath={len(hangul_math)}"
                               + (f" examples={hangul_math[:5]}" if hangul_math else "")})
+    for name in ("wide-light", "narrow-light", "min360-light"):
+        splits = ((configs.get(name) or {}).get("a11") or {}).get("splits") or []
+        entries.append({"ok": not splits,
+                        "detail": f"{path} {name}: parenOperatorSplits={len(splits)}"
+                                  + (f" examples={splits[:5]}" if splits else "")})
     return entries
 
 
