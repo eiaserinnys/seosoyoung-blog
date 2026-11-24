@@ -37,7 +37,6 @@ images:
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #0c0d0c;
   border-inline-end: 1px solid var(--rule);
 }
 .post-content .source-og-card__media img {
@@ -47,14 +46,15 @@ images:
   aspect-ratio: 1200 / 630;
   object-fit: contain;
   margin: 0;
+  box-shadow: none;
   cursor: pointer;
 }
 .post-content .source-og-card__body {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  gap: 0.25rem;
-  padding: 0.7rem 1rem;
+  justify-content: center;
+  gap: var(--space-1);
+  padding: var(--space-1-5) var(--space-2);
   min-width: 0;
 }
 .post-content .source-og-card__meta {
@@ -66,7 +66,7 @@ images:
 }
 .post-content .source-og-card__title {
   font-family: var(--sans);
-  font-size: 1.02rem;
+  font-size: var(--type-body);
   font-weight: 700;
   color: var(--ink);
   line-height: 1.35;
@@ -77,13 +77,6 @@ images:
   color: var(--ink-2);
   line-height: 1.45;
 }
-.post-content .source-og-card__cta {
-  font-family: var(--sans);
-  font-size: var(--type-meta);
-  font-weight: 600;
-  color: var(--accent-ink);
-  line-height: 1.35;
-}
 @media (max-width: 640px) {
   .post-content .source-og-card {
     grid-template-columns: minmax(0, 1fr);
@@ -93,20 +86,19 @@ images:
     border-bottom: 1px solid var(--rule);
   }
   .post-content .source-og-card__body {
-    gap: 0.35rem;
-    padding: 0.85rem 1rem;
+    gap: var(--space-1);
+    padding: var(--space-2);
   }
 }
 </style>
 <a class="source-og-card" href="https://pages.eiaserinnys.me/d/riemann-tutoring-neon" target="_blank" rel="noopener">
   <span class="source-og-card__media">
-    <img src="https://img.seosoyoung.eiaserinnys.me/images/riemann-tutoring-neon/00-og-pages.png" alt="수학을 놓은 고등학생과 리만 가설 증명 따라가기 원문 과외 대화 페이지 표지" loading="eager">
+    <img src="https://img.seosoyoung.eiaserinnys.me/images/riemann-tutoring-neon/00-og-pages.png" alt="" loading="eager">
   </span>
   <span class="source-og-card__body">
-    <span class="source-og-card__meta">pages.eiaserinnys.me / 원문 과외 대화 전문</span>
+    <span class="source-og-card__meta">pages.eiaserinnys.me ↗</span>
     <span class="source-og-card__title">수학을 놓은 고등학생과 리만 가설 증명 따라가기</span>
-    <span class="source-og-card__desc">중학교 1학년 때 수학을 놓은 고등학생 네온이 알푀게와 Claude의 리만 가설 증명을 끝까지 따라간 10교시 과외 대화 전문(201문답, 도식 10개, 노트 20개).</span>
-    <span class="source-og-card__cta">원문 과외 대화 페이지 열기 ↗</span>
+    <span class="source-og-card__desc">10교시, 201문답의 과외 대화 전문</span>
   </span>
 </a>
 

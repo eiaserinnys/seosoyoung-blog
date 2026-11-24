@@ -874,8 +874,58 @@ def _visible_width(image):
     return float(image.get("w") or 0) - float(widths[3]) - float(widths[1])
 
 
+def source_og_card_checks(path, configs):
+    entries = []
+    for name, config in (configs or {}).items():
+        card = (config or {}).get("sourceOgCard")
+        if not card:
+            continue
+        lines = card.get("lines") or {}
+        gaps = card.get("gaps") or []
+        vw = float(card.get("vw") or 0)
+        layout_ok = (
+            not card.get("hasCta")
+            and card.get("imgAlt") == ""
+            and not card.get("metaHasHangul")
+            and lines.get("meta") == 1
+            and lines.get("desc") == 1
+            and 1 <= int(lines.get("title") or 0) <= 2
+            and all(abs(float(g) - 8.0) <= 1.5 for g in gaps)
+        )
+        if vw >= 641:
+            card_h = float((card.get("card") or {}).get("h") or 0)
+            img_h = float((card.get("img") or {}).get("h") or 0)
+            desktop_ok = (
+                abs(float(card.get("letterbox") or 0)) <= 1.0
+                and abs(card_h - (img_h + 2.0)) <= 1.5
+                and abs(float(card.get("padTop") or 0) - float(card.get("padBottom") or 0)) <= 2.0
+            )
+        else:
+            desktop_ok = True
+        entries.append({
+            "ok": layout_ok and desktop_ok,
+            "detail": (
+                f"{path} {name} .source-og-card layout: vw={vw} lines={lines} gaps={gaps} "
+                f"letterbox={card.get('letterbox')} pad=({card.get('padTop')}, {card.get('padBottom')}) "
+                f"hasCta={card.get('hasCta')} imgAlt={card.get('imgAlt')!r} metaHasHangul={card.get('metaHasHangul')}"
+            ),
+        })
+        if name in A12_CONFIGS:
+            bp = card.get("borderPixels") or {}
+            border_ok = card.get("imgBoxShadow") == "none" and bool(bp.get("ok"))
+            entries.append({
+                "ok": border_ok,
+                "detail": (
+                    f"{path} {name} .source-og-card border: imgBoxShadow={card.get('imgBoxShadow')!r} "
+                    f"restMismatches={bp.get('restMismatches')} focusMismatches={bp.get('focusMismatches')}"
+                ),
+            })
+    return entries
+
+
 def a12_checks(path, configs):
-    if not _path_has_images(configs):
+    card_entries = source_og_card_checks(path, configs)
+    if not _path_has_images(configs) and not card_entries:
         return [{"ok": True, "na": True, "detail": f"{path}: 본문 이미지 0건 (A12 해당 없음)"}]
     entries = []
     for name in A12_CONFIGS:
@@ -888,6 +938,7 @@ def a12_checks(path, configs):
                 "ok": ok,
                 "detail": f"{path} {name} {image.get('src')}: boxShadow={shadow!r} rule={rule!r}",
             })
+    entries.extend(card_entries)
     return entries
 
 
