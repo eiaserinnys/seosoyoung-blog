@@ -231,7 +231,7 @@ MEASURE_JS = r"""
     return null;
   };
   out.postImages = [...content.querySelectorAll('img')]
-    .filter((img) => img.getBoundingClientRect().width > 0)
+    .filter((img) => img.getBoundingClientRect().width > 0 && !img.closest('a'))
     .map((img) => {
       const b = img.getBoundingClientRect();
       const cs = getComputedStyle(img);
@@ -1214,6 +1214,155 @@ def capture_sticky_seams(page, out_dir, name, dpr):
     return records
 
 
+SOURCE_OG_CARD_JS = r"""
+() => {
+  const c = document.querySelector('.source-og-card');
+  if (!c) return null;
+  const r = el => {
+    if (!el) return null;
+    const b = el.getBoundingClientRect();
+    return {x: +b.x.toFixed(2), y: +b.y.toFixed(2), w: +b.width.toFixed(2), h: +b.height.toFixed(2)};
+  };
+  const lines = el => {
+    if (!el) return 0;
+    const rg = document.createRange();
+    rg.selectNodeContents(el);
+    return new Set([...rg.getClientRects()].map(x => Math.round(x.top))).size;
+  };
+  const media = c.querySelector('.source-og-card__media');
+  const img = c.querySelector('img');
+  const body = c.querySelector('.source-og-card__body');
+  const kids = body ? [...body.children] : [];
+  const gaps = [];
+  for (let i = 1; i < kids.length; i++) {
+    gaps.push(+(kids[i].getBoundingClientRect().top - kids[i - 1].getBoundingClientRect().bottom).toFixed(1));
+  }
+  const br = body.getBoundingClientRect();
+  const first = kids[0].getBoundingClientRect();
+  const last = kids[kids.length - 1].getBoundingClientRect();
+  const probe = (varName) => {
+    const p = document.createElement('span');
+    p.style.cssText = `position:fixed;left:-9999px;color:var(${varName})`;
+    document.body.appendChild(p);
+    const col = getComputedStyle(p).color;
+    p.remove();
+    return col;
+  };
+  const metaEl = c.querySelector('.source-og-card__meta');
+  const titleEl = c.querySelector('.source-og-card__title');
+  const ctaEl = c.querySelector('.source-og-card__cta');
+  return {
+    vw: innerWidth,
+    card: r(c),
+    media: r(media),
+    img: r(img),
+    body: r(body),
+    imgBoxShadow: img ? getComputedStyle(img).boxShadow : null,
+    imgAlt: img ? img.getAttribute('alt') : null,
+    hasCta: !!ctaEl,
+    metaText: metaEl ? metaEl.textContent.trim() : '',
+    metaHasHangul: metaEl ? /[가-힣]/.test(metaEl.textContent) : false,
+    titleFontSize: titleEl ? parseFloat(getComputedStyle(titleEl).fontSize) : null,
+    bodyFontSize: parseFloat(getComputedStyle(document.body).fontSize),
+    lines: Object.fromEntries(kids.map(k => [(k.className.split('__')[1] || k.tagName), lines(k)])),
+    gaps,
+    padTop: +(first.top - br.top).toFixed(1),
+    padBottom: +(br.bottom - last.bottom).toFixed(1),
+    letterbox: +(media.getBoundingClientRect().height - img.getBoundingClientRect().height).toFixed(1),
+    ruleStrongColor: probe('--rule-strong'),
+    accentColor: probe('--accent'),
+    bgColor: probe('--bg'),
+  };
+}
+"""
+
+
+def measure_source_og_card(page, dpr, check_pixels=False):
+    card = page.locator(".source-og-card")
+    if card.count() == 0:
+        return None
+    card.scroll_into_view_if_needed()
+    page.wait_for_timeout(150)
+    info = page.evaluate(SOURCE_OG_CARD_JS)
+    if not info or not check_pixels:
+        return info
+
+    def color_close(a, b, tol=18):
+        return all(abs(int(x) - int(y)) <= tol for x, y in zip(a[:3], b[:3]))
+
+    bg_rgb = parse_rgb(info["bgColor"])
+
+    def first_border_pixel(seq):
+        for px in seq[:max(2, int(round(dpr)) + 1)]:
+            if not color_close(px, bg_rgb, tol=6):
+                return px
+        return seq[0]
+
+    def grab_border_pixels():
+        raw = card.screenshot()
+        im = Image.open(io.BytesIO(raw)).convert("RGB")
+        w, h = im.size
+        vw = info["vw"]
+        media_w = int(round(info["media"]["w"] * dpr))
+        media_h = int(round(info["media"]["h"] * dpr))
+        band = max(3, int(round(2 * dpr)) + 1)
+        bands = {}
+        if vw >= 641:
+            img_x = max(band, min(w - band, media_w // 2))
+            body_x = max(media_w + band, min(w - band, media_w + (w - media_w) // 2))
+            mid_y = max(band, min(h - band, h // 2))
+            bands["top_img"] = [im.getpixel((img_x, y)) for y in range(band)]
+            bands["top_body"] = [im.getpixel((body_x, y)) for y in range(band)]
+            bands["bottom_img"] = [im.getpixel((img_x, h - 1 - y)) for y in range(band)]
+            bands["bottom_body"] = [im.getpixel((body_x, h - 1 - y)) for y in range(band)]
+            bands["left_img"] = [im.getpixel((x, mid_y)) for x in range(band)]
+            bands["right_body"] = [im.getpixel((w - 1 - x, mid_y)) for x in range(band)]
+        else:
+            mid_x = max(band, min(w - band, w // 2))
+            img_y = max(band, min(h - band, media_h // 2))
+            body_y = max(media_h + band, min(h - band, media_h + (h - media_h) // 2))
+            bands["top_img"] = [im.getpixel((mid_x, y)) for y in range(band)]
+            bands["bottom_body"] = [im.getpixel((mid_x, h - 1 - y)) for y in range(band)]
+            bands["left_img"] = [im.getpixel((x, img_y)) for x in range(band)]
+            bands["left_body"] = [im.getpixel((x, body_y)) for x in range(band)]
+            bands["right_img"] = [im.getpixel((w - 1 - x, img_y)) for x in range(band)]
+            bands["right_body"] = [im.getpixel((w - 1 - x, body_y)) for x in range(band)]
+        return {k: first_border_pixel(v) for k, v in bands.items()}
+
+    page.mouse.move(1, 1)
+    page.evaluate("document.activeElement && document.activeElement.blur && document.activeElement.blur()")
+    page.wait_for_timeout(150)
+    rest_px = grab_border_pixels()
+
+    page.evaluate("(document.querySelector('.toc summary') || document.querySelector('.toc a') || document.body).focus()")
+    for _ in range(6):
+        page.keyboard.press("Tab")
+        if page.evaluate("document.activeElement && document.activeElement.classList.contains('source-og-card')"):
+            break
+    page.wait_for_timeout(150)
+    focus_px = grab_border_pixels()
+    page.evaluate("document.activeElement && document.activeElement.blur && document.activeElement.blur()")
+
+    expected_rest = parse_rgb(info["ruleStrongColor"])
+    expected_focus = parse_rgb(info["accentColor"])
+    rest_mismatches = {
+        k: list(v) for k, v in rest_px.items() if not color_close(v, expected_rest, tol=18)
+    }
+    focus_mismatches = {
+        k: list(v) for k, v in focus_px.items() if not color_close(v, expected_focus, tol=18)
+    }
+    info["borderPixels"] = {
+        "expectedRest": list(expected_rest),
+        "expectedFocus": list(expected_focus),
+        "rest": {k: list(v) for k, v in rest_px.items()},
+        "focus": {k: list(v) for k, v in focus_px.items()},
+        "restMismatches": rest_mismatches,
+        "focusMismatches": focus_mismatches,
+        "ok": not rest_mismatches and not focus_mismatches,
+    }
+    return info
+
+
 def capture_config(browser, url, out_dir, name, width, height, dpr, scheme, a10=False):
     ctx = open_context(browser, width, height, dpr, scheme, touch=name in TOUCH_CONFIGS)
     page = ctx.new_page()
@@ -1240,6 +1389,9 @@ def capture_config(browser, url, out_dir, name, width, height, dpr, scheme, a10=
     if (a10 or has_katex) and name in A10_CONFIGS:
         m["a10"] = page.evaluate(A10_JS, name == "wide-light")
         m["a11"] = page.evaluate(A11_JS, name == "wide-light")
+    m["sourceOgCard"] = measure_source_og_card(
+        page, dpr, check_pixels=name in ("wide-light", "wide-dark", "narrow-light", "narrow-dark")
+    )
     d = out_dir / name
     d.mkdir(parents=True, exist_ok=True)
     page.add_style_tag(content=".site-top{position:static!important} html{scroll-behavior:auto!important}")
