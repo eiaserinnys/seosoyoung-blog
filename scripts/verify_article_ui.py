@@ -1389,7 +1389,9 @@ def capture_config(browser, url, out_dir, name, width, height, dpr, scheme, a10=
     if (a10 or has_katex) and name in A10_CONFIGS:
         m["a10"] = page.evaluate(A10_JS, name == "wide-light")
         m["a11"] = page.evaluate(A11_JS, name == "wide-light")
-    m["sourceOgCard"] = measure_source_og_card(page, dpr, check_pixels=name in A12_CONFIGS)
+    m["sourceOgCard"] = measure_source_og_card(
+        page, dpr, check_pixels=name in ("wide-light", "wide-dark", "narrow-light", "narrow-dark")
+    )
     d = out_dir / name
     d.mkdir(parents=True, exist_ok=True)
     page.add_style_tag(content=".site-top{position:static!important} html{scroll-behavior:auto!important}")
