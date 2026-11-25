@@ -30,7 +30,7 @@ images:
 
 팀이 스스로 판단하려면 세 종류의 맥락이 끊임없이 보충되어야 한다.
 
-| 맥락 구분 | 보충해야 할 핵심 정보 | 팀과 공동의 두뇌를 구축하는 실천 방식 |
+| 맥락 구분 | 보충해야 할 핵심 정보 | 공동의 두뇌 구축 방식 |
 |---|---|---|
 | 고객 맥락 (Customer Context) | 고객이 겪는 구체적인 불편, 감정적 반응, 수작업 우회 방식 | PM이 요약 보고서만 전달하지 않고 고객 인터뷰에 엔지니어를 함께 참석시키며, 유럽 고객 행사 부스도 엔지니어와 함께 운영한다. |
 | 제품과 시장 맥락 (Product & Market Context) | 시장 구도, 경쟁 도구와 신규 AI 도구의 실제 장단점, 장기 비전 | 한 사람이 혼자 조사해 지시서를 배포하는 대신, 팀 전체가 각자 다른 AI 도구를 써 보고 결과를 공유하며 비전을 함께 수립한다. |
@@ -52,32 +52,32 @@ images:
   <rect x="16" y="16" width="688" height="96" fill="var(--bg)" stroke="var(--rule)" stroke-width="1"/>
   <text x="30" y="38" font-family="var(--sans)" font-size="13.5" font-weight="700" fill="var(--ink-2)">기존 통념: 명세서 전달형 모델 (PM이 의사결정 병목으로 작용)</text>
   <rect x="30" y="50" width="185" height="48" fill="var(--bg-2)" stroke="var(--rule)" stroke-width="1"/>
-  <text x="42" y="70" font-family="var(--sans)" font-size="13" font-weight="700" fill="var(--ink)">1. PM의 단독 정보 독점</text>
-  <text x="42" y="88" font-family="var(--sans)" font-size="13" fill="var(--ink-2)">고객 인터뷰와 백로그 총괄</text>
+  <text x="42" y="68" font-family="var(--sans)" font-size="13" font-weight="700" fill="var(--ink)">1. PM의 단독 정보 독점</text>
+  <text x="42" y="86" font-family="var(--sans)" font-size="13" fill="var(--ink-2)">고객 인터뷰와 백로그 총괄</text>
   <line x1="215" y1="74" x2="253" y2="74" stroke="var(--ink-2)" stroke-width="1.5" marker-end="url(#arr-ink)"/>
   <rect x="257" y="50" width="195" height="48" fill="var(--bg-2)" stroke="var(--rule)" stroke-width="1"/>
-  <text x="269" y="70" font-family="var(--sans)" font-size="13" font-weight="700" fill="var(--ink)">2. 기능 명세서(Spec) 전달</text>
-  <text x="269" y="88" font-family="var(--sans)" font-size="13" fill="var(--ink-2)">요약 보고서와 우선순위 통보</text>
+  <text x="269" y="68" font-family="var(--sans)" font-size="13" font-weight="700" fill="var(--ink)">2. 기능 명세서(Spec) 전달</text>
+  <text x="269" y="86" font-family="var(--sans)" font-size="13" fill="var(--ink-2)">요약 보고서와 우선순위 통보</text>
   <line x1="452" y1="74" x2="490" y2="74" stroke="var(--ink-2)" stroke-width="1.5" marker-end="url(#arr-ink)"/>
   <rect x="494" y="50" width="194" height="48" fill="var(--bg-2)" stroke="var(--rule)" stroke-width="1"/>
-  <text x="506" y="70" font-family="var(--sans)" font-size="13" font-weight="700" fill="var(--ink)">3. 수동적 구현과 대기</text>
-  <text x="506" y="88" font-family="var(--sans)" font-size="13" fill="var(--ink-2)">미세 결정마다 PM 승인 대기</text>
+  <text x="506" y="68" font-family="var(--sans)" font-size="13" font-weight="700" fill="var(--ink)">3. 수동적 구현과 대기</text>
+  <text x="506" y="86" font-family="var(--sans)" font-size="13" fill="var(--ink-2)">미세 결정마다 PM 승인 대기</text>
   <rect x="16" y="128" width="688" height="116" fill="var(--bg)" stroke="var(--rule-strong)" stroke-width="1.5"/>
   <text x="30" y="150" font-family="var(--sans)" font-size="13.5" font-weight="700" fill="var(--accent)">Sherif Mansour의 제1원칙: 공동의 두뇌(Shared Brain) 모델 (의사결정 속도 극대화)</text>
   <rect x="30" y="164" width="185" height="64" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.5"/>
-  <text x="42" y="185" font-family="var(--sans)" font-size="13" font-weight="700" fill="var(--accent-ink)">1. 3대 맥락 부족 보충</text>
-  <text x="42" y="203" font-family="var(--sans)" font-size="13" fill="var(--accent-ink)">고객, 시장, 비즈니스 맥락</text>
-  <text x="42" y="219" font-family="var(--sans)" font-size="13" fill="var(--accent-ink)">인터뷰 동석과 공동 도구 실험</text>
+  <text x="42" y="182" font-family="var(--sans)" font-size="13" font-weight="700" fill="var(--accent-ink)">1. 3대 맥락 부족 보충</text>
+  <text x="42" y="200" font-family="var(--sans)" font-size="13" fill="var(--accent-ink)">고객, 시장, 비즈니스 맥락</text>
+  <text x="42" y="216" font-family="var(--sans)" font-size="13" fill="var(--accent-ink)">인터뷰 동석과 공동 도구 실험</text>
   <line x1="215" y1="196" x2="253" y2="196" stroke="var(--accent)" stroke-width="1.5" marker-end="url(#arr-acc)"/>
   <rect x="257" y="164" width="195" height="64" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.5"/>
-  <text x="269" y="185" font-family="var(--sans)" font-size="13" font-weight="700" fill="var(--accent-ink)">2. 공동의 두뇌 형성</text>
-  <text x="269" y="203" font-family="var(--sans)" font-size="13" fill="var(--accent-ink)">팀원 직접 관찰로 공감 확보</text>
-  <text x="269" y="219" font-family="var(--sans)" font-size="13" fill="var(--accent-ink)">AI 에이전트와도 맥락 공유</text>
+  <text x="269" y="182" font-family="var(--sans)" font-size="13" font-weight="700" fill="var(--accent-ink)">2. 공동의 두뇌 형성</text>
+  <text x="269" y="200" font-family="var(--sans)" font-size="13" fill="var(--accent-ink)">팀원 직접 관찰로 공감 확보</text>
+  <text x="269" y="216" font-family="var(--sans)" font-size="13" fill="var(--accent-ink)">AI 에이전트와도 맥락 공유</text>
   <line x1="452" y1="196" x2="490" y2="196" stroke="var(--accent)" stroke-width="1.5" marker-end="url(#arr-acc)"/>
   <rect x="494" y="164" width="194" height="64" fill="var(--bg)" stroke="var(--accent)" stroke-width="1.5"/>
-  <text x="506" y="185" font-family="var(--sans)" font-size="13" font-weight="700" fill="var(--ink)">3. 자율 판단과 기능 제안</text>
-  <text x="506" y="203" font-family="var(--sans)" font-size="13" fill="var(--ink-2)">프로덕트 엔지니어의 주도적</text>
-  <text x="506" y="219" font-family="var(--sans)" font-size="13" fill="var(--ink-2)">해결책 제시 및 속도 향상</text>
+  <text x="506" y="182" font-family="var(--sans)" font-size="13" font-weight="700" fill="var(--ink)">3. 자율 판단과 기능 제안</text>
+  <text x="506" y="200" font-family="var(--sans)" font-size="13" fill="var(--ink-2)">프로덕트 엔지니어의 주도적</text>
+  <text x="506" y="216" font-family="var(--sans)" font-size="13" fill="var(--ink-2)">해결책 제시 및 속도 향상</text>
 </svg>
 <svg class="diagram-svg-mobile" viewBox="0 0 350 470" role="img" aria-label="명세서 전달형 모델과 공동의 두뇌 구축형 모델의 의사결정 구조 비교 (모바일)" xmlns="http://www.w3.org/2000/svg">
   <defs>
@@ -92,19 +92,19 @@ images:
   <rect x="14" y="134" width="322" height="322" fill="var(--bg)" stroke="var(--rule-strong)" stroke-width="1.5"/>
   <text x="26" y="158" font-family="var(--sans)" font-size="15" font-weight="700" fill="var(--accent)">제1원칙: 공동의 두뇌(Shared Brain) 모델</text>
   <rect x="26" y="172" width="298" height="72" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.5"/>
-  <text x="38" y="196" font-family="var(--sans)" font-size="15" font-weight="700" fill="var(--accent-ink)">1. 3대 맥락 부족 보충</text>
-  <text x="38" y="218" font-family="var(--sans)" font-size="14.5" fill="var(--accent-ink)">고객 인터뷰에 엔지니어 동석</text>
-  <text x="38" y="236" font-family="var(--sans)" font-size="14.5" fill="var(--accent-ink)">시장 도구 실험과 비전 수립 공동 참여</text>
+  <text x="38" y="193" font-family="var(--sans)" font-size="15" font-weight="700" fill="var(--accent-ink)">1. 3대 맥락 부족 보충</text>
+  <text x="38" y="215" font-family="var(--sans)" font-size="14.5" fill="var(--accent-ink)">고객 인터뷰에 엔지니어 동석</text>
+  <text x="38" y="233" font-family="var(--sans)" font-size="14.5" fill="var(--accent-ink)">시장 도구 실험과 비전 수립 공동 참여</text>
   <line x1="175" y1="244" x2="175" y2="266" stroke="var(--accent)" stroke-width="1.5" marker-end="url(#arr-acc-m)"/>
   <rect x="26" y="270" width="298" height="72" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.5"/>
-  <text x="38" y="294" font-family="var(--sans)" font-size="15" font-weight="700" fill="var(--accent-ink)">2. 팀과 에이전트의 공동 두뇌 형성</text>
-  <text x="38" y="316" font-family="var(--sans)" font-size="14.5" fill="var(--accent-ink)">직접 관찰을 통한 고객 공감대 100배 강화</text>
-  <text x="38" y="334" font-family="var(--sans)" font-size="14.5" fill="var(--accent-ink)">우선순위 판단 기준을 팀 전체가 내재화</text>
+  <text x="38" y="291" font-family="var(--sans)" font-size="15" font-weight="700" fill="var(--accent-ink)">2. 팀과 에이전트의 공동 두뇌 형성</text>
+  <text x="38" y="313" font-family="var(--sans)" font-size="14.5" fill="var(--accent-ink)">직접 관찰을 통한 고객 공감대 100배 강화</text>
+  <text x="38" y="331" font-family="var(--sans)" font-size="14.5" fill="var(--accent-ink)">우선순위 판단 기준을 팀 전체가 내재화</text>
   <line x1="175" y1="342" x2="175" y2="364" stroke="var(--accent)" stroke-width="1.5" marker-end="url(#arr-acc-m)"/>
   <rect x="26" y="368" width="298" height="72" fill="var(--bg)" stroke="var(--accent)" stroke-width="1.5"/>
-  <text x="38" y="392" font-family="var(--sans)" font-size="15" font-weight="700" fill="var(--ink)">3. 의사결정 속도와 자율 제안 향상</text>
-  <text x="38" y="414" font-family="var(--sans)" font-size="14.5" fill="var(--ink-2)">엔지니어와 디자이너가 스스로 기능 제안</text>
-  <text x="38" y="432" font-family="var(--sans)" font-size="14.5" fill="var(--ink-2)">PM은 Jira 백로그 관리 대신 새 맥락 보충</text>
+  <text x="38" y="389" font-family="var(--sans)" font-size="15" font-weight="700" fill="var(--ink)">3. 의사결정 속도와 자율 제안 향상</text>
+  <text x="38" y="411" font-family="var(--sans)" font-size="14.5" fill="var(--ink-2)">엔지니어와 디자이너가 스스로 기능 제안</text>
+  <text x="38" y="429" font-family="var(--sans)" font-size="14.5" fill="var(--ink-2)">PM은 Jira 백로그 관리 대신 새 맥락 보충</text>
 </svg>
 <figcaption style="margin-top: 0.65rem; font-size: 0.85rem; color: var(--ink-2); text-align: center; line-height: 1.5;">명세서 전달형 모델과 Sherif Mansour의 공동의 두뇌(Shared Brain) 모델 비교. PM은 결정을 독점하는 대신 맥락을 보충해 팀의 의사결정 속도를 높인다.</figcaption>
 </figure>
@@ -212,10 +212,10 @@ PM이 먼저 10장의 맥락을 이해하고 스스로 확신을 얻어야만 1�
 
 아울러 PM이 자신이 동의하지 않는 결정을 팀에 전달할 때는 한쪽 입장만 옹호하거나 특정 임원 탓으로 돌리면 안 된다. 양쪽 선택지의 장단점과 정당한 트레이드오프를 모두 공정하게 설명한 뒤 왜 최종적으로 이 결정을 택했는지 밝혀야 팀이 납득한다. 뛰어난 PM은 언제나 "우리가 왜 이 일을 하지 말아야 하는가?"를 스스로에게 먼저 묻고 자기 주장에 대한 최선의 반론을 직접 제시할 수 있는 사람이다.
 
-| 상황과 과제 | 잘못된 대응 (반패턴) | Sherif Mansour가 제시하는 해결 프로토콜 |
+| 상황과 과제 | 잘못된 대응 (반패턴) | 해결 프로토콜 |
 |---|---|---|
 | 창업자와 경영진이 납득하기 어려운 비전(영화의 10장)을 제시할 때 | 확신 없이 "위가 시켜서 한다"고 전달하거나 맥락 파악 없이 즉각 반발한다. | 창업자가 99% 확률로 깊이 고민했음을 전제하고 "어떤 깨달음을 거쳐 그 결론에 이르셨는지" 질문해 3장에서 10장까지의 맥락 격차를 먼저 해소한다. |
-| 맥락을 다 파악한 뒤에도 경영진의 의견에 동의할 수 없을 때 | 모호하게 타협하거나 결정권 소재를 흐린 채 불만을 품는다. | 반대 논거를 제시한 뒤 "얼마나 강한 확신이 있으신지", "이 결정의 최종 결정권자가 누구인지"를 투명하게 묻고 발언 강도(`#FYI`, `#제안`, `#간청`)를 되물어 확인(playback)한다. |
+| 맥락을 다 파악한 뒤에도 경영진의 의견에 동의할 수 없을 때 | 모호하게 타협하거나 결정권 소재를 흐린 채 불만을 품는다. | 반대 논거를 제시한 뒤 "얼마나 강한 확신이 있으신지", "이 결정의 최종 결정권자가 누구인지"를 투명하게 묻고 발언 강도('#FYI', '#제안', '#간청')를 되물어 확인(playback)한다. |
 | 본인이 동의하지 않았으나 확정된 결정을 실행 팀에 전달할 때 | 특정 임원의 이름을 핑계로 대거나 한쪽 주장만 일방적으로 옹호한다. | 양쪽 대안의 장단점과 정당한 트레이드오프를 모두 대변하고, 스스로 반대 논거까지 충분히 검토했음을 보여준 뒤 최종 결정 방향을 공유한다. |
 
 이 밖에도 Atlassian은 모든 임원 리뷰 영상을 Loom으로 녹화해, 전 직원이 검색하고 AI 에이전트에게 물어볼 수 있게 하는 **기본 공개**(Open by default) 문화를 유지하고 있다. 또한 전 세계 어디서나 일할 수 있는 'Team Anywhere' 정책을 운영한다. 사무실에 모여 화이트보드를 쓰는 직원보다 디지털 문서를 더 많이 작성하고 공유하는 **원격 근무자가 AI를 활용해 더 많은 성과를 낸다**는 가설을 데이터 과학 팀과 함께 검증하고 있다.
@@ -228,7 +228,7 @@ Atlassian이 한 달 동안 실험한 '전원 AI 빌더' 스쿼드의 해체와 
 
 ## 출처
 
-Lenny Rachitsky & Sherif Mansour, 「First principles: What it takes to be a great product manager in the AI era | Sherif Mansour」, *Lenny's Newsletter / Lenny's Podcast*, 2026-11-22. 치비 서소영 삽화 두 장은 「느낌적인 느낌을 숫자로 옮기는 일」의 치비 서소영 라인아트를 참조해 gpt-image-2.6-flare로 따로 생성했다.
+Lenny Rachitsky & Sherif Mansour, 「First principles: What it takes to be a great product manager in the AI era | Sherif Mansour」, *Lenny's Newsletter / Lenny's Podcast* (2026년 11월 22일 발행). 치비 서소영 삽화 두 장은 「느낌적인 느낌을 숫자로 옮기는 일」의 치비 서소영 라인아트를 참조해 gpt-image-2.6-flare로 따로 생성했다.
 
 - 원문: <https://www.lennysnewsletter.com/p/first-principles-what-it-takes-to>
 - YouTube 대담 영상: <https://youtu.be/hRtmV1mCBSE>
