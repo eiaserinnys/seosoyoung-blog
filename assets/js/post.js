@@ -259,6 +259,21 @@
           var fontSize = parseFloat(getComputedStyle(item.table).fontSize);
           sticky = width !== null && !isNaN(fontSize)
             && item.wrapper.clientWidth - width >= fontSize * MIN_COLUMN_EM;
+          if (sticky) {
+            item.wrapper.classList.add("is-sticky-first");
+            width = firstColumnWidth(item.table);
+            var visible = width !== null ? item.wrapper.clientWidth - width : 0;
+            var row = item.table.rows[0];
+            var restCells = row ? Array.from(row.cells).slice(1) : [];
+            sticky = restCells.length > 0 && restCells.every(function (cell, index) {
+              var st = getComputedStyle(cell);
+              var cellWidth = cell.getBoundingClientRect().width;
+              var need = index === restCells.length - 1
+                ? cellWidth - parseFloat(st.paddingInlineStart)
+                : cellWidth - parseFloat(st.paddingInlineStart) - parseFloat(st.paddingInlineEnd);
+              return need <= visible + 1;
+            });
+          }
         }
         item.wrapper.classList.toggle("is-sticky-first", sticky);
         syncHeader(item);

@@ -1342,8 +1342,10 @@ def a17_checks(path, configs):
             room = None if width is None else wrap - width
             need = None if font is None else font * MIN_COLUMN_EM
             cols = row.get("cols")
+            cols_fit = row.get("colsFit", True)
             expected = (bool(row.get("overflowing")) and cols is not None and cols >= MIN_TABLE_COLS
-                        and width is not None and wrap > 0 and need is not None and room >= need)
+                        and width is not None and wrap > 0 and need is not None and room >= need
+                        and bool(cols_fit))
             bg = row.get("firstCellBg") or {}
             body = row.get("bodyBg") or {}
             bg_same = (bg.get("a") == 1 and body.get("a") is not None
@@ -1522,14 +1524,13 @@ def a24_checks(path, rows):
 
 
 def a26_checks(path, configs):
-    """375px에서 넘치는 3칸 이상 표는 첫 열이 고정되고, 둘째 열부터 각 열의 글 폭이 남는 폭 안에 들어온다."""
+    """375px에서 넘치는 3칸 이상 표는 첫 열이 고정되고, 둘째 열부터 각 열의 글 폭이 남는 폭 안에 들어온다.
+    또한 360/375/390/414px에서 첫 열이 고정된 넘치는 표를 오른쪽 끝까지 밀었을 때 마지막 열 글이 고정 열 오른쪽에서
+    4px 이상 떨어져 시작하고, 가운데 열도 남는 폭 안에 들어와 어느 위치에선가 글 전체가 보여야 한다."""
     narrow = configs.get('narrow-light') or {}
     tables = narrow.get('tables') or []
     targets = [t for t in tables
                if bool(t.get('overflowing')) and (t.get('cols') or 0) >= 3]
-    if not targets:
-        return [{'ok': True, 'na': True,
-                 'detail': f'{path}: 375px 넘치는 3칸 이상 표 0건 (A26 해당 없음)'}]
     entries = []
     for t in targets:
         sticky = bool(t.get('sticky'))
@@ -1552,4 +1553,36 @@ def a26_checks(path, configs):
                         'detail': f"{path} 375 table {t.get('i')} ({t.get('cols')}칸): "
                                   f"sticky={sticky} visible={visible}px maxNeed={max_need}px "
                                   f"colNeedWidths={need_widths} over={over_cols} headers={headers}"})
+
+    for width, cfg_name in ((360, 'min360-light'), (375, 'narrow-light'),
+                            (390, 'min390-light'), (414, 'min414-light')):
+        cfg = configs.get(cfg_name) or {}
+        for t in (cfg.get('tables') or []):
+            if not (bool(t.get('overflowing')) and (t.get('cols') or 0) >= 3 and bool(t.get('sticky'))):
+                continue
+            gap = t.get('lastColEndGap')
+            if gap is None:
+                continue
+            need_widths = t.get('colNeedWidths') or []
+            visible = t.get('visibleWidth')
+            if visible is None:
+                wrap_client = t.get('wrapClient') or 0
+                first_w = t.get('firstCellWidth') or 0
+                visible = round(wrap_client - first_w)
+            headers = t.get('colHeaders') or []
+            mid_needs = need_widths[1:-1]
+            mid_over = [
+                f"{idx + 2}열({headers[idx + 1] if idx + 1 < len(headers) else ''}={w}px>{visible}px)"
+                for idx, w in enumerate(mid_needs)
+                if w > visible + 1
+            ]
+            ok = (gap >= 4.0) and not mid_over
+            entries.append({'ok': bool(ok),
+                            'detail': f"{path} {width} table {t.get('i')} ({t.get('cols')}칸, sticky 끝까지 밀기): "
+                                      f"lastColEndGap={gap}px (기준 >= 4.0px) visible={visible}px "
+                                      f"midOver={mid_over}"})
+
+    if not entries:
+        return [{'ok': True, 'na': True,
+                 'detail': f'{path}: 375px 넘치는 3칸 이상 표 0건 (A26 해당 없음)'}]
     return entries
