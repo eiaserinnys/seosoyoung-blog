@@ -347,6 +347,27 @@ MEASURE_JS = r"""
     const firstColCell = (rows[1] && rows[1].children[0]) || firstBodyCell;
     const firstColW = firstColCell ? firstColCell.getBoundingClientRect().width : 0;
     const visibleWidth = wrap ? Math.round(wrap.clientWidth - (isSticky ? firstColW : 0)) : null;
+    let lastColEndGap = null;
+    if (wrap && overflowBefore && cols >= 2) {
+      const savedScroll = wrap.scrollLeft;
+      wrap.scrollLeft = wrap.scrollWidth;
+      const stickyRight = isSticky
+        ? Math.max(...rows.map((row) => row.children[0] ? row.children[0].getBoundingClientRect().right : -Infinity))
+        : wrap.getBoundingClientRect().left;
+      const lastIdx = cols - 1;
+      let lastTextLeft = Infinity;
+      for (const row of rows) {
+        const cell = row.children[lastIdx];
+        if (!cell || (cell.colSpan || 1) !== 1) continue;
+        for (const rect of textRects(cell)) {
+          if (rect.left < lastTextLeft) lastTextLeft = rect.left;
+        }
+      }
+      if (Number.isFinite(lastTextLeft) && Number.isFinite(stickyRight)) {
+        lastColEndGap = +(lastTextLeft - stickyRight).toFixed(1);
+      }
+      wrap.scrollLeft = savedScroll;
+    }
     const maxLinesPerCell = Math.max(...[...t.querySelectorAll('td')].map((c) => Math.round((c.getBoundingClientRect().height - 16) / parseFloat(getComputedStyle(c).lineHeight))));
     // A23과 같은 줄 세기: 칸 내용 높이를 그 칸 줄 높이로 나눠 반올림한다(머리 칸 포함).
     const cellLines = [...t.querySelectorAll('th,td')].map((cell) => {
@@ -364,7 +385,7 @@ MEASURE_JS = r"""
       wrapping: wrap ? wrap.classList.contains('is-overflowing') : null, overflowing: overflowBefore,
       wrapDelta: wrap ? wrap.scrollWidth - wrap.clientWidth : null,
       tableRect: r(t), wrapRect: r(wrap), th: textInfo(th, 'th'), td: textInfo(td, 'td'),
-      colWidths, maxLinesPerCell, colTextLengths, colHeaders, colNeedWidths, visibleWidth,
+      colWidths, maxLinesPerCell, colTextLengths, colHeaders, colNeedWidths, visibleWidth, lastColEndGap,
       firstColWidths: [...t.querySelectorAll('tbody tr td:first-child')].slice(0, 3).map((c) => +c.getBoundingClientRect().width.toFixed(1)),
       maxCellHeight: Math.max(...[...t.querySelectorAll('td')].map((c) => c.getBoundingClientRect().height)),
       maxContentWidth, fontSize: parseFloat(style.fontSize),

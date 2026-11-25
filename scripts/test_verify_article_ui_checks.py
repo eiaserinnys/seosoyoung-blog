@@ -698,6 +698,19 @@ class NewArticleChecksTest(unittest.TestCase):
         self.assertTrue(entries[0]['ok'])
         self.assertTrue(entries[0]['na'])
 
+        clipped_360 = {'i': 5, 'cols': 3, 'overflowing': True, 'sticky': True,
+                       'visibleWidth': 194, 'colNeedWidths': [110, 138, 202],
+                       'colHeaders': ['조직 및 직무', '개방 이전', '도입 이후'],
+                       'lastColEndGap': -8.9}
+        entries = a26_checks('/x/', {'min360-light': {'tables': [clipped_360]}})
+        self.assertEqual(len(entries), 1)
+        self.assertFalse(entries[0]['ok'])
+
+        passing_360 = dict(clipped_360, lastColEndGap=6.1)
+        entries = a26_checks('/x/', {'min360-light': {'tables': [passing_360]}})
+        self.assertEqual(len(entries), 1)
+        self.assertTrue(entries[0]['ok'])
+
 class RevisedChecksTest(unittest.TestCase):
     def test_a5_independent_expected_overflow(self):
         from verify_article_ui_checks import a5_overflow_checks
