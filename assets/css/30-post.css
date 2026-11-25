@@ -381,7 +381,14 @@
 .table-scroll.is-wrap-first > table :is(th, td):first-child {
   width: var(--table-first-col-max);
   max-width: var(--table-first-col-max);
+}
+
+.table-scroll.is-wrap-first.is-overflowing > table :is(th, td):first-child {
   white-space: normal;
+}
+
+.table-scroll.is-wrap-first > table :is(th, td):first-child code {
+  white-space: nowrap;
 }
 
 .table-scroll.is-overflowing:not(.is-expanded) > table:has(tr > :nth-child(6)) {

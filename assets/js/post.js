@@ -112,7 +112,7 @@
       while ((node = walker.nextNode())) {
         if (node.parentElement && node.parentElement.closest(".katex, code, pre, script, style")) continue;
         var t = node.data
-          .replace(/([A-Za-z0-9가-힣])-([A-Za-z0-9가-힣])/g, "$1\u2011$2")
+          .replace(/([A-Za-z0-9가-힣])-(?=[A-Za-z0-9가-힣])/g, "$1\u2011")
           .replace(/([)%])([가-힣])/g, "$1\u2060$2");
         if (t !== node.data) node.data = t;
       }
@@ -121,16 +121,17 @@
     document.querySelectorAll(".post-content table").forEach(function (table) {
       if (table.closest(".highlight") || table.classList.contains("highlighttable")) return;
 
+      var firstTexts = [];
       table.querySelectorAll("tbody tr > :first-child").forEach(function (cell) {
         var walker = document.createTreeWalker(cell, NodeFilter.SHOW_TEXT);
         var node;
         while ((node = walker.nextNode())) {
           if (node.parentElement && node.parentElement.closest(".katex, code, pre, script, style")) continue;
           var t = node.data
-            .replace(/([A-Za-z0-9가-힣])-([A-Za-z0-9가-힣])/g, "$1\u2011$2")
+            .replace(/([A-Za-z0-9가-힣])-(?=[A-Za-z0-9가-힣])/g, "$1\u2011")
             .replace(/^(\s*\S+)\s+(\d+(?:\.\d+)?)(?=\s+\S)/, "$1\u00a0$2")
             .replace(/(\S\s+\S+)\s+(\d+(?:\.\d+)?)\s*$/, "$1\u00a0$2");
-          if (t !== node.data) node.data = t;
+          if (t !== node.data) firstTexts.push({ node: node, plain: node.data, bound: t });
         }
       });
 
@@ -150,7 +151,7 @@
         if (count > cols) cols = count;
       });
       table.style.setProperty("--table-cols", cols);
-      wrappers.push({ table: table, wrapper: wrapper, cols: cols });
+      wrappers.push({ table: table, wrapper: wrapper, cols: cols, firstTexts: firstTexts });
     });
 
     function isMathOnlyTable(table, cols) {
@@ -226,6 +227,7 @@
         item.wrapper.classList.toggle("is-math-table", isMathOnlyTable(item.table, item.cols));
         item.table.style.removeProperty("--table-expanded-width");
         item.table.style.removeProperty("--table-first-col-max");
+        item.firstTexts.forEach(function (f) { if (f.node.data !== f.plain) f.node.data = f.plain; });
       });
       wrappers.forEach(function (item) {
         var natural = item.wrapper.scrollWidth > item.wrapper.clientWidth + 1
@@ -280,35 +282,19 @@
         var sticky = false;
         // 2칸 표는 값 열이 좁은 창으로만 보여 읽기 나빠지므로 고정하지 않는다.
         if (overflowing && item.cols >= 3 && item.wrapper.clientWidth > 0) {
-          var width = firstColumnWidth(item.table);
           var fontSize = parseFloat(getComputedStyle(item.table).fontSize);
-          var headRow = item.table.rows[0];
-          var checkCells = headRow ? Array.from(headRow.cells).slice(1) : [];
-          var maxRestNeed = 0;
-          checkCells.forEach(function (cell, index) {
-            var st = getComputedStyle(cell);
-            var cellWidth = cell.getBoundingClientRect().width;
-            var need = index === checkCells.length - 1
-              ? cellWidth - parseFloat(st.paddingInlineStart) + 6
-              : cellWidth - parseFloat(st.paddingInlineStart) - parseFloat(st.paddingInlineEnd);
-            if (need > maxRestNeed) maxRestNeed = need;
-          });
-          var minRoom = !isNaN(fontSize) ? Math.max(fontSize * MIN_COLUMN_EM, maxRestNeed) : maxRestNeed;
-          var maxFirst = Math.floor(item.wrapper.clientWidth - minRoom);
-          if (width !== null && !isNaN(fontSize) && width > maxFirst && maxFirst >= fontSize * 5) {
-            item.wrapper.classList.add("is-wrap-first");
-            item.table.style.setProperty("--table-first-col-max", maxFirst + "px");
-            width = firstColumnWidth(item.table);
-          }
-          sticky = width !== null && !isNaN(fontSize)
-            && item.wrapper.clientWidth - width >= fontSize * MIN_COLUMN_EM;
-          if (sticky) {
+          var trySticky = function () {
+            item.wrapper.classList.remove("is-sticky-first");
+            var width = firstColumnWidth(item.table);
+            var ok = width !== null && !isNaN(fontSize)
+              && item.wrapper.clientWidth - width >= fontSize * MIN_COLUMN_EM;
+            if (!ok) return false;
             item.wrapper.classList.add("is-sticky-first");
             width = firstColumnWidth(item.table);
             var visible = width !== null ? item.wrapper.clientWidth - width : 0;
             var row = item.table.rows[0];
             var restCells = row ? Array.from(row.cells).slice(1) : [];
-            sticky = restCells.length > 0 && restCells.every(function (cell, index) {
+            ok = restCells.length > 0 && restCells.every(function (cell, index) {
               var st = getComputedStyle(cell);
               var cellWidth = cell.getBoundingClientRect().width;
               var need = index === restCells.length - 1
@@ -316,6 +302,48 @@
                 : cellWidth - parseFloat(st.paddingInlineStart) - parseFloat(st.paddingInlineEnd);
               return need <= visible + 1;
             });
+            if (!ok) item.wrapper.classList.remove("is-sticky-first");
+            return ok;
+          };
+          var firstColSpills = function () {
+            return Array.from(item.table.querySelectorAll("tr > :first-child")).some(function (cell) {
+              if (cell.colSpan !== 1) return false;
+              var range = document.createRange();
+              range.selectNodeContents(cell);
+              var rects = Array.from(range.getClientRects());
+              if (!rects.length) return false;
+              var right = Math.max.apply(null, rects.map(function (r) { return r.right; }));
+              var limit = cell.getBoundingClientRect().right - parseFloat(getComputedStyle(cell).paddingRight);
+              return right > limit + 1;
+            });
+          };
+          sticky = trySticky();
+          if (!sticky && !isNaN(fontSize)) {
+            item.firstTexts.forEach(function (f) { f.node.data = f.bound; });
+            var headRow = item.table.rows[0];
+            var checkCells = headRow ? Array.from(headRow.cells).slice(1) : [];
+            var maxRestNeed = 0;
+            checkCells.forEach(function (cell, index) {
+              var st = getComputedStyle(cell);
+              var cellWidth = cell.getBoundingClientRect().width;
+              var need = index === checkCells.length - 1
+                ? cellWidth - parseFloat(st.paddingInlineStart) + 6
+                : cellWidth - parseFloat(st.paddingInlineStart) - parseFloat(st.paddingInlineEnd);
+              if (need > maxRestNeed) maxRestNeed = need;
+            });
+            var maxFirst = Math.floor(item.wrapper.clientWidth - Math.max(fontSize * MIN_COLUMN_EM, maxRestNeed));
+            var width0 = firstColumnWidth(item.table);
+            if (width0 !== null && width0 > maxFirst && maxFirst >= fontSize * 5) {
+              item.wrapper.classList.add("is-wrap-first");
+              item.table.style.setProperty("--table-first-col-max", maxFirst + "px");
+              sticky = trySticky() && !firstColSpills();
+              if (!sticky) item.wrapper.classList.remove("is-sticky-first");
+            }
+            if (!sticky) {
+              item.wrapper.classList.remove("is-wrap-first");
+              item.table.style.removeProperty("--table-first-col-max");
+              item.firstTexts.forEach(function (f) { f.node.data = f.plain; });
+            }
           }
         }
         item.wrapper.classList.toggle("is-sticky-first", sticky);

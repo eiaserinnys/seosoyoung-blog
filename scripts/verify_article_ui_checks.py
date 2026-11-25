@@ -1626,14 +1626,24 @@ def a26_checks(path, configs):
             if not (bool(t.get('overflowing')) and (t.get('cols') or 0) >= 3):
                 continue
             sticky = bool(t.get('sticky'))
+            wrap_first = bool(t.get('wrapFirst'))
+            spills = t.get('firstColSpills') or []
             mid_breaks = t.get('firstColMidWordBreaks') or []
             orphan_vers = t.get('firstColOrphanVersions') or []
+            if wrap_first and not sticky:
+                entries.append({'ok': False,
+                                'detail': f"{path} {width} table {t.get('i')} ({t.get('cols')}칸): "
+                                          f"is-wrap-first가 붙었으나 is-sticky-first가 아님"})
             if not sticky:
                 if cfg_name != 'narrow-light':
                     entries.append({'ok': False,
                                     'detail': f"{path} {width} table {t.get('i')} ({t.get('cols')}칸): "
                                               f"sticky=False (360~414px 넘치는 3칸+ 표는 첫 열 고정 필수)"})
                 continue
+            if spills:
+                entries.append({'ok': False,
+                                'detail': f"{path} {width} table {t.get('i')} ({t.get('cols')}칸): "
+                                          f"고정 첫 열 글이 칸 안쪽 여백을 넘어 넘침 spills={spills}"})
             if mid_breaks or orphan_vers:
                 entries.append({'ok': False,
                                 'detail': f"{path} {width} table {t.get('i')} ({t.get('cols')}칸): "

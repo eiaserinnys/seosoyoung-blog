@@ -77,6 +77,11 @@ DEFAULT_PATHS = [
     "/digest/qwenputer-riscv-cpu/",
     "/digest/it3-periodic-table-z172/",
     "/digest/ai-agents-unmapped-maya-site/",
+    "/digest/xiaomi-mimo-v2-6/",
+    "/digest/jacobian-conjecture-false-frontier-ai-2026/",
+    "/digest/anabology-escape-velocity-mv/",
+    "/digest/design-md-agent-design-system/",
+    "/digest/humanitys-first-exam/",
     "/gallery/seosoyoung-russian-avant-garde-poster/",
     "/posts/why-rsi-might-not-reach-agi/",
 ]
@@ -393,8 +398,25 @@ MEASURE_JS = r"""
       firstCellWidth: firstBodyCell ? +firstBodyCell.getBoundingClientRect().width.toFixed(1) : null,
       firstCellText: firstBodyCell ? firstBodyCell.textContent.trim().slice(0, 24) : null,
       sticky: wrap ? wrap.classList.contains('is-sticky-first') : null,
+      wrapFirst: wrap ? wrap.classList.contains('is-wrap-first') : false,
       firstCellPosition: firstCellStyle ? firstCellStyle.position : null,
       firstCellBg: firstCellStyle ? firstCellStyle.backgroundColor : null,
+      firstColSpills: (() => {
+        const bad = [];
+        for (const cell of t.querySelectorAll('tr > :first-child')) {
+          if ((cell.colSpan || 1) !== 1) continue;
+          const r = document.createRange();
+          r.selectNodeContents(cell);
+          const rects = [...r.getClientRects()].filter(x => x.width > 0);
+          if (!rects.length) continue;
+          const right = Math.max(...rects.map(x => x.right));
+          const limit = cell.getBoundingClientRect().right - parseFloat(getComputedStyle(cell).paddingRight);
+          if (right > limit + 1) {
+            bad.push(`${cell.textContent.trim().slice(0, 32)}(+${+(right - limit).toFixed(1)}px)`);
+          }
+        }
+        return bad;
+      })(),
       firstColMidWordBreaks: (() => {
         const bad = [];
         for (const cell of t.querySelectorAll('tbody tr > :first-child')) {

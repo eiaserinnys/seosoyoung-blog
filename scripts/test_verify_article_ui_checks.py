@@ -724,6 +724,14 @@ class NewArticleChecksTest(unittest.TestCase):
         entries = a26_checks('/x/', {'min360-light': {'tables': [orphan_ver_360]}})
         self.assertTrue(any(not e['ok'] and '첫 열 줄바꿈 위반' in e['detail'] for e in entries))
 
+        spill_360 = dict(passing_360, firstColSpills=['Gemini 3.5 Flash-Lite(+20.0px)'])
+        entries = a26_checks('/x/', {'min360-light': {'tables': [spill_360]}})
+        self.assertTrue(any(not e['ok'] and '고정 첫 열 글이 칸 안쪽 여백을 넘어 넘침' in e['detail'] for e in entries))
+
+        wrap_no_sticky_360 = dict(passing_360, sticky=False, wrapFirst=True)
+        entries = a26_checks('/x/', {'min360-light': {'tables': [wrap_no_sticky_360]}})
+        self.assertTrue(any(not e['ok'] and 'is-wrap-first가 붙었으나' in e['detail'] for e in entries))
+
 class RevisedChecksTest(unittest.TestCase):
     def test_a5_independent_expected_overflow(self):
         from verify_article_ui_checks import a5_overflow_checks
@@ -861,6 +869,43 @@ class RevisedBrowserChecksTest(unittest.TestCase):
         self.assertIn(measured['strayBefore'], ('none', 'normal', '""', ''))
         self.assertGreater(measured['linkGap'], 1.0)
         self.assertTrue(measured['sameLine'])
+
+    def test_wrap_first_column_wraps_without_spilling_and_reverts_when_not_sticky(self):
+        from pathlib import Path
+        css = Path('assets/css/30-post.css').read_text(encoding='utf-8')
+        js = Path('assets/js/post.js').read_text(encoding='utf-8')
+        self.page.set_viewport_size({'width': 360, 'height': 740})
+        self.page.set_content('''<style>*, *::before, *::after{box-sizing:border-box}:root{--space-1:8px;--space-2:16px;--space-3:24px;
+          --line:1px;--line-strong:2px;--bg:white;--rule:#ccc;--rule-strong:#333;--ink-2:#333;--type-meta:13px;
+          --topbar-height:64px} .post-content{width:320px;font-size:18px}</style>
+          <div class="post-content">
+            <table id="t6"><thead><tr><th>모델</th><th>A</th><th>B</th><th>C</th><th>D</th><th>E</th></tr></thead>
+            <tbody><tr><td><strong>Gemini 3.5 Flash-Lite Experimental</strong></td><td>68.7%</td><td>52.6%</td><td>98.8%</td><td>18.6%</td><td>80.1%p</td></tr></tbody></table>
+            <table id="t2"><thead><tr><th>항목</th><th>값</th></tr></thead>
+            <tbody><tr><td>Gemini-3-Flash-Preview</td><td>100%</td></tr></tbody></table>
+          </div>''')
+        self.page.add_style_tag(content=css)
+        self.page.evaluate(js)
+        m = self.page.evaluate('''() => {
+          const w6 = document.querySelector('#t6').closest('.table-scroll');
+          const c6 = document.querySelector('#t6 tbody td');
+          const r = document.createRange(); r.selectNodeContents(c6);
+          const rects = [...r.getClientRects()].filter(x => x.width > 0);
+          const right = Math.max(...rects.map(x => x.right));
+          const limit = c6.getBoundingClientRect().right - parseFloat(getComputedStyle(c6).paddingRight);
+          const c2 = document.querySelector('#t2 tbody td');
+          return {
+            cls6: w6.className,
+            ws6: getComputedStyle(c6).whiteSpace,
+            spill6: +(right - limit).toFixed(1),
+            hasAsciiHyphen2: c2.textContent.includes('-'),
+          };
+        }''')
+        self.assertIn('is-sticky-first', m['cls6'])
+        self.assertIn('is-wrap-first', m['cls6'])
+        self.assertEqual(m['ws6'], 'normal')
+        self.assertLessEqual(m['spill6'], 1.0)
+        self.assertTrue(m['hasAsciiHyphen2'])
 
 class Card1521SecondReviewTest(unittest.TestCase):
     def test_a22_rule_pixels(self):
