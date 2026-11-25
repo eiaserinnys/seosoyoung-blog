@@ -413,7 +413,7 @@ A11_JS = r"""
   const hangulInMath = [...content.querySelectorAll('.katex')]
     .filter((k) => !k.closest('.table-header-clone') && /[가-힣]/.test(k.textContent))
     .map((k) => ((k.querySelector('annotation') || k).textContent || '').trim().slice(0, 60));
-  const OPS = /[+\-−×÷=<>≤≥\/]/;
+  const OPS = /[+\-−±×÷=<>≤≥\/]/;
   const allTables = [...content.querySelectorAll('table')].filter((t) => !t.closest('.table-header-clone'));
   const splits = [];
   const cellChars = (cell) => {
@@ -445,6 +445,13 @@ A11_JS = r"""
         const stack = [];
         const near = (k, dir) => { let j = k + dir; while (j >= 0 && j < chars.length && chars[j].ch === ' ') j += dir; return chars[j]; };
         chars.forEach((c, k) => {
+          if (c.ch === '±' && c.y != null && !stack.length) {
+            const a = near(k, -1), b = near(k, 1);
+            if (a && b && /\d/.test(a.ch) && /\d/.test(b.ch) && [a, b].some((x) => x.y != null && Math.abs(x.y - c.y) > tol)) {
+              const s = Math.max(0, k - 6), e = Math.min(chars.length, k + 7);
+              splits.push({table: ti + 1, row: ri, col: ci + 1, text: chars.slice(s, e).map((x) => x.ch).join('').trim()});
+            }
+          }
           if (c.ch === '(') stack.push(k);
           if (c.ch === ')' && stack.length) {
             const s = stack.pop();
