@@ -242,7 +242,40 @@ A9_JS = r"""
       }
     }
   }
-  return {codes: codes, loneCharCells: loneCharCells, bracketBreaks: bracketBreaks, dateBreaks: dateBreaks, hashBreaks: hashBreaks, pres: pres, headingBreaks: headingBreaks};
+  const productBreaks = [];
+  const prodRoots = [...new Set(document.querySelectorAll('.post-content table, aside.sidenote, .post-content .footnotes, .footnotes'))];
+  const prodRe = /\b[A-Za-z][A-Za-z0-9.]*(?:[-‑][A-Za-z0-9./]+)+\b/g;
+  for (const r of prodRoots) {
+    if (r.closest('.table-header-clone')) continue;
+    const vis = r.getBoundingClientRect();
+    if (vis.width === 0 && vis.height === 0) continue;
+    const walker = document.createTreeWalker(r, NodeFilter.SHOW_TEXT, {
+      acceptNode(n) {
+        if (!n.parentElement || n.parentElement.closest('pre, svg, code, script, style, .katex-mathml, .table-header-clone')) {
+          return NodeFilter.FILTER_REJECT;
+        }
+        return prodRe.test(n.nodeValue) ? NodeFilter.FILTER_ACCEPT : NodeFilter.FILTER_REJECT;
+      }
+    });
+    let n;
+    while ((n = walker.nextNode())) {
+      prodRe.lastIndex = 0;
+      let m;
+      while ((m = prodRe.exec(n.nodeValue))) {
+        if (!/\d/.test(m[0])) continue;
+        const rg = document.createRange();
+        rg.setStart(n, m.index);
+        rg.setEnd(n, m.index + m[0].length);
+        const rects = [...rg.getClientRects()].filter(x => x.width > 0);
+        const tops = new Set(rects.map(x => Math.round(x.top)));
+        if (tops.size > 1) {
+          const where = n.parentElement.closest('table') ? 'table' : (n.parentElement.closest('.footnotes') ? 'footnote' : 'sidenote');
+          productBreaks.push(`${where}:${m[0]}`);
+        }
+      }
+    }
+  }
+  return {codes: codes, loneCharCells: loneCharCells, bracketBreaks: bracketBreaks, dateBreaks: dateBreaks, hashBreaks: hashBreaks, pres: pres, headingBreaks: headingBreaks, productBreaks: productBreaks};
 }
 """
 
@@ -811,6 +844,12 @@ def a9_checks(path, configs):
             entries.append({
                 "ok": False,
                 "detail": f"{path} {name}: 제목 어절 가운데 줄바꿈 {len(heading_breaks)}건 {heading_breaks[:5]}",
+            })
+        product_breaks = (((configs.get(name) or {}).get("a9") or {}).get("productBreaks") or [])
+        if product_breaks:
+            entries.append({
+                "ok": False,
+                "detail": f"{path} {name}: 표/각주 제품과 모델명 줄 중간 줄바꿈 {len(product_breaks)}건 {product_breaks[:5]}",
             })
     for name in A9_PRE_WIDE_CONFIGS:
         pres = (((configs.get(name) or {}).get("a9") or {}).get("pres") or [])
