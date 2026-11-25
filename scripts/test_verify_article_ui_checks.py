@@ -904,6 +904,15 @@ class Card1521SecondReviewTest(unittest.TestCase):
         entries_ok = a9_checks('/digest/x/', ok_cfg)
         self.assertTrue(all(e['ok'] for e in entries_ok))
 
+    def test_a9_hash_linebreaks(self):
+        from verify_article_ui_checks import a9_checks
+        fail_cfg = {'narrow-light': {'a9': {'codes': [], 'loneCharCells': [], 'hashBreaks': ['#제안']}}}
+        entries = a9_checks('/digest/x/', fail_cfg)
+        self.assertTrue(any(not e['ok'] and '해시태그 토큰 줄 중간 줄바꿈' in e['detail'] for e in entries))
+        ok_cfg = {'narrow-light': {'a9': {'codes': [], 'loneCharCells': [], 'hashBreaks': []}}}
+        entries_ok = a9_checks('/digest/x/', ok_cfg)
+        self.assertTrue(all(e['ok'] for e in entries_ok))
+
     def test_a9_wide_pre_overflow(self):
         from verify_article_ui_checks import a9_checks
         fail_cfg = {
