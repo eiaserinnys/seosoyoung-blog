@@ -32,11 +32,11 @@ images:
 [^scope]: 이 보고서에서 말하는 신뢰성(reliability)은 서빙 인프라나 API 가동률과는 별개로, 모델이 반복 호출과 유사 변형 문항에서 일관되게 정답을 출력하는 성질을 가리킨다. 또한 외부 도구나 에이전트 하네스의 영향을 배제하고 객관적인 채점을 보장하기 위해 이미지 생성 과제는 제외하고 단일 턴(single-turn), 제로샷(zero-shot) 조건의 텍스트 출력만 평가한다.
 
 ![HFE 공개 데이터셋의 두 가지 예시 문항. 왼쪽은 물체 개수 세기(정답: 4), 오른쪽은 네온사인 색상 식별(정답: green; yellow; white; blue; blue)이다.](https://img.seosoyoung.eiaserinnys.me/images/humanitys-first-exam/03-fig2-example-prompts.png)
-*HFE 공개 데이터셋에서 발췌한 두 가지 예시 프롬프트. 왼쪽(Object Counting)은 '앞줄에 놓인 커피 머그잔 중 김이 올라오지 않는 잔은 몇 개인가?'라는 질문이고 정답은 4다. 오른쪽(Color Identification)은 '네온사인의 각 단어에서 세 번째 글자의 색상을 순서대로 세미콜론으로 구분해 나열하라'는 요청이고 정답은 green; yellow; white; blue; blue다. 사람에게는 단순하지만 여러 프론티어 모델이 반복 시도나 변형 문항에서 실패한다. (출처: Google DeepMind HFE 기술 보고서 Figure 2)*
+*HFE 공개 데이터셋에서 발췌한 두 가지 예시 프롬프트. 왼쪽(Object Counting)은 '앞줄에 놓인 커피 머그잔 중 김이 올라오지 않는 잔은 몇 개인가?'라는 질문(정답: 4)이고, 오른쪽(Color Identification)은 '네온사인의 각 단어에서 세 번째 글자의 색상을 순서대로 세미콜론으로 구분해 나열하라'는 요청(정답: green; yellow; white; blue; blue)이다. (출처: Google DeepMind HFE 기술 보고서 Figure 2)*
 
 Google DeepMind 연구진은 모델의 기초 신뢰성을 측정하기 위해 고난도 시험인 'Humanity’s Last Exam'과 대비되는 이름의 <strong>Humanity’s First Exam(HFE)</strong>을 설계했다. 이와 함께 Kaggle에 실시간 리더보드와 공개 데이터셋을 마련하고 해커톤을 시작했다. 해커톤은 2026년 12월 15일까지 3주간 이어지며, 최신 모델이 여전히 틀리는 일상적 질문을 커뮤니티에서 수집한다.
 
-## 벤치마크 설계: 20개 기초 역량과 4-프롬프트 패밀리
+## 벤치마크 설계: 20개 기초 역량과 4‑프롬프트 패밀리
 
 HFE는 모델이 특정 문구에서만 우연히 정답을 맞히는 현상을 걸러내고자 단일 문항 대신 **4-프롬프트 패밀리(four-prompt family)** 단위로 과제를 구성한다. 연구진은 하위 역량 분류부터 시드 작성, 변형 확장, 인간 기준선 검증 및 품질 필터링까지 네 단계를 거쳐 데이터셋을 완성했다.
 
@@ -74,7 +74,7 @@ HFE는 모델이 특정 문구에서만 우연히 정답을 맞히는 현상을 
 연구진은 각 시드 프롬프트마다 하위 역량, 인지적 난이도, 과제 논리를 그대로 유지한 채 개체 이름, 절의 순서, 시각적 레이아웃이나 속성만 바꾼 변형(variants) 4개를 추가로 만들었다(정답 값은 달라져도 무방하며 과제 논리만 보존한다). 2026년 6월 26일부터 7월 26일까지 초기 5개 모델에 신규 출시된 Gemini 3.5 Flash와 Claude Opus 4.8을 더한 7개 모델 패널에서 변형 문항을 검증해 한 모델이라도 틀리게 하는 변형만 남겼고, 변형 4개를 채우지 못한 시드 6개를 제외해 총 315개의 5-프롬프트 패밀리(1,575개 문항)를 확보했다.
 
 ![색상 식별 과제 패밀리의 4개 문항 이미지 전체 예시.](https://img.seosoyoung.eiaserinnys.me/images/humanitys-first-exam/09-figA1-color-family.png)
-*공개 데이터셋에 포함된 색상 식별(Color Identification) 패밀리의 4개 이미지 구성. (a) 시드 문항은 격자 배경 위 문장에서 각 단어의 두 번째 글자 색상을 묻고, (b) 변형 1은 네온사인에서 각 단어의 세 번째 글자 색상을 묻고, (c) 변형 2는 공책 손글씨에서 모든 모음의 색상을 묻고, (d) 변형 3은 화이트보드에서 각 단어의 두 번째 자음 색상을 위에서 아래 순서로 묻는다. 네 문항 모두 동일한 기초 역량을 측정한다. (출처: Google DeepMind HFE 기술 보고서 Figure A1)*
+*공개 데이터셋에 포함된 색상 식별(Color Identification) 패밀리의 4개 이미지 구성. (a) 시드는 격자 배경 위 문장에서 각 단어의 두 번째 글자 색상을, (b) 변형 1은 네온사인에서 각 단어의 세 번째 글자 색상을, (c) 변형 2는 공책 손글씨에서 모든 모음의 색상을, (d) 변형 3은 화이트보드에서 각 단어의 두 번째 자음 색상을 위에서 아래 순서로 묻는다. (출처: Google DeepMind HFE 기술 보고서 Figure A1)*
 
 ### 4. 인간 기준선 측정과 3단계 품질 필터링
 
@@ -113,16 +113,16 @@ HFE는 각 프롬프트마다 독립적으로 $n=6$회씩 생성하고(모델당
 수학적 정의에 따라 모든 모델에서 항상 $\text{family pass}^4 \le \text{pass}^4 \le \text{pass}@1 \le \text{pass}@4 \le \text{family pass}@4$ 부등식이 성립한다.
 
 ![Gemini 4 Carbon 단일 모델에서 5개 지표의 관계와 Family Reliability Gap을 보여주는 도표.](https://img.seosoyoung.eiaserinnys.me/images/humanitys-first-exam/04-fig3-five-metrics.png)
-*단일 모델(Gemini 4 Carbon, high effort)에서 5개 지표의 점수 분포. 단일 시도 정확도($\text{pass}@1$)는 95.6%, 패밀리 능력 상한($\text{family pass}@4$)은 100.0%에 이르지만, 패밀리 내 4개 문항을 4회씩 총 16회 모두 맞혀야 하는 $\text{family pass}^4$는 80.5%다. 두 값의 차이인 19.5%p가 신뢰성 격차(노란 음영 구간)다. (출처: Google DeepMind HFE 기술 보고서 Figure 3)*
+*단일 모델(Gemini 4 Carbon, high effort)에서 측정한 다섯 지표의 분포와 95% 신뢰구간. 노란 음영 구간이 패밀리 능력 상한과 신뢰성 하한의 차이인 Family Reliability Gap이다. (출처: Google DeepMind HFE 기술 보고서 Figure 3)*
 
 ## 18개 모델 평가 결과: 100%의 능력 상한과 80.1%p의 신뢰성 격차
 
 연구진은 Google, OpenAI, Anthropic의 주요 프론티어 모델과 경량(fast-tier) 모델을 합쳐 18종을 기본 디코딩 파라미터와 최고 추론 노력 설정에서 제로샷으로 평가했다(부록에는 참고용 이전 세대까지 총 29개 모델, 52개 추론 설정의 결과가 실려 있다).[^eval_models]
 
-[^eval_models]: 평가 대상 18개 중 16개는 데이터 수집이 끝난 2026년 7월 26일 이후에 출시됐으며, 나머지 2개(Gemini 3.5 Flash-Lite, Gemini 3.6 Flash)도 변형 문항 제작 마지막 주였던 2026년 7월 21일에 출시되어 보정 패널에는 쓰이지 않았다. 아래 성적표에서는 표 너비를 고려해 Gemini 3.5 Flash-Lite를 Gemini 3.5 Lite로 약칭했다.
+[^eval_models]: 평가 대상 18개 중 16개는 데이터 수집이 끝난 2026년 7월 26일 이후에 출시됐으며, 나머지 2개(Gemini 3.5 Flash-Lite, Gemini 3.6 Flash)도 변형 문항 제작 마지막 주였던 2026년 7월 21일에 출시되어 보정 패널에는 쓰이지 않았다.
 
 ![18개 평가 모델 전체의 Family Reliability Gap 비교 차트.](https://img.seosoyoung.eiaserinnys.me/images/humanitys-first-exam/10-figA2-all18-gap.png)
-*18개 모델 전체의 패밀리 능력 상한($\text{family pass}@4$, 초록색 네모)과 패밀리 신뢰성 하한($\text{family pass}^4$, 빨간색 원), 그리고 두 값의 차이인 Family Reliability Gap(노란색 막대). 거의 모든 모델이 능력 상한에서는 98.5%에서 100%에 도달하지만, 신뢰성 하한은 모델에 따라 18.6%에서 92.4%까지 폭넓게 분포한다. (출처: Google DeepMind HFE 기술 보고서 Figure A2)*
+*18개 평가 모델 전체의 패밀리 능력 상한($\text{family pass}@4$, 초록색 네모)과 패밀리 신뢰성 하한($\text{family pass}^4$, 빨간색 원), 그리고 두 지표의 차이인 Family Reliability Gap(노란색 막대). (출처: Google DeepMind HFE 기술 보고서 Figure A2)*
 
 모델마다 프롬프트 544개를 6회씩 총 3,264회 실행해 집계한 18개 모델의 최고 추론 설정(OpenAI는 xhigh, Google은 xhigh 또는 high, Anthropic은 max) 성적표를 살펴보자.
 
@@ -145,7 +145,7 @@ HFE는 각 프롬프트마다 독립적으로 $n=6$회씩 생성하고(모델당
 | **Gemini 3.6 Flash** | 83.8% | 75.8% | 100.0% | **44.7%** | **55.3%p** |
 | **Claude Haiku 5.5** | 83.6% | 76.3% | 99.8% | **41.6%** | **58.1%p** |
 | **GPT-6 Luna** | 74.8% | 60.9% | 98.5% | **25.6%** | **73.0%p** |
-| **Gemini 3.5 Lite** | 68.7% | 52.6% | 98.8% | **18.6%** | **80.1%p** |
+| **Gemini 3.5 Flash-Lite** | 68.7% | 52.6% | 98.8% | **18.6%** | **80.1%p** |
 
 이 표에서 관찰 네 가지를 얻을 수 있다.
 
@@ -169,7 +169,7 @@ HFE는 각 프롬프트마다 독립적으로 $n=6$회씩 생성하고(모델당
 그렇다면 추론 시간 연산(test-time compute)을 늘리면 이 신뢰성 격차를 줄일 수 있을까? 연구진은 추론 노력이 최소 신뢰성에 미치는 영향을 확인하고자 21개 모델을 서로 다른 추론 예산 설정(low, high/max/xhigh, minimal)에서 비교 실험했다.
 
 ![추론 노력 수준(Thinking levels)에 따른 family pass^4 변화 도표.](https://img.seosoyoung.eiaserinnys.me/images/humanitys-first-exam/06-fig6-thinking-levels.png)
-*추론 노력(Thinking level)이 $\text{family pass}^4$에 미치는 영향. (A) 대부분 모델에서 추론 노력을 low에서 high/max/xhigh로 높이면 신뢰성 하한이 크게 오른다. (B) 그러나 대분류별로 보면 수학과 알고리즘(57%에서 81%)이나 추론과 언어(55%에서 72%)의 상승 폭에 비해 시각(Vision, 50%에서 54%)의 상승 폭은 4%p에 그친다. (C) 추론 토큰을 0으로 끈 minimal 설정에서는 점수가 급락하지만, 소량의 추론 예산(low)만 투입해도 상승분의 대부분을 회복한다. (출처: Google DeepMind HFE 기술 보고서 Figure 6)*
+*추론 노력(Thinking level) 설정에 따른 $\text{family pass}^4$ 비교. (A) 18개 모델 각각의 최고 추론(채운 원) 대 저추론(빈 원) 성적, (B) 4대 대분류별 고추론(진한 파란색)과 저추론(연한 파란색)의 18개 모델 평균, (C) Flash 모델 2종에서 추론을 끈 minimal(빗금) 설정까지 비교한 대분류별 평균이다. (출처: Google DeepMind HFE 기술 보고서 Figure 6)*
 
 - **추론 노력은 신뢰성 하한을 높이지만 능력 상한에는 거의 영향을 주지 않는다**: 추론 노력이 low여도 $\text{family pass}@4$는 대부분 100% 근처를 유지한다. 반면 $\text{family pass}^4$는 추론 노력을 높이면 Gemini 4 Carbon에서 17.4%p(63.1%에서 80.5%), Claude Sonnet 5.5에서 32.3%p(35.3%에서 67.6%), Claude Haiku 5.5에서 30.7%p(10.9%에서 41.6%) 오른다.
 - **추론을 완전히 끄면 신뢰성이 급락하지만 작은 추론 예산으로도 대부분 회복된다**: Gemini 3.6 Flash에서 추론 토큰을 0으로 설정(minimal)하면 $\text{family pass}^4$가 8.0%에 불과하지만, high 설정에서는 44.7%로 오르며, low 설정(36.6%)만으로도 전체 개선 폭의 78%를 확보한다.
@@ -180,7 +180,7 @@ HFE는 각 프롬프트마다 독립적으로 $n=6$회씩 생성하고(모델당
 모델이 패밀리 단위의 신뢰성 평가에서 탈락할 때, 패밀리 내 4개 문항 전체를 모르는 것일까, 아니면 특정 변형 문항 하나에서 실수하는 것일까?
 
 ![모델별로 136개 패밀리 중 6회 실행 모두 정답을 맞힌 프롬프트 개수(4개, 3개, 2개, 1개 이하) 비율.](https://img.seosoyoung.eiaserinnys.me/images/humanitys-first-exam/11-fig7-family-prompts-solved.png)
-*136개 과제 패밀리를 6회 모두 정답을 낸 문항 수로 구분한 비율. 4개 문항 모두 성공(초록색), 3개만 성공(노란색 빗금, 즉 1개 문항에서만 실패), 2개 성공(주황색), 1개 이하 성공(빨간색)이다. 상위 모델이 실패한 패밀리의 대다수는 단 1개의 문항에서만 오답이 나온 경우다. (출처: Google DeepMind HFE 기술 보고서 Figure 7)*
+*136개 과제 패밀리를 6회 모두 정답을 낸 문항 수로 구분한 비율. 4개 문항 모두 성공(초록색), 3개만 성공(노란색 빗금, 즉 1개 문항에서만 실패), 2개 성공(주황색), 1개 이하 성공(빨간색)이다. (출처: Google DeepMind HFE 기술 보고서 Figure 7)*
 
 분석 결과 상위 12개 모델이 실패한 패밀리의 61%에서 85%는 <strong>4개 문항 중 1개에서만 오답이 나온 경우(노란색 빗금)</strong>였다. 나머지 3개 문항은 6회 실행 모두 맞혔다. 또한 한 모델이 한 문항에서 오답을 냈다는 결과는 같은 패밀리의 다른 변형 문항을 틀릴 가능성을 거의 예측하지 못했다(패밀리 단위 급내상관계수 ICC는 0.09에서 0.20). 반대로 서로 다른 모델들 사이에서는 실패가 같은 변형 문항에 집중됐다. 예컨대 수동 QA를 통과한 한 공간 추론 패밀리에서는 18개 모델 중 15개가 같은 변형 문항 하나에서 집중적으로 틀렸다(108회 실행 중 78회 실패, 나머지 3개 문항은 합쳐서 11회 실패).
 
@@ -198,7 +198,7 @@ HFE는 각 프롬프트마다 독립적으로 $n=6$회씩 생성하고(모델당
 연구진은 오답이 나온 모든 프롬프트-모델 쌍(1,492개 쌍, 5,552회 오답 실행)을 LLM 심사관으로 정밀 분류했다. 주 심사관은 Claude Fable 5.2, 교차 검증은 Gemini 4 Carbon이 맡았고 두 심사관의 코헨 카파 일치도는 $\kappa = 0.81$이다.
 
 ![오답의 주요 원인과 모델별 불확실성 표현(헤징) 비율을 보여주는 차트.](https://img.seosoyoung.eiaserinnys.me/images/humanitys-first-exam/08-fig9-failure-causes.png)
-*오답 실행 5,552건의 원인 분포(왼쪽 A)와 오답 응답에서 확신을 유보하거나 대안 답변을 함께 제시(hedging)한 비율(오른쪽 B). 파란색 막대인 시각 지각 오류가 전체 오답의 73%를 차지하며, 제공사별로는 Anthropic 모델들이 틀린 답을 낼 때 불확실성을 표현하는 비율이 뚜렷하게 높다. (출처: Google DeepMind HFE 기술 보고서 Figure 9)*
+*오답 실행 5,552건의 주요 원인 분포(왼쪽 A: 파란색 막대가 시각 지각 오류, 회색 막대가 기타 원인)와 모델별 실패 문항 중 확신을 유보하거나 대안을 제시한 비율(오른쪽 B: 파란색 Google, 초록색 OpenAI, 주황색 Anthropic). (출처: Google DeepMind HFE 기술 보고서 Figure 9)*
 
 심사관 분류와 비응답 집계를 종합하면 모델들의 실패 양상에서 여섯 가지 특징이 확인된다.
 
@@ -209,7 +209,7 @@ HFE는 각 프롬프트마다 독립적으로 $n=6$회씩 생성하고(모델당
 5. **경량 모델은 단순 텍스트 절차를 밟다가 마지막에 오답을 적는다(5%)**: 단계별 텍스트 조작 실수 132건 중 111건이 3사의 최소형 경량 모델(Gemini Flash/Flash-Lite 3종에서 54건, GPT-6 Luna에서 48건, Claude Haiku 5.5에서 9건)에서 나왔으며, 그중 42건은 풀이 과정에서는 정답을 도출해 놓고 최종 답에 다른 값을 제시했다.
 
 ![실패 유형별 비율과 비응답 실패를 정답 처리했을 때의 family pass^4 변화.](https://img.seosoyoung.eiaserinnys.me/images/humanitys-first-exam/12-fig10-non-answer-failures.png)
-*실패 유형별 전체 실행 대비 비율(왼쪽 A: 빨간색 오답, 보라색 안전 거부, 주황색 출력 한도 초과)과 비응답 실패 3종을 정답으로 간주했을 때 $\text{family pass}^4$의 상승 폭(오른쪽 B). 안전 거부와 출력 한도 초과 때문에 잃은 점수는 Anthropic 모델군에 집중되어 있다. (출처: Google DeepMind HFE 기술 보고서 Figure 10)*
+*실패 유형별 전체 실행 대비 비율(왼쪽 A: 빨간색 오답, 보라색 안전 거부, 주황색 출력 한도 초과, 회색 하네스 오류)과 비응답 실패 3종을 정답으로 간주했을 때 $\text{family pass}^4$의 변화(오른쪽 B: 빨간색 원이 기본 측정값, 보라색 빈 원이 보정값). (출처: Google DeepMind HFE 기술 보고서 Figure 10)*
 
 6. **제공사마다 불확실성 표현(hedging)과 비응답 실패가 다르다**: 오답을 낼 때 망설이거나 대안을 함께 적는 비율은 Anthropic 모델이 평균 39%(Claude Fable 5.2는 68%, Sonnet 5.5는 67%)로, Google(14%)이나 OpenAI(7%)보다 훨씬 높았다. 비응답 실패 가운데 안전 필터가 응답을 차단한 안전 거부(refusal)는 Google이나 OpenAI 모델에서는 한 건도 없었고 Anthropic 모델에서만 관찰됐다. Claude Opus 5.5는 전체 실행의 1.6%(패밀리의 4.4%)에서 유해하지 않은 기초 과제를 거부했고, 이 때문에 $\text{family pass}^4$가 4.4%p(67.4%에서 63.0%로) 낮아졌다. 출력 한도 초과는 추론 토큰을 길게 생성하는 Claude Haiku 5.5(전체 실행의 2.0%, 패밀리의 14.7%)에 집중됐다.[^non_answer]
 

@@ -395,6 +395,62 @@ MEASURE_JS = r"""
       sticky: wrap ? wrap.classList.contains('is-sticky-first') : null,
       firstCellPosition: firstCellStyle ? firstCellStyle.position : null,
       firstCellBg: firstCellStyle ? firstCellStyle.backgroundColor : null,
+      firstColMidWordBreaks: (() => {
+        const bad = [];
+        for (const cell of t.querySelectorAll('tbody tr > :first-child')) {
+          const walker = document.createTreeWalker(cell, NodeFilter.SHOW_TEXT);
+          const chars = [];
+          let n;
+          while ((n = walker.nextNode())) {
+            if (n.parentElement && n.parentElement.closest('.katex, script, style')) continue;
+            for (let k = 0; k < n.data.length; k++) {
+              const r = document.createRange();
+              r.setStart(n, k); r.setEnd(n, k + 1);
+              const rects = r.getClientRects();
+              if (!rects.length) continue;
+              chars.push({c: n.data[k], top: Math.round(rects[0].top)});
+            }
+          }
+          for (let k = 1; k < chars.length; k++) {
+            if (chars[k].top > chars[k - 1].top + 4) {
+              const prev = chars[k - 1].c, next = chars[k].c;
+              if (/\s/.test(prev) || /\s/.test(next)) continue;
+              bad.push(chars.slice(Math.max(0, k - 10), k).map(x => x.c).join('') + '⏎' + chars.slice(k, k + 10).map(x => x.c).join(''));
+            }
+          }
+        }
+        return bad;
+      })(),
+      firstColOrphanVersions: (() => {
+        const bad = [];
+        for (const cell of t.querySelectorAll('tbody tr > :first-child')) {
+          const walker = document.createTreeWalker(cell, NodeFilter.SHOW_TEXT);
+          const lines = [];
+          let n;
+          while ((n = walker.nextNode())) {
+            if (n.parentElement && n.parentElement.closest('.katex, script, style')) continue;
+            for (let k = 0; k < n.data.length; k++) {
+              const ch = n.data[k];
+              const r = document.createRange();
+              r.setStart(n, k); r.setEnd(n, k + 1);
+              const rects = r.getClientRects();
+              if (!rects.length) continue;
+              const mid = (rects[0].top + rects[0].bottom) / 2;
+              let ln = lines.find(l => Math.abs(l.mid - mid) <= 9);
+              if (!ln) { ln = {mid, text: ''}; lines.push(ln); }
+              ln.text += ch;
+            }
+          }
+          if (lines.length > 1) {
+            for (const ln of lines.slice(1)) {
+              if (/^\d+(?:\.\d+)?$/.test(ln.text.trim())) {
+                bad.push(cell.textContent.trim() + ' -> ' + lines.map(l => l.text.trim()).join(' / '));
+              }
+            }
+          }
+        }
+        return bad;
+      })(),
       hasInlineCode: codeMetrics.length > 0, codeMetrics};
   });
 

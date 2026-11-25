@@ -378,6 +378,12 @@
   max-width: 100px;
 }
 
+.table-scroll.is-wrap-first > table :is(th, td):first-child {
+  width: var(--table-first-col-max);
+  max-width: var(--table-first-col-max);
+  white-space: normal;
+}
+
 .table-scroll.is-overflowing:not(.is-expanded) > table:has(tr > :nth-child(6)) {
   width: max-content;
 }

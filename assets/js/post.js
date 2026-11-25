@@ -106,9 +106,33 @@
   }
 
   function wrapTables() {
+    document.querySelectorAll("article h1, .post-content h2, .post-content h3").forEach(function (heading) {
+      var walker = document.createTreeWalker(heading, NodeFilter.SHOW_TEXT);
+      var node;
+      while ((node = walker.nextNode())) {
+        if (node.parentElement && node.parentElement.closest(".katex, code, pre, script, style")) continue;
+        var t = node.data
+          .replace(/([A-Za-z0-9가-힣])-([A-Za-z0-9가-힣])/g, "$1\u2011$2")
+          .replace(/([)%])([가-힣])/g, "$1\u2060$2");
+        if (t !== node.data) node.data = t;
+      }
+    });
     var wrappers = [];
     document.querySelectorAll(".post-content table").forEach(function (table) {
       if (table.closest(".highlight") || table.classList.contains("highlighttable")) return;
+
+      table.querySelectorAll("tbody tr > :first-child").forEach(function (cell) {
+        var walker = document.createTreeWalker(cell, NodeFilter.SHOW_TEXT);
+        var node;
+        while ((node = walker.nextNode())) {
+          if (node.parentElement && node.parentElement.closest(".katex, code, pre, script, style")) continue;
+          var t = node.data
+            .replace(/([A-Za-z0-9가-힣])-([A-Za-z0-9가-힣])/g, "$1\u2011$2")
+            .replace(/^(\s*\S+)\s+(\d+(?:\.\d+)?)(?=\s+\S)/, "$1\u00a0$2")
+            .replace(/(\S\s+\S+)\s+(\d+(?:\.\d+)?)\s*$/, "$1\u00a0$2");
+          if (t !== node.data) node.data = t;
+        }
+      });
 
       var wrapper = table.parentElement;
       if (!wrapper || !wrapper.classList.contains("table-scroll")) {
@@ -198,9 +222,10 @@
 
     function updateOverflow() {
       wrappers.forEach(function (item) {
-        item.wrapper.classList.remove("is-overflowing", "is-sticky-first", "is-expanded", "is-compact-first");
+        item.wrapper.classList.remove("is-overflowing", "is-sticky-first", "is-expanded", "is-compact-first", "is-wrap-first");
         item.wrapper.classList.toggle("is-math-table", isMathOnlyTable(item.table, item.cols));
         item.table.style.removeProperty("--table-expanded-width");
+        item.table.style.removeProperty("--table-first-col-max");
       });
       wrappers.forEach(function (item) {
         var natural = item.wrapper.scrollWidth > item.wrapper.clientWidth + 1
@@ -257,6 +282,24 @@
         if (overflowing && item.cols >= 3 && item.wrapper.clientWidth > 0) {
           var width = firstColumnWidth(item.table);
           var fontSize = parseFloat(getComputedStyle(item.table).fontSize);
+          var headRow = item.table.rows[0];
+          var checkCells = headRow ? Array.from(headRow.cells).slice(1) : [];
+          var maxRestNeed = 0;
+          checkCells.forEach(function (cell, index) {
+            var st = getComputedStyle(cell);
+            var cellWidth = cell.getBoundingClientRect().width;
+            var need = index === checkCells.length - 1
+              ? cellWidth - parseFloat(st.paddingInlineStart) + 6
+              : cellWidth - parseFloat(st.paddingInlineStart) - parseFloat(st.paddingInlineEnd);
+            if (need > maxRestNeed) maxRestNeed = need;
+          });
+          var minRoom = !isNaN(fontSize) ? Math.max(fontSize * MIN_COLUMN_EM, maxRestNeed) : maxRestNeed;
+          var maxFirst = Math.floor(item.wrapper.clientWidth - minRoom);
+          if (width !== null && !isNaN(fontSize) && width > maxFirst && maxFirst >= fontSize * 5) {
+            item.wrapper.classList.add("is-wrap-first");
+            item.table.style.setProperty("--table-first-col-max", maxFirst + "px");
+            width = firstColumnWidth(item.table);
+          }
           sticky = width !== null && !isNaN(fontSize)
             && item.wrapper.clientWidth - width >= fontSize * MIN_COLUMN_EM;
           if (sticky) {

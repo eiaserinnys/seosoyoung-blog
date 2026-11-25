@@ -216,7 +216,33 @@ A9_JS = r"""
     over: +(p.scrollWidth - p.clientWidth).toFixed(1),
     text: p.textContent.trim().slice(0, 60),
   }));
-  return {codes: codes, loneCharCells: loneCharCells, bracketBreaks: bracketBreaks, dateBreaks: dateBreaks, hashBreaks: hashBreaks, pres: pres};
+  const headingBreaks = [];
+  for (const el of document.querySelectorAll('article h1, .post-content h2, .post-content h3')) {
+    if (el.closest('.katex')) continue;
+    const walker = document.createTreeWalker(el, NodeFilter.SHOW_TEXT);
+    const chars = [];
+    let n;
+    while ((n = walker.nextNode())) {
+      if (n.parentElement && n.parentElement.closest('.katex, script, style')) continue;
+      for (let i = 0; i < n.data.length; i++) {
+        const r = document.createRange();
+        r.setStart(n, i);
+        r.setEnd(n, i + 1);
+        const rects = r.getClientRects();
+        if (!rects.length) continue;
+        chars.push({c: n.data[i], top: Math.round(rects[0].top)});
+      }
+    }
+    for (let i = 1; i < chars.length; i++) {
+      if (chars[i].top > chars[i - 1].top + 4) {
+        const prev = chars[i - 1].c, next = chars[i].c;
+        if (/\s/.test(prev) || /\s/.test(next)) continue;
+        const ctx = chars.slice(Math.max(0, i - 12), i).map(x => x.c).join('') + '⏎' + chars.slice(i, i + 10).map(x => x.c).join('');
+        headingBreaks.push(ctx);
+      }
+    }
+  }
+  return {codes: codes, loneCharCells: loneCharCells, bracketBreaks: bracketBreaks, dateBreaks: dateBreaks, hashBreaks: hashBreaks, pres: pres, headingBreaks: headingBreaks};
 }
 """
 
@@ -772,6 +798,12 @@ def a9_checks(path, configs):
             entries.append({
                 "ok": False,
                 "detail": f"{path} {name}: 해시태그 토큰 줄 중간 줄바꿈 {len(hash_breaks)}건 {hash_breaks[:5]}",
+            })
+        heading_breaks = (((configs.get(name) or {}).get("a9") or {}).get("headingBreaks") or [])
+        if heading_breaks:
+            entries.append({
+                "ok": False,
+                "detail": f"{path} {name}: 제목 어절 가운데 줄바꿈 {len(heading_breaks)}건 {heading_breaks[:5]}",
             })
     for name in A9_PRE_WIDE_CONFIGS:
         pres = (((configs.get(name) or {}).get("a9") or {}).get("pres") or [])
@@ -1591,8 +1623,21 @@ def a26_checks(path, configs):
                             (390, 'min390-light'), (414, 'min414-light')):
         cfg = configs.get(cfg_name) or {}
         for t in (cfg.get('tables') or []):
-            if not (bool(t.get('overflowing')) and (t.get('cols') or 0) >= 3 and bool(t.get('sticky'))):
+            if not (bool(t.get('overflowing')) and (t.get('cols') or 0) >= 3):
                 continue
+            sticky = bool(t.get('sticky'))
+            mid_breaks = t.get('firstColMidWordBreaks') or []
+            orphan_vers = t.get('firstColOrphanVersions') or []
+            if not sticky:
+                if cfg_name != 'narrow-light':
+                    entries.append({'ok': False,
+                                    'detail': f"{path} {width} table {t.get('i')} ({t.get('cols')}칸): "
+                                              f"sticky=False (360~414px 넘치는 3칸+ 표는 첫 열 고정 필수)"})
+                continue
+            if mid_breaks or orphan_vers:
+                entries.append({'ok': False,
+                                'detail': f"{path} {width} table {t.get('i')} ({t.get('cols')}칸): "
+                                          f"첫 열 줄바꿈 위반 midWord={mid_breaks} orphanVersion={orphan_vers}"})
             gap = t.get('lastColEndGap')
             if gap is None:
                 continue

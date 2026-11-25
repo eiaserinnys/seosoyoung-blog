@@ -711,6 +711,19 @@ class NewArticleChecksTest(unittest.TestCase):
         self.assertEqual(len(entries), 1)
         self.assertTrue(entries[0]['ok'])
 
+        not_sticky_360 = dict(passing_360, sticky=False)
+        entries = a26_checks('/x/', {'min360-light': {'tables': [not_sticky_360]}})
+        self.assertEqual(len(entries), 1)
+        self.assertFalse(entries[0]['ok'])
+
+        mid_break_375 = dict(fitting_cols, firstColMidWordBreaks=['Flash-⏎Lite'])
+        entries = a26_checks('/x/', {'narrow-light': {'tables': [mid_break_375]}})
+        self.assertTrue(any(not e['ok'] and '첫 열 줄바꿈 위반' in e['detail'] for e in entries))
+
+        orphan_ver_360 = dict(passing_360, firstColOrphanVersions=['Claude Opus 5.5 -> Claude Opus / 5.5'])
+        entries = a26_checks('/x/', {'min360-light': {'tables': [orphan_ver_360]}})
+        self.assertTrue(any(not e['ok'] and '첫 열 줄바꿈 위반' in e['detail'] for e in entries))
+
 class RevisedChecksTest(unittest.TestCase):
     def test_a5_independent_expected_overflow(self):
         from verify_article_ui_checks import a5_overflow_checks
@@ -946,6 +959,15 @@ class Card1521SecondReviewTest(unittest.TestCase):
                 }
             }
         }
+        entries_ok = a9_checks('/digest/x/', ok_cfg)
+        self.assertTrue(all(e['ok'] for e in entries_ok))
+
+    def test_a9_heading_midword_breaks(self):
+        from verify_article_ui_checks import a9_checks
+        fail_cfg = {'min360-light': {'a9': {'codes': [], 'loneCharCells': [], 'headingBreaks': ['20개 기초 역량과 4-⏎프롬프트 패밀리']}}}
+        entries = a9_checks('/digest/x/', fail_cfg)
+        self.assertTrue(any(not e['ok'] and '제목 어절 가운데 줄바꿈' in e['detail'] for e in entries))
+        ok_cfg = {'min360-light': {'a9': {'codes': [], 'loneCharCells': [], 'headingBreaks': []}}}
         entries_ok = a9_checks('/digest/x/', ok_cfg)
         self.assertTrue(all(e['ok'] for e in entries_ok))
 
