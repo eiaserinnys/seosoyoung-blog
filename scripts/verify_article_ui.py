@@ -512,11 +512,23 @@ TABLE_STICKY_JS = r"""
     const headRect = headCell ? headCell.getBoundingClientRect() : null;
     const bodyRect = bodyCell ? bodyCell.getBoundingClientRect() : null;
     const cs = firstCell ? getComputedStyle(firstCell) : null;
+    const row0 = table.rows[0];
+    const restCells = row0 ? [...row0.cells].slice(1) : [];
+    const visibleRoom = cellRect ? wrap.clientWidth - cellRect.width : 0;
+    const colsFit = restCells.length > 0 && restCells.every((cell, idx) => {
+      const st = getComputedStyle(cell);
+      const cw = cell.getBoundingClientRect().width;
+      const needW = idx === restCells.length - 1
+        ? cw - parseFloat(st.paddingInlineStart)
+        : cw - parseFloat(st.paddingInlineStart) - parseFloat(st.paddingInlineEnd);
+      return needW <= visibleRoom + 1;
+    });
     const data = {
       index: index + 1,
       cols,
       overflowing: wrap.classList.contains('is-overflowing'),
       sticky: wrap.classList.contains('is-sticky-first'),
+      colsFit,
       wrapClient: wrap.clientWidth,
       scrollLeft: +wrap.scrollLeft.toFixed(1),
       maxScroll: +(wrap.scrollWidth - wrap.clientWidth).toFixed(1),

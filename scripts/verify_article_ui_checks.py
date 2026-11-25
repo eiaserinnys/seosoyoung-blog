@@ -1342,8 +1342,10 @@ def a17_checks(path, configs):
             room = None if width is None else wrap - width
             need = None if font is None else font * MIN_COLUMN_EM
             cols = row.get("cols")
+            cols_fit = row.get("colsFit", True)
             expected = (bool(row.get("overflowing")) and cols is not None and cols >= MIN_TABLE_COLS
-                        and width is not None and wrap > 0 and need is not None and room >= need)
+                        and width is not None and wrap > 0 and need is not None and room >= need
+                        and bool(cols_fit))
             bg = row.get("firstCellBg") or {}
             body = row.get("bodyBg") or {}
             bg_same = (bg.get("a") == 1 and body.get("a") is not None
