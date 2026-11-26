@@ -1716,6 +1716,18 @@ def a26_checks(path, configs):
                                       f"lastColEndGap={gap}px (기준 >= 4.0px) visible={visible}px "
                                       f"midOver={mid_over}"})
 
+    for width, cfg_name in ((360, 'min360-light'), (375, 'narrow-light'),
+                            (390, 'min390-light'), (414, 'min414-light'),
+                            (768, 'tablet-light'), (1024, 'mid-light'),
+                            (1440, 'wide-light')):
+        cfg = configs.get(cfg_name) or {}
+        for t in (cfg.get('tables') or []):
+            hyphen_breaks = t.get('tableHyphenBreaks') or []
+            if hyphen_breaks:
+                entries.append({'ok': False,
+                                'detail': f"{path} {width} table {t.get('i')} ({t.get('cols')}칸): "
+                                          f"표 칸 안 하이픈 낱말 줄바꿈 위반 tableHyphenBreaks={hyphen_breaks}"})
+
     if not entries:
         return [{'ok': True, 'na': True,
                  'detail': f'{path}: 375px 넘치는 3칸 이상 표 0건 (A26 해당 없음)'}]
