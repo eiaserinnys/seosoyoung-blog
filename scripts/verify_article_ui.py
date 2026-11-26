@@ -473,6 +473,31 @@ MEASURE_JS = r"""
         }
         return bad;
       })(),
+      tableHyphenBreaks: (() => {
+        const bad = [];
+        for (const cell of t.querySelectorAll('th, td')) {
+          const walker = document.createTreeWalker(cell, NodeFilter.SHOW_TEXT);
+          let n;
+          while ((n = walker.nextNode())) {
+            const p = n.parentElement;
+            if (!p || p.closest('.katex, code, pre, script, style')) continue;
+            const txt = n.textContent;
+            for (let k = 1; k < txt.length - 1; k++) {
+              if (txt[k] !== '-') continue;
+              if (!/[A-Za-z0-9]/.test(txt[k - 1]) || !/[A-Za-z0-9]/.test(txt[k + 1])) continue;
+              const r1 = document.createRange(); r1.setStart(n, k); r1.setEnd(n, k + 1);
+              const r2 = document.createRange(); r2.setStart(n, k + 1); r2.setEnd(n, k + 2);
+              const a = r1.getBoundingClientRect(), b = r2.getBoundingClientRect();
+              if (b.top - a.top > 4) {
+                const s = txt.lastIndexOf(' ', k) + 1;
+                let e = txt.indexOf(' ', k); if (e < 0) e = txt.length;
+                bad.push(txt.slice(s, k + 1) + '⏎' + txt.slice(k + 1, e));
+              }
+            }
+          }
+        }
+        return bad;
+      })(),
       hasInlineCode: codeMetrics.length > 0, codeMetrics};
   });
 
